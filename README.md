@@ -10,8 +10,8 @@ that is enough.
 
 | Folder | What it holds |
 | --- | --- |
-| [`docs/`](docs/) | The priority list, with what is published for each tool, and the to-do list |
-| [`plans/`](plans/) | One folder per planned tool, each with a README describing the project |
+| [`docs/`](docs/) | The priority list, with what is published for each tool, and the to-do project list |
+| [`plans/`](plans/) | The plans index, one folder per planned tool, and the template and skill for writing a plan |
 | [`drafts/`](drafts/) | Works in progress. First copies, not yet reviewed |
 | [`projects/`](projects/) | Published projects, each with a student guide and one folder per level |
 

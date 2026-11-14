@@ -1,22 +1,49 @@
-# To do
+# To-do project list
 
-## Now
+Every project starts with the same two steps, in this order:
 
-- [ ] Review the five candidates in `drafts/` and promote the levels that are ready
-- [ ] Check the estimator demo and its three worked examples against a real price list
+1. **Research** established best practices. Record each with a source link and the date checked.
+2. **Simple level:** write the level 1 solution and its overview.
+
+The working level and beyond are not planned in detail until the simple level is in use.
+
+Status read from the folders on 2026-11-14: 5 of 20 simple levels drafted, 0 reviewed, 0 published.
+
+| # | Project | 1. Research | 2. Simple level and overview | Plan |
+| --- | --- | --- | --- | --- |
+| 1 | Artifact studio | Partly done | Drafted, needs review | [Plan](../plans/artifact-studio/) |
+| 2 | Voice post drafter | To do | Drafted, needs review | [Plan](../plans/voice-post-drafter/) |
+| 3 | Short video guide | Partly done | Drafted, needs review | [Plan](../plans/short-video/) |
+| 4 | Estimator | To do | Drafted, needs review | No plan |
+| 5 | Training explainer with avatar | To do | Drafted, needs review | [Plan](../plans/training-explainer/) |
+| 6 | Learning system | To do | To do | [Plan](../plans/learning-system/) |
+| 7 | Publishing a website | To do | To do | [Plan](../plans/website-publishing/) |
+| 8 | Inbox triage and daily summary | To do | To do | [Plan](../plans/inbox-daily-summary/) |
+| 9 | Weekly brief with research | To do | To do | [Plan](../plans/weekly-brief/) |
+| 10 | Dashboard | To do | To do | [Plan](../plans/dashboard/) |
+| 11 | Client project tracking and support site | To do | To do | [Plan](../plans/client-project-portal/) |
+| 12 | Daily builder | To do | To do | [Plan](../plans/daily-builder/) |
+| 13 | Training website | To do | To do | [Plan](../plans/training-website/) |
+| 14 | Student AI assistant | To do | To do | [Plan](../plans/student-assistant/) |
+| 15 | Website chatbot | To do | To do | [Plan](../plans/website-chatbot/) |
+| 16 | Expense form creator | To do | To do | [Plan](../plans/expense-form/) |
+| 17 | Client onboarding kit | To do | To do | [Plan](../plans/client-onboarding-kit/) |
+| 18 | Lead responder | To do | To do | [Plan](../plans/lead-responder/) |
+| 19 | Meeting to actions | To do | To do | [Plan](../plans/meeting-to-actions/) |
+| 20 | Proposal builder | To do | To do | [Plan](../plans/proposal-builder/) |
+
+"Partly done" means the tool facts in the draft guide were checked against sources. A wider review
+of established practice has not been done for any project yet.
+
+## Across all projects
+
+- [ ] Review the drafts in `drafts/` and promote the levels that are ready to `projects/`
+- [ ] Have someone other than the author test each simple level
 - [ ] Fill the open slots listed at the end of each draft student guide
-- [ ] Write the first three style cards for the artifact studio into a gallery page
+- [ ] Draft a commercial-grade one-pager for each promoted project
 
-## Next
+## Waiting on a decision
 
-- [ ] Define the spreadsheet columns for the learning system and build a demo sheet
-- [ ] Seed the voice post drafter with example posts and run five topics
-- [ ] Produce one sample per route for the short video guide
-- [ ] Record one sample per teaching style for the training explainer
-- [ ] Draft a commercial-grade one-pager for each candidate
-
-## Waiting
-
-- [ ] Choose the avatar and voice tools for the video guides
-- [ ] Confirm one hosting route end to end
-- [ ] Agree the scoring rubric for the daily builder before it is scheduled
+- [ ] The avatar and voice tools to recommend in the video guides
+- [ ] One hosting route confirmed end to end
+- [ ] The scoring rubric for the daily builder, before it is scheduled

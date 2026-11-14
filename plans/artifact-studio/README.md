@@ -1,29 +1,50 @@
 # Artifact studio
 
-Ask for a web page or small tool and choose how it looks before it is built.
+Ask for a web page or small tool and choose its style, from clean to cinematic to scrollytelling, with optional video and audio add-ons.
 
-**Think of it as:** A print shop with house rules. Any job comes out looking like the same studio made it, because the paper, type and margins were decided once.
+| Complexity | Research | Simple level | Draft |
+| --- | --- | --- | --- |
+| Beginner to intermediate | Partly: tool facts checked 2026-11-14 | [Drafted](../../drafts/artifact-studio/) | [`drafts/artifact-studio/`](../../drafts/artifact-studio/) |
 
-## What it includes
+**Think of it as:** A print shop with house rules. Any job comes out looking like the same studio made it, because the paper, the type and the margins were decided once.
 
-- Style cards: clean, cinematic, scrollytelling, dashboard, editorial. Each card fixes layout, type, motion and tone.
-- A design spec filled in once and reused: colours, fonts, spacing, words to avoid.
-- A pre-ship checklist: phone width, real content, one main action, contrast, nothing private.
-- Hosting routes: a shared link, a hosted static site, a repository page.
-- Optional add-ons: a video explainer, a short avatar clip, a generated audio track.
+## Overview
 
-## Priority list entries this plan covers
+Pages built by an assistant tend to look generic because the assistant has to guess the look. This tool removes the guess: you fill in a design spec once, then name a style every time you ask.
 
-- Artifact studio
-- Website from your notes
-- Song and jingle add-on
+## Who it is for
 
-## Status
+Anyone who asks an assistant for a page, a calculator, a dashboard or a landing page.
 
-Plan only. A first draft of the guide is in [`drafts/artifact-studio/`](../../drafts/artifact-studio/).
+## What might be involved at each level
 
-## Next steps
+The simple level is described in most detail, because it is built first. The later levels are
+outlines and will change.
 
-1. Write the first three style cards
-2. Build a gallery page that shows one request in each style
-3. Confirm one hosting route end to end
+| Level | What it involves | Complexity |
+| --- | --- | --- |
+| Demo | A gallery page showing one request built in each style. | Beginner |
+| Simple | Fill in a one-page design spec (colours, fonts, spacing, tone, three things you never want). Pick one of five style cards: clean, cinematic, scrollytelling, dashboard or editorial. Give the assistant the spec, the card and two sentences about what the page is for, then run a short pre-ship checklist. | Beginner |
+| Working | A saved design system, review steps for accessibility and wording, and a hosting route. | Intermediate |
+| Automated | One request produces the page, hosts it and attaches media add-ons such as a short video or an audio track. | Advanced |
+| Commercial grade | Brand governance across a team, a component library, and review before anything is published. | Explained, not built here |
+
+## Established best practices
+
+_Partly done. The draft student guide lists the sources checked on 2026-11-14. A wider review of established practice is still to do._
+
+## What it reuses
+
+Design and front-end skills already available in chat assistants. Publishing a website covers the hosting.
+
+## First step
+
+1. Research established best practices. Record each one with a source link and the date checked.
+2. Write the simple level solution and its overview.
+
+The working level and beyond are planned only after the simple level is in use.
+
+## Open questions
+
+- Which styles beyond the first five are worth a card?
+- Which paid add-ons are worth their cost per render?
