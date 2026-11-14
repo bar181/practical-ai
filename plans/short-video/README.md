@@ -18,7 +18,7 @@ Choose the route by length and purpose, then follow the steps for that route.
 
 ## Status
 
-Plan only. No draft yet.
+Plan only. A first draft of the guide is in [`drafts/short-video/`](../../drafts/short-video/).
 
 ## Next steps
 

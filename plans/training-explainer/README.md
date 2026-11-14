@@ -17,7 +17,7 @@ Turn a topic into a taught video, in a teaching style chosen from a menu.
 
 ## Status
 
-Plan only. No draft yet.
+Plan only. A first draft of the guide is in [`drafts/training-explainer/`](../../drafts/training-explainer/).
 
 ## Next steps
 

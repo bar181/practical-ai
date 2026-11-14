@@ -1,0 +1,64 @@
+# Style cards
+
+A style card has five fields: beats, on-screen rule, visuals, voice, best for. To add a style,
+fill in one more card.
+
+## Lecture builder
+
+| Field | |
+| --- | --- |
+| Beats | An everyday analogy. A worked example. Complexity added one layer at a time. Pseudocode or a summary rule |
+| On-screen rule | One big-type analogy, then the steps. Never a wall of text |
+| Visuals | Physical props, a live demonstration, large type |
+| Voice | Energetic and curious. Builds momentum |
+| Best for | Technical topics for beginners |
+
+## Keynote vision
+
+| Field | |
+| --- | --- |
+| Beats | The problem everyone accepts. A better way. The reveal. What it means for you |
+| On-screen rule | A few words or one number per screen |
+| Visuals | One striking image at a time, with a lot of empty space |
+| Voice | Calm and deliberate, with long pauses |
+| Best for | Big ideas, launches, senior audiences |
+
+## Short story
+
+| Field | |
+| --- | --- |
+| Beats | A compelling hook. A hero with a problem. A twist. An ending that leaves you thinking |
+| On-screen rule | Almost nothing. A title and a closing line |
+| Visuals | Documentary-style stills with slow pan and zoom |
+| Voice | A warm storyteller, unhurried |
+| Best for | Case studies and why-it-matters lessons |
+
+## Emotional pitch
+
+| Field | |
+| --- | --- |
+| Beats | A personal memory. The feeling behind it. The idea as the answer to that feeling |
+| On-screen rule | A single phrase, at the end |
+| Visuals | Old photographs and close, intimate shots |
+| Voice | First person, quiet, deeply felt |
+| Best for | Anything that needs buy-in: change, values, a brand story |
+
+## Dry and sarcastic
+
+| Field | |
+| --- | --- |
+| Beats | State the hype. Deflate it. Give the plain truth. One grudging recommendation |
+| On-screen rule | Deadpan captions that undercut the voice |
+| Visuals | Deliberately low-fi. Awkward stock footage used knowingly |
+| Voice | Flat, wry, self-aware |
+| Best for | Sceptical audiences and myth-busting |
+
+## Blank card
+
+| Field | |
+| --- | --- |
+| Beats | |
+| On-screen rule | |
+| Visuals | |
+| Voice | |
+| Best for | |

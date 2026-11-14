@@ -12,11 +12,11 @@ is on disk, so the flags always match the folders.
 
 | # | Tool | What it does | Published | Student guide | Plan | Commercial |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Artifact studio | Ask for a web page or small tool and choose its style, from clean to cinematic to scrollytelling, with optional video and audio add-ons. | 0 | No | [Yes](../plans/artifact-studio/) | No |
-| 2 | Voice post drafter | A draft post or newsletter that sounds like you, for you to edit and publish yourself. | 0 | No | [Yes](../plans/voice-post-drafter/) | No |
-| 3 | Short video guide | Pick the right route by length and purpose and finish a short video in under 30 minutes. | 0 | No | [Yes](../plans/short-video/) | No |
+| 1 | Artifact studio | Ask for a web page or small tool and choose its style, from clean to cinematic to scrollytelling, with optional video and audio add-ons. | 0 | Draft guide | [Yes](../plans/artifact-studio/) | No |
+| 2 | Voice post drafter | A draft post or newsletter that sounds like you, for you to edit and publish yourself. | 0 | Draft guide | [Yes](../plans/voice-post-drafter/) | No |
+| 3 | Short video guide | Pick the right route by length and purpose and finish a short video in under 30 minutes. | 0 | Draft guide | [Yes](../plans/short-video/) | No |
 | 4 | Daily builder | A scheduled agent that researches and builds the next item on this list, then opens a pull request for review. | 0 | No | [Yes](../plans/daily-builder/) | No |
-| 5 | Training explainer with avatar | Turn a topic into a taught video in a teaching style chosen from a menu. | 0 | No | [Yes](../plans/training-explainer/) | No |
+| 5 | Training explainer with avatar | Turn a topic into a taught video in a teaching style chosen from a menu. | 0 | Draft guide | [Yes](../plans/training-explainer/) | No |
 | 6 | Student AI assistant | A course assistant that answers from the lesson material and names the lesson it used. | 0 | No | [Yes](../plans/course-operations/) | No |
 | 7 | Website chatbot | A site assistant that answers from your own notes and captures enquiries. | 0 | No | [Yes](../plans/sales-department/) | No |
 | 8 | Course program manager | Schedules, reminders and surveys for a cohort, with a summary of the results. | 0 | No | [Yes](../plans/course-operations/) | No |

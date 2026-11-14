@@ -20,7 +20,7 @@ Ask for a web page or small tool and choose how it looks before it is built.
 
 ## Status
 
-Plan only. No draft yet.
+Plan only. A first draft of the guide is in [`drafts/artifact-studio/`](../../drafts/artifact-studio/).
 
 ## Next steps
 

@@ -19,7 +19,7 @@ A draft that sounds like you, for you to copy, edit and publish.
 
 ## Status
 
-Plan only. No draft yet.
+Plan only. A first draft of the guide is in [`drafts/voice-post-drafter/`](../../drafts/voice-post-drafter/).
 
 ## Next steps
 

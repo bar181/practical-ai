@@ -5,4 +5,9 @@ or tested by anyone else. Expect gaps, open questions and things that will chang
 
 A draft that passes review moves to [`projects/`](../projects/).
 
-_No drafts yet._
+| Draft | Tool |
+| --- | --- |
+| [`artifact-studio/`](artifact-studio/) | Artifact studio |
+| [`short-video/`](short-video/) | Short video guide |
+| [`training-explainer/`](training-explainer/) | Training explainer with avatar |
+| [`voice-post-drafter/`](voice-post-drafter/) | Voice post drafter |
