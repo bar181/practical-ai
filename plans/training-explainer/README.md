@@ -7,7 +7,7 @@ Turn a topic into a taught video, in a teaching style chosen from a menu.
 ## What it includes
 
 - A five-line brief: topic, audience, core areas, style, length.
-- Five style cards: lecture builder, keynote vision, short story, emotional pitch, dry and sarcastic.
+- Five style cards, each with a named inspiration: lecture builder (David Malan), keynote vision (Steve Jobs), short story (Don Miller), emotional pitch (Don Draper), dry and sarcastic (Gen X humour).
 - Each card fixes the beats, the on-screen rule, the visuals and the voice.
 - Styles are structures to borrow. Nobody's voice or likeness is imitated.
 

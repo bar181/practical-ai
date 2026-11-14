@@ -14,7 +14,7 @@ Draft. First copy, not yet reviewed or tested by anyone else.
 | Level | What it will hold | In this draft |
 | --- | --- | --- |
 | `level-demo` | A finished beat sheet and one finished video per style | One beat sheet |
-| `level-simple` | The brief, the style cards and the steps. You record it yourself | Brief template, five style cards |
+| `level-simple` | The brief, the style cards and the steps. You record it yourself | Brief template, five style cards with their inspirations |
 | `level-working` | Script, generated visuals and your own cloned voice, assembled by hand | Not started |
 | `level-automated` | An agent produces the whole piece with your avatar and stops at your approval | Not started |
 | `commercial-grade` | What a commercial build adds | Not started |

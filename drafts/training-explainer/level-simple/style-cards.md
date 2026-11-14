@@ -1,12 +1,16 @@
 # Style cards
 
-A style card has five fields: beats, on-screen rule, visuals, voice, best for. To add a style,
-fill in one more card.
+A style card has six fields: inspired by, beats, on-screen rule, visuals, voice, best for. To add a
+style, fill in one more card.
+
+The inspiration tells you whose work to study for the structure. It is not a licence to imitate
+their voice, their face or their phrases.
 
 ## Lecture builder
 
 | Field | |
 | --- | --- |
+| Inspired by | David Malan's lectures: a big-type everyday analogy, then an example, then the complexity, then pseudocode |
 | Beats | An everyday analogy. A worked example. Complexity added one layer at a time. Pseudocode or a summary rule |
 | On-screen rule | One big-type analogy, then the steps. Never a wall of text |
 | Visuals | Physical props, a live demonstration, large type |
@@ -17,6 +21,7 @@ fill in one more card.
 
 | Field | |
 | --- | --- |
+| Inspired by | Steve Jobs keynotes: a vision told with almost no text on screen |
 | Beats | The problem everyone accepts. A better way. The reveal. What it means for you |
 | On-screen rule | A few words or one number per screen |
 | Visuals | One striking image at a time, with a lot of empty space |
@@ -27,6 +32,7 @@ fill in one more card.
 
 | Field | |
 | --- | --- |
+| Inspired by | Don Miller's story structure, with Nat Geo style pan-and-zoom imagery |
 | Beats | A compelling hook. A hero with a problem. A twist. An ending that leaves you thinking |
 | On-screen rule | Almost nothing. A title and a closing line |
 | Visuals | Documentary-style stills with slow pan and zoom |
@@ -37,6 +43,7 @@ fill in one more card.
 
 | Field | |
 | --- | --- |
+| Inspired by | Don Draper, the fictional advertising executive: deep emotion, told in the first person |
 | Beats | A personal memory. The feeling behind it. The idea as the answer to that feeling |
 | On-screen rule | A single phrase, at the end |
 | Visuals | Old photographs and close, intimate shots |
@@ -47,6 +54,7 @@ fill in one more card.
 
 | Field | |
 | --- | --- |
+| Inspired by | Gen X humour |
 | Beats | State the hype. Deflate it. Give the plain truth. One grudging recommendation |
 | On-screen rule | Deadpan captions that undercut the voice |
 | Visuals | Deliberately low-fi. Awkward stock footage used knowingly |
@@ -57,6 +65,7 @@ fill in one more card.
 
 | Field | |
 | --- | --- |
+| Inspired by |  |
 | Beats | |
 | On-screen rule | |
 | Visuals | |

@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Estimator demo</title>
+<style>
+  :root {
+    --paper: #EEF2EF;
+    --sheet: #FBFCFA;
+    --ink: #14302A;
+    --muted: #55706A;
+    --rule: #C4D2CC;
+    --pen: #23479A;
+    --marker: #F4D75E;
+    --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+    --sans: "Avenir Next", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #0F1A18;
+      --sheet: #16241F;
+      --ink: #E4EDE9;
+      --muted: #9DB3AC;
+      --rule: #2C423B;
+      --pen: #A9C0FF;
+      --marker: #6B5A12;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font: 16px/1.5 var(--sans);
+  }
+  main { max-width: 1080px; margin: 0 auto; padding: 28px 18px 56px; }
+  h1 {
+    font: 600 clamp(2rem, 6vw, 3.25rem)/1.05 var(--serif);
+    letter-spacing: -0.01em;
+    margin: 0 0 10px;
+  }
+  .lede { max-width: 58ch; margin: 0 0 24px; color: var(--muted); font-size: 1.05rem; }
+  h2 { font: 600 1.3rem/1.2 var(--serif); margin: 0 0 12px; }
+  h3 { font: 600 1rem/1.3 var(--sans); margin: 0 0 6px; }
+
+  /* business picker */
+  .picker { border: 0; padding: 0; margin: 0 0 22px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .picker legend { padding: 0; margin-bottom: 8px; font-weight: 600; }
+  .picker label {
+    position: relative;
+    padding: 10px 16px;
+    border: 1.5px solid var(--ink);
+    border-radius: 999px;
+    cursor: pointer;
+    font-weight: 600;
+    background: transparent;
+  }
+  .picker input { position: absolute; opacity: 0; inset: 0; cursor: pointer; }
+  .picker label:has(input:checked) { background: var(--ink); color: var(--paper); }
+  .picker label:has(input:focus-visible) { outline: 3px solid var(--pen); outline-offset: 2px; }
+
+  .bench { display: grid; gap: 22px; }
+  @media (min-width: 820px) {
+    .bench { grid-template-columns: minmax(260px, 1fr) minmax(0, 1.45fr); align-items: start; }
+  }
+
+  /* the job */
+  .job p.kind { margin: 0 0 16px; color: var(--muted); }
+  .field { display: grid; grid-template-columns: 1fr auto; gap: 12px; align-items: center; padding: 9px 0; border-bottom: 1px solid var(--rule); }
+  .field label { font-size: 0.98rem; }
+  .field input[type="number"], .field select {
+    width: 7.5rem;
+    padding: 8px 10px;
+    font: inherit;
+    font-variant-numeric: tabular-nums;
+    text-align: right;
+    color: var(--ink);
+    background: var(--sheet);
+    border: 1.5px solid var(--rule);
+    border-radius: 6px;
+  }
+  .field select { width: 9.5rem; text-align: left; }
+  .field input[type="checkbox"] { width: 22px; height: 22px; accent-color: var(--pen); }
+  .field input:focus-visible, .field select:focus-visible { outline: 3px solid var(--pen); outline-offset: 1px; }
+
+  /* the quote sheet */
+  .sheet {
+    background: var(--sheet);
+    border: 1px solid var(--rule);
+    border-top: 6px solid var(--ink);
+    padding: 20px 20px 22px;
+  }
+  .sheet header { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-bottom: 6px; }
+  .sheet header span { color: var(--muted); font-size: 0.9rem; }
+  .rows { list-style: none; margin: 0; padding: 0; }
+  .rows li {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2px 16px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .rows .what { font-weight: 600; }
+  .rows .how { grid-column: 1; color: var(--muted); font-size: 0.9rem; }
+  .rows .amt { grid-row: 1 / span 2; grid-column: 2; align-self: center; font-variant-numeric: tabular-nums; font-weight: 600; }
+  .rows li.sub .what, .rows li.sub .amt { font-family: var(--serif); font-size: 1.05rem; }
+  .rows li.adj .what { font-weight: 500; }
+  .total {
+    display: flex; justify-content: space-between; align-items: baseline; gap: 16px;
+    margin-top: 18px;
+  }
+  .total .label { font: 600 1.3rem/1.2 var(--serif); }
+  .total .figure {
+    font: 600 clamp(2rem, 7vw, 2.9rem)/1 var(--serif);
+    font-variant-numeric: tabular-nums;
+    padding: 4px 12px 6px;
+    background: linear-gradient(-2deg, transparent 12%, var(--marker) 12%, var(--marker) 88%, transparent 88%);
+  }
+  .exact { margin: 8px 0 0; color: var(--muted); font-size: 0.92rem; text-align: right; }
+  .caution { margin: 14px 0 0; padding-left: 12px; border-left: 3px solid var(--pen); font-size: 0.95rem; }
+
+  /* notes */
+  .notes { display: grid; gap: 22px; margin-top: 30px; }
+  @media (min-width: 820px) { .notes { grid-template-columns: repeat(3, 1fr); } }
+  .notes ul, .notes ol { margin: 0; padding-left: 1.15rem; }
+  .notes li { margin-bottom: 6px; }
+  details { margin-top: 28px; border-top: 1px solid var(--rule); padding-top: 14px; }
+  summary { cursor: pointer; font-weight: 600; }
+  summary:focus-visible { outline: 3px solid var(--pen); outline-offset: 3px; }
+  details ol { margin: 12px 0 0; padding-left: 1.3rem; max-width: 70ch; }
+  details li { margin-bottom: 6px; }
+  footer { margin-top: 34px; color: var(--muted); font-size: 0.9rem; max-width: 70ch; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Estimator demo</h1>
+  <p class="lede">A first-draft quote, worked out from a price list and a short set of written rules. Change the job and watch which lines move. Every figure shows the price and the rule behind it.</p>
+
+  <fieldset class="picker" id="picker">
+    <legend>Kind of business</legend>
+  </fieldset>
+
+  <div class="bench">
+    <section class="job" aria-labelledby="job-h">
+      <h2 id="job-h">The job</h2>
+      <p class="kind" id="kind"></p>
+      <div id="fields"></div>
+    </section>
+
+    <section class="sheet" aria-labelledby="quote-h">
+      <header>
+        <h2 id="quote-h">The quote</h2>
+        <span>First draft, for review</span>
+      </header>
+      <ul class="rows" id="rows"></ul>
+      <div class="total" aria-live="polite">
+        <span class="label">Total</span>
+        <span class="figure" id="total"></span>
+      </div>
+      <p class="exact" id="exact"></p>
+      <p class="caution" id="caution" hidden></p>
+    </section>
+  </div>
+
+  <div class="notes">
+    <section><h3>Assumptions</h3><ul id="assumptions"></ul></section>
+    <section><h3>Not priced</h3><ul id="notpriced"></ul></section>
+    <section><h3>Questions before sending</h3><ol id="questions"></ol></section>
+  </div>
+
+  <details>
+    <summary>The rules this business wrote down</summary>
+    <ol id="rules"></ol>
+  </details>
+
+  <footer>
+    Figures are illustrative units, not market prices, and no real company is described. The demo is a calculator with the rules built in. The chatbot version reads the same price list and rules from a file, so a business can change them without touching any code.
+  </footer>
+</main>
+
+<script>
+// CALC-START
+function line(item, qty, unit, price, from) {
+  return { item: item, qty: qty, unit: unit, price: price, amount: qty * price, from: from };
+}
+function sum(lines) { return lines.reduce(function (t, l) { return t + l.amount; }, 0); }
+function cents(n) { return Math.round(n * 100) / 100; }
+function nearest100(n) { return Math.round(n / 100) * 100; }
+
+var BUSINESSES = {
+  consulting: {
+    name: 'Management consulting',
+    kind: 'Sells people’s time: day rates by role, a share for project management, and contingency when the scope is unclear.',
+    fields: [
+      { id: 'discoveryDays', label: 'Discovery, lead consultant days', value: 3, max: 60 },
+      { id: 'consultantDays', label: 'Interviews and analysis, consultant days', value: 6, max: 200 },
+      { id: 'analystDays', label: 'Data analysis, analyst days', value: 8, max: 200 },
+      { id: 'workshops', label: 'Workshops', value: 1, max: 20 },
+      { id: 'scopeUnclear', label: 'Scope is not yet fixed', type: 'checkbox', value: true }
+    ],
+    rules: [
+      'Every engagement starts with discovery: 3 lead consultant days unless the brief says otherwise.',
+      'Each workshop takes 2 lead consultant days and 2 consultant days.',
+      'A written report takes 2 lead consultant days and 3 consultant days.',
+      'Interview, analysis and data work are estimated in days by role.',
+      'Add project management at 10% of the labour subtotal.',
+      'If the scope is not yet fixed, add contingency of 10% of labour plus project management.',
+      'Round the final total to the nearest 100.',
+      'Travel and other expenses are charged at cost and never included.',
+      'Payment: 40% at the start, 60% on delivery of the report.',
+      'An estimate is valid for 30 days.'
+    ],
+    compute: function (v) {
+      var R = { lead: 1800, consultant: 1200, analyst: 800 };
+      var lines = [
+        line('Discovery', v.discoveryDays, 'lead consultant days', R.lead, 'rule 1'),
+        line('Interviews and analysis', v.consultantDays, 'consultant days', R.consultant, 'rule 4'),
+        line('Data analysis', v.analystDays, 'analyst days', R.analyst, 'rule 4'),
+        line('Workshops, lead', v.workshops * 2, 'lead consultant days', R.lead, 'rule 2'),
+        line('Workshops, consultant', v.workshops * 2, 'consultant days', R.consultant, 'rule 2'),
+        line('Report, lead', 2, 'lead consultant days', R.lead, 'rule 3'),
+        line('Report, consultant', 3, 'consultant days', R.consultant, 'rule 3')
+      ].filter(function (l) { return l.qty > 0; });
+      var subtotal = sum(lines);
+      var pm = cents(subtotal * 0.10);
+      var before = subtotal + pm;
+      var contingency = v.scopeUnclear ? cents(before * 0.10) : 0;
+      var exact = cents(before + contingency);
+      var adjustments = [{ item: 'Project management', how: '10% of labour subtotal, rule 5', amount: pm }];
+      if (v.scopeUnclear) adjustments.push({ item: 'Contingency', how: '10% of labour plus project management, rule 6', amount: contingency });
+      return {
+        lines: lines, subtotalLabel: 'Labour subtotal', subtotal: subtotal, adjustments: adjustments,
+        exact: exact, total: nearest100(exact), rounded: true,
+        assumptions: [
+          'About two interviews fit in one consultant day.',
+          v.workshops + (v.workshops === 1 ? ' workshop' : ' workshops') + ' with the leadership team.',
+          v.scopeUnclear ? 'Contingency is included because the scope is not fixed.' : 'No contingency: the scope is treated as fixed.'
+        ],
+        notPriced: ['Travel and other expenses, charged at cost.', 'Any work to carry out the recommendations.'],
+        questions: [
+          'How many people should be interviewed, and are they in one place?',
+          'Is data available for the analyst, and in what form?',
+          'Who needs to attend each workshop?'
+        ]
+      };
+    }
+  },
+
+  kitchen: {
+    name: 'Kitchen renovation',
+    kind: 'Sells materials and labour by measure: unit prices by length and area, flat fees, and contingency that depends on the age of the house.',
+    fields: [
+      { id: 'cabinetFeet', label: 'Cabinets, linear feet', value: 20, max: 200 },
+      { id: 'cabinetGrade', label: 'Cabinet grade', type: 'select', value: 'semi', options: [['stock', 'Stock'], ['semi', 'Semi-custom']] },
+      { id: 'counterFeet', label: 'Countertop, square feet', value: 40, max: 500 },
+      { id: 'counterType', label: 'Countertop material', type: 'select', value: 'quartz', options: [['laminate', 'Laminate'], ['quartz', 'Quartz']] },
+      { id: 'floorFeet', label: 'Floor area, square feet', value: 144, max: 2000 },
+      { id: 'splashFeet', label: 'Backsplash, square feet', value: 30, max: 500 },
+      { id: 'lights', label: 'New lights or outlets', value: 6, max: 100 },
+      { id: 'sinkMoves', label: 'The sink is moving', type: 'checkbox', value: false },
+      { id: 'oldHouse', label: 'House is more than 30 years old', type: 'checkbox', value: true }
+    ],
+    rules: [
+      'Every job includes demolition and disposal, and permits.',
+      'Every job includes exactly one plumbing line: standard hookup if the sink stays, relocation if it moves.',
+      'Flooring is priced on the full floor area of the room.',
+      'Add project management at 8% of the subtotal of all line items.',
+      'Add contingency on the subtotal plus project management: 10% if the house is more than 30 years old, otherwise 5%.',
+      'Round the final total to the nearest 100.',
+      'Appliances and painting are not on the price list. Never price them.',
+      'Never give a firm quote without a site visit.',
+      'Payment: 30% on signing, 40% at the midpoint, 30% on completion.',
+      'An estimate is valid for 30 days.'
+    ],
+    compute: function (v) {
+      var P = { demo: 2500, stock: 450, semi: 750, laminate: 35, quartz: 90, floor: 12, splash: 30, hookup: 600, relocate: 1200, electrical: 150, permits: 800 };
+      var gradeName = v.cabinetGrade === 'semi' ? 'semi-custom' : 'stock';
+      var lines = [
+        line('Demolition and disposal', 1, 'flat fee', P.demo, 'rule 1'),
+        line('Cabinets, ' + gradeName, v.cabinetFeet, 'linear feet', P[v.cabinetGrade], 'price list'),
+        line('Countertop, ' + v.counterType, v.counterFeet, 'square feet', P[v.counterType], 'price list'),
+        line('Flooring', v.floorFeet, 'square feet', P.floor, 'rule 3'),
+        line('Backsplash tile', v.splashFeet, 'square feet', P.splash, 'price list'),
+        v.sinkMoves ? line('Plumbing, relocate sink', 1, 'flat fee', P.relocate, 'rule 2')
+                    : line('Plumbing, standard hookup', 1, 'flat fee', P.hookup, 'rule 2'),
+        line('Electrical, lights or outlets', v.lights, 'each', P.electrical, 'price list'),
+        line('Permits', 1, 'flat fee', P.permits, 'rule 1')
+      ].filter(function (l) { return l.qty > 0; });
+      var subtotal = sum(lines);
+      var pm = cents(subtotal * 0.08);
+      var before = subtotal + pm;
+      var rate = v.oldHouse ? 0.10 : 0.05;
+      var contingency = cents(before * rate);
+      var exact = cents(before + contingency);
+      return {
+        lines: lines, subtotalLabel: 'Subtotal', subtotal: subtotal,
+        adjustments: [
+          { item: 'Project management', how: '8% of subtotal, rule 4', amount: pm },
+          { item: 'Contingency', how: (v.oldHouse ? '10%, house over 30 years old' : '5%, newer house') + ', rule 5', amount: contingency }
+        ],
+        exact: exact, total: nearest100(exact), rounded: true,
+        caution: 'This is a range guide from a description. A firm quote needs a site visit (rule 8).',
+        assumptions: [
+          'Flooring covers the full room.',
+          'New lights and outlets use existing wiring routes.',
+          v.sinkMoves ? 'The sink moves, so plumbing is priced as a relocation.' : 'The sink stays where it is.'
+        ],
+        notPriced: ['Appliances.', 'Painting.'],
+        questions: [
+          'Are new appliances part of the job, and who supplies them?',
+          'Do the walls or ceiling need painting afterwards?',
+          'When can we visit to measure and check the wiring and plumbing?'
+        ]
+      };
+    }
+  },
+
+  staffing: {
+    name: 'Employment services',
+    kind: 'Places full-time and temporary staff: a share of salary for permanent hires, and an hourly bill rate built from the pay rate for temporary staff.',
+    fields: [
+      { id: 'tempWorkers', label: 'Temporary workers', value: 6, max: 500 },
+      { id: 'tempWeeks', label: 'Weeks', value: 8, max: 104 },
+      { id: 'tempHours', label: 'Hours per week, each', value: 40, max: 60 },
+      { id: 'payRate', label: 'Pay rate per hour', value: 20, max: 500, step: 0.25 },
+      { id: 'skill', label: 'Skill level', type: 'select', value: 'general', options: [['general', 'General'], ['skilled', 'Skilled'], ['specialist', 'Specialist']] },
+      { id: 'permHires', label: 'Permanent placements', value: 1, max: 50 },
+      { id: 'salary', label: 'Base salary, each', value: 70000, max: 1000000, step: 1000 },
+      { id: 'level', label: 'Role level', type: 'select', value: 'standard', options: [['standard', 'Standard'], ['specialist', 'Specialist'], ['senior', 'Senior']] }
+    ],
+    rules: [
+      'The client states the pay rate and the base salary. Never suggest or assume either.',
+      'Temporary cost = workers x weeks x hours per week x bill rate.',
+      'Overtime is billed at 1.5 times the bill rate, only when the client gives overtime hours.',
+      'With 3 or more permanent placements in one request, reduce each fee by 2 percentage points.',
+      'Do not round. Temporary staff are invoiced weekly on actual hours.',
+      'A permanent placement carries a 90-day replacement guarantee.',
+      'A fee applies if a temporary worker is hired permanently. It is not on this price list.',
+      'Payment: temporary staff invoiced weekly, payable in 14 days. Permanent fees are due on the start date.',
+      'An estimate is valid for 30 days.'
+    ],
+    compute: function (v) {
+      var MULT = { general: 1.45, skilled: 1.55, specialist: 1.65 };
+      var FEE = { standard: 18, specialist: 22, senior: 25 };
+      var billRate = cents(v.payRate * MULT[v.skill]);
+      var hours = v.tempWorkers * v.tempWeeks * v.tempHours;
+      var feePct = FEE[v.level] - (v.permHires >= 3 ? 2 : 0);
+      var lines = [];
+      if (hours > 0 && v.payRate > 0) {
+        var t = line('Temporary staff, ' + v.skill, hours, 'hours', billRate, 'rule 2');
+        t.amount = cents(t.amount);
+        t.extra = 'bill rate = pay rate ' + v.payRate + ' x ' + MULT[v.skill];
+        lines.push(t);
+      }
+      if (v.permHires > 0 && v.salary > 0) {
+        var p = line('Permanent placement, ' + v.level, v.permHires, v.permHires === 1 ? 'placement' : 'placements', cents(v.salary * feePct / 100), v.permHires >= 3 ? 'price list and rule 4' : 'price list');
+        p.amount = cents(p.amount);
+        p.extra = 'fee = ' + feePct + '% of salary ' + v.salary.toLocaleString('en-US');
+        lines.push(p);
+      }
+      var exact = cents(sum(lines));
+      var weekly = cents(v.tempWorkers * v.tempHours * billRate);
+      return {
+        lines: lines, subtotalLabel: null, subtotal: exact, adjustments: [],
+        exact: exact, total: exact, rounded: false,
+        caution: hours > 0 ? 'Weekly temporary invoice: ' + weekly.toLocaleString('en-US') + ' for ' + v.tempWeeks + (v.tempWeeks === 1 ? ' week.' : ' weeks.') : null,
+        assumptions: [
+          'Temporary work is at the ' + v.skill + ' skill level.',
+          'The permanent role is a ' + v.level + ' role.',
+          'No overtime.'
+        ],
+        notPriced: ['Overtime, because no overtime hours were given.', 'A conversion fee if a temporary worker is hired permanently.'],
+        questions: [
+          'Is any overtime or weekend work expected?',
+          'Does the work need a certificate or licence? That changes the skill level.',
+          'Does the permanent role manage a team and a budget? That may make it senior.',
+          'What start date is needed for each part?'
+        ]
+      };
+    }
+  }
+};
+
+function defaults(key) {
+  var v = {};
+  BUSINESSES[key].fields.forEach(function (f) { v[f.id] = f.value; });
+  return v;
+}
+// CALC-END
+
+(function () {
+  var state = { key: 'consulting', values: {} };
+  Object.keys(BUSINESSES).forEach(function (k) { state.values[k] = defaults(k); });
+
+  function money(n) {
+    var whole = Math.abs(n - Math.round(n)) < 0.005;
+    return n.toLocaleString('en-US', { minimumFractionDigits: whole ? 0 : 2, maximumFractionDigits: 2 });
+  }
+  function el(tag, cls, text) {
+    var e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (text !== undefined && text !== null) e.textContent = text;
+    return e;
+  }
+  function fill(id, items) {
+    var box = document.getElementById(id);
+    box.replaceChildren();
+    items.forEach(function (t) { box.appendChild(el('li', null, t)); });
+  }
+
+  function buildPicker() {
+    var picker = document.getElementById('picker');
+    Object.keys(BUSINESSES).forEach(function (k) {
+      var label = el('label');
+      var input = document.createElement('input');
+      input.type = 'radio'; input.name = 'business'; input.value = k; input.checked = k === state.key;
+      input.addEventListener('change', function () { state.key = k; buildFields(); render(); });
+      label.appendChild(input);
+      label.appendChild(document.createTextNode(BUSINESSES[k].name));
+      picker.appendChild(label);
+    });
+  }
+
+  function buildFields() {
+    var biz = BUSINESSES[state.key], values = state.values[state.key];
+    document.getElementById('kind').textContent = biz.kind;
+    var box = document.getElementById('fields');
+    box.replaceChildren();
+    biz.fields.forEach(function (f) {
+      var row = el('div', 'field');
+      var label = el('label', null, f.label);
+      label.htmlFor = 'f-' + f.id;
+      var input;
+      if (f.type === 'select') {
+        input = document.createElement('select');
+        f.options.forEach(function (o) {
+          var opt = el('option', null, o[1]); opt.value = o[0]; input.appendChild(opt);
+        });
+        input.value = values[f.id];
+        input.addEventListener('change', function () { values[f.id] = input.value; render(); });
+      } else if (f.type === 'checkbox') {
+        input = document.createElement('input');
+        input.type = 'checkbox'; input.checked = values[f.id];
+        input.addEventListener('change', function () { values[f.id] = input.checked; render(); });
+      } else {
+        input = document.createElement('input');
+        input.type = 'number'; input.min = 0; input.max = f.max; input.step = f.step || 1;
+        input.inputMode = 'decimal'; input.value = values[f.id];
+        input.addEventListener('input', function () {
+          var n = parseFloat(input.value);
+          values[f.id] = isFinite(n) ? Math.min(Math.max(n, 0), f.max) : 0;
+          render();
+        });
+      }
+      input.id = 'f-' + f.id;
+      row.appendChild(label); row.appendChild(input);
+      box.appendChild(row);
+    });
+    fill('rules', biz.rules);
+  }
+
+  function row(cls, what, how, amount) {
+    var li = el('li', cls);
+    li.appendChild(el('span', 'what', what));
+    li.appendChild(el('span', 'amt', money(amount)));
+    if (how) li.appendChild(el('span', 'how', how));
+    return li;
+  }
+
+  function render() {
+    var r = BUSINESSES[state.key].compute(state.values[state.key]);
+    var rows = document.getElementById('rows');
+    rows.replaceChildren();
+    if (!r.lines.length) rows.appendChild(el('li', null, 'Nothing to price yet. Enter a quantity above zero.'));
+    r.lines.forEach(function (l) {
+      var how = money(l.qty) + ' ' + l.unit + ' at ' + money(l.price) + (l.extra ? ' (' + l.extra + ')' : '') + ', ' + l.from;
+      rows.appendChild(row('', l.item, how, l.amount));
+    });
+    if (r.subtotalLabel && r.lines.length) rows.appendChild(row('sub', r.subtotalLabel, null, r.subtotal));
+    r.adjustments.forEach(function (a) { rows.appendChild(row('adj', a.item, a.how, a.amount)); });
+
+    document.getElementById('total').textContent = money(r.total);
+    document.getElementById('exact').textContent = r.rounded
+      ? 'Exact figure ' + money(r.exact) + ', rounded to the nearest 100.'
+      : 'Not rounded.';
+    var caution = document.getElementById('caution');
+    caution.hidden = !r.caution;
+    caution.textContent = r.caution || '';
+    fill('assumptions', r.assumptions);
+    fill('notpriced', r.notPriced);
+    fill('questions', r.questions);
+  }
+
+  buildPicker();
+  buildFields();
+  render();
+})();
+</script>
+</body>
+</html>

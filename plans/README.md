@@ -13,6 +13,7 @@ then a project as work proceeds.
 | [Daily builder](daily-builder/) | A scheduled agent that builds the next item on the priority list and asks for review. |
 | [Expense form creator](expense-form/) | A folder of receipt photos becomes a filled-in expense form in your own categories. |
 | [Agentic marketing and sales department](sales-department/) | A set of agents that cover the routine work of marketing and sales, each with a person approving. |
-| [Course operations](course-operations/) | Agents that handle the routine work of running a course. |
+| [Course operations](course-operations/) | A training website and the agents that handle the routine work of running a course. |
+| [Learning system](learning-system/) | A log of questions and the solutions that worked, so the same problem is never solved twice. |
 
 Not every tool in the [priority list](../docs/PRIORITIES.md) has a plan here.

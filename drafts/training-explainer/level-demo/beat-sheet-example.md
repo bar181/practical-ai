@@ -2,7 +2,7 @@
 
 Synthetic example. Topic: what an AI agent is. Length: 3 minutes.
 
-## As a lecture builder
+## As a lecture builder (inspired by David Malan)
 
 | Beat | Time | Said | Shown |
 | --- | --- | --- | --- |
@@ -12,7 +12,7 @@ Synthetic example. Topic: what an AI agent is. Length: 3 minutes.
 | Summary rule | 2:15 to 2:45 | The whole idea in five lines | Five lines of plain pseudocode |
 | Last line | 2:45 to 3:00 | An agent is not smarter. It is allowed to act | That sentence, alone |
 
-## As dry and sarcastic
+## As dry and sarcastic (inspired by Gen X humour)
 
 | Beat | Time | Said | Shown |
 | --- | --- | --- | --- |

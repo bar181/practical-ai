@@ -19,19 +19,19 @@ If the brief lists eight core areas, it is two videos.
 
 Read [`level-simple/style-cards.md`](level-simple/style-cards.md) and choose by the "best for" line.
 
-| Style | Best for |
-| --- | --- |
-| Lecture builder | Technical topics for beginners |
-| Keynote vision | Big ideas and senior audiences |
-| Short story | Case studies and why-it-matters lessons |
-| Emotional pitch | Anything that needs buy-in |
-| Dry and sarcastic | Sceptical audiences and myth-busting |
+| Style | Inspired by | Best for |
+| --- | --- | --- |
+| Lecture builder | David Malan | Technical topics for beginners |
+| Keynote vision | Steve Jobs | Big ideas and senior audiences |
+| Short story | Don Miller, with Nat Geo style imagery | Case studies and why-it-matters lessons |
+| Emotional pitch | Don Draper | Anything that needs buy-in |
+| Dry and sarcastic | Gen X humour | Sceptical audiences and myth-busting |
 
 Rules for choosing:
 
 - **Style follows the audience, not your taste.**
 - **One style per video.** A sarcastic opening with an emotional close reads as confusion.
-- **Borrow the structure, never a person.** A style is a pattern of beats. Do not imitate anyone's voice, face or phrases.
+- **Borrow the structure, never the person.** Each style names an inspiration so you know whose work to study. A style is a pattern of beats. Do not imitate anyone's voice, face or phrases.
 
 ## Step 3: Write the last line first
 
