@@ -16,6 +16,12 @@ One morning summary across your connected sources: email, calendar and social me
 
 Anyone whose day starts in three different apps.
 
+## Scope
+
+- **In:** the simple level described below.
+- **Out:** the working level and beyond, until the simple level is in use.
+- **It works when:** to be written before anything is built.
+
 ## What might be involved at each level
 
 The simple level is described in most detail, because it is built first. The later levels are
@@ -36,6 +42,15 @@ _Research not started. This is the first step for this plan._
 ## What it reuses
 
 Email and calendar connectors, and inbox skills already available in chat assistants.
+
+## Decisions to record during research
+
+Follow the [build process](../plans-template/BUILD-PROCESS.md). Tick each as it is settled.
+
+- [ ] **Reuse check:** what is built in, what is open source, and whether to stop here
+- [ ] **Build or license:** the lean for each level, with outside providers reviewed but not selected
+- [ ] **Dependencies and pricing:** what the simple level depends on and what it costs
+- [ ] **Where it lives:** which assistant, where the files are kept, what stays manual
 
 ## First step
 

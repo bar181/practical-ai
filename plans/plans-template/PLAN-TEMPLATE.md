@@ -16,6 +16,12 @@ Two to four sentences. What problem it solves and how. No jargon.
 
 One sentence.
 
+## Scope
+
+- **In:** what the simple level does.
+- **Out:** what it deliberately does not do.
+- **It works when:** one specific input and what a good result looks like.
+
 ## What might be involved at each level
 
 The simple level is described in most detail, because it is built first. The later levels are
@@ -39,6 +45,15 @@ reason, and a source link with the date it was checked.
 ## What it reuses
 
 What already exists that this tool builds on. Name it before proposing anything new.
+
+## Decisions to record during research
+
+Follow [`BUILD-PROCESS.md`](BUILD-PROCESS.md). Fill these in as each is settled.
+
+- [ ] **Reuse check:** what is built in, what is open source, and whether to stop here
+- [ ] **Build or license:** the lean for each level, with outside providers reviewed but not selected
+- [ ] **Dependencies and pricing:** what the simple level depends on and what it costs
+- [ ] **Where it lives:** which assistant, where the files are kept, what stays manual
 
 ## First step
 

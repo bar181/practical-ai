@@ -16,6 +16,12 @@ A page each client can open to follow their project and get support. It grows in
 
 Anyone delivering projects to clients who keep asking for a status update.
 
+## Scope
+
+- **In:** the simple level described below.
+- **Out:** the working level and beyond, until the simple level is in use.
+- **It works when:** to be written before anything is built.
+
 ## What might be involved at each level
 
 The simple level is described in most detail, because it is built first. The later levels are
@@ -36,6 +42,15 @@ _Research not started. This is the first step for this plan._
 ## What it reuses
 
 Artifact pages for the simple level, a hosted database with sign-in for the working level, Publishing a website for hosting.
+
+## Decisions to record during research
+
+Follow the [build process](../plans-template/BUILD-PROCESS.md). Tick each as it is settled.
+
+- [ ] **Reuse check:** what is built in, what is open source, and whether to stop here
+- [ ] **Build or license:** the lean for each level, with outside providers reviewed but not selected
+- [ ] **Dependencies and pricing:** what the simple level depends on and what it costs
+- [ ] **Where it lives:** which assistant, where the files are kept, what stays manual
 
 ## First step
 

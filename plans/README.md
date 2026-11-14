@@ -4,8 +4,9 @@ One folder per planned tool. Each README gives an overview, what might be involv
 and a complexity flag. A plan is a starting point: it is updated as research is done and replaced by
 a draft and then a project as work proceeds.
 
-To add or update a plan, use [`plans-template/`](plans-template/). It holds the template, the
-instructions and a skill that does the work for you.
+To add or update a plan, use [`plans-template/`](plans-template/). It holds the nine-step build
+process, the template and the instructions. The skills that do the work for you are in
+[`../skills/`](../skills/).
 
 ## Complexity scale
 

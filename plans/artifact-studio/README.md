@@ -16,6 +16,12 @@ Pages built by an assistant tend to look generic because the assistant has to gu
 
 Anyone who asks an assistant for a page, a calculator, a dashboard or a landing page.
 
+## Scope
+
+- **In:** the simple level described below.
+- **Out:** the working level and beyond, until the simple level is in use.
+- **It works when:** to be written before anything is built.
+
 ## What might be involved at each level
 
 The simple level is described in most detail, because it is built first. The later levels are
@@ -36,6 +42,21 @@ _Partly done. The draft student guide lists the sources checked on 2026-11-14. A
 ## What it reuses
 
 Design and front-end skills already available in chat assistants. Publishing a website covers the hosting.
+
+Found so far in the reuse check, on 2026-11-14:
+
+- Anthropic's skills repository includes a frontend design skill and a web artifacts builder skill for multi-component pages. [Source](https://github.com/anthropics/skills)
+- OpenAI's skills catalogue for Codex includes a frontend skill, and both use the same open skill format. [Source](https://composio.dev/blog/top-design-skills), [format](https://developers.openai.com/codex/skills.md)
+- Community skill packs already offer named visual styles such as editorial, bento and brutalism. Review these before writing more style cards. [Source](https://open-design.ai/plugins/codex-design/)
+
+## Decisions to record during research
+
+Follow the [build process](../plans-template/BUILD-PROCESS.md). Tick each as it is settled.
+
+- [ ] **Reuse check:** what is built in, what is open source, and whether to stop here
+- [ ] **Build or license:** the lean for each level, with outside providers reviewed but not selected
+- [ ] **Dependencies and pricing:** what the simple level depends on and what it costs
+- [ ] **Where it lives:** which assistant, where the files are kept, what stays manual
 
 ## First step
 
