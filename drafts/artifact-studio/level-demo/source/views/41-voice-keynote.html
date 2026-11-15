@@ -1,0 +1,47 @@
+<style>
+#v-voice-keynote{background:#000;color:#f5f5f7;font-family:var(--sans)}
+html[data-view=voice-keynote]{scroll-snap-type:y proximity}
+.kn-s{min-height:min(100svh,900px);display:grid;place-content:center;justify-items:center;text-align:center;padding:48px 24px;scroll-snap-align:start;position:relative;overflow:hidden;background:radial-gradient(120% 90% at 50% 0%,#1e1e23 0%,#000 72%)}
+.kn-s h1,.kn-s h2{font:700 clamp(2.4rem,9.4vw,6rem)/1.02 var(--sans);letter-spacing:-.035em;max-width:11em;color:#f5f5f7;text-wrap:balance}
+.kn-s p{font:400 clamp(1.1rem,3.7vw,1.7rem)/1.3 var(--sans);color:#a1a1a6;margin-top:18px;max-width:19em;text-wrap:balance}
+.kn-big{font:700 clamp(5.4rem,29vw,18rem)/.9 var(--sans);letter-spacing:-.06em;background:linear-gradient(180deg,#fff 20%,#86868b);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;font-variant-numeric:tabular-nums}
+.kn-big small{font-size:.32em;letter-spacing:-.02em;margin-left:.12em}
+.kn-dim h2{color:#6e6e73}
+.kn-three{display:grid;gap:6px}
+.kn-three span{font:700 clamp(2.8rem,12vw,7rem)/1 var(--sans);letter-spacing:-.045em}
+.kn-photo .ph{position:absolute;inset:0;background-image:var(--photo2);background-position:50% 30%}
+.kn-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.05) 30%,rgba(0,0,0,.72))}
+.kn-photo>div:not(.ph){position:relative;z-index:1;align-self:end;display:grid;justify-items:center}
+.kn-photo{align-content:end;padding-bottom:14svh}
+.kn-photo p{color:#f5f5f7}
+.kn-pair{display:flex;gap:clamp(20px,7vw,80px);align-items:baseline}
+.kn-pair .kn-big{font-size:clamp(4.6rem,22vw,14rem)}
+.kn-pair .was{background:none;color:#48484a;-webkit-text-fill-color:#48484a}
+.kn-note{position:absolute;bottom:16px;left:0;right:0;font:400 .78rem/1.3 var(--sans);color:#6e6e73;margin:0;max-width:none}
+#v-voice-keynote.anim .see{opacity:0;transform:translateY(26px) scale(.985);transition:opacity .9s ease,transform 1s cubic-bezier(.2,.8,.2,1);transition-delay:calc(var(--i,0)*190ms)}
+#v-voice-keynote.anim .see.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){#v-voice-keynote.anim .see{opacity:1;transform:none;transition:none}}
+</style>
+<div class="view" id="v-voice-keynote" data-tab="voices" data-title="The keynote">
+  <section class="kn-s"><h1 class="see">Every enquiry is a person, waiting.</h1><p class="kn-note">Scroll. One idea per screen.</p></section>
+  <section class="kn-s"><div class="kn-big see">26<small>hours</small></div><p class="see" style="--i:1">That is how long they wait for us today.</p></section>
+  <section class="kn-s kn-dim"><h2 class="see">By then, they have called someone else.</h2></section>
+  <section class="kn-s"><h2 class="see">What if the answer was already written?</h2></section>
+  <section class="kn-s"><div class="kn-three"><span class="see">A draft.</span><span class="see" style="--i:1">A person.</span><span class="see" style="--i:2">A send.</span></div><p class="see" style="--i:4">Three steps. Under an hour.</p></section>
+  <section class="kn-s kn-photo"><div class="ph" role="img" aria-label="A dog on a lead looks out over rocks and calm water toward a low orange sun."></div><div><div class="kn-big see">38<small>min</small></div><p class="see" style="--i:1">From enquiry to answer. Before the sun is down.</p></div></section>
+  <section class="kn-s"><div class="kn-pair"><div class="kn-big was see">18</div><div class="kn-big see" style="--i:2">31</div></div><p class="see" style="--i:3">Site visits booked, every month.</p></section>
+  <section class="kn-s"><h2 class="see">One more thing.</h2><p class="see" style="--i:3">Nobody worked late to do it. Time spent on replies fell from 6 hours a week to 2.5.</p></section>
+  <section class="kn-s"><h2 class="see">Answer first.<br>Win the job.</h2></section>
+  <section class="anat"><div class="wrap">
+    <h2>Behind this page</h2>
+    <p class="measure">The keynote voice sells a vision by removing everything else. Inspired by Steve Jobs's product launches. The company and every figure here are invented for the demo.</p>
+    <div class="anat-grid">
+      <div><h3>How it is built</h3><ol><li>The world as it is, as one painful number</li><li>The consequence, said quietly</li><li>A question that opens the door</li><li>The answer in three words</li><li>One image and the new number</li><li>Before and after, side by side</li><li>One more thing</li><li>A closing line short enough to repeat</li></ol></div>
+      <div><h3>Design rules</h3><ul><li>One idea per screen. If it needs two sentences, it is two screens.</li><li>Black background, one typeface, white and grey only</li><li>Numbers are the pictures. Make them enormous.</li><li>The rule of three: three words, three steps, three benefits</li><li>One photograph, used once, full screen</li><li>Each screen snaps into place and its words arrive in order</li></ul></div>
+    </div>
+@@levels Turn my notes into a keynote-style page: one idea per screen, huge type, almost no words. || Build a keynote-style page from my notes. Black background, one sans-serif typeface. Open with the problem as one huge number, reveal the answer in three words, show my photo once full screen, compare before and after as two numbers, and finish with "one more thing". Screens snap as I scroll. || Use the artifact-studio skill. Recipe: scrolling explainer. Voice: keynote. Look: black and white, with one colour taken from my attached photo. Content: the attached notes. Mark any number you could not find in my notes instead of inventing one.
+  </div></section>
+</div>
+<script>
+onView("voice-keynote",root=>{root.classList.add('anim');STUDIO.seen(root)});
+</script>

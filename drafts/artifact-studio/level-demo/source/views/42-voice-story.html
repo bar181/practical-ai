@@ -1,0 +1,74 @@
+<style>
+#v-voice-story{background:#1d1c15;color:#efe6d6;font:400 1.3rem/1.55 var(--text)}
+.st-hero{position:relative;height:min(92svh,820px);min-height:520px;overflow:hidden;display:flex;align-items:flex-end}
+.st-hero .ph{position:absolute;inset:0;background-image:var(--photo2);background-position:50% 40%;transform-origin:55% 22%;animation:st-push 26s ease-in-out infinite alternate}
+@keyframes st-push{from{transform:scale(1)}to{transform:scale(1.22)}}
+.st-hero::after{content:"";position:absolute;inset:35% 0 0 0;background:linear-gradient(180deg,rgba(29,28,21,0),rgba(29,28,21,.94))}
+.st-hero div:last-child{position:relative;z-index:1;padding:0 22px 34px;max-width:760px;margin-inline:auto;width:100%}
+.st-hero h1{font:400 clamp(1.9rem,6.6vw,3.4rem)/1.12 var(--text);letter-spacing:-.01em;color:#fff7ea}
+.st-beat{font:700 .86rem/1 var(--display);color:#e9a45c;margin-bottom:14px;display:block}
+.st-col{max-width:680px;margin-inline:auto;padding:64px 22px 0}
+.st-col p+p{margin-top:1em}
+.st-col h2{font:400 clamp(1.7rem,5.6vw,2.6rem)/1.14 var(--text);color:#fff7ea;margin-bottom:.6em}
+.st-quote{font:400 italic clamp(1.6rem,6vw,2.7rem)/1.18 var(--text);color:#f3c58e;margin:64px auto 0;max-width:760px;padding:0 22px;text-wrap:balance}
+.st-win{position:relative;height:min(62svh,560px);overflow:clip;margin-top:64px}
+.st-win .ph{position:absolute;inset:-22% 0;background-image:var(--photo2);background-position:30% 86%;background-size:190% auto;transform:translateY(calc((var(--p) - .5)*22%))}
+.st-win::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 120px rgba(29,28,21,.7)}
+.st-three{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:14px}
+.st-three li{border-top:1px solid rgba(239,230,214,.25);padding-top:14px}
+.st-three b{display:block;font:700 1rem/1.3 var(--display);color:#e9a45c}
+.st-plan{counter-reset:s;list-style:none;margin:22px 0 0;padding:0;display:grid;gap:18px}
+.st-plan li{counter-increment:s;display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:baseline}
+.st-plan li::before{content:counter(s);font:400 2.6rem/1 var(--text);color:#e9a45c}
+.st-cta{margin-top:30px;font:700 1.05rem/1 var(--display);background:#e9a45c;color:#1d1c15;border:0;border-radius:999px;min-height:54px;padding:0 28px;cursor:pointer}
+.st-stakes{display:grid;gap:14px;margin-top:22px}
+.st-stakes div{padding:18px;border-radius:12px;font-size:1.14rem;line-height:1.45}
+.st-stakes .no{background:#2b2a22;color:#b9b2a4}
+.st-stakes .yes{background:#e9a45c;color:#1d1c15}
+.st-stakes b{display:block;font:700 .95rem/1.3 var(--display);margin-bottom:6px}
+.st-end{padding-bottom:84px}
+@media(min-width:760px){.st-stakes{grid-template-columns:1fr 1fr}}
+@media (prefers-reduced-motion:reduce){.st-hero .ph{animation:none}}
+</style>
+<div class="view" id="v-voice-story" data-tab="voices" data-title="The storyteller">
+  <header class="st-hero"><div class="ph" role="img" aria-label="A dog on a lead watches the sun set over calm water and a line of grey rocks."></div>
+    <div><span class="st-beat">The hook</span><h1>At 6:40 on a Tuesday evening, walking the dog along the water, Priya finally sent the message she had been putting off for a year.</h1></div></header>
+  <div class="st-col"><span class="st-beat">A character who wants something</span>
+    <p>She wanted a kitchen her family could actually eat in. Not a showroom. A table that fit four people and a counter where the kettle did not have to be moved to make toast.</p>
+    <p>It had taken her a year to ask. Asking meant admitting the old kitchen had won.</p></div>
+  <p class="st-quote">She typed four sentences, pressed send, and put the phone back in her pocket.</p>
+  <div class="st-col"><span class="st-beat">The problem</span>
+    <h2>Then nothing happened.</h2>
+    <ul class="st-three">
+      <li><b>On the surface</b>Three companies had her message. By Wednesday night, none had answered.</li>
+      <li><b>Underneath</b>She began to feel foolish for asking. Maybe the job was too small. Maybe she had filled in the form wrong.</li>
+      <li><b>Why it is wrong</b>Nobody should have to chase a company to give it their money.</li>
+    </ul></div>
+  <div class="st-win sd"><div class="ph" role="img" aria-label="Close view of the dog looking out at the water."></div></div>
+  <div class="st-col"><span class="st-beat">A guide appears</span>
+    <h2>We know, because we were the ones who went quiet.</h2>
+    <p>For years our own replies took a day or more. Not because we did not care. Because the person who could answer was on a ladder in someone else's kitchen.</p>
+    <p>So we changed one thing. Now a reply is drafted the moment a message arrives, and a person reads it, fixes it and sends it. In a 90-day trial, 81 of every 100 people heard from us within the hour.</p></div>
+  <div class="st-col"><span class="st-beat">The plan</span>
+    <h2>Three steps, and only the first is yours.</h2>
+    <ol class="st-plan"><li><span>You write to us once. Four sentences is plenty.</span></li><li><span>A real person answers within the hour, in working hours.</span></li><li><span>That first reply offers you two dates for a visit.</span></li></ol>
+    <span class="st-beat" style="margin-top:44px">The call to action</span>
+    <button class="st-cta" type="button">Send your one message</button><p class="sample-note" id="st-msg" style="margin-top:10px" aria-live="polite"></p></div>
+  <div class="st-col"><span class="st-beat">What is at stake</span>
+    <div class="st-stakes"><div class="no"><b>If nothing changes</b>Another year of moving the kettle. Another form sent into silence. The quiet conclusion that it was never going to happen.</div><div class="yes"><b>If you write tonight</b>An answer before bed. A date in the diary. Someone in your kitchen this week with a tape measure and a pencil.</div></div></div>
+  <div class="st-col st-end"><span class="st-beat">The ending</span>
+    <p>Priya's phone buzzed before she reached the end of the path. On Thursday someone stood in her kitchen with a tape measure.</p>
+    <p class="st-quote" style="margin-top:28px;padding:0">The reply was not the work. It was the proof that the work would be done.</p></div>
+  <section class="anat"><div class="wrap">
+    <h2>Behind this page</h2>
+    <p class="measure">The storyteller voice makes the customer the hero and the company the guide. Inspired by Donald Miller's story framework. Priya, the company and the figures are invented for the demo.</p>
+    <div class="anat-grid">
+      <div><h3>How it is built</h3><ol><li>A hook: one moment, one person, a time on the clock</li><li>A character who wants something specific</li><li>A problem at three depths: on the surface, underneath, and why it is wrong</li><li>A guide who shows empathy first, then proof</li><li>A plan in three steps</li><li>One call to action</li><li>The stakes: failure beside success</li><li>An ending that returns to the opening, and a line that lingers</li></ol></div>
+      <div><h3>Design rules</h3><ul><li>Photography leads. Slow push-ins and a window that drifts, like a nature film.</li><li>One reading column, large serif type, generous space</li><li>The story beat is named above each part, small, in the accent colour</li><li>One pull quote per screen at most</li><li>The company does not appear until the fourth beat</li><li>Colours come from the photograph: dusk, sand and ember</li></ul></div>
+    </div>
+@@levels Tell this as a story on one page, with my customer as the hero and us as the guide. Use my photo large. || Write a one-page story from my notes. Hero: my customer. Open on one moment with a time and a place. Give the problem at three depths, then introduce us as the guide with empathy before proof, a three-step plan, one button, the stakes side by side, and an ending that returns to the opening. Dark warm page, large serif type, my photo with a slow push-in. Take the colours from the photo. || Use the artifact-studio skill. Recipe: landing page. Voice: storyteller. Look: take the palette from my attached photo. Content: the attached customer interview notes. Invent nothing about the customer; where a story beat has no material, ask me one question.
+  </div></section>
+</div>
+<script>
+onView("voice-story",root=>{$('.st-cta',root).addEventListener('click',()=>{$('#st-msg').textContent='This is a demo. On a real page this button opens the enquiry form.'})});
+</script>

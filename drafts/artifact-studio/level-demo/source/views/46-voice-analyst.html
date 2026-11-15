@@ -1,0 +1,67 @@
+<style>
+#v-voice-analyst{--c-bar:#1f5f8b;--c-quiet:#b4c3d1;--c-muted:#55616e;--c-ink:#16202a;background:#f6f7f8;color:#16202a;font:400 1.02rem/1.55 var(--sans)}
+.an-s{max-width:860px;margin-inline:auto;padding:40px 20px 0}
+.an-kicker{font:400 .86rem/1.3 var(--sans);color:#55616e}
+.an-s h1{font:700 clamp(1.7rem,5.6vw,2.7rem)/1.12 var(--plex);letter-spacing:-.01em;margin-top:8px}
+.an-answer{margin-top:22px;background:#16202a;color:#fff;border-radius:10px;padding:20px}
+.an-answer b{display:block;font:400 .86rem/1 var(--sans);color:#9fb6c9;margin-bottom:8px}
+.an-answer p{font:400 1.22rem/1.4 var(--plex)}
+.an-kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
+.an-kpis div{background:#fff;border-radius:10px;padding:14px 12px;border:1px solid #e1e5e9}
+.an-kpis b{display:block;font:700 clamp(1.5rem,6vw,2.2rem)/1 var(--sans);font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.an-kpis span{display:block;margin-top:6px;font-size:.8rem;line-height:1.3;color:#55616e}
+.an-find{background:#fff;border:1px solid #e1e5e9;border-radius:10px;padding:20px 16px 16px;margin-top:16px}
+.an-find h2{font:700 1.2rem/1.25 var(--plex);max-width:26em}
+.an-find h2 small{display:block;font:400 .82rem/1.3 var(--sans);color:#55616e;margin-bottom:6px}
+.an-find .so{margin-top:14px;padding-top:12px;border-top:1px solid #e1e5e9;font-size:.95rem}
+.an-find .so b{font-weight:700}
+.an-src{margin-top:8px;font-size:.78rem;color:#55616e}
+.an-two{display:grid;gap:16px;margin-top:16px}
+.an-two h2{font:700 1.2rem/1.25 var(--plex);margin-bottom:8px}
+.an-two ul{margin:0;padding-left:1.1em;display:grid;gap:6px;font-size:.95rem}
+.an-next{width:100%;border-collapse:collapse;font-size:.92rem;margin-top:8px;font-family:var(--sans)}
+.an-next th,.an-next td{text-align:left;padding:9px 8px;border-bottom:1px solid #e1e5e9;vertical-align:top}
+.an-next td:nth-child(2),.an-next th:nth-child(2){text-align:left}
+.an-next th{color:#55616e;font-weight:400}
+.an-end{padding-bottom:72px}
+@media(min-width:760px){.an-two{grid-template-columns:1fr 1fr}}
+</style>
+<div class="view" id="v-voice-analyst" data-tab="voices" data-title="The analyst">
+  <section class="an-s"><p class="an-kicker">First-reply trial, 90 days. Prepared for the owners.</p>
+    <h1>Replying within the hour raised booked site visits by 72%. Make it the standard.</h1>
+    <div class="an-answer"><b>The answer</b><p>Adopt drafted first replies with human approval for all enquiries. The trial paid for itself in the first month and reduced staff time.</p></div>
+    <div class="an-kpis"><div><b>38 min</b><span>median first reply, down from 26 h</span></div><div><b>31</b><span>site visits a month, up from 18</span></div><div><b>2.5 h</b><span>staff time a week, down from 6 h</span></div></div>
+    <p class="an-src">Example figures, invented for this demo.</p></section>
+  <section class="an-s">
+    <div class="an-find"><h2><small>Finding 1</small>Reply time fell from 26 hours to under an hour by week 8, and stayed there</h2>
+      <div class="lc" id="an-line"></div><p class="an-src">Median hours from enquiry to first reply, by week. Touch the chart to read a week.</p>
+      <p class="so"><b>So what:</b> the change held after the first month, when attention usually drifts.</p></div>
+    <div class="an-find"><h2><small>Finding 2</small>Booked site visits rose every month of the trial</h2>
+      <div class="hb see"><div class="hb-row"><span class="hb-l">Before</span><span class="hb-t"><i class="quiet" style="--v:50%"></i><b>18</b></span></div><div class="hb-row"><span class="hb-l">Month 1</span><span class="hb-t"><i style="--v:61%"></i><b>22</b></span></div><div class="hb-row"><span class="hb-l">Month 2</span><span class="hb-t"><i style="--v:78%"></i><b>28</b></span></div><div class="hb-row"><span class="hb-l">Month 3</span><span class="hb-t"><i style="--v:86%"></i><b>31</b></span></div></div>
+      <p class="an-src">Site visits booked per month. "Before" is the average of the three months before the trial.</p>
+      <p class="so"><b>So what:</b> 13 more visits a month. At the usual one job in four, that is about three more jobs.</p></div>
+    <div class="an-find"><h2><small>Finding 3</small>Staff spent less time on replies, not more</h2>
+      <div class="hb see" style="--lw:9.5em"><div class="hb-row"><span class="hb-l">Hours a week, before</span><span class="hb-t"><i class="quiet" style="--v:86%"></i><b>6.0</b></span></div><div class="hb-row"><span class="hb-l">Hours a week, after</span><span class="hb-t"><i style="--v:36%"></i><b>2.5</b></span></div></div>
+      <p class="an-src">Office manager's own time log, weeks 9 to 13 against the month before the trial.</p>
+      <p class="so"><b>So what:</b> the gain does not depend on anyone working longer.</p></div>
+    <div class="an-two">
+      <div class="an-find" style="margin:0"><h2>How we measured</h2><ul><li>All 214 enquiries received in the 90 days</li><li>Reply time taken from mailbox timestamps</li><li>Visits counted from the shared calendar</li></ul></div>
+      <div class="an-find" style="margin:0"><h2>What this does not show</h2><ul><li>One company and no comparison group</li><li>Spring is the busy season, so some of the rise is seasonal</li><li>Jobs won lag visits by weeks. That number is not in yet.</li></ul></div>
+    </div></section>
+  <section class="an-s an-end"><div class="an-find" style="margin:0"><h2>Recommended next steps</h2>
+    <table class="an-next"><thead><tr><th>Step</th><th>Owner</th><th>By</th></tr></thead><tbody><tr><td>Make drafted first replies the standard for every enquiry</td><td>Office manager</td><td>1 June</td></tr><tr><td>Report jobs won from trial enquiries</td><td>Owner</td><td>15 July</td></tr><tr><td>Repeat the measurement in the quiet season</td><td>Office manager</td><td>November</td></tr></tbody></table></div></section>
+  <section class="anat"><div class="wrap">
+    <h2>Behind this page</h2>
+    <p class="measure">The analyst voice gives the answer first and then earns it with evidence. Inspired by Barbara Minto's pyramid principle. The company and every figure are invented for the demo.</p>
+    <div class="anat-grid">
+      <div><h3>How it is built</h3><ol><li>A title that is the conclusion, not the topic</li><li>The answer in two sentences</li><li>Three numbers that carry it</li><li>Three findings. Each heading is a full sentence, each has one chart and a "so what".</li><li>How it was measured</li><li>What the evidence does not show</li><li>Next steps with an owner and a date</li></ol></div>
+      <div><h3>Design rules</h3><ul><li>Quiet page, one data colour, grey for the comparison</li><li>Every chart has one job and says its unit</li><li>Label the values that matter and leave the rest to touch</li><li>Sources sit under each chart in small type</li><li>Limits get the same space as method</li><li>No decoration that is not data</li></ul></div>
+    </div>
+@@levels Write this up as an evidence-first one-pager: the answer at the top, then three findings with a chart each. || Build an evidence-first report from my data. The title states the conclusion. Then the answer in two sentences, three key numbers, and three findings where each heading is a full sentence with one chart and a "so what" line. Add how it was measured, what it does not show, and next steps with owner and date. One data colour, grey for comparisons, values labelled at the bar ends, source under every chart. || Use the artifact-studio skill. Recipe: one-page report. Voice: analyst. Look: quiet, one data colour from my brand spec. Content: the attached spreadsheet and notes. Show your calculation for every number in a collapsed table, and list anything you could not verify under "what this does not show".
+  </div></section>
+</div>
+<script>
+onView("voice-analyst",root=>{root.classList.add('anim');STUDIO.seen(root);
+  STUDIO.line($('#an-line',root),{vals:[26,22,15,9,5,3,1.8,1.2,.9,.8,.7,.65,.63],labels:Array.from({length:13},(_,i)=>'Week '+(i+1)),max:30,ticks:[0,10,20,30],fmt:v=>v<1?Math.round(v*60)+' min':(+v.toFixed(1))+' h',color:'#1f5f8b',surface:'#fff',first:'26 h',last:'38 min',label:'Median first reply time by week. It falls from 26 hours in week 1 to under an hour by week 8 and reaches 38 minutes in week 13.'});
+});
+</script>

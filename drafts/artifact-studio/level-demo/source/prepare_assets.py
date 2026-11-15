@@ -1,18 +1,17 @@
 """Prepare everything the gallery page embeds: the photo, measurements taken from it,
 line art traced from it, and subset fonts. Writes assets.json next to this script.
 
-Usage: python3 prepare_assets.py --photo photo.jpg --fonts path/to/font/folder
-The font folder must hold NationalPark-Bold.ttf, NationalPark-Regular.ttf, CrimsonPro-Regular.ttf,
-CrimsonPro-Italic.ttf and CrimsonPro-Bold.ttf (both families are on Google Fonts, SIL OFL 1.1).
+Usage: python3 prepare_assets.py --lake photos/lake.jpg --sunset photos/sunset.jpg --fonts path/to/font/folder
+The font folder must hold the .ttf files listed in FONTS below (all are on Google Fonts, SIL OFL 1.1).
 Needs: pillow, numpy, fonttools, brotli.
 """
 import argparse, base64, io, json, random, subprocess, os, tempfile
 from PIL import Image, ImageOps
 import numpy as np
-ap=argparse.ArgumentParser(); ap.add_argument('--photo',default='photo.jpg'); ap.add_argument('--fonts',default='fonts'); ap.add_argument('--quality',type=int,default=72)
+ap=argparse.ArgumentParser(); ap.add_argument('--lake',default='photos/lake.jpg'); ap.add_argument('--sunset',default='photos/sunset.jpg'); ap.add_argument('--fonts',default='fonts'); ap.add_argument('--quality',type=int,default=72)
 args=ap.parse_args()
 HERE=os.path.dirname(os.path.abspath(__file__))
-SRC=args.photo
+SRC=args.lake
 im = ImageOps.exif_transpose(Image.open(SRC)).convert('RGB')
 W0,H0 = im.size
 buf=io.BytesIO(); im.save(buf,'JPEG',quality=args.quality,optimize=True,progressive=True)  # saved without metadata
@@ -100,10 +99,17 @@ P['cattails']=' '.join(cat)
 P['ground']='M0,1010 Q300,985 620,1040 T1150,1030 T1600,1000'
 # ---- fonts
 FD=args.fonts.rstrip('/')+'/'; TMP=tempfile.mkdtemp()
+FONTS=[('np7','NationalPark-Bold.ttf'),('np4','NationalPark-Regular.ttf'),('cp4','CrimsonPro-Regular.ttf'),('cp4i','CrimsonPro-Italic.ttf'),('cp7','CrimsonPro-Bold.ttf'),
+ ('is4','InstrumentSans-Regular.ttf'),('is7','InstrumentSans-Bold.ttf'),('jb4','JetBrainsMono-Regular.ttf'),('gl4','Gloock-Regular.ttf'),('bs7','BigShoulders-Bold.ttf'),
+ ('ws4','WorkSans-Regular.ttf'),('ws7','WorkSans-Bold.ttf'),('px4','IBMPlexSerif-Regular.ttf'),('px4i','IBMPlexSerif-Italic.ttf'),('px7','IBMPlexSerif-Bold.ttf')]
 fonts={}
-for name,f in [('np7','NationalPark-Bold.ttf'),('np4','NationalPark-Regular.ttf'),('cp4','CrimsonPro-Regular.ttf'),('cp4i','CrimsonPro-Italic.ttf'),('cp7','CrimsonPro-Bold.ttf')]:
+for name,f in FONTS:
     out=os.path.join(TMP,name+'.woff2')
-    subprocess.run(['pyftsubset',FD+f,'--unicodes=U+0020-007E,U+00A0,U+00B7,U+00D7,U+2013,U+2014,U+2018,U+2019,U+201C,U+201D,U+2026,U+2192','--flavor=woff2','--layout-features=kern,liga','--output-file='+out],check=True)
-    fonts[name]=base64.b64encode(open(out,'rb').read()).decode(); print(name,os.path.getsize(out))
-json.dump({'photo':photo,'w':W0,'h':H0,'rows':rows,'pal':pal,'paths':P,'fonts':fonts},open(os.path.join(HERE,'assets.json'),'w'))
-print('photo kb',len(photo)//1024,'size',W0,H0); 
+    subprocess.run(['pyftsubset',FD+f,'--unicodes=U+0020-007E,U+00A0,U+00A3,U+00B7,U+00D7,U+00E9,U+2013,U+2014,U+2018,U+2019,U+201C,U+201D,U+2022,U+2026,U+2190,U+2192,U+2713','--flavor=woff2','--layout-features=kern,liga,tnum','--output-file='+out],check=True)
+    fonts[name]=base64.b64encode(open(out,'rb').read()).decode()
+# second photo: portrait sunset, embedded only (no measurements taken from it)
+s2=ImageOps.exif_transpose(Image.open(args.sunset)).convert('RGB'); s2=s2.resize((1200,round(1200*s2.size[1]/s2.size[0])),Image.LANCZOS)
+b2=io.BytesIO(); s2.save(b2,'JPEG',quality=args.quality,optimize=True,progressive=True)
+sunset=base64.b64encode(b2.getvalue()).decode()
+json.dump({'photo':photo,'sunset':sunset,'w':W0,'h':H0,'rows':rows,'pal':pal,'paths':P,'fonts':fonts},open(os.path.join(HERE,'assets.json'),'w'))
+print('lake KB',len(photo)*3//4096,'sunset KB',len(sunset)*3//4096,'fonts KB',sum(len(v) for v in fonts.values())*3//4096)

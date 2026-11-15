@@ -1,0 +1,64 @@
+<style>
+.s0-hero{position:relative;height:min(78svh,720px);min-height:460px;overflow:hidden;background:#1d1c15;color:#fff7ea;display:flex;align-items:flex-end}
+.s0-hero .ph{position:absolute;inset:0;background-position:50% 38%;transform-origin:55% 22%;animation:st-push 28s ease-in-out infinite alternate}
+.s0-hero::after{content:"";position:absolute;inset:40% 0 0 0;background:linear-gradient(180deg,rgba(29,28,21,0),rgba(29,28,21,.9))}
+.s0-hero div:last-child{position:relative;z-index:1;padding:0 20px 34px;max-width:1080px;margin-inline:auto;width:100%}
+.s0-hero h1{font-size:clamp(3rem,13vw,7rem);line-height:.92}
+.s0-hero p{margin-top:14px;max-width:22em;font-size:1.3rem;line-height:1.35}
+.s0-build{background:var(--pine);color:var(--fog);padding:56px 0 60px}
+.s0-build h2{color:var(--fog)}
+.s0-build>.wrap>p{margin-top:12px;color:var(--sky);max-width:30em}
+.s0-pick{display:grid;gap:14px;margin-top:26px}
+.s0-pick label{display:grid;gap:6px;font:700 .9rem/1.2 var(--display);color:var(--sky)}
+.s0-pick select{appearance:none;-webkit-appearance:none;font:700 1.05rem/1.2 var(--display);color:var(--pine);background:var(--fog) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%231b2228' stroke-width='2'/%3E%3C/svg%3E") no-repeat right 14px center/12px;border:0;border-radius:10px;min-height:52px;padding:0 40px 0 14px;width:100%}
+.s0-lv{display:inline-flex;background:var(--pine-2);border-radius:999px;padding:4px;gap:2px;margin-top:22px}
+.s0-lv button{font:700 .9rem/1 var(--display);min-height:42px;padding:0 16px;border-radius:999px;border:0;background:transparent;color:var(--fog);cursor:pointer}
+.s0-lv button[aria-pressed=true]{background:var(--reed);color:var(--pine)}
+.s0-build .ask{margin-top:16px;background:var(--fog);color:var(--pine)}
+.s0-build .ask blockquote{min-height:4.2em}
+.s0-shelves a.r{background:var(--pine);color:var(--fog)}
+.s0-shelves a.v{background:#1d1c15;color:#efe6d6}
+.s0-shelves a.p{background:var(--sky);color:var(--pine)}
+.s0-shelves a.f{color:#fff;background:var(--pine)}
+.s0-shelves a.f .ph{position:absolute;inset:0;opacity:.55}
+.s0-shelves a.f>*:not(.ph){position:relative}
+.s0-shelves h3{font-size:1.9rem}
+@media(min-width:760px){.s0-pick{grid-template-columns:repeat(3,1fr)}}
+@media (prefers-reduced-motion:reduce){.s0-hero .ph{animation:none}}
+</style>
+<div class="view" id="v-start" data-tab="start" data-title="Start">
+  <header class="s0-hero"><div class="ph ph2" role="img" aria-label="A dog on a lead looks out over grey rocks and calm water at a low orange sun."></div>
+    <div><h1>Artifact studio</h1><p>Pick a page type, a voice and a look. Get a page worth sharing.</p></div></header>
+  <section class="s0-build"><div class="wrap">
+    <h2>Build your sentence</h2>
+    <p>Think of it as ordering at a counter: the dish, how you like it, and the plate. Choose three things and copy the sentence into Claude or ChatGPT with your notes.</p>
+    <div class="s0-pick">
+      <label for="s0-r">Recipe: what kind of page<select id="s0-r"><option value="report">One-page report</option><option value="proposal">Proposal</option><option value="explainer">Scrolling explainer</option><option value="landing">Landing page</option></select></label>
+      <label for="s0-v">Voice: how it speaks<select id="s0-v"><option value="keynote">The keynote</option><option value="story">The storyteller</option><option value="teacher">The teacher</option><option value="pitch">The pitch</option><option value="practical" selected>The practical instructor</option><option value="analyst">The analyst</option><option value="brief">The executive brief</option></select></label>
+      <label for="s0-l">Look: what it wears<select id="s0-l"><option value="photo">Colours from my photo</option><option value="bw">Black and white, one highlight</option><option value="memo">Paper memo</option><option value="guide">Field guide</option><option value="film">Faded film</option><option value="brand">My brand colours</option></select></label>
+    </div>
+    <div class="s0-lv" role="group" aria-label="Level"><button type="button" aria-pressed="true" data-lv="b">Beginner</button><button type="button" aria-pressed="false" data-lv="a">Advanced</button><button type="button" aria-pressed="false" data-lv="e">Expert</button></div>
+    <div class="ask"><h3>Your sentence</h3><blockquote id="s0-out"></blockquote><button class="copy" type="button">Copy</button></div>
+  </div></section>
+  <div class="wrap shelf-head"><h2>What is in the studio</h2><p class="measure">Four shelves. Every item on them is a working example with the sentence that asks for it.</p></div>
+  <ul class="cards s0-shelves">
+    <li><a class="r" href="#recipes" data-go="recipes"><h3>4 recipes</h3><p>Whole pages: a report, a proposal, an explainer and a landing page.</p></a></li>
+    <li><a class="v" href="#voices" data-go="voices"><h3>7 voices</h3><p>One message told seven ways, from keynote to board memo.</p></a></li>
+    <li><a class="p" href="#parts" data-go="parts"><h3>12 page components</h3><p>Numbers, timelines, tables, charts and questions. No photo needed.</p></a></li>
+    <li><a class="f" href="#photo" data-go="photo"><div class="ph" data-crop=".5,.6,1.3"></div><h3>12 photo components</h3><p>Pan and zoom, a scrolling tour, line art and more, from one picture.</p></a></li>
+  </ul>
+</div>
+<script>
+onView("start",root=>{
+  const R={report:['a one-page report','One-page report'],proposal:['a proposal page','Proposal'],explainer:['a scrolling explainer','Scrolling explainer'],landing:['a landing page','Landing page']};
+  const V={keynote:['keynote','One idea per screen, huge type, almost no words, and end with "one more thing".'],story:['storyteller','Make my customer the hero and us the guide: a hook, the problem, a three-step plan, the stakes, and an ending that returns to the opening.'],teacher:['teacher','Start with an everyday analogy in large type, then one worked example, then the detail, then three check-yourself questions.'],pitch:['pitch','First person. Start with a memory, name the feeling, and name the product only at the end.'],practical:['practical instructor','The core idea in one sentence, one analogy, numbered steps with a time on each, and one next step.'],analyst:['analyst','The answer first, then three findings whose headings are full sentences, each with one chart and a "so what".'],brief:['executive brief','The decision first, numbered background paragraphs, one options table including "do nothing", then risks and next steps.']};
+  const L={photo:'colours taken from my attached photo',bw:'black and white with one highlight colour',memo:'a paper memo with one navy accent',guide:'a field guide with squared paper and two colours',film:'faded film, warm and soft at the edges',brand:'my brand colours (spec attached)'};
+  const r=$('#s0-r',root),v=$('#s0-v',root),l=$('#s0-l',root),out=$('#s0-out',root),lv=$$('.s0-lv button',root);let level='b';
+  const cap=s=>s[0].toUpperCase()+s.slice(1);
+  const make=()=>{const [rp,rn]=R[r.value],[vn,vh]=V[v.value],lk=L[l.value];
+    out.textContent=level==='b'?`Make ${rp} from my notes, in the ${vn} voice. Look: ${lk}.`
+      :level==='a'?`Build ${rp} from my notes in the ${vn} voice. ${vh} Look: ${lk}. Make it one page that reads well on a phone, and mark anything you had to guess.`
+      :`Use the artifact-studio skill. Recipe: ${rn.toLowerCase()}. Voice: ${vn}. Look: ${lk}. Content: the attached notes and images. Invent no facts, mark every gap, and run the pre-ship check before you show me.`};
+  [r,v,l].forEach(s=>s.addEventListener('change',make));lv.forEach(b=>b.addEventListener('click',()=>{level=b.dataset.lv;lv.forEach(x=>x.setAttribute('aria-pressed',x===b));make()}));make();
+});
+</script>
