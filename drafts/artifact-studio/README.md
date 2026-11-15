@@ -50,10 +50,10 @@ The repository's level folders map onto three levels of skill.
 
 | Level | Folder | What you do | Complexity |
 | --- | --- | --- | --- |
-| Demo | [`level-demo/`](level-demo/) | Look. One file with every recipe, voice and component working | None |
-| Beginner | [`level-simple/`](level-simple/) | Copy one sentence, attach your notes | Beginner |
-| Advanced | [`level-working/`](level-working/) | Choose the recipe, voice, look and parts. Fill in a design spec once | Intermediate |
-| Expert | [`level-automated/`](level-automated/) | Install the skill. Hand over any content and media and get a checked page back | Advanced |
+| Demo | [`level-demo/`](level-demo/) | Look. [One file](level-demo/artifact-studio.html) with every recipe, voice and component working | None |
+| Beginner | [`level-simple/`](level-simple/) | Copy one sentence, attach your notes. [Level 1 page](level-simple/artifact-studio-beginner.html) | Beginner |
+| Advanced | [`level-working/`](level-working/) | Choose the recipe, voice, look and parts. Fill in a design spec once. [Level 2 page](level-working/artifact-studio-advanced.html) | Intermediate |
+| Expert | [`level-automated/`](level-automated/) | Install the skill. Hand over any content and media and get a checked page back. [Level 3 page](level-automated/artifact-studio-expert.html) | Advanced |
 | Student projects | [`student-projects/`](student-projects/) | Pages built by students, shared with permission | |
 | Commercial grade | [`commercial-grade/`](commercial-grade/) | What a commercial build adds. An explanation, never a project | |
 

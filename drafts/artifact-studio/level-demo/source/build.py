@@ -1,4 +1,4 @@
-"""Assemble artifact-studio.html from shell.html, base.css, the views folder and assets.json.
+"""Assemble the four studio pages (all examples, and one per level) from shell.html, base.css, the views folder and assets.json.
 
 Usage: python3 prepare_assets.py ... then python3 build.py
 Each file in views/ holds one tab or page: an optional <style>, the markup (a div.view with id v-NAME),
@@ -27,36 +27,106 @@ def levels_macro(m):
     rows=[('Beginner','one sentence',b),('Advanced','add your look, voice and parts',a),('Expert','hand the whole job to the skill',e)]
     return '<div class="levels">'+''.join(f'<div class="ask"><h3><b>{n}:</b> {d}</h3><blockquote>{q}</blockquote><button class="copy" type="button">Copy</button></div>' for n,d,q in rows)+'</div>'
 
-css=[];body=[];js=[];names=[]
+import markdown
+ROOT=os.path.normpath(os.path.join(HERE,'..','..'))            # drafts/artifact-studio
+SKILL=os.path.normpath(os.path.join(ROOT,'..','..','skills','artifact-studio'))
+def md_html(path,drop_h1=False):
+    src=open(path).read()
+    if src.startswith('---'):
+        _,fm,src=src.split('---',2); src='```\n'+fm.strip()+'\n```\n'+src
+    h=markdown.markdown(src,extensions=['tables','fenced_code','sane_lists'])
+    if drop_h1: h=re.sub(r'<h1>.*?</h1>','',h,count=1,flags=re.S)
+    h=re.sub(r'<a href="(?!https?:)[^"]*">(.*?)</a>',r'\1',h,flags=re.S)       # repo-relative links mean nothing inside an artifact
+    h=h.replace('<table>','<div class="tblw" tabindex="0" role="region" aria-label="Table"><table>').replace('</table>','</table></div>')
+    h=re.sub(r'<th></th>','<td></td>',h)
+    h=re.sub(r'<li>\[ \] ?(.*?)</li>',r'<li class="task"><label><input type="checkbox"><span>\1</span></label></li>',h,flags=re.S)
+    h=re.sub(r'<pre>(.*?)</pre>',r'<div class="codeb"><pre>\1</pre><button class="copy" type="button">Copy</button></div>',h,flags=re.S)
+    return h
+def md_macro(m): return '<article class="md sub"><div class="wrap">'+md_html(os.path.normpath(os.path.join(ROOT,m.group(1).strip())),drop_h1=True)+'</div></article>'
+def md_view(name,title,path,raw=None):
+    if raw: inner=f'<h1>{html.escape(title)}</h1><p>{raw}</p><div class="codeb"><pre>{html.escape(open(path).read().strip())}</pre><button class="copy" type="button">Copy</button></div>'
+    else: inner=md_html(path)
+    return f'<div class="view" id="v-{name}" data-title="{html.escape(title)}"><article class="md"><div class="wrap">{inner}</div></article></div>'
+
+# every view file: css always, script and markup kept by name
+css=[];VIEW={};VJS={};LIB=[]
 for f in sorted(glob.glob(os.path.join(HERE,'views','*.html'))):
     t=open(f).read()
     for m in re.finditer(r'<style>(.*?)</style>',t,re.S): css.append(m.group(1).strip())
-    for m in re.finditer(r'<script>(.*?)</script>',t,re.S): js.append(m.group(1).strip())
+    sc=[m.group(1).strip() for m in re.finditer(r'<script>(.*?)</script>',t,re.S)]
     t=re.sub(r'<style>.*?</style>|<script>.*?</script>','',t,flags=re.S).strip()
-    t=re.sub(r'^@@ask (.*)$',ask_macro,t,flags=re.M); t=re.sub(r'^@@levels (.*)$',levels_macro,t,flags=re.M)
+    t=re.sub(r'^@@ask (.*)$',ask_macro,t,flags=re.M); t=re.sub(r'^@@levels (.*)$',levels_macro,t,flags=re.M); t=re.sub(r'^\s*@@md (.*)$',md_macro,t,flags=re.M)
     m=re.search(r'id="v-([\w-]+)"',t)
-    if not m: continue
-    names.append((m.group(1),re.search(r'data-title="([^"]*)"',t).group(1) if 'data-title' in t.split('>')[0] else m.group(1),t)); 
-# pagers for voice and recipe pages
-out=[]
-for kind,label in (('voice','voices'),('recipe','recipes')):
-    grp=[n for n in names if n[0].startswith(kind+'-')]
-    for i,(nm,title,t) in enumerate(grp):
-        prev=grp[i-1]; nxt=grp[(i+1)%len(grp)]
-        crumb=f'<div class="crumb"><a href="#{label}" data-go="{label}">All {label}</a><span>{html.escape(title)}</span></div>'
-        pager=f'<nav class="pager" aria-label="More {label}"><div><a href="#{prev[0]}" data-go="{prev[0]}">← {html.escape(prev[1])}</a><a href="#{nxt[0]}" data-go="{nxt[0]}">{html.escape(nxt[1])} →</a></div></nav>'
-        t2=re.sub(r'(<div class="view"[^>]*>)',lambda m:m.group(1)+crumb,t,count=1); t2=t2[:t2.rindex('</div>')]+pager+'</div>'
-        names[names.index((nm,title,t))]=(nm,title,t2)
-body=[t for _,_,t in names]
-t=open(os.path.join(HERE,'shell.html')).read()
-photos=f'--photo:url("data:image/jpeg;base64,{A["photo"]}");--photo2:url("data:image/jpeg;base64,{A["sunset"]}");'
+    if not m: LIB+=sc; continue
+    VIEW[m.group(1)]=t; VJS[m.group(1)]=sc
+MD={ # name: (title, path, note shown above a copy-ready block or None to render the Markdown)
+ 'l1-sentences':('All sentences',ROOT+'/level-simple/sentences.md',None),
+ 'l1-test':('Test a sentence',ROOT+'/level-simple/sentence-test.md',None),
+ 'l2-recipes':('Recipe cards',SKILL+'/references/recipes.md',None),
+ 'l2-voices':('Voice cards',SKILL+'/references/voices.md',None),
+ 'l2-parts':('Parts list',SKILL+'/references/components.md',None),
+ 'l2-spec':('Design spec',ROOT+'/level-working/design-spec-template.md','Fill this in once and keep it. Attach it to every request so each page comes out in your colours and type. Copy it, then replace the parts in brackets.'),
+ 'l2-brief':('Content brief',ROOT+'/level-working/content-brief-template.md','Fill this in for each page. Five lines that tell the assistant who the page is for and what it must do. Copy it, then replace the parts in brackets.'),
+ 'l3-skill':('The skill',SKILL+'/SKILL.md',None),
+ 'l3-single':('Single-file edition',SKILL+'/SKILL-single-file.md','The whole skill condensed into one file, for assistants that cannot load a skill folder. Copy it and paste it into the instructions of a Project.'),
+ 'l3-skel':('Page skeleton',SKILL+'/assets/page-skeleton.html','The starting file the skill builds from. One self-contained page with the tokens, the type scale and the motion rules already in place.'),
+ 'l3-rules':('Build rules',SKILL+'/references/build-rules.md',None),
+ 'l3-check':('Pre-ship checklist',SKILL+'/references/pre-ship-checklist.md',None),
+ 'l3-agent':('Agent guide',ROOT+'/AGENT-GUIDE.md',None),
+ 'l3-best':('Best practices',ROOT+'/BEST-PRACTICES.md',None)}
+for n,(title,path,raw) in MD.items(): VIEW[n]=md_view(n,title,path,raw); VJS[n]=[]
+LABEL={'voice-keynote':'Keynote','voice-story':'Storyteller','voice-teacher':'Teacher','voice-pitch':'Pitch','voice-practical':'Practical instructor','voice-analyst':'Analyst','voice-brief':'Executive brief',
+       'recipe-report':'Report','recipe-proposal':'Proposal','recipe-explainer':'Explainer','recipe-landing':'Landing page'}
+VOICES=['voice-keynote','voice-story','voice-teacher','voice-pitch','voice-practical','voice-analyst','voice-brief']
+RECIPES=['recipe-report','recipe-proposal','recipe-explainer','recipe-landing']
+G_VOICES=('Voices',VOICES,'Seven voices. One message, told seven ways. Tap one:'); G_RECIPES=('Recipes',RECIPES,'Four whole pages. Tap one:')
+EDITIONS={ # each: output file, title, one-line lead, groups of (tab label, [views], caption for the second row)
+ 'all':('level-demo/artifact-studio.html','All examples','Seven voices, 24 parts and four whole pages. Tap a tab. Every example shows the sentence that asks for it.',
+   [G_VOICES,('Photo parts',['photo'],''),('Page parts',['parts'],''),G_RECIPES]),
+ 'beginner':('level-simple/artifact-studio-beginner.html','Level 1: Beginner','One sentence gets you a page. Find an example you like and copy its sentence.',
+   [('Start here',['l1-start'],''),G_RECIPES,('Photo parts',['photo'],''),('Page parts',['parts'],''),('Sentences',['l1-sentences','l1-test'],'Every sentence on one page, and how to test one:')]),
+ 'advanced':('level-working/artifact-studio-advanced.html','Level 2: Advanced','You choose the voice, the look and the parts, so the page sounds and looks like yours.',
+   [('Start here',['l2-start'],''),G_VOICES,('Looks',['l2-looks'],''),('Mix',['l2-mix'],''),('Cards',['l2-recipes','l2-voices','l2-parts'],'The reference cards to keep in your Project:'),('Templates',['l2-spec','l2-brief'],'Two short forms to copy and fill in:')]),
+ 'expert':('level-automated/artifact-studio-expert.html','Level 3: Expert','Hand over any content and media. The skill chooses, builds, checks and reports what it assumed.',
+   [('Start here',['l3-start'],''),('The skill',['l3-skill','l3-single','l3-skel'],'Three forms of the same instructions:'),('Build rules',['l3-rules'],''),('Checklist',['l3-check'],''),('Agent guide',['l3-agent'],''),('Best practices',['l3-best'],'')]),
+}
+SHELL=open(os.path.join(HERE,'shell.html')).read()
+BASE=open(os.path.join(HERE,'base.css')).read()
 data=json.dumps({'rows':A['rows'],'pal':A['pal']},separators=(',',':'))
-t=t.replace('/*FONTS*/',fonts).replace('/*PHOTOS*/',photos).replace('/*BASE_CSS*/',open(os.path.join(HERE,'base.css')).read())
-t=t.replace('/*VIEW_CSS*/','\n'.join(css)).replace('<!--VIEWS-->','\n'.join(body)).replace('<!--VIEW_JS-->','<script>\n'+'\n'.join(js)+'\n</script>')
-t=t.replace('__PATHS__',paths).replace('__DATA__',data).replace('__TOPHEX__',A['pal'][0]['hex']).replace('__TOPSHARE__',str(round(A['pal'][0]['share'])))
-kb=round(len(t.encode())/1024); t=t.replace('__KB__',f'{kb:,}')
-left=re.findall(r'__[A-Z]+__|^@@\w+',re.sub(r'data:[^")]+','',t),flags=re.M); assert not left, left
-open(os.path.join(HERE,'..','artifact-studio.html'),'w').write(t); print('built',kb,'KB;',len(names),'views:',' '.join(n for n,_,_ in names))
+def title_of(n): return LABEL.get(n) or re.search(r'data-title="([^"]*)"',VIEW[n]).group(1)
+def build(key):
+    out,title,lead,groups=EDITIONS[key]
+    order=[n for _,vs,_ in groups for n in vs]
+    radios=[];g_row=[];s_rows=[];tcss=[]
+    for i,(gl,vs,cap) in enumerate(groups):
+        for n in vs:
+            radios.append(f'<input class="tabr" type="radio" name="tab" id="t-{n}" aria-label="{html.escape(gl if len(vs)==1 else gl+": "+title_of(n))}"{" checked" if n==order[0] else ""}>')
+            tcss.append(f'#t-{n}:checked~#v-{n}{{display:block}}\n#t-{n}:focus-visible~.tabs label[for="t-{n}"]{{outline:3px solid var(--reed);outline-offset:2px}}')
+            if len(vs)>1: tcss.append(f'#t-{n}:checked~.tabs .tabs-s label[for="t-{n}"]{{background:var(--reed);color:var(--pine)}}')
+        sel=':is('+','.join('#t-'+n for n in vs)+'):checked~.tabs '
+        tcss.append(sel+f'.g{i}{{background:var(--fog);color:var(--pine);border-color:var(--fog)}}')
+        g_row.append(f'<label class="g{i}" for="t-{vs[0]}">{html.escape(gl)}</label>')
+        if len(vs)>1:
+            tcss.append(sel+f'.s{i}{{display:flex}}')
+            s_rows.append(f'<div class="tabs-s s{i}"><span>{html.escape(cap)}</span>'+''.join(f'<label for="t-{n}">{html.escape(title_of(n))}</label>' for n in vs)+'</div>')
+    nav='<nav class="tabs" aria-label="Sections"><div class="tabs-g">'+''.join(g_row)+'</div>'+''.join(s_rows)+'</nav>'
+    mast=f'<header class="mast"><div class="wrap"><p class="mast-k">Practical AI artifact studio</p><p class="mast-t">{html.escape(title)}</p><p class="mast-l">{html.escape(lead)}</p></div></header>'
+    body=[]
+    for k,n in enumerate(order):
+        t=VIEW[n]; prev=order[k-1] if k else None; nxt=order[k+1] if k+1<len(order) else None
+        pager='<nav class="pager" aria-label="Previous and next tab"><div>'+(f'<label for="t-{prev}">← {html.escape(title_of(prev))}</label>' if prev else '<span></span>')+(f'<label for="t-{nxt}">{html.escape(title_of(nxt))} →</label>' if nxt else '<span></span>')+'</div></nav>'
+        body.append(t[:t.rindex('</div>')]+pager+'</div>')
+    js=LIB+[x for n in order for x in VJS[n]]
+    js='\n'.join('try{(()=>{\n'+x+'\n})()}catch(err){console.error(err)}' for x in js)
+    photos='' if key=='expert' else f'--photo:url("data:image/jpeg;base64,{A["photo"]}");--photo2:url("data:image/jpeg;base64,{A["sunset"]}");'
+    t=SHELL.replace('<title>Artifact studio</title>',f'<title>Artifact studio: {html.escape(title)}</title>')
+    t=t.replace('/*FONTS*/',fonts).replace('/*PHOTOS*/',photos).replace('/*BASE_CSS*/',BASE).replace('/*TAB_CSS*/','\n'.join(tcss)).replace('/*VIEW_CSS*/','\n'.join(css))
+    t=t.replace('<!--MAST-->',mast).replace('<!--RADIOS-->','\n'.join(radios)).replace('<!--NAV-->',nav).replace('<!--VIEWS-->','\n'.join(body)).replace('/*VIEW_JS*/',js)
+    t=t.replace('__PATHS__',paths).replace('__DATA__',data).replace('__TOPHEX__',A['pal'][0]['hex']).replace('__TOPSHARE__',str(round(A['pal'][0]['share'])))
+    kb=round(len(t.encode())/1024); t=t.replace('__KB__',f'{kb:,}')
+    left=re.findall(r'__[A-Z]+__|^\s*@@\w+',re.sub(r'data:[^")]+','',re.sub(r'<pre>.*?</pre>','',t,flags=re.S)),flags=re.M); assert not left, left
+    open(os.path.join(ROOT,out),'w').write(t); print(f'{key}: {kb} KB, {len(order)} tabs -> {out}')
+for key in EDITIONS: build(key)
 
 # ---- export the sentences and the component catalogue as Markdown, so the docs never drift from the demo
 def export_docs():
@@ -105,7 +175,7 @@ def export_docs():
 export_docs()
 
 # ---- the one-page explainer saved in docs/ (built with the studio's own recipe and voice)
-SCORES=[('Teaching and promo',85,90),('Stunning, with tone',80,86),('Easy for a non-coder',70,76),('Fits the level ladder',60,88),('Reuse before build',45,58),('Evidence',45,62),('Business usefulness',40,80)]
+SCORES=[('Teaching and promo',85,90),('Stunning, with tone',80,86),('Easy for a non-coder',70,74),('Fits the level ladder',60,90),('Reuse before build',45,58),('Evidence',45,64),('Business usefulness',40,80)]
 def build_explained():
     t=open(os.path.join(HERE,'explained.src.html')).read()
     f2=[x for x in ff if x[3] in ('np7','np4','cp4','cp4i')]

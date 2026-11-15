@@ -16,7 +16,7 @@ plate (look).
 ## Before you start: look at the demo
 
 Download [`level-demo/artifact-studio.html`](level-demo/artifact-studio.html) and open it in a
-browser. Spend five minutes on the Recipes and Voices tabs. Notice which page you would be glad to
+browser. It holds every example. Spend five minutes on the Recipes and Voices tabs. Notice which page you would be glad to
 have made. That is your target.
 
 ## Level 1, beginner: one sentence
@@ -32,8 +32,8 @@ have made. That is your target.
    | How something works | Scrolling explainer |
    | Something you want people to sign up for or buy | Landing page |
 
-2. Open the demo's Start tab. Choose the recipe, leave the level on Beginner and copy the sentence.
-   Or copy one from [`level-simple/sentences.md`](level-simple/sentences.md).
+2. Open the [level 1 page](level-simple/artifact-studio-beginner.html), find that recipe and copy the
+   Beginner sentence under it. Or copy one from [`level-simple/sentences.md`](level-simple/sentences.md).
 3. Paste the sentence into your assistant. Attach or paste your notes underneath.
 4. Open the result on your phone. Most people who receive it will read it there.
 5. Check every number and name against your notes. Fix anything wrong by telling the assistant
@@ -62,7 +62,8 @@ have made. That is your target.
    say when each one fits.
 4. Choose a look. Use your design spec, or attach a photo and ask for colours taken from it, or
    name a [look card](../../skills/artifact-studio/references/looks.md).
-5. On the demo's Start tab, set the level to Advanced and copy the sentence. Paste it with your
+5. On the Mix tab of the [level 2 page](level-working/artifact-studio-advanced.html), tap your
+   choices and copy the request. Paste it with your
    spec, your brief and your notes.
 6. Ask for parts by name. The demo's two component tabs give you the words: "show the three
    numbers as big numbers that count up", "put the options in a comparison table".

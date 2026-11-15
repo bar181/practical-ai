@@ -6,8 +6,9 @@ The smallest version you can run yourself. No accounts to connect, nothing to in
 
 ## What you do
 
-1. Pick the sentence that matches the page you need from [`sentences.md`](sentences.md), or build
-   one on the Start tab of the [demo](../level-demo/).
+1. Open [`artifact-studio-beginner.html`](artifact-studio-beginner.html) in a browser, find an
+   example you like and copy the sentence under it. Every sentence is also in
+   [`sentences.md`](sentences.md).
 2. Paste it into Claude or ChatGPT.
 3. Attach or paste your notes underneath. Add a photo if the page uses one.
 4. Read the result on your phone and check every number against your notes.
@@ -19,6 +20,7 @@ what to say when something goes wrong.
 
 | File | Use |
 | --- | --- |
+| [`artifact-studio-beginner.html`](artifact-studio-beginner.html) | The level 1 page: 4 recipes, 12 photo parts and 12 page parts as working examples, each with its sentence |
 | [`sentences.md`](sentences.md) | Every sentence in the studio: 4 recipes and 7 voices at three levels each, 12 page components, 12 photo components |
 | [`sentence-test.md`](sentence-test.md) | How to test whether a sentence works, and the sheet to record results |
 

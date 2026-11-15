@@ -6,6 +6,12 @@ follows the recipe, voice and look, builds the page, checks it, and tells you wh
 **Think of it as** a studio assistant who knows the house rules by heart, and still shows you the
 proof before anything goes out.
 
+## The level 3 page
+
+[`artifact-studio-expert.html`](artifact-studio-expert.html) holds everything on this level in one
+file you can open in a browser: the skill, its single-file edition, the page skeleton, the build
+rules, a pre-ship checklist you can tick, the agent guide and the best practices.
+
 ## What you get
 
 - The page, as one HTML file.

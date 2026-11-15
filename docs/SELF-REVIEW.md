@@ -43,13 +43,13 @@ end of this file, building stops there until other people have used the tools.
 
 ## Artifact studio
 
-"Before" is the single-page photo gallery. "After" is the six-tab studio with all levels.
+"Before" is the single-page photo gallery. "After" is the studio with all levels, as it stood at the end of round 2. Round 3 below changes three of these scores.
 
 | Item | Before | After | What changed |
 | --- | --- | --- | --- |
 | Teaching and promo value | 85 | 90 | Seven full voice pages and four recipe pages, each with "Behind this page" |
 | Quality of the demo | 80 | 86 | Each voice has its own type, colour and behaviour |
-| Easy for a non-coder | 70 | 76 | A sentence builder on the Start tab. Sentences still untested |
+| Easy for a non-coder | 70 | 76 | A tap-to-choose request mixer on the level 2 page, and the sentence under every example. Sentences still untested |
 | Fits the level ladder | 60 | 88 | Every level folder written. The skill exists in a full and a single-file edition |
 | Reuse before build | 45 | 58 | The skill loads a design skill when one is present. The demo itself still uses no libraries |
 | Evidence | 45 | 62 | Three screen widths, an automated accessibility scan, link and arithmetic checks. No outside user |
@@ -162,6 +162,42 @@ The dashboard has since had its landscape review done, with dated sources, so it
 
 The dashboard demo is the only one of the three that works on a person's own data: it builds
 tiles, a trend and a table from pasted rows, in the browser.
+
+## Round 3: the first outside look at the studio
+
+The repository owner opened the studio artifact on a phone. This is the first use by anyone other
+than the author, and it found a failure the automated checks could not.
+
+What was reported: the examples could not be found, the first screen showed dropdown menus with
+no content under them, each voice was expected as its own tab, and one artifact per level was
+expected.
+
+What was wrong: the first tab was a sentence builder made of three dropdowns. Tabs were links
+switched by a script, so one script problem in the viewer leaves every tab empty. Voices and
+recipes sat one level down, behind index cards. All three levels shared one page.
+
+What changed:
+
+- Tabs are radio buttons styled as tabs. They switch with scripts turned off, and the first tab is
+  showing on load. Each voice and each recipe has its own tab.
+- The dropdowns are gone. The request mixer uses tap-to-choose buttons and starts with a complete
+  request already written out.
+- Four pages are built from one source: all examples, and one page per level.
+- The keynote page opened on an empty black screen below the tabs. Its first screen is now short
+  enough that the headline shows at once.
+
+| Item | Round 2 | As the owner found it | Round 3 | Why |
+| --- | --- | --- | --- | --- |
+| Easy for a non-coder | 76 | 50 | 74 | The owner could not find the examples. Fixed, and the fix is not yet confirmed by the owner |
+| Fits the level ladder | 88 | 88 | 90 | Each level has its own page |
+| Evidence | 62 | 62 | 64 | One outside user, one failure found. Tabs tested with scripts off at three widths |
+
+Overall for the studio: 77 at the end of round 2 by the author's own scoring, 73 as the owner found
+it, 77 after the fix. The lesson is the rule at the end of this file: the author's score for "easy"
+was 26 points higher than the first real user's experience.
+
+Still not checked: the pages inside the artifact viewer on a phone, by the author. The author
+cannot see that viewer. Confirmation has to come from the owner.
 
 ## How to run the next round
 

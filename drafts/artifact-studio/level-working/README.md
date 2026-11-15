@@ -24,8 +24,8 @@ The cards live in the skill folder so there is one copy of each.
 ## For each page, about 30 minutes
 
 1. Fill in [`content-brief-template.md`](content-brief-template.md). Five lines.
-2. Choose the recipe, the voice and the look. The Start tab of the [demo](../level-demo/) builds
-   the sentence for you: set the level to Advanced.
+2. Choose the recipe, the voice and the look. The Mix tab of
+   [`artifact-studio-advanced.html`](artifact-studio-advanced.html) builds the request for you.
 3. Paste the sentence with your brief and your notes.
 4. Ask for parts by name, and for changes by naming the part: "replace the bar chart with big
    numbers", "use the teacher voice for the opening only".
@@ -35,6 +35,7 @@ The cards live in the skill folder so there is one copy of each.
 
 | File | Use |
 | --- | --- |
+| [`artifact-studio-advanced.html`](artifact-studio-advanced.html) | The level 2 page: 7 voices as full pages, 9 looks, the request mixer, the cards and both templates |
 | [`design-spec-template.md`](design-spec-template.md) | Your colours, fonts and rules. Fill in once |
 | [`content-brief-template.md`](content-brief-template.md) | Who the page is for and what it must do. Fill in per page |
 

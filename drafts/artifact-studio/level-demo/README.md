@@ -1,8 +1,8 @@
-# Level demo: the studio in one file
+# Level demo: every example in one file
 
-[`artifact-studio.html`](artifact-studio.html) is the whole studio as a single page with six tabs.
-Nothing to set up. Download it and open it in a browser. GitHub shows HTML files as source, so it
-has to be opened locally.
+[`artifact-studio.html`](artifact-studio.html) holds every working example in the studio. Nothing
+to set up. Download it and open it in a browser. GitHub shows HTML files as source, so it has to
+be opened locally.
 
 **Think of it as** a showroom. Every item on the floor works, and each has a tag saying how to
 order one.
@@ -11,32 +11,42 @@ order one.
 
 | Tab | What it shows | Count |
 | --- | --- | --- |
-| Start | A sentence builder: choose a recipe, a voice, a look and a level, then copy the sentence | |
-| Recipes | Whole pages made from the parts: a report, a proposal, an explainer, a landing page | 4 |
-| Voices | The same case made seven ways, each a complete page | 7 |
-| Page components | Parts that need no photograph: numbers, timeline, tables, chart, questions and more | 12 |
-| Photo components | Parts built from one photograph: pan and zoom, scrolling tour, line art and more | 12 |
-| How to use | The three levels, steps for people, rules for agents | |
+| Voices | The same case made seven ways, each a complete page with its own tab: keynote, storyteller, teacher, pitch, practical instructor, analyst, executive brief | 7 |
+| Photo parts | Parts built from one photograph: pan and zoom, scrolling tour, line art and more | 12 |
+| Page parts | Parts that need no photograph: numbers, timeline, tables, chart, questions and more | 12 |
+| Recipes | Whole pages made from the parts, each with its own tab: a report, a proposal, an explainer, a landing page | 4 |
 
 Every voice and recipe page ends with "Behind this page": how it is built, its design rules, and
 the sentence that asks for it at beginner, advanced and expert level.
 
+## The four pages built from this source
+
+| Page | File | Tabs |
+| --- | --- | --- |
+| All examples | [`artifact-studio.html`](artifact-studio.html) | 7 voices, photo parts, page parts, 4 recipes |
+| Level 1: Beginner | [`../level-simple/artifact-studio-beginner.html`](../level-simple/artifact-studio-beginner.html) | Start here, 4 recipes, photo parts, page parts, every sentence, how to test a sentence |
+| Level 2: Advanced | [`../level-working/artifact-studio-advanced.html`](../level-working/artifact-studio-advanced.html) | Start here, 7 voices, 9 looks, the request mixer, three reference cards, two templates |
+| Level 3: Expert | [`../level-automated/artifact-studio-expert.html`](../level-automated/artifact-studio-expert.html) | Start here, the skill in three forms, build rules, a tickable checklist, the agent guide, best practices |
+
 ## Facts about the file
 
-- One HTML file of about 1.4 MB. Two photographs and fifteen subset fonts are inside it.
+- Each page is one HTML file. The three with photographs are about 1.4 MB. The expert page has no
+  photographs and is about 0.3 MB.
 - It loads nothing from the network and uses no libraries.
-- Tabs are views in the same file, switched by the address after the `#`.
+- Tabs are radio buttons styled as tabs, so they switch with scripts turned off. The script adds
+  the animated parts and keeps the address after the `#` in step.
 - All example companies, people and figures are invented, and each page says so.
 
 ## What was checked, and what was not
 
 Checked on 2026-11-15, in Chrome:
 
-- Every tab and page at 390 and 1280 pixels wide: no script errors, no sideways scrolling.
+- Every tab of all four pages at 320, 390 and 1280 pixels wide: no script errors, no sideways
+  scrolling, exactly one tab showing.
+- Tabs with scripts turned off: the first tab shows on load and tapping a tab changes it.
 - The script path used by browsers without scroll-driven animations.
 - Arithmetic in the examples: report rows add up to the totals, and percentages match.
-- An automated accessibility scan (axe-core, WCAG 2 A and AA rules) of all seventeen views with
-  motion turned off: no violations after fixes. An automated scan covers only part of the
+- An automated accessibility scan (axe-core, WCAG 2 A and AA rules) of every tab of all four pages: no violations after fixes. An automated scan covers only part of the
   standard.
 
 Not checked:
@@ -55,13 +65,13 @@ python3 build.py
 
 | File | Role |
 | --- | --- |
-| `source/shell.html` | The page frame: tabs, the router, shared helpers |
+| `source/shell.html` | The page frame: header, tabs, shared helpers |
 | `source/base.css` | Shared styles |
-| `source/views/` | One file per tab or page: style, markup, script |
+| `source/views/` | One file per tab: style, markup, script. Document tabs are rendered from the Markdown files in this folder and the skill |
 | `source/prepare_assets.py` | Encodes photos and fonts, measures the lake photo, traces its line art. Writes `assets.json` |
-| `source/build.py` | Assembles the page. Also regenerates `level-simple/sentences.md` and the skill's component catalogue |
+| `source/build.py` | Assembles the four pages. Which tabs go in which page is the `EDITIONS` table near the top. Also regenerates `level-simple/sentences.md` and the skill's component catalogue |
 
-`prepare_assets.py` needs pillow, numpy, fonttools and brotli, and a folder holding the font files
+`build.py` needs the Python `markdown` package. `prepare_assets.py` needs pillow, numpy, fonttools and brotli, and a folder holding the font files
 named in its header. `assets.json` is a build product and is not committed.
 
 A rebuild from the stored photos looks the same but is not byte for byte identical, because the

@@ -1,0 +1,25 @@
+<style>
+.lv-hero{position:relative;min-height:340px;overflow:hidden;background:#1d1c15;color:#fff7ea;display:flex;align-items:flex-end}
+.lv-hero .ph{position:absolute;inset:0;background-position:50% 40%}
+.lv-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,22,24,.1),rgba(20,22,24,.78) 46%,rgba(20,22,24,.94))}
+.lv-hero.plain{background:var(--pine-2);min-height:0;padding-top:40px}.lv-hero.plain::after{display:none}
+.lv-hero>div:last-child{position:relative;z-index:1;padding:0 20px 30px;max-width:1080px;margin-inline:auto;width:100%}
+.lv-hero .lv-k{font:700 .9rem/1.2 var(--display);color:#f0d9b0;margin:0}
+.lv-hero h1{font-size:clamp(2.3rem,9vw,4.6rem);line-height:.98;margin-top:6px}
+.lv-hero p.lv-l{margin-top:12px;max-width:26em;font:400 1.2rem/1.4 var(--display)}
+.lv-in{background:var(--pine);color:var(--fog);padding:34px 0 40px}
+.lv-in h2{font-size:clamp(1.5rem,5vw,2.1rem);color:var(--fog)}
+.lv-in ul{list-style:none;margin:16px 0 0;padding:0;display:grid;gap:10px}
+.lv-in li{background:var(--pine-2);border-radius:12px;padding:14px 16px;font:400 1rem/1.4 var(--display)}
+.lv-in li b{display:block;color:var(--reed);font-size:1.05rem}
+@media(min-width:760px){.lv-in ul{grid-template-columns:repeat(3,1fr)}}
+</style>
+<div class="view" id="v-l1-start" data-title="Start here">
+  <header class="lv-hero"><div class="ph ph2" role="img" aria-label="A dog on a lead looks out over grey rocks and calm water at a low orange sun."></div>
+    <div><p class="lv-k">Level 1 of 3</p><h1>Beginner: one sentence</h1><p class="lv-l">Think of it as pointing at a picture on a menu. Find a page you like in the tabs above, copy its sentence, and paste it into a chat assistant with your notes.</p></div></header>
+  <section class="lv-in"><div class="wrap"><h2>What is in this artifact</h2>
+    <ul><li><b>4 recipes</b>Whole pages you can ask for: a report, a proposal, an explainer and a landing page. Each is a working example.</li>
+    <li><b>24 parts</b>Twelve that use a photo and twelve that do not. Each one shows the sentence that asks for it.</li>
+    <li><b>Every sentence</b>All of them on one tab, ready to copy.</li></ul></div></section>
+  @@md level-simple/README.md
+</div>

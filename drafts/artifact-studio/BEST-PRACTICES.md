@@ -155,5 +155,5 @@ demo.
   what goes out, examples are synthetic, dated claims.
 - The dated review of browser features, libraries and existing skills in
   [`landscape-review.md`](landscape-review.md).
-- Building the seventeen views of the demo. Practices 2, 3, 6 and 7 came out of that work and
+- Building the demo pages: seven voices, four recipes and twenty-four parts. Practices 2, 3, 6 and 7 came out of that work and
   have not been tested with other people yet.

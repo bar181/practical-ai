@@ -29,7 +29,7 @@ outlines and will change.
 
 | Level | What it involves | Complexity |
 | --- | --- | --- |
-| Demo | One file with six tabs: a sentence builder, four recipes, seven voices, twelve page components and twelve photo components. Every example carries the sentence that asks for it. | Beginner |
+| Demo | One file holding every example, with a tab for each: seven voices, four recipes, twelve page components and twelve photo components. Every example carries the sentence that asks for it. Each level also has its own page. | Beginner |
 | Simple | Copy one sentence from the studio, attach your notes, and paste both into a chat assistant. The assistant chooses the colours and type. Check every number against your notes. | Beginner |
 | Working | Choose the recipe, the voice, the look and the parts yourself. Fill in a one-page design spec once and a five-line content brief per page, then run the pre-ship checklist. | Intermediate |
 | Automated | Install the artifact-studio skill. Hand over any content and media. The skill chooses or follows the recipe, voice and look, builds one self-contained page, checks it, and reports what it assumed and what is missing. Hosting and media add-ons belong to other tools. | Advanced |
