@@ -19,6 +19,11 @@ All figures are illustrative units, not market prices. No real company is descri
 | [Kitchen renovation](level-simple/examples/kitchen-renovation/) | Sells materials and labour by measure | Unit prices by area and length, flat fees, contingency that depends on the age of the house |
 | [Employment services](level-simple/examples/employment-services/) | Places full-time and temporary staff | A percentage fee on salary for permanent hires, an hourly bill rate from a pay rate and a multiplier for temporary staff |
 
+## What already exists
+
+See the [landscape review](landscape-review.md): what the sources say about estimates, quotes and
+options, and what changed in the tool as a result.
+
 ## Status
 
 Draft. First copy, not yet reviewed or tested by anyone else.

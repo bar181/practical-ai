@@ -60,6 +60,8 @@ One line each, with the arithmetic written out.
 
 Payment terms and validity, copied from the rules.
 
+Ask whether the business calls this document an estimate or a quote, and use its word throughout. The two can commit a business to different things. Head every draft "First draft. Not an offer." If the rules do not say how long the prices hold, add that to "Questions before sending".
+
 ## If something does not add up
 
 If two rules conflict, or a rule cannot be applied to this job, stop and say which rules and why.

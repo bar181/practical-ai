@@ -35,6 +35,11 @@ Use these headings, in this order: Job as understood. Line items (item, quantity
 amount, from). Adjustments, one line each with the arithmetic. Total. Assumptions. Not priced.
 Questions before sending. Terms, copied from the rules.
 
+Ask whether the business calls this document an estimate or a quote, and use its word
+throughout. The two can commit a business to different things. Head every draft "First draft.
+Not an offer." If the rules do not say how long the prices hold, add that to "Questions before
+sending".
+
 ## Check your own arithmetic
 
 Before you answer, recompute every amount and the total a second time, a different way (for

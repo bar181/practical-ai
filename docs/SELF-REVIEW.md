@@ -237,6 +237,12 @@ tool. By the plain average of the seven items, the inbox summary moves from 62 t
 and the weekly brief from 62 to 63 (443 of 700). The round summary showed 60 for both, which was
 below their own item scores. It now shows the plain averages.
 
+The estimator had the same gap in a milder form: its tool facts were checked and it had no
+landscape review. It has one now. The finding that changed the tool is that an estimate and a
+quote can commit a business to different things. The skill now uses the business's own word,
+heads every draft as a first draft that is not an offer, and asks how long prices hold. Its score
+stays at 71: nothing about its evidence changed.
+
 The sources are trade and vendor guides plus security firms' reports, not studies. Prices and
 plan details were not checked, and the reviews say so.
 

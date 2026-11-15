@@ -14,7 +14,7 @@ Status read from the folders on 2026-11-14: 10 of 20 simple levels drafted, 0 re
 | 1 | Artifact studio | Done | Drafted, needs review | [Plan](../plans/artifact-studio/) |
 | 2 | Voice post drafter | To do | Drafted, needs review | [Plan](../plans/voice-post-drafter/) |
 | 3 | Short video guide | Partly done | Drafted, needs review | [Plan](../plans/short-video/) |
-| 4 | Estimator | To do | Drafted, needs review | No plan |
+| 4 | Estimator | Done | Drafted, needs review | No plan |
 | 5 | Training explainer with avatar | To do | Drafted, needs review | [Plan](../plans/training-explainer/) |
 | 6 | Learning system | Done | Drafted, needs review | [Plan](../plans/learning-system/) |
 | 7 | Publishing a website | Done | Drafted, needs review | [Plan](../plans/website-publishing/) |
