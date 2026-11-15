@@ -14,10 +14,11 @@ Draft. First copy, not yet reviewed or tested by anyone else.
 
 | Level | What it will hold | In this draft |
 | --- | --- | --- |
-| `level-demo` | A gallery page showing one request built in each style | Not started |
-| `level-simple` | Style cards, a design spec you fill in once, a pre-ship checklist | All three |
+| `level-demo` | A [component gallery](level-demo/): one photo shown as twelve components, each with the sentence that asks for it | First copy |
+| `level-simple` | Style cards, a design spec you fill in once, a pre-ship checklist, and the [component sentences](level-simple/component-sentences.md) | All four. The sentences are untested |
 | `level-working` | A saved design system, review steps, and a hosting route | Not started |
 | `level-automated` | One request produces the page, hosts it and attaches media add-ons | Not started |
 | `commercial-grade` | What a commercial build adds | Not started |
 
-Start with [`STUDENT-GUIDE.md`](STUDENT-GUIDE.md).
+Start with [`STUDENT-GUIDE.md`](STUDENT-GUIDE.md). What already exists in this area is in
+[`landscape-review.md`](landscape-review.md).

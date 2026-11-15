@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lake photo component gallery</title>
+<style>
+/*FONTS*/
+:root{
+  /* Layout idea: one photo, twelve specimens. Each specimen is a demo, then the sentence that asks for it. Phone first, left aligned. */
+  --fog:#e8edf3;      /* page: the pale cloud */
+  --mist:#d6dfea;     /* panels: one step into the sky */
+  --sky:#a5b9d8;      /* the photo's largest colour, measured */
+  --slate:#4b596e;    /* secondary text: the water in shadow */
+  --pine:#1b2228;     /* text and dark bands: the far shore, measured */
+  --pine-2:#28343d;
+  --reed:#d2b78c;     /* accent on dark: dry cattails */
+  --rust:#774528;     /* accent on light: fallen leaves */
+  --display:"National Park","Avenir Next","Segoe UI",system-ui,sans-serif;
+  --text:"Crimson Pro","Iowan Old Style","Palatino Linotype",Georgia,serif;
+  color-scheme:light;
+  /*PHOTO*/
+}
+@property --p{syntax:"<number>";inherits:true;initial-value:0}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--fog);color:var(--pine);font:400 1.22rem/1.5 var(--text);overflow-x:clip}
+h1,h2,h3{font-family:var(--display);font-weight:700;margin:0;text-wrap:balance;letter-spacing:-.012em}
+h2{font-size:clamp(2.1rem,6.4vw,3.6rem);line-height:1.02}
+h3{font-size:1.02rem;line-height:1.25;letter-spacing:0}
+p{margin:0}
+a{color:inherit;text-underline-offset:.18em;text-decoration-thickness:1px}
+:focus-visible{outline:3px solid var(--rust);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1080px;margin-inline:auto;padding-inline:20px}
+.measure{max-width:34em}
+.ph{background-image:var(--photo);background-size:cover;background-position:50% 50%;background-repeat:no-repeat}
+.ui{font-family:var(--display);font-size:.84rem;line-height:1.35;letter-spacing:.005em}
+
+/* reading progress */
+.progress{position:fixed;inset:0 0 auto 0;height:3px;z-index:50;pointer-events:none}
+.progress i{display:block;height:100%;background:var(--rust);transform-origin:0 50%;transform:scaleX(var(--p))}
+
+/* hero */
+.hero{position:relative;height:min(80svh,760px);min-height:480px;overflow:hidden;background:var(--pine);color:var(--fog);display:flex;align-items:flex-end}
+.hero .ph{position:absolute;inset:0;background-position:74% 58%;transform-origin:70% 60%;animation:drift 30s ease-in-out infinite alternate}
+.hero::after{content:"";position:absolute;inset:45% 0 0 0;background:linear-gradient(180deg,rgba(27,34,40,0),rgba(27,34,40,.72))}
+.hero-copy{position:relative;z-index:1;padding:0 20px 34px;max-width:1080px;margin-inline:auto;width:100%}
+.hero h1{font-size:clamp(2.7rem,10.5vw,6rem);line-height:.96;max-width:9em}
+.hero h1 span{display:inline-block;animation:rise .9s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(var(--i)*90ms + 150ms)}
+.hero p{margin-top:14px;max-width:26em;font-size:1.22rem;line-height:1.4}
+@keyframes drift{from{transform:scale(1.02) translate(0,0)}to{transform:scale(1.18) translate(-2.5%,-1.5%)}}
+@keyframes rise{from{transform:translateY(.5em);opacity:0}to{transform:none;opacity:1}}
+
+/* intro and contents */
+.intro{padding-block:56px 8px}
+.intro p+p{margin-top:.8em}
+.contents{list-style:none;margin:30px 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:0 20px;font-family:var(--display);font-size:1rem}
+.contents a{display:block;padding:11px 0;border-top:1px solid rgba(27,34,40,.18);text-decoration:none}
+.contents a:hover{color:var(--rust)}
+@media(min-width:760px){.contents{grid-template-columns:repeat(4,1fr)}}
+
+/* specimen frame */
+.spec{padding-top:88px;scroll-margin-top:8px}
+.spec-head p{margin-top:12px;color:var(--slate)}
+.demo{margin-top:28px;position:relative}
+.frame{max-width:1080px;margin-inline:auto;overflow:hidden;position:relative}
+@media(min-width:1120px){.frame{border-radius:10px}}
+.recipe{padding-top:26px;display:grid;gap:22px}
+.ask{background:var(--mist);border-radius:10px;padding:18px 18px 16px;display:grid;gap:10px}
+.ask h3{color:var(--slate);font-weight:400}
+.ask blockquote{margin:0;font-style:italic;font-size:1.34rem;line-height:1.34}
+.copy{justify-self:start;font:700 .9rem/1 var(--display);color:var(--pine);background:transparent;border:1.5px solid var(--pine);border-radius:999px;padding:0 18px;min-height:44px;cursor:pointer}
+.copy:hover{background:var(--pine);color:var(--fog)}
+.facts{margin:0;display:grid;gap:12px 28px;font-family:var(--display);font-size:.92rem;line-height:1.4}
+.facts dt{color:var(--slate)}
+.facts dd{margin:2px 0 0}
+@media(min-width:760px){.recipe{grid-template-columns:1.1fr 1fr;align-items:start}.facts{grid-template-columns:1fr 1fr}}
+
+/* 1 pan and zoom */
+.kb{aspect-ratio:16/10;background:var(--pine)}
+.kb .ph{position:absolute;inset:0;transform-origin:86% 57%;animation:kb 22s ease-in-out infinite alternate}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(2.6)}}
+
+/* 2 parallax window */
+.px{height:min(64svh,560px);overflow:clip;background:var(--pine)}
+.px .ph{position:absolute;inset:-20% 0;background-position:60% 50%;transform:translateY(calc((var(--p) - .5)*24%))}
+.px-card{position:absolute;left:20px;bottom:15%;max-width:15em;background:var(--fog);padding:14px 16px;border-radius:8px;transform:translateY(calc((.5 - var(--p))*90px));box-shadow:0 14px 30px rgba(27,34,40,.3)}
+
+/* 3 photo-filled type */
+.tf{background:var(--pine);color:var(--fog);padding:min(16svh,130px) 0;overflow:hidden;text-align:left}
+.tf-word{font:700 clamp(6.4rem,31vw,23rem)/.86 var(--display);letter-spacing:-.04em;margin:0 0 0 14px;background-image:var(--photo);background-size:230% auto;background-position:calc(8% + var(--p)*78%) 34%;-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;white-space:nowrap}
+.tf p{margin:22px 20px 0;max-width:22em;color:var(--sky)}
+
+/* 4 scrollytelling tour */
+.tour-stage{position:sticky;top:0;z-index:3;background:var(--fog);padding:3px 0 0}
+.tour-frame{aspect-ratio:4/3;overflow:hidden;position:relative;background:var(--pine)}
+.tour-img{position:absolute;left:0;top:0;width:100%;height:100%;transform-origin:0 0;transition:transform 1.25s cubic-bezier(.3,.7,.15,1);display:block;max-width:none}
+.tour-count{position:absolute;right:10px;bottom:10px;background:rgba(27,34,40,.72);color:var(--fog);padding:5px 10px;border-radius:999px;font-variant-numeric:tabular-nums}
+.tour-steps{list-style:none;margin:0;padding:0 20px}
+.tour-steps li{min-height:min(58svh,460px);display:flex;flex-direction:column;justify-content:center;gap:8px;opacity:.32;transition:opacity .5s}
+.tour-steps li.on{opacity:1}
+.tour-steps h3{font-size:1.5rem;line-height:1.1}
+.tour-steps p{max-width:26em}
+@media(min-width:900px){
+  .tour{display:grid;grid-template-columns:1.45fr 1fr;gap:44px;align-items:start;max-width:1080px;margin-inline:auto;padding-inline:20px}
+  .tour-stage{top:calc(50svh - 240px);padding:0}
+  .tour-frame{border-radius:10px}
+  .tour-steps{padding:0}
+  .tour-steps li{min-height:min(78svh,640px)}
+}
+
+/* 5 self-drawing line art */
+.draw{height:min(280svh,2600px)}
+.draw-stage{position:sticky;top:0;height:min(100svh,940px);display:flex;flex-direction:column;justify-content:center;gap:16px}
+.draw-frame{aspect-ratio:4/3;position:relative;width:100%;max-width:min(1080px,112svh);margin-inline:auto;background:var(--mist);overflow:hidden}
+.draw-photo{position:absolute;inset:0;opacity:clamp(0,calc((var(--p) - .76)/.2),1)}
+.draw-frame svg{position:absolute;inset:0;width:100%;height:100%;opacity:calc(1 - clamp(0,(var(--p) - .8)/.18,1)*.9)}
+.draw-frame path{fill:none;stroke:var(--pine);stroke-width:1.5px;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke;stroke-dasharray:1 1;
+  stroke-dashoffset:calc(1 - clamp(0,(var(--p) - var(--s))/var(--d),1));opacity:clamp(0,calc((var(--p) - var(--s))*400),1)}
+.draw-frame path.thin{stroke-width:.9px;stroke:var(--slate)}
+.draw-hint{padding-inline:20px;color:var(--slate);max-width:1080px;margin-inline:auto;width:100%}
+
+/* 6 chart */
+.fig{background:#f3f6fa;border-radius:10px;padding:18px 14px 14px}
+.fig+.fig{margin-top:16px}
+.fig h3{font-size:1.06rem}
+.fig .sub{color:var(--slate);margin-top:4px}
+.plot{position:relative;margin-top:10px;touch-action:pan-y}
+.plot svg{display:block;width:100%;overflow:visible}
+.plot text{font:400 12px var(--display);fill:var(--slate)}
+.plot text.strong{fill:var(--pine);font-weight:700}
+.plot .line{fill:none;stroke:#34506f;stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.plot.play .line{stroke-dasharray:1;animation:dash 1.8s cubic-bezier(.4,0,.2,1) both}
+@keyframes dash{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+.tip{position:absolute;top:0;left:0;pointer-events:none;background:var(--pine);color:var(--fog);border-radius:8px;padding:8px 10px;white-space:nowrap;visibility:hidden;font-variant-numeric:tabular-nums}
+.tip b{display:block;font-size:.95rem}
+.tip i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;vertical-align:-1px;border:1px solid rgba(232,237,243,.5)}
+details.table{margin-top:10px}
+details.table summary{cursor:pointer;min-height:44px;display:flex;align-items:center;color:var(--slate)}
+.table-scroll{max-height:260px;overflow:auto}
+table{border-collapse:collapse;width:100%;font:400 .84rem/1.3 var(--display);font-variant-numeric:tabular-nums}
+th,td{text-align:left;padding:6px 8px;border-bottom:1px solid rgba(27,34,40,.12)}
+td:nth-child(2),th:nth-child(2){text-align:right}
+.palbar{display:flex;gap:2px;height:34px;margin-top:14px;border-radius:6px;overflow:hidden}
+.palbar span{min-width:3px}
+.pallist{list-style:none;margin:12px 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:8px 16px;font-variant-numeric:tabular-nums}
+.pallist i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:8px;vertical-align:-1px;border:1px solid rgba(27,34,40,.2)}
+.pallist b{font-weight:700}
+
+/* 7 before and after */
+.ba{aspect-ratio:4/3;--x:50%;background:var(--pine);touch-action:pan-y}
+.ba>.ph,.ba-b{position:absolute;inset:0}
+.ba-b{clip-path:inset(0 0 0 var(--x))}
+.ba-b .ph{position:absolute;inset:0;filter:contrast(1.14) saturate(1.55) brightness(1.03)}
+.ba-b::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,176,92,.5),rgba(255,140,90,.18) 55%,rgba(36,52,110,.42));mix-blend-mode:soft-light}
+.ba-line{position:absolute;top:0;bottom:0;left:var(--x);width:2px;margin-left:-1px;background:var(--fog);box-shadow:0 0 0 1px rgba(27,34,40,.25)}
+.ba-line::after{content:"";position:absolute;top:50%;left:50%;width:44px;height:44px;margin:-22px;border-radius:50%;background:var(--fog);box-shadow:0 4px 14px rgba(27,34,40,.4);
+  background-image:linear-gradient(var(--pine),var(--pine)),linear-gradient(var(--pine),var(--pine));background-size:2px 14px;background-position:calc(50% - 5px) 50%,calc(50% + 5px) 50%;background-repeat:no-repeat}
+.ba-tag{position:absolute;top:12px;background:rgba(27,34,40,.72);color:var(--fog);padding:5px 10px;border-radius:999px}
+.ba-tag.a{left:12px}.ba-tag.b{right:12px}
+.ba input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:ew-resize;touch-action:pan-y}
+.ba:has(input:focus-visible) .ba-line::after{outline:3px solid var(--rust);outline-offset:3px}
+
+/* 8 looks */
+.looks-photo{aspect-ratio:4/3;background:var(--pine);view-transition-name:looks}
+.looks-photo .ph,.looks-photo i{position:absolute;inset:0}
+.looks-photo i{pointer-events:none}
+.looks-cap{position:absolute;inset:auto 0 0 0;padding:60px 18px 18px;background:linear-gradient(180deg,rgba(27,34,40,0),rgba(27,34,40,.78));color:var(--fog)}
+.looks-line{font-size:clamp(1.35rem,4.6vw,2.3rem);line-height:1.12;max-width:17em;text-wrap:balance}
+[data-look=fog] .looks-line{font-family:var(--text)}
+[data-look=ink] .ph{filter:grayscale(1) contrast(1.4) brightness(.92)}
+[data-look=ink] .looks-line{font-family:var(--display);font-weight:700;font-size:clamp(1.9rem,7vw,3.6rem);letter-spacing:-.02em;line-height:1}
+[data-look=dusk] .ph{filter:contrast(1.12) saturate(1.3) brightness(.88)}
+[data-look=dusk] .l1{background:linear-gradient(180deg,#ffa35c 0%,#d05e78 52%,#27306f 100%);mix-blend-mode:soft-light}
+[data-look=dusk] .l2{background:linear-gradient(180deg,rgba(255,150,80,.3),rgba(40,30,90,.3));mix-blend-mode:overlay}
+[data-look=dusk] .looks-line{font-style:italic}
+[data-look=film] .ph{filter:sepia(.5) contrast(.84) brightness(1.1) saturate(.75)}
+[data-look=film] .l1{background:#4a3524;mix-blend-mode:lighten;opacity:.75}
+[data-look=film] .looks-line{font-style:italic}
+[data-look=blue] .ph{filter:grayscale(1) contrast(1.25)}
+[data-look=blue] .l1{background:#cfe2ff;mix-blend-mode:multiply}
+[data-look=blue] .l2{background:#10305e;mix-blend-mode:lighten}
+[data-look=blue] .looks-line{font-family:var(--display);font-weight:400}
+.looks-bar{display:flex;gap:8px;overflow-x:auto;padding:14px 20px 4px;max-width:1080px;margin-inline:auto;scrollbar-width:none}
+.looks-bar button{flex:none;font:700 .9rem/1 var(--display);min-height:44px;padding:0 16px;border-radius:999px;border:1.5px solid var(--pine);background:transparent;color:var(--pine);cursor:pointer}
+.looks-bar button[aria-pressed=true]{background:var(--pine);color:var(--fog)}
+.looks-voice{margin-top:14px;display:grid;gap:4px}
+.looks-voice b{font-family:var(--display)}
+.looks-voice span{color:var(--slate)}
+::view-transition-old(looks),::view-transition-new(looks){animation-duration:.7s}
+
+/* 9 frosted glass */
+.glass-scene{min-height:min(88svh,720px);overflow:clip;display:flex;justify-content:center;align-items:flex-start;padding:min(11svh,90px) 20px;background:var(--pine)}
+.glass-scene>.ph{position:absolute;inset:-12% 0;background-position:48% 50%;transform:translateY(calc((var(--p) - .5)*14%))}
+.glass{position:relative;width:min(100%,400px);padding:22px 22px 20px;border-radius:24px;background:rgba(232,237,243,.26);-webkit-backdrop-filter:blur(18px) saturate(1.5);backdrop-filter:blur(18px) saturate(1.5);border:1px solid rgba(255,255,255,.5);box-shadow:0 24px 50px rgba(27,34,40,.32),inset 0 1px 0 rgba(255,255,255,.55)}
+@supports not ((backdrop-filter:blur(2px)) or (-webkit-backdrop-filter:blur(2px))){.glass{background:rgba(232,237,243,.9)}}
+.glass h3{font-size:1.35rem}
+.glass dl{margin:14px 0 0;display:grid;gap:0}
+.glass dl div{display:flex;justify-content:space-between;gap:16px;padding:10px 0;border-top:1px solid rgba(27,34,40,.22);font-family:var(--display);font-size:.95rem}
+.glass dd{margin:0;font-weight:700;text-align:right;font-variant-numeric:tabular-nums}
+.glass dd i{display:inline-block;width:12px;height:12px;border-radius:3px;background:var(--sky);margin-right:6px;vertical-align:-1px;border:1px solid rgba(27,34,40,.3)}
+
+/* 10 bento */
+.bento{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.tile{border-radius:16px;padding:16px;background:#f3f6fa;min-height:138px;display:flex;flex-direction:column;justify-content:flex-end;gap:4px;position:relative;overflow:hidden}
+.tile .n{font:700 3.2rem/.9 var(--display);letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.tile .n small{font-size:1.1rem;letter-spacing:0;margin-left:3px}
+.tile.photo{grid-row:span 2;color:var(--fog);padding:0;min-height:286px}
+.tile.photo .ph{position:absolute;inset:0}
+.tile.photo span{position:relative;padding:40px 16px 14px;background:linear-gradient(180deg,rgba(27,34,40,0),rgba(27,34,40,.75))}
+.tile.dark{background:var(--pine);color:var(--fog)}
+.tile.sky{background:var(--sky)}
+.tile.wide{grid-column:span 2;min-height:0}
+.tile .chips{display:flex;gap:4px;height:44px;margin-bottom:8px}
+.tile .chips i{flex:1;border-radius:6px}
+.tile svg{width:100%;height:56px;margin-bottom:8px;display:block}
+.tile.say{grid-column:span 2;min-height:0;font-size:1.5rem;line-height:1.15;justify-content:center;font-style:italic;padding-block:22px}
+@media(min-width:760px){.bento{grid-template-columns:repeat(4,1fr)}.tile.wide{grid-column:span 2}.tile.say{grid-column:span 2}}
+
+/* 11 swipe gallery */
+.swipe{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 20px 16px;scroll-padding-inline:20px;max-width:1120px;margin-inline:auto;overscroll-behavior-x:contain}
+.swipe article{flex:0 0 min(76%,320px);scroll-snap-align:start;display:grid;gap:10px}
+.swipe .ph{aspect-ratio:4/5;border-radius:14px;background-color:var(--pine)}
+.swipe h3{font-size:1.15rem}
+.swipe p{color:var(--slate);font-size:1.08rem;line-height:1.35}
+
+/* 12 flip postcard */
+.card-wrap{padding:10px 20px 0;perspective:1400px;max-width:640px;margin-inline:auto}
+.card3d{display:block;width:100%;aspect-ratio:3/2;padding:0;border:0;background:none;cursor:pointer;color:inherit;font:inherit;text-align:left;transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transform-style:preserve-3d;transition:transform .25s ease-out}
+.card-inner{display:block;position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .9s cubic-bezier(.3,.7,.2,1)}
+.card3d[aria-pressed=true] .card-inner{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;border-radius:12px;backface-visibility:hidden;-webkit-backface-visibility:hidden;overflow:hidden;box-shadow:0 18px 40px rgba(27,34,40,.28)}
+.face.front{border:9px solid #f6f8fb;background-position:60% 55%}
+.face.back{transform:rotateY(180deg);background:#f6f8fb;padding:18px;display:grid;grid-template-columns:1.25fr 1fr;gap:16px}
+.back .note{font-style:italic;font-size:clamp(1rem,3.7vw,1.3rem);line-height:1.3;align-self:center}
+.back .addr{border-left:1px solid rgba(27,34,40,.3);padding-left:14px;display:flex;flex-direction:column;justify-content:space-between;align-items:flex-end}
+.back .stamp{width:clamp(52px,16vw,84px);aspect-ratio:4/5;border:4px solid #fff;outline:1px dashed rgba(27,34,40,.45);background-size:520% auto;background-position:90% 58%}
+.back .lines{width:100%;display:grid;gap:13px}
+.back .lines i{display:block;height:1px;background:rgba(27,34,40,.35)}
+.card-hint{margin-top:16px;color:var(--slate);text-align:center}
+
+/* shelves */
+.shelves{margin-top:104px;background:var(--pine);color:var(--fog);padding:80px 0 72px}
+.shelves .lede{margin-top:14px;color:var(--sky);max-width:30em}
+.shelf{margin-top:46px}
+.shelf h3{font-size:1.4rem;color:var(--reed)}
+.shelf ul{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:0 36px}
+.shelf li{padding:13px 0;border-top:1px solid rgba(232,237,243,.2);display:grid;gap:2px}
+.shelf li a{font-family:var(--display);font-weight:700;font-size:1.05rem;justify-self:start}
+.shelf li span{color:#c2cede;font-size:1.08rem;line-height:1.35}
+.shelf .note{margin-top:14px;color:var(--sky);max-width:34em;font-size:1.08rem}
+@media(min-width:760px){.shelf ul{grid-template-columns:1fr 1fr}}
+footer{background:var(--pine);color:#c2cede;padding:0 0 60px}
+footer p{border-top:1px solid rgba(232,237,243,.2);padding-top:22px;max-width:40em}
+
+/* scroll-driven drivers: native where supported, script elsewhere */
+@keyframes p01{from{--p:0}to{--p:1}}
+@supports ((animation-timeline:view()) and (animation-range:entry)){
+  html:not(.sd-js) .sd{animation:p01 linear both;animation-timeline:view();animation-range:cover 0% cover 100%}
+  html:not(.sd-js) .sd[data-range=contain]{animation-range:contain 0% contain 100%}
+  html:not(.sd-js) .progress{animation:p01 linear both;animation-timeline:scroll(root)}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .sd,.progress{animation:none!important;--p:.5}
+  .hero .ph,.kb .ph,.hero h1 span,.plot.play .line{animation:none!important}
+  .kb .ph{transform:scale(1.5)}
+  .draw{height:auto}.draw.sd{--p:1}.draw-stage{position:static;height:auto;padding:10px 0}
+  .draw-frame svg{opacity:.0}
+  .tour-img,.card-inner,.card3d,.tour-steps li{transition:none}
+  ::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){animation:none!important}
+}
+</style>
+</head>
+<body>
+<div class="progress" aria-hidden="true"><i></i></div>
+
+<header class="hero">
+  <div class="ph" role="img" aria-label="An overcast lake seen from the shore: a bare tree trunk on the right, dry cattails in front, a dark line of evergreens on the far side."></div>
+  <div class="hero-copy">
+    <h1><span style="--i:0">One</span> <span style="--i:1">photo,</span> <span style="--i:2">twelve</span> <span style="--i:3">components</span></h1>
+    <p>Every effect on this page is built from a single lake photo. Each one comes with the sentence that asks for it.</p>
+  </div>
+</header>
+
+<main>
+<section class="intro wrap">
+  <div class="measure">
+    <p>Pick a component, copy its sentence, attach your own photo and paste both into Claude or ChatGPT. That is the whole method.</p>
+    <p>Nothing here loads a library. It is one file of HTML, CSS and a little JavaScript, so each effect is small enough for an assistant to write in one reply.</p>
+  </div>
+  <ul class="contents">
+    <li><a href="#pan">Pan and zoom</a></li>
+    <li><a href="#parallax">Parallax window</a></li>
+    <li><a href="#type">Photo-filled type</a></li>
+    <li><a href="#tour">Scrolling photo tour</a></li>
+    <li><a href="#draw">Self-drawing line art</a></li>
+    <li><a href="#chart">Chart from the photo</a></li>
+    <li><a href="#compare">Before and after</a></li>
+    <li><a href="#looks">Looks and voices</a></li>
+    <li><a href="#glass">Frosted glass card</a></li>
+    <li><a href="#bento">Bento grid</a></li>
+    <li><a href="#swipe">Swipe gallery</a></li>
+    <li><a href="#postcard">Flip postcard</a></li>
+  </ul>
+</section>
+
+<!-- 1 -->
+<section class="spec" id="pan">
+  <div class="spec-head wrap"><h2>Pan and zoom</h2><p class="measure">A still photo that moves slowly reads as film. Use it to open a page or to hold a quote.</p></div>
+  <div class="demo frame kb"><div class="ph" role="img" aria-label="The lake photo, zooming slowly toward the small island."></div></div>
+  <div class="recipe wrap">
+    <div class="ask"><h3>Ask for it like this</h3><blockquote>Fill the frame with my photo and zoom in very slowly toward the island, like a documentary shot. Loop it back out.</blockquote><button class="copy" type="button">Copy</button></div>
+    <dl class="facts"><div><dt>Effort</dt><dd>Easy. One sentence.</dd></div><div><dt>Made here with</dt><dd>One CSS animation</dd></div><div><dt>Grow into</dt><dd>GSAP or Motion, for timed sequences of shots</dd></div><div><dt>Seen in</dt><dd>Documentary title cards and photo essays</dd></div></dl>
+  </div>
+</section>
+
+<!-- 2 -->
+<section class="spec" id="parallax">
+  <div class="spec-head wrap"><h2>Parallax window</h2><p class="measure">The photo moves slower than the page, so the frame feels like a window with depth behind it.</p></div>
+  <div class="demo frame px sd"><div class="ph" role="img" aria-label="The lake photo, drifting behind its frame as the page scrolls."></div><p class="px-card ui">The card and the photo travel at different speeds. Scroll up and down to see it.</p></div>
+  <div class="recipe wrap">
+    <div class="ask"><h3>Ask for it like this</h3><blockquote>Put my photo in a wide window and move it slower than the page as I scroll. Float a small caption card over it that moves the other way.</blockquote><button class="copy" type="button">Copy</button></div>
+    <dl class="facts"><div><dt>Effort</dt><dd>Easy. One sentence.</dd></div><div><dt>Made here with</dt><dd>CSS scroll-driven animation, plus a short script for older browsers</dd></div><div><dt>Grow into</dt><dd>GSAP ScrollTrigger, Lenis for smooth scrolling</dd></div><div><dt>Seen in</dt><dd>Product pages that tie movement to the scroll</dd></div></dl>
+  </div>
+</section>
+
+<!-- 3 -->
+<section class="spec" id="type">
+  <div class="spec-head wrap"><h2>Photo-filled type</h2><p class="measure">One word, large enough that the letters become windows. Good for a chapter break.</p></div>
+  <div class="demo tf sd"><p class="tf-word" role="img" aria-label="The word quiet, with the lake photo showing through the letters.">quiet</p><p>The cloud and the far shore slide through the letters as you scroll.</p></div>
+  <div class="recipe wrap">
+    <div class="ask"><h3>Ask for it like this</h3><blockquote>Write one huge word on a dark band and fill the letters with my photo. Slide the photo sideways inside the letters as I scroll.</blockquote><button class="copy" type="button">Copy</button></div>
+    <dl class="facts"><div><dt>Effort</dt><dd>Easy. One sentence.</dd></div><div><dt>Made here with</dt><dd>CSS background-clip on text</dd></div><div><dt>Grow into</dt><dd>GSAP SplitText, to move each letter on its own</dd></div><div><dt>Seen in</dt><dd>Magazine covers and award-site title screens</dd></div></dl>
+  </div>
+</section>
+
+<!-- 4 -->
+<section class="spec" id="tour">
+  <div class="spec-head wrap"><h2>Scrolling photo tour</h2><p class="measure">The photo stays put while the text scrolls. Each paragraph moves the camera to the part it talks about.</p></div>
+  <div class="demo tour">
+    <div class="tour-stage"><div class="tour-frame"><img class="tour-img" alt="The lake photo. It zooms to a different detail with each step of the text."><p class="tour-count ui" aria-hidden="true">1 of 7</p></div></div>
+    <ol class="tour-steps">
+      <li data-fx=".5" data-fy=".5" data-z="1"><h3>Start wide</h3><p>One frame, 2016 by 1512 pixels, taken from the shore under full cloud.</p></li>
+      <li data-fx=".36" data-fy=".28" data-z="1.7"><h3>The sky does most of the work</h3><p>Cloud fills the top 57% of the picture. That much even tone is why text sits on it so easily.</p></li>
+      <li data-fx=".3" data-fy=".575" data-z="3"><h3>The far shore</h3><p>A band of evergreens crosses the frame just past halfway down. It is the darkest strip in the photo.</p></li>
+      <li data-fx=".86" data-fy=".56" data-z="3.2"><h3>The island</h3><p>To the right of the trunk a small wooded island stands taller than the shoreline behind it.</p></li>
+      <li data-fx=".567" data-fy=".62" data-z="4"><h3>The detail you would miss</h3><p>A single bare shrub stands in open water. Zooming is how a page says: look here.</p></li>
+      <li data-fx=".76" data-fy=".3" data-z="2"><h3>The tree</h3><p>The trunk runs the full height of the frame and splits it into a wide part and a narrow part.</p></li>
+      <li data-fx=".28" data-fy=".76" data-z="2.4"><h3>The reeds</h3><p>Dry cattails and fallen leaves fill the bottom third. They are the only warm colours in the picture.</p></li>
+    </ol>
+  </div>
+  <div class="recipe wrap">
+    <div class="ask"><h3>Ask for it like this</h3><blockquote>Pin my photo while I scroll. I will give you seven short paragraphs. For each one, zoom the photo to the part it describes.</blockquote><button class="copy" type="button">Copy</button></div>
+    <dl class="facts"><div><dt>Effort</dt><dd>Moderate. You say where to look; expect one round of nudging the zooms.</dd></div><div><dt>Made here with</dt><dd>Sticky positioning and an IntersectionObserver</dd></div><div><dt>Grow into</dt><dd>Scrollama, the step-trigger library used in newsrooms</dd></div><div><dt>Seen in</dt><dd>The Pudding, and the New York Times feature Snow Fall</dd></div></dl>
+  </div>
+</section>
+
+<!-- 5 -->
+<section class="spec" id="draw">
+  <div class="spec-head wrap"><h2>Self-drawing line art</h2><p class="measure">A sketch that draws itself as you scroll, then gives way to the real photo. The treeline, island and trunk were traced from the photo's own pixels.</p></div>
+  <div class="demo draw sd" data-range="contain">
+    <div class="draw-stage">
+      <div class="draw-frame">
+        <div class="ph draw-photo"></div>
+        <svg viewBox="0 0 1600 1200" preserveAspectRatio="none" role="img" aria-label="A line drawing of the lake scene that draws itself, then fades into the photo.">__PATHS__</svg>
+      </div>
+      <p class="draw-hint ui">Keep scrolling. Far shore first, then the tree, then the reeds, then the photo.</p>
+    </div>
+  </div>
+  <div class="recipe wrap">
+    <div class="ask"><h3>Ask for it like this</h3><blockquote>Trace the main shapes in my photo as a simple line drawing. Draw the lines as I scroll, far things first, then fade the real photo in underneath.</blockquote><button class="copy" type="button">Copy</button></div>
+    <dl class="facts"><div><dt>Effort</dt><dd>Harder. The assistant has to analyse the photo. Ask for a looser sketch if the first one is off.</dd></div><div><dt>Made here with</dt><dd>SVG paths and stroke-dashoffset, tied to scroll</dd></div><div><dt>Grow into</dt><dd>GSAP DrawSVG or Anime.js; Lottie or Rive for animation drawn by a designer</dd></div><div><dt>Seen in</dt><dd>Explainer intros and Codrops demos</dd></div></dl>
+  </div>
+</section>
+
+<!-- 6 -->
+<section class="spec" id="chart">
+  <div class="spec-head wrap"><h2>Chart from the photo</h2><p class="measure">A chart is a component too. These numbers are measured from the photo, so the chart and the picture tell the same story.</p></div>
+  <div class="demo wrap">
+    <figure class="fig" style="margin:0">
+      <h3>How bright the photo is, from its top edge to its bottom edge</h3>
+      <p class="sub ui">Average brightness of 48 horizontal bands. The strip underneath shows each band's average colour. Touch the chart to read a band.</p>
+      <div class="plot" id="bright"></div>
+      <details class="table"><summary class="ui">Show the 48 values as a table</summary><div class="table-scroll"><table id="bright-table"><thead><tr><th>Distance down the photo</th><th>Brightness</th><th>Part</th></tr></thead><tbody></tbody></table></div></details>
+    </figure>
+    <figure class="fig" style="margin:16px 0 0">
+      <h3>Six colours cover the frame</h3>
+      <p class="sub ui">Every pixel grouped into its nearest of six colours. Width shows each colour's share.</p>
+      <div class="palbar" id="palbar" role="img" aria-label="A bar split into six colours by their share of the photo."></div>
+      <ul class="pallist ui" id="pallist"></ul>
+    </figure>
+  </div>
+  <div class="recipe wrap">
+    <div class="ask"><h3>Ask for it like this</h3><blockquote>Measure how bright my photo is from top to bottom and chart it as a line with a soft fill. Put a strip of the real colours under the axis. Label only the highest and lowest points, and let me touch the chart to read the rest.</blockquote><button class="copy" type="button">Copy</button></div>
+    <dl class="facts"><div><dt>Effort</dt><dd>Moderate. The chart is easy; ask the assistant to show how it measured.</dd></div><div><dt>Made here with</dt><dd>Hand-written SVG, sized to your screen</dd></div><div><dt>Grow into</dt><dd>Observable Plot for quick charts, D3 for custom ones, ECharts for dashboards</dd></div><div><dt>Seen in</dt><dd>The Pudding's data stories</dd></div></dl>
+  </div>
+</section>
+
+<!-- 7 -->
+<section class="spec" id="compare">
+  <div class="spec-head wrap"><h2>Before and after</h2><p class="measure">Two versions of one picture with a divider to drag. It makes a change obvious without a word of explanation.</p></div>
+  <div class="demo frame ba" id="ba">
+    <div class="ph" role="img" aria-label="The photo as it was taken."></div>
+    <div class="ba-b"><div class="ph" role="img" aria-label="The same photo with a warm colour grade."></div></div>
+    <span class="ba-tag a ui">As shot</span><span class="ba-tag b ui">Graded</span>
+    <div class="ba-line" aria-hidden="true"></div>
+    <input id="ba-range" type="range" min="0" max="100" value="50" aria-label="Move the divider between the original photo and the graded photo">
+  </div>
+  <div class="recipe wrap">
+    <div class="ask"><h3>Ask for it like this</h3><blockquote>Show my photo as shot and with a warm sunset grade, as one picture with a divider I can drag from side to side.</blockquote><button class="copy" type="button">Copy</button></div>
+    <dl class="facts"><div><dt>Effort</dt><dd>Easy. One sentence.</dd></div><div><dt>Made here with</dt><dd>A range slider, a CSS filter and clip-path</dd></div><div><dt>Grow into</dt><dd>Nothing needed. Supply two real photos in place of the filter.</dd></div><div><dt>Seen in</dt><dd>Renovation portfolios and satellite image comparisons</dd></div></dl>
+  </div>
+</section>
+
+<!-- 8 -->
+<section class="spec" id="looks">
+  <div class="spec-head wrap"><h2>Looks and voices</h2><p class="measure">The same photo and the same message, five ways. A look sets the mood; a voice sets how it speaks. Describe both and a page stops sounding generic.</p></div>
+  <div class="demo" id="looksbox" data-look="fog">
+    <div class="frame looks-photo"><div class="ph" role="img" aria-label="The lake photo, shown in the selected look."></div><i class="l1"></i><i class="l2"></i><div class="looks-cap"><p class="looks-line" id="looks-line"></p></div></div>
+    <div class="looks-bar" role="group" aria-label="Choose a look" id="looks-bar"></div>
+    <div class="wrap"><p class="looks-voice"><b id="looks-voice"></b><span class="ui" id="looks-by"></span></p></div>
+  </div>
+  <div class="recipe wrap">
+    <div class="ask"><h3>Ask for it like this</h3><blockquote id="looks-ask"></blockquote><button class="copy" type="button">Copy</button></div>
+    <dl class="facts"><div><dt>Effort</dt><dd>Easy. Name the look and the voice in the same sentence.</dd></div><div><dt>Made here with</dt><dd>CSS filters, blend modes and the View Transitions API for the cross-fade</dd></div><div><dt>Grow into</dt><dd>A saved style card per look, so every page you make can reuse it</dd></div><div><dt>Seen in</dt><dd>Photo app filters and brand style guides</dd></div></dl>
+  </div>
+</section>
+
+<!-- 9 -->
+<section class="spec" id="glass">
+  <div class="spec-head wrap"><h2>Frosted glass card</h2><p class="measure">Facts float over the photo on a pane that blurs what is behind it. The photo stays the star and the text stays readable.</p></div>
+  <div class="demo frame glass-scene sd">
+    <div class="ph" role="img" aria-label="The lake photo behind a frosted glass card."></div>
+    <div class="glass">
+      <h3>About this photo</h3>
+      <dl>
+        <div><dt>Size</dt><dd>2016 × 1512 px</dd></div>
+        <div><dt>Sky</dt><dd>Top 57% of the frame</dd></div>
+        <div><dt>Darkest strip</dt><dd>The far shore</dd></div>
+        <div><dt>Largest colour</dt><dd><i></i>__TOPHEX__, __TOPSHARE__%</dd></div>
+      </dl>
+    </div>
+  </div>
+  <div class="recipe wrap">
+    <div class="ask"><h3>Ask for it like this</h3><blockquote>Float the key facts in a frosted glass card over my photo. Keep the card over the sky so dark text stays readable.</blockquote><button class="copy" type="button">Copy</button></div>
+    <dl class="facts"><div><dt>Effort</dt><dd>Easy. One sentence.</dd></div><div><dt>Made here with</dt><dd>CSS backdrop-filter</dd></div><div><dt>Grow into</dt><dd>Magic UI or Aceternity UI, for ready-made animated cards</dd></div><div><dt>Seen in</dt><dd>Phone lock screens and weather apps</dd></div></dl>
+  </div>
+</section>
+
+<!-- 10 -->
+<section class="spec" id="bento">
+  <div class="spec-head wrap"><h2>Bento grid</h2><p class="measure">A summary as a tray of tiles in different sizes. Each tile holds one fact, so the eye can land anywhere.</p></div>
+  <div class="demo wrap">
+    <div class="bento">
+      <div class="tile photo"><div class="ph" data-crop=".86,.56,3.6" role="img" aria-label="Close view of the wooded island."></div><span class="ui">The island, from the same file</span></div>
+      <div class="tile dark"><span class="n">12</span><span class="ui">components on this page</span></div>
+      <div class="tile sky"><span class="n">0</span><span class="ui">libraries loaded</span></div>
+      <div class="tile wide"><div class="chips" id="chips" aria-hidden="true"></div><span class="ui">The photo's six main colours, largest first</span></div>
+      <div class="tile"><svg id="spark" viewBox="0 0 100 40" preserveAspectRatio="none" role="img" aria-label="Small line showing brightness from the top of the photo to the bottom."></svg><span class="ui">Brightness, top to bottom</span></div>
+      <div class="tile"><span class="n">__KB__<small>KB</small></span><span class="ui">one file, photo and fonts included</span></div>
+      <div class="tile say dark">Every tile here is a true fact about this page.</div>
+    </div>
+  </div>
+  <div class="recipe wrap">
+    <div class="ask"><h3>Ask for it like this</h3><blockquote>Summarise this as a bento grid: one tall photo tile, three big-number tiles, a colour palette tile and a small chart tile.</blockquote><button class="copy" type="button">Copy</button></div>
+    <dl class="facts"><div><dt>Effort</dt><dd>Easy. List the tiles you want.</dd></div><div><dt>Made here with</dt><dd>CSS grid</dd></div><div><dt>Grow into</dt><dd>shadcn/ui and Magic UI, which ship bento layouts</dd></div><div><dt>Seen in</dt><dd>Product launch summaries</dd></div></dl>
+  </div>
+</section>
+
+<!-- 11 -->
+<section class="spec" id="swipe">
+  <div class="spec-head wrap"><h2>Swipe gallery</h2><p class="measure">Cards in a row that snap into place one at a time. On a phone it is the most natural way to browse a set.</p></div>
+  <div class="demo">
+    <div class="swipe" tabindex="0" role="region" aria-label="Six details from the photo. Swipe or scroll sideways.">
+      <article><div class="ph" data-crop=".86,.56,4.4" role="img" aria-label="The island."></div><h3>The island</h3><p>Evergreens on a low rise, right of the trunk.</p></article>
+      <article><div class="ph" data-crop=".567,.625,6" role="img" aria-label="A bare shrub standing in the water."></div><h3>The shrub</h3><p>Alone in open water, easy to miss at full size.</p></article>
+      <article><div class="ph" data-crop=".745,.34,3.6" role="img" aria-label="The tree trunk and its bare branches."></div><h3>The bark</h3><p>The trunk and a few bare branches against cloud.</p></article>
+      <article><div class="ph" data-crop=".2,.74,3.4" role="img" aria-label="Dry cattails."></div><h3>The cattails</h3><p>Dry stalks and seed heads along the near shore.</p></article>
+      <article><div class="ph" data-crop=".18,.58,4.4" role="img" aria-label="The far shoreline."></div><h3>The far shore</h3><p>A thin dark line of trees between sky and water.</p></article>
+      <article><div class="ph" data-crop=".33,.2,2.4" role="img" aria-label="Layered cloud."></div><h3>The cloud</h3><p>Soft bands of grey and blue, most of the picture.</p></article>
+    </div>
+  </div>
+  <div class="recipe wrap">
+    <div class="ask"><h3>Ask for it like this</h3><blockquote>Crop six details from my photo and show them as cards I can swipe sideways, snapping one card at a time. Give each a two-word title and one line.</blockquote><button class="copy" type="button">Copy</button></div>
+    <dl class="facts"><div><dt>Effort</dt><dd>Easy. One sentence.</dd></div><div><dt>Made here with</dt><dd>CSS scroll snap. No script.</dd></div><div><dt>Grow into</dt><dd>Motion or GSAP, for dragging with momentum</dd></div><div><dt>Seen in</dt><dd>App store listings and social carousels</dd></div></dl>
+  </div>
+</section>
+
+<!-- 12 -->
+<section class="spec" id="postcard">
+  <div class="spec-head wrap"><h2>Flip postcard</h2><p class="measure">A photo with a second side. Put the picture on the front and the message on the back.</p></div>
+  <div class="demo card-wrap">
+    <button class="card3d" id="card" type="button" aria-pressed="false" aria-label="Postcard. Turn it over.">
+      <span class="card-inner">
+        <span class="face front ph"></span>
+        <span class="face back">
+          <span class="note">Grey sky, flat water, one bare tree. It did not look like much until I zoomed in.</span>
+          <span class="addr"><span class="stamp ph"></span><span class="lines"><i></i><i></i><i></i></span></span>
+        </span>
+      </span>
+    </button>
+    <p class="card-hint ui">Tap the postcard to turn it over.</p>
+  </div>
+  <div class="recipe wrap">
+    <div class="ask"><h3>Ask for it like this</h3><blockquote>Make my photo a postcard with a white border. When I tap it, flip it over in 3D and show a short handwritten-style note, a stamp and address lines on the back.</blockquote><button class="copy" type="button">Copy</button></div>
+    <dl class="facts"><div><dt>Effort</dt><dd>Easy. One sentence.</dd></div><div><dt>Made here with</dt><dd>CSS 3D transforms and one line of script</dd></div><div><dt>Grow into</dt><dd>React Bits and Aceternity UI, which ship tilt and 3D cards</dd></div><div><dt>Seen in</dt><dd>Invitations, team pages and product cards</dd></div></dl>
+  </div>
+</section>
+</main>
+
+<section class="shelves">
+  <div class="wrap">
+    <h2>Where to look next</h2>
+    <p class="lede">The simple version of any page borrows ideas from the best work. The advanced version plugs in the free tools that work is built with.</p>
+
+    <div class="shelf">
+      <h3>Pages worth studying</h3>
+      <ul>
+        <li><a href="https://pudding.cool/">The Pudding</a><span>Data stories built on a pinned chart with text scrolling past.</span></li>
+        <li><a href="https://www.nytimes.com/projects/2012/snow-fall/">Snow Fall, The New York Times</a><span>The 2012 feature that made scrollytelling a format.</span></li>
+        <li><a href="https://joshworth.com/dev/pixelspace/pixelspace_solarsystem.html">If the Moon Were Only 1 Pixel</a><span>The size of the solar system, explained by scrolling sideways.</span></li>
+        <li><a href="https://www.apple.com/airpods-pro/">Apple AirPods Pro</a><span>A product that turns and comes apart as you scroll.</span></li>
+        <li><a href="https://www.awwwards.com/">Awwwards</a><span>A daily winner, with each entry tagged by the tools behind it.</span></li>
+        <li><a href="https://tympanus.net/codrops/">Codrops</a><span>Experimental effects published with their source code.</span></li>
+        <li><a href="https://shorthand.com/the-craft/scrollytelling-examples/">Shorthand's scrollytelling picks</a><span>Twelve examples with notes on which elements each one uses.</span></li>
+        <li><a href="https://www.maglr.com/blog/best-scrollytelling-examples">Maglr's ten for 2026</a><span>News, corporate and education examples side by side.</span></li>
+      </ul>
+    </div>
+
+    <div class="shelf">
+      <h3>Free tools to grow into</h3>
+      <ul>
+        <li><a href="https://gsap.com/">GSAP</a><span>The standard for scroll and timeline animation. Free with every plugin, under its own no-charge licence.</span></li>
+        <li><a href="https://motion.dev/">Motion</a><span>Animation for React, Vue and plain JavaScript. MIT licence.</span></li>
+        <li><a href="https://animejs.com/">Anime.js</a><span>Small and friendly, strong on SVG. MIT licence.</span></li>
+        <li><a href="https://github.com/russellsamora/scrollama">Scrollama</a><span>Step triggers for scrollytelling. MIT licence.</span></li>
+        <li><a href="https://github.com/darkroomengineering/lenis">Lenis</a><span>Smooth scrolling that other effects sit on top of.</span></li>
+        <li><a href="https://web.dev/blog/web-platform-10-2026">Built into browsers</a><span>Scroll-driven animations and view transitions now work without any library.</span></li>
+        <li><a href="https://observablehq.com/plot/">Observable Plot</a><span>A chart in a few lines. ISC licence.</span></li>
+        <li><a href="https://d3js.org/">D3</a><span>Total control for custom charts. ISC licence.</span></li>
+        <li><a href="https://echarts.apache.org/">Apache ECharts</a><span>A large catalogue of interactive charts. Apache 2.0 licence.</span></li>
+        <li><a href="https://ui.shadcn.com/">shadcn/ui</a><span>Accessible components you copy into your project.</span></li>
+        <li><a href="https://magicui.design/">Magic UI</a><span>Animated components for landing pages. MIT licence.</span></li>
+        <li><a href="https://ui.aceternity.com/">Aceternity UI</a><span>Dramatic, dark, cinematic components.</span></li>
+        <li><a href="https://reactbits.dev/">React Bits</a><span>Animated text, backgrounds and cards with open source.</span></li>
+        <li><a href="https://threejs.org/">Three.js, Lottie and Rive</a><span>For 3D scenes and for animation drawn by a designer.</span></li>
+      </ul>
+    </div>
+
+    <div class="shelf">
+      <h3>Skills and plugins that already exist</h3>
+      <ul>
+        <li><a href="https://github.com/anthropics/skills">Anthropic's skills: frontend-design, web-artifacts-builder, theme-factory</a><span>Design judgement, a build kit for richer artifacts and ready-made themes.</span></li>
+        <li><a href="https://skills.sh/doodledood/claude-code-plugins/scrollytelling">scrollytelling</a><span>A community skill that asks which scroll pattern and which library you want.</span></li>
+        <li><a href="https://skills.sh/rshvr/elite-web-design/elite-gsap">elite-gsap</a><span>A community skill of GSAP recipes: ScrollTrigger, SplitText, SVG.</span></li>
+        <li><a href="https://skills.sh/freshtechbro/claudedesignskills/animated-component-libraries">animated-component-libraries</a><span>A community skill covering Magic UI and React Bits.</span></li>
+      </ul>
+      <p class="note">Community skills are not reviewed by anyone. Read a skill before you install it.</p>
+    </div>
+  </div>
+</section>
+<footer><div class="wrap"><p class="ui">Built on 14 November 2026 from one photo. Tool and licence notes were checked the same day; follow each link before you rely on one. The line under this page's top edge is a thirteenth component: a reading progress bar.</p></div></footer>
+
+<script>
+(()=>{
+const DATA=__DATA__;
+const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
+const html=document.documentElement;
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const clamp=(v,a=0,b=1)=>Math.min(b,Math.max(a,v));
+const NS='http://www.w3.org/2000/svg';
+const el=(n,a={},t)=>{const e=document.createElementNS(NS,n);for(const k in a)e.setAttribute(k,a[k]);if(t!=null)e.textContent=t;return e};
+
+/* scroll driver for browsers without native scroll-driven animations */
+const native=CSS.supports('(animation-timeline: view()) and (animation-range: entry)')&&location.hash!=='#fallback';
+if(!native&&!reduce){
+  html.classList.add('sd-js');
+  const els=$$('.sd'),bar=$('.progress');let tick=false;
+  const upd=()=>{tick=false;const vh=innerHeight;
+    for(const e of els){const r=e.getBoundingClientRect();
+      const p=e.dataset.range==='contain'?-r.top/Math.max(1,r.height-vh):(vh-r.top)/(vh+r.height);
+      e.style.setProperty('--p',clamp(p).toFixed(4));}
+    bar.style.setProperty('--p',clamp(scrollY/Math.max(1,html.scrollHeight-vh)).toFixed(4));};
+  addEventListener('scroll',()=>{if(!tick){tick=true;requestAnimationFrame(upd)}},{passive:true});
+  addEventListener('resize',upd);upd();
+}
+
+/* crops: point a background at one part of the photo */
+for(const e of $$('[data-crop]')){
+  const [fx,fy,S]=e.dataset.crop.split(',').map(Number),w=e.clientWidth||1,h=e.clientHeight||1;
+  let iw=w*S,ih=iw*.75;if(ih<h){ih=h;iw=ih/.75}
+  e.style.backgroundSize=iw/w*100+'% auto';
+  e.style.backgroundPosition=clamp(iw>w?(fx*iw-w/2)/(iw-w):.5)*100+'% '+clamp(ih>h?(fy*ih-h/2)/(ih-h):.5)*100+'%';
+}
+
+/* tour */
+{const src=getComputedStyle(html).getPropertyValue('--photo').trim().replace(/^url\(\s*["']?/,'').replace(/["']?\s*\)$/,'');
+ const img=$('.tour-img'),frame=$('.tour-frame'),steps=$$('.tour-steps li'),count=$('.tour-count');let cur=0;
+ img.src=src;
+ const place=()=>{const s=steps[cur],z=+s.dataset.z,fx=+s.dataset.fx,fy=+s.dataset.fy,w=frame.clientWidth,h=frame.clientHeight;
+   const tx=clamp(w/2-fx*w*z,w-w*z,0),ty=clamp(h/2-fy*h*z,h-h*z,0);
+   img.style.transform=`translate(${tx.toFixed(1)}px,${ty.toFixed(1)}px) scale(${z})`;
+   count.textContent=`${cur+1} of ${steps.length}`;steps.forEach((e,i)=>e.classList.toggle('on',i===cur));};
+ const io=new IntersectionObserver(es=>{for(const e of es)if(e.isIntersecting){cur=steps.indexOf(e.target);place();}},{rootMargin:'-52% 0px -44% 0px'});
+ steps.forEach(s=>io.observe(s));addEventListener('resize',place);place();}
+
+/* chart */
+const ROWS=DATA.rows,N=ROWS.length;
+const part=i=>i<27?'Sky':i<29?'Far shore':i<32?'Water':i<40?'Reeds':'Leaves';
+const pct=i=>Math.round((i+.5)/N*100);
+{const host=$('#bright');const tip=document.createElement('div');tip.className='tip ui';
+ const draw=()=>{
+  const W=host.clientWidth,H=Math.round(clamp(W*.62,230,330)),m={l:34,r:12,t:22,b:54},iw=W-m.l-m.r,ih=H-m.t-m.b;
+  const x=i=>m.l+(i+.5)/N*iw,y=v=>m.t+(1-v/100)*ih;
+  const svg=el('svg',{viewBox:`0 0 ${W} ${H}`,height:H,role:'img',tabindex:0,'aria-label':'Line chart of brightness from the top of the photo to the bottom. It stays near 70% through the sky, drops to 22% at the far shore, recovers to 64% on the water, then falls to about 25% in the reeds and leaves.'});
+  for(const t of [0,25,50,75,100]){svg.append(el('line',{x1:m.l,x2:W-m.r,y1:y(t),y2:y(t),stroke:'#d3dae4','stroke-width':1}));svg.append(el('text',{x:m.l-6,y:y(t)+4,'text-anchor':'end'},t===100?'100%':t));}
+  const pts=ROWS.map((r,i)=>[x(i),y(r.b)]);
+  const d='M'+pts.map(p=>p[0].toFixed(1)+','+p[1].toFixed(1)).join(' L');
+  svg.append(el('path',{d:d+` L${pts[N-1][0].toFixed(1)},${y(0)} L${pts[0][0].toFixed(1)},${y(0)} Z`,fill:'#34506f','fill-opacity':.1}));
+  svg.append(el('path',{d,class:'line',pathLength:1}));
+  const sy=m.t+ih+8,bw=iw/N;
+  ROWS.forEach((r,i)=>svg.append(el('rect',{x:(m.l+i*bw).toFixed(2),y:sy,width:(bw+.6).toFixed(2),height:14,fill:r.c})));
+  for(const b of [27,29,32,40])svg.append(el('rect',{x:(m.l+b*bw-1).toFixed(2),y:sy-1,width:2,height:16,fill:'#f3f6fa'}));
+  for(const [a,b,name] of [[0,27,'Sky'],[32,40,'Reeds'],[40,48,'Leaves']])svg.append(el('text',{x:m.l+(a+b)/2*bw,y:sy+31,'text-anchor':'middle'},name));
+  const lo=ROWS.reduce((a,r,i)=>r.b<ROWS[a].b?i:a,0),hi=ROWS.reduce((a,r,i)=>r.b>ROWS[a].b?i:a,0);
+  for(const i of [lo,hi])svg.append(el('circle',{cx:pts[i][0],cy:pts[i][1],r:5,fill:'#34506f',stroke:'#f3f6fa','stroke-width':2}));
+  svg.append(el('text',{x:pts[lo][0]-10,y:pts[lo][1]+4,'text-anchor':'end',class:'strong'},`Far shore ${Math.round(ROWS[lo].b)}%`));
+  svg.append(el('text',{x:clamp(pts[hi][0],m.l+62,W-m.r-62),y:pts[hi][1]-12,'text-anchor':'middle',class:'strong'},`Brightest cloud ${Math.round(ROWS[hi].b)}%`));
+  const cross=el('line',{y1:m.t,y2:m.t+ih,stroke:'#1b2228','stroke-width':1,visibility:'hidden'}),dot=el('circle',{r:5,fill:'#34506f',stroke:'#f3f6fa','stroke-width':2,visibility:'hidden'});
+  svg.append(cross,dot);
+  let at=-1;
+  const show=i=>{at=clamp(i,0,N-1);const r=ROWS[at];cross.setAttribute('x1',x(at));cross.setAttribute('x2',x(at));cross.setAttribute('visibility','visible');
+    dot.setAttribute('cx',x(at));dot.setAttribute('cy',y(r.b));dot.setAttribute('visibility','visible');
+    tip.textContent='';const b=document.createElement('b');b.textContent=`Brightness ${r.b.toFixed(0)}%`;const s=document.createElement('span');const sw=document.createElement('i');sw.style.background=r.c;s.append(sw,`${part(at)}, ${pct(at)}% of the way down`);tip.append(b,s);
+    tip.style.visibility='visible';const tw=tip.offsetWidth;tip.style.transform=`translate(${clamp(x(at)-tw/2,0,W-tw).toFixed(0)}px,${Math.max(0,y(r.b)-64).toFixed(0)}px)`;};
+  const hide=()=>{at=-1;cross.setAttribute('visibility','hidden');dot.setAttribute('visibility','hidden');tip.style.visibility='hidden'};
+  const fromEvent=e=>{const b=svg.getBoundingClientRect();show(Math.floor((e.clientX-b.left-m.l)/iw*N))};
+  svg.addEventListener('pointermove',fromEvent);svg.addEventListener('pointerdown',fromEvent);svg.addEventListener('pointerleave',e=>{if(e.pointerType==='mouse')hide()});
+  svg.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();show((at<0?0:at)+(e.key==='ArrowRight'?1:-1))}else if(e.key==='Escape')hide()});
+  svg.addEventListener('blur',hide);
+  host.replaceChildren(svg,tip);};
+ let lastW=0;const redraw=()=>{if(host.clientWidth!==lastW){lastW=host.clientWidth;draw()}};
+ redraw();addEventListener('resize',redraw);
+ if(!reduce)new IntersectionObserver((es,o)=>{if(es[0].isIntersecting){host.classList.add('play');o.disconnect()}},{threshold:.5}).observe(host);
+ const tb=$('#bright-table tbody');ROWS.forEach((r,i)=>{const tr=document.createElement('tr');for(const v of [pct(i)+'%',r.b.toFixed(1)+'%',part(i)]){const td=document.createElement('td');td.textContent=v;tr.append(td)}tb.append(tr)});
+}
+/* palette, chips, sparkline */
+{const bar=$('#palbar'),list=$('#pallist'),chips=$('#chips');
+ for(const c of DATA.pal){const s=document.createElement('span');s.style.cssText=`flex:${c.share} 0 0;background:${c.hex}`;bar.append(s);
+  const li=document.createElement('li'),sw=document.createElement('i'),b=document.createElement('b');sw.style.background=c.hex;b.textContent=c.share.toFixed(0)+'%';li.append(sw,b,' '+c.hex);list.append(li);
+  const ch=document.createElement('i');ch.style.background=c.hex;chips.append(ch);}
+ const sp=$('#spark');sp.append(el('path',{d:'M'+ROWS.map((r,i)=>(i/(N-1)*100).toFixed(1)+','+(38-r.b/100*36).toFixed(1)).join(' L'),fill:'none',stroke:'#34506f','stroke-width':2,'vector-effect':'non-scaling-stroke','stroke-linejoin':'round'}));}
+
+/* before and after */
+{const ba=$('#ba'),r=$('#ba-range');r.addEventListener('input',()=>ba.style.setProperty('--x',r.value+'%'));}
+
+/* looks and voices */
+{const LOOKS=[
+  {id:'fog',name:'As shot',line:'Think of a web page as a recipe. Same ingredients, different dish.',voice:'Voice: the patient teacher',by:'Inspired by David Malan. Analogy first, then an example, then the detail.',ask:'Keep my photo as shot. Voice: a patient teacher. Open with an everyday analogy, then one worked example, then the detail.'},
+  {id:'ink',name:'Ink',line:'One photo. Twelve pages.',voice:'Voice: the keynote',by:'Inspired by Steve Jobs. One idea per screen and almost no text.',ask:'Make my photo high-contrast black and white. Voice: a keynote. One idea per screen, very short sentences, huge type.'},
+  {id:'dusk',name:'Dusk',line:'The photo was nearly deleted. Grey sky, bare tree, nothing to see. Then someone zoomed in.',voice:'Voice: the storyteller',by:'Inspired by Don Miller. A hook, a hero, a twist and an ending that stays with you.',ask:'Grade my photo like dusk, warm at the top and deep blue at the bottom. Voice: a storyteller. Start with a hook, give it a twist, end on a line that lingers.'},
+  {id:'film',name:'Faded film',line:'This is not a picture of a lake. It is the minute before you went back inside.',voice:'Voice: the pitch',by:'Inspired by Don Draper. First person, emotional, about the feeling and never the feature.',ask:'Make my photo look like faded film, soft and slightly brown. Voice: an emotional pitch in the first person, about the feeling and never the feature.'},
+  {id:'blue',name:'Blueprint',line:'Pick a component. Copy the sentence. Ship the page.',voice:'Voice: the practical instructor',by:'A best guess at Bradley Ross. Core concept first, one analogy, then steps you can use today.',ask:'Turn my photo into a two-colour blueprint in navy and pale blue. Voice: a practical instructor. Core concept first, one analogy, then steps I can follow today.'}];
+ const box=$('#looksbox'),bar=$('#looks-bar');
+ const set=id=>{const L=LOOKS.find(l=>l.id===id);box.dataset.look=id;$('#looks-line').textContent=L.line;$('#looks-voice').textContent=L.voice;$('#looks-by').textContent=L.by;$('#looks-ask').textContent=L.ask;
+   $$('button',bar).forEach(b=>b.setAttribute('aria-pressed',b.dataset.id===id))};
+ for(const L of LOOKS){const b=document.createElement('button');b.type='button';b.dataset.id=L.id;b.textContent=L.name;
+   b.addEventListener('click',()=>{if(document.startViewTransition&&!reduce)document.startViewTransition(()=>set(L.id));else set(L.id)});bar.append(b);}
+ set('fog');}
+
+/* postcard */
+{const c=$('#card');c.addEventListener('click',()=>{const on=c.getAttribute('aria-pressed')!=='true';c.setAttribute('aria-pressed',on);$('.card-hint').textContent=on?'Tap again to see the photo.':'Tap the postcard to turn it over.'});
+ if(!reduce&&matchMedia('(hover:hover)').matches){c.addEventListener('pointermove',e=>{const b=c.getBoundingClientRect();c.style.setProperty('--ry',((e.clientX-b.left)/b.width-.5)*14+'deg');c.style.setProperty('--rx',(.5-(e.clientY-b.top)/b.height)*10+'deg')});
+  c.addEventListener('pointerleave',()=>{c.style.setProperty('--rx','0deg');c.style.setProperty('--ry','0deg')});}}
+
+/* copy buttons */
+for(const b of $$('.copy'))b.addEventListener('click',async()=>{const q=b.parentElement.querySelector('blockquote');
+  try{await navigator.clipboard.writeText(q.textContent.trim());b.textContent='Copied'}
+  catch{const r=document.createRange();r.selectNodeContents(q);const s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selected. Copy it from the menu'}
+  setTimeout(()=>b.textContent='Copy',2400)});
+})();
+</script>
+</body>
+</html>
