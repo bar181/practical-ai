@@ -1,8 +1,8 @@
 # Component catalogue
 
-The parts a page can be built from. Each row is a working example in the studio demo. Pick parts that carry content; never add one for decoration.
+The parts a page can be built from. Each row is a working example in the studio. Pick parts that carry content; never add one for decoration.
 
-Generated from the demo by `drafts/artifact-studio/level-demo/source/build.py`.
+Generated from the examples by `drafts/artifact-studio/base/source/build.py`.
 
 ## Page components (no photo needed)
 

@@ -19,6 +19,10 @@ If a front-end design skill is available (for example `frontend-design`), load i
 1. **Intake.** Find the content, any media, the audience, the one job of the page, and where it
    will be seen. Infer what you can. Ask at most two questions, only if you cannot tell the
    audience or the job.
+   If there is a preferences file (a file named `preferences.md`, or a section headed Preferences
+   in your instructions), read it before you choose anything. It sets the defaults for recipe,
+   voice, look, layout and format. What the person says in this request overrides it. Do not ask
+   a question the file already answers. Say in the delivery note which preferences you applied.
 2. **Recipe.** Pick one from the table. If named, use it. If none fits, use the one-page report.
 3. **Voice.** Pick one from the table. If named, use it. Otherwise take the recipe's first voice.
 4. **Look.** In order: the person's design spec; colours taken from an image they supplied; the

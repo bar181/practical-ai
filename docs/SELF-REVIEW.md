@@ -68,7 +68,7 @@ Found and fixed in this round:
 
 Still open, and not fixable by the author alone:
 
-- Run the sentence test: `drafts/artifact-studio/level-simple/sentence-test.md`.
+- Run the sentence test: `drafts/artifact-studio/base/sentence-test.md`.
 - Have a second agent run the skill on fresh content.
 - Watch one person do level 1 from the student guide.
 - Check on a real phone, in Safari and in Firefox.
@@ -261,6 +261,32 @@ The sources are trade and vendor guides plus security firms' reports, not studie
 explainer is the exception: its review rests on published research. Prices and
 plan details were not checked, and the reviews say so.
 
+## Round 4: a base, and levels that add to it
+
+The owner reviewed the pages and asked whether the level folders were the right shape for a
+repository that ships a usable product. They were not. Each level had its own page, and the
+examples were divided between the levels by teaching order: recipes on one page, voices on
+another. Someone who wanted "the thing" had to visit three places.
+
+The artifact studio now trials a different shape.
+
+| | Before | After |
+| --- | --- | --- |
+| Where the examples are | Split across four pages, by level | One studio page, and each example again as a file of its own, all in `base/` |
+| What a level folder holds | A page, plus a copy of some of the examples | Only what that level adds |
+| What decides the level | How much the person has learned | What the person must depend on: nothing, files, or connections |
+| Level 1 | A page of recipes and parts | Two files: instructions for the assistant, instructions for the person |
+| Level 2 | A page of voices, looks and templates | A preferences file, and the skill installed |
+| Level 3 | A page of the skill's documents | A list of connection slots. Nothing built |
+
+What this changes in the scores: nothing yet. The rubric item "fits the level ladder" measured
+fit to the older folders, so it is not rescored here. The honest gain is that there is one place
+to look and no copy of an example to keep in step. The honest cost is that level 3 is now visibly
+empty, where the older "expert" page made it look finished.
+
+The other nine tools still use the older folders. Converting them is a decision for the owner,
+after this one has been looked at.
+
 ## What only other people can do next
 
 After round 3 the weakest item for every tool is still evidence, and the author cannot raise it
@@ -269,7 +295,7 @@ alone. In order of value:
 1. **Open the four studio artifacts on a phone** and say whether every tab shows content. This
    confirms or refutes the round 3 fix. Five minutes.
 2. **Run the sentence test.** The beginner sentence for each of the four recipes, in two
-   assistants, with the sheet in `drafts/artifact-studio/level-simple/sentence-test.md`. About an
+   assistants, with the sheet in `drafts/artifact-studio/base/sentence-test.md`. About an
    hour.
 3. **Give the artifact-studio skill to a second agent** with one set of real notes, and compare
    what comes back against the pre-ship checklist.

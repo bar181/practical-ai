@@ -17,7 +17,7 @@ In priority order.
 
 | # | Tool | What it does | Published | Student guide | Plan | Commercial |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Artifact studio | Pick a page type, a voice and a look from a menu of working examples, and get a page worth sharing built from your own content. | 0 | [Draft guide](../drafts/artifact-studio/STUDENT-GUIDE.md) | [Yes](../plans/artifact-studio/) | Draft |
+| 1 | Artifact studio | Pick a page type, a voice and a look from a menu of working examples, and get a page worth sharing built from your own content. | 0 | [Draft guide](../drafts/artifact-studio/level-1/README.md) | [Yes](../plans/artifact-studio/) | Draft |
 | 2 | Voice post drafter | A draft post or newsletter that sounds like you, for you to edit and publish yourself. | 0 | [Draft guide](../drafts/voice-post-drafter/STUDENT-GUIDE.md) | [Yes](../plans/voice-post-drafter/) | Draft |
 | 3 | Short video guide | Pick the right route by length and purpose and finish a short video in under 30 minutes. | 0 | [Draft guide](../drafts/short-video/STUDENT-GUIDE.md) | [Yes](../plans/short-video/) | Draft |
 | 4 | Estimator | A first-draft quote with its reasoning, built from your own price list and written rules. Examples for management consulting, kitchen renovation and employment services. | 0 | [Draft guide](../drafts/estimator/STUDENT-GUIDE.md) | No | Draft |

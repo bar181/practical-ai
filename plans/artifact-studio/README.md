@@ -18,7 +18,7 @@ Anyone who asks an assistant for a report, a proposal, an explainer or a landing
 
 ## Scope
 
-- **In:** every level, from the demo to the skill. All are drafted. None has been reviewed by a second person.
+- **In:** the base and levels 1 and 2. All are drafted. None has been reviewed by a second person. Level 3 is a list of connection slots, with nothing built.
 - **Out:** hosting the page, and video, audio and avatar add-ons. Those belong to other tools on the list.
 - **It works when:** a person with no design training gives an assistant their notes and one sentence from the studio, and gets a page they are willing to send on the first or second try.
 
@@ -29,15 +29,15 @@ outlines and will change.
 
 | Level | What it involves | Complexity |
 | --- | --- | --- |
-| Demo | One file holding every example, with a tab for each: seven voices, four recipes, twelve page components and twelve photo components. Every example carries the sentence that asks for it. Each level also has its own page. | Beginner |
-| Simple | Copy one sentence from the studio, attach your notes, and paste both into a chat assistant. The assistant chooses the colours and type. Check every number against your notes. | Beginner |
-| Working | Choose the recipe, the voice, the look and the parts yourself. Fill in a one-page design spec once and a five-line content brief per page, then run the pre-ship checklist. | Intermediate |
-| Automated | Install the artifact-studio skill. Hand over any content and media. The skill chooses or follows the recipe, voice and look, builds one self-contained page, checks it, and reports what it assumed and what is missing. Hosting and media add-ons belong to other tools. | Advanced |
+| Demo | A base that holds everything: one studio page with a tab for every example, and each example again as a file of its own. Every example carries the sentence that asks for it. This tool trials the base-plus-levels layout: level folders hold only what each level adds. | Beginner |
+| Simple | Level 1, nothing to install. Paste the instructions for the assistant into a Project once. Then copy a sentence from any example, attach your notes, and check every number against them. | Beginner |
+| Working | Level 2, your preferences on file. Fill in one preferences file: default recipe, voice and look, brand, layout and format rules. Install the skill if the assistant loads skills. A short ask then gives a page that looks and sounds like yours. | Intermediate |
+| Automated | Level 3, connected. Not built. The slots are listed in the draft: content in from where it lives, the page out to a web address, a one-step install as a plugin, and runs on a schedule. An addition is built only after it has been walked end to end once. | Advanced |
 | Commercial grade | A design system with an owner, approved voices, facts traced to a source of record, an accessibility audit, a named reviewer and a release step with an audit trail. | Explained, not built here |
 
 ## Established best practices
 
-Done. See the [landscape review](../../drafts/artifact-studio/landscape-review.md) for what already exists, with dated sources, and the [best practices](../../drafts/artifact-studio/BEST-PRACTICES.md) for how the tool is built and used.
+Done. See the [landscape review](../../drafts/artifact-studio/landscape-review.md) for what already exists, with dated sources.
 
 ## What it reuses
 

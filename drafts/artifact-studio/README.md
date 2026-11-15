@@ -14,13 +14,15 @@ build those pages, through the skill.
 
 ## Start here
 
-| You are | Open |
+| You want | Open |
 | --- | --- |
-| A person who wants a page today | [`STUDENT-GUIDE.md`](STUDENT-GUIDE.md) |
-| An agent, or someone setting one up | [`AGENT-GUIDE.md`](AGENT-GUIDE.md) |
-| Curious how and why it works | [`BEST-PRACTICES.md`](BEST-PRACTICES.md) |
-| Looking for what already exists in this area | [`landscape-review.md`](landscape-review.md) |
-| Wanting the whole toolkit on one page | [`docs/practical-ai-explained.html`](../../docs/practical-ai-explained.html) |
+| To see what it makes | [`base/studio.html`](base/studio.html), or one file from [`base/examples/`](base/examples/) |
+| A page today, with nothing to install | [`level-1/`](level-1/) |
+| Pages that look and sound like yours every time | [`level-2/`](level-2/) |
+| To hand the job to an agent | [`base/AGENT-GUIDE.md`](base/AGENT-GUIDE.md) and the [skill](../../skills/artifact-studio/) |
+| How and why it works | [`base/BEST-PRACTICES.md`](base/BEST-PRACTICES.md) |
+| What already exists in this area | [`landscape-review.md`](landscape-review.md) |
+| The whole toolkit on one page | [`docs/practical-ai-explained.html`](../../docs/practical-ai-explained.html) |
 
 ## How it works
 
@@ -44,18 +46,30 @@ flowchart LR
 | Look | Nine look cards, your own design spec, or colours taken from a photo | [`looks.md`](../../skills/artifact-studio/references/looks.md) |
 | Parts | 12 page components and 12 photo components | [`components.md`](../../skills/artifact-studio/references/components.md) |
 
-## Levels
+## A base, and levels that add to it
 
-The repository's level folders map onto three levels of skill.
+The base holds everything needed to use the tool. A level never repeats the base. It holds only
+what that level adds, and the rule for which level something belongs to is what it makes you
+depend on.
 
-| Level | Folder | What you do | Complexity |
-| --- | --- | --- | --- |
-| Demo | [`level-demo/`](level-demo/) | Look. [One file](level-demo/artifact-studio.html) with every recipe, voice and component working | None |
-| Beginner | [`level-simple/`](level-simple/) | Copy one sentence, attach your notes. [Level 1 page](level-simple/artifact-studio-beginner.html) | Beginner |
-| Advanced | [`level-working/`](level-working/) | Choose the recipe, voice, look and parts. Fill in a design spec once. [Level 2 page](level-working/artifact-studio-advanced.html) | Intermediate |
-| Expert | [`level-automated/`](level-automated/) | Install the skill. Hand over any content and media and get a checked page back. [Level 3 page](level-automated/artifact-studio-expert.html) | Advanced |
-| Student projects | [`student-projects/`](student-projects/) | Pages built by students, shared with permission | |
-| Commercial grade | [`commercial-grade/`](commercial-grade/) | What a commercial build adds. An explanation, never a project | |
+| | Folder | What it adds to the base | What you then depend on | State |
+| --- | --- | --- | --- | --- |
+| Base | [`base/`](base/) and [`skills/artifact-studio/`](../../skills/artifact-studio/) | Everything: the studio page, fourteen example files, sentences, templates, the skill, the source | A browser | Built |
+| Level 1 | [`level-1/`](level-1/) | Instructions for the assistant, and instructions for you | Any chat assistant | Written, not yet tested by others |
+| Level 2 | [`level-2/`](level-2/) | A preferences file, and the skill installed | An assistant that keeps files or loads skills | Written, not yet used on a real page |
+| Level 3 | [`level-3/`](level-3/) | Connections: content in, page out, one-step install, schedules | Connectors or a plugin | **Not built.** The slots are listed |
+
+```mermaid
+flowchart LR
+  B[Base: examples, templates, skill] --> L1[Level 1: add instructions]
+  L1 --> L2[Level 2: add your preferences]
+  L2 --> L3[Level 3: add connections]
+```
+
+This layout is a trial. The other tools in the repository still use the older folders
+(`level-demo`, `level-simple`, `level-working`, `level-automated`). The two remaining folders
+here, [`student-projects/`](student-projects/) and [`commercial-grade/`](commercial-grade/), come
+from that older layout and are unchanged.
 
 ## Status
 
@@ -63,11 +77,12 @@ Draft. Built and checked by its author only.
 
 | Item | State |
 | --- | --- |
-| Demo | Built. Renders in Chrome at phone and desktop width with no script errors |
-| Sentences | Written. **Not yet tested** in fresh chats. See [`level-simple/sentence-test.md`](level-simple/sentence-test.md) |
+| Base | Built. The studio page and all fourteen example files render in Chrome at phone and desktop width with no script errors |
+| Sentences | Written. **Not yet tested** in fresh chats. See [`base/sentence-test.md`](base/sentence-test.md) |
 | Skill | Written. **Not yet run** end to end by a second agent |
 | Real devices | Not checked on an iPhone, an Android phone, Safari or Firefox |
-| Review | Nobody other than the author has used it |
+| Preferences file | New. Not yet used on a real page |
+| Review | The repository owner has looked at the pages. Nobody else has used it |
 
 It moves to `projects/` when the sentence test has been run and one other person has built a page
 with it.

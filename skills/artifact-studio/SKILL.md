@@ -33,6 +33,10 @@ the look is the plate. Your job is to take the order correctly and cook it well.
 1. **Intake.** Find five things in what you were given: the content, any media, the audience, the
    one job of the page, and where it will be seen (phone, meeting screen, print). Infer what you
    can. Ask at most two questions, and only when you cannot tell the audience or the job.
+   If there is a preferences file (a file named `preferences.md`, or a section headed Preferences
+   in your instructions), read it before you choose anything. It sets the defaults for recipe,
+   voice, look, layout and format. What the person says in this request overrides it. Do not ask
+   a question the file already answers. Say in the delivery note which preferences you applied.
 2. **Recipe.** Pick one page type from `references/recipes.md`. If the person named one, use it.
    If none fits, use the one-page report and say so.
 3. **Voice.** Pick one voice from `references/voices.md`. If the person named one, use it. If not,
