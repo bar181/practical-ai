@@ -2,7 +2,7 @@
 
 The tools this repository is working toward. Flags were read from the folders on 2026-11-14.
 
-**Built so far:** 5 draft candidates in [`drafts/`](../drafts/): Artifact studio, Voice post drafter, Short video guide, Estimator, Training explainer with avatar. Working demo: Artifact studio, Estimator. 19 plans in [`plans/`](../plans/). Nothing has been promoted to `projects/` yet.
+**Built so far:** 5 draft candidates in [`drafts/`](../drafts/): Artifact studio, Voice post drafter, Short video guide, Estimator, Training explainer with avatar. Working demo: Artifact studio, Voice post drafter, Short video guide, Estimator, Training explainer with avatar. 19 plans in [`plans/`](../plans/). Nothing has been promoted to `projects/` yet.
 
 | Flag | Means |
 | --- | --- |

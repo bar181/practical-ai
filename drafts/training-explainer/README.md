@@ -13,7 +13,7 @@ Draft. First copy, not yet reviewed or tested by anyone else.
 
 | Level | What it will hold | In this draft |
 | --- | --- | --- |
-| `level-demo` | A finished beat sheet and one finished video per style | One beat sheet |
+| `level-demo` | A finished beat sheet and one finished video per style | [`index.html`](level-demo/index.html): one beat sheet in two styles, playable. No finished video yet |
 | `level-simple` | The brief, the style cards and the steps. You record it yourself | Brief template, five style cards with their inspirations |
 | `level-working` | Script, generated visuals and your own cloned voice, assembled by hand | [Outline](level-working/) |
 | `level-automated` | An agent produces the whole piece with your avatar and stops at your approval | [Outline](level-automated/), with the [`script-and-beat-sheet`](../../skills/script-and-beat-sheet/) skill |

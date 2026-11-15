@@ -14,7 +14,7 @@ Draft. First copy, not yet reviewed or tested by anyone else.
 
 | Level | What it will hold | In this draft |
 | --- | --- | --- |
-| `level-demo` | A sample voice file, a topic, the draft it produced and the feedback given | One worked example |
+| `level-demo` | A sample voice file, a topic, the draft it produced and the feedback given | [`index.html`](level-demo/index.html): one full loop you can step through, and the same example as text |
 | `level-simple` | Instructions to paste into a chatbot Project, and a voice file to fill in | Both |
 | `level-working` | One draft per channel, with feedback saved and applied every time | [Outline](level-working/) |
 | `level-automated` | A daily topic scout that queues topics and drafts for your review | [Outline](level-automated/), with the [`voice-drafter`](../../skills/voice-drafter/) skill |

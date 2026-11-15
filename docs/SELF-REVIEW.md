@@ -23,13 +23,18 @@ Seven items, each scored from 1 to 100. The overall score is the plain average.
 
 ## Round summary, 15 November 2026
 
-| Tool | Before | After | Weakest item now |
-| --- | --- | --- | --- |
-| 1. Artifact studio | 61 | 77 | Reuse before build (58), evidence (62) |
-| 2. Voice post drafter | 57 | 64 | Evidence (30) |
-| 3. Short video guide | 55 | 62 | Quality of the demo (35) |
-| 4. Estimator | 66 | 71 | Evidence (50) |
-| 5. Training explainer | 51 | 58 | Evidence (30) |
+| Tool | Start | Round 1 | Round 2 | Weakest item now |
+| --- | --- | --- | --- | --- |
+| 1. Artifact studio | 61 | 77 | 77 | Reuse before build (58), evidence (62) |
+| 2. Voice post drafter | 57 | 64 | 67 | Evidence (30) |
+| 3. Short video guide | 55 | 62 | 66 | Evidence (45). The demo plays a script, not a video |
+| 4. Estimator | 66 | 71 | 71 | Evidence (50) |
+| 5. Training explainer | 51 | 58 | 61 | Evidence (30). The demo plays a plan, not a video |
+
+Round 1 added skills, agent guides and the upper levels. Round 2 fixed the weakest fixable item it
+found, the quality of three demos, by building a page for each with the artifact studio's own
+skeleton and look. After round 2, the weakest item for every tool is evidence. By the rule at the
+end of this file, building stops there until other people have used the tools.
 
 ## Artifact studio
 
@@ -89,6 +94,18 @@ What would move each one most:
 | Short video guide | One finished video per route in the demo folder. A script is not a demo of a video |
 | Estimator | Run each example through a fresh chat and compare totals with the worked examples |
 | Training explainer | One finished video in one style, made from the beat sheet |
+
+## Round 2: three demos
+
+| Tool | Demo before | Demo after | What was built |
+| --- | --- | --- | --- |
+| Voice post drafter | 60 | 76 | A page that steps through one loop: voice file, point of view, draft with its voice traits marked, the flagged guess, and feedback becoming a rule |
+| Short video guide | 35 | 60 | A page that plays a 20-second script beat by beat on a phone-shaped frame, with a word budget and a route chooser |
+| Training explainer | 40 | 62 | A page that plays one beat sheet in two teaching styles |
+
+Each page was checked at 320 and 390 pixels wide and with the automated accessibility scan: no
+errors and no violations. The two video tools still have no finished video. That needs an outside
+rendering service and the owner's own image and voice.
 
 ## How to run the next round
 

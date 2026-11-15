@@ -13,7 +13,7 @@ Draft. First copy, not yet reviewed or tested by anyone else.
 
 | Level | What it will hold | In this draft |
 | --- | --- | --- |
-| `level-demo` | A finished script and one finished video per route | One example script |
+| `level-demo` | A finished script and one finished video per route | [`index.html`](level-demo/index.html): a script you can play beat by beat and a route chooser. No finished video yet |
 | `level-simple` | The route table, the script template, steps you follow by hand in each tool's own app | Script template |
 | `level-working` | A saved prompt set per route and a voice file, so every video sounds like you | [Outline](level-working/) |
 | `level-automated` | An agent runs the route end to end and stops at your approval | [Outline](level-automated/), with the [`script-and-beat-sheet`](../../skills/script-and-beat-sheet/) skill |
