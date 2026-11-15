@@ -87,6 +87,9 @@ swipe gallery, flip card.
 - Design at 390 pixels wide first. Nothing scrolls sideways except a table inside its own
   container. Tap targets 44 pixels. Use `svh` with a pixel cap, not bare `vh`.
 - Four to six named colour tokens. Body text contrast 4.5 to 1. Meaning never by colour alone.
+- The page is complete at rest: the first screen shows real content before any script runs. Build
+  tabs from radio buttons and labels so they switch with scripts off, one tab per item, the first
+  one showing. Offer choices as visible buttons, not dropdowns.
 - Everything is readable before any animation runs and with reduced motion on. Tie movement to
   scrolling with CSS scroll-driven animations inside
   `@supports ((animation-timeline: view()) and (animation-range: entry))`, with a small script

@@ -13,6 +13,21 @@ people who turn motion off.
 - If the page will be published as a Claude artifact, only cdnjs, jsDelivr, unpkg and Google Fonts
   load from outside. Everything else is blocked without an error.
 
+## Complete at rest
+
+The page must make sense before any script runs. The first person to open the studio on a phone
+could not find the examples, and this section is what that taught.
+
+- The first screen shows real content. Never open on a form, a row of menus or an empty frame.
+- Build tabs from radio buttons and labels, or from `<details>`, so they switch with scripts
+  turned off. The first tab is showing on load. Give every item its own tab when there are
+  fewer than about ten, instead of a menu page that leads to them.
+- Offer choices as buttons that are all visible. A dropdown hides its choices.
+- Scripts add to the page and never hold it up. Give each part's set-up its own `try`, so one
+  failure cannot empty the rest.
+- A part that cannot work without script, such as a calculator or a player, starts with a worked
+  default written into the HTML, or says so in a `<noscript>` line.
+
 ## Layout
 
 - Design at 390 pixels wide first, then widen. Nothing scrolls sideways except a table or a

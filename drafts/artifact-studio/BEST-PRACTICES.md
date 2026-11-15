@@ -143,7 +143,9 @@ demo.
 
 | Test | How | State |
 | --- | --- | --- |
-| Renders without errors | Open every tab in Chrome at 390 and 1280 pixels wide | Done by the author |
+| Renders without errors | Open every tab in Chrome at 320, 390 and 1280 pixels wide | Done by the author |
+| Complete at rest | Turn scripts off. The first screen shows content and the tabs switch | Done by the author for the four studio pages |
+| Found by a person on a phone | The owner opened the first studio artifact and could not find the examples. See round 3 in `docs/SELF-REVIEW.md` | One person, once |
 | Works with motion off | Turn on "reduce motion" in the system settings and reload | Checked in code, not on a device |
 | Sentences reproduce the result | [`level-simple/sentence-test.md`](level-simple/sentence-test.md) | Not yet run |
 | The skill works for a second agent | Give a fresh agent the skill and one set of notes | Not yet run |

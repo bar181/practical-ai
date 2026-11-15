@@ -196,6 +196,19 @@ Overall for the studio: 77 at the end of round 2 by the author's own scoring, 73
 it, 77 after the fix. The lesson is the rule at the end of this file: the author's score for "easy"
 was 26 points higher than the first real user's experience.
 
+The same test was then run on the nine other demo pages, with scripts turned off:
+
+| Demo | At rest, with scripts off |
+| --- | --- |
+| Inbox summary, weekly brief, learning system, voice post drafter, publishing a website | Readable. The content is in the page |
+| Estimator | Headings only. Every figure is worked out by script |
+| Short video, training explainer | Text is readable. The player frame is empty |
+| Dashboard | Sample rows show. Tiles and chart are empty |
+
+All nine now carry a one-line notice that shows only when scripts are off. The four that depend on
+script are not rebuilt. That is a known gap, not a fix. The rule that came out of this is the new
+"Complete at rest" section of the skill's build rules, and one new line in the pre-ship checklist.
+
 Still not checked: the pages inside the artifact viewer on a phone, by the author. The author
 cannot see that viewer. Confirmation has to come from the owner.
 

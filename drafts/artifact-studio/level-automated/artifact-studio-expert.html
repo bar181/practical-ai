@@ -1192,6 +1192,9 @@ swipe gallery, flip card.
 - Design at 390 pixels wide first. Nothing scrolls sideways except a table inside its own
   container. Tap targets 44 pixels. Use `svh` with a pixel cap, not bare `vh`.
 - Four to six named colour tokens. Body text contrast 4.5 to 1. Meaning never by colour alone.
+- The page is complete at rest: the first screen shows real content before any script runs. Build
+  tabs from radio buttons and labels so they switch with scripts off, one tab per item, the first
+  one showing. Offer choices as visible buttons, not dropdowns.
 - Everything is readable before any animation runs and with reduced motion on. Tie movement to
   scrolling with CSS scroll-driven animations inside
   `@supports ((animation-timeline: view()) and (animation-range: entry))`, with a small script
@@ -1303,6 +1306,20 @@ people who turn motion off.</p>
 <li>If the page will be published as a Claude artifact, only cdnjs, jsDelivr, unpkg and Google Fonts
   load from outside. Everything else is blocked without an error.</li>
 </ul>
+<h2>Complete at rest</h2>
+<p>The page must make sense before any script runs. The first person to open the studio on a phone
+could not find the examples, and this section is what that taught.</p>
+<ul>
+<li>The first screen shows real content. Never open on a form, a row of menus or an empty frame.</li>
+<li>Build tabs from radio buttons and labels, or from <code>&lt;details&gt;</code>, so they switch with scripts
+  turned off. The first tab is showing on load. Give every item its own tab when there are
+  fewer than about ten, instead of a menu page that leads to them.</li>
+<li>Offer choices as buttons that are all visible. A dropdown hides its choices.</li>
+<li>Scripts add to the page and never hold it up. Give each part's set-up its own <code>try</code>, so one
+  failure cannot empty the rest.</li>
+<li>A part that cannot work without script, such as a calculator or a player, starts with a worked
+  default written into the HTML, or says so in a <code>&lt;noscript&gt;</code> line.</li>
+</ul>
 <h2>Layout</h2>
 <ul>
 <li>Design at 390 pixels wide first, then widen. Nothing scrolls sideways except a table or a
@@ -1412,6 +1429,7 @@ result. A person then looks at the page on a phone and checks the facts.</p>
 <ul>
 <li class="task"><label><input type="checkbox"><span>One clear primary action</span></label></li>
 <li class="task"><label><input type="checkbox"><span>Every button and link does something</span></label></li>
+<li class="task"><label><input type="checkbox"><span>With scripts turned off, the first screen shows content and any tabs still switch</span></label></li>
 <li class="task"><label><input type="checkbox"><span>Usable with a keyboard alone</span></label></li>
 <li class="task"><label><input type="checkbox"><span>Still works after a refresh, with nothing remembered</span></label></li>
 <li class="task"><label><input type="checkbox"><span>Opens from a folder with no network connection, unless a library was agreed</span></label></li>
@@ -1781,8 +1799,18 @@ demo.</p>
 <tbody>
 <tr>
 <td>Renders without errors</td>
-<td>Open every tab in Chrome at 390 and 1280 pixels wide</td>
+<td>Open every tab in Chrome at 320, 390 and 1280 pixels wide</td>
 <td>Done by the author</td>
+</tr>
+<tr>
+<td>Complete at rest</td>
+<td>Turn scripts off. The first screen shows content and the tabs switch</td>
+<td>Done by the author for the four studio pages</td>
+</tr>
+<tr>
+<td>Found by a person on a phone</td>
+<td>The owner opened the first studio artifact and could not find the examples. See round 3 in <code>docs/SELF-REVIEW.md</code></td>
+<td>One person, once</td>
 </tr>
 <tr>
 <td>Works with motion off</td>

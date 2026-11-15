@@ -15,6 +15,7 @@ result. A person then looks at the page on a phone and checks the facts.
 
 - [ ] One clear primary action
 - [ ] Every button and link does something
+- [ ] With scripts turned off, the first screen shows content and any tabs still switch
 - [ ] Usable with a keyboard alone
 - [ ] Still works after a refresh, with nothing remembered
 - [ ] Opens from a folder with no network connection, unless a library was agreed
