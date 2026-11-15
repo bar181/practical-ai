@@ -151,7 +151,7 @@ See them in [`components/colour.html`](components/colour.html).
 | 60, 30, 10 | A rule borrowed from decorating a room. The largest share is calm, the next gives structure, and the smallest draws the eye. Judge it by eye: it is about weight, not a count of pixels. On a dense screen such as a dashboard the calm share is nearer 90. |
 | One colour in even steps | Nine shades of one colour, from nearly white to nearly black, where each step looks the same size to the eye. Older colour sums make yellow steps look bigger than blue ones. The OKLCH way of writing colour fixes that, and current browsers understand it. |
 | Colours that go together | Start from your colour and turn the wheel, keeping the lightness and strength the same. Because only the direction changes, the colours feel like a set. One of them is still the accent. The others are for charts, labels and pictures. |
-| Contrast you can read | Contrast is a ratio between the text and what is behind it, from 1 to 1 (invisible) up to 21 to 1 (black on white). Ordinary text needs 4.5. These four pairs use two colours that look fine together and still fail as text. |
+| Contrast you can read | Contrast is a ratio between the text and what is behind it, from 1 to 1 (invisible) up to 21 to 1 (black on white). Ordinary text needs 4.5. Two of these four pairs pass. The other two use colours that look fine side by side and still fail as text. |
 
 ## Animated SVG
 

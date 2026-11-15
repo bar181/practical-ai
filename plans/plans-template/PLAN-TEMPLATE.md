@@ -2,7 +2,7 @@
 
 One-line promise: what it does for the person using it.
 
-| Complexity | Research | Simple level | Draft |
+| Complexity | Research | Level 1 | Draft |
 | --- | --- | --- | --- |
 | Beginner, Intermediate, Advanced, or a range | Not started, Partly, or Done with the date | Not started, Drafted, or Published | Link to `drafts/<slug>/`, or "None yet" |
 
@@ -18,21 +18,24 @@ One sentence.
 
 ## Scope
 
-- **In:** what the simple level does.
+- **In:** what level 1 does.
 - **Out:** what it deliberately does not do.
 - **It works when:** one specific input and what a good result looks like.
 
 ## What might be involved at each level
 
-The simple level is described in most detail, because it is built first. The later levels are
+Level 1 is described in most detail, because it is built first. The later levels are
 outlines and will change.
+
+A tool has a base, which holds everything, and up to three levels, each holding only what it adds.
+The layout and the stages are in the [project method](../../drafts/project-method/).
 
 | Level | What it involves | Complexity |
 | --- | --- | --- |
-| Demo | One line: the finished example someone can look at | |
-| Simple | Three or four sentences: what the person prepares, what they give the assistant, what they get back, what they check | |
-| Working | One line | |
-| Automated | One line | |
+| Base | One line: what a person can open and use with nothing set up | |
+| Level 1 | Three or four sentences: what the person prepares, what they give the assistant, what they get back, what they check | |
+| Level 2 | One line: what makes it repeatable, such as a preferences file or a skill | |
+| Level 3 | One line: the connections, such as an MCP server or a schedule | |
 | Commercial grade | One line: what a commercial build adds | Explained, not built here |
 
 ## Established best practices
@@ -52,15 +55,15 @@ Follow [`BUILD-PROCESS.md`](BUILD-PROCESS.md). Fill these in as each is settled.
 
 - [ ] **Reuse check:** what is built in, what is open source, and whether to stop here
 - [ ] **Build or license:** the lean for each level, with outside providers reviewed but not selected
-- [ ] **Dependencies and pricing:** what the simple level depends on and what it costs
+- [ ] **Dependencies and pricing:** what level 1 depends on and what it costs
 - [ ] **Where it lives:** which assistant, where the files are kept, what stays manual
 
 ## First step
 
 1. Research established best practices. Record each one with a source link and the date checked.
-2. Write the simple level solution and its overview.
+2. Write level 1 solution and its overview.
 
-The working level and beyond are planned only after the simple level is in use.
+Level 2 and beyond are planned only after level 1 is in use.
 
 ## Open questions
 

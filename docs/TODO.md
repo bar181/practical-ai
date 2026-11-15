@@ -3,13 +3,13 @@
 Every project starts with the same two steps, in this order:
 
 1. **Research** established best practices. Record each with a source link and the date checked.
-2. **Simple level:** write the level 1 solution and its overview.
+2. **Level 1:** write the level 1 solution and its overview.
 
-The working level and beyond are not planned in detail until the simple level is in use.
+The working level and beyond are not planned in detail until level 1 is in use.
 
-Status read from the folders on 2026-11-14: 10 of 20 simple levels drafted, 0 reviewed, 0 published.
+Status read from the folders on 2026-11-14: 10 of 20 level 1s drafted, 0 reviewed, 0 published.
 
-| # | Project | 1. Research | 2. Simple level and overview | Plan |
+| # | Project | 1. Research | 2. Level 1 and overview | Plan |
 | --- | --- | --- | --- | --- |
 | 1 | Artifact studio | Done | Drafted, needs review | [Plan](../plans/artifact-studio/) |
 | 2 | Voice post drafter | Done | Drafted, needs review | [Plan](../plans/voice-post-drafter/) |
@@ -38,7 +38,7 @@ of established practice has not been done for any project yet.
 ## Across all projects
 
 - [ ] Review the drafts in `drafts/` and promote the levels that are ready to `projects/`
-- [ ] Have someone other than the author test each simple level
+- [ ] Have someone other than the author test each level 1
 - [ ] Run the six worked examples in a fresh chat and record the scores: `drafts/artifact-studio/base/examples/`
 - [ ] Try the artifact studio MCP server inside a desktop assistant
 - [ ] Take one older draft through the project method from stage 1

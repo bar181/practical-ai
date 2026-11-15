@@ -12,7 +12,7 @@ Everything needed to add a plan to this repository, by hand or with a skill.
 ## What a plan is
 
 A plan is a starting point, not a specification. It says what the tool is, who it is for, what
-might be involved at each level, and how hard each level is. It is detailed about the simple level
+might be involved at each level, and how hard each level is. It is detailed about level 1
 and deliberately light on everything after it.
 
 ## By hand
@@ -24,7 +24,7 @@ and deliberately light on everything after it.
    - Write the one-line promise from the user's side: what they get, not how it works.
    - Lead with an analogy from everyday life.
    - Write the scope before anything else, including what is out.
-   - Describe the simple level fully. Give each later level one line.
+   - Describe level 1 fully. Give each later level one line.
    - Name what the tool reuses before describing anything new.
    - Put anything you do not know under Open questions. Never guess.
 5. **Flag the complexity** using the scale below, for the tool overall and for each level.

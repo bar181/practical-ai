@@ -5,7 +5,7 @@ description: Writes or updates a plan for a practical AI tool in the practical-a
 
 # Plan writer
 
-You write one plan at a time. A plan is a starting point: clear about the simple level, light on
+You write one plan at a time. A plan is a starting point: clear about level 1, light on
 everything after it. Work in the repository's `plans/` folder.
 
 ## Before you write
@@ -35,10 +35,10 @@ everything after it. Work in the repository's `plans/` folder.
     - **Think of it as:** one everyday analogy.
     - **Overview:** two to four plain sentences.
     - **Scope:** from step 5.
-    - **Levels table:** one line for demo. Three or four sentences for simple: what the person prepares, what they give the assistant, what they get back, what they check. One line each for working, automated and commercial grade.
+    - **Levels table:** one line for the base. Three or four sentences for level 1: what the person prepares, what they give the assistant, what they get back, what they check. One line each for working, automated and commercial grade.
     - **Established best practices:** the list from step 7, with links and dates.
     - **What it reuses:** from the landscape review.
-    - **Decisions to record:** tick only what is settled. For dependencies and pricing, cover the simple level only.
+    - **Decisions to record:** tick only what is settled. For dependencies and pricing, cover level 1 only.
     - **Open questions:** everything you do not know.
 13. **Flag complexity** for the tool overall and for each level, using only these words:
     - **Beginner:** no code, a chat assistant and a few files, under an hour.
@@ -49,7 +49,7 @@ everything after it. Work in the repository's `plans/` folder.
 
 ## Update the indexes
 
-14. `plans/README.md`: add or update the tool's row (name with link, one line, complexity, research status, simple level status).
+14. `plans/README.md`: add or update the tool's row (name with link, one line, complexity, research status, level 1 status).
 15. `docs/TODO.md`: add or update the tool's row. Research is "Done" only if every practice has a source link and a date.
 16. `docs/PRIORITIES.md`: set the Plan flag to a link to the plan. Add the tool to the list if it is new, at the end of the additional options unless told where it ranks.
 
@@ -64,7 +64,7 @@ everything after it. Work in the repository's `plans/` folder.
 - **Never invent.** A fact you could not confirm goes under Open questions.
 - **No real names.** No people, companies or client material. Examples are synthetic.
 - **Reuse first.** Do not plan to build what already exists.
-- **Stay light past the simple level.** One line per later level. Do not design the working or automated levels in detail.
+- **Stay light past level 1.** One line per later level. Do not design level 2 or level 3 in detail.
 - **A person approves** anything that posts, sends, pays or publishes. Write that into the plan wherever it applies.
 - **Plain words.** Short sentences. No jargon the reader would have to look up.
 - **One plan per request.** If asked for several, do them one at a time and summarise after each.

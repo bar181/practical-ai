@@ -1,11 +1,24 @@
-"""Assemble the four studio pages (all examples, and one per level) from shell.html, base.css, the views folder and assets.json.
+"""build.py: assemble everything the artifact studio generates, from one catalogue and a folder of views.
 
-Usage: python3 prepare_assets.py ... then python3 build.py
-Each file in views/ holds one tab or page: an optional <style>, the markup (a div.view with id v-NAME),
-and an optional <script> that registers onView("NAME", root => { ... }) to run the first time it is shown.
-Two macros keep the views short:
-  @@ask sentence || effort || made here with || grow into || use it for
-  @@levels beginner sentence || advanced sentence || expert sentence
+Reads   catalog.py (templates, fit scores, social styles, the palette rule), shell.html, base.css, assets.json,
+        views/*.html, the skill's Markdown files, and docs/reports/*.md
+Writes  base/studio.html                      every view as a tab
+        base/templates/                       each template and part as its own page, the starters, index.json, README.md
+        base/sentences.md                     every ask, in one list
+        level-1/AI-INSTRUCTIONS.md            a copy of the skill's single-file edition
+        skills/artifact-studio/references/    components.md and design-ideas.md
+        docs/practical-ai-explained.html and docs/reports/*.html
+        the counts line in README.md and base/README.md
+
+A view is one file: an optional <style>, the markup (a div.view with id v-NAME), and an optional <script> that
+registers onView("NAME", root => { ... }) to run the first time the view is shown.
+Macros, each on a line of its own:
+  @@ask sentence || effort || made here with || grow into || use it for      the ask box under a part
+  @@levels short ask || full ask || ask with the skill                         the three asks under a template
+  @@md path    @@svgset    @@facet name default    @@pick goal audience format    @@palette hue
+
+Run: python3 build.py   (prepare_assets.py is needed only when a font or photograph changes)
+This file is dense. It was written quickly and is covered by the gates in ../../gates.json, not by its own clarity.
 """
 import json, os, re, glob, html
 HERE=os.path.dirname(os.path.abspath(__file__))

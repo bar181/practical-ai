@@ -24,7 +24,7 @@ A tool can start at Beginner and reach Advanced at its automated level. The inde
 
 ## The 20 priority tools
 
-| # | Plan | In one line | Complexity | Research | Simple level |
+| # | Plan | In one line | Complexity | Research | Level 1 |
 | --- | --- | --- | --- | --- | --- |
 | 1 | [Artifact studio](artifact-studio/) | A library of templates for pages, slide decks and social posts, with rules that pick the right one and an assistant that builds it from your content. | Beginner to advanced | Done: landscape review in the draft | [Drafted](../drafts/artifact-studio/) |
 | 2 | [Voice post drafter](voice-post-drafter/) | A draft post or newsletter that sounds like you, for you to edit and publish yourself. | Beginner | Done: landscape review in the draft | [Drafted](../drafts/voice-post-drafter/) |

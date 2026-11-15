@@ -171,7 +171,7 @@ taken a tool through all seven stages with it.** That run is the test of level 2
 | layout | The folder follows the repository's layout | Pass |
 | build | The studio page, every template, both indexes, the starters and the skill's sheets rebuild from source | Pass |
 | examples | The six worked examples rebuild from the current starters | Pass |
-| links | No Markdown link in the repository is broken | Pass, 187 files |
+| links | No Markdown link in the repository is broken | Pass, 188 files |
 | skills | Every skill follows the published authoring rules | Pass, 12 skills |
 | picker | The picker and the palette maker agree between the page and Python | Pass: 120 of 120 requests, 360 of 360 hues |
 | example-outputs | Every example output opens cleanly with its words inside the frame | Pass, 10 of 10 |

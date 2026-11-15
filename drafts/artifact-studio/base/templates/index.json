@@ -1070,7 +1070,7 @@
    "id": "colour-contrast-you-can-read",
    "group": "colour",
    "name": "Contrast you can read",
-   "use": "Contrast is a ratio between the text and what is behind it, from 1 to 1 (invisible) up to 21 to 1 (black on white). Ordinary text needs 4.5. These four pairs use two colours that look fine together and still fail as text.",
+   "use": "Contrast is a ratio between the text and what is behind it, from 1 to 1 (invisible) up to 21 to 1 (black on white). Ordinary text needs 4.5. Two of these four pairs pass. The other two use colours that look fine side by side and still fail as text.",
    "ask": "Check every pair of text colour and background on this page. List each pair with its contrast ratio, and fix any ordinary text under 4.5 to 1 or large text under 3 to 1 by changing the lightness, not the hue.",
    "effort": "Easy. One sentence.",
    "file": "base/templates/components/colour.html",
