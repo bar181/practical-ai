@@ -9,6 +9,7 @@ A draft that passes review moves to [`projects/`](../projects/).
 | --- | --- |
 | [`artifact-studio/`](artifact-studio/) | Artifact studio |
 | [`estimator/`](estimator/) | Estimator |
+| [`learning-system/`](learning-system/) | Learning system |
 | [`short-video/`](short-video/) | Short video guide |
 | [`training-explainer/`](training-explainer/) | Training explainer with avatar |
 | [`voice-post-drafter/`](voice-post-drafter/) | Voice post drafter |

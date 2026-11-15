@@ -16,6 +16,7 @@ writing it down once saves doing it from memory each time.
 | [`voice-drafter`](voice-drafter/) | Drafts a post in one person's voice from their voice file, and turns feedback into a rule | [Voice post drafter](../drafts/voice-post-drafter/) |
 | [`quote-drafter`](quote-drafter/) | Builds a first-draft estimate from a price list and written rules, showing its arithmetic | [Estimator](../drafts/estimator/) |
 | [`script-and-beat-sheet`](script-and-beat-sheet/) | Turns a brief into a beat sheet and a timed script, and recommends the production route | [Short video guide](../drafts/short-video/), [training explainer](../drafts/training-explainer/) |
+| [`learning-log`](learning-log/) | Looks in a log of solved problems before answering, says how often a stored answer worked, and drafts a new entry after a fix | [Learning system](../drafts/learning-system/) |
 | [`landscape-review`](landscape-review/) | Checks what already exists and frames the build-or-license decision, with costs and sources | Step 2 to 4 of the [build process](../plans/plans-template/BUILD-PROCESS.md) |
 
 ## Identified, not yet written

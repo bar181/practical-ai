@@ -2,7 +2,7 @@
 
 The tools this repository is working toward. Flags were read from the folders on 2026-11-14.
 
-**Built so far:** 5 draft candidates in [`drafts/`](../drafts/): Artifact studio, Voice post drafter, Short video guide, Estimator, Training explainer with avatar. Working demo: Artifact studio, Voice post drafter, Short video guide, Estimator, Training explainer with avatar. 19 plans in [`plans/`](../plans/). Nothing has been promoted to `projects/` yet.
+**Built so far:** 6 draft candidates in [`drafts/`](../drafts/): Artifact studio, Voice post drafter, Short video guide, Estimator, Training explainer with avatar, Learning system. Working demo: Artifact studio, Voice post drafter, Short video guide, Estimator, Training explainer with avatar, Learning system. 19 plans in [`plans/`](../plans/). Nothing has been promoted to `projects/` yet.
 
 | Flag | Means |
 | --- | --- |
@@ -22,7 +22,7 @@ In priority order.
 | 3 | Short video guide | Pick the right route by length and purpose and finish a short video in under 30 minutes. | 0 | [Draft guide](../drafts/short-video/STUDENT-GUIDE.md) | [Yes](../plans/short-video/) | Draft |
 | 4 | Estimator | A first-draft quote with its reasoning, built from your own price list and written rules. Examples for management consulting, kitchen renovation and employment services. | 0 | [Draft guide](../drafts/estimator/STUDENT-GUIDE.md) | No | Draft |
 | 5 | Training explainer with avatar | Turn a topic into a taught video in a teaching style chosen from a menu. | 0 | [Draft guide](../drafts/training-explainer/STUDENT-GUIDE.md) | [Yes](../plans/training-explainer/) | Draft |
-| 6 | Learning system | A growing log of questions and the solutions that worked, so the same problem is never solved twice. Versions for developers, businesses and personal use. | 0 | No | [Yes](../plans/learning-system/) | No |
+| 6 | Learning system | A growing log of questions and the solutions that worked, so the same problem is never solved twice. Versions for developers, businesses and personal use. | 0 | [Draft guide](../drafts/learning-system/STUDENT-GUIDE.md) | [Yes](../plans/learning-system/) | Draft |
 | 7 | Publishing a website | Take a page from a chatbot artifact to a hosted site: a shared link first, then a hosting platform, then a repository that deploys itself. | 0 | No | [Yes](../plans/website-publishing/) | No |
 | 8 | Inbox triage and daily summary | One morning summary across your connected sources: email, calendar and social media feedback, with replies drafted. | 0 | No | [Yes](../plans/inbox-daily-summary/) | No |
 | 9 | Weekly brief with research | A one-page weekly brief: industry and social media research with links, plus what your own documents and meeting transcripts say. | 0 | No | [Yes](../plans/weekly-brief/) | No |

@@ -4,7 +4,7 @@ A growing log of questions and the solutions that worked, so the same problem is
 
 | Complexity | Research | Simple level | Draft |
 | --- | --- | --- | --- |
-| Beginner to advanced | Not started | Not started | None yet |
+| Beginner to advanced | Done: landscape review in the draft | [Drafted](../../drafts/learning-system/) | [`drafts/learning-system/`](../../drafts/learning-system/) |
 
 **Think of it as:** A workshop notebook where every fix is written down once, with a note on whether it held. The next person with the same problem starts from the answer.
 
@@ -37,7 +37,7 @@ outlines and will change.
 
 ## Established best practices
 
-_Research not started. This is the first step for this plan._
+Done. See the [landscape review](../../drafts/learning-system/landscape-review.md) for what already exists, with dated sources.
 
 ## What it reuses
 

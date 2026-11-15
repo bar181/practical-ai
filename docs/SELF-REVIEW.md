@@ -30,6 +30,7 @@ Seven items, each scored from 1 to 100. The overall score is the plain average.
 | 3. Short video guide | 55 | 62 | 66 | Evidence (45). The demo plays a script, not a video |
 | 4. Estimator | 66 | 71 | 71 | Evidence (50) |
 | 5. Training explainer | 51 | 58 | 61 | Evidence (30). The demo plays a plan, not a video |
+| 6. Learning system | none | none | 69 | Evidence (35). New in round 2: demo, simple level, skill and outlines |
 
 Round 1 added skills, agent guides and the upper levels. Round 2 fixed the weakest fixable item it
 found, the quality of three demos, by building a page for each with the artifact studio's own
@@ -106,6 +107,22 @@ What would move each one most:
 Each page was checked at 320 and 390 pixels wide and with the automated accessibility scan: no
 errors and no violations. The two video tools still have no finished video. That needs an outside
 rendering service and the owner's own image and voice.
+
+## Round 2: learning system, drafted from its plan
+
+Built with the nine-step process: a short landscape review first (the known error database and
+the lessons learned register are established practice, so their columns were reused), then the
+simplest version that works.
+
+| Item | Score | Why |
+| --- | --- | --- |
+| Easy for a non-coder | 72 | A spreadsheet and pasted instructions. Connecting the sheet differs by assistant and is unchecked |
+| Reuse before build | 75 | Columns borrowed from established practice. Nothing built for the simple level |
+| Fits the level ladder | 72 | Demo and simple level drafted. Working, automated and commercial levels outlined |
+| Business usefulness | 78 | Starter entries for a business, for developers and for home |
+| Quality of the demo | 72 | A searchable log with status, counts and a draft-entry form. It saves nothing |
+| Teachable | 78 | Student guide, agent guide and the `learning-log` skill |
+| Evidence | 35 | Checked in Chrome and by the automated scan. Never used on a real log |
 
 ## How to run the next round
 

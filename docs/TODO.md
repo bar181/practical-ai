@@ -7,7 +7,7 @@ Every project starts with the same two steps, in this order:
 
 The working level and beyond are not planned in detail until the simple level is in use.
 
-Status read from the folders on 2026-11-14: 5 of 20 simple levels drafted, 0 reviewed, 0 published.
+Status read from the folders on 2026-11-14: 6 of 20 simple levels drafted, 0 reviewed, 0 published.
 
 | # | Project | 1. Research | 2. Simple level and overview | Plan |
 | --- | --- | --- | --- | --- |
@@ -16,7 +16,7 @@ Status read from the folders on 2026-11-14: 5 of 20 simple levels drafted, 0 rev
 | 3 | Short video guide | Partly done | Drafted, needs review | [Plan](../plans/short-video/) |
 | 4 | Estimator | To do | Drafted, needs review | No plan |
 | 5 | Training explainer with avatar | To do | Drafted, needs review | [Plan](../plans/training-explainer/) |
-| 6 | Learning system | To do | To do | [Plan](../plans/learning-system/) |
+| 6 | Learning system | Done | Drafted, needs review | [Plan](../plans/learning-system/) |
 | 7 | Publishing a website | To do | To do | [Plan](../plans/website-publishing/) |
 | 8 | Inbox triage and daily summary | To do | To do | [Plan](../plans/inbox-daily-summary/) |
 | 9 | Weekly brief with research | To do | To do | [Plan](../plans/weekly-brief/) |
