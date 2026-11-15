@@ -13,8 +13,8 @@
 .se-stage g.done circle{stroke:var(--am)}.se-stage g.done .ic{stroke:var(--am)}
 .se-stage g.now circle{fill:var(--am);stroke:var(--am)}.se-stage g.now .ic{stroke:var(--nv)}.se-stage g.now text{fill:#fff}
 .se-steps{list-style:none;margin:0 auto;padding:0 20px;max-width:620px}
-.se-steps li{min-height:min(64svh,520px);display:flex;flex-direction:column;justify-content:center;gap:10px;opacity:.3;transition:opacity .5s}
-.se-steps li.on{opacity:1}
+.se-steps li{min-height:min(64svh,520px);display:flex;flex-direction:column;justify-content:center;gap:10px;opacity:.66;transition:opacity .5s;padding-left:14px;border-left:3px solid transparent}
+.se-steps li.on{opacity:1;border-left-color:var(--am)}
 .se-steps h2{font:700 clamp(1.6rem,6vw,2.3rem)/1.08 var(--display)}
 .se-steps .who{font:700 .86rem/1.2 var(--display);color:var(--am)}
 .se-steps .fact{margin-top:6px;border-left:3px solid var(--am);padding:8px 0 8px 14px;color:#fff;font-size:1.05rem}

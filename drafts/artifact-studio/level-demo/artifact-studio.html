@@ -108,8 +108,8 @@ a{color:inherit;text-underline-offset:.18em;text-decoration-thickness:1px}
 .tour-img{position:absolute;left:0;top:0;width:100%;height:100%;transform-origin:0 0;transition:transform 1.25s cubic-bezier(.3,.7,.15,1);display:block;max-width:none}
 .tour-count{position:absolute;right:10px;bottom:10px;background:rgba(27,34,40,.72);color:var(--fog);padding:5px 10px;border-radius:999px;font-variant-numeric:tabular-nums}
 .tour-steps{list-style:none;margin:0;padding:0 20px}
-.tour-steps li{min-height:min(58svh,460px);display:flex;flex-direction:column;justify-content:center;gap:8px;opacity:.32;transition:opacity .5s}
-.tour-steps li.on{opacity:1}
+.tour-steps li{min-height:min(58svh,460px);display:flex;flex-direction:column;justify-content:center;gap:8px;opacity:.7;transition:opacity .5s;padding-left:14px;border-left:3px solid transparent}
+.tour-steps li.on{opacity:1;border-left-color:var(--rust)}
 .tour-steps h3{font-size:1.5rem;line-height:1.1}
 .tour-steps p{max-width:26em}
 @media(min-width:900px){
@@ -668,7 +668,7 @@ html[data-view=voice-keynote]{scroll-snap-type:y proximity}
 .rp-two ul{margin:10px 0 0;padding-left:1.1em;display:grid;gap:6px;font-size:.95rem}
 .rp-end{padding-bottom:64px}
 @media(min-width:760px){.rp-kpis{grid-template-columns:repeat(4,1fr)}.rp-two{grid-template-columns:1fr 1fr}}
-#v-recipe-proposal{--fo:#1f3b2d;--br:#a8782c;background:#edf0ea;color:#1c2a22;font:400 1.14rem/1.55 var(--text)}
+#v-recipe-proposal{--fo:#1f3b2d;--br:#8a6220;background:#edf0ea;color:#1c2a22;font:400 1.14rem/1.55 var(--text)}
 .pp-s{max-width:860px;margin-inline:auto;padding:52px 20px 0}
 .pp-cover{background:var(--fo);color:#f1f4ee;padding:56px 20px 44px}
 .pp-cover div{max-width:860px;margin-inline:auto}
@@ -722,15 +722,15 @@ html[data-view=voice-keynote]{scroll-snap-type:y proximity}
 .se-stage g.done circle{stroke:var(--am)}.se-stage g.done .ic{stroke:var(--am)}
 .se-stage g.now circle{fill:var(--am);stroke:var(--am)}.se-stage g.now .ic{stroke:var(--nv)}.se-stage g.now text{fill:#fff}
 .se-steps{list-style:none;margin:0 auto;padding:0 20px;max-width:620px}
-.se-steps li{min-height:min(64svh,520px);display:flex;flex-direction:column;justify-content:center;gap:10px;opacity:.3;transition:opacity .5s}
-.se-steps li.on{opacity:1}
+.se-steps li{min-height:min(64svh,520px);display:flex;flex-direction:column;justify-content:center;gap:10px;opacity:.66;transition:opacity .5s;padding-left:14px;border-left:3px solid transparent}
+.se-steps li.on{opacity:1;border-left-color:var(--am)}
 .se-steps h2{font:700 clamp(1.6rem,6vw,2.3rem)/1.08 var(--display)}
 .se-steps .who{font:700 .86rem/1.2 var(--display);color:var(--am)}
 .se-steps .fact{margin-top:6px;border-left:3px solid var(--am);padding:8px 0 8px 14px;color:#fff;font-size:1.05rem}
 .se-end{max-width:620px;margin-inline:auto;padding:30px 20px 84px}
 .se-end p{font:700 clamp(1.5rem,5.6vw,2.3rem)/1.14 var(--display);letter-spacing:-.01em}
 @media (prefers-reduced-motion:reduce){.se-stage .go,.se-steps li{transition:none}}
-#v-recipe-landing{--tl:#0d3b3e;--mn:#dff3e8;--co:#e4572e;background:#f7faf8;color:#0d2a2c;font:400 1.1rem/1.55 var(--sans)}
+#v-recipe-landing{--tl:#0d3b3e;--mn:#dff3e8;--co:#c23f1b;background:#f7faf8;color:#0d2a2c;font:400 1.1rem/1.55 var(--sans)}
 .lp-hero{background:var(--tl);color:#f2fbf6;padding:56px 20px 0;overflow:hidden}
 .lp-hero>div{max-width:900px;margin-inline:auto}
 .lp-hero h1{font:700 clamp(2.5rem,10vw,5.2rem)/.98 var(--sans);letter-spacing:-.04em;max-width:9em}
@@ -936,7 +936,7 @@ html[data-view=voice-keynote]{scroll-snap-type:y proximity}
       <h3>How bright the photo is, from its top edge to its bottom edge</h3>
       <p class="sub ui">Average brightness of 48 horizontal bands. The strip underneath shows each band's average colour. Touch the chart to read a band.</p>
       <div class="plot" id="bright"></div>
-      <details class="table"><summary class="ui">Show the 48 values as a table</summary><div class="table-scroll"><table id="bright-table"><thead><tr><th>Distance down the photo</th><th>Brightness</th><th>Part</th></tr></thead><tbody></tbody></table></div></details>
+      <details class="table"><summary class="ui">Show the 48 values as a table</summary><div class="table-scroll" tabindex="0" role="region" aria-label="Brightness values"><table id="bright-table"><thead><tr><th>Distance down the photo</th><th>Brightness</th><th>Part</th></tr></thead><tbody></tbody></table></div></details>
     </figure>
     <figure class="fig" style="margin:16px 0 0">
       <h3>Six colours cover the frame</h3>
@@ -1012,7 +1012,7 @@ html[data-view=voice-keynote]{scroll-snap-type:y proximity}
       <div class="tile sky"><span class="n">0</span><span class="ui">libraries loaded</span></div>
       <div class="tile wide"><div class="chips" id="chips" aria-hidden="true"></div><span class="ui">The photo's six main colours, largest first</span></div>
       <div class="tile"><svg id="spark" viewBox="0 0 100 40" preserveAspectRatio="none" role="img" aria-label="Small line showing brightness from the top of the photo to the bottom."></svg><span class="ui">Brightness, top to bottom</span></div>
-      <div class="tile"><span class="n">1,418<small>KB</small></span><span class="ui">the whole studio: one file, photos and fonts included</span></div>
+      <div class="tile"><span class="n">1,419<small>KB</small></span><span class="ui">the whole studio: one file, photos and fonts included</span></div>
       <div class="tile say dark">Every tile here is a true fact about this page.</div>
     </div>
   </div>
@@ -1142,9 +1142,9 @@ html[data-view=voice-keynote]{scroll-snap-type:y proximity}
 
   <section class="spec" id="pc-compare"><div class="spec-head wrap"><h2>Comparison table</h2><p class="measure">Options side by side on the same questions, with the recommended one picked out.</p></div>
     <div class="demo wrap"><table class="pc-cmp"><thead><tr><th scope="col"><span class="ui">You get</span></th><th scope="col">Do nothing</th><th scope="col">Hire a coordinator</th><th scope="col" class="best">Drafted replies</th></tr></thead><tbody>
-      <tr><th scope="row">Reply within the hour</th><td><span class="pc-no" aria-label="No"></span></td><td><span class="pc-yes" aria-label="Yes"></span></td><td class="best"><span class="pc-yes" aria-label="Yes"></span></td></tr>
-      <tr><th scope="row">Covered during holidays</th><td><span class="pc-no" aria-label="No"></span></td><td><span class="pc-no" aria-label="No"></span></td><td class="best"><span class="pc-yes" aria-label="Yes"></span></td></tr>
-      <tr><th scope="row">A person approves each reply</th><td><span class="pc-yes" aria-label="Yes"></span></td><td><span class="pc-yes" aria-label="Yes"></span></td><td class="best"><span class="pc-yes" aria-label="Yes"></span></td></tr>
+      <tr><th scope="row">Reply within the hour</th><td><span class="pc-no" role="img" aria-label="No"></span></td><td><span class="pc-yes" role="img" aria-label="Yes"></span></td><td class="best"><span class="pc-yes" role="img" aria-label="Yes"></span></td></tr>
+      <tr><th scope="row">Covered during holidays</th><td><span class="pc-no" role="img" aria-label="No"></span></td><td><span class="pc-no" role="img" aria-label="No"></span></td><td class="best"><span class="pc-yes" role="img" aria-label="Yes"></span></td></tr>
+      <tr><th scope="row">A person approves each reply</th><td><span class="pc-yes" role="img" aria-label="Yes"></span></td><td><span class="pc-yes" role="img" aria-label="Yes"></span></td><td class="best"><span class="pc-yes" role="img" aria-label="Yes"></span></td></tr>
       <tr><th scope="row">Cost a year</th><td>$0</td><td>$26,000</td><td class="best">$1,800</td></tr></tbody></table></div>
 <div class="recipe wrap"><div class="ask"><h3>Ask for it like this</h3><blockquote>Compare my three options in a table with four rows. Use ticks and dashes, put cost on the last row, and pick out the recommended column in a solid colour.</blockquote><button class="copy" type="button">Copy</button></div><dl class="facts"><div><dt>Effort</dt><dd>Easy. One sentence and your options.</dd></div><div><dt>Made here with</dt><dd>A plain HTML table</dd></div><div><dt>Grow into</dt><dd>shadcn/ui tables, for sorting and filtering</dd></div><div><dt>Use it for</dt><dd>Proposals, decision briefs, plan pages</dd></div></dl></div>
   </section>
@@ -1332,7 +1332,7 @@ html[data-view=voice-keynote]{scroll-snap-type:y proximity}
     </div>
     <div class="pr-meter" aria-hidden="true"><i id="pr-bar"></i></div><p class="pr-done" id="pr-done" aria-live="polite">0 of 5 done</p></section>
   <section class="pr-s"><h2>Three levels</h2><p>Stop at the level that is enough for you.</p>
-    <div class="pr-scroll" style="margin-top:12px"><table class="pr-table"><thead><tr><th>Level</th><th>What you do</th><th>What it takes</th></tr></thead><tbody>
+    <div class="pr-scroll" style="margin-top:12px" tabindex="0" role="region" aria-label="Three levels"><table class="pr-table"><thead><tr><th>Level</th><th>What you do</th><th>What it takes</th></tr></thead><tbody>
       <tr><td><b>Beginner</b></td><td>Paste each enquiry into a chat with your rules</td><td>An hour, no accounts to connect</td></tr>
       <tr><td><b>Advanced</b></td><td>A saved project with your voice file, price list and visit calendar</td><td>An afternoon</td></tr>
       <tr><td><b>Expert</b></td><td>Your inbox is connected. Drafts appear on their own and you approve them.</td><td>A connected mailbox and a weekly check</td></tr></tbody></table></div></section>
@@ -1394,7 +1394,7 @@ html[data-view=voice-keynote]{scroll-snap-type:y proximity}
     <p><span class="ex-n">2.</span>From February to April we trialled drafted replies. Median reply time fell to 38 minutes, 81% of enquiries were answered within the hour, and booked site visits rose from 18 to 31 a month.</p>
     <p><span class="ex-n">3.</span>The trial ends on 31 May. Without a decision we return to the previous arrangement.</p>
     <h2>Options</h2>
-    <div class="ex-scroll"><table class="ex-opts"><thead><tr><th>Option</th><th>Cost a year</th><th>Expected result</th><th>Main risk</th></tr></thead><tbody>
+    <div class="ex-scroll" tabindex="0" role="region" aria-label="Options"><table class="ex-opts"><thead><tr><th>Option</th><th>Cost a year</th><th>Expected result</th><th>Main risk</th></tr></thead><tbody>
       <tr><td data-l="">A. Return to the previous arrangement</td><td data-l="Cost a year">None</td><td data-l="Result">Replies in about a day. Visits return to about 18 a month.</td><td data-l="Main risk">Lost work we never hear about</td></tr>
       <tr><td data-l="">B. Hire a part-time coordinator</td><td data-l="Cost a year">About $26,000</td><td data-l="Result">Replies within the hour in office hours</td><td data-l="Main risk">Cover for holidays and illness</td></tr>
       <tr class="pick"><td data-l="">C. Drafted replies, sent by staff (recommended)</td><td data-l="Cost a year">About $1,800</td><td data-l="Result">As measured in the trial</td><td data-l="Main risk">A wrong draft sent unread</td></tr></tbody></table></div>
@@ -1426,7 +1426,7 @@ html[data-view=voice-keynote]{scroll-snap-type:y proximity}
     <li><a class="rc-4" href="#recipe-landing" data-go="recipe-landing"><h3>Landing page</h3><p>One promise, one button. A bookkeeping catch-up service.</p></a></li>
   </ul>
   <div class="rc-mix"><h3>Which voice suits which recipe</h3>
-    <div class="scroll"><table><thead><tr><th>Recipe</th><th>Use it when</th><th>Voices that fit</th></tr></thead><tbody>
+    <div class="scroll" tabindex="0" role="region" aria-label="Which voice suits which recipe"><table><thead><tr><th>Recipe</th><th>Use it when</th><th>Voices that fit</th></tr></thead><tbody>
       <tr><td>One-page report</td><td>Someone needs to know how a period went</td><td>Analyst, executive brief</td></tr>
       <tr><td>Proposal</td><td>A customer has to choose and say yes</td><td>Practical instructor, executive brief</td></tr>
       <tr><td>Scrolling explainer</td><td>People need to understand a process or an idea</td><td>Teacher, practical instructor, keynote</td></tr>
@@ -1567,7 +1567,7 @@ html[data-view=voice-keynote]{scroll-snap-type:y proximity}
     <p>The repository holds a skill called <b>artifact-studio</b>. It turns any content into a page by following the same menu, in this order: intake, recipe, voice, look, outline, parts, build, check.</p>
     <ul class="us-rules"><li>It invents no facts. A gap in the content is marked on the page and listed for the person.</li><li>It uses real customer words for quotes, or leaves the quote out.</li><li>It builds one self-contained file that works on a phone and with motion turned off.</li><li>It runs the pre-ship checklist and reports the result.</li><li>Anything that posts, sends or publishes waits for a person.</li></ul></section>
   <section class="us-s"><h3>Where things are in the repository</h3>
-    <div class="us-files"><table><thead><tr><th>You want</th><th>Open</th></tr></thead><tbody>
+    <div class="us-files" tabindex="0" role="region" aria-label="Where things are in the repository"><table><thead><tr><th>You want</th><th>Open</th></tr></thead><tbody>
       <tr><td>The step-by-step guide</td><td><code>STUDENT-GUIDE.md</code></td></tr>
       <tr><td>Sentences to copy</td><td><code>level-simple/</code></td></tr>
       <tr><td>Recipe, voice and look cards, and the design spec</td><td><code>level-working/</code></td></tr>

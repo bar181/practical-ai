@@ -35,6 +35,9 @@ Checked on 2026-11-15, in Chrome:
 - Every tab and page at 390 and 1280 pixels wide: no script errors, no sideways scrolling.
 - The script path used by browsers without scroll-driven animations.
 - Arithmetic in the examples: report rows add up to the totals, and percentages match.
+- An automated accessibility scan (axe-core, WCAG 2 A and AA rules) of all seventeen views with
+  motion turned off: no violations after fixes. An automated scan covers only part of the
+  standard.
 
 Not checked:
 

@@ -76,8 +76,10 @@ The skill's "Rules that never bend" section is binding. The three that matter mo
 
 ## Running without skill support
 
-In an assistant that cannot load skills, paste `SKILL.md` into the project instructions and attach
-the five reference files. The behaviour is the same.
+In an assistant that cannot load skill folders, paste
+[`SKILL-single-file.md`](../../skills/artifact-studio/SKILL-single-file.md) into the project
+instructions. It condenses the skill and its cards into one file. The full reference files have
+more detail and take precedence where the two differ.
 
 ## Known limits
 

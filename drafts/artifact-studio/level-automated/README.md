@@ -19,7 +19,7 @@ The skill is the folder [`skills/artifact-studio/`](../../../skills/artifact-stu
 | --- | --- |
 | Claude, with skills turned on | Add the folder as a skill. It is then loaded when you ask for a page or say "use the artifact-studio skill" |
 | An agent that reads skill folders, such as Claude Code or Codex | Copy the folder into the agent's skills directory |
-| Any other assistant | Create a Project. Paste `SKILL.md` into its instructions and attach the files in `references/` and `assets/` |
+| Any other assistant | Create a Project and paste [`SKILL-single-file.md`](../../../skills/artifact-studio/SKILL-single-file.md) into its instructions. It is the whole skill condensed into one file |
 
 The skill uses the open Agent Skills format: a `SKILL.md` with a name and a description, plus
 reference files it reads when needed.
