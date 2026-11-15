@@ -57,3 +57,49 @@ t=t.replace('__PATHS__',paths).replace('__DATA__',data).replace('__TOPHEX__',A['
 kb=round(len(t.encode())/1024); t=t.replace('__KB__',f'{kb:,}')
 left=re.findall(r'__[A-Z]+__|^@@\w+',re.sub(r'data:[^")]+','',t),flags=re.M); assert not left, left
 open(os.path.join(HERE,'..','artifact-studio.html'),'w').write(t); print('built',kb,'KB;',len(names),'views:',' '.join(n for n,_,_ in names))
+
+# ---- export the sentences and the component catalogue as Markdown, so the docs never drift from the demo
+def export_docs():
+    V=os.path.join(HERE,'views'); un=html.unescape
+    def read(n): return open(os.path.join(V,n)).read()
+    files=sorted(os.listdir(V))
+    lv=[]  # (kind,title,about,[b,a,e])
+    for f in files:
+        t=read(f); m=re.search(r'^@@levels (.*)$',t,re.M)
+        if not m: continue
+        title=re.search(r'data-title="([^"]*)"',t).group(1)
+        about=un(re.search(r'<section class="anat">.*?<p class="measure">(.*?)</p>',t,re.S).group(1))
+        lv.append(('voice' if 'voice-' in f else 'recipe',title,about,[x.strip() for x in m.group(1).split('||')]))
+    parts=[]
+    for sec in re.findall(r'<section class="spec".*?</section>',read('30-parts.html'),re.S):
+        q,effort,made,grow,use=[x.strip() for x in re.search(r'^@@ask (.*)$',sec,re.M).group(1).split('||')]
+        parts.append((re.search(r'<h2>(.*?)</h2>',sec).group(1),un(re.search(r'<p class="measure">(.*?)</p>',sec,re.S).group(1)),un(q),effort,made,grow,use))
+    photo=[]; pt=read('20-photo.html')
+    for sec in re.findall(r'<section class="spec".*?</section>',pt,re.S):
+        name=re.search(r'<h2>(.*?)</h2>',sec).group(1); facts=dict((a,un(b)) for a,b in re.findall(r'<dt>(.*?)</dt><dd>(.*?)</dd>',sec))
+        q=re.search(r'<blockquote[^>]*>(.*?)</blockquote>',sec,re.S).group(1).strip()
+        photo.append((name,un(re.search(r'<p class="measure">(.*?)</p>',sec,re.S).group(1)),un(q),facts['Effort'],facts['Made here with'],facts['Grow into'],facts['Seen in']))
+    looks=re.findall(r"\{id:'(\w+)',name:'([^']+)',line:'([^']+)',voice:'([^']+)',by:'([^']+)',ask:'([^']+)'\}",pt)
+    o=['# Sentences','','Every sentence in the studio, in one place. Copy one, attach your notes (and a photo if the page uses one), and paste both into a chat assistant.','',
+       '**Status: untested.** These sentences describe what the demo pages do. They have not yet been run in fresh chats and scored. Record results in [`sentence-test.md`](sentence-test.md).','',
+       'This file is generated from the demo by `level-demo/source/build.py`. Edit the views, not this file.','']
+    for kind,head in (('recipe','Recipes'),('voice','Voices')):
+        o+=[f'## {head}','']
+        for k,title,about,(b,a,e) in lv:
+            if k!=kind: continue
+            o+=[f'### {title}','',about,'',f'- **Beginner:** {b}',f'- **Advanced:** {a}',f'- **Expert:** {e}','']
+    for head,rows,last in (('Page components',parts,'Use it for'),('Photo components',photo,'Seen in')):
+        o+=[f'## {head}','']
+        for name,blurb,q,effort,made,grow,use in rows:
+            if name=='Looks and voices':
+                o+=[f'### {name}','',blurb,'']+[f'- **{n}:** {a}' for i,n,line,voice,by,a in looks]+['']; continue
+            o+=[f'### {name}','',blurb,'',f'> {q}','',f'Effort: {effort} {last}: {use.rstrip(".")}.','']
+    open(os.path.join(HERE,'..','..','level-simple','sentences.md'),'w').write('\n'.join(o).rstrip()+'\n')
+    c=['# Component catalogue','','The parts a page can be built from. Each row is a working example in the studio demo. Pick parts that carry content; never add one for decoration.','',
+       'Generated from the demo by `drafts/artifact-studio/level-demo/source/build.py`.','']
+    for head,rows in (('Page components (no photo needed)',parts),('Photo components',photo)):
+        c+=[f'## {head}','','| Component | What it is for | How it is made | Grow into |','| --- | --- | --- | --- |']
+        c+=[f'| {n} | {b} | {made} | {grow} |' for n,b,q,effort,made,grow,use in rows]+['']
+    sk=os.path.join(HERE,'..','..','..','..','skills','artifact-studio','references','components.md')
+    open(sk,'w').write('\n'.join(c).rstrip()+'\n'); print('docs:',len(lv),'level sets,',len(parts),'page parts,',len(photo),'photo parts')
+export_docs()

@@ -1,87 +1,73 @@
-# Component gallery
+# Level demo: the studio in one file
 
-One photo, twelve components. A single page that shows what a chat assistant can build from one
-picture, with the sentence that asks for each effect.
+[`artifact-studio.html`](artifact-studio.html) is the whole studio as a single page with six tabs.
+Nothing to set up. Download it and open it in a browser. GitHub shows HTML files as source, so it
+has to be opened locally.
 
-**Think of it as:** a paint chart. You do not learn the chemistry. You point at a swatch and say
-"that one".
+**Think of it as** a showroom. Every item on the floor works, and each has a tag saying how to
+order one.
 
-## Open it
+## What is in it
 
-GitHub shows HTML files as source. To see the page, download
-[`component-gallery.html`](component-gallery.html) and open it in a browser. It is one file of
-769 KB with the photo and fonts inside it, and it loads nothing from the network.
+| Tab | What it shows | Count |
+| --- | --- | --- |
+| Start | A sentence builder: choose a recipe, a voice, a look and a level, then copy the sentence | |
+| Recipes | Whole pages made from the parts: a report, a proposal, an explainer, a landing page | 4 |
+| Voices | The same case made seven ways, each a complete page | 7 |
+| Page components | Parts that need no photograph: numbers, timeline, tables, chart, questions and more | 12 |
+| Photo components | Parts built from one photograph: pan and zoom, scrolling tour, line art and more | 12 |
+| How to use | The three levels, steps for people, rules for agents | |
 
-## What is on the page
+Every voice and recipe page ends with "Behind this page": how it is built, its design rules, and
+the sentence that asks for it at beginner, advanced and expert level.
 
-| Component | What it shows |
-| --- | --- |
-| Pan and zoom | A slow documentary zoom on a still photo |
-| Parallax window | The photo moving slower than the page |
-| Photo-filled type | One large word with the photo showing through the letters |
-| Scrolling photo tour | The photo stays put and zooms to a new detail with each paragraph |
-| Self-drawing line art | A line drawing that draws as you scroll, then fades into the photo |
-| Chart from the photo | Brightness from top to bottom, and the six main colours, both measured from the pixels |
-| Before and after | Two versions of one picture with a divider to drag |
-| Looks and voices | Five colour treatments, each paired with a writing voice |
-| Frosted glass card | Facts on a blurred pane over the photo |
-| Bento grid | A summary as tiles of different sizes |
-| Swipe gallery | Cards that snap sideways one at a time |
-| Flip postcard | A photo with a note on the back |
+## Facts about the file
 
-The page also has a reading progress bar and three reference lists: pages worth studying, free
-tools to grow into, and skills that already exist.
-
-The sentences are collected in
-[`../level-simple/component-sentences.md`](../level-simple/component-sentences.md). The research
-behind the reference lists is in [`../landscape-review.md`](../landscape-review.md).
+- One HTML file of about 1.4 MB. Two photographs and fifteen subset fonts are inside it.
+- It loads nothing from the network and uses no libraries.
+- Tabs are views in the same file, switched by the address after the `#`.
+- All example companies, people and figures are invented, and each page says so.
 
 ## What was checked, and what was not
 
-Checked on 2026-11-14:
+Checked on 2026-11-15, in Chrome:
 
-- Rendered in Chrome at phone width (390 px) and desktop width (1280 px) with no script errors and
-  no sideways scrolling.
-- Both scroll paths: the browser's own scroll-driven animations, and the script used where a
-  browser lacks them.
-- The numbers on the page come from the photo. `source/prepare_assets.py` computes them.
+- Every tab and page at 390 and 1280 pixels wide: no script errors, no sideways scrolling.
+- The script path used by browsers without scroll-driven animations.
+- Arithmetic in the examples: report rows add up to the totals, and percentages match.
 
 Not checked:
 
-- A real iPhone or Android phone, Safari or Firefox.
-- Whether the twelve sentences reproduce these effects when pasted into a fresh chat. This is the
-  main open test.
+- A real phone, Safari or Firefox.
+- A screen reader. Controls use standard elements and labels, and that is as far as it went.
 - Anyone other than the author using it.
 
-## Known gaps
-
-- It shows effects, not finished pages. Nothing here is a proposal, a report or an explainer yet.
-- Everything is written by hand. The free tools in the reference lists are named, not used.
-- The treeline, island and trunk in the line art are traced from the photo's pixels. The branches,
-  reeds and ripples are sketched to match and are approximate.
-- The fifth voice card is a guess at the repository owner's teaching style and has not been
-  corrected by him.
-
-## Rebuild it
+## Source and rebuild
 
 ```
 cd source
-python3 prepare_assets.py --photo photo.jpg --fonts path/to/fonts
+python3 prepare_assets.py --lake photos/lake.jpg --sunset photos/sunset.jpg --fonts path/to/fonts
 python3 build.py
 ```
 
-`prepare_assets.py` needs pillow, numpy, fonttools and brotli, and a folder holding the National
-Park and Crimson Pro font files named in its header. `build.py` writes `component-gallery.html`
-one folder up.
+| File | Role |
+| --- | --- |
+| `source/shell.html` | The page frame: tabs, the router, shared helpers |
+| `source/base.css` | Shared styles |
+| `source/views/` | One file per tab or page: style, markup, script |
+| `source/prepare_assets.py` | Encodes photos and fonts, measures the lake photo, traces its line art. Writes `assets.json` |
+| `source/build.py` | Assembles the page. Also regenerates `level-simple/sentences.md` and the skill's component catalogue |
 
-A rebuild from `source/photo.jpg` looks the same but is not byte for byte identical to the
-committed page, because the photo is compressed a second time. The committed page was built from
-the original camera file. To use your own picture, pass it with `--photo`. The tour stops, the
-crops and the page text describe the lake photo, so edit `page-template.html` to match.
+`prepare_assets.py` needs pillow, numpy, fonttools and brotli, and a folder holding the font files
+named in its header. `assets.json` is a build product and is not committed.
+
+A rebuild from the stored photos looks the same but is not byte for byte identical, because the
+photos are compressed a second time.
 
 ## Credits and licences
 
-- Photo: taken by the repository owner. Saved without location or camera metadata.
-- Fonts: National Park and Crimson Pro, embedded as subsets under the SIL Open Font License 1.1.
-  The licence texts are in [`source/licences/`](source/licences/).
+- Photographs: taken by the repository owner. Stored without location or camera data.
+- Fonts: National Park, Crimson Pro, Instrument Sans, JetBrains Mono, Gloock, Big Shoulders, Work
+  Sans and IBM Plex Serif, embedded as subsets under the SIL Open Font License 1.1. Licence texts
+  are in [`source/licences/`](source/licences/).
 - Code: Apache-2.0, like the rest of this repository.

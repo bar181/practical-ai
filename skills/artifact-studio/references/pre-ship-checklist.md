@@ -1,13 +1,14 @@
 # Pre-ship checklist
 
-Run this before you share or host a page. Ask your assistant to check each line too, then look
-yourself.
+Run this before a page is shared or hosted. An agent works through every line and reports the
+result. A person then looks at the page on a phone and checks the facts.
 
 ## Looks right
 
 - [ ] Reads well at phone width, with no sideways scrolling
 - [ ] Colours and fonts match the design spec
-- [ ] Follows the style card, including its "avoid" line
+- [ ] Follows the look card and the voice card, including each "avoid" line
+- [ ] With motion turned off, everything is still readable and nothing is missing
 - [ ] Text is easy to read against its background in light and dark mode
 
 ## Works right
@@ -16,11 +17,15 @@ yourself.
 - [ ] Every button and link does something
 - [ ] Usable with a keyboard alone
 - [ ] Still works after a refresh, with nothing remembered
+- [ ] Opens from a folder with no network connection, unless a library was agreed
 
 ## Says the right thing
 
 - [ ] Real content everywhere. No placeholder text
-- [ ] Every number and claim is true
+- [ ] Every number, name, date and quote can be found in the content that was supplied
+- [ ] Totals add up, and derived numbers show their working
+- [ ] Every gap is marked on the page and listed for the person
+- [ ] Customer quotes are real. Example content is labelled as an example
 - [ ] Nothing private, and nothing that belongs to someone else
 
 ## Before it goes public

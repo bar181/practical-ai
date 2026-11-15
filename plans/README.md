@@ -22,7 +22,7 @@ A tool can start at Beginner and reach Advanced at its automated level. The inde
 
 | # | Plan | In one line | Complexity | Research | Simple level |
 | --- | --- | --- | --- | --- | --- |
-| 1 | [Artifact studio](artifact-studio/) | Ask for a web page or small tool and choose its style, from clean to cinematic to scrollytelling, with optional video and audio add-ons. | Beginner to intermediate | Partly: tool facts checked 2026-11-14 | [Drafted](../drafts/artifact-studio/) |
+| 1 | [Artifact studio](artifact-studio/) | Pick a page type, a voice and a look from a menu of working examples, and get a page worth sharing built from your own content. | Beginner to advanced | Done: landscape review in the draft | [Drafted](../drafts/artifact-studio/) |
 | 2 | [Voice post drafter](voice-post-drafter/) | A draft post or newsletter that sounds like you, for you to edit and publish yourself. | Beginner | Not started | [Drafted](../drafts/voice-post-drafter/) |
 | 3 | [Short video guide](short-video/) | Pick the right route by length and purpose and finish a short video in under 30 minutes. | Beginner to intermediate | Partly: tool facts checked 2026-11-14 | [Drafted](../drafts/short-video/) |
 | 4 | Estimator | A first-draft quote with its reasoning, built from your own price list and written rules. Examples for management consulting, kitchen renovation and employment services. | | | No plan published. A candidate is in [`drafts/estimator/`](../drafts/estimator/). |

@@ -1,98 +1,102 @@
-# Artifact studio: student guide
+# Student guide: artifact studio
 
-By the end you will have a design spec of your own, and one page built twice in two different
-styles so you can see the difference a style card makes.
+You will make a page you are happy to share, from your own notes, in three sittings. Each sitting
+is one level. Stop at the level that is enough for you.
 
-## Why pages come out "meh"
+**Think of it as** ordering at a counter: the dish (recipe), how you like it (voice), and the
+plate (look).
 
-An assistant asked for "a page about X" has to guess the look. A guess aims for the middle, and the
-middle is generic. The fix is to stop making it guess: decide the look once, then name a style
-every time you ask.
+## What you need
 
-## Step 1: Fill in your design spec, once
+- A chat assistant that can make web pages. Claude and ChatGPT both can.
+- Notes for one real thing: last month's numbers, a quote you need to send, a process you keep
+  explaining, or a service you sell. Real content teaches more than a made-up exercise.
+- Ten minutes for the first level.
 
-Use [`level-simple/design-spec-template.md`](level-simple/design-spec-template.md). Ten minutes.
-Colours, fonts, spacing, tone of the words, three things you never want.
+## Before you start: look at the demo
 
-You will attach this to every request from now on.
+Download [`level-demo/artifact-studio.html`](level-demo/artifact-studio.html) and open it in a
+browser. Spend five minutes on the Recipes and Voices tabs. Notice which page you would be glad to
+have made. That is your target.
 
-## Step 2: Say what the page is for
+## Level 1, beginner: one sentence
 
-Two sentences: what it is for, and who will use it. Then name the one thing a visitor should do.
+**Time:** 10 minutes. **You will have:** a first page.
 
-**One page, one job.** A calculator calculates. A landing page lands. Split anything that does two.
+1. Decide which of the four recipes your notes fit.
 
-## Step 3: Pick a style card
+   | Your notes are about | Recipe |
+   | --- | --- |
+   | How a week, month or project went | One-page report |
+   | Something a customer has to say yes to | Proposal |
+   | How something works | Scrolling explainer |
+   | Something you want people to sign up for or buy | Landing page |
 
-Read [`level-simple/style-cards.md`](level-simple/style-cards.md).
+2. Open the demo's Start tab. Choose the recipe, leave the level on Beginner and copy the sentence.
+   Or copy one from [`level-simple/sentences.md`](level-simple/sentences.md).
+3. Paste the sentence into your assistant. Attach or paste your notes underneath.
+4. Open the result on your phone. Most people who receive it will read it there.
+5. Check every number and name against your notes. Fix anything wrong by telling the assistant
+   exactly what to change.
 
-| Style | Choose it when |
+**You are done when** the page says what your notes say and nothing else.
+
+**If it goes wrong**
+
+| What you see | What to say |
 | --- | --- |
-| Clean | The content is the point and should be read quickly |
-| Cinematic | You want an impression first and detail second |
-| Scrollytelling | There is a story or a sequence to walk through |
-| Dashboard | People will come back to check numbers |
-| Editorial | It is long-form reading |
+| It made up a number or a customer quote | "Remove anything that is not in my notes. Mark gaps with [needs: ...]." |
+| It looks like every other AI page | Go to level 2. That is what the voice and the look are for. |
+| Text is tiny or runs off the side on your phone | "Fix the layout at phone width. Nothing may scroll sideways." |
 
-## Step 4: Ask for it
+## Level 2, advanced: choose the voice, the look and the parts
 
-Give the assistant three things together: the two sentences, the design spec and the style card.
-For anything visual, ask for two directions and choose one.
+**Time:** 30 minutes. **You will have:** a page that looks like yours and sounds the way you chose.
 
-Give feedback in three lists: keep, change, remove.
+1. Fill in [`level-working/design-spec-template.md`](level-working/design-spec-template.md) once.
+   Your colours, your fonts and three things you never want. You will reuse it every time.
+2. Fill in [`level-working/content-brief-template.md`](level-working/content-brief-template.md) for
+   this page. It takes five minutes and prevents most rework.
+3. Choose a voice. Read the seven examples on the demo's Voices tab and pick the one whose page
+   you would want to receive. The [voice cards](../../skills/artifact-studio/references/voices.md)
+   say when each one fits.
+4. Choose a look. Use your design spec, or attach a photo and ask for colours taken from it, or
+   name a [look card](../../skills/artifact-studio/references/looks.md).
+5. On the demo's Start tab, set the level to Advanced and copy the sentence. Paste it with your
+   spec, your brief and your notes.
+6. Ask for parts by name. The demo's two component tabs give you the words: "show the three
+   numbers as big numbers that count up", "put the options in a comparison table".
+7. Run the [pre-ship checklist](../../skills/artifact-studio/references/pre-ship-checklist.md)
+   yourself.
 
-## Step 5: Run the pre-ship checklist
+**You are done when** someone who knows you would believe you made it.
 
-Use [`level-simple/pre-ship-checklist.md`](level-simple/pre-ship-checklist.md). The two most common
-failures in generated pages are a layout that breaks on a phone and text that is hard to read
-against its background.
+## Level 3, expert: let the skill do it
 
-## Step 6: Share or host it
+**Time:** an hour to set up, then minutes per page. **You will have:** a repeatable routine.
 
-| Route | Use when | Trade-off |
-| --- | --- | --- |
-| A shared link from your assistant | A quick demo or a private preview | Lives inside that product |
-| A hosted static site | It needs a public address or your own domain | Needs a hosting account. One option is a static site served from an edge platform, which an agent can deploy for you |
-| A page in a code repository | The work already lives in a repository | Simple. Check the limits of your plan |
+1. Install the `artifact-studio` skill. The steps are in
+   [`level-automated/README.md`](level-automated/README.md).
+2. Give it everything: notes, documents, spreadsheets, photos, a video link. Say "use the
+   artifact-studio skill" and name the recipe, voice and look if you have a preference.
+3. Read the delivery note it returns. It lists what it chose, what it assumed and what is missing.
+4. Answer its gaps, then ask for the final page.
+5. You decide whether and where it is published. The skill stops before that step.
 
-A public page is one share away from anyone. Keep private material out of it, and let a person,
-not an agent, make the decision to publish.
+**You are done when** you have made three different pages this way without editing the HTML.
 
-## Good habits
+## Words used in this guide
 
-1. **Design for the phone first.**
-2. **Real content, never placeholder text.** Placeholder text hides layout problems.
-3. **One primary action per screen.**
-4. **Keep a hand-built page in one self-contained file.**
-5. **Do not rely on the browser remembering things.** Saved state can come back empty.
-6. **Show a draft early.** Two rough directions beat one polished guess.
+| Word | Meaning |
+| --- | --- |
+| Recipe | A page type: what goes on it and in what order |
+| Voice | How the page speaks, which also changes what it says first |
+| Look | Colours, type and layout feel |
+| Part, or component | One building block, such as a price table or a scrolling photo tour |
+| Skill | A folder of instructions an assistant loads to do a job the same way every time |
+| Pre-ship checklist | The short list to run before anyone else sees the page |
 
-## Add-ons, for later levels
+## What this guide does not cover
 
-A page can carry more than text: a short explainer video, a 20-second avatar clip, a generated
-audio track. Each costs money per render and each needs a person to review it. They belong to the
-working and automated levels. See the short video guide for how each is made.
-
-## Guardrails
-
-- Never build a page that imitates another organisation's site, sign-in or branding.
-- No private or client material on a public page.
-
-## Try it
-
-1. Fill in the design spec.
-2. Ask for the same one-page explainer twice: once as Clean, once as Scrollytelling.
-3. Run both through the checklist. Note what the style card changed and what it did not.
-
-## Open slots in this draft
-
-- A gallery page showing one request in every style
-- One hosting route confirmed end to end, with exact steps
-- Example pages worth imitating, with a note on why each works
-
-## Sources
-
-Checked 2026-11-14.
-
-- [Managing an edge platform through an agent connection](https://www.fast.io/resources/mcp-server-for-cloudflare.md)
-- [Serving a static site and deploying it in one step](https://dev.to/umesh_malik/deploy-an-mcp-server-on-cloudflare-workers-free-stateless-at-the-edge-31d6)
+- Putting the page on the web. That belongs to the "Publishing a website" tool.
+- Video, audio and avatar add-ons. Those belong to the short video and training explainer tools.

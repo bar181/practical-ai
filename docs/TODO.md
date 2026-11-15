@@ -11,7 +11,7 @@ Status read from the folders on 2026-11-14: 5 of 20 simple levels drafted, 0 rev
 
 | # | Project | 1. Research | 2. Simple level and overview | Plan |
 | --- | --- | --- | --- | --- |
-| 1 | Artifact studio | Partly done | Drafted, needs review | [Plan](../plans/artifact-studio/) |
+| 1 | Artifact studio | Done | Drafted, needs review | [Plan](../plans/artifact-studio/) |
 | 2 | Voice post drafter | To do | Drafted, needs review | [Plan](../plans/voice-post-drafter/) |
 | 3 | Short video guide | Partly done | Drafted, needs review | [Plan](../plans/short-video/) |
 | 4 | Estimator | To do | Drafted, needs review | No plan |

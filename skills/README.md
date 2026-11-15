@@ -12,6 +12,7 @@ writing it down once saves doing it from memory each time.
 | Skill | What it does | Used by |
 | --- | --- | --- |
 | [`plan-writer`](plan-writer/) | Researches a tool and writes its plan from the template, then updates the indexes | Every plan in [`../plans/`](../plans/) |
+| [`artifact-studio`](artifact-studio/) | Turns any content into one polished HTML page by choosing a recipe, a voice and a look, then building and checking it. Holds the canonical recipe, voice and look cards | [Artifact studio](../drafts/artifact-studio/) |
 | [`landscape-review`](landscape-review/) | Checks what already exists and frames the build-or-license decision, with costs and sources | Step 2 to 4 of the [build process](../plans/plans-template/BUILD-PROCESS.md) |
 
 ## Identified, not yet written
@@ -20,8 +21,7 @@ These will be written when the tool they belong to reaches its simple level.
 
 | Skill | What it would do | Belongs to |
 | --- | --- | --- |
-| Style card applier | Builds a page from a design spec and a chosen style card, then runs the pre-ship checklist | Artifact studio |
-| Pre-ship check | Checks a page for phone layout, contrast, real content and private material before it is shared | Artifact studio, publishing a website |
+| Pre-ship check | Checks any page for phone layout, contrast, real content and private material before it is shared. The checklist exists inside `artifact-studio`; a standalone skill is for pages made elsewhere | Publishing a website |
 | Voice drafter | Drafts a post from a voice file and turns feedback into a rule | Voice post drafter |
 | Quote drafter | Builds a first-draft quote from a price list and written rules, showing its arithmetic | Estimator |
 | Script and beat sheet | Turns a brief and a style card into a beat sheet and a timed script | Short video guide, training explainer |

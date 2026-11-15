@@ -1,5 +1,7 @@
 # Style cards
 
+> The canonical voice cards for this repository are in [`skills/artifact-studio/references/voices.md`](../../../skills/artifact-studio/references/voices.md). The teaching styles below are the video versions of the same voices. If the two disagree, the canonical cards win.
+
 A style card has six fields: inspired by, beats, on-screen rule, visuals, voice, best for. To add a
 style, fill in one more card.
 

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PAGE TITLE</title>
+<style>
+:root{
+  /* Recipe: ___  Voice: ___  Look: ___  (fill these in; they are the brief for everything below) */
+  --bg:#f4f6f8;      /* page background */
+  --ink:#16202a;     /* text, and background of dark bands */
+  --muted:#55616e;   /* secondary text: must pass 4.5 to 1 on --bg */
+  --panel:#ffffff;   /* cards and figures */
+  --accent:#1f5f8b;  /* the one colour that means "look here" or "act" */
+  --display:system-ui,-apple-system,"Segoe UI",sans-serif;
+  --text:Georgia,"Iowan Old Style",serif;
+  color-scheme:light;
+}
+@property --p{syntax:"<number>";inherits:true;initial-value:0}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.15rem/1.55 var(--text);overflow-x:clip}
+h1,h2,h3{font-family:var(--display);margin:0;text-wrap:balance;line-height:1.08}
+p{margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:900px;margin-inline:auto;padding-inline:20px}
+.measure{max-width:34em}
+section{padding-top:56px}
+button,.button{font:700 1rem/1 var(--display);min-height:48px;padding:0 22px;border-radius:10px;border:0;background:var(--accent);color:#fff;cursor:pointer}
+
+/* Scroll-linked parts: add class "sd" to an element, then use var(--p) (0 to 1) in its CSS. */
+@keyframes p01{from{--p:0}to{--p:1}}
+@supports ((animation-timeline:view()) and (animation-range:entry)){
+  html:not(.sd-js) .sd{animation:p01 linear both;animation-timeline:view();animation-range:cover 0% cover 100%}
+}
+/* One-time reveals: add class "see". The script adds "in" when it is on screen. Resting state is visible. */
+.anim .see:not(.in){opacity:0;transform:translateY(18px)}
+.anim .see{transition:opacity .7s ease,transform .7s ease}
+@media (prefers-reduced-motion:reduce){
+  .sd{animation:none!important;--p:.5}
+  .anim .see:not(.in){opacity:1;transform:none}
+  *{transition:none!important;animation:none!important}
+}
+</style>
+</head>
+<body>
+<main>
+  <header class="wrap"><section><h1>ONE LINE THAT SAYS WHAT THIS PAGE IS FOR</h1><p class="measure">The first sentence of real content.</p></section></header>
+  <!-- Sections follow the chosen recipe, in the order the chosen voice sets. -->
+</main>
+<script>
+(()=>{
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches,html=document.documentElement;
+const clamp=(v,a=0,b=1)=>Math.min(b,Math.max(a,v));
+/* scroll driver for browsers without native scroll-driven animations */
+if(!CSS.supports('(animation-timeline: view()) and (animation-range: entry)')&&!reduce){
+  html.classList.add('sd-js');const els=[...document.querySelectorAll('.sd')];let tick=false;
+  const upd=()=>{tick=false;const vh=innerHeight;for(const e of els){const r=e.getBoundingClientRect();e.style.setProperty('--p',clamp((vh-r.top)/(vh+r.height)).toFixed(4))}};
+  addEventListener('scroll',()=>{if(!tick){tick=true;requestAnimationFrame(upd)}},{passive:true});addEventListener('resize',upd);upd();
+}
+/* one-time reveals */
+if(!reduce&&'IntersectionObserver' in window){document.body.classList.add('anim');
+  const io=new IntersectionObserver((es,o)=>{for(const e of es)if(e.isIntersecting){e.target.classList.add('in');o.unobserve(e.target)}},{threshold:.3});
+  document.querySelectorAll('.see').forEach(n=>io.observe(n));}
+})();
+</script>
+</body>
+</html>
