@@ -63,6 +63,10 @@ without collisions.
 | Tick boxes with a progress bar | `45-voice-practical.html` |
 | A table that stacks on phones | `47-voice-brief.html` |
 | Price cards, questions, tabs, callouts, ring | `30-parts.html` |
+| Page tabs that switch with scripts off | `shell.html` (styles) and `build()` in `build.py` (radio buttons, labels and the rules that show one view) |
+| Tap-to-choose buttons that write a request | `72-l2-mix.html` |
+| One line dressed in nine looks | `73-l2-looks.html` |
+| A Markdown file shown as a tab | `md_view()` in `build.py` |
 
 Adapt the pattern. Do not copy the example content: every company and figure in it is invented.
 
