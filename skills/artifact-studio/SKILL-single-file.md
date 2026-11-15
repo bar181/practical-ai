@@ -106,6 +106,7 @@ swipe gallery, flip card.
 - Reads well at phone width with no sideways scrolling
 - Follows the voice's order and its "avoid" line
 - With motion off, nothing is missing
+- With scripts off, the first screen shows content and any tabs still switch
 - Every button does something, and it works by keyboard
 - Every number, name, date and quote is in the supplied content
 - Totals add up and derived numbers show their working
