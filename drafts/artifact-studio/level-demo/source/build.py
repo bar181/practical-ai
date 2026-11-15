@@ -54,14 +54,16 @@ def md_view(name,title,path,raw=None):
     return f'<div class="view" id="v-{name}" data-title="{html.escape(title)}"><article class="md"><div class="wrap">{inner}</div></article></div>'
 
 # every view file: css always, script and markup kept by name
-css=[];VIEW={};VJS={};LIB=[]
+css=[];VIEW={};VJS={};LIB=[];LV={}
 for f in sorted(glob.glob(os.path.join(HERE,'views','*.html'))):
     t=open(f).read()
     for m in re.finditer(r'<style>(.*?)</style>',t,re.S): css.append(m.group(1).strip())
     sc=[m.group(1).strip() for m in re.finditer(r'<script>(.*?)</script>',t,re.S)]
     t=re.sub(r'<style>.*?</style>|<script>.*?</script>','',t,flags=re.S).strip()
+    lvm=re.search(r'^@@levels (.*)$',t,re.M)
     t=re.sub(r'^@@ask (.*)$',ask_macro,t,flags=re.M); t=re.sub(r'^@@levels (.*)$',levels_macro,t,flags=re.M); t=re.sub(r'^\s*@@md (.*)$',md_macro,t,flags=re.M)
     m=re.search(r'id="v-([\w-]+)"',t)
+    if m and lvm: LV[m.group(1)]=[x.strip() for x in lvm.group(1).split('||')]
     if not m: LIB+=sc; continue
     VIEW[m.group(1)]=t; VJS[m.group(1)]=sc
 MD={ # name: (title, path, note shown above a copy-ready block or None to render the Markdown)
@@ -100,7 +102,7 @@ _v=open(SKILL+'/references/voices.md').read()
 _use={n.strip():u.strip() for u,n in re.findall(r'^\| ([^|]+) \| ([^|]+) \|$',_v[_v.index('## Choosing'):_v.index('## Keynote')],re.M) if n.strip() not in ('Use','---')}
 _by=dict(re.findall(r'^## ([^\n]+)\n\n\| Field \| \|\n\| --- \| --- \|\n\| Inspired by \| ([^|]+) \|',_v,re.M))
 VNAME={'voice-keynote':'Keynote','voice-story':'Storyteller','voice-teacher':'Teacher','voice-pitch':'Pitch','voice-practical':'Practical instructor','voice-analyst':'Analyst','voice-brief':'Executive brief'}
-def about(n,t):
+def about(n,t,key='all'):
     if n in VNAME:
         k=VNAME[n]; u=_use[k]; by=_by[k].strip(); by=by[0].lower()+by[1:] if by.startswith(('The ','A ')) else by; txt=f'<b>The {k.lower()} voice.</b> Inspired by {html.escape(by)}. Use it when the reader should {u[0].lower()+u[1:]}.'
         note='A full example follows.'
@@ -108,7 +110,10 @@ def about(n,t):
         m=re.search(r'<section class="anat">.*?<p class="measure">(.*?)</p>',t,re.S); first=re.split(r'(?<=\.) ',m.group(1).strip())[0]
         txt=f'<b>The {re.search(chr(100)+'ata-title="([^"]*)"',t).group(1).lower()} recipe.</b> {first}'; note='A full example follows, with invented content.'
     else: return t
-    strip=f'<aside class="about" aria-label="About this example"><div class="wrap"><p>{txt}</p><p class="about-n">{note} <a href="#anat-{n}" data-jump="anat-{n}">How it is built, and the sentence that asks for it</a></p></div></aside>'
+    i={'beginner':0,'advanced':1}.get(key); ask=''
+    if i is not None and n in LV: ask=f'<div class="ask"><h3>{("Beginner","Advanced")[i]}: ask for it like this</h3><blockquote>{LV[n][i]}</blockquote><button class="copy" type="button">Copy</button></div>'
+    if ask and i==1: ask='<details class="about-d"><summary>Show the advanced request that asks for this page</summary>'+ask.replace('<h3>Advanced: ask for it like this</h3>','<h3>Paste it with your brief and notes</h3>')+'</details>'
+    strip=f'<aside class="about" aria-label="About this example"><div class="wrap"><p>{txt}</p>{ask}<p class="about-n">{note} <a href="#anat-{n}" data-jump="anat-{n}">How it is built{"" if ask else ", and the sentence that asks for it"}</a></p></div></aside>'
     t=t.replace('<section class="anat">',f'<section class="anat" id="anat-{n}">',1)
     return re.sub(r'(<div class="view"[^>]*>)',lambda m:m.group(1)+strip,t,count=1)
 SHELL=open(os.path.join(HERE,'shell.html')).read()
@@ -134,7 +139,7 @@ def build(key):
     mast=f'<header class="mast"><div class="wrap"><p class="mast-t"><span>Artifact studio</span> {html.escape(title)}</p><p class="mast-l">{html.escape(lead)}</p></div></header>'
     body=[]
     for k,n in enumerate(order):
-        t=about(n,VIEW[n]); prev=order[k-1] if k else None; nxt=order[k+1] if k+1<len(order) else None
+        t=about(n,VIEW[n],key); prev=order[k-1] if k else None; nxt=order[k+1] if k+1<len(order) else None
         pager='<nav class="pager" aria-label="Previous and next tab"><div>'+(f'<label for="t-{prev}">← {html.escape(title_of(prev))}</label>' if prev else '<span></span>')+(f'<label for="t-{nxt}">{html.escape(title_of(nxt))} →</label>' if nxt else '<span></span>')+'</div></nav>'
         body.append(t[:t.rindex('</div>')]+pager+'</div>')
     js=LIB+[x for n in order for x in VJS[n]]
