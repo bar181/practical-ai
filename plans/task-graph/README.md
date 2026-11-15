@@ -27,6 +27,7 @@ that shows what to do first and what is blocked, in under ten minutes.
 | [Task Master](https://www.mdskills.ai/skills/claude-task-master), an open-source task manager for coding agents | 15 Nov 2026 | A written requirements document is parsed into one tasks file with dependencies and priorities, and the agent asks for the next task. A small set of core tools keeps the cost down |
 | [prd-taskmaster](https://awesome.ecosyste.ms/projects/github.com%2Fanombyte93%2Fprd-taskmaster), an open-source engine | 15 Nov 2026 | Interview first, then a graded requirements page, then a task graph in dependency order. A task is done only with evidence |
 | [Spec-driven development](https://www.verdent.ai/guides/coding/spec-driven-development) | 15 Nov 2026 | Tasks are the unit that can be handed out. Each is small enough to review alone |
+| Task lists and planning modes built into coding assistants | Known from using the products, not researched today | They hold the steps for one session and are gone after it. They show order, not what blocks what, and they draw nothing a decision maker can read |
 | Work breakdown structures, the critical path and Gantt charts | Long-standing project practice, no single source | Break work down until each piece has one owner and one result. The longest chain of dependent tasks sets the finish date |
 | [The artifact studio](../../drafts/artifact-studio/) in this repository | 15 Nov 2026 | Its templates, looks and one-file output are reused for every view |
 

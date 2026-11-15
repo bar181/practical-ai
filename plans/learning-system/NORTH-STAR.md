@@ -39,6 +39,7 @@ in one sentence. Reference material belongs in the [core memory system](../core-
 | [Mistake Notebook Learning](https://www.alphaxiv.org/abs/2512.11485.md), a 2026 paper | 15 Nov 2026 | Group similar failures before writing the rule, so the notebook holds a few general lessons and not hundreds of near-duplicates |
 | [Supabase: hybrid search](https://supabase.com/docs/guides/ai/hybrid-search) | 15 Nov 2026 | Keyword search and similarity search in one Postgres query, each with a weight. Exact terms and close meanings are both found |
 | [Supabase: semantic search](https://supabase.com/docs/guides/ai/semantic-search) | 15 Nov 2026 | Similarity is combined with ordinary column filters, so labels and flags narrow the search first |
+| What assistants do on their own | Known from using the products, not researched today | An assistant may remember a correction within its own memory, but there is no log you can read, review or retire, and nothing carries to another assistant or to a colleague |
 | Project "lessons learned" registers and blameless reviews | Common practice, no single source | A fixed set of columns, a named owner for each lesson, and a review on a schedule |
 
 **Decision:** build on top of what exists. The store is a spreadsheet or a Postgres table that

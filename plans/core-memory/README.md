@@ -35,6 +35,7 @@ that worked.
 | [Developers Digest: memory providers compared](https://www.developersdigest.tech/blog/best-ai-agent-memory-providers-2026) | 15 Nov 2026 | Mem0 extracts and retrieves. Zep's open engine, Graphiti, keeps a graph of facts with times. Letta lets the agent edit its own memory |
 | [Techsy: memory tools](https://techsy.io/en/blog/best-ai-agent-memory-tools) | 15 Nov 2026 | Products in this field change their terms within months. One retired its self-hosted edition. Own the store, and treat any layer above it as replaceable |
 | [A guide to agent knowledge systems](https://dev.to/sebastian_chedal/agent-memory-038-knowledge-systems-compared-2026-guide-568p) | 15 Nov 2026 | Ask five questions before picking a system. "Build it yourself on files" is a real option, and is the path this project leaves to others |
+| Memory built into the assistants themselves | Known from using the products, not researched today | Assistants now remember things between chats. That memory belongs to one vendor, is not a table you can filter by label, and does not follow you to another assistant. A store you own does all three. Check what each assistant offers before building level 2 |
 | [Supabase: hybrid search](https://supabase.com/docs/guides/ai/hybrid-search) | 15 Nov 2026 | One Postgres table can answer by keyword and by meaning together |
 
 **Decision:** build on top of what exists, and stay small. The store is a sheet or a Postgres

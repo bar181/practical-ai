@@ -29,6 +29,7 @@ defend: the question, the options, the evidence with working links, and what is 
 | [StrategyU: the issue tree in practice](https://strategyu.co/issue-tree) | 15 Nov 2026 | The tree and the problem statement are revisited again and again. The sequence is a loop, not a line |
 | [PrepLounge: the Pyramid Principle](https://www.preplounge.com/en/case-interview-basics/issue-tree) | 15 Nov 2026 | Present answer first: the recommendation, then the reasons, then the evidence |
 | The Deckary page above, on the hypothesis-driven approach | 15 Nov 2026 | Its known weakness is looking only for evidence that agrees. Seek the evidence against each hypothesis on purpose |
+| Research features built into assistants | Known from using the products, not researched today | They gather sources and write a long report. They do not follow a fixed sequence you can review step by step, and a cited link is not the same as a checked one |
 | SWOT, decision matrices and the pre-mortem | Long-standing practice, no single source | A short set of analyses chosen to fit the question, never all of them every time |
 
 **Decision:** build on top. The frameworks are public and well described. What is built here is
