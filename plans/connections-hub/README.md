@@ -30,12 +30,13 @@ copy whole transcripts or mailboxes anywhere.
 | --- | --- | --- |
 | [Layer3 Labs: Granola MCP setup guide](https://www.layer3labs.io/guides/granola-mcp) | 15 Nov 2026 | Granola has an official MCP server with sign-in. It suits asking questions in a chat. It is not built for unattended background runs, where its API and webhooks are the route |
 | [ContextBolt: Granola MCP](https://contextbolt.com/blog/granola-mcp/) | 15 Nov 2026 | What you can read depends on the plan: full transcripts are a paid feature, and they can be too large to send in one piece |
-| [Spinach: MCP and meeting transcripts](https://www.spinach.ai/blog/what-is-mcp-server-meeting-transcripts-2), a vendor's page | 15 Nov 2026 | By this vendor's account, Zoom, Teams and Meet do not offer transcripts through MCP themselves, so a meeting-notes product or an export sits in between. Verify before relying on it |
+| [Spinach: MCP and meeting transcripts](https://www.spinach.ai/blog/what-is-mcp-server-meeting-transcripts-2), a vendor's page | 15 Nov 2026 | It says Zoom offers no MCP route of its own. **The connector directory below contradicts this**, which is the lesson: check the directory on the day, and treat a vendor's account of its rivals with care |
+| The assistant's own connector directory | 15 Nov 2026 | Listed today: Gmail, Google Drive, Google Sheets, Granola, a Zoom connector that searches meetings and recordings, Grain, and Supabase. Seen in the directory, not tested |
 | [Circleback: MCP meeting tools](https://circleback.ai/blog/what-is-mcp-meeting-tool), a vendor's page | 15 Nov 2026 | Several meeting-notes products now have MCP servers. Answers improve when meetings and email are searched together |
 | [A walkthrough of stacking connectors](https://openclawdatabase.com/news/videos/2026-06-25-granola-mcp-connector-claude-chatgpt/index.md) | 15 Nov 2026 | Meeting notes beside drive, email and calendar connectors already give an assistant a wide view. The same page warns that this is broad access to private data |
-| Connectors already available to the assistants people use | 15 Nov 2026 | Email, calendar and drive connectors exist. Level 1 should use them and build nothing |
 
-**Decision:** use what exists, and build only the intake step. Connecting is solved by others.
+**Decision:** use what exists, and build only the intake step. Level 1 pastes an export. Level 2
+uses the connectors a person already has. Connecting is solved by others.
 What is missing is the step between reading a source and having a clean, labelled record.
 
 ## Scope

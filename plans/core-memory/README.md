@@ -69,6 +69,20 @@ The same shape as a learning, so one viewer and one search serve both.
 | `status` | current, superseded, forgotten |
 | `sensitive` | yes or no. Rows marked yes are never exported or sent to a hosted model without a person's say |
 
+### Questions it must answer exactly
+
+| Question | How it is answered |
+| --- | --- |
+| What is our policy on this? | `kind = policy`, `topics` contains it, `status = current` |
+| Everything about one client or project | `labels` contains it, any kind, newest first |
+| Which sites did I save on this subject? | `kind = website` and `topics` |
+| What is due for review this month? | `review_by` within the month |
+| Where is the code we used for that? | `kind = code` or `repository`, by `keywords` |
+| What did this record replace? | `status = superseded`, linked by id |
+
+Similarity search, at level 3, answers "anything like this?" and is then narrowed by the same
+filters. It never replaces them.
+
 ### Levels
 
 | | Holds | Done when |

@@ -33,18 +33,18 @@ A report for the owner, 15 November 2026. The artifact studio is closed, the met
 | The value | You and your agents always know what to do first and what is blocked. |
 | Why it ranks here | Nothing private in it, so it can be shared and taught as it is. Every view reuses the artifact studio. It plans every other tool on this list, and it is the last step of a decision. |
 | The shape | One small task file. Five views drawn from it: a tree, a Mermaid diagram, a sticky-note board, a Gantt chart and a "ready now" list. |
-| Built on | An open-source tracker built for agents that only shows work with nothing blocking it, spec-driven development, and long-standing project practice. |
+| Built on | Two open-source task tools for coding agents, one that only shows work with nothing blocking it and one that turns a requirements page into a tasks file, plus long-standing project practice. |
 | North Star | [`plans/task-graph/README.md`](https://github.com/bar181/practical-ai/blob/studio/component-gallery/plans/task-graph/README.md) |
 
 ### 3. Decision support assistant: 82 of 100
 
 | | |
 | --- | --- |
-| What it is | A decision worked the way a consulting team would: frame, structure, hypothesise, gather, analyse, recommend, deliver, with every link checked. |
+| What it is | A decision worked the way a consulting team would: define, structure, prioritise, plan, analyse, synthesise, recommend, with every link checked. |
 | The value | A recommendation you can defend, in one sitting, with the working shown. |
 | Why it ranks here | Closest to the owner's paid work, and the frameworks are public and well described. The deliverables already exist in the studio. Ranked below the task graph only because it ends in one. |
 | The shape | Seven steps, a template for each, ending in a briefing deck and a plan. Level 3 adds your own material: transcripts, papers, spreadsheets. |
-| Built on | The seven-step backbone the large consulting firms share, issue trees with no overlaps or gaps, a hypothesis on each branch, and answer-first presentation. |
+| Built on | The seven-step process attributed to McKinsey, issue trees with no overlaps or gaps, a hypothesis on each branch, and answer-first presentation. An existing consulting skill does the structuring in text. Its listing describes no link checking and no visuals, which are the two things this adds. |
 | North Star | [`plans/decision-support/README.md`](https://github.com/bar181/practical-ai/blob/studio/component-gallery/plans/decision-support/README.md) |
 
 ### 4. Core memory system: 80 of 100
@@ -204,10 +204,24 @@ The sources, with links and dates, are in `drafts/project-method/base/SOURCES.md
 
 Not checked:
 
-- **The research is one sitting.** Each North Star lists three to six sources read today. Two of the sources on meeting tools are vendors describing their own market, and the pages say so.
+- **The research is one sitting.** Each North Star lists three to six sources read today. Two of the sources on meeting tools are vendors describing their own market. One of their claims was contradicted by the assistant's connector directory on the same day, and the North Star says so.
 - **No North Star is approved.** They are my reading of your five paragraphs. Each ends with open questions for you.
 - **The method has closed one tool.** No tool has yet been built with it from stage 1.
 - **Nothing new was built.** This sprint produced pages, a ranking and a revised method, as asked.
+
+## Self-score for this sprint
+
+| Line | Score | Evidence |
+| --- | --- | --- |
+| Did what was asked | 88 | Method revised from research, studio closed, list re-ranked with the existing tools kept, a North Star for each of your five, two more proposed, pushed to the branch |
+| Depth of research | 62 | Three to seven sources for each candidate, read in one sitting. Nothing was installed or tried. Two sources are vendors. One existing skill was read from its listing only |
+| A ranking you can argue with | 74 | The rubric and every sub-score are shown. The numbers are still one person's judgement |
+| Clean scaffolding | 85 | One page for each new candidate, in one form. The link, layout and skill gates pass |
+| Honest about limits | 88 | Each page says "not yet approved" and ends with open questions. Vendor claims are marked, and one that the connector directory contradicted is called out |
+| Approved by you | 0 | Nothing here has been approved. That is the next step, and it is yours |
+
+**Overall 66**, the plain average. Without the last line it is 79. The last line is the one that
+decides whether any of this is right.
 
 ## Decisions for you
 

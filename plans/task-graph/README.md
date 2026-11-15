@@ -24,12 +24,16 @@ that shows what to do first and what is blocked, in under ten minutes.
 | [Beads](https://github.com/steveyegge/beads), an open-source issue tracker for agents | 15 Nov 2026 | Tasks that block other tasks, and a "ready" list that shows only work with nothing open in front of it. An agent cannot skip a step it is never shown |
 | [A guide to Beads](https://betterstack.com/community/guides/ai/beads-issue-tracker-ai-agents/) | 15 Nov 2026 | A flat checklist hides order and priority. A graph with ids, epics and sub-tasks makes them explicit |
 | [Why agents skip steps](https://trilogyai.substack.com/p/how-to-fix-your-ai-agents-keep-cutting) | 15 Nov 2026 | Make each step its own task with an unambiguous "done". Skipping should be structurally impossible, not merely forbidden |
+| [Task Master](https://www.mdskills.ai/skills/claude-task-master), an open-source task manager for coding agents | 15 Nov 2026 | A written requirements document is parsed into one tasks file with dependencies and priorities, and the agent asks for the next task. A small set of core tools keeps the cost down |
+| [prd-taskmaster](https://awesome.ecosyste.ms/projects/github.com%2Fanombyte93%2Fprd-taskmaster), an open-source engine | 15 Nov 2026 | Interview first, then a graded requirements page, then a task graph in dependency order. A task is done only with evidence |
 | [Spec-driven development](https://www.verdent.ai/guides/coding/spec-driven-development) | 15 Nov 2026 | Tasks are the unit that can be handed out. Each is small enough to review alone |
 | Work breakdown structures, the critical path and Gantt charts | Long-standing project practice, no single source | Break work down until each piece has one owner and one result. The longest chain of dependent tasks sets the finish date |
 | [The artifact studio](../../drafts/artifact-studio/) in this repository | 15 Nov 2026 | Its templates, looks and one-file output are reused for every view |
 
-**Decision:** build on top. The task file is plain and small. For coding projects that outgrow it,
-hand over to a real tracker such as Beads: the plan says when.
+**Decision:** build on top. The task file is plain and small, and close to what Task Master
+already writes, so a plan can move between them. What these tools lack is what this one adds: a
+goal that is not code, and views a decision maker can read. For coding projects that outgrow the
+file, hand over to a real tracker such as Beads or Task Master: the plan says when.
 
 ## Scope
 

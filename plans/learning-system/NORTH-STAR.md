@@ -74,6 +74,37 @@ without anyone's history in it.
 | `source` | Where it came from: a session, a review, a person | Exactly |
 | `sensitive` | yes or no | Rows marked yes are never exported |
 
+### Questions it must answer exactly
+
+No guessing and no ranking: these are filters, and the same question always returns the same rows.
+
+| Question | How it is answered |
+| --- | --- |
+| What have we learned about this tool, at this stage? | `applies_to` and `status = accepted` |
+| What has gone wrong more than twice? | `kind = error` and `seen > 2` |
+| What worked that we did not expect? | `kind = worked` |
+| What is waiting for review? | `status = proposed` |
+| What is serious and still open? | `severity = high` and `status` is not retired |
+| Everything on one topic, newest first | `topics` contains it, sorted by `date` |
+| What may never leave this file? | `sensitive = yes` |
+
+At level 3 one more kind of question is added, and only one: "anything like this?", answered by
+similarity and then narrowed by the same filters.
+
+### What the earlier draft already has
+
+The [earlier draft](../../drafts/learning-system/) keeps a sheet with eleven columns: an id, a
+question, a recommended solution, context, keywords, a status, counts of worked and did not work,
+who confirmed it, and two dates. That shape carries over. This page adds the three kinds, the
+labels and topics, severity, `seen`, and the sensitive flag, and turns "question and solution"
+into "what happened and the rule". The `learning-log` skill is rewritten, not replaced.
+
+### What is already connected
+
+Seen in the assistant's connector directory on 15 November 2026: a Google Sheets connector that
+reads and updates values, which level 2 needs, and a Supabase connector, which level 3 needs. This
+is a note of what exists, not a test of either.
+
 ### Levels
 
 | | Holds | Done when |
