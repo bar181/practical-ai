@@ -4,7 +4,7 @@ Turn a topic into a taught video in a teaching style chosen from a menu.
 
 | Complexity | Research | Simple level | Draft |
 | --- | --- | --- | --- |
-| Intermediate | Not started | [Drafted](../../drafts/training-explainer/) | [`drafts/training-explainer/`](../../drafts/training-explainer/) |
+| Intermediate | Done: landscape review in the draft | [Drafted](../../drafts/training-explainer/) | [`drafts/training-explainer/`](../../drafts/training-explainer/) |
 
 **Think of it as:** A cover band's set list. The song stays the same. The arrangement changes how it lands.
 
@@ -37,7 +37,7 @@ outlines and will change.
 
 ## Established best practices
 
-_Research not started. This is the first step for this plan._
+Done. See the [landscape review](../../drafts/training-explainer/landscape-review.md) for what already exists, with dated sources.
 
 ## What it reuses
 

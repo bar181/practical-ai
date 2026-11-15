@@ -24,3 +24,7 @@ Copy this table. Fill the two right-hand columns. About 50 spoken words fills 20
 One sentence with five parts:
 
 `[subject] [doing what] [where], [camera move], [mood or light]`
+
+## Sound-off check
+
+Read only the on-screen words of the first three seconds. Do they say what the video is about? If not, rewrite the hook. Do not open with a greeting, your name or your brand.

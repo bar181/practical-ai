@@ -4,7 +4,7 @@ A draft post or newsletter that sounds like you, for you to edit and publish you
 
 | Complexity | Research | Simple level | Draft |
 | --- | --- | --- | --- |
-| Beginner | Not started | [Drafted](../../drafts/voice-post-drafter/) | [`drafts/voice-post-drafter/`](../../drafts/voice-post-drafter/) |
+| Beginner | Done: landscape review in the draft | [Drafted](../../drafts/voice-post-drafter/) | [`drafts/voice-post-drafter/`](../../drafts/voice-post-drafter/) |
 
 **Think of it as:** A ghostwriter who has read everything you posted and remembers every time you said "I would never say that". They hand you a draft. You still sign it.
 
@@ -37,7 +37,7 @@ outlines and will change.
 
 ## Established best practices
 
-_Research not started. This is the first step for this plan._
+Done. See the [landscape review](../../drafts/voice-post-drafter/landscape-review.md) for what already exists, with dated sources.
 
 ## What it reuses
 

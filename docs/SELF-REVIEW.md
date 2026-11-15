@@ -243,7 +243,18 @@ quote can commit a business to different things. The skill now uses the business
 heads every draft as a first draft that is not an offer, and asks how long prices hold. Its score
 stays at 71: nothing about its evidence changed.
 
-The sources are trade and vendor guides plus security firms' reports, not studies. Prices and
+The last three tools without a review now have one, so all ten do.
+
+| Tool | What the review found | What changed |
+| --- | --- | --- |
+| Voice post drafter | Assistants already build a style from writing samples. Guides say paired examples teach a voice fastest | The voice file has a "this is me, this is not me" section and asks for a reason beside each rule. The review says to try the built-in style first |
+| Short video guide | The first two to three seconds decide, and many people watch muted. The sources' figures for how many disagree widely and are left out | The script skill and template gain a sound-off check on the opening |
+| Training explainer | Published research supports teaching in learner-paced pieces. Watching time tops out near six minutes. A critique notes that watching is not learning | Lessons over six minutes are split. The guide asks for questions at the end as the check on learning |
+
+None of these scores changes. Research was not what held them down. Evidence of use is.
+
+The sources are trade and vendor guides plus security firms' reports, not studies. The training
+explainer is the exception: its review rests on published research. Prices and
 plan details were not checked, and the reviews say so.
 
 ## How to run the next round

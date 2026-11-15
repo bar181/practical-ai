@@ -4,6 +4,8 @@ Attach this file to the drafter's Project. Update the Rules section whenever you
 
 ## Rules
 
+Add a few words of reason beside each rule. A reason tells the drafter what you mean, not only what to avoid.
+
 Words and moves I never use:
 
 -
@@ -17,6 +19,16 @@ Things I always do:
 Formatting (emoji, hashtags, line breaks):
 
 -
+
+## This is me, this is not me
+
+Three to five pairs. The same thing said twice: once the way you would say it, once the way you never would.
+
+| This is me | This is not me |
+| --- | --- |
+| | |
+| | |
+| | |
 
 ## Examples
 

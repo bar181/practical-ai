@@ -9,6 +9,7 @@ Five lines. Fill the right-hand column.
 | Core areas to cover (3 to 5) | | Chatbot versus agent, tools, memory, when not to use one |
 | Teaching style | | Lecture builder |
 | Length, and where it will be watched | | 3 minutes, inside a course |
+| Terms the viewer must know before the lesson starts | | Chatbot, tool |
 
 ## Also decide
 

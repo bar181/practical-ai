@@ -29,6 +29,10 @@ video takes much longer. You write. The person records, renders and publishes.
    words and 3 minutes holds about 450. If it runs long, cut. Do not speed up.
 6. **Plan what is shown.** For each beat: at most one image or one line of text, large enough to
    read on a phone. Captions are two lines at most.
+   Then run the sound-off check: read only the on-screen words of the first three seconds. They
+   must say what the video is about. The opening is never a greeting, a name or a brand.
+   For a lesson, split anything planned at more than six minutes into lessons that each stand
+   alone.
 7. **Hand over** the beat sheet, the script, the word count against the target, the route, and a
    list of anything the person must supply or approve.
 

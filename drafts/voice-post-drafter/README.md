@@ -8,6 +8,10 @@ said "I would never say that". They hand you a draft. You still sign it.
 **Who it is for:** people who know they should post and do not, because a blank page takes an hour
 and generic AI drafts sound like nobody.
 
+## What already exists
+
+See the [landscape review](landscape-review.md): what the sources say, and what changed in the tool as a result.
+
 ## Status
 
 Draft. First copy, not yet reviewed or tested by anyone else.

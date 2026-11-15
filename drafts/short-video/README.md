@@ -7,6 +7,10 @@ different trip. Most wasted effort in AI video is taking the taxi for a one-bloc
 
 **Who it is for:** anyone who posts, teaches or pitches. No editing skills assumed.
 
+## What already exists
+
+See the [landscape review](landscape-review.md): what the sources say, and what changed in the tool as a result.
+
 ## Status
 
 Draft. First copy, not yet reviewed or tested by anyone else.

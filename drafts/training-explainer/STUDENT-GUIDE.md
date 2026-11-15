@@ -68,6 +68,14 @@ One line per shot. Follow your style card's on-screen rule strictly. Generated c
 - [ ] Every fact checked against a source. A confident presenter makes errors more convincing
 - [ ] One real learner has watched it
 
+## A note on length
+
+A large study of online course videos found that people keep watching for about six minutes at
+most, however long the video is. That measures watching, not learning. So keep each lesson under
+six minutes, split longer topics into lessons that stand alone, and check learning directly: end
+each lesson with two or three questions and see whether viewers can answer them. Sources are in
+the [landscape review](landscape-review.md).
+
 ## Guardrails
 
 - Your own avatar and voice only.

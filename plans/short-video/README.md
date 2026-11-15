@@ -4,7 +4,7 @@ Pick the right route by length and purpose and finish a short video in under 30 
 
 | Complexity | Research | Simple level | Draft |
 | --- | --- | --- | --- |
-| Beginner to intermediate | Partly: tool facts checked 2026-11-14 | [Drafted](../../drafts/short-video/) | [`drafts/short-video/`](../../drafts/short-video/) |
+| Beginner to intermediate | Done: landscape review in the draft | [Drafted](../../drafts/short-video/) | [`drafts/short-video/`](../../drafts/short-video/) |
 
 **Think of it as:** Getting across a city. A scooter, a bus and a taxi all work, but each suits a different trip.
 
@@ -37,7 +37,7 @@ outlines and will change.
 
 ## Established best practices
 
-_Partly done. The draft student guide lists the sources checked on 2026-11-14. A wider review of established practice is still to do._
+Done. See the [landscape review](../../drafts/short-video/landscape-review.md) for what already exists, with dated sources.
 
 ## What it reuses
 

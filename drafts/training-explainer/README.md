@@ -7,6 +7,10 @@ Turn a topic into a taught video, in a teaching style you choose from a menu.
 
 **Who it is for:** instructors, course builders and anyone who explains things for a living.
 
+## What already exists
+
+See the [landscape review](landscape-review.md): what the sources say, and what changed in the tool as a result.
+
 ## Status
 
 Draft. First copy, not yet reviewed or tested by anyone else.
