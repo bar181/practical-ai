@@ -27,6 +27,13 @@ written in your own words. You do not come home with their plate.
 5. **If it becomes a part or a template,** follow "Adding to the library" below.
 6. **Move the card** from `inbox/` to this folder once decided, so the inbox only holds open ones.
 
+## Using what is on file
+
+A card is read again when something is made. An assistant following [`AGENTS.md`](../../AGENTS.md)
+reads the cards before it chooses a voice, a look and parts, and with the MCP server connected it
+calls `list_inspiration`. Tags on a card (page, deck, social, motion, number, photo) are how it
+finds the ones that matter for the job.
+
 ## What may and may not come in
 
 | May | May not |

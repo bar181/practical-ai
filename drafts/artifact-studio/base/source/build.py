@@ -144,7 +144,7 @@ def about(n,t,key='all'):
     return re.sub(r'(<div class="view"[^>]*>)',lambda m:m.group(1)+strip,t,count=1)
 SHELL=open(os.path.join(HERE,'shell.html')).read()
 BASE=open(os.path.join(HERE,'base.css')).read()
-PAGE_INDEX={'templates':[dict(t,tab=TAB[t['id']]) for t in C.TEMPLATES],'rules':C.RULES,'labels':{f:dict(v) for f,v in C.FACETS.items()}}
+PAGE_INDEX={'templates':[dict(t,tab=TAB[t['id']]) for t in C.TEMPLATES],'rules':C.RULES,'labels':{f:dict(v) for f,v in C.FACETS.items()},'social_styles':C.SOCIAL_STYLES}
 data=json.dumps({'rows':A['rows'],'pal':A['pal'],'index':PAGE_INDEX},separators=(',',':'))
 def title_of(n): return LABEL.get(n) or re.search(r'data-title="([^"]*)"',VIEW[n]).group(1)
 PREFIX={}
@@ -222,6 +222,7 @@ def write_starters():
 *{{box-sizing:border-box}}html,body{{margin:0}}body{{background:var(--pine);font-family:var(--sans);padding:14px 0}}
 h1,h2,h3,p,ol,ul{{margin:0}}button{{font:inherit;cursor:pointer}}
 .ph{{background:linear-gradient(135deg,#5b6b4f,#c79a5b 60%,#f1d9a8) center/cover}}
+@media print{{body{{padding:0;background:none}}.dk{{padding:0;gap:0;max-width:none}}}}
 {eng_css.strip()}
 {css.strip()}
 </style>
@@ -241,7 +242,7 @@ STUDIO.deck(document);
         open(os.path.join(out,key+'.html'),'w').write(doc); made.append((key,len(doc)))
     # social: each artboard as one SVG file with its text styles inside and system fonts
     v=open(os.path.join(HERE,'views','85-social.html')).read()
-    css=''.join(l for l in v[v.index('<style>')+7:v.index('</style>')].split('\n') if re.match(r'\.so-[hjskln]',l))
+    css=''.join(l for l in v[v.index('<style>')+7:v.index('</style>')].split('\n') if re.match(r'\.so-[hsn]\{font',l))
     css=css.replace('var(--display)','"Avenir Next","Segoe UI","Helvetica Neue",Arial,sans-serif').replace('"Gloock",serif','Georgia,"Times New Roman",serif')
     for m in re.finditer(r'<svg id="(so-[a-z0-9-]+)" class="so-a"( viewBox="0 0 (\d+) (\d+)".*?</svg>)',v,re.S):
         sid,body,w,hh=m.group(1),m.group(2),m.group(3),m.group(4)
@@ -286,7 +287,7 @@ def write_index(parts,photo):
     counts={'templates':len(tpl),**{k+'s' if k!='social' else 'social_formats':sum(t['kind']==k for t in tpl) for k in kinds},'components':len(comp),'page_parts':len(parts),'photo_parts':len(photo),'animated_svg':sum(c['group']=='svg' for c in comp),'gif_copies':sum('gif' in c for c in comp),'looks':len(looks)}
     idx=dict(name='artifact-studio',generated=datetime.date.today().isoformat(),
              read_me='Paths are relative to drafts/artifact-studio/. "file" is the finished template to open. "starter", where present, is a small complete file to copy and fill. "source" is reference code: one style block, the markup and one script, not a complete file. "fit" scores run 0 to 3. To choose, score = 3 x goal fit + 2 x audience fit, highest first.',
-             counts=counts,facets={f:[dict(id=k,label=v) for k,v in v2] for f,v2 in C.FACETS.items()},rules=C.RULES,templates=tpl,components=comp,
+             counts=counts,social_styles=C.SOCIAL_STYLES,facets={f:[dict(id=k,label=v) for k,v in v2] for f,v2 in C.FACETS.items()},rules=C.RULES,templates=tpl,components=comp,
              looks=[dict(name=l,file=T+'looks/nine-looks.html',card='skills/artifact-studio/references/looks.md') for l in looks])
     json.dump(idx,open(os.path.join(ROOT,'base','templates','index.json'),'w'),indent=1)
     rel=lambda p:p.replace(T,'')
@@ -296,7 +297,7 @@ def write_index(parts,photo):
        '| Folder | What is in it |','| --- | --- |','| [`pages/`](pages/) | Whole pages: report, proposal, explainer, landing page |','| [`voices/`](voices/) | One case told seven ways, each a full page |','| [`decks/`](decks/) | Slide decks you present with the arrow keys |','| [`social/`](social/) | Post shapes you download as pictures |','| [`components/`](components/) | The parts: page parts, photo parts and animated SVG files |','| [`looks/`](looks/) | One line dressed nine ways |','',
        'Every example uses invented content. GitHub shows HTML as source, so download a file and open it in a browser.','']
     for k,head,note in (('page','Pages','A page is the structure. Pair it with a voice.'),('voice','Voices','A voice is how the piece speaks. All seven tell the same invented case.'),('deck','Decks','One deck engine, two manners. Each is a single file.'),('social','Social formats','All seven pictures are in one file, with download buttons.')):
-        o+=[f'## {head}','',note,'','**What you can change:** '+C.OPTIONS[k],'','| Template | Use it when you need to | Open | Short ask |','| --- | --- | --- | --- |']
+        o+=[f'## {head}','',note,'','**What you can change:** '+C.OPTIONS[k]+(' **Styles:** '+' '.join(f"{s['name']}: {s['summary']}" for s in C.SOCIAL_STYLES)+' The colours for each are under `social_styles` in `index.json`.' if k=='social' else ''),'','| Template | Use it when you need to | Open | Short ask |','| --- | --- | --- | --- |']
         for t in tpl:
             if t['kind']!=k: continue
             best=[dict(C.FACETS['goal'])[g].lower() for g,v in sorted(t['fit']['goal'].items(),key=lambda x:-x[1]) if v>=2]

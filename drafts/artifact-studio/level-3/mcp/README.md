@@ -17,6 +17,7 @@ proposal?" and gets an answer, where before it had to be handed the files.
 | `list_components` | Page parts, photo parts and animated SVG files | No |
 | `get_component` | One part: its use, the sentence that asks for it, and its code | No |
 | `get_rules` | The build rules, the checklist, or the recipe, voice and look cards | No |
+| `list_inspiration` | The person's saved finds, in their own words, so their taste shapes the choice | No |
 | `add_inspiration` | Files a short note about a design you like in `base/inspiration/inbox/` | One small text file |
 
 Start the server with `--read-only` to leave the last tool out.

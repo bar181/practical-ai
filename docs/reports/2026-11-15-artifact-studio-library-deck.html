@@ -17,6 +17,7 @@
 *{box-sizing:border-box}html,body{margin:0}body{background:var(--pine);font-family:var(--sans);padding:14px 0}
 h1,h2,h3,p,ol,ul{margin:0}button{font:inherit;cursor:pointer}
 .ph{background:linear-gradient(135deg,#5b6b4f,#c79a5b 60%,#f1d9a8) center/cover}
+@media print{body{padding:0;background:none}.dk{padding:0;gap:0;max-width:none}}
 /* deck engine. At rest (no script) the slides are a readable column. The script turns them into a stage. */
 .dk-top{background:var(--pine);color:var(--fog);padding:34px 0 20px}
 .dk-top h1{font-size:clamp(2rem,8vw,3.4rem);line-height:1;color:var(--fog)}
@@ -63,7 +64,7 @@ h1,h2,h3,p,ol,ul{margin:0}button{font:inherit;cursor:pointer}
     <section class="dk-s"><div><h2>So we made one rule.</h2><p>Stop guessing. Pick from a shelf.</p></div><aside class="dk-note">The whole project is this slide: a shelf of working templates, and rules that pick.</aside></section>
     <section class="dk-s"><div class="three"><div><b>Pick</b><span>Say the job, the reader and the shape.</span></div><div><b>Build</b><span>The assistant fills a template with your content.</span></div><div><b>Check</b><span>A checklist runs before you see it.</span></div></div><aside class="dk-note">Ten seconds each. Pick is a score: three times the goal fit plus twice the reader fit.</aside></section>
     <section class="dk-s"><div><p class="big">20</p><p>templates on the shelf. <span class="was">11 this morning.</span></p></div><aside class="dk-note">Pages, voices, decks and social formats. And 36 parts, twelve of them animated.</aside></section>
-    <section class="dk-s"><div><p class="big">8</p><p>tools an assistant can call. No pasting.</p></div><aside class="dk-note">The MCP server. Be plain: it has only been tried with a test client so far.</aside></section>
+    <section class="dk-s"><div><p class="big">9</p><p>tools an assistant can call. No pasting.</p></div><aside class="dk-note">The MCP server. Be plain: it has only been tried with a test client so far.</aside></section>
     <section class="dk-s"><div><h2>One more thing.</h2><p>Nobody else has used it yet. You are first.</p></div><aside class="dk-note">End on the ask: one real job this week, and tell us where it broke.</aside></section>
     <div class="dk-bar"><button class="dk-prev" type="button" aria-label="Previous slide">&#8592;</button><span class="dk-n" aria-live="polite">1</span><button class="dk-next" type="button" aria-label="Next slide">&#8594;</button><button class="dk-notes-b" type="button" aria-pressed="false">Notes</button><button class="dk-full" type="button">Full screen</button></div>
   </div>

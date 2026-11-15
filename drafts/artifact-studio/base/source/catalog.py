@@ -45,6 +45,13 @@ OPTIONS={ # what can be swapped on each kind of template
 }
 _LBL={f:dict(v) for f,v in FACETS.items()}
 _FIT={3:'a strong fit',2:'a good fit',1:'a possible fit',0:'not made'}
+# Social styles: the same seven pictures in three palettes. Each maps the Studio colours to its own.
+# Every text and background pair in each palette has a contrast of at least 5 to 1 (checked when chosen).
+SOCIAL_STYLES=[
+ dict(id='studio',name='Studio',summary='Slate, fog and a warm brown. The default.',swap={}),
+ dict(id='bold',name='Bold',summary='Navy, white, a strong red and yellow. For announcements.',swap={'#1b2228':'#0a2540','#e8edf3':'#ffffff','#774528':'#b3261e','#d2b78c':'#ffd23f','#a5b9d8':'#b9d4f1','#4b596e':'#3a4a5e','#f0d9b0':'#ffe9a8'}),
+ dict(id='soft',name='Soft',summary='Plum, cream and terracotta. For stories and thanks.',swap={'#1b2228':'#3b2a3f','#e8edf3':'#fbf3e8','#774528':'#9a4a2f','#d2b78c':'#f2c9a0','#a5b9d8':'#dcc9e0','#4b596e':'#5d4a5f','#f0d9b0':'#fde3c4'}),
+]
 def score(t,goal,audience): w=RULES['weights']; return w['goal']*t['fit']['goal'].get(goal,0)+w['audience']*t['fit']['audience'].get(audience,0)
 def rank(kind,goal,audience): return sorted([t for t in TEMPLATES if t['kind']==kind],key=lambda t:-score(t,goal,audience))
 def why(t,goal,audience):

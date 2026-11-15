@@ -30,4 +30,6 @@ async def main():
             bad=await s.call_tool('recommend',{'goal':'nope','audience':'customer'}); print('bad input is an error:',getattr(bad,'is_error',getattr(bad,'isError',None)),str(val(bad))[:110])
             if '--write' in sys.argv:
                 a=val(await s.call_tool('add_inspiration',{'title':'Test note','what_works':'A test.','tags':'test'})); print('saved:',a['saved'])
+                li=val(await s.call_tool('list_inspiration',{'tag':'test'})); print('listed back:',[(x['title'],x['tags'],x['what_works'],x['status']) for x in li])
+                os.remove(os.path.join(os.path.dirname(os.path.abspath(__file__)),'..','..',a['saved'])); print('test note deleted')
 asyncio.run(main())

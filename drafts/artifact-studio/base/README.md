@@ -32,7 +32,7 @@ GitHub shows HTML files as source, so download a file and open it in a browser.
 | Pages | 4 | `templates/pages/`: report, proposal, explainer, landing page |
 | Voices | 7 | `templates/voices/`: keynote, storyteller, teacher, pitch, practical instructor, analyst, executive brief |
 | Decks | 4 | `templates/decks/`: visionary, story, briefing, workshop |
-| Social formats | 5 | `templates/social/formats.html`: square, portrait stat, story, three-slide carousel, link preview |
+| Social formats | 5 | `templates/social/formats.html`: square, portrait stat, story, three-slide carousel, link preview. Three styles: Studio, Bold, Soft |
 | Page parts | 12 | `templates/components/page-parts.html` |
 | Photo parts | 12 | `templates/components/photo-parts.html` |
 | Animated SVG | 12 | `templates/components/svg/`, one file each |

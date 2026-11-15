@@ -17,6 +17,7 @@
 *{box-sizing:border-box}html,body{margin:0}body{background:var(--pine);font-family:var(--sans);padding:14px 0}
 h1,h2,h3,p,ol,ul{margin:0}button{font:inherit;cursor:pointer}
 .ph{background:linear-gradient(135deg,#5b6b4f,#c79a5b 60%,#f1d9a8) center/cover}
+@media print{body{padding:0;background:none}.dk{padding:0;gap:0;max-width:none}}
 /* deck engine. At rest (no script) the slides are a readable column. The script turns them into a stage. */
 .dk-top{background:var(--pine);color:var(--fog);padding:34px 0 20px}
 .dk-top h1{font-size:clamp(2rem,8vw,3.4rem);line-height:1;color:var(--fog)}

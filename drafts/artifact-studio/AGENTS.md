@@ -13,19 +13,22 @@ person's own content into one finished file that follows a template.
    server connected, call `recommend` and it does this for you. Tell the person what you chose and
    why in one line. Each answer carries a `strength`: strong, fair or weak. When the best answer in
    the shape they asked for is weak, its `note` names a shape that suits the job better. Say so.
-3. **Start from the starter** when there is one. Decks and social formats have a `starter` field in
+3. **Read the person's saved finds** in [`base/inspiration/`](base/inspiration/), or call
+   `list_inspiration`. They are designs the person liked, described in their own words. Let them
+   shape the choice of voice, look and parts. Never copy the thing a card describes.
+4. **Start from the starter** when there is one. Decks and social formats have a `starter` field in
    the index: a complete file of about 10 KB or less, with system fonts and no photograph, that you
    copy and fill. Pages and voices have none: build on the skill's
    [`page-skeleton.html`](../../skills/artifact-studio/assets/page-skeleton.html) and read the
    template's `source` field, one small file with a style block, the markup and a script.
-4. **Read the rules.** [`build-rules.md`](../../skills/artifact-studio/references/build-rules.md)
+5. **Read the rules.** [`build-rules.md`](../../skills/artifact-studio/references/build-rules.md)
    before you write, and the card for the voice and look in
    [`voices.md`](../../skills/artifact-studio/references/voices.md) and
    [`looks.md`](../../skills/artifact-studio/references/looks.md).
-5. **Build** one self-contained HTML file from the person's content. Start from
-   [`page-skeleton.html`](../../skills/artifact-studio/assets/page-skeleton.html).
-6. **Check** with [`pre-ship-checklist.md`](../../skills/artifact-studio/references/pre-ship-checklist.md).
-7. **Return** the file and the delivery note below.
+6. **Build** one self-contained file from the person's content, on the starter or skeleton from
+   step 4: HTML for a page or a deck, SVG for a social picture.
+7. **Check** with [`pre-ship-checklist.md`](../../skills/artifact-studio/references/pre-ship-checklist.md).
+8. **Return** the file and the delivery note below.
 
 If you can load skills, load [`skills/artifact-studio/SKILL.md`](../../skills/artifact-studio/SKILL.md)
 and follow it. It says all of this in more detail.

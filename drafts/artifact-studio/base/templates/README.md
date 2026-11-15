@@ -63,7 +63,7 @@ One deck engine, two manners. Each is a single file.
 
 All seven pictures are in one file, with download buttons.
 
-**What you can change:** Colours and type: your brand. Words: one idea, seven words or fewer in the headline. Picture: your own photograph where the format has one.
+**What you can change:** Colours and type: your brand. Words: one idea, seven words or fewer in the headline. Picture: your own photograph where the format has one. **Styles:** Studio: Slate, fog and a warm brown. The default. Bold: Navy, white, a strong red and yellow. For announcements. Soft: Plum, cream and terracotta. For stories and thanks. The colours for each are under `social_styles` in `index.json`.
 
 | Template | Use it when you need to | Open | Short ask |
 | --- | --- | --- | --- |

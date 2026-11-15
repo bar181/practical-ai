@@ -42,6 +42,28 @@ That is the whole installation.
 
 **You are done when** the page says what your notes say and nothing else.
 
+## Make a deck or a social post
+
+The same instructions make these too. Two things make it go better.
+
+1. Pick the one you want in the Decks or Social tab of [`base/studio.html`](../base/studio.html),
+   or let the Pick tab choose, and copy its sentence.
+2. Attach its starter from [`base/templates/starters/`](../base/templates/starters/) with your
+   notes. A starter is a small complete file of that deck or picture. Say "fill this in from my
+   notes". The assistant then changes words in a file that already works, which is more reliable
+   than building one from a description.
+
+| You need | Starter to attach |
+| --- | --- |
+| To move a room | `deck-visionary.html` |
+| To win a customer | `deck-story.html` |
+| A decision from the people who decide | `deck-briefing.html` |
+| To teach a skill, with an exercise | `deck-workshop.html` |
+| A post | One of the `social-*.svg` files: square, portrait, story, carousel, link |
+
+Present a deck from a browser: arrow keys or a tap move between slides, N shows your notes, and
+printing gives one slide a page.
+
 ## Using it properly
 
 | Do | Why |

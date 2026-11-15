@@ -9,7 +9,7 @@ Run:  python server.py            (stdio, for desktop assistants)
       add --read-only to leave out the one tool that writes a file
 Needs: Python 3.10 or later and the `mcp` package, version 2.
 """
-import json, os, re, sys, datetime
+import glob, json, os, re, sys, datetime
 from mcp.server.mcpserver import MCPServer
 from mcp.server.mcpserver.exceptions import ToolError
 from mcp.types import ToolAnnotations
@@ -95,7 +95,7 @@ def get_template(id: str, part: str = "options") -> dict:
     if not t:
         raise ToolError("No template with that id. Call list_templates to see the ids.")
     if part == "options":
-        return t
+        return dict(t, styles=_index()["social_styles"]) if t["kind"] == "social" else t
     if part == "source":
         return {"id": id, "note": "Reference code: one style block, the markup, one script. It is not a complete file. Shared styles and helpers are in base/source/shell.html. For a deck or a social format, part='starter' is complete.", "source": _read(t["source"])}
     if part == "starter":
@@ -141,6 +141,27 @@ def get_rules(which: str = "build") -> str:
         raise ToolError("which must be one of: " + ", ".join(files))
     with open(os.path.join(SKILL, files[which]), encoding="utf-8") as f:
         return f.read()
+
+
+@mcp.tool(annotations=READ)
+def list_inspiration(tag: str = "") -> list[dict]:
+    """The person's saved finds: designs they liked, described in their own words. Read these before you
+    choose, because they are the person's taste. tag filters by one tag, such as deck, social or number."""
+    folder = os.path.join(ROOT, "base", "inspiration")
+    out = []
+    for path in sorted(glob.glob(os.path.join(folder, "inbox", "*.md")) + glob.glob(os.path.join(folder, "*.md"))):
+        if os.path.basename(path) in ("README.md", "card-template.md"):
+            continue
+        with open(path, encoding="utf-8") as f:
+            text = f.read()
+        row = lambda k: (re.search(rf"^\| {k} \| (.*?) \|$", text, re.M) or [None, ""])[1]
+        tags = [t.strip().lower() for t in row("Tags").split(",") if t.strip() and t.strip() != "none"]
+        if tag and tag.strip().lower() not in tags:
+            continue
+        sec = lambda h: (re.search(rf"^## {h}\n\n(.*?)(?=\n## |\Z)", text, re.M | re.S) or [None, ""])[1].strip()
+        out.append({"file": os.path.relpath(path, ROOT), "title": (re.search(r"^# (.+)$", text, re.M) or [None, ""])[1], "filed": row("Filed"), "tags": tags,
+                    "status": row("Status"), "what_works": sec("What works")[:1500], "closest": sec("Closest thing in the library")[:400], "decision": sec("Decision")[:400]})
+    return out
 
 
 def add_inspiration(title: str, what_works: str, source: str = "", tags: str = "") -> dict:

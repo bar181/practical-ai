@@ -309,11 +309,11 @@ Scored on a rubric that fits what the tool now is:
 | Item | Score | Why |
 | --- | --- | --- |
 | One place for each thing, one source of truth | 88 | One catalogue feeds the index, the page and the server. Indexes, counts and starters are generated |
-| Usable by an agent | 87 | A front door, a machine index, starters, eight tools. A scripted agent finished a file |
+| Usable by an agent | 87 | A front door, a machine index, starters, nine tools. A scripted agent finished a file |
 | Correct and checked | 85 | Automated checks pass. They missed three faults that the agent run found |
 | Honest and current documents | 85 | Status lines say who has and has not tried each thing |
 | Usable today by a person | 81 | Open, pick, copy, ask |
-| Range and quality of templates | 80 | Four decks cover selling, inspiring, deciding and teaching. Social is one family of pictures |
+| Range and quality of templates | 81 | Four decks cover selling, inspiring, deciding and teaching. Social is one family of pictures in three styles |
 | Evidence from real use | 40 | The owner has looked at the pages. One scripted run. Nothing else |
 
 Overall 78, the plain average. This is a different rubric from rounds 1 to 3, so it is not

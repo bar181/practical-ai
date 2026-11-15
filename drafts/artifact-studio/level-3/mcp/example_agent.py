@@ -19,17 +19,18 @@ SLIDES = [  # (slide markup, speaker's note)
     ("<div><h2>So we made one rule.</h2><p>Stop guessing. Pick from a shelf.</p></div>", "The whole project is this slide: a shelf of working templates, and rules that pick."),
     ('<div class="three"><div><b>Pick</b><span>Say the job, the reader and the shape.</span></div><div><b>Build</b><span>The assistant fills a template with your content.</span></div><div><b>Check</b><span>A checklist runs before you see it.</span></div></div>', "Ten seconds each. Pick is a score: three times the goal fit plus twice the reader fit."),
     ('<div><p class="big">{n}</p><p>templates on the shelf. <span class="was">11 this morning.</span></p></div>', "Pages, voices, decks and social formats. And 36 parts, twelve of them animated."),
-    ('<div><p class="big">8</p><p>tools an assistant can call. No pasting.</p></div>', "The MCP server. Be plain: it has only been tried with a test client so far."),
+    ('<div><p class="big">{t}</p><p>tools an assistant can call. No pasting.</p></div>', "The MCP server. Be plain: it has only been tried with a test client so far."),
     ("<div><h2>One more thing.</h2><p>Nobody else has used it yet. You are first.</p></div>", "End on the ask: one real job this week, and tell us where it broke."),
 ]
 CARD = {"lines": ["Stop guessing.", "Pick from", "a shelf."], "sub": "{n} templates for pages, decks and posts.", "name": "Practical AI: artifact studio"}
 
 
 async def main():
-    async with stdio_client(StdioServerParameters(command=sys.executable, args=[os.path.join(HERE, "server.py"), "--read-only"])) as (r, w):
+    async with stdio_client(StdioServerParameters(command=sys.executable, args=[os.path.join(HERE, "server.py")])) as (r, w):
         async with ClientSession(r, w) as s:
             await s.initialize()
             call = lambda name, **a: s.call_tool(name, a)
+            tools = str(len((await s.list_tools()).tools))
             shelf = (await call("list_templates")).content
             count = str(len(json.loads(shelf[0].text)) if len(shelf) == 1 and shelf[0].text.lstrip().startswith("[") else len(shelf))   # the count comes from the server, not from this file
             rec = json.loads((await call("recommend", goal="inspire", audience="team", format="deck")).content[0].text)
@@ -41,7 +42,7 @@ async def main():
             n = len(re.findall(r'<section class="dk-s', doc))
             assert n == len(SLIDES), f"the starter has {n} slides and this script has {len(SLIDES)}"
             it = iter(SLIDES)
-            doc = re.sub(r'<section class="dk-s([^"]*)">.*?</section>', lambda m: (lambda b, note: f'<section class="dk-s{m.group(1)}">{b.replace("{n}", count)}<aside class="dk-note">{note}</aside></section>')(*next(it)), doc, flags=re.S)
+            doc = re.sub(r'<section class="dk-s([^"]*)">.*?</section>', lambda m: (lambda b, note: f'<section class="dk-s{m.group(1)}">{b.replace("{n}", count).replace("{t}", tools)}<aside class="dk-note">{note}</aside></section>')(*next(it)), doc, flags=re.S)
             doc = re.sub(r"<title>.*?</title>", f"<title>{TITLE}: the deck</title>", doc)
             doc = re.sub(r'aria-label="The [a-z]+ deck, [a-z]+ slides"', f'aria-label="{TITLE}, {len(SLIDES)} slides"', doc)
             open(os.path.join(OUT, "deck.html"), "w", encoding="utf-8").write(doc)
