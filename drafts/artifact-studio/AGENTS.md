@@ -11,9 +11,13 @@ person's own content into one finished file that follows a template.
 2. **Choose.** Read [`base/templates/index.json`](base/templates/index.json). Score each template
    as three times its goal fit plus twice its audience fit, and take the highest. With the MCP
    server connected, call `recommend` and it does this for you. Tell the person what you chose and
-   why in one line.
-3. **Read the reference code** for what you chose. Each template's `source` field in the index
-   points at one small file: a style block, the markup and a script.
+   why in one line. Each answer carries a `strength`: strong, fair or weak. When the best answer in
+   the shape they asked for is weak, its `note` names a shape that suits the job better. Say so.
+3. **Start from the starter** when there is one. Decks and social formats have a `starter` field in
+   the index: a complete file of about 10 KB or less, with system fonts and no photograph, that you
+   copy and fill. Pages and voices have none: build on the skill's
+   [`page-skeleton.html`](../../skills/artifact-studio/assets/page-skeleton.html) and read the
+   template's `source` field, one small file with a style block, the markup and a script.
 4. **Read the rules.** [`build-rules.md`](../../skills/artifact-studio/references/build-rules.md)
    before you write, and the card for the voice and look in
    [`voices.md`](../../skills/artifact-studio/references/voices.md) and
@@ -33,6 +37,7 @@ and follow it. It says all of this in more detail.
 | Every template, with its options and fit scores | [`base/templates/index.json`](base/templates/index.json), or [`base/templates/README.md`](base/templates/README.md) for a page a person can read |
 | The rules that choose between templates | [`base/source/catalog.py`](base/source/catalog.py) |
 | A finished template to look at | The `file` field in the index, under [`base/templates/`](base/templates/) |
+| A complete small file to copy and fill | The `starter` field in the index, under [`base/templates/starters/`](base/templates/starters/) |
 | Its reference code | The `source` field in the index, under [`base/source/views/`](base/source/views/) |
 | The parts: page parts, photo parts, animated SVG | The `components` list in the index |
 | The person's standing preferences | A file named `preferences.md`, if they have one. See [`level-2/`](level-2/) |

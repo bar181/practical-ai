@@ -89,13 +89,21 @@ def recommend(goal: str, audience: str, format: str = "any") -> list[dict]:
 
 @mcp.tool(annotations=READ)
 def get_template(id: str, part: str = "options") -> dict:
-    """One template. part='options' for what it is and what can be changed, 'source' for its reference code."""
+    """One template. part='options' for what it is and what can be changed. part='starter' for a small
+    complete file to copy and fill (decks and social formats). part='source' for its reference code."""
     t = next((t for t in _index()["templates"] if t["id"] == id), None)
     if not t:
         raise ToolError("No template with that id. Call list_templates to see the ids.")
+    if part == "options":
+        return t
     if part == "source":
-        return {"id": id, "note": "One style block, the markup, one script. Shared styles and helpers are in base/source/shell.html and base.css.", "source": _read(t["source"])}
-    return t
+        return {"id": id, "note": "Reference code: one style block, the markup, one script. It is not a complete file. Shared styles and helpers are in base/source/shell.html. For a deck or a social format, part='starter' is complete.", "source": _read(t["source"])}
+    if part == "starter":
+        st = t.get("starter")
+        if not st:
+            return {"id": id, "note": "Pages and voices have no starter. Build on the skeleton below, and read part='source' for this template's markup and styles.", "files": {"skills/artifact-studio/assets/page-skeleton.html": open(os.path.join(SKILL, "assets", "page-skeleton.html"), encoding="utf-8").read()}}
+        return {"id": id, "note": "Complete files with system fonts and no photograph. Copy, then replace the text. The comment at the top of each says how.", "files": {f: _read(f) for f in ([st] if isinstance(st, str) else st)}}
+    raise ToolError("part must be one of: options, starter, source.")
 
 
 @mcp.tool(annotations=READ)

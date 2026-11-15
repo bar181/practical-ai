@@ -11,9 +11,9 @@ proposal?" and gets an answer, where before it had to be handed the files.
 | Tool | What it returns | Writes anything? |
 | --- | --- | --- |
 | `studio_overview` | Counts, the kinds of template, the words to use for goal, audience and format | No |
-| `recommend` | The best combinations for a goal, an audience and a format, with the reason for each | No |
+| `recommend` (each answer says strong, fair or weak, and a weak one names a better shape) | The best combinations for a goal, an audience and a format, with the reason for each | No |
 | `list_templates` | Every template, or one kind | No |
-| `get_template` | One template's options, or its reference code | No |
+| `get_template` | One template's options, a small complete starter file to copy and fill, or its reference code | No |
 | `list_components` | Page parts, photo parts and animated SVG files | No |
 | `get_component` | One part: its use, the sentence that asks for it, and its code | No |
 | `get_rules` | The build rules, the checklist, or the recipe, voice and look cards | No |
@@ -73,13 +73,23 @@ python test_client.py
 
 This starts the server, calls every tool through a real client and prints what came back.
 
+```
+python example_agent.py OUT_DIR
+```
+
+This is what an assistant does with the server, written out as a script: it asks for a
+recommendation, fetches the starter that was picked, fills it with new content and saves a finished
+deck and a social picture. No model is involved. It proves the tools give an agent everything it
+needs to finish a file.
+
 ## What has and has not been tested
 
 | | |
 | --- | --- |
 | Every tool, through the SDK's client, over stdio | Done, 2026-11-15, with `mcp` 2.3.0 |
 | A wrong input returns a message that says what to send | Done |
-| The server starts over HTTP and answers a first request | Done, on the same machine |
+| Every read-only tool over HTTP, through the SDK's client | Done, on the same machine |
+| A scripted agent picks, fetches a starter and finishes a deck and a picture | Done. The first run found three faults, now fixed |
 | Inside Claude Desktop or any desktop assistant | **Not done** |
 | At an HTTPS address, from ChatGPT or any web assistant | **Not done.** Nothing has been hosted |
 | With a sign-in | Not built |

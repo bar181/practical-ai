@@ -29,7 +29,7 @@ outlines and will change.
 
 | Level | What it involves | Complexity |
 | --- | --- | --- |
-| Demo | A base that holds everything: a library of 18 templates (pages, voices, decks, social formats) and 36 parts, an index for people and one for agents, and one studio page that shows them all in tabs with a picker. Every template carries the sentence that asks for it. This tool trials the base-plus-levels layout | Beginner |
+| Demo | A base that holds everything: a library of 20 templates (pages, voices, decks, social formats) and 36 parts, an index for people and one for agents, and one studio page that shows them all in tabs with a picker. Every template carries the sentence that asks for it. This tool trials the base-plus-levels layout | Beginner |
 | Simple | Level 1, nothing to install. Paste the instructions for the assistant into a Project once. Then copy a sentence from any example, attach your notes, and check every number against them. | Beginner |
 | Working | Level 2, your preferences on file. Fill in one preferences file: default recipe, voice and look, brand, layout and format rules. Install the skill if the assistant loads skills. A short ask then gives a page that looks and sounds like yours. | Intermediate |
 | Automated | Level 3, connected. One connection is built: an MCP server that gives an assistant the library as tools, so it can choose a template, read its reference code and rules, and file a note about a design the person likes. Tested with a client only. Other slots are listed in the draft: content in, the page out to a web address, a plugin, and runs on a schedule | Advanced |

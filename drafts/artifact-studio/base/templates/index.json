@@ -1,12 +1,12 @@
 {
  "name": "artifact-studio",
  "generated": "2026-11-15",
- "read_me": "Paths are relative to drafts/artifact-studio/. \"file\" is the finished template to open or copy. \"source\" is the smaller file to read as reference code: one style block, the markup and one script. \"fit\" scores run 0 to 3. To choose, score = 3 x goal fit + 2 x audience fit, highest first.",
+ "read_me": "Paths are relative to drafts/artifact-studio/. \"file\" is the finished template to open. \"starter\", where present, is a small complete file to copy and fill. \"source\" is reference code: one style block, the markup and one script, not a complete file. \"fit\" scores run 0 to 3. To choose, score = 3 x goal fit + 2 x audience fit, highest first.",
  "counts": {
-  "templates": 18,
+  "templates": 20,
   "pages": 4,
   "voices": 7,
-  "decks": 2,
+  "decks": 4,
   "social_formats": 5,
   "components": 36,
   "page_parts": 12,
@@ -408,7 +408,8 @@
     "with_skill": "Use the artifact-studio skill. Template: visionary deck. Content: the attached notes. Invent no facts and mark every gap."
    },
    "look": "Keynote black",
-   "voice": "voice-keynote"
+   "voice": "voice-keynote",
+   "starter": "base/templates/starters/deck-visionary.html"
   },
   {
    "id": "deck-story",
@@ -434,7 +435,65 @@
     "with_skill": "Use the artifact-studio skill. Template: story deck. Content: the attached notes and photo. Invent no facts and mark every gap."
    },
    "look": "Editorial",
-   "voice": "voice-story"
+   "voice": "voice-story",
+   "starter": "base/templates/starters/deck-story.html"
+  },
+  {
+   "id": "deck-briefing",
+   "kind": "deck",
+   "title": "Briefing deck",
+   "summary": "Six light slides for a decision: the answer first, three reasons, two numbers, the options, what is not known, the decision and a date.",
+   "file": "base/templates/decks/briefing.html",
+   "source": "base/source/views/83-deck-briefing.html",
+   "fit": {
+    "goal": {
+     "decide": 3,
+     "report": 3,
+     "sell": 1
+    },
+    "audience": {
+     "executive": 3,
+     "team": 3,
+     "customer": 2
+    }
+   },
+   "options": "Slides: add or remove, one idea each. Look: any of the nine or your brand. Parts: an animated SVG or one photograph per slide.",
+   "ask": {
+    "short": "Turn my notes into a short briefing deck for a decision: the answer first.",
+    "full": "Build a six-slide deck from my notes in the executive brief voice, clean light look with one blue. Slides: the recommendation in one sentence, three reasons, two numbers with what they were before, the options on one table with the recommended one marked, what we do not know, and the decision with a date. Make it one HTML file I can present with arrow keys.",
+    "with_skill": "Use the artifact-studio skill. Template: briefing deck. Content: the attached notes. Invent no facts and mark every gap."
+   },
+   "look": "Clean",
+   "voice": "voice-brief",
+   "starter": "base/templates/starters/deck-briefing.html"
+  },
+  {
+   "id": "deck-workshop",
+   "kind": "deck",
+   "title": "Workshop deck",
+   "summary": "Seven slides that teach one skill: a promise, a picture, three steps, a worked example, an exercise, a check and a card to keep.",
+   "file": "base/templates/decks/workshop.html",
+   "source": "base/source/views/84-deck-workshop.html",
+   "fit": {
+    "goal": {
+     "teach": 3,
+     "report": 1
+    },
+    "audience": {
+     "learner": 3,
+     "team": 3,
+     "public": 1
+    }
+   },
+   "options": "Slides: add or remove, one idea each. Look: any of the nine or your brand. Parts: an animated SVG or one photograph per slide.",
+   "ask": {
+    "short": "Turn my notes into a short workshop deck that teaches one skill, with an exercise.",
+    "full": "Build a seven-slide deck from my notes in the teacher voice, warm white look with one deep green and yellow labels. Slides: what people will be able to do, a comparison to hold the idea, three steps, one worked example, an exercise with a time limit on a slide of a different colour, a three-question check, and a card to keep. Make it one HTML file I can present with arrow keys.",
+    "with_skill": "Use the artifact-studio skill. Template: workshop deck. Content: the attached notes. Invent no facts and mark every gap."
+   },
+   "look": "Warm",
+   "voice": "voice-teacher",
+   "starter": "base/templates/starters/deck-workshop.html"
   },
   {
    "id": "social-square",
@@ -458,7 +517,8 @@
    "ask": {
     "short": "Make a square social post from this one sentence, in my colours."
    },
-   "size": "1080x1080"
+   "size": "1080x1080",
+   "starter": "base/templates/starters/social-square.svg"
   },
   {
    "id": "social-portrait",
@@ -483,7 +543,8 @@
    "ask": {
     "short": "Make a portrait social post with my best number, what it means, and a before-and-after bar."
    },
-   "size": "1080x1350"
+   "size": "1080x1350",
+   "starter": "base/templates/starters/social-portrait.svg"
   },
   {
    "id": "social-story",
@@ -507,7 +568,8 @@
    "ask": {
     "short": "Make an upright story picture from my photo with two short lines under it."
    },
-   "size": "1080x1920"
+   "size": "1080x1920",
+   "starter": "base/templates/starters/social-story.svg"
   },
   {
    "id": "social-carousel",
@@ -532,7 +594,12 @@
    "ask": {
     "short": "Make a three-slide carousel from my notes: a hook that stands alone, the steps, then one ask."
    },
-   "size": "3 x 1080x1350"
+   "size": "3 x 1080x1350",
+   "starter": [
+    "base/templates/starters/social-carousel-1.svg",
+    "base/templates/starters/social-carousel-2.svg",
+    "base/templates/starters/social-carousel-3.svg"
+   ]
   },
   {
    "id": "social-link",
@@ -557,7 +624,8 @@
    "ask": {
     "short": "Make the link preview picture for my page: the title large, my company name small."
    },
-   "size": "1200x630"
+   "size": "1200x630",
+   "starter": "base/templates/starters/social-link.svg"
   }
  ],
  "components": [

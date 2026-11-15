@@ -38,8 +38,8 @@ async def main(keys):
                         r=await pg.evaluate("axe.run(document,{runOnly:['wcag2a','wcag2aa']}).then(r=>r.violations.map(v=>v.id+' x'+v.nodes.length+' '+(v.nodes[0].target.join(' ')).slice(0,90)))")
                         if r: bad.append((i,'axe',r))
                 if not ids:
-                    st=await pg.evaluate("(()=>{const v=[...document.querySelectorAll('.view')].filter(v=>getComputedStyle(v).display!=='none');return {n:v.length,h:v[0]&&v[0].offsetHeight,sw:document.documentElement.scrollWidth}})()")
-                    if st['n']!=1 or st['h']<300 or st['sw']>w: bad.append(('page',st))
+                    st=await pg.evaluate("(()=>{const v=[...document.querySelectorAll('.view, body > .dk')].filter(v=>getComputedStyle(v).display!=='none');return {n:v.length,h:v[0]&&v[0].offsetHeight,sw:document.documentElement.scrollWidth}})()")
+                    if st['n']!=1 or st['h']<(150 if key.startswith('starters/') else 300) or st['sw']>w: bad.append(('page',st))
                     if w==390 and AXE:
                         await pg.evaluate(AXE); r=await pg.evaluate("axe.run(document,{runOnly:['wcag2a','wcag2aa']}).then(r=>r.violations.map(v=>v.id+' x'+v.nodes.length+' '+(v.nodes[0].target.join(' ')).slice(0,90)))")
                         if r: bad.append(('page','axe',r))
@@ -48,7 +48,7 @@ async def main(keys):
                 print(key,w,'tabs',len(ids),'errors',errs[:3],'problems',bad[:6]); await pg.close()
             cx=await b.new_context(java_script_enabled=False,viewport={'width':390,'height':780}); pg=await cx.new_page()
             await pg.goto('file://'+R+F[key])
-            v0=await pg.locator('.view:visible').count(); v1='(one page, no tabs)'
+            v0=await pg.locator('.view:visible, body > .dk:visible').count(); v1='(one page, no tabs)'
             if await pg.locator('.tabs .tabs-g label').count()>1:
                 await pg.locator('.tabs .tabs-g label').nth(1).click(); await pg.wait_for_timeout(200); v1=await pg.locator('.view:visible').first.get_attribute('id')
             print(key,'no script: visible views at load',v0,'after tapping 2nd tab ->',v1); await cx.close()

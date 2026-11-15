@@ -120,9 +120,12 @@ swipe gallery, flip card.
 The same steps make two other things.
 
 - **A slide deck.** One HTML file. One idea on each slide. Arrow keys, buttons and a tap move
-  between slides. With scripts off the slides are a readable column. Two manners: a visionary
-  deck (black, huge type, a villain, one rule, three things, one number, "one more thing") and a
-  story deck (the customer as hero: person, problem, guide, plan, ask, stakes, ending).
+  between slides. With scripts off the slides are a readable column. Four manners: a visionary
+  deck (black, huge type, a villain, one rule, three things, one number, "one more thing"), a
+  story deck (the customer as hero: person, problem, guide, plan, ask, stakes, ending), a briefing
+  deck (the answer first, three reasons, two numbers, the options, what is not known, the decision)
+  and a workshop deck (a promise, a picture, three steps, one worked example, an exercise, a check,
+  a card to keep).
 - **A social post picture.** One SVG drawing at the real pixel size: 1080 by 1080 for a square,
   1080 by 1350 for a portrait, 1080 by 1920 for a story, 1200 by 630 for a link preview. One idea,
   seven words or fewer in the headline, the company name small at the bottom. A carousel is three
@@ -130,6 +133,10 @@ The same steps make two other things.
 
 When the person says what they need and not which kind, choose for them: a page to be read, a deck
 to be presented, a post to be scrolled past. Say what you chose and why in one line.
+
+When the person shows you a design they like, record the idea and never the thing. Describe in
+your own words what works about it: the structure, the order, the rhythm, how a number is shown.
+Do not copy its text, pictures, logo, characters or code.
 
 ## Rules that never bend
 

@@ -27,6 +27,10 @@ TEMPLATES=[
     ask='Turn my notes into a keynote-style deck: black slides, one idea each, huge type.',look='Keynote black',voice='voice-keynote'),
  _t('deck-story','deck','Story deck','story deck','decks/story.html','Seven warm slides that follow a story: a person, a problem, a guide, a plan, an ask, the stakes, the ending.',{'sell':3,'inspire':2},{'customer':3,'public':2},
     ask='Turn my notes into a short story deck where my customer is the hero and we are the guide.',look='Editorial',voice='voice-story'),
+ _t('deck-briefing','deck','Briefing deck','briefing deck','decks/briefing.html','Six light slides for a decision: the answer first, three reasons, two numbers, the options, what is not known, the decision and a date.',{'decide':3,'report':3,'sell':1},{'executive':3,'team':3,'customer':2},
+    ask='Turn my notes into a short briefing deck for a decision: the answer first.',look='Clean',voice='voice-brief'),
+ _t('deck-workshop','deck','Workshop deck','workshop deck','decks/workshop.html','Seven slides that teach one skill: a promise, a picture, three steps, a worked example, an exercise, a check and a card to keep.',{'teach':3,'report':1},{'learner':3,'team':3,'public':1},
+    ask='Turn my notes into a short workshop deck that teaches one skill, with an exercise.',look='Warm',voice='voice-teacher'),
  _t('social-square','social','Square post','square post','social/formats.html#so-square','1080 by 1080. One claim or quote in seven words or fewer.',{'announce':3,'inspire':3,'sell':1},{'public':3,'customer':2},ask='Make a square social post from this one sentence, in my colours.',size='1080x1080'),
  _t('social-portrait','social','Portrait stat post','portrait stat post','social/formats.html#so-portrait','1080 by 1350. One number, what it means, and a before-and-after bar.',{'report':3,'announce':2,'sell':2},{'public':3,'customer':2,'executive':1},ask='Make a portrait social post with my best number, what it means, and a before-and-after bar.',size='1080x1350'),
  _t('social-story','social','Story','story','social/formats.html#so-story','1080 by 1920. A photograph above, two short lines below.',{'inspire':3,'sell':2,'announce':2},{'public':3,'customer':3},ask='Make an upright story picture from my photo with two short lines under it.',size='1080x1920'),
@@ -46,6 +50,19 @@ def rank(kind,goal,audience): return sorted([t for t in TEMPLATES if t['kind']==
 def why(t,goal,audience):
     g=_FIT[t['fit']['goal'].get(goal,0)]; a=_FIT[t['fit']['audience'].get(audience,0)]
     return f"{t['title']}: {g} for \"{_LBL['goal'][goal].lower()}\", {a} for \"{_LBL['audience'][audience].lower()}\"."
+def _raw(goal,audience,format):
+    """The top combination of one format, before strength is added."""
+    out=[]; one=True; limit=1
+    if format in('page','any'):
+        R=rank('page',goal,audience); V=rank('voice',goal,audience)
+        for r,v in [(R[0],V[0]),(R[0],V[1]),(R[1],V[0])][:1 if one else limit]:
+            out.append(dict(format='page',templates=[r['id'],v['id']],title=f"{r['title']} in the {v['name']} voice",look=RULES['look_for_voice'][v['id']],score=score(r,goal,audience)+score(v,goal,audience),
+                            why=why(r,goal,audience)+' '+why(v,goal,audience),ask=f"Make {r['article']} from my notes in the {v['name']} voice.",files=[r['file'],v['file']]))
+    for kind in('deck','social'):
+        if format in(kind,'any'):
+            for t in rank(kind,goal,audience)[:1 if one else limit]:
+                out.append(dict(format=kind,templates=[t['id']],title=t['title'],look=t.get('look','Your brand colours'),score=score(t,goal,audience),why=why(t,goal,audience),ask=t['ask'],files=[t['file']]))
+    return out
 def recommend(goal,audience,format='any',limit=3):
     """Return up to `limit` combinations for one format, or the best one of each format for 'any'."""
     if goal not in _LBL['goal'] or audience not in _LBL['audience'] or format not in _LBL['format']: raise ValueError('unknown goal, audience or format')
@@ -59,4 +76,14 @@ def recommend(goal,audience,format='any',limit=3):
         if format in(kind,'any'):
             for t in rank(kind,goal,audience)[:1 if one else limit]:
                 out.append(dict(format=kind,templates=[t['id']],title=t['title'],look=t.get('look','Your brand colours'),score=score(t,goal,audience),why=why(t,goal,audience),ask=t['ask'],files=[t['file']]))
+    for k,r in enumerate(out):
+        r['strength'],r['note']=_strength(r,goal,audience,format)
+        if k: r['note']=''          # only the top answer names a better shape
     return out
+def _ratio(r): return r['score']/(15*len(r['templates']))
+def _strength(r,goal,audience,format):
+    """strong from 0.8 of the highest possible score, fair from 0.6, weak below. A weak answer names a better shape."""
+    q=_ratio(r); s='strong' if q>=.8 else 'fair' if q>=.6 else 'weak'
+    if s!='weak' or format=='any': return s,''
+    best=max((x for k in('page','deck','social') if k!=format for x in _raw(goal,audience,k)),key=_ratio)
+    return s,(f'{best["title"]} suits this better.' if _ratio(best)>q else '')

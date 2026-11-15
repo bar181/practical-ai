@@ -116,6 +116,22 @@ The story deck is for winning one customer or one room of them. The customer is 
 - **Full ask:** Build a seven-slide deck from my notes in the storyteller voice, warm paper look with a serif headline. Slides: the person and what they want, the problem and how it feels, us as the guide with one proof, a three-step plan, one call to action, what happens if nothing changes, and what success looks like. Put a photo on the first and last slides only. Make it one HTML file I can present with arrow keys.
 - **With the skill:** Use the artifact-studio skill. Template: story deck. Content: the attached notes and photo. Invent no facts and mark every gap.
 
+### Briefing deck
+
+The briefing deck is for a room that has to decide. It gives the answer on the first slide, so the meeting can end early, and it says what is not known before anyone asks. The company and figures are invented.
+
+- **Short ask:** Turn my notes into a short briefing deck for a decision: the answer first.
+- **Full ask:** Build a six-slide deck from my notes in the executive brief voice, clean light look with one blue. Slides: the recommendation in one sentence, three reasons, two numbers with what they were before, the options on one table with the recommended one marked, what we do not know, and the decision with a date. Make it one HTML file I can present with arrow keys.
+- **With the skill:** Use the artifact-studio skill. Template: briefing deck. Content: the attached notes. Invent no facts and mark every gap.
+
+### Workshop deck
+
+The workshop deck is for teaching a room one skill. People practise before the session ends: a picture to hold the idea, the steps, one worked example, then their turn. The company and figures are invented.
+
+- **Short ask:** Turn my notes into a short workshop deck that teaches one skill, with an exercise.
+- **Full ask:** Build a seven-slide deck from my notes in the teacher voice, warm white look with one deep green and yellow labels. Slides: what people will be able to do, a comparison to hold the idea, three steps, one worked example, an exercise with a time limit on a slide of a different colour, a three-question check, and a card to keep. Make it one HTML file I can present with arrow keys.
+- **With the skill:** Use the artifact-studio skill. Template: workshop deck. Content: the attached notes. Invent no facts and mark every gap.
+
 ## Social formats and animated SVG
 
 ### Animated SVG

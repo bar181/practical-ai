@@ -3,6 +3,7 @@
 .pk-o li{background:#fff;border-radius:14px;padding:16px;display:grid;gap:8px}
 .pk-o h3{font-size:1.2rem;line-height:1.2}
 .pk-o .pk-w{font:400 .93rem/1.4 var(--display);color:var(--slate);margin:0}
+.pk-s{color:var(--pine)}.pk-s.weak{background:#ffe27a;padding:1px 6px;border-radius:4px}
 .pk-o .pk-l{font:400 .93rem/1.4 var(--display);margin:0}.pk-o .pk-l b{font-weight:700}
 .pk-o code{font:400 .84rem var(--mono);background:var(--mist);border-radius:4px;padding:.1em .35em;overflow-wrap:anywhere}
 .pk-o .ask{margin:2px 0 0;padding:12px 14px}.pk-o .ask blockquote{font-size:1.08rem}
@@ -33,15 +34,19 @@ onView("pick",root=>{
   const score=(t,g,a)=>W.goal*(t.fit.goal[g]||0)+W.audience*(t.fit.audience[a]||0);
   const rank=(k,g,a)=>T.filter(t=>t.kind===k).map((t,i)=>[t,i]).sort((p,q)=>score(q[0],g,a)-score(p[0],g,a)||p[1]-q[1]).map(p=>p[0]);
   const why=(t,g,a)=>`${t.title}: ${FIT[t.fit.goal[g]||0]} for "${LB.goal[g].toLowerCase()}", ${FIT[t.fit.audience[a]||0]} for "${LB.audience[a].toLowerCase()}".`;
-  STUDIO.recommend=(g,a,f='any',limit=3)=>{const out=[],one=f==='any';
+  STUDIO.recommend=(g,a,f='any',limit=3,raw=false)=>{const out=[],one=f==='any';
     if(f==='page'||one){const R=rank('page',g,a),V=rank('voice',g,a);
       for(const [r,v] of [[R[0],V[0]],[R[0],V[1]],[R[1],V[0]]].slice(0,one?1:limit))out.push({format:'page',templates:[r.id,v.id],title:`${r.title} in the ${v.name} voice`,look:L[v.id],score:score(r,g,a)+score(v,g,a),why:why(r,g,a)+' '+why(v,g,a),ask:`Make ${r.article} from my notes in the ${v.name} voice.`,files:[r.file,v.file]})}
     for(const k of ['deck','social'])if(f===k||one)for(const t of rank(k,g,a).slice(0,one?1:limit))out.push({format:k,templates:[t.id],title:t.title,look:t.look||'Your brand colours',score:score(t,g,a),why:why(t,g,a),ask:t.ask,files:[t.file]});
+    const ratio=r=>r.score/(15*r.templates.length),top=k=>STUDIO.recommend(g,a,k,1,true)[0];
+    if(!raw)for(const r of out){const q=ratio(r);r.strength=q>=.8?'strong':q>=.6?'fair':'weak';r.note='';
+      if(r.strength==='weak'&&!one&&r===out[0]){let best=null;for(const k of ['page','deck','social'])if(k!==f){const x=top(k);if(!best||ratio(x)>ratio(best))best=x}
+        if(ratio(best)>q)r.note=best.title+' suits this better.'}}
     return out};
   const out=$('#pk-out',root),val=n=>($(`input[name=pk-${n}]:checked`,root)||{}).value;
   const draw=()=>{out.replaceChildren(...STUDIO.recommend(val('goal'),val('audience'),val('format')).map(r=>{const li=h('li');
     const go=h('div',{class:'pk-go'});r.templates.forEach(id=>{const t=T.find(x=>x.id===id),tab=t.tab&&document.getElementById('t-'+t.tab);if(tab){const l=h('label',{for:'t-'+t.tab});l.textContent='Open '+t.title;go.append(l)}});
-    const hd=h('h3');hd.textContent=r.title;const w=h('p',{class:'pk-w'});w.textContent=r.why;
+    const hd=h('h3');hd.textContent=r.title;const w=h('p',{class:'pk-w'}),sb=h('b',{class:'pk-s '+r.strength});sb.textContent=r.strength[0].toUpperCase()+r.strength.slice(1)+' fit.';w.append(sb,' '+(r.note?r.note+' ':'')+r.why);
     const l=h('p',{class:'pk-l'});l.innerHTML='<b>Look:</b> '+r.look+'. <b>Files:</b> '+r.files.map(f=>'<code>base/templates/'+f+'</code>').join(' ');
     const a=h('div',{class:'ask'});a.innerHTML='<h3>Ask for it like this</h3><blockquote></blockquote><button class="copy" type="button">Copy</button>';$('blockquote',a).textContent=r.ask;
     li.append(hd,w,l,a,go);return li}))};

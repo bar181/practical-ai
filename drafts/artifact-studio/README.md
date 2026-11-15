@@ -14,7 +14,7 @@ sentence, and gets back something they are proud to send, on the first or second
 of posts, and gets work from an assistant that functions but looks and sounds generic. Also the
 agents that build those pieces, through the skill or the MCP server.
 
-**What is in it:** <!-- counts -->18 templates (4 pages, 7 voices, 2 decks, 5 social formats), 36 components (12 page parts, 12 photo parts, 12 animated SVG files with 11 GIF copies) and 9 looks<!-- /counts -->. The build counts the library and writes this line, and the same numbers go into [`base/templates/index.json`](base/templates/index.json).
+**What is in it:** <!-- counts -->20 templates (4 pages, 7 voices, 4 decks, 5 social formats), 36 components (12 page parts, 12 photo parts, 12 animated SVG files with 11 GIF copies) and 9 looks<!-- /counts -->. The build counts the library and writes this line, and the same numbers go into [`base/templates/index.json`](base/templates/index.json).
 
 ## Start here
 
@@ -104,9 +104,9 @@ Draft. Built and checked by its author only.
 
 | Item | State |
 | --- | --- |
-| Base | Built. The studio page and all 18 template files render in Chrome at phone and desktop width with no script errors |
-| Picker | Built. The page and the Python rules agree on all 120 requests. **The scores are the author's judgement and have not been tested against real choices** |
-| MCP server | Built. Every tool tested through a client. **Not yet tried** inside a desktop assistant or from the web |
+| Base | Built. The studio page and every template file render in Chrome at phone and desktop width with no script errors |
+| Picker | Built. It says how strong each answer is and names a better shape when the fit is weak. The page and the Python rules agree on all 120 requests. **The scores are the author's judgement and have not been tested against real choices** |
+| MCP server | Built. Every tool tested through a client, over stdio and over HTTP. A scripted agent used it to pick, fetch a starter and finish a deck. **Not yet tried** inside a desktop assistant or from the web |
 | Decks and social formats | New. Not yet presented to a room or posted |
 | Inspiration intake | Written. No real find has been through it |
 | Sentences | Written. **Not yet tested** in fresh chats. See [`base/sentence-test.md`](base/sentence-test.md) |

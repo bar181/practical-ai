@@ -21,6 +21,9 @@ async def main():
             o=val(await s.call_tool('studio_overview',{})); print('overview counts:',o['counts'])
             rec=val(await s.call_tool('recommend',{'goal':'sell','audience':'customer','format':'any'})); print('recommend:',[(x['format'],x['title']) for x in rec])
             t=val(await s.call_tool('get_template',{'id':'deck-visionary','part':'source'})); print('template source chars:',len(t['source']))
+            for tid in ('deck-story','social-carousel','recipe-report'):
+                t=val(await s.call_tool('get_template',{'id':tid,'part':'starter'})); print('starter for',tid,{k:len(v) for k,v in t['files'].items()})
+            x=await s.call_tool('get_template',{'id':'deck-story','part':'everything'}); print('wrong part ->',x.content[0].text[:80])
             c=val(await s.call_tool('get_component',{'id':'svg-line-draw'})); print('svg code starts:',c['code'][:40])
             c2=val(await s.call_tool('get_component',{'id':val(await s.call_tool('list_components',{'group':'page'}))[0]['id']})); print('page part code chars:',len(c2.get('code','')),c2['name'])
             rules=val(await s.call_tool('get_rules',{'which':'checklist'})); print('checklist chars:',len(rules if isinstance(rules,str) else rules[0]))

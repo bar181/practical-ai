@@ -31,14 +31,15 @@ GitHub shows HTML files as source, so download a file and open it in a browser.
 | --- | --- | --- |
 | Pages | 4 | `templates/pages/`: report, proposal, explainer, landing page |
 | Voices | 7 | `templates/voices/`: keynote, storyteller, teacher, pitch, practical instructor, analyst, executive brief |
-| Decks | 2 | `templates/decks/`: visionary, story |
+| Decks | 4 | `templates/decks/`: visionary, story, briefing, workshop |
 | Social formats | 5 | `templates/social/formats.html`: square, portrait stat, story, three-slide carousel, link preview |
 | Page parts | 12 | `templates/components/page-parts.html` |
 | Photo parts | 12 | `templates/components/photo-parts.html` |
 | Animated SVG | 12 | `templates/components/svg/`, one file each |
 | Looks | 9 | `templates/looks/nine-looks.html` |
+| Starters | 11 | `templates/starters/`: each deck and each social picture as one small file with system fonts, to copy and fill |
 
-The build counts the library and writes the line below, and `templates/index.json`: <!-- counts -->18 templates (4 pages, 7 voices, 2 decks, 5 social formats), 36 components (12 page parts, 12 photo parts, 12 animated SVG files with 11 GIF copies) and 9 looks<!-- /counts -->. All seven voices and both decks
+The build counts the library and writes the line below, and `templates/index.json`: <!-- counts -->20 templates (4 pages, 7 voices, 4 decks, 5 social formats), 36 components (12 page parts, 12 photo parts, 12 animated SVG files with 11 GIF copies) and 9 looks<!-- /counts -->. All seven voices and both decks
 use the same invented case, so the only thing that changes between them is the manner.
 
 ## Facts about the file
@@ -65,7 +66,7 @@ Checked on 2026-11-15, in Chrome:
   still opens.
 - The script path used by browsers without scroll-driven animations.
 - The picker: the page's script and the Python rules give the same answer for all 120 combinations
-  of goal, audience and format.
+  of goal, audience and format. `source/tests/check_pick.py` runs this.
 - The decks: buttons and arrow keys move between slides, and with scripts off the slides are a
   readable column.
 - The social formats: the download button produces a PNG at full size with the fonts inside.

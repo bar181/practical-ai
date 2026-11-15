@@ -88,6 +88,8 @@ call `recommend` and it does the scoring.
 
 The library also holds decks, social post pictures and animated SVG parts. They follow the same
 rules as pages: one self-contained file, the person's own content, the checklist before showing.
+For a deck or a social picture, start from its starter in
+`drafts/artifact-studio/base/templates/starters/`: a complete small file you copy and fill.
 
 ## When the person shows you something they like
 

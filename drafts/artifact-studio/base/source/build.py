@@ -67,7 +67,7 @@ def pick_macro(m):
     g,a,f=m.group(1).split(); rows=[]
     for r in C.recommend(g,a,f):
         files=' '.join(f'<code>base/templates/{x}</code>' for x in r['files'])
-        rows.append(f'<li><h3>{html.escape(r["title"])}</h3><p class="pk-w">{html.escape(r["why"])}</p><p class="pk-l"><b>Look:</b> {html.escape(r["look"])}. <b>Files:</b> {files}</p><div class="ask"><h3>Ask for it like this</h3><blockquote>{html.escape(r["ask"])}</blockquote><button class="copy" type="button">Copy</button></div></li>')
+        rows.append(f'<li><h3>{html.escape(r["title"])}</h3><p class="pk-w"><b class="pk-s {r["strength"]}">{r["strength"].capitalize()} fit.</b> {html.escape((r["note"]+" ") if r["note"] else "")}{html.escape(r["why"])}</p><p class="pk-l"><b>Look:</b> {html.escape(r["look"])}. <b>Files:</b> {files}</p><div class="ask"><h3>Ask for it like this</h3><blockquote>{html.escape(r["ask"])}</blockquote><button class="copy" type="button">Copy</button></div></li>')
     return '\n'.join(rows)
 def md_macro(m): return '<article class="md sub"><div class="wrap">'+md_html(os.path.normpath(os.path.join(ROOT,m.group(1).strip())),drop_h1=True)+'</div></article>'
 def md_view(name,title,path,raw=None):
@@ -111,12 +111,12 @@ LABEL={'voice-keynote':'Keynote','voice-story':'Storyteller','voice-teacher':'Te
 VOICES=['voice-keynote','voice-story','voice-teacher','voice-pitch','voice-practical','voice-analyst','voice-brief']
 RECIPES=['recipe-report','recipe-proposal','recipe-explainer','recipe-landing']
 G_VOICES=('Voices',VOICES,'One message, told seven ways. Tap a voice:'); G_RECIPES=('Recipes',RECIPES,'Four whole pages. Tap a recipe:')
-STUDIO_GROUPS=[G_VOICES,('Pages',RECIPES,'Four whole pages. Tap one:'),('Decks',['deck-visionary','deck-story'],'Two slide decks on one engine:'),('Social',['social'],''),
+STUDIO_GROUPS=[G_VOICES,('Pages',RECIPES,'Four whole pages. Tap one:'),('Decks',['deck-visionary','deck-story','deck-briefing','deck-workshop'],'Four slide decks on one engine:'),('Social',['social'],''),
   ('Parts',['parts','photo','svg','looks'],'The pieces a page is made of:'),('Pick',['pick','mix'],'Let the studio suggest, or choose every part yourself:'),
   ('Cards',['c-recipes','c-voices','c-parts','c-spec','c-brief','c-sentences'],'The reference cards, the two forms and every sentence:'),
   ('Skill',['s-skill','s-single','s-skel','s-rules','s-check','s-best'],'What the assistant follows. "AI instructions" is the paste-in version:'),
   ('Guide',['use'],'')]
-LABEL.update({'parts':'Page parts','photo':'Photo parts','svg':'Animated SVG','looks':'Looks','pick':'Pick for me','mix':'Mix it myself','deck-visionary':'Visionary','deck-story':'Story'})
+LABEL.update({'parts':'Page parts','photo':'Photo parts','svg':'Animated SVG','looks':'Looks','pick':'Pick for me','mix':'Mix it myself','deck-visionary':'Visionary','deck-story':'Story','deck-briefing':'Briefing','deck-workshop':'Workshop'})
 # every template again as a file of its own: view -> (file under base/templates, title)
 FILES={t['id']:t['file'].split('#')[0] for t in C.TEMPLATES if t['kind'] in('page','voice','deck')}
 FILES.update({'social':'social/formats.html','parts':'components/page-parts.html','photo':'components/photo-parts.html','svg':'components/animated-svg.html','looks':'looks/nine-looks.html'})
@@ -190,6 +190,67 @@ for n,fn in FILES.items():
     os.makedirs(os.path.dirname(os.path.join(ROOT,'base','templates',fn)),exist_ok=True)
     build(n,'base/templates/'+fn,FTITLE[n],'A complete template in one file. Copy it as a starting point, or ask for one like it with the sentence at the end.',[(FTITLE[n],[n],'')])
 
+# ---- starters: a deck as one small file with system fonts and no photograph, for an agent to copy and fill
+def write_starters():
+    lib=open(os.path.join(HERE,'views','01-lib.html')).read()
+    eng_css=lib[lib.index('/* deck engine.'):]; eng_css=eng_css[:eng_css.index('</style>')]
+    eng_js=lib[lib.index('STUDIO.deck='):]; eng_js=eng_js[:eng_js.index('</script>')]
+    eng_css=eng_css.replace('html[data-view^="deck-"] ','')
+    out=os.path.join(ROOT,'base','templates','starters'); os.makedirs(out,exist_ok=True); made=[]
+    for f,key,name in (('81-deck-visionary.html','deck-visionary','Visionary deck'),('82-deck-story.html','deck-story','Story deck'),('83-deck-briefing.html','deck-briefing','Briefing deck'),('84-deck-workshop.html','deck-workshop','Workshop deck')):
+        v=open(os.path.join(HERE,'views',f)).read()
+        css=v[v.index('<style>')+7:v.index('</style>')]
+        dk=v[v.index('<div class="dk '):]; dk=dk[:dk.index('</section>\n  <section class="anat">')] if '</section>\n  <section class="anat">' in dk else dk[:dk.index('<section class="anat">')]
+        dk=dk.rstrip(); dk=dk[:-len('</section>')].rstrip() if dk.endswith('</section>') else dk
+        dk=re.sub(r'<div class="ph ph2"','<div class="ph"',dk)
+        doc=f"""<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{name}: starter</title>
+<!-- {name}: starter. One file, no outside requests, system fonts, no photograph.
+     To use: replace the text in each slide, which is a section with the class dk-s. Keep one idea on each slide.
+     The aside with the class dk-note is the speaker's note for that slide. Add or remove slides freely.
+     A photograph goes on a slide as the background of a div with the class ph, written into the file as a data: address.
+     (No tags are written out in this comment, so a search for a tag finds only real ones.)
+     Arrow keys, the buttons, a tap or a swipe move between slides. N shows the notes. Print gives one slide a page.
+     With scripts off the slides are a readable column.
+     Generated by base/source/build.py from the same styles and script as the full template. -->
+<style>
+:root{{--pine:#1b2228;--pine-2:#28343d;--reed:#d2b78c;--fog:#e8edf3;--sans:"Helvetica Neue",Arial,system-ui,sans-serif;--display:"Avenir Next","Segoe UI",system-ui,sans-serif;--text:"Iowan Old Style","Palatino Linotype",Georgia,serif}}
+*{{box-sizing:border-box}}html,body{{margin:0}}body{{background:var(--pine);font-family:var(--sans);padding:14px 0}}
+h1,h2,h3,p,ol,ul{{margin:0}}button{{font:inherit;cursor:pointer}}
+.ph{{background:linear-gradient(135deg,#5b6b4f,#c79a5b 60%,#f1d9a8) center/cover}}
+{eng_css.strip()}
+{css.strip()}
+</style>
+</head>
+<body>
+{dk}
+<script>
+const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
+const h=(n,a={{}})=>{{const e=document.createElement(n);for(const k in a)e.setAttribute(k,a[k]);return e}};
+const STUDIO={{}};
+{eng_js.strip()}
+STUDIO.deck(document);
+</script>
+</body>
+</html>
+"""
+        open(os.path.join(out,key+'.html'),'w').write(doc); made.append((key,len(doc)))
+    # social: each artboard as one SVG file with its text styles inside and system fonts
+    v=open(os.path.join(HERE,'views','85-social.html')).read()
+    css=''.join(l for l in v[v.index('<style>')+7:v.index('</style>')].split('\n') if re.match(r'\.so-[hjskln]',l))
+    css=css.replace('var(--display)','"Avenir Next","Segoe UI","Helvetica Neue",Arial,sans-serif').replace('"Gloock",serif','Georgia,"Times New Roman",serif')
+    for m in re.finditer(r'<svg id="(so-[a-z0-9-]+)" class="so-a"( viewBox="0 0 (\d+) (\d+)".*?</svg>)',v,re.S):
+        sid,body,w,hh=m.group(1),m.group(2),m.group(3),m.group(4)
+        body=re.sub(r'<image data-photo="2"[^>]*?/>|<image data-photo="2".*?</image>','<!-- a photograph goes here as <image href="data:..."> covering the artboard -->',body,flags=re.S)
+        svg=f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{hh}"'+body.replace('>',f'>\n<!-- Social starter, {w} by {hh}. Change the text and the fill colours. Keep the headline to seven words or fewer. System fonts, so it opens anywhere. Generated by base/source/build.py. -->\n<style>{css}</style>',1)
+        name='social-'+sid[3:]+'.svg'; open(os.path.join(out,name),'w').write(svg); made.append((name,len(svg)))
+    print('starters:',made)
+write_starters()
+
 # ---- reports: any Markdown file in docs/reports becomes a page in the same style
 REPO=os.path.normpath(os.path.join(ROOT,'..','..'))
 for f in sorted(glob.glob(os.path.join(REPO,'docs','reports','*.md'))):
@@ -218,10 +279,13 @@ def write_index(parts,photo):
     for c in comp:
         g=T+'components/gif/'+os.path.basename(c['file'])[:-4]+'.gif'
         if c['group']=='svg' and os.path.exists(os.path.join(ROOT,g)): c['gif']=g
+    for t in tpl:
+        st=sorted(glob.glob(os.path.join(ROOT,T+'starters',t['id']+'*')))
+        if st: t['starter']=[os.path.relpath(x,ROOT) for x in st] if len(st)>1 else os.path.relpath(st[0],ROOT)
     kinds=['page','voice','deck','social']
     counts={'templates':len(tpl),**{k+'s' if k!='social' else 'social_formats':sum(t['kind']==k for t in tpl) for k in kinds},'components':len(comp),'page_parts':len(parts),'photo_parts':len(photo),'animated_svg':sum(c['group']=='svg' for c in comp),'gif_copies':sum('gif' in c for c in comp),'looks':len(looks)}
     idx=dict(name='artifact-studio',generated=datetime.date.today().isoformat(),
-             read_me='Paths are relative to drafts/artifact-studio/. "file" is the finished template to open or copy. "source" is the smaller file to read as reference code: one style block, the markup and one script. "fit" scores run 0 to 3. To choose, score = 3 x goal fit + 2 x audience fit, highest first.',
+             read_me='Paths are relative to drafts/artifact-studio/. "file" is the finished template to open. "starter", where present, is a small complete file to copy and fill. "source" is reference code: one style block, the markup and one script, not a complete file. "fit" scores run 0 to 3. To choose, score = 3 x goal fit + 2 x audience fit, highest first.',
              counts=counts,facets={f:[dict(id=k,label=v) for k,v in v2] for f,v2 in C.FACETS.items()},rules=C.RULES,templates=tpl,components=comp,
              looks=[dict(name=l,file=T+'looks/nine-looks.html',card='skills/artifact-studio/references/looks.md') for l in looks])
     json.dump(idx,open(os.path.join(ROOT,'base','templates','index.json'),'w'),indent=1)
@@ -236,7 +300,9 @@ def write_index(parts,photo):
         for t in tpl:
             if t['kind']!=k: continue
             best=[dict(C.FACETS['goal'])[g].lower() for g,v in sorted(t['fit']['goal'].items(),key=lambda x:-x[1]) if v>=2]
-            o.append(f"| **{t['title']}**. {t['summary']} | {', '.join(best) or 'see the summary'} | [`{rel(t['file']).split('#')[0]}`]({rel(t['file']).split('#')[0]}) | {t['ask']['short']} |")
+            st=t.get('starter'); st=[st] if isinstance(st,str) else (st or [])
+            stx=' Starter: '+', '.join(f"[`{os.path.basename(x)}`]({rel(x)})" for x in st)+'.' if st else ''
+            o.append(f"| **{t['title']}**. {t['summary']}{stx} | {', '.join(best) or 'see the summary'} | [`{rel(t['file']).split('#')[0]}`]({rel(t['file']).split('#')[0]}) | {t['ask']['short']} |")
         o.append('')
     for g,head,f in (('page','Page parts','components/page-parts.html'),('photo','Photo parts','components/photo-parts.html')):
         o+=[f'## {head}','',f'All twelve are in [`{f}`]({f}), each with the sentence that asks for it.','','| Part | Use it for |','| --- | --- |']+[f"| {c['name']} | {c['use']} |" for c in comp if c['group']==g]+['']

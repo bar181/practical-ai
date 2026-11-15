@@ -299,7 +299,7 @@ were judged worth doing and were built in one sitting. The full account, with ho
 | Options for each template, reachable from the index | 88 | Built |
 | Recommending a combination from the requirements | 84 | Built. The page and the Python rules agree on all 120 requests |
 | An MCP server and a front door for agents | 82 | Built. Tested with a client only |
-| Decks and social formats | 80 | Built: two decks, five formats |
+| Decks and social formats | 80 | Built: four decks, five formats |
 | Animated SVG, and GIF copies | 80 | Built: twelve and eleven |
 | A way in for new ideas | 78 | Built. No real find has been through it |
 | A list of outside skills, frameworks and services | 70 | Built, dated, prices left out |
@@ -308,26 +308,40 @@ Scored on a rubric that fits what the tool now is:
 
 | Item | Score | Why |
 | --- | --- | --- |
-| One place for each thing, one source of truth | 86 | One catalogue feeds the index, the page and the server |
-| Usable by an agent | 82 | A front door, a machine index, eight tools. Unproven in a real assistant |
-| Correct and checked | 84 | Automated checks pass. They cannot judge taste |
+| One place for each thing, one source of truth | 88 | One catalogue feeds the index, the page and the server. Indexes, counts and starters are generated |
+| Usable by an agent | 87 | A front door, a machine index, starters, eight tools. A scripted agent finished a file |
+| Correct and checked | 85 | Automated checks pass. They missed three faults that the agent run found |
 | Honest and current documents | 85 | Status lines say who has and has not tried each thing |
-| Usable today by a person | 80 | Open, pick, copy, ask |
-| Range and quality of templates | 74 | Two decks, with speaker notes and a print layout, and one family of social pictures |
-| Evidence from real use | 35 | The owner has looked at the pages. Nothing else |
+| Usable today by a person | 81 | Open, pick, copy, ask |
+| Range and quality of templates | 80 | Four decks cover selling, inspiring, deciding and teaching. Social is one family of pictures |
+| Evidence from real use | 40 | The owner has looked at the pages. One scripted run. Nothing else |
 
-Overall 75, the plain average. This is a different rubric from rounds 1 to 3, so 75 is not a fall
-from 77. The earlier rubric measured a set of pages. This one measures a library with delivery.
+Overall 78, the plain average. This is a different rubric from rounds 1 to 3, so it is not
+comparable with the 77 there. The earlier rubric measured a set of pages. This one measures a
+library with delivery.
 
-Faults found by the checks and fixed in this round: a shared helper that made SVG elements where
-HTML ones were needed, which left both decks blank and the picker dead until it was caught by a
-screenshot; SVG styles that would have clashed when two files were pasted into one page; a
-slide photograph cut to three quarters of its width; a PDF print that put each slide in the top
-third of a tall page; and a deck control bar that ran off the side of a 320 pixel screen once the
-Notes button was added.
+Three things in this round came from testing the work against itself and not from the proposal:
 
-What this round did not change: evidence. It added a great deal of surface, and every new part of
-it is untested by anyone else. The rule at the end of this file applies with more force now.
+1. **A scripted agent.** A script used only the MCP server to pick a deck, fetch it and fill it. It
+   failed three times: the tool returned markup without the script that makes it a deck; a comment
+   that spelled out a tag was matched as a slide; and arrow keys did nothing until the deck was
+   clicked. Each is fixed, and the script is kept as `level-3/mcp/example_agent.py`.
+2. **Every request through the picker.** For a deck to report or to get a decision, the best answer
+   scored 0 to 6 out of 15 and was given without comment. Two decks were added for those jobs, and
+   every answer is now marked strong, fair or weak. Deck requests with a best answer under 10 fell
+   from 20 to 11. The picker's agreement between the page and Python is a saved test.
+3. **Starters.** A template that shows well is a poor thing to copy. Each deck and social picture
+   also exists as a small complete file.
+
+Other faults found by the checks and fixed: a shared helper that made SVG elements where HTML ones
+were needed, which left both decks blank and the picker dead until a screenshot caught it; SVG
+styles that would have clashed when two files were pasted into one page; a slide photograph cut to
+three quarters of its width; a PDF print that put each slide in the top third of a tall page; and a
+deck control bar that ran off the side of a 320 pixel screen.
+
+What this round did not change: evidence from people. It added a great deal of surface, and every
+new part of it is untested by anyone else. The rule at the end of this file applies with more force
+now.
 
 ## What only other people can do next
 
