@@ -23,14 +23,14 @@ That is the whole installation.
 
 ## Make a page
 
-1. Decide which recipe your notes fit.
+1. Decide which template your notes fit. The four pages are below. Decks and social posts are in the [index](../base/templates/README.md), and the Pick tab of the studio page will suggest one.
 
    | Your notes are about | Recipe | Example to open |
    | --- | --- | --- |
-   | How a week, month or project went | One-page report | [`recipe-report.html`](../base/examples/recipe-report.html) |
-   | Something a customer has to say yes to | Proposal | [`recipe-proposal.html`](../base/examples/recipe-proposal.html) |
-   | How something works | Scrolling explainer | [`recipe-explainer.html`](../base/examples/recipe-explainer.html) |
-   | Something you want people to sign up for or buy | Landing page | [`recipe-landing.html`](../base/examples/recipe-landing.html) |
+   | How a week, month or project went | One-page report | [`pages/report.html`](../base/templates/pages/report.html) |
+   | Something a customer has to say yes to | Proposal | [`pages/proposal.html`](../base/templates/pages/proposal.html) |
+   | How something works | Scrolling explainer | [`pages/explainer.html`](../base/templates/pages/explainer.html) |
+   | Something you want people to sign up for or buy | Landing page | [`pages/landing.html`](../base/templates/pages/landing.html) |
 
 2. Copy the sentence for it. Every example ends with its sentence, and all of them are in
    [`base/sentences.md`](../base/sentences.md). Start with the short ask.
@@ -49,7 +49,7 @@ That is the whole installation.
 | Use real notes | The assistant is told never to add facts. Thin notes give a thin page, with the gaps marked |
 | Ask for one page with one job | A page that reports and sells and explains does none of them well |
 | Ask for changes by naming parts | "Make the three numbers a bar chart" works. "Make it pop" does not |
-| Name a voice when the first try sounds generic | The seven voices are in [`base/examples/`](../base/examples/). Say "use the storyteller voice" |
+| Name a voice when the first try sounds generic | The seven voices are in [`base/templates/voices/`](../base/templates/voices/). Say "use the storyteller voice" |
 | Read the list of gaps and guesses it returns | That list is where the mistakes are |
 | Decide yourself what is published and where | The assistant builds a file. It does not send or post anything |
 

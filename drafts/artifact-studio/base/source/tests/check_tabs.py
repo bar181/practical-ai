@@ -1,13 +1,13 @@
 """check_tabs.py [edition ...]
 
-Opens the studio page (every tab) and each example file at 320, 390 and 1280 pixels wide and
+Opens the studio page (every tab) and each template file at 320, 390 and 1280 pixels wide and
 reports script errors, sideways scrolling, any state where exactly one view is not showing, and
 any photo frame left without its photograph. At 390 it also runs an
 accessibility scan (axe-core, WCAG 2 A and AA) if AXE_JS points at axe.min.js. Then it reloads
 with scripts turned off and checks that the first tab shows and that tapping a tab changes it.
 
 Needs: pip install playwright, and a Chrome or Chromium binary (set CHROME to its path).
-Pages: studio, or example:NAME such as example:voice-keynote. Default: all of them. A clean run prints "problems []".
+Pages: studio, or a template by folder and name, such as voices/keynote or decks/story. Default: all of them. A clean run prints "problems []".
 """
 import asyncio, sys, os
 from playwright.async_api import async_playwright
@@ -15,7 +15,7 @@ R=os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)),'..',
 CHROME=os.environ.get('CHROME','/usr/bin/google-chrome')
 F={'studio':'base/studio.html'}
 import glob
-for _f in sorted(glob.glob(R+'base/examples/*.html')): F['example:'+os.path.basename(_f)[:-5]]='base/examples/'+os.path.basename(_f)
+for _f in sorted(glob.glob(R+'base/templates/*/*.html')): F[_f.split('/templates/')[1][:-5]]='base/templates/'+_f.split('/templates/')[1]
 AXE=open(os.environ['AXE_JS']).read() if os.environ.get('AXE_JS') else None
 async def main(keys):
     async with async_playwright() as p:

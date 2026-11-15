@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="s-bars-grow" viewBox="0 0 320 160" role="img" aria-labelledby="t-bars-grow">
+<title id="t-bars-grow">Five bars that grow from the baseline</title>
+<desc>Use for a small comparison of up to five values. Plays once. At rest it shows the full bars.</desc>
+<style>#s-bars-grow .b{fill:var(--soft,#a5b9d8);transform-box:fill-box;transform-origin:50% 100%;animation:bars-grow-g .7s cubic-bezier(.2,.8,.2,1) both}#s-bars-grow .b:nth-of-type(2){animation-delay:.1s}#s-bars-grow .b:nth-of-type(3){animation-delay:.2s}#s-bars-grow .b:nth-of-type(4){animation-delay:.3s}#s-bars-grow .b.hi{fill:var(--accent,#774528);animation-delay:.4s}#s-bars-grow .x{stroke:var(--ink,#1b2228);stroke-width:2}@keyframes bars-grow-g{from{transform:scaleY(0)}to{transform:scaleY(1)}}@media (prefers-reduced-motion:reduce){#s-bars-grow *{animation:none!important}}</style>
+<rect class="b" x="30" y="92" width="40" height="48" rx="4"/><rect class="b" x="86" y="74" width="40" height="66" rx="4"/><rect class="b" x="142" y="84" width="40" height="56" rx="4"/><rect class="b" x="198" y="54" width="40" height="86" rx="4"/><rect class="b hi" x="254" y="24" width="40" height="116" rx="4"/><path class="x" d="M20 141H304"/>
+</svg>

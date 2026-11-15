@@ -113,6 +113,7 @@ const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
 const clamp=(v,a=0,b=1)=>Math.min(b,Math.max(a,v));
 const NS='http://www.w3.org/2000/svg';
 const el=(n,a={},t)=>{const e=document.createElementNS(NS,n);for(const k in a)e.setAttribute(k,a[k]);if(t!=null)e.textContent=t;return e};
+const h=(n,a={})=>{const e=document.createElement(n);for(const k in a)e.setAttribute(k,a[k]);return e};
 const HOOKS={};const onView=(name,fn)=>{HOOKS[name]=fn};
 /* count a number up once, when it scrolls into view */
 STUDIO.countUp=root=>{const io=new IntersectionObserver((es,o)=>{for(const e of es)if(e.isIntersecting){o.unobserve(e.target);const n=e.target,to=+n.dataset.count,dec=(n.dataset.count.split('.')[1]||'').length,t0=performance.now();

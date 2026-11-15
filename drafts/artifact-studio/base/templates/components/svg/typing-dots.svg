@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="s-typing-dots" viewBox="0 0 120 60" role="img" aria-labelledby="t-typing-dots">
+<title id="t-typing-dots">Three dots rising in turn</title>
+<desc>Use while something is being worked out, or to show an assistant drafting. Loops.</desc>
+<style>#s-typing-dots .d{fill:var(--ink,#1b2228);animation:typing-dots-b 1.2s ease-in-out infinite}#s-typing-dots .d:nth-of-type(2){animation-delay:.15s}#s-typing-dots .d:nth-of-type(3){animation-delay:.3s}@keyframes typing-dots-b{0%,60%,100%{transform:translateY(0);opacity:.45}30%{transform:translateY(-12px);opacity:1}}@media (prefers-reduced-motion:reduce){#s-typing-dots *{animation:none!important}}</style>
+<circle class="d" cx="30" cy="36" r="9"/><circle class="d" cx="60" cy="36" r="9"/><circle class="d" cx="90" cy="36" r="9"/>
+</svg>

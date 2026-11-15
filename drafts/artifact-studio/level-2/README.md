@@ -30,7 +30,7 @@ Either addition works without the other.
 1. Copy [`preferences-template.md`](preferences-template.md) and name the copy `preferences.md`.
 2. Fill in the parts you care about. Leave the rest blank. A blank line means "the assistant
    chooses".
-3. For colours and fonts, fill in [`base/templates/design-spec.md`](../base/templates/design-spec.md)
+3. For colours and fonts, fill in [`base/forms/design-spec.md`](../base/forms/design-spec.md)
    and paste its table under "Brand" in your preferences file.
 4. Put `preferences.md` where your assistant keeps files for you: the files of the same Project
    that holds the level 1 instructions.

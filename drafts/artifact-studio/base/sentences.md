@@ -6,7 +6,7 @@ Every sentence in the studio, in one place. Copy one, attach your notes (and a p
 
 This file is generated from the examples by `base/source/build.py`. Edit the views, not this file.
 
-## Recipes
+## Pages
 
 ### One-page report
 
@@ -97,6 +97,42 @@ The executive brief voice exists to get a decision from busy people. It is the p
 - **Short ask:** Write this as a one-page decision brief for busy executives. Decision first, then background, options, recommendation and risks.
 - **Full ask:** Build a decision brief from my notes that looks like a paper memo. Header with to, from, date and decision deadline. State the decision first in a shaded box. Background in numbered paragraphs. One options table including "do nothing", with the recommended row shaded. Then the recommendation in two sentences, each risk with its control, and next steps. Serif type, one navy accent, no images, no animation.
 - **With the skill:** Use the artifact-studio skill. Recipe: one-page report. Voice: executive brief. Look: paper memo, navy accent. Content: the attached notes and costs. Keep it to one printed page; if the content does not fit, tell me what you would cut rather than shrinking the type.
+
+## Decks
+
+### Visionary deck
+
+The visionary deck is for a room. It makes people feel that something has changed, and it leaves the detail for the conversation afterwards. It follows the manner of Steve Jobs's product launches: a villain, one rule, three things, one number, and a quiet last slide. The company and figures are invented.
+
+- **Short ask:** Turn my notes into a keynote-style deck: black slides, one idea each, huge type.
+- **Full ask:** Build an eight-slide deck from my notes in the keynote voice, black with white type. Slide 1 the feeling in one sentence, 2 the problem as one number, 3 what it cost, 4 the idea as one rule, 5 three things in three words, 6 the proof number with the old one struck through, 7 what it bought, 8 "one more thing" with the next step. No bullet lists. Make it one HTML file I can present with arrow keys.
+- **With the skill:** Use the artifact-studio skill. Template: visionary deck. Content: the attached notes. Invent no facts and mark every gap.
+
+### Story deck
+
+The story deck is for winning one customer or one room of them. The customer is the hero and the company is the guide. It follows Donald Miller's story framework: a character, a problem, a guide, a plan, a call to action, what failure looks like and what success looks like. The company and figures are invented.
+
+- **Short ask:** Turn my notes into a short story deck where my customer is the hero and we are the guide.
+- **Full ask:** Build a seven-slide deck from my notes in the storyteller voice, warm paper look with a serif headline. Slides: the person and what they want, the problem and how it feels, us as the guide with one proof, a three-step plan, one call to action, what happens if nothing changes, and what success looks like. Put a photo on the first and last slides only. Make it one HTML file I can present with arrow keys.
+- **With the skill:** Use the artifact-studio skill. Template: story deck. Content: the attached notes and photo. Invent no facts and mark every gap.
+
+## Social formats and animated SVG
+
+### Animated SVG
+
+Each file is plain SVG with its animation written in CSS inside the file. That means it plays as an image, inside a page, or pasted into a slide tool that accepts SVG. Colours come from four variables with built-in fallbacks, so a page can recolour a part by setting them.
+
+- **Short ask:** Add a small animated picture of a line going up next to my headline.
+- **Full ask:** Add the "line-draw" animated SVG from the artifact studio beside my headline, recoloured to my accent colour, with alt text that says what the trend is. Keep it under 160 pixels tall and make sure it is still readable with motion turned off.
+- **With the skill:** Use the artifact-studio skill. Component: line-draw.svg, recoloured to my brand. Place it beside the headline.
+
+### Social formats
+
+A post is read in about a second, on a phone, among other posts. So each format carries one idea in very large type, and the brand is a small line at the bottom. The sizes are the common ones. Platforms change their preferred sizes, so check the platform before a campaign.
+
+- **Short ask:** Make a square social post from this one sentence, in my colours.
+- **Full ask:** Make three social pictures from my notes: a square post with my main claim in seven words or fewer, a portrait post with my best number and a before-and-after bar, and a link preview with the page title. Use the colours in my attached spec, very large type, and my company name small at the bottom. Give me each as a PNG at full size.
+- **With the skill:** Use the artifact-studio skill. Templates: social square, portrait stat and link preview. Content: the attached notes. Invent no facts.
 
 ## Page components
 

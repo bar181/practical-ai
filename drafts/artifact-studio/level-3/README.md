@@ -2,13 +2,18 @@
 
 Level 2, plus connections, so content comes in and pages go out without copying and pasting.
 
-**Nothing in this level is built.** This file lists the slots, so that an addition has a place to
-go and a bar to clear. The base and levels 1 and 2 need none of it.
+**One connection is built: an MCP server.** It has been tested with a client on the machine that built it, and not yet inside a desktop assistant or over the internet. The other slots are listed so that an addition has a place to go and a bar to clear. The base and levels 1 and 2 need none of this.
 
 **Think of it as** plumbing. The kitchen works with buckets. Pipes save carrying, and a badly
 fitted pipe floods the floor, so each one is tested before it is trusted.
 
-## The slots
+## Built
+
+| Addition | What it does | Where | Status |
+| --- | --- | --- | --- |
+| The studio as tools | Lets an assistant browse the library, get a recommendation, read reference code and rules, and file a note about a design you like | [`mcp/`](mcp/) | Works over stdio and local HTTP with a test client, 2026-11-15. Not yet tried in a desktop assistant or from the web |
+
+## Slots not yet built
 
 | Addition | What it would do | What it depends on | Status |
 | --- | --- | --- | --- |

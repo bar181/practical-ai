@@ -1,0 +1,37 @@
+<style>
+.sv{background:var(--fog);color:var(--pine);padding:44px 0 60px}
+.sv h1{font-size:clamp(2.1rem,8vw,3.6rem);line-height:1}
+.sv>.wrap>p{margin-top:10px;max-width:34em;color:var(--slate);font:400 1.1rem/1.45 var(--display)}
+.sv-g{list-style:none;margin:26px 0 0;padding:0;display:grid;gap:16px}
+.sv-g li{background:#fff;border-radius:14px;padding:16px;display:grid;gap:8px;align-content:start}
+.sv-f{background:var(--fog);border-radius:10px;height:150px;display:grid;place-items:center;padding:14px}
+.sv-f img{max-width:100%;max-height:122px;width:auto;height:122px}.sv-f img.wide{width:100%;height:auto}
+.sv-g h3{font-size:1.1rem;line-height:1.2}.sv-g p{font:400 .93rem/1.4 var(--display);color:var(--slate);margin:0}
+.sv-g code{font:400 .84rem var(--mono);background:var(--mist);border-radius:4px;padding:.1em .35em}
+.sv-b{display:flex;gap:8px;flex-wrap:wrap}
+.sv-b button{min-height:44px;padding:0 16px;border-radius:999px;border:1.5px solid var(--pine);background:#fff;color:var(--pine);font:700 .9rem/1 var(--display);cursor:pointer}
+.sv-b button.copy{background:var(--pine);color:var(--fog)}
+@media(min-width:700px){.sv-g{grid-template-columns:1fr 1fr}}@media(min-width:1040px){.sv-g{grid-template-columns:1fr 1fr 1fr}}
+</style>
+<div class="view" id="v-svg" data-title="Animated SVG">
+  <section class="sv"><div class="wrap">
+    <h1>Twelve animated SVG parts</h1>
+    <p>Small moving pictures, each a single file with no script. Drop one into a page, a slide or a post. Each stops moving for people who have asked for less motion, and each still makes sense when it is still.</p>
+    <ul class="sv-g">
+@@svgset
+    </ul>
+  </div></section>
+  <section class="anat"><div class="wrap">
+    <h2>Behind these parts</h2>
+    <p class="measure">Each file is plain SVG with its animation written in CSS inside the file. That means it plays as an image, inside a page, or pasted into a slide tool that accepts SVG. Colours come from four variables with built-in fallbacks, so a page can recolour a part by setting them.</p>
+    <div class="anat-grid">
+      <div><h3>How to use one</h3><ol><li>As an image: <code>&lt;img src="line-draw.svg" alt="..."&gt;</code></li><li>Inline: paste the file's contents into the page. Its styles are scoped to its own id, so parts do not clash</li><li>To recolour inline, set <code>--ink</code>, <code>--accent</code>, <code>--soft</code> or <code>--sand</code> on the page</li><li>To change a number, edit the text and the one value the description names</li><li>Where SVG is not accepted, such as email, use the GIF copy in <code>components/gif/</code></li></ol></div>
+      <div><h3>Design rules</h3><ul><li>The resting picture is the finished picture. Motion only brings it in</li><li>One movement per part, under three seconds, or a slow loop</li><li>No script and no outside files</li><li>A title and a description inside every file, for screen readers and for agents</li><li>Motion stops under "reduce motion"</li></ul></div>
+    </div>
+@@levels Add a small animated picture of a line going up next to my headline. || Add the "line-draw" animated SVG from the artifact studio beside my headline, recoloured to my accent colour, with alt text that says what the trend is. Keep it under 160 pixels tall and make sure it is still readable with motion turned off. || Use the artifact-studio skill. Component: line-draw.svg, recoloured to my brand. Place it beside the headline.
+  </div></section>
+</div>
+<script>
+onView("svg",root=>{root.addEventListener('click',e=>{const li=e.target.closest('.sv-g li');if(!li)return;const img=$('img',li);
+  if(e.target.closest('.sv-re')){const s=img.src;img.src='';requestAnimationFrame(()=>{img.src=s})}});});
+</script>

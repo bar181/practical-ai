@@ -1,6 +1,6 @@
 ---
 name: artifact-studio
-description: Turns any content (notes, documents, data, images, video) into one polished, self-contained HTML page by choosing a recipe (page type), a voice and a look, then building and checking it. Use when asked to "make a page", "build an artifact", "turn this into a report", "make a proposal page", "make a landing page", "explain this as a scrolling page", "make this look good", "use the keynote voice" (or storyteller, teacher, pitch, practical instructor, analyst, executive brief), or "use the artifact studio".
+description: Turns any content (notes, documents, data, images, video) into one polished, self-contained HTML page, slide deck or social post picture by choosing a template, a voice and a look, then building and checking it. Use when asked to "make a page", "build an artifact", "turn this into a report", "make a proposal page", "make a landing page", "explain this as a scrolling page", "make this look good", "use the keynote voice" (or storyteller, teacher, pitch, practical instructor, analyst, executive brief), or "use the artifact studio".
 ---
 
 # Artifact studio
@@ -55,13 +55,13 @@ the look is the plate. Your job is to take the order correctly and cook it well.
 9. **Deliver.** Give the page, then a short note with four things: what you chose (recipe, voice,
    look), what you assumed, what is missing, and what the person should check before sharing.
 
-## Three levels of request
+## Three kinds of request
 
 | The person says | You do |
 | --- | --- |
-| One sentence, such as "make a landing page from my notes" (beginner) | Choose the voice and look yourself in steps 3 and 4, and say what you chose in one line |
-| A sentence naming the recipe, voice, look and parts (advanced) | Follow their choices exactly. If two of them conflict, say which you followed and why |
-| "Use the artifact-studio skill" with attachments (expert) | Run every step, including the check and the full delivery note |
+| One sentence, such as "make a landing page from my notes" (a short ask) | Choose the voice and look yourself in steps 3 and 4, and say what you chose in one line |
+| A sentence naming the recipe, voice, look and parts (a full ask) | Follow their choices exactly. If two of them conflict, say which you followed and why |
+| "Use the artifact-studio skill" with attachments | Run every step, including the check and the full delivery note |
 
 ## Media
 
@@ -75,6 +75,28 @@ the look is the plate. Your job is to take the order correctly and cook it well.
   collapsed table under the chart.
 - **No media supplied.** Build with type, colour and drawn parts. Do not add stock photos or
   generated images unless asked.
+
+## Choosing for the person
+
+When the person says what they need and not which template, choose for them. The library's index
+is `drafts/artifact-studio/base/templates/index.json`. Each template has a fit score from 0 to 3
+for six goals (report, decide, sell, teach, inspire, announce) and five readers (customer,
+executive, team, public, learner). Score each as three times the goal fit plus twice the reader
+fit and take the highest: one page with one voice, or one deck, or one social format. Say what
+you chose and why in one line, and offer the runner-up. With the studio's MCP server connected,
+call `recommend` and it does the scoring.
+
+The library also holds decks, social post pictures and animated SVG parts. They follow the same
+rules as pages: one self-contained file, the person's own content, the checklist before showing.
+
+## When the person shows you something they like
+
+Record the idea, never the thing. Write a short card in your own words: what it is, what works
+about it (structure, order, rhythm, how a number is shown), the closest template in the library,
+and whether it should stay a note, change an existing template or become a new part. Do not copy
+its text, pictures, logo, characters or code. The process is in
+`drafts/artifact-studio/base/inspiration/README.md`. With the MCP server connected, file the card
+with `add_inspiration`.
 
 ## Rules that never bend
 

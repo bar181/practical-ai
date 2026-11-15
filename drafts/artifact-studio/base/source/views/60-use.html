@@ -23,28 +23,32 @@
 </style>
 <div class="view" id="v-use" data-tab="use" data-title="How to use">
   <div class="wrap shelf-head"><h2>How to use the studio</h2>
-    <p class="measure">The studio is a menu. You point at what you want and the assistant builds it from your own content. Everything you need is in the base: this page, every example as a file of its own, the cards, the templates and the skill. A level only adds to the base.</p></div>
+    <p class="measure">The studio is a menu. You point at what you want and the assistant builds it from your own content. Everything you need is in the base: this page, the template library with every template as a file of its own, the cards, the forms and the skill. A level only adds to the base.</p></div>
   <section class="us-s"><h3>Three levels, by what you add</h3>
     <div class="us-lv">
       <div><b>Level 1</b><span>Nothing to install.</span><dl><dt>You add</dt><dd>Two instruction files: one for the assistant, one for you</dd><dt>You get</dt><dd>Any example here, rebuilt from your own notes</dd><dt>Depends on</dt><dd>Any chat assistant that can make a web page</dd></dl></div>
       <div><b>Level 2</b><span>Your preferences on file.</span><dl><dt>You add</dt><dd>One preferences file, and the skill installed</dd><dt>You get</dt><dd>Pages in your colours, voice and layout without saying so each time</dd><dt>Depends on</dt><dd>An assistant that keeps files for you, such as a Project, or one that loads skills</dd></dl></div>
-      <div><b>Level 3</b><span>Connected. Not built yet.</span><dl><dt>You add</dt><dd>Connections that bring content in and send pages out</dd><dt>You get</dt><dd>Less copying and pasting</dd><dt>Depends on</dt><dd>Connectors or a plugin. The slots are listed in the repository. None has been walked end to end</dd></dl></div>
+      <div><b>Level 3</b><span>Connected. One connection built.</span><dl><dt>You add</dt><dd>An MCP server, so your assistant can browse this library and pick from it by itself</dd><dt>You get</dt><dd>No pasting of instructions or files. You say what you need</dd><dt>Depends on</dt><dd>An assistant that runs MCP servers. Tested with a client only, not yet in a desktop assistant</dd></dl></div>
     </div></section>
   <section class="us-s"><h3>For people: six steps</h3>
-    <ol class="us-steps"><li>Once: open the Skill tab, copy "AI instructions" and paste it into your assistant's Project instructions.</li><li>Open an example you like and copy the sentence under it.</li><li>Paste it into the assistant and attach your notes. Add a photo if the page should use one.</li><li>Read what comes back on your phone first. Most people will see it there.</li><li>Ask for changes by naming parts: "make the big numbers a ring", "use the teacher voice for the opening".</li><li>Check every number and name against your notes before you share it.</li></ol></section>
+    <ol class="us-steps"><li>Once: open the Skill tab, copy "AI instructions" and paste it into your assistant's Project instructions.</li><li>Open a template you like and copy the sentence under it. Not sure which? The Pick tab suggests one.</li><li>Paste it into the assistant and attach your notes. Add a photo if the page should use one.</li><li>Read what comes back on your phone first. Most people will see it there.</li><li>Ask for changes by naming parts: "make the big numbers a ring", "use the teacher voice for the opening".</li><li>Check every number and name against your notes before you share it.</li></ol></section>
   <section class="us-s"><h3>For agents: the skill</h3>
     <p>The repository holds a skill called <b>artifact-studio</b>. It turns any content into a page by following the same menu, in this order: intake, recipe, voice, look, outline, parts, build, check.</p>
     <ul class="us-rules"><li>It invents no facts. A gap in the content is marked on the page and listed for the person.</li><li>It uses real customer words for quotes, or leaves the quote out.</li><li>It builds one self-contained file that works on a phone and with motion turned off.</li><li>It reads a preferences file first, if there is one.</li><li>It runs the pre-ship checklist and reports the result.</li><li>Anything that posts, sends or publishes waits for a person.</li></ul></section>
   <section class="us-s"><h3>Where things are in the repository</h3>
     <div class="us-files" tabindex="0" role="region" aria-label="Where things are in the repository"><table><thead><tr><th>You want</th><th>Open</th></tr></thead><tbody>
       <tr><td>This page</td><td><code>base/studio.html</code></td></tr>
-      <tr><td>One example as a file to copy</td><td><code>base/examples/</code></td></tr>
+      <tr><td>One template as a file to copy</td><td><code>base/templates/</code></td></tr>
+      <tr><td>The index of everything</td><td><code>base/templates/README.md</code></td></tr>
       <tr><td>Sentences to copy</td><td><code>base/sentences.md</code></td></tr>
-      <tr><td>The design spec and content brief</td><td><code>base/templates/</code></td></tr>
+      <tr><td>The design spec and content brief</td><td><code>base/forms/</code></td></tr>
+      <tr><td>Taking in a design you like</td><td><code>base/inspiration/</code></td></tr>
+      <tr><td>Outside tools worth knowing</td><td><code>base/RESOURCES.md</code></td></tr>
       <tr><td>The skill</td><td><code>skills/artifact-studio/</code></td></tr>
       <tr><td>Instructions for the assistant and for you</td><td><code>level-1/</code></td></tr>
       <tr><td>The preferences file</td><td><code>level-2/</code></td></tr>
-      <tr><td>The connection slots</td><td><code>level-3/</code></td></tr>
+      <tr><td>The MCP server</td><td><code>level-3/mcp/</code></td></tr>
+      <tr><td>The front door for agents</td><td><code>AGENTS.md</code></td></tr>
       <tr><td>How these pages are made, and why</td><td><code>base/BEST-PRACTICES.md</code></td></tr>
       <tr><td>The source of this page</td><td><code>base/source/</code></td></tr></tbody></table></div></section>
   <section class="us-s us-end"><h3>What has and has not been tested</h3>

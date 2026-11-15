@@ -27,7 +27,8 @@ def levels_macro(m):
     rows=[('Short ask','one sentence',b),('Full ask','you name the voice, look and parts',a),('With the skill','it does the whole job',e)]
     return '<div class="levels">'+''.join(f'<div class="ask"><h3><b>{n}:</b> {d}</h3><blockquote>{q}</blockquote><button class="copy" type="button">Copy</button></div>' for n,d,q in rows)+'</div>'
 
-import markdown
+import markdown, base64
+import catalog as C
 ROOT=os.path.normpath(os.path.join(HERE,'..','..'))            # drafts/artifact-studio
 SKILL=os.path.normpath(os.path.join(ROOT,'..','..','skills','artifact-studio'))
 def md_html(path,drop_h1=False):
@@ -47,6 +48,27 @@ def md_html(path,drop_h1=False):
     h=re.sub(r'<li>\[ \] ?(.*?)</li>',r'<li class="task"><label><input type="checkbox"><span>\1</span></label></li>',h,flags=re.S)
     h=re.sub(r'<pre>(.*?)</pre>',r'<div class="codeb"><pre>\1</pre><button class="copy" type="button">Copy</button></div>',h,flags=re.S)
     return h
+SVGDIR=os.path.normpath(os.path.join(HERE,'..','templates','components','svg'))
+def svg_items():
+    out=[]
+    for f in sorted(glob.glob(os.path.join(SVGDIR,'*.svg'))):
+        t=open(f).read(); out.append((os.path.basename(f),re.search(r'<title[^>]*>(.*?)</title>',t).group(1),re.search(r'<desc>(.*?)</desc>',t).group(1),t))
+    return out
+def svgset_macro(m):
+    rows=[]
+    for name,title,desc,t in svg_items():
+        vb=[float(x) for x in re.search(r'viewBox="([^"]*)"',t).group(1).split()]; wide=' class="wide"' if vb[2]/vb[3]>3 else ''
+        rows.append(f'      <li><div class="sv-f"><img{wide} alt="{html.escape(title)}" src="data:image/svg+xml;base64,{base64.b64encode(t.encode()).decode()}"></div><h3>{html.escape(title)}</h3><p>{html.escape(desc)}</p><p><code>{name}</code></p><div class="sv-b"><button class="sv-re" type="button">Replay</button><button class="copy" type="button">Copy SVG</button><pre hidden>{html.escape(t)}</pre></div></li>')
+    return '\n'.join(rows)
+def facet_macro(m):
+    f,on=m.group(1).split()
+    return ''.join(f'<label><input type="radio" name="pk-{f}" value="{k}"{" checked" if k==on else ""}><span>{html.escape(v)}</span></label>' for k,v in C.FACETS[f])
+def pick_macro(m):
+    g,a,f=m.group(1).split(); rows=[]
+    for r in C.recommend(g,a,f):
+        files=' '.join(f'<code>base/templates/{x}</code>' for x in r['files'])
+        rows.append(f'<li><h3>{html.escape(r["title"])}</h3><p class="pk-w">{html.escape(r["why"])}</p><p class="pk-l"><b>Look:</b> {html.escape(r["look"])}. <b>Files:</b> {files}</p><div class="ask"><h3>Ask for it like this</h3><blockquote>{html.escape(r["ask"])}</blockquote><button class="copy" type="button">Copy</button></div></li>')
+    return '\n'.join(rows)
 def md_macro(m): return '<article class="md sub"><div class="wrap">'+md_html(os.path.normpath(os.path.join(ROOT,m.group(1).strip())),drop_h1=True)+'</div></article>'
 def md_view(name,title,path,raw=None):
     if raw: inner=f'<h1>{html.escape(title)}</h1><p>{raw}</p><div class="codeb"><pre>{html.escape(re.sub(r"^<!--.*?-->\s*","",open(path).read(),flags=re.S).strip())}</pre><button class="copy" type="button">Copy</button></div>'
@@ -54,7 +76,7 @@ def md_view(name,title,path,raw=None):
     return f'<div class="view" id="v-{name}" data-title="{html.escape(title)}"><article class="md"><div class="wrap">{inner}</div></article></div>'
 
 # every view file: css always, script and markup kept by name
-css=[];VIEW={};VJS={};LIB=[];LV={};VCSS={}
+css=[];VIEW={};VJS={};LIB=[];LV={};VCSS={};VFILE={}
 for f in sorted(glob.glob(os.path.join(HERE,'views','*.html'))):
     t=open(f).read()
     own=[m.group(1).strip() for m in re.finditer(r'<style>(.*?)</style>',t,re.S)]; css+=own
@@ -62,10 +84,11 @@ for f in sorted(glob.glob(os.path.join(HERE,'views','*.html'))):
     t=re.sub(r'<style>.*?</style>|<script>.*?</script>','',t,flags=re.S).strip()
     lvm=re.search(r'^@@levels (.*)$',t,re.M)
     t=re.sub(r'^@@ask (.*)$',ask_macro,t,flags=re.M); t=re.sub(r'^@@levels (.*)$',levels_macro,t,flags=re.M); t=re.sub(r'^\s*@@md (.*)$',md_macro,t,flags=re.M)
+    t=re.sub(r'^@@svgset$',svgset_macro,t,flags=re.M); t=re.sub(r'^@@facet (.*)$',facet_macro,t,flags=re.M); t=re.sub(r'^@@pick (.*)$',pick_macro,t,flags=re.M)
     m=re.search(r'id="v-([\w-]+)"',t)
     if m and lvm: LV[m.group(1)]=[x.strip() for x in lvm.group(1).split('||')]
     if not m: LIB+=sc; continue
-    VIEW[m.group(1)]=t; VJS[m.group(1)]=sc; VCSS[m.group(1)]='\n'.join(own)
+    VFILE[m.group(1)]=os.path.basename(f); VIEW[m.group(1)]=t; VJS[m.group(1)]=sc; VCSS[m.group(1)]='\n'.join(own)
 # level 1's instructions for the assistant are the single-file skill without its header, written first so the tab below can show them
 _one=open(os.path.join(SKILL,'SKILL-single-file.md')).read().split('---',2)[2].strip()
 open(os.path.join(ROOT,'level-1','AI-INSTRUCTIONS.md'),'w').write('<!-- Generated from skills/artifact-studio/SKILL-single-file.md by base/source/build.py. Edit that file, not this one. -->\n\n'+_one+'\n')
@@ -73,29 +96,33 @@ MD={ # name: (title, path, note shown above a copy-ready block or None to render
  'c-recipes':('Recipe cards',SKILL+'/references/recipes.md',None),
  'c-voices':('Voice cards',SKILL+'/references/voices.md',None),
  'c-parts':('Parts list',SKILL+'/references/components.md',None),
- 'c-spec':('Design spec',ROOT+'/base/templates/design-spec.md','Your colours and type on one page. Fill it in once and attach it to a request, or paste it into your preferences file at level 2. Copy it, then replace the parts in brackets.'),
- 'c-brief':('Content brief',ROOT+'/base/templates/content-brief.md','Fill this in for each page. Five lines that tell the assistant who the page is for and what it must do. Copy it, then replace the parts in brackets.'),
+ 'c-spec':('Design spec',ROOT+'/base/forms/design-spec.md','Your colours and type on one page. Fill it in once and attach it to a request, or paste it into your preferences file at level 2. Copy it, then replace the parts in brackets.'),
+ 'c-brief':('Content brief',ROOT+'/base/forms/content-brief.md','Fill this in for each page. Five lines that tell the assistant who the page is for and what it must do. Copy it, then replace the parts in brackets.'),
  'c-sentences':('All sentences',ROOT+'/base/sentences.md',None),
  's-skill':('The skill',SKILL+'/SKILL.md',None),
  's-single':('AI instructions',ROOT+'/level-1/AI-INSTRUCTIONS.md','Level 1 needs only this. It is the whole skill in one file. Copy it and paste it into the instructions of a Project, or into the first message of a chat.'),
  's-skel':('Page skeleton',SKILL+'/assets/page-skeleton.html','The starting file the skill builds from. One self-contained page with the tokens, the type scale and the motion rules already in place.'),
  's-rules':('Build rules',SKILL+'/references/build-rules.md',None),
  's-check':('Checklist',SKILL+'/references/pre-ship-checklist.md',None),
- 's-agent':('Agent guide',ROOT+'/base/AGENT-GUIDE.md',None),
- 's-best':('Best practices',ROOT+'/base/BEST-PRACTICES.md',None)}
+  's-best':('Best practices',ROOT+'/base/BEST-PRACTICES.md',None)}
 for n,(title,path,raw) in MD.items(): VIEW[n]=md_view(n,title,path,raw); VJS[n]=[]
 LABEL={'voice-keynote':'Keynote','voice-story':'Storyteller','voice-teacher':'Teacher','voice-pitch':'Pitch','voice-practical':'Practical','voice-analyst':'Analyst','voice-brief':'Brief',
        'recipe-report':'Report','recipe-proposal':'Proposal','recipe-explainer':'Explainer','recipe-landing':'Landing page'}
 VOICES=['voice-keynote','voice-story','voice-teacher','voice-pitch','voice-practical','voice-analyst','voice-brief']
 RECIPES=['recipe-report','recipe-proposal','recipe-explainer','recipe-landing']
 G_VOICES=('Voices',VOICES,'One message, told seven ways. Tap a voice:'); G_RECIPES=('Recipes',RECIPES,'Four whole pages. Tap a recipe:')
-STUDIO_GROUPS=[G_VOICES,('Looks',['looks'],''),('Photo parts',['photo'],''),('Page parts',['parts'],''),G_RECIPES,('Mix',['mix'],''),
-  ('Cards',['c-recipes','c-voices','c-parts','c-spec','c-brief','c-sentences'],'The reference cards, the two templates and every sentence:'),
-  ('Skill',['s-skill','s-single','s-skel','s-rules','s-check','s-agent','s-best'],'What the assistant follows. "AI instructions" is the paste-in version:'),
+STUDIO_GROUPS=[G_VOICES,('Pages',RECIPES,'Four whole pages. Tap one:'),('Decks',['deck-visionary','deck-story'],'Two slide decks on one engine:'),('Social',['social'],''),
+  ('Parts',['parts','photo','svg','looks'],'The pieces a page is made of:'),('Pick',['pick','mix'],'Let the studio suggest, or choose every part yourself:'),
+  ('Cards',['c-recipes','c-voices','c-parts','c-spec','c-brief','c-sentences'],'The reference cards, the two forms and every sentence:'),
+  ('Skill',['s-skill','s-single','s-skel','s-rules','s-check','s-best'],'What the assistant follows. "AI instructions" is the paste-in version:'),
   ('Guide',['use'],'')]
-# one page with everything, and every example again as a file of its own
-EXAMPLES={n:n for n in VOICES+RECIPES}; EXAMPLES.update({'looks':'looks','photo':'photo-parts','parts':'page-parts'})
-EX_TITLE={'looks':'Nine looks','photo':'Twelve photo parts','parts':'Twelve page parts'}
+LABEL.update({'parts':'Page parts','photo':'Photo parts','svg':'Animated SVG','looks':'Looks','pick':'Pick for me','mix':'Mix it myself','deck-visionary':'Visionary','deck-story':'Story'})
+# every template again as a file of its own: view -> (file under base/templates, title)
+FILES={t['id']:t['file'].split('#')[0] for t in C.TEMPLATES if t['kind'] in('page','voice','deck')}
+FILES.update({'social':'social/formats.html','parts':'components/page-parts.html','photo':'components/photo-parts.html','svg':'components/animated-svg.html','looks':'looks/nine-looks.html'})
+FTITLE={'social':'Seven social formats','parts':'Twelve page parts','photo':'Twelve photo parts','svg':'Twelve animated SVG parts','looks':'Nine looks'}
+FTITLE.update({t['id']:t['title'] for t in C.TEMPLATES})
+TAB={t['id']:(t['id'] if t['kind']!='social' else 'social') for t in C.TEMPLATES}
 # a short "about" strip at the top of every voice and recipe tab, taken from the voice cards and from the page's own closing note
 _v=open(SKILL+'/references/voices.md').read()
 _use={n.strip():u.strip() for u,n in re.findall(r'^\| ([^|]+) \| ([^|]+) \|$',_v[_v.index('## Choosing'):_v.index('## Keynote')],re.M) if n.strip() not in ('Use','---')}
@@ -117,8 +144,10 @@ def about(n,t,key='all'):
     return re.sub(r'(<div class="view"[^>]*>)',lambda m:m.group(1)+strip,t,count=1)
 SHELL=open(os.path.join(HERE,'shell.html')).read()
 BASE=open(os.path.join(HERE,'base.css')).read()
-data=json.dumps({'rows':A['rows'],'pal':A['pal']},separators=(',',':'))
+PAGE_INDEX={'templates':[dict(t,tab=TAB[t['id']]) for t in C.TEMPLATES],'rules':C.RULES,'labels':{f:dict(v) for f,v in C.FACETS.items()}}
+data=json.dumps({'rows':A['rows'],'pal':A['pal'],'index':PAGE_INDEX},separators=(',',':'))
 def title_of(n): return LABEL.get(n) or re.search(r'data-title="([^"]*)"',VIEW[n]).group(1)
+PREFIX={}
 def build(key,out,title,lead,groups):
     single=len(groups)==1 and len(groups[0][1])==1
     order=[n for _,vs,_ in groups for n in vs]
@@ -136,7 +165,7 @@ def build(key,out,title,lead,groups):
             s_rows.append(f'<div class="tabs-s s{i}"><span>{html.escape(cap)}</span>'+''.join(f'<label for="t-{n}">{html.escape(title_of(n))}</label>' for n in vs)+'</div>')
     nav='<nav class="tabs" aria-label="Sections"><div class="tabs-g">'+''.join(g_row)+'</div>'+''.join(s_rows)+'</nav>'
     if single: radios=[]; nav=''; tcss=[f'#v-{order[0]}{{display:block}}','.mast{padding-bottom:14px}']
-    mast=f'<header class="mast"><div class="wrap"><p class="mast-t"><span>{"Artifact studio example" if single else "Artifact studio"}</span> {html.escape(title)}</p><p class="mast-l">{html.escape(lead)}</p></div></header>'
+    mast=f'<header class="mast"><div class="wrap"><p class="mast-t"><span>{PREFIX.get(key,"Artifact studio template") if single else "Artifact studio"}</span> {html.escape(title)}</p><p class="mast-l">{html.escape(lead)}</p></div></header>'
     body=[]
     for k,n in enumerate(order):
         t=about(n,VIEW[n],key); prev=order[k-1] if k else None; nxt=order[k+1] if k+1<len(order) else None
@@ -144,7 +173,7 @@ def build(key,out,title,lead,groups):
         body.append(t if single else t[:t.rindex('</div>')]+pager+'</div>')
     js=LIB+[x for n in order for x in VJS[n]]
     js='\n'.join('<script>\ntry{(()=>{\n'+x+'\n})()}catch(err){console.error(err)}\n</script>' for x in js)
-    mk='\n'.join(VIEW[n] for n in order); vc='\n'.join(VCSS.get(n,'') for n in order)
+    mk='\n'.join(VIEW[n] for n in order); vc='\n'.join(VCSS.get(n,'')+'\n'.join(VJS.get(n,[])) for n in order)
     p1=(not single) or 'photo' in order or bool(re.search(r'class="(?![^"]*\bph2\b)[^"]*\bph\b',mk)) or 'var(--photo)' in vc or 'data-crop' in mk
     p2=(not single) or 'photo' in order or 'ph2' in mk or '--photo2' in vc
     if single and order[0] in ('voice-keynote','voice-story'): p1=False          # these two repaint every photo frame with the second photograph
@@ -156,10 +185,71 @@ def build(key,out,title,lead,groups):
     kb=round(len(t.encode())/1024); t=t.replace('__KB__',f'{kb:,}')
     left=re.findall(r'__[A-Z]+__|^\s*@@\w+',re.sub(r'data:[^")]+','',re.sub(r'<pre>.*?</pre>','',t,flags=re.S)),flags=re.M); assert not left, left
     open(os.path.join(ROOT,out),'w').write(t); print(f'{key}: {kb} KB, {len(order)} tabs -> {out}')
-build('studio','base/studio.html','','Everything in one page: seven voices, nine looks, 24 parts and four whole pages, then the cards, the skill and a guide. Tap a tab.',STUDIO_GROUPS)
-for n,fn in EXAMPLES.items():
-    full=EX_TITLE.get(n) or (VNAME[n]+' voice' if n in VNAME else re.search(r'data-title="([^"]*)"',VIEW[n]).group(1)+' recipe')
-    build(n,f'base/examples/{fn}.html',full,'A complete page in one file. Copy it as a starting point, or ask for one like it with the sentence at the end.',[(full,[n],'')])
+build('studio','base/studio.html','','Everything in one page: voices, pages, decks, social formats and parts, then a picker, the cards, the skill and a guide. Tap a tab.',STUDIO_GROUPS)
+for n,fn in FILES.items():
+    os.makedirs(os.path.dirname(os.path.join(ROOT,'base','templates',fn)),exist_ok=True)
+    build(n,'base/templates/'+fn,FTITLE[n],'A complete template in one file. Copy it as a starting point, or ask for one like it with the sentence at the end.',[(FTITLE[n],[n],'')])
+
+# ---- reports: any Markdown file in docs/reports becomes a page in the same style
+REPO=os.path.normpath(os.path.join(ROOT,'..','..'))
+for f in sorted(glob.glob(os.path.join(REPO,'docs','reports','*.md'))):
+    key='report-'+os.path.basename(f)[:-3]; src=open(f).read(); ttl=re.search(r'^# (.+)$',src,re.M).group(1)
+    VIEW[key]=f'<div class="view" id="v-{key}" data-title="{html.escape(ttl)}"><article class="md"><div class="wrap">{md_html(f,drop_h1=True)}</div></article></div>'; VJS[key]=[]; PREFIX[key]='Practical AI report'
+    build(key,os.path.relpath(f[:-3]+'.html',ROOT),ttl,'What was proposed, what was built, how to use it, and what has not been checked.',[(ttl,[key],'')])
+
+# ---- the index: one machine-readable file and one page for people, both generated, so neither can drift from the templates
+def write_index(parts,photo):
+    import datetime
+    slug=lambda x: re.sub(r'[^a-z0-9]+','-',x.lower()).strip('-')
+    T='base/templates/'; looks=re.findall(r'^## (.+)$',open(SKILL+'/references/looks.md').read(),re.M)
+    looks=[l for l in looks if l in ('Clean','Cinematic','Scrollytelling','Dashboard','Editorial','Keynote black','Paper memo','Field guide','Faded film')]
+    tpl=[]
+    for t in C.TEMPLATES:
+        view=TAB[t['id']]; lv=LV.get(t['id'])
+        ask={'short':lv[0],'full':lv[1],'with_skill':lv[2]} if lv else {'short':t['ask']}
+        e=dict(id=t['id'],kind=t['kind'],title=t['title'],summary=t['summary'],file=T+t['file'],source='base/source/views/'+VFILE[view],fit=t['fit'],options=C.OPTIONS[t['kind']],ask=ask)
+        for k in('look','size','voice'):
+            if k in t: e[k]=t[k]
+        if t['kind']=='voice': e['default_look']=C.RULES['look_for_voice'][t['id']]
+        tpl.append(e)
+    comp=[dict(id='page-'+slug(n),group='page',name=n,use=use.rstrip('.'),ask=q,effort=effort,file=T+'components/page-parts.html',source='base/source/views/30-parts.html') for n,blurb,q,effort,made,grow,use in parts]
+    comp+=[dict(id='photo-'+slug(n),group='photo',name=n,use=blurb,ask=q,effort=effort,file=T+'components/photo-parts.html',source='base/source/views/20-photo.html') for n,blurb,q,effort,made,grow,use in photo]
+    comp+=[dict(id='svg-'+name[:-4],group='svg',name=title,use=desc,ask=f'Add the "{name[:-4]}" animated SVG from the artifact studio, recoloured to my accent colour.',effort='Copy one file',file=T+'components/svg/'+name,source=T+'components/svg/'+name) for name,title,desc,_ in svg_items()]
+    for c in comp:
+        g=T+'components/gif/'+os.path.basename(c['file'])[:-4]+'.gif'
+        if c['group']=='svg' and os.path.exists(os.path.join(ROOT,g)): c['gif']=g
+    kinds=['page','voice','deck','social']
+    counts={'templates':len(tpl),**{k+'s' if k!='social' else 'social_formats':sum(t['kind']==k for t in tpl) for k in kinds},'components':len(comp),'page_parts':len(parts),'photo_parts':len(photo),'animated_svg':sum(c['group']=='svg' for c in comp),'gif_copies':sum('gif' in c for c in comp),'looks':len(looks)}
+    idx=dict(name='artifact-studio',generated=datetime.date.today().isoformat(),
+             read_me='Paths are relative to drafts/artifact-studio/. "file" is the finished template to open or copy. "source" is the smaller file to read as reference code: one style block, the markup and one script. "fit" scores run 0 to 3. To choose, score = 3 x goal fit + 2 x audience fit, highest first.',
+             counts=counts,facets={f:[dict(id=k,label=v) for k,v in v2] for f,v2 in C.FACETS.items()},rules=C.RULES,templates=tpl,components=comp,
+             looks=[dict(name=l,file=T+'looks/nine-looks.html',card='skills/artifact-studio/references/looks.md') for l in looks])
+    json.dump(idx,open(os.path.join(ROOT,'base','templates','index.json'),'w'),indent=1)
+    rel=lambda p:p.replace(T,'')
+    o=['# Templates','','Everything the studio can make, in one index. Open a file to see it, copy it to start from it, or give the short ask to an assistant.','',
+       'This page and [`index.json`](index.json) are generated by `base/source/build.py` from the templates themselves. Edit the views or `base/source/catalog.py`, not this file.','',
+       f"**In the library:** {counts['templates']} templates ({counts['pages']} pages, {counts['voices']} voices, {counts['decks']} decks, {counts['social_formats']} social formats), {counts['components']} components ({counts['page_parts']} page parts, {counts['photo_parts']} photo parts, {counts['animated_svg']} animated SVG files) and {counts['looks']} looks.",'',
+       '| Folder | What is in it |','| --- | --- |','| [`pages/`](pages/) | Whole pages: report, proposal, explainer, landing page |','| [`voices/`](voices/) | One case told seven ways, each a full page |','| [`decks/`](decks/) | Slide decks you present with the arrow keys |','| [`social/`](social/) | Post shapes you download as pictures |','| [`components/`](components/) | The parts: page parts, photo parts and animated SVG files |','| [`looks/`](looks/) | One line dressed nine ways |','',
+       'Every example uses invented content. GitHub shows HTML as source, so download a file and open it in a browser.','']
+    for k,head,note in (('page','Pages','A page is the structure. Pair it with a voice.'),('voice','Voices','A voice is how the piece speaks. All seven tell the same invented case.'),('deck','Decks','One deck engine, two manners. Each is a single file.'),('social','Social formats','All seven pictures are in one file, with download buttons.')):
+        o+=[f'## {head}','',note,'','**What you can change:** '+C.OPTIONS[k],'','| Template | Use it when you need to | Open | Short ask |','| --- | --- | --- | --- |']
+        for t in tpl:
+            if t['kind']!=k: continue
+            best=[dict(C.FACETS['goal'])[g].lower() for g,v in sorted(t['fit']['goal'].items(),key=lambda x:-x[1]) if v>=2]
+            o.append(f"| **{t['title']}**. {t['summary']} | {', '.join(best) or 'see the summary'} | [`{rel(t['file']).split('#')[0]}`]({rel(t['file']).split('#')[0]}) | {t['ask']['short']} |")
+        o.append('')
+    for g,head,f in (('page','Page parts','components/page-parts.html'),('photo','Photo parts','components/photo-parts.html')):
+        o+=[f'## {head}','',f'All twelve are in [`{f}`]({f}), each with the sentence that asks for it.','','| Part | Use it for |','| --- | --- |']+[f"| {c['name']} | {c['use']} |" for c in comp if c['group']==g]+['']
+    o+=['## Animated SVG','','Each is one file with no script. See them move in [`components/animated-svg.html`](components/animated-svg.html).','','Where SVG is not accepted, such as email and some slide tools, use the GIF copy. The GIFs are made from the SVG files by `base/source/svg_to_gif.py`.','','| File | GIF copy | What it is | Use |','| --- | --- | --- | --- |']
+    o+=[f"| [`{os.path.basename(c['file'])}`]({rel(c['file'])}) | "+(f"[`gif`]({rel(c['gif'])})" if 'gif' in c else 'none')+f" | {c['name']} | {c['use']} |" for c in comp if c['group']=='svg']
+    o+=['','## Looks','','Nine looks, shown side by side in [`looks/nine-looks.html`](looks/nine-looks.html): '+', '.join(looks)+'. The cards are in the skill.','',
+        '## How a combination is picked','','Each template carries a score from 0 to 3 for six goals and five audiences. A request is scored as three times the goal fit plus twice the audience fit, and the highest wins. The scores are in [`index.json`](index.json) and `base/source/catalog.py`, so you can read them and change them. The Pick tab of the studio page and the MCP server both use the same rules.','']
+    open(os.path.join(ROOT,'base','templates','README.md'),'w').write('\n'.join(o))
+    line=f"{counts['templates']} templates ({counts['pages']} pages, {counts['voices']} voices, {counts['decks']} decks, {counts['social_formats']} social formats), {counts['components']} components ({counts['page_parts']} page parts, {counts['photo_parts']} photo parts, {counts['animated_svg']} animated SVG files with {counts['gif_copies']} GIF copies) and {counts['looks']} looks"
+    for readme in (os.path.join(ROOT,'README.md'),os.path.join(ROOT,'base','README.md')):
+        t=open(readme).read(); t2=re.sub(r'<!-- counts -->.*?<!-- /counts -->',f'<!-- counts -->{line}<!-- /counts -->',t,flags=re.S)
+        if t2!=t: open(readme,'w').write(t2)
+    print('index:',counts)
 
 # ---- export the sentences and the component catalogue as Markdown, so the docs never drift from the demo
 def export_docs():
@@ -172,7 +262,8 @@ def export_docs():
         if not m: continue
         title=re.search(r'data-title="([^"]*)"',t).group(1)
         about=un(re.search(r'<section class="anat">.*?<p class="measure">(.*?)</p>',t,re.S).group(1))
-        lv.append(('voice' if 'voice-' in f else 'recipe',title,about,[x.strip() for x in m.group(1).split('||')]))
+        kind='voice' if 'voice-' in f else 'recipe' if 'recipe-' in f else 'deck' if 'deck-' in f else 'more'
+        lv.append((kind,title,about,[x.strip() for x in m.group(1).split('||')]))
     parts=[]
     for sec in re.findall(r'<section class="spec".*?</section>',read('30-parts.html'),re.S):
         q,effort,made,grow,use=[x.strip() for x in re.search(r'^@@ask (.*)$',sec,re.M).group(1).split('||')]
@@ -186,7 +277,7 @@ def export_docs():
     o=['# Sentences','','Every sentence in the studio, in one place. Copy one, attach your notes (and a photo if the page uses one), and paste both into a chat assistant.','',
        '**Status: untested.** These sentences describe what the demo pages do. They have not yet been run in fresh chats and scored. Record results in [`sentence-test.md`](sentence-test.md).','',
        'This file is generated from the examples by `base/source/build.py`. Edit the views, not this file.','']
-    for kind,head in (('recipe','Recipes'),('voice','Voices')):
+    for kind,head in (('recipe','Pages'),('voice','Voices'),('deck','Decks'),('more','Social formats and animated SVG')):
         o+=[f'## {head}','']
         for k,title,about,(b,a,e) in lv:
             if k!=kind: continue
@@ -204,6 +295,7 @@ def export_docs():
         c+=[f'## {head}','','| Component | What it is for | How it is made | Grow into |','| --- | --- | --- | --- |']
         c+=[f'| {n} | {b} | {made} | {grow} |' for n,b,q,effort,made,grow,use in rows]+['']
     sk=os.path.join(HERE,'..','..','..','..','skills','artifact-studio','references','components.md')
+    write_index(parts,photo)
     open(sk,'w').write('\n'.join(c).rstrip()+'\n'); print('docs:',len(lv),'level sets,',len(parts),'page parts,',len(photo),'photo parts')
 export_docs()
 

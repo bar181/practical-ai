@@ -118,6 +118,22 @@ swipe gallery, flip card.
 - Example content is labelled as an example
 - Nothing private, and no imitation of another organisation's branding
 
+## Decks and social posts
+
+The same steps make two other things.
+
+- **A slide deck.** One HTML file. One idea on each slide. Arrow keys, buttons and a tap move
+  between slides. With scripts off the slides are a readable column. Two manners: a visionary
+  deck (black, huge type, a villain, one rule, three things, one number, "one more thing") and a
+  story deck (the customer as hero: person, problem, guide, plan, ask, stakes, ending).
+- **A social post picture.** One SVG drawing at the real pixel size: 1080 by 1080 for a square,
+  1080 by 1350 for a portrait, 1080 by 1920 for a story, 1200 by 630 for a link preview. One idea,
+  seven words or fewer in the headline, the company name small at the bottom. A carousel is three
+  portraits: the hook, the steps, the ask.
+
+When the person says what they need and not which kind, choose for them: a page to be read, a deck
+to be presented, a post to be scrolled past. Say what you chose and why in one line.
+
 ## Rules that never bend
 
 - No invented facts, numbers, names, customers or quotations.

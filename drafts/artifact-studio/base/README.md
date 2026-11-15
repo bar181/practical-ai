@@ -11,48 +11,41 @@ a tag saying how to order one, and you can carry any of them out as a file.
 
 | You want | Open | What it is |
 | --- | --- | --- |
-| To see everything | [`studio.html`](studio.html) | One page with a tab for every example, then the cards, the skill and how to use it |
-| One example as a file | [`examples/`](examples/) | Fourteen complete pages, each a single file you can copy as a starting point |
-| The words that ask for each one | [`sentences.md`](sentences.md) | Every sentence, generated from the examples |
-| Your colours and type on one page | [`templates/design-spec.md`](templates/design-spec.md) | A form to fill in once |
-| A brief for one page | [`templates/content-brief.md`](templates/content-brief.md) | A form to fill in per page |
+| To see everything | [`studio.html`](studio.html) | One page with a tab for every template and part, a picker, the cards, the skill and a guide |
+| The library | [`templates/`](templates/) | Templates and components, each a file you can open or copy. [`templates/README.md`](templates/README.md) is the index for people and [`templates/index.json`](templates/index.json) is the index for agents |
+| The words that ask for each one | [`sentences.md`](sentences.md) | Every sentence, generated from the templates |
+| Your colours and type on one page | [`forms/design-spec.md`](forms/design-spec.md) | A form to fill in once |
+| A brief for one piece | [`forms/content-brief.md`](forms/content-brief.md) | A form to fill in each time |
+| To take in a design you like | [`inspiration/`](inspiration/) | How a find becomes a note, a change or a new part, without copying it |
+| Something the studio does not do | [`RESOURCES.md`](RESOURCES.md) | Outside skills, open-source frameworks and paid services, with dates |
 | The instructions an assistant follows | [`skills/artifact-studio/`](../../../skills/artifact-studio/) | The skill, its cards, the build rules, the checklist and the page skeleton |
-| To hand the job to an agent | [`AGENT-GUIDE.md`](AGENT-GUIDE.md) | Inputs, steps and the output contract |
-| The reasoning | [`BEST-PRACTICES.md`](BEST-PRACTICES.md) | Ten practices and how to add a recipe, voice, look or part |
+| The reasoning | [`BEST-PRACTICES.md`](BEST-PRACTICES.md) | Ten practices and how to add to the library |
 | To test a sentence | [`sentence-test.md`](sentence-test.md) | The sheet for scoring a sentence in a fresh chat |
-| To change or rebuild any of it | [`source/`](source/) | Views, build script and checks |
+| To change or rebuild any of it | [`source/`](source/) | Views, the catalogue, the build script and checks |
 
 GitHub shows HTML files as source, so download a file and open it in a browser.
 
-## The examples
+## The library at a glance
 
-| File | What it shows |
-| --- | --- |
-| `examples/voice-keynote.html` | The same case in the keynote voice: one idea per screen, huge type |
-| `examples/voice-story.html` | The storyteller voice: the customer as the hero |
-| `examples/voice-teacher.html` | The teacher voice: analogy, worked example, check-yourself questions |
-| `examples/voice-pitch.html` | The pitch voice: a memory, a feeling, the product last |
-| `examples/voice-practical.html` | The practical instructor voice: numbered steps with a time on each |
-| `examples/voice-analyst.html` | The analyst voice: the answer first, then findings with one chart each |
-| `examples/voice-brief.html` | The executive brief voice: the decision first, an options table |
-| `examples/recipe-report.html` | A one-page report |
-| `examples/recipe-proposal.html` | A proposal with three options |
-| `examples/recipe-explainer.html` | A scrolling explainer |
-| `examples/recipe-landing.html` | A landing page |
-| `examples/looks.html` | One line dressed in nine looks, with the look cards |
-| `examples/photo-parts.html` | Twelve parts built from one photograph |
-| `examples/page-parts.html` | Twelve parts that need no photograph |
+| Kind | Count | Where |
+| --- | --- | --- |
+| Pages | 4 | `templates/pages/`: report, proposal, explainer, landing page |
+| Voices | 7 | `templates/voices/`: keynote, storyteller, teacher, pitch, practical instructor, analyst, executive brief |
+| Decks | 2 | `templates/decks/`: visionary, story |
+| Social formats | 5 | `templates/social/formats.html`: square, portrait stat, story, three-slide carousel, link preview |
+| Page parts | 12 | `templates/components/page-parts.html` |
+| Photo parts | 12 | `templates/components/photo-parts.html` |
+| Animated SVG | 12 | `templates/components/svg/`, one file each |
+| Looks | 9 | `templates/looks/nine-looks.html` |
 
-Every voice and recipe page ends with "Behind this page": how it is built, its design rules, and
-the sentence that asks for it as a short ask, a full ask, and with the skill.
-
-All seven voices use the same invented case, so the only thing that changes between them is the
-voice.
+The build counts the library and writes the line below, and `templates/index.json`: <!-- counts -->18 templates (4 pages, 7 voices, 2 decks, 5 social formats), 36 components (12 page parts, 12 photo parts, 12 animated SVG files with 11 GIF copies) and 9 looks<!-- /counts -->. All seven voices and both decks
+use the same invented case, so the only thing that changes between them is the manner.
 
 ## Facts about the file
 
-- Each page is one HTML file with its fonts and any photograph inside it. Examples without a
-  photograph are about 0.3 MB. Those with one are 0.6 to 1.4 MB. The studio page is about 1.5 MB.
+- Each template is one HTML file with its fonts and any photograph inside it. Those without a
+  photograph are about 0.3 MB. Those with one are 0.6 to 1.4 MB. The studio page is about 1.6 MB.
+- Each animated SVG is one file of about 1 KB with no script.
 - It loads nothing from the network and uses no libraries.
 - Tabs are radio buttons styled as tabs, so they switch with scripts turned off. The script adds
   the animated parts and keeps the address after the `#` in step.
@@ -63,7 +56,7 @@ voice.
 
 Checked on 2026-11-15, in Chrome:
 
-- Every tab of the studio page and every example file at 320, 390 and 1280 pixels wide: no
+- Every tab of the studio page and every template file at 320, 390 and 1280 pixels wide: no
   script errors, no sideways scrolling, exactly one view showing, no photo frame left empty.
 - Every tab at 768 and 1024 pixels wide, either side of the layout's breakpoint, before the
   pages were reorganised into this folder: no errors, no sideways scrolling.
@@ -71,8 +64,13 @@ Checked on 2026-11-15, in Chrome:
 - One tab's script broken on purpose: the other tabs still set themselves up, and every tab
   still opens.
 - The script path used by browsers without scroll-driven animations.
+- The picker: the page's script and the Python rules give the same answer for all 120 combinations
+  of goal, audience and format.
+- The decks: buttons and arrow keys move between slides, and with scripts off the slides are a
+  readable column.
+- The social formats: the download button produces a PNG at full size with the fonts inside.
 - Arithmetic in the examples: report rows add up to the totals, and percentages match.
-- An automated accessibility scan (axe-core, WCAG 2 A and AA rules) of every tab of the studio page and of every example file: no violations after fixes. An automated scan covers only part of the
+- An automated accessibility scan (axe-core, WCAG 2 A and AA rules) of every tab of the studio page and of every template file: no violations after fixes. An automated scan covers only part of the
   standard.
 
 Not checked:
@@ -94,7 +92,7 @@ CHROME=/path/to/chrome python3 check_at_rest.py
 
 | Script | What it reports |
 | --- | --- |
-| `check_tabs.py` | Every tab of the studio page and every example file at three widths: script errors, sideways scrolling, whether exactly one tab shows, the accessibility scan if `AXE_JS` is set, and the tabs with scripts off. A clean run prints `problems []` on every line |
+| `check_tabs.py` | Every tab of the studio page and every template file at three widths: script errors, sideways scrolling, whether exactly one tab shows, the accessibility scan if `AXE_JS` is set, and the tabs with scripts off. A clean run prints `problems []` on every line |
 | `check_at_rest.py` | How much text each of the other nine demo pages shows with scripts off |
 
 ## Source and rebuild
@@ -111,7 +109,8 @@ python3 build.py
 | `source/base.css` | Shared styles |
 | `source/views/` | One file per tab: style, markup, script. Document tabs are rendered from the Markdown files in this folder and the skill |
 | `source/prepare_assets.py` | Encodes photos and fonts, measures the lake photo, traces its line art. Writes `assets.json` |
-| `source/build.py` | Assembles `studio.html` and the fourteen files in `examples/`. The studio's tabs are the `STUDIO_GROUPS` list. Also regenerates `sentences.md`, the skill's component catalogue and `level-1/AI-INSTRUCTIONS.md` |
+| `source/catalog.py` | Every template, its fit scores, and the rules that pick between them. Read by the build, the Pick tab and the MCP server |
+| `source/build.py` | Assembles `studio.html` and the files in `templates/`. The studio's tabs are the `STUDIO_GROUPS` list. Also regenerates the two indexes, `sentences.md`, the skill's component catalogue and `level-1/AI-INSTRUCTIONS.md` |
 
 `build.py` needs the Python `markdown` package. `prepare_assets.py` needs pillow, numpy, fonttools and brotli, and a folder holding the font files
 named in its header. `assets.json` is a build product and is not committed.

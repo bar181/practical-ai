@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="s-line-draw" viewBox="0 0 320 160" role="img" aria-labelledby="t-line-draw">
+<title id="t-line-draw">A trend line that draws itself</title>
+<desc>Use beside a claim about change over time. Plays once. At rest it shows the finished line.</desc>
+<style>#s-line-draw .l{fill:none;stroke:var(--accent,#774528);stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;animation:line-draw-d 1.8s ease-out both}#s-line-draw .g{stroke:var(--soft,#a5b9d8);stroke-width:1}#s-line-draw .p{fill:var(--accent,#774528);transform-box:fill-box;transform-origin:center;animation:line-draw-p .4s 1.7s ease-out both}@keyframes line-draw-d{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}@keyframes line-draw-p{from{transform:scale(0)}to{transform:scale(1)}}@media (prefers-reduced-motion:reduce){#s-line-draw *{animation:none!important}}</style>
+<path class="g" d="M20 130H300M20 90H300M20 50H300"/><path class="l" pathLength="1" d="M20 122 70 110 120 114 170 84 220 70 262 40 300 26"/><circle class="p" cx="300" cy="26" r="7"/>
+</svg>

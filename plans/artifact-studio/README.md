@@ -10,7 +10,7 @@ Pick a page type, a voice and a look from a menu of working examples, and get a 
 
 ## Overview
 
-Pages built by an assistant tend to look and sound generic because the assistant has to guess three things: what kind of page this is, how it should speak and what it should look like. The studio removes the guesses. You choose a recipe (page type), a voice and a look from a menu of working examples, and the assistant builds the page from your own content.
+Work built by an assistant tends to look and sound generic because the assistant has to guess three things: what kind of piece this is, how it should speak and what it should look like. The studio removes the guesses. It is a library of working templates for pages, slide decks and social posts, with rules that pick the best combination for a request, and a skill that builds it from your own content
 
 ## Who it is for
 
@@ -29,10 +29,10 @@ outlines and will change.
 
 | Level | What it involves | Complexity |
 | --- | --- | --- |
-| Demo | A base that holds everything: one studio page with a tab for every example, and each example again as a file of its own. Every example carries the sentence that asks for it. This tool trials the base-plus-levels layout: level folders hold only what each level adds. | Beginner |
+| Demo | A base that holds everything: a library of 18 templates (pages, voices, decks, social formats) and 36 parts, an index for people and one for agents, and one studio page that shows them all in tabs with a picker. Every template carries the sentence that asks for it. This tool trials the base-plus-levels layout | Beginner |
 | Simple | Level 1, nothing to install. Paste the instructions for the assistant into a Project once. Then copy a sentence from any example, attach your notes, and check every number against them. | Beginner |
 | Working | Level 2, your preferences on file. Fill in one preferences file: default recipe, voice and look, brand, layout and format rules. Install the skill if the assistant loads skills. A short ask then gives a page that looks and sounds like yours. | Intermediate |
-| Automated | Level 3, connected. Not built. The slots are listed in the draft: content in from where it lives, the page out to a web address, a one-step install as a plugin, and runs on a schedule. An addition is built only after it has been walked end to end once. | Advanced |
+| Automated | Level 3, connected. One connection is built: an MCP server that gives an assistant the library as tools, so it can choose a template, read its reference code and rules, and file a note about a design the person likes. Tested with a client only. Other slots are listed in the draft: content in, the page out to a web address, a plugin, and runs on a schedule | Advanced |
 | Commercial grade | A design system with an owner, approved voices, facts traced to a source of record, an accessibility audit, a named reviewer and a release step with an audit trail. | Explained, not built here |
 
 ## Established best practices

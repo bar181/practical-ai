@@ -287,6 +287,48 @@ empty, where the older "expert" page made it look finished.
 The other nine tools still use the older folders. Converting them is a decision for the owner,
 after this one has been looked at.
 
+## Round 5: the studio becomes a library
+
+The owner proposed eight additions and asked for each to be judged before it was built. All eight
+were judged worth doing and were built in one sitting. The full account, with how to use each, is
+[`reports/2026-11-15-artifact-studio-library.md`](reports/2026-11-15-artifact-studio-library.md).
+
+| Addition | Value, out of 100 | State |
+| --- | --- | --- |
+| A templates folder with an index for people and one for agents | 92 | Built. Both indexes are generated |
+| Options for each template, reachable from the index | 88 | Built |
+| Recommending a combination from the requirements | 84 | Built. The page and the Python rules agree on all 120 requests |
+| An MCP server and a front door for agents | 82 | Built. Tested with a client only |
+| Decks and social formats | 80 | Built: two decks, five formats |
+| Animated SVG, and GIF copies | 80 | Built: twelve and eleven |
+| A way in for new ideas | 78 | Built. No real find has been through it |
+| A list of outside skills, frameworks and services | 70 | Built, dated, prices left out |
+
+Scored on a rubric that fits what the tool now is:
+
+| Item | Score | Why |
+| --- | --- | --- |
+| One place for each thing, one source of truth | 86 | One catalogue feeds the index, the page and the server |
+| Usable by an agent | 82 | A front door, a machine index, eight tools. Unproven in a real assistant |
+| Correct and checked | 84 | Automated checks pass. They cannot judge taste |
+| Honest and current documents | 85 | Status lines say who has and has not tried each thing |
+| Usable today by a person | 80 | Open, pick, copy, ask |
+| Range and quality of templates | 74 | Two decks, with speaker notes and a print layout, and one family of social pictures |
+| Evidence from real use | 35 | The owner has looked at the pages. Nothing else |
+
+Overall 75, the plain average. This is a different rubric from rounds 1 to 3, so 75 is not a fall
+from 77. The earlier rubric measured a set of pages. This one measures a library with delivery.
+
+Faults found by the checks and fixed in this round: a shared helper that made SVG elements where
+HTML ones were needed, which left both decks blank and the picker dead until it was caught by a
+screenshot; SVG styles that would have clashed when two files were pasted into one page; a
+slide photograph cut to three quarters of its width; a PDF print that put each slide in the top
+third of a tall page; and a deck control bar that ran off the side of a 320 pixel screen once the
+Notes button was added.
+
+What this round did not change: evidence. It added a great deal of surface, and every new part of
+it is untested by anyone else. The rule at the end of this file applies with more force now.
+
 ## What only other people can do next
 
 After round 3 the weakest item for every tool is still evidence, and the author cannot raise it

@@ -1,0 +1,983 @@
+{
+ "name": "artifact-studio",
+ "generated": "2026-11-15",
+ "read_me": "Paths are relative to drafts/artifact-studio/. \"file\" is the finished template to open or copy. \"source\" is the smaller file to read as reference code: one style block, the markup and one script. \"fit\" scores run 0 to 3. To choose, score = 3 x goal fit + 2 x audience fit, highest first.",
+ "counts": {
+  "templates": 18,
+  "pages": 4,
+  "voices": 7,
+  "decks": 2,
+  "social_formats": 5,
+  "components": 36,
+  "page_parts": 12,
+  "photo_parts": 12,
+  "animated_svg": 12,
+  "gif_copies": 11,
+  "looks": 9
+ },
+ "facets": {
+  "goal": [
+   {
+    "id": "report",
+    "label": "Say how something went"
+   },
+   {
+    "id": "decide",
+    "label": "Get a decision"
+   },
+   {
+    "id": "sell",
+    "label": "Win a customer"
+   },
+   {
+    "id": "teach",
+    "label": "Explain how something works"
+   },
+   {
+    "id": "inspire",
+    "label": "Make people feel a change"
+   },
+   {
+    "id": "announce",
+    "label": "Tell people something new"
+   }
+  ],
+  "audience": [
+   {
+    "id": "customer",
+    "label": "A customer"
+   },
+   {
+    "id": "executive",
+    "label": "A busy decision-maker"
+   },
+   {
+    "id": "team",
+    "label": "My own team"
+   },
+   {
+    "id": "public",
+    "label": "People who do not know us"
+   },
+   {
+    "id": "learner",
+    "label": "Someone learning"
+   }
+  ],
+  "format": [
+   {
+    "id": "page",
+    "label": "A web page"
+   },
+   {
+    "id": "deck",
+    "label": "A slide deck"
+   },
+   {
+    "id": "social",
+    "label": "A social post"
+   },
+   {
+    "id": "any",
+    "label": "Show me one of each"
+   }
+  ]
+ },
+ "rules": {
+  "weights": {
+   "goal": 3,
+   "audience": 2
+  },
+  "look_for_voice": {
+   "voice-keynote": "Keynote black",
+   "voice-story": "Cinematic",
+   "voice-teacher": "Clean",
+   "voice-pitch": "Faded film",
+   "voice-practical": "Field guide",
+   "voice-analyst": "Dashboard",
+   "voice-brief": "Paper memo"
+  }
+ },
+ "templates": [
+  {
+   "id": "recipe-report",
+   "kind": "page",
+   "title": "One-page report",
+   "summary": "How a week, month or project went: the answer, the numbers, what changed, what is next.",
+   "file": "base/templates/pages/report.html",
+   "source": "base/source/views/51-recipe-report.html",
+   "fit": {
+    "goal": {
+     "report": 3,
+     "decide": 2,
+     "announce": 1
+    },
+    "audience": {
+     "executive": 3,
+     "team": 3,
+     "customer": 1
+    }
+   },
+   "options": "Voice: any of the seven. Look: any of the nine, your brand, or colours from a photo. Parts: any page part, photo part or animated SVG.",
+   "ask": {
+    "short": "Turn this spreadsheet into a one-page report: a two-sentence summary, four key numbers, one chart and what happens next.",
+    "full": "Build a one-page monthly report from my spreadsheet in the analyst voice. Title and period, a two-sentence summary, four key numbers each with its change from last month, one trend line with a full-sentence heading, one breakdown table with a small bar per row and the weakest row marked, then \"what changed\" and \"what we will do next\". One data colour, grey for comparisons.",
+    "with_skill": "Use the artifact-studio skill. Recipe: one-page report. Voice: analyst. Look: quiet, one data colour from my brand spec. Content: the attached spreadsheet and last month's report. Check that the breakdown rows add up to the totals and tell me if they do not."
+   }
+  },
+  {
+   "id": "recipe-proposal",
+   "kind": "page",
+   "title": "Proposal",
+   "summary": "Something a customer has to say yes to: the job as understood, three options, a schedule, one accept button.",
+   "file": "base/templates/pages/proposal.html",
+   "source": "base/source/views/52-recipe-proposal.html",
+   "fit": {
+    "goal": {
+     "sell": 3,
+     "decide": 3
+    },
+    "audience": {
+     "customer": 3,
+     "executive": 2
+    }
+   },
+   "options": "Voice: any of the seven. Look: any of the nine, your brand, or colours from a photo. Parts: any page part, photo part or animated SVG.",
+   "ask": {
+    "short": "Turn my estimate and site notes into a one-page proposal with three price options and a schedule.",
+    "full": "Build a proposal page from my estimate and site notes. Cover with the promise, the customer and a valid-until date. Then \"what you asked for\" in their words, \"what we propose\" with a simple floor plan drawing, three options as price cards with our suggestion marked, a six-week schedule chart, included and not included, payment terms, and one accept button. Dark green and brass, a serif for headings.",
+    "with_skill": "Use the artifact-studio skill. Recipe: proposal. Voice: practical instructor. Look: my brand spec (attached). Content: the attached estimate, site notes and photos. Every price must come from the estimate; flag any line you could not match."
+   }
+  },
+  {
+   "id": "recipe-explainer",
+   "kind": "page",
+   "title": "Scrolling explainer",
+   "summary": "How something works, told as a picture that changes while short steps scroll past.",
+   "file": "base/templates/pages/explainer.html",
+   "source": "base/source/views/53-recipe-explainer.html",
+   "fit": {
+    "goal": {
+     "teach": 3,
+     "announce": 2,
+     "inspire": 1
+    },
+    "audience": {
+     "learner": 3,
+     "public": 2,
+     "team": 2,
+     "customer": 2
+    }
+   },
+   "options": "Voice: any of the seven. Look: any of the nine, your brand, or colours from a photo. Parts: any page part, photo part or animated SVG.",
+   "ask": {
+    "short": "Explain my five-step process as a scrolling page with a diagram that stays on screen and lights up each step.",
+    "full": "Build a scrolling explainer of my process in the teacher voice. Title and one line on why it matters. Pin a diagram of the five stages at the top, with a small icon and label for each and a line that fills as I scroll. Under it, one block per stage: who does it, what happens in two or three sentences, and one fact set apart. End with a line that adds the stages up. Dark navy with one amber highlight.",
+    "with_skill": "Use the artifact-studio skill. Recipe: scrolling explainer. Voice: teacher. Look: dark with one highlight colour from my brand spec. Content: the attached procedure document. Keep my stage names exactly; if a stage has no fact worth setting apart, leave the fact out."
+   }
+  },
+  {
+   "id": "recipe-landing",
+   "kind": "page",
+   "title": "Landing page",
+   "summary": "One offer and one action for people arriving cold: promise, proof, plan, price, questions.",
+   "file": "base/templates/pages/landing.html",
+   "source": "base/source/views/54-recipe-landing.html",
+   "fit": {
+    "goal": {
+     "sell": 3,
+     "announce": 3,
+     "inspire": 1
+    },
+    "audience": {
+     "public": 3,
+     "customer": 3
+    }
+   },
+   "options": "Voice: any of the seven. Look: any of the nine, your brand, or colours from a photo. Parts: any page part, photo part or animated SVG.",
+   "ask": {
+    "short": "Make a landing page for my service with one clear promise, how it works in three steps, the price and one button.",
+    "full": "Build a landing page for my service. Open with the promise in one line that includes a number, and one button. Under it, show a short animated ledger with rows being ticked off. Then \"what you get\" as three numbered items, \"how it works\" in three steps, one customer quote, the price as two cards, three questions that open on tap, and the promise and button again. Deep teal, pale mint, and one coral colour used only for the button.",
+    "with_skill": "Use the artifact-studio skill. Recipe: landing page. Voice: storyteller. Look: take two colours from my logo (attached) and choose one button colour that appears nowhere else. Content: the attached service description and two customer emails. Use only real customer words for quotes; if I gave you none, leave the quote section out."
+   }
+  },
+  {
+   "id": "voice-keynote",
+   "kind": "voice",
+   "title": "Keynote voice",
+   "summary": "One idea per screen, huge type, almost no words, and \"one more thing\".",
+   "file": "base/templates/voices/keynote.html",
+   "source": "base/source/views/41-voice-keynote.html",
+   "fit": {
+    "goal": {
+     "inspire": 3,
+     "announce": 3,
+     "sell": 1
+    },
+    "audience": {
+     "public": 3,
+     "team": 2,
+     "customer": 2,
+     "executive": 1
+    }
+   },
+   "options": "Recipe: any of the four pages, or a deck. Look: the default named with it, or any of the nine. Parts: any that suit the voice.",
+   "ask": {
+    "short": "Turn my notes into a keynote-style page: one idea per screen, huge type, almost no words.",
+    "full": "Build a keynote-style page from my notes. Black background, one sans-serif typeface. Open with the problem as one huge number, reveal the answer in three words, show my photo once full screen, compare before and after as two numbers, and finish with \"one more thing\". Screens snap as I scroll.",
+    "with_skill": "Use the artifact-studio skill. Recipe: scrolling explainer. Voice: keynote. Look: black and white, with one colour taken from my attached photo. Content: the attached notes. Mark any number you could not find in my notes instead of inventing one."
+   },
+   "default_look": "Keynote black"
+  },
+  {
+   "id": "voice-story",
+   "kind": "voice",
+   "title": "Storyteller voice",
+   "summary": "The customer is the hero and you are the guide: hook, problem, plan, stakes, ending.",
+   "file": "base/templates/voices/storyteller.html",
+   "source": "base/source/views/42-voice-story.html",
+   "fit": {
+    "goal": {
+     "sell": 3,
+     "inspire": 2,
+     "announce": 1
+    },
+    "audience": {
+     "customer": 3,
+     "public": 3
+    }
+   },
+   "options": "Recipe: any of the four pages, or a deck. Look: the default named with it, or any of the nine. Parts: any that suit the voice.",
+   "ask": {
+    "short": "Tell this as a story on one page, with my customer as the hero and us as the guide. Use my photo large.",
+    "full": "Write a one-page story from my notes. Hero: my customer. Open on one moment with a time and a place. Give the problem at three depths, then introduce us as the guide with empathy before proof, a three-step plan, one button, the stakes side by side, and an ending that returns to the opening. Dark warm page, large serif type, my photo with a slow push-in. Take the colours from the photo.",
+    "with_skill": "Use the artifact-studio skill. Recipe: landing page. Voice: storyteller. Look: take the palette from my attached photo. Content: the attached customer interview notes. Invent nothing about the customer; where a story beat has no material, ask me one question."
+   },
+   "default_look": "Cinematic"
+  },
+  {
+   "id": "voice-teacher",
+   "kind": "voice",
+   "title": "Teacher voice",
+   "summary": "An everyday analogy first, then one worked example, the detail, and questions to check yourself.",
+   "file": "base/templates/voices/teacher.html",
+   "source": "base/source/views/43-voice-teacher.html",
+   "fit": {
+    "goal": {
+     "teach": 3
+    },
+    "audience": {
+     "learner": 3,
+     "team": 2,
+     "public": 1
+    }
+   },
+   "options": "Recipe: any of the four pages, or a deck. Look: the default named with it, or any of the nine. Parts: any that suit the voice.",
+   "ask": {
+    "short": "Explain this like a great teacher: start with an everyday analogy, then one example, then the detail.",
+    "full": "Build a one-page lesson from my notes. Open with the question. Give one everyday analogy in very large type, then one worked example with real times, then the same idea as numbered pseudocode I can step through line by line, then three check-yourself questions that open on click, and a one-sentence recap that reuses the analogy. Black and white with a single highlight colour.",
+    "with_skill": "Use the artifact-studio skill. Recipe: scrolling explainer. Voice: teacher. Look: black and white with one highlight colour. Content: the attached procedure. Keep every step of my procedure; if the analogy stops fitting at some step, say so rather than bending the step."
+   },
+   "default_look": "Clean"
+  },
+  {
+   "id": "voice-pitch",
+   "kind": "voice",
+   "title": "Pitch voice",
+   "summary": "First person. A memory, the feeling it carries, and the product named only at the end.",
+   "file": "base/templates/voices/pitch.html",
+   "source": "base/source/views/44-voice-pitch.html",
+   "fit": {
+    "goal": {
+     "inspire": 3,
+     "sell": 2
+    },
+    "audience": {
+     "public": 2,
+     "customer": 2
+    }
+   },
+   "options": "Recipe: any of the four pages, or a deck. Look: the default named with it, or any of the nine. Parts: any that suit the voice.",
+   "ask": {
+    "short": "Pitch this as a feeling, not a feature. First person, a handful of slides, and the product named only at the end.",
+    "full": "Build a six-slide pitch from my notes that I advance by hand. Dark background with one lit slide at a time. Open with a personal memory in the first person, name the feeling, show what was lost, give one hard fact, say three things this is not, then name the product as the feeling. Make my photos look like faded film. End with a short close below the slides.",
+    "with_skill": "Use the artifact-studio skill. Recipe: landing page. Voice: pitch. Look: faded film, taken from my attached photos. Content: the attached notes. The memory must be mine: ask me for one true memory before you write, and do not invent one."
+   },
+   "default_look": "Faded film"
+  },
+  {
+   "id": "voice-practical",
+   "kind": "voice",
+   "title": "Practical instructor voice",
+   "summary": "The idea in one sentence, one analogy, numbered steps with a time on each, one next step.",
+   "file": "base/templates/voices/practical.html",
+   "source": "base/source/views/45-voice-practical.html",
+   "fit": {
+    "goal": {
+     "teach": 3,
+     "report": 1,
+     "decide": 1
+    },
+    "audience": {
+     "team": 3,
+     "learner": 2,
+     "customer": 2
+    }
+   },
+   "options": "Recipe: any of the four pages, or a deck. Look: the default named with it, or any of the nine. Parts: any that suit the voice.",
+   "ask": {
+    "short": "Turn this into a practical one-page guide: the core idea, one analogy, then steps I can do today.",
+    "full": "Build a one-page field guide from my notes. Start with the core idea in one sentence, then one boxed analogy, three numbers on why it matters, five numbered steps with a time estimate and a tick box each plus a progress bar, a table of the same job at beginner, advanced and expert level, three common mistakes, and one next step. Navy and one bright accent, condensed headings, squared grid paper background.",
+    "with_skill": "Use the artifact-studio skill. Recipe: scrolling explainer. Voice: practical instructor. Look: field guide in my brand colours (attached spec). Content: the attached procedure. Give every step a time estimate; ask me for any you cannot judge."
+   },
+   "default_look": "Field guide"
+  },
+  {
+   "id": "voice-analyst",
+   "kind": "voice",
+   "title": "Analyst voice",
+   "summary": "The answer first, then findings whose headings are full sentences, each with one chart and a \"so what\".",
+   "file": "base/templates/voices/analyst.html",
+   "source": "base/source/views/46-voice-analyst.html",
+   "fit": {
+    "goal": {
+     "report": 3,
+     "decide": 2
+    },
+    "audience": {
+     "executive": 3,
+     "team": 2
+    }
+   },
+   "options": "Recipe: any of the four pages, or a deck. Look: the default named with it, or any of the nine. Parts: any that suit the voice.",
+   "ask": {
+    "short": "Write this up as an evidence-first one-pager: the answer at the top, then three findings with a chart each.",
+    "full": "Build an evidence-first report from my data. The title states the conclusion. Then the answer in two sentences, three key numbers, and three findings where each heading is a full sentence with one chart and a \"so what\" line. Add how it was measured, what it does not show, and next steps with owner and date. One data colour, grey for comparisons, values labelled at the bar ends, source under every chart.",
+    "with_skill": "Use the artifact-studio skill. Recipe: one-page report. Voice: analyst. Look: quiet, one data colour from my brand spec. Content: the attached spreadsheet and notes. Show your calculation for every number in a collapsed table, and list anything you could not verify under \"what this does not show\"."
+   },
+   "default_look": "Dashboard"
+  },
+  {
+   "id": "voice-brief",
+   "kind": "voice",
+   "title": "Executive brief voice",
+   "summary": "The decision first, numbered background, one options table including \"do nothing\", risks, next steps.",
+   "file": "base/templates/voices/brief.html",
+   "source": "base/source/views/47-voice-brief.html",
+   "fit": {
+    "goal": {
+     "decide": 3,
+     "report": 2
+    },
+    "audience": {
+     "executive": 3
+    }
+   },
+   "options": "Recipe: any of the four pages, or a deck. Look: the default named with it, or any of the nine. Parts: any that suit the voice.",
+   "ask": {
+    "short": "Write this as a one-page decision brief for busy executives. Decision first, then background, options, recommendation and risks.",
+    "full": "Build a decision brief from my notes that looks like a paper memo. Header with to, from, date and decision deadline. State the decision first in a shaded box. Background in numbered paragraphs. One options table including \"do nothing\", with the recommended row shaded. Then the recommendation in two sentences, each risk with its control, and next steps. Serif type, one navy accent, no images, no animation.",
+    "with_skill": "Use the artifact-studio skill. Recipe: one-page report. Voice: executive brief. Look: paper memo, navy accent. Content: the attached notes and costs. Keep it to one printed page; if the content does not fit, tell me what you would cut rather than shrinking the type."
+   },
+   "default_look": "Paper memo"
+  },
+  {
+   "id": "deck-visionary",
+   "kind": "deck",
+   "title": "Visionary deck",
+   "summary": "Eight black slides in the keynote manner: a villain, one rule, three things, one number, one more thing.",
+   "file": "base/templates/decks/visionary.html",
+   "source": "base/source/views/81-deck-visionary.html",
+   "fit": {
+    "goal": {
+     "inspire": 3,
+     "announce": 3,
+     "sell": 1
+    },
+    "audience": {
+     "public": 3,
+     "team": 3,
+     "executive": 1,
+     "customer": 1
+    }
+   },
+   "options": "Slides: add or remove, one idea each. Look: any of the nine or your brand. Parts: an animated SVG or one photograph per slide.",
+   "ask": {
+    "short": "Turn my notes into a keynote-style deck: black slides, one idea each, huge type.",
+    "full": "Build an eight-slide deck from my notes in the keynote voice, black with white type. Slide 1 the feeling in one sentence, 2 the problem as one number, 3 what it cost, 4 the idea as one rule, 5 three things in three words, 6 the proof number with the old one struck through, 7 what it bought, 8 \"one more thing\" with the next step. No bullet lists. Make it one HTML file I can present with arrow keys.",
+    "with_skill": "Use the artifact-studio skill. Template: visionary deck. Content: the attached notes. Invent no facts and mark every gap."
+   },
+   "look": "Keynote black",
+   "voice": "voice-keynote"
+  },
+  {
+   "id": "deck-story",
+   "kind": "deck",
+   "title": "Story deck",
+   "summary": "Seven warm slides that follow a story: a person, a problem, a guide, a plan, an ask, the stakes, the ending.",
+   "file": "base/templates/decks/story.html",
+   "source": "base/source/views/82-deck-story.html",
+   "fit": {
+    "goal": {
+     "sell": 3,
+     "inspire": 2
+    },
+    "audience": {
+     "customer": 3,
+     "public": 2
+    }
+   },
+   "options": "Slides: add or remove, one idea each. Look: any of the nine or your brand. Parts: an animated SVG or one photograph per slide.",
+   "ask": {
+    "short": "Turn my notes into a short story deck where my customer is the hero and we are the guide.",
+    "full": "Build a seven-slide deck from my notes in the storyteller voice, warm paper look with a serif headline. Slides: the person and what they want, the problem and how it feels, us as the guide with one proof, a three-step plan, one call to action, what happens if nothing changes, and what success looks like. Put a photo on the first and last slides only. Make it one HTML file I can present with arrow keys.",
+    "with_skill": "Use the artifact-studio skill. Template: story deck. Content: the attached notes and photo. Invent no facts and mark every gap."
+   },
+   "look": "Editorial",
+   "voice": "voice-story"
+  },
+  {
+   "id": "social-square",
+   "kind": "social",
+   "title": "Square post",
+   "summary": "1080 by 1080. One claim or quote in seven words or fewer.",
+   "file": "base/templates/social/formats.html#so-square",
+   "source": "base/source/views/85-social.html",
+   "fit": {
+    "goal": {
+     "announce": 3,
+     "inspire": 3,
+     "sell": 1
+    },
+    "audience": {
+     "public": 3,
+     "customer": 2
+    }
+   },
+   "options": "Colours and type: your brand. Words: one idea, seven words or fewer in the headline. Picture: your own photograph where the format has one.",
+   "ask": {
+    "short": "Make a square social post from this one sentence, in my colours."
+   },
+   "size": "1080x1080"
+  },
+  {
+   "id": "social-portrait",
+   "kind": "social",
+   "title": "Portrait stat post",
+   "summary": "1080 by 1350. One number, what it means, and a before-and-after bar.",
+   "file": "base/templates/social/formats.html#so-portrait",
+   "source": "base/source/views/85-social.html",
+   "fit": {
+    "goal": {
+     "report": 3,
+     "announce": 2,
+     "sell": 2
+    },
+    "audience": {
+     "public": 3,
+     "customer": 2,
+     "executive": 1
+    }
+   },
+   "options": "Colours and type: your brand. Words: one idea, seven words or fewer in the headline. Picture: your own photograph where the format has one.",
+   "ask": {
+    "short": "Make a portrait social post with my best number, what it means, and a before-and-after bar."
+   },
+   "size": "1080x1350"
+  },
+  {
+   "id": "social-story",
+   "kind": "social",
+   "title": "Story",
+   "summary": "1080 by 1920. A photograph above, two short lines below.",
+   "file": "base/templates/social/formats.html#so-story",
+   "source": "base/source/views/85-social.html",
+   "fit": {
+    "goal": {
+     "inspire": 3,
+     "sell": 2,
+     "announce": 2
+    },
+    "audience": {
+     "public": 3,
+     "customer": 3
+    }
+   },
+   "options": "Colours and type: your brand. Words: one idea, seven words or fewer in the headline. Picture: your own photograph where the format has one.",
+   "ask": {
+    "short": "Make an upright story picture from my photo with two short lines under it."
+   },
+   "size": "1080x1920"
+  },
+  {
+   "id": "social-carousel",
+   "kind": "social",
+   "title": "Three-slide carousel",
+   "summary": "Three pictures of 1080 by 1350: the hook, the steps, the ask.",
+   "file": "base/templates/social/formats.html#so-carousel-1",
+   "source": "base/source/views/85-social.html",
+   "fit": {
+    "goal": {
+     "teach": 3,
+     "sell": 2,
+     "announce": 1
+    },
+    "audience": {
+     "public": 3,
+     "learner": 3,
+     "customer": 2
+    }
+   },
+   "options": "Colours and type: your brand. Words: one idea, seven words or fewer in the headline. Picture: your own photograph where the format has one.",
+   "ask": {
+    "short": "Make a three-slide carousel from my notes: a hook that stands alone, the steps, then one ask."
+   },
+   "size": "3 x 1080x1350"
+  },
+  {
+   "id": "social-link",
+   "kind": "social",
+   "title": "Link preview",
+   "summary": "1200 by 630. The picture shown when a page is shared as a link.",
+   "file": "base/templates/social/formats.html#so-link",
+   "source": "base/source/views/85-social.html",
+   "fit": {
+    "goal": {
+     "announce": 3,
+     "sell": 1,
+     "report": 1
+    },
+    "audience": {
+     "public": 3,
+     "customer": 2,
+     "executive": 1
+    }
+   },
+   "options": "Colours and type: your brand. Words: one idea, seven words or fewer in the headline. Picture: your own photograph where the format has one.",
+   "ask": {
+    "short": "Make the link preview picture for my page: the title large, my company name small."
+   },
+   "size": "1200x630"
+  }
+ ],
+ "components": [
+  {
+   "id": "page-big-numbers",
+   "group": "page",
+   "name": "Big numbers",
+   "use": "Results, impact pages, the top of a report",
+   "ask": "Show my three key numbers as large tiles that count up from zero when they scroll into view. One short label under each.",
+   "effort": "Easy. One sentence.",
+   "file": "base/templates/components/page-parts.html",
+   "source": "base/source/views/30-parts.html"
+  },
+  {
+   "id": "page-timeline",
+   "group": "page",
+   "name": "Timeline",
+   "use": "Project plans, company history, onboarding",
+   "ask": "Lay out these five stages as a vertical timeline with a date and one line each. Fill the line with colour as I scroll down it.",
+   "effort": "Easy. One sentence and your dates.",
+   "file": "base/templates/components/page-parts.html",
+   "source": "base/source/views/30-parts.html"
+  },
+  {
+   "id": "page-process-flow",
+   "group": "page",
+   "name": "Process flow",
+   "use": "How it works sections, explainers, training",
+   "ask": "Draw my four-step process as a simple diagram: numbered circles joined by a line, with a one-word label under each. Draw the line when it scrolls into view.",
+   "effort": "Easy. One sentence and your steps.",
+   "file": "base/templates/components/page-parts.html",
+   "source": "base/source/views/30-parts.html"
+  },
+  {
+   "id": "page-comparison-table",
+   "group": "page",
+   "name": "Comparison table",
+   "use": "Proposals, decision briefs, plan pages",
+   "ask": "Compare my three options in a table with four rows. Use ticks and dashes, put cost on the last row, and pick out the recommended column in a solid colour.",
+   "effort": "Easy. One sentence and your options.",
+   "file": "base/templates/components/page-parts.html",
+   "source": "base/source/views/30-parts.html"
+  },
+  {
+   "id": "page-price-table",
+   "group": "page",
+   "name": "Price table",
+   "use": "Landing pages and proposals",
+   "ask": "Show my three plans as price cards with a switch between monthly and yearly prices. Highlight the middle plan. One line under each price.",
+   "effort": "Easy. One sentence and your prices.",
+   "file": "base/templates/components/page-parts.html",
+   "source": "base/source/views/30-parts.html"
+  },
+  {
+   "id": "page-questions-and-answers",
+   "group": "page",
+   "name": "Questions and answers",
+   "use": "Landing pages, proposals, help pages",
+   "ask": "Add a questions and answers section where each question opens when I tap it. Use a plus sign that turns into a cross.",
+   "effort": "Easy. One sentence and your questions.",
+   "file": "base/templates/components/page-parts.html",
+   "source": "base/source/views/30-parts.html"
+  },
+  {
+   "id": "page-customer-quote",
+   "group": "page",
+   "name": "Customer quote",
+   "use": "Landing pages, case studies, proposals",
+   "ask": "Set this customer quote large in italics on a dark panel, with the customer's first name and town underneath.",
+   "effort": "Easy. One sentence and a real quote.",
+   "file": "base/templates/components/page-parts.html",
+   "source": "base/source/views/30-parts.html"
+  },
+  {
+   "id": "page-tabs",
+   "group": "page",
+   "name": "Tabs",
+   "use": "Pages with more than one kind of reader",
+   "ask": "Put these three short answers behind tabs, one tab per audience. Make the tabs work with the arrow keys.",
+   "effort": "Easy. One sentence.",
+   "file": "base/templates/components/page-parts.html",
+   "source": "base/source/views/30-parts.html"
+  },
+  {
+   "id": "page-bar-chart",
+   "group": "page",
+   "name": "Bar chart",
+   "use": "Reports, proposals, results pages",
+   "ask": "Chart these four values as thin horizontal bars with the number at the end of each. Make the \"before\" bar grey and the rest one colour. Grow the bars when they scroll into view.",
+   "effort": "Easy. One sentence and your numbers.",
+   "file": "base/templates/components/page-parts.html",
+   "source": "base/source/views/30-parts.html"
+  },
+  {
+   "id": "page-progress-ring",
+   "group": "page",
+   "name": "Progress ring",
+   "use": "One headline figure on a report or landing page",
+   "ask": "Show 81% as a ring that fills when it scrolls into view, with the number and one line of explanation beside it.",
+   "effort": "Easy. One sentence.",
+   "file": "base/templates/components/page-parts.html",
+   "source": "base/source/views/30-parts.html"
+  },
+  {
+   "id": "page-callouts",
+   "group": "page",
+   "name": "Callouts",
+   "use": "Guides, checklists, anything with a risk to flag",
+   "ask": "Add three callout boxes: a note, a warning and a confirmation. Give each an icon and a bold label as well as its colour.",
+   "effort": "Easy. One sentence.",
+   "file": "base/templates/components/page-parts.html",
+   "source": "base/source/views/30-parts.html"
+  },
+  {
+   "id": "page-old-way-new-way",
+   "group": "page",
+   "name": "Old way, new way",
+   "use": "Change announcements, proposals, case studies",
+   "ask": "Show the change as two lists side by side: the old way struck through on a pale panel, the new way on a dark panel. Three lines each.",
+   "effort": "Easy. One sentence.",
+   "file": "base/templates/components/page-parts.html",
+   "source": "base/source/views/30-parts.html"
+  },
+  {
+   "id": "photo-pan-and-zoom",
+   "group": "photo",
+   "name": "Pan and zoom",
+   "use": "A still photo that moves slowly reads as film. Use it to open a page or to hold a quote.",
+   "ask": "Fill the frame with my photo and zoom in very slowly toward the island, like a documentary shot. Loop it back out.",
+   "effort": "Easy. One sentence.",
+   "file": "base/templates/components/photo-parts.html",
+   "source": "base/source/views/20-photo.html"
+  },
+  {
+   "id": "photo-parallax-window",
+   "group": "photo",
+   "name": "Parallax window",
+   "use": "The photo moves slower than the page, so the frame feels like a window with depth behind it.",
+   "ask": "Put my photo in a wide window and move it slower than the page as I scroll. Float a small caption card over it that moves the other way.",
+   "effort": "Easy. One sentence.",
+   "file": "base/templates/components/photo-parts.html",
+   "source": "base/source/views/20-photo.html"
+  },
+  {
+   "id": "photo-photo-filled-type",
+   "group": "photo",
+   "name": "Photo-filled type",
+   "use": "One word, large enough that the letters become windows. Good for a chapter break.",
+   "ask": "Write one huge word on a dark band and fill the letters with my photo. Slide the photo sideways inside the letters as I scroll.",
+   "effort": "Easy. One sentence.",
+   "file": "base/templates/components/photo-parts.html",
+   "source": "base/source/views/20-photo.html"
+  },
+  {
+   "id": "photo-scrolling-photo-tour",
+   "group": "photo",
+   "name": "Scrolling photo tour",
+   "use": "The photo stays put while the text scrolls. Each paragraph moves the camera to the part it talks about.",
+   "ask": "Pin my photo while I scroll. I will give you seven short paragraphs. For each one, zoom the photo to the part it describes.",
+   "effort": "Moderate. You say where to look; expect one round of nudging the zooms.",
+   "file": "base/templates/components/photo-parts.html",
+   "source": "base/source/views/20-photo.html"
+  },
+  {
+   "id": "photo-self-drawing-line-art",
+   "group": "photo",
+   "name": "Self-drawing line art",
+   "use": "A sketch that draws itself as you scroll, then gives way to the real photo. The treeline, island and trunk were traced from the photo's own pixels.",
+   "ask": "Trace the main shapes in my photo as a simple line drawing. Draw the lines as I scroll, far things first, then fade the real photo in underneath.",
+   "effort": "Harder. The assistant has to analyse the photo. Ask for a looser sketch if the first one is off.",
+   "file": "base/templates/components/photo-parts.html",
+   "source": "base/source/views/20-photo.html"
+  },
+  {
+   "id": "photo-chart-from-the-photo",
+   "group": "photo",
+   "name": "Chart from the photo",
+   "use": "A chart is a component too. These numbers are measured from the photo, so the chart and the picture tell the same story.",
+   "ask": "Measure how bright my photo is from top to bottom and chart it as a line with a soft fill. Put a strip of the real colours under the axis. Label only the highest and lowest points, and let me touch the chart to read the rest.",
+   "effort": "Moderate. The chart is easy; ask the assistant to show how it measured.",
+   "file": "base/templates/components/photo-parts.html",
+   "source": "base/source/views/20-photo.html"
+  },
+  {
+   "id": "photo-before-and-after",
+   "group": "photo",
+   "name": "Before and after",
+   "use": "Two versions of one picture with a divider to drag. It makes a change obvious without a word of explanation.",
+   "ask": "Show my photo as shot and with a warm sunset grade, as one picture with a divider I can drag from side to side.",
+   "effort": "Easy. One sentence.",
+   "file": "base/templates/components/photo-parts.html",
+   "source": "base/source/views/20-photo.html"
+  },
+  {
+   "id": "photo-looks-and-voices",
+   "group": "photo",
+   "name": "Looks and voices",
+   "use": "The same photo and the same message, five ways. A look sets the mood; a voice sets how it speaks. Describe both and a page stops sounding generic.",
+   "ask": "",
+   "effort": "Easy. Name the look and the voice in the same sentence.",
+   "file": "base/templates/components/photo-parts.html",
+   "source": "base/source/views/20-photo.html"
+  },
+  {
+   "id": "photo-frosted-glass-card",
+   "group": "photo",
+   "name": "Frosted glass card",
+   "use": "Facts float over the photo on a pane that blurs what is behind it. The photo stays the star and the text stays readable.",
+   "ask": "Float the key facts in a frosted glass card over my photo. Keep the card over the sky so dark text stays readable.",
+   "effort": "Easy. One sentence.",
+   "file": "base/templates/components/photo-parts.html",
+   "source": "base/source/views/20-photo.html"
+  },
+  {
+   "id": "photo-bento-grid",
+   "group": "photo",
+   "name": "Bento grid",
+   "use": "A summary as a tray of tiles in different sizes. Each tile holds one fact, so the eye can land anywhere.",
+   "ask": "Summarise this as a bento grid: one tall photo tile, three big-number tiles, a colour palette tile and a small chart tile.",
+   "effort": "Easy. List the tiles you want.",
+   "file": "base/templates/components/photo-parts.html",
+   "source": "base/source/views/20-photo.html"
+  },
+  {
+   "id": "photo-swipe-gallery",
+   "group": "photo",
+   "name": "Swipe gallery",
+   "use": "Cards in a row that snap into place one at a time. On a phone it is the most natural way to browse a set.",
+   "ask": "Crop six details from my photo and show them as cards I can swipe sideways, snapping one card at a time. Give each a two-word title and one line.",
+   "effort": "Easy. One sentence.",
+   "file": "base/templates/components/photo-parts.html",
+   "source": "base/source/views/20-photo.html"
+  },
+  {
+   "id": "photo-flip-postcard",
+   "group": "photo",
+   "name": "Flip postcard",
+   "use": "A photo with a second side. Put the picture on the front and the message on the back.",
+   "ask": "Make my photo a postcard with a white border. When I tap it, flip it over in 3D and show a short handwritten-style note, a stamp and address lines on the back.",
+   "effort": "Easy. One sentence.",
+   "file": "base/templates/components/photo-parts.html",
+   "source": "base/source/views/20-photo.html"
+  },
+  {
+   "id": "svg-bars-grow",
+   "group": "svg",
+   "name": "Five bars that grow from the baseline",
+   "use": "Use for a small comparison of up to five values. Plays once. At rest it shows the full bars.",
+   "ask": "Add the \"bars-grow\" animated SVG from the artifact studio, recoloured to my accent colour.",
+   "effort": "Copy one file",
+   "file": "base/templates/components/svg/bars-grow.svg",
+   "source": "base/templates/components/svg/bars-grow.svg",
+   "gif": "base/templates/components/gif/bars-grow.gif"
+  },
+  {
+   "id": "svg-check-draw",
+   "group": "svg",
+   "name": "A tick that draws inside a circle",
+   "use": "Use to confirm that something is done or included. Plays once.",
+   "ask": "Add the \"check-draw\" animated SVG from the artifact studio, recoloured to my accent colour.",
+   "effort": "Copy one file",
+   "file": "base/templates/components/svg/check-draw.svg",
+   "source": "base/templates/components/svg/check-draw.svg",
+   "gif": "base/templates/components/gif/check-draw.gif"
+  },
+  {
+   "id": "svg-flow-steps",
+   "group": "svg",
+   "name": "Three steps with a marker moving through them",
+   "use": "Use above a three-step process. Loops. At rest it shows the three steps joined by a line.",
+   "ask": "Add the \"flow-steps\" animated SVG from the artifact studio, recoloured to my accent colour.",
+   "effort": "Copy one file",
+   "file": "base/templates/components/svg/flow-steps.svg",
+   "source": "base/templates/components/svg/flow-steps.svg",
+   "gif": "base/templates/components/gif/flow-steps.gif"
+  },
+  {
+   "id": "svg-line-draw",
+   "group": "svg",
+   "name": "A trend line that draws itself",
+   "use": "Use beside a claim about change over time. Plays once. At rest it shows the finished line.",
+   "ask": "Add the \"line-draw\" animated SVG from the artifact studio, recoloured to my accent colour.",
+   "effort": "Copy one file",
+   "file": "base/templates/components/svg/line-draw.svg",
+   "source": "base/templates/components/svg/line-draw.svg",
+   "gif": "base/templates/components/gif/line-draw.gif"
+  },
+  {
+   "id": "svg-orbit",
+   "group": "svg",
+   "name": "Three points circling one centre",
+   "use": "Use for one idea with three supports, or a team around a customer. Loops slowly.",
+   "ask": "Add the \"orbit\" animated SVG from the artifact studio, recoloured to my accent colour.",
+   "effort": "Copy one file",
+   "file": "base/templates/components/svg/orbit.svg",
+   "source": "base/templates/components/svg/orbit.svg",
+   "gif": "base/templates/components/gif/orbit.gif"
+  },
+  {
+   "id": "svg-pulse-dot",
+   "group": "svg",
+   "name": "A dot with rings pulsing outward",
+   "use": "Use to mark something live or waiting, such as an open enquiry. Loops. At rest it shows the dot and one ring.",
+   "ask": "Add the \"pulse-dot\" animated SVG from the artifact studio, recoloured to my accent colour.",
+   "effort": "Copy one file",
+   "file": "base/templates/components/svg/pulse-dot.svg",
+   "source": "base/templates/components/svg/pulse-dot.svg",
+   "gif": "base/templates/components/gif/pulse-dot.gif"
+  },
+  {
+   "id": "svg-ring-progress",
+   "group": "svg",
+   "name": "A ring that fills to a share of the whole",
+   "use": "Use for one percentage. Change the number in the text and the dash length to match. Plays once.",
+   "ask": "Add the \"ring-progress\" animated SVG from the artifact studio, recoloured to my accent colour.",
+   "effort": "Copy one file",
+   "file": "base/templates/components/svg/ring-progress.svg",
+   "source": "base/templates/components/svg/ring-progress.svg",
+   "gif": "base/templates/components/gif/ring-progress.gif"
+  },
+  {
+   "id": "svg-spark-burst",
+   "group": "svg",
+   "name": "A burst of short rays",
+   "use": "Use once beside a win, such as a target met. Plays once and fades to a small star.",
+   "ask": "Add the \"spark-burst\" animated SVG from the artifact studio, recoloured to my accent colour.",
+   "effort": "Copy one file",
+   "file": "base/templates/components/svg/spark-burst.svg",
+   "source": "base/templates/components/svg/spark-burst.svg",
+   "gif": "base/templates/components/gif/spark-burst.gif"
+  },
+  {
+   "id": "svg-sunrise",
+   "group": "svg",
+   "name": "A sun rising over lines of water",
+   "use": "Use as a small opening picture for a fresh start or a result. Plays once. At rest the sun is up.",
+   "ask": "Add the \"sunrise\" animated SVG from the artifact studio, recoloured to my accent colour.",
+   "effort": "Copy one file",
+   "file": "base/templates/components/svg/sunrise.svg",
+   "source": "base/templates/components/svg/sunrise.svg",
+   "gif": "base/templates/components/gif/sunrise.gif"
+  },
+  {
+   "id": "svg-typing-dots",
+   "group": "svg",
+   "name": "Three dots rising in turn",
+   "use": "Use while something is being worked out, or to show an assistant drafting. Loops.",
+   "ask": "Add the \"typing-dots\" animated SVG from the artifact studio, recoloured to my accent colour.",
+   "effort": "Copy one file",
+   "file": "base/templates/components/svg/typing-dots.svg",
+   "source": "base/templates/components/svg/typing-dots.svg",
+   "gif": "base/templates/components/gif/typing-dots.gif"
+  },
+  {
+   "id": "svg-underline-draw",
+   "group": "svg",
+   "name": "A hand-drawn underline",
+   "use": "Place under the one phrase that matters. Stretch to the width of the words. Plays once.",
+   "ask": "Add the \"underline-draw\" animated SVG from the artifact studio, recoloured to my accent colour.",
+   "effort": "Copy one file",
+   "file": "base/templates/components/svg/underline-draw.svg",
+   "source": "base/templates/components/svg/underline-draw.svg",
+   "gif": "base/templates/components/gif/underline-draw.gif"
+  },
+  {
+   "id": "svg-wave-divider",
+   "group": "svg",
+   "name": "Two waves drifting past each other",
+   "use": "Use between two sections in place of a rule. Stretch it to the full width. Loops slowly.",
+   "ask": "Add the \"wave-divider\" animated SVG from the artifact studio, recoloured to my accent colour.",
+   "effort": "Copy one file",
+   "file": "base/templates/components/svg/wave-divider.svg",
+   "source": "base/templates/components/svg/wave-divider.svg"
+  }
+ ],
+ "looks": [
+  {
+   "name": "Clean",
+   "file": "base/templates/looks/nine-looks.html",
+   "card": "skills/artifact-studio/references/looks.md"
+  },
+  {
+   "name": "Cinematic",
+   "file": "base/templates/looks/nine-looks.html",
+   "card": "skills/artifact-studio/references/looks.md"
+  },
+  {
+   "name": "Scrollytelling",
+   "file": "base/templates/looks/nine-looks.html",
+   "card": "skills/artifact-studio/references/looks.md"
+  },
+  {
+   "name": "Dashboard",
+   "file": "base/templates/looks/nine-looks.html",
+   "card": "skills/artifact-studio/references/looks.md"
+  },
+  {
+   "name": "Editorial",
+   "file": "base/templates/looks/nine-looks.html",
+   "card": "skills/artifact-studio/references/looks.md"
+  },
+  {
+   "name": "Keynote black",
+   "file": "base/templates/looks/nine-looks.html",
+   "card": "skills/artifact-studio/references/looks.md"
+  },
+  {
+   "name": "Paper memo",
+   "file": "base/templates/looks/nine-looks.html",
+   "card": "skills/artifact-studio/references/looks.md"
+  },
+  {
+   "name": "Field guide",
+   "file": "base/templates/looks/nine-looks.html",
+   "card": "skills/artifact-studio/references/looks.md"
+  },
+  {
+   "name": "Faded film",
+   "file": "base/templates/looks/nine-looks.html",
+   "card": "skills/artifact-studio/references/looks.md"
+  }
+ ]
+}

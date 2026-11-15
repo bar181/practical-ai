@@ -2,7 +2,7 @@
 
 A recipe is a page type: what goes on the page and in what order. Each recipe below has a finished
 example in the studio (`drafts/artifact-studio/base/studio.html`, Recipes tab) and as a file of its
-own in `drafts/artifact-studio/base/examples/`.
+own in `drafts/artifact-studio/base/templates/pages/`.
 
 ## Choosing
 
