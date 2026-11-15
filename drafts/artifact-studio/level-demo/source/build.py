@@ -103,3 +103,15 @@ def export_docs():
     sk=os.path.join(HERE,'..','..','..','..','skills','artifact-studio','references','components.md')
     open(sk,'w').write('\n'.join(c).rstrip()+'\n'); print('docs:',len(lv),'level sets,',len(parts),'page parts,',len(photo),'photo parts')
 export_docs()
+
+# ---- the one-page explainer saved in docs/ (built with the studio's own recipe and voice)
+SCORES=[('Teaching and promo',85,90),('Stunning, with tone',80,86),('Easy for a non-coder',70,76),('Fits the level ladder',60,88),('Reuse before build',45,58),('Evidence',45,62),('Business usefulness',40,80)]
+def build_explained():
+    t=open(os.path.join(HERE,'explained.src.html')).read()
+    f2=[x for x in ff if x[3] in ('np7','np4','cp4','cp4i')]
+    fonts2='\n'.join(f'@font-face{{font-family:"{n}";font-weight:{w};font-style:{s};font-display:swap;src:url(data:font/woff2;base64,{A["fonts"][k]}) format("woff2")}}' for n,w,s,k in f2)
+    bars=''.join(f'<div class="hb-row"><span class="hb-l">{n}</span><span class="hb-t"><span><i class="q" style="--v:{b*.8:.0f}%"></i><b>{b}</b></span><span><i style="--v:{a*.8:.0f}%"></i><b>{a}</b></span></span></div>' for n,b,a in SCORES)
+    t=t.replace('/*FONTS*/',fonts2).replace('/*PHOTO*/',f'--photo:url("data:image/jpeg;base64,{A["sunset"]}");').replace('__BARS__',bars)
+    out=os.path.join(HERE,'..','..','..','..','docs','artifact-studio-explained.html'); open(out,'w').write(t)
+    print('explained:',round(len(t.encode())/1024),'KB; overall before',round(sum(b for _,b,_ in SCORES)/len(SCORES)),'after',round(sum(a for _,_,a in SCORES)/len(SCORES)))
+build_explained()
