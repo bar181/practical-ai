@@ -4,7 +4,7 @@ Take a page from a chatbot artifact to a hosted site: a shared link first, then 
 
 | Complexity | Research | Simple level | Draft |
 | --- | --- | --- | --- |
-| Beginner to advanced | Not started | Not started | None yet |
+| Beginner to advanced | Done: landscape review in the draft | [Drafted](../../drafts/website-publishing/) | [`drafts/website-publishing/`](../../drafts/website-publishing/) |
 
 **Think of it as:** Moving out of a sketchbook. First you show the page to a friend, then you hang it in a gallery, then you set up a studio that hangs each new piece for you.
 
@@ -37,7 +37,7 @@ outlines and will change.
 
 ## Established best practices
 
-_Research not started. This is the first step for this plan._
+Done. See the [landscape review](../../drafts/website-publishing/landscape-review.md) for what already exists, with dated sources.
 
 ## What it reuses
 

@@ -17,15 +17,12 @@ writing it down once saves doing it from memory each time.
 | [`quote-drafter`](quote-drafter/) | Builds a first-draft estimate from a price list and written rules, showing its arithmetic | [Estimator](../drafts/estimator/) |
 | [`script-and-beat-sheet`](script-and-beat-sheet/) | Turns a brief into a beat sheet and a timed script, and recommends the production route | [Short video guide](../drafts/short-video/), [training explainer](../drafts/training-explainer/) |
 | [`learning-log`](learning-log/) | Looks in a log of solved problems before answering, says how often a stored answer worked, and drafts a new entry after a fix | [Learning system](../drafts/learning-system/) |
+| [`publish-check`](publish-check/) | Checks a page for private material, unverified facts and layout problems before it is shared, and recommends a publishing route. Never publishes | [Publishing a website](../drafts/website-publishing/) |
 | [`landscape-review`](landscape-review/) | Checks what already exists and frames the build-or-license decision, with costs and sources | Step 2 to 4 of the [build process](../plans/plans-template/BUILD-PROCESS.md) |
 
 ## Identified, not yet written
 
-These will be written when the tool they belong to reaches its simple level.
-
-| Skill | What it would do | Belongs to |
-| --- | --- | --- |
-| Pre-ship check | Checks any page for phone layout, contrast, real content and private material before it is shared. The checklist exists inside `artifact-studio`; a standalone skill is for pages made elsewhere | Publishing a website |
+None at present. Add a row here when a procedure has been done by hand twice.
 
 ## Using a skill
 

@@ -31,6 +31,7 @@ Seven items, each scored from 1 to 100. The overall score is the plain average.
 | 4. Estimator | 66 | 71 | 71 | Evidence (50) |
 | 5. Training explainer | 51 | 58 | 61 | Evidence (30). The demo plays a plan, not a video |
 | 6. Learning system | none | none | 69 | Evidence (35). New in round 2: demo, simple level, skill and outlines |
+| 7. Publishing a website | none | none | 67 | Evidence (25). New in round 2. No route has been walked end to end |
 
 Round 1 added skills, agent guides and the upper levels. Round 2 fixed the weakest fixable item it
 found, the quality of three demos, by building a page for each with the artifact studio's own
@@ -123,6 +124,18 @@ simplest version that works.
 | Quality of the demo | 72 | A searchable log with status, counts and a draft-entry form. It saves nothing |
 | Teachable | 78 | Student guide, agent guide and the `learning-log` skill |
 | Evidence | 35 | Checked in Chrome and by the automated scan. Never used on a real log |
+
+## Round 2: publishing a website, drafted from its plan
+
+| Item | Score | Why |
+| --- | --- | --- |
+| Easy for a non-coder | 68 | Three routes in plain words. The steps describe the routes and are not click-by-click |
+| Reuse before build | 85 | Nothing is built. It uses the assistant's sharing and free static hosts |
+| Fits the level ladder | 70 | Demo and simple level drafted. Upper levels outlined |
+| Business usefulness | 80 | Every page made with the other tools needs this step |
+| Quality of the demo | 65 | A route chooser and a pre-publish check. It publishes nothing |
+| Teachable | 78 | Student guide, agent guide and the `publish-check` skill |
+| Evidence | 25 | Host facts come from dated sources. No route was walked for this draft |
 
 ## How to run the next round
 
