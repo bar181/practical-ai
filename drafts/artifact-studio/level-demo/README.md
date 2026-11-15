@@ -12,6 +12,7 @@ order one.
 | Tab | What it shows | Count |
 | --- | --- | --- |
 | Voices | The same case made seven ways, each a complete page with its own tab: keynote, storyteller, teacher, pitch, practical instructor, analyst, executive brief | 7 |
+| Looks | The same line dressed nine ways, with the look cards underneath | 9 |
 | Photo parts | Parts built from one photograph: pan and zoom, scrolling tour, line art and more | 12 |
 | Page parts | Parts that need no photograph: numbers, timeline, tables, chart, questions and more | 12 |
 | Recipes | Whole pages made from the parts, each with its own tab: a report, a proposal, an explainer, a landing page | 4 |
@@ -23,7 +24,7 @@ the sentence that asks for it at beginner, advanced and expert level.
 
 | Page | File | Tabs |
 | --- | --- | --- |
-| All examples | [`artifact-studio.html`](artifact-studio.html) | 7 voices, photo parts, page parts, 4 recipes |
+| All examples | [`artifact-studio.html`](artifact-studio.html) | 7 voices, 9 looks, photo parts, page parts, 4 recipes |
 | Level 1: Beginner | [`../level-simple/artifact-studio-beginner.html`](../level-simple/artifact-studio-beginner.html) | Start here, 4 recipes, photo parts, page parts, every sentence, how to test a sentence |
 | Level 2: Advanced | [`../level-working/artifact-studio-advanced.html`](../level-working/artifact-studio-advanced.html) | Start here, 7 voices, 9 looks, the request mixer, three reference cards, two templates |
 | Level 3: Expert | [`../level-automated/artifact-studio-expert.html`](../level-automated/artifact-studio-expert.html) | Start here, the skill in three forms, build rules, a tickable checklist, the agent guide, best practices |

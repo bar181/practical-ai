@@ -379,12 +379,15 @@ footer p{border-top:1px solid rgba(232,237,243,.2);padding-top:22px;max-width:40
 #t-voice-brief:checked~.tabs .tabs-s label[for="t-voice-brief"]{background:var(--reed);color:var(--pine)}
 :is(#t-voice-keynote,#t-voice-story,#t-voice-teacher,#t-voice-pitch,#t-voice-practical,#t-voice-analyst,#t-voice-brief):checked~.tabs .g0{background:var(--fog);color:var(--pine);border-color:var(--fog)}
 :is(#t-voice-keynote,#t-voice-story,#t-voice-teacher,#t-voice-pitch,#t-voice-practical,#t-voice-analyst,#t-voice-brief):checked~.tabs .s0{display:flex}
+#t-l2-looks:checked~#v-l2-looks{display:block}
+#t-l2-looks:focus-visible~.tabs label[for="t-l2-looks"]{outline:3px solid var(--reed);outline-offset:2px}
+:is(#t-l2-looks):checked~.tabs .g1{background:var(--fog);color:var(--pine);border-color:var(--fog)}
 #t-photo:checked~#v-photo{display:block}
 #t-photo:focus-visible~.tabs label[for="t-photo"]{outline:3px solid var(--reed);outline-offset:2px}
-:is(#t-photo):checked~.tabs .g1{background:var(--fog);color:var(--pine);border-color:var(--fog)}
+:is(#t-photo):checked~.tabs .g2{background:var(--fog);color:var(--pine);border-color:var(--fog)}
 #t-parts:checked~#v-parts{display:block}
 #t-parts:focus-visible~.tabs label[for="t-parts"]{outline:3px solid var(--reed);outline-offset:2px}
-:is(#t-parts):checked~.tabs .g2{background:var(--fog);color:var(--pine);border-color:var(--fog)}
+:is(#t-parts):checked~.tabs .g3{background:var(--fog);color:var(--pine);border-color:var(--fog)}
 #t-recipe-report:checked~#v-recipe-report{display:block}
 #t-recipe-report:focus-visible~.tabs label[for="t-recipe-report"]{outline:3px solid var(--reed);outline-offset:2px}
 #t-recipe-report:checked~.tabs .tabs-s label[for="t-recipe-report"]{background:var(--reed);color:var(--pine)}
@@ -397,8 +400,8 @@ footer p{border-top:1px solid rgba(232,237,243,.2);padding-top:22px;max-width:40
 #t-recipe-landing:checked~#v-recipe-landing{display:block}
 #t-recipe-landing:focus-visible~.tabs label[for="t-recipe-landing"]{outline:3px solid var(--reed);outline-offset:2px}
 #t-recipe-landing:checked~.tabs .tabs-s label[for="t-recipe-landing"]{background:var(--reed);color:var(--pine)}
-:is(#t-recipe-report,#t-recipe-proposal,#t-recipe-explainer,#t-recipe-landing):checked~.tabs .g3{background:var(--fog);color:var(--pine);border-color:var(--fog)}
-:is(#t-recipe-report,#t-recipe-proposal,#t-recipe-explainer,#t-recipe-landing):checked~.tabs .s3{display:flex}
+:is(#t-recipe-report,#t-recipe-proposal,#t-recipe-explainer,#t-recipe-landing):checked~.tabs .g4{background:var(--fog);color:var(--pine);border-color:var(--fog)}
+:is(#t-recipe-report,#t-recipe-proposal,#t-recipe-explainer,#t-recipe-landing):checked~.tabs .s4{display:flex}
 .ph2{background-image:var(--photo2)}
 [data-count]{display:inline!important;font:inherit!important;color:inherit!important;margin:0!important;letter-spacing:inherit!important}
 /* horizontal bars: thin, rounded at the data end, value at the tip */
@@ -867,7 +870,7 @@ html[data-view=voice-keynote]{scroll-snap-type:y proximity}
 </head>
 <body>
 <div class="progress" aria-hidden="true"><i></i></div>
-<header class="mast"><div class="wrap"><p class="mast-t"><span>Artifact studio</span> All examples</p><p class="mast-l">Seven voices, 24 parts and four whole pages. Tap a tab. Every example shows the sentence that asks for it.</p></div></header>
+<header class="mast"><div class="wrap"><p class="mast-t"><span>Artifact studio</span> All examples</p><p class="mast-l">Seven voices, nine looks, 24 parts and four whole pages. Tap a tab. Every example shows the sentence that asks for it.</p></div></header>
 <input class="tabr" type="radio" name="tab" id="t-voice-keynote" aria-label="Voices: Keynote" checked>
 <input class="tabr" type="radio" name="tab" id="t-voice-story" aria-label="Voices: Storyteller">
 <input class="tabr" type="radio" name="tab" id="t-voice-teacher" aria-label="Voices: Teacher">
@@ -875,13 +878,14 @@ html[data-view=voice-keynote]{scroll-snap-type:y proximity}
 <input class="tabr" type="radio" name="tab" id="t-voice-practical" aria-label="Voices: Practical instructor">
 <input class="tabr" type="radio" name="tab" id="t-voice-analyst" aria-label="Voices: Analyst">
 <input class="tabr" type="radio" name="tab" id="t-voice-brief" aria-label="Voices: Executive brief">
+<input class="tabr" type="radio" name="tab" id="t-l2-looks" aria-label="Looks">
 <input class="tabr" type="radio" name="tab" id="t-photo" aria-label="Photo parts">
 <input class="tabr" type="radio" name="tab" id="t-parts" aria-label="Page parts">
 <input class="tabr" type="radio" name="tab" id="t-recipe-report" aria-label="Recipes: Report">
 <input class="tabr" type="radio" name="tab" id="t-recipe-proposal" aria-label="Recipes: Proposal">
 <input class="tabr" type="radio" name="tab" id="t-recipe-explainer" aria-label="Recipes: Explainer">
 <input class="tabr" type="radio" name="tab" id="t-recipe-landing" aria-label="Recipes: Landing page">
-<nav class="tabs" aria-label="Sections"><div class="tabs-g"><label class="g0" for="t-voice-keynote">Voices</label><label class="g1" for="t-photo">Photo parts</label><label class="g2" for="t-parts">Page parts</label><label class="g3" for="t-recipe-report">Recipes</label></div><div class="tabs-s s0"><span>One message, told seven ways. Tap a voice:</span><label for="t-voice-keynote">Keynote</label><label for="t-voice-story">Storyteller</label><label for="t-voice-teacher">Teacher</label><label for="t-voice-pitch">Pitch</label><label for="t-voice-practical">Practical</label><label for="t-voice-analyst">Analyst</label><label for="t-voice-brief">Brief</label></div><div class="tabs-s s3"><span>Four whole pages. Tap a recipe:</span><label for="t-recipe-report">Report</label><label for="t-recipe-proposal">Proposal</label><label for="t-recipe-explainer">Explainer</label><label for="t-recipe-landing">Landing page</label></div></nav>
+<nav class="tabs" aria-label="Sections"><div class="tabs-g"><label class="g0" for="t-voice-keynote">Voices</label><label class="g1" for="t-l2-looks">Looks</label><label class="g2" for="t-photo">Photo parts</label><label class="g3" for="t-parts">Page parts</label><label class="g4" for="t-recipe-report">Recipes</label></div><div class="tabs-s s0"><span>One message, told seven ways. Tap a voice:</span><label for="t-voice-keynote">Keynote</label><label for="t-voice-story">Storyteller</label><label for="t-voice-teacher">Teacher</label><label for="t-voice-pitch">Pitch</label><label for="t-voice-practical">Practical</label><label for="t-voice-analyst">Analyst</label><label for="t-voice-brief">Brief</label></div><div class="tabs-s s4"><span>Four whole pages. Tap a recipe:</span><label for="t-recipe-report">Report</label><label for="t-recipe-proposal">Proposal</label><label for="t-recipe-explainer">Explainer</label><label for="t-recipe-landing">Landing page</label></div></nav>
 <div class="view" id="v-voice-keynote" data-tab="voices" data-title="The keynote"><aside class="about" aria-label="About this example"><div class="wrap"><p><b>The keynote voice.</b> Inspired by Steve Jobs&#x27;s product launches. Use it when the reader should feel that something new is possible.</p><p class="about-n">A full example follows. <a href="#anat-voice-keynote" data-jump="anat-voice-keynote">How it is built, and the sentence that asks for it</a></p></div></aside>
   <section class="kn-s"><h1 class="see">Every enquiry is a person, waiting.</h1><p class="kn-note">Scroll. One idea per screen.</p></section>
   <section class="kn-s"><div class="kn-big see">26<small>hours</small></div><p class="see" style="--i:1">That is how long they wait for us today.</p></section>
@@ -1091,7 +1095,433 @@ html[data-view=voice-keynote]{scroll-snap-type:y proximity}
     </div>
 <div class="levels"><div class="ask"><h3><b>Beginner:</b> one sentence</h3><blockquote>Write this as a one-page decision brief for busy executives. Decision first, then background, options, recommendation and risks.</blockquote><button class="copy" type="button">Copy</button></div><div class="ask"><h3><b>Advanced:</b> add your look, voice and parts</h3><blockquote>Build a decision brief from my notes that looks like a paper memo. Header with to, from, date and decision deadline. State the decision first in a shaded box. Background in numbered paragraphs. One options table including "do nothing", with the recommended row shaded. Then the recommendation in two sentences, each risk with its control, and next steps. Serif type, one navy accent, no images, no animation.</blockquote><button class="copy" type="button">Copy</button></div><div class="ask"><h3><b>Expert:</b> hand the whole job to the skill</h3><blockquote>Use the artifact-studio skill. Recipe: one-page report. Voice: executive brief. Look: paper memo, navy accent. Content: the attached notes and costs. Keep it to one printed page; if the content does not fit, tell me what you would cut rather than shrinking the type.</blockquote><button class="copy" type="button">Copy</button></div></div>
   </div></section>
-<nav class="pager" aria-label="Previous and next tab"><div><label for="t-voice-analyst">← Analyst</label><label for="t-photo">Photo components →</label></div></nav></div>
+<nav class="pager" aria-label="Previous and next tab"><div><label for="t-voice-analyst">← Analyst</label><label for="t-l2-looks">Looks →</label></div></nav></div>
+<div class="view" id="v-l2-looks" data-title="Looks">
+  <section class="lk"><div class="wrap">
+    <h1>Nine looks</h1>
+    <p>A look is what the page wears. Each sample below shows the same line, "38 minutes to answer an enquiry", dressed nine ways. Ask for a look by name, or hand over a photo or your brand colours instead.</p>
+    <ul class="lk-g">
+      <li><div class="lk-m lk-clean" aria-hidden="true"><i></i><b>38 min</b><span>to answer an enquiry</span></div><h3>Clean</h3><p>A well-edited reference page. One typeface, one accent.</p></li>
+      <li><div class="lk-m lk-cine" aria-hidden="true"><b>38 minutes</b><span>to answer an enquiry</span><i></i></div><h3>Cinematic</h3><p>A film title sequence. One idea per screen over a dark field.</p></li>
+      <li><div class="lk-m lk-scroll" aria-hidden="true"><b>38 min</b><span>Step 2 of 3: the reply goes out</span><i></i></div><h3>Scrollytelling</h3><p>A picture stays put while short steps scroll past and change it.</p></li>
+      <li><div class="lk-m lk-dash" aria-hidden="true"><b>38m</b><i></i><span>Median first reply, last 30 days</span></div><h3>Dashboard</h3><p>An instrument panel. The few numbers that matter, then the detail.</p></li>
+      <li><div class="lk-m lk-edit" aria-hidden="true"><i></i><b>Thirty-eight minutes</b><span>How one company learned to answer first.</span></div><h3>Editorial</h3><p>A magazine feature. A narrow column made for reading.</p></li>
+      <li><div class="lk-m lk-key" aria-hidden="true"><b>38</b><span>minutes</span><i></i></div><h3>Keynote black</h3><p>A launch in a dark theatre. Numbers larger than anything else.</p></li>
+      <li><div class="lk-m lk-memo" aria-hidden="true"><div><b>1. Decision requested</b><span>Approve the one-hour reply standard. First replies now take 38 minutes.</span></div></div><h3>Paper memo</h3><p>A printed decision paper. Numbered paragraphs, no pictures.</p></li>
+      <li><div class="lk-m lk-field" aria-hidden="true"><b>Reply in 38 min</b><span>Step 1. Turn on the enquiry alert</span><i></i></div><h3>Field guide</h3><p>A workbook you write in. Boxes, tick marks and two colours.</p></li>
+      <li><div class="lk-m lk-film" aria-hidden="true"><i></i><b>Thirty-eight minutes</b><span>It used to take a day.</span></div><h3>Faded film</h3><p>A slide projector in a dark room. Warm, soft and slow.</p></li>
+    </ul>
+  </div></section>
+<article class="md sub"><div class="wrap">
+<p>A look is what the page wears: layout feel, type, colour and motion. Choose the look after the
+recipe and the voice. Each card has six fields. To add a look, fill in the blank card at the end.</p>
+<h2>Where the look comes from</h2>
+<p>Use the first of these that applies.</p>
+<ol>
+<li><strong>The person's design spec or brand colours.</strong> Follow it exactly.</li>
+<li><strong>An image they supplied.</strong> Take the palette from it with the method below.</li>
+<li><strong>The default for the chosen voice.</strong> See the last table in this file.</li>
+</ol>
+<h2>Taking colours from a photo</h2>
+<ol>
+<li>Find the five or six colours that cover most of the picture. Ask for them by share, largest first.</li>
+<li>The darkest becomes the text colour, and the background for dark bands.</li>
+<li>The lightest, or a paler step of the largest colour, becomes the page background.</li>
+<li>The most vivid colour that is not skin or sky becomes the accent. Use it sparingly.</li>
+<li>Check text against its background: 4.5 to 1 or better. Darken or lighten until it passes.</li>
+<li>Name each colour for the thing it came from (fog, pine, reed). It keeps choices honest.</li>
+</ol>
+<p>A cool photo gives a calm page. A warm photo gives an emotional one. Do not fight the picture.</p>
+<h2>Clean</h2>
+<div class="tblw" tabindex="0" role="region" aria-label="Table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<td></td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Feels like</td>
+<td>A well-edited reference page</td>
+</tr>
+<tr>
+<td>Layout</td>
+<td>One column, generous margins, clear headings, short sections</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>One typeface. Size and weight carry the hierarchy</td>
+</tr>
+<tr>
+<td>Colour</td>
+<td>Neutral background, one accent colour used sparingly</td>
+</tr>
+<tr>
+<td>Motion</td>
+<td>None, or a gentle fade on load</td>
+</tr>
+<tr>
+<td>Avoid</td>
+<td>Decoration, gradients, more than one accent, centred body text</td>
+</tr>
+</tbody>
+</table></div>
+<h2>Cinematic</h2>
+<div class="tblw" tabindex="0" role="region" aria-label="Table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<td></td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Feels like</td>
+<td>A film title sequence</td>
+</tr>
+<tr>
+<td>Layout</td>
+<td>Full-height sections, one idea per screen, large imagery or dark colour fields</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>Very large display headings, small quiet body text</td>
+</tr>
+<tr>
+<td>Colour</td>
+<td>Dark base, one strong highlight</td>
+</tr>
+<tr>
+<td>Motion</td>
+<td>Slow reveals as each section enters. Nothing that loops</td>
+</tr>
+<tr>
+<td>Avoid</td>
+<td>Dense text, small images, busy navigation, anything that moves constantly</td>
+</tr>
+</tbody>
+</table></div>
+<h2>Scrollytelling</h2>
+<div class="tblw" tabindex="0" role="region" aria-label="Table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<td></td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Feels like</td>
+<td>A guided walk through a story or a process</td>
+</tr>
+<tr>
+<td>Layout</td>
+<td>A visual that stays in place while short text steps scroll past it and change it</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>Short paragraphs, one per step, large enough to read while scrolling</td>
+</tr>
+<tr>
+<td>Colour</td>
+<td>Calm base. The highlight follows the current step</td>
+</tr>
+<tr>
+<td>Motion</td>
+<td>Tied to scrolling. The reader controls the pace</td>
+</tr>
+<tr>
+<td>Avoid</td>
+<td>More than about seven steps, steps longer than three sentences, motion that plays on its own</td>
+</tr>
+</tbody>
+</table></div>
+<h2>Dashboard</h2>
+<div class="tblw" tabindex="0" role="region" aria-label="Table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<td></td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Feels like</td>
+<td>An instrument panel</td>
+</tr>
+<tr>
+<td>Layout</td>
+<td>The few numbers that matter at the top, supporting charts below, details last</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>Tabular numbers, compact labels, units always shown</td>
+</tr>
+<tr>
+<td>Colour</td>
+<td>Neutral. Colour only for status and for separating series</td>
+</tr>
+<tr>
+<td>Motion</td>
+<td>None</td>
+</tr>
+<tr>
+<td>Avoid</td>
+<td>Decorative charts, unlabeled axes, more than one question per chart</td>
+</tr>
+</tbody>
+</table></div>
+<h2>Editorial</h2>
+<div class="tblw" tabindex="0" role="region" aria-label="Table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<td></td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Feels like</td>
+<td>A magazine feature</td>
+</tr>
+<tr>
+<td>Layout</td>
+<td>A narrow reading column, pull quotes, the occasional wide image</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>A serif for reading, a contrasting face for headings, comfortable line spacing</td>
+</tr>
+<tr>
+<td>Colour</td>
+<td>Paper-like background, dark text, one accent</td>
+</tr>
+<tr>
+<td>Motion</td>
+<td>None</td>
+</tr>
+<tr>
+<td>Avoid</td>
+<td>Sidebars, wide text columns, anything that interrupts the read</td>
+</tr>
+</tbody>
+</table></div>
+<h2>Keynote black</h2>
+<div class="tblw" tabindex="0" role="region" aria-label="Table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<td></td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Feels like</td>
+<td>A product launch in a dark theatre</td>
+</tr>
+<tr>
+<td>Layout</td>
+<td>One idea per full screen, centred. Screens snap into place</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>One sans serif, bold, very tight. Numbers larger than anything else</td>
+</tr>
+<tr>
+<td>Colour</td>
+<td>Black, white and two greys. At most one colour, used once</td>
+</tr>
+<tr>
+<td>Motion</td>
+<td>Words rise into place as each screen arrives</td>
+</tr>
+<tr>
+<td>Avoid</td>
+<td>Bullet lists, small charts, any second typeface</td>
+</tr>
+</tbody>
+</table></div>
+<h2>Paper memo</h2>
+<div class="tblw" tabindex="0" role="region" aria-label="Table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<td></td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Feels like</td>
+<td>A printed decision paper on a desk</td>
+</tr>
+<tr>
+<td>Layout</td>
+<td>One page-shaped column on a grey surround. A header block, numbered paragraphs, one table</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>A serif for text, a plain sans for headings and labels</td>
+</tr>
+<tr>
+<td>Colour</td>
+<td>White paper, near-black text, one dark accent for rules and headings</td>
+</tr>
+<tr>
+<td>Motion</td>
+<td>None</td>
+</tr>
+<tr>
+<td>Avoid</td>
+<td>Images, icons, coloured panels, anything that moves</td>
+</tr>
+</tbody>
+</table></div>
+<h2>Field guide</h2>
+<div class="tblw" tabindex="0" role="region" aria-label="Table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<td></td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Feels like</td>
+<td>A workbook you write in</td>
+</tr>
+<tr>
+<td>Layout</td>
+<td>Boxed blocks on squared paper. Numbered steps with tick boxes. Tables for comparisons</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>A condensed bold face for headings, a wide plain sans for text</td>
+</tr>
+<tr>
+<td>Colour</td>
+<td>Two colours: a dark one for structure and a bright one that means "act"</td>
+</tr>
+<tr>
+<td>Motion</td>
+<td>Only in response to the reader: a tick, a progress bar</td>
+</tr>
+<tr>
+<td>Avoid</td>
+<td>Soft shadows, gradients, long paragraphs</td>
+</tr>
+</tbody>
+</table></div>
+<h2>Faded film</h2>
+<div class="tblw" tabindex="0" role="region" aria-label="Table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<td></td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Feels like</td>
+<td>A slide projector in a dark room</td>
+</tr>
+<tr>
+<td>Layout</td>
+<td>One lit rectangle at a time, a few words beneath it</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>A high-contrast serif for the few large words, italic serif for captions</td>
+</tr>
+<tr>
+<td>Colour</td>
+<td>Warm near-black, cream, and the browns of an old photograph</td>
+</tr>
+<tr>
+<td>Motion</td>
+<td>Slides advance by hand. Captions fade up</td>
+</tr>
+<tr>
+<td>Avoid</td>
+<td>Crisp saturated photos, sans serif type, anything that looks new</td>
+</tr>
+</tbody>
+</table></div>
+<h2>Blank card</h2>
+<div class="tblw" tabindex="0" role="region" aria-label="Table"><table>
+<thead>
+<tr>
+<th>Field</th>
+<td></td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Feels like</td>
+<td></td>
+</tr>
+<tr>
+<td>Layout</td>
+<td></td>
+</tr>
+<tr>
+<td>Type</td>
+<td></td>
+</tr>
+<tr>
+<td>Colour</td>
+<td></td>
+</tr>
+<tr>
+<td>Motion</td>
+<td></td>
+</tr>
+<tr>
+<td>Avoid</td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<h2>Default look for each voice</h2>
+<div class="tblw" tabindex="0" role="region" aria-label="Table"><table>
+<thead>
+<tr>
+<th>Voice</th>
+<th>Default look</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Keynote</td>
+<td>Keynote black</td>
+</tr>
+<tr>
+<td>Storyteller</td>
+<td>Colours from the photo, or Editorial</td>
+</tr>
+<tr>
+<td>Teacher</td>
+<td>Clean, with one highlight colour</td>
+</tr>
+<tr>
+<td>Pitch</td>
+<td>Faded film</td>
+</tr>
+<tr>
+<td>Practical instructor</td>
+<td>Field guide</td>
+</tr>
+<tr>
+<td>Analyst</td>
+<td>Dashboard</td>
+</tr>
+<tr>
+<td>Executive brief</td>
+<td>Paper memo</td>
+</tr>
+</tbody>
+</table></div></div></article>
+<nav class="pager" aria-label="Previous and next tab"><div><label for="t-voice-brief">← Brief</label><label for="t-photo">Photo components →</label></div></nav></div>
 <div class="view" id="v-photo" data-tab="photo" data-title="Photo components">
 <header class="hero">
   <div class="ph" role="img" aria-label="An overcast lake seen from the shore: a bare tree trunk on the right, dry cattails in front, a dark line of evergreens on the far side."></div>
@@ -1276,7 +1706,7 @@ html[data-view=voice-keynote]{scroll-snap-type:y proximity}
       <div class="tile sky"><span class="n">0</span><span class="ui">libraries loaded</span></div>
       <div class="tile wide"><div class="chips" id="chips" aria-hidden="true"></div><span class="ui">The photo's six main colours, largest first</span></div>
       <div class="tile"><svg id="spark" viewBox="0 0 100 40" preserveAspectRatio="none" role="img" aria-label="Small line showing brightness from the top of the photo to the bottom."></svg><span class="ui">Brightness, top to bottom</span></div>
-      <div class="tile"><span class="n">1,421<small>KB</small></span><span class="ui">the whole studio: one file, photos and fonts included</span></div>
+      <div class="tile"><span class="n">1,432<small>KB</small></span><span class="ui">the whole studio: one file, photos and fonts included</span></div>
       <div class="tile say dark">Every tile here is a true fact about this page.</div>
     </div>
   </div>
@@ -1379,7 +1809,7 @@ html[data-view=voice-keynote]{scroll-snap-type:y proximity}
   </div>
 </section>
 <footer><div class="wrap"><p class="ui">Built on 14 November 2026 from one photo. Tool and licence notes were checked the same day; follow each link before you rely on one. The line under this page's top edge is a thirteenth component: a reading progress bar.</p></div></footer>
-<nav class="pager" aria-label="Previous and next tab"><div><label for="t-voice-brief">← Brief</label><label for="t-parts">Page components →</label></div></nav></div>
+<nav class="pager" aria-label="Previous and next tab"><div><label for="t-l2-looks">← Looks</label><label for="t-parts">Page components →</label></div></nav></div>
 <div class="view" id="v-parts" data-tab="parts" data-title="Page components">
   <div class="wrap shelf-head"><h2>Page components</h2>
     <p class="measure">Twelve building blocks that need no photograph. These are the plain parts most business pages are made of. Each one comes with the sentence that asks for it. All figures are invented for the demo.</p></div>
