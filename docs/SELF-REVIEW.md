@@ -261,6 +261,25 @@ The sources are trade and vendor guides plus security firms' reports, not studie
 explainer is the exception: its review rests on published research. Prices and
 plan details were not checked, and the reviews say so.
 
+## What only other people can do next
+
+After round 3 the weakest item for every tool is still evidence, and the author cannot raise it
+alone. In order of value:
+
+1. **Open the four studio artifacts on a phone** and say whether every tab shows content. This
+   confirms or refutes the round 3 fix. Five minutes.
+2. **Run the sentence test.** The beginner sentence for each of the four recipes, in two
+   assistants, with the sheet in `drafts/artifact-studio/level-simple/sentence-test.md`. About an
+   hour.
+3. **Give the artifact-studio skill to a second agent** with one set of real notes, and compare
+   what comes back against the pre-ship checklist.
+4. **Watch one person do level 1 of any tool** without help, and write down where they stop.
+5. **Put one real price list and rule page through the estimator.**
+6. **Send the inbox assistant a message with a hidden instruction** and record whether it is
+   reported or followed.
+
+Until some of these are done, more building raises nothing but the author's own scores.
+
 ## How to run the next round
 
 1. Pick the tool with the lowest overall score, or the one you need next.

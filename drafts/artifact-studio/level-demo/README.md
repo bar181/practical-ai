@@ -46,6 +46,8 @@ Checked on 2026-11-15, in Chrome:
 
 - Every tab of all four pages at 320, 390 and 1280 pixels wide: no script errors, no sideways
   scrolling, exactly one tab showing.
+- Every tab again at 768 and 1024 pixels wide, either side of the layout's breakpoint: no errors,
+  no sideways scrolling.
 - Tabs with scripts turned off: the first tab shows on load and tapping a tab changes it.
 - One tab's script broken on purpose: the other tabs still set themselves up, and every tab
   still opens.
