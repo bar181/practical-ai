@@ -7,6 +7,7 @@ in `plans/` and, once started, a folder in `drafts/` or `projects/`.
 | --- | --- |
 | Make a page, a slide deck or a social post | [`drafts/artifact-studio/AGENTS.md`](drafts/artifact-studio/AGENTS.md): the path from a request to a finished file |
 | Understand what the repository holds | [`README.md`](README.md) |
+| Decide what to build next | [`docs/PRIORITIES.md`](docs/PRIORITIES.md): the ranked list, with a North Star page for each new candidate |
 | Start a new tool, or continue one | [`drafts/project-method/AGENTS.md`](drafts/project-method/AGENTS.md) and the [`project-builder`](skills/project-builder/) skill |
 | Write or update a plan for a tool | [`skills/plan-writer/`](skills/plan-writer/) |
 | Check what already exists before building | [`skills/landscape-review/`](skills/landscape-review/) |

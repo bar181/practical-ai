@@ -84,7 +84,8 @@ Each gate is one line in [`gates.json`](gates.json) saying what it proves. The r
 
 ## Status
 
-Draft. Built and checked by its author only.
+**Closed as a draft on 15 November 2026.** Built and checked by its author only. The closing
+checklist, the score and what is still open are in [`docs/close-out.md`](docs/close-out.md).
 
 | Part | State |
 | --- | --- |

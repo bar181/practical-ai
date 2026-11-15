@@ -13,7 +13,7 @@ what is there, what is being made and what is still an idea.
 | Looking for something to use today | [`drafts/artifact-studio/`](drafts/artifact-studio/): pages, slide decks and social posts from your notes |
 | An agent | [`AGENTS.md`](AGENTS.md) |
 | Wondering what else is planned | [`docs/PRIORITIES.md`](docs/PRIORITIES.md) and [`plans/`](plans/) |
-| Building a tool here | [`drafts/project-method/`](drafts/project-method/): seven stages, a gate after each |
+| Building a tool here | [`drafts/project-method/`](drafts/project-method/): nine stages, a gate after each |
 
 ## Layout
 

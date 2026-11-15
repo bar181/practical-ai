@@ -23,7 +23,7 @@
   gates.json     the checks that must pass
   base/          everything you use
   level-1/       use it by hand
-  docs/          the purpose page and the decisions
+  docs/          the North Star page, the rubric and a progress note
 ```
 
 | Level | You add | You depend on | State |
@@ -39,9 +39,9 @@ python3 ../../tools/gates.py .
 
 ## Status
 
-Stage 1 of 7. See [`docs/purpose.md`](docs/purpose.md).
+Stage 1 of 9: Understand. See [`docs/north-star.md`](docs/north-star.md).
 
 | Part | State |
 | --- | --- |
-| Purpose page | Not yet approved |
+| North Star page | Not yet approved |
 | Real use | None |

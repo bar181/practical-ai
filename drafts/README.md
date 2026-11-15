@@ -12,7 +12,7 @@ A draft that passes review moves to [`projects/`](../projects/).
 | [`dashboard/`](dashboard/) | Dashboard |
 | [`estimator/`](estimator/) | Estimator |
 | [`inbox-daily-summary/`](inbox-daily-summary/) | Inbox triage and daily summary |
-| [`learning-system/`](learning-system/) | Learning system |
+| [`learning-system/`](learning-system/) | Learnings database (earlier draft, as a learning system) |
 | [`short-video/`](short-video/) | Short video guide |
 | [`training-explainer/`](training-explainer/) | Training explainer with avatar |
 | [`voice-post-drafter/`](voice-post-drafter/) | Voice post drafter |

@@ -4,7 +4,7 @@ One folder per planned tool. Each README gives an overview, what might be involv
 and a complexity flag. A plan is a starting point: it is updated as research is done and replaced by
 a draft and then a project as work proceeds.
 
-How a plan becomes a tool is the [project method](../drafts/project-method/): seven stages, a gate after each.
+How a plan becomes a tool is the [project method](../drafts/project-method/): nine stages, a gate after each.
 Plans written before 15 November 2026 describe four sizes of each tool (demo, simple, working, automated).
 The current layout is a base and up to three levels that hold only what they add. [`archive/`](archive/) says what changed.
 
@@ -22,7 +22,24 @@ process, the template and the instructions. The skills that do the work for you 
 
 A tool can start at Beginner and reach Advanced at its automated level. The index shows the range.
 
-## The 20 priority tools
+## New candidates, with a North Star page
+
+Written 15 November 2026. Each is one to three pages: who it is for, what already exists, what is in scope. **None is approved yet.**
+
+| Plan | In one line | Complexity | Proposed by |
+| --- | --- | --- | --- |
+| [Learnings database](learning-system/NORTH-STAR.md) | One row for every error, redo and thing that unexpectedly worked, in a store you own. Updates the earlier [learning system plan](learning-system/) | Beginner to advanced | The owner |
+| [Task decomposition and dependency graph](task-graph/) | A goal becomes tasks with dependencies, drawn five ways from one file | Beginner to intermediate | The owner |
+| [Decision support assistant](decision-support/) | A decision worked in seven steps the way a consulting team would, with every link checked | Intermediate | The owner |
+| [Core memory system](core-memory/) | Notes, policies, sites, code and pointers as labelled records in a store you own. Not a wiki | Intermediate to advanced | The owner |
+| [Connections hub](connections-hub/) | Reads a meeting, a thread, a page or a file and files what is worth keeping, after review | Intermediate to advanced | The owner |
+| [Rubric reviewer](rubric-reviewer/) | Work scored out of 100 against a rubric written beforehand, by fresh eyes | Beginner | The assistant |
+| [Source and link verifier](source-verifier/) | Every link opened on a known date and checked against its sentence | Beginner to intermediate | The assistant |
+| [Project method](project-method/) | How a tool here gets built. Already a [draft](../drafts/project-method/) | Beginner to intermediate | The owner |
+
+## Earlier plans
+
+In the order of the first priority list. The current order, with scores, is in [`docs/PRIORITIES.md`](../docs/PRIORITIES.md).
 
 | # | Plan | In one line | Complexity | Research | Level 1 |
 | --- | --- | --- | --- | --- | --- |

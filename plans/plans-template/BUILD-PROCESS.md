@@ -1,6 +1,6 @@
 # How to build a new productivity tool
 
-> These nine steps are how a **plan** is written. They are the detail behind stages 1 to 3 of the
+> These nine steps are how a **plan** is written. They are the detail behind stages 1 to 4 of the
 > [project method](../../drafts/project-method/base/METHOD.md), which covers the whole build and the gates.
 
 The steps every tool in this repository goes through, in order. Use it before writing a plan and

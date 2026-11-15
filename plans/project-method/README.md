@@ -4,7 +4,7 @@
 
 ## Overview
 
-How a tool in this repository gets built: seven stages, a gate after each, and a folder to copy so
+How a tool in this repository gets built: nine stages, a gate after each, and a folder to copy so
 every tool is laid out the same way. It exists because the first tool, the artifact studio, was
 rebuilt three times before its shape was right.
 
@@ -24,10 +24,11 @@ can use, without rebuilding it three times on the way.
 
 ## Reuse check
 
-Done lightly, 15 November 2026. The skill rules come from the published Agent Skills authoring
-guide, and `tools/check_skills.py` checks them. The layout, the stages and the gates come from one
-build, the artifact studio, recorded in [`LESSONS.md`](../../drafts/project-method/base/LESSONS.md).
-No outside method was adopted wholesale.
+Done on 15 November 2026 and recorded in [`SOURCES.md`](../../drafts/project-method/base/SOURCES.md):
+the explore, plan, build, verify routines published for coding agents, spec-driven development,
+and harnesses for agents that work across many sessions. The skill rules come from the published
+Agent Skills authoring guide, and `tools/check_skills.py` checks them. The layout and the lessons
+come from one build, the artifact studio. No outside method was adopted wholesale.
 
 ## Open questions
 

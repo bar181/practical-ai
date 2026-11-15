@@ -13,8 +13,10 @@ what must be true before you move on.
    [`project-builder`](../../skills/project-builder/) to run the whole sequence.
 4. **Pass the gate.** A gate is a command that exits with 0, or a named person saying yes. Never
    mark a stage done because the work feels finished.
-5. **Stop where the method says stop.** Stages 1, 4 and 7 end with a person's decision. Prepare
+5. **Stop where the method says stop.** Stages 3, 5 and 9 end with a person's decision. Prepare
    everything, set out the decision, and wait.
+6. **Leave a handover.** Update `docs/progress.md` in the tool's folder before you finish: what is
+   done, what is next, what to be careful of.
 
 ## Rules that never bend
 

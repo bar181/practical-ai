@@ -21,4 +21,4 @@ for folder, _, files in os.walk(dest):
         path = os.path.join(folder, name)
         text = open(path, encoding="utf-8").read().replace("{{SLUG}}", slug).replace("{{TITLE}}", title)
         open(path, "w", encoding="utf-8").write(text)
-print(f"Created {dest}. Next: write the purpose page in docs/purpose.md and get it approved (stage 1).")
+print(f"Created {dest}. Next: fill in docs/north-star.md (stages 1 to 3) and get it approved.")

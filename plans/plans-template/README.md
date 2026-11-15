@@ -1,5 +1,9 @@
 # Plans template
 
+> A plan starts as a **North Star page**: one to three pages on who the tool is for, what already exists and what is
+> in scope. Its form is [`north-star.md`](../../drafts/project-method/base/scaffold/docs/north-star.md) in the project
+> method's scaffold. The fuller plan template below is for a tool whose North Star has been approved.
+
 Everything needed to add a plan to this repository, by hand or with a skill.
 
 | File | What it is |

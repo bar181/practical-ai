@@ -1,11 +1,7 @@
 # To-do project list
 
-Every project starts with the same two steps, in this order:
-
-1. **Research** established best practices. Record each with a source link and the date checked.
-2. **Level 1:** write the level 1 solution and its overview.
-
-The working level and beyond are not planned in detail until level 1 is in use.
+Every project follows the [project method](../drafts/project-method/): nine stages, a gate after
+each. Nothing is built until its North Star page is approved at stage 3.
 
 Status read from the folders on 2026-11-14: 10 of 20 level 1s drafted, 0 reviewed, 0 published.
 
@@ -34,6 +30,16 @@ Status read from the folders on 2026-11-14: 10 of 20 level 1s drafted, 0 reviewe
 
 "Partly done" means the tool facts in the draft guide were checked against sources. A wider review
 of established practice has not been done for any project yet.
+
+## Next, in order
+
+- [ ] Approve, change or reject each North Star page listed at the top of [`PRIORITIES.md`](PRIORITIES.md). Nothing is built before that
+- [ ] Learnings database: take it through the project method from stage 4. Import `drafts/project-method/base/LESSONS.md` as its first rows
+- [ ] Task graph: stage 4 onward, reusing the artifact studio for every view
+- [ ] Decision support: read the existing consulting skill at stage 2 before building
+- [ ] Core memory: settle where a record ends and a document begins, then build on the learnings row shape
+- [ ] Decide whether the rubric reviewer and the source verifier are tools or steps inside other tools
+- [ ] Bring `docs/practical-ai-explained.html` up to the new list. It still describes the first ten tools
 
 ## Across all projects
 

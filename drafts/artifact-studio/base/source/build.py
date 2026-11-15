@@ -280,7 +280,7 @@ REPO=os.path.normpath(os.path.join(ROOT,'..','..'))
 for f in sorted(glob.glob(os.path.join(REPO,'docs','reports','*.md'))):
     key='report-'+os.path.basename(f)[:-3]; src=open(f).read(); ttl=re.search(r'^# (.+)$',src,re.M).group(1)
     VIEW[key]=f'<div class="view" id="v-{key}" data-title="{html.escape(ttl)}"><article class="md"><div class="wrap">{md_html(f,drop_h1=True)}</div></article></div>'; VJS[key]=[]; PREFIX[key]='Practical AI report'
-    build(key,os.path.relpath(f[:-3]+'.html',ROOT),ttl,'What was proposed, what was built, how to use it, and what has not been checked.',[(ttl,[key],'')])
+    build(key,os.path.relpath(f[:-3]+'.html',ROOT),ttl,('The ranked list, why each tool sits where it does, and what is waiting for approval.' if 'priorities' in key else 'What was built, how to use it, and what has not been checked.'),[(ttl,[key],'')])
 
 # ---- the index: one machine-readable file and one page for people, both generated, so neither can drift from the templates
 def write_design_ideas():

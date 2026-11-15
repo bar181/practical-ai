@@ -1,6 +1,6 @@
 # Project method: level 2, agentic
 
-An agent takes a tool through the seven stages by itself, stopping only where a person has to
+An agent takes a tool through the nine stages by itself, stopping only where a person has to
 decide. This level adds two things to the base: a skill that knows the order, and gates that say
 whether a stage is done.
 
@@ -15,7 +15,9 @@ are the fence: they say where not to go. The agent does the walking.
 | Stage skills | [`landscape-review`](../../../skills/landscape-review/), [`plan-writer`](../../../skills/plan-writer/) | The reuse check and the plan |
 | The gate runner | [`tools/gates.py`](../../../tools/gates.py) | Runs the tool's `gates.json` and ends with pass or "DO NOT SHIP" |
 | The standing gates | [`tools/`](../../../tools/) | Layout, links and skills. Every tool gets these |
-| The tool's own gates | `gates.json` in the tool's folder | Written at stage 3, before the work they check |
+| The tool's own gates | `gates.json` in the tool's folder | Written at stage 4, before the work they check |
+| The handover note | `docs/progress.md` in the tool's folder | What was done, what is next, what to be careful of. Read at the start of every session |
+| The rubric | `docs/rubric.md` in the tool's folder | Written at stage 4, scored at stage 8 |
 
 ## The run
 
@@ -25,7 +27,7 @@ flowchart TD
   W --> G{Run its gate}
   G -- fails --> F[Read the failure. Fix the cause. At most three tries]
   F --> G
-  G -- passes --> H{Stage 1, 4 or 7?}
+  G -- passes --> H{Stage 3, 5 or 9?}
   H -- yes --> P[Stop. Set out the decision for a person]
   H -- no --> S
   F -- still failing --> P
@@ -35,9 +37,9 @@ flowchart TD
 
 | After | The agent sets out | A person decides |
 | --- | --- | --- |
-| Stage 1 | The purpose page | Is this the right thing to build? |
-| Stage 4 | One finished example | Is this what I wanted? |
-| Stage 7 | The gates, the status table and the scored review | May this go to someone else? |
+| Stage 3 | The North Star page: purpose, what exists, scope | Is this the right thing to build? |
+| Stage 5 | One finished example | Is this what I wanted? |
+| Stage 9 | The gates, the scored review and the closing checklist | May this be closed? |
 | Any gate that fails three times | What it tried and what the failure says | Fix the tool, or change the gate? |
 
 The agent never changes a gate to make it pass, never marks a stage done without running its gate,
@@ -47,7 +49,7 @@ and never deletes retired work: it moves it to `plans/archive/`.
 
 Give the agent the skill and one line:
 
-> Use the project-builder skill. The idea: [one sentence]. Start at stage 1 and stop at the first decision.
+> Use the project-builder skill. The idea: [one sentence]. Work through stages 1 to 3 and stop for my approval.
 
 To continue a tool that exists:
 
@@ -55,6 +57,6 @@ To continue a tool that exists:
 
 ## State
 
-Written, with every part it names in place. **No agent has yet taken a tool from stage 1 to stage 7
+Written, with every part it names in place. **No agent has yet taken a tool from stage 1 to stage 9
 with it.** The first such run is the test of this level, and its result belongs in the status table
 of [`../README.md`](../README.md).

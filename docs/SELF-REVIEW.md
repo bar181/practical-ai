@@ -393,6 +393,15 @@ Judgement calls, made because the owner asked for best judgement:
 3. **Tool names on the server were not prefixed.** Assistants already name a tool by its server.
    Renaming would have broken every document for no gain a user would see.
 
+## Closing the artifact studio
+
+Closed as a draft on 15 November 2026, through stage 9 of the revised project method. The checklist
+and the final scores are in
+[`drafts/artifact-studio/docs/close-out.md`](../drafts/artifact-studio/docs/close-out.md). The
+score did not change at closing: 80, with evidence from real use still at 40. The method itself
+grew from seven stages to nine in the same sitting, adding a scoring stage and a closing stage,
+because this tool was called finished several times before anyone had cleaned up after it.
+
 ## What only other people can do next
 
 After round 3 the weakest item for every tool is still evidence, and the author cannot raise it
