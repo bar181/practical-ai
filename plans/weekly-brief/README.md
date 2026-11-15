@@ -4,7 +4,7 @@ A one-page weekly brief: industry and social media research with links, plus wha
 
 | Complexity | Research | Simple level | Draft |
 | --- | --- | --- | --- |
-| Beginner to intermediate | Partly: notes only, sources not checked | [Drafted](../../drafts/weekly-brief/) | [`drafts/weekly-brief/`](../../drafts/weekly-brief/) |
+| Beginner to intermediate | Done: landscape review in the draft | [Drafted](../../drafts/weekly-brief/) | [`drafts/weekly-brief/`](../../drafts/weekly-brief/) |
 
 **Think of it as:** A research assistant who reads the trade press and your own meeting notes all week, then gives you one page on Friday with every claim linked.
 
@@ -37,7 +37,7 @@ outlines and will change.
 
 ## Established best practices
 
-_Notes only. See the [landscape notes](../../drafts/weekly-brief/landscape-notes.md). Sources have not been checked. A proper review is the next step._
+Done. See the [landscape review](../../drafts/weekly-brief/landscape-review.md) for what already exists, with dated sources.
 
 ## What it reuses
 

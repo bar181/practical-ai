@@ -14,7 +14,7 @@ One morning page across your email, calendar and social feedback, with replies d
 | --- | --- |
 | A person who wants to try it | [`STUDENT-GUIDE.md`](STUDENT-GUIDE.md) |
 | An agent, or someone setting one up | [`AGENT-GUIDE.md`](AGENT-GUIDE.md) |
-| Looking for what already exists | [`landscape-notes.md`](landscape-notes.md) |
+| Looking for what already exists | [`landscape-review.md`](landscape-review.md) |
 
 ## The loop
 

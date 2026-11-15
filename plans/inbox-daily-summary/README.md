@@ -4,7 +4,7 @@ One morning summary across your connected sources: email, calendar and social me
 
 | Complexity | Research | Simple level | Draft |
 | --- | --- | --- | --- |
-| Beginner to intermediate | Partly: notes only, sources not checked | [Drafted](../../drafts/inbox-daily-summary/) | [`drafts/inbox-daily-summary/`](../../drafts/inbox-daily-summary/) |
+| Beginner to intermediate | Done: landscape review in the draft | [Drafted](../../drafts/inbox-daily-summary/) | [`drafts/inbox-daily-summary/`](../../drafts/inbox-daily-summary/) |
 
 **Think of it as:** A chief of staff who has read everything before you wake up and hands you one page: what needs you, what is drafted, what can wait.
 
@@ -37,7 +37,7 @@ outlines and will change.
 
 ## Established best practices
 
-_Notes only. See the [landscape notes](../../drafts/inbox-daily-summary/landscape-notes.md). Sources have not been checked. A proper review is the next step._
+Done. See the [landscape review](../../drafts/inbox-daily-summary/landscape-review.md) for what already exists, with dated sources.
 
 ## What it reuses
 

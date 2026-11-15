@@ -39,6 +39,6 @@ Open three of the outside links. If a claim is not on the page it links to, say 
 
 ## Open slots in this draft
 
-- The research behind this draft is notes only. Sources have not been checked.
+- The research behind this draft is in [`landscape-review.md`](landscape-review.md), from dated sources. They are trade guides, not studies.
 - Connecting an assistant to your own accounts differs by product and has not been walked end to end.
 - Nobody other than the author has used this guide.

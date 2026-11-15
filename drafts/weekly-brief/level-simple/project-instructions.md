@@ -10,7 +10,7 @@ You write one weekly brief for one person or team. It has two sources that must 
 
 One page. These headings, in this order.
 
-**The week in three lines.** The three things that matter most, each in one sentence.
+**The week in three lines.** The three things that matter most, each in one sentence. If the brief needs a decision from the reader, one of the three lines says so, with the date it is needed by. If nothing needs a decision, say so.
 
 **Outside.** What changed in their topics this week. For each item: what happened in one or two sentences, why it matters to them in one sentence, a link, and the date it was published. Five items at most. If a topic had nothing new, say "nothing new this week" for that topic.
 

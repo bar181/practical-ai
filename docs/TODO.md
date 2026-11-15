@@ -18,8 +18,8 @@ Status read from the folders on 2026-11-14: 10 of 20 simple levels drafted, 0 re
 | 5 | Training explainer with avatar | To do | Drafted, needs review | [Plan](../plans/training-explainer/) |
 | 6 | Learning system | Done | Drafted, needs review | [Plan](../plans/learning-system/) |
 | 7 | Publishing a website | Done | Drafted, needs review | [Plan](../plans/website-publishing/) |
-| 8 | Inbox triage and daily summary | Notes only | Drafted, needs review | [Plan](../plans/inbox-daily-summary/) |
-| 9 | Weekly brief with research | Notes only | Drafted, needs review | [Plan](../plans/weekly-brief/) |
+| 8 | Inbox triage and daily summary | Done | Drafted, needs review | [Plan](../plans/inbox-daily-summary/) |
+| 9 | Weekly brief with research | Done | Drafted, needs review | [Plan](../plans/weekly-brief/) |
 | 10 | Dashboard | Done | Drafted, needs review | [Plan](../plans/dashboard/) |
 | 11 | Client project tracking and support site | To do | To do | [Plan](../plans/client-project-portal/) |
 | 12 | Daily builder | To do | To do | [Plan](../plans/daily-builder/) |

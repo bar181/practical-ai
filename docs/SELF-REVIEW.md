@@ -32,8 +32,8 @@ Seven items, each scored from 1 to 100. The overall score is the plain average.
 | 5. Training explainer | 51 | 58 | 61 | Evidence (30). The demo plays a plan, not a video |
 | 6. Learning system | none | none | 69 | Evidence (35). New in round 2: demo, simple level, skill and outlines |
 | 7. Publishing a website | none | none | 67 | Evidence (25). New in round 2. No route has been walked end to end |
-| 8. Inbox triage and daily summary | none | none | 60 | Evidence (20). Research is notes only |
-| 9. Weekly brief with research | none | none | 60 | Evidence (20). Research is notes only |
+| 8. Inbox triage and daily summary | none | none | 64 | Evidence (30). Landscape review done in round 3 |
+| 9. Weekly brief with research | none | none | 63 | Evidence (30). Landscape review done in round 3 |
 | 10. Dashboard | none | none | 67 | Evidence (30). Landscape review added after the first draft |
 
 Round 1 added skills, agent guides and the upper levels. Round 2 fixed the weakest fixable item it
@@ -158,7 +158,7 @@ review is the next step for each, before anything else is built on them.
 | Evidence | 20 | 20 | 25 |
 
 The dashboard has since had its landscape review done, with dated sources, so its plan now says
-"done". The inbox summary and the weekly brief are still notes only.
+"done". The inbox summary and the weekly brief had theirs done in round 3, below.
 
 The dashboard demo is the only one of the three that works on a person's own data: it builds
 tiles, a trend and a table from pasted rows, in the browser.
@@ -221,6 +221,24 @@ and one new line in the pre-ship checklist.
 
 Still not checked: the pages inside the artifact viewer on a phone, by the author. The author
 cannot see that viewer. Confirmation has to come from the owner.
+
+## Round 3: landscape reviews for tools 8 and 9
+
+Both tools had been started from notes, which broke the research-first rule. Each now has a
+landscape review from dated sources, and each review changed the tool.
+
+| Tool | What the review found | What changed |
+| --- | --- | --- |
+| Inbox triage and daily summary | Sorting by action is settled practice. Mail products are building the same page. Hidden instructions in mail are a documented risk with no complete fix. The official pages for one assistant disagree about plans | The skill and the project instructions now flag any request to change payment details. The review tells readers to check their own mail product first |
+| Weekly brief | Every source says to open with the bottom line, including the ask and its date | The opening three lines must now state any decision needed and by when, or say that none is |
+
+Evidence for each moves from 20 to 30: the research rule is now met, and nobody has used either
+tool. By the plain average of the seven items, the inbox summary moves from 62 to 64 (446 of 700)
+and the weekly brief from 62 to 63 (443 of 700). The round summary showed 60 for both, which was
+below their own item scores. It now shows the plain averages.
+
+The sources are trade and vendor guides plus security firms' reports, not studies. Prices and
+plan details were not checked, and the reviews say so.
 
 ## How to run the next round
 
