@@ -13,6 +13,9 @@ writing it down once saves doing it from memory each time.
 | --- | --- | --- |
 | [`plan-writer`](plan-writer/) | Researches a tool and writes its plan from the template, then updates the indexes | Every plan in [`../plans/`](../plans/) |
 | [`artifact-studio`](artifact-studio/) | Turns any content into one polished HTML page by choosing a recipe, a voice and a look, then building and checking it. Holds the canonical recipe, voice and look cards | [Artifact studio](../drafts/artifact-studio/) |
+| [`voice-drafter`](voice-drafter/) | Drafts a post in one person's voice from their voice file, and turns feedback into a rule | [Voice post drafter](../drafts/voice-post-drafter/) |
+| [`quote-drafter`](quote-drafter/) | Builds a first-draft estimate from a price list and written rules, showing its arithmetic | [Estimator](../drafts/estimator/) |
+| [`script-and-beat-sheet`](script-and-beat-sheet/) | Turns a brief into a beat sheet and a timed script, and recommends the production route | [Short video guide](../drafts/short-video/), [training explainer](../drafts/training-explainer/) |
 | [`landscape-review`](landscape-review/) | Checks what already exists and frames the build-or-license decision, with costs and sources | Step 2 to 4 of the [build process](../plans/plans-template/BUILD-PROCESS.md) |
 
 ## Identified, not yet written
@@ -22,9 +25,6 @@ These will be written when the tool they belong to reaches its simple level.
 | Skill | What it would do | Belongs to |
 | --- | --- | --- |
 | Pre-ship check | Checks any page for phone layout, contrast, real content and private material before it is shared. The checklist exists inside `artifact-studio`; a standalone skill is for pages made elsewhere | Publishing a website |
-| Voice drafter | Drafts a post from a voice file and turns feedback into a rule | Voice post drafter |
-| Quote drafter | Builds a first-draft quote from a price list and written rules, showing its arithmetic | Estimator |
-| Script and beat sheet | Turns a brief and a style card into a beat sheet and a timed script | Short video guide, training explainer |
 
 ## Using a skill
 

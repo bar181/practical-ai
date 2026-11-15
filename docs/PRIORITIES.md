@@ -18,10 +18,10 @@ In priority order.
 | # | Tool | What it does | Published | Student guide | Plan | Commercial |
 | --- | --- | --- | --- | --- | --- | --- |
 | 1 | Artifact studio | Pick a page type, a voice and a look from a menu of working examples, and get a page worth sharing built from your own content. | 0 | [Draft guide](../drafts/artifact-studio/STUDENT-GUIDE.md) | [Yes](../plans/artifact-studio/) | Draft |
-| 2 | Voice post drafter | A draft post or newsletter that sounds like you, for you to edit and publish yourself. | 0 | [Draft guide](../drafts/voice-post-drafter/STUDENT-GUIDE.md) | [Yes](../plans/voice-post-drafter/) | No |
-| 3 | Short video guide | Pick the right route by length and purpose and finish a short video in under 30 minutes. | 0 | [Draft guide](../drafts/short-video/STUDENT-GUIDE.md) | [Yes](../plans/short-video/) | No |
-| 4 | Estimator | A first-draft quote with its reasoning, built from your own price list and written rules. Examples for management consulting, kitchen renovation and employment services. | 0 | [Draft guide](../drafts/estimator/STUDENT-GUIDE.md) | No | No |
-| 5 | Training explainer with avatar | Turn a topic into a taught video in a teaching style chosen from a menu. | 0 | [Draft guide](../drafts/training-explainer/STUDENT-GUIDE.md) | [Yes](../plans/training-explainer/) | No |
+| 2 | Voice post drafter | A draft post or newsletter that sounds like you, for you to edit and publish yourself. | 0 | [Draft guide](../drafts/voice-post-drafter/STUDENT-GUIDE.md) | [Yes](../plans/voice-post-drafter/) | Draft |
+| 3 | Short video guide | Pick the right route by length and purpose and finish a short video in under 30 minutes. | 0 | [Draft guide](../drafts/short-video/STUDENT-GUIDE.md) | [Yes](../plans/short-video/) | Draft |
+| 4 | Estimator | A first-draft quote with its reasoning, built from your own price list and written rules. Examples for management consulting, kitchen renovation and employment services. | 0 | [Draft guide](../drafts/estimator/STUDENT-GUIDE.md) | No | Draft |
+| 5 | Training explainer with avatar | Turn a topic into a taught video in a teaching style chosen from a menu. | 0 | [Draft guide](../drafts/training-explainer/STUDENT-GUIDE.md) | [Yes](../plans/training-explainer/) | Draft |
 | 6 | Learning system | A growing log of questions and the solutions that worked, so the same problem is never solved twice. Versions for developers, businesses and personal use. | 0 | No | [Yes](../plans/learning-system/) | No |
 | 7 | Publishing a website | Take a page from a chatbot artifact to a hosted site: a shared link first, then a hosting platform, then a repository that deploys itself. | 0 | No | [Yes](../plans/website-publishing/) | No |
 | 8 | Inbox triage and daily summary | One morning summary across your connected sources: email, calendar and social media feedback, with replies drafted. | 0 | No | [Yes](../plans/inbox-daily-summary/) | No |

@@ -16,8 +16,10 @@ Draft. First copy, not yet reviewed or tested by anyone else.
 | --- | --- | --- |
 | `level-demo` | A sample voice file, a topic, the draft it produced and the feedback given | One worked example |
 | `level-simple` | Instructions to paste into a chatbot Project, and a voice file to fill in | Both |
-| `level-working` | One draft per channel, with feedback saved and applied every time | Not started |
-| `level-automated` | A daily topic scout that queues topics and drafts for your review | Not started |
-| `commercial-grade` | What a commercial build adds | Not started |
+| `level-working` | One draft per channel, with feedback saved and applied every time | [Outline](level-working/) |
+| `level-automated` | A daily topic scout that queues topics and drafts for your review | [Outline](level-automated/), with the [`voice-drafter`](../../skills/voice-drafter/) skill |
+| `commercial-grade` | What a commercial build adds | [Explained](commercial-grade/) |
 
 Start with [`STUDENT-GUIDE.md`](STUDENT-GUIDE.md).
+
+Agents: start with [`AGENT-GUIDE.md`](AGENT-GUIDE.md).

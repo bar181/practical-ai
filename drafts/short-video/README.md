@@ -15,8 +15,10 @@ Draft. First copy, not yet reviewed or tested by anyone else.
 | --- | --- | --- |
 | `level-demo` | A finished script and one finished video per route | One example script |
 | `level-simple` | The route table, the script template, steps you follow by hand in each tool's own app | Script template |
-| `level-working` | A saved prompt set per route and a voice file, so every video sounds like you | Not started |
-| `level-automated` | An agent runs the route end to end and stops at your approval | Not started |
-| `commercial-grade` | What a commercial build adds | Not started |
+| `level-working` | A saved prompt set per route and a voice file, so every video sounds like you | [Outline](level-working/) |
+| `level-automated` | An agent runs the route end to end and stops at your approval | [Outline](level-automated/), with the [`script-and-beat-sheet`](../../skills/script-and-beat-sheet/) skill |
+| `commercial-grade` | What a commercial build adds | [Explained](commercial-grade/) |
 
 Start with [`STUDENT-GUIDE.md`](STUDENT-GUIDE.md).
+
+Agents: start with [`AGENT-GUIDE.md`](AGENT-GUIDE.md).

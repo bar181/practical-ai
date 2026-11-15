@@ -27,8 +27,10 @@ Draft. First copy, not yet reviewed or tested by anyone else.
 | --- | --- | --- |
 | `level-demo` | A one-page interactive demo covering all three examples | [`index.html`](level-demo/index.html) |
 | `level-simple` | Instructions for a chatbot Project, plus a price list, rules and a worked example for each business | All three |
-| `level-working` | Past quotes as reference, checks on the inputs, a list of points to clarify | Not started |
-| `level-automated` | Connected to your files and your systems, with an approval step | Not started |
-| `commercial-grade` | What a commercial build adds | Not started |
+| `level-working` | Past quotes as reference, checks on the inputs, a list of points to clarify | [Outline](level-working/) |
+| `level-automated` | Connected to your files and your systems, with an approval step | [Outline](level-automated/), with the [`quote-drafter`](../../skills/quote-drafter/) skill |
+| `commercial-grade` | What a commercial build adds | [Explained](commercial-grade/) |
 
 Start with [`STUDENT-GUIDE.md`](STUDENT-GUIDE.md).
+
+Agents: start with [`AGENT-GUIDE.md`](AGENT-GUIDE.md).
