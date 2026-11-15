@@ -1,5 +1,8 @@
 # How to build a new productivity tool
 
+> These nine steps are how a **plan** is written. They are the detail behind stages 1 to 3 of the
+> [project method](../../drafts/project-method/base/METHOD.md), which covers the whole build and the gates.
+
 The steps every tool in this repository goes through, in order. Use it before writing a plan and
 again before starting each new level.
 
@@ -70,7 +73,7 @@ Decide for the level you are about to build. Leave later levels as options.
 | --- | --- |
 | What it is and what it is needed for | So it can be swapped |
 | Cost: free, per month, or per use, and the free-tier limit | So the level has a known price |
-| Who pays: the builder or each user | So a student is not surprised |
+| Who pays: the builder or each user | So nobody is surprised |
 | What happens if it goes away or changes its price | So there is a way out |
 
 The simple level should run on what a person already has. If it cannot, say what it costs before

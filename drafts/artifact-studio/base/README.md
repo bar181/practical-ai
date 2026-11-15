@@ -19,8 +19,9 @@ a tag saying how to order one, and you can carry any of them out as a file.
 | To take in a design you like | [`inspiration/`](inspiration/) | How a find becomes a note, a change or a new part, without copying it |
 | Something the studio does not do | [`RESOURCES.md`](RESOURCES.md) | Outside skills, open-source frameworks and paid services, with dates |
 | The instructions an assistant follows | [`skills/artifact-studio/`](../../../skills/artifact-studio/) | The skill, its cards, the build rules, the checklist and the page skeleton |
-| The reasoning | [`BEST-PRACTICES.md`](BEST-PRACTICES.md) | Ten practices and how to add to the library |
-| To test a sentence | [`sentence-test.md`](sentence-test.md) | The sheet for scoring a sentence in a fresh chat |
+| To see what a good result looks like | [`examples/`](examples/) | Six worked requests: what was asked, the notes, what was picked and what came back |
+| The reasoning | [`../docs/best-practices.md`](../docs/best-practices.md) | Ten practices and how to add to the library |
+| To test a sentence | [`../docs/sentence-test.md`](../docs/sentence-test.md) | The sheet for scoring a sentence in a fresh chat |
 | To change or rebuild any of it | [`source/`](source/) | Views, the catalogue, the build script and checks |
 
 GitHub shows HTML files as source, so download a file and open it in a browser.
@@ -37,9 +38,10 @@ GitHub shows HTML files as source, so download a file and open it in a browser.
 | Photo parts | 12 | `templates/components/photo-parts.html` |
 | Animated SVG | 12 | `templates/components/svg/`, one file each |
 | Looks | 9 | `templates/looks/nine-looks.html` |
+| Design ideas | 17 | `templates/components/cards.html`, `layouts.html` and `colour.html`: six kinds of card, six layouts, five colour ideas with a palette maker |
 | Starters | 11 | `templates/starters/`: each deck and each social picture as one small file with system fonts, to copy and fill |
 
-The build counts the library and writes the line below, and `templates/index.json`: <!-- counts -->20 templates (4 pages, 7 voices, 4 decks, 5 social formats), 36 components (12 page parts, 12 photo parts, 12 animated SVG files with 11 GIF copies) and 9 looks<!-- /counts -->. All seven voices and both decks
+The build counts the library and writes the line below, and `templates/index.json`: <!-- counts -->20 templates (4 pages, 7 voices, 4 decks, 5 social formats), 53 components (12 page parts, 12 photo parts, 12 animated SVG files with 11 GIF copies, 17 design ideas for cards, layouts and colour) and 9 looks<!-- /counts -->. All seven voices and both decks
 use the same invented case, so the only thing that changes between them is the manner.
 
 ## Facts about the file
@@ -82,19 +84,17 @@ Not checked:
 
 ## Rerun the checks
 
-The checks above can be repeated from this folder. They need Python, the `playwright` package and
-a Chrome or Chromium binary.
+One command runs every check and says plainly whether the library may ship. Run it from the tool's
+folder, one level up from here.
 
 ```
-cd source/tests
-CHROME=/path/to/chrome AXE_JS=/path/to/axe.min.js python3 check_tabs.py
-CHROME=/path/to/chrome python3 check_at_rest.py
+python3 ../../tools/gates.py .          # quick gates
+python3 ../../tools/gates.py . --all    # adds the page check at three widths
 ```
 
-| Script | What it reports |
-| --- | --- |
-| `check_tabs.py` | Every tab of the studio page and every template file at three widths: script errors, sideways scrolling, whether exactly one tab shows, the accessibility scan if `AXE_JS` is set, and the tabs with scripts off. A clean run prints `problems []` on every line |
-| `check_at_rest.py` | How much text each of the other nine demo pages shows with scripts off |
+The gates are listed in [`../gates.json`](../gates.json), each with what it proves. The page check
+needs `playwright` and a Chrome binary, and runs the accessibility scan when `AXE_JS` points at
+`axe.min.js`.
 
 ## Source and rebuild
 
@@ -114,7 +114,7 @@ python3 build.py
 | `source/build.py` | Assembles `studio.html` and the files in `templates/`. The studio's tabs are the `STUDIO_GROUPS` list. Also regenerates the two indexes, `sentences.md`, the skill's component catalogue and `level-1/AI-INSTRUCTIONS.md` |
 
 `build.py` needs the Python `markdown` package. `prepare_assets.py` needs pillow, numpy, fonttools and brotli, and a folder holding the font files
-named in its header. `assets.json` is a build product and is not committed.
+named in its header. `assets.json` is committed, so the build runs without the asset step.
 
 A rebuild from the stored photos looks the same but is not byte for byte identical, because the
 photos are compressed a second time.

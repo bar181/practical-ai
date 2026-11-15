@@ -18,9 +18,13 @@ async def main():
         async with ClientSession(r,w) as s:
             init=await s.initialize(); print('server:',init.server_info.name if hasattr(init,'server_info') else init.serverInfo.name)
             tools=(await s.list_tools()).tools; print('tools:',[t.name for t in tools])
+            need={'studio_overview','list_templates','recommend','get_template','list_components','get_component','get_rules','make_palette','list_inspiration'}; missing=need-{t.name for t in tools}
+            assert not missing, f'tools missing from the server: {missing}'
             o=val(await s.call_tool('studio_overview',{})); print('overview counts:',o['counts'])
             rec=val(await s.call_tool('recommend',{'goal':'sell','audience':'customer','format':'any'})); print('recommend:',[(x['format'],x['title']) for x in rec])
             t=val(await s.call_tool('get_template',{'id':'deck-visionary','part':'source'})); print('template source chars:',len(t['source']))
+            pal=val(await s.call_tool('make_palette',{'hue':250})); print('palette for hue 250:',[r['hex'] for r in pal['roles']],'all checks pass:',all(c['passes'] for c in pal['checks']))
+            d=await s.call_tool('get_rules',{'which':'design'}); print('design rules chars:',len(d.content[0].text)); cc=val(await s.call_tool('list_components',{'group':'card'})); print('card ideas:',[c['name'] for c in cc])
             for tid in ('deck-story','social-carousel','recipe-report'):
                 t=val(await s.call_tool('get_template',{'id':tid,'part':'starter'})); print('starter for',tid,{k:len(v) for k,v in t['files'].items()})
             x=await s.call_tool('get_template',{'id':'deck-story','part':'everything'}); print('wrong part ->',x.content[0].text[:80])

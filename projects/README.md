@@ -1,23 +1,10 @@
 # Projects
 
-Published projects. Each project folder has the same shape, so once you have worked through one you
-know your way around all of them.
+Tools that someone other than their author has used for a real job. **None yet.**
 
-```
-projects/<tool>/
-  README.md            what the project is
-  STUDENT-GUIDE.md     step by step explainer
-  level-demo/          A finished example to look at. Nothing to set up.
-  level-simple/        The smallest version you can run yourself, usually in a chatbot Project with a few files.
-  level-working/       The common size. What most people use day to day.
-  level-automated/     The working version plus schedules and connections, so it runs without being asked.
-  student-projects/    Versions built by students, shared with permission and with private details removed.
-  commercial-grade/    An explanation of what a commercial build adds. Never contains a project. Usually an HTML explainer and a one-pager.
-```
+A draft moves here when it passes stage 7 of the [project method](../drafts/project-method/):
+every gate passes, its status table is honest, and one other person has used it.
 
-Start a new project by copying [`_template/`](_template/).
-
-_No projects published yet. Candidates are in [`drafts/`](../drafts/)._
-
-A level is published when its folder holds more than a placeholder. The count per tool is in the
-[priority list](../docs/PRIORITIES.md).
+A project keeps the layout it had as a draft: a base, up to three levels, two front doors and a
+list of gates. The folder every tool starts from is
+[`drafts/project-method/base/scaffold/`](../drafts/project-method/base/scaffold/).

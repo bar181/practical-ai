@@ -7,7 +7,7 @@ The tools this repository is working toward. Flags were read from the folders on
 | Flag | Means |
 | --- | --- |
 | Published | How many levels of the tool are in `projects/` (demo, simple, working, automated) |
-| Student guide | Whether a step by step explainer exists, and where |
+| Guide | Whether a usable draft with its own README exists, and where |
 | Plan | Whether a plan is published in `plans/` |
 | Commercial | Whether a commercial-grade explainer exists |
 
@@ -15,9 +15,9 @@ The tools this repository is working toward. Flags were read from the folders on
 
 In priority order.
 
-| # | Tool | What it does | Published | Student guide | Plan | Commercial |
+| # | Tool | What it does | Published | Guide | Plan | Commercial |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Artifact studio | Pick a page type, a voice and a look from a menu of working examples, and get a page worth sharing built from your own content. | 0 | [Draft guide](../drafts/artifact-studio/level-1/README.md) | [Yes](../plans/artifact-studio/) | Draft |
+| 1 | Artifact studio | A library of templates for pages, slide decks and social posts, with rules that pick the right one and an assistant that builds it from your content. | 0 | [Draft guide](../drafts/artifact-studio/level-1/README.md) | [Yes](../plans/artifact-studio/) | Draft |
 | 2 | Voice post drafter | A draft post or newsletter that sounds like you, for you to edit and publish yourself. | 0 | [Draft guide](../drafts/voice-post-drafter/STUDENT-GUIDE.md) | [Yes](../plans/voice-post-drafter/) | Draft |
 | 3 | Short video guide | Pick the right route by length and purpose and finish a short video in under 30 minutes. | 0 | [Draft guide](../drafts/short-video/STUDENT-GUIDE.md) | [Yes](../plans/short-video/) | Draft |
 | 4 | Estimator | A first-draft quote with its reasoning, built from your own price list and written rules. Examples for management consulting, kitchen renovation and employment services. | 0 | [Draft guide](../drafts/estimator/STUDENT-GUIDE.md) | No | Draft |
@@ -42,7 +42,7 @@ In priority order.
 
 Not scheduled. Any of these can move up.
 
-| # | Tool | What it does | Published | Student guide | Plan | Commercial |
+| # | Tool | What it does | Published | Guide | Plan | Commercial |
 | --- | --- | --- | --- | --- | --- | --- |
 | 21 | Course program manager | Schedules, reminders and surveys for a cohort, with a summary of the results. | 0 | No | No | No |
 | 22 | Daily topic scout | A morning list of topics with draft posts, ready for review. | 0 | No | No | No |

@@ -100,4 +100,4 @@ printing gives one slide a page.
 ## Status
 
 The instructions and sentences are written. They have not yet been run in fresh chats and scored.
-The sheet for that test is [`base/sentence-test.md`](../base/sentence-test.md).
+The sheet for that test is [`docs/sentence-test.md`](../docs/sentence-test.md).

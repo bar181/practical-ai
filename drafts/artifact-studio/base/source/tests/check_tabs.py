@@ -45,12 +45,17 @@ async def main(keys):
                         if r: bad.append(('page','axe',r))
                 blank=await pg.evaluate("[...document.querySelectorAll('.view .ph')].filter(e=>getComputedStyle(e).display!=='none'&&e.offsetParent&&getComputedStyle(e).backgroundImage==='none').length")
                 if blank: bad.append(('photo frames without a photo',blank))
-                print(key,w,'tabs',len(ids),'errors',errs[:3],'problems',bad[:6]); await pg.close()
+                print(key,w,'tabs',len(ids),'errors',errs[:3],'problems',bad[:6]); FAILED.extend([key]*bool(errs or bad)); RAN.append(key); await pg.close()
             cx=await b.new_context(java_script_enabled=False,viewport={'width':390,'height':780}); pg=await cx.new_page()
             await pg.goto('file://'+R+F[key])
             v0=await pg.locator('.view:visible, body > .dk:visible').count(); v1='(one page, no tabs)'
             if await pg.locator('.tabs .tabs-g label').count()>1:
                 await pg.locator('.tabs .tabs-g label').nth(1).click(); await pg.wait_for_timeout(200); v1=await pg.locator('.view:visible').first.get_attribute('id')
             print(key,'no script: visible views at load',v0,'after tapping 2nd tab ->',v1); await cx.close()
+            if v0!=1: FAILED.append(key+' (scripts off)')
         await b.close()
+FAILED=[]; RAN=[]
 asyncio.run(main(sys.argv[1:] or list(F)))
+print(f'{len(RAN)-len([f for f in FAILED if "scripts off" not in f])} of {len(RAN)} page checks clean'+('' if AXE else ' (no accessibility scan: set AXE_JS to the path of axe.min.js)'))
+if FAILED: print('FAILED:',sorted(set(FAILED)))
+sys.exit(1 if FAILED else 0)

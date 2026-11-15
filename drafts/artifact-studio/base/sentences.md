@@ -2,7 +2,7 @@
 
 Every sentence in the studio, in one place. Copy one, attach your notes (and a photo if the page uses one), and paste both into a chat assistant.
 
-**Status: untested.** These sentences describe what the demo pages do. They have not yet been run in fresh chats and scored. Record results in [`sentence-test.md`](sentence-test.md).
+**Status: untested.** These sentences describe what the demo pages do. They have not yet been run in fresh chats and scored. Record results in [`sentence-test.md`](../docs/sentence-test.md).
 
 This file is generated from the examples by `base/source/build.py`. Edit the views, not this file.
 

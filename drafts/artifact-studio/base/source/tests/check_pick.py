@@ -1,4 +1,4 @@
-"""check_pick.py: the picker in the studio page must give the same answers as catalog.py.
+"""check_pick.py: the picker and the palette maker in the studio page must give the same answers as catalog.py.
 
 Runs every combination of goal, reader and shape through both and compares each result's
 templates, score, strength and note. Needs playwright and a Chrome binary (set CHROME).
@@ -21,8 +21,15 @@ async def main():
                     js=await pg.evaluate("([g,a,f])=>STUDIO.recommend(g,a,f).map(r=>[r.templates,r.score,r.strength,r.note,r.ask])",[g,a,f])
                     weak+=py[0][2]=='weak'
                     if py!=js: bad.append((g,a,f,py[:1],js[:1]))
+        await pg.evaluate("document.getElementById('t-colour').click()"); await pg.wait_for_timeout(400)
+        js=await pg.evaluate("[...Array(360).keys()].map(h=>{const p=STUDIO.palette(h);return [p.roles.map(r=>r.hex),p.checks.map(c=>[c.ratio,c.passes])]})")
+        pbad=[h for h in range(360) if [[r['hex'] for r in C.palette(h)['roles']],[[c['ratio'],c['passes']] for c in C.palette(h)['checks']]]!=js[h]]
+        fails=[h for h in range(360) if not all(c['passes'] for c in C.palette(h)['checks'])]
         await b.close()
-    print(f'{n-len(bad)} of {n} requests give the same answer in the page and in Python. Top answer is a weak fit in {weak}.')
+    print(f'{360-len(pbad)} of 360 hues give the same palette in the page and in Python. Hues with a failing contrast check: {len(fails)}.')
+    if pbad: print('DIFFERENT palette at hues',pbad[:8]); bad.append(('palette',pbad[:3]))
+    if fails: bad.append(('contrast',fails[:3]))
+    print(f'{n-len([x for x in bad if len(x)==5])} of {n} requests give the same answer in the page and in Python. Top answer is a weak fit in {weak}.')
     for x in bad[:5]: print('DIFFERENT',x)
     sys.exit(1 if bad else 0)
 asyncio.run(main())

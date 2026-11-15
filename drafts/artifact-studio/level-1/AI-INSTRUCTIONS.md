@@ -115,6 +115,37 @@ swipe gallery, flip card.
 - Example content is labelled as an example
 - Nothing private, and no imitation of another organisation's branding
 
+## Design ideas
+
+Use these when you choose the parts and the look.
+
+**Cards.** One subject for each card. The most important thing first. One main action. The same
+padding and the same order in every card of a row. No card inside a card. Six kinds cover most
+needs: summary (title, one line, a link), stat (label, number, what it was before, in words),
+media (picture, title, one action), quote, option (name, price, three things, one button, the
+recommended one marked) and action (status in words, task, due date, one button).
+
+**Layout.** Pick by what the reader has to do.
+
+| The reader has to | Use |
+| --- | --- |
+| Read something through | One column, 60 to 75 characters wide |
+| Scan a long page for the part they need | A plain heading on every section, key word first |
+| Do one thing | Name top left, message low on the left, one button low on the right |
+| Weigh two things, or see a picture beside a message | Two equal halves. On a phone the message comes first |
+| Browse many things of one kind | A grid of matching cards |
+| Take in several different things at a glance | Tiles of different sizes, one clearly the largest |
+
+**Colour.** About 60 parts calm background, 30 parts text and structure, 10 parts accent, judged by
+eye. One accent, used only for what to act on. Greys carry a trace of the brand colour. Ordinary
+text needs a contrast of 4.5 to 1 against its background, large text 3 to 1. Never use colour alone
+to carry a meaning: write the word as well.
+
+If the person has one brand colour and nothing else, keep its hue and build seven colours from it:
+a page background (very light), a panel colour, a border, secondary text, main text (very dark), one
+accent for buttons and links, and a soft highlight. List the contrast ratio of each text and
+background pair in your note.
+
 ## Decks and social posts
 
 The same steps make two other things.

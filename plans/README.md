@@ -4,6 +4,10 @@ One folder per planned tool. Each README gives an overview, what might be involv
 and a complexity flag. A plan is a starting point: it is updated as research is done and replaced by
 a draft and then a project as work proceeds.
 
+How a plan becomes a tool is the [project method](../drafts/project-method/): seven stages, a gate after each.
+Plans written before 15 November 2026 describe four sizes of each tool (demo, simple, working, automated).
+The current layout is a base and up to three levels that hold only what they add. [`archive/`](archive/) says what changed.
+
 To add or update a plan, use [`plans-template/`](plans-template/). It holds the nine-step build
 process, the template and the instructions. The skills that do the work for you are in
 [`../skills/`](../skills/).
@@ -22,7 +26,7 @@ A tool can start at Beginner and reach Advanced at its automated level. The inde
 
 | # | Plan | In one line | Complexity | Research | Simple level |
 | --- | --- | --- | --- | --- | --- |
-| 1 | [Artifact studio](artifact-studio/) | Pick a page type, a voice and a look from a menu of working examples, and get a page worth sharing built from your own content. | Beginner to advanced | Done: landscape review in the draft | [Drafted](../drafts/artifact-studio/) |
+| 1 | [Artifact studio](artifact-studio/) | A library of templates for pages, slide decks and social posts, with rules that pick the right one and an assistant that builds it from your content. | Beginner to advanced | Done: landscape review in the draft | [Drafted](../drafts/artifact-studio/) |
 | 2 | [Voice post drafter](voice-post-drafter/) | A draft post or newsletter that sounds like you, for you to edit and publish yourself. | Beginner | Done: landscape review in the draft | [Drafted](../drafts/voice-post-drafter/) |
 | 3 | [Short video guide](short-video/) | Pick the right route by length and purpose and finish a short video in under 30 minutes. | Beginner to intermediate | Done: landscape review in the draft | [Drafted](../drafts/short-video/) |
 | 4 | Estimator | A first-draft quote with its reasoning, built from your own price list and written rules. Examples for management consulting, kitchen renovation and employment services. | | | No plan published. A candidate is in [`drafts/estimator/`](../drafts/estimator/). |

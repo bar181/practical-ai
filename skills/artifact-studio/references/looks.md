@@ -3,6 +3,22 @@
 A look is what the page wears: layout feel, type, colour and motion. Choose the look after the
 recipe and the voice. Each card has six fields. To add a look, fill in the blank card at the end.
 
+## Contents
+
+- Where the look comes from
+- Taking colours from a photo
+- Clean
+- Cinematic
+- Scrollytelling
+- Dashboard
+- Editorial
+- Keynote black
+- Paper memo
+- Field guide
+- Faded film
+- Blank card
+- Default look for each voice
+
 ## Where the look comes from
 
 Use the first of these that applies.

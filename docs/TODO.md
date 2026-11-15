@@ -39,7 +39,10 @@ of established practice has not been done for any project yet.
 
 - [ ] Review the drafts in `drafts/` and promote the levels that are ready to `projects/`
 - [ ] Have someone other than the author test each simple level
-- [ ] Fill the open slots listed at the end of each draft student guide
+- [ ] Run the six worked examples in a fresh chat and record the scores: `drafts/artifact-studio/base/examples/`
+- [ ] Try the artifact studio MCP server inside a desktop assistant
+- [ ] Take one older draft through the project method from stage 1
+- [ ] Give the artifact studio to one other person for a real job
 - [ ] Draft a commercial-grade one-pager for each promoted project
 
 ## Waiting on a decision

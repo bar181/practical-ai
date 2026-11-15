@@ -16,19 +16,21 @@ person's own content into one finished file that follows a template.
 3. **Read the person's saved finds** in [`base/inspiration/`](base/inspiration/), or call
    `list_inspiration`. They are designs the person liked, described in their own words. Let them
    shape the choice of voice, look and parts. Never copy the thing a card describes.
-4. **Start from the starter** when there is one. Decks and social formats have a `starter` field in
+4. **Look at one worked example** of the shape you chose, in [`base/examples/`](base/examples/). It
+   shows the level of finish expected and how a gap in the notes is marked.
+5. **Start from the starter** when there is one. Decks and social formats have a `starter` field in
    the index: a complete file of about 10 KB or less, with system fonts and no photograph, that you
    copy and fill. Pages and voices have none: build on the skill's
    [`page-skeleton.html`](../../skills/artifact-studio/assets/page-skeleton.html) and read the
    template's `source` field, one small file with a style block, the markup and a script.
-5. **Read the rules.** [`build-rules.md`](../../skills/artifact-studio/references/build-rules.md)
+6. **Read the rules.** [`build-rules.md`](../../skills/artifact-studio/references/build-rules.md)
    before you write, and the card for the voice and look in
    [`voices.md`](../../skills/artifact-studio/references/voices.md) and
    [`looks.md`](../../skills/artifact-studio/references/looks.md).
-6. **Build** one self-contained file from the person's content, on the starter or skeleton from
+7. **Build** one self-contained file from the person's content, on the starter or skeleton from
    step 4: HTML for a page or a deck, SVG for a social picture.
-7. **Check** with [`pre-ship-checklist.md`](../../skills/artifact-studio/references/pre-ship-checklist.md).
-8. **Return** the file and the delivery note below.
+8. **Check** with [`pre-ship-checklist.md`](../../skills/artifact-studio/references/pre-ship-checklist.md).
+9. **Return** the file and the delivery note below.
 
 If you can load skills, load [`skills/artifact-studio/SKILL.md`](../../skills/artifact-studio/SKILL.md)
 and follow it. It says all of this in more detail.
@@ -43,6 +45,8 @@ and follow it. It says all of this in more detail.
 | A complete small file to copy and fill | The `starter` field in the index, under [`base/templates/starters/`](base/templates/starters/) |
 | Its reference code | The `source` field in the index, under [`base/source/views/`](base/source/views/) |
 | The parts: page parts, photo parts, animated SVG | The `components` list in the index |
+| Design ideas: kinds of card, layouts, colour rules and the palette rule | [`design-ideas.md`](../../skills/artifact-studio/references/design-ideas.md), or the Design tabs of the studio page |
+| What a good result looks like | Six worked examples in [`base/examples/`](base/examples/): the request, the notes, what was picked and the output |
 | The person's standing preferences | A file named `preferences.md`, if they have one. See [`level-2/`](level-2/) |
 | Their colours, type and a brief for this page | [`base/forms/`](base/forms/), filled in |
 | What to use when the studio is the wrong tool | [`base/RESOURCES.md`](base/RESOURCES.md) |

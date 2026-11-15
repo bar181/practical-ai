@@ -42,16 +42,19 @@ mcp = MCPServer(
     "artifact-studio",
     instructions=(
         "A library of page, deck and social templates with rules for choosing between them. "
-        "Typical order: recommend (or list_templates) to choose, get_template with part='source' to read the "
-        "reference code, get_rules('build') before writing, get_rules('checklist') before showing the result. "
-        "Build one self-contained HTML file from the person's own content. Invent no facts."
+        "Typical order: recommend to choose (it says how strong the fit is); list_inspiration to read the person's saved finds; "
+        "get_template with part='starter' for a complete small file to fill (decks and social), or part='source' for a page's "
+        "reference code; get_rules('build') before writing; get_rules('checklist') before showing the result. "
+        "make_palette turns one brand colour into a checked palette. "
+        "Build one self-contained file from the person's own content. Invent no facts."
     ),
 )
 
 
 @mcp.tool(annotations=READ)
 def studio_overview() -> dict:
-    """What the studio holds and how to use it. Call this first."""
+    """What the studio holds and how to use it: counts, the goals and readers it scores against, and the order to call the tools in.
+    Call this first, once. Not needed again in the same conversation."""
     idx = _index()
     return {
         "counts": idx["counts"],
@@ -64,7 +67,8 @@ def studio_overview() -> dict:
 
 @mcp.tool(annotations=READ)
 def list_templates(kind: str = "") -> list[dict]:
-    """List templates. kind is one of: page, voice, deck, social. Leave it empty for all."""
+    """List templates with a one-line summary each. kind is one of: page, voice, deck, social. Leave it empty for all.
+    Use it to browse. To choose for a request, call recommend instead: it scores the fit."""
     return [
         {k: t[k] for k in ("id", "kind", "title", "summary", "file")}
         for t in _index()["templates"]
@@ -108,13 +112,14 @@ def get_template(id: str, part: str = "options") -> dict:
 
 @mcp.tool(annotations=READ)
 def list_components(group: str = "") -> list[dict]:
-    """List components. group is one of: page, photo, svg. Leave it empty for all."""
+    """List components. group is one of: page, photo, svg (parts to build with) or card, layout, colour (design ideas, each with a rule). Leave it empty for all."""
     return [{k: c[k] for k in ("id", "group", "name", "use")} for c in _index()["components"] if not group or c["group"] == group]
 
 
 @mcp.tool(annotations=READ)
 def get_component(id: str) -> dict:
-    """One component: what it is for, the sentence that asks for it, and its code."""
+    """One component: what it is for, the sentence that asks for it, and its code. Returns the markup of that one part.
+    Call list_components first for the ids. For a whole page, deck or picture, use get_template."""
     c = next((c for c in _index()["components"] if c["id"] == id), None)
     if not c:
         raise ToolError("No component with that id. Call list_components to see the ids.")
@@ -134,13 +139,24 @@ def get_component(id: str) -> dict:
 
 @mcp.tool(annotations=READ)
 def get_rules(which: str = "build") -> str:
-    """The studio's written rules. which is one of: build, checklist, recipes, voices, looks, skill."""
+    """The studio's written rules, as Markdown. which is one of: build (read before writing), checklist (read before showing the
+    result), recipes, voices, looks, design (cards, layouts and colour), skill (the whole method)."""
     files = {"build": "references/build-rules.md", "checklist": "references/pre-ship-checklist.md", "recipes": "references/recipes.md",
-             "voices": "references/voices.md", "looks": "references/looks.md", "skill": "SKILL.md"}
+             "voices": "references/voices.md", "looks": "references/looks.md", "design": "references/design-ideas.md", "skill": "SKILL.md"}
     if which not in files:
         raise ToolError("which must be one of: " + ", ".join(files))
     with open(os.path.join(SKILL, files[which]), encoding="utf-8") as f:
         return f.read()
+
+
+@mcp.tool(annotations=READ)
+def make_palette(hue: int) -> dict:
+    """A colour palette from one brand colour. hue is its position on the colour wheel, 0 to 359 (0 red, 45 orange-brown,
+    140 green, 250 blue, 320 pink). Returns seven colours with a job each, and the contrast ratio of every text and
+    background pair. Use it when the person has one brand colour and needs the rest. Not for picking the brand colour itself."""
+    if not 0 <= int(hue) <= 359:
+        raise ToolError("hue must be a whole number from 0 to 359.")
+    return catalog.palette(hue)
 
 
 @mcp.tool(annotations=READ)

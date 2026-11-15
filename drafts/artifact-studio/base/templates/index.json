@@ -8,10 +8,11 @@
   "voices": 7,
   "decks": 4,
   "social_formats": 5,
-  "components": 36,
+  "components": 53,
   "page_parts": 12,
   "photo_parts": 12,
   "animated_svg": 12,
+  "design_ideas": 17,
   "gif_copies": 11,
   "looks": 9
  },
@@ -904,6 +905,176 @@
    "effort": "Easy. One sentence.",
    "file": "base/templates/components/photo-parts.html",
    "source": "base/source/views/20-photo.html"
+  },
+  {
+   "id": "card-summary-card",
+   "group": "card",
+   "name": "Summary card",
+   "use": "A title, one line and a way in. The plain card that leads to more detail. Use it for a list of services, articles or projects.",
+   "ask": "Show my three services as summary cards in a row: a short title, one sentence, and one link each. Same padding and same order in every card.",
+   "effort": "Easy. One sentence.",
+   "file": "base/templates/components/cards.html",
+   "source": "base/source/views/31-cards.html"
+  },
+  {
+   "id": "card-stat-card",
+   "group": "card",
+   "name": "Stat card",
+   "use": "One number, what it measures, and how it has changed. The change is written in words and never shown by colour alone.",
+   "ask": "Show my three key figures as stat cards: the label on top, the number large, and one line under it saying what it was before. Say the change in words, not only in colour.",
+   "effort": "Easy. One sentence.",
+   "file": "base/templates/components/cards.html",
+   "source": "base/source/views/31-cards.html"
+  },
+  {
+   "id": "card-media-card",
+   "group": "card",
+   "name": "Media card",
+   "use": "A picture, then a title, a line of detail and one action. Every picture in a row has the same shape, so the titles line up.",
+   "ask": "Show these three case studies as media cards: a 16 by 9 photo on top, a small label, a title, one line of detail and one link. Use my photos, cropped to the same shape.",
+   "effort": "Easy with photos attached",
+   "file": "base/templates/components/cards.html",
+   "source": "base/source/views/31-cards.html"
+  },
+  {
+   "id": "card-quote-card",
+   "group": "card",
+   "name": "Quote card",
+   "use": "What a customer said, who said it and what they are to you. Use only words a real person gave you. These are invented to show the shape.",
+   "ask": "Show these two customer quotes as quote cards: the quote in a serif face, then the person's initials in a circle, their name, and what we did for them. Use only the quotes I attached.",
+   "effort": "Easy. One sentence.",
+   "file": "base/templates/components/cards.html",
+   "source": "base/source/views/31-cards.html"
+  },
+  {
+   "id": "card-option-card",
+   "group": "card",
+   "name": "Option card",
+   "use": "A choice with a price: the name, the price, three things it includes and one button. Mark the one you recommend, and say why in its label.",
+   "ask": "Show my three options as option cards: name, price, three things each includes and one button. Mark the middle one as most chosen with a small label and a stronger border. Use my prices exactly.",
+   "effort": "Easy. Check every price.",
+   "file": "base/templates/components/cards.html",
+   "source": "base/source/views/31-cards.html"
+  },
+  {
+   "id": "card-action-card",
+   "group": "card",
+   "name": "Action card",
+   "use": "One thing someone has to do: its state, what it is, when it is due and the button that does it. The state is written out, so it reads without colour.",
+   "ask": "Show the next three things my customer has to do as action cards: a status label in words, the task, the due date, one line of help and one button. Finished tasks show no button.",
+   "effort": "Medium. Needs real dates and states.",
+   "file": "base/templates/components/cards.html",
+   "source": "base/source/views/31-cards.html"
+  },
+  {
+   "id": "layout-single-column",
+   "group": "layout",
+   "name": "Single column",
+   "use": "One column of text at a comfortable width, with nothing beside it. The layout for anything meant to be read from top to bottom.",
+   "ask": "Lay this out as one reading column, about 65 characters wide, centred on wide screens. Nothing in the margins.",
+   "effort": "Easy. One sentence.",
+   "file": "base/templates/components/layouts.html",
+   "source": "base/source/views/32-layouts.html"
+  },
+  {
+   "id": "layout-headings-down-the-left",
+   "group": "layout",
+   "name": "Headings down the left",
+   "use": "On a long page people read the first lines across, then run down the left edge looking for a heading that matters to them. This is often called the F-pattern. Give the left edge something worth finding.",
+   "ask": "This page will be scanned, not read. Put a plain heading on every section, start each heading with its key word, and put the answer in the first sentence under it.",
+   "effort": "Easy. Mostly a writing job.",
+   "file": "base/templates/components/layouts.html",
+   "source": "base/source/views/32-layouts.html"
+  },
+  {
+   "id": "layout-corner-to-corner",
+   "group": "layout",
+   "name": "Corner to corner",
+   "use": "On a page with few words the eye starts top left, crosses to the top right, drops diagonally and ends bottom right. This is the Z-pattern. Put your name where the eye starts and the button where it ends.",
+   "ask": "Make the first screen follow the eye from corner to corner: our name top left, one small link top right, the main message low on the left and one button low on the right. One action only.",
+   "effort": "Easy. One sentence.",
+   "file": "base/templates/components/layouts.html",
+   "source": "base/source/views/32-layouts.html"
+  },
+  {
+   "id": "layout-split-screen",
+   "group": "layout",
+   "name": "Split screen",
+   "use": "Two halves of equal weight: a message and a picture, or two choices. On a phone the halves stack, so decide which comes first.",
+   "ask": "Make this a split screen: the message and one button on the left, my photo filling the right. On a phone, show the message first and the photo under it.",
+   "effort": "Easy with a photo attached",
+   "file": "base/templates/components/layouts.html",
+   "source": "base/source/views/32-layouts.html"
+  },
+  {
+   "id": "layout-card-grid",
+   "group": "layout",
+   "name": "Card grid",
+   "use": "Rows of matching cards. Nothing is more important than anything else, which is the point: the reader browses and chooses.",
+   "ask": "Show these as a card grid: three across on a wide screen, one on a phone. Every card the same height and every photo the same shape.",
+   "effort": "Easy. One sentence.",
+   "file": "base/templates/components/layouts.html",
+   "source": "base/source/views/32-layouts.html"
+  },
+  {
+   "id": "layout-bento-grid",
+   "group": "layout",
+   "name": "Bento grid",
+   "use": "Tiles of different sizes packed into one block, like a lunch box. One tile is clearly the largest. The rest support it.",
+   "ask": "Summarise this as a bento grid: one large tile for the main result, and four or five smaller tiles for a number, a quote, a photo and the next step. Same padding and corners on every tile. Stack to one column on a phone.",
+   "effort": "Medium. Decide the main tile first.",
+   "file": "base/templates/components/layouts.html",
+   "source": "base/source/views/32-layouts.html"
+  },
+  {
+   "id": "colour-a-palette-from-one-colour",
+   "group": "colour",
+   "name": "A palette from one colour",
+   "use": "Give it the one colour you already have, as a position on the colour wheel from 0 to 359. It returns seven colours with a job each, and checks every pair of text and background. The first one shown is hue 45.",
+   "ask": "Build my colours from one brand colour: a page background, a panel colour, a border, main text, secondary text, one accent for buttons and links, and a soft highlight. Keep a trace of the brand colour in the greys. Check every text and background pair for contrast and list the ratios.",
+   "effort": "Easy. Give it your one colour.",
+   "file": "base/templates/components/colour.html",
+   "source": "base/source/views/33-colour.html"
+  },
+  {
+   "id": "colour-60-30-10",
+   "group": "colour",
+   "name": "60, 30, 10",
+   "use": "A rule borrowed from decorating a room. The largest share is calm, the next gives structure, and the smallest draws the eye. Judge it by eye: it is about weight, not a count of pixels. On a dense screen such as a dashboard the calm share is nearer 90.",
+   "ask": "Use my colours in a 60, 30, 10 balance: about 60 percent calm background, 30 percent text and structure, and 10 percent accent. Use the accent only on the things I want people to click or notice first.",
+   "effort": "Easy. One sentence.",
+   "file": "base/templates/components/colour.html",
+   "source": "base/source/views/33-colour.html"
+  },
+  {
+   "id": "colour-one-colour-in-even-steps",
+   "group": "colour",
+   "name": "One colour in even steps",
+   "use": "Nine shades of one colour, from nearly white to nearly black, where each step looks the same size to the eye. Older colour sums make yellow steps look bigger than blue ones. The OKLCH way of writing colour fixes that, and current browsers understand it.",
+   "ask": "Make a nine-step scale of my brand colour from nearly white to nearly black, with even steps of lightness. Write the colours in OKLCH with a hex value beside each. Use the scale for backgrounds, borders and text of that colour.",
+   "effort": "Easy. One sentence.",
+   "file": "base/templates/components/colour.html",
+   "source": "base/source/views/33-colour.html"
+  },
+  {
+   "id": "colour-colours-that-go-together",
+   "group": "colour",
+   "name": "Colours that go together",
+   "use": "Start from your colour and turn the wheel, keeping the lightness and strength the same. Because only the direction changes, the colours feel like a set. One of them is still the accent. The others are for charts, labels and pictures.",
+   "ask": "Give me two more colours that go with my brand colour, for charts and labels: keep the same lightness and strength and change only the hue. Show neighbours, the opposite, and the softened opposite, and say which you would use.",
+   "effort": "Easy. One sentence.",
+   "file": "base/templates/components/colour.html",
+   "source": "base/source/views/33-colour.html"
+  },
+  {
+   "id": "colour-contrast-you-can-read",
+   "group": "colour",
+   "name": "Contrast you can read",
+   "use": "Contrast is a ratio between the text and what is behind it, from 1 to 1 (invisible) up to 21 to 1 (black on white). Ordinary text needs 4.5. These four pairs use two colours that look fine together and still fail as text.",
+   "ask": "Check every pair of text colour and background on this page. List each pair with its contrast ratio, and fix any ordinary text under 4.5 to 1 or large text under 3 to 1 by changing the lightness, not the hue.",
+   "effort": "Easy. One sentence.",
+   "file": "base/templates/components/colour.html",
+   "source": "base/source/views/33-colour.html"
   },
   {
    "id": "svg-bars-grow",

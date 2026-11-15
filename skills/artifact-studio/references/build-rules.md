@@ -3,6 +3,19 @@
 How to write the HTML. These rules are why the studio's pages work on a phone, offline and for
 people who turn motion off.
 
+## Contents
+
+- The file
+- Complete at rest
+- Layout
+- Colour and type
+- Motion
+- Charts
+- Images and video
+- Words
+- Accessibility
+- Libraries
+
 ## The file
 
 - One HTML file. CSS in one `<style>`, script inside the file. No build step.
@@ -100,4 +113,4 @@ network dependency.
 | Step triggers on a long story | Scrollama | cdnjs or unpkg, pinned |
 | Large diagrams from text | Mermaid | cdnjs, pinned |
 
-Licences and the date each was checked are in `drafts/artifact-studio/landscape-review.md`.
+Licences and the date each was checked are in `drafts/artifact-studio/docs/landscape-review.md`.

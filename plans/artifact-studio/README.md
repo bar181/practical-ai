@@ -37,7 +37,7 @@ outlines and will change.
 
 ## Established best practices
 
-Done. See the [landscape review](../../drafts/artifact-studio/landscape-review.md) for what already exists, with dated sources.
+Done. See the [landscape review](../../drafts/artifact-studio/docs/landscape-review.md) for what already exists, with dated sources.
 
 ## What it reuses
 

@@ -5,9 +5,9 @@ description: Turns any content (notes, documents, data, images, video) into one 
 
 # Artifact studio
 
-You turn a person's content into one page worth sharing. You do it the way a studio would: agree
-what kind of page it is, how it should speak and what it should look like, then build it and check
-it. The person's content is the material. You add structure and craft. You never add facts.
+You turn a person's content into one finished piece worth sharing: a page, a slide deck or a social
+picture. You do it the way a studio would: agree what kind of piece it is, how it should speak and
+what it should look like, then build it and check it. The person's content is the material. You add structure and craft. You never add facts.
 
 **Think of it as** ordering at a counter. The recipe is the dish, the voice is how they like it,
 the look is the plate. Your job is to take the order correctly and cook it well.
@@ -24,9 +24,11 @@ the look is the plate. Your job is to take the order correctly and cook it well.
 | `references/voices.md` | Choosing how the page speaks, and writing in that voice |
 | `references/looks.md` | Choosing colours, type and layout feel |
 | `references/components.md` | Choosing the parts for each section |
+| `references/design-ideas.md` | Choosing a kind of card, a layout and colours, and building a palette from one brand colour |
 | `references/build-rules.md` | Before writing any HTML |
 | `references/pre-ship-checklist.md` | Before showing the page to the person |
-| `assets/page-skeleton.html` | As the starting file for every build |
+| `assets/page-skeleton.html` | As the starting file for every page |
+| `evals/evals.json` | To test this skill: six requests, each with what a good result must contain |
 
 ## Steps
 
@@ -42,11 +44,13 @@ the look is the plate. Your job is to take the order correctly and cook it well.
 3. **Voice.** Pick one voice from `references/voices.md`. If the person named one, use it. If not,
    take the first voice listed for the recipe.
 4. **Look.** In this order: the person's design spec or brand colours; colours taken from an image
-   they supplied (the method is in `references/looks.md`); the default look for the chosen voice.
+   they supplied (the method is in `references/looks.md`); a palette built from their one brand
+   colour (the method is in `references/design-ideas.md`); the default look for the chosen voice.
 5. **Outline.** Map the content onto the recipe's sections, in the voice's order. Write the words.
    Where the content has nothing for a section, either drop the section or mark the gap. List every
    gap and every assumption as you go.
-6. **Parts.** Choose a component from `references/components.md` for each section that needs one.
+6. **Parts.** Choose a component from `references/components.md` for each section that needs one,
+   and the kind of card and the layout from `references/design-ideas.md`.
    Every part must carry content. Use at most three moving parts on a page.
 7. **Build.** Start from `assets/page-skeleton.html`. Follow `references/build-rules.md`. Produce
    one self-contained HTML file.
@@ -84,7 +88,7 @@ for six goals (report, decide, sell, teach, inspire, announce) and five readers 
 executive, team, public, learner). Score each as three times the goal fit plus twice the reader
 fit and take the highest: one page with one voice, or one deck, or one social format. Say what
 you chose and why in one line, and offer the runner-up. With the studio's MCP server connected,
-call `recommend` and it does the scoring.
+call `artifact-studio:recommend` and it does the scoring.
 
 The library also holds decks, social post pictures and animated SVG parts. They follow the same
 rules as pages: one self-contained file, the person's own content, the checklist before showing.
@@ -98,7 +102,8 @@ about it (structure, order, rhythm, how a number is shown), the closest template
 and whether it should stay a note, change an existing template or become a new part. Do not copy
 its text, pictures, logo, characters or code. The process is in
 `drafts/artifact-studio/base/inspiration/README.md`. With the MCP server connected, file the card
-with `add_inspiration`.
+with `artifact-studio:add_inspiration`. Before you choose a voice, a look and parts, read the person's
+saved finds with `artifact-studio:list_inspiration`, or in `drafts/artifact-studio/base/inspiration/`.
 
 ## Rules that never bend
 

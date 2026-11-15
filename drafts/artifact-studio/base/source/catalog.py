@@ -52,6 +52,37 @@ SOCIAL_STYLES=[
  dict(id='bold',name='Bold',summary='Navy, white, a strong red and yellow. For announcements.',swap={'#1b2228':'#0a2540','#e8edf3':'#ffffff','#774528':'#b3261e','#d2b78c':'#ffd23f','#a5b9d8':'#b9d4f1','#4b596e':'#3a4a5e','#f0d9b0':'#ffe9a8'}),
  dict(id='soft',name='Soft',summary='Plum, cream and terracotta. For stories and thanks.',swap={'#1b2228':'#3b2a3f','#e8edf3':'#fbf3e8','#774528':'#9a4a2f','#d2b78c':'#f2c9a0','#a5b9d8':'#dcc9e0','#4b596e':'#5d4a5f','#f0d9b0':'#fde3c4'}),
 ]
+# ---- colour: one hue in, a checked palette out. The page (views/33-colour.html) carries the same sums in script.
+import math
+# Each role is a lightness and a chroma in OKLCH, where equal steps of lightness look equal to the eye.
+# The hue comes from the brand. Neutrals keep a trace of it so greys do not look dead beside the accent.
+PALETTE_ROLES=[('surface','Page background',.97,.012,60),('surface2','Panels and cards',.93,.020,0),('line','Borders and rules',.86,.025,0),
+               ('muted','Secondary text',.48,.030,30),('ink','Main text',.22,.030,0),('accent','Buttons and links',.46,.140,10),('accentsoft','Highlights behind text',.92,.050,0)]
+def oklch_hex(L,C,H):
+    """OKLCH to an sRGB hex colour. Chroma is reduced until the colour fits the screen's range."""
+    while True:
+        a=C*math.cos(math.radians(H)); b=C*math.sin(math.radians(H))
+        l=(L+.3963377774*a+.2158037573*b)**3; m=(L-.1055613458*a-.0638541728*b)**3; s=(L-.0894841775*a-1.2914855480*b)**3
+        rgb=[4.0767416621*l-3.3077115913*m+.2309699292*s,-1.2684380046*l+2.6097574011*m-.3413193965*s,-.0041960863*l-.7034186147*m+1.7076147010*s]
+        if all(-.0005<=x<=1.0005 for x in rgb) or C<.001: break
+        C*=.95
+    f=lambda x:12.92*x if x<=.0031308 else 1.055*x**(1/2.4)-.055
+    return '#'+''.join(f'{max(0,min(255,round(f(max(0,min(1,x)))*255))):02x}' for x in rgb)
+def contrast(h1,h2):
+    """WCAG contrast ratio between two hex colours, from 1 to 21."""
+    def lum(h):
+        v=[int(h[i:i+2],16)/255 for i in (1,3,5)]; v=[x/12.92 if x<=.03928 else ((x+.055)/1.055)**2.4 for x in v]
+        return .2126*v[0]+.7152*v[1]+.0722*v[2]
+    a,b=sorted((lum(h1),lum(h2)),reverse=True); return round((a+.05)/(b+.05),2)
+def palette(hue):
+    """A palette for one brand hue (0 to 359): seven roles with hex values, their share of the page, and contrast checks."""
+    hue=int(hue)%360; col={k:oklch_hex(L,C,hue) for k,_,L,C,_ in PALETTE_ROLES}
+    checks=[('Main text on the page background',contrast(col['ink'],col['surface']),7),('Secondary text on the page background',contrast(col['muted'],col['surface']),4.5),
+            ('Secondary text on panels',contrast(col['muted'],col['surface2']),4.5),('White text on a button',contrast('#ffffff',col['accent']),4.5),('Links on the page background',contrast(col['accent'],col['surface']),4.5),
+            ('Main text on a highlight',contrast(col['ink'],col['accentsoft']),7)]
+    return dict(hue=hue,roles=[dict(id=k,use=u,hex=col[k],oklch=f'oklch({L} {C} {hue})',share=sh) for k,u,L,C,sh in PALETTE_ROLES],
+                checks=[dict(pair=p,ratio=r,needs=n,passes=r>=n) for p,r,n in checks],
+                rule='About 60 parts background, 30 parts text and structure, 10 parts accent, judged by eye and not by counting pixels. The accent is for things to act on and nothing else.')
 def score(t,goal,audience): w=RULES['weights']; return w['goal']*t['fit']['goal'].get(goal,0)+w['audience']*t['fit']['audience'].get(audience,0)
 def rank(kind,goal,audience): return sorted([t for t in TEMPLATES if t['kind']==kind],key=lambda t:-score(t,goal,audience))
 def why(t,goal,audience):

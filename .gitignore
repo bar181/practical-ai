@@ -148,3 +148,7 @@ vite.config.ts.timestamp-*
 # Turbo Repo
 .turbo
 drafts/artifact-studio/level-demo/source/assets.json
+
+# Python
+__pycache__/
+*.pyc

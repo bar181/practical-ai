@@ -68,7 +68,7 @@ Found and fixed in this round:
 
 Still open, and not fixable by the author alone:
 
-- Run the sentence test: `drafts/artifact-studio/base/sentence-test.md`.
+- Run the sentence test: `drafts/artifact-studio/docs/sentence-test.md`.
 - Have a second agent run the skill on fresh content.
 - Watch one person do level 1 from the student guide.
 - Check on a real phone, in Safari and in Firefox.
@@ -348,6 +348,51 @@ What this round did not change: evidence from people. It added a great deal of s
 new part of it is untested by anyone else. The rule at the end of this file applies with more force
 now.
 
+## Round 6: finishing the first project, and the method behind it
+
+The owner answered the open decisions and asked for five things: a short catalogue of design ideas,
+a review of the skills and the server against current best practice, worked examples, a clean-up
+of the scaffolding, and the method written up as its own project.
+
+| Asked for | What exists now |
+| --- | --- |
+| Design ideas: cards, layouts, colour | Three tabs, 17 ideas, each with a live example, a rule and the sentence that asks for it. A palette maker turns one brand colour into seven, and checks contrast for every one of the 360 hues |
+| Skills and server reviewed | `tools/check_skills.py` checks all 12 skills against the published rules. It found three long reference files with no contents list, and no skill with test cases. Both fixed for the artifact studio. The server's instructions were stale and are rewritten, and two tools were added |
+| Worked examples | Six, each a request, the notes, what was picked, the output and a list of what a good result must have. They are also the skill's test cases |
+| Clean scaffolding | One rule, a layout check that enforces it, and one command that runs every gate. Background papers moved to `docs/`. Training leftovers removed. Retired work in `plans/archive/` |
+| The method as a project | `drafts/project-method/`: seven stages, a gate after each, a scaffold, and an agentic level 2 built on a skill and the gate runner |
+
+Scored on the same seven lines as round 5, plus one for the scaffolding:
+
+| Item | Round 5 | Now | Why |
+| --- | --- | --- | --- |
+| One place for each thing, one source of truth | 88 | 90 | The palette rule, the design ideas card and the examples are generated from the catalogue and the views |
+| Usable by an agent | 87 | 89 | Design rules and a palette tool on the server, examples to copy the finish from, tool descriptions that say what comes back |
+| Correct and checked | 85 | 88 | Ten gates behind one command. The checks now fail loudly instead of printing and exiting clean |
+| Honest and current documents | 85 | 87 | Front doors rewritten around daily use. A link gate caught every move in this round |
+| Usable today by a person | 81 | 84 | A "use it today" table, examples to read first, a palette from one colour in two minutes |
+| Range and quality of templates | 81 | 84 | The design ideas fill the gap between a template and a blank page |
+| Evidence from real use | 40 | 40 | **Unchanged.** The examples were made by the author. No fresh assistant has been given the requests |
+| Scaffolding a newcomer can follow | not scored | 80 | Two tools follow one rule and a script checks it. Nine older drafts still use the earlier layout |
+
+Overall 80 on the seven lines that can be compared, up from 78. Every point of the gain is in things
+the author can check alone. The line that needs other people has not moved in two rounds.
+
+Faults found in this round by its own checks: three reference files over 100 lines with no contents
+list; the page check and the client test printed problems but exited as if clean, so they could not
+serve as gates; a compiled Python file was committed; the README said a build input was not committed
+when it was; a sentence in a worked example stated something the notes did not say; and a line of
+text in a social picture ran within 20 pixels of the edge.
+
+Judgement calls, made because the owner asked for best judgement:
+
+1. **The nine older drafts were not renamed.** A bulk rename would make them look converted while
+   each level still held a full copy. Each moves over when it is next worked on, from stage 1.
+2. **The plan generator was archived, not kept.** It encoded the earlier layout and lived outside
+   the repository. The Markdown files are now the source.
+3. **Tool names on the server were not prefixed.** Assistants already name a tool by its server.
+   Renaming would have broken every document for no gain a user would see.
+
 ## What only other people can do next
 
 After round 3 the weakest item for every tool is still evidence, and the author cannot raise it
@@ -356,7 +401,7 @@ alone. In order of value:
 1. **Open the four studio artifacts on a phone** and say whether every tab shows content. This
    confirms or refutes the round 3 fix. Five minutes.
 2. **Run the sentence test.** The beginner sentence for each of the four recipes, in two
-   assistants, with the sheet in `drafts/artifact-studio/base/sentence-test.md`. About an
+   assistants, with the sheet in `drafts/artifact-studio/docs/sentence-test.md`. About an
    hour.
 3. **Give the artifact-studio skill to a second agent** with one set of real notes, and compare
    what comes back against the pre-ship checklist.

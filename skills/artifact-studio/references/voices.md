@@ -10,6 +10,18 @@ writing style should point here instead of keeping their own copy.
 Each voice is inspired by a well-known communicator. That is a description of a style. Never write
 as if the person said it, and never put their name on a page.
 
+## Contents
+
+- Choosing
+- Keynote
+- Storyteller
+- Teacher
+- Pitch
+- Practical instructor
+- Analyst
+- Executive brief
+- Blank card
+
 ## Choosing
 
 | If the reader should | Use |

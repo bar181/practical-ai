@@ -8,7 +8,7 @@ test turns "it should work" into evidence.
 ## How to run one test
 
 1. Open a new chat with nothing else in it. No project instructions, no memory of earlier work.
-2. Paste one sentence from [`sentences.md`](sentences.md).
+2. Paste one sentence from [`sentences.md`](../base/sentences.md).
 3. Attach the test content for that kind of sentence.
 
    | Sentence kind | Attach |

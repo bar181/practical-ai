@@ -15,14 +15,14 @@ other, and prices change. Read the vendor's own page.
 | A deck someone will edit in PowerPoint or Google Slides | A slide service below, or your assistant's own deck feature | The studio's decks are web pages. They present well and do not open in a slide editor |
 | Many posts on a schedule, with brand locked down for a team | A design service below | The studio makes one picture at a time and has no scheduling |
 | A deck written as text and kept in a code repository | An open-source slide framework below | They have speaker notes, export and plugins that the studio's small engine does not |
-| Heavy animation or video | The libraries in the [landscape review](../landscape-review.md), or the short video guide in this repository | The studio keeps motion small on purpose |
+| Heavy animation or video | The libraries in the [landscape review](../docs/landscape-review.md), or the short video guide in this repository | The studio keeps motion small on purpose |
 
 ## Skills for assistants
 
 | Skill | What it adds | Source |
 | --- | --- | --- |
 | frontend-design, web-artifacts-builder, theme-factory | Anthropic's own skills for design judgement, multi-part artifacts and ready-made themes | [anthropics/skills](https://github.com/anthropics/skills), checked 2026-11-14 |
-| Community skills for scroll effects and animated components | Recipes for one library each | Listed with links in the [landscape review](../landscape-review.md). Unreviewed. Read one before installing it |
+| Community skills for scroll effects and animated components | Recipes for one library each | Listed with links in the [landscape review](../docs/landscape-review.md). Unreviewed. Read one before installing it |
 
 The studio's own skill is in [`skills/artifact-studio/`](../../../skills/artifact-studio/). It uses the same open
 skill format, so it can sit beside any of these.
@@ -40,7 +40,7 @@ you can edit ([open-design.ai](https://open-design.ai/ja/blog/slidev/), [opendes
 
 ## Open-source libraries for motion, charts and components
 
-Already reviewed, with licences, in the [landscape review](../landscape-review.md): GSAP, Motion,
+Already reviewed, with licences, in the [landscape review](../docs/landscape-review.md): GSAP, Motion,
 Anime.js, Scrollama, Observable Plot, D3, Apache ECharts, Chart.js and four component sets.
 
 ## Paid services
@@ -71,6 +71,32 @@ Details that matter for ChatGPT, from those pages: developer mode is a beta on p
 web app; on business plans an admin may have to allow it; the connector form offers sign-in by
 OAuth or no sign-in at all; and one guide says the individual plans are limited to tools that only
 read. The guides do not fully agree on plans, so check your own account.
+
+## Where the design ideas come from
+
+The Cards, Layouts and Colour tabs are a short, chosen set. They follow what these sources agree on,
+written in the studio's own words. All were read on 15 November 2026 and none is quoted.
+
+| Idea in the studio | Source | What was taken from it |
+| --- | --- | --- |
+| One subject and one main action for each card, consistent padding | [Simple Thread: card components](https://www.simplethread.com/card-components-best-practices/), [Ramotion: card design principles](https://www.ramotion.com/blog/card-ui-design/) | The rules at the top of the Cards tab |
+| Light use of shadows inside a card | [Uxcel: cards best practices](https://uxcel.com/lessons/cards-best-practices-038) | "A light hand with shadows" |
+| The six layouts and when each fits | [UXPin: web layout patterns](https://www.uxpin.com/studio/blog/web-layout-best-practices-12-timeless-ui-patterns-explained/), [AIDesigner: website layout patterns](https://www.aidesigner.ai/blog/website-layout) | Which layouts to include, and that a bento grid needs one dominant tile |
+| Scanning down the left edge is one pattern among several, and good headings change it | [Webiano: F-pattern](https://webiano.digital/knowledge-base/design/layout-grids/f-pattern/), [Webiano: Z-pattern](https://webiano.digital/knowledge-base/design/layout-grids/z-pattern/) | The "avoid it when" lines, and that a long page repeats the corner-to-corner shape |
+| 60, 30, 10 as a balance of weight | [Zudo CSS: colour palette strategy](https://zudo-css.pages.dev/pj/zcss/docs/styling/color/color-palette-strategy), [UXPin: choosing a colour palette](https://www.uxpin.com/studio/4852/new-uxpin-color-picker) | The rule, and checking every pair for contrast |
+| The rule fits pages better than dense screens, and greys should carry a tint | [UXMagic: a scalable colour system](https://uxmagic.ai/blog/ui-color-palette-apps-scalable-system) | The caution on the 60, 30, 10 card, and tinted greys |
+| OKLCH for even steps of lightness | The Zudo CSS page above | The scale and the palette maker |
+
+Where the sources disagree, the studio says so: some designers hold that 60, 30, 10 is too simple
+for product screens. The card states the limit instead of taking a side.
+
+## Where the skill and server rules come from
+
+| What | Source | Read |
+| --- | --- | --- |
+| How a skill should be written: name, description, length, references, test cases | [Skill authoring best practices](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices) | 15 November 2026. `tools/check_skills.py` checks these rules |
+| How an MCP tool should be described: its purpose, what it returns, when not to use it | [Workato: MCP server tool design](https://docs.workato.com/en/mcp/mcp-server-tool-design) | 15 November 2026 |
+| A skill for building MCP servers, with a four-phase method | [mcp-builder](https://skillselion.com/skills/composiohq/awesome-claude-skills/mcp-builder) | Listing read 15 November 2026. Not installed |
 
 ## Still to do
 
