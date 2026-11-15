@@ -332,6 +332,11 @@ Three things in this round came from testing the work against itself and not fro
    from 20 to 11. The picker's agreement between the page and Python is a saved test.
 3. **Starters.** A template that shows well is a poor thing to copy. Each deck and social picture
    also exists as a small complete file.
+4. **The inbox read back.** Saved finds could be filed and never read. They are now step 3 of the
+   agent's path and an MCP tool, so a person's taste shapes the choice.
+
+Also added after the gap analysis: three styles for the social pictures, each checked for contrast,
+with downloads that follow the chosen style.
 
 Other faults found by the checks and fixed: a shared helper that made SVG elements where HTML ones
 were needed, which left both decks blank and the picker dead until a screenshot caught it; SVG
