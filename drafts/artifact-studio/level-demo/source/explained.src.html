@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Artifact studio explained</title>
+<title>Practical AI explained</title>
 <style>
 /*FONTS*/
 :root{
@@ -108,22 +108,62 @@ code{font:400 .84rem/1.4 ui-monospace,Menlo,Consolas,monospace}
 .next h2{color:var(--fog)}
 .next ol{margin:18px 0 0;padding-left:1.2em;display:grid;gap:12px;max-width:33em}
 .next p{margin-top:26px;color:var(--sky)}
+.tools{display:grid;gap:10px;margin-top:22px}
+.tool{background:var(--panel);border-radius:12px;padding:14px 16px;display:grid;grid-template-columns:1fr auto;gap:4px 14px;align-items:start}
+.tool b{font:700 1.08rem/1.2 var(--display)}.tool p{font:400 .92rem/1.4 var(--display);color:var(--slate);grid-column:1}
+.tool .sc{grid-row:1/3;grid-column:2;font:700 1.7rem/1 var(--display);font-variant-numeric:tabular-nums;text-align:right}.tool .sc small{display:block;font:400 .72rem/1.2 var(--display);color:var(--slate);margin-top:2px}
+.tool .r{grid-column:1/3;justify-self:start;font:700 .76rem/1 var(--display);border-radius:999px;padding:5px 9px;border:1.5px solid;margin-top:4px}
+.tool .r.d{background:#e4f3ea;border-color:#1c6b3c;color:#14502c}.tool .r.p{background:#fbf1dc;border-color:#8a5a00;color:#6b4500}.tool .r.n{background:var(--mist);border-color:var(--slate);color:var(--pine)}
+@media(min-width:760px){.tools{grid-template-columns:1fr 1fr}}
 @media(min-width:760px){.trio{grid-template-columns:repeat(3,1fr)}.nums{grid-template-columns:repeat(4,1fr)}.lv{grid-template-columns:repeat(3,1fr)}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}.anim .hb.see:not(.in) i{width:var(--v)}}
 </style>
 </head>
 <body>
 <header class="hero"><div class="ph" role="img" aria-label="A dog on a lead looks out over grey rocks and calm water at a low orange sun."></div>
-  <div><h1>Artifact studio, explained</h1><p>How a page goes from rough notes to something worth sharing, what the studio is made of, and how to use it today.</p></div></header>
+  <div><h1>Practical AI, explained</h1><p>Ten tools, eleven skills and one way of building them. What is here, how it was made, and how to use it today.</p></div></header>
 <main>
 <section><div class="wrap">
-  <h2>The idea in one line</h2>
+  <h2>What this is</h2>
+  <p class="lede measure">A toolkit of practical AI tools for small businesses, kept in one repository. Each tool is something a person can set up and use, mostly without writing code.</p>
+  <div class="box"><b>Think of it as a workshop wall.</b><span>Every tool hangs in its place with a tag: what it does, how to use it, and how well it has been tested. You take down the one you need.</span></div>
+  <div class="nums"><div><b>10</b><strong>Tools drafted</strong><span>Of 20 on the priority list. Each has a demo you can open</span></div><div><b>11</b><strong>Skills</strong><span>Instructions an agent loads to do one job the same way every time</span></div><div><b>5</b><strong>Levels each</strong><span>Demo, beginner, advanced, expert, and what a commercial build adds</span></div><div><b>0</b><strong>Outside users</strong><span>Nobody but the author has used any of it yet. That is the next step</span></div></div>
+</div></section>
+
+<section><div class="wrap"><h2>The ten tools</h2><p class="lede measure">In priority order. The score is the author's own, out of 100, against the repository's goals. It shows what to fix next. It is not proof that a tool works.</p>
+  <div class="tools"><div class="tool"><b>1. Artifact studio</b><span class="sc">77<small>self-score</small></span><p>Pick a page type, a voice and a look, and get a page worth sharing.</p><span class="r d">Research done</span></div><div class="tool"><b>2. Voice post drafter</b><span class="sc">67<small>self-score</small></span><p>A draft post that sounds like you, for you to edit and publish.</p><span class="r p">Tool facts checked</span></div><div class="tool"><b>3. Short video guide</b><span class="sc">66<small>self-score</small></span><p>Plan a short video on paper and pick the right route to make it.</p><span class="r p">Tool facts checked</span></div><div class="tool"><b>4. Estimator</b><span class="sc">71<small>self-score</small></span><p>A first-draft quote from your own price list and rules, with the arithmetic shown.</p><span class="r p">Arithmetic checked</span></div><div class="tool"><b>5. Training explainer</b><span class="sc">61<small>self-score</small></span><p>Turn a topic into a taught video in a chosen teaching style.</p><span class="r p">Tool facts checked</span></div><div class="tool"><b>6. Learning system</b><span class="sc">69<small>self-score</small></span><p>A log of solved problems, so nothing is solved twice.</p><span class="r d">Research done</span></div><div class="tool"><b>7. Publishing a website</b><span class="sc">67<small>self-score</small></span><p>Three routes from a page on your screen to a page other people can open.</p><span class="r d">Research done, no route walked</span></div><div class="tool"><b>8. Inbox triage and daily summary</b><span class="sc">60<small>self-score</small></span><p>One morning page: what needs you today, with a draft for each reply.</p><span class="r n">Research: notes only</span></div><div class="tool"><b>9. Weekly brief</b><span class="sc">60<small>self-score</small></span><p>Outside news with links and inside decisions with sources, on one page.</p><span class="r n">Research: notes only</span></div><div class="tool"><b>10. Dashboard</b><span class="sc">64<small>self-score</small></span><p>Your key numbers on one page, from a spreadsheet.</p><span class="r n">Research: notes only</span></div></div>
+</div></section>
+
+<section><div class="wrap"><h2>How every tool is laid out</h2><p class="lede measure">The same folders in the same order, so once you know one tool you know them all.</p>
+  <ol class="time">
+    <li><b>Demo</b>A finished example to open. Nothing to set up.</li>
+    <li><b>Beginner</b>The smallest version you can run: usually one sentence or one page of instructions pasted into a chat Project.</li>
+    <li><b>Advanced</b>The common size. Your own templates, colours and rules, saved once and reused.</li>
+    <li><b>Expert</b>A skill does the job and checks its own work. A person still approves anything that goes out.</li>
+    <li><b>Commercial grade</b>An explanation of what a business-critical version adds. Never a project.</li>
+  </ol>
+  <p class="measure" style="margin-top:6px">Each tool also has a guide for people, a guide for agents, and notes on what already exists.</p>
+</div></section>
+
+<section><div class="wrap"><h2>How each one is built</h2><p class="lede measure">The same loop every time. Building is the short part.</p>
+  <ol class="time">
+    <li><b>Scope and research</b>Say what it is for. Then find what assistants, browsers and free tools already do, with dated sources. Reuse before building.</li>
+    <li><b>The simplest version that works</b>A demo and a beginner level. Nothing more until those exist.</li>
+    <li><b>Score it</b>Seven questions, from "can a non-coder use it" to "has anyone else tried it". Written down, with the reasons.</li>
+    <li><b>Fix the weakest thing</b>Not the most interesting thing. Then score again.</li>
+    <li><b>Stop when evidence is the weakest item</b>At that point more building does not help. Someone else has to use it.</li>
+  </ol>
+  <p class="measure" style="margin-top:6px">Every tool here has now reached that last step.</p>
+</div></section>
+
+<section><div class="wrap">
+  <h2>The centrepiece: artifact studio</h2>
   <p class="lede measure">Tell the assistant three things it would otherwise guess: what kind of page this is, how it should speak and what it should look like.</p>
   <div class="box"><b>Think of it as ordering at a counter.</b><span>You do not explain how to cook. You name the dish, say how you like it, and it arrives on a plate. The studio is the menu.</span></div>
   <div class="trio"><div><b>Recipe</b><span>The dish. What kind of page: a report, a proposal, an explainer or a landing page.</span></div><div><b>Voice</b><span>How you like it. Who is speaking, and what they say first.</span></div><div><b>Look</b><span>The plate. Colours, type and layout, from your brand or from a photo.</span></div></div>
 </div></section>
 
-<section><div class="wrap"><h2>The process</h2><p class="lede measure">Four stages, always in this order. Each one narrows the next. Scroll and the diagram keeps your place.</p></div>
+<section><div class="wrap"><h2>How the studio makes a page</h2><p class="lede measure">Four stages, always in this order. Each one narrows the next. Scroll and the diagram keeps your place.</p></div>
   <div class="stage" id="stage"><svg viewBox="0 0 480 126" role="img" aria-label="Four stages in a row: choose, write, build, check. The current stage is highlighted.">
     <path class="rail" d="M60,44 H420"/><path class="go" pathLength="1" d="M60,44 H420"/>
     <g><circle cx="60" cy="44" r="27"/><text class="n" x="60" y="52">1</text><text x="60" y="108">Choose</text></g>
@@ -169,13 +209,14 @@ Check before sharing: the three option prices against the estimate.</pre>
   <p class="measure" style="margin-top:16px">Three rules never bend: no invented facts, a voice is a style and never an impersonation, and nothing is posted or published without a person saying so.</p>
 </div></section>
 
-<section><div class="wrap"><h2>How it was built</h2><p class="lede measure">The studio was made with the repository's own nine-step process, then scored against its own goals and rebuilt.</p>
+<section><div class="wrap"><h2>How the studio was built</h2><p class="lede measure">The loop above, run on the first tool. The same loop was then run on the rest of the list.</p>
   <ol class="time">
     <li><b>Research first</b>What browsers, free libraries and existing skills already do. Dated sources, saved as a landscape review.</li>
     <li><b>The simplest thing that works</b>A gallery of 12 components from one lake photo. Self-scored at 61 out of 100: a good demo, not yet a tool.</li>
     <li><b>The gap, named</b>It stopped at components. Nothing was a page a business needs, and nothing made it repeatable.</li>
     <li><b>Rebuilt as a studio</b>Recipes, voices, plain components, a sentence builder, all levels, guides for people and agents, and a skill.</li>
     <li><b>Checked</b>Three screen widths, an automated accessibility scan, link and arithmetic checks. Self-scored at 77.</li>
+    <li><b>Then the rest of the list</b>Skills, agent guides and upper levels for four existing tools. Demo pages built with the studio's own skeleton. Five more tools started from their plans.</li>
   </ol>
   <figure class="fig" style="margin:22px 0 0"><h3>Self-score before and after the rebuild</h3><p class="sub ui">Out of 100, scored by the author against the repository's goals. Not an independent review.</p>
     <div class="hb see">__BARS__</div>
@@ -184,14 +225,18 @@ Check before sharing: the three option prices against the estimate.</pre>
 
 <section><div class="wrap"><h2>What is proven and what is not</h2>
   <div class="calls">
-    <div class="call good"><b>Checked</b>All 17 views render in Chrome at 320, 390 and 1280 pixels wide with no errors. An automated accessibility scan found no violations after fixes. The example arithmetic adds up.</div>
+    <div class="call good"><b>Checked</b>The studio's 17 views and all nine other demo pages render in Chrome at phone width with no errors and no sideways scrolling. An automated accessibility scan found no violations after fixes. The example arithmetic adds up.</div>
     <div class="call warn"><b>Not yet tested</b>The sentences have not been run in fresh chats and scored. The skill has not been run by a second agent. Nobody but the author has used it. No real phone, Safari or Firefox.</div>
+    <div class="call warn"><b>Thin research</b>Tools 8, 9 and 10 were started from notes, with no checked sources. Their plans say so. No publishing route has been walked end to end.</div>
     <div class="call warn"><b>A guess</b>The practical instructor voice is a best guess at one person's teaching style and has not been corrected by him.</div>
   </div>
 </div></section>
 
 <section><div class="wrap"><h2>Where everything is</h2>
   <div class="scroll" tabindex="0" role="region" aria-label="Where everything is in the repository"><table><thead><tr><th>You want</th><th>Open</th></tr></thead><tbody>
+    <tr><td>The priority list and what exists for each tool</td><td><code>docs/PRIORITIES.md</code></td></tr>
+    <tr><td>Any tool: its demo, guides and levels</td><td><code>drafts/&lt;tool&gt;/</code></td></tr>
+    <tr><td>Every skill</td><td><code>skills/</code></td></tr>
     <tr><td>The studio itself</td><td><code>drafts/artifact-studio/level-demo/artifact-studio.html</code></td></tr>
     <tr><td>The guide for people</td><td><code>drafts/artifact-studio/STUDENT-GUIDE.md</code></td></tr>
     <tr><td>The guide for agents</td><td><code>drafts/artifact-studio/AGENT-GUIDE.md</code></td></tr>
@@ -202,8 +247,8 @@ Check before sharing: the three option prices against the estimate.</pre>
 </div></section>
 </main>
 <section class="next"><div class="wrap"><h2>Three things that would make it real</h2>
-  <ol><li><b>Run the sentence test.</b> Eight tests, about an hour: the beginner sentence for each recipe, in two assistants.</li><li><b>Watch one person do level 1.</b> Say nothing. Write down where they stop.</li><li><b>Correct the practical instructor card.</b> It should sound like its owner.</li></ol>
-  <p class="ui">Built on 15 November 2026 with the studio's own skill: scrolling explainer recipe, practical instructor voice, the studio's fog and pine look. The photograph is the repository owner's.</p></div></section>
+  <ol><li><b>Run the sentence test.</b> Eight tests, about an hour: the beginner sentence for each studio recipe, in two assistants.</li><li><b>Watch one person do level 1 of any tool.</b> Say nothing. Write down where they stop.</li><li><b>Do the research for tools 8, 9 and 10.</b> They were started from notes. Check the sources before building further.</li></ol>
+  <p class="ui">Built on 15 November 2026 with the studio's own skill: scrolling explainer recipe, practical instructor voice, the studio's fog and pine look. Everything described is on the branch behind pull request 1 of the repository. The photograph is the repository owner's.</p></div></section>
 <script>
 (()=>{
 const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)],reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;

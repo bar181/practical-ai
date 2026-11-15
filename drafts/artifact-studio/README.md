@@ -20,7 +20,7 @@ build those pages, through the skill.
 | An agent, or someone setting one up | [`AGENT-GUIDE.md`](AGENT-GUIDE.md) |
 | Curious how and why it works | [`BEST-PRACTICES.md`](BEST-PRACTICES.md) |
 | Looking for what already exists in this area | [`landscape-review.md`](landscape-review.md) |
-| Wanting the whole thing on one page | [`docs/artifact-studio-explained.html`](../../docs/artifact-studio-explained.html) |
+| Wanting the whole toolkit on one page | [`docs/practical-ai-explained.html`](../../docs/practical-ai-explained.html) |
 
 ## How it works
 

@@ -112,6 +112,6 @@ def build_explained():
     fonts2='\n'.join(f'@font-face{{font-family:"{n}";font-weight:{w};font-style:{s};font-display:swap;src:url(data:font/woff2;base64,{A["fonts"][k]}) format("woff2")}}' for n,w,s,k in f2)
     bars=''.join(f'<div class="hb-row"><span class="hb-l">{n}</span><span class="hb-t"><span><i class="q" style="--v:{b*.8:.0f}%"></i><b>{b}</b></span><span><i style="--v:{a*.8:.0f}%"></i><b>{a}</b></span></span></div>' for n,b,a in SCORES)
     t=t.replace('/*FONTS*/',fonts2).replace('/*PHOTO*/',f'--photo:url("data:image/jpeg;base64,{A["sunset"]}");').replace('__BARS__',bars)
-    out=os.path.join(HERE,'..','..','..','..','docs','artifact-studio-explained.html'); open(out,'w').write(t)
+    out=os.path.join(HERE,'..','..','..','..','docs','practical-ai-explained.html'); open(out,'w').write(t)
     print('explained:',round(len(t.encode())/1024),'KB; overall before',round(sum(b for _,b,_ in SCORES)/len(SCORES)),'after',round(sum(a for _,_,a in SCORES)/len(SCORES)))
 build_explained()
