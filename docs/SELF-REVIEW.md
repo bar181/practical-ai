@@ -180,6 +180,10 @@ What changed:
 
 - Tabs are radio buttons styled as tabs. They switch with scripts turned off, and the first tab is
   showing on load. Each voice and each recipe has its own tab.
+- Each tab's script is in its own script element. In the first version every tab's script
+  shared one element, so a single fault would have left every tab without its set-up. That is
+  the most likely cause of what the owner saw, and it is not proven. Breaking one tab's script
+  on purpose now leaves the others working.
 - The dropdowns are gone. The request mixer uses tap-to-choose buttons and starts with a complete
   request already written out.
 - Four pages are built from one source: all examples, and one page per level.

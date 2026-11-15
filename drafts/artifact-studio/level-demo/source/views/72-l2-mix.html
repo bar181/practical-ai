@@ -37,7 +37,7 @@ onView("l2-mix",root=>{
   const V={keynote:['keynote','One idea per screen, huge type, almost no words, and end with "one more thing".'],story:['storyteller','Make my customer the hero and us the guide: a hook, the problem, a three-step plan, the stakes, and an ending that returns to the opening.'],teacher:['teacher','Start with an everyday analogy in large type, then one worked example, then the detail, then three check-yourself questions.'],pitch:['pitch','First person. Start with a memory, name the feeling, and name the product only at the end.'],practical:['practical instructor','The core idea in one sentence, one analogy, numbered steps with a time on each, and one next step.'],analyst:['analyst','The answer first, then three findings whose headings are full sentences, each with one chart and a "so what".'],brief:['executive brief','The decision first, numbered background paragraphs, one options table including "do nothing", then risks and next steps.']};
   const out=$('#mx-out',root),val=n=>($(`input[name=${n}]:checked`,root)||{}).value;
   const make=()=>{const [vn,vh]=V[val('mx-v')],ps=$$('[data-g=p] input:checked',root).map(i=>i.value);
-    const parts=ps.length?` Include ${ps.length>1?ps.slice(0,-1).join(', ')+' and '+ps.at(-1):ps[0]}.`:'';
+    const parts=ps.length?` Include ${ps.length>1?ps.slice(0,-1).join(', ')+' and '+ps[ps.length-1]:ps[0]}.`:'';
     out.textContent=`Build ${R[val('mx-r')]} from my notes in the ${vn} voice. ${vh} Look: ${val('mx-l')}.${parts} Make it one page that reads well on a phone, and mark anything you had to guess.`};
   root.addEventListener('change',make);make();
 });

@@ -143,11 +143,11 @@ def build(key):
         pager='<nav class="pager" aria-label="Previous and next tab"><div>'+(f'<label for="t-{prev}">← {html.escape(title_of(prev))}</label>' if prev else '<span></span>')+(f'<label for="t-{nxt}">{html.escape(title_of(nxt))} →</label>' if nxt else '<span></span>')+'</div></nav>'
         body.append(t[:t.rindex('</div>')]+pager+'</div>')
     js=LIB+[x for n in order for x in VJS[n]]
-    js='\n'.join('try{(()=>{\n'+x+'\n})()}catch(err){console.error(err)}' for x in js)
+    js='\n'.join('<script>\ntry{(()=>{\n'+x+'\n})()}catch(err){console.error(err)}\n</script>' for x in js)
     photos='' if key=='expert' else f'--photo:url("data:image/jpeg;base64,{A["photo"]}");--photo2:url("data:image/jpeg;base64,{A["sunset"]}");'
     t=SHELL.replace('<title>Artifact studio</title>',f'<title>Artifact studio: {html.escape(title)}</title>')
     t=t.replace('/*FONTS*/',fonts).replace('/*PHOTOS*/',photos).replace('/*BASE_CSS*/',BASE).replace('/*TAB_CSS*/','\n'.join(tcss)).replace('/*VIEW_CSS*/','\n'.join(css))
-    t=t.replace('<!--MAST-->',mast).replace('<!--RADIOS-->','\n'.join(radios)).replace('<!--NAV-->',nav).replace('<!--VIEWS-->','\n'.join(body)).replace('/*VIEW_JS*/',js)
+    t=t.replace('<!--MAST-->',mast).replace('<!--RADIOS-->','\n'.join(radios)).replace('<!--NAV-->',nav).replace('<!--VIEWS-->','\n'.join(body)).replace('<!--VIEW_JS-->',js)
     t=t.replace('__PATHS__',paths).replace('__DATA__',data).replace('__TOPHEX__',A['pal'][0]['hex']).replace('__TOPSHARE__',str(round(A['pal'][0]['share'])))
     kb=round(len(t.encode())/1024); t=t.replace('__KB__',f'{kb:,}')
     left=re.findall(r'__[A-Z]+__|^\s*@@\w+',re.sub(r'data:[^")]+','',re.sub(r'<pre>.*?</pre>','',t,flags=re.S)),flags=re.M); assert not left, left

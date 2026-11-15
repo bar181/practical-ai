@@ -1302,7 +1302,7 @@ if(!reduce&amp;&amp;&#x27;IntersectionObserver&#x27; in window){document.body.cl
 people who turn motion off.</p>
 <h2>The file</h2>
 <ul>
-<li>One HTML file. CSS in one <code>&lt;style&gt;</code>, script in one <code>&lt;script&gt;</code>. No build step.</li>
+<li>One HTML file. CSS in one <code>&lt;style&gt;</code>, script inside the file. No build step.</li>
 <li>It opens from a folder with no network. Fonts and images are embedded, or the page uses system
   fonts and no images.</li>
 <li>Start from <code>assets/page-skeleton.html</code>. Keep its token block, its motion guard and its scroll
@@ -1320,7 +1320,8 @@ could not find the examples, and this section is what that taught.</p>
   fewer than about ten, instead of a menu page that leads to them.</li>
 <li>Offer choices as buttons that are all visible. A dropdown hides its choices.</li>
 <li>Scripts add to the page and never hold it up. Give each part's set-up its own <code>try</code>, so one
-  failure cannot empty the rest.</li>
+  failure cannot empty the rest. On a page with tabs, give each tab its own script element: a
+  syntax fault stops the whole element it is in.</li>
 <li>A part that cannot work without script, such as a calculator or a player, starts with a worked
   default written into the HTML, or says so in a <code>&lt;noscript&gt;</code> line.</li>
 </ul>
@@ -1840,7 +1841,7 @@ demo.</p>
   have not been tested with other people yet.</li>
 </ul></div></article><nav class="pager" aria-label="Previous and next tab"><div><label for="t-l3-agent">← Agent guide</label><span></span></div></nav></div>
 <script>
-(()=>{
+/* shared helpers. Each tab's own script follows in a separate script element, so a fault in one cannot stop the others. */
 const STUDIO={data:{"rows":[{"b":69.1,"c":"#9fb2d2"},{"b":69.0,"c":"#9fb2d1"},{"b":69.4,"c":"#a0b3d2"},{"b":68.7,"c":"#9eb1cf"},{"b":67.6,"c":"#9baecc"},{"b":69.1,"c":"#9fb2d0"},{"b":69.3,"c":"#9fb3d1"},{"b":69.9,"c":"#a0b4d3"},{"b":69.2,"c":"#9fb3d1"},{"b":68.7,"c":"#9db1cf"},{"b":68.4,"c":"#9db0ce"},{"b":68.0,"c":"#9cafcd"},{"b":68.7,"c":"#9eb1ce"},{"b":69.9,"c":"#a1b4d1"},{"b":71.6,"c":"#a5b9d5"},{"b":71.4,"c":"#a5b8d4"},{"b":71.2,"c":"#a5b8d3"},{"b":71.1,"c":"#a5b7d2"},{"b":73.8,"c":"#acbed7"},{"b":75.0,"c":"#afc1da"},{"b":73.1,"c":"#aabcd6"},{"b":74.3,"c":"#aec0d8"},{"b":73.3,"c":"#acbdd5"},{"b":69.5,"c":"#a2b3cd"},{"b":67.5,"c":"#9daec8"},{"b":66.0,"c":"#99aac5"},{"b":62.9,"c":"#93a2ba"},{"b":41.8,"c":"#626c78"},{"b":22.4,"c":"#343a41"},{"b":59.2,"c":"#8b98ad"},{"b":64.3,"c":"#98a5ba"},{"b":56.6,"c":"#8c909c"},{"b":46.8,"c":"#79767a"},{"b":40.7,"c":"#6c6767"},{"b":37.8,"c":"#665f5f"},{"b":32.6,"c":"#5a5150"},{"b":28.0,"c":"#504542"},{"b":25.6,"c":"#4b3f39"},{"b":23.8,"c":"#483a34"},{"b":24.0,"c":"#493b33"},{"b":24.1,"c":"#4a3b33"},{"b":24.0,"c":"#4a3b32"},{"b":24.8,"c":"#4d3c34"},{"b":25.1,"c":"#4d3d34"},{"b":25.1,"c":"#4d3d34"},{"b":24.9,"c":"#4d3d34"},{"b":26.0,"c":"#503f36"},{"b":26.4,"c":"#504137"}],"pal":[{"hex":"#a5b9d8","share":35.0},{"hex":"#594b44","share":18.6},{"hex":"#352d2a","share":17.0},{"hex":"#99a7c0","share":12.8},{"hex":"#bacee8","share":11.8},{"hex":"#797981","share":4.7}]}};window.STUDIO=STUDIO;
 const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
 const html=document.documentElement;
@@ -1862,6 +1863,8 @@ STUDIO.crops=root=>{for(const e of $$('[data-crop]',root)){
   let iw=w*S,ih=iw/ar;if(ih<h){ih=h;iw=ih*ar}
   e.style.backgroundSize=iw/w*100+'% auto';
   e.style.backgroundPosition=clamp(iw>w?(fx*iw-w/2)/(iw-w):.5)*100+'% '+clamp(ih>h?(fy*ih-h/2)/(ih-h):.5)*100+'%';}};
+</script>
+<script>
 try{(()=>{
 /* STUDIO.line(host,{vals,labels,fmt,color,surface,first,last,max}): one series, 2px line, soft fill, end labels, touch to read */
 STUDIO.line=(host,o)=>{
@@ -1889,6 +1892,9 @@ STUDIO.line=(host,o)=>{
     host.replaceChildren(svg,tip)};
   draw();addEventListener('resize',draw)};
 })()}catch(err){console.error(err)}
+</script>
+<script>
+(()=>{
 /* scroll driver for browsers without native scroll-driven animations */
 const native=CSS.supports('(animation-timeline: view()) and (animation-range: entry)')&&!window.FORCE_SD_JS;
 if(!native&&!reduce){

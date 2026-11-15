@@ -1706,7 +1706,7 @@ recipe and the voice. Each card has six fields. To add a look, fill in the blank
       <div class="tile sky"><span class="n">0</span><span class="ui">libraries loaded</span></div>
       <div class="tile wide"><div class="chips" id="chips" aria-hidden="true"></div><span class="ui">The photo's six main colours, largest first</span></div>
       <div class="tile"><svg id="spark" viewBox="0 0 100 40" preserveAspectRatio="none" role="img" aria-label="Small line showing brightness from the top of the photo to the bottom."></svg><span class="ui">Brightness, top to bottom</span></div>
-      <div class="tile"><span class="n">1,432<small>KB</small></span><span class="ui">the whole studio: one file, photos and fonts included</span></div>
+      <div class="tile"><span class="n">1,433<small>KB</small></span><span class="ui">the whole studio: one file, photos and fonts included</span></div>
       <div class="tile say dark">Every tile here is a true fact about this page.</div>
     </div>
   </div>
@@ -2007,7 +2007,7 @@ recipe and the voice. Each card has six fields. To add a look, fill in the blank
   </div></section>
 <nav class="pager" aria-label="Previous and next tab"><div><label for="t-recipe-explainer">← Explainer</label><span></span></div></nav></div>
 <script>
-(()=>{
+/* shared helpers. Each tab's own script follows in a separate script element, so a fault in one cannot stop the others. */
 const STUDIO={data:{"rows":[{"b":69.1,"c":"#9fb2d2"},{"b":69.0,"c":"#9fb2d1"},{"b":69.4,"c":"#a0b3d2"},{"b":68.7,"c":"#9eb1cf"},{"b":67.6,"c":"#9baecc"},{"b":69.1,"c":"#9fb2d0"},{"b":69.3,"c":"#9fb3d1"},{"b":69.9,"c":"#a0b4d3"},{"b":69.2,"c":"#9fb3d1"},{"b":68.7,"c":"#9db1cf"},{"b":68.4,"c":"#9db0ce"},{"b":68.0,"c":"#9cafcd"},{"b":68.7,"c":"#9eb1ce"},{"b":69.9,"c":"#a1b4d1"},{"b":71.6,"c":"#a5b9d5"},{"b":71.4,"c":"#a5b8d4"},{"b":71.2,"c":"#a5b8d3"},{"b":71.1,"c":"#a5b7d2"},{"b":73.8,"c":"#acbed7"},{"b":75.0,"c":"#afc1da"},{"b":73.1,"c":"#aabcd6"},{"b":74.3,"c":"#aec0d8"},{"b":73.3,"c":"#acbdd5"},{"b":69.5,"c":"#a2b3cd"},{"b":67.5,"c":"#9daec8"},{"b":66.0,"c":"#99aac5"},{"b":62.9,"c":"#93a2ba"},{"b":41.8,"c":"#626c78"},{"b":22.4,"c":"#343a41"},{"b":59.2,"c":"#8b98ad"},{"b":64.3,"c":"#98a5ba"},{"b":56.6,"c":"#8c909c"},{"b":46.8,"c":"#79767a"},{"b":40.7,"c":"#6c6767"},{"b":37.8,"c":"#665f5f"},{"b":32.6,"c":"#5a5150"},{"b":28.0,"c":"#504542"},{"b":25.6,"c":"#4b3f39"},{"b":23.8,"c":"#483a34"},{"b":24.0,"c":"#493b33"},{"b":24.1,"c":"#4a3b33"},{"b":24.0,"c":"#4a3b32"},{"b":24.8,"c":"#4d3c34"},{"b":25.1,"c":"#4d3d34"},{"b":25.1,"c":"#4d3d34"},{"b":24.9,"c":"#4d3d34"},{"b":26.0,"c":"#503f36"},{"b":26.4,"c":"#504137"}],"pal":[{"hex":"#a5b9d8","share":35.0},{"hex":"#594b44","share":18.6},{"hex":"#352d2a","share":17.0},{"hex":"#99a7c0","share":12.8},{"hex":"#bacee8","share":11.8},{"hex":"#797981","share":4.7}]}};window.STUDIO=STUDIO;
 const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
 const html=document.documentElement;
@@ -2029,6 +2029,8 @@ STUDIO.crops=root=>{for(const e of $$('[data-crop]',root)){
   let iw=w*S,ih=iw/ar;if(ih<h){ih=h;iw=ih*ar}
   e.style.backgroundSize=iw/w*100+'% auto';
   e.style.backgroundPosition=clamp(iw>w?(fx*iw-w/2)/(iw-w):.5)*100+'% '+clamp(ih>h?(fy*ih-h/2)/(ih-h):.5)*100+'%';}};
+</script>
+<script>
 try{(()=>{
 /* STUDIO.line(host,{vals,labels,fmt,color,surface,first,last,max}): one series, 2px line, soft fill, end labels, touch to read */
 STUDIO.line=(host,o)=>{
@@ -2056,12 +2058,18 @@ STUDIO.line=(host,o)=>{
     host.replaceChildren(svg,tip)};
   draw();addEventListener('resize',draw)};
 })()}catch(err){console.error(err)}
+</script>
+<script>
 try{(()=>{
 onView("voice-keynote",root=>{root.classList.add('anim');STUDIO.seen(root)});
 })()}catch(err){console.error(err)}
+</script>
+<script>
 try{(()=>{
 onView("voice-story",root=>{$('.st-cta',root).addEventListener('click',()=>{$('#st-msg').textContent='This is a demo. On a real page this button opens the enquiry form.'})});
 })()}catch(err){console.error(err)}
+</script>
+<script>
 try{(()=>{
 onView("voice-teacher",root=>{
   const lines=$$('#te-code span',root),why=$('#te-why',root);let i=-1;
@@ -2071,6 +2079,8 @@ onView("voice-teacher",root=>{
   $('#te-reset',root).addEventListener('click',()=>{i=-1;paint()});
 });
 })()}catch(err){console.error(err)}
+</script>
+<script>
 try{(()=>{
 onView("voice-pitch",root=>{
   const reel=$('#pi-reel',root),fs=$$('.pi-f',root),n=$('#pi-n',root),prev=$('#pi-prev',root),next=$('#pi-next',root);let cur=0;
@@ -2080,16 +2090,22 @@ onView("voice-pitch",root=>{
   reel.addEventListener('keydown',e=>{if(e.key==='ArrowRight'){e.preventDefault();to(cur+1)}if(e.key==='ArrowLeft'){e.preventDefault();to(cur-1)}});mark();
 });
 })()}catch(err){console.error(err)}
+</script>
+<script>
 try{(()=>{
 onView("voice-practical",root=>{const boxes=$$('#pr-steps input',root),bar=$('#pr-bar',root),done=$('#pr-done',root);
   const upd=()=>{const n=boxes.filter(b=>b.checked).length;bar.style.width=n/boxes.length*100+'%';done.textContent=n===boxes.length?'All 5 done. That is a working first-reply system.':`${n} of ${boxes.length} done`};
   boxes.forEach(b=>b.addEventListener('change',upd));upd()});
 })()}catch(err){console.error(err)}
+</script>
+<script>
 try{(()=>{
 onView("voice-analyst",root=>{root.classList.add('anim');STUDIO.seen(root);
   STUDIO.line($('#an-line',root),{vals:[26,22,15,9,5,3,1.8,1.2,.9,.8,.7,.65,.63],labels:Array.from({length:13},(_,i)=>'Week '+(i+1)),max:30,ticks:[0,10,20,30],fmt:v=>v<1?Math.round(v*60)+' min':(+v.toFixed(1))+' h',color:'#1f5f8b',surface:'#fff',first:'26 h',last:'38 min',label:'Median first reply time by week. It falls from 26 hours in week 1 to under an hour by week 8 and reaches 38 minutes in week 13.'});
 });
 })()}catch(err){console.error(err)}
+</script>
+<script>
 try{(()=>{
 onView("photo",root=>{
 const DATA=STUDIO.data;
@@ -2174,6 +2190,8 @@ const pct=i=>Math.round((i+.5)/N*100);
   c.addEventListener('pointerleave',()=>{c.style.setProperty('--rx','0deg');c.style.setProperty('--ry','0deg')});}}
 });
 })()}catch(err){console.error(err)}
+</script>
+<script>
 try{(()=>{
 onView("parts",root=>{root.classList.add('anim');STUDIO.seen(root);STUDIO.countUp(root);
   const tg=$$('.pc-toggle button',root);tg.forEach(b=>b.addEventListener('click',()=>{tg.forEach(x=>x.setAttribute('aria-pressed',x===b));const y=b.dataset.per==='y';
@@ -2182,22 +2200,33 @@ onView("parts",root=>{root.classList.add('anim');STUDIO.seen(root);STUDIO.countU
   tabs.forEach((t,i)=>{t.addEventListener('click',()=>pick(t));t.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();const n=tabs[(i+(e.key==='ArrowRight'?1:tabs.length-1))%tabs.length];pick(n);n.focus()}})});
 });
 })()}catch(err){console.error(err)}
+</script>
+<script>
 try{(()=>{
 onView("recipe-report",root=>{STUDIO.countUp(root);
   STUDIO.line($('#rp-line',root),{vals:[82,84,83,85,86,88,87,89,88,86,86,91],labels:['May','June','July','August','September','October','November','December','January','February','March','April'],max:100,ticks:[0,50,100],fmt:v=>Math.round(v)+'%',color:'#0f6b63',surface:'#fff',first:'82%',last:'91%',label:'Fill rate by month, rising from 82% last May to 91% in April.'});
 });
 })()}catch(err){console.error(err)}
+</script>
+<script>
 try{(()=>{
 onView("recipe-proposal",root=>{root.classList.add('anim');STUDIO.seen(root);$('#pp-btn',root).addEventListener('click',()=>{$('#pp-msg',root).textContent='This is a demo. On a real proposal this button records the acceptance or opens a signing page.'})});
 })()}catch(err){console.error(err)}
+</script>
+<script>
 try{(()=>{
 onView("recipe-explainer",root=>{const stage=$('#se-stage',root),gs=$$('g',stage),steps=$$('.se-steps li',root);
   const set=k=>{stage.style.setProperty('--k',k);gs.forEach((g,i)=>{g.classList.toggle('done',i<k);g.classList.toggle('now',i===k)});steps.forEach((s,i)=>s.classList.toggle('on',i===k))};
   const io=new IntersectionObserver(es=>{for(const e of es)if(e.isIntersecting)set(steps.indexOf(e.target))},{rootMargin:'-50% 0px -45% 0px'});steps.forEach(s=>io.observe(s));set(0)});
 })()}catch(err){console.error(err)}
+</script>
+<script>
 try{(()=>{
 onView("recipe-landing",root=>{$$('[data-demo]',root).forEach(b=>b.addEventListener('click',()=>{$('#lp-msg',root).textContent='This is a demo. On a real page this button opens a booking calendar.';$('#lp-msg',root).scrollIntoView({block:'nearest'})}))});
 })()}catch(err){console.error(err)}
+</script>
+<script>
+(()=>{
 /* scroll driver for browsers without native scroll-driven animations */
 const native=CSS.supports('(animation-timeline: view()) and (animation-range: entry)')&&!window.FORCE_SD_JS;
 if(!native&&!reduce){

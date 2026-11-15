@@ -105,7 +105,7 @@
 <!--NAV-->
 <!--VIEWS-->
 <script>
-(()=>{
+/* shared helpers. Each tab's own script follows in a separate script element, so a fault in one cannot stop the others. */
 const STUDIO={data:__DATA__};window.STUDIO=STUDIO;
 const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
 const html=document.documentElement;
@@ -127,7 +127,10 @@ STUDIO.crops=root=>{for(const e of $$('[data-crop]',root)){
   let iw=w*S,ih=iw/ar;if(ih<h){ih=h;iw=ih*ar}
   e.style.backgroundSize=iw/w*100+'% auto';
   e.style.backgroundPosition=clamp(iw>w?(fx*iw-w/2)/(iw-w):.5)*100+'% '+clamp(ih>h?(fy*ih-h/2)/(ih-h):.5)*100+'%';}};
-/*VIEW_JS*/
+</script>
+<!--VIEW_JS-->
+<script>
+(()=>{
 /* scroll driver for browsers without native scroll-driven animations */
 const native=CSS.supports('(animation-timeline: view()) and (animation-range: entry)')&&!window.FORCE_SD_JS;
 if(!native&&!reduce){

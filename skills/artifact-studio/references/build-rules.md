@@ -5,7 +5,7 @@ people who turn motion off.
 
 ## The file
 
-- One HTML file. CSS in one `<style>`, script in one `<script>`. No build step.
+- One HTML file. CSS in one `<style>`, script inside the file. No build step.
 - It opens from a folder with no network. Fonts and images are embedded, or the page uses system
   fonts and no images.
 - Start from `assets/page-skeleton.html`. Keep its token block, its motion guard and its scroll
@@ -24,7 +24,8 @@ could not find the examples, and this section is what that taught.
   fewer than about ten, instead of a menu page that leads to them.
 - Offer choices as buttons that are all visible. A dropdown hides its choices.
 - Scripts add to the page and never hold it up. Give each part's set-up its own `try`, so one
-  failure cannot empty the rest.
+  failure cannot empty the rest. On a page with tabs, give each tab its own script element: a
+  syntax fault stops the whole element it is in.
 - A part that cannot work without script, such as a calculator or a player, starts with a worked
   default written into the HTML, or says so in a `<noscript>` line.
 

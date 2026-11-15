@@ -36,6 +36,7 @@ the sentence that asks for it at beginner, advanced and expert level.
 - It loads nothing from the network and uses no libraries.
 - Tabs are radio buttons styled as tabs, so they switch with scripts turned off. The script adds
   the animated parts and keeps the address after the `#` in step.
+- Each tab's script sits in its own script element, so a fault in one cannot stop the others.
 - All example companies, people and figures are invented, and each page says so.
 
 ## What was checked, and what was not
@@ -45,6 +46,8 @@ Checked on 2026-11-15, in Chrome:
 - Every tab of all four pages at 320, 390 and 1280 pixels wide: no script errors, no sideways
   scrolling, exactly one tab showing.
 - Tabs with scripts turned off: the first tab shows on load and tapping a tab changes it.
+- One tab's script broken on purpose: the other tabs still set themselves up, and every tab
+  still opens.
 - The script path used by browsers without scroll-driven animations.
 - Arithmetic in the examples: report rows add up to the totals, and percentages match.
 - An automated accessibility scan (axe-core, WCAG 2 A and AA rules) of every tab of all four pages: no violations after fixes. An automated scan covers only part of the
