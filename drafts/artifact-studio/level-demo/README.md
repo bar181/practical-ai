@@ -59,6 +59,22 @@ Not checked:
 - A screen reader. Controls use standard elements and labels, and that is as far as it went.
 - Anyone other than the author using it.
 
+## Rerun the checks
+
+The checks above can be repeated from this folder. They need Python, the `playwright` package and
+a Chrome or Chromium binary.
+
+```
+cd source/tests
+CHROME=/path/to/chrome AXE_JS=/path/to/axe.min.js python3 check_tabs.py
+CHROME=/path/to/chrome python3 check_at_rest.py
+```
+
+| Script | What it reports |
+| --- | --- |
+| `check_tabs.py` | Every tab of the four pages at three widths: script errors, sideways scrolling, whether exactly one tab shows, the accessibility scan if `AXE_JS` is set, and the tabs with scripts off. A clean run prints `problems []` on every line |
+| `check_at_rest.py` | How much text each of the other nine demo pages shows with scripts off |
+
 ## Source and rebuild
 
 ```
