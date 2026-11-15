@@ -34,6 +34,11 @@ def md_html(path,drop_h1=False):
     src=open(path).read()
     if src.startswith('---'):
         _,fm,src=src.split('---',2); src='```\n'+fm.strip()+'\n```\n'+src
+    src=re.sub(r'\n## The level \d page\n.*?(?=\n## )','',src,flags=re.S)                 # a page need not describe itself
+    def flow(m):                                                                          # a Mermaid flowchart becomes a plain stack of steps
+        steps=list(dict.fromkeys(re.findall(r'\[([^\]]+)\]',m.group(1)))); back=re.search(r'--\s*([^-\n]+?)\s*-->',m.group(1))
+        return '<ol class="flow">'+''.join(f'<li>{html.escape(re.sub(r"^\d+\.\s*","",x))}</li>' for x in steps)+'</ol>'+(f'<p class="flow-n">If the check {html.escape(back.group(1))}, go back to the outline and fix it.</p>' if back else '')
+    src=re.sub(r'```mermaid\n(.*?)```',flow,src,flags=re.S)
     h=markdown.markdown(src,extensions=['tables','fenced_code','sane_lists'])
     if drop_h1: h=re.sub(r'<h1>.*?</h1>','',h,count=1,flags=re.S)
     h=re.sub(r'<a href="(?!https?:)[^"]*">(.*?)</a>',r'\1',h,flags=re.S)       # repo-relative links mean nothing inside an artifact

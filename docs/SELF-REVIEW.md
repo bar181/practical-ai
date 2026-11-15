@@ -205,9 +205,19 @@ The same test was then run on the nine other demo pages, with scripts turned off
 | Short video, training explainer | Text is readable. The player frame is empty |
 | Dashboard | Sample rows show. Tiles and chart are empty |
 
-All nine now carry a one-line notice that shows only when scripts are off. The four that depend on
-script are not rebuilt. That is a known gap, not a fix. The rule that came out of this is the new
-"Complete at rest" section of the skill's build rules, and one new line in the pre-ship checklist.
+What was done about it:
+
+- All nine carry a one-line notice that shows only when scripts are off.
+- The four that depended on script now have their starting state written into the HTML: the
+  estimator's first quote, the dashboard's tiles and chart for the sample rows, and the first beat
+  of each player. Each was kept only after a check that the live page, with scripts on, has the
+  same text and the same number of elements as before.
+- The estimator's business picker was appended on every start. It now clears itself first.
+- With scripts off, the estimator's number boxes show empty, because their values are set by
+  script. The quote beside them is correct for the starting job.
+
+The rule that came out of this is the new "Complete at rest" section of the skill's build rules,
+and one new line in the pre-ship checklist.
 
 Still not checked: the pages inside the artifact viewer on a phone, by the author. The author
 cannot see that viewer. Confirmation has to come from the owner.

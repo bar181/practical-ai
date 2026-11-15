@@ -135,20 +135,18 @@
 </style>
 </head>
 <body>
-<noscript><p style="margin:0;padding:12px 20px;background:#fff3d6;color:#3a2a00;font:400 1rem/1.4 system-ui,sans-serif">This demo works things out in your browser, so it needs scripts turned on. With scripts off, some parts stay empty.</p></noscript>
+<noscript><p style="margin:0;padding:12px 20px;background:#fff3d6;color:#3a2a00;font:400 1rem/1.4 system-ui,sans-serif">This demo works things out in your browser. With scripts off you see its starting state, and the controls do nothing.</p></noscript>
 <main>
   <h1>Estimator demo</h1>
   <p class="lede">A first-draft quote, worked out from a price list and a short set of written rules. Change the job and watch which lines move. Every figure shows the price and the rule behind it.</p>
 
-  <fieldset class="picker" id="picker">
-    <legend>Kind of business</legend>
-  </fieldset>
+  <fieldset class="picker" id="picker"><label><input type="radio" name="business" value="consulting" checked="">Management consulting</label><label><input type="radio" name="business" value="kitchen">Kitchen renovation</label><label><input type="radio" name="business" value="staffing">Employment services</label></fieldset>
 
   <div class="bench">
     <section class="job" aria-labelledby="job-h">
       <h2 id="job-h">The job</h2>
-      <p class="kind" id="kind"></p>
-      <div id="fields"></div>
+      <p class="kind" id="kind">Sells people’s time: day rates by role, a share for project management, and contingency when the scope is unclear.</p>
+      <div id="fields"><div class="field"><label for="f-discoveryDays">Discovery, lead consultant days</label><input type="number" min="0" max="60" step="1" inputmode="decimal" id="f-discoveryDays"></div><div class="field"><label for="f-consultantDays">Interviews and analysis, consultant days</label><input type="number" min="0" max="200" step="1" inputmode="decimal" id="f-consultantDays"></div><div class="field"><label for="f-analystDays">Data analysis, analyst days</label><input type="number" min="0" max="200" step="1" inputmode="decimal" id="f-analystDays"></div><div class="field"><label for="f-workshops">Workshops</label><input type="number" min="0" max="20" step="1" inputmode="decimal" id="f-workshops"></div><div class="field"><label for="f-scopeUnclear">Scope is not yet fixed</label><input type="checkbox" id="f-scopeUnclear"></div></div>
     </section>
 
     <section class="sheet" aria-labelledby="quote-h">
@@ -156,32 +154,31 @@
         <h2 id="quote-h">The quote</h2>
         <span>First draft, for review</span>
       </header>
-      <ul class="rows" id="rows"></ul>
+      <ul class="rows" id="rows"><li><span class="what">Discovery</span><span class="amt">5,400</span><span class="how">3 lead consultant days at 1,800, rule 1</span></li><li><span class="what">Interviews and analysis</span><span class="amt">7,200</span><span class="how">6 consultant days at 1,200, rule 4</span></li><li><span class="what">Data analysis</span><span class="amt">6,400</span><span class="how">8 analyst days at 800, rule 4</span></li><li><span class="what">Workshops, lead</span><span class="amt">3,600</span><span class="how">2 lead consultant days at 1,800, rule 2</span></li><li><span class="what">Workshops, consultant</span><span class="amt">2,400</span><span class="how">2 consultant days at 1,200, rule 2</span></li><li><span class="what">Report, lead</span><span class="amt">3,600</span><span class="how">2 lead consultant days at 1,800, rule 3</span></li><li><span class="what">Report, consultant</span><span class="amt">3,600</span><span class="how">3 consultant days at 1,200, rule 3</span></li><li class="sub"><span class="what">Labour subtotal</span><span class="amt">32,200</span></li><li class="adj"><span class="what">Project management</span><span class="amt">3,220</span><span class="how">10% of labour subtotal, rule 5</span></li><li class="adj"><span class="what">Contingency</span><span class="amt">3,542</span><span class="how">10% of labour plus project management, rule 6</span></li></ul>
       <div class="total" aria-live="polite">
         <span class="label">Total</span>
-        <span class="figure" id="total"></span>
+        <span class="figure" id="total">39,000</span>
       </div>
-      <p class="exact" id="exact"></p>
-      <p class="caution" id="caution" hidden></p>
+      <p class="exact" id="exact">Exact figure 38,962, rounded to the nearest 100.</p>
+      <p class="caution" id="caution" hidden=""></p>
     </section>
   </div>
 
   <div class="notes">
-    <section><h3>Assumptions</h3><ul id="assumptions"></ul></section>
-    <section><h3>Not priced</h3><ul id="notpriced"></ul></section>
-    <section><h3>Questions before sending</h3><ol id="questions"></ol></section>
+    <section><h3>Assumptions</h3><ul id="assumptions"><li>About two interviews fit in one consultant day.</li><li>1 workshop with the leadership team.</li><li>Contingency is included because the scope is not fixed.</li></ul></section>
+    <section><h3>Not priced</h3><ul id="notpriced"><li>Travel and other expenses, charged at cost.</li><li>Any work to carry out the recommendations.</li></ul></section>
+    <section><h3>Questions before sending</h3><ol id="questions"><li>How many people should be interviewed, and are they in one place?</li><li>Is data available for the analyst, and in what form?</li><li>Who needs to attend each workshop?</li></ol></section>
   </div>
 
   <details>
     <summary>The rules this business wrote down</summary>
-    <ol id="rules"></ol>
+    <ol id="rules"><li>Every engagement starts with discovery: 3 lead consultant days unless the brief says otherwise.</li><li>Each workshop takes 2 lead consultant days and 2 consultant days.</li><li>A written report takes 2 lead consultant days and 3 consultant days.</li><li>Interview, analysis and data work are estimated in days by role.</li><li>Add project management at 10% of the labour subtotal.</li><li>If the scope is not yet fixed, add contingency of 10% of labour plus project management.</li><li>Round the final total to the nearest 100.</li><li>Travel and other expenses are charged at cost and never included.</li><li>Payment: 40% at the start, 60% on delivery of the report.</li><li>An estimate is valid for 30 days.</li></ol>
   </details>
 
   <footer>
     Figures are illustrative units, not market prices, and no real company is described. The demo is a calculator with the rules built in. The chatbot version reads the same price list and rules from a file, so a business can change them without touching any code.
   </footer>
 </main>
-
 <script>
 // CALC-START
 function line(item, qty, unit, price, from) {
@@ -414,10 +411,11 @@ function defaults(key) {
 
   function buildPicker() {
     var picker = document.getElementById('picker');
+    picker.replaceChildren();
     Object.keys(BUSINESSES).forEach(function (k) {
       var label = el('label');
       var input = document.createElement('input');
-      input.type = 'radio'; input.name = 'business'; input.value = k; input.checked = k === state.key;
+      input.type = 'radio'; input.name = 'business'; input.value = k; input.checked = k === state.key; if (input.checked) input.setAttribute('checked', '');
       input.addEventListener('change', function () { state.key = k; buildFields(); render(); });
       label.appendChild(input);
       label.appendChild(document.createTextNode(BUSINESSES[k].name));

@@ -341,6 +341,11 @@ footer p{border-top:1px solid rgba(232,237,243,.2);padding-top:22px;max-width:40
 .md th,.md td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:1px solid #d6dfea}
 .md th{font-weight:700;background:#f3f6fa}
 .md th:empty{padding:0;border:0}
+.md ol.flow{list-style:none;padding:0;margin:1em 0 0;display:grid;gap:22px;counter-reset:f}
+.md ol.flow li{counter-increment:f;margin:0;background:#fff;border-radius:10px;padding:11px 14px 11px 50px;position:relative;font:400 1rem/1.35 var(--display)}
+.md ol.flow li::before{content:counter(f);position:absolute;left:12px;top:9px;width:26px;height:26px;border-radius:50%;background:var(--pine);color:var(--fog);font:700 .85rem/26px var(--display);text-align:center}
+.md ol.flow li:not(:last-child)::after{content:"";position:absolute;left:24px;bottom:-18px;width:2px;height:14px;background:var(--slate)}
+.md .flow-n{font:400 .92rem/1.4 var(--display);color:var(--slate)}
 .md blockquote{margin:1em 0 0;padding:2px 0 2px 16px;border-left:4px solid var(--reed);color:var(--slate)}
 .md a{color:var(--rust)}
 .md li.task{list-style:none;margin-left:-1.25em}
