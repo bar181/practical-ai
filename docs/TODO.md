@@ -7,7 +7,7 @@ Every project starts with the same two steps, in this order:
 
 The working level and beyond are not planned in detail until the simple level is in use.
 
-Status read from the folders on 2026-11-14: 7 of 20 simple levels drafted, 0 reviewed, 0 published.
+Status read from the folders on 2026-11-14: 10 of 20 simple levels drafted, 0 reviewed, 0 published.
 
 | # | Project | 1. Research | 2. Simple level and overview | Plan |
 | --- | --- | --- | --- | --- |
@@ -18,9 +18,9 @@ Status read from the folders on 2026-11-14: 7 of 20 simple levels drafted, 0 rev
 | 5 | Training explainer with avatar | To do | Drafted, needs review | [Plan](../plans/training-explainer/) |
 | 6 | Learning system | Done | Drafted, needs review | [Plan](../plans/learning-system/) |
 | 7 | Publishing a website | Done | Drafted, needs review | [Plan](../plans/website-publishing/) |
-| 8 | Inbox triage and daily summary | To do | To do | [Plan](../plans/inbox-daily-summary/) |
-| 9 | Weekly brief with research | To do | To do | [Plan](../plans/weekly-brief/) |
-| 10 | Dashboard | To do | To do | [Plan](../plans/dashboard/) |
+| 8 | Inbox triage and daily summary | Notes only | Drafted, needs review | [Plan](../plans/inbox-daily-summary/) |
+| 9 | Weekly brief with research | Notes only | Drafted, needs review | [Plan](../plans/weekly-brief/) |
+| 10 | Dashboard | Notes only | Drafted, needs review | [Plan](../plans/dashboard/) |
 | 11 | Client project tracking and support site | To do | To do | [Plan](../plans/client-project-portal/) |
 | 12 | Daily builder | To do | To do | [Plan](../plans/daily-builder/) |
 | 13 | Training website | To do | To do | [Plan](../plans/training-website/) |

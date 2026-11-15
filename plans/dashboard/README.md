@@ -4,7 +4,7 @@ Your key numbers on one page. Starts from a spreadsheet, then connects to your s
 
 | Complexity | Research | Simple level | Draft |
 | --- | --- | --- | --- |
-| Beginner to advanced | Not started | Not started | None yet |
+| Beginner to advanced | Partly: notes only, sources not checked | [Drafted](../../drafts/dashboard/) | [`drafts/dashboard/`](../../drafts/dashboard/) |
 
 **Think of it as:** The instrument panel of a car. A few dials you can read at a glance, each wired to something real.
 
@@ -37,7 +37,7 @@ outlines and will change.
 
 ## Established best practices
 
-_Research not started. This is the first step for this plan._
+_Notes only. See the [landscape notes](../../drafts/dashboard/landscape-notes.md). Sources have not been checked. A proper review is the next step._
 
 ## What it reuses
 

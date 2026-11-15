@@ -2,7 +2,7 @@
 
 The tools this repository is working toward. Flags were read from the folders on 2026-11-14.
 
-**Built so far:** 7 draft candidates in [`drafts/`](../drafts/): Artifact studio, Voice post drafter, Short video guide, Estimator, Training explainer with avatar, Learning system, Publishing a website. Working demo: Artifact studio, Voice post drafter, Short video guide, Estimator, Training explainer with avatar, Learning system, Publishing a website. 19 plans in [`plans/`](../plans/). Nothing has been promoted to `projects/` yet.
+**Built so far:** 10 draft candidates in [`drafts/`](../drafts/): Artifact studio, Voice post drafter, Short video guide, Estimator, Training explainer with avatar, Learning system, Publishing a website, Inbox triage and daily summary, Weekly brief with research, Dashboard. Working demo: Artifact studio, Voice post drafter, Short video guide, Estimator, Training explainer with avatar, Learning system, Publishing a website, Inbox triage and daily summary, Weekly brief with research, Dashboard. 19 plans in [`plans/`](../plans/). Nothing has been promoted to `projects/` yet.
 
 | Flag | Means |
 | --- | --- |
@@ -24,9 +24,9 @@ In priority order.
 | 5 | Training explainer with avatar | Turn a topic into a taught video in a teaching style chosen from a menu. | 0 | [Draft guide](../drafts/training-explainer/STUDENT-GUIDE.md) | [Yes](../plans/training-explainer/) | Draft |
 | 6 | Learning system | A growing log of questions and the solutions that worked, so the same problem is never solved twice. Versions for developers, businesses and personal use. | 0 | [Draft guide](../drafts/learning-system/STUDENT-GUIDE.md) | [Yes](../plans/learning-system/) | Draft |
 | 7 | Publishing a website | Take a page from a chatbot artifact to a hosted site: a shared link first, then a hosting platform, then a repository that deploys itself. | 0 | [Draft guide](../drafts/website-publishing/STUDENT-GUIDE.md) | [Yes](../plans/website-publishing/) | Draft |
-| 8 | Inbox triage and daily summary | One morning summary across your connected sources: email, calendar and social media feedback, with replies drafted. | 0 | No | [Yes](../plans/inbox-daily-summary/) | No |
-| 9 | Weekly brief with research | A one-page weekly brief: industry and social media research with links, plus what your own documents and meeting transcripts say. | 0 | No | [Yes](../plans/weekly-brief/) | No |
-| 10 | Dashboard | Your key numbers on one page. Starts from a spreadsheet, then connects to your sales, accounting and customer systems. | 0 | No | [Yes](../plans/dashboard/) | No |
+| 8 | Inbox triage and daily summary | One morning summary across your connected sources: email, calendar and social media feedback, with replies drafted. | 0 | [Draft guide](../drafts/inbox-daily-summary/STUDENT-GUIDE.md) | [Yes](../plans/inbox-daily-summary/) | Draft |
+| 9 | Weekly brief with research | A one-page weekly brief: industry and social media research with links, plus what your own documents and meeting transcripts say. | 0 | [Draft guide](../drafts/weekly-brief/STUDENT-GUIDE.md) | [Yes](../plans/weekly-brief/) | Draft |
+| 10 | Dashboard | Your key numbers on one page. Starts from a spreadsheet, then connects to your sales, accounting and customer systems. | 0 | [Draft guide](../drafts/dashboard/STUDENT-GUIDE.md) | [Yes](../plans/dashboard/) | Draft |
 | 11 | Client project tracking and support site | A page each client can open to see where their project stands and get help. Starts as one HTML page, then adds sign-in, then a project plan with visuals. | 0 | No | [Yes](../plans/client-project-portal/) | No |
 | 12 | Daily builder | A scheduled agent that researches and builds the next item on this list, then opens a pull request for review. | 0 | No | [Yes](../plans/daily-builder/) | No |
 | 13 | Training website | A course site with lessons, a schedule and a built-in assistant. | 0 | No | [Yes](../plans/training-website/) | No |
