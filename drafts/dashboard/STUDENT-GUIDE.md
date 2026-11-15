@@ -39,6 +39,5 @@ Say "build the dashboard". Check each tile against the sheet. Then ask what the 
 
 ## Open slots in this draft
 
-- The research behind this draft is notes only. Sources have not been checked.
 - Connecting an assistant to your own accounts differs by product and has not been walked end to end.
 - Nobody other than the author has used this guide.

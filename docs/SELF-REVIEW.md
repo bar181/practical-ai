@@ -34,7 +34,7 @@ Seven items, each scored from 1 to 100. The overall score is the plain average.
 | 7. Publishing a website | none | none | 67 | Evidence (25). New in round 2. No route has been walked end to end |
 | 8. Inbox triage and daily summary | none | none | 60 | Evidence (20). Research is notes only |
 | 9. Weekly brief with research | none | none | 60 | Evidence (20). Research is notes only |
-| 10. Dashboard | none | none | 64 | Evidence (25). Research is notes only |
+| 10. Dashboard | none | none | 67 | Evidence (30). Landscape review added after the first draft |
 
 Round 1 added skills, agent guides and the upper levels. Round 2 fixed the weakest fixable item it
 found, the quality of three demos, by building a page for each with the artifact studio's own
@@ -156,6 +156,9 @@ review is the next step for each, before anything else is built on them.
 | Quality of the demo | 62 | 60 | 72 |
 | Teachable | 72 | 72 | 72 |
 | Evidence | 20 | 20 | 25 |
+
+The dashboard has since had its landscape review done, with dated sources, so its plan now says
+"done". The inbox summary and the weekly brief are still notes only.
 
 The dashboard demo is the only one of the three that works on a person's own data: it builds
 tiles, a trend and a table from pasted rows, in the browser.

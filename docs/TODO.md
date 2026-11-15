@@ -20,7 +20,7 @@ Status read from the folders on 2026-11-14: 10 of 20 simple levels drafted, 0 re
 | 7 | Publishing a website | Done | Drafted, needs review | [Plan](../plans/website-publishing/) |
 | 8 | Inbox triage and daily summary | Notes only | Drafted, needs review | [Plan](../plans/inbox-daily-summary/) |
 | 9 | Weekly brief with research | Notes only | Drafted, needs review | [Plan](../plans/weekly-brief/) |
-| 10 | Dashboard | Notes only | Drafted, needs review | [Plan](../plans/dashboard/) |
+| 10 | Dashboard | Done | Drafted, needs review | [Plan](../plans/dashboard/) |
 | 11 | Client project tracking and support site | To do | To do | [Plan](../plans/client-project-portal/) |
 | 12 | Daily builder | To do | To do | [Plan](../plans/daily-builder/) |
 | 13 | Training website | To do | To do | [Plan](../plans/training-website/) |

@@ -16,4 +16,4 @@ Load [`skills/dashboard-builder/SKILL.md`](../../skills/dashboard-builder/SKILL.
 
 ## Known limits
 
-The skill has not yet been run end to end by a second agent. Research for this tool is notes only.
+The skill has not yet been run end to end by a second agent.

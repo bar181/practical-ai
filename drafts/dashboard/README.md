@@ -14,7 +14,7 @@ Your key numbers on one page. Starts from a spreadsheet, then connects to your s
 | --- | --- |
 | A person who wants to try it | [`STUDENT-GUIDE.md`](STUDENT-GUIDE.md) |
 | An agent, or someone setting one up | [`AGENT-GUIDE.md`](AGENT-GUIDE.md) |
-| Looking for what already exists | [`landscape-notes.md`](landscape-notes.md) |
+| Looking for what already exists | [`landscape-review.md`](landscape-review.md) |
 
 ## The loop
 
@@ -28,8 +28,7 @@ flowchart LR
 
 ## Status
 
-Draft. First copy, not yet reviewed or tested by anyone else. Research is at the level of notes:
-sources have not been checked yet.
+Draft. First copy, not yet reviewed or tested by anyone else.
 
 | Level | What it holds | In this draft |
 | --- | --- | --- |
