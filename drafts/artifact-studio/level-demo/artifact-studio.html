@@ -402,6 +402,9 @@ footer p{border-top:1px solid rgba(232,237,243,.2);padding-top:22px;max-width:40
 #t-recipe-landing:checked~.tabs .tabs-s label[for="t-recipe-landing"]{background:var(--reed);color:var(--pine)}
 :is(#t-recipe-report,#t-recipe-proposal,#t-recipe-explainer,#t-recipe-landing):checked~.tabs .g4{background:var(--fog);color:var(--pine);border-color:var(--fog)}
 :is(#t-recipe-report,#t-recipe-proposal,#t-recipe-explainer,#t-recipe-landing):checked~.tabs .s4{display:flex}
+#t-use:checked~#v-use{display:block}
+#t-use:focus-visible~.tabs label[for="t-use"]{outline:3px solid var(--reed);outline-offset:2px}
+:is(#t-use):checked~.tabs .g5{background:var(--fog);color:var(--pine);border-color:var(--fog)}
 .ph2{background-image:var(--photo2)}
 [data-count]{display:inline!important;font:inherit!important;color:inherit!important;margin:0!important;letter-spacing:inherit!important}
 /* horizontal bars: thin, rounded at the data end, value at the tip */
@@ -816,6 +819,27 @@ html[data-view=voice-keynote]{scroll-snap-type:y proximity}
 .lp-last h2{font:700 clamp(1.9rem,7vw,3rem)/1.02 var(--sans);letter-spacing:-.03em}
 @media(min-width:760px){.lp-how{grid-template-columns:repeat(3,1fr)}.lp-price{grid-template-columns:1.4fr 1fr}}
 @media (prefers-reduced-motion:reduce){.lp-ledger i{animation:none}}
+.us-s{max-width:900px;margin-inline:auto;padding:52px 20px 0}
+.us-s h3{font-size:1.3rem;margin-bottom:.4em}
+.us-s>p{max-width:34em}
+.us-lv{display:grid;gap:12px;margin-top:8px}
+.us-lv div{border-radius:14px;padding:20px;display:grid;gap:8px;background:#f3f6fa}
+.us-lv div:nth-child(2){background:var(--mist)}
+.us-lv div:nth-child(3){background:var(--pine);color:var(--fog)}
+.us-lv b{font:700 1.5rem/1 var(--display)}
+.us-lv span{font:400 .95rem/1.45 var(--display)}
+.us-lv dl{margin:4px 0 0;display:grid;gap:6px;font:400 .9rem/1.4 var(--display)}
+.us-lv dt{opacity:.7}.us-lv dd{margin:0}
+.us-steps{margin:8px 0 0;padding-left:1.3em;display:grid;gap:10px;max-width:34em}
+.us-rules{margin:8px 0 0;padding-left:1.1em;display:grid;gap:8px;max-width:34em}
+.us-files{margin-top:8px;overflow-x:auto}
+.us-files table{min-width:520px;background:#f3f6fa;border-radius:10px}
+.us-files th,.us-files td{padding:10px 12px;vertical-align:top}
+.us-files td:nth-child(2),.us-files th:nth-child(2){text-align:left}
+.us-files code{font:400 .84rem/1.4 var(--mono)}
+.us-test{display:grid;gap:10px;margin-top:8px}
+.us-end{padding-bottom:88px}
+@media(min-width:760px){.us-lv{grid-template-columns:repeat(3,1fr)}}
 .lv-hero{position:relative;min-height:340px;overflow:hidden;background:#1d1c15;color:#fff7ea;display:flex;align-items:flex-end}
 .lv-hero .ph{position:absolute;inset:0;background-position:50% 40%}
 .lv-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,22,24,.1),rgba(20,22,24,.78) 46%,rgba(20,22,24,.94))}
@@ -885,7 +909,8 @@ html[data-view=voice-keynote]{scroll-snap-type:y proximity}
 <input class="tabr" type="radio" name="tab" id="t-recipe-proposal" aria-label="Recipes: Proposal">
 <input class="tabr" type="radio" name="tab" id="t-recipe-explainer" aria-label="Recipes: Explainer">
 <input class="tabr" type="radio" name="tab" id="t-recipe-landing" aria-label="Recipes: Landing page">
-<nav class="tabs" aria-label="Sections"><div class="tabs-g"><label class="g0" for="t-voice-keynote">Voices</label><label class="g1" for="t-l2-looks">Looks</label><label class="g2" for="t-photo">Photo parts</label><label class="g3" for="t-parts">Page parts</label><label class="g4" for="t-recipe-report">Recipes</label></div><div class="tabs-s s0"><span>One message, told seven ways. Tap a voice:</span><label for="t-voice-keynote">Keynote</label><label for="t-voice-story">Storyteller</label><label for="t-voice-teacher">Teacher</label><label for="t-voice-pitch">Pitch</label><label for="t-voice-practical">Practical</label><label for="t-voice-analyst">Analyst</label><label for="t-voice-brief">Brief</label></div><div class="tabs-s s4"><span>Four whole pages. Tap a recipe:</span><label for="t-recipe-report">Report</label><label for="t-recipe-proposal">Proposal</label><label for="t-recipe-explainer">Explainer</label><label for="t-recipe-landing">Landing page</label></div></nav>
+<input class="tabr" type="radio" name="tab" id="t-use" aria-label="How to use">
+<nav class="tabs" aria-label="Sections"><div class="tabs-g"><label class="g0" for="t-voice-keynote">Voices</label><label class="g1" for="t-l2-looks">Looks</label><label class="g2" for="t-photo">Photo parts</label><label class="g3" for="t-parts">Page parts</label><label class="g4" for="t-recipe-report">Recipes</label><label class="g5" for="t-use">How to use</label></div><div class="tabs-s s0"><span>One message, told seven ways. Tap a voice:</span><label for="t-voice-keynote">Keynote</label><label for="t-voice-story">Storyteller</label><label for="t-voice-teacher">Teacher</label><label for="t-voice-pitch">Pitch</label><label for="t-voice-practical">Practical</label><label for="t-voice-analyst">Analyst</label><label for="t-voice-brief">Brief</label></div><div class="tabs-s s4"><span>Four whole pages. Tap a recipe:</span><label for="t-recipe-report">Report</label><label for="t-recipe-proposal">Proposal</label><label for="t-recipe-explainer">Explainer</label><label for="t-recipe-landing">Landing page</label></div></nav>
 <div class="view" id="v-voice-keynote" data-tab="voices" data-title="The keynote"><aside class="about" aria-label="About this example"><div class="wrap"><p><b>The keynote voice.</b> Inspired by Steve Jobs&#x27;s product launches. Use it when the reader should feel that something new is possible.</p><p class="about-n">A full example follows. <a href="#anat-voice-keynote" data-jump="anat-voice-keynote">How it is built, and the sentence that asks for it</a></p></div></aside>
   <section class="kn-s"><h1 class="see">Every enquiry is a person, waiting.</h1><p class="kn-note">Scroll. One idea per screen.</p></section>
   <section class="kn-s"><div class="kn-big see">26<small>hours</small></div><p class="see" style="--i:1">That is how long they wait for us today.</p></section>
@@ -1706,7 +1731,7 @@ recipe and the voice. Each card has six fields. To add a look, fill in the blank
       <div class="tile sky"><span class="n">0</span><span class="ui">libraries loaded</span></div>
       <div class="tile wide"><div class="chips" id="chips" aria-hidden="true"></div><span class="ui">The photo's six main colours, largest first</span></div>
       <div class="tile"><svg id="spark" viewBox="0 0 100 40" preserveAspectRatio="none" role="img" aria-label="Small line showing brightness from the top of the photo to the bottom."></svg><span class="ui">Brightness, top to bottom</span></div>
-      <div class="tile"><span class="n">1,433<small>KB</small></span><span class="ui">the whole studio: one file, photos and fonts included</span></div>
+      <div class="tile"><span class="n">1,439<small>KB</small></span><span class="ui">the whole studio: one file, photos and fonts included</span></div>
       <div class="tile say dark">Every tile here is a true fact about this page.</div>
     </div>
   </div>
@@ -2005,7 +2030,32 @@ recipe and the voice. Each card has six fields. To add a look, fill in the blank
     </div>
 <div class="levels"><div class="ask"><h3><b>Beginner:</b> one sentence</h3><blockquote>Make a landing page for my service with one clear promise, how it works in three steps, the price and one button.</blockquote><button class="copy" type="button">Copy</button></div><div class="ask"><h3><b>Advanced:</b> add your look, voice and parts</h3><blockquote>Build a landing page for my service. Open with the promise in one line that includes a number, and one button. Under it, show a short animated ledger with rows being ticked off. Then "what you get" as three numbered items, "how it works" in three steps, one customer quote, the price as two cards, three questions that open on tap, and the promise and button again. Deep teal, pale mint, and one coral colour used only for the button.</blockquote><button class="copy" type="button">Copy</button></div><div class="ask"><h3><b>Expert:</b> hand the whole job to the skill</h3><blockquote>Use the artifact-studio skill. Recipe: landing page. Voice: storyteller. Look: take two colours from my logo (attached) and choose one button colour that appears nowhere else. Content: the attached service description and two customer emails. Use only real customer words for quotes; if I gave you none, leave the quote section out.</blockquote><button class="copy" type="button">Copy</button></div></div>
   </div></section>
-<nav class="pager" aria-label="Previous and next tab"><div><label for="t-recipe-explainer">← Explainer</label><span></span></div></nav></div>
+<nav class="pager" aria-label="Previous and next tab"><div><label for="t-recipe-explainer">← Explainer</label><label for="t-use">How to use →</label></div></nav></div>
+<div class="view" id="v-use" data-tab="use" data-title="How to use">
+  <div class="wrap shelf-head"><h2>How to use the studio</h2>
+    <p class="measure">The studio is a menu. You point at what you want and the assistant builds it from your own content. There are three levels, and you stop at the one that is enough.</p></div>
+  <section class="us-s"><h3>Three levels</h3>
+    <div class="us-lv">
+      <div><b>Beginner</b><span>One sentence and your notes.</span><dl><dt>You give</dt><dd>Notes or a document, and a sentence copied from this studio</dd><dt>You get</dt><dd>A good page in one reply, in the assistant's choice of colours</dd><dt>Time</dt><dd>Five minutes</dd></dl></div>
+      <div><b>Advanced</b><span>You choose the recipe, voice, look and parts.</span><dl><dt>You give</dt><dd>The longer sentence, your colours and fonts on a one-page spec, and a photo if you have one</dd><dt>You get</dt><dd>A page that looks like yours and sounds the way you chose</dd><dt>Time</dt><dd>Half an hour, including one round of changes</dd></dl></div>
+      <div><b>Expert</b><span>The skill does the whole job and checks its own work.</span><dl><dt>You give</dt><dd>Any content, images or video, and the artifact-studio skill installed</dd><dt>You get</dt><dd>A finished page, a list of what was assumed, and a pre-ship check</dd><dt>Time</dt><dd>An hour to set up once, then minutes per page</dd></dl></div>
+    </div></section>
+  <section class="us-s"><h3>For people: five steps</h3>
+    <ol class="us-steps"><li>Open an example you like and copy the sentence under it. Each voice and recipe ends with its sentence at all three levels.</li><li>Paste it into Claude or ChatGPT and attach your notes. Add a photo if the page should use one.</li><li>Read what comes back on your phone first. Most people will see it there.</li><li>Ask for changes by naming parts: "make the big numbers a ring", "use the teacher voice for the opening".</li><li>Check every number and name against your notes before you share it.</li></ol></section>
+  <section class="us-s"><h3>For agents: the skill</h3>
+    <p>The repository holds a skill called <b>artifact-studio</b>. It turns any content into a page by following the same menu, in this order: intake, recipe, voice, look, outline, parts, build, check.</p>
+    <ul class="us-rules"><li>It invents no facts. A gap in the content is marked on the page and listed for the person.</li><li>It uses real customer words for quotes, or leaves the quote out.</li><li>It builds one self-contained file that works on a phone and with motion turned off.</li><li>It runs the pre-ship checklist and reports the result.</li><li>Anything that posts, sends or publishes waits for a person.</li></ul></section>
+  <section class="us-s"><h3>Where things are in the repository</h3>
+    <div class="us-files" tabindex="0" role="region" aria-label="Where things are in the repository"><table><thead><tr><th>You want</th><th>Open</th></tr></thead><tbody>
+      <tr><td>The step-by-step guide</td><td><code>STUDENT-GUIDE.md</code></td></tr>
+      <tr><td>Sentences to copy</td><td><code>level-simple/</code></td></tr>
+      <tr><td>Recipe, voice and look cards, and the design spec</td><td><code>level-working/</code></td></tr>
+      <tr><td>The skill and how to install it</td><td><code>level-automated/</code> and <code>skills/artifact-studio/</code></td></tr>
+      <tr><td>How these pages are made, and why</td><td><code>BEST-PRACTICES.md</code></td></tr>
+      <tr><td>This studio's source</td><td><code>level-demo/source/</code></td></tr></tbody></table></div></section>
+  <section class="us-s us-end"><h3>What has and has not been tested</h3>
+    <div class="us-test"><div class="pc-call good"><b>Checked</b>Every tab renders in Chrome at phone and desktop width with no script errors, and the tabs switch with scripts turned off.</div><div class="pc-call warn"><b>Not yet checked</b>The sentences have not been run in fresh chats and scored. The results sheet for that test is in the repository.</div><div class="pc-call note"><b>Invented</b>Every company, person and figure in the examples is made up. The two photographs are real.</div></div></section>
+<nav class="pager" aria-label="Previous and next tab"><div><label for="t-recipe-landing">← Landing page</label><span></span></div></nav></div>
 <script>
 /* shared helpers. Each tab's own script follows in a separate script element, so a fault in one cannot stop the others. */
 const STUDIO={data:{"rows":[{"b":69.1,"c":"#9fb2d2"},{"b":69.0,"c":"#9fb2d1"},{"b":69.4,"c":"#a0b3d2"},{"b":68.7,"c":"#9eb1cf"},{"b":67.6,"c":"#9baecc"},{"b":69.1,"c":"#9fb2d0"},{"b":69.3,"c":"#9fb3d1"},{"b":69.9,"c":"#a0b4d3"},{"b":69.2,"c":"#9fb3d1"},{"b":68.7,"c":"#9db1cf"},{"b":68.4,"c":"#9db0ce"},{"b":68.0,"c":"#9cafcd"},{"b":68.7,"c":"#9eb1ce"},{"b":69.9,"c":"#a1b4d1"},{"b":71.6,"c":"#a5b9d5"},{"b":71.4,"c":"#a5b8d4"},{"b":71.2,"c":"#a5b8d3"},{"b":71.1,"c":"#a5b7d2"},{"b":73.8,"c":"#acbed7"},{"b":75.0,"c":"#afc1da"},{"b":73.1,"c":"#aabcd6"},{"b":74.3,"c":"#aec0d8"},{"b":73.3,"c":"#acbdd5"},{"b":69.5,"c":"#a2b3cd"},{"b":67.5,"c":"#9daec8"},{"b":66.0,"c":"#99aac5"},{"b":62.9,"c":"#93a2ba"},{"b":41.8,"c":"#626c78"},{"b":22.4,"c":"#343a41"},{"b":59.2,"c":"#8b98ad"},{"b":64.3,"c":"#98a5ba"},{"b":56.6,"c":"#8c909c"},{"b":46.8,"c":"#79767a"},{"b":40.7,"c":"#6c6767"},{"b":37.8,"c":"#665f5f"},{"b":32.6,"c":"#5a5150"},{"b":28.0,"c":"#504542"},{"b":25.6,"c":"#4b3f39"},{"b":23.8,"c":"#483a34"},{"b":24.0,"c":"#493b33"},{"b":24.1,"c":"#4a3b33"},{"b":24.0,"c":"#4a3b32"},{"b":24.8,"c":"#4d3c34"},{"b":25.1,"c":"#4d3d34"},{"b":25.1,"c":"#4d3d34"},{"b":24.9,"c":"#4d3d34"},{"b":26.0,"c":"#503f36"},{"b":26.4,"c":"#504137"}],"pal":[{"hex":"#a5b9d8","share":35.0},{"hex":"#594b44","share":18.6},{"hex":"#352d2a","share":17.0},{"hex":"#99a7c0","share":12.8},{"hex":"#bacee8","share":11.8},{"hex":"#797981","share":4.7}]}};window.STUDIO=STUDIO;

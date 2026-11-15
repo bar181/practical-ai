@@ -89,7 +89,7 @@ RECIPES=['recipe-report','recipe-proposal','recipe-explainer','recipe-landing']
 G_VOICES=('Voices',VOICES,'One message, told seven ways. Tap a voice:'); G_RECIPES=('Recipes',RECIPES,'Four whole pages. Tap a recipe:')
 EDITIONS={ # each: output file, title, one-line lead, groups of (tab label, [views], caption for the second row)
  'all':('level-demo/artifact-studio.html','All examples','Seven voices, nine looks, 24 parts and four whole pages. Tap a tab. Every example shows the sentence that asks for it.',
-   [G_VOICES,('Looks',['l2-looks'],''),('Photo parts',['photo'],''),('Page parts',['parts'],''),G_RECIPES]),
+   [G_VOICES,('Looks',['l2-looks'],''),('Photo parts',['photo'],''),('Page parts',['parts'],''),G_RECIPES,('How to use',['use'],'')]),
  'beginner':('level-simple/artifact-studio-beginner.html','Level 1: Beginner','One sentence gets you a page. Find an example you like and copy its sentence.',
    [('Start here',['l1-start'],''),G_RECIPES,('Photo parts',['photo'],''),('Page parts',['parts'],''),('Sentences',['l1-sentences','l1-test'],'Every sentence on one page, and how to test one:')]),
  'advanced':('level-working/artifact-studio-advanced.html','Level 2: Advanced','You choose the voice, the look and the parts, so the page sounds and looks like yours.',
