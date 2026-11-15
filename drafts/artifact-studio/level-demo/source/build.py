@@ -75,11 +75,11 @@ MD={ # name: (title, path, note shown above a copy-ready block or None to render
  'l3-agent':('Agent guide',ROOT+'/AGENT-GUIDE.md',None),
  'l3-best':('Best practices',ROOT+'/BEST-PRACTICES.md',None)}
 for n,(title,path,raw) in MD.items(): VIEW[n]=md_view(n,title,path,raw); VJS[n]=[]
-LABEL={'voice-keynote':'Keynote','voice-story':'Storyteller','voice-teacher':'Teacher','voice-pitch':'Pitch','voice-practical':'Practical instructor','voice-analyst':'Analyst','voice-brief':'Executive brief',
+LABEL={'voice-keynote':'Keynote','voice-story':'Storyteller','voice-teacher':'Teacher','voice-pitch':'Pitch','voice-practical':'Practical','voice-analyst':'Analyst','voice-brief':'Brief',
        'recipe-report':'Report','recipe-proposal':'Proposal','recipe-explainer':'Explainer','recipe-landing':'Landing page'}
 VOICES=['voice-keynote','voice-story','voice-teacher','voice-pitch','voice-practical','voice-analyst','voice-brief']
 RECIPES=['recipe-report','recipe-proposal','recipe-explainer','recipe-landing']
-G_VOICES=('Voices',VOICES,'Seven voices. One message, told seven ways. Tap one:'); G_RECIPES=('Recipes',RECIPES,'Four whole pages. Tap one:')
+G_VOICES=('Voices',VOICES,'One message, told seven ways. Tap a voice:'); G_RECIPES=('Recipes',RECIPES,'Four whole pages. Tap a recipe:')
 EDITIONS={ # each: output file, title, one-line lead, groups of (tab label, [views], caption for the second row)
  'all':('level-demo/artifact-studio.html','All examples','Seven voices, 24 parts and four whole pages. Tap a tab. Every example shows the sentence that asks for it.',
    [G_VOICES,('Photo parts',['photo'],''),('Page parts',['parts'],''),G_RECIPES]),
@@ -90,6 +90,22 @@ EDITIONS={ # each: output file, title, one-line lead, groups of (tab label, [vie
  'expert':('level-automated/artifact-studio-expert.html','Level 3: Expert','Hand over any content and media. The skill chooses, builds, checks and reports what it assumed.',
    [('Start here',['l3-start'],''),('The skill',['l3-skill','l3-single','l3-skel'],'Three forms of the same instructions:'),('Build rules',['l3-rules'],''),('Checklist',['l3-check'],''),('Agent guide',['l3-agent'],''),('Best practices',['l3-best'],'')]),
 }
+# a short "about" strip at the top of every voice and recipe tab, taken from the voice cards and from the page's own closing note
+_v=open(SKILL+'/references/voices.md').read()
+_use={n.strip():u.strip() for u,n in re.findall(r'^\| ([^|]+) \| ([^|]+) \|$',_v[_v.index('## Choosing'):_v.index('## Keynote')],re.M) if n.strip() not in ('Use','---')}
+_by=dict(re.findall(r'^## ([^\n]+)\n\n\| Field \| \|\n\| --- \| --- \|\n\| Inspired by \| ([^|]+) \|',_v,re.M))
+VNAME={'voice-keynote':'Keynote','voice-story':'Storyteller','voice-teacher':'Teacher','voice-pitch':'Pitch','voice-practical':'Practical instructor','voice-analyst':'Analyst','voice-brief':'Executive brief'}
+def about(n,t):
+    if n in VNAME:
+        k=VNAME[n]; u=_use[k]; by=_by[k].strip(); by=by[0].lower()+by[1:] if by.startswith(('The ','A ')) else by; txt=f'<b>The {k.lower()} voice.</b> Inspired by {html.escape(by)}. Use it when the reader should {u[0].lower()+u[1:]}.'
+        note='A full example follows.'
+    elif n.startswith('recipe-'):
+        m=re.search(r'<section class="anat">.*?<p class="measure">(.*?)</p>',t,re.S); first=re.split(r'(?<=\.) ',m.group(1).strip())[0]
+        txt=f'<b>The {re.search(chr(100)+'ata-title="([^"]*)"',t).group(1).lower()} recipe.</b> {first}'; note='A full example follows, with invented content.'
+    else: return t
+    strip=f'<aside class="about" aria-label="About this example"><div class="wrap"><p>{txt}</p><p class="about-n">{note} <a href="#anat-{n}" data-jump="anat-{n}">How it is built, and the sentence that asks for it</a></p></div></aside>'
+    t=t.replace('<section class="anat">',f'<section class="anat" id="anat-{n}">',1)
+    return re.sub(r'(<div class="view"[^>]*>)',lambda m:m.group(1)+strip,t,count=1)
 SHELL=open(os.path.join(HERE,'shell.html')).read()
 BASE=open(os.path.join(HERE,'base.css')).read()
 data=json.dumps({'rows':A['rows'],'pal':A['pal']},separators=(',',':'))
@@ -100,7 +116,7 @@ def build(key):
     radios=[];g_row=[];s_rows=[];tcss=[]
     for i,(gl,vs,cap) in enumerate(groups):
         for n in vs:
-            radios.append(f'<input class="tabr" type="radio" name="tab" id="t-{n}" aria-label="{html.escape(gl if len(vs)==1 else gl+": "+title_of(n))}"{" checked" if n==order[0] else ""}>')
+            radios.append(f'<input class="tabr" type="radio" name="tab" id="t-{n}" aria-label="{html.escape(gl if len(vs)==1 else gl+": "+VNAME.get(n,title_of(n)))}"{" checked" if n==order[0] else ""}>')
             tcss.append(f'#t-{n}:checked~#v-{n}{{display:block}}\n#t-{n}:focus-visible~.tabs label[for="t-{n}"]{{outline:3px solid var(--reed);outline-offset:2px}}')
             if len(vs)>1: tcss.append(f'#t-{n}:checked~.tabs .tabs-s label[for="t-{n}"]{{background:var(--reed);color:var(--pine)}}')
         sel=':is('+','.join('#t-'+n for n in vs)+'):checked~.tabs '
@@ -110,10 +126,10 @@ def build(key):
             tcss.append(sel+f'.s{i}{{display:flex}}')
             s_rows.append(f'<div class="tabs-s s{i}"><span>{html.escape(cap)}</span>'+''.join(f'<label for="t-{n}">{html.escape(title_of(n))}</label>' for n in vs)+'</div>')
     nav='<nav class="tabs" aria-label="Sections"><div class="tabs-g">'+''.join(g_row)+'</div>'+''.join(s_rows)+'</nav>'
-    mast=f'<header class="mast"><div class="wrap"><p class="mast-k">Practical AI artifact studio</p><p class="mast-t">{html.escape(title)}</p><p class="mast-l">{html.escape(lead)}</p></div></header>'
+    mast=f'<header class="mast"><div class="wrap"><p class="mast-t"><span>Artifact studio</span> {html.escape(title)}</p><p class="mast-l">{html.escape(lead)}</p></div></header>'
     body=[]
     for k,n in enumerate(order):
-        t=VIEW[n]; prev=order[k-1] if k else None; nxt=order[k+1] if k+1<len(order) else None
+        t=about(n,VIEW[n]); prev=order[k-1] if k else None; nxt=order[k+1] if k+1<len(order) else None
         pager='<nav class="pager" aria-label="Previous and next tab"><div>'+(f'<label for="t-{prev}">← {html.escape(title_of(prev))}</label>' if prev else '<span></span>')+(f'<label for="t-{nxt}">{html.escape(title_of(nxt))} →</label>' if nxt else '<span></span>')+'</div></nav>'
         body.append(t[:t.rindex('</div>')]+pager+'</div>')
     js=LIB+[x for n in order for x in VJS[n]]

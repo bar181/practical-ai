@@ -286,16 +286,20 @@ footer p{border-top:1px solid rgba(232,237,243,.2);padding-top:22px;max-width:40
 /* studio shell */
 .view{display:none}
 .tabr{position:absolute;top:0;left:0;width:1px;height:1px;margin:0;opacity:0;pointer-events:none}
-.mast{background:var(--pine);color:var(--fog);padding:20px 0 4px}
-.mast .mast-k{font:700 .84rem/1.2 var(--display);color:var(--reed);margin:0}
-.mast .mast-t{font:700 clamp(1.6rem,6.2vw,2.5rem)/1.05 var(--display);letter-spacing:-.012em;color:var(--fog);margin:4px 0 0}
-.mast .mast-l{font:400 1rem/1.4 var(--display);color:#c2cede;margin:8px 0 0;max-width:40em}
-.tabs{background:var(--pine);padding:8px 0 14px;position:relative;z-index:40}
-.tabs>div{display:flex;flex-wrap:wrap;gap:7px;padding:5px 20px;max-width:1080px;margin-inline:auto}
-.tabs label{flex:none;font:700 .92rem/1 var(--display);color:#dbe3ee;padding:0 15px;min-height:44px;display:flex;align-items:center;border-radius:999px;cursor:pointer;border:1.5px solid #5b6b7a;user-select:none;-webkit-user-select:none}
-.tabs .tabs-s{display:none;border-top:1px solid #36434d;margin-top:6px;padding-top:11px}
-.tabs .tabs-s label{border-color:transparent;background:var(--pine-2);font-size:.88rem;min-height:42px}
+.mast{background:var(--pine);color:var(--fog);padding:16px 0 2px}
+.mast .mast-t{font:700 clamp(1.3rem,5.4vw,2.1rem)/1.1 var(--display);letter-spacing:-.012em;color:var(--fog);margin:0}
+.mast .mast-t span{color:var(--reed)}
+.mast .mast-l{font:400 .94rem/1.4 var(--display);color:#c2cede;margin:6px 0 0;max-width:40em}
+.tabs{background:var(--pine);padding:6px 0 12px;position:relative;z-index:40}
+.tabs>div{display:flex;flex-wrap:wrap;gap:6px;padding:5px 20px;max-width:1080px;margin-inline:auto}
+.tabs label{flex:none;font:700 .86rem/1 var(--display);color:#dbe3ee;padding:0 12px;min-height:40px;display:flex;align-items:center;border-radius:999px;cursor:pointer;border:1.5px solid #5b6b7a;user-select:none;-webkit-user-select:none}
+.tabs .tabs-s{display:none;border-top:1px solid #36434d;margin-top:5px;padding-top:9px}
+.tabs .tabs-s label{border-color:transparent;background:var(--pine-2);font-size:.86rem;min-height:40px}
 .tabs .tabs-s span{font:400 .84rem/1 var(--display);color:#c2cede;display:flex;align-items:center;width:100%}
+.about{background:var(--fog);color:var(--pine);font:400 .96rem/1.42 var(--display);padding:13px 0 12px;border-bottom:3px solid var(--reed);text-align:left}
+.about p{margin:0;max-width:44em}.about b{font-weight:700}
+.about .about-n{margin-top:4px;font-size:.88rem;color:var(--slate)}
+.about a{color:var(--rust);font-weight:700;text-underline-offset:3px}
 .pager{background:var(--pine);color:var(--fog);padding:26px 20px 60px}
 .pager div{max-width:1080px;margin-inline:auto;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font:700 1rem/1.3 var(--display)}
 .pager label{min-height:44px;display:flex;align-items:center;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
@@ -496,7 +500,7 @@ footer p{border-top:1px solid rgba(232,237,243,.2);padding-top:22px;max-width:40
 #v-voice-keynote{background:#000;color:#f5f5f7;font-family:var(--sans)}
 html[data-view=voice-keynote]{scroll-snap-type:y proximity}
 .kn-s{min-height:min(100svh,900px);display:grid;place-content:center;justify-items:center;text-align:center;padding:48px 24px;scroll-snap-align:start;position:relative;overflow:hidden;background:radial-gradient(120% 90% at 50% 0%,#1e1e23 0%,#000 72%)}
-.kn-s:first-child{min-height:0;padding:84px 24px 76px}
+.kn-s:first-of-type{min-height:0;padding:84px 24px 76px}
 .kn-s h1,.kn-s h2{font:700 clamp(2.4rem,9.4vw,6rem)/1.02 var(--sans);letter-spacing:-.035em;max-width:11em;color:#f5f5f7;text-wrap:balance}
 .kn-s p{font:400 clamp(1.1rem,3.7vw,1.7rem)/1.3 var(--sans);color:#a1a1a6;margin-top:18px;max-width:19em;text-wrap:balance}
 .kn-big{font:700 clamp(5.4rem,29vw,18rem)/.9 var(--sans);letter-spacing:-.06em;background:linear-gradient(180deg,#fff 20%,#86868b);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;font-variant-numeric:tabular-nums}
@@ -864,7 +868,7 @@ html[data-view=voice-keynote]{scroll-snap-type:y proximity}
 </head>
 <body>
 <div class="progress" aria-hidden="true"><i></i></div>
-<header class="mast"><div class="wrap"><p class="mast-k">Practical AI artifact studio</p><p class="mast-t">Level 2: Advanced</p><p class="mast-l">You choose the voice, the look and the parts, so the page sounds and looks like yours.</p></div></header>
+<header class="mast"><div class="wrap"><p class="mast-t"><span>Artifact studio</span> Level 2: Advanced</p><p class="mast-l">You choose the voice, the look and the parts, so the page sounds and looks like yours.</p></div></header>
 <input class="tabr" type="radio" name="tab" id="t-l2-start" aria-label="Start here" checked>
 <input class="tabr" type="radio" name="tab" id="t-voice-keynote" aria-label="Voices: Keynote">
 <input class="tabr" type="radio" name="tab" id="t-voice-story" aria-label="Voices: Storyteller">
@@ -880,7 +884,7 @@ html[data-view=voice-keynote]{scroll-snap-type:y proximity}
 <input class="tabr" type="radio" name="tab" id="t-l2-parts" aria-label="Cards: Parts list">
 <input class="tabr" type="radio" name="tab" id="t-l2-spec" aria-label="Templates: Design spec">
 <input class="tabr" type="radio" name="tab" id="t-l2-brief" aria-label="Templates: Content brief">
-<nav class="tabs" aria-label="Sections"><div class="tabs-g"><label class="g0" for="t-l2-start">Start here</label><label class="g1" for="t-voice-keynote">Voices</label><label class="g2" for="t-l2-looks">Looks</label><label class="g3" for="t-l2-mix">Mix</label><label class="g4" for="t-l2-recipes">Cards</label><label class="g5" for="t-l2-spec">Templates</label></div><div class="tabs-s s1"><span>Seven voices. One message, told seven ways. Tap one:</span><label for="t-voice-keynote">Keynote</label><label for="t-voice-story">Storyteller</label><label for="t-voice-teacher">Teacher</label><label for="t-voice-pitch">Pitch</label><label for="t-voice-practical">Practical instructor</label><label for="t-voice-analyst">Analyst</label><label for="t-voice-brief">Executive brief</label></div><div class="tabs-s s4"><span>The reference cards to keep in your Project:</span><label for="t-l2-recipes">Recipe cards</label><label for="t-l2-voices">Voice cards</label><label for="t-l2-parts">Parts list</label></div><div class="tabs-s s5"><span>Two short forms to copy and fill in:</span><label for="t-l2-spec">Design spec</label><label for="t-l2-brief">Content brief</label></div></nav>
+<nav class="tabs" aria-label="Sections"><div class="tabs-g"><label class="g0" for="t-l2-start">Start here</label><label class="g1" for="t-voice-keynote">Voices</label><label class="g2" for="t-l2-looks">Looks</label><label class="g3" for="t-l2-mix">Mix</label><label class="g4" for="t-l2-recipes">Cards</label><label class="g5" for="t-l2-spec">Templates</label></div><div class="tabs-s s1"><span>One message, told seven ways. Tap a voice:</span><label for="t-voice-keynote">Keynote</label><label for="t-voice-story">Storyteller</label><label for="t-voice-teacher">Teacher</label><label for="t-voice-pitch">Pitch</label><label for="t-voice-practical">Practical</label><label for="t-voice-analyst">Analyst</label><label for="t-voice-brief">Brief</label></div><div class="tabs-s s4"><span>The reference cards to keep in your Project:</span><label for="t-l2-recipes">Recipe cards</label><label for="t-l2-voices">Voice cards</label><label for="t-l2-parts">Parts list</label></div><div class="tabs-s s5"><span>Two short forms to copy and fill in:</span><label for="t-l2-spec">Design spec</label><label for="t-l2-brief">Content brief</label></div></nav>
 <div class="view" id="v-l2-start" data-title="Start here">
   <header class="lv-hero"><div class="ph" role="img" aria-label="A bare tree leans over a still lake under a pale sky, with reeds in the foreground."></div>
     <div><p class="lv-k">Level 2 of 3</p><h1>Advanced: your voice, look and parts</h1><p class="lv-l">Think of it as ordering off the menu with your usual changes, which the kitchen keeps on file. You make the choices the assistant made for you at level 1.</p></div></header>
@@ -963,7 +967,7 @@ page starts to look and sound like yours.</p>
 <p>Move to the expert level when you make a page most weeks, or when more than one person needs to
 produce pages that match.</p></div></article>
 <nav class="pager" aria-label="Previous and next tab"><div><span></span><label for="t-voice-keynote">Keynote →</label></div></nav></div>
-<div class="view" id="v-voice-keynote" data-tab="voices" data-title="The keynote">
+<div class="view" id="v-voice-keynote" data-tab="voices" data-title="The keynote"><aside class="about" aria-label="About this example"><div class="wrap"><p><b>The keynote voice.</b> Inspired by Steve Jobs&#x27;s product launches. Use it when the reader should feel that something new is possible.</p><p class="about-n">A full example follows. <a href="#anat-voice-keynote" data-jump="anat-voice-keynote">How it is built, and the sentence that asks for it</a></p></div></aside>
   <section class="kn-s"><h1 class="see">Every enquiry is a person, waiting.</h1><p class="kn-note">Scroll. One idea per screen.</p></section>
   <section class="kn-s"><div class="kn-big see">26<small>hours</small></div><p class="see" style="--i:1">That is how long they wait for us today.</p></section>
   <section class="kn-s kn-dim"><h2 class="see">By then, they have called someone else.</h2></section>
@@ -973,7 +977,7 @@ produce pages that match.</p></div></article>
   <section class="kn-s"><div class="kn-pair"><div class="kn-big was see">18</div><div class="kn-big see" style="--i:2">31</div></div><p class="see" style="--i:3">Site visits booked, every month.</p></section>
   <section class="kn-s"><h2 class="see">One more thing.</h2><p class="see" style="--i:3">Nobody worked late to do it. Time spent on replies fell from 6 hours a week to 2.5.</p></section>
   <section class="kn-s"><h2 class="see">Answer first.<br>Win the job.</h2></section>
-  <section class="anat"><div class="wrap">
+  <section class="anat" id="anat-voice-keynote"><div class="wrap">
     <h2>Behind this page</h2>
     <p class="measure">The keynote voice sells a vision by removing everything else. Inspired by Steve Jobs's product launches. The company and every figure here are invented for the demo.</p>
     <div class="anat-grid">
@@ -983,7 +987,7 @@ produce pages that match.</p></div></article>
 <div class="levels"><div class="ask"><h3><b>Beginner:</b> one sentence</h3><blockquote>Turn my notes into a keynote-style page: one idea per screen, huge type, almost no words.</blockquote><button class="copy" type="button">Copy</button></div><div class="ask"><h3><b>Advanced:</b> add your look, voice and parts</h3><blockquote>Build a keynote-style page from my notes. Black background, one sans-serif typeface. Open with the problem as one huge number, reveal the answer in three words, show my photo once full screen, compare before and after as two numbers, and finish with "one more thing". Screens snap as I scroll.</blockquote><button class="copy" type="button">Copy</button></div><div class="ask"><h3><b>Expert:</b> hand the whole job to the skill</h3><blockquote>Use the artifact-studio skill. Recipe: scrolling explainer. Voice: keynote. Look: black and white, with one colour taken from my attached photo. Content: the attached notes. Mark any number you could not find in my notes instead of inventing one.</blockquote><button class="copy" type="button">Copy</button></div></div>
   </div></section>
 <nav class="pager" aria-label="Previous and next tab"><div><label for="t-l2-start">← Start here</label><label for="t-voice-story">Storyteller →</label></div></nav></div>
-<div class="view" id="v-voice-story" data-tab="voices" data-title="The storyteller">
+<div class="view" id="v-voice-story" data-tab="voices" data-title="The storyteller"><aside class="about" aria-label="About this example"><div class="wrap"><p><b>The storyteller voice.</b> Inspired by Donald Miller&#x27;s story framework. Use it when the reader should see themselves in the problem and act.</p><p class="about-n">A full example follows. <a href="#anat-voice-story" data-jump="anat-voice-story">How it is built, and the sentence that asks for it</a></p></div></aside>
   <header class="st-hero"><div class="ph" role="img" aria-label="A dog on a lead watches the sun set over calm water and a line of grey rocks."></div>
     <div><span class="st-beat">The hook</span><h1>At 6:40 on a Tuesday evening, walking the dog along the water, Priya finally sent the message she had been putting off for a year.</h1></div></header>
   <div class="st-col"><span class="st-beat">A character who wants something</span>
@@ -1012,7 +1016,7 @@ produce pages that match.</p></div></article>
   <div class="st-col st-end"><span class="st-beat">The ending</span>
     <p>Priya's phone buzzed before she reached the end of the path. On Thursday someone stood in her kitchen with a tape measure.</p>
     <p class="st-quote" style="margin-top:28px;padding:0">The reply was not the work. It was the proof that the work would be done.</p></div>
-  <section class="anat"><div class="wrap">
+  <section class="anat" id="anat-voice-story"><div class="wrap">
     <h2>Behind this page</h2>
     <p class="measure">The storyteller voice makes the customer the hero and the company the guide. Inspired by Donald Miller's story framework. Priya, the company and the figures are invented for the demo.</p>
     <div class="anat-grid">
@@ -1022,7 +1026,7 @@ produce pages that match.</p></div></article>
 <div class="levels"><div class="ask"><h3><b>Beginner:</b> one sentence</h3><blockquote>Tell this as a story on one page, with my customer as the hero and us as the guide. Use my photo large.</blockquote><button class="copy" type="button">Copy</button></div><div class="ask"><h3><b>Advanced:</b> add your look, voice and parts</h3><blockquote>Write a one-page story from my notes. Hero: my customer. Open on one moment with a time and a place. Give the problem at three depths, then introduce us as the guide with empathy before proof, a three-step plan, one button, the stakes side by side, and an ending that returns to the opening. Dark warm page, large serif type, my photo with a slow push-in. Take the colours from the photo.</blockquote><button class="copy" type="button">Copy</button></div><div class="ask"><h3><b>Expert:</b> hand the whole job to the skill</h3><blockquote>Use the artifact-studio skill. Recipe: landing page. Voice: storyteller. Look: take the palette from my attached photo. Content: the attached customer interview notes. Invent nothing about the customer; where a story beat has no material, ask me one question.</blockquote><button class="copy" type="button">Copy</button></div></div>
   </div></section>
 <nav class="pager" aria-label="Previous and next tab"><div><label for="t-voice-keynote">← Keynote</label><label for="t-voice-teacher">Teacher →</label></div></nav></div>
-<div class="view" id="v-voice-teacher" data-tab="voices" data-title="The teacher">
+<div class="view" id="v-voice-teacher" data-tab="voices" data-title="The teacher"><aside class="about" aria-label="About this example"><div class="wrap"><p><b>The teacher voice.</b> Inspired by David Malan&#x27;s lectures. Use it when the reader should understand how something works.</p><p class="about-n">A full example follows. <a href="#anat-voice-teacher" data-jump="anat-voice-teacher">How it is built, and the sentence that asks for it</a></p></div></aside>
   <section class="te-s"><span class="te-tag">Today's question</span><h1 class="te-q">How do you answer everyone within the hour, without hiring anyone?</h1></section>
   <section class="te-analogy"><div><span class="te-tag">Think of it as</span><p class="te-q">The host at a busy restaurant.</p>
     <p>The host does not cook your meal. The host looks up, says "we see you, your table is nearly ready", and tells the kitchen you are here. You stop wondering whether to leave.</p>
@@ -1038,7 +1042,7 @@ produce pages that match.</p></div></article>
     <details><summary>What should the first reply never include?</summary><p>A price. The host does not quote the bill at the door. The first reply confirms, sets a time and stops.</p></details>
     <details><summary>What happens at 2 in the morning?</summary><p>Lines 2 and 3. An instant note says a person will reply by 9. The draft waits for that person.</p></details></section>
   <section class="te-s te-recap"><span class="te-tag">So</span><p>The first reply is <mark>the looking up</mark>, not the meal. Draft it by machine. Send it by hand.</p></section>
-  <section class="anat"><div class="wrap">
+  <section class="anat" id="anat-voice-teacher"><div class="wrap">
     <h2>Behind this page</h2>
     <p class="measure">The teacher voice makes a hard idea feel obvious by starting somewhere familiar. Inspired by David Malan's lectures. The company and the timings are invented for the demo.</p>
     <div class="anat-grid">
@@ -1048,7 +1052,7 @@ produce pages that match.</p></div></article>
 <div class="levels"><div class="ask"><h3><b>Beginner:</b> one sentence</h3><blockquote>Explain this like a great teacher: start with an everyday analogy, then one example, then the detail.</blockquote><button class="copy" type="button">Copy</button></div><div class="ask"><h3><b>Advanced:</b> add your look, voice and parts</h3><blockquote>Build a one-page lesson from my notes. Open with the question. Give one everyday analogy in very large type, then one worked example with real times, then the same idea as numbered pseudocode I can step through line by line, then three check-yourself questions that open on click, and a one-sentence recap that reuses the analogy. Black and white with a single highlight colour.</blockquote><button class="copy" type="button">Copy</button></div><div class="ask"><h3><b>Expert:</b> hand the whole job to the skill</h3><blockquote>Use the artifact-studio skill. Recipe: scrolling explainer. Voice: teacher. Look: black and white with one highlight colour. Content: the attached procedure. Keep every step of my procedure; if the analogy stops fitting at some step, say so rather than bending the step.</blockquote><button class="copy" type="button">Copy</button></div></div>
   </div></section>
 <nav class="pager" aria-label="Previous and next tab"><div><label for="t-voice-story">← Storyteller</label><label for="t-voice-pitch">Pitch →</label></div></nav></div>
-<div class="view" id="v-voice-pitch" data-tab="voices" data-title="The pitch">
+<div class="view" id="v-voice-pitch" data-tab="voices" data-title="The pitch"><aside class="about" aria-label="About this example"><div class="wrap"><p><b>The pitch voice.</b> Inspired by Don Draper&#x27;s carousel pitch in Mad Men. Use it when the reader should feel something first and remember it.</p><p class="about-n">A full example follows. <a href="#anat-voice-pitch" data-jump="anat-voice-pitch">How it is built, and the sentence that asks for it</a></p></div></aside>
   <div class="pi-room">
     <div class="pi-reel" id="pi-reel" tabindex="0" role="region" aria-label="Six slides. Swipe sideways or use the buttons.">
       <article class="pi-f"><div class="pi-shot"><div class="ph ph2" data-crop=".55,.22,1.5,.75" role="img" aria-label="A low orange sun over still water."></div></div><p>My father kept a hardware shop. There was a bell over the door. When it rang, he looked up. Every time.</p></article>
@@ -1063,7 +1067,7 @@ produce pages that match.</p></div></article>
   <div class="pi-close"><h2>What they will remember</h2>
     <p>In the trial, 81 of every 100 people heard from us within the hour. They will not remember the number.</p>
     <p>They will remember that on an ordinary evening, they rang the bell, and somebody looked up.</p></div>
-  <section class="anat"><div class="wrap">
+  <section class="anat" id="anat-voice-pitch"><div class="wrap">
     <h2>Behind this page</h2>
     <p class="measure">The pitch voice sells a feeling and lets the product arrive last. Inspired by Don Draper's carousel pitch in Mad Men. The father, the shop and the figures are invented for the demo.</p>
     <div class="anat-grid">
@@ -1072,8 +1076,8 @@ produce pages that match.</p></div></article>
     </div>
 <div class="levels"><div class="ask"><h3><b>Beginner:</b> one sentence</h3><blockquote>Pitch this as a feeling, not a feature. First person, a handful of slides, and the product named only at the end.</blockquote><button class="copy" type="button">Copy</button></div><div class="ask"><h3><b>Advanced:</b> add your look, voice and parts</h3><blockquote>Build a six-slide pitch from my notes that I advance by hand. Dark background with one lit slide at a time. Open with a personal memory in the first person, name the feeling, show what was lost, give one hard fact, say three things this is not, then name the product as the feeling. Make my photos look like faded film. End with a short close below the slides.</blockquote><button class="copy" type="button">Copy</button></div><div class="ask"><h3><b>Expert:</b> hand the whole job to the skill</h3><blockquote>Use the artifact-studio skill. Recipe: landing page. Voice: pitch. Look: faded film, taken from my attached photos. Content: the attached notes. The memory must be mine: ask me for one true memory before you write, and do not invent one.</blockquote><button class="copy" type="button">Copy</button></div></div>
   </div></section>
-<nav class="pager" aria-label="Previous and next tab"><div><label for="t-voice-teacher">← Teacher</label><label for="t-voice-practical">Practical instructor →</label></div></nav></div>
-<div class="view" id="v-voice-practical" data-tab="voices" data-title="The practical instructor">
+<nav class="pager" aria-label="Previous and next tab"><div><label for="t-voice-teacher">← Teacher</label><label for="t-voice-practical">Practical →</label></div></nav></div>
+<div class="view" id="v-voice-practical" data-tab="voices" data-title="The practical instructor"><aside class="about" aria-label="About this example"><div class="wrap"><p><b>The practical instructor voice.</b> Inspired by a best guess at Bradley Ross&#x27;s teaching style. Use it when the reader should do the thing today.</p><p class="about-n">A full example follows. <a href="#anat-voice-practical" data-jump="anat-voice-practical">How it is built, and the sentence that asks for it</a></p></div></aside>
   <section class="pr-s"><h1>Answer in the first hour.</h1><p class="pr-lede"><b>The core idea:</b> a machine drafts the reply, a person sends it. You get speed without giving up judgement.</p></section>
   <section class="pr-s"><div class="pr-box pr-analogy"><b>Think of it as a sous-chef.</b><span>The chopping is done before you walk in. You still taste the dish and you still plate it. Nobody gets served something you have not seen.</span></div></section>
   <section class="pr-s"><h2>Why bother</h2>
@@ -1096,7 +1100,7 @@ produce pages that match.</p></div></article>
   <section class="pr-s"><h2>Where people go wrong</h2>
     <ul class="pr-miss"><li><b>Letting it send by itself.</b> A person approves every reply. No exceptions.</li><li><b>Putting a price in the first reply.</b> Confirm, offer a time, stop.</li><li><b>Skipping the test on old enquiries.</b> Five tests find most of the problems.</li></ul></section>
   <section class="pr-s pr-next"><div class="pr-box">Your next step: open your sent mail and find three replies you are proud of.</div></section>
-  <section class="anat"><div class="wrap">
+  <section class="anat" id="anat-voice-practical"><div class="wrap">
     <h2>Behind this page</h2>
     <p class="measure">The practical instructor voice gets someone doing the thing within the hour. A best guess at Bradley Ross's teaching style: core concept, one analogy, steps for today. The company and figures are invented for the demo.</p>
     <div class="anat-grid">
@@ -1106,7 +1110,7 @@ produce pages that match.</p></div></article>
 <div class="levels"><div class="ask"><h3><b>Beginner:</b> one sentence</h3><blockquote>Turn this into a practical one-page guide: the core idea, one analogy, then steps I can do today.</blockquote><button class="copy" type="button">Copy</button></div><div class="ask"><h3><b>Advanced:</b> add your look, voice and parts</h3><blockquote>Build a one-page field guide from my notes. Start with the core idea in one sentence, then one boxed analogy, three numbers on why it matters, five numbered steps with a time estimate and a tick box each plus a progress bar, a table of the same job at beginner, advanced and expert level, three common mistakes, and one next step. Navy and one bright accent, condensed headings, squared grid paper background.</blockquote><button class="copy" type="button">Copy</button></div><div class="ask"><h3><b>Expert:</b> hand the whole job to the skill</h3><blockquote>Use the artifact-studio skill. Recipe: scrolling explainer. Voice: practical instructor. Look: field guide in my brand colours (attached spec). Content: the attached procedure. Give every step a time estimate; ask me for any you cannot judge.</blockquote><button class="copy" type="button">Copy</button></div></div>
   </div></section>
 <nav class="pager" aria-label="Previous and next tab"><div><label for="t-voice-pitch">← Pitch</label><label for="t-voice-analyst">Analyst →</label></div></nav></div>
-<div class="view" id="v-voice-analyst" data-tab="voices" data-title="The analyst">
+<div class="view" id="v-voice-analyst" data-tab="voices" data-title="The analyst"><aside class="about" aria-label="About this example"><div class="wrap"><p><b>The analyst voice.</b> Inspired by Barbara Minto&#x27;s pyramid principle. Use it when the reader should be convinced by evidence.</p><p class="about-n">A full example follows. <a href="#anat-voice-analyst" data-jump="anat-voice-analyst">How it is built, and the sentence that asks for it</a></p></div></aside>
   <section class="an-s"><p class="an-kicker">First-reply trial, 90 days. Prepared for the owners.</p>
     <h1>Replying within the hour raised booked site visits by 72%. Make it the standard.</h1>
     <div class="an-answer"><b>The answer</b><p>Adopt drafted first replies with human approval for all enquiries. The trial paid for itself in the first month and reduced staff time.</p></div>
@@ -1130,7 +1134,7 @@ produce pages that match.</p></div></article>
     </div></section>
   <section class="an-s an-end"><div class="an-find" style="margin:0"><h2>Recommended next steps</h2>
     <table class="an-next"><thead><tr><th>Step</th><th>Owner</th><th>By</th></tr></thead><tbody><tr><td>Make drafted first replies the standard for every enquiry</td><td>Office manager</td><td>1 June</td></tr><tr><td>Report jobs won from trial enquiries</td><td>Owner</td><td>15 July</td></tr><tr><td>Repeat the measurement in the quiet season</td><td>Office manager</td><td>November</td></tr></tbody></table></div></section>
-  <section class="anat"><div class="wrap">
+  <section class="anat" id="anat-voice-analyst"><div class="wrap">
     <h2>Behind this page</h2>
     <p class="measure">The analyst voice gives the answer first and then earns it with evidence. Inspired by Barbara Minto's pyramid principle. The company and every figure are invented for the demo.</p>
     <div class="anat-grid">
@@ -1139,8 +1143,8 @@ produce pages that match.</p></div></article>
     </div>
 <div class="levels"><div class="ask"><h3><b>Beginner:</b> one sentence</h3><blockquote>Write this up as an evidence-first one-pager: the answer at the top, then three findings with a chart each.</blockquote><button class="copy" type="button">Copy</button></div><div class="ask"><h3><b>Advanced:</b> add your look, voice and parts</h3><blockquote>Build an evidence-first report from my data. The title states the conclusion. Then the answer in two sentences, three key numbers, and three findings where each heading is a full sentence with one chart and a "so what" line. Add how it was measured, what it does not show, and next steps with owner and date. One data colour, grey for comparisons, values labelled at the bar ends, source under every chart.</blockquote><button class="copy" type="button">Copy</button></div><div class="ask"><h3><b>Expert:</b> hand the whole job to the skill</h3><blockquote>Use the artifact-studio skill. Recipe: one-page report. Voice: analyst. Look: quiet, one data colour from my brand spec. Content: the attached spreadsheet and notes. Show your calculation for every number in a collapsed table, and list anything you could not verify under "what this does not show".</blockquote><button class="copy" type="button">Copy</button></div></div>
   </div></section>
-<nav class="pager" aria-label="Previous and next tab"><div><label for="t-voice-practical">← Practical instructor</label><label for="t-voice-brief">Executive brief →</label></div></nav></div>
-<div class="view" id="v-voice-brief" data-tab="voices" data-title="The executive brief">
+<nav class="pager" aria-label="Previous and next tab"><div><label for="t-voice-practical">← Practical</label><label for="t-voice-brief">Brief →</label></div></nav></div>
+<div class="view" id="v-voice-brief" data-tab="voices" data-title="The executive brief"><aside class="about" aria-label="About this example"><div class="wrap"><p><b>The executive brief voice.</b> Inspired by the board or cabinet decision memo. Use it when the reader should make a decision in three minutes.</p><p class="about-n">A full example follows. <a href="#anat-voice-brief" data-jump="anat-voice-brief">How it is built, and the sentence that asks for it</a></p></div></aside>
   <article class="ex-page">
     <header class="ex-top"><h1>Decision brief: a one-hour standard for first replies</h1>
       <dl class="ex-head"><dt>To</dt><dd>The owners</dd><dt>From</dt><dd>Office manager</dd><dt>Date</dt><dd>12 May</dd><dt>Decision needed by</dt><dd>26 May</dd><dt>Reading time</dt><dd>Three minutes</dd></dl></header>
@@ -1163,7 +1167,7 @@ produce pages that match.</p></div></article>
     <p><span class="ex-n">5.</span>Standard takes effect 1 June. Office manager reports reply times and visits on the first Monday of each month.</p>
     <p class="ex-sign">Example brief. The company, the dates and every figure are invented for this demo.</p>
   </article>
-  <section class="anat"><div class="wrap">
+  <section class="anat" id="anat-voice-brief"><div class="wrap">
     <h2>Behind this page</h2>
     <p class="measure">The executive brief voice exists to get a decision from busy people. It is the plainest voice here on purpose. It follows the convention of a board or cabinet decision memo. The company and figures are invented for the demo.</p>
     <div class="anat-grid">
@@ -1598,7 +1602,7 @@ recipe and the voice. Each card has six fields. To add a look, fill in the blank
 </tr>
 </tbody>
 </table></div></div></article>
-<nav class="pager" aria-label="Previous and next tab"><div><label for="t-voice-brief">← Executive brief</label><label for="t-l2-mix">Mix your request →</label></div></nav></div>
+<nav class="pager" aria-label="Previous and next tab"><div><label for="t-voice-brief">← Brief</label><label for="t-l2-mix">Mix your request →</label></div></nav></div>
 <div class="view" id="v-l2-mix" data-title="Mix your request">
   <section class="mx"><div class="wrap">
     <h1>Mix your request</h1>
