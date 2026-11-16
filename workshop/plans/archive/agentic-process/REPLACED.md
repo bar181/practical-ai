@@ -10,3 +10,9 @@ and its source. They were retired on 16 November 2026 when the owner asked for a
 [`base/course.html`](../../../../projects/agentic-process/base/course.html), with modules, lessons and a
 lecture deck per module. The 30-minute version lives on as the "taster" in the course's
 instructor guide.
+
+`course-v1.py` was the source of the first full course: five modules on building AI tools in
+general, with a lecture deck per module. It was retired on 16 November 2026 when the owner asked
+for a course about this project itself: how it works, why each step exists, and how to run it,
+told visually. Its replacement is written from `_build/course.py` into the same file,
+[`base/course.html`](../../../../projects/agentic-process/base/course.html).

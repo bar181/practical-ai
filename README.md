@@ -165,8 +165,8 @@ proof you are done and a prompt to copy. Nobody but its author has built a tool 
 ## Teach it
 
 [Artifact Studio](projects/artifact-studio/base/TEACH-IN-30-MINUTES.md) has a 30-minute lesson plan.
-[Agentic Process](projects/agentic-process/) has [a full course](https://raw.githack.com/bar181/practical-ai/main/projects/agentic-process/base/course.html):
-five modules, each with a lecture deck and step-by-step lessons, then a capstone. Neither has been taught yet.
+[Agentic Process](projects/agentic-process/) has [a visual course](https://raw.githack.com/bar181/practical-ai/main/projects/agentic-process/base/course.html)
+on how the project works and how to run it, with a present mode. Neither has been taught yet.
 
 ## What comes next
 

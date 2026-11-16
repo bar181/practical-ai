@@ -19,7 +19,7 @@ else can use, and know it works before anyone relies on it.
 | --- | --- | --- |
 | [**The North Star**](https://raw.githack.com/bar181/practical-ai/main/projects/agentic-process/base/north-star.html) | One page: the purpose, the value at your level, and where it fits | 5 minutes |
 | [**The guide**](https://raw.githack.com/bar181/practical-ai/main/projects/agentic-process/base/explainer.html) | All nine steps, each with its purpose, who it helps, proof and a prompt | 10 minutes |
-| [**The course**](https://raw.githack.com/bar181/practical-ai/main/projects/agentic-process/base/course.html) | Five modules, each with a lecture deck and step-by-step lessons, then a capstone | about 4.5 hours |
+| [**The course**](https://raw.githack.com/bar181/practical-ai/main/projects/agentic-process/base/course.html) | How it works, why each step exists and how to run it, with the nine steps as a scrolling diagram | about 25 minutes to read |
 
 The links open the pages through raw.githack.com, a free service that shows a GitHub HTML file as
 a page, once this branch is merged. Otherwise download the file from [`base/`](base/) and open it
@@ -56,7 +56,7 @@ path: steps 1, 6 and 8 in full, steps 2 to 5 in a line each, step 7 folded into 
 | **New to this** (Beginner) | The coach, pasted into any chatbot | A one-page plan and a first prompt you can test today |
 | **Building with an agent** (Advanced) | [One skill folder](level-2-files/) to copy into your agent's skills. Works in any repository | A project folder with its own checks, the front page and the first version in place |
 | **Running agents unattended** (Expert) | [Gates, the fresh-run test and the score sheet](level-3-files/) | Proof of what works, before a person spends time on it |
-| **Teaching or learning it properly** | [The course](https://raw.githack.com/bar181/practical-ai/main/projects/agentic-process/base/course.html): five modules, lecture decks with instructor notes, lessons, checks and a capstone | A tool of your own, taken through steps 1 to 8 and tested by a stranger, with step 9 planned |
+| **Teaching or learning it properly** | [The course](https://raw.githack.com/bar181/practical-ai/main/projects/agentic-process/base/course.html): five chapters, a scrolling diagram of the nine steps, three ways to run it, the automation levels, and a present mode | A tool of your own, taken through steps 1 to 8 and tested by a stranger, with step 9 planned |
 
 ### 3. See it used
 
@@ -114,21 +114,13 @@ the wood, draw it, have someone check the drawing, build the smallest platform y
 ## The course
 
 <!-- course:start -->
-**[Build the right AI tool](https://raw.githack.com/bar181/practical-ai/main/projects/agentic-process/base/course.html)**: Learn to turn a job you repeat into a small AI tool that someone else can use, and to prove it works before anyone relies on it. 5 modules, about 4 and a half hours, each with a lecture deck, step-by-step lessons, a three-question check and an
-assignment, then a capstone. It has not been taught yet.
-
-| Module | Purpose | Lessons | Time |
-| --- | --- | --- | --- |
-| 1. Why process beats prompts | See why an AI that builds fast moves the expensive mistakes earlier, and meet the nine steps that catch them. | The problem: the wrong thing, built well; The North Star and the nine steps; Your first run: the coach, on the short path | about 53 min |
-| 2. Decide: is it worth building? | Before anything is built, name one job, check what already does it, and know what it would cost. | Scope; Reuse check; Outside help and cost | about 55 min |
-| 3. Design: the plan before the build | Choose the fewest parts, write the plan and the first screen before the tool exists, and have a stranger explain it back. | Simplest design; Plan and front door; Review | about 55 min |
-| 4. Build and test: let a stranger break it | Build the smallest version, hand it to a fresh chat that has only your instructions, and fix what it trips on. | Build the smallest version; The fresh-chat test; Read the friction log and fix | about 65 min |
-| 5. Grow, and work at your level | Plan how the tool grows once it is in use, and see how the same steps run with a coding agent and with agents that work unattended. | Plan the next addition; Advanced: the skill folder in your repository (optional); Expert: gates and unattended agents (optional) | about 27 min |
-| Capstone | Take one real job of your own through steps 1 to 8, hand in a first version a stranger has tested, and plan step 9. | Your tool, steps 1 to 8, step 9 planned | homework |
+**[How to use Agentic Process](https://raw.githack.com/bar181/practical-ai/main/projects/agentic-process/base/course.html)**: How this project works, why each of its nine steps exists, and how to run it yourself: in a chat window, with a coding agent, or from a spec you already have. Five chapters: why it exists; the nine steps as a
+scrolling diagram, with why each exists and its time; three ways to run it (any chatbot, a coding agent, a spec you
+already have); automation and the levels, with what has been tried; your first tool. About 25 minutes to read and
+60 for a first run, both estimates. Press Present to teach from it. It has not been taught yet.
 <!-- course:end -->
 
-The course includes an instructor guide: three formats (one day, five weeks, or a 30-minute
-taster), what to prepare, and what to watch for.
+Each chapter ends with notes for whoever presents it.
 
 ## Status
 
@@ -156,11 +148,11 @@ agentic-process/
     PROCESS.md            the nine steps in detail, and the one-page plan to fill in
     north-star.html       the North Star, the purpose and the value, on one page
     explainer.html        the guide: the same steps as a page to read or present
-    course.html           the course: five modules, lecture decks, lessons, checks, a capstone
+    course.html           the course: how to use this project, told visually, with a present mode
     examples/             unedited runs: two of the coach, one of an agent working unattended
   level-2-files/          Advanced: one skill folder, with the project template and its checks inside
   level-3-files/          Expert: gates, the fresh-run test and a score sheet
-  _build/                 steps.py and course.py, the sources; pages.py and build.py, which writes every page from them; runs/, the test logs
+  _build/                 steps.py and course.py, the sources; pages.py, course_page.py and build.py, which write every page from them; runs/, the test logs
 ```
 
 ## About the creator

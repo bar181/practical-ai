@@ -224,7 +224,7 @@ footer{{padding:26px 0 44px;font:400 .88rem/1.45 var(--display);color:var(--mute
     <li><b>Beginner:</b> the coach above, or the nine prompts one at a time. Nothing to install.</li>
     <li><b>Advanced:</b> <a href="https://github.com/bar181/practical-ai/tree/main/projects/agentic-process/level-2-files" style="color:#fff">one skill folder</a> to copy into your coding agent. It works in any repository.</li>
     <li><b>Expert:</b> <a href="https://github.com/bar181/practical-ai/tree/main/projects/agentic-process/level-3-files" style="color:#fff">gates, the fresh-run test and the score sheet</a>.</li>
-    <li><b>Teaching or learning it properly:</b> <a href="https://raw.githack.com/bar181/practical-ai/main/projects/agentic-process/base/course.html" style="color:#fff">the course</a>: five modules, each with a lecture deck and step-by-step lessons.</li>
+    <li><b>Teaching or learning it properly:</b> <a href="https://raw.githack.com/bar181/practical-ai/main/projects/agentic-process/base/course.html" style="color:#fff">the course</a>: how this project works, why each step exists and how to run it, told visually.</li>
   </ul>
   <a class="btn" href="https://github.com/bar181/practical-ai">Open Practical AI on GitHub</a>
 </div></div>
@@ -318,7 +318,8 @@ def process_md():
           "5. **One addition, one change request.** Small changes get reviewed. Big ones get waved through.", ""]
     return "\n".join(L)
 
-from pages import north_star_html, course_html, course_outline_md
+from pages import north_star_html
+from course_page import course_html, course_outline_md
 GH = "https://raw.githack.com/bar181/practical-ai/main/projects/agentic-process/base/"
 
 def nine_steps_svg():
@@ -380,7 +381,7 @@ def fill(path, table, name='steps', text=None, inline=False):
     return re.sub(pat, lambda m: m.group(1) + sep + table + sep + m.group(2), text, flags=re.S)
 
 outputs = {P/'base/explainer.html': page, P/'base/PROCESS.md': process_md(),
-           P/'base/north-star.html': north_star_html(me, 'explainer.html', 'course.html'), P/'base/course.html': course_html(me, 'north-star.html', 'explainer.html'),
+           P/'base/north-star.html': north_star_html(me, 'explainer.html', 'course.html'), P/'base/course.html': course_html(me, puppy, 'north-star.html', 'explainer.html'),
            P/'base/AI-INSTRUCTIONS.md': fill(P/'base/AI-INSTRUCTIONS.md', '. '.join(PLAN_ROWS) + '.', 'plan', fill(P/'base/AI-INSTRUCTIONS.md', coach_table()), inline=True),
            P/'README.md': fill(P/'README.md', course_outline_md(GH + 'course.html'), 'course', fill(P/'README.md', '```\n' + PROMPT + '\n```', 'prompt')),
            P/'_build/img/nine-steps.svg': nine_steps_svg(),
