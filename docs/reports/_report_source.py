@@ -164,7 +164,7 @@ footer{{margin-top:50px;background:var(--accent);color:#dfe6ef;padding:28px 0 36
 
 <section aria-labelledby="m"><p class="lab">How it was measured</p><h2 id="m">Every test was an AI session that had only the project's own files; the rubric is the author's.</h2>
   <div class="tw" tabindex="0" role="region" aria-label="What ran"><table><thead><tr><th scope="col">Test</th><th scope="col">Runs</th></tr></thead><tbody>{''.join(f'<tr><th scope="row">{E(n)}</th><td>{c}</td></tr>' for n, c in TESTS)}</tbody></table></div>
-  <p style="margin-top:14px">Each run logged every place it had to guess, marked blocking or minor. The logs are kept unedited in <code>projects/agentic-process/_build/runs/</code>. The pages were checked in Chrome at phone and laptop width with an automated accessibility scan, with scripts off, and the presenter window was driven from a second window.</p>
+  <p style="margin-top:14px">Each run logged every place it had to guess, marked blocking or minor. The logs are kept unedited in <code>projects/agentic-process/level-3-files/test-runs/</code>. The pages were checked in Chrome at phone and laptop width with an automated accessibility scan, with scripts off, and the presenter window was driven from a second window.</p>
 </section>
 
 <section aria-labelledby="l"><p class="lab">What it does not show</p><h2 id="l">It does not show that a person can use it, or that it works outside Claude.</h2>

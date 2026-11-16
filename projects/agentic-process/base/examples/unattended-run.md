@@ -21,7 +21,7 @@ because nobody was there.
    sessions, one for each folder. Each finished and logged 3 blocking points.
 4. The agent read both logs, fixed the instructions, ran its gates again, and handed back.
 
-**What it made:** [the project folder](../../_build/runs/unattended/calm-reply/), as the agent
+**What it made:** [the project folder](../../level-3-files/test-runs/unattended/calm-reply/), as the agent
 left it. **The test logs:** in that folder's `_build/runs/round-1/`.
 
 Below the line is the agent's hand-back. Only the machine paths were shortened. Nobody has yet

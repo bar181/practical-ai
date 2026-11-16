@@ -13,7 +13,7 @@ The person in the message is invented: a member of a five-person sales team who 
 > My idea: five of us in a sales team share one spreadsheet of deals. After each call, whoever made it is supposed to update the row, and nobody does. I want an AI to read our call notes each Friday and suggest the updates for each row, for our team lead to approve. We all use Microsoft Copilot at work. I am not technical.
 
 **Where it tripped** is in
-[`friction.md`](../../_build/runs/round-3/shared-tracker/friction.md). Read that too: it is the honest
+[`friction.md`](../../level-3-files/test-runs/round-3/shared-tracker/friction.md). Read that too: it is the honest
 half of the example. The coach was changed afterwards to fix what it found, and its plan headings have changed since.
 
 ---

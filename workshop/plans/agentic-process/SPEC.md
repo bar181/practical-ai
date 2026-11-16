@@ -41,6 +41,19 @@ end users are not the product (see section 10).
 | A person who works in a chatbot | Primary user | Describe a workflow (for example, research a decision and write a SWOT) and get back a tool package to save in a chatbot project or a Drive folder, and run whenever needed |
 | A person working step by step in a chatbot | Kept, not extended | The coach (`base/AI-INSTRUCTIONS.md`): the same nine steps, one question at a time. Frozen at its current state |
 
+## 3a. Levels
+
+Each level is useful on its own. Each adds one thing to the one before.
+
+| Level | For | What it adds | What is in this project |
+| --- | --- | --- | --- |
+| Base: run it in chat | A business owner or office worker | A result today, with nothing to set up | The coach, the nine steps, a four-file template for a chatbot tool (`base/template/`), and worked examples, including one complete tool (`base/examples/decision-support/`) |
+| Level 2: make it repeatable | Someone trained on AI, or a builder with a coding agent | A saved workflow: a chatbot project, a skill or a shared folder; or a project folder in a repository; and Autopilot from a spec | The skill folder with its project template, and `AUTOPILOT.md` |
+| Level 3: connect it and prove it | The owner, or a client setup | Connections where work happens (a folder, a tool server, GitHub, a scheduler), gates a script runs, and tests by fresh sessions | Gates, the fresh-run test, the score sheet and every test log (`level-3-files/`) |
+
+Tests belong to Level 3. A Base or Level 2 user never has to run one; they read the example
+that a test produced.
+
 ## 4. Use cases
 
 | ID | Use case | Trigger | Result | In version 1 |
@@ -187,13 +200,13 @@ Out of 100. No item counts users.
 
 | Item | Score | Why |
 | --- | --- | --- |
-| Spec and method | 85 | This file now exists; the method has been stable since the fourth audit |
+| Spec and method | 85 | This file; the method has been stable since the fourth audit |
 | Machine gates | 55 | Five of eight exist; `spec-ready`, `tested` and `handback` do not |
 | Autopilot | 20 | Written into the skill; never run |
-| Generalises | 0 | Not run |
+| Generalises | 40 | A chatbot tool package (decision support) was built from a workflow card with this method and tested in three rounds by fresh sessions: blocking points 2, 2, 1. It was built in a guided session, not by Autopilot, and the owner has not run it on a real decision |
 | Any repository | 90 | The template gate passes in an empty repository; one unattended run from an idea |
-| Focus | 80 | The end-user pages are parked; 50 test-log files remain as evidence |
-| **Total** | **52** | |
+| Focus | 85 | Base is the coach, the method, a four-file template and examples; tests and their logs are in Level 3; end-user pages are parked |
+| **Total** | **57** | Up from 52 |
 
 **Next, in order:** build the three missing gates (about 45 minutes), then run AC-1 on the
 learning-system spec and AC-6 on the decision-support spec, and read both hand-backs.

@@ -34,7 +34,7 @@ Then run it again on the fixed instructions, and compare the last line of each l
 ## Evidence
 
 This test was used on both tools in this repository. The logs, unedited, are in
-[`_build/runs/`](../../_build/runs/) for this project and in
+[`test-runs/`](../test-runs/) for this project and in
 [Artifact Studio's runs](../../../artifact-studio/_build/examples/runs/). On both, a fresh session
 found faults the author had read past, and each round of fixes found new, smaller ones.
 

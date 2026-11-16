@@ -55,6 +55,7 @@ path: steps 1, 6 and 8 in full, steps 2 to 5 in a line each, step 7 folded into 
 | --- | --- | --- |
 | [A Monday email from sales notes](base/examples/monday-email.md) | Beginner, short path | The plan, the prompt and the note a new AI session made from one paragraph, unedited |
 | [Deal updates for a sales team](base/examples/shared-tracker.md) | Beginner, all nine steps | The same for a team job, where the coach takes every step |
+| [Decision support: a complete tool](base/examples/decision-support/) | Beginner, end to end | A workflow card, the tool's instructions, a run by a fresh chat, and what three rounds of testing changed. Paste it into a chatbot project and ask a business question |
 | [An agent working unattended](base/examples/unattended-run.md) | Advanced and Expert | A coding agent with only the skill folder, in a repository it had never seen: the plan, the tool it built, two fresh-session tests and its hand-back |
 
 The people are invented. Each result was made by a session that had only this project's
@@ -137,7 +138,7 @@ Never merge, post or send anything.
 | Autopilot | **Not yet run end to end.** Written on 16 November 2026 |
 | The links in this page | Open once this project is merged into the main branch |
 
-Every round of testing, with the logs, is in [`_build/runs/`](_build/runs/README.md).
+Every round of testing, with the logs, is in [`level-3-files/test-runs/`](level-3-files/test-runs/README.md).
 
 **Built a tool with it?** [Tell us in two minutes](https://github.com/bar181/practical-ai/issues/new?template=i-built-one.yml): the form records the three numbers the North Star is measured by.
 

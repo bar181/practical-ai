@@ -24,7 +24,8 @@ Take the first of these that you can do.
 | How to test what you built | [`level-3-files/fresh-run/`](level-3-files/fresh-run/) |
 | Checks to run from step 5 on | `python3 projects/<slug>/_build/checks/gates.py projects/<slug>`. It runs the new project's `_build/gates.json`. This project's own gates are in [`level-3-files/gates.json`](level-3-files/gates.json) |
 | How to score the result | [`level-3-files/scorecard.md`](level-3-files/scorecard.md) |
-| Three worked examples | [`base/examples/`](base/examples/): the unedited results of fresh sessions, one of them an agent working unattended |
+| A template for a chatbot tool | [`base/template/`](base/template/): four files, the workflow card (the spec), the instructions, an example and how to use it |
+| Worked examples | [`base/examples/`](base/examples/): the unedited results of fresh sessions, one of them an agent working unattended. [`decision-support/`](base/examples/decision-support/) is a complete tool, from spec to tested |
 
 ## Output contract
 

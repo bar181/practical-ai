@@ -13,7 +13,7 @@ The person in the message is invented: a kitchen-fitting company owner who is no
 > My idea: every Monday I turn last week's sales notes into an email for my team. I want an AI to draft it. I run a small kitchen-fitting company with six staff. I am not technical. I use ChatGPT on my phone and laptop. The notes are a few lines I type into my phone during the week.
 
 **Where it tripped** is in
-[`friction.md`](../../_build/runs/round-3/monday-email/friction.md). Read that too: it is the honest
+[`friction.md`](../../level-3-files/test-runs/round-3/monday-email/friction.md). Read that too: it is the honest
 half of the example. The coach was changed afterwards to fix what it found, and its plan headings have changed since.
 
 ---

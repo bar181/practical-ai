@@ -16,6 +16,14 @@ that machine paths were shortened.
 The round 3 points are fixed and have not been tested again. Each round found new, smaller
 points: no round repeated the list before it.
 
+## A complete tool: decision support, `base/examples/decision-support/`
+
+| Round | Folder | Message (invented) | Blocking, minor |
+| --- | --- | --- | --- |
+| 1 | [`decision-support/round-1/`](decision-support/round-1/) | A three-shop bakery asks whether to start office catering | 2, 13 |
+| 2 | [`decision-support/round-2/`](decision-support/round-2/) | The same, after the round 1 fixes | 2, 11 |
+| 3 | [`decision-support/round-3/`](decision-support/round-3/) | The same, after the round 2 fixes | 1, 11 |
+
 ## The skill folder, `level-2-files/agentic-process/`
 
 | Run | Folder | What happened |

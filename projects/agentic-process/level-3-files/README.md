@@ -11,6 +11,7 @@ that the wiring is safe.
 | Gates | Your project's `_build/gates.json` | A list of commands, each proving one thing. An agent runs them after every step and stops if one fails |
 | The fresh-run test | [`fresh-run/`](fresh-run/) | Hands the tool to a new AI session that knows nothing, and collects where it tripped |
 | The score sheet | [`scorecard.md`](scorecard.md) | Ten measures, what 80 looks like for each, and rules for scoring your own work |
+| The test logs | [`test-runs/`](test-runs/README.md) | Every fresh-session test of this project, unedited |
 
 ## Gates for your project
 
