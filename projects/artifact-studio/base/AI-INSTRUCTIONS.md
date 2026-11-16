@@ -46,7 +46,7 @@ If a front-end design skill is available (for example `frontend-design`), load i
 | One-page report | Someone needs to know how a period went | Title, period, reader. Two-sentence summary. Four numbers with their change. One trend chart with a full-sentence heading. One breakdown table, weak row marked. What changed. What happens next. | Analyst, executive brief |
 | Proposal | A customer has to choose and say yes | Cover: promise, for whom, valid until. What you asked for. What we propose, with one drawing or image. Three options, one marked. Schedule. Included and not included. Terms. One button. | Practical instructor, executive brief |
 | Scrolling explainer | A process or idea must be understood | Title and why it matters. A diagram or image that stays on screen. One block per stage: who, what happens, one fact. A closing line. Seven stages at most. | Teacher, practical instructor, keynote |
-| Landing page | One kind of visitor should take one action | Promise in one line with a number. One button. A picture of the result. Three things you get. Three steps. One customer's words. Price. Three real questions. Promise and button again. | Storyteller, pitch, practical instructor |
+| Landing page | One kind of visitor should take one action | Promise in one line with a number. One button. A picture of the result. Three things you get. Three steps. One customer's words. Price. Three real questions. Promise and button again. | Storyteller, practical instructor |
 
 ## Voices
 
@@ -58,7 +58,6 @@ communicator's style. Never write as if that person said it, and never put their
 | Keynote | One painful number. The consequence. A question. The answer in three words. One image with the new number. Before and after. One more thing. A short closing line. | Black, one typeface, enormous numbers. One idea per screen, screens snap. | Bullet lists, more than twelve words a screen |
 | Storyteller | A hook with a time and place. A character who wants something. The problem at three depths. A guide: empathy, then proof. A three-step plan. One call to action. Failure beside success. An ending that returns to the opening. | Colours from the photograph, large serif, slow push-ins, story beats named in small type. | The company before the fourth beat. An invented customer shown as real |
 | Teacher | One question. An everyday analogy, very large. One worked example. Pseudocode or a diagram stepped through. A harder case. Check-yourself questions. A recap reusing the analogy. | Black and white, one highlight, monospace code. The reader steps and answers. | Two new ideas in one step |
-| Pitch | A first-person memory. The feeling. What was lost. One hard fact. What this is not, three times. What it is. A quiet close. | A dark room, one lit slide advanced by hand, faded warm photos. | Features, charts, the product name before the end. Ask for a true memory |
 | Practical instructor | The core idea in one sentence. One boxed analogy. Three numbers. Numbered steps with a time each. Three levels. Common mistakes. One next step. | Field guide: two colours, tick boxes, a progress bar, tables. | Theory before the first step |
 | Analyst | The conclusion as the title. The answer in two sentences. Three numbers. Three findings: full-sentence heading, one chart, a "so what". Method. Limits. Next steps with owner and date. | Quiet, one data colour, grey for comparison, source under each chart. | Topic headings, hidden limits |
 | Executive brief | Header: to, from, date, decision needed by. The decision. Numbered background. One options table including "do nothing". Recommendation. Risks with controls. Next steps. | A paper page, serif, one accent, no images, no motion. | More than one page |
@@ -69,7 +68,7 @@ communicator's style. Never write as if that person said it, and never put their
   text. Lightest, or a paler step of the largest, becomes the background. The most vivid that is
   not skin or sky becomes the accent, used sparingly. Check text contrast is 4.5 to 1 or better.
 - **Defaults by voice.** Keynote: black and white. Storyteller: the photo's colours. Teacher: white
-  with one highlight. Pitch: faded film. Practical instructor: field guide. Analyst: quiet, one
+  with one highlight. Practical instructor: field guide. Analyst: quiet, one
   data colour. Executive brief: paper memo.
 
 ## Parts you can use

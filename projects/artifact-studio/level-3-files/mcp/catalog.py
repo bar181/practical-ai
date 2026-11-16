@@ -10,7 +10,7 @@ FACETS={
  'format':[('page','A web page'),('deck','A slide deck'),('social','A social post'),('any','Show me one of each')],
 }
 RULES={'weights':{'goal':3,'audience':2},
- 'look_for_voice':{'voice-keynote':'Keynote black','voice-story':'Cinematic','voice-teacher':'Clean','voice-pitch':'Faded film','voice-practical':'Field guide','voice-analyst':'Dashboard','voice-brief':'Paper memo'}}
+ 'look_for_voice':{'voice-keynote':'Keynote black','voice-story':'Cinematic','voice-teacher':'Clean','voice-practical':'Field guide','voice-analyst':'Dashboard','voice-brief':'Paper memo'}}
 def _t(id,kind,title,name,file,summary,goal,audience,**kw): return dict(id=id,kind=kind,title=title,name=name,file=file,summary=summary,fit={'goal':goal,'audience':audience},**kw)
 TEMPLATES=[
  _t('recipe-report','page','One-page report','one-page report','pages/report.html','How a week, month or project went: the answer, the numbers, what changed, what is next.',{'report':3,'decide':2,'announce':1},{'executive':3,'team':3,'customer':1},article='a one-page report'),
@@ -20,7 +20,6 @@ TEMPLATES=[
  _t('voice-keynote','voice','Keynote voice','keynote','voices/keynote.html','One idea per screen, huge type, almost no words, and "one more thing".',{'inspire':3,'announce':3,'sell':1},{'public':3,'team':2,'customer':2,'executive':1}),
  _t('voice-story','voice','Storyteller voice','storyteller','voices/storyteller.html','The customer is the hero and you are the guide: hook, problem, plan, stakes, ending.',{'sell':3,'inspire':2,'announce':1},{'customer':3,'public':3}),
  _t('voice-teacher','voice','Teacher voice','teacher','voices/teacher.html','An everyday analogy first, then one worked example, the detail, and questions to check yourself.',{'teach':3},{'learner':3,'team':2,'public':1}),
- _t('voice-pitch','voice','Pitch voice','pitch','voices/pitch.html','First person. A memory, the feeling it carries, and the product named only at the end.',{'inspire':3,'sell':2},{'public':2,'customer':2}),
  _t('voice-practical','voice','Practical instructor voice','practical instructor','voices/practical.html','The idea in one sentence, one analogy, numbered steps with a time on each, one next step.',{'teach':3,'report':1,'decide':1},{'team':3,'learner':2,'customer':2}),
  _t('voice-analyst','voice','Analyst voice','analyst','voices/analyst.html','The answer first, then findings whose headings are full sentences, each with one chart and a "so what".',{'report':3,'decide':2},{'executive':3,'team':2}),
  _t('voice-brief','voice','Executive brief voice','executive brief','voices/brief.html','The decision first, numbered background, one options table including "do nothing", risks, next steps.',{'decide':3,'report':2},{'executive':3}),

@@ -58,21 +58,13 @@ The storyteller voice makes the customer the hero and the company the guide. Ins
 - **Full ask:** Write a one-page story from my notes. Hero: my customer. Open on one moment with a time and a place. Give the problem at three depths, then introduce us as the guide with empathy before proof, a three-step plan, one button, the stakes side by side, and an ending that returns to the opening. Dark warm page, large serif type, my photo with a slow push-in. Take the colours from the photo.
 - **With the skill:** Use the artifact-studio skill. Recipe: landing page. Voice: storyteller. Look: take the palette from my attached photo. Content: the attached customer interview notes. Invent nothing about the customer; where a story beat has no material, ask me one question.
 
-### The teacher
+### The explainer
 
-The teacher voice makes a hard idea feel obvious by starting somewhere familiar. Inspired by David Malan's lectures. The company and the timings are invented for the demo.
+The explainer is a lesson you can teach from. It uses the teacher voice, which makes a hard idea feel obvious by starting somewhere familiar. Inspired by David Malan's lectures. This one teaches how to use the studio itself, so you can run it in a class.
 
 - **Short ask:** Explain this like a great teacher: start with an everyday analogy, then one example, then the detail.
-- **Full ask:** Build a one-page lesson from my notes. Open with the question. Give one everyday analogy in very large type, then one worked example with real times, then the same idea as numbered pseudocode I can step through line by line, then three check-yourself questions that open on click, and a one-sentence recap that reuses the analogy. Black and white with a single highlight colour.
+- **Full ask:** Build a one-page lesson from my notes that I can teach from. Open with the question over a picture with one line of text on it. Give one everyday analogy in very large type with a simple hand-drawn sketch that draws itself. Then the steps as a scrolling section with a diagram that stays on screen and lights up each step, with one example per step. Add a worked example I can step through line by line, a five-minute exercise, three check-yourself questions that open on click, and a one-sentence recap that reuses the analogy. Black and white with a single highlight colour.
 - **With the skill:** Use the artifact-studio skill. Recipe: scrolling explainer. Voice: teacher. Look: black and white with one highlight colour. Content: the attached procedure. Keep every step of my procedure; if the analogy stops fitting at some step, say so rather than bending the step.
-
-### The pitch
-
-The pitch voice sells a feeling and lets the product arrive last. Inspired by Don Draper's carousel pitch in Mad Men. The father, the shop and the figures are invented for the demo.
-
-- **Short ask:** Pitch this as a feeling, not a feature. First person, a handful of slides, and the product named only at the end.
-- **Full ask:** Build a six-slide pitch from my notes that I advance by hand. Dark background with one lit slide at a time. Open with a personal memory in the first person, name the feeling, show what was lost, give one hard fact, say three things this is not, then name the product as the feeling. Make my photos look like faded film. End with a short close below the slides.
-- **With the skill:** Use the artifact-studio skill. Recipe: landing page. Voice: pitch. Look: faded film, taken from my attached photos. Content: the attached notes. The memory must be mine: ask me for one true memory before you write, and do not invent one.
 
 ### The practical instructor
 
@@ -102,10 +94,10 @@ The executive brief voice exists to get a decision from busy people. It is the p
 
 ### Visionary deck
 
-The visionary deck is for a room. It makes people feel that something has changed, and it leaves the detail for the conversation afterwards. It follows the manner of Steve Jobs's product launches: a villain, one rule, three things, one number, and a quiet last slide. The company and figures are invented.
+The visionary deck is for a room. It makes people feel that something has changed, and it leaves the detail for the conversation afterwards. It follows the manner of Steve Jobs's product launches: a picture, a villain, one rule, three things, one number, and a quiet last slide. The company and figures are invented.
 
-- **Short ask:** Turn my notes into a keynote-style deck: black slides, one idea each, huge type.
-- **Full ask:** Build an eight-slide deck from my notes in the keynote voice, black with white type. Slide 1 the feeling in one sentence, 2 the problem as one number, 3 what it cost, 4 the idea as one rule, 5 three things in three words, 6 the proof number with the old one struck through, 7 what it bought, 8 "one more thing" with the next step. No bullet lists. Make it one HTML file I can present with arrow keys.
+- **Short ask:** Turn my notes into a keynote-style deck: black slides, one idea each, huge type. Put my photo full screen behind two of the slides, with the words over it.
+- **Full ask:** Build a nine-slide deck from my notes in the keynote voice, black with white type. Slide 1 the feeling in one sentence, 2 my photo filling the slide with one line over it, 3 the problem as one number, 4 what it cost, 5 the idea as one rule, 6 three things in three words, 7 the proof number with the old one struck through, 8 what it bought, 9 "one more thing" with the next step. Put my photos behind slides 2, 4 and 5, full screen, with the words over them. No bullet lists. Make it one HTML file I can present with arrow keys.
 - **With the skill:** Use the artifact-studio skill. Template: visionary deck. Content: the attached notes. Invent no facts and mark every gap.
 
 ### Story deck
@@ -313,7 +305,7 @@ The same photo and the same message, five ways. A look sets the mood; a voice se
 - **As shot:** Keep my photo as shot. Voice: a patient teacher. Open with an everyday analogy, then one worked example, then the detail.
 - **Ink:** Make my photo high-contrast black and white. Voice: a keynote. One idea per screen, very short sentences, huge type.
 - **Dusk:** Grade my photo like dusk, warm at the top and deep blue at the bottom. Voice: a storyteller. Start with a hook, give it a twist, end on a line that lingers.
-- **Faded film:** Make my photo look like faded film, soft and slightly brown. Voice: an emotional pitch in the first person, about the feeling and never the feature.
+- **Faded film:** Make my photo look like faded film, soft and slightly brown. Voice: first person and emotional, about the feeling and never the feature.
 - **Blueprint:** Turn my photo into a two-colour blueprint in navy and pale blue. Voice: a practical instructor. Core concept first, one analogy, then steps I can follow today.
 
 ### Frosted glass card

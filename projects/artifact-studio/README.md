@@ -169,32 +169,51 @@ grid, swipe gallery, and matched looks and voices.
 
 ### The rest of the kit
 
-The effects sit on a full library: <!-- counts -->20 templates (4 pages, 7 voices, 4 decks, 5 social formats), 53 components (12 page parts, 12 photo parts, 12 animated SVG files, 17 design ideas for cards, layouts and colour) and 9 looks<!-- /counts -->. Every one
+The effects sit on a full library: <!-- counts -->19 templates (4 pages, 6 voices, 4 decks, 5 social formats), 53 components (12 page parts, 12 photo parts, 12 animated SVG files, 17 design ideas for cards, layouts and colour) and 9 looks<!-- /counts -->. Every one
 comes with the sentence that asks for it.
 
-### Seven voices: tell your story the way great communicators do
+### A full artifact, in the style you ask for
+
+One sentence picks the style. The same notes become a deck you present, a lesson you teach from,
+a report that argues from evidence, or a guide people act on today.
+
+<p align="center">
+  <img src="_build/img/style-visionary.webp" width="720" alt="Animated screen capture of the visionary deck: black slides with one idea each in huge white type, then full-screen pictures of a city at sunset, a house in fog and a lightbulb splashed with colour, each with a few words over it">
+</p>
+
+| Style | What you get | Say this |
+| --- | --- | --- |
+| **Visionary** | A slide deck. Huge type, one idea per slide, and full-screen pictures with a few words over them | "Turn my notes into a keynote-style deck: black slides, one idea each, huge type. Put my photo full screen behind two of the slides, with the words over it." |
+| **Explainer** | A lesson you can teach from: an analogy, a sketch that draws itself, steps you scroll through while a diagram keeps your place, a worked example and questions to check | "Explain this like a great teacher: start with an everyday analogy, then one example, then the detail." |
+| **Analyst** | A report that gives the answer first, then earns it with three findings and a chart each | "Write this up as an evidence-first one-pager: the answer at the top, then three findings with a chart each." |
+| **Practical** | A field guide: the core idea, one analogy, and steps to tick off today | "Turn this into a practical one-page guide: the core idea, one analogy, then steps I can do today." |
+
+The explainer in the gallery teaches this project. It is the page Bradley built to use in class:
+the smart intern analogy, the four steps, and how to write a good ask.
+
+<p align="center">
+  <img src="_build/img/style-explainer.webp" width="49%" alt="Animated screen capture of the explainer: the words A smart intern in very large type, above a hand-drawn sketch that draws itself, showing an intern, a one-page brief and a finished page">
+  <img src="_build/img/style-explainer-steps.webp" width="49%" alt="Screen capture of the explainer's steps: a diagram of four steps, copy, paste, ask and check, stays at the top with the third step lit, above that step's instructions and an example to copy">
+</p>
+<p align="center">
+  <img src="_build/img/style-analyst.webp" width="49%" alt="Screen capture of the analyst report: a headline that states the conclusion, the answer on a frosted glass card over a picture of coloured puzzle pieces, and three key numbers">
+  <img src="_build/img/style-practical.webp" width="49%" alt="Screen capture of the practical guide: the headline Answer in the first hour, a picture of a small dog at a laptop beside a boxed analogy, and three numbers">
+</p>
+
+### Six voices: tell your story the way great communicators do
 
 The same facts land differently depending on who is telling them. Pick a voice by name.
 
 <p align="center">
-  <img src="_build/img/show-keynote.webp" width="720" alt="Animated screen capture of the keynote voice: huge white type on black, one idea per screen">
-</p>
-
-<p align="center">
   <img src="_build/img/voice-storyteller.webp" width="49%" alt="Screen capture of the storyteller voice: a sunset photograph over water with a story opening set in serif type">
-  <img src="_build/img/voice-pitch.webp" width="49%" alt="Screen capture of the pitch voice: a single warm photograph framed like a slide projector image on a dark page, with one line of story beneath">
-</p>
-<p align="center">
-  <img src="_build/img/voice-practical.webp" width="49%" alt="Screen capture of the practical instructor voice: a headline, the core idea, an analogy and three key numbers on a clean page">
-  <img src="_build/img/voice-teacher.webp" width="49%" alt="Screen capture of the teacher voice: one large question, then an everyday analogy, in bold type">
+  <img src="_build/img/deck-story.webp" width="49%" alt="Screen capture of the story deck: a slide with a full-bleed photograph and a serif headline about the customer">
 </p>
 
 | Voice | Inspired by | Use it when |
 | --- | --- | --- |
 | **Keynote** | Steve Jobs's product launches | The reader should feel that something new is possible |
 | **Storyteller** | Donald Miller's story framework | Your customer is the hero and you are the guide |
-| **Teacher** | David Malan's lectures | Someone has to understand how a thing works |
-| **Pitch** | Don Draper's carousel pitch | You are selling a feeling, not a feature |
+| **Teacher** | David Malan's lectures | Someone has to understand how a thing works. The explainer uses this voice |
 | **Practical instructor** | Bradley Ross's own teaching style | People need the core idea, one analogy and steps for today |
 | **Analyst** | Barbara Minto's pyramid principle | The evidence has to carry the argument |
 | **Executive brief** | The board decision memo | A busy person has to decide |
@@ -202,11 +221,6 @@ The same facts land differently depending on who is telling them. Pick a voice b
 Each voice describes a style. Nothing is written by, or endorsed by, the people named.
 
 ### Decks you present straight from the browser
-
-<p align="center">
-  <img src="_build/img/deck-visionary.webp" width="49%" alt="Screen capture of the visionary deck: a black slide with one sentence in huge white type and slide controls beneath">
-  <img src="_build/img/deck-story.webp" width="49%" alt="Screen capture of the story deck: a slide with a full-bleed photograph and a serif headline about the customer">
-</p>
 
 Four decks: **visionary**, **story**, **briefing** and **workshop**. Each is one file. Open it,
 press the arrow keys, go full screen. No PowerPoint, no export.
@@ -263,8 +277,9 @@ used it yet, so tell us what you find.
 | Devices | Chrome only. Not checked on a phone, Safari or Firefox |
 
 Every company, person and figure in the templates and the example is made up, and each says so.
-The photographs inside the templates are real, were taken by the repository owner and carry no
-location data. The times on this page are estimates, not measurements.
+Two photographs inside the templates, the lake and the sunset, were taken by the repository
+owner. The other eight pictures were supplied by the owner as finished images, not taken as
+photographs. None carries location data. The times on this page are estimates, not measurements.
 
 ## How it is laid out
 

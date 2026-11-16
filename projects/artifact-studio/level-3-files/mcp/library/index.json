@@ -3,9 +3,9 @@
  "generated": "2026-11-15",
  "read_me": "Paths are relative to the project folder. \"preview\" is the tab of the studio page that shows it. \"starter\", where present, is a small complete file to copy and fill. \"source\" is reference code: one style block, the markup and one script, not a complete file. \"fit\" scores run 0 to 3. To choose, score = 3 x goal fit + 2 x audience fit, highest first.",
  "counts": {
-  "templates": 20,
+  "templates": 19,
   "pages": 4,
-  "voices": 7,
+  "voices": 6,
   "decks": 4,
   "social_formats": 5,
   "components": 53,
@@ -128,7 +128,6 @@
    "voice-keynote": "Keynote black",
    "voice-story": "Cinematic",
    "voice-teacher": "Clean",
-   "voice-pitch": "Faded film",
    "voice-practical": "Field guide",
    "voice-analyst": "Dashboard",
    "voice-brief": "Paper memo"
@@ -311,35 +310,10 @@
    "options": "Recipe: any of the four pages, or a deck. Look: the default named with it, or any of the nine. Parts: any that suit the voice.",
    "ask": {
     "short": "Explain this like a great teacher: start with an everyday analogy, then one example, then the detail.",
-    "full": "Build a one-page lesson from my notes. Open with the question. Give one everyday analogy in very large type, then one worked example with real times, then the same idea as numbered pseudocode I can step through line by line, then three check-yourself questions that open on click, and a one-sentence recap that reuses the analogy. Black and white with a single highlight colour.",
+    "full": "Build a one-page lesson from my notes that I can teach from. Open with the question over a picture with one line of text on it. Give one everyday analogy in very large type with a simple hand-drawn sketch that draws itself. Then the steps as a scrolling section with a diagram that stays on screen and lights up each step, with one example per step. Add a worked example I can step through line by line, a five-minute exercise, three check-yourself questions that open on click, and a one-sentence recap that reuses the analogy. Black and white with a single highlight colour.",
     "with_skill": "Use the artifact-studio skill. Recipe: scrolling explainer. Voice: teacher. Look: black and white with one highlight colour. Content: the attached procedure. Keep every step of my procedure; if the analogy stops fitting at some step, say so rather than bending the step."
    },
    "default_look": "Clean"
-  },
-  {
-   "id": "voice-pitch",
-   "kind": "voice",
-   "title": "Pitch voice",
-   "summary": "First person. A memory, the feeling it carries, and the product named only at the end.",
-   "preview": "base/studio.html#voice-pitch",
-   "source": "level-3-files/mcp/library/sources/44-voice-pitch.html",
-   "fit": {
-    "goal": {
-     "inspire": 3,
-     "sell": 2
-    },
-    "audience": {
-     "public": 2,
-     "customer": 2
-    }
-   },
-   "options": "Recipe: any of the four pages, or a deck. Look: the default named with it, or any of the nine. Parts: any that suit the voice.",
-   "ask": {
-    "short": "Pitch this as a feeling, not a feature. First person, a handful of slides, and the product named only at the end.",
-    "full": "Build a six-slide pitch from my notes that I advance by hand. Dark background with one lit slide at a time. Open with a personal memory in the first person, name the feeling, show what was lost, give one hard fact, say three things this is not, then name the product as the feeling. Make my photos look like faded film. End with a short close below the slides.",
-    "with_skill": "Use the artifact-studio skill. Recipe: landing page. Voice: pitch. Look: faded film, taken from my attached photos. Content: the attached notes. The memory must be mine: ask me for one true memory before you write, and do not invent one."
-   },
-   "default_look": "Faded film"
   },
   {
    "id": "voice-practical",
@@ -439,8 +413,8 @@
    },
    "options": "Slides: add or remove, one idea each. Look: any of the nine or your brand. Parts: an animated SVG or one photograph per slide.",
    "ask": {
-    "short": "Turn my notes into a keynote-style deck: black slides, one idea each, huge type.",
-    "full": "Build an eight-slide deck from my notes in the keynote voice, black with white type. Slide 1 the feeling in one sentence, 2 the problem as one number, 3 what it cost, 4 the idea as one rule, 5 three things in three words, 6 the proof number with the old one struck through, 7 what it bought, 8 \"one more thing\" with the next step. No bullet lists. Make it one HTML file I can present with arrow keys.",
+    "short": "Turn my notes into a keynote-style deck: black slides, one idea each, huge type. Put my photo full screen behind two of the slides, with the words over it.",
+    "full": "Build a nine-slide deck from my notes in the keynote voice, black with white type. Slide 1 the feeling in one sentence, 2 my photo filling the slide with one line over it, 3 the problem as one number, 4 what it cost, 5 the idea as one rule, 6 three things in three words, 7 the proof number with the old one struck through, 8 what it bought, 9 \"one more thing\" with the next step. Put my photos behind slides 2, 4 and 5, full screen, with the words over them. No bullet lists. Make it one HTML file I can present with arrow keys.",
     "with_skill": "Use the artifact-studio skill. Template: visionary deck. Content: the attached notes. Invent no facts and mark every gap."
    },
    "look": "Keynote black",

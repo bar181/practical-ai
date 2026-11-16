@@ -127,12 +127,12 @@ MD={ # name: (title, path, note shown above a copy-ready block or None to render
  's-rules':('Build rules',SKILL+'/references/build-rules.md',None),
  's-check':('Checklist',SKILL+'/references/pre-ship-checklist.md',None)}
 for n,(title,path,raw) in MD.items(): VIEW[n]=md_view(n,title,path,raw); VJS[n]=[]
-LABEL={'voice-keynote':'Keynote','voice-story':'Storyteller','voice-teacher':'Teacher','voice-pitch':'Pitch','voice-practical':'Practical','voice-analyst':'Analyst','voice-brief':'Brief',
+LABEL={'voice-keynote':'Keynote','voice-story':'Storyteller','voice-teacher':'Explainer','voice-practical':'Practical','voice-analyst':'Analyst','voice-brief':'Brief',
        'recipe-report':'Report','recipe-proposal':'Proposal','recipe-explainer':'Explainer','recipe-landing':'Landing page'}
-VOICES=['voice-keynote','voice-story','voice-teacher','voice-pitch','voice-practical','voice-analyst','voice-brief']
+VOICES=['voice-keynote','voice-story','voice-teacher','voice-practical','voice-analyst','voice-brief']
 RECIPES=['recipe-report','recipe-proposal','recipe-explainer','recipe-landing']
 CONCEPTS=(('card','31-cards.html','components/cards.html','Cards'),('layout','32-layouts.html','components/layouts.html','Layouts'),('colour','33-colour.html','components/colour.html','Colour'))
-G_VOICES=('Voices',VOICES,'One message, told seven ways. Tap a voice:'); G_RECIPES=('Recipes',RECIPES,'Four whole pages. Tap a recipe:')
+G_VOICES=('Voices',VOICES,'One message, told six ways. Tap a voice:'); G_RECIPES=('Recipes',RECIPES,'Four whole pages. Tap a recipe:')
 STUDIO_GROUPS=[('Photo effects',['photo'],''),G_VOICES,('Pages',RECIPES,'Four whole pages. Tap one:'),('Decks',['deck-visionary','deck-story','deck-briefing','deck-workshop'],'Four slide decks on one engine:'),('Social',['social'],''),
   ('Parts',['parts','svg','looks'],'The pieces a page is made of:'),('Design',['cards','layouts','colour'],'The ideas behind a good page:'),('Pick',['pick','mix'],'Let the studio suggest, or choose every part yourself:'),
   ('Reference',['c-recipes','c-voices','c-parts','c-spec','c-brief','c-sentences'],'The reference sheets, the two forms and every sentence:'),
@@ -148,7 +148,7 @@ TAB={t['id']:(t['id'] if t['kind']!='social' else 'social') for t in C.TEMPLATES
 _v=open(SKILL+'/references/voices.md').read()
 _use={n.strip():u.strip() for u,n in re.findall(r'^\| ([^|]+) \| ([^|]+) \|$',_v[_v.index('## Choosing'):_v.index('## Keynote')],re.M) if n.strip() not in ('Use','---')}
 _by=dict(re.findall(r'^## ([^\n]+)\n\n\| Field \| \|\n\| --- \| --- \|\n\| Inspired by \| ([^|]+) \|',_v,re.M))
-VNAME={'voice-keynote':'Keynote','voice-story':'Storyteller','voice-teacher':'Teacher','voice-pitch':'Pitch','voice-practical':'Practical instructor','voice-analyst':'Analyst','voice-brief':'Executive brief'}
+VNAME={'voice-keynote':'Keynote','voice-story':'Storyteller','voice-teacher':'Teacher','voice-practical':'Practical instructor','voice-analyst':'Analyst','voice-brief':'Executive brief'}
 def about(n,t,key='all'):
     if n in VNAME:
         k=VNAME[n]; u=_use[k]; by=_by[k].strip(); by=by[0].lower()+by[1:] if by.startswith(('The ','A ')) else by; txt=f'<b>The {k.lower()} voice.</b> Inspired by {html.escape(by)}. Use it when the reader should {u[0].lower()+u[1:]}.'
@@ -163,6 +163,8 @@ def about(n,t,key='all'):
     strip=f'<aside class="about" aria-label="About this example"><div class="wrap"><p>{txt}</p>{ask}<p class="about-n">{note} <a href="#anat-{n}" data-jump="anat-{n}">How it is built{"" if ask else ", and the sentence that asks for it"}</a></p></div></aside>'
     t=t.replace('<section class="anat">',f'<section class="anat" id="anat-{n}">',1)
     return re.sub(r'(<div class="view"[^>]*>)',lambda m:m.group(1)+strip,t,count=1)
+# pictures beyond the two in assets.json: each file in photos/ named here becomes a CSS variable, --ph-NAME
+EXTRA=''.join(f'--ph-{k}:url("data:image/jpeg;base64,{base64.b64encode(open(os.path.join(HERE,"photos",k+".jpg"),"rb").read()).decode()}");' for k in ('toronto','dog','puzzle','class','fog','bulb','cat','home'))
 SHELL=open(os.path.join(HERE,'shell.html')).read()
 BASE=open(os.path.join(HERE,'base.css')).read()
 PAGE_INDEX={'templates':[dict(t,tab=TAB[t['id']]) for t in C.TEMPLATES],'rules':C.RULES,'labels':{f:dict(v) for f,v in C.FACETS.items()},'social_styles':C.SOCIAL_STYLES,'palette_roles':C.PALETTE_ROLES,'palette_rule':C.palette(0)['rule']}
@@ -198,7 +200,7 @@ def build(key,out,title,lead,groups):
     p1=(not single) or 'photo' in order or bool(re.search(r'class="(?![^"]*\bph2\b)[^"]*\bph\b',mk)) or 'var(--photo)' in vc or 'data-crop' in mk
     p2=(not single) or 'photo' in order or 'ph2' in mk or '--photo2' in vc
     if single and order[0] in ('voice-keynote','voice-story'): p1=False          # these two repaint every photo frame with the second photograph
-    photos=(f'--photo:url("data:image/jpeg;base64,{A["photo"]}");' if p1 else '')+(f'--photo2:url("data:image/jpeg;base64,{A["sunset"]}");' if p2 else '')
+    photos=(f'--photo:url("data:image/jpeg;base64,{A["photo"]}");' if p1 else '')+(f'--photo2:url("data:image/jpeg;base64,{A["sunset"]}");' if p2 else '')+EXTRA
     t=SHELL.replace('<title>Artifact studio</title>',f'<title>Artifact studio: {html.escape(title)}</title>' if title else '<title>Artifact studio</title>')
     t=t.replace('/*FONTS*/',fonts).replace('/*PHOTOS*/',photos).replace('/*BASE_CSS*/',BASE).replace('/*TAB_CSS*/','\n'.join(tcss)).replace('/*VIEW_CSS*/','\n'.join(css))
     t=t.replace('<!--MAST-->',mast).replace('<!--RADIOS-->','\n'.join(radios)).replace('<!--NAV-->',nav).replace('<!--VIEWS-->','\n'.join(body)).replace('<!--VIEW_JS-->',js)
@@ -220,6 +222,8 @@ def write_starters():
         dk=v[v.index('<div class="dk '):]; dk=dk[:dk.index('</section>\n  <section class="anat">')] if '</section>\n  <section class="anat">' in dk else dk[:dk.index('<section class="anat">')]
         dk=dk.rstrip(); dk=dk[:-len('</section>')].rstrip() if dk.endswith('</section>') else dk
         dk=re.sub(r'<div class="ph ph2"','<div class="ph"',dk)
+        css=re.sub(r'var\(--ph-\w+\)','var(--slide-photo,linear-gradient(#1a1a1a,#1a1a1a))',css)   # the starter carries no picture: the picture slides wait for yours
+        picnote='     A slide with the class dv-img is a picture with words over it. Give it your photograph by setting --slide-photo on that\n     slide to a url() holding a data: address.\n' if 'dv-img' in dk else ''
         doc=f"""<!doctype html>
 <html lang="en">
 <head>
@@ -230,7 +234,7 @@ def write_starters():
      To use: replace the text in each slide, which is a section with the class dk-s. Keep one idea on each slide.
      The aside with the class dk-note is the speaker's note for that slide. Add or remove slides freely.
      A photograph goes on a slide as the background of a div with the class ph, written into the file as a data: address.
-     (No tags are written out in this comment, so a search for a tag finds only real ones.)
+{picnote}     (No tags are written out in this comment, so a search for a tag finds only real ones.)
      Arrow keys, the buttons, a tap or a swipe move between slides. N shows the notes. Print gives one slide a page.
      With scripts off the slides are a readable column.
      Generated by _build/build.py from the same styles and script as the full template. -->
@@ -327,7 +331,10 @@ def write_index(parts,photo):
              looks=[dict(name=l,preview='base/studio.html#looks',card='level-2-files/artifact-studio/references/looks.md') for l in looks])
     os.makedirs(os.path.join(LIBRARY,'sources'),exist_ok=True); os.makedirs(os.path.join(LIBRARY,'svg'),exist_ok=True)
     json.dump(idx,open(os.path.join(LIBRARY,'index.json'),'w'),indent=1)
-    for f in sorted({os.path.basename(x['source']) for x in tpl+comp if x['source'].startswith(SRC)}): shutil.copy(os.path.join(HERE,'views',f),os.path.join(LIBRARY,'sources',f))
+    keep={os.path.basename(x['source']) for x in tpl+comp if x['source'].startswith(SRC)}
+    for f in os.listdir(os.path.join(LIBRARY,'sources')):   # a view removed from views/ leaves the library too
+        if f.endswith('.html') and f!='shell.html' and f not in keep: os.remove(os.path.join(LIBRARY,'sources',f))
+    for f in sorted(keep): shutil.copy(os.path.join(HERE,'views',f),os.path.join(LIBRARY,'sources',f))
     for f in sorted(glob.glob(os.path.join(SVGDIR,'*.svg'))): shutil.copy(f,os.path.join(LIBRARY,'svg'))
     shutil.copy(os.path.join(HERE,'shell.html'),os.path.join(LIBRARY,'sources','shell.html'))
     open(os.path.join(ROOT,'level-3-files','mcp','catalog.py'),'w').write('# Generated: a copy of _build/catalog.py, made by _build/build.py so the server needs nothing outside this folder and the skill. Edit that file, not this one.\n'+open(os.path.join(HERE,'catalog.py')).read())

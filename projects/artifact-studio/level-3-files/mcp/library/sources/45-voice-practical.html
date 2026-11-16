@@ -6,6 +6,13 @@
 .pr-lede{margin-top:16px;font-size:1.22rem;max-width:26em}
 .pr-box{background:#fff;border:2px solid var(--navy);border-radius:6px;padding:18px;box-shadow:5px 5px 0 var(--navy)}
 .pr-analogy{display:grid;gap:8px}
+.pr-pic{position:relative;border:2px solid var(--navy);border-radius:6px;box-shadow:5px 5px 0 var(--navy);overflow:hidden;aspect-ratio:3/2;background:#3a2a1c}
+.pr-pic i{position:absolute;inset:0;background:var(--ph-dog) 60% 40%/cover no-repeat;animation:pr-kb 24s ease-in-out infinite alternate}
+.pr-pic p{position:absolute;left:0;right:0;bottom:0;margin:0;padding:34px 16px 14px;color:#fff;font:700 clamp(1.3rem,5vw,1.9rem)/1.05 "Big Shoulders",var(--display);background:linear-gradient(180deg,rgba(0,0,0,0),rgba(0,0,0,.82))}
+@keyframes pr-kb{from{transform:scale(1)}to{transform:scale(1.16) translate(-2%,-2%)}}
+@media (prefers-reduced-motion:reduce){.pr-pic i{animation:none}}
+@media(min-width:720px){.pr-duo{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:stretch}.pr-duo .pr-pic{aspect-ratio:auto;min-height:230px}}
+.pr-duo{display:grid;gap:16px}
 .pr-analogy b{font:700 1.5rem/1.1 "Big Shoulders",var(--display)}
 .pr-facts{display:grid;gap:12px;grid-template-columns:repeat(3,1fr);margin-top:8px}
 .pr-facts div{background:var(--navy);color:#fff;border-radius:6px;padding:14px 12px}
@@ -34,7 +41,7 @@
 </style>
 <div class="view" id="v-voice-practical" data-tab="voices" data-title="The practical instructor">
   <section class="pr-s"><h1>Answer in the first hour.</h1><p class="pr-lede"><b>The core idea:</b> a machine drafts the reply, a person sends it. You get speed without giving up judgement.</p></section>
-  <section class="pr-s"><div class="pr-box pr-analogy"><b>Think of it as a sous-chef.</b><span>The chopping is done before you walk in. You still taste the dish and you still plate it. Nobody gets served something you have not seen.</span></div></section>
+  <section class="pr-s"><div class="pr-duo"><div class="pr-pic"><i role="img" aria-label="A small dog with its paws on a desk, looking closely at a laptop screen."></i><p>Keen. Fast. New here.</p></div><div class="pr-box pr-analogy"><b>Think of it as a sous-chef.</b><span>The chopping is done before you walk in. You still taste the dish and you still plate it. Nobody gets served something you have not seen.</span></div></div></section>
   <section class="pr-s"><h2>Why bother</h2>
     <div class="pr-facts"><div><b>26 h</b><span>typical wait before the change</span></div><div><b>38 min</b><span>typical wait after 90 days</span></div><div><b>+13</b><span>more site visits a month</span></div></div>
     <p class="sample-note" style="margin-top:10px">Example figures, invented for this demo.</p></section>
@@ -59,7 +66,7 @@
     <h2>Behind this page</h2>
     <p class="measure">The practical instructor voice gets someone doing the thing within the hour. A best guess at Bradley Ross's teaching style: core concept, one analogy, steps for today. The company and figures are invented for the demo.</p>
     <div class="anat-grid">
-      <div><h3>How it is built</h3><ol><li>The core idea in one sentence</li><li>One analogy, boxed so it can be found again</li><li>Three numbers that say why it matters</li><li>Numbered steps with a time on each, and boxes to tick</li><li>The same job at three levels</li><li>The common mistakes</li><li>One next step, small enough to do now</li></ol></div>
+      <div><h3>How it is built</h3><ol><li>The core idea in one sentence</li><li>One analogy, boxed so it can be found again, beside one picture that moves slowly</li><li>Three numbers that say why it matters</li><li>Numbered steps with a time on each, and boxes to tick</li><li>The same job at three levels</li><li>The common mistakes</li><li>One next step, small enough to do now</li></ol></div>
       <div><h3>Design rules</h3><ul><li>It should feel like a field guide or a workbook, not a brochure</li><li>Short sentences that start with a verb</li><li>Everything the reader does is a control they can touch</li><li>Numbers only on steps that happen in order</li><li>Two colours: one for structure, one that means "act"</li><li>Tables for comparing levels, never paragraphs</li></ul></div>
     </div>
 @@levels Turn this into a practical one-page guide: the core idea, one analogy, then steps I can do today. || Build a one-page field guide from my notes. Start with the core idea in one sentence, then one boxed analogy, three numbers on why it matters, five numbered steps with a time estimate and a tick box each plus a progress bar, a table of the same job at beginner, advanced and expert level, three common mistakes, and one next step. Navy and one bright accent, condensed headings, squared grid paper background. || Use the artifact-studio skill. Recipe: scrolling explainer. Voice: practical instructor. Look: field guide in my brand colours (attached spec). Content: the attached procedure. Give every step a time estimate; ask me for any you cannot judge.

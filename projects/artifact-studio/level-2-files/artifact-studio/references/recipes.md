@@ -58,7 +58,7 @@ get wrong.
 | Job | Get one kind of visitor to take one action |
 | Sections, in order | The promise in one line with a number in it. One button. A picture of the result. What you get, as three things. How it works, in three steps. One customer's words. The price. Three real questions. The promise and the button again. |
 | Parts | Price cards, questions and answers, customer quote, one image or small animation |
-| Voices that fit | Storyteller, pitch, practical instructor |
+| Voices that fit | Storyteller, practical instructor |
 | Look | Two strong colours, and a third used only for the button |
 | Needs from the content | The offer, the price, the action, and real customer words if a quote is wanted |
 | Common mistakes | Two different buttons. An invented testimonial. Features listed where outcomes belong. |

@@ -1,6 +1,6 @@
 ---
 name: artifact-studio
-description: Turns any content (notes, documents, data, images, video) into one polished, self-contained HTML page, slide deck or social post picture by choosing a template, a voice and a look, then building and checking it. Use when asked to "make a page", "build an artifact", "turn this into a report", "make a proposal page", "make a landing page", "explain this as a scrolling page", "make this look good", "use the keynote voice" (or storyteller, teacher, pitch, practical instructor, analyst, executive brief), or "use the artifact studio".
+description: Turns any content (notes, documents, data, images, video) into one polished, self-contained HTML page, slide deck or social post picture by choosing a template, a voice and a look, then building and checking it. Use when asked to "make a page", "build an artifact", "turn this into a report", "make a proposal page", "make a landing page", "explain this as a scrolling page", "make this look good", "use the keynote voice" (or storyteller, teacher, practical instructor, analyst, executive brief), or "use the artifact studio".
 ---
 
 # Artifact studio
@@ -122,7 +122,7 @@ saved finds with `artifact-studio:list_inspiration`, or in `level-3-files/mcp/in
 ## When something does not fit
 
 - The content is too thin for the recipe: build the shorter page and list what would complete it.
-- The person asks for a voice that fights the content (a pitch for a compliance notice, say): do
+- The person asks for a voice that fights the content (a keynote for a compliance notice, say): do
   it if asked twice, after saying once why another voice may serve them better.
 - The page needs a library (a large chart set, a map, complex timelines): say so, name the library
   from `references/components.md`, and ask before adding a network dependency.

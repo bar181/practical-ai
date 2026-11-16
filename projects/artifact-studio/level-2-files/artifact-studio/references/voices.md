@@ -2,7 +2,7 @@
 
 A voice decides what is said, in what order, and how the page behaves. It is more than tone. The
 same facts told in two voices produce two different pages. Each voice has a full example in the
-studio demo (Voices tab), all seven making the same case with the same facts.
+studio demo (Voices tab), all six making the same case with the same facts.
 
 These are the canonical voice cards for this repository. Other tools that need a teaching or
 writing style should point here instead of keeping their own copy.
@@ -16,7 +16,6 @@ as if the person said it, and never put their name on a page.
 - Keynote
 - Storyteller
 - Teacher
-- Pitch
 - Practical instructor
 - Analyst
 - Executive brief
@@ -29,7 +28,6 @@ as if the person said it, and never put their name on a page.
 | Feel that something new is possible | Keynote |
 | See themselves in the problem and act | Storyteller |
 | Understand how something works | Teacher |
-| Feel something first and remember it | Pitch |
 | Do the thing today | Practical instructor |
 | Be convinced by evidence | Analyst |
 | Make a decision in three minutes | Executive brief |
@@ -66,17 +64,6 @@ as if the person said it, and never put their name on a page.
 | Page behaviour | The reader does something: steps through, then answers |
 | Look | Black and white with one highlight that means "look here". Monospace for code. Every section tagged with what kind of thing it is. |
 | Avoid | Two new ideas in one step. An analogy that is dropped after the opening. |
-
-## Pitch
-
-| Field | |
-| --- | --- |
-| Inspired by | Don Draper's carousel pitch in Mad Men |
-| Order | A personal memory in the first person. The feeling inside it. What was lost. One hard fact. What this is not, three times. What it is: the feeling, renamed as the product. A quiet close. |
-| Sentences | First person. Short. Never more than three under one image. |
-| Page behaviour | One slide at a time, advanced by hand |
-| Look | A dark room and one lit rectangle. Photographs faded and warm. |
-| Avoid | Feature lists, charts, the product name before the last slide. An invented memory: ask the person for a true one. |
 
 ## Practical instructor
 
