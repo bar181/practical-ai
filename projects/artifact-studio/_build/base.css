@@ -60,8 +60,8 @@ a{color:inherit;text-underline-offset:.18em;text-decoration-thickness:1px}
 
 /* 2 parallax window */
 .px{height:min(64svh,560px);overflow:clip;background:var(--pine)}
-.px .ph{position:absolute;inset:-20% 0;background-position:60% 50%;transform:translateY(calc((var(--p) - .5)*24%))}
-.px-card{position:absolute;left:20px;bottom:15%;max-width:15em;background:var(--fog);padding:14px 16px;border-radius:8px;transform:translateY(calc((.5 - var(--p))*90px));box-shadow:0 14px 30px rgba(27,34,40,.3)}
+.px .ph{position:absolute;inset:-30% 0;background-position:60% 50%;transform:translateY(calc((var(--p) - .5)*36%))}
+.px-card{position:absolute;left:20px;bottom:15%;max-width:15em;background:var(--fog);padding:14px 16px;border-radius:8px;transform:translateY(calc((.5 - var(--p))*150px));box-shadow:0 14px 30px rgba(27,34,40,.3)}
 
 /* 3 photo-filled type */
 .tf{background:var(--pine);color:var(--fog);padding:min(16svh,130px) 0;overflow:hidden;text-align:left}

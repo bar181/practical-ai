@@ -18,7 +18,7 @@ and the library the MCP server reads. It needs Python and the `markdown` package
 | `svg/` | The twelve animated SVG parts |
 | `forms/`, `sentences.md` | Text shown as tabs in the studio page. `sentences.md` is written by the build |
 | `assets.json` | Fonts and photographs, already encoded, so the build needs nothing else |
-| `photos/`, `prepare_assets.py` | The fourteen pictures. `prepare_assets.py` encodes the lake and the sunset into `assets.json`; `build.py` reads the other twelve straight from this folder, and each becomes a CSS variable named `--ph-NAME` |
+| `photos/`, `prepare_assets.py` | The sixteen pictures, and a small portrait of the creator for the note at the foot of each page. `prepare_assets.py` encodes the lake and the sunset into `assets.json`; `build.py` reads the other fourteen straight from this folder, and each becomes a CSS variable named `--ph-NAME` |
 | `licences/` | The licence for each embedded font |
 | `img/` | The pictures on the landing page |
 | `build.py` | The build |
@@ -27,7 +27,7 @@ and the library the MCP server reads. It needs Python and the `markdown` package
 
 ## Credits and licences
 
-- Pictures: `lake.jpg` and `sunset.jpg` are photographs taken by the repository owner. The other twelve were supplied by the owner as finished images. All are stored without location or camera data.
+- Pictures: `lake.jpg` and `sunset.jpg` are photographs taken by the repository owner. The other fourteen were made by the owner with AI image tools. All are stored without location or camera data.
 - Fonts: National Park, Crimson Pro, Instrument Sans, JetBrains Mono, Gloock, Big Shoulders, Work
   Sans and IBM Plex Serif, embedded as subsets under the SIL Open Font License 1.1.
 - Code: Apache-2.0.

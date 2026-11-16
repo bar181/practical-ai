@@ -34,8 +34,8 @@ evidence: almost nothing has been tried by anyone but its author.
 2. **Run each worked example's prompt** in a fresh chat and either replace the reference with the
    real result or keep the label.
 3. **Run the beginner prompt in ChatGPT and Gemini.**
-4. **The pictures.** Two are the owner's photographs. Twelve were supplied as finished images. The
-   owner should confirm each can be published under this repository's licence.
+4. **The pictures.** Settled on 15 November 2026: the owner confirmed he made every supplied
+   picture with AI image tools. Two more, the lake and the sunset, are his photographs.
 5. **Size.** `base/` is 9 MB: the kitchen sink is 2.9 MB and the examples carry their own fonts
    and pictures.
 6. **Branch protection on `main`** could not be set by the assistant. The owner sets it by hand.

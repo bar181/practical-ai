@@ -8,6 +8,8 @@
      To use: replace the text in each slide, which is a section with the class dk-s. Keep one idea on each slide.
      The aside with the class dk-note is the speaker's note for that slide. Add or remove slides freely.
      A photograph goes on a slide as the background of a div with the class ph, written into the file as a data: address.
+     An element with the class dk-pic is a picture beside the words. Give it your photograph by setting --slide-photo on it
+     to a url() holding a data: address.
      (No tags are written out in this comment, so a search for a tag finds only real ones.)
      Arrow keys, the buttons, a tap or a swipe move between slides. N shows the notes. Print gives one slide a page.
      With scripts off the slides are a readable column.
@@ -49,6 +51,7 @@ h1,h2,h3,p,ol,ul{margin:0}button{font:inherit;cursor:pointer}
   .dk-s{page:slide;position:relative!important;inset:auto!important;opacity:1!important;visibility:visible!important;border-radius:0;width:100%;aspect-ratio:16/9;break-after:page;break-inside:avoid;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
 .db .dk-s{background:#f7f8fa;color:#16202b;text-align:left;place-items:center start;padding:7% 8%;border-top:1.2cqw solid #1f4e79}
 .db .dk-s>div{width:100%}
+.db .dk-s.lead>div{width:64%}.db .dk-pic{position:absolute;right:0;top:0;bottom:0;width:31%;background:var(--slide-photo,linear-gradient(#1a1a1a,#1a1a1a)) 50% 30%/cover no-repeat #16202b}
 .db .k{font:700 2.23vw/1.2 var(--sans);font:700 2.53cqw/1.2 var(--sans);color:#1f4e79;margin:0 0 1.8cqw}
 .db h2{font:700 5.46vw/1.08 var(--sans);font:700 6.21cqw/1.08 var(--sans);letter-spacing:-.02em;color:inherit;margin:0;max-width:20em}
 .db p{font:400 2.93vw/1.35 var(--sans);font:400 3.33cqw/1.35 var(--sans);margin:2cqw 0 0;color:#3d4a59;max-width:30em}
@@ -69,7 +72,7 @@ h1,h2,h3,p,ol,ul{margin:0}button{font:inherit;cursor:pointer}
 </head>
 <body>
 <div class="dk db" tabindex="0" role="region" aria-roledescription="slide deck" aria-label="The briefing deck, six slides">
-    <section class="dk-s"><div><p class="k">The recommendation</p><h2>Keep the one-hour rule. Extend it to weekends.</h2><p>It costs four hours a week and wins thirteen more site visits a month.</p></div><aside class="dk-note">Say the answer in the first ten seconds. If they stop you here and agree, you are done.</aside></section>
+    <section class="dk-s lead"><i class="dk-pic" role="img" aria-label="A cheetah in a suit and tie: the person who has to decide."></i><div><p class="k">The recommendation</p><h2>Keep the one-hour rule. Extend it to weekends.</h2><p>It costs four hours a week and wins thirteen more site visits a month.</p></div><aside class="dk-note">Say the answer in the first ten seconds. If they stop you here and agree, you are done.</aside></section>
     <section class="dk-s"><div><p class="k">Why</p><ol><li>The median first reply went from 26 hours to 38 minutes.</li><li>Site visits went from 18 a month to 31.</li><li>A person still reads and sends every reply.</li></ol></div><aside class="dk-note">Three reasons, no more. The third answers the worry they have not said aloud.</aside></section>
     <section class="dk-s"><div><p class="k">The numbers</p><div class="two"><div><b>38</b><span>minutes to a first reply</span><small>It was 26 hours.</small></div><div><b>31</b><span>site visits a month</span><small>There were 18.</small></div></div></div><aside class="dk-note">Two numbers. Say where each comes from: the enquiry log and the diary.</aside></section>
     <section class="dk-s"><div><p class="k">The options</p><table><thead><tr><th scope="col">Option</th><th scope="col">Time a week</th><th scope="col">What we expect</th></tr></thead><tbody><tr><td>Stop</td><td>None</td><td>Back to a day&#8217;s wait</td></tr><tr><td>Weekdays only</td><td>3 hours</td><td>As now</td></tr><tr class="pick"><td>Weekends too (recommended)</td><td>4 hours</td><td>Weekend enquiries answered the same day</td></tr></tbody></table></div><aside class="dk-note">Give every option a fair line, including stopping. Name the one you recommend.</aside></section>

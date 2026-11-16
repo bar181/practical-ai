@@ -15,13 +15,14 @@ Claude, Gemini, Microsoft Copilot and other chatbots, and with personal agents.
 <p align="center">
   <a href="#try-it-in-five-minutes"><b>Try it in five minutes</b></a> &nbsp;·&nbsp;
   <a href="#the-jobs-you-repeat">The jobs it helps with</a> &nbsp;·&nbsp;
+  <a href="#what-comes-next">What comes next</a> &nbsp;·&nbsp;
   <a href="#created-by-bradley-ross">Who made this</a>
 </p>
 
 ## Try it in five minutes
 
-The first tool is ready: **Artifact Studio** turns any AI answer into a slide deck or a report
-you would be proud to present. Free, no sign-up, nothing to install.
+The first tool is finished: **Artifact Studio** turns any AI answer into a mini website, a slide
+deck, a report or a preview of your next post. Free, no sign-up, nothing to install.
 
 **1. See it on your own AI.** Paste this into ChatGPT, Claude, Gemini or the chatbot you already
 use, after any answer or with your own notes:
@@ -33,7 +34,9 @@ Then show this as an HTML presentation in the keynote voice, and tell me three w
 ```
 
 No notes to hand? The [Artifact Studio page](projects/artifact-studio/#try-it-in-five-minutes)
-has a version with sample notes built in, and the finished result to compare.
+has a version with sample notes built in. Or open a
+[worked example](projects/artifact-studio/base/examples/): each one shows a prompt, its sample
+input and the finished page.
 
 **2. Use it every day.** Make a Project in Claude or ChatGPT, or a Gem in Gemini, and paste
 [the instructions](projects/artifact-studio/base/AI-INSTRUCTIONS.md) into it once. After that you
@@ -73,10 +76,10 @@ who work with AI agents every day.
 
 | Job you repeat | The AI does | You do |
 | --- | --- | --- |
-| **A slide deck or report from your notes**<br>Weekly. Ready now | The design, the layout, the first draft | Check the numbers, decide what to cut |
+| **A slide deck, report or mini website from your notes**<br>Weekly. Ready now | The design, the layout, the first draft | Check the numbers, decide what to cut |
 | **Sort the inbox and draft replies**<br>Daily. Drafted | Reads, sorts, drafts | Approve and send |
 | **Meeting notes to actions**<br>Daily. Planned | Pulls decisions, owners and dates | Confirm names and dates |
-| **Posts for the week from one piece**<br>Weekly. Drafted | Five drafts in your voice | Edit and post |
+| **Posts for the week from one piece**<br>Weekly. Previews ready now | Drafts in your voice, shown as they will look in the feed | Choose, edit and post |
 | **Research brief with checked sources**<br>Weekly. Partly drafted | Finds, reads, links every claim | Open the links, judge the answer |
 | **Receipts and invoices into a sheet**<br>Monthly. Planned | Reads each receipt and fills the form | Check each line against the photo |
 
@@ -86,28 +89,55 @@ and the research is in [`docs/tool-inventory.md`](docs/tool-inventory.md).
 
 ## Ready now: Artifact Studio
 
-**Your AI gives brilliant answers. Then it shows them on a grey page.** Artifact Studio is a
+**"Make this look better" is not a solution. Give your AI a design brief.** Artifact Studio is a
 curated library of modern design templates. Say "show this as a presentation" and get a deck or a
 report you would be proud to present. Give it one photo and it moves like a film. Ask for
 three drafts of a post and see each one the way your audience will.
 
 <p align="center">
-  <a href="projects/artifact-studio/"><img src="projects/artifact-studio/_build/img/show-photo-effects.webp" width="800" alt="Animated screen capture of photo effects made from one photograph with Artifact Studio: a sketch draws itself and becomes the photo, the camera pans across a lake, a divider slides between two colour grades, a postcard flips over, and a huge word is filled with the picture"></a>
+  <a href="projects/artifact-studio/"><img src="projects/artifact-studio/_build/img/show-photo-effects.webp" width="800" alt="Animated screen capture of photo effects made from one photograph with Artifact Studio: a sketch draws itself and becomes the photo, the camera pans across a lake, a postcard flips over, and a word is filled with the photo"></a>
 </p>
 
 <p align="center">
-  <img src="projects/artifact-studio/_build/img/fx-line-art.webp" width="32%" alt="Screen capture of a pencil sketch, traced from a photograph, drawing itself">
-  <img src="projects/artifact-studio/_build/img/fx-photo-type.webp" width="32%" alt="Screen capture of one huge word with a photograph inside its letters">
-  <img src="projects/artifact-studio/_build/img/fx-postcard.webp" width="32%" alt="Screen capture of a photograph flipped over like a postcard to show a note">
+  <img src="projects/artifact-studio/_build/img/callouts.svg" width="800" alt="Four cards. One: present a mini website, not a slide show. Two: make this look better is not a solution. Three: give your agents a way to tell a proper story. Four: see your draft the way your audience will.">
 </p>
 
+What is in it, now that the first project is finished:
+
+| You get | What it is |
+| --- | --- |
+| [One file to browse](projects/artifact-studio/base/studio.html) | The whole library as one page you download and open, highlights first |
+| [Ten worked examples](projects/artifact-studio/base/examples/) | A prompt, its sample input and the finished page, for each of seven voices, for post previews, for photo effects and for a report |
+| Thirteen photo and scroll effects | Pan and zoom, parallax, a sketch that draws itself, scrollytelling and more, each with the sentence that asks for it |
+| Seven voices | Visionary, storyteller, emotional, explainer, practical, analyst and executive brief |
+| Post previews for six places | LinkedIn, Instagram, TikTok, Facebook, email and a short blog, shown as your audience will see them |
+| Pages, decks and parts | Four page types, four slide decks you present from the browser, and the parts to build your own |
+| [Instructions for any chatbot](projects/artifact-studio/base/AI-INSTRUCTIONS.md) | The whole procedure in one file you paste in once |
+| [A skill](projects/artifact-studio/level-2-files/) and [an MCP server](projects/artifact-studio/level-3-files/) | For people who work with agents |
+
 <p align="center">
-  <img src="projects/artifact-studio/_build/img/by-hand-or-studio.svg" width="720" alt="Animation comparing a presentation made by hand, one hour to several days, with Artifact Studio, a solid draft in about 5 minutes">
+  <img src="projects/artifact-studio/_build/img/social-three-drafts.webp" width="800" alt="Screen capture of three drafts of one LinkedIn post shown side by side as they would look in a feed, each with a different opening and picture, and a button to choose it">
 </p>
 
 <p align="center"><a href="projects/artifact-studio/"><b>Open Artifact Studio</b></a></p>
 
-It was built and checked by its author. Nobody else has used it yet, so your feedback counts.
+It was built and checked by its author, and scored 70 out of 100 in
+[his own final review](docs/reports/2026-11-15-artifact-studio-final-review.md). Nobody else has
+used it yet, so your feedback counts.
+
+## What comes next
+
+**Project 2 is the template and the process.** Artifact Studio was built the hard way: the folder
+layout changed four times. The next project is the project template and the agentic build
+process themselves, built by following that process. If the method cannot build its own
+template, it is not ready for anything else.
+
+- [What the first build taught us](plans/plans-template/BUILD-PROCESS.md#what-the-first-build-taught-us): eleven lessons, each tied to a step
+- [The nine-step build process](plans/plans-template/BUILD-PROCESS.md)
+- [The project method](drafts/project-method/), a draft that still describes an earlier layout
+- [The layout every project follows](projects/README.md)
+
+After that, the tools in [the priorities](docs/practical-ai-priorities.md), one pull request each.
 
 ## Get started at your level
 
@@ -148,7 +178,7 @@ room.
 
 | Folder | What it holds |
 | --- | --- |
-| [`projects/`](projects/) | Showcases you can try in five minutes. One so far |
+| [`projects/`](projects/) | Showcases you can try in five minutes. One so far: Artifact Studio |
 | [`drafts/`](drafts/) | Earlier work in progress |
 | [`docs/`](docs/) | The one list of tools, the to-do list and the reports |
 | [`plans/`](plans/) | A plan for each tool on the list, and [`archive/`](plans/archive/) for what was replaced |
@@ -160,7 +190,7 @@ Inside every project, `base/` is enough to try the tool. Beside it, `level-2-fil
 
 - Reuse what already exists before building anything new.
 - A person approves anything that posts, sends, pays or publishes.
-- Examples use invented data and say so. No real names, companies or client material.
+- Examples use invented data and say so. No real names, companies or client material. The exception is a page about this repository and its author, which says so.
 - Every claim about something that changes often carries the date it was checked.
 - Every status line says who has and has not tried the thing. "Built" is not "used".
 

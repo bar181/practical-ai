@@ -171,8 +171,12 @@ def about(n,t,key='all'):
     t=t.replace('<section class="anat">',f'<section class="anat" id="anat-{n}">',1)
     return re.sub(r'(<div class="view"[^>]*>)',lambda m:m.group(1)+strip,t,count=1)
 # pictures beyond the two in assets.json: each file in photos/ named here becomes a CSS variable, --ph-NAME
-EXTRA={k:f'--ph-{k}:url("data:image/jpeg;base64,{base64.b64encode(open(os.path.join(HERE,"photos",k+".jpg"),"rb").read()).decode()}");' for k in ('toronto','dog','puzzle','class','fog','bulb','cat','home','flower','portrait','dancers','heart')}
+EXTRA={k:f'--ph-{k}:url("data:image/jpeg;base64,{base64.b64encode(open(os.path.join(HERE,"photos",k+".jpg"),"rb").read()).decode()}");' for k in ('toronto','dog','puzzle','class','fog','bulb','cat','home','flower','portrait','dancers','heart','cheetah','puppy')}
 SHELL=open(os.path.join(HERE,'shell.html')).read()
+# the creator's note at the foot of the studio page and of every worked example. Starters do not carry it: they are for other people's work
+FOOT=('<aside class="me" id="about-the-creator" aria-label="About the creator"><div class="wrap"><img src="data:image/jpeg;base64,'+base64.b64encode(open(os.path.join(HERE,'photos','creator-144.jpg'),'rb').read()).decode()+'" width="72" height="72" alt="Bradley Ross">'
+      '<div><p class="me-k">Made by Bradley Ross</p><p>Bradley is an agentic AI architect and developer for businesses of every size, from start-up to enterprise. He builds and teaches practical AI: 12 courses, more than 40 cohorts and more than 900 students.</p>'
+      '<a class="me-b" href="https://www.linkedin.com/in/bradaross/">Connect with Bradley on LinkedIn</a><span class="me-s">For training, questions or feedback.</span></div></div></aside>')
 BASE=open(os.path.join(HERE,'base.css')).read()
 PAGE_INDEX={'templates':[dict(t,tab=TAB[t['id']]) for t in C.TEMPLATES],'rules':C.RULES,'labels':{f:dict(v) for f,v in C.FACETS.items()},'social_styles':C.SOCIAL_STYLES,'palette_roles':C.PALETTE_ROLES,'palette_rule':C.palette(0)['rule']}
 data=json.dumps({'rows':A['rows'],'pal':A['pal'],'index':PAGE_INDEX},separators=(',',':'))
@@ -214,6 +218,7 @@ def build(key,out,title,lead,groups,other=None,panel=None):
     t=SHELL.replace('<title>Artifact studio</title>',f'<title>Artifact studio: {html.escape(title)}</title>' if title else '<title>Artifact studio</title>')
     t=t.replace('/*FONTS*/',fonts).replace('/*PHOTOS*/',photos).replace('/*BASE_CSS*/',BASE).replace('/*TAB_CSS*/','\n'.join(tcss)).replace('/*VIEW_CSS*/','\n'.join(css))
     t=t.replace('<!--MAST-->',mast).replace('<!--RADIOS-->','\n'.join(radios)).replace('<!--NAV-->',nav).replace('<!--VIEWS-->','\n'.join(body)).replace('<!--VIEW_JS-->',js)
+    t=t.replace('<!--FOOT-->',FOOT)
     t=t.replace('__ELSEWHERE__',json.dumps(elsewhere,separators=(',',':')))
     t=t.replace('__PATHS__',paths).replace('__DATA__',data).replace('__TOPHEX__',A['pal'][0]['hex']).replace('__TOPSHARE__',str(round(A['pal'][0]['share'])))
     kb=round(len(t.encode())/1024); t=t.replace('__KB__',f'{kb:,}')
@@ -258,6 +263,7 @@ def write_starters():
         dk=re.sub(r'<div class="ph ph2"','<div class="ph"',dk)
         css=re.sub(r'var\(--ph-\w+\)','var(--slide-photo,linear-gradient(#1a1a1a,#1a1a1a))',css)   # the starter carries no picture: the picture slides wait for yours
         picnote='     A slide with the class dv-img is a picture with words over it. Give it your photograph by setting --slide-photo on that\n     slide to a url() holding a data: address.\n' if 'dv-img' in dk else ''
+        if 'dk-pic' in dk: picnote+='     An element with the class dk-pic is a picture beside the words. Give it your photograph by setting --slide-photo on it\n     to a url() holding a data: address.\n'
         doc=f"""<!doctype html>
 <html lang="en">
 <head>

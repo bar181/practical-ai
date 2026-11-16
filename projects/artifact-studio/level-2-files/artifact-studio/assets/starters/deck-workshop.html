@@ -8,6 +8,8 @@
      To use: replace the text in each slide, which is a section with the class dk-s. Keep one idea on each slide.
      The aside with the class dk-note is the speaker's note for that slide. Add or remove slides freely.
      A photograph goes on a slide as the background of a div with the class ph, written into the file as a data: address.
+     An element with the class dk-pic is a picture beside the words. Give it your photograph by setting --slide-photo on it
+     to a url() holding a data: address.
      (No tags are written out in this comment, so a search for a tag finds only real ones.)
      Arrow keys, the buttons, a tap or a swipe move between slides. N shows the notes. Print gives one slide a page.
      With scripts off the slides are a readable column.
@@ -50,6 +52,7 @@ h1,h2,h3,p,ol,ul{margin:0}button{font:inherit;cursor:pointer}
 .dw .dk-s{background:#fffdf6;color:#14302d;text-align:left;place-items:center start;padding:7% 8%}
 .dw .dk-s.turn{background:#0d4f4a;color:#fffdf6}
 .dw .dk-s>div{width:100%}
+.dw .dk-s.lead>div{width:62%}.dw .dk-pic{position:absolute;right:0;top:0;bottom:0;width:33%;background:var(--slide-photo,linear-gradient(#1a1a1a,#1a1a1a)) 50% 40%/cover no-repeat #0d4f4a}
 .dw .k{display:inline-block;font:700 2.23vw/1 var(--sans);font:700 2.53cqw/1 var(--sans);color:#14302d;background:#ffe27a;padding:.9cqw 1.6cqw;border-radius:.6cqw;margin:0 0 2.2cqw}
 .dw h2{font:700 5.67vw/1.08 var(--display);font:700 6.44cqw/1.08 var(--display);letter-spacing:-.015em;color:inherit;margin:0;max-width:19em}
 .dw p{font:400 3.04vw/1.35 var(--text);font:400 3.45cqw/1.35 var(--text);margin:2cqw 0 0;color:inherit;max-width:30em}
@@ -65,7 +68,7 @@ h1,h2,h3,p,ol,ul{margin:0}button{font:inherit;cursor:pointer}
 </head>
 <body>
 <div class="dk dw" tabindex="0" role="region" aria-roledescription="slide deck" aria-label="The workshop deck, seven slides">
-    <section class="dk-s"><div><p class="k">By the end</p><h2>You will be able to answer an enquiry in under an hour.</h2><p>And it will still sound like you.</p></div><aside class="dk-note">Promise one skill they can use today. Ask who has answered an enquiry this week.</aside></section>
+    <section class="dk-s lead"><i class="dk-pic" role="img" aria-label="A puppy in a plaid suit and tie, ready to coach."></i><div><p class="k">By the end</p><h2>You will be able to answer an enquiry in under an hour.</h2><p>And it will still sound like you.</p></div><aside class="dk-note">Promise one skill they can use today. Ask who has answered an enquiry this week.</aside></section>
     <section class="dk-s"><div><p class="k">Think of it as</p><h2>A relay race.</h2><p>The alert hands to the draft. The draft hands to you. You run the last leg.</p></div><aside class="dk-note">Give the picture before the steps. Come back to it whenever someone is lost.</aside></section>
     <section class="dk-s"><div><p class="k">The three steps</p><ol><li>Open the alert on your phone.</li><li>Read the draft against our price list.</li><li>Change one line so it sounds like you. Then send.</li></ol></div><aside class="dk-note">Read each step once, slowly. Do not explain yet. The example does the explaining.</aside></section>
     <section class="dk-s"><div><p class="k">Watch one</p><div class="pair"><div><b>The enquiry</b><span>&#8220;Can you fit a kitchen before March?&#8221;</span></div><div><b>The reply</b><span>&#8220;Yes. We can visit on Thursday or Friday to measure. Which suits you?&#8221;</span></div></div></div><aside class="dk-note">Point at the three things: it answers first, it offers two times, it ends on a question.</aside></section>

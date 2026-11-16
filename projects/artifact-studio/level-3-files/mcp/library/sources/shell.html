@@ -29,6 +29,12 @@
 .mast .mast-l{font:400 .94rem/1.4 var(--display);color:#c2cede;margin:6px 0 0;max-width:40em}
 .tabs .tabs-h{flex-basis:100%;font:700 .8rem/1 var(--display);color:#c2cede;margin:8px 0 0}.tabs .tabs-h:first-child{margin-top:0}
 .ex .codeb pre{max-height:24em;overflow:auto;white-space:pre-wrap;overflow-wrap:anywhere}.ex .codeb{margin-top:10px}
+.me{background:#0c2340;color:#fff;padding:34px 0 40px;font-family:var(--work)}.me .wrap{display:flex;gap:18px;align-items:flex-start}
+.me img{flex:none;width:72px;height:72px;border-radius:50%;border:3px solid #ffd23f}
+.me-k{font:700 1.3rem/1.15 var(--display);margin:0}.me p{margin:6px 0 0;max-width:38em;color:#dfe6ef;font-size:1rem;line-height:1.45}
+.me-b{display:inline-flex;align-items:center;min-height:46px;margin-top:14px;padding:0 20px;border-radius:999px;background:#ffd23f;color:#0c2340;font:700 1rem/1 var(--display);text-decoration:none}
+.me-s{display:block;margin-top:8px;color:#b9c5d3;font-size:.9rem}
+@media print{.me{display:none}}
 .mast .mast-x{margin:8px 0 0;font:700 .9rem/1.3 var(--display)}.mast .mast-x a{color:var(--reed);display:inline-flex;align-items:center;min-height:40px}
 .tabs{background:var(--pine);padding:6px 0 12px;position:relative;z-index:40}
 .tabs>div{display:flex;flex-wrap:wrap;gap:6px;padding:5px 20px;max-width:1080px;margin-inline:auto}
@@ -107,6 +113,7 @@
 <!--RADIOS-->
 <!--NAV-->
 <!--VIEWS-->
+<!--FOOT-->
 <script>
 /* shared helpers. Each tab's own script follows in a separate script element, so a fault in one cannot stop the others. */
 const STUDIO={data:__DATA__,elsewhere:__ELSEWHERE__};window.STUDIO=STUDIO;
@@ -136,7 +143,7 @@ STUDIO.crops=root=>{for(const e of $$('[data-crop]',root)){
 <script>
 (()=>{
 /* scroll driver for browsers without native scroll-driven animations */
-const native=CSS.supports('(animation-timeline: view()) and (animation-range: entry)')&&!window.FORCE_SD_JS;
+const native=false;   /* the script drives scroll progress in every browser. Some browsers accept the CSS-only form and then do not animate a custom property, which left effects such as the parallax window still. The CSS-only form remains for pages opened with scripts off. */
 if(!native&&!reduce){
   html.classList.add('sd-js');
   const els=$$('.sd'),bar=$('.progress');let tick=false;

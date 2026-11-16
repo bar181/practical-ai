@@ -357,9 +357,9 @@ used it yet, so tell us what you find.
 Every company, person and figure in the templates and the example is made up, and each says so.
 Two places are about this repository instead and name its author: the visionary page and the
 post previews. Their drafts are examples, written from his own teaching phrases.
-Two photographs inside the templates, the lake and the sunset, were taken by the repository
-owner. The other twelve pictures were supplied by the owner as finished images, not taken as
-photographs. None carries location data. The times on this page are estimates, not measurements.
+Two pictures inside the templates, the lake and the sunset, are photographs taken by the
+repository owner. The other fourteen were made by the owner with AI image tools. None carries
+location data. The times on this page are estimates, not measurements.
 
 ## How it is laid out
 
