@@ -10,43 +10,43 @@ E = html.escape
 HERE = pathlib.Path(__file__).resolve().parent
 
 # The end-user rubric, scored by the author. "before" is the review written on 16 November 2026 in the morning.
-RUBRIC = [  # measure, before, now, evidence for now
- ("Purpose is clear in one screen", 84, 86, "Hook, the guide recommended at the top, the picture now present, and the training linked"),
- ("A beginner gets value fast", 78, 82, "A short path for small jobs, and a stop line if the chatbot cannot open the coach. Six fresh-session runs; no person yet"),
- ("Base content is worth its place", 82, 88, "Six items, each with a reader. The duplicate plan template is gone; the training page is in"),
+RUBRIC = [  # measure, morning, now, evidence for now
+ ("Purpose is clear in one screen", 84, 86, "Hook, the guide recommended at the top, the picture now present, the training linked"),
+ ("A beginner gets value fast", 78, 78, "A short path for small jobs, a stop line and a ready-made second prompt if the link fails. Six coach runs; none in ChatGPT, none by a person"),
+ ("Base content is worth its place", 82, 86, "Six items, each with a reader. One plan template. Examples made by the current or a recent coach"),
  ("Each step is easy to follow", 85, 86, "Purpose, a user story per level with a filter, what to expect, proof, the gate and a prompt"),
- ("The Advanced level works where builders work", 62, 82, "One self-contained folder. An agent with only that folder, in an empty repository, reached a tested first version"),
- ("The Expert level is usable as given", 66, 82, "The template carries three gates, including one that catches blanks. A full unattended run is a worked example"),
- ("The scaffolding is clean", 78, 86, "Test logs in _build/runs, one plan template, every repeated page written by one build"),
- ("The files agree with each other", 70, 88, "Steps, gate tables, plan headings, prompt and lesson each have one source. A gate fails if a page drifts"),
- ("Honest about what is proven", 92, 92, "Every status line says who tried it; every time is labelled an estimate"),
+ ("The Advanced level works where builders work", 62, 76, "One folder that works in any repository. The third audit found a bug that stopped a finished project passing; fixed, and a gate now proves a filled project passes. Not re-audited"),
+ ("The Expert level is usable as given", 66, 78, "Four starter gates, a full unattended run as a worked example, one rule for which test points to fix first"),
+ ("The scaffolding is clean", 78, 84, "Test logs in _build/runs, every repeated page written by one build, a place named for code"),
+ ("The files agree with each other", 70, 86, "The third audit found the steps, gates and plan headings word for word the same in all four places"),
+ ("Honest about what is proven", 92, 88, "Every status line says who tried it. The audits caught two claims that had gone stale; both are dated now"),
  ("Evidence of real value", 25, 25, "AI sessions only. No person has used it, and no chatbot other than Claude has run it"),
 ]
 # The independent newcomer audit: a fresh session reading the project as three people. Before = first audit, after = second.
-AUDIT = [("Beginner, uses ChatGPT", 64, None), ("Builder with a coding agent", 60, None), ("Teacher with a class tomorrow", 52, None)]
-AUDIT_FOUND = {"before": (4, 16, 23), "after": None}   # blocking, confusing, minor
+AUDIT = [("Beginner, uses ChatGPT", 64, 60, 72), ("Builder with a coding agent", 60, 70, 52), ("Teacher with a class tomorrow", 52, 58, 70)]
+AUDIT_FOUND = [(4, 16, 23), (4, 12, 19), (1, 12, 16)]   # blocking, confusing, minor, per audit
 # GitHub, read through the GitHub API on 16 November 2026.
 GITHUB = {"stars": 0, "forks": 0, "watchers": 0, "topics": 0, "releases": 0, "community_profile": 42,
           "description": "Suite of practical ai assisted workflows and automation tools - no fluff, just productivity",
           "homepage": "none", "pages": "off", "discussions": "off", "template": "no", "traffic": "not readable from this session"}
 TESTS = [  # what ran on Agentic Process, all on 16 November 2026, all Claude sessions
- ("Coach runs by fresh sessions", 6), ("Skill runs by a second agent", 2), ("Fresh-session tests of a tool the skill built", 2), ("Newcomer audits", 2)]
+ ("Coach runs by fresh sessions", 6), ("Skill runs by a second agent", 2), ("Fresh-session tests of a tool the skill built", 2), ("Newcomer audits", 3)]
 
 
-def bars(rows, key_before, key_after, unit="out of 100"):
+def bars(rows):
+    """rows: (name, value, value, ...). The last value is drawn in the data colour, the others in greys."""
     out = []
-    for i, (name, a, b) in enumerate(rows):
-        out.append(f'<div class="pair" role="listitem"><span class="nm">{E(name)}</span>'
-                   f'<span class="bar was" style="--v:{a}%" title="Before: {a}"><b>{a}</b></span>'
-                   f'<span class="bar now" style="--v:{b}%" title="Now: {b}"><b>{b}</b></span></div>')
+    for name, *vals in rows:
+        cls = ['was', 'mid', 'now'][-len(vals):] if len(vals) <= 3 else ['was'] * (len(vals) - 1) + ['now']
+        spans = ''.join(f'<span class="bar {c}" style="--v:{v}%" title="{v}"><b>{v}</b></span>' for c, v in zip(cls, vals))
+        out.append(f'<div class="pair" role="listitem"><span class="nm">{E(name)}</span>{spans}</div>')
     return '\n'.join(out)
 
 
 def page():
-    audit_after = [a for a in AUDIT if a[2] is not None]
     rub_before = round(sum(r[1] for r in RUBRIC) / len(RUBRIC)); rub_now = round(sum(r[2] for r in RUBRIC) / len(RUBRIC))
-    au_before = round(sum(a[1] for a in AUDIT) / 3); au_now = round(sum(a[2] for a in AUDIT) / 3) if len(audit_after) == 3 else None
-    fb, fa = AUDIT_FOUND["before"], AUDIT_FOUND["after"]
+    au = [round(sum(a[i] for a in AUDIT) / 3) for i in (1, 2, 3)]
+    at80 = sum(1 for r in RUBRIC if r[2] >= 80)
     rub_rows = ''.join(f'<tr><th scope="row">{E(m)}</th><td>{a}</td><td><b>{b}</b></td><td>{E(ev)}</td></tr>' for m, a, b, ev in RUBRIC)
     below = [m for m, a, b, ev in RUBRIC if b < 80]
     gh = GITHUB
@@ -79,10 +79,10 @@ section p+p,section h2+p{{margin-top:12px}}section p{{max-width:40em}}
 .lv{{display:grid;gap:12px;margin-top:16px}}@media(min-width:760px){{.lv{{grid-template-columns:repeat(3,1fr)}}}}
 .lv div{{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px;font:400 1rem/1.45 var(--display)}}.lv b{{display:block;font-size:1.08rem;margin-bottom:6px}}
 figure{{margin:18px 0 0;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 16px 14px}}
-.key{{display:flex;flex-wrap:wrap;gap:16px;font:400 .92rem/1.2 var(--display);color:var(--muted);margin-bottom:12px}}.key span::before{{content:"";display:inline-block;width:14px;height:10px;border-radius:2px;margin-right:6px;background:var(--was)}}.key .k2::before{{background:var(--data)}}
+.key{{display:flex;flex-wrap:wrap;gap:16px;font:400 .92rem/1.2 var(--display);color:var(--muted);margin-bottom:12px}}.key span::before{{content:"";display:inline-block;width:14px;height:10px;border-radius:2px;margin-right:6px;background:var(--was)}}.key .k2::before{{background:var(--data)}}.key .k1::before{{background:#8d9ab0}}
 .chart{{display:grid;gap:14px}}.pair{{display:grid;gap:3px;font:400 .95rem/1.25 var(--display)}}.pair .nm{{color:var(--ink)}}
 .bar{{display:flex;align-items:center;justify-content:flex-end;width:var(--v);min-width:2.6em;height:20px;border-radius:0 4px 4px 0;background:var(--was)}}.bar.now{{background:var(--data)}}
-.bar b{{padding-right:6px;font:700 .82rem/1 var(--display);color:var(--ink)}}.bar.now b{{color:#fff}}
+.bar.mid{{background:#8d9ab0}}.bar b{{padding-right:6px;font:700 .82rem/1 var(--display);color:var(--ink)}}.bar.now b{{color:#fff}}
 figcaption{{margin-top:12px;font:400 .86rem/1.4 var(--display);color:var(--muted)}}
 .so{{margin-top:14px;padding:12px 14px;border-left:5px solid var(--data);background:var(--panel);border-radius:0 10px 10px 0;font:400 1rem/1.45 var(--display)}}
 .tw{{overflow-x:auto;margin-top:14px}}table{{border-collapse:collapse;width:100%;min-width:560px;font:400 .94rem/1.4 var(--display)}}
@@ -98,10 +98,10 @@ footer{{margin-top:50px;background:var(--accent);color:#dfe6ef;padding:28px 0 36
 <header><div class="wrap">
   <p class="meta">Report for the owner of Practical AI · 16 November 2026 · Project two: Agentic Process</p>
   <h1>Agentic Process is ready to try and to teach; nobody but its author has used it yet.</h1>
-  <p class="answer">Four rounds of independent tests found and fixed the faults a newcomer would hit at every level, and an agent with only the skill folder built and tested a first tool in a repository it had never seen. GitHub shows none of this yet: no stars, no topics and no page that opens on a phone.</p>
+  <p class="answer">Three independent audits and nine test runs found and fixed the faults a newcomer would hit at every level; the last audit's fixes have not been audited again. GitHub shows none of this yet: no stars, no topics and no page that opens on a phone, and the links work only once the branch is merged.</p>
   <div class="tiles">
-    <div class="tile"><b>{rub_before} → {rub_now}</b><span>The end-user rubric, out of 100. <i>{len(below)} of 10</i> measures still below 80.</span></div>
-    <div class="tile"><b>{au_before} → {au_now if au_now is not None else "…"}</b><span>A fresh newcomer's average score, as a beginner, a builder and a teacher.</span></div>
+    <div class="tile"><b>{rub_before} → {rub_now}</b><span>The end-user rubric, out of 100, this morning and now. <i>{len(below)} of 10</i> measures still below 80.</span></div>
+    <div class="tile"><b>{au[0]} → {au[1]} → {au[2]}</b><span>An independent newcomer's average score across three audits, as a beginner, a builder and a teacher.</span></div>
     <div class="tile"><b>0</b><span>People outside the author who have used it. Every test so far was an AI session, in Claude.</span></div>
   </div>
 </div></header>
@@ -118,29 +118,29 @@ footer{{margin-top:50px;background:var(--accent);color:#dfe6ef;padding:28px 0 36
   <p style="margin-top:14px">For teaching there is a 30-minute training: ten slides on Artifact Studio's workshop deck, a lesson timer, and a presenter window that keeps the notes off the projector.</p>
 </section>
 
-<section aria-labelledby="f1"><p class="lab">Finding 1</p><h2 id="f1">A fresh newcomer scored the project {au_before} on average before the fixes{f" and {au_now} after" if au_now is not None else ""}.</h2>
+<section aria-labelledby="f1"><p class="lab">Finding 1</p><h2 id="f1">Across three audits the teacher's score rose from {AUDIT[2][1]} to {AUDIT[2][3]} and the beginner's from {AUDIT[0][1]} to {AUDIT[0][3]}; the builder's fell to {AUDIT[1][3]} on a bug now fixed.</h2>
   <figure>
-    <div class="key"><span>First audit, before the fixes</span><span class="k2">Second audit, after</span></div>
-    <div class="chart" role="list" aria-label="Newcomer scores out of 100, before and after">
-{bars([(n, a, b if b is not None else 0) for n, a, b in AUDIT], 1, 2)}
+    <div class="key"><span>First audit</span><span class="k1">Second, after its fixes</span><span class="k2">Third, scored as if merged</span></div>
+    <div class="chart" role="list" aria-label="Newcomer scores out of 100, three audits">
+{bars([(n, a, b, c) for n, a, b, c in AUDIT])}
     </div>
-    <figcaption>Unit: "would this be useful to me today", out of 100. Each audit was one fresh Claude session reading the whole project as three people and running the Advanced commands. It found {fb[0]} blocking, {fb[1]} confusing and {fb[2]} minor points the first time{f"; {fa[0]}, {fa[1]} and {fa[2]} the second" if fa else ""}.</figcaption>
+    <figcaption>Unit: "would this be useful to me today", out of 100. Each audit was one fresh Claude session that read the whole project as three people and ran the builder's commands in an empty repository. The first two counted the links that do not work until the merge; the third was asked to score as if merged, so it is not a like-for-like comparison. Problems found (blocking, confusing, minor): {", then ".join(f"{x[0]}, {x[1]}, {x[2]}" for x in AUDIT_FOUND)}.</figcaption>
   </figure>
-  <p class="so"><b>So what.</b> The teacher's path moved most, because the lesson used to promise a plan the class never reached, and the slides named no file to copy when a link failed. Both are fixed, and the presenter window is new.</p>
+  <p class="so"><b>So what.</b> Each audit found new faults, some of them introduced by the previous round's fixes: a heading bug in the second, and in the third a check that a finished project could never pass. Both are fixed, and a gate now fills a new project and expects every check to pass, so that class of fault cannot return unnoticed. A fourth audit would show whether the builder's score recovers.</p>
 </section>
 
-<section aria-labelledby="f2"><p class="lab">Finding 2</p><h2 id="f2">Nine of ten measures now reach 80 or more; evidence of real use stays at {RUBRIC[-1][2]}.</h2>
+<section aria-labelledby="f2"><p class="lab">Finding 2</p><h2 id="f2">{['None','One','Two','Three','Four','Five','Six','Seven','Eight','Nine','Ten'][at80]} of ten measures reach 80 or more; the builder's path is fixed but not re-audited, and real use stays at {RUBRIC[-1][2]}.</h2>
   <figure>
     <div class="key"><span>This morning's review</span><span class="k2">Now</span></div>
     <div class="chart" role="list" aria-label="End-user rubric, out of 100, this morning and now">
-{bars([(m, a, b) for m, a, b, ev in RUBRIC], 1, 2)}
+{bars([(m, a, b) for m, a, b, ev in RUBRIC])}
     </div>
     <figcaption>Unit: score out of 100, scored by the author from the user's side, with evidence for each. Source: the review written this morning, and the tests run since. The table below gives the evidence.</figcaption>
   </figure>
   <details><summary>The rubric as a table, with the evidence</summary>
     <div class="tw" tabindex="0" role="region" aria-label="The rubric with evidence"><table><thead><tr><th scope="col">Measure</th><th scope="col">Morning</th><th scope="col">Now</th><th scope="col">Evidence now</th></tr></thead><tbody>{rub_rows}</tbody></table></div>
   </details>
-  <p class="so"><b>So what.</b> The largest gains are where a builder works: the skill used to run only inside this repository, and now an agent with one folder took an idea to a tested first version elsewhere. The last measure cannot move from here: it needs people.</p>
+  <p class="so"><b>So what.</b> The largest gain is that the files now agree: every page that repeats the steps is written from one source, and a gate fails if one drifts. The builder's path gained most in substance (one folder, any repository) but is scored cautiously until it is audited again. The last measure cannot move from here: it needs people.</p>
 </section>
 
 <section aria-labelledby="f3"><p class="lab">Finding 3</p><h2 id="f3">On GitHub the repository shows none of the signals a visitor looks for, and the ones it could show are mostly vanity.</h2>
@@ -162,7 +162,7 @@ footer{{margin-top:50px;background:var(--accent);color:#dfe6ef;padding:28px 0 36
   <p class="so"><b>So what.</b> Topics, a description, a social picture and Pages take the owner about 30 minutes and make the work findable. They do not prove value. The measure that matters, people who used it, needs a way to report back: the "I tried it" template.</p>
 </section>
 
-<section aria-labelledby="m"><p class="lab">How it was measured</p><h2 id="m">Every test was an AI session that had only the project's own files.</h2>
+<section aria-labelledby="m"><p class="lab">How it was measured</p><h2 id="m">Every test was an AI session that had only the project's own files; the rubric is the author's.</h2>
   <div class="tw" tabindex="0" role="region" aria-label="What ran"><table><thead><tr><th scope="col">Test</th><th scope="col">Runs</th></tr></thead><tbody>{''.join(f'<tr><th scope="row">{E(n)}</th><td>{c}</td></tr>' for n, c in TESTS)}</tbody></table></div>
   <p style="margin-top:14px">Each run logged every place it had to guess, marked blocking or minor. The logs are kept unedited in <code>projects/agentic-process/_build/runs/</code>. The pages were checked in Chrome at phone and laptop width with an automated accessibility scan, with scripts off, and the presenter window was driven from a second window.</p>
 </section>

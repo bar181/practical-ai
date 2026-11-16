@@ -17,16 +17,20 @@ each. Nothing is built until its North Star page is approved at stage 3.
 
 From [the review from the user's side](reports/2026-11-16-agentic-process-user-review.md), most value first.
 
-- [ ] Bundle the checks into `level-2-files/` so the skill and template work in any repository
-- [ ] Generate the coach's and the skill's gate tables from `_build/steps.py`
-- [ ] Add a short path to the coach for small jobs, and test it with two fresh sessions
-- [ ] Fold the landscape review's search order into the skill's step 2
-- [ ] Point the Expert page at the template's starter gates, and add one worked unattended run
-- [ ] Move the run logs from `level-3-files/fresh-run/runs/` to `_build/runs/`
-- [ ] Make `base/plan-template.md` the one source of the template's plan
-- [ ] Re-run the skill with a second agent after these changes
-- [ ] Add an Expert worked example
+- [x] Bundle the checks into `level-2-files/` so the skill and template work in any repository
+- [x] Generate the coach's and the skill's gate tables from `_build/steps.py`
+- [x] Add a short path to the coach for small jobs, and test it with two fresh sessions
+- [x] Fold the landscape review's search order into the skill's step 2
+- [x] Point the Expert page at the template's starter gates, and add one worked unattended run
+- [x] Move the run logs from `level-3-files/fresh-run/runs/` to `_build/runs/`
+- [x] Make `base/plan-template.md` the one source of the template's plan
+- [x] Re-run the skill with a second agent after these changes
+- [x] Add an Expert worked example
+- [ ] Run a fourth newcomer audit, to see whether the builder's score recovers after the filled-check fix
+- [ ] Run the coach's short path once with a timer, to check the lesson's twelve minutes
 - [ ] Owner: teach the 30-minute lesson once and time each section
+- [ ] Owner: add topics, a description, a social picture and GitHub Pages (see the report)
+- [ ] Owner: answer the open gates in the Document to action brief plan
 
 ## Across all tools
 

@@ -32,6 +32,9 @@ builder's commands in an empty repository. The audit files are not kept here; th
 | --- | --- | --- | --- | --- |
 | First | 64 | 60 | 52 | 4, 16, 23 |
 | Second, after the first audit's fixes | 60 | 70 | 58 | 4, 12, 19 |
+| Third, after the second audit's fixes, scored as if merged | 72 | 52 | 70 | 1, 12, 16 |
 
-The beginner's score fell in the second audit because it found new faults, among them a bug that
-added four nonsense headings to every plan. Those are fixed, and a third audit is on the list.
+Each audit found new faults, some introduced by the previous round's fixes: a bug that added four
+nonsense headings to every plan (second audit), and a check that a finished project could never
+pass (third audit, the cause of the builder's 52). Both are fixed, and a gate now fills a new
+project and expects every check to pass. The third audit's fixes have not been audited again.

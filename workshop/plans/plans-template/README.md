@@ -1,8 +1,9 @@
 # Plans template
 
-> A plan starts as a **North Star page**: one to three pages on who the tool is for, what already exists and what is
-> in scope. Its form is [`north-star.md`](../../../projects/agentic-process/level-2-files/agentic-process/template/) in the project
-> method's scaffold. The fuller plan template below is for a tool whose North Star has been approved.
+> A new plan now follows [Agentic Process](../../../projects/agentic-process/): its one-page plan is
+> `base/plan.md` in [the project template](../../../projects/agentic-process/level-2-files/agentic-process/template/).
+> [Document to action brief](../document-to-action-brief/) is the first plan written that way. The
+> fuller plan template below is kept for the older plans.
 
 Everything needed to add a plan to this repository, by hand or with a skill.
 
