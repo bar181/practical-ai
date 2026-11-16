@@ -113,7 +113,7 @@ def get_template(id: str, part: str = "options") -> dict:
 
 @mcp.tool(annotations=READ)
 def list_components(group: str = "") -> list[dict]:
-    """List components. group is one of: page, photo, svg (parts to build with) or card, layout, colour (design ideas, each with a rule). Leave it empty for all."""
+    """List components. group is one of: page, photo, svg, post (parts to build with; post is a preview of a social post, an email or a blog) or card, layout, colour (design ideas, each with a rule). Leave it empty for all."""
     return [{k: c[k] for k in ("id", "group", "name", "use")} for c in _index()["components"] if not group or c["group"] == group]
 
 

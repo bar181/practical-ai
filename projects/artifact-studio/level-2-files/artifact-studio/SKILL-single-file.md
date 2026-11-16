@@ -150,7 +150,7 @@ background pair in your note.
 
 ## Decks and social posts
 
-The same steps make two other things.
+The same steps make three other things.
 
 - **A slide deck.** One HTML file. One idea on each slide. Arrow keys, buttons and a tap move
   between slides. With scripts off the slides are a readable column. Four manners: a visionary
@@ -163,6 +163,15 @@ The same steps make two other things.
   1080 by 1350 for a portrait, 1080 by 1920 for a story, 1200 by 630 for a link preview. One idea,
   seven words or fewer in the headline, the company name small at the bottom. A carousel is three
   portraits: the hook, the steps, the ask.
+- **A post preview.** When the person asks for social posts, an email or a blog post, never hand
+  back a list of text. Show each draft in a plain frame in the shape its audience will see: a feed
+  post (name, the text cut after three lines with a control to read the rest, the picture, the
+  actions as plain words), an upright video frame for each beat with its on-screen words, an inbox
+  line above an HTML email, or a finished blog page. Write in the person's own voice: ask for two
+  or three posts they are proud of and match them. When there is a choice to make, show three
+  drafts side by side, each with a different way in, and name the way in above each. Name the
+  platform in words above the frame. Never draw a platform's logo or copy its interface, and never
+  show invented likes, comments or follower counts. Stop at the preview: nothing is posted or sent.
 
 When the person says what they need and not which kind, choose for them: a page to be read, a deck
 to be presented, a post to be scrolled past. Say what you chose and why in one line.

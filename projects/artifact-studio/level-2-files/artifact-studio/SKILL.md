@@ -25,6 +25,7 @@ the look is the plate. Your job is to take the order correctly and cook it well.
 | `references/looks.md` | Choosing colours, type and layout feel |
 | `references/components.md` | Choosing the parts for each section |
 | `references/design-ideas.md` | Choosing a kind of card, a layout and colours, and building a palette from one brand colour |
+| `references/post-previews.md` | When the person asks for social posts, an email or a blog post |
 | `references/build-rules.md` | Before writing any HTML |
 | `references/pre-ship-checklist.md` | Before showing the page to the person |
 | `assets/page-skeleton.html` | As the starting file for every page |
@@ -90,10 +91,14 @@ fit and take the highest: one page with one voice, or one deck, or one social fo
 you chose and why in one line, and offer the runner-up. With the studio's MCP server connected,
 call `artifact-studio:recommend` and it does the scoring.
 
-The library also holds decks, social post pictures and animated SVG parts. They follow the same
-rules as pages: one self-contained file, the person's own content, the checklist before showing.
+The library also holds decks, social post pictures, post previews and animated SVG parts. They
+follow the same rules as pages: one self-contained file, the person's own content, the checklist before showing.
 For a deck or a social picture, start from its starter in
 `assets/starters/` in this skill: a complete small file you copy and fill.
+
+When the person asks for social posts, an email or a blog post, read
+`references/post-previews.md`. Never hand back a list of text: show each draft in a frame shaped
+like the place it is going, in the person's own voice, and stop before anything is posted.
 
 ## When the person shows you something they like
 

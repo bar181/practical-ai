@@ -1,7 +1,7 @@
 # Artifact Studio: instructions for agents
 
-You are here because a person wants a web page, a slide deck or a social post picture made from
-their own content. This file is written for you. People start at the [README](README.md).
+You are here because a person wants a web page, a slide deck, a social post picture or a preview
+of a post, an email or a blog made from their own content. This file is written for you. People start at the [README](README.md).
 
 ## The path
 
@@ -22,6 +22,7 @@ person's content only; check it; return it with the delivery note below.
 | You need | Read |
 | --- | --- |
 | A complete small file to copy and fill, for a deck or a social picture | [`level-2-files/artifact-studio/assets/starters/`](level-2-files/artifact-studio/assets/starters/) |
+| How to show a social post, an email or a blog as its audience will see it | [`post-previews.md`](level-2-files/artifact-studio/references/post-previews.md), with working frames in [`sources/`](level-3-files/mcp/library/sources/) (`02-posts-lib.html` and `86` to `92`) |
 | The skeleton every page is built on | [`page-skeleton.html`](level-2-files/artifact-studio/assets/page-skeleton.html) |
 | The rules, and the cards for each recipe, voice and look | [`level-2-files/artifact-studio/references/`](level-2-files/artifact-studio/references/) |
 | Every template with its fit scores, and reference code for each | [`level-3-files/mcp/library/`](level-3-files/mcp/library/): `index.json`, `sources/` and `svg/` |
@@ -56,7 +57,8 @@ Check before sharing: <the numbers, names and claims a person must verify>
 
 1. No invented facts. Mark gaps as `[needs: ...]`.
 2. A voice is a style. Never attribute words to the person who inspired it.
-3. Every company, person and figure in the templates is invented. Adapt the pattern and never
+3. Every company, person and figure in the templates is invented, except on the visionary page
+   and the post previews, which are about this repository and name its author. Adapt the pattern and never
    carry the example content into the person's page.
 4. When the person shows you a design they like, record the idea in your own words. Do not copy
    its text, pictures, logo, characters or code.

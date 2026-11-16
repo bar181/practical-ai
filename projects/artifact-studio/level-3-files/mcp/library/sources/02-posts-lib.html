@@ -1,0 +1,106 @@
+<style>
+/* post previews. A frame in the shape of a feed, an inbox or a blog, so a draft is judged the way its audience will see it.
+   The frames are plain on purpose: no platform's logo, colours or exact interface. The label above each frame names the platform. */
+.sp-view{background:#eef1f5;color:#1b2228;font-family:var(--work);padding-bottom:64px}
+.sp-top{background:#0c2340;color:#fff;padding:56px 0 48px}
+.sp-top h1{font:700 clamp(2.2rem,8.6vw,4.4rem)/1 var(--display);letter-spacing:-.02em;max-width:12em;text-wrap:balance}
+.sp-top p,.sp-top .sp-lede-top{margin-top:16px;max-width:30em;font:400 clamp(1.06rem,3.6vw,1.3rem)/1.4 var(--work);color:#dfe6ef}
+.sp-top p b{color:#ffd23f}
+.sp-sec{padding-top:52px}
+.sp-sec h2{font:700 clamp(1.6rem,5.6vw,2.5rem)/1.06 var(--display);letter-spacing:-.015em;max-width:16em;text-wrap:balance}
+.sp-lede{margin-top:10px;max-width:34em;font:400 1.1rem/1.45 var(--work);color:#3d4856}
+.sp-calls{list-style:none;margin:28px 0 0;padding:0;display:grid;gap:12px}
+.sp-calls li{background:#fff;border-left:5px solid #ffd23f;border-radius:10px;padding:16px 18px}
+.sp-calls b{display:block;font:700 1.22rem/1.15 var(--display)}
+.sp-calls span{display:block;margin-top:6px;color:#3d4856;font-size:1rem;line-height:1.4}
+@media(min-width:780px){.sp-calls{grid-template-columns:repeat(3,1fr)}}
+/* frames in a row: swipe on a phone, side by side on a wide screen */
+.sp-row{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;margin-top:24px;padding:2px 2px 16px;overscroll-behavior-x:contain}
+.sp-col{flex:0 0 min(86%,372px);scroll-snap-align:start;display:flex;flex-direction:column;gap:10px}
+@media(min-width:1000px){.sp-row{overflow:visible}.sp-col{flex:1 1 0;max-width:400px}}
+.sp-tag{font:700 .92rem/1.2 var(--display);color:#0c2340}
+.sp-tag small{display:block;font:400 .86rem/1.3 var(--work);color:#3d4856;margin-top:2px}
+.sp-pick{align-self:flex-start;min-height:44px;padding:0 18px;border-radius:999px;border:2px solid #0c2340;background:#fff;color:#0c2340;font:700 .92rem/1 var(--display);cursor:pointer}
+.sp-pick[aria-pressed=true]{background:#0c2340;color:#ffd23f}
+.sp-chosen{margin-top:6px;min-height:1.5em;font:700 1.02rem/1.4 var(--display);color:#0c2340}
+.sp-one{max-width:400px;margin-top:22px;display:grid;gap:10px}
+.sp-duo{display:grid;gap:30px;margin-top:8px}
+@media(min-width:900px){.sp-duo{grid-template-columns:repeat(3,1fr);align-items:start}.sp-duo.two{grid-template-columns:repeat(2,minmax(0,400px))}}
+.sp-note{margin-top:26px;background:#0c2340;color:#fff;border-radius:14px;padding:22px 20px;max-width:760px}
+.sp-note b{display:block;font:700 1.3rem/1.15 var(--display);color:#ffd23f}
+.sp-note p{margin-top:8px;color:#dfe6ef;line-height:1.45}
+.sp-note small{display:block;margin-top:10px;color:#b9c5d3;font-size:.9rem;line-height:1.4}
+.sp-view .ask{margin-top:20px;max-width:760px;background:#fff}
+.sp-check{margin:18px 0 0;padding:0 0 0 1.2em;max-width:34em;display:grid;gap:6px;color:#3d4856}
+/* the feed frame */
+.sp{background:#fff;border:1px solid #cfd6df;border-radius:12px;overflow:hidden;font:400 .95rem/1.42 var(--sans);color:#1c1e21;box-shadow:0 8px 22px rgba(12,35,64,.08)}
+.sp-h{display:flex;gap:10px;align-items:center;padding:12px 14px 8px}
+.sp-av{flex:none;width:44px;height:44px;border-radius:50%;background:#0c2340;color:#ffd23f;display:grid;place-items:center;font:700 .95rem/1 var(--display)}
+.sp-who b{display:block;font-weight:700;line-height:1.2}
+.sp-who span{display:block;font-size:.8rem;line-height:1.3;color:#56606b}
+.sp-t{padding:0 14px 6px}
+.sp-t p{margin:0}
+.sp-js .sp-t.cut p{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden}
+.sp-js .sp-t.cut br+br{display:none}   /* while cut, a blank line between paragraphs would waste one of the three lines */
+.sp-more{display:none;margin:0 14px 10px;padding:6px 0;border:0;background:none;color:#56606b;font:700 .9rem/1 var(--sans);cursor:pointer;text-decoration:underline}
+.sp-js .sp-more{display:inline-block}
+.sp-m{position:relative;aspect-ratio:1.91/1;background:#0c2340 center/cover no-repeat;display:flex;align-items:flex-end}
+.sp-m.r11{aspect-ratio:1/1}.sp-m.r45{aspect-ratio:4/5}
+.sp-m::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 35%,rgba(0,0,0,.82))}
+.sp-m b{position:relative;z-index:1;padding:16px;color:#fff;font:700 clamp(1.3rem,5.6vw,1.9rem)/1.05 var(--display);letter-spacing:-.015em;text-wrap:balance}
+.sp-m.flat{background:#0c2340;align-items:center}.sp-m.flat::after{display:none}.sp-m.flat b{color:#ffd23f;font-size:clamp(1.5rem,6.4vw,2.2rem)}
+.sp-m.flat b small{display:block;margin-top:10px;color:#fff;font:400 1rem/1.35 var(--work);letter-spacing:0}
+.sp-a{display:flex;justify-content:space-around;border-top:1px solid #e3e7ec;padding:11px 6px;font:700 .82rem/1 var(--sans);color:#56606b}
+.sp-link{background:#f0f2f5;padding:10px 14px 12px;border-top:1px solid #e3e7ec}
+.sp-link span{font-size:.78rem;color:#56606b}.sp-link b{display:block;font-size:1rem;line-height:1.25}.sp-link p{margin:2px 0 0;font-size:.86rem;color:#56606b;line-height:1.3}
+/* picture-first frame */
+.sp.pic .sp-h{padding:10px 12px}.sp.pic .sp-av{width:32px;height:32px;font-size:.72rem}
+.sp-i{display:flex;gap:14px;padding:10px 12px 4px;color:#1c1e21}.sp-i svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}.sp-i svg:last-child{margin-left:auto}
+.sp-cap{padding:4px 12px 14px}.sp-cap p{margin:0}.sp-cap .tags{color:#3a4a8c;margin-top:4px}
+.sp-dots{display:flex;gap:5px;justify-content:center;padding-top:8px}.sp-dots i{width:6px;height:6px;border-radius:50%;background:#c3cad3}.sp-dots i:first-child{background:#0c2340}
+.sp-car{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;overscroll-behavior-x:contain}.sp-car>*{flex:0 0 100%;scroll-snap-align:start}
+/* upright video frame */
+.sp-v{position:relative;aspect-ratio:9/16;max-width:300px;width:100%;border-radius:18px;overflow:hidden;background:#000;color:#fff;font-family:var(--sans);box-shadow:0 10px 26px rgba(12,35,64,.2)}
+.sp-v .bg{position:absolute;inset:0;background:center/cover no-repeat;animation:sp-zoom 9s ease-in-out infinite alternate}
+.sp-v .bg.b2{animation:sp-zoom 9s ease-in-out infinite alternate,sp-in2 9s linear infinite}
+.sp-v::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.35),rgba(0,0,0,0) 30%,rgba(0,0,0,0) 55%,rgba(0,0,0,.8))}
+.sp-v .beats{position:absolute;z-index:2;left:14px;right:60px;top:20%}
+.sp-v .beats p{position:absolute;left:0;top:0;margin:0;display:inline;font:700 clamp(1.2rem,5.6vw,1.5rem)/1.3 var(--display);opacity:0;animation:sp-beat 9s linear infinite}
+.sp-v .beats p span{background:#fff;color:#000;padding:.12em .36em;border-radius:6px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.sp-v .beats p:nth-child(2){animation-delay:3s}.sp-v .beats p:nth-child(3){animation-delay:6s}
+.sp-v .side{position:absolute;z-index:2;right:10px;bottom:22%;display:grid;gap:18px}.sp-v .side svg{width:30px;height:30px;fill:none;stroke:#fff;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.sp-v .foot{position:absolute;z-index:2;left:14px;right:60px;bottom:16px;font-size:.88rem;line-height:1.35}.sp-v .foot b{display:block;margin-bottom:3px}
+.sp-v.still .bg{animation:none}.sp-v.still .beats p{position:static;display:block;opacity:1;animation:none}
+.sp-v .when{position:absolute;z-index:2;left:12px;top:12px;background:rgba(0,0,0,.6);padding:4px 9px;border-radius:999px;font:700 .78rem/1 var(--sans)}
+@keyframes sp-zoom{from{transform:scale(1)}to{transform:scale(1.14)}}
+@keyframes sp-beat{0%,2%{opacity:0}5%,30%{opacity:1}33.3%,100%{opacity:0}}
+@keyframes sp-in2{0%,62%{opacity:0}68%,97%{opacity:1}100%{opacity:0}}
+/* inbox line and email body */
+.sp-mail{background:#fff;border:1px solid #cfd6df;border-radius:12px;overflow:hidden;font-family:var(--sans);color:#1c1e21;max-width:600px;box-shadow:0 8px 22px rgba(12,35,64,.08)}
+.sp-inbox{display:grid;gap:2px;padding:12px 16px;border-bottom:1px solid #e3e7ec;background:#f7f9fb;font-size:.92rem;line-height:1.35}
+.sp-inbox b{font-weight:700}.sp-inbox span{color:#56606b}
+.sp-body .banner{aspect-ratio:3/1;background:center/cover no-repeat #0c2340}
+.sp-body .in{padding:22px 22px 8px}
+.sp-body h3{font:700 clamp(1.5rem,5.6vw,2rem)/1.1 var(--display);letter-spacing:-.015em}
+.sp-body p{margin:12px 0 0;font-size:1rem;line-height:1.5}
+.sp-body ol{margin:12px 0 0;padding-left:1.3em;display:grid;gap:5px;line-height:1.45}
+.sp-btn{display:inline-block;margin-top:18px;background:#0c2340;color:#fff;font:700 1rem/1 var(--display);padding:14px 22px;border-radius:8px;text-decoration:none}
+.sp-body .fine{margin:22px 0 0;padding:14px 22px 18px;border-top:1px solid #e3e7ec;font-size:.8rem;line-height:1.4;color:#56606b}
+/* short blog */
+.sp-blog{background:#fff;border:1px solid #cfd6df;border-radius:12px;overflow:hidden;max-width:680px;box-shadow:0 8px 22px rgba(12,35,64,.08)}
+.sp-blog .banner{aspect-ratio:2/1;background:center/cover no-repeat #0c2340}
+.sp-blog .in{padding:24px 22px 28px;font:400 1.12rem/1.6 var(--text)}
+.sp-blog h3{font:700 clamp(1.7rem,6.4vw,2.6rem)/1.05 var(--display);letter-spacing:-.02em;text-wrap:balance}
+.sp-blog .deck{margin-top:10px;font:400 1.14rem/1.4 var(--work);color:#3d4856}
+.sp-blog .by{margin-top:12px;font:400 .88rem/1.3 var(--work);color:#56606b}
+.sp-blog .in>p:not(.deck):not(.by){margin-top:16px}
+.sp-blog blockquote{margin:22px 0 0;padding-left:16px;border-left:5px solid #ffd23f;font:700 1.4rem/1.2 var(--display)}
+@media (prefers-reduced-motion:reduce){.sp-v .bg,.sp-v .bg.b2{animation:none}.sp-v .beats p{position:static;display:block;opacity:1;animation:none;margin-bottom:8px}}
+</style>
+<script>
+/* post previews: cut long text where a feed would, with a control to read the rest; and let one of several drafts be chosen */
+STUDIO.posts=root=>{root.classList.add('sp-js');
+  for(const b of $$('.sp-more',root)){const t=b.previousElementSibling;b.addEventListener('click',()=>{const open=t.classList.toggle('cut')===false;b.setAttribute('aria-expanded',open);b.textContent=open?'less':'more'})}
+  const out=$('.sp-chosen',root),picks=$$('.sp-pick',root);
+  for(const b of picks)b.addEventListener('click',()=>{picks.forEach(x=>x.setAttribute('aria-pressed',x===b));out.textContent=`You chose draft ${b.dataset.d}. Tell your assistant: "Go with draft ${b.dataset.d}. Tighten the last line."`})};
+</script>

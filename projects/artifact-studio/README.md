@@ -1,16 +1,25 @@
-# Artifact Studio: turn any AI answer into a beautiful slide deck or report
+# Artifact Studio: turn any AI answer into a mini website, slide deck, report or social post
 
 <p align="center">
   <img src="_build/img/show-photo-effects.webp" width="800" alt="Animated screen capture of photo effects made by an AI chatbot from one photograph: a pencil sketch draws itself and becomes the photo, the camera pans and zooms across a lake, a divider slides between two colour grades, a postcard flips over, and one huge word is filled with the picture">
 </p>
 
-<h3 align="center">Your AI gives brilliant answers. Then it shows them on a grey page.</h3>
+<h3 align="center">"Make this look better" is not a solution. Give your AI a design brief.</h3>
 
-<p align="center"><b>One photo. One sentence. A page that moves like a film.</b><br>
-Everything above is a single photograph, and each effect comes with the sentence that asks for it.</p>
+<p align="center"><b>Your AI gives brilliant answers. Then it shows them on a grey page.</b><br>
+One photo and one sentence, and the page moves like a film. Everything above is a single photograph.</p>
+
+<p align="center">
+  <img src="_build/img/callouts.svg" width="800" alt="Four cards. One: present a mini website, not a slide show. Two: make this look better is not a solution. Three: give your agents a way to tell a proper story. Four: see your draft the way your audience will.">
+</p>
+
+- **Present a mini website, not a slide show.** A deck is a stack of pictures. A page can move: a photo that pans, a chart that draws itself, steps that light up as you scroll.
+- **"Make this look better" is not a solution.** The AI does not know what better means to you. A brief names the job, the reader and the shape.
+- **Give your agents a way to tell a proper story.** This is the time of agentic software. Agents write the code and the report; hand them voices, templates and rules so the result is worth reading.
+- **See your draft the way your audience will.** A list of draft posts is more reading for everyone. Ask for each draft as it will look in the feed, then choose.
 
 **Artifact Studio is a free, curated library of modern design templates that turns any AI answer
-into a professional slide deck, report or web page.** Use it with the chatbot you already have:
+into a professional slide deck, report, web page or post preview.** Use it with the chatbot you already have:
 ChatGPT, Claude, Gemini, Microsoft Copilot, Grok, Perplexity, Mistral Le Chat or DeepSeek. Paste
 one link and say "show this as a presentation", or tailor it to your own brand. Running a personal
 agent such as Grok Bot or Muse, or agents of your own? Hand them the same library and they design
@@ -60,9 +69,9 @@ You should get something like this. It is the same request, already built:
 - **Now add a photo.** Attach any photo of your own and say: `Open with my photo as a slow pan and zoom, like a documentary shot, and set the title in huge letters filled with the photo.`
 - **Now make it a deck.** In the same chat, say: `Show the same notes as a keynote-style slide deck: black slides, one idea each, huge type.`
 - **Browse everything it can make.** Download two files and open them in a browser.
-  [`base/studio.html`](base/studio.html) is the highlights: photo effects, scroll effects, layouts
-  and one message told in six voices. [`base/components.html`](base/components.html) is everything
-  else: pages, decks, social formats, parts, and a picker that chooses a template for you. Keep
+  [`base/studio.html`](base/studio.html) is the highlights: photo effects, scroll effects, layouts,
+  post previews and one message told in six voices. [`base/components.html`](base/components.html) is everything
+  else: pages, decks, more post previews, parts, and a picker that chooses a template for you. Keep
   them in the same folder and each links to the other.
 
 ### 2. Use it every day
@@ -171,7 +180,7 @@ chart from the photo, scrollytelling with a pinned picture, and matched looks an
 
 ### The rest of the kit
 
-The effects sit on a full library: <!-- counts -->19 templates (4 pages, 6 voices, 4 decks, 5 social formats), 54 components (12 page parts, 13 photo parts, 12 animated SVG files, 17 design ideas for cards, layouts and colour) and 9 looks<!-- /counts -->. Every one
+The effects sit on a full library: <!-- counts -->19 templates (4 pages, 6 voices, 4 decks, 5 social formats), 60 components (12 page parts, 13 photo parts, 12 animated SVG files, 17 design ideas for cards, layouts and colour, 6 post previews) and 9 looks<!-- /counts -->. Every one
 comes with the sentence that asks for it.
 
 ### A full artifact, in the style you ask for
@@ -230,6 +239,36 @@ The same facts land differently depending on who is telling them. Pick a voice b
 
 Each voice describes a style. Nothing is written by, or endorsed by, the people named.
 
+### Post previews: see the draft the way your audience will
+
+When you review or present social posts, a list of text is extra work for everyone who has to
+read it. Ask for each draft in the shape of the feed, in your own voice, and you are looking at
+the deliverable before you press post.
+
+<p align="center">
+  <img src="_build/img/social-three-drafts.webp" width="800" alt="Screen capture of three drafts of one LinkedIn post shown side by side as they would look in a feed. Each starts a different way, has its own picture with a few words over it, and has a button to choose it">
+</p>
+
+- **Compare three drafts side by side.** One topic, three ways in: the problem, the analogy, the
+  objection. The text is cut where a feed would cut it, so you judge the opening.
+- **Your voice.** Paste three posts you are proud of and say "write in this voice".
+- **One message, told differently in each place.** LinkedIn gets the lesson. Instagram gets the
+  feeling, with the picture first.
+- **Six places.** LinkedIn, Instagram, TikTok, Facebook, an HTML email with its inbox line, and a
+  short blog post.
+- **Advanced: ready when you wake up.** Run the request on a schedule and review the previews
+  over coffee. This needs an assistant that can run tasks on a schedule. It is a recommendation;
+  the library does not set it up.
+
+<p align="center">
+  <img src="_build/img/social-platforms.webp" width="800" alt="Screen capture of three post previews side by side: a Facebook link post, an upright TikTok frame with words on screen over a cartoon, and an email shown with its inbox line, a picture, three steps and one button">
+</p>
+
+Say this: `Write three drafts of a LinkedIn post about my notes, in my voice. Take a different way in for each. Show each one as it will look in the feed, side by side. Do not post anything.`
+
+The frames are plain on purpose. They copy the shape of a feed, not any platform's logo or
+interface, and they never show invented likes or followers. Nothing is posted for you.
+
 ### Decks you present straight from the browser
 
 Four decks: **visionary**, **story**, **briefing** and **workshop**. Each is one file. Open it,
@@ -283,10 +322,13 @@ used it yet, so tell us what you find.
 | The one-link prompt | The link opens. **Not yet tried** from inside each chatbot |
 | The skill | Written. Not yet run end to end by a second agent |
 | MCP server | Tested through a client. Not yet tried in a desktop assistant. Nothing is hosted |
+| Post previews | Built on 15 November 2026 and checked in Chrome. **Not yet asked for** in a fresh chat. The example drafts have not been posted anywhere |
 | Real use | **None yet.** Nobody has presented a deck or sent a report made with it |
 | Devices | Chrome only. Not checked on a phone, Safari or Firefox |
 
 Every company, person and figure in the templates and the example is made up, and each says so.
+Two places are about this repository instead and name its author: the visionary page and the
+post previews. Their drafts are examples, written from his own teaching phrases.
 Two photographs inside the templates, the lake and the sunset, were taken by the repository
 owner. The other eight pictures were supplied by the owner as finished images, not taken as
 photographs. None carries location data. The times on this page are estimates, not measurements.

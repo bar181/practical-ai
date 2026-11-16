@@ -1,18 +1,19 @@
 {
  "name": "artifact-studio",
  "generated": "2026-11-15",
- "read_me": "Paths are relative to the project folder. \"preview\" is the file and tab that shows it: base/studio.html holds the highlights and base/components.html holds the rest. \"starter\", where present, is a small complete file to copy and fill. \"source\" is reference code: one style block, the markup and one script, not a complete file. \"fit\" scores run 0 to 3. To choose, score = 3 x goal fit + 2 x audience fit, highest first.",
+ "read_me": "Paths are relative to the project folder. \"preview\" is the file and tab that shows it: base/studio.html holds the highlights and base/components.html holds the rest. \"starter\", where present, is a small complete file to copy and fill. \"source\" is reference code: one style block, the markup and one script, not a complete file. A post preview also needs the frame styles in sources/02-posts-lib.html. \"fit\" scores run 0 to 3. To choose, score = 3 x goal fit + 2 x audience fit, highest first.",
  "counts": {
   "templates": 19,
   "pages": 4,
   "voices": 6,
   "decks": 4,
   "social_formats": 5,
-  "components": 54,
+  "components": 60,
   "page_parts": 12,
   "photo_parts": 13,
   "animated_svg": 12,
   "design_ideas": 17,
+  "post_previews": 6,
   "looks": 9
  },
  "social_styles": [
@@ -1058,6 +1059,66 @@
    "effort": "Easy. One sentence.",
    "preview": "base/components.html#colour",
    "source": "level-3-files/mcp/library/sources/33-colour.html"
+  },
+  {
+   "id": "post-linkedin",
+   "group": "post",
+   "name": "LinkedIn post preview",
+   "use": "Most readers see the first lines and the picture. The preview cuts your text there, so that is what you judge.",
+   "ask": "Write a LinkedIn post from my notes in my voice. Here are three posts I am proud of, to match. Show it as it will look in the feed, cut where the feed would cut it. Then give me a second version as a three-slide document post.",
+   "effort": "One sentence, your notes and your photos",
+   "preview": "base/components.html#post-linkedin",
+   "source": "level-3-files/mcp/library/sources/87-post-linkedin.html"
+  },
+  {
+   "id": "post-instagram",
+   "group": "post",
+   "name": "Instagram post preview",
+   "use": "The caption is the second thing anyone reads. Judge the picture first, at phone width, then the first line of the caption.",
+   "ask": "Make an Instagram carousel of three square pictures from my notes and my photos, with a few words on each and a caption in my voice. Show it as it will look in the feed so I can swipe it.",
+   "effort": "One sentence, your notes and your photos",
+   "preview": "base/components.html#post-instagram",
+   "source": "level-3-files/mcp/library/sources/88-post-instagram.html"
+  },
+  {
+   "id": "post-tiktok",
+   "group": "post",
+   "name": "TikTok post preview",
+   "use": "A short video is a storyboard before it is a video. See the three frames side by side and you can fix the hook before you film anything.",
+   "ask": "Storyboard a nine-second TikTok from my notes: three beats, the words on screen for each, and what I say. Show the three frames side by side at phone shape, using my photos.",
+   "effort": "One sentence, your notes and your photos",
+   "preview": "base/components.html#post-tiktok",
+   "source": "level-3-files/mcp/library/sources/89-post-tiktok.html"
+  },
+  {
+   "id": "post-facebook",
+   "group": "post",
+   "name": "Facebook post preview",
+   "use": "This is the feed where a question does better than an announcement. The preview shows the whole post, the picture and the row where the replies start.",
+   "ask": "Write a Facebook post from my notes in my voice, as a question my customers can answer in one line. Show it as it will look in the feed, with my photo and a few words over it.",
+   "effort": "One sentence, your notes and your photos",
+   "preview": "base/components.html#post-facebook",
+   "source": "level-3-files/mcp/library/sources/90-post-facebook.html"
+  },
+  {
+   "id": "post-email",
+   "group": "post",
+   "name": "Email preview",
+   "use": "The inbox line decides whether the message is opened. The body decides what happens next. See both, at the width of a phone.",
+   "ask": "Write a short email newsletter from my notes in my voice. Show the inbox line first: sender, subject and preview text. Then the message as an HTML email at phone width, with one picture and one button.",
+   "effort": "One sentence, your notes and your photos",
+   "preview": "base/components.html#post-email",
+   "source": "level-3-files/mcp/library/sources/91-post-email.html"
+  },
+  {
+   "id": "post-blog",
+   "group": "post",
+   "name": "Short blog preview",
+   "use": "Read the draft as your visitor will: the picture, the title, the first paragraph. If those three do not hold, the rest is not read.",
+   "ask": "Write a short blog post from my notes in my voice: a title that makes a claim, about two hundred words, one line worth quoting. Show it as a finished page with my photo at the top.",
+   "effort": "One sentence, your notes and your photos",
+   "preview": "base/components.html#post-blog",
+   "source": "level-3-files/mcp/library/sources/92-post-blog.html"
   },
   {
    "id": "svg-bars-grow",

@@ -88,7 +88,8 @@ and the research is in [`docs/tool-inventory.md`](docs/tool-inventory.md).
 
 **Your AI gives brilliant answers. Then it shows them on a grey page.** Artifact Studio is a
 curated library of modern design templates. Say "show this as a presentation" and get a deck or a
-report you would be proud to present. Give it one photo and it moves like a film.
+report you would be proud to present. Give it one photo and it moves like a film. Ask for
+three drafts of a post and see each one the way your audience will.
 
 <p align="center">
   <a href="projects/artifact-studio/"><img src="projects/artifact-studio/_build/img/show-photo-effects.webp" width="800" alt="Animated screen capture of photo effects made from one photograph with Artifact Studio: a sketch draws itself and becomes the photo, the camera pans across a lake, a divider slides between two colour grades, a postcard flips over, and a huge word is filled with the picture"></a>

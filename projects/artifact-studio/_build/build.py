@@ -134,8 +134,9 @@ RECIPES=['recipe-report','recipe-proposal','recipe-explainer','recipe-landing']
 CONCEPTS=(('card','31-cards.html','components/cards.html','Cards'),('layout','32-layouts.html','components/layouts.html','Layouts'),('colour','33-colour.html','components/colour.html','Colour'))
 G_VOICES=('Voices',VOICES,'One message, told six ways. Tap a voice:'); G_RECIPES=('Recipes',RECIPES,'Four whole pages. Tap a recipe:')
 # two files. Highlights: the photo and scroll effects, the looks and layouts, and one tab for each voice. Components: everything else.
-HIGHLIGHT_GROUPS=[('Photo effects',['photo'],''),('Scroll effects',['scroll'],''),('Layouts',['lookvoice','looks','layouts'],'Looks set the mood and layouts set the order:')]+[(LABEL[v],[v],'') for v in VOICES]
-COMPONENT_GROUPS=[('Pages',RECIPES,'Four whole pages. Tap one:'),('Decks',['deck-visionary','deck-story','deck-briefing','deck-workshop'],'Four slide decks on one engine:'),('Social',['social'],''),
+POSTS=['post-linkedin','post-instagram','post-tiktok','post-facebook','post-email','post-blog']
+HIGHLIGHT_GROUPS=[('Photo effects',['photo'],''),('Scroll effects',['scroll'],''),('Layouts',['lookvoice','looks','layouts'],'Looks set the mood and layouts set the order:'),('Socials',['socials'],'')]+[(LABEL[v],[v],'') for v in VOICES]
+COMPONENT_GROUPS=[('Pages',RECIPES,'Four whole pages. Tap one:'),('Decks',['deck-visionary','deck-story','deck-briefing','deck-workshop'],'Four slide decks on one engine:'),('Socials',POSTS+['social'],'See each draft the way your audience will. Tap a platform:'),
   ('Parts',['parts','svg'],'The pieces a page is made of:'),('Design',['cards','colour'],'The ideas behind a good page:'),('Pick',['pick','mix'],'Let the studio suggest, or choose every part yourself:'),
   ('Reference',['c-recipes','c-voices','c-parts','c-spec','c-brief','c-sentences'],'The reference sheets, the two forms and every sentence:'),
   ('Skill',['s-skill','s-single','s-skel','s-rules','s-check'],'What the assistant follows. "AI instructions" is the paste-in version:'),
@@ -143,7 +144,7 @@ COMPONENT_GROUPS=[('Pages',RECIPES,'Four whole pages. Tap one:'),('Decks',['deck
 OUT={'highlights':'base/studio.html','components':'base/components.html'}
 WHERE={n:OUT[k] for k,gs in (('highlights',HIGHLIGHT_GROUPS),('components',COMPONENT_GROUPS)) for _,vs,_ in gs for n in vs}   # which file shows each tab
 pv=lambda view: WHERE[view]+'#'+view
-LABEL.update({'cards':'Cards','layouts':'Six layouts','colour':'Colour','parts':'Page parts','photo':'Photo effects','scroll':'Scroll effects','lookvoice':'Looks and voices','svg':'Animated SVG','looks':'Nine looks','pick':'Pick for me','mix':'Mix it myself','deck-visionary':'Visionary','deck-story':'Story','deck-briefing':'Briefing','deck-workshop':'Workshop'})
+LABEL.update({'socials':'Socials','post-linkedin':'LinkedIn','post-instagram':'Instagram','post-tiktok':'TikTok','post-facebook':'Facebook','post-email':'Email','post-blog':'Short blog','social':'Picture formats','cards':'Cards','layouts':'Six layouts','colour':'Colour','parts':'Page parts','photo':'Photo effects','scroll':'Scroll effects','lookvoice':'Looks and voices','svg':'Animated SVG','looks':'Nine looks','pick':'Pick for me','mix':'Mix it myself','deck-visionary':'Visionary','deck-story':'Story','deck-briefing':'Briefing','deck-workshop':'Workshop'})
 FILES={t['id']:t['file'].split('#')[0] for t in C.TEMPLATES if t['kind'] in('page','voice','deck')}
 FILES.update({'cards':'components/cards.html','layouts':'components/layouts.html','colour':'components/colour.html','social':'social/formats.html','parts':'components/page-parts.html','photo':'components/photo-parts.html','svg':'components/animated-svg.html','looks':'looks/nine-looks.html'})
 FTITLE={'cards':'Six kinds of card','layouts':'Six layouts','colour':'Colour: five ideas and a palette maker','social':'Seven social formats','parts':'Twelve page parts','photo':'Nine photo effects','scroll':'Three scroll effects','lookvoice':'Looks and voices','svg':'Twelve animated SVG parts','looks':'Nine looks'}
@@ -216,8 +217,8 @@ def build(key,out,title,lead,groups,other=None):
     kb=round(len(t.encode())/1024); t=t.replace('__KB__',f'{kb:,}')
     left=re.findall(r'__[A-Z]+__|^\s*@@\w+',re.sub(r'data:[^")]+','',re.sub(r'<pre>.*?</pre>','',t,flags=re.S)),flags=re.M); assert not left, left
     open(os.path.join(ROOT,out),'w').write(t); print(f'{key}: {kb} KB, {len(order)} tabs -> {out}')
-build('highlights',OUT['highlights'],'','The highlights: photo effects, scroll effects, looks and layouts, and one message told in six voices. Tap a tab.',HIGHLIGHT_GROUPS,('components.html','Components: pages, decks, social formats, parts and the skill →'))
-build('components',OUT['components'],'Components','Everything else you can build with: pages, decks, social formats, parts, design ideas, a picker, the skill and a guide. Tap a tab.',COMPONENT_GROUPS,('studio.html','← Highlights: photo effects, scroll effects, layouts and voices'))
+build('highlights',OUT['highlights'],'','The highlights: photo effects, scroll effects, layouts, post previews for social media, and one message told in six voices. Tap a tab.',HIGHLIGHT_GROUPS,('components.html','Components: pages, decks, more post previews, parts and the skill →'))
+build('components',OUT['components'],'Components','Everything else you can build with: pages, decks, post previews for six platforms, parts, design ideas, a picker, the skill and a guide. Tap a tab.',COMPONENT_GROUPS,('studio.html','← Highlights: photo effects, scroll effects, layouts, socials and voices'))
 # ---- starters: a deck as one small file with system fonts and no photograph, for an agent to copy and fill
 def write_starters():
     lib=open(os.path.join(HERE,'views','01-lib.html')).read()
@@ -329,26 +330,30 @@ def write_index(parts,photo):
             q,effort,made,grow,use=[x.strip() for x in re.search(r'^@@ask (.*)$',sec,re.M).group(1).split('||')]
             n=re.search(r'<h2>(.*?)</h2>',sec).group(1)
             comp.append(dict(id=g+'-'+slug(n),group=g,name=n,use=html.unescape(re.search(r'<p class="measure">(.*?)</p>',sec,re.S).group(1)),ask=html.unescape(q),effort=effort,preview=pv(g+'s' if g!='colour' else 'colour'),source=SRC+f))
+    un=lambda x: html.unescape(re.sub(r'<[^>]+>','',x)).strip()
+    for v in POSTS:
+        s=open(os.path.join(HERE,'views',VFILE[v])).read()
+        comp.append(dict(id=v,group='post',name=LABEL[v]+' post preview' if v not in('post-email','post-blog') else LABEL[v]+' preview',use=un(re.search(r'<p class="sp-lede-top">(.*?)</p>',s,re.S).group(1)),ask=un(re.findall(r'<blockquote>(.*?)</blockquote>',s,re.S)[-1]),effort='One sentence, your notes and your photos',preview=pv(v),source=SRC+VFILE[v]))
     comp+=[dict(id='svg-'+name[:-4],group='svg',name=title,use=desc,ask=f'Add the "{name[:-4]}" animated SVG from the artifact studio, recoloured to my accent colour.',effort='Copy one file',file=SVG+name,source=SVG+name) for name,title,desc,_ in svg_items()]
     for t in tpl:
         st=sorted(glob.glob(os.path.join(ROOT,ST,t['id']+'*')))
         if st: t['starter']=[os.path.relpath(x,ROOT) for x in st] if len(st)>1 else os.path.relpath(st[0],ROOT)
     kinds=['page','voice','deck','social']
-    counts={'templates':len(tpl),**{k+'s' if k!='social' else 'social_formats':sum(t['kind']==k for t in tpl) for k in kinds},'components':len(comp),'page_parts':len(parts),'photo_parts':len(photo),'animated_svg':sum(c['group']=='svg' for c in comp),'design_ideas':sum(c['group'] in('card','layout','colour') for c in comp),'looks':len(looks)}
+    counts={'templates':len(tpl),**{k+'s' if k!='social' else 'social_formats':sum(t['kind']==k for t in tpl) for k in kinds},'components':len(comp),'page_parts':len(parts),'photo_parts':len(photo),'animated_svg':sum(c['group']=='svg' for c in comp),'design_ideas':sum(c['group'] in('card','layout','colour') for c in comp),'post_previews':sum(c['group']=='post' for c in comp),'looks':len(looks)}
     idx=dict(name='artifact-studio',generated=datetime.date.today().isoformat(),
-             read_me='Paths are relative to the project folder. "preview" is the file and tab that shows it: base/studio.html holds the highlights and base/components.html holds the rest. "starter", where present, is a small complete file to copy and fill. "source" is reference code: one style block, the markup and one script, not a complete file. "fit" scores run 0 to 3. To choose, score = 3 x goal fit + 2 x audience fit, highest first.',
+             read_me='Paths are relative to the project folder. "preview" is the file and tab that shows it: base/studio.html holds the highlights and base/components.html holds the rest. "starter", where present, is a small complete file to copy and fill. "source" is reference code: one style block, the markup and one script, not a complete file. A post preview also needs the frame styles in sources/02-posts-lib.html. "fit" scores run 0 to 3. To choose, score = 3 x goal fit + 2 x audience fit, highest first.',
              counts=counts,social_styles=C.SOCIAL_STYLES,facets={f:[dict(id=k,label=v) for k,v in v2] for f,v2 in C.FACETS.items()},rules=C.RULES,templates=tpl,components=comp,
              looks=[dict(name=l,preview=pv('looks'),card='level-2-files/artifact-studio/references/looks.md') for l in looks])
     os.makedirs(os.path.join(LIBRARY,'sources'),exist_ok=True); os.makedirs(os.path.join(LIBRARY,'svg'),exist_ok=True)
     json.dump(idx,open(os.path.join(LIBRARY,'index.json'),'w'),indent=1)
-    keep={os.path.basename(x['source']) for x in tpl+comp if x['source'].startswith(SRC)}
+    keep={os.path.basename(x['source']) for x in tpl+comp if x['source'].startswith(SRC)}|{'02-posts-lib.html','86-socials.html'}   # the shared frame styles, and the page that shows three drafts side by side
     for f in os.listdir(os.path.join(LIBRARY,'sources')):   # a view removed from views/ leaves the library too
         if f.endswith('.html') and f!='shell.html' and f not in keep: os.remove(os.path.join(LIBRARY,'sources',f))
     for f in sorted(keep): shutil.copy(os.path.join(HERE,'views',f),os.path.join(LIBRARY,'sources',f))
     for f in sorted(glob.glob(os.path.join(SVGDIR,'*.svg'))): shutil.copy(f,os.path.join(LIBRARY,'svg'))
     shutil.copy(os.path.join(HERE,'shell.html'),os.path.join(LIBRARY,'sources','shell.html'))
     open(os.path.join(ROOT,'level-3-files','mcp','catalog.py'),'w').write('# Generated: a copy of _build/catalog.py, made by _build/build.py so the server needs nothing outside this folder and the skill. Edit that file, not this one.\n'+open(os.path.join(HERE,'catalog.py')).read())
-    line=f"{counts['templates']} templates ({counts['pages']} pages, {counts['voices']} voices, {counts['decks']} decks, {counts['social_formats']} social formats), {counts['components']} components ({counts['page_parts']} page parts, {counts['photo_parts']} photo parts, {counts['animated_svg']} animated SVG files, {counts['design_ideas']} design ideas for cards, layouts and colour) and {counts['looks']} looks"
+    line=f"{counts['templates']} templates ({counts['pages']} pages, {counts['voices']} voices, {counts['decks']} decks, {counts['social_formats']} social formats), {counts['components']} components ({counts['page_parts']} page parts, {counts['photo_parts']} photo parts, {counts['animated_svg']} animated SVG files, {counts['design_ideas']} design ideas for cards, layouts and colour, {counts['post_previews']} post previews) and {counts['looks']} looks"
     for readme in (os.path.join(ROOT,'README.md'),):
         t=open(readme).read(); t2=re.sub(r'<!-- counts -->.*?<!-- /counts -->',f'<!-- counts -->{line}<!-- /counts -->',t,flags=re.S)
         if t2!=t: open(readme,'w').write(t2)
