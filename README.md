@@ -157,16 +157,11 @@ each, and a test by a fresh AI session before any person sees the result.
 | Building with an agent | [The skill and the project template](projects/agentic-process/level-2-files/) | A project folder with the front page and first version in place |
 | Running agents unattended | [Gates, the fresh-run test and a score sheet](projects/agentic-process/level-3-files/) | Proof of what works before a person spends time on it |
 
-Start with [the guide](https://raw.githack.com/bar181/practical-ai/main/projects/agentic-process/base/explainer.html): one page with all nine steps, each with its purpose, what to expect,
-proof you are done and a prompt to copy. Nobody but its author has built a tool with it yet.
-
-<p align="center"><a href="https://raw.githack.com/bar181/practical-ai/main/projects/agentic-process/base/explainer.html"><b>Read the guide</b></a> &nbsp;·&nbsp; <a href="projects/agentic-process/"><b>Open Agentic Process</b></a></p>
+What it is for, and when version 1 is done: [the spec](workshop/plans/agentic-process/SPEC.md). Nobody but its author has built a tool with it yet.
 
 ## Teach it
 
-[Artifact Studio](projects/artifact-studio/base/TEACH-IN-30-MINUTES.md) has a 30-minute lesson plan.
-[Agentic Process](projects/agentic-process/) has [a visual course](https://raw.githack.com/bar181/practical-ai/main/projects/agentic-process/base/course.html)
-on how the project works and how to run it, with a present mode. Neither has been taught yet.
+[Artifact Studio](projects/artifact-studio/base/TEACH-IN-30-MINUTES.md) has a 30-minute lesson plan. It has not been taught yet.
 
 ## What comes next
 

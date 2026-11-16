@@ -16,8 +16,7 @@ Take the first of these that you can do.
 
 | You need | Read |
 | --- | --- |
-| Why the project exists: the North Star, purpose and value | [`base/north-star.html`](base/north-star.html) |
-| How to use this project, as a visual course with a present mode | [`base/course.html`](base/course.html), written from `_build/course.py` |
+| What this project is for, and when it is done | [The spec](../../workshop/plans/agentic-process/SPEC.md). It wins over every other file here |
 | The nine steps, with a purpose, proof and prompt for each | [`base/PROCESS.md`](base/PROCESS.md). It is written by `_build/build.py` from `_build/steps.py`: change the source |
 | The plan to fill in | The end of [`base/PROCESS.md`](base/PROCESS.md), and `base/plan.md` in every new project folder |
 | To build from a spec without a person at each step | [`level-2-files/AUTOPILOT.md`](level-2-files/AUTOPILOT.md), and the Autopilot section of the skill |
@@ -44,4 +43,4 @@ Assumed. Not checked. Test this next.
 ## Known limits
 
 - The skill has been run end to end by one agent working unattended. Treat the next runs as tests: see the status table in the README.
-- Every time in the README and the guide is an estimate.
+- Every time in the README is an estimate.

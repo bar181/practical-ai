@@ -1,6 +1,6 @@
 # Plan: Agentic Process (was: project method)
 
-> **Built on 16 November 2026.** This plan is done. The tool is [Agentic Process](../../../projects/agentic-process/), the second showcase. The earlier draft is in [the archive](../archive/project-method-draft/REPLACED.md). What follows is the plan as it was written, kept for the record.
+> **Superseded on 16 November 2026 by [the spec](../agentic-process/SPEC.md).** This plan is done. The tool is [Agentic Process](../../../projects/agentic-process/), the second showcase. The earlier draft is in [the archive](../archive/project-method-draft/REPLACED.md). What follows is the plan as it was written, kept for the record.
 
 
 **Draft:** [`projects/agentic-process/`](../../../projects/agentic-process/). **Complexity:** beginner to intermediate.

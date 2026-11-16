@@ -13,17 +13,8 @@ hand it to your coding agent, or give the agent a spec and let it run to a draft
 
 **North Star:** a person, or an agent working alone, can take an idea or a spec to a tool that someone
 else can use, without rebuilding it three times on the way.
-[Why it exists, and what it is worth to you](https://raw.githack.com/bar181/practical-ai/main/projects/agentic-process/base/north-star.html).
-
-| Start with | What it is | Time |
-| --- | --- | --- |
-| [**The North Star**](https://raw.githack.com/bar181/practical-ai/main/projects/agentic-process/base/north-star.html) | One page: the purpose, the value at your level, and where it fits | 5 minutes |
-| [**The guide**](https://raw.githack.com/bar181/practical-ai/main/projects/agentic-process/base/explainer.html) | All nine steps, each with its purpose, who it helps, proof and a prompt | 10 minutes |
-| [**The course**](https://raw.githack.com/bar181/practical-ai/main/projects/agentic-process/base/course.html) | How it works, why each step exists and how to run it, with the nine steps as a scrolling diagram | about 25 minutes to read |
-
-The links open the pages through raw.githack.com, a free service that shows a GitHub HTML file as
-a page, once this branch is merged. Otherwise download the file from [`base/`](base/) and open it
-in a browser: GitHub itself shows HTML files as code.
+**The spec:** [`workshop/plans/agentic-process/SPEC.md`](../../workshop/plans/agentic-process/SPEC.md) says what this
+project is for, who it serves, and when version 1 is done. Everything here follows it.
 
 ## Try it in five minutes
 
@@ -137,7 +128,6 @@ coding agent: [how, and what comes back](level-2-files/AUTOPILOT.md).
 | --- | --- |
 | The coach | Fresh AI sessions, six runs in Claude. **Not yet run in ChatGPT, Gemini or Copilot, or by a person** |
 | The skill folder | One agent working unattended, in an empty repository: it built and tested a first tool |
-| The North Star page, the guide and the course | Checked in a browser at phone and laptop size with an accessibility scan. **The course has not been taught** |
 | Autopilot | **Not yet run end to end.** Written on 16 November 2026 |
 | The links in this page | Open once this project is merged into the main branch |
 
@@ -154,13 +144,10 @@ agentic-process/
   base/                   Beginner: everything you need
     AI-INSTRUCTIONS.md    the build coach: paste into your chatbot
     PROCESS.md            the nine steps in detail, and the one-page plan to fill in
-    north-star.html       the North Star, the purpose and the value, on one page
-    explainer.html        the guide: the same steps as a page to read or present
-    course.html           the course: how to use this project, told visually, with a present mode
     examples/             unedited runs: two of the coach, one of an agent working unattended
-  level-2-files/          Advanced: one skill folder, with the project template and its checks inside
+  level-2-files/          Advanced: one skill folder, with the project template and its checks inside, and AUTOPILOT.md
   level-3-files/          Expert: gates, the fresh-run test and a score sheet
-  _build/                 steps.py and course.py, the sources; pages.py, course_page.py and build.py, which write every page from them; runs/, the test logs
+  _build/                 steps.py, the one source of the nine steps; build.py, which writes every generated file from it; runs/, the test logs; deferred/, end-user pages parked until version 1
 ```
 
 ## About the creator

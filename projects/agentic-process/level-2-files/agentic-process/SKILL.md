@@ -31,8 +31,12 @@ Use this when the person gives you a spec (a plan, a draft, notes) and guidance,
 "autopilot", or when you run on a schedule. The person decides by writing the spec and by
 reviewing the pull request. You decide everything in between, and record why.
 
-1. **Read the inputs.** The spec, any draft it links to, and the guidance. Guidance wins over the
-   spec when they differ. Write both paths at the top of the plan.
+1. **Read the inputs and check the spec is ready.** The spec, any draft it links to, and the
+   guidance. Guidance wins over the spec when they differ. Write both paths at the top of the
+   plan. A ready spec answers five things: the job in one sentence, what is out, one acceptance
+   test (an input and a good result), where it runs, and what the demo must show. If the job or
+   the acceptance test is missing, draft them, hand them back, and stop before building, unless
+   the guidance says "proceed on assumptions". Anything else missing: choose, and mark it `Assumed:`.
 2. **Steps 1 to 6 from the spec.** Take each answer from the spec. Where the spec is silent, make
    the smallest reasonable choice and mark it `Assumed:` in the plan. Do not stop to ask. Still
    run the reuse check: if something already does the whole job, stop, write the guide to it,

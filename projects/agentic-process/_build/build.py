@@ -380,8 +380,8 @@ def fill(path, table, name='steps', text=None, inline=False):
     assert re.search(pat, text, flags=re.S), f'no {name} markers in {path}'
     return re.sub(pat, lambda m: m.group(1) + sep + table + sep + m.group(2), text, flags=re.S)
 
-outputs = {P/'base/explainer.html': page, P/'base/PROCESS.md': process_md(),
-           P/'base/north-star.html': north_star_html(me, 'explainer.html', 'course.html'), P/'base/course.html': course_html(me, puppy, 'north-star.html', 'explainer.html'),
+outputs = {P/'_build/deferred/explainer.html': page, P/'base/PROCESS.md': process_md(),
+           P/'_build/deferred/north-star.html': north_star_html(me, 'explainer.html', 'course.html'), P/'_build/deferred/course.html': course_html(me, puppy, 'north-star.html', 'explainer.html'),
            P/'base/AI-INSTRUCTIONS.md': fill(P/'base/AI-INSTRUCTIONS.md', '. '.join(PLAN_ROWS) + '.', 'plan', fill(P/'base/AI-INSTRUCTIONS.md', coach_table()), inline=True),
            P/'README.md': fill(P/'README.md', '```\n' + PROMPT + '\n```', 'prompt'),
            P/'_build/img/nine-steps.svg': nine_steps_svg(),
