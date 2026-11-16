@@ -1,20 +1,32 @@
-# Practical AI: free, ready-to-use AI tools for everyday work
+# Practical AI: put your smart intern to work
 
 <p align="center">
-  <img src="docs/assets/levels.svg" width="720" alt="Animation: every Practical AI tool comes at three levels. Beginner, paste and go, for anyone. Advanced, a skill plus connectors, for builders. Expert, your own data, server and schedule, for teams">
+  <img src="docs/assets/smart-intern.svg" width="800" alt="Animation: AI is a smart intern that has read every book and has never met you. It needs your priorities, your tone of voice, what your business does and how it can help you. Then it is ready to work">
 </p>
 
-**Practical AI is a free, open collection of AI tools you can use the same day**, with the
-assistant you already have: Claude, ChatGPT or another. No fluff, just productivity. Each tool
-solves one everyday job, such as turning notes into a slide deck, and each comes with
-instructions for your level.
+<h3 align="center">AI has read every book in the world. It has never met you.</h3>
+
+**Practical AI is a free set of tools that turn the AI you already have into a productive digital
+employee.** Think of AI as a **smart intern**: a new hire who has read everything and knows
+nothing about you. It needs your priorities, your tone of voice, what your business does and how
+it can help. Each tool here hands it exactly that, for one job you repeat. It works with ChatGPT,
+Claude, Gemini, Microsoft Copilot and other chatbots, and with personal agents.
 
 <p align="center">
-  <a href="#ready-now-artifact-studio"><b>Try the first tool</b></a> &nbsp;·&nbsp;
-  <a href="#pick-your-level">Pick your level</a> &nbsp;·&nbsp;
-  <a href="#what-is-coming">What is coming</a> &nbsp;·&nbsp;
-  <a href="#who-made-this">Who made this</a>
+  <a href="#ready-now-artifact-studio"><b>Try the first tool, free</b></a> &nbsp;·&nbsp;
+  <a href="#the-jobs-you-repeat">The jobs it helps with</a> &nbsp;·&nbsp;
+  <a href="#created-by-bradley-ross">Who made this</a>
 </p>
+
+## Practical, not breakthrough
+
+This is not about new technology. It is about getting more done, and done better, by letting AI
+do the things AI is good at.
+
+- **Tasks, not theory.** Each tool is one job you already do every day, every week or every month.
+- **Time back, and better quality.** The AI gets you most of the way to a solid draft. You spend
+  your time on the part that needs you.
+- **A clear split.** Every tool says what the AI does and what stays your responsibility.
 
 **Think of it as** a cookbook where every recipe is printed twice: once for a home kitchen with a
 pan and a hob, and once for a professional kitchen with the full line.
@@ -23,67 +35,67 @@ pan and a hob, and once for a professional kitchen with the full line.
 assistant with nothing installed, and **Advanced** levels, with skills and connectors, for people
 who work with AI agents every day.
 
+## The jobs you repeat
+
+<p align="center">
+  <img src="docs/assets/jobs-you-repeat.svg" width="800" alt="Card showing the jobs Practical AI helps with. Daily: sort the inbox, turn meetings into actions. Weekly: a slide deck or report, ready now, and posts for the week. Monthly: the monthly report and receipts into a sheet. The AI does the drafting. You check it and make the call">
+</p>
+
+| Job you repeat | The AI does | You do |
+| --- | --- | --- |
+| **A slide deck or report from your notes**<br>Weekly. Ready now | The design, the layout, the first draft | Check the numbers, decide what to cut |
+| **Sort the inbox and draft replies**<br>Daily. Drafted | Reads, sorts, drafts | Approve and send |
+| **Meeting notes to actions**<br>Daily. Planned | Pulls decisions, owners and dates | Confirm names and dates |
+| **Posts for the week from one piece**<br>Weekly. Drafted | Five drafts in your voice | Edit and post |
+| **Research brief with checked sources**<br>Weekly. Partly drafted | Finds, reads, links every claim | Open the links, judge the answer |
+| **Receipts and invoices into a sheet**<br>Monthly. Planned | Reads each receipt and fills the form | Check each line against the photo |
+
+These are the jobs people most often use AI for, from usage studies and small-business surveys
+read in November 2026. The full list, with the research, is in
+[`docs/PRIORITIES.md`](docs/PRIORITIES.md).
+
 ## Ready now: Artifact Studio
 
-**Turn rough notes into a slide deck, a one-page report, a landing page or a social post.** You
-copy one set of instructions into your assistant, type one sentence and attach your notes.
+**Your AI gives brilliant answers. Then it shows them on a grey page.** Artifact Studio is a
+curated library of modern design templates. Say "show this as a presentation" and get a deck or a
+report you would be proud to present.
 
 <p align="center">
-  <a href="drafts/artifact-studio/"><img src="drafts/artifact-studio/docs/img/hero.svg" width="760" alt="Animation: a page of rough notes and one typed sentence become a slide deck, then a one-page report, then a social post"></a>
+  <a href="drafts/artifact-studio/"><img src="drafts/artifact-studio/docs/img/show-keynote.webp" width="800" alt="Animated screen capture of the keynote template in Artifact Studio: huge white type on black, one idea per screen"></a>
 </p>
 
 <p align="center">
-  <img src="drafts/artifact-studio/docs/img/example-deck.webp" width="49%" alt="Screen capture of a slide deck made by AI from meeting notes, opening with the recommendation">
-  <img src="drafts/artifact-studio/docs/img/example-report.webp" width="40%" alt="Screen capture of a one-page monthly business report made by AI, with key numbers and a chart">
+  <img src="drafts/artifact-studio/docs/img/voice-storyteller.webp" width="49%" alt="Screen capture of the storyteller voice in Artifact Studio: a sunset photograph with a story opening in serif type">
+  <img src="drafts/artifact-studio/docs/img/nine-looks.webp" width="40%" alt="Screen capture of nine design looks in Artifact Studio, shown side by side with the same content">
 </p>
 
-**[Open Artifact Studio and start in 5 minutes](drafts/artifact-studio/)**
+<p align="center">
+  <img src="drafts/artifact-studio/docs/img/by-hand-or-studio.svg" width="720" alt="Animation comparing a presentation made by hand, one hour to several days, with Artifact Studio, a solid draft in about 5 minutes">
+</p>
+
+<p align="center"><a href="drafts/artifact-studio/"><b>Open Artifact Studio</b></a></p>
 
 It was built and checked by its author. Nobody else has used it yet, so your feedback counts.
 
-## Pick your level
+## Get started at your level
 
-Every tool here is built the same way, so once you have used one you know your way around the rest.
+<p align="center">
+  <img src="docs/assets/levels.svg" width="640" alt="Animation: every Practical AI tool comes at three levels. Beginner, paste and go, for anyone. Advanced, a skill plus connectors, for builders. Expert, your own data, server and schedule, for teams">
+</p>
 
-| Level | For you if | What you do |
-| --- | --- | --- |
-| **1. Beginner** | You use AI now and then and want a result today | Copy the instructions, paste them into any chat assistant, type one sentence |
-| **2. Advanced** | You use AI most days and are tired of repeating yourself | Add a skill and connect it to where your work lives: mail, calendar, drive, sheets |
-| **3. Expert** | You run agents or build for a team | Connect your own data, a server or a schedule |
+**Beginner:** copy the instructions, paste them into your chatbot, type one sentence.
+**Advanced:** add a skill and connect it to your mail, calendar, drive or sheets.
+**Expert:** connect your own data, a server or a schedule, and let your agents use it.
 
-Start at Level 1. It is the whole tool. The other levels only remove steps.
+Start at Beginner. It is the whole tool. The other levels only remove steps.
 
-## What is coming
-
-One tool is ready. The rest are planned. These are the ten everyday jobs people most often use AI
-for, from usage studies and small-business surveys read in November 2026. Each will get a Beginner
-level first.
-
-| Tool | What you will be able to do | State |
-| --- | --- | --- |
-| **Research brief with checked sources** | Ask a question, get one page with a dated link for every claim | Partly drafted |
-| **Rewrite and draft in my voice** | Paste any email or paragraph and get it tighter, in a voice that sounds like you | Partly drafted |
-| **Summarise a document** | Attach a report or contract and get what it says, what it asks of you and what is missing | Planned |
-| **Meeting notes to actions** | Paste a transcript and get decisions, owners, dates and a follow-up email | Planned |
-| **Email triage and reply drafts** | One morning summary of what needs you, with replies drafted for approval | Drafted |
-| **Decision helper** | Work a decision in seven steps and get a one-page recommendation | Planned |
-| **One piece into a week of posts** | Paste one article or talk and get five posts in your voice | Drafted, with Artifact Studio |
-| **Customer reply assistant** | Paste a customer message and get a reply drafted only from your own facts | Planned |
-| **Ask your spreadsheet** | Upload a sheet, ask one question, get the answer and a chart | Partly drafted |
-| **Receipts and invoices into a sheet** | Upload receipt photos and get a filled, categorised form | Planned |
-
-The full list, with the Beginner and Advanced version of every tool and the research behind this
-order, is in [`docs/PRIORITIES.md`](docs/PRIORITIES.md).
-
-## Who made this
+## Created by Bradley Ross
 
 <p>
-  <img src="docs/assets/bradley-ross.jpg" width="150" alt="Bradley Ross">
+  <img src="docs/assets/bradley-ross.jpg" width="150" alt="Bradley Ross, creator of Practical AI">
   &nbsp;
   <img src="docs/assets/bradley-ross-avatar.webp" width="150" alt="Cartoon avatar of Bradley Ross with a small friendly robot, in front of a red-brick campus building">
 </p>
-
-**Created by Bradley Ross.**
 
 - **Harvard CS50:** 10 terms as a Teaching Fellow.
 - **Agentics Foundation:** Director, working with and sharing teaching with the top agentic
@@ -93,9 +105,16 @@ order, is in [`docs/PRIORITIES.md`](docs/PRIORITIES.md).
 These tools come out of that teaching: what people ask for most, in the form that worked in the
 room.
 
-**Questions, training or feedback:** [linkedin.com/in/bradaross](https://www.linkedin.com/in/bradaross/)
+**More information, training or feedback:** [linkedin.com/in/bradaross](https://www.linkedin.com/in/bradaross/)
 
-## How it is built, in one minute
+## If you are someone's agent
+
+Do not work from this page. Read [`AGENTS.md`](AGENTS.md). It routes you by task. To make a page, a
+deck or a social post, go straight to
+[`drafts/artifact-studio/AGENTS.md`](drafts/artifact-studio/AGENTS.md).
+
+<details>
+<summary>How the repository is organised, and the ground rules</summary>
 
 | Folder | What it holds |
 | --- | --- |
@@ -106,17 +125,8 @@ room.
 | [`skills/`](skills/) | Skills an assistant can load, one folder each |
 | [`tools/`](tools/) | Small scripts that check the repository |
 
-Inside every tool: **`base/` holds everything. A level holds only what it adds.**
-
-| | Called | Holds |
-| --- | --- | --- |
-| `base/` | Base | The thing itself, its examples and its source |
-| `level-1/` | Beginner | Instructions to paste. Nothing to install |
-| `level-2/` | Advanced | A skill, connectors, a preferences file |
-| `level-3/` | Expert | A database, an MCP server, a plugin, a schedule |
-
-<details>
-<summary>Ground rules, and how to check the work</summary>
+Inside every tool, `base/` holds everything and a level holds only what it adds: `level-1/` is
+Beginner, `level-2/` is Advanced, `level-3/` is Expert.
 
 - Reuse what already exists before building anything new.
 - A person approves anything that posts, sends, pays or publishes.
@@ -124,26 +134,11 @@ Inside every tool: **`base/` holds everything. A level holds only what it adds.*
 - Every claim about something that changes often carries the date it was checked.
 - Every status line says who has and has not tried the thing. "Built" is not "used".
 
-Each tool lists its checks in a `gates.json`. Run them with:
-
-```
-python3 tools/gates.py drafts/artifact-studio
-```
-
-It ends with "All gates that ran passed" or "DO NOT SHIP" and the reason. How a tool gets built is
-the [project method](drafts/project-method/): nine stages, a gate after each. It serves the tools
-and is not the point of the repository. The [artifact studio](drafts/artifact-studio/) and the
-project method follow the layout above. Nine older drafts still use an earlier one and move over
-as each is next worked on.
+Each tool lists its checks in a `gates.json`. Run them with
+`python3 tools/gates.py drafts/artifact-studio`. It ends with "All gates that ran passed" or
+"DO NOT SHIP" and the reason. How a tool gets built is the
+[project method](drafts/project-method/): nine stages, a gate after each.
 
 </details>
-
-## If you are someone's agent
-
-Do not work from this page. Read [`AGENTS.md`](AGENTS.md). It routes you by task. To make a page, a
-deck or a social post, go straight to
-[`drafts/artifact-studio/AGENTS.md`](drafts/artifact-studio/AGENTS.md).
-
-## Licence
 
 Free to use, change and share under Apache-2.0.

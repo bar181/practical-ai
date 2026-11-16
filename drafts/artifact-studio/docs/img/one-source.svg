@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img" aria-labelledby="t d" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif">
-<title id="t">Rough notes and one sentence become a finished piece</title>
+<title id="t">One set of notes, shown three ways</title>
 <desc id="d">On the left, a page of rough notes. In the middle, one sentence typed to an assistant. On the right, the result, which changes in turn: a slide deck, a one-page report, a social post.</desc>
 <style>
 .cy{opacity:0;animation:show 12s infinite}
@@ -32,9 +32,9 @@
 <path class="flow" d="M236 208h44" stroke="#8fb3e8" stroke-width="4" stroke-linecap="round"/>
 <rect x="290" y="166" width="220" height="84" rx="18" fill="#17365f" stroke="#8fb3e8" stroke-width="2"/>
 <g fill="#fff" font-size="24" font-weight="600" text-anchor="middle">
-  <text class="cy a" x="400" y="216">Make it a deck.</text>
-  <text class="cy b" x="400" y="216">Make it a report.</text>
-  <text class="cy c" x="400" y="216">Make it a post.</text>
+  <text class="cy a" x="400" y="216">Show it as a deck.</text>
+  <text class="cy b" x="400" y="216">Now a report.</text>
+  <text class="cy c" x="400" y="216">Now a post.</text>
 </g>
 <rect class="cur" x="494" y="196" width="3" height="26" fill="#ffd23f"/>
 <path class="flow" d="M520 208h44" stroke="#8fb3e8" stroke-width="4" stroke-linecap="round"/>
@@ -72,5 +72,5 @@
   <text x="672" y="304" text-anchor="middle" fill="#fff" font-size="24" font-weight="600">A social post</text>
 </g>
 
-<text x="400" y="364" text-anchor="middle" fill="#b9cbe6" font-size="22">Free. For Claude or ChatGPT. Nothing to install.</text>
+<text x="400" y="364" text-anchor="middle" fill="#b9cbe6" font-size="22">Same notes. A new version in one sentence.</text>
 </svg>
