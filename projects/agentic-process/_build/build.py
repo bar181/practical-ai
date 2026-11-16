@@ -224,7 +224,7 @@ footer{{padding:26px 0 44px;font:400 .88rem/1.45 var(--display);color:var(--mute
     <li><b>Beginner:</b> the coach above, or the nine prompts one at a time. Nothing to install.</li>
     <li><b>Advanced:</b> <a href="https://github.com/bar181/practical-ai/tree/main/projects/agentic-process/level-2-files" style="color:#fff">one skill folder</a> to copy into your coding agent. It works in any repository.</li>
     <li><b>Expert:</b> <a href="https://github.com/bar181/practical-ai/tree/main/projects/agentic-process/level-3-files" style="color:#fff">gates, the fresh-run test and the score sheet</a>.</li>
-    <li><b>Teaching:</b> <a href="https://raw.githack.com/bar181/practical-ai/main/projects/agentic-process/base/training.html" style="color:#fff">the 30-minute training</a>, with slides, a timer and a presenter window.</li>
+    <li><b>Teaching or learning it properly:</b> <a href="https://raw.githack.com/bar181/practical-ai/main/projects/agentic-process/base/course.html" style="color:#fff">the course</a>: five modules, each with a lecture deck and step-by-step lessons.</li>
   </ul>
   <a class="btn" href="https://github.com/bar181/practical-ai">Open Practical AI on GitHub</a>
 </div></div>
@@ -318,187 +318,8 @@ def process_md():
           "5. **One addition, one change request.** Small changes get reviewed. Big ones get waved through.", ""]
     return "\n".join(L)
 
-from lesson import SEGMENTS, WATCH, COACH_PROMPT, REVIEW_PROMPT, PASTED_PROMPT, CHECKS
-STARTER = P.parent/'artifact-studio/level-2-files/artifact-studio/assets/starters/deck-workshop.html'
-
-def lesson_md():
-    L = ["<!-- Written by _build/build.py from _build/lesson.py. In the repository, change lesson.py and rebuild. A copy you keep can be edited by hand. -->",
-         "# Teach Agentic Process in 30 minutes", "",
-         "A lesson plan for one teacher and any number of learners. Nobody needs to code. Each learner",
-         "needs a chatbot they already use, and one job they repeat at work.", "",
-         "**By the end** each learner has a one-page plan for a small AI tool of their own, and knows the",
-         "one test that finds its faults.", "",
-         "**Present from** [`training.html`](training.html): the slides for this plan, with a lesson timer,",
-         "these notes, and a presenter window that keeps them off the projector. Open it from the link in the",
-         "project's README, or on GitHub open the file, choose **Download raw file**, and open it in a browser.", "",
-         "## Before the lesson", "",
-         "| Do this | Time |", "| --- | --- |",
-         "| Open [`training.html`](training.html) on the screen you will present from. Press N to see your notes | 1 minute |",
-         "| Keep [the guide](explainer.html) open in a second tab, to show a step card if asked | 1 minute |",
-         "| Ask each learner to bring one job they do on their own every week that starts from a blank page | The day before |",
-         "| Copy the coach prompt from the slides page and post it in the class chat, so nobody types it from the screen | 1 minute |",
-         "| If several learners use a chatbot that cannot open links, put the coach's text in a shared document | 5 minutes |", "",
-         "## The lesson", "",
-         "| Minutes | You do | You say | Learners do |", "| --- | --- | --- | --- |"]
-    for g in SEGMENTS:
-        L.append(f"| {g['start']} to {g['end']} | {g['do']} | {g['say']} | {g['learners']} |")
-    L += ["", "## The prompts learners paste", "", f"**At minute {SEGMENTS[3]['start']}, the coach:**", "", "```", COACH_PROMPT, "```", "",
-          "**If the chatbot cannot open the link:** open the coach on GitHub, press Raw, copy all of it, paste it into the chat, then:", "", "```", PASTED_PROMPT, "```", "",
-          "**At minute 22, the review in a new chat:**", "", "```", REVIEW_PROMPT, "```", "",
-          "## The three check questions, at minute 26", ""] + [f"{i}. **{q}** {a}" for i, (q, a) in enumerate(CHECKS, 1)] + ["",
-          "## What to watch for", "", "| You see | It means | Say |", "| --- | --- | --- |"]
-    L += [f"| {a} | {b} | {c} |" for a, b, c in WATCH]
-    L += ["", "## After the lesson", "",
-          "Homework: each learner goes back to the coach chat, types *carry on to step 8*, runs the fresh-chat",
-          "test it gives them, and sends you two things: the plan, and what the new chat had to guess.",
-          "The second tells you more than the first.", "",
-          "This plan has not yet been taught. The timings are estimates: change them after your first run.", ""]
-    return "\n".join(L)
-
-def slide_html(label, title, body, note, seg, turn, pic):
-    out, lst = [], None
-    for line in body:
-        kind = 'ol' if line.startswith('1. ') else 'ul' if line.startswith('- ') else None
-        if kind != lst:
-            if lst: out.append(f'</{lst}>')
-            if kind: out.append(f'<{kind}>')
-            lst = kind
-        if kind: out.append(f'<li>{E(line[3:] if kind == "ol" else line[2:])}</li>')
-        elif line == 'PROMPT': out.append(f'<pre class="pr">{E(COACH_PROMPT)}</pre>')
-        elif line.startswith('> '): out.append(f'<p class="q">&#8220;{E(line[2:])}&#8221;</p>')
-        else: out.append(f'<p>{E(line)}</p>')
-    if lst: out.append(f'</{lst}>')
-    cls = 'dk-s' + (' turn' if turn else '') + (' lead' if pic else '')
-    picture = '<i class="dk-pic" role="img" aria-label="A puppy in a plaid suit and tie, sitting upright: the inspector."></i>' if pic else ''
-    return (f'    <section class="{cls}" data-seg="{seg}">{picture}<div><p class="k">{E(label)}</p><h2>{E(title)}</h2>'
-            + ''.join(out) + f'</div><aside class="dk-note">{E(note)}</aside></section>')
-
-def training_html():
-    starter = STARTER.read_text(encoding='utf-8')
-    style = starter.split('<style>', 1)[1].split('</style>', 1)[0]
-    engine = starter.split('<script>', 1)[1].split('</script>', 1)[0]
-    slides, n = [], 0
-    for i, g in enumerate(SEGMENTS):
-        for (label, title, body, note) in g['slides']:
-            n += 1
-            slides.append(slide_html(label, title, body, note, i, label.startswith(('Your turn', 'Turn to', 'A stranger')), label == 'Think of it as'))
-    rows = ''.join(f'<tr><th scope="row">{g["start"]} to {g["end"]}</th><td>{E(g["do"])}</td><td>{E(g["say"])}</td><td>{E(g["learners"])}</td></tr>' for g in SEGMENTS)
-    watch = ''.join(f'<tr><th scope="row">{E(a)}</th><td>{E(b)}</td><td>{E(c)}</td></tr>' for a, b, c in WATCH)
-    segs = ','.join(f'[{g["start"]},{g["end"]},"{g["name"]}"]' for g in SEGMENTS)
-    return f"""<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Teach Agentic Process in 30 minutes</title>
-<!-- Written by projects/agentic-process/_build/build.py from _build/lesson.py. Change the source, not this file.
-     Made with Artifact Studio: the workshop deck starter, its styles and its slide engine, unchanged. Voice: practical instructor. -->
-<style>{style}
-/* added for this lesson: a timer, a prompt on a slide, and the teacher's handout under the deck */
-.dw h2+ol,.dw h2+ul{{margin-top:2.6cqw}}
-.dw .dk-s.lead .dk-pic{{--slide-photo:url(data:image/jpeg;base64,{puppy})}}
-.dw .pr{{margin:2.4cqw 0 0;padding:2cqw 2.4cqw;background:#fffdf6;color:#14302d;border-radius:1cqw;white-space:pre-wrap;overflow-wrap:anywhere;font:400 2cqw/1.35 ui-monospace,Menlo,Consolas,monospace;text-align:left}}
-.dk-top .wrap,.hand .wrap{{max-width:1080px;margin-inline:auto;padding-inline:12px}}
-.dk-top .how{{font-size:.98rem}}
-.tm{{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;max-width:1080px;margin:0 auto 12px;padding:10px 12px;color:var(--fog);font:700 1rem/1.3 var(--display)}}
-.tm button{{min-height:44px;border-radius:999px;border:0;background:var(--reed);color:var(--pine);font:700 1rem/1 var(--display);padding:0 18px}}
-.tm .clock{{font-variant-numeric:tabular-nums;font-size:1.3rem}}.tm .seg{{font-weight:400;color:#c2cede}}.tm .warn{{color:#ffe27a}}
-.hand{{background:#fffdf6;color:#14302d;padding:40px 0 48px;font:400 1.05rem/1.5 var(--display)}}
-.hand h2{{font:700 clamp(1.5rem,4.4vw,2.1rem)/1.1 var(--display);margin:34px 0 12px}}.hand h2:first-child{{margin-top:0}}
-.hand p{{max-width:40em;margin-top:10px}}.hand ol{{max-width:44em;padding-left:1.3em}}.hand li+li{{margin-top:8px}}
-.tw{{overflow-x:auto}}.hand table{{border-collapse:collapse;width:100%;min-width:560px;font-size:.96rem}}
-.hand th,.hand td{{text-align:left;vertical-align:top;padding:10px;border-bottom:1px solid #d9d2bf}}.hand thead th{{font-size:.86rem;color:#3f5a56}}
-.hand pre{{margin:10px 0 0;padding:14px;background:#f1ece0;border-radius:10px;white-space:pre-wrap;overflow-wrap:anywhere;font:400 .92rem/1.5 ui-monospace,Menlo,Consolas,monospace;max-width:46em}}
-.hand .cp{{min-height:44px;margin-top:8px;border-radius:999px;border:0;background:#0d4f4a;color:#fffdf6;font:700 .95rem/1 var(--display);padding:0 18px}}
-.me{{display:flex;gap:16px;align-items:flex-start;margin-top:36px;padding-top:24px;border-top:1px solid #d9d2bf}}.me img{{flex:none;width:64px;height:64px;border-radius:50%}}
-.me a{{color:#0d4f4a;font-weight:700;display:inline-flex;min-height:44px;align-items:center}}
-.tm:not(.on){{display:none}}
-.pvb button{{min-height:44px;border-radius:999px;border:0;background:var(--reed);color:var(--pine);font:700 1rem/1 var(--display);padding:0 18px;margin-top:6px}}.pvb:not(.on){{display:none}}
-#pv{{display:none}}
-.presenter body{{padding:0}}.presenter .dk-top,.presenter .dk-hold,.presenter .hand,.presenter .tm{{display:none}}
-.presenter #pv{{display:grid;gap:14px;max-width:900px;margin:0 auto;padding:18px;color:var(--fog);font:400 1.1rem/1.45 var(--display)}}
-#pv .row{{display:flex;flex-wrap:wrap;gap:10px;align-items:center}}#pv button{{min-height:48px;min-width:64px;border-radius:999px;border:1.5px solid #5b6b7a;background:var(--pine-2);color:var(--fog);font:700 1.05rem/1 var(--display);padding:0 18px}}
-#pv .clock{{font:700 2.4rem/1 var(--display);font-variant-numeric:tabular-nums}}#pv .lab{{font:700 .86rem/1.2 var(--display);color:var(--reed)}}
-#pv .now{{font:700 1.6rem/1.2 var(--display)}}#pv .note{{background:var(--pine-2);border-radius:10px;padding:14px 16px;font-size:1.2rem}}#pv .next{{color:#c2cede}}#pv .warn{{color:#ffe27a}}
-</style>
-</head>
-<body>
-<header class="dk-top"><div class="wrap">
-  <h1>Teach Agentic Process in 30 minutes</h1>
-  <p>Slides for one lesson. Each learner leaves with a one-page plan for an AI tool of their own, and the one test that finds its faults.</p>
-  <p class="how">To present: put the slides in full screen on the projector, and open the presenter window on your own screen. It shows your notes, the next slide and the lesson timer, and moves the slides. With one screen, press N to show your notes under the slide. The teacher's plan is under the slides.</p>
-  <details class="how"><summary>Before the lesson</summary><p>The day before, ask each learner to bring one job they do every week that starts from a blank page. Copy the coach prompt below and post it in the class chat, so nobody types it from the screen. On the day, open this page on the screen you present from, and keep the guide open in a second tab in case someone asks about a step.</p></details>
-  <p class="how pvb"><button type="button" id="pvopen">Open the presenter window</button> <span id="pvmsg" aria-live="polite"></span></p>
-</div></header>
-<section id="pv" aria-label="Presenter window">
-  <div class="row"><span class="clock" id="pvclock">0:00</span><button type="button" id="pvgo">Start the timer</button><span id="pvseg"></span></div>
-  <p class="warn" id="pvwarn" aria-live="polite"></p>
-  <div><p class="lab" id="pvn">Slide 1</p><p class="now" id="pvnow"></p></div>
-  <div><p class="lab">Your notes</p><p class="note" id="pvnote"></p></div>
-  <p class="next" id="pvnext"></p>
-  <div class="row"><button type="button" id="pvprev" aria-label="Previous slide">&#8592; Back</button><button type="button" id="pvnextb" aria-label="Next slide">Next &#8594;</button></div>
-  <p class="next">Keep this window on your own screen. The slides window follows it.</p>
-</section>
-<div class="tm" id="tm" role="group" aria-label="Lesson timer"><button type="button" id="tmgo">Start the 30-minute timer</button><span class="clock" id="tmclock" aria-live="off">0:00</span><span class="seg" id="tmseg">Minutes 0 to 3: The hook</span><span class="warn" id="tmwarn" aria-live="polite"></span></div>
-<div class="dk-hold">
-<div class="dk dw" tabindex="0" role="region" aria-roledescription="slide deck" aria-label="Teach Agentic Process in 30 minutes, {n} slides">
-{chr(10).join(slides)}
-    <div class="dk-bar"><button class="dk-prev" type="button" aria-label="Previous slide">&#8592;</button><span class="dk-n" aria-live="polite">1</span><button class="dk-next" type="button" aria-label="Next slide">&#8594;</button><button class="dk-notes-b" type="button" aria-pressed="false">Notes</button><button class="dk-full" type="button">Full screen</button></div>
-  </div>
-</div>
-<main class="hand"><div class="wrap">
-  <h2>The lesson, minute by minute</h2>
-  <div class="tw" tabindex="0" role="region" aria-label="The lesson, minute by minute"><table><thead><tr><th scope="col">Minutes</th><th scope="col">You do</th><th scope="col">You say</th><th scope="col">Learners do</th></tr></thead><tbody>{rows}</tbody></table></div>
-  <h2>The prompts learners paste</h2>
-  <p>At minute {SEGMENTS[3]['start']}, the coach. Learners change the last line to their own job.</p>
-  <pre id="pc">{E(COACH_PROMPT)}</pre><button class="cp" type="button" data-copy="pc">Copy the coach prompt</button>
-  <p>If the chatbot cannot open the link: open the coach on GitHub, press Raw, copy all of it, paste it into the chat, then this.</p>
-  <pre id="pp">{E(PASTED_PROMPT)}</pre><button class="cp" type="button" data-copy="pp">Copy the second prompt</button>
-  <p>At minute 22, the review, in a new chat with no history.</p>
-  <pre id="pr">{E(REVIEW_PROMPT)}</pre><button class="cp" type="button" data-copy="pr">Copy the review prompt</button>
-  <h2>The three check questions, at minute 26</h2>
-  <ol>{''.join(f"<li><b>{E(q)}</b> {E(a)}</li>" for q, a in CHECKS)}</ol>
-  <h2>What to watch for</h2>
-  <div class="tw" tabindex="0" role="region" aria-label="What to watch for"><table><thead><tr><th scope="col">You see</th><th scope="col">It means</th><th scope="col">Say</th></tr></thead><tbody>{watch}</tbody></table></div>
-  <h2>After the lesson</h2>
-  <p>Homework: each learner goes back to the coach chat, types <i>carry on to step 8</i>, runs the fresh-chat test it gives them, and sends you two things: the plan, and what the new chat had to guess. The second tells you more than the first.</p>
-  <p>This lesson has not yet been taught. Every timing is an estimate.</p>
-  <div class="me"><img src="data:image/jpeg;base64,{me}" width="64" height="64" alt="Bradley Ross"><div><b>Made by Bradley Ross</b><p style="margin-top:4px">An agentic AI architect and developer for businesses of every size, from start-up to enterprise. He builds and teaches practical AI.</p><a href="https://www.linkedin.com/in/bradaross/">Connect with Bradley on LinkedIn</a></div></div>
-</div></main>
-<script>{engine}
-/* the lesson timer: which segment the clock says you should be in, and whether the slide on screen is behind */
-(()=>{{const S=[{segs}],tm=document.getElementById('tm'),go=document.getElementById('tmgo'),clock=document.getElementById('tmclock'),seg=document.getElementById('tmseg'),warn=document.getElementById('tmwarn');
-  tm.classList.add('on');let t0=null,held=0,tick=null;
-  const slideSeg=()=>{{const c=document.querySelector('.dk-s.cur');return c?+c.dataset.seg:0}};
-  const show=()=>{{const ms=held+(t0?Date.now()-t0:0),m=ms/60000,mm=Math.floor(m),ss=Math.floor((ms/1000)%60);
-    clock.textContent=mm+':'+String(ss).padStart(2,'0');const k=S.findIndex(x=>m<x[1]);const cur=S[k<0?S.length-1:k];
-    seg.textContent=(m>=30?'Time is up. ':'')+'Minutes '+cur[0]+' to '+cur[1]+': '+cur[2]+(m<30?' ('+Math.max(0,Math.ceil(cur[1]-m))+' min left)':'');
-    const s=slideSeg();warn.textContent=t0&&k>=0&&s<k?'The slide on screen is behind the clock':''}};
-  go.addEventListener('click',()=>{{setTimeout(()=>{{go.blur();document.querySelector('.dk').focus()}});if(t0){{held+=Date.now()-t0;t0=null;clearInterval(tick);go.textContent='Carry on'}}else{{t0=Date.now();tick=setInterval(show,1000);go.textContent='Pause'}}show()}});
-  document.addEventListener('keyup',show);document.addEventListener('click',show);
-  /* the presenter window: a second copy of this page, opened with #presenter. The two windows talk by postMessage,
-     which also works for a file opened from the computer. The slides window owns the slides and the timer. */
-  const P=location.hash==='#presenter';
-  if(P){{document.documentElement.classList.add('presenter');const $i=id=>document.getElementById(id),send=c=>{{try{{opener&&opener.postMessage({{ap:'cmd',c}},'*')}}catch(e){{}}}};
-    $i('pvprev').addEventListener('click',()=>send('prev'));$i('pvnextb').addEventListener('click',()=>send('next'));$i('pvgo').addEventListener('click',()=>send('timer'));
-    document.addEventListener('keydown',e=>{{if(['ArrowRight',' ','PageDown','Enter'].includes(e.key)&&!e.target.closest('button')){{e.preventDefault();send('next')}}else if(['ArrowLeft','PageUp'].includes(e.key)){{e.preventDefault();send('prev')}}}});
-    addEventListener('message',e=>{{const d=e.data;if(!d||d.ap!=='state')return;$i('pvn').textContent='Slide '+d.i+' of '+d.n;$i('pvnow').textContent=d.title;$i('pvnote').textContent=d.note;
-      $i('pvnext').textContent=d.next?'Next: '+d.next:'This is the last slide';$i('pvclock').textContent=d.clock;$i('pvseg').textContent=d.seg;$i('pvwarn').textContent=d.warn;$i('pvgo').textContent=d.go}});
-    if(!opener)$i('pvnow').textContent='Open this window with the button on the slides page.';send('hello');return}}
-  const slides=[...document.querySelectorAll('.dk-s')],pvb=document.querySelector('.pvb');pvb.classList.add('on');let pw=null;
-  const state=()=>{{if(!pw||pw.closed)return;const i=slides.findIndex(s=>s.classList.contains('cur')),s=slides[i],nx=slides[i+1];
-    pw.postMessage({{ap:'state',i:i+1,n:slides.length,title:s.querySelector('h2').textContent,note:(s.querySelector('.dk-note')||{{}}).textContent||'',next:nx?nx.querySelector('h2').textContent:'',clock:clock.textContent,seg:seg.textContent,warn:warn.textContent,go:go.textContent}},'*')}};
-  document.getElementById('pvopen').addEventListener('click',()=>{{pw=open(location.href.split('#')[0]+'#presenter','ap-presenter','width=820,height=640');
-    document.getElementById('pvmsg').textContent=pw?'Presenter window open. Put this window in full screen on the projector.':'Your browser blocked the window. Allow pop-ups for this page, or press N for notes under the slide.'}});
-  addEventListener('message',e=>{{const d=e.data;if(!d||d.ap!=='cmd')return;if(e.source)pw=e.source;
-    if(d.c==='next')document.querySelector('.dk-next').click();else if(d.c==='prev')document.querySelector('.dk-prev').click();else if(d.c==='timer')go.click();show();state()}});
-  new MutationObserver(state).observe(document.querySelector('.dk-stage')||document.body,{{subtree:true,attributes:true,attributeFilter:['class']}});setInterval(state,1000);
-  document.querySelectorAll('[data-copy]').forEach(b=>b.addEventListener('click',async()=>{{const was=b.textContent;try{{await navigator.clipboard.writeText(document.getElementById(b.dataset.copy).textContent);b.textContent='Copied'}}catch(e){{b.textContent='Select the text and copy it'}}setTimeout(()=>b.textContent=was,2200)}}));
-}})();
-</script>
-</body>
-</html>
-"""
+from pages import north_star_html, course_html, course_outline_md
+GH = "https://raw.githack.com/bar181/practical-ai/main/projects/agentic-process/base/"
 
 def nine_steps_svg():
     """The README picture: nine steps in a row with a gate after each. A marker walks them and waits at each gate."""
@@ -559,9 +380,9 @@ def fill(path, table, name='steps', text=None, inline=False):
     return re.sub(pat, lambda m: m.group(1) + sep + table + sep + m.group(2), text, flags=re.S)
 
 outputs = {P/'base/explainer.html': page, P/'base/PROCESS.md': process_md(),
-           P/'base/TEACH-IN-30-MINUTES.md': lesson_md(), P/'base/training.html': training_html(),
+           P/'base/north-star.html': north_star_html(me, 'explainer.html', 'course.html'), P/'base/course.html': course_html(me, 'north-star.html', 'explainer.html'),
            P/'base/AI-INSTRUCTIONS.md': fill(P/'base/AI-INSTRUCTIONS.md', '. '.join(PLAN_ROWS) + '.', 'plan', fill(P/'base/AI-INSTRUCTIONS.md', coach_table()), inline=True),
-           P/'README.md': fill(P/'README.md', '```\n' + PROMPT + '\n```', 'prompt'),
+           P/'README.md': fill(P/'README.md', course_outline_md(GH + 'course.html'), 'course', fill(P/'README.md', '```\n' + PROMPT + '\n```', 'prompt')),
            P/'_build/img/nine-steps.svg': nine_steps_svg(),
            SKILL_DIR/'SKILL.md': fill(SKILL_DIR/'SKILL.md', skill_table())}
 for name in ('gates.py', 'check_project.py', 'check_links.py', 'check_filled.py'):

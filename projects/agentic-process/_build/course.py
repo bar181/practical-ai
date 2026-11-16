@@ -1,0 +1,192 @@
+"""The Agentic Process course, written once. build.py turns it into base/course.html and the course outline in the README.
+
+A lesson that teaches one of the nine steps names it with step=N: its purpose, what to do, the prompt, the proof and the
+gate then come from steps.py, so the course and the process cannot drift apart.
+
+Slides are (kind, title, body, notes). Kinds: title, points, two (two columns: body is (left title, left points,
+right title, right points)), diagram (body names a diagram in build.py), quote, lab, recap. Notes are what the
+instructor says, in the instructor's voice.
+"""
+from steps import coach_prompt, pasted_prompt
+
+COURSE = dict(
+ title="Build the right AI tool",
+ subtitle="The Agentic Process course",
+ purpose="Learn to turn a job you repeat into a small AI tool that someone else can use, and to prove it works before anyone relies on it.",
+ audience="Business owners, employees and students who use a chatbot at work. Modules 1 to 4 need no code. Module 5 adds a track for people who build with a coding agent.",
+ outcomes=[
+  "Say what a tool does in one sentence: one user, one input, one result.",
+  "Check what already exists, and decide whether to stop, wrap it or build.",
+  "Write a one-page plan and the first screen a user will see, before anything is built.",
+  "Test your tool with a stranger, a fresh chat that has only your instructions, and read what it tripped on.",
+  "Grow a tool one addition at a time, and know which level of the process fits your work.",
+ ],
+ needs=["A chatbot you already use, such as ChatGPT, Claude, Gemini or Copilot", "One job you do on your own every week that starts from a blank page", "About three and a half hours, in one day or over five weeks, plus the capstone"],
+ honest="This course was written on 16 November 2026 and has not yet been taught. Every time on it is an estimate. The process has been tested by AI sessions, all in Claude, and by nobody else yet.",
+)
+
+MODULES = [
+ dict(n=1, title="Why process beats prompts", minutes=40,
+  purpose="See why an AI that builds fast makes the expensive mistakes earlier, and meet the nine steps that catch them.",
+  outcomes=["Explain why a good prompt is not enough to get the right tool", "Name the four stages and what a gate is", "Run the coach on a real job, on the short path"],
+  slides=[
+   ("title", "Why process beats prompts", ["Module 1 of 5"], "Welcome. Today is about one idea: when building gets cheap, deciding what to build becomes the expensive part. By the end of this module you will have run the process once on a job of your own."),
+   ("points", "An AI will build whatever you ask", ["Quickly", "Confidently", "Without asking whether it is the right thing"], "This is the shift. A year ago the hard part was getting the AI to build anything. Now it builds anything, so the risk is building the wrong thing well. Ask the room: who has had an answer that was polished and wrong?"),
+   ("diagram", "Where the mistakes moved", "cost", "The picture is qualitative, not data. Building used to be the slow, costly stage, so we planned carefully. Now building is fast and cheap, so people skip the deciding. The expensive mistakes are now made before the first line: the wrong job, a tool that already exists, a tool nobody else can use."),
+   ("quote", "Think of it as a building site with an inspector", ["You agree the drawing before you pour concrete. Nothing moves to the next stage until the current one is signed off."], "This is the picture for the whole course. Come back to it whenever someone is lost. The inspector is not there to slow you down. The inspector stops you pouring concrete in the wrong place."),
+   ("diagram", "Nine steps, four stages", "stages", "Decide is steps 1 to 4: is it worth building? Design is 5 to 7: the plan before the build. Build and test is step 8: a stranger tests it. Grow is step 9: one addition at a time. Do not explain each step now. Modules 2 to 5 take one stage each."),
+   ("points", "A gate is a question you answer before you go on", ["Step 1: can you say the job in one sentence?", "Step 2: after what already exists, is there still something to build?", "Step 8: did a fresh chat finish the job, and have you read what it tripped on?"], "Each gate is worded so that yes means go on. If the answer is no, you fix the step. A gate you cannot answer yet, because you need someone else, is open, not failed."),
+   ("two", "Three levels, one process", ("Beginner", ["Any chatbot", "Paste one prompt, the coach", "Leave with a plan, a prompt and a test"], "Advanced and Expert", ["A coding agent and a repository", "One skill folder with its own checks", "Agents that work unattended, with gates"]), "Most people in this room will stay at Beginner, and that is the point: the same nine steps work in a chat window. Module 5 shows the other two levels for those who build with agents."),
+   ("lab", "Your turn: run the coach", ["Paste the coach prompt into your chatbot", "Change the last line to your job", "Say yes to the short path", "Stop when it shows you the plan"], "Give them twelve minutes. Walk the room. If a chatbot cannot open the link, they open the coach on GitHub, copy it, paste it, and type: Follow the build coach pasted above."),
+   ("recap", "Take away", ["Building is cheap. Deciding is not.", "Nine steps, four stages, a gate after each", "The coach runs it in any chatbot"], "Next module: Decide. Bring the plan the coach gave you."),
+  ],
+  lessons=[
+   dict(id="1-1", title="The problem: the wrong thing, built well", minutes=8,
+    objective="Recognise the three expensive mistakes an AI makes before the first line is written.",
+    do=["Read the three mistakes below.", "Think of one AI result you got this month that was polished and wrong. Write one line on why.", "Decide which of the three mistakes it was."],
+    body=["**The wrong job.** You asked for five things and got a tool that does none of them well.",
+          "**It already existed.** A built-in feature or a free tool already did the job.",
+          "**Nobody else can use it.** It works in your chat, with everything you said earlier, and breaks for anyone else."],
+    proof=["One line about a real AI result that was polished and wrong", "Which of the three mistakes it was"]),
+   dict(id="1-2", title="The North Star and the nine steps", minutes=10,
+    objective="Know what the process is for and how its nine steps are grouped.",
+    do=["Open the North Star page and read the North Star and the purpose.", "Open the guide and scroll to the diagram of four stages.", "Open step 1's card and find its four parts: purpose, proof, prompt and gate."],
+    links=[("The North Star page", "north-star.html"), ("The guide", "explainer.html")],
+    proof=["The North Star in your own words, in one sentence", "The four stages, from memory"]),
+   dict(id="1-3", title="Your first run: the coach, on the short path", minutes=15,
+    objective="Run the whole process once, on a small job of your own.",
+    do=["Pick one job you do on your own every week that starts from a blank page.", "Copy the prompt below into your chatbot and change the last line to your job.", "Say yes when the coach offers the short path.", "Answer its questions. Stop when it shows you the one-page plan.", "Save the plan: you need it in Module 2."],
+    prompt=coach_prompt("[one job you do on your own, in one sentence]"),
+    fallback=pasted_prompt("[one job you do on your own, in one sentence]"),
+    proof=["A one-page plan for your own job", "The coach's list of what it assumed"]),
+  ],
+  quiz=[
+   ("Building with AI got much cheaper. Where do the expensive mistakes happen now?", ["In the code", "Before the first line: choosing the job, checking what exists, making it usable by others", "After launch"], 1, "Building is fast now, so the costly errors are in deciding what to build."),
+   ("What is a gate?", ["A review meeting", "A question you answer before you go on, worded so yes means go on", "A paid feature"], 1, "Each step ends with a gate question. No means fix the step."),
+   ("The coach offers the short path. When is that right?", ["Always", "When one person turns one kind of input into one result in a chat", "Only for developers"], 1, "Shared files, several users or anything paid take all nine steps."),
+  ],
+  assignment="Run the coach on your own job, on the short path, and save the one-page plan it gives you."),
+
+ dict(n=2, title="Decide: is it worth building?", minutes=45,
+  purpose="Before anything is built, name one job, check what already does it, and know what it would cost.",
+  outcomes=["Cut a job down to one user and one result", "Run a reuse check in the right order, and stop when something already does the job", "List what the first version depends on and what it costs"],
+  slides=[
+   ("title", "Decide: is it worth building?", ["Module 2 of 5 · Steps 1 to 4"], "This is the cheapest module in the course and it saves the most. Every minute here saves an hour later."),
+   ("two", "One user, one job", ("Too wide", ["Help me with sales emails, proposals and follow-ups", "Five jobs, so none done well"], "One job", ["Turn my call notes into a follow-up email for that client", "One input, one result, one person"]), "Scope is the step everyone wants to skip. Ask each person to read their job aloud in one sentence. If it has an 'and' in it, it is probably two jobs."),
+   ("points", "Write down what is out", ["Three things the first version will not do", "The rest go under Next, not into the build", "Name the one thing that makes people stop and look"], "What is out matters as much as what is in. It is what the AI will refuse when you ask for more later. The wow is the one thing you build first."),
+   ("diagram", "The reuse check, cheapest first", "reuse", "Look in this order and stop as soon as something does the whole job. Built in: what your chatbot already does. Open source. How people who do this well already do it. Paid providers last. Every option gets a link and the date you looked."),
+   ("quote", "Stopping is a win", ["If something already does the whole job, you write a two-line guide to it and you are done. You just saved a week."], "This is the hardest one to sell to builders. Make it a celebration when it happens in class."),
+   ("two", "Build, buy or do by hand", ("For each part", ["Build it", "Buy it", "Leave it as something you do by hand"], "For the first version", ["Usually: build a prompt", "Buy nothing", "Do the checking by hand"]), "Step 3 is not choosing a supplier. It is deciding, part by part, what the first version does and does not do."),
+   ("points", "What it costs to run", ["Every dependency, its price and its limit", "Who pays: you, or each person who uses it", "Expect the first version to cost nothing new"], "If the first version needs something paid, that usually belongs in a later level. Write 'not confirmed' for any price you could not check."),
+   ("lab", "Your turn: steps 1 to 4", ["Scope: one sentence, three things out, one test", "Reuse check: built in first", "Build or buy for each part", "Cost: one line"], "Fifteen minutes. Use the prompts in lessons 2.1 to 2.3. Ask two people to share whether their reuse check found something that does the whole job."),
+   ("recap", "Take away", ["One user, one job, written in one sentence", "Check what exists before you build", "The first version should cost nothing new"], "Next module: Design. The plan before the build."),
+  ],
+  lessons=[dict(id="2-1", step=1, minutes=10), dict(id="2-2", step=2, minutes=15), dict(id="2-3", step=(3, 4), minutes=10, title="Outside help and cost")],
+  quiz=[
+   ("Which job is scoped well enough for step 1?", ["Help me with all my marketing", "Turn my call notes into a follow-up email for that client", "Make my business more efficient"], 1, "One user, one input, one result."),
+   ("Your reuse check finds a free tool that does the whole job. What now?", ["Build anyway, it will be better", "Stop, and write a short guide to that tool", "Buy a paid tool instead"], 1, "Stopping is a win. The gate exists to save you from building what already exists."),
+   ("In what order do you look in the reuse check?", ["Paid providers, then open source", "Built in, open source, established practice, then providers", "Whatever the chatbot suggests"], 1, "Cheapest first, and stop as soon as something does the whole job."),
+  ],
+  assignment="Take your job through steps 1 to 4 and add the results to your plan: the job in one sentence, what is out, what already exists (with links and dates), build or buy, and cost."),
+
+ dict(n=3, title="Design: the plan before the build", minutes=45,
+  purpose="Choose the fewest parts, write the plan and the first screen before the tool exists, and have someone else explain it back.",
+  outcomes=["Design the simplest version that does the job", "Write a one-page plan and a front door", "Get a review from a stranger and turn it into a fix list"],
+  slides=[
+   ("title", "Design: the plan before the build", ["Module 3 of 5 · Steps 5 to 7"], "Three steps, all on paper. Nothing is built in this module, and that is deliberate."),
+   ("points", "The fewest parts that do the job", ["Which assistant it runs in", "Where its files live: instructions, input, results", "What stays manual"], "Most first versions are one saved prompt and one place to keep it. If you add a part, say what breaks without it."),
+   ("quote", "Fix the layout before you build", ["Every file you write afterwards points at other files. Moving them later breaks those links, and you pay again each time the shape changes."], "For a beginner the layout is: where the prompt lives and where the input comes from. For a builder it is the folder structure. Either way, decide now."),
+   ("diagram", "The one-page plan", "plan", "Fifteen headings, five lines at most under each. The short path uses seven of them. If any section needs more than five lines, the scope has grown: go back to step 1."),
+   ("points", "Write the front door first", ["One sentence a stranger would stop for", "Who it is for and what they get", "One thing they can try in five minutes"], "If you cannot write the first screen, you do not understand the tool yet. The front door is also the agent's target: it builds toward what a user will actually try."),
+   ("two", "Why you cannot review your own plan", ("You", ["Know what you meant", "Read past the gaps"], "A stranger", ["Has only the page", "Trips on every gap"]), "This is the core habit of the course. A new chat with no history is a free, patient stranger. It cannot read your mind, which is exactly what makes it useful."),
+   ("lab", "Your turn: a stranger reads your plan", ["Open a new chat: temporary, or memory off", "Paste the review prompt and your plan", "Read where it had to guess", "Those places are your fix list"], "Ten minutes. Ask one person to read out the first thing the stranger guessed. Usually it is something the author thought was obvious."),
+   ("recap", "Take away", ["Fewest parts; fix the layout now", "Plan and front door before the tool", "A stranger reviews it, never you"], "Next module: Build and test. We build the smallest version and let a stranger break it."),
+  ],
+  lessons=[dict(id="3-1", step=5, minutes=10), dict(id="3-2", step=6, minutes=15), dict(id="3-3", step=7, minutes=10)],
+  quiz=[
+   ("Why fix the folder layout before anything is built?", ["It looks tidier", "Every file points at other files; moving them later breaks those links", "GitHub requires it"], 1, "You pay for the move again each time the shape changes."),
+   ("What do you write before the tool exists?", ["Nothing", "The one-page plan and the first screen a user sees", "The code"], 1, "If the front door cannot be written, the tool is not understood yet."),
+   ("Who should review your plan?", ["You, carefully", "Someone who is not the author, such as a new chat with no history", "Nobody"], 1, "You cannot see your own gaps, because you know what you meant."),
+  ],
+  assignment="Finish your one-page plan and front door, run the review prompt in a new chat, and fix every place it had to guess."),
+
+ dict(n=4, title="Build and test: let a stranger break it", minutes=50,
+  purpose="Build the smallest version, hand it to a fresh session that has only your instructions, and fix what it trips on.",
+  outcomes=["Build only the beginner version, with one worked example", "Run a fair fresh-chat test", "Sort a friction log into blocking and minor, and fix in the right order"],
+  slides=[
+   ("title", "Build and test: let a stranger break it", ["Module 4 of 5 · Step 8"], "This is where most AI work stops: it works for me, so it works. Today we find out whether it works for someone else."),
+   ("points", "Build the smallest version", ["Instructions someone can paste", "The steps, the rules that never bend, the format of the result", "One worked example, kept beside the prompt"], "Leave out everything under 'what is out'. When the AI finishes, ask it what it decided, what it assumed and what it did not check."),
+   ("diagram", "The fresh-chat test", "test", "A new chat, temporary or with memory off, gets only your instructions and one real input. It does the job and lists every place it had to guess. You do not help it. You read the list before the result."),
+   ("two", "Blocking or minor", ("Blocking", ["A different guess would change the result", "Fix it"], "Minor", ["The result would be the same", "Note it; fix it if cheap"]), "Every point in the log is marked one or the other. This keeps people from rewriting everything because of one complaint."),
+   ("points", "Fix in this order", ["First: every point that appears in two or more logs", "Then: every blocking point", "Then run a second round"], "One log can be noise from that request or that session. The same point twice means the instructions are wrong."),
+   ("quote", "The author is the worst reader of their own instructions", ["A typical find: one step says stop if the answer is yes, while every other step says go on if yes. The author reads past it every time. A stranger trips on it at once."], "This is the best argument for the test. Ask: what would a stranger trip on in your instructions? Then stop guessing and run the test."),
+   ("lab", "Your turn: build and test", ["Build the beginner version with the build prompt", "Open a new chat, temporary or memory off", "Paste the test prompt, your instructions and one real input", "Mark each point blocking or minor"], "Twenty minutes. Make sure every new chat really is new. Memory or custom instructions can carry the first session over and make the test pass for the wrong reason."),
+   ("recap", "Take away", ["Smallest version, one worked example", "A stranger tests it; you do not help", "Fix repeats first, then blockers, then test again"], "Next module: Grow, and the levels above Beginner."),
+  ],
+  lessons=[dict(id="4-1", step=8, minutes=15, title="Build the smallest version", part="build"),
+           dict(id="4-2", step=8, minutes=15, title="The fresh-chat test", part="test"),
+           dict(id="4-3", title="Read the friction log and fix", minutes=15,
+            objective="Turn a friction log into a short fix list in the right order.",
+            do=["Read the friction log before the result.", "Mark each point BLOCKING (a different guess would change the result) or MINOR.", "Fix first every point that appears in two or more logs, then every blocking point.", "Run the test again in another new chat.", "Write one line: did round 2 find fewer blocking points?"],
+            proof=["A friction log with each point marked", "The fixes you made", "A second round, and how many blocking points it found"])],
+  quiz=[
+   ("A fresh chat finishes the job and lists twelve problems. Did the test pass?", ["No, twelve is too many", "Yes: it finished, and the twelve problems are the next hour of work", "Only if none are blocking"], 1, "The list is the test working."),
+   ("What makes a point blocking?", ["It annoyed the tester", "A different guess would change the result", "It is in the first paragraph"], 1, "Minor points would not change the result."),
+   ("Why must the test chat have no memory of your session?", ["Speed", "Otherwise it carries what you said earlier and passes for the wrong reason", "Privacy only"], 1, "A stranger has only your instructions."),
+  ],
+  assignment="Build your beginner version, run two rounds of the fresh-chat test, and keep both friction logs unedited."),
+
+ dict(n=5, title="Grow, and work at your level", minutes=40,
+  purpose="Add one thing at a time once the tool is in use, and see how the same steps run with a coding agent and with agents that work unattended.",
+  outcomes=["Choose the next addition from real use, not ideas", "Start a project with the skill folder in any repository", "Describe what gates and an unattended run add, and what a person still approves"],
+  slides=[
+   ("title", "Grow, and work at your level", ["Module 5 of 5 · Step 9, Advanced and Expert"], "Two halves. First, how a tool grows without falling apart. Second, the same process for people who build with coding agents."),
+   ("points", "One addition at a time", ["Use the first version for two weeks first", "Add only what you actually missed", "One addition, one change you can review in five minutes"], "Most of the additions people plan turn out to be unnecessary once they use the tool. Small additions get reviewed. Big ones get waved through, and that is how tools break."),
+   ("diagram", "The levels", "levels", "Beginner is the chat window. Advanced is a coding agent with one skill folder that carries its own checks. Expert is agents that run the steps unattended, with gates a script checks. A person still approves anything that is merged, posted, sent, paid or published."),
+   ("points", "Advanced: one folder, any repository", ["Copy the skill folder into your agent's skills", "The agent stops at each gate and waits for you", "A new project carries its own four checks"], "Show the Advanced README if the room has developers. The checks are layout, links, filled (the plan has no blanks) and built (the instructions have no blanks)."),
+   ("diagram", "Expert: an unattended run", "unattended", "The agent runs steps 1 to 6, prepares the tests and stops. An orchestrator starts fresh sessions for each test. The agent reads the logs, fixes, runs its gates again and hands back. A person reads the hand-back and decides. Nothing is sent before that."),
+   ("lab", "Capstone: your tool, all nine steps", ["Take one real job through all nine steps", "Hand in: the plan, the first version, two friction logs and the note", "Use it for two weeks, then pick one addition"], "Set the capstone. Show the rubric in the course page. Ask them to send the friction logs: they tell you more than the tool."),
+   ("recap", "Take away", ["Grow from use, one addition at a time", "Same steps with a coding agent, plus checks", "Agents can work alone; a person approves"], "That is the course. Thank them, and remind them: the stranger's list is the most useful thing they will make."),
+  ],
+  lessons=[dict(id="5-1", step=9, minutes=10),
+           dict(id="5-2", title="Advanced: the skill folder in your repository", minutes=15, track="Advanced",
+            objective="Start a project with a coding agent, in your own repository, and run its checks.",
+            do=["Copy the skill folder into your agent's skills (for Claude Code, .claude/skills/).", "Tell the agent: Use the agentic-process skill. Start at step 1. Give it your one-sentence job.", "Answer its questions. It stops at every gate.", "At step 5 it makes the project folder and prints the command that checks it. Run it.", "Expect two checks to fail until later: filled until step 6, built until step 8."],
+            links=[("The Advanced level", "https://github.com/bar181/practical-ai/tree/main/projects/agentic-process/level-2-files")],
+            proof=["A project folder in your repository", "The check output, with layout and links passing"]),
+           dict(id="5-3", title="Expert: gates and unattended agents", minutes=15, track="Expert",
+            objective="Know how agents run the process alone, and where a person must still decide.",
+            do=["Read the worked unattended run: an agent with only the skill folder, in an empty repository.", "Find the moment it stopped for the fresh-session tests, and who ran them.", "Find the gate it added of its own.", "Write the one decision in your work that an agent must never make alone."],
+            links=[("The worked unattended run", "examples/unattended-run.md"), ("The Expert level", "https://github.com/bar181/practical-ai/tree/main/projects/agentic-process/level-3-files")],
+            proof=["Where the agent stopped, and why", "One decision that stays with a person"])],
+  quiz=[
+   ("When should you build the next addition?", ["Straight after the first version", "After the first version has been used, and only for something you missed", "When you have five ideas"], 1, "Grow from use, one addition at a time."),
+   ("What does a new project made from the skill folder carry?", ["Nothing", "Its own checks: layout, links, filled and built", "A paid licence"], 1, "So it works in any repository."),
+   ("In an unattended run, what must a person still do?", ["Nothing", "Approve anything that is merged, posted, sent, paid or published", "Write the code"], 1, "Agents can work alone. A person decides."),
+  ],
+  assignment="Start the capstone: one real job through all nine steps."),
+]
+
+CAPSTONE = dict(
+ title="Capstone: your tool, all nine steps",
+ purpose="Take one real job of your own through all nine steps and hand in a first version a stranger has tested.",
+ deliver=["The one-page plan, every heading filled", "The first version: instructions someone can paste, with one worked example", "Two friction logs from fresh-chat tests, unedited", "A note with four headings: Decided. Assumed. Not checked. Test this next."],
+ rubric=[("Scope", "One user and one job in one sentence; three things out", 15),
+         ("Reuse check", "At least three options with links and dates; a clear stop, wrap or build", 15),
+         ("Plan and front door", "Every heading filled; a front door a stranger would try", 20),
+         ("Fresh-chat test", "Two rounds, logs unedited, each point marked blocking or minor", 25),
+         ("Fixes", "Repeats fixed first, then blockers; round 2 shows fewer blocking points", 15),
+         ("Honesty", "The note says what was assumed and what was not checked", 10)],
+)
+
+INSTRUCTOR = dict(
+ formats=[("One day", "Modules 1 to 5 back to back, about four and a half hours with breaks; the capstone as homework"),
+          ("Five weeks", "One module a week, 45 to 60 minutes each; the assignment between sessions; the capstone in week 5"),
+          ("A 30-minute taster", "Module 1 only: slides 1 to 5, then lesson 1.3 on the short path, then the review prompt from lesson 3.3 in a new chat")],
+ before=["Ask each learner to bring one job they do on their own every week that starts from a blank page", "Post the coach prompt in the class chat so nobody types it from the screen", "Open this page on the screen you present from; press N in a deck to see your notes"],
+ watch=[("A learner describing three jobs", "\"Which one would you miss most on Monday? That one. The others go under Next.\""),
+        ("The reuse check found an existing tool", "\"Good. You just saved a week. Write the guide to that tool.\""),
+        ("A chatbot that cannot open the link", "Open the coach on GitHub, copy all of it, paste it, then: Follow the build coach pasted above."),
+        ("A job that involves a team or shared files", "\"Pick the part you do on your own for today.\""),
+        ("A fresh-chat test that passes too easily", "Check the new chat really is new: temporary, or memory off.")],
+)

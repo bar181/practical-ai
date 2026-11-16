@@ -16,6 +16,8 @@ Take the first of these that you can do.
 
 | You need | Read |
 | --- | --- |
+| Why the project exists: the North Star, purpose and value | [`base/north-star.html`](base/north-star.html) |
+| The course: modules, lessons, lecture decks with instructor notes | [`base/course.html`](base/course.html), written from `_build/course.py` |
 | The nine steps, with a purpose, proof and prompt for each | [`base/PROCESS.md`](base/PROCESS.md). It is written by `_build/build.py` from `_build/steps.py`: change the source |
 | The plan to fill in | The end of [`base/PROCESS.md`](base/PROCESS.md), and `base/plan.md` in every new project folder |
 | A new project folder | Run `python3 projects/agentic-process/level-2-files/agentic-process/new_project.py <slug> "<Title>"` from the repository root. It makes `projects/<slug>/` from [the template](level-2-files/agentic-process/template/), with its own checks |
