@@ -1,36 +1,27 @@
-# Level 2: your preferences on file
+# Level 2, Advanced: it knows your brand
 
-Level 1, plus one file that holds how you like your pages, and the skill installed if your
-assistant can load one.
+Level 1, plus one file that holds how you like your work, and the skill installed if your
+assistant can load one. After that a short ask comes back in your style.
 
 **Think of it as** being a regular. The kitchen knows your usual, so you only say what is
 different today.
 
-## What this level adds to the base
+## What this level uses from the base
 
-| Addition | Where | What it changes |
+| What | Where | What it changes |
 | --- | --- | --- |
-| A preferences file | [`preferences-template.md`](preferences-template.md), saved as `preferences.md` | Your default recipe, voice and look, your layout habits, your format rules, and the things you never want |
-| The skill, installed | [`skills/artifact-studio/`](../../../skills/artifact-studio/) | The assistant loads the full instructions, the cards and the page skeleton by itself, instead of the condensed copy you pasted at level 1 |
+| A preferences file | [`base/instructions/preferences-template.md`](base/instructions/preferences-template.md), saved as `preferences.md` | Your default template, voice and look, your layout habits, your format rules, and the things you never want |
+| The skill | [`base/skills/artifact-studio/`](base/skills/artifact-studio/) | The assistant loads the full instructions, the cards and the page skeleton by itself, in place of the condensed copy you pasted at level 1 |
 
-Nothing else changes. The instructions from level 1 already tell the assistant to read a
-preferences file first when one is there.
-
-## What it depends on
-
-| Addition | Needs |
-| --- | --- |
-| Preferences file | An assistant that keeps files between chats, such as a Project. Without one, attach the file to each request |
-| Installed skill | An assistant or agent that loads skills. Without one, stay with the pasted instructions from level 1. The pages are the same; you lose only the longer reference cards |
-
-Either addition works without the other.
+Either works without the other. The preferences file needs an assistant that keeps files between
+chats, such as a Project. The skill needs an assistant or agent that loads skills.
 
 ## Set up once
 
-1. Copy [`preferences-template.md`](preferences-template.md) and name the copy `preferences.md`.
+1. Copy [`preferences-template.md`](base/instructions/preferences-template.md) and name the copy `preferences.md`.
 2. Fill in the parts you care about. Leave the rest blank. A blank line means "the assistant
    chooses".
-3. For colours and fonts, fill in [`base/forms/design-spec.md`](../base/forms/design-spec.md)
+3. For colours and fonts, fill in [`base/forms/design-spec.md`](base/forms/design-spec.md)
    and paste its table under "Brand" in your preferences file.
 4. Put `preferences.md` where your assistant keeps files for you: the files of the same Project
    that holds the level 1 instructions.
@@ -38,7 +29,7 @@ Either addition works without the other.
 
    | Assistant | How |
    | --- | --- |
-   | Claude, with skills turned on | Add the folder `skills/artifact-studio/` as a skill. It loads when you ask for a page or say "use the artifact-studio skill" |
+   | Claude, with skills turned on | Add the folder `base/skills/artifact-studio/` as a skill. It loads when you ask for a page or say "use the artifact-studio skill" |
    | An agent that reads skill folders, such as Claude Code or Codex | Copy the folder into the agent's skills directory |
 
    The skill uses the open Agent Skills format: a `SKILL.md` with a name and a description, plus

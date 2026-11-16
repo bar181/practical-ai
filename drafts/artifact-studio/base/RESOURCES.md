@@ -15,16 +15,16 @@ other, and prices change. Read the vendor's own page.
 | A deck someone will edit in PowerPoint or Google Slides | A slide service below, or your assistant's own deck feature | The studio's decks are web pages. They present well and do not open in a slide editor |
 | Many posts on a schedule, with brand locked down for a team | A design service below | The studio makes one picture at a time and has no scheduling |
 | A deck written as text and kept in a code repository | An open-source slide framework below | They have speaker notes, export and plugins that the studio's small engine does not |
-| Heavy animation or video | The libraries in the [landscape review](../docs/landscape-review.md), or the short video guide in this repository | The studio keeps motion small on purpose |
+| Heavy animation or video | An animation library such as GSAP or Motion, or the short video guide in this repository | The studio keeps motion small on purpose |
 
 ## Skills for assistants
 
 | Skill | What it adds | Source |
 | --- | --- | --- |
 | frontend-design, web-artifacts-builder, theme-factory | Anthropic's own skills for design judgement, multi-part artifacts and ready-made themes | [anthropics/skills](https://github.com/anthropics/skills), checked 2026-11-14 |
-| Community skills for scroll effects and animated components | Recipes for one library each | Listed with links in the [landscape review](../docs/landscape-review.md). Unreviewed. Read one before installing it |
+| Community skills for scroll effects and animated components | Recipes for one library each | Unreviewed. Read one before installing it |
 
-The studio's own skill is in [`skills/artifact-studio/`](../../../skills/artifact-studio/). It uses the same open
+The studio's own skill is in [`skills/artifact-studio/`](skills/artifact-studio/). It uses the same open
 skill format, so it can sit beside any of these.
 
 ## Open-source slide frameworks
@@ -40,7 +40,7 @@ you can edit ([open-design.ai](https://open-design.ai/ja/blog/slidev/), [opendes
 
 ## Open-source libraries for motion, charts and components
 
-Already reviewed, with licences, in the [landscape review](../docs/landscape-review.md): GSAP, Motion,
+Reviewed before the studio was built: GSAP, Motion,
 Anime.js, Scrollama, Observable Plot, D3, Apache ECharts, Chart.js and four component sets.
 
 ## Paid services
@@ -64,7 +64,7 @@ Most of these sources are comparison sites, and some sell a competing product. T
 
 | Assistant | How | What it needs | Source |
 | --- | --- | --- | --- |
-| Desktop assistants that run local MCP servers, such as Claude Desktop | Add the server to the assistant's MCP settings as a command | Python and the `mcp` package on the same computer | From general knowledge. Not rechecked today. Steps are in [`level-3/mcp/`](../level-3/mcp/) |
+| Desktop assistants that run local MCP servers, such as Claude Desktop | Add the server to the assistant's MCP settings as a command | Python and the `mcp` package on the same computer | From general knowledge. Not rechecked today. Steps are in [`connectors/mcp/`](connectors/mcp/) |
 | ChatGPT | Turn on developer mode, then add the server as a custom connector | A server reachable at an HTTPS address ending in `/mcp`. A file on your own computer is not enough | [Boomi](https://help.boomi.com/docs/Atomsphere/Platform/Connect_chatgpt_setup), [Celigo](https://developer.celigo.com/mcp/connect/chatgpt), [Dataddo](https://docs.dataddo.com/docs/chatgpt.md) |
 
 Details that matter for ChatGPT, from those pages: developer mode is a beta on paid plans and on the

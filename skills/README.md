@@ -13,7 +13,7 @@ writing it down once saves doing it from memory each time.
 | --- | --- | --- |
 | [`project-builder`](project-builder/) | Takes a tool from an idea to something another person can use, through seven stages with a gate after each | The [project method](../drafts/project-method/), level 2 |
 | [`plan-writer`](plan-writer/) | Researches a tool and writes its plan from the template, then updates the indexes | Every plan in [`../plans/`](../plans/) |
-| [`artifact-studio`](artifact-studio/) | Turns any content into one polished HTML page by choosing a recipe, a voice and a look, then building and checking it. Holds the canonical recipe, voice and look cards | [Artifact studio](../drafts/artifact-studio/) |
+| [`artifact-studio`](../drafts/artifact-studio/base/skills/artifact-studio/) | Turns any content into one polished HTML page by choosing a recipe, a voice and a look, then building and checking it. Holds the canonical recipe, voice and look cards | [Artifact studio](../drafts/artifact-studio/) |
 | [`voice-drafter`](voice-drafter/) | Drafts a post in one person's voice from their voice file, and turns feedback into a rule | [Voice post drafter](../drafts/voice-post-drafter/) |
 | [`quote-drafter`](quote-drafter/) | Builds a first-draft estimate from a price list and written rules, showing its arithmetic | [Estimator](../drafts/estimator/) |
 | [`script-and-beat-sheet`](script-and-beat-sheet/) | Turns a brief into a beat sheet and a timed script, and recommends the production route | [Short video guide](../drafts/short-video/), [training explainer](../drafts/training-explainer/) |

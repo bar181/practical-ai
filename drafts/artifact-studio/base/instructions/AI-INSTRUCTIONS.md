@@ -1,4 +1,4 @@
-<!-- Generated from skills/artifact-studio/SKILL-single-file.md by base/source/build.py. Edit that file, not this one. -->
+<!-- Generated from base/skills/artifact-studio/SKILL-single-file.md by base/source/build.py. Edit that file, not this one. -->
 
 # Artifact studio (single-file edition)
 

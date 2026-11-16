@@ -1,7 +1,7 @@
 # The studio as tools: an MCP server
 
 A small server that lets an assistant use the template library directly. It reads
-[`base/templates/index.json`](../../base/templates/index.json), so it always matches the library.
+[`base/templates/index.json`](../../templates/index.json), so it always matches the library.
 
 **Think of it as** the studio's front desk. The assistant asks "what do you have for a customer
 proposal?" and gets an answer, where before it had to be handed the files.
@@ -42,7 +42,7 @@ Desktop, add this to the assistant's MCP settings, with the real path to this fi
   "mcpServers": {
     "artifact-studio": {
       "command": "python",
-      "args": ["/full/path/to/drafts/artifact-studio/level-3/mcp/server.py"]
+      "args": ["/full/path/to/artifact-studio/base/connectors/mcp/server.py"]
     }
   }
 }
@@ -62,7 +62,7 @@ python server.py --http --read-only
 
 This serves the same tools at `http://127.0.0.1:8000/mcp`. To use it from the web you must put it
 at an HTTPS address, by hosting it or by using a tunnel, and then add that address as a custom
-connector. What ChatGPT needs for that is in [`base/RESOURCES.md`](../../base/RESOURCES.md).
+connector. What ChatGPT needs for that is in [`base/RESOURCES.md`](../../RESOURCES.md).
 
 **This server has no sign-in.** Anyone who has the address can call it. Use `--read-only` whenever
 it is reachable from outside your computer, and take the address down when you are done.

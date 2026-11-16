@@ -134,7 +134,7 @@ write("04-one-page-report", "output.html", f"""<!DOCTYPE html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>October in one page</title>
 <!-- A worked example. Recipe: one-page report. Voice: executive brief. Look: a palette built from the owner's green (hue 140).
-     Built on skills/artifact-studio/assets/page-skeleton.html. No script: everything is on the page when it loads. -->
+     Built on base/skills/artifact-studio/assets/page-skeleton.html. No script: everything is on the page when it loads. -->
 <style>
 :root{{--bg:{P['surface']};--panel:{P['surface2']};--line:{P['line']};--muted:{P['muted']};--ink:{P['ink']};--accent:{P['accent']};--soft:{P['accentsoft']};
   --display:system-ui,-apple-system,"Segoe UI",sans-serif;--text:Georgia,"Iowan Old Style",serif}}
@@ -243,11 +243,11 @@ rows = [f"| [{e['title'][0].upper() + e['title'][1:]}]({e['id']}/request.md) | {
 write(".", "README.md", "\n".join(["# Worked examples", "", "Six requests, each with the notes that came with it, what the studio picked, and what came back. Read one to see what to expect. Run one to test the studio.", "",
     "**Think of them as** the photographs on a menu. They show what the dish looks like when it is made properly.", "",
     "| Example | What was picked | Output | Tested in a fresh chat |", "| --- | --- | --- | --- |"] + rows + ["",
-    "## How to test one", "", "1. Open the example's `request.md`.", "2. Give a fresh assistant the request and the notes. Attach the starter if the example names one. At level 1, paste [`AI-INSTRUCTIONS.md`](../../level-1/AI-INSTRUCTIONS.md) first.",
+    "## How to test one", "", "1. Open the example's `request.md`.", "2. Give a fresh assistant the request and the notes. Attach the starter if the example names one. At level 1, paste [`AI-INSTRUCTIONS.md`](../instructions/AI-INSTRUCTIONS.md) first.",
     "3. Score what comes back against \"What a good result must have\", one point for each line.", "4. Change \"Not yet\" in the table above to the score and the date, in [`make_examples.py`](make_examples.py), which writes this file.", "",
     "## What these are and are not", "", "- Every business and figure is invented.", "- The outputs were made by the assistant that built this repository, following the skill, with the content typed into [`make_examples.py`](make_examples.py). **No fresh assistant has been given these requests yet.** That is what the last column is for.",
-    "- They are rebuilt from the starters each time the script runs, so they cannot fall out of step with the library.", "- The same six requests are the skill's test cases, in [`skills/artifact-studio/evals/evals.json`](../../../../skills/artifact-studio/evals/evals.json).", ""]))
-ev = os.path.join(ROOT, "..", "..", "skills", "artifact-studio", "evals"); os.makedirs(ev, exist_ok=True)
+    "- They are rebuilt from the starters each time the script runs, so they cannot fall out of step with the library.", "- The same six requests are the skill's test cases, in [`skills/artifact-studio/evals/evals.json`](../skills/artifact-studio/evals/evals.json).", ""]))
+ev = os.path.join(BASE, "skills", "artifact-studio", "evals"); os.makedirs(ev, exist_ok=True)
 json.dump({"skill": "artifact-studio", "how_to_run": "Give a fresh assistant the skill and one prompt. Score the result one point for each line in expected. The reference output shows one result that scores full marks.",
            "status": "Written. Not yet run against a fresh assistant.", "evals": [{k: e[k] for k in ("id", "prompt", "expected", "reference_output", "request")} for e in EX]}, open(os.path.join(ev, "evals.json"), "w", encoding="utf-8"), indent=1)
 print(f"{len(EX)} examples written:", ", ".join(e["id"] for e in EX))

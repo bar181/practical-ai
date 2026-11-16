@@ -8,50 +8,50 @@ person's own content into one finished file that follows a template.
 
 1. **Find out what is needed.** The job (report, decide, sell, teach, inspire, announce), the
    reader, and the shape (page, deck, social post). Infer what you can. Ask at most two questions.
-2. **Choose.** Read [`base/templates/index.json`](base/templates/index.json). Score each template
+2. **Choose.** Read [`templates/index.json`](templates/index.json). Score each template
    as three times its goal fit plus twice its audience fit, and take the highest. With the MCP
    server connected, call `recommend` and it does this for you. Tell the person what you chose and
    why in one line. Each answer carries a `strength`: strong, fair or weak. When the best answer in
    the shape they asked for is weak, its `note` names a shape that suits the job better. Say so.
-3. **Read the person's saved finds** in [`base/inspiration/`](base/inspiration/), or call
+3. **Read the person's saved finds** in [`inspiration/`](inspiration/), or call
    `list_inspiration`. They are designs the person liked, described in their own words. Let them
    shape the choice of voice, look and parts. Never copy the thing a card describes.
-4. **Look at one worked example** of the shape you chose, in [`base/examples/`](base/examples/). It
+4. **Look at one worked example** of the shape you chose, in [`examples/`](examples/). It
    shows the level of finish expected and how a gap in the notes is marked.
 5. **Start from the starter** when there is one. Decks and social formats have a `starter` field in
    the index: a complete file of about 10 KB or less, with system fonts and no photograph, that you
    copy and fill. Pages and voices have none: build on the skill's
-   [`page-skeleton.html`](../../skills/artifact-studio/assets/page-skeleton.html) and read the
+   [`page-skeleton.html`](skills/artifact-studio/assets/page-skeleton.html) and read the
    template's `source` field, one small file with a style block, the markup and a script.
-6. **Read the rules.** [`build-rules.md`](../../skills/artifact-studio/references/build-rules.md)
+6. **Read the rules.** [`build-rules.md`](skills/artifact-studio/references/build-rules.md)
    before you write, and the card for the voice and look in
-   [`voices.md`](../../skills/artifact-studio/references/voices.md) and
-   [`looks.md`](../../skills/artifact-studio/references/looks.md).
+   [`voices.md`](skills/artifact-studio/references/voices.md) and
+   [`looks.md`](skills/artifact-studio/references/looks.md).
 7. **Build** one self-contained file from the person's content, on the starter or skeleton from
    step 4: HTML for a page or a deck, SVG for a social picture.
-8. **Check** with [`pre-ship-checklist.md`](../../skills/artifact-studio/references/pre-ship-checklist.md).
+8. **Check** with [`pre-ship-checklist.md`](skills/artifact-studio/references/pre-ship-checklist.md).
 9. **Return** the file and the delivery note below.
 
-If you can load skills, load [`skills/artifact-studio/SKILL.md`](../../skills/artifact-studio/SKILL.md)
+If you can load skills, load [`skills/artifact-studio/SKILL.md`](skills/artifact-studio/SKILL.md)
 and follow it. It says all of this in more detail.
 
 ## Where everything is
 
 | You need | Read |
 | --- | --- |
-| Every template, with its options and fit scores | [`base/templates/index.json`](base/templates/index.json), or [`base/templates/README.md`](base/templates/README.md) for a page a person can read |
-| The rules that choose between templates | [`base/source/catalog.py`](base/source/catalog.py) |
-| A finished template to look at | The `file` field in the index, under [`base/templates/`](base/templates/) |
-| A complete small file to copy and fill | The `starter` field in the index, under [`base/templates/starters/`](base/templates/starters/) |
-| Its reference code | The `source` field in the index, under [`base/source/views/`](base/source/views/) |
+| Every template, with its options and fit scores | [`templates/index.json`](templates/index.json), or [`templates/README.md`](templates/README.md) for a page a person can read |
+| The rules that choose between templates | [`source/catalog.py`](source/catalog.py) |
+| A finished template to look at | The `file` field in the index, under [`templates/`](templates/) |
+| A complete small file to copy and fill | The `starter` field in the index, under [`templates/starters/`](templates/starters/) |
+| Its reference code | The `source` field in the index, under [`source/views/`](source/views/) |
 | The parts: page parts, photo parts, animated SVG | The `components` list in the index |
-| Design ideas: kinds of card, layouts, colour rules and the palette rule | [`design-ideas.md`](../../skills/artifact-studio/references/design-ideas.md), or the Design tabs of the studio page |
-| What a good result looks like | Six worked examples in [`base/examples/`](base/examples/): the request, the notes, what was picked and the output |
-| The person's standing preferences | A file named `preferences.md`, if they have one. See [`level-2/`](level-2/) |
-| Their colours, type and a brief for this page | [`base/forms/`](base/forms/), filled in |
-| What to use when the studio is the wrong tool | [`base/RESOURCES.md`](base/RESOURCES.md) |
-| How to take in a design the person likes | [`base/inspiration/README.md`](base/inspiration/README.md) |
-| The same library as tools you can call | [`level-3/mcp/`](level-3/mcp/) |
+| Design ideas: kinds of card, layouts, colour rules and the palette rule | [`design-ideas.md`](skills/artifact-studio/references/design-ideas.md), or the Design tabs of the studio page |
+| What a good result looks like | Six worked examples in [`examples/`](examples/): the request, the notes, what was picked and the output |
+| The person's standing preferences | A file named `preferences.md`, if they have one. See the [level 2 guide](../level-2-advanced.md) |
+| Their colours, type and a brief for this page | [`forms/`](forms/), filled in |
+| What to use when the studio is the wrong tool | [`RESOURCES.md`](RESOURCES.md) |
+| How to take in a design the person likes | [`inspiration/README.md`](inspiration/README.md) |
+| The same library as tools you can call | [`connectors/mcp/`](connectors/mcp/) |
 
 ## Inputs you can expect
 
@@ -114,7 +114,7 @@ per file, so a part can be lifted out without collisions.
 ## Running without skill support
 
 In an assistant that cannot load skill folders, the person pastes
-[`level-1/AI-INSTRUCTIONS.md`](level-1/AI-INSTRUCTIONS.md) into the project instructions. It
+[`instructions/AI-INSTRUCTIONS.md`](instructions/AI-INSTRUCTIONS.md) into the project instructions. It
 condenses the skill and its cards into one file. The full reference files have more detail and
 take precedence where the two differ.
 

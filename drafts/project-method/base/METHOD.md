@@ -181,7 +181,7 @@ Closing is cleaning up so the next person, or the next session, finds only what 
 | Nothing stale | Front doors, status table and counts match what is there |
 | Nothing left over | Retired work is in [`plans/archive/`](../../../plans/archive/) with a line saying what replaced it. Scratch files are gone |
 | Lessons kept | Anything that went wrong, was redone, or worked unexpectedly well is a row in [`LESSONS.md`](LESSONS.md), and in the learnings database once it exists |
-| The list is current | The tool's row in [`docs/PRIORITIES.md`](../../../docs/PRIORITIES.md) shows its state |
+| The list is current | The tool's row in [`docs/tool-inventory.md`](../../../docs/tool-inventory.md) shows its state |
 | Handed over | A short report: what it is, how to use it, what nobody has tried, the decisions still open |
 
 **Gate:** all of the above, and a person says close. **Stop here.**

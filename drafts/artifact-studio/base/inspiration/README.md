@@ -29,7 +29,7 @@ written in your own words. You do not come home with their plate.
 
 ## Using what is on file
 
-A card is read again when something is made. An assistant following [`AGENTS.md`](../../AGENTS.md)
+A card is read again when something is made. An assistant following [`AGENTS.md`](../AGENTS.md)
 reads the cards before it chooses a voice, a look and parts, and with the MCP server connected it
 calls `list_inspiration`. Tags on a card (page, deck, social, motion, number, photo) are how it
 finds the ones that matter for the job.

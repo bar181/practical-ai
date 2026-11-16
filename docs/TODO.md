@@ -1,6 +1,6 @@
 # To-do list
 
-Actions, not tools. The tools are in the one list: [`PRIORITIES.md`](PRIORITIES.md).
+Actions, not tools. The tools are in the one list: [`tool-inventory.md`](tool-inventory.md).
 
 Every tool follows the [project method](../drafts/project-method/): nine stages, a gate after
 each. Nothing is built until its North Star page is approved at stage 3.
@@ -12,7 +12,6 @@ each. Nothing is built until its North Star page is approved at stage 3.
 - [ ] Decide what to do with the five North Star pages that match no demand (learnings database, task graph, core memory, connections hub, rubric reviewer): keep as Advanced tools for the owner, or park
 - [ ] Write a North Star page for "summarise a document", the one researched tool with no page
 - [ ] Read the small-business plugin's skills before designing any Advanced level, and record what it already covers
-- [ ] Bring `docs/practical-ai-explained.html` up to the new list. It still describes the first ten tools
 
 ## Across all tools
 

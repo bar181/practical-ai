@@ -6,9 +6,9 @@ connectors. Each tool has a plan in `plans/` and, once started, a folder in `dra
 
 | You were asked to | Go to |
 | --- | --- |
-| Make a page, a slide deck or a social post | [`drafts/artifact-studio/AGENTS.md`](drafts/artifact-studio/AGENTS.md): the path from a request to a finished file |
+| Make a page, a slide deck or a social post | [`drafts/artifact-studio/base/AGENTS.md`](drafts/artifact-studio/base/AGENTS.md): the path from a request to a finished file |
 | Understand what the repository holds | [`README.md`](README.md) |
-| Decide what to build next | [`docs/PRIORITIES.md`](docs/PRIORITIES.md): the one list of potential builds, and the ten most in-demand simple tools |
+| Decide what to build next | [`docs/practical-ai-priorities.md`](docs/practical-ai-priorities.md): the owner's priorities. The inventory and research behind it are in [`docs/tool-inventory.md`](docs/tool-inventory.md) |
 | Start a new tool, or continue one | [`drafts/project-method/AGENTS.md`](drafts/project-method/AGENTS.md) and the [`project-builder`](skills/project-builder/) skill |
 | Write or update a plan for a tool | [`skills/plan-writer/`](skills/plan-writer/) |
 | Check what already exists before building | [`skills/landscape-review/`](skills/landscape-review/) |

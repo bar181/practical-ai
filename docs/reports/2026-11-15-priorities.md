@@ -136,7 +136,7 @@ Three rules hold for all of them.
 | 23 | Training website | 45 | Plan |
 | 24 | Student AI assistant | 43 | Plan |
 
-Twelve more ideas are kept as "not scheduled". Meeting to actions is now the first source of the connections hub. The full list is in [`docs/PRIORITIES.md`](https://github.com/bar181/practical-ai/blob/studio/component-gallery/docs/PRIORITIES.md).
+Twelve more ideas are kept as "not scheduled". Meeting to actions is now the first source of the connections hub. The full list is in [`docs/tool-inventory.md`](https://github.com/bar181/practical-ai/blob/studio/component-gallery/docs/tool-inventory.md).
 
 ## How the scores are made
 

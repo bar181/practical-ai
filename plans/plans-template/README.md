@@ -21,7 +21,7 @@ and deliberately light on everything after it.
 
 ## By hand
 
-1. **Check the list.** Open [`../../docs/PRIORITIES.md`](../../docs/PRIORITIES.md). If the tool is already there, update its plan instead of adding a new one.
+1. **Check the list.** Open [`../../docs/tool-inventory.md`](../../docs/tool-inventory.md). If the tool is already there, update its plan instead of adding a new one.
 2. **Pick a slug.** Lowercase words joined by hyphens, for example `expense-form`.
 3. **Copy the template** to `plans/<slug>/README.md`.
 4. **Work through the build process**, steps 1 to 6, filling the template as you go. Keep to these rules:
@@ -32,7 +32,7 @@ and deliberately light on everything after it.
    - Name what the tool reuses before describing anything new.
    - Put anything you do not know under Open questions. Never guess.
 5. **Flag the complexity** using the scale below, for the tool overall and for each level.
-6. **Update the one list.** Add the tool's row to [`../../docs/PRIORITIES.md`](../../docs/PRIORITIES.md), with its Beginner and Advanced lines. That is the only index.
+6. **Update the one list.** Add the tool's row to [`../../docs/tool-inventory.md`](../../docs/tool-inventory.md), with its Beginner and Advanced lines. That is the only index.
 7. **Open a pull request.** Do not commit to the main branch.
 
 ## With the skills

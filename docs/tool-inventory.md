@@ -1,8 +1,10 @@
-# Potential builds
+# Tool inventory
 
-The one list of practical AI tools this repository may build. Rewritten on 15 November 2026.
-There is no other list: [`plans/`](../plans/) holds the pages this one links to, and
-[`TODO.md`](TODO.md) holds actions, not tools.
+Every tool this repository has a North Star page or a plan for, with its Beginner and Advanced
+level, and the research on which simple tools people use most. Written on 15 November 2026.
+
+**What to build next, and in what order, is in
+[`practical-ai-priorities.md`](practical-ai-priorities.md).** This page is the inventory behind it.
 
 **North Star:** practical AI tools a person can use the same day. Every tool comes at two depths.
 A **Beginner** level a student or a business owner runs in any chat assistant with nothing

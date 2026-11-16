@@ -395,9 +395,8 @@ Judgement calls, made because the owner asked for best judgement:
 
 ## Closing the artifact studio
 
-Closed as a draft on 15 November 2026, through stage 9 of the revised project method. The checklist
-and the final scores are in
-[`drafts/artifact-studio/docs/close-out.md`](../drafts/artifact-studio/docs/close-out.md). The
+Closed as a draft on 15 November 2026, through stage 9 of the revised project method. The
+close-out record was removed when the project folder was simplified and is in the git history. The
 score did not change at closing: 80, with evidence from real use still at 40. The method itself
 grew from seven stages to nine in the same sitting, adding a scoring stage and a closing stage,
 because this tool was called finished several times before anyone had cleaned up after it.

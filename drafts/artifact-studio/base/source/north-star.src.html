@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Artifact Studio: the North Star</title>
+<style>
+/*FONTS*/
+:root{
+  /* Recipe: scrolling explainer. Voice: practical instructor. Look: the studio's own fog and pine, measured from the lake photo. */
+  --fog:#e8edf3;--mist:#d6dfea;--sky:#a5b9d8;--slate:#4b596e;--pine:#1b2228;--pine-2:#28343d;--reed:#d2b78c;--rust:#774528;--panel:#f3f6fa;
+  --display:"National Park","Avenir Next","Segoe UI",system-ui,sans-serif;
+  --text:"Crimson Pro","Iowan Old Style",Georgia,serif;
+  color-scheme:light;
+  /*PHOTO*/
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--fog);color:var(--pine);font:400 1.2rem/1.5 var(--text);overflow-x:clip}
+h1,h2,h3{font-family:var(--display);font-weight:700;margin:0;text-wrap:balance;letter-spacing:-.012em}
+h2{font-size:clamp(2rem,6.4vw,3.2rem);line-height:1.03}
+h3{font-size:1.05rem;line-height:1.25;letter-spacing:0}
+p{margin:0}
+a{color:inherit;text-underline-offset:.18em}
+:focus-visible{outline:3px solid var(--rust);outline-offset:3px;border-radius:4px}
+.wrap{max-width:900px;margin-inline:auto;padding-inline:20px}
+.measure{max-width:33em}
+.ui{font:400 .9rem/1.4 var(--display)}
+section{padding-top:72px}
+section>.wrap>p.lede{margin-top:12px;color:var(--slate)}
+.hero{position:relative;min-height:min(74svh,640px);display:flex;align-items:flex-end;background:#1d1c15;color:#fff7ea;overflow:hidden;padding:0}
+.hero .ph{position:absolute;inset:0;background:var(--photo) 50% 34%/cover no-repeat}
+.hero::after{content:"";position:absolute;inset:35% 0 0 0;background:linear-gradient(180deg,rgba(29,28,21,0),rgba(29,28,21,.92))}
+.hero div:last-child{position:relative;z-index:1;padding:0 20px 34px;max-width:900px;margin-inline:auto;width:100%}
+.hero h1{font-size:clamp(2.6rem,10.5vw,5.4rem);line-height:.96;max-width:9em}
+.hero p{margin-top:14px;max-width:24em;font-size:1.26rem;line-height:1.36}
+.box{background:#fff;border:2px solid var(--pine);border-radius:8px;padding:18px;box-shadow:5px 5px 0 var(--pine);margin-top:22px;display:grid;gap:8px}
+.box b{font:700 1.4rem/1.1 var(--display)}
+.trio{display:grid;gap:10px;margin-top:18px}
+.trio div{background:var(--pine);color:var(--fog);border-radius:12px;padding:16px;display:grid;gap:4px}
+.trio b{font:700 1.3rem/1.1 var(--display);color:var(--reed)}
+.trio span{font:400 .95rem/1.4 var(--display)}
+.stage{position:sticky;top:0;z-index:3;background:var(--fog);padding:10px 12px;border-bottom:1px solid rgba(27,34,40,.15);margin-top:26px}
+.stage svg{display:block;width:100%;max-width:560px;margin-inline:auto;height:auto}
+.stage .rail{fill:none;stroke:var(--mist);stroke-width:4}
+.stage .go{fill:none;stroke:var(--rust);stroke-width:4;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:calc(1 - var(--k,0)/3);transition:stroke-dashoffset .8s cubic-bezier(.3,.7,.2,1)}
+.stage circle{fill:var(--fog);stroke:var(--slate);stroke-width:3;transition:fill .4s,stroke .4s}
+.stage text{font:700 21px var(--display);fill:var(--slate);text-anchor:middle;transition:fill .4s}
+.stage .n{font-size:22px}
+.stage g.done circle{stroke:var(--rust)}
+.stage g.now circle{fill:var(--rust);stroke:var(--rust)}.stage g.now .n{fill:#fff}.stage g.now text{fill:var(--pine)}
+.steps{list-style:none;margin:0 auto;padding:0 20px;max-width:640px}
+.steps>li{min-height:min(60svh,480px);display:flex;flex-direction:column;justify-content:center;gap:10px;opacity:.88;transition:opacity .5s;padding-left:14px;border-left:3px solid transparent}
+.steps>li.on{opacity:1;border-left-color:var(--rust)}
+.steps h3{font-size:clamp(1.5rem,5.6vw,2.1rem);line-height:1.08}
+.steps .who{font:700 .88rem/1.2 var(--display);color:var(--rust)}
+.steps ul{margin:0;padding-left:1.1em;display:grid;gap:4px;font:400 1rem/1.4 var(--display)}
+.nums{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:22px}
+.nums div{background:var(--panel);border-radius:12px;padding:16px;display:grid;gap:4px;align-content:start}
+.nums b{font:700 clamp(2.4rem,10vw,3.6rem)/.95 var(--display);letter-spacing:-.03em}
+.nums strong{font:700 1.05rem/1.2 var(--display)}
+.nums span{font:400 .9rem/1.4 var(--display);color:var(--slate)}
+.lv{display:grid;gap:12px;margin-top:22px}
+.lv>div{border-radius:14px;padding:20px;display:grid;gap:8px;background:var(--panel)}
+.lv>div:nth-child(2){background:var(--mist)}
+.lv>div:nth-child(3){background:var(--pine);color:var(--fog)}
+.lv b{font:700 1.5rem/1 var(--display)}
+.lv span{font:400 .95rem/1.45 var(--display)}
+.lv blockquote{margin:6px 0 0;font:italic 400 1.12rem/1.34 var(--text);border-left:3px solid var(--rust);padding-left:12px}
+.lv>div:nth-child(3) blockquote{border-color:var(--reed)}
+.copy{justify-self:start;font:700 .88rem/1 var(--display);color:inherit;background:transparent;border:1.5px solid currentColor;border-radius:999px;padding:0 16px;min-height:44px;cursor:pointer}
+.todo{display:grid;gap:10px;margin-top:20px;counter-reset:s}
+.todo label{counter-increment:s;display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:start;background:#fff;border:2px solid var(--pine);border-radius:8px;padding:14px;cursor:pointer;font:400 1rem/1.4 var(--display)}
+.todo input{width:24px;height:24px;margin:1px 0 0;accent-color:var(--rust)}
+.todo b{display:block}.todo b::before{content:counter(s) ". "}
+.todo label:has(input:checked){background:#f7efe8;border-color:var(--rust)}
+.meter{height:12px;border-radius:999px;background:#fff;border:2px solid var(--pine);overflow:hidden;margin-top:14px}
+.meter i{display:block;height:100%;width:0;background:var(--rust);transition:width .35s}
+pre{white-space:pre-wrap;margin:14px 0 0;background:var(--pine);color:var(--fog);border-radius:10px;padding:16px;overflow-x:auto;font:400 .84rem/1.6 ui-monospace,Menlo,Consolas,monospace}
+.fig{background:var(--panel);border-radius:12px;padding:18px 16px;margin-top:22px}
+.fig .sub{color:var(--slate);margin-top:4px}
+.hb{display:grid;gap:12px;margin-top:16px;font:400 .88rem/1.2 var(--display);font-variant-numeric:tabular-nums}
+.hb-row{display:grid;grid-template-columns:8.4em 1fr;gap:10px;align-items:center}
+.hb-l{color:var(--slate)}
+.hb-t{display:grid;gap:3px}
+.hb-t span{display:flex;align-items:center;gap:8px}
+.hb-t i{display:block;height:12px;width:var(--v);background:#34506f;border-radius:0 4px 4px 0;transition:width 1.1s cubic-bezier(.2,.8,.2,1)}
+.hb-t i.q{background:#aab6c6}
+.anim .hb.see:not(.in) i{width:0}
+.key{display:flex;gap:16px;margin-top:12px;font:400 .86rem/1.2 var(--display)}
+.key i{display:inline-block;width:12px;height:12px;border-radius:2px;margin-right:6px;vertical-align:-1px}
+.time{list-style:none;margin:22px 0 0;padding:0 0 0 22px;position:relative}
+.time::before{content:"";position:absolute;left:5px;top:6px;bottom:6px;width:2px;background:var(--mist)}
+.time li{position:relative;padding:0 0 18px;font:400 1rem/1.4 var(--display)}
+.time li::before{content:"";position:absolute;left:-22px;top:5px;width:12px;height:12px;border-radius:50%;background:var(--fog);border:2px solid var(--pine)}
+.time b{display:block}
+.calls{display:grid;gap:10px;margin-top:20px}
+.call{border-radius:10px;padding:14px 16px 14px 46px;position:relative;font:400 .98rem/1.4 var(--display);border:1.5px solid}
+.call::before{position:absolute;left:14px;top:13px;width:22px;height:22px;border-radius:50%;display:grid;place-content:center;font:700 .9rem/1 var(--display);color:#fff}
+.call b{display:block}
+.call.good{background:#e4f3ea;border-color:#1c6b3c}.call.good::before{content:"\2713";background:#1c6b3c}
+.call.warn{background:#fbf1dc;border-color:#8a5a00}.call.warn::before{content:"!";background:#8a5a00}
+.scroll{overflow-x:auto;margin-top:18px}
+table{border-collapse:collapse;width:100%;font:400 .9rem/1.4 var(--display);background:var(--panel);border-radius:10px}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid rgba(27,34,40,.12);vertical-align:top}
+code{font:400 .84rem/1.4 ui-monospace,Menlo,Consolas,monospace}
+.next{background:var(--pine);color:var(--fog);margin-top:72px;padding:56px 0 64px}
+.next h2{color:var(--fog)}
+.next ol{margin:18px 0 0;padding-left:1.2em;display:grid;gap:12px;max-width:33em}
+.next p{margin-top:26px;color:var(--sky)}
+.tools{display:grid;gap:10px;margin-top:22px}
+.tool{background:var(--panel);border-radius:12px;padding:14px 16px;display:grid;grid-template-columns:1fr auto;gap:4px 14px;align-items:start}
+.tool b{font:700 1.08rem/1.2 var(--display)}.tool p{font:400 .92rem/1.4 var(--display);color:var(--slate);grid-column:1}
+.tool .sc{grid-row:1/3;grid-column:2;font:700 1.7rem/1 var(--display);font-variant-numeric:tabular-nums;text-align:right}.tool .sc small{display:block;font:400 .72rem/1.2 var(--display);color:var(--slate);margin-top:2px}
+.tool .r{grid-column:1/3;justify-self:start;font:700 .76rem/1 var(--display);border-radius:999px;padding:5px 9px;border:1.5px solid;margin-top:4px}
+.tool .r.d{background:#e4f3ea;border-color:#1c6b3c;color:#14502c}.tool .r.p{background:#fbf1dc;border-color:#8a5a00;color:#6b4500}.tool .r.n{background:var(--mist);border-color:var(--slate);color:var(--pine)}
+@media(min-width:760px){.tools{grid-template-columns:1fr 1fr}}
+@media(min-width:760px){.trio{grid-template-columns:repeat(3,1fr)}.nums{grid-template-columns:repeat(4,1fr)}.lv{grid-template-columns:repeat(3,1fr)}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}.anim .hb.see:not(.in) i{width:var(--v)}}
+</style>
+</head>
+<body>
+<header class="hero"><div class="ph" role="img" aria-label="A dog on a lead looks out over grey rocks and calm water at a low orange sun."></div>
+  <div><h1>Artifact Studio: the North Star</h1><p>What this project is for, who it serves, what is in it, and how anyone can tell whether it is working.</p></div></header>
+<main>
+<section><div class="wrap">
+  <h2>The North Star</h2>
+  <p class="lede measure">A person with no design training gives an assistant their own notes and one sentence, and gets back something they are proud to send, on the first or second try.</p>
+  <div class="box"><b>Think of it as the design brief you hand a smart intern.</b><span>AI has read every book in the world and has never met you. It can build a page in seconds. It does not know what good looks like for this job, this reader or your business. The studio tells it.</span></div>
+  <div class="nums"><div><b>__T__</b><strong>Templates</strong><span>Pages, voices, decks and social formats, each with the sentence that asks for it</span></div><div><b>__C__</b><strong>Parts and ideas</strong><span>Page parts, photo effects, animated pictures, and ideas for cards, layouts and colour</span></div><div><b>__L__</b><strong>Looks</strong><span>The same content dressed nine ways, or your own brand colours</span></div><div><b>0</b><strong>Outside users</strong><span>Nobody but the author has used it yet. That is the next step</span></div></div>
+</div></section>
+
+<section><div class="wrap"><h2>The problem it solves</h2><p class="lede measure">Your AI gives brilliant answers. Then it shows them on a grey page.</p>
+  <div class="trio"><div><b>By hand</b><span>A deck you like takes an hour to several days: pick a theme, copy and paste, hunt for images, fix the alignment, start again.</span></div><div><b>A chatbot alone</b><span>Fast, and it looks like everyone else's. Even experienced users lose hours asking for one fix after another.</span></div><div><b>With the studio</b><span>The chatbot starts from a curated template, a voice and a look. You get most of the way to a draft you can use, in minutes.</span></div></div>
+</div></section>
+
+<section><div class="wrap"><h2>Who it is for</h2><p class="lede measure">One library, three kinds of user. Each has a guide beside this page.</p>
+  <div class="trio"><div><b>Anyone with a chatbot</b><span>Paste one link or one set of instructions and say what you want. Nothing to install. This is level 1, and it is the whole product.</span></div><div><b>People who make things every week</b><span>A preferences file and a skill hold your brand, tone and rules, so a short ask comes back in your style. This is level 2.</span></div><div><b>Agents and teams</b><span>A server gives agents the library as tools, so they choose and build without a person picking templates. This is level 3.</span></div></div>
+</div></section>
+
+<section><div class="wrap"><h2>How a request becomes a file</h2><p class="lede measure">Four stages, always in this order. Each one narrows the next. Scroll and the diagram keeps your place.</p></div>
+  <div class="stage" id="stage"><svg viewBox="0 0 480 126" role="img" aria-label="Four stages in a row: choose, write, build, check. The current stage is highlighted.">
+    <path class="rail" d="M60,44 H420"/><path class="go" pathLength="1" d="M60,44 H420"/>
+    <g><circle cx="60" cy="44" r="27"/><text class="n" x="60" y="52">1</text><text x="60" y="108">Choose</text></g>
+    <g><circle cx="180" cy="44" r="27"/><text class="n" x="180" y="52">2</text><text x="180" y="108">Write</text></g>
+    <g><circle cx="300" cy="44" r="27"/><text class="n" x="300" y="52">3</text><text x="300" y="108">Build</text></g>
+    <g><circle cx="420" cy="44" r="27"/><text class="n" x="420" y="52">4</text><text x="420" y="108">Check</text></g></svg></div>
+  <ol class="steps" id="steps">
+    <li><span class="who">Stage 1. Three choices</span><h3>Choose the template, the voice and the look</h3><p>Start with the job of the piece: who reads it and what they should do next. That picks the template. The template suggests a voice. The voice suggests a look.</p><ul><li>Name them yourself, or let the picker score every template</li><li>Or take the colours from a photo you attach</li></ul></li>
+    <li><span class="who">Stage 2. Words before pixels</span><h3>Write the outline and list the gaps</h3><p>Your content is mapped onto the template's sections, in the order the voice sets. Anything missing is marked on the page as a gap. Nothing is invented to fill it.</p><ul><li>No made-up numbers, names or quotes</li><li>Every assumption is written down</li></ul></li>
+    <li><span class="who">Stage 3. One file</span><h3>Build it from parts that carry content</h3><p>Each section gets a part only if it needs one: big numbers for results, a timeline for a schedule, a table for a choice. The result is one file that opens anywhere.</p><ul><li>Decks and social posts start from a finished starter file</li><li>Designed for a phone first</li></ul></li>
+    <li><span class="who">Stage 4. Before anyone sees it</span><h3>Check it, then look once</h3><p>A short checklist, then one read on a phone. The piece comes back with a note: what was chosen, what was assumed, what is missing and what you should verify.</p><ul><li>A person decides whether it is shared</li></ul></li>
+  </ol></section>
+
+<section><div class="wrap"><h2>What is in the box</h2><p class="lede measure">Everything lives in one folder called base. Every item is a working example with the sentence that asks for it.</p>
+  <div class="nums"><div><b>7</b><strong>Voices</strong><span>Keynote, storyteller, teacher, pitch, practical instructor, analyst, executive brief</span></div><div><b>4</b><strong>Decks</strong><span>Visionary, story, briefing and workshop. Each presents from the browser</span></div><div><b>4</b><strong>Pages</strong><span>One-page report, proposal, scrolling explainer, landing page</span></div><div><b>12</b><strong>Photo effects</strong><span>Pan and zoom, photo-filled type and ten more, all from one picture</span></div></div>
+  <p class="measure" style="margin-top:18px">The seven voices are the part most people have not seen before. Each voice makes the same case with the same facts, and each comes out as a different piece, because a voice changes the order of what is said and not only the wording.</p>
+</div></section>
+
+<section><div class="wrap"><h2>Three levels, one base</h2><p class="lede measure">The base holds everything. A level is a guide to using it, and holds nothing of its own. Stop at the level that is enough.</p>
+  <div class="lv">
+    <div><b>Level 1, Beginner</b><span>Nothing to install. Paste the instructions once, then one sentence and your notes.</span><blockquote>Turn my notes into a keynote-style deck: black slides, one idea each, huge type.</blockquote><button class="copy" type="button">Copy</button></div>
+    <div><b>Level 2, Advanced</b><span>Your preferences on file, and the skill installed. A short ask is then enough. This is the full ask, for when you want to choose.</span><blockquote>Build a proposal page from my estimate in the practical instructor voice. Three options as price cards with our suggestion marked, a six-week schedule, and one accept button. Use the colours in my attached spec.</blockquote><button class="copy" type="button">Copy</button></div>
+    <div><b>Level 3, Expert</b><span>Connected. A server gives your assistant the library as tools, so it can pick for you. Tested with a client only. With the skill, you ask like this.</span><blockquote>Use the artifact-studio skill. Recipe: landing page. Voice: storyteller. Look: colours from my attached photo. Content: the attached notes. Invent no facts and mark every gap.</blockquote><button class="copy" type="button">Copy</button></div>
+  </div>
+</div></section>
+
+<section><div class="wrap"><h2>Use it today</h2><p class="lede measure">Five steps, about ten minutes. Tick them off.</p>
+  <div class="todo" id="todo">
+    <label><input type="checkbox" id="t1"><span><b>Open the level 1 guide.</b>It is the file named level-1-beginner beside this page.</span></label>
+    <label><input type="checkbox" id="t2"><span><b>Give your chatbot the instructions.</b>Paste the link, or copy the instructions file into a Project once.</span></label>
+    <label><input type="checkbox" id="t3"><span><b>Type one sentence and attach your notes.</b>Real notes for a real job teach more than an exercise.</span></label>
+    <label><input type="checkbox" id="t4"><span><b>Read the result on your phone.</b>That is where most people will open it.</span></label>
+    <label><input type="checkbox" id="t5"><span><b>Check every number and name against your notes.</b>Then decide whether to share it.</span></label>
+  </div>
+  <div class="meter" aria-hidden="true"><i id="bar"></i></div><p class="ui" id="done" style="margin-top:8px;font-weight:700" aria-live="polite">0 of 5 done</p>
+</div></section>
+
+<section><div class="wrap"><h2>For agents</h2><p class="lede measure">The same library, as a skill and as tools. An agent follows nine steps and returns the piece with a note in this form.</p>
+<pre tabindex="0" role="region" aria-label="Example delivery note">Chose: proposal, practical instructor, brand spec.
+Assumed: the start date is the first Monday after acceptance.
+Missing: [needs: payment terms]
+Check before sharing: the three option prices against the estimate.</pre>
+  <p class="measure" style="margin-top:16px">Three rules never bend: no invented facts, a voice is a style and never an impersonation, and nothing is posted or published without a person saying so.</p>
+</div></section>
+
+<section><div class="wrap"><h2>How we will know it is working</h2><p class="lede measure">Four measures, in the order they should be met. None has been met yet.</p>
+  <ol class="time">
+    <li><b>One other person makes something real</b>Someone who did not build this presents a deck or sends a report made with it, for an actual job.</li>
+    <li><b>First or second try</b>They get something they are willing to send without a third round of fixes.</li>
+    <li><b>The sentences hold up in fresh chats</b>Each short ask is run in a new conversation and scored against the checklist.</li>
+    <li><b>More than one chatbot</b>The same sentence gives a usable result in at least two different assistants.</li>
+  </ol>
+</div></section>
+
+<section><div class="wrap"><h2>What is proven and what is not</h2>
+  <div class="calls">
+    <div class="call good"><b>Checked</b>Every tab of the studio page and every template opens in Chrome at phone and desktop width with no errors and no sideways scrolling. An automated accessibility scan found no violations. The picker gives the same answer in the page and in the server.</div>
+    <div class="call warn"><b>Not yet tested</b>The sentences have not been run in fresh chats and scored. It was built with one assistant and has not been run in the others. No Safari or Firefox.</div>
+    <div class="call warn"><b>Estimates</b>The times on the landing page are estimates, not measurements. The template scores are the author's judgement.</div>
+    <div class="call warn"><b>A guess</b>The practical instructor voice is a best guess at one person's teaching style and has not been corrected by him.</div>
+  </div>
+</div></section>
+
+<section><div class="wrap"><h2>Where everything is</h2>
+  <div class="scroll" tabindex="0" role="region" aria-label="Where everything is in the project folder"><table><thead><tr><th>You want</th><th>Open</th></tr></thead><tbody>
+    <tr><td>The showcase and the quick start</td><td><code>README.md</code></td></tr>
+    <tr><td>A guide for your level</td><td><code>level-1-beginner.md</code>, <code>level-2-advanced.md</code>, <code>level-3-expert.md</code></td></tr>
+    <tr><td>Everything in one page, with a picker</td><td><code>base/studio.html</code></td></tr>
+    <tr><td>The instructions to paste into a chatbot</td><td><code>base/instructions/</code></td></tr>
+    <tr><td>Every template and part, with an index</td><td><code>base/templates/</code></td></tr>
+    <tr><td>Six worked requests and what came back</td><td><code>base/examples/</code></td></tr>
+    <tr><td>Every sentence to copy</td><td><code>base/sentences.md</code></td></tr>
+    <tr><td>The skill and its reference cards</td><td><code>base/skills/</code></td></tr>
+    <tr><td>The MCP server</td><td><code>base/connectors/</code></td></tr>
+    <tr><td>Instructions for agents</td><td><code>base/AGENTS.md</code> and <code>base/CLAUDE.md</code></td></tr></tbody></table></div>
+</div></section>
+<section class="next"><div class="wrap"><h2>Three things that would make it real</h2>
+  <ol><li><b>Give it to one other person.</b> Say nothing. Write down where they stop.</li><li><b>Run the short asks in fresh chats.</b> One per template, in two assistants, scored against the checklist.</li><li><b>Try the one-link method in each chatbot.</b> The link opens. Whether each chatbot reads it has not been tried.</li></ol>
+  <p class="ui">Built on 15 November 2026 with the studio itself: the scrolling explainer template, the practical instructor voice and the fog and pine look. Every count on this page is read from the library when the page is built. The photograph is the repository owner's.</p></div></section>
+</main>
+<script>
+(()=>{
+const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)],reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const stage=$('#stage'),gs=$$('g',stage),steps=$$('#steps>li');
+const set=k=>{stage.style.setProperty('--k',k);gs.forEach((g,i)=>{g.classList.toggle('done',i<k);g.classList.toggle('now',i===k)});steps.forEach((s,i)=>s.classList.toggle('on',i===k))};
+const io=new IntersectionObserver(es=>{for(const e of es)if(e.isIntersecting)set(steps.indexOf(e.target))},{rootMargin:'-50% 0px -45% 0px'});steps.forEach(s=>io.observe(s));set(0);
+const boxes=$$('#todo input'),bar=$('#bar'),done=$('#done');const upd=()=>{const n=boxes.filter(b=>b.checked).length;bar.style.width=n/boxes.length*100+'%';done.textContent=n===boxes.length?'All 5 done. You have made your first studio piece.':`${n} of ${boxes.length} done`};boxes.forEach(b=>b.addEventListener('change',upd));upd();
+if(!reduce){document.body.classList.add('anim');const o=new IntersectionObserver((es,ob)=>{for(const e of es)if(e.isIntersecting){e.target.classList.add('in');ob.unobserve(e.target)}},{threshold:.3});$$('.see').forEach(n=>o.observe(n))}
+document.addEventListener('click',e=>{const b=e.target.closest('.copy');if(!b)return;const q=b.parentElement.querySelector('blockquote');
+  (async()=>{try{await navigator.clipboard.writeText(q.textContent.trim());b.textContent='Copied'}catch{const r=document.createRange();r.selectNodeContents(q);const s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selected. Copy it from the menu'}setTimeout(()=>b.textContent='Copy',2400)})()});
+})();
+</script>
+</body>
+</html>

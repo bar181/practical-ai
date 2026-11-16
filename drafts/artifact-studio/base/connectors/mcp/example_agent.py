@@ -4,7 +4,7 @@ It asks the server to pick, fetches the starter it picked, fills it with new con
 result. No model is involved: the content is typed below. The point is to prove that the tools give
 an agent everything it needs to finish a file. Run from drafts/artifact-studio:
 
-    python3 level-3/mcp/example_agent.py OUT_DIR
+    python3 base/connectors/mcp/example_agent.py OUT_DIR
 """
 import asyncio, json, os, re, sys
 from mcp import ClientSession, StdioServerParameters, stdio_client

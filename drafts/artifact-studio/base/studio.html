@@ -478,11 +478,8 @@ footer p{border-top:1px solid rgba(232,237,243,.2);padding-top:22px;max-width:40
 #t-s-check:checked~#v-s-check{display:block}
 #t-s-check:focus-visible~.tabs label[for="t-s-check"]{outline:3px solid var(--reed);outline-offset:2px}
 #t-s-check:checked~.tabs .tabs-s label[for="t-s-check"]{background:var(--reed);color:var(--pine)}
-#t-s-best:checked~#v-s-best{display:block}
-#t-s-best:focus-visible~.tabs label[for="t-s-best"]{outline:3px solid var(--reed);outline-offset:2px}
-#t-s-best:checked~.tabs .tabs-s label[for="t-s-best"]{background:var(--reed);color:var(--pine)}
-:is(#t-s-skill,#t-s-single,#t-s-skel,#t-s-rules,#t-s-check,#t-s-best):checked~.tabs .g8{background:var(--fog);color:var(--pine);border-color:var(--fog)}
-:is(#t-s-skill,#t-s-single,#t-s-skel,#t-s-rules,#t-s-check,#t-s-best):checked~.tabs .s8{display:flex}
+:is(#t-s-skill,#t-s-single,#t-s-skel,#t-s-rules,#t-s-check):checked~.tabs .g8{background:var(--fog);color:var(--pine);border-color:var(--fog)}
+:is(#t-s-skill,#t-s-single,#t-s-skel,#t-s-rules,#t-s-check):checked~.tabs .s8{display:flex}
 #t-use:checked~#v-use{display:block}
 #t-use:focus-visible~.tabs label[for="t-use"]{outline:3px solid var(--reed);outline-offset:2px}
 :is(#t-use):checked~.tabs .g9{background:var(--fog);color:var(--pine);border-color:var(--fog)}
@@ -1172,9 +1169,8 @@ html[data-view=voice-keynote]{scroll-snap-type:y proximity}
 <input class="tabr" type="radio" name="tab" id="t-s-skel" aria-label="Skill: Page skeleton">
 <input class="tabr" type="radio" name="tab" id="t-s-rules" aria-label="Skill: Build rules">
 <input class="tabr" type="radio" name="tab" id="t-s-check" aria-label="Skill: Checklist">
-<input class="tabr" type="radio" name="tab" id="t-s-best" aria-label="Skill: Best practices">
 <input class="tabr" type="radio" name="tab" id="t-use" aria-label="Guide">
-<nav class="tabs" aria-label="Sections"><div class="tabs-g"><label class="g0" for="t-voice-keynote">Voices</label><label class="g1" for="t-recipe-report">Pages</label><label class="g2" for="t-deck-visionary">Decks</label><label class="g3" for="t-social">Social</label><label class="g4" for="t-parts">Parts</label><label class="g5" for="t-cards">Design</label><label class="g6" for="t-pick">Pick</label><label class="g7" for="t-c-recipes">Reference</label><label class="g8" for="t-s-skill">Skill</label><label class="g9" for="t-use">Guide</label></div><div class="tabs-s s0"><span>One message, told seven ways. Tap a voice:</span><label for="t-voice-keynote">Keynote</label><label for="t-voice-story">Storyteller</label><label for="t-voice-teacher">Teacher</label><label for="t-voice-pitch">Pitch</label><label for="t-voice-practical">Practical</label><label for="t-voice-analyst">Analyst</label><label for="t-voice-brief">Brief</label></div><div class="tabs-s s1"><span>Four whole pages. Tap one:</span><label for="t-recipe-report">Report</label><label for="t-recipe-proposal">Proposal</label><label for="t-recipe-explainer">Explainer</label><label for="t-recipe-landing">Landing page</label></div><div class="tabs-s s2"><span>Four slide decks on one engine:</span><label for="t-deck-visionary">Visionary</label><label for="t-deck-story">Story</label><label for="t-deck-briefing">Briefing</label><label for="t-deck-workshop">Workshop</label></div><div class="tabs-s s4"><span>The pieces a page is made of:</span><label for="t-parts">Page parts</label><label for="t-photo">Photo parts</label><label for="t-svg">Animated SVG</label><label for="t-looks">Looks</label></div><div class="tabs-s s5"><span>The ideas behind a good page:</span><label for="t-cards">Cards</label><label for="t-layouts">Layouts</label><label for="t-colour">Colour</label></div><div class="tabs-s s6"><span>Let the studio suggest, or choose every part yourself:</span><label for="t-pick">Pick for me</label><label for="t-mix">Mix it myself</label></div><div class="tabs-s s7"><span>The reference sheets, the two forms and every sentence:</span><label for="t-c-recipes">Recipe cards</label><label for="t-c-voices">Voice cards</label><label for="t-c-parts">Parts list</label><label for="t-c-spec">Design spec</label><label for="t-c-brief">Content brief</label><label for="t-c-sentences">All sentences</label></div><div class="tabs-s s8"><span>What the assistant follows. &quot;AI instructions&quot; is the paste-in version:</span><label for="t-s-skill">The skill</label><label for="t-s-single">AI instructions</label><label for="t-s-skel">Page skeleton</label><label for="t-s-rules">Build rules</label><label for="t-s-check">Checklist</label><label for="t-s-best">Best practices</label></div></nav>
+<nav class="tabs" aria-label="Sections"><div class="tabs-g"><label class="g0" for="t-voice-keynote">Voices</label><label class="g1" for="t-recipe-report">Pages</label><label class="g2" for="t-deck-visionary">Decks</label><label class="g3" for="t-social">Social</label><label class="g4" for="t-parts">Parts</label><label class="g5" for="t-cards">Design</label><label class="g6" for="t-pick">Pick</label><label class="g7" for="t-c-recipes">Reference</label><label class="g8" for="t-s-skill">Skill</label><label class="g9" for="t-use">Guide</label></div><div class="tabs-s s0"><span>One message, told seven ways. Tap a voice:</span><label for="t-voice-keynote">Keynote</label><label for="t-voice-story">Storyteller</label><label for="t-voice-teacher">Teacher</label><label for="t-voice-pitch">Pitch</label><label for="t-voice-practical">Practical</label><label for="t-voice-analyst">Analyst</label><label for="t-voice-brief">Brief</label></div><div class="tabs-s s1"><span>Four whole pages. Tap one:</span><label for="t-recipe-report">Report</label><label for="t-recipe-proposal">Proposal</label><label for="t-recipe-explainer">Explainer</label><label for="t-recipe-landing">Landing page</label></div><div class="tabs-s s2"><span>Four slide decks on one engine:</span><label for="t-deck-visionary">Visionary</label><label for="t-deck-story">Story</label><label for="t-deck-briefing">Briefing</label><label for="t-deck-workshop">Workshop</label></div><div class="tabs-s s4"><span>The pieces a page is made of:</span><label for="t-parts">Page parts</label><label for="t-photo">Photo parts</label><label for="t-svg">Animated SVG</label><label for="t-looks">Looks</label></div><div class="tabs-s s5"><span>The ideas behind a good page:</span><label for="t-cards">Cards</label><label for="t-layouts">Layouts</label><label for="t-colour">Colour</label></div><div class="tabs-s s6"><span>Let the studio suggest, or choose every part yourself:</span><label for="t-pick">Pick for me</label><label for="t-mix">Mix it myself</label></div><div class="tabs-s s7"><span>The reference sheets, the two forms and every sentence:</span><label for="t-c-recipes">Recipe cards</label><label for="t-c-voices">Voice cards</label><label for="t-c-parts">Parts list</label><label for="t-c-spec">Design spec</label><label for="t-c-brief">Content brief</label><label for="t-c-sentences">All sentences</label></div><div class="tabs-s s8"><span>What the assistant follows. &quot;AI instructions&quot; is the paste-in version:</span><label for="t-s-skill">The skill</label><label for="t-s-single">AI instructions</label><label for="t-s-skel">Page skeleton</label><label for="t-s-rules">Build rules</label><label for="t-s-check">Checklist</label></div></nav>
 <div class="view" id="v-voice-keynote" data-tab="voices" data-title="The keynote"><aside class="about" aria-label="About this example"><div class="wrap"><p><b>The keynote voice.</b> Inspired by Steve Jobs&#x27;s product launches. Use it when the reader should feel that something new is possible.</p><p class="about-n">A full example follows. <a href="#anat-voice-keynote" data-jump="anat-voice-keynote">How it is built, and the sentence that asks for it</a></p></div></aside>
   <section class="kn-s"><h1 class="see">Every enquiry is a person, waiting.</h1><p class="kn-note">Scroll. One idea per screen.</p></section>
   <section class="kn-s"><div class="kn-big see">26<small>hours</small></div><p class="see" style="--i:1">That is how long they wait for us today.</p></section>
@@ -1885,7 +1881,7 @@ html[data-view=voice-keynote]{scroll-snap-type:y proximity}
       <div class="tile sky"><span class="n">0</span><span class="ui">libraries loaded</span></div>
       <div class="tile wide"><div class="chips" id="chips" aria-hidden="true"></div><span class="ui">The photo's six main colours, largest first</span></div>
       <div class="tile"><svg id="spark" viewBox="0 0 100 40" preserveAspectRatio="none" role="img" aria-label="Small line showing brightness from the top of the photo to the bottom."></svg><span class="ui">Brightness, top to bottom</span></div>
-      <div class="tile"><span class="n">1,705<small>KB</small></span><span class="ui">the whole studio: one file, photos and fonts included</span></div>
+      <div class="tile"><span class="n">1,695<small>KB</small></span><span class="ui">the whole studio: one file, photos and fonts included</span></div>
       <div class="tile say dark">Every tile here is a true fact about this page.</div>
     </div>
   </div>
@@ -3492,7 +3488,7 @@ notes.
 Paste notes, figures and any customer words below this line. Say where each number came from.</pre><button class="copy" type="button">Copy</button></div></div></article><nav class="pager" aria-label="Previous and next tab"><div><label for="t-c-spec">← Design spec</label><label for="t-c-sentences">All sentences →</label></div></nav></div>
 <div class="view" id="v-c-sentences" data-title="All sentences"><article class="md"><div class="wrap"><h1>Sentences</h1>
 <p>Every sentence in the studio, in one place. Copy one, attach your notes (and a photo if the page uses one), and paste both into a chat assistant.</p>
-<p><strong>Status: untested.</strong> These sentences describe what the demo pages do. They have not yet been run in fresh chats and scored. Record results in <code>sentence-test.md</code>.</p>
+<p><strong>Status: untested.</strong> These sentences describe what the demo pages do. They have not yet been run in fresh chats and scored.</p>
 <p>This file is generated from the examples by <code>base/source/build.py</code>. Edit the views, not this file.</p>
 <h2>Pages</h2>
 <h3>One-page report</h3>
@@ -4312,7 +4308,7 @@ network dependency.</p>
 </tr>
 </tbody>
 </table></div>
-<p>Licences and the date each was checked are in <code>drafts/artifact-studio/docs/landscape-review.md</code>.</p></div></article><nav class="pager" aria-label="Previous and next tab"><div><label for="t-s-skel">← Page skeleton</label><label for="t-s-check">Checklist →</label></div></nav></div>
+<p>Check each library's licence before you ship with it.</p></div></article><nav class="pager" aria-label="Previous and next tab"><div><label for="t-s-skel">← Page skeleton</label><label for="t-s-check">Checklist →</label></div></nav></div>
 <div class="view" id="v-s-check" data-title="Checklist"><article class="md"><div class="wrap"><h1>Pre-ship checklist</h1>
 <p>Run this before a page is shared or hosted. An agent works through every line and reports the
 result. A person then looks at the page on a phone and checks the facts.</p>
@@ -4346,232 +4342,7 @@ result. A person then looks at the page on a phone and checks the facts.</p>
 <ul>
 <li class="task"><label><input type="checkbox"><span>A person, not an agent, has decided to publish it</span></label></li>
 <li class="task"><label><input type="checkbox"><span>It does not imitate another organisation's site or branding</span></label></li>
-</ul></div></article><nav class="pager" aria-label="Previous and next tab"><div><label for="t-s-rules">← Build rules</label><label for="t-s-best">Best practices →</label></div></nav></div>
-<div class="view" id="v-s-best" data-title="Best practices"><article class="md"><div class="wrap"><h1>Best practices: making and using studio pages</h1>
-<p>How to turn any content into a page that is worth opening, and why each practice is here. This is
-the reasoning behind the skill and the
-instructions for people. Read it when a page came out wrong and you want to know which
-rule was broken.</p>
-<p><strong>Think of it as</strong> a kitchen's house rules. The menu changes. The rules about clean knives and
-tasting before serving do not.</p>
-<h2>The method in one picture</h2>
-<ol class="flow"><li>Intake: content, media, audience, job, screen</li><li>Recipe</li><li>Voice</li><li>Look</li><li>Outline: write the words, list the gaps</li><li>Parts: one per section, three moving at most</li><li>Build: one file from the skeleton</li><li>Check: checklist, then look once on a phone</li><li>Deliver: page plus what was chosen, assumed and missing</li></ol>
-<p class="flow-n">If the check fails, go back to the outline and fix it.</p>
-
-<p>The order matters. Each choice narrows the next one. Choosing colours before the voice is how
-pages end up pretty and pointless.</p>
-<h2>Ten practices</h2>
-<h3>1. Decide the job of the page before anything else</h3>
-<p>One sentence: who reads it and what they should do afterwards. If you cannot write that sentence,
-no design will rescue the page.</p>
-<p><em>Why:</em> every later choice is judged against it. A report that should inform and a proposal that
-should close are different pages even with the same numbers.</p>
-<h3>2. Choose the recipe, then the voice, then the look</h3>
-<p><em>Why:</em> the recipe fixes what must be on the page. The voice fixes the order and the wording. Only
-then is there anything for the look to dress. The seven voice demos use identical facts and come
-out as seven different pages. That difference comes from order and emphasis, not from colour.</p>
-<h3>3. A voice changes structure, not only tone</h3>
-<p>Asking for "a friendly tone" changes adjectives. Asking for the teacher voice puts an analogy
-first, an example second and the detail third. Describe the order you want.</p>
-<p><em>Why:</em> assistants follow structure reliably and tone loosely. Structure is also what readers
-remember.</p>
-<h3>4. Take the look from something real</h3>
-<p>A brand spec, or a photograph you supply. The method for pulling a palette from a photo is in
-<code>looks.md</code>.</p>
-<p><em>Why:</em> left to choose, an assistant returns to the same few looks. A real source gives the page a
-reason to look the way it does. The demo's fog and pine colours were measured from the lake photo.</p>
-<h3>5. Never let the assistant invent facts</h3>
-<p>No made-up numbers, names, customers or quotes. Gaps are marked on the page as <code>[needs: ...]</code>.</p>
-<p><em>Why:</em> an invented figure on a polished page is more dangerous than on a rough one, because polish
-reads as authority. This is the rule that protects the person who sends the page.</p>
-<h3>6. Every part must carry content</h3>
-<p>Use a component because a section needs it. Big numbers for results. A timeline for a schedule. A
-comparison table for a choice.</p>
-<p><em>Why:</em> decoration costs attention and returns nothing. The test: delete the part. If nothing is
-lost, it should not have been there.</p>
-<h3>7. Three moving parts at most, and motion must mean something</h3>
-<p>Motion is for showing what changed, where to look or how far along the reader is. Everything is
-readable before any animation runs, and with motion turned off.</p>
-<p><em>Why:</em> a page where everything moves reads as a template. Some readers turn motion off for
-medical reasons, and their page must be complete.</p>
-<h3>8. Build for the phone first</h3>
-<p>Design at 390 pixels wide. Nothing scrolls sideways. Tap targets are 44 pixels high.</p>
-<p><em>Why:</em> a link sent by message is opened on a phone. A page that only works on a laptop fails most
-of its readers on first contact.</p>
-<h3>9. One self-contained file</h3>
-<p>No build step, no network, fonts and images inside the file.</p>
-<p><em>Why:</em> it can be emailed, saved, opened offline and published as an artifact without anything
-breaking. A library is added only when it does substantial work, and the person is told.</p>
-<h3>10. Check, then look once</h3>
-<p>Run the pre-ship checklist. Then
-open the page on a phone and read it top to bottom as the recipient would.</p>
-<p><em>Why:</em> the checklist catches what can be listed. The read-through catches what cannot: a sentence
-that sounds wrong, a number that is technically right and misleading.</p>
-<h2>Using content of different kinds</h2>
-<div class="tblw" tabindex="0" role="region" aria-label="Table"><table>
-<thead>
-<tr>
-<th>You have</th>
-<th>Do this</th>
-<th>Watch for</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Rough notes</td>
-<td>Use them as they are. The assistant structures them</td>
-<td>Notes that assume context. Add one line on who the reader is</td>
-</tr>
-<tr>
-<td>A long document</td>
-<td>Say which recipe, and what the reader should do afterwards</td>
-<td>The page inheriting the document's order instead of the recipe's</td>
-</tr>
-<tr>
-<td>A spreadsheet</td>
-<td>Name the period and the comparison (this month against last)</td>
-<td>Totals that do not add up. Ask the assistant to check and say so</td>
-</tr>
-<tr>
-<td>Photos</td>
-<td>Attach them and say what each shows</td>
-<td>Crops that lose the subject at phone width</td>
-</tr>
-<tr>
-<td>A video</td>
-<td>Give the link, or the file plus a still image for a poster</td>
-<td>A single-file page cannot hold a large video. It links to it</td>
-</tr>
-<tr>
-<td>A transcript</td>
-<td>Ask for the customer's own words to be kept as quotes</td>
-<td>Paraphrases presented as quotations</td>
-</tr>
-</tbody>
-</table></div>
-<h2>Describing what you want</h2>
-<p>The assistant builds what you describe. These phrasings work because they name structure.</p>
-<div class="tblw" tabindex="0" role="region" aria-label="Table"><table>
-<thead>
-<tr>
-<th>Weak</th>
-<th>Strong</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Make it look professional</td>
-<td>Use the executive brief voice: decision first, one options table, no images</td>
-</tr>
-<tr>
-<td>Make it pop</td>
-<td>Open with the one number that matters, very large, and nothing else on the screen</td>
-</tr>
-<tr>
-<td>Add some animation</td>
-<td>Draw the line of the diagram as I scroll, and keep everything else still</td>
-</tr>
-<tr>
-<td>Use my brand</td>
-<td>Colours and fonts are in the attached spec. The accent is for buttons only</td>
-</tr>
-<tr>
-<td>Make it shorter</td>
-<td>Cut it to the recipe's sections. Drop any section my notes do not fill</td>
-</tr>
-</tbody>
-</table></div>
-<h2>Extending the studio</h2>
-<div class="tblw" tabindex="0" role="region" aria-label="Table"><table>
-<thead>
-<tr>
-<th>To add</th>
-<th>Do this</th>
-<th>It is ready when</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>A component</td>
-<td>Add a section to <code>base/source/views/30-parts.html</code> with an <code>@@ask</code> line</td>
-<td>It works at phone width, with motion off, and has a sentence</td>
-</tr>
-<tr>
-<td>A voice</td>
-<td>Add <code>views/4N-voice-name.html</code> and a card in <code>voices.md</code></td>
-<td>It changes the order of the content, and has a full example</td>
-</tr>
-<tr>
-<td>A recipe</td>
-<td>Add <code>views/5N-recipe-name.html</code> and a card in <code>recipes.md</code></td>
-<td>The same page type has been built by hand twice</td>
-</tr>
-<tr>
-<td>A look</td>
-<td>Add a card in <code>looks.md</code></td>
-<td>It has been used on one real page</td>
-</tr>
-</tbody>
-</table></div>
-<p>Then run <code>python3 build.py</code> in <code>base/source/</code>. It rebuilds the studio page and the example files and regenerates
-<code>base/sentences.md</code> and the component catalogue, so the documents cannot drift from the
-demo.</p>
-<h2>Testing</h2>
-<div class="tblw" tabindex="0" role="region" aria-label="Table"><table>
-<thead>
-<tr>
-<th>Test</th>
-<th>How</th>
-<th>State</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Renders without errors</td>
-<td>Open every tab in Chrome at 320, 390 and 1280 pixels wide</td>
-<td>Done by the author</td>
-</tr>
-<tr>
-<td>Complete at rest</td>
-<td>Turn scripts off. The first screen shows content and the tabs switch</td>
-<td>Done by the author for the four studio pages</td>
-</tr>
-<tr>
-<td>Found by a person on a phone</td>
-<td>The owner opened the first studio artifact and could not find the examples. See round 3 in <code>docs/SELF-REVIEW.md</code></td>
-<td>One person, once</td>
-</tr>
-<tr>
-<td>Works with motion off</td>
-<td>Turn on "reduce motion" in the system settings and reload</td>
-<td>Checked in code, not on a device</td>
-</tr>
-<tr>
-<td>Sentences reproduce the result</td>
-<td><code>sentence-test.md</code></td>
-<td>Not yet run</td>
-</tr>
-<tr>
-<td>The skill works for a second agent</td>
-<td>Give a fresh agent the skill and one set of notes</td>
-<td>Not yet run</td>
-</tr>
-<tr>
-<td>A beginner can follow the guide</td>
-<td>Watch one person do level 1 without help</td>
-<td>Not yet run</td>
-</tr>
-</tbody>
-</table></div>
-<h2>What this document rests on</h2>
-<ul>
-<li>The repository's ground rules in the root <code>README.md</code>: reuse before building, a person approves
-  what goes out, examples are synthetic, dated claims.</li>
-<li>The dated review of browser features, libraries and existing skills in
-  <code>landscape-review.md</code>.</li>
-<li>Building the demo pages: seven voices, four recipes and twenty-four parts. Practices 2, 3, 6 and 7 came out of that work and
-  have not been tested with other people yet.</li>
-</ul></div></article><nav class="pager" aria-label="Previous and next tab"><div><label for="t-s-check">← Checklist</label><label for="t-use">How to use →</label></div></nav></div>
+</ul></div></article><nav class="pager" aria-label="Previous and next tab"><div><label for="t-s-rules">← Build rules</label><label for="t-use">How to use →</label></div></nav></div>
 <div class="view" id="v-use" data-tab="use" data-title="How to use">
   <div class="wrap shelf-head"><h2>How to use the studio</h2>
     <p class="measure">The studio is a menu. You point at what you want and the assistant builds it from your own content. Everything you need is in the base: this page, the template library with every template as a file of its own, the cards, the forms and the skill. A level only adds to the base.</p></div>
@@ -4596,16 +4367,15 @@ demo.</p>
       <tr><td>The design spec and content brief</td><td><code>base/forms/</code></td></tr>
       <tr><td>Taking in a design you like</td><td><code>base/inspiration/</code></td></tr>
       <tr><td>Outside tools worth knowing</td><td><code>base/RESOURCES.md</code></td></tr>
-      <tr><td>The skill</td><td><code>skills/artifact-studio/</code></td></tr>
-      <tr><td>Instructions for the assistant and for you</td><td><code>level-1/</code></td></tr>
-      <tr><td>The preferences file</td><td><code>level-2/</code></td></tr>
-      <tr><td>The MCP server</td><td><code>level-3/mcp/</code></td></tr>
+      <tr><td>The skill</td><td><code>base/skills/artifact-studio/</code></td></tr>
+      <tr><td>Instructions to paste into your assistant</td><td><code>base/instructions/AI-INSTRUCTIONS.md</code></td></tr>
+      <tr><td>The preferences file</td><td><code>base/instructions/preferences-template.md</code></td></tr>
+      <tr><td>The MCP server</td><td><code>base/connectors/mcp/</code></td></tr>
       <tr><td>The front door for agents</td><td><code>AGENTS.md</code></td></tr>
-      <tr><td>How these pages are made, and why</td><td><code>docs/best-practices.md</code></td></tr>
       <tr><td>The source of this page</td><td><code>base/source/</code></td></tr></tbody></table></div></section>
   <section class="us-s us-end"><h3>What has and has not been tested</h3>
     <div class="us-test"><div class="pc-call good"><b>Checked</b>Every tab renders in Chrome at phone and desktop width with no script errors, and the tabs switch with scripts turned off.</div><div class="pc-call warn"><b>Not yet checked</b>The sentences have not been run in fresh chats and scored. The results sheet for that test is in the repository.</div><div class="pc-call note"><b>Invented</b>Every company, person and figure in the examples is made up. The two photographs are real.</div></div></section>
-<nav class="pager" aria-label="Previous and next tab"><div><label for="t-s-best">← Best practices</label><span></span></div></nav></div>
+<nav class="pager" aria-label="Previous and next tab"><div><label for="t-s-check">← Checklist</label><span></span></div></nav></div>
 <script>
 /* shared helpers. Each tab's own script follows in a separate script element, so a fault in one cannot stop the others. */
 const STUDIO={data:{"rows":[{"b":69.1,"c":"#9fb2d2"},{"b":69.0,"c":"#9fb2d1"},{"b":69.4,"c":"#a0b3d2"},{"b":68.7,"c":"#9eb1cf"},{"b":67.6,"c":"#9baecc"},{"b":69.1,"c":"#9fb2d0"},{"b":69.3,"c":"#9fb3d1"},{"b":69.9,"c":"#a0b4d3"},{"b":69.2,"c":"#9fb3d1"},{"b":68.7,"c":"#9db1cf"},{"b":68.4,"c":"#9db0ce"},{"b":68.0,"c":"#9cafcd"},{"b":68.7,"c":"#9eb1ce"},{"b":69.9,"c":"#a1b4d1"},{"b":71.6,"c":"#a5b9d5"},{"b":71.4,"c":"#a5b8d4"},{"b":71.2,"c":"#a5b8d3"},{"b":71.1,"c":"#a5b7d2"},{"b":73.8,"c":"#acbed7"},{"b":75.0,"c":"#afc1da"},{"b":73.1,"c":"#aabcd6"},{"b":74.3,"c":"#aec0d8"},{"b":73.3,"c":"#acbdd5"},{"b":69.5,"c":"#a2b3cd"},{"b":67.5,"c":"#9daec8"},{"b":66.0,"c":"#99aac5"},{"b":62.9,"c":"#93a2ba"},{"b":41.8,"c":"#626c78"},{"b":22.4,"c":"#343a41"},{"b":59.2,"c":"#8b98ad"},{"b":64.3,"c":"#98a5ba"},{"b":56.6,"c":"#8c909c"},{"b":46.8,"c":"#79767a"},{"b":40.7,"c":"#6c6767"},{"b":37.8,"c":"#665f5f"},{"b":32.6,"c":"#5a5150"},{"b":28.0,"c":"#504542"},{"b":25.6,"c":"#4b3f39"},{"b":23.8,"c":"#483a34"},{"b":24.0,"c":"#493b33"},{"b":24.1,"c":"#4a3b33"},{"b":24.0,"c":"#4a3b32"},{"b":24.8,"c":"#4d3c34"},{"b":25.1,"c":"#4d3d34"},{"b":25.1,"c":"#4d3d34"},{"b":24.9,"c":"#4d3d34"},{"b":26.0,"c":"#503f36"},{"b":26.4,"c":"#504137"}],"pal":[{"hex":"#a5b9d8","share":35.0},{"hex":"#594b44","share":18.6},{"hex":"#352d2a","share":17.0},{"hex":"#99a7c0","share":12.8},{"hex":"#bacee8","share":11.8},{"hex":"#797981","share":4.7}],"index":{"templates":[{"id":"recipe-report","kind":"page","title":"One-page report","name":"one-page report","file":"pages/report.html","summary":"How a week, month or project went: the answer, the numbers, what changed, what is next.","fit":{"goal":{"report":3,"decide":2,"announce":1},"audience":{"executive":3,"team":3,"customer":1}},"article":"a one-page report","tab":"recipe-report"},{"id":"recipe-proposal","kind":"page","title":"Proposal","name":"proposal","file":"pages/proposal.html","summary":"Something a customer has to say yes to: the job as understood, three options, a schedule, one accept button.","fit":{"goal":{"sell":3,"decide":3},"audience":{"customer":3,"executive":2}},"article":"a proposal page","tab":"recipe-proposal"},{"id":"recipe-explainer","kind":"page","title":"Scrolling explainer","name":"scrolling explainer","file":"pages/explainer.html","summary":"How something works, told as a picture that changes while short steps scroll past.","fit":{"goal":{"teach":3,"announce":2,"inspire":1},"audience":{"learner":3,"public":2,"team":2,"customer":2}},"article":"a scrolling explainer","tab":"recipe-explainer"},{"id":"recipe-landing","kind":"page","title":"Landing page","name":"landing page","file":"pages/landing.html","summary":"One offer and one action for people arriving cold: promise, proof, plan, price, questions.","fit":{"goal":{"sell":3,"announce":3,"inspire":1},"audience":{"public":3,"customer":3}},"article":"a landing page","tab":"recipe-landing"},{"id":"voice-keynote","kind":"voice","title":"Keynote voice","name":"keynote","file":"voices/keynote.html","summary":"One idea per screen, huge type, almost no words, and \"one more thing\".","fit":{"goal":{"inspire":3,"announce":3,"sell":1},"audience":{"public":3,"team":2,"customer":2,"executive":1}},"tab":"voice-keynote"},{"id":"voice-story","kind":"voice","title":"Storyteller voice","name":"storyteller","file":"voices/storyteller.html","summary":"The customer is the hero and you are the guide: hook, problem, plan, stakes, ending.","fit":{"goal":{"sell":3,"inspire":2,"announce":1},"audience":{"customer":3,"public":3}},"tab":"voice-story"},{"id":"voice-teacher","kind":"voice","title":"Teacher voice","name":"teacher","file":"voices/teacher.html","summary":"An everyday analogy first, then one worked example, the detail, and questions to check yourself.","fit":{"goal":{"teach":3},"audience":{"learner":3,"team":2,"public":1}},"tab":"voice-teacher"},{"id":"voice-pitch","kind":"voice","title":"Pitch voice","name":"pitch","file":"voices/pitch.html","summary":"First person. A memory, the feeling it carries, and the product named only at the end.","fit":{"goal":{"inspire":3,"sell":2},"audience":{"public":2,"customer":2}},"tab":"voice-pitch"},{"id":"voice-practical","kind":"voice","title":"Practical instructor voice","name":"practical instructor","file":"voices/practical.html","summary":"The idea in one sentence, one analogy, numbered steps with a time on each, one next step.","fit":{"goal":{"teach":3,"report":1,"decide":1},"audience":{"team":3,"learner":2,"customer":2}},"tab":"voice-practical"},{"id":"voice-analyst","kind":"voice","title":"Analyst voice","name":"analyst","file":"voices/analyst.html","summary":"The answer first, then findings whose headings are full sentences, each with one chart and a \"so what\".","fit":{"goal":{"report":3,"decide":2},"audience":{"executive":3,"team":2}},"tab":"voice-analyst"},{"id":"voice-brief","kind":"voice","title":"Executive brief voice","name":"executive brief","file":"voices/brief.html","summary":"The decision first, numbered background, one options table including \"do nothing\", risks, next steps.","fit":{"goal":{"decide":3,"report":2},"audience":{"executive":3}},"tab":"voice-brief"},{"id":"deck-visionary","kind":"deck","title":"Visionary deck","name":"visionary deck","file":"decks/visionary.html","summary":"Eight black slides in the keynote manner: a villain, one rule, three things, one number, one more thing.","fit":{"goal":{"inspire":3,"announce":3,"sell":1},"audience":{"public":3,"team":3,"executive":1,"customer":1}},"ask":"Turn my notes into a keynote-style deck: black slides, one idea each, huge type.","look":"Keynote black","voice":"voice-keynote","tab":"deck-visionary"},{"id":"deck-story","kind":"deck","title":"Story deck","name":"story deck","file":"decks/story.html","summary":"Seven warm slides that follow a story: a person, a problem, a guide, a plan, an ask, the stakes, the ending.","fit":{"goal":{"sell":3,"inspire":2},"audience":{"customer":3,"public":2}},"ask":"Turn my notes into a short story deck where my customer is the hero and we are the guide.","look":"Editorial","voice":"voice-story","tab":"deck-story"},{"id":"deck-briefing","kind":"deck","title":"Briefing deck","name":"briefing deck","file":"decks/briefing.html","summary":"Six light slides for a decision: the answer first, three reasons, two numbers, the options, what is not known, the decision and a date.","fit":{"goal":{"decide":3,"report":3,"sell":1},"audience":{"executive":3,"team":3,"customer":2}},"ask":"Turn my notes into a short briefing deck for a decision: the answer first.","look":"Clean","voice":"voice-brief","tab":"deck-briefing"},{"id":"deck-workshop","kind":"deck","title":"Workshop deck","name":"workshop deck","file":"decks/workshop.html","summary":"Seven slides that teach one skill: a promise, a picture, three steps, a worked example, an exercise, a check and a card to keep.","fit":{"goal":{"teach":3,"report":1},"audience":{"learner":3,"team":3,"public":1}},"ask":"Turn my notes into a short workshop deck that teaches one skill, with an exercise.","look":"Warm","voice":"voice-teacher","tab":"deck-workshop"},{"id":"social-square","kind":"social","title":"Square post","name":"square post","file":"social/formats.html#so-square","summary":"1080 by 1080. One claim or quote in seven words or fewer.","fit":{"goal":{"announce":3,"inspire":3,"sell":1},"audience":{"public":3,"customer":2}},"ask":"Make a square social post from this one sentence, in my colours.","size":"1080x1080","tab":"social"},{"id":"social-portrait","kind":"social","title":"Portrait stat post","name":"portrait stat post","file":"social/formats.html#so-portrait","summary":"1080 by 1350. One number, what it means, and a before-and-after bar.","fit":{"goal":{"report":3,"announce":2,"sell":2},"audience":{"public":3,"customer":2,"executive":1}},"ask":"Make a portrait social post with my best number, what it means, and a before-and-after bar.","size":"1080x1350","tab":"social"},{"id":"social-story","kind":"social","title":"Story","name":"story","file":"social/formats.html#so-story","summary":"1080 by 1920. A photograph above, two short lines below.","fit":{"goal":{"inspire":3,"sell":2,"announce":2},"audience":{"public":3,"customer":3}},"ask":"Make an upright story picture from my photo with two short lines under it.","size":"1080x1920","tab":"social"},{"id":"social-carousel","kind":"social","title":"Three-slide carousel","name":"three-slide carousel","file":"social/formats.html#so-carousel-1","summary":"Three pictures of 1080 by 1350: the hook, the steps, the ask.","fit":{"goal":{"teach":3,"sell":2,"announce":1},"audience":{"public":3,"learner":3,"customer":2}},"ask":"Make a three-slide carousel from my notes: a hook that stands alone, the steps, then one ask.","size":"3 x 1080x1350","tab":"social"},{"id":"social-link","kind":"social","title":"Link preview","name":"link preview","file":"social/formats.html#so-link","summary":"1200 by 630. The picture shown when a page is shared as a link.","fit":{"goal":{"announce":3,"sell":1,"report":1},"audience":{"public":3,"customer":2,"executive":1}},"ask":"Make the link preview picture for my page: the title large, my company name small.","size":"1200x630","tab":"social"}],"rules":{"weights":{"goal":3,"audience":2},"look_for_voice":{"voice-keynote":"Keynote black","voice-story":"Cinematic","voice-teacher":"Clean","voice-pitch":"Faded film","voice-practical":"Field guide","voice-analyst":"Dashboard","voice-brief":"Paper memo"}},"labels":{"goal":{"report":"Say how something went","decide":"Get a decision","sell":"Win a customer","teach":"Explain how something works","inspire":"Make people feel a change","announce":"Tell people something new"},"audience":{"customer":"A customer","executive":"A busy decision-maker","team":"My own team","public":"People who do not know us","learner":"Someone learning"},"format":{"page":"A web page","deck":"A slide deck","social":"A social post","any":"Show me one of each"}},"social_styles":[{"id":"studio","name":"Studio","summary":"Slate, fog and a warm brown. The default.","swap":{}},{"id":"bold","name":"Bold","summary":"Navy, white, a strong red and yellow. For announcements.","swap":{"#1b2228":"#0a2540","#e8edf3":"#ffffff","#774528":"#b3261e","#d2b78c":"#ffd23f","#a5b9d8":"#b9d4f1","#4b596e":"#3a4a5e","#f0d9b0":"#ffe9a8"}},{"id":"soft","name":"Soft","summary":"Plum, cream and terracotta. For stories and thanks.","swap":{"#1b2228":"#3b2a3f","#e8edf3":"#fbf3e8","#774528":"#9a4a2f","#d2b78c":"#f2c9a0","#a5b9d8":"#dcc9e0","#4b596e":"#5d4a5f","#f0d9b0":"#fde3c4"}}],"palette_roles":[["surface","Page background",0.97,0.012,60],["surface2","Panels and cards",0.93,0.02,0],["line","Borders and rules",0.86,0.025,0],["muted","Secondary text",0.48,0.03,30],["ink","Main text",0.22,0.03,0],["accent","Buttons and links",0.46,0.14,10],["accentsoft","Highlights behind text",0.92,0.05,0]],"palette_rule":"About 60 parts background, 30 parts text and structure, 10 parts accent, judged by eye and not by counting pixels. The accent is for things to act on and nothing else."}}};window.STUDIO=STUDIO;

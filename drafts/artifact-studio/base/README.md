@@ -1,123 +1,59 @@
-# The base: everything you need
+# The base: everything the studio is made of
 
-This folder is the product. It holds every example, the templates, the sentences and the source.
-The [skill](../../../skills/artifact-studio/) sits in the repository's `skills/` folder and is
-part of the base. The level folders beside this one only add to it.
+This folder is the product. The landing page and the three level guides beside it only explain
+how to use what is in here.
 
 **Think of it as** a showroom with a stockroom behind it. Every item on the floor works, each has
 a tag saying how to order one, and you can carry any of them out as a file.
 
-## What is in it
-
 | You want | Open | What it is |
 | --- | --- | --- |
-| To see everything | [`studio.html`](studio.html) | One page with a tab for every template and part, a picker, the cards, the skill and a guide |
-| The library | [`templates/`](templates/) | Templates and components, each a file you can open or copy. [`templates/README.md`](templates/README.md) is the index for people and [`templates/index.json`](templates/index.json) is the index for agents |
+| To see everything in one page | [`studio.html`](studio.html) | Every template and part in tabs, with a picker and a palette maker. Download it and open it in a browser |
+| The instructions for a chatbot | [`instructions/`](instructions/) | `AI-INSTRUCTIONS.md` to paste at level 1, and `preferences-template.md` to fill in at level 2 |
+| The library | [`templates/`](templates/) | Every template, part and starter as its own file. [`README.md`](templates/README.md) is the index for people, [`index.json`](templates/index.json) for agents |
+| Sample outputs | [`examples/`](examples/) | Six worked requests: what was asked, the notes, what was picked and what came back |
 | The words that ask for each one | [`sentences.md`](sentences.md) | Every sentence, generated from the templates |
-| Your colours and type on one page | [`forms/design-spec.md`](forms/design-spec.md) | A form to fill in once |
-| A brief for one piece | [`forms/content-brief.md`](forms/content-brief.md) | A form to fill in each time |
-| To take in a design you like | [`inspiration/`](inspiration/) | How a find becomes a note, a change or a new part, without copying it |
-| Something the studio does not do | [`RESOURCES.md`](RESOURCES.md) | Outside skills, open-source frameworks and paid services, with dates |
-| The instructions an assistant follows | [`skills/artifact-studio/`](../../../skills/artifact-studio/) | The skill, its cards, the build rules, the checklist and the page skeleton |
-| To see what a good result looks like | [`examples/`](examples/) | Six worked requests: what was asked, the notes, what was picked and what came back |
-| The reasoning | [`../docs/best-practices.md`](../docs/best-practices.md) | Ten practices and how to add to the library |
-| To test a sentence | [`../docs/sentence-test.md`](../docs/sentence-test.md) | The sheet for scoring a sentence in a fresh chat |
-| To change or rebuild any of it | [`source/`](source/) | Views, the catalogue, the build script and checks |
+| The skill | [`skills/artifact-studio/`](skills/artifact-studio/) | What an assistant follows: the steps, the cards, the build rules, the checklist and the page skeleton |
+| Connectors | [`connectors/`](connectors/) | The MCP server that gives an agent the library as tools |
+| Your colours, and a brief for one piece | [`forms/`](forms/) | Two short forms to fill in |
+| To keep a design you admired | [`inspiration/`](inspiration/) | How a find becomes a card, without copying it |
+| Something the studio does not do | [`RESOURCES.md`](RESOURCES.md) | Outside skills, frameworks and services, with dates |
+| Instructions for agents | [`AGENTS.md`](AGENTS.md), [`CLAUDE.md`](CLAUDE.md) | The path from a request to a finished file |
+| To change or check any of it | [`source/`](source/), [`gates.json`](gates.json) | The catalogue, the views, the build script, the tests and the list of checks |
 
-GitHub shows HTML files as source, so download a file and open it in a browser.
+The build counts the library and writes this line: <!-- counts -->20 templates (4 pages, 7 voices, 4 decks, 5 social formats), 53 components (12 page parts, 12 photo parts, 12 animated SVG files with 11 GIF copies, 17 design ideas for cards, layouts and colour) and 9 looks<!-- /counts -->.
 
-## The library at a glance
+## Check it
 
-| Kind | Count | Where |
-| --- | --- | --- |
-| Pages | 4 | `templates/pages/`: report, proposal, explainer, landing page |
-| Voices | 7 | `templates/voices/`: keynote, storyteller, teacher, pitch, practical instructor, analyst, executive brief |
-| Decks | 4 | `templates/decks/`: visionary, story, briefing, workshop |
-| Social formats | 5 | `templates/social/formats.html`: square, portrait stat, story, three-slide carousel, link preview. Three styles: Studio, Bold, Soft |
-| Page parts | 12 | `templates/components/page-parts.html` |
-| Photo parts | 12 | `templates/components/photo-parts.html` |
-| Animated SVG | 12 | `templates/components/svg/`, one file each |
-| Looks | 9 | `templates/looks/nine-looks.html` |
-| Design ideas | 17 | `templates/components/cards.html`, `layouts.html` and `colour.html`: six kinds of card, six layouts, five colour ideas with a palette maker |
-| Starters | 11 | `templates/starters/`: each deck and each social picture as one small file with system fonts, to copy and fill |
+```
+python3 ../../../tools/gates.py .          # quick checks, about 30 seconds
+python3 ../../../tools/gates.py . --all    # adds every page at three widths, about 10 minutes
+```
 
-The build counts the library and writes the line below, and `templates/index.json`: <!-- counts -->20 templates (4 pages, 7 voices, 4 decks, 5 social formats), 53 components (12 page parts, 12 photo parts, 12 animated SVG files with 11 GIF copies, 17 design ideas for cards, layouts and colour) and 9 looks<!-- /counts -->. All seven voices and both decks
-use the same invented case, so the only thing that changes between them is the manner.
+It ends with "All gates that ran passed" or "DO NOT SHIP" and the reason. Each check in
+[`gates.json`](gates.json) says what it proves. The page check needs `playwright` and a Chrome
+binary, and runs an accessibility scan when `AXE_JS` points at `axe.min.js`.
 
-## Facts about the file
+## Rebuild it
 
-- Each template is one HTML file with its fonts and any photograph inside it. Those without a
-  photograph are about 0.3 MB. Those with one are 0.6 to 1.4 MB. The studio page is about 1.6 MB.
-- Each animated SVG is one file of about 1 KB with no script.
-- It loads nothing from the network and uses no libraries.
-- Tabs are radio buttons styled as tabs, so they switch with scripts turned off. The script adds
-  the animated parts and keeps the address after the `#` in step.
-- Each tab's script sits in its own script element, so a fault in one cannot stop the others.
-- All example companies, people and figures are invented, and each page says so.
+```
+python3 source/build.py
+```
+
+One file feeds everything: [`source/catalog.py`](source/catalog.py) holds the templates, their fit
+scores and the palette rule. The build writes the studio page, the template files, both indexes,
+`sentences.md`, the pasted instructions and the North Star page. It needs the Python `markdown`
+package. Fonts and photographs are already encoded in `source/assets.json`.
 
 ## What was checked, and what was not
 
-Checked on 2026-11-15, in Chrome:
+- **Checked, in Chrome:** every tab of the studio page and every template at 320, 390 and 1280
+  pixels wide. No script errors, no sideways scrolling, and no violations in an automated
+  accessibility scan, which covers only part of the standard.
+- **Not checked:** a real phone, Safari, Firefox, a screen reader, or anyone other than the author
+  using it.
 
-- Every tab of the studio page and every template file at 320, 390 and 1280 pixels wide: no
-  script errors, no sideways scrolling, exactly one view showing, no photo frame left empty.
-- Every tab at 768 and 1024 pixels wide, either side of the layout's breakpoint, before the
-  pages were reorganised into this folder: no errors, no sideways scrolling.
-- Tabs with scripts turned off: the first tab shows on load and tapping a tab changes it.
-- One tab's script broken on purpose: the other tabs still set themselves up, and every tab
-  still opens.
-- The script path used by browsers without scroll-driven animations.
-- The picker: the page's script and the Python rules give the same answer for all 120 combinations
-  of goal, audience and format. `source/tests/check_pick.py` runs this.
-- The decks: buttons and arrow keys move between slides, and with scripts off the slides are a
-  readable column.
-- The social formats: the download button produces a PNG at full size with the fonts inside.
-- Arithmetic in the examples: report rows add up to the totals, and percentages match.
-- An automated accessibility scan (axe-core, WCAG 2 A and AA rules) of every tab of the studio page and of every template file: no violations after fixes. An automated scan covers only part of the
-  standard.
-
-Not checked:
-
-- A real phone, Safari or Firefox.
-- A screen reader. Controls use standard elements and labels, and that is as far as it went.
-- Anyone other than the author using it.
-
-## Rerun the checks
-
-One command runs every check and says plainly whether the library may ship. Run it from the tool's
-folder, one level up from here.
-
-```
-python3 ../../tools/gates.py .          # quick gates
-python3 ../../tools/gates.py . --all    # adds the page check at three widths
-```
-
-The gates are listed in [`../gates.json`](../gates.json), each with what it proves. The page check
-needs `playwright` and a Chrome binary, and runs the accessibility scan when `AXE_JS` points at
-`axe.min.js`.
-
-## Source and rebuild
-
-```
-cd source
-python3 prepare_assets.py --lake photos/lake.jpg --sunset photos/sunset.jpg --fonts path/to/fonts
-python3 build.py
-```
-
-| File | Role |
-| --- | --- |
-| `source/shell.html` | The page frame: header, tabs, shared helpers |
-| `source/base.css` | Shared styles |
-| `source/views/` | One file per tab: style, markup, script. Document tabs are rendered from the Markdown files in this folder and the skill |
-| `source/prepare_assets.py` | Encodes photos and fonts, measures the lake photo, traces its line art. Writes `assets.json` |
-| `source/catalog.py` | Every template, its fit scores, and the rules that pick between them. Read by the build, the Pick tab and the MCP server |
-| `source/build.py` | Assembles `studio.html` and the files in `templates/`. The studio's tabs are the `STUDIO_GROUPS` list. Also regenerates the two indexes, `sentences.md`, the skill's component catalogue and `level-1/AI-INSTRUCTIONS.md` |
-
-`build.py` needs the Python `markdown` package. `prepare_assets.py` needs pillow, numpy, fonttools and brotli, and a folder holding the font files
-named in its header. `assets.json` is committed, so the build runs without the asset step.
-
-A rebuild from the stored photos looks the same but is not byte for byte identical, because the
-photos are compressed a second time.
+Every example company, person and figure is invented, and each page says so.
 
 ## Credits and licences
 

@@ -5,9 +5,9 @@ Reads   catalog.py (templates, fit scores, social styles, the palette rule), she
 Writes  base/studio.html                      every view as a tab
         base/templates/                       each template and part as its own page, the starters, index.json, README.md
         base/sentences.md                     every ask, in one list
-        level-1/AI-INSTRUCTIONS.md            a copy of the skill's single-file edition
-        skills/artifact-studio/references/    components.md and design-ideas.md
-        docs/practical-ai-explained.html and docs/reports/*.html
+        base/instructions/AI-INSTRUCTIONS.md  a copy of the skill's single-file edition
+        base/skills/artifact-studio/references/  components.md and design-ideas.md
+        north-star.html in the project folder, and docs/reports/*.html
         the counts line in README.md and base/README.md
 
 A view is one file: an optional <style>, the markup (a div.view with id v-NAME), and an optional <script> that
@@ -18,7 +18,7 @@ Macros, each on a line of its own:
   @@md path    @@svgset    @@facet name default    @@pick goal audience format    @@palette hue
 
 Run: python3 build.py   (prepare_assets.py is needed only when a font or photograph changes)
-This file is dense. It was written quickly and is covered by the gates in ../../gates.json, not by its own clarity.
+This file is dense. It was written quickly and is covered by the gates in ../gates.json, not by its own clarity.
 """
 import json, os, re, glob, html
 HERE=os.path.dirname(os.path.abspath(__file__))
@@ -43,7 +43,7 @@ def levels_macro(m):
 import markdown, base64
 import catalog as C
 ROOT=os.path.normpath(os.path.join(HERE,'..','..'))            # drafts/artifact-studio
-SKILL=os.path.normpath(os.path.join(ROOT,'..','..','skills','artifact-studio'))
+SKILL=os.path.join(ROOT,'base','skills','artifact-studio')
 def md_html(path,drop_h1=False):
     src=open(path).read()
     if src.startswith('---'):
@@ -113,7 +113,7 @@ for f in sorted(glob.glob(os.path.join(HERE,'views','*.html'))):
     VFILE[m.group(1)]=os.path.basename(f); VIEW[m.group(1)]=t; VJS[m.group(1)]=sc; VCSS[m.group(1)]='\n'.join(own)
 # level 1's instructions for the assistant are the single-file skill without its header, written first so the tab below can show them
 _one=open(os.path.join(SKILL,'SKILL-single-file.md')).read().split('---',2)[2].strip()
-open(os.path.join(ROOT,'level-1','AI-INSTRUCTIONS.md'),'w').write('<!-- Generated from skills/artifact-studio/SKILL-single-file.md by base/source/build.py. Edit that file, not this one. -->\n\n'+_one+'\n')
+open(os.path.join(ROOT,'base','instructions','AI-INSTRUCTIONS.md'),'w').write('<!-- Generated from base/skills/artifact-studio/SKILL-single-file.md by base/source/build.py. Edit that file, not this one. -->\n\n'+_one+'\n')
 MD={ # name: (title, path, note shown above a copy-ready block or None to render the Markdown)
  'c-recipes':('Recipe cards',SKILL+'/references/recipes.md',None),
  'c-voices':('Voice cards',SKILL+'/references/voices.md',None),
@@ -122,11 +122,10 @@ MD={ # name: (title, path, note shown above a copy-ready block or None to render
  'c-brief':('Content brief',ROOT+'/base/forms/content-brief.md','Fill this in for each page. Five lines that tell the assistant who the page is for and what it must do. Copy it, then replace the parts in brackets.'),
  'c-sentences':('All sentences',ROOT+'/base/sentences.md',None),
  's-skill':('The skill',SKILL+'/SKILL.md',None),
- 's-single':('AI instructions',ROOT+'/level-1/AI-INSTRUCTIONS.md','Level 1 needs only this. It is the whole skill in one file. Copy it and paste it into the instructions of a Project, or into the first message of a chat.'),
+ 's-single':('AI instructions',ROOT+'/base/instructions/AI-INSTRUCTIONS.md','Level 1 needs only this. It is the whole skill in one file. Copy it and paste it into the instructions of a Project, or into the first message of a chat.'),
  's-skel':('Page skeleton',SKILL+'/assets/page-skeleton.html','The starting file the skill builds from. One self-contained page with the tokens, the type scale and the motion rules already in place.'),
  's-rules':('Build rules',SKILL+'/references/build-rules.md',None),
- 's-check':('Checklist',SKILL+'/references/pre-ship-checklist.md',None),
-  's-best':('Best practices',ROOT+'/docs/best-practices.md',None)}
+ 's-check':('Checklist',SKILL+'/references/pre-ship-checklist.md',None)}
 for n,(title,path,raw) in MD.items(): VIEW[n]=md_view(n,title,path,raw); VJS[n]=[]
 LABEL={'voice-keynote':'Keynote','voice-story':'Storyteller','voice-teacher':'Teacher','voice-pitch':'Pitch','voice-practical':'Practical','voice-analyst':'Analyst','voice-brief':'Brief',
        'recipe-report':'Report','recipe-proposal':'Proposal','recipe-explainer':'Explainer','recipe-landing':'Landing page'}
@@ -137,7 +136,7 @@ G_VOICES=('Voices',VOICES,'One message, told seven ways. Tap a voice:'); G_RECIP
 STUDIO_GROUPS=[G_VOICES,('Pages',RECIPES,'Four whole pages. Tap one:'),('Decks',['deck-visionary','deck-story','deck-briefing','deck-workshop'],'Four slide decks on one engine:'),('Social',['social'],''),
   ('Parts',['parts','photo','svg','looks'],'The pieces a page is made of:'),('Design',['cards','layouts','colour'],'The ideas behind a good page:'),('Pick',['pick','mix'],'Let the studio suggest, or choose every part yourself:'),
   ('Reference',['c-recipes','c-voices','c-parts','c-spec','c-brief','c-sentences'],'The reference sheets, the two forms and every sentence:'),
-  ('Skill',['s-skill','s-single','s-skel','s-rules','s-check','s-best'],'What the assistant follows. "AI instructions" is the paste-in version:'),
+  ('Skill',['s-skill','s-single','s-skel','s-rules','s-check'],'What the assistant follows. "AI instructions" is the paste-in version:'),
   ('Guide',['use'],'')]
 LABEL.update({'cards':'Cards','layouts':'Layouts','colour':'Colour','parts':'Page parts','photo':'Photo parts','svg':'Animated SVG','looks':'Looks','pick':'Pick for me','mix':'Mix it myself','deck-visionary':'Visionary','deck-story':'Story','deck-briefing':'Briefing','deck-workshop':'Workshop'})
 # every template again as a file of its own: view -> (file under base/templates, title)
@@ -305,7 +304,7 @@ def write_design_ideas():
         '| Role | Lightness | Chroma | Share of the page |','| --- | --- | --- | --- |']+[f'| {u} | {L} | {Cc} | {str(sh)+" parts" if sh else "as needed"} |' for k,u,L,Cc,sh in C.PALETTE_ROLES]
     o+=['','Write each colour as `oklch(lightness chroma hue)` with a hex value beside it. Then check these pairs and list the ratios in the delivery note:','']+[f"- {k['pair']}: at least {k['needs']:g} to 1" for k in p['checks']]
     o+=['',p['rule'],'','With the studio\'s MCP server connected, `artifact-studio:make_palette` does the sums and the checks.','']
-    open(os.path.join(REPO,'skills','artifact-studio','references','design-ideas.md'),'w').write('\n'.join(o))
+    open(os.path.join(SKILL,'references','design-ideas.md'),'w').write('\n'.join(o))
 def write_index(parts,photo):
     import datetime
     slug=lambda x: re.sub(r'[^a-z0-9]+','-',x.lower()).strip('-')
@@ -396,7 +395,7 @@ def export_docs():
         photo.append((name,un(re.search(r'<p class="measure">(.*?)</p>',sec,re.S).group(1)),un(q),facts['Effort'],facts['Made here with'],facts['Grow into'],facts['Seen in']))
     looks=re.findall(r"\{id:'(\w+)',name:'([^']+)',line:'([^']+)',voice:'([^']+)',by:'([^']+)',ask:'([^']+)'\}",pt)
     o=['# Sentences','','Every sentence in the studio, in one place. Copy one, attach your notes (and a photo if the page uses one), and paste both into a chat assistant.','',
-       '**Status: untested.** These sentences describe what the demo pages do. They have not yet been run in fresh chats and scored. Record results in [`sentence-test.md`](../docs/sentence-test.md).','',
+       '**Status: untested.** These sentences describe what the demo pages do. They have not yet been run in fresh chats and scored.','',
        'This file is generated from the examples by `base/source/build.py`. Edit the views, not this file.','']
     for kind,head in (('recipe','Pages'),('voice','Voices'),('deck','Decks'),('more','Social formats and animated SVG')):
         o+=[f'## {head}','']
@@ -415,20 +414,18 @@ def export_docs():
     for head,rows in (('Page components (no photo needed)',parts),('Photo components',photo)):
         c+=[f'## {head}','','| Component | What it is for | How it is made | Grow into |','| --- | --- | --- | --- |']
         c+=[f'| {n} | {b} | {made} | {grow} |' for n,b,q,effort,made,grow,use in rows]+['']
-    sk=os.path.join(HERE,'..','..','..','..','skills','artifact-studio','references','components.md')
+    sk=os.path.join(SKILL,'references','components.md')
     write_design_ideas()
     write_index(parts,photo)
     open(sk,'w').write('\n'.join(c).rstrip()+'\n'); print('docs:',len(lv),'level sets,',len(parts),'page parts,',len(photo),'photo parts')
 export_docs()
 
-# ---- the one-page explainer saved in docs/ (built with the studio's own recipe and voice)
-SCORES=[('Teaching and promo',85,90),('Stunning, with tone',80,86),('Easy for a non-coder',70,74),('Fits the level ladder',60,90),('Reuse before build',45,58),('Evidence',45,64),('Business usefulness',40,80)]
-def build_explained():
-    t=open(os.path.join(HERE,'explained.src.html')).read()
+# ---- north-star.html: the explainer for this project, built with the studio's own explainer template and practical voice
+def build_north_star():
+    t=open(os.path.join(HERE,'north-star.src.html')).read(); c=json.load(open(os.path.join(ROOT,'base','templates','index.json')))['counts']
     f2=[x for x in ff if x[3] in ('np7','np4','cp4','cp4i')]
     fonts2='\n'.join(f'@font-face{{font-family:"{n}";font-weight:{w};font-style:{s};font-display:swap;src:url(data:font/woff2;base64,{A["fonts"][k]}) format("woff2")}}' for n,w,s,k in f2)
-    bars=''.join(f'<div class="hb-row"><span class="hb-l">{n}</span><span class="hb-t"><span><i class="q" style="--v:{b*.8:.0f}%"></i><b>{b}</b></span><span><i style="--v:{a*.8:.0f}%"></i><b>{a}</b></span></span></div>' for n,b,a in SCORES)
-    t=t.replace('/*FONTS*/',fonts2).replace('/*PHOTO*/',f'--photo:url("data:image/jpeg;base64,{A["sunset"]}");').replace('__BARS__',bars)
-    out=os.path.join(HERE,'..','..','..','..','docs','practical-ai-explained.html'); open(out,'w').write(t)
-    print('explained:',round(len(t.encode())/1024),'KB; overall before',round(sum(b for _,b,_ in SCORES)/len(SCORES)),'after',round(sum(a for _,_,a in SCORES)/len(SCORES)))
-build_explained()
+    t=t.replace('/*FONTS*/',fonts2).replace('/*PHOTO*/',f'--photo:url("data:image/jpeg;base64,{A["sunset"]}");')
+    t=t.replace('__T__',str(c['templates'])).replace('__C__',str(c['components'])).replace('__L__',str(c['looks']))
+    open(os.path.join(ROOT,'north-star.html'),'w').write(t); print('north star:',round(len(t.encode())/1024),'KB')
+build_north_star()

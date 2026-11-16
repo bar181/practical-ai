@@ -51,8 +51,8 @@ who work with AI agents every day.
 | **Receipts and invoices into a sheet**<br>Monthly. Planned | Reads each receipt and fills the form | Check each line against the photo |
 
 These are the jobs people most often use AI for, from usage studies and small-business surveys
-read in November 2026. The full list, with the research, is in
-[`docs/PRIORITIES.md`](docs/PRIORITIES.md).
+read in November 2026. What gets built next is in [`docs/practical-ai-priorities.md`](docs/practical-ai-priorities.md),
+and the research is in [`docs/tool-inventory.md`](docs/tool-inventory.md).
 
 ## Ready now: Artifact Studio
 
@@ -61,16 +61,16 @@ curated library of modern design templates. Say "show this as a presentation" an
 report you would be proud to present.
 
 <p align="center">
-  <a href="drafts/artifact-studio/"><img src="drafts/artifact-studio/docs/img/show-keynote.webp" width="800" alt="Animated screen capture of the keynote template in Artifact Studio: huge white type on black, one idea per screen"></a>
+  <a href="drafts/artifact-studio/"><img src="drafts/artifact-studio/base/img/show-keynote.webp" width="800" alt="Animated screen capture of the keynote template in Artifact Studio: huge white type on black, one idea per screen"></a>
 </p>
 
 <p align="center">
-  <img src="drafts/artifact-studio/docs/img/voice-storyteller.webp" width="49%" alt="Screen capture of the storyteller voice in Artifact Studio: a sunset photograph with a story opening in serif type">
-  <img src="drafts/artifact-studio/docs/img/nine-looks.webp" width="40%" alt="Screen capture of nine design looks in Artifact Studio, shown side by side with the same content">
+  <img src="drafts/artifact-studio/base/img/voice-storyteller.webp" width="49%" alt="Screen capture of the storyteller voice in Artifact Studio: a sunset photograph with a story opening in serif type">
+  <img src="drafts/artifact-studio/base/img/nine-looks.webp" width="40%" alt="Screen capture of nine design looks in Artifact Studio, shown side by side with the same content">
 </p>
 
 <p align="center">
-  <img src="drafts/artifact-studio/docs/img/by-hand-or-studio.svg" width="720" alt="Animation comparing a presentation made by hand, one hour to several days, with Artifact Studio, a solid draft in about 5 minutes">
+  <img src="drafts/artifact-studio/base/img/by-hand-or-studio.svg" width="720" alt="Animation comparing a presentation made by hand, one hour to several days, with Artifact Studio, a solid draft in about 5 minutes">
 </p>
 
 <p align="center"><a href="drafts/artifact-studio/"><b>Open Artifact Studio</b></a></p>
@@ -111,7 +111,7 @@ room.
 
 Do not work from this page. Read [`AGENTS.md`](AGENTS.md). It routes you by task. To make a page, a
 deck or a social post, go straight to
-[`drafts/artifact-studio/AGENTS.md`](drafts/artifact-studio/AGENTS.md).
+[`drafts/artifact-studio/base/AGENTS.md`](drafts/artifact-studio/base/AGENTS.md).
 
 <details>
 <summary>How the repository is organised, and the ground rules</summary>
@@ -125,8 +125,8 @@ deck or a social post, go straight to
 | [`skills/`](skills/) | Skills an assistant can load, one folder each |
 | [`tools/`](tools/) | Small scripts that check the repository |
 
-Inside every tool, `base/` holds everything and a level holds only what it adds: `level-1/` is
-Beginner, `level-2/` is Advanced, `level-3/` is Expert.
+Inside every tool, `base/` holds everything. Beside it sit a landing page, a North Star page and
+one guide per level: Beginner, Advanced, Expert.
 
 - Reuse what already exists before building anything new.
 - A person approves anything that posts, sends, pays or publishes.

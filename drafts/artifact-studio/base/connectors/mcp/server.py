@@ -15,8 +15,8 @@ from mcp.server.mcpserver.exceptions import ToolError
 from mcp.types import ToolAnnotations
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-ROOT = os.path.normpath(os.path.join(HERE, "..", ".."))                       # drafts/artifact-studio
-SKILL = os.path.normpath(os.path.join(ROOT, "..", "..", "skills", "artifact-studio"))
+ROOT = os.path.normpath(os.path.join(HERE, "..", "..", ".."))                 # the project folder
+SKILL = os.path.join(ROOT, "base", "skills", "artifact-studio")
 sys.path.insert(0, os.path.join(ROOT, "base", "source"))
 import catalog                                                                # the same rules the studio page uses
 

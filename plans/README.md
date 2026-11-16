@@ -1,7 +1,7 @@
 # Plans
 
 One folder for each tool that has a North Star page or a plan. **The list of them, with what each
-does at the Beginner and Advanced levels, is [`docs/PRIORITIES.md`](../docs/PRIORITIES.md).** It is
+does at the Beginner and Advanced levels, is [`docs/tool-inventory.md`](../docs/tool-inventory.md).** It is
 not repeated here.
 
 | Here | What it is |

@@ -16,7 +16,7 @@ Six requests, each with the notes that came with it, what the studio picked, and
 ## How to test one
 
 1. Open the example's `request.md`.
-2. Give a fresh assistant the request and the notes. Attach the starter if the example names one. At level 1, paste [`AI-INSTRUCTIONS.md`](../../level-1/AI-INSTRUCTIONS.md) first.
+2. Give a fresh assistant the request and the notes. Attach the starter if the example names one. At level 1, paste [`AI-INSTRUCTIONS.md`](../instructions/AI-INSTRUCTIONS.md) first.
 3. Score what comes back against "What a good result must have", one point for each line.
 4. Change "Not yet" in the table above to the score and the date, in [`make_examples.py`](make_examples.py), which writes this file.
 
@@ -25,4 +25,4 @@ Six requests, each with the notes that came with it, what the studio picked, and
 - Every business and figure is invented.
 - The outputs were made by the assistant that built this repository, following the skill, with the content typed into [`make_examples.py`](make_examples.py). **No fresh assistant has been given these requests yet.** That is what the last column is for.
 - They are rebuilt from the starters each time the script runs, so they cannot fall out of step with the library.
-- The same six requests are the skill's test cases, in [`skills/artifact-studio/evals/evals.json`](../../../../skills/artifact-studio/evals/evals.json).
+- The same six requests are the skill's test cases, in [`skills/artifact-studio/evals/evals.json`](../skills/artifact-studio/evals/evals.json).

@@ -5,7 +5,8 @@ A gate is one command that must exit with code 0. A project lists its gates in g
     [{"name": "links", "proves": "No Markdown link is broken", "run": "python3 ../../tools/check_links.py ."},
      {"name": "pages", "proves": "...", "run": "...", "slow": true}]
 
-Commands run from the project folder, in order. Gates marked slow run only with --all.
+Commands run from the folder that holds gates.json, in order. That is the project folder, or its base/ folder
+when the project keeps everything there. Gates marked slow run only with --all.
 The run stops at nothing: every gate is run, so one report shows everything that is wrong.
 Exit code 0 only if every gate that ran passed.
 """
@@ -14,6 +15,8 @@ import json, os, subprocess, sys, time
 if len(sys.argv) < 2:
     sys.exit(__doc__)
 project = os.path.abspath(sys.argv[1]); run_all = "--all" in sys.argv
+if not os.path.exists(os.path.join(project, "gates.json")) and os.path.exists(os.path.join(project, "base", "gates.json")):
+    project = os.path.join(project, "base")                          # a project that keeps everything in base/ keeps its gates there too
 gates = json.load(open(os.path.join(project, "gates.json"), encoding="utf-8"))
 TAIL = 6                                                             # lines of a failed gate's output to show
 results = []

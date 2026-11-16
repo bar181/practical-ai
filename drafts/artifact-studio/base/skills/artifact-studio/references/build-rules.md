@@ -113,4 +113,4 @@ network dependency.
 | Step triggers on a long story | Scrollama | cdnjs or unpkg, pinned |
 | Large diagrams from text | Mermaid | cdnjs, pinned |
 
-Licences and the date each was checked are in `drafts/artifact-studio/docs/landscape-review.md`.
+Check each library's licence before you ship with it.
