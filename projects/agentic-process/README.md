@@ -7,9 +7,9 @@
 <h3 align="center">Your AI can build almost anything. That is the problem.</h3>
 
 **An AI agent will happily build the wrong thing three times.** Agentic Process is the order of
-work that stops it: nine steps, a gate after each, and a test by a fresh AI session before any
-person sees the result. It is free. Use it with ChatGPT, Claude, Gemini or the chatbot you
-already have, or hand it to your coding agent.
+work that stops it: nine steps, a gate after each, and a test in a fresh chat, run before anyone
+else sees the result. It is free. It is written for any chatbot (so far it has been
+tested in Claude only), or hand it to your coding agent.
 
 ### Start here: [read the guide](https://raw.githack.com/bar181/practical-ai/main/projects/agentic-process/base/explainer.html)
 
@@ -25,7 +25,7 @@ a browser: GitHub itself shows HTML files as code.
   <a href="https://raw.githack.com/bar181/practical-ai/main/projects/agentic-process/base/explainer.html"><b>Read the guide</b></a> &nbsp;·&nbsp;
   <a href="#try-it-in-five-minutes">Try it in five minutes</a> &nbsp;·&nbsp;
   <a href="base/PROCESS.md">The nine steps in detail</a> &nbsp;·&nbsp;
-  <a href="base/TEACH-IN-30-MINUTES.md">Teach it in 30 minutes</a>
+  <a href="https://raw.githack.com/bar181/practical-ai/main/projects/agentic-process/base/training.html">Teach it in 30 minutes</a>
 </p>
 
 ## Try it in five minutes
@@ -34,17 +34,20 @@ a browser: GitHub itself shows HTML files as code.
 
 Paste this into the chatbot you already use. Change the last line to a job you repeat.
 
+<!-- prompt:start (written by _build/build.py) -->
 ```
-Read the build coach at https://raw.githubusercontent.com/bar181/practical-ai/main/projects/agentic-process/base/AI-INSTRUCTIONS.md and follow it.
+Read the build coach at https://raw.githubusercontent.com/bar181/practical-ai/main/projects/agentic-process/base/AI-INSTRUCTIONS.md and follow it. If you cannot open it, say so and stop: do not make up a coach of your own.
 
 My idea: every Monday I turn last week's sales notes into an email for my team. I want an AI to draft it.
 ```
+<!-- prompt:end -->
 
 It walks you through the steps one at a time, asks at most two questions in each, and ends with a
-one-page plan and a first version you can test.
+one-page plan and a first version you can test. For a small job like this one it offers a short
+path: steps 1, 6 and 8 in full, steps 2 to 5 in a line each, and step 7 folded into the test. You can start in five minutes; a full first run takes about an hour.
 
-- **It cannot open the link?** Open [`base/AI-INSTRUCTIONS.md`](base/AI-INSTRUCTIONS.md), copy all
-  of it, and paste it in before your idea.
+- **It cannot open the link?** Open [`base/AI-INSTRUCTIONS.md`](base/AI-INSTRUCTIONS.md), press
+  **Raw**, select all, copy, and paste it in before your idea.
 - **Rather go one step at a time?** [The nine steps in detail](base/PROCESS.md) give each step a
   purpose, user stories, what to expect, proof you are done, and a prompt to paste.
 
@@ -53,18 +56,20 @@ one-page plan and a first version you can test.
 | You are | You use | You get |
 | --- | --- | --- |
 | **New to this** (Beginner) | The coach, pasted into any chatbot | A one-page plan and a first prompt you can test today |
-| **Building with an agent** (Advanced) | [The skill and the project template](level-2-files/) | A project folder in your repository, with the front page and first version in place |
+| **Building with an agent** (Advanced) | [One skill folder](level-2-files/) to copy into your agent's skills. Works in any repository | A project folder with its own checks, the front page and the first version in place |
 | **Running agents unattended** (Expert) | [Gates, the fresh-run test and the score sheet](level-3-files/) | Proof of what works, before a person spends time on it |
+| **Teaching it** | [The 30-minute training](https://raw.githack.com/bar181/practical-ai/main/projects/agentic-process/base/training.html): slides with a lesson timer and your notes, and [the plan](base/TEACH-IN-30-MINUTES.md) | One lesson where each learner leaves with a plan of their own |
 
 ### 3. See it used
 
 | Example | Level | What it is |
 | --- | --- | --- |
-| [A Monday email from sales notes](base/examples/monday-email.md) | Beginner | The plan, the prompt and the note a new AI session made from one paragraph, unedited |
-| [A notice checker for a class](base/examples/supplier-notice.md) | Advanced | The same for a teacher who builds with a coding agent: six files written out in full, unedited |
+| [A Monday email from sales notes](base/examples/monday-email.md) | Beginner, short path | The plan, the prompt and the note a new AI session made from one paragraph, unedited |
+| [Deal updates for a sales team](base/examples/shared-tracker.md) | Beginner, all nine steps | The same for a team job, where the coach takes every step |
+| [An agent working unattended](base/examples/unattended-run.md) | Advanced and Expert | A coding agent with only the skill folder, in a repository it had never seen: the plan, the tool it built, two fresh-session tests and its hand-back |
 
-Both people are invented. Both results were made by sessions that had only the coach. Nobody has
-used what they made.
+The people are invented. Each result was made by a session that had only this project's
+instructions. Nobody has used what they made.
 
 **If you are an AI agent:** follow [`AGENTS.md`](AGENTS.md).
 
@@ -117,10 +122,11 @@ use, without rebuilding it three times on the way.
 
 | Part | State |
 | --- | --- |
-| The coach | Run four times by new AI sessions that had only the coach: two ideas, two rounds. Every run handed over a plan, a first version and a note. The runs logged 9 blocking points, then 7; those were fixed and **not re-tested**. Not yet run in ChatGPT or Gemini, or by a person |
+| The coach | Run six times by new AI sessions that had only the coach, across three rounds and three invented people. Every run handed over a plan, a first version and a note. Blocking points per run: 4 to 5 in round 1, 3 to 4 in round 2, 2 to 3 in round 3. The round 3 points are fixed and **not re-tested**. In round 3 the short path was chosen for the small job and all nine steps for the team job, as intended. Not yet run in ChatGPT, Gemini or Copilot, or by a person |
 | The process | Nine steps, each with a purpose, user stories, proof and a prompt. Used by its author to build this project. Nobody else has followed it yet |
-| The template and the skill | Run end to end by a second agent on 16 November 2026, on an invented idea. The layout check passed first time. Two commands failed as written: the skill gave no path for the template script, and the template had no gates file. Both are fixed and tested by the author, **not yet re-run** by a second agent. [Its log](level-3-files/fresh-run/runs/skill-run/SKILL-RUN.md) lists 8 blocking points. No real tool has been built from the template |
-| The fresh-run test | Used on both projects in this repository by their author. The logs are in [`level-3-files/fresh-run/runs/`](level-3-files/fresh-run/runs/) |
+| The template and the skill | Run end to end by a second agent on 16 November 2026, on an invented idea. The layout check passed first time. Two commands failed as written: the skill gave no path for the template script, and the template had no gates file. Both are fixed and tested by the author, **not yet re-run** by a second agent. [Its log](_build/runs/skill-run/SKILL-RUN.md) lists 8 blocking points. No real tool has been built from the template |
+| The fresh-run test | Used on both projects in this repository by their author. The logs are in [`_build/runs/`](_build/runs/) |
+| The training | Made with Artifact Studio's workshop deck, from one source with the lesson plan. Checked at phone and laptop width with an accessibility scan and with scripts off. **Not yet taught.** Opens from the link once this branch is merged |
 | The guide | Made by following Artifact Studio's instructions, from the same source as the detailed steps page. Checked in Chrome at three widths with an accessibility scan, with scripts off, and in the WebKit engine that Safari is built on. Not checked on a real phone. The raw.githack.com link works only once this branch is merged |
 | The times | All estimates. Nobody has been timed |
 | Real use | **None yet.** Nobody outside its author has built a tool with it |
@@ -133,14 +139,14 @@ agentic-process/
   AGENTS.md               the path for an AI agent
   base/                   Beginner: everything you need
     AI-INSTRUCTIONS.md    the build coach: paste into your chatbot
-    PROCESS.md            the nine steps in detail: purpose, user stories, proof and a prompt for each
-    plan-template.md      the one-page plan to fill in
+    PROCESS.md            the nine steps in detail, and the one-page plan to fill in
     explainer.html        the guide: the same steps as a page to read or present
-    TEACH-IN-30-MINUTES.md  a lesson plan
-    examples/             two unedited runs of the coach
-  level-2-files/          Advanced: a skill, a project template and a script to copy it
+    training.html         the 30-minute training: slides, a lesson timer and the teacher's notes
+    TEACH-IN-30-MINUTES.md  the same lesson as a plan to read
+    examples/             unedited runs: two of the coach, one of an agent working unattended
+  level-2-files/          Advanced: one skill folder, with the project template and its checks inside
   level-3-files/          Expert: gates, the fresh-run test and a score sheet
-  _build/                 steps.py, the one source for the steps; build.py, which writes PROCESS.md and the guide
+  _build/                 steps.py and lesson.py, the sources; build.py, which writes every page from them; runs/, the test logs
 ```
 
 ## About the creator

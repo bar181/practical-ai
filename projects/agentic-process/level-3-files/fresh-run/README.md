@@ -8,7 +8,7 @@ Where they stop and frown is where the leaflet is wrong.
 
 ## How to run one
 
-1. Make a folder for the run, outside the project or in its `_build/runs/round-1/`. Put three things in it and nothing else: a copy of your tool's
+1. Make a folder for the run: `_build/runs/round-1/<what was asked>/` in your project. Put three things in it and nothing else: a copy of your tool's
    instructions, the message a user would send (`prompt.txt`), and any files that user would
    attach.
 2. Start a new session: a new chat, or a sub-agent with no memory of the project. Give it
@@ -30,29 +30,12 @@ know about each other.
 
 Then run it again on the fixed instructions, and compare the last line of each log.
 
-## What it found on project one
+## Evidence
 
-On 16 November 2026, thirteen fresh sessions ran in parallel against Artifact Studio. Each took
-between 5 and 11 minutes. Every one finished. Together they logged about 230 points of friction.
-One found that the server broke when its folder was copied by itself. The author's own review,
-over two days, had found two faults. The logs are in
-[`artifact-studio/_build/examples/runs/`](../../../artifact-studio/_build/examples/runs/).
-
-## What it found on this project
-
-The build coach was tested the same way on 16 November 2026: two invented people, a beginner
-and a builder, two rounds each. All four runs handed over a plan, a first version and a note.
-The first round found that the second gate ran backwards (yes meant stop), that the eighth gate
-asked for a test result nobody had, and that "decide" collided with "never invent". The logs and
-the unedited results are in [`runs/`](runs/).
-
-| Round | Beginner idea | Builder idea |
-| --- | --- | --- |
-| 1 | 4 blocking, 11 minor | 5 blocking, 12 minor |
-| 2, after fixes | 4 blocking, 11 minor | 3 blocking, 9 minor |
-
-The round 2 points were fixed and not tested again. The count did not fall much because each
-round finds new, smaller points: the round 2 list does not repeat the round 1 list.
+This test was used on both tools in this repository. The logs, unedited, are in
+[`_build/runs/`](../../_build/runs/) for this project and in
+[Artifact Studio's runs](../../../artifact-studio/_build/examples/runs/). On both, a fresh session
+found faults the author had read past, and each round of fixes found new, smaller ones.
 
 ## Limits
 

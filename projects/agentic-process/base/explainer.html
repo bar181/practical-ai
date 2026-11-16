@@ -75,6 +75,9 @@ section>.wrap>p,.wrap>p{max-width:36em}h2+p{margin-top:12px}section .wrap>p+p{ma
 .gate{margin-top:12px;padding:12px 14px;border-left:5px solid var(--hl);background:#fff7d6;border-radius:0 10px 10px 0;font:400 1rem/1.4 var(--display)}
 .step pre{margin:0;padding:14px;background:var(--bg);border:1px solid var(--line);border-radius:10px;white-space:pre-wrap;overflow-wrap:anywhere;font:400 .92rem/1.5 var(--mono)}
 .btn.sm{justify-self:start;min-height:44px;margin-top:2px;padding:0 18px;font-size:.95rem;background:var(--accent);color:#fff}
+.lvpick{margin:18px 0 0;padding:0;border:0;display:flex;flex-wrap:wrap;gap:8px;font:400 1rem/1.2 var(--display)}.lvpick legend{font:700 .92rem/1.2 var(--display);color:var(--accent);margin-bottom:8px}
+.lvpick label{display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:0 14px;border:1px solid var(--line);border-radius:999px;background:var(--panel);cursor:pointer}.lvpick label:has(input:checked){border-color:var(--accent);background:#e6ecf4;font-weight:700}
+.steplist[data-lvl="Beginner"] .stories li:not([data-lvl="Beginner"]),.steplist[data-lvl="Advanced"] .stories li:not([data-lvl="Advanced"]),.steplist[data-lvl="Expert"] .stories li:not([data-lvl="Expert"]){display:none}
 .all{margin-top:18px;background:var(--panel);color:var(--accent);border:2px solid var(--accent)}
 /* three levels */
 .levels{display:grid;gap:14px;margin-top:22px}
@@ -122,7 +125,7 @@ footer{padding:26px 0 44px;font:400 .88rem/1.45 var(--display);color:var(--muted
   <path class="rail" d="M70,42 H530"/><path class="go" pathLength="1" d="M70,42 H530"/>
   <g><circle cx="70" cy="42" r="26"/><text class="n" x="70" y="49">1-4</text><text x="70" y="108">Decide</text></g>
   <g><circle cx="223" cy="42" r="26"/><text class="n" x="223" y="49">5-7</text><text x="223" y="108">Design</text></g>
-  <g><circle cx="377" cy="42" r="26"/><text class="n" x="377" y="49">8</text><text x="377" y="108">Test</text></g>
+  <g><circle cx="377" cy="42" r="26"/><text class="n" x="377" y="49">8</text><text x="377" y="108">Build, test</text></g>
   <g><circle cx="530" cy="42" r="26"/><text class="n" x="530" y="49">9</text><text x="530" y="108">Grow</text></g></svg></div>
 <ol class="steps">
     <li><span class="who">Steps 1 to 4</span><h3>Decide</h3><p class="what">Scope, reuse check, outside help, cost.</p><p><b>Who:</b> You and the AI, in a chat.</p><p>You name one user and one job. The AI looks for what already exists and what it would cost.</p><p class="fact">Expect about 25 minutes. If something existing already does the whole job, you stop here and write a guide to it.</p></li>
@@ -134,19 +137,21 @@ footer{padding:26px 0 44px;font:400 .88rem/1.45 var(--display);color:var(--muted
 
 <section class="wrap" aria-labelledby="steps-h"><span class="tag">Step by step</span><h2 id="steps-h">The nine steps, one at a time</h2>
   <p>Open a step to see why it exists, who it helps, what you should be holding when it is done, and a prompt to paste into your chatbot. The times are estimates and add up to about an hour for steps 1 to 8.</p>
+  <fieldset class="lvpick" id="lvpick" hidden><legend>Show user stories for</legend>
+    <label><input type="radio" name="lv" value="" checked> Every level</label><label><input type="radio" name="lv" value="Beginner"> Beginner</label><label><input type="radio" name="lv" value="Advanced"> Advanced</label><label><input type="radio" name="lv" value="Expert"> Expert</label></fieldset>
   <button class="btn all" type="button" id="all" aria-expanded="false">Open all nine steps</button>
   <div class="steplist">
   <details class="step" open>
     <summary><span class="num">1</span><span class="nm">Scope</span><span class="gist">One user, one job</span></summary>
     <div class="in">
       <p class="lab">Purpose</p><p>Decide who the tool is for and the one job it does, before anything is built. A tool that does one job gets finished. A tool that does five gets rebuilt.</p>
-      <p class="lab">User stories</p><ul class="stories"><li><b class="lvl">Beginner</b> As someone with a job I repeat every week, I want to say the job in one sentence, so that the AI builds that and nothing else.</li><li><b class="lvl">Advanced</b> As a builder working with a coding agent, I want the scope written into the plan, so that the agent has something to refuse extra work against.</li><li><b class="lvl">Expert</b> As a team lead whose agents work unattended, I want one user and one job agreed before any agent starts, so that I am not reviewing five half-built features.</li></ul>
+      <p class="lab">User stories</p><ul class="stories"><li data-lvl="Beginner"><b class="lvl">Beginner</b> As someone with a job I repeat every week, I want to say the job in one sentence, so that the AI builds that and nothing else.</li><li data-lvl="Advanced"><b class="lvl">Advanced</b> As a builder working with a coding agent, I want the scope written into the plan, so that the agent has something to refuse extra work against.</li><li data-lvl="Expert"><b class="lvl">Expert</b> As a team lead whose agents work unattended, I want one user and one job agreed before any agent starts, so that I am not reviewing five half-built features.</li></ul>
       <p class="lab">What to expect</p><p>About 5 minutes. Expect to drop something you wanted: the first answer is usually two or three jobs.</p>
       <p class="lab">Proof you are done</p><ul class="proof"><li>One sentence: who it is for, what goes in and what comes out</li><li>Three things the first version will not do</li><li>One test: a real input, and what a good result looks like</li></ul>
       <p class="gate"><b>The gate.</b> Can you say the job in one sentence?</p>
       <p class="lab">Prompt to paste</p><pre id="p1-0" tabindex="0">I want to turn a job I repeat into a small AI tool. Help me scope it.
 
-Ask me up to three questions, one at a time. Then write:
+Ask me up to two questions, one at a time. Then write:
 1. The one user.
 2. The one job, in one sentence: what goes in and what comes out.
 3. Three things the first version will not do.
@@ -162,7 +167,7 @@ My job: [describe the job you repeat]</pre><button class="btn sm" type="button" 
     <summary><span class="num">2</span><span class="nm">Reuse check</span><span class="gist">Does it already exist?</span></summary>
     <div class="in">
       <p class="lab">Purpose</p><p>Find out whether something you already have, or something free, does the job. The cheapest tool is the one you do not build.</p>
-      <p class="lab">User stories</p><ul class="stories"><li><b class="lvl">Beginner</b> As someone with a job I repeat every week, I want to know whether my chatbot already does this, so that I do not spend a week rebuilding a built-in feature.</li><li><b class="lvl">Advanced</b> As a builder working with a coding agent, I want links and dates for what exists, so that I can wrap an existing tool and not start from nothing.</li><li><b class="lvl">Expert</b> As a team lead whose agents work unattended, I want the reuse check written down, so that nobody on the team builds what we already pay for.</li></ul>
+      <p class="lab">User stories</p><ul class="stories"><li data-lvl="Beginner"><b class="lvl">Beginner</b> As someone with a job I repeat every week, I want to know whether my chatbot already does this, so that I do not spend a week rebuilding a built-in feature.</li><li data-lvl="Advanced"><b class="lvl">Advanced</b> As a builder working with a coding agent, I want links and dates for what exists, so that I can wrap an existing tool and not start from nothing.</li><li data-lvl="Expert"><b class="lvl">Expert</b> As a team lead whose agents work unattended, I want the reuse check written down, so that nobody on the team builds what we already pay for.</li></ul>
       <p class="lab">What to expect</p><p>About 10 minutes with web search, longer without. Expect to find something that does part of the job. Often the result is that you build less than you planned.</p>
       <p class="lab">Proof you are done</p><ul class="proof"><li>A short list of what exists, each with a link and the date you looked</li><li>One line saying what is still left to build</li><li>If nothing is left: a short guide to the existing tool, and you stop here</li></ul>
       <p class="gate"><b>The gate.</b> After what already exists, is there still something to build? If not, stop and write a guide to that thing.</p>
@@ -179,7 +184,7 @@ Then tell me plainly: does something existing do the whole job? If yes, tell me 
     <summary><span class="num">3</span><span class="nm">Outside help</span><span class="gist">Build it or buy it</span></summary>
     <div class="in">
       <p class="lab">Purpose</p><p>For whatever is left, list the services you could pay for, so that the choice between building and buying is made on purpose.</p>
-      <p class="lab">User stories</p><ul class="stories"><li><b class="lvl">Beginner</b> As someone with a job I repeat every week, I want to know what I would have to pay for, so that there are no surprises after I start.</li><li><b class="lvl">Advanced</b> As a builder working with a coding agent, I want the options listed and not ranked, so that I choose with the cost and the way out in view.</li><li><b class="lvl">Expert</b> As a team lead whose agents work unattended, I want build-or-buy decided for the first version only, so that we do not sign up for a service before we know the tool is used.</li></ul>
+      <p class="lab">User stories</p><ul class="stories"><li data-lvl="Beginner"><b class="lvl">Beginner</b> As someone with a job I repeat every week, I want to know what I would have to pay for, so that there are no surprises after I start.</li><li data-lvl="Advanced"><b class="lvl">Advanced</b> As a builder working with a coding agent, I want the options listed and not ranked, so that I choose with the cost and the way out in view.</li><li data-lvl="Expert"><b class="lvl">Expert</b> As a team lead whose agents work unattended, I want build-or-buy decided for the first version only, so that we do not sign up for a service before we know the tool is used.</li></ul>
       <p class="lab">What to expect</p><p>About 5 minutes. For most beginner tools the answer is that there is nothing to buy. Write that down and go on.</p>
       <p class="lab">Proof you are done</p><ul class="proof"><li>A list of paid options for what is left, or the words &quot;nothing to buy&quot;</li><li>For each part of the tool: build it, buy it, or leave it as something done by hand</li></ul>
       <p class="gate"><b>The gate.</b> Do you know what you would build and what you would buy?</p>
@@ -194,7 +199,7 @@ Then, for each part of the tool, say whether the first version should build it, 
     <summary><span class="num">4</span><span class="nm">Cost</span><span class="gist">What it costs to run</span></summary>
     <div class="in">
       <p class="lab">Purpose</p><p>Put a price and a limit on everything the first version depends on. A tool people cannot afford to run is not finished.</p>
-      <p class="lab">User stories</p><ul class="stories"><li><b class="lvl">Beginner</b> As someone with a job I repeat every week, I want to know it runs on the plan I already have, so that I can use it tomorrow.</li><li><b class="lvl">Advanced</b> As a builder working with a coding agent, I want every dependency listed with its limit, so that the tool does not stop working in its first busy week.</li><li><b class="lvl">Expert</b> As a team lead whose agents work unattended, I want to know who pays, the builder or each user, so that the cost of rolling it out is known before we roll it out.</li></ul>
+      <p class="lab">User stories</p><ul class="stories"><li data-lvl="Beginner"><b class="lvl">Beginner</b> As someone with a job I repeat every week, I want to know it runs on the plan I already have, so that I can use it tomorrow.</li><li data-lvl="Advanced"><b class="lvl">Advanced</b> As a builder working with a coding agent, I want every dependency listed with its limit, so that the tool does not stop working in its first busy week.</li><li data-lvl="Expert"><b class="lvl">Expert</b> As a team lead whose agents work unattended, I want to know who pays, the builder or each user, so that the cost of rolling it out is known before we roll it out.</li></ul>
       <p class="lab">What to expect</p><p>About 5 minutes. Expect the first version to cost nothing new. If it needs something paid, that usually belongs in a later level.</p>
       <p class="lab">Proof you are done</p><ul class="proof"><li>A table: each thing the first version depends on, its price, its limit, and who pays</li><li>One line: the first version costs nothing new, or it costs this much</li></ul>
       <p class="gate"><b>The gate.</b> Does the first version cost nothing, or an amount you accept?</p>
@@ -209,7 +214,7 @@ End with one line: does the first version cost nothing new, or how much? If it n
     <summary><span class="num">5</span><span class="nm">Simplest design</span><span class="gist">Fewest parts, fixed layout</span></summary>
     <div class="in">
       <p class="lab">Purpose</p><p>Choose the fewest moving parts that do the job, and fix where every file lives before any file is written.</p>
-      <p class="lab">User stories</p><ul class="stories"><li><b class="lvl">Beginner</b> As someone with a job I repeat every week, I want to know where I keep the prompt and where my input comes from, so that I can run it next week without thinking.</li><li><b class="lvl">Advanced</b> As a builder working with a coding agent, I want the folder layout fixed now, so that the agent does not move files later and break every link.</li><li><b class="lvl">Expert</b> As a team lead whose agents work unattended, I want every project in the same shape, so that anyone on the team can open any tool and find their way.</li></ul>
+      <p class="lab">User stories</p><ul class="stories"><li data-lvl="Beginner"><b class="lvl">Beginner</b> As someone with a job I repeat every week, I want to know where I keep the prompt and where my input comes from, so that I can run it next week without thinking.</li><li data-lvl="Advanced"><b class="lvl">Advanced</b> As a builder working with a coding agent, I want the folder layout fixed now, so that the agent does not move files later and break every link.</li><li data-lvl="Expert"><b class="lvl">Expert</b> As a team lead whose agents work unattended, I want every project in the same shape, so that anyone on the team can open any tool and find their way.</li></ul>
       <p class="lab">What to expect</p><p>About 5 minutes. Expect the design to be smaller than you imagined: often one saved prompt and one place to keep it.</p>
       <p class="lab">Proof you are done</p><ul class="proof"><li>Three lines: which assistant, where the files live, and what stays manual</li><li>A short list a beginner could copy out: what goes in, what the AI does, what comes out, who checks it</li><li>For a project folder: the layout check passes</li></ul>
       <p class="gate"><b>The gate.</b> Could a beginner draw it?</p>
@@ -226,22 +231,22 @@ This layout is now fixed. Tell me if anything later would force it to change.</p
     <summary><span class="num">6</span><span class="nm">Plan and front door</span><span class="gist">One page, and the first screen</span></summary>
     <div class="in">
       <p class="lab">Purpose</p><p>Write the one-page plan and the first thing a user will see, before the tool exists. If the front door cannot be written, the tool is not understood yet.</p>
-      <p class="lab">User stories</p><ul class="stories"><li><b class="lvl">Beginner</b> As someone with a job I repeat every week, I want one page I can read in two minutes, so that I know what I am about to build and how I will test it.</li><li><b class="lvl">Advanced</b> As a builder working with a coding agent, I want the first screen of the README written first, so that the agent builds toward what a user will actually try.</li><li><b class="lvl">Expert</b> As a team lead whose agents work unattended, I want one worked example for each kind of request, so that a reviewer can compare a real result against a known good one.</li></ul>
+      <p class="lab">User stories</p><ul class="stories"><li data-lvl="Beginner"><b class="lvl">Beginner</b> As someone with a job I repeat every week, I want one page I can read in two minutes, so that I know what I am about to build and how I will test it.</li><li data-lvl="Advanced"><b class="lvl">Advanced</b> As a builder working with a coding agent, I want the first screen of the README written first, so that the agent builds toward what a user will actually try.</li><li data-lvl="Expert"><b class="lvl">Expert</b> As a team lead whose agents work unattended, I want one worked example for each kind of request, so that a reviewer can compare a real result against a known good one.</li></ul>
       <p class="lab">What to expect</p><p>About 10 minutes. Expect to cut. If a section of the plan needs more than five lines, the scope has grown.</p>
       <p class="lab">Proof you are done</p><ul class="proof"><li>The plan template, filled in, on one page</li><li>The first screen: a hook, and one thing a person can try in five minutes</li><li>One worked example: an input, and the result you would be happy with</li></ul>
       <p class="gate"><b>The gate.</b> Is the beginner version fully described?</p>
-      <p class="lab">Prompt to paste</p><pre id="p6-0" tabindex="0">Write the one-page plan for this tool from what we have decided so far. Use these headings: the job, the user, what is out, the wow, what already exists, cost, the design, the steps a user follows, the front door, the test, the next three additions. Five lines at most under each. Mark anything you had to assume.
+      <p class="lab">Prompt to paste</p><pre id="p6-0" tabindex="0">Write the one-page plan for this tool from what we have decided so far. Use these headings: the job, the user, what is out, the wow, what already exists, build or buy, cost, the design, the folder layout, the steps, the front door, the test, who reviewed it, gates, next three additions, part, the plan, the first version, tested by. Five lines at most under each. Mark anything you had to assume.
 
 Then write the front door, the first thing a new user reads: one sentence that would make a stranger stop, two sentences on who it is for and what they get, and one thing they can try in five minutes.
 
-Then write one worked example: a realistic input and the result I should expect. Say that the example is invented.</pre><button class="btn sm" type="button" data-copy="p6-0">Copy this prompt</button>
+Then write one worked example for each kind of request the tool handles differently (most first versions need one): a realistic input and the result I should expect. Say that each example is invented.</pre><button class="btn sm" type="button" data-copy="p6-0">Copy this prompt</button>
     </div>
   </details>
   <details class="step">
     <summary><span class="num">7</span><span class="nm">Review</span><span class="gist">Someone else explains it back</span></summary>
     <div class="in">
       <p class="lab">Purpose</p><p>Have someone who is not the author read the plan and explain it back. You cannot see your own gaps, because you know what you meant.</p>
-      <p class="lab">User stories</p><ul class="stories"><li><b class="lvl">Beginner</b> As someone with a job I repeat every week, I want a second reader before I build, so that I find the confusing part while it is still one line to fix.</li><li><b class="lvl">Advanced</b> As a builder working with a coding agent, I want a fresh session to explain the plan back, so that I learn what my agent will misread.</li><li><b class="lvl">Expert</b> As a team lead whose agents work unattended, I want the review recorded with a name and a date, so that &quot;reviewed&quot; means something.</li></ul>
+      <p class="lab">User stories</p><ul class="stories"><li data-lvl="Beginner"><b class="lvl">Beginner</b> As someone with a job I repeat every week, I want a second reader before I build, so that I find the confusing part while it is still one line to fix.</li><li data-lvl="Advanced"><b class="lvl">Advanced</b> As a builder working with a coding agent, I want a fresh session to explain the plan back, so that I learn what my agent will misread.</li><li data-lvl="Expert"><b class="lvl">Expert</b> As a team lead whose agents work unattended, I want the review recorded with a name and a date, so that &quot;reviewed&quot; means something.</li></ul>
       <p class="lab">What to expect</p><p>About 5 minutes. Expect the summary to differ from your plan in one or two places. Those places are the fix list.</p>
       <p class="lab">Proof you are done</p><ul class="proof"><li>The reviewer&#x27;s summary, in their own words</li><li>A list of what was unclear, and what you changed</li><li>Who reviewed it and when: a name, or &quot;a fresh AI session&quot;</li></ul>
       <p class="gate"><b>The gate.</b> Can someone else explain it back to you?</p>
@@ -260,7 +265,7 @@ Do not improve the plan. Only report.
     <summary><span class="num">8</span><span class="nm">Build and test</span><span class="gist">A stranger tests it</span></summary>
     <div class="in">
       <p class="lab">Purpose</p><p>Build the smallest version that does the job, then hand it to a stranger: a new AI session that has only your instructions. It finds what you cannot.</p>
-      <p class="lab">User stories</p><ul class="stories"><li><b class="lvl">Beginner</b> As someone with a job I repeat every week, I want to test my prompt in a new chat, so that I know it works without everything I said earlier.</li><li><b class="lvl">Advanced</b> As a builder working with a coding agent, I want a friction log from a fresh session, so that I fix what tripped it and not what I guess is wrong.</li><li><b class="lvl">Expert</b> As a team lead whose agents work unattended, I want several fresh sessions run at once with different requests, so that the faults are found before a person spends time on it.</li></ul>
+      <p class="lab">User stories</p><ul class="stories"><li data-lvl="Beginner"><b class="lvl">Beginner</b> As someone with a job I repeat every week, I want to test my prompt in a new chat, so that I know it works without everything I said earlier.</li><li data-lvl="Advanced"><b class="lvl">Advanced</b> As a builder working with a coding agent, I want a friction log from a fresh session, so that I fix what tripped it and not what I guess is wrong.</li><li data-lvl="Expert"><b class="lvl">Expert</b> As a team lead whose agents work unattended, I want several fresh sessions run at once with different requests, so that the faults are found before a person spends time on it.</li></ul>
       <p class="lab">What to expect</p><p>About 15 minutes for the first round. Expect a list of problems even when the job gets done. That list is the test working. Fix the points that appear more than once first, then run it again.</p>
       <p class="lab">Proof you are done</p><ul class="proof"><li>The first version: instructions someone can paste, or a folder someone can open</li><li>The result the fresh session produced, unedited</li><li>Its list of where it had to guess, and a note of what you fixed</li></ul>
       <p class="gate"><b>The gate.</b> Did a fresh session finish the job, and have you read what it tripped on?</p>
@@ -283,7 +288,7 @@ Give me two things.
     <summary><span class="num">9</span><span class="nm">Grow</span><span class="gist">One addition at a time</span></summary>
     <div class="in">
       <p class="lab">Purpose</p><p>Add one thing at a time, and only after the level below is in use. Small additions get reviewed. Big ones get waved through.</p>
-      <p class="lab">User stories</p><ul class="stories"><li><b class="lvl">Beginner</b> As someone with a job I repeat every week, I want to use the first version for two weeks before I change it, so that I add what I actually missed.</li><li><b class="lvl">Advanced</b> As a builder working with a coding agent, I want each addition as its own small change, so that I can review it in five minutes and undo it if it is wrong.</li><li><b class="lvl">Expert</b> As a team lead whose agents work unattended, I want the next level built only when the one below is used, so that we do not maintain features nobody opens.</li></ul>
+      <p class="lab">User stories</p><ul class="stories"><li data-lvl="Beginner"><b class="lvl">Beginner</b> As someone with a job I repeat every week, I want to use the first version for two weeks before I change it, so that I add what I actually missed.</li><li data-lvl="Advanced"><b class="lvl">Advanced</b> As a builder working with a coding agent, I want each addition as its own small change, so that I can review it in five minutes and undo it if it is wrong.</li><li data-lvl="Expert"><b class="lvl">Expert</b> As a team lead whose agents work unattended, I want the next level built only when the one below is used, so that we do not maintain features nobody opens.</li></ul>
       <p class="lab">What to expect</p><p>No fixed time: this step repeats. Expect most of your first list of additions to turn out unnecessary once you use the tool.</p>
       <p class="lab">Proof you are done</p><ul class="proof"><li>A list of the next three additions, smallest first</li><li>For each addition made: what changed, who approved it, and a new test run</li><li>Evidence the current level is in use: who used it, for what, and when</li></ul>
       <p class="gate"><b>The gate.</b> Is the level below in use before you build the next?</p>
@@ -317,14 +322,16 @@ Then build only the first one. Stop and show me before you start the second.</pr
   <span class="tag" style="background:var(--hl);color:var(--accent)">Quick start</span>
   <h2 style="margin-top:12px">Try it on your own idea in five minutes</h2>
   <p>Paste this into the chatbot you already use. Change the last line to a job you repeat. Five minutes is an estimate.</p>
-  <pre id="prompt" tabindex="0">Read the build coach at https://raw.githubusercontent.com/bar181/practical-ai/main/projects/agentic-process/base/AI-INSTRUCTIONS.md and follow it.
+  <pre id="prompt" tabindex="0">Read the build coach at https://raw.githubusercontent.com/bar181/practical-ai/main/projects/agentic-process/base/AI-INSTRUCTIONS.md and follow it. If you cannot open it, say so and stop: do not make up a coach of your own.
 
 My idea: every Monday I turn last week&#x27;s sales notes into an email for my team. I want an AI to draft it.</pre>
   <button class="btn" type="button" id="copy">Copy the prompt</button>
+  <p>If your chatbot says it cannot open the link, open <a href="https://github.com/bar181/practical-ai/blob/main/projects/agentic-process/base/AI-INSTRUCTIONS.md" style="color:#fff">the coach on GitHub</a>, copy all of it, and paste it in before your idea.</p>
   <ul class="where">
     <li><b>Beginner:</b> the coach above, or the nine prompts one at a time. Nothing to install.</li>
-    <li><b>Advanced:</b> the skill and the project template, in level-2-files.</li>
-    <li><b>Expert:</b> gates, the fresh-run test and the score sheet, in level-3-files.</li>
+    <li><b>Advanced:</b> <a href="https://github.com/bar181/practical-ai/tree/main/projects/agentic-process/level-2-files" style="color:#fff">one skill folder</a> to copy into your coding agent. It works in any repository.</li>
+    <li><b>Expert:</b> <a href="https://github.com/bar181/practical-ai/tree/main/projects/agentic-process/level-3-files" style="color:#fff">gates, the fresh-run test and the score sheet</a>.</li>
+    <li><b>Teaching:</b> <a href="https://raw.githack.com/bar181/practical-ai/main/projects/agentic-process/base/training.html" style="color:#fff">the 30-minute training</a>, with slides, a timer and a presenter window.</li>
   </ul>
   <a class="btn" href="https://github.com/bar181/practical-ai">Open Practical AI on GitHub</a>
 </div></div>
@@ -359,6 +366,9 @@ My idea: every Monday I turn last week&#x27;s sales notes into an email for my t
   const sync=()=>{const open=cards.every(d=>d.open);all.setAttribute('aria-expanded',open);all.textContent=open?'Close all nine steps':'Open all nine steps'};
   all.addEventListener('click',()=>{const open=all.getAttribute('aria-expanded')!=='true';cards.forEach(d=>d.open=open);sync()});
   cards.forEach(d=>d.addEventListener('toggle',sync));sync();
+  /* show only one level's user stories. Without the script every level shows */
+  const pick=document.getElementById('lvpick'),list=document.querySelector('.steplist');pick.hidden=false;
+  pick.addEventListener('change',e=>{if(e.target.value)list.dataset.lvl=e.target.value;else delete list.dataset.lvl});
 })();
 </script>
 </body>

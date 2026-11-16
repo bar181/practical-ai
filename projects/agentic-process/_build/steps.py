@@ -3,6 +3,9 @@
 Each step has: a purpose, three user stories (one for each level), what to expect, what proves the step is done,
 the gate, and one or more prompts to paste. Times are estimates and the pages say so.
 """
+COACH_URL = "https://raw.githubusercontent.com/bar181/practical-ai/main/projects/agentic-process/base/AI-INSTRUCTIONS.md"
+COACH_FILE = "github.com/bar181/practical-ai: projects/agentic-process/base/AI-INSTRUCTIONS.md"
+def coach_prompt(idea): return f"Read the build coach at {COACH_URL} and follow it. If you cannot open it, say so and stop: do not make up a coach of your own.\n\nMy idea: {idea}"
 LEVELS = ("Beginner", "Advanced", "Expert")
 WHO = ("someone with a job I repeat every week", "a builder working with a coding agent", "a team lead whose agents work unattended")
 
@@ -20,7 +23,7 @@ STEPS = [
   gate="Can you say the job in one sentence?",
   prompts=(("Prompt to paste", """I want to turn a job I repeat into a small AI tool. Help me scope it.
 
-Ask me up to three questions, one at a time. Then write:
+Ask me up to two questions, one at a time. Then write:
 1. The one user.
 2. The one job, in one sentence: what goes in and what comes out.
 3. Three things the first version will not do.
@@ -51,7 +54,7 @@ Give me a table: the option, what it covers, what it costs, its limits, a link, 
 Then tell me plainly: does something existing do the whole job? If yes, tell me to stop, and write me a short guide to it. If no, say in one line what is left to build."""),)),
 
  dict(n=3, name="Outside help", gist="Build it or buy it", minutes=5,
-  writes="Paid services for whatever is left. List them. Do not choose yet",
+  writes="Paid services for whatever is left. Do not pick a provider. Decide only build, buy or by hand for each part",
   purpose="For whatever is left, list the services you could pay for, so that the choice between building and buying is made on purpose.",
   stories=("I want to know what I would have to pay for, so that there are no surprises after I start.",
            "I want the options listed and not ranked, so that I choose with the cost and the way out in view.",
@@ -112,11 +115,11 @@ This layout is now fixed. Tell me if anything later would force it to change."""
          "The first screen: a hook, and one thing a person can try in five minutes",
          "One worked example: an input, and the result you would be happy with"),
   gate="Is the beginner version fully described?",
-  prompts=(("Prompt to paste", """Write the one-page plan for this tool from what we have decided so far. Use these headings: the job, the user, what is out, the wow, what already exists, cost, the design, the steps a user follows, the front door, the test, the next three additions. Five lines at most under each. Mark anything you had to assume.
+  prompts=(("Prompt to paste", """Write the one-page plan for this tool from what we have decided so far. Use these headings: {PLAN_HEADINGS}. Five lines at most under each. Mark anything you had to assume.
 
 Then write the front door, the first thing a new user reads: one sentence that would make a stranger stop, two sentences on who it is for and what they get, and one thing they can try in five minutes.
 
-Then write one worked example: a realistic input and the result I should expect. Say that the example is invented."""),)),
+Then write one worked example for each kind of request the tool handles differently (most first versions need one): a realistic input and the result I should expect. Say that each example is invented."""),)),
 
  dict(n=7, name="Review", gist="Someone else explains it back", minutes=5,
   writes="Someone who is not the author reads the plan",
@@ -184,3 +187,33 @@ Then build only the first one. Stop and show me before you start the second.""")
 ]
 
 TOTAL_MINUTES = sum(s["minutes"] for s in STEPS)   # steps 1 to 8; step 9 repeats
+
+# How the coach (a chat, base/AI-INSTRUCTIONS.md) and the skill (an agent, level-2-files) do each step.
+# The gate question is the same everywhere: STEPS[n]["gate"]. The note says how that reader answers it.
+COACH = {
+ 1: ("Find one user and one job. List what is out. Ask what would make people stop and look. Write one test: a specific input and what a good result looks like", ""),
+ 2: ("Look for what already does this: features of the assistant they use, free tools, common practice",
+     "If the answer is no, stop: hand over a short guide to that thing and the note, in place of the plan. The assistant they already use counts only if one plain sentence typed into it gives a result the person would send unchanged. You cannot know that unseen: go on, and put \"try one plain sentence first\" under Test this next"),
+ 3: ("For whatever is left, list paid options with what each covers and how it charges. Do not pick a provider: decide only build, buy or by hand for each part", ""),
+ 4: ("List every dependency of the first version with its price and its limit",
+     "With prices not checked, the gate passes only if the first version buys nothing new. Say so"),
+ 5: ("Say which assistant, where files live, and what stays manual. Propose a folder layout and fix it", ""),
+ 6: ("Write the steps a user follows, the first thing they see, and one worked example for each kind of request the tool handles differently. Most first versions need one", ""),
+ 7: ("Ask who will read the plan. Give them the review prompt: paste the plan into a new chat with no history and ask it to explain the plan back and list where it had to guess",
+     "Never review your own plan: you know what you meant. Until a person or a new chat has read it, the gate stays open, and the review goes under Test this next"),
+ 8: ("Write the first version: usually a prompt or a set of instructions, plus one worked example. Then tell the person exactly how to test it in a fresh chat that has only those instructions",
+     "In a chat you cannot run the test. Leave this gate open, and put the exact test under Test this next. Never state a test result you did not see"),
+ 9: ("List the next three additions, smallest first. One at a time",
+     "In the first session nothing is in use yet. Leave this gate open"),
+}
+SKILL = {
+ 1: ("One user, one job, what is out, the wow, and one test with a specific input and a good result", "The plan's job line is one sentence"),
+ 2: ("Search in the order under \"Step 2 in detail\" below. Put up to five options in the plan, a longer list in `_build/landscape.md`", "If something does the whole job, stop and write a guide to it. Instructions written for an assistant the user already has count as building, unless one plain sentence already gives a result they would send unchanged"),
+ 3: ("List paid options for what is left. Do not pick a provider: decide only build, buy or by hand for each part, and write it under \"Build or buy\" in the plan", ""),
+ 4: ("Every dependency of the first version with its price and limit", ""),
+ 5: ("Which assistant, where files live, what stays manual. Make the folder from the template (see \"Make the folder\")", "The design is three lines in the plan. In the new folder, `python3 _build/checks/gates.py .` passes layout and links. `filled` fails until step 6"),
+ 6: ("Fill `base/plan.md`. Write the README's hook, its \"Try it in five minutes\" section and at least one worked example: one for each kind of request the beginner version handles differently. Most first versions have one or two", "The `filled` gate passes: no blanks are left from the template"),
+ 7: ("A person, or a fresh session given only `base/plan.md`, explains it back", "The reviewer's summary matches the plan. With neither available, the gate stays open: say so and go on to step 8, whose test also reads the plan"),
+ 8: ("Build the beginner version. Run the fresh-session test (see \"The fresh-session test\")", "The fresh session finished the job. Its friction log has been read and the recurring points fixed"),
+ 9: ("One addition at a time, each its own change request", "Someone other than the builder has used the level below"),
+}

@@ -1,0 +1,5 @@
+[
+ {"name": "layout", "proves": "The folder follows the showcase layout", "run": "python3 _build/checks/check_project.py ."},
+ {"name": "links", "proves": "No Markdown link in this project is broken", "run": "python3 _build/checks/check_links.py ."},
+ {"name": "filled", "proves": "No blanks are left from the template. Fails until step 6 is done", "run": "python3 _build/checks/check_filled.py README.md AGENTS.md base/plan.md base/AI-INSTRUCTIONS.md"}
+]

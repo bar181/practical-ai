@@ -10,17 +10,25 @@ the order of work.
 
 | What | Where | What it does |
 | --- | --- | --- |
-| The skill | [`agentic-process/`](agentic-process/) | Add the folder to your agent's skills. It runs the nine steps and stops at each gate |
-| The template | [`template/`](template/) | A project folder with the front page, the agent file, a plan and paste-in instructions, all with the blanks marked |
-| The script | [`new_project.py`](new_project.py) | Copies the template and fills in the name |
+| The skill | [`agentic-process/SKILL.md`](agentic-process/SKILL.md) | Runs the nine steps and stops at each gate |
+| The template | [`agentic-process/template/`](agentic-process/template/) | A project folder with the front page, the agent file, a plan, paste-in instructions and its own checks, all with the blanks marked |
+| The script | [`agentic-process/new_project.py`](agentic-process/new_project.py) | Copies the template and fills in the name |
+
+All three are in one folder, [`agentic-process/`](agentic-process/). Copy that folder into your
+agent's skills (for Claude Code, `.claude/skills/` in your repository) and it works in any
+repository: a new project carries its own checks and needs nothing else from here.
 
 ## Use it
 
-1. From the repository root, make the folder: `python3 projects/agentic-process/level-2-files/new_project.py meeting-notes "Meeting notes to actions"`
-2. Say to your agent: "Use the agentic-process skill. The idea: turn a meeting transcript into
-   decisions, tasks and a follow-up. Start at step 1."
+1. Copy the folder [`agentic-process/`](agentic-process/) into your repository. For Claude Code,
+   put it in `.claude/skills/`. For any other coding agent, put it anywhere and tell the agent to
+   read `SKILL.md` in it first.
+2. Say to your agent: "Use the agentic-process skill. The idea: turn a meeting transcript into a
+   list of actions, each with an owner and a date. Start at step 1."
 3. Answer its two questions for each step. It stops at every gate and waits for you.
-4. After step 8, read the friction log from the fresh-session test before you fix anything.
+4. At step 5 the agent makes the project folder and prints the command that checks it. Run that
+   command yourself whenever you want to see where things stand.
+5. After step 8, read the friction log from the fresh-session test before you fix anything.
 
 ## What changes compared with the Beginner level
 
@@ -30,5 +38,6 @@ the order of work.
 | You test by pasting into a fresh chat yourself | The agent runs the checks. You read the results |
 | The plan lives in the chat | The plan lives in `base/plan.md`, beside the tool |
 
-The template has been used once, to make a trial folder that passes the layout check. No tool has
-been built from it yet by anyone but its author.
+Tested: an agent with only this folder, in an empty repository, took an idea to a tested first
+version. Its whole hand-back is [a worked example](../base/examples/unattended-run.md). Nobody but
+the author has built a real tool with it.

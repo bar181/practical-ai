@@ -17,16 +17,16 @@ Take the first of these that you can do.
 | You need | Read |
 | --- | --- |
 | The nine steps, with a purpose, proof and prompt for each | [`base/PROCESS.md`](base/PROCESS.md). It is written by `_build/build.py` from `_build/steps.py`: change the source |
-| The plan to fill in | [`base/plan-template.md`](base/plan-template.md) |
-| A new project folder | From the repository root, run `python3 projects/agentic-process/level-2-files/new_project.py <slug> "<Title>"`. It makes `projects/<slug>/` from [`level-2-files/template/`](level-2-files/template/) |
+| The plan to fill in | The end of [`base/PROCESS.md`](base/PROCESS.md), and `base/plan.md` in every new project folder |
+| A new project folder | Run `python3 projects/agentic-process/level-2-files/agentic-process/new_project.py <slug> "<Title>"` from the repository root. It makes `projects/<slug>/` from [the template](level-2-files/agentic-process/template/), with its own checks |
 | How to test what you built | [`level-3-files/fresh-run/`](level-3-files/fresh-run/) |
-| Checks to run from step 5 on | The new project's own `_build/gates.json`, with `python3 workshop/tools/gates.py projects/<slug>` from the repository root. This project's gates are in [`level-3-files/gates.json`](level-3-files/gates.json) |
+| Checks to run from step 5 on | `python3 projects/<slug>/_build/checks/gates.py projects/<slug>`. It runs the new project's `_build/gates.json`. This project's own gates are in [`level-3-files/gates.json`](level-3-files/gates.json) |
 | How to score the result | [`level-3-files/scorecard.md`](level-3-files/scorecard.md) |
 | Two worked examples | [`base/examples/`](base/examples/): the unedited results of two fresh sessions |
 
 ## Output contract
 
-After each step, three lines: what was decided, what you assumed, and the gate with pass or fail.
+After each step, three lines: what was decided, what you assumed, and the gate with pass, fail or open.
 At the end: the plan on one page, the first version, and a note with four headings: Decided.
 Assumed. Not checked. Test this next.
 
@@ -40,5 +40,5 @@ Assumed. Not checked. Test this next.
 
 ## Known limits
 
-- The skill has been run once by a second agent. Its fixes have not been re-run. Treat the next runs as tests.
+- The skill has been run end to end by one agent working unattended. Treat the next runs as tests: see the status table in the README.
 - Every time in the README and the guide is an estimate.

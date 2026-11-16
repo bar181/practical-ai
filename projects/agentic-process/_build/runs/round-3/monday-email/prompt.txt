@@ -1,0 +1,3 @@
+Read the build coach [saved as COACH.md in the run folder] and follow it.
+
+My idea: every Monday I turn last week's sales notes into an email for my team. I want an AI to draft it. I run a small kitchen-fitting company with six staff. I am not technical. I use ChatGPT on my phone and laptop. The notes are a few lines I type into my phone during the week.

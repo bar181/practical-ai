@@ -18,7 +18,7 @@ walks you through all nine. Or take the steps one at a time with the prompts bel
 | --- | --- | --- | --- | --- |
 | 1 | [**Scope**](#1-scope) | One user, one job, what is out, and the one thing that will make people stop and look | Can you say the job in one sentence? | about 5 min |
 | 2 | [**Reuse check**](#2-reuse-check) | What already does this: built in, free, common practice | After what already exists, is there still something to build? If not, stop and write a guide to that thing. | about 10 min |
-| 3 | [**Outside help**](#3-outside-help) | Paid services for whatever is left. List them. Do not choose yet | Do you know what you would build and what you would buy? | about 5 min |
+| 3 | [**Outside help**](#3-outside-help) | Paid services for whatever is left. Do not pick a provider. Decide only build, buy or by hand for each part | Do you know what you would build and what you would buy? | about 5 min |
 | 4 | [**Cost**](#4-cost) | Every dependency of the first version, with its price and its limit | Does the first version cost nothing, or an amount you accept? | about 5 min |
 | 5 | [**Simplest design**](#5-simplest-design) | Which assistant, where files live, what stays manual. The folder layout, fixed now | Could a beginner draw it? | about 5 min |
 | 6 | [**Plan and front door**](#6-plan-and-front-door) | The steps a person follows, the first screen they see, one worked example for each kind of request it handles | Is the beginner version fully described? | about 10 min |
@@ -28,6 +28,9 @@ walks you through all nine. Or take the steps one at a time with the prompts bel
 
 Steps 1 to 8 add up to about 60 minutes the first time. Every time on this page is an estimate: nobody
 has yet been timed.
+
+**A small job can take the short path:** steps 1, 6 and 8 in full, steps 2 to 5 in a line each, and step 7 folded into the test.
+The coach offers it when the job is one person turning one kind of input into one result in a chat.
 
 ## Who does what
 
@@ -64,7 +67,7 @@ has yet been timed.
 ```
 I want to turn a job I repeat into a small AI tool. Help me scope it.
 
-Ask me up to three questions, one at a time. Then write:
+Ask me up to two questions, one at a time. Then write:
 1. The one user.
 2. The one job, in one sentence: what goes in and what comes out.
 3. Three things the first version will not do.
@@ -95,6 +98,8 @@ My job: [describe the job you repeat]
 - If nothing is left: a short guide to the existing tool, and you stop here
 
 **The gate.** After what already exists, is there still something to build? If not, stop and write a guide to that thing.
+
+*In a chat with the coach:* If the answer is no, stop: hand over a short guide to that thing and the note, in place of the plan. The assistant they already use counts only if one plain sentence typed into it gives a result the person would send unchanged. You cannot know that unseen: go on, and put "try one plain sentence first" under Test this next.
 
 **Prompt to paste**
 
@@ -155,6 +160,8 @@ Then, for each part of the tool, say whether the first version should build it, 
 - One line: the first version costs nothing new, or it costs this much
 
 **The gate.** Does the first version cost nothing, or an amount you accept?
+
+*In a chat with the coach:* With prices not checked, the gate passes only if the first version buys nothing new. Say so.
 
 **Prompt to paste**
 
@@ -221,11 +228,11 @@ This layout is now fixed. Tell me if anything later would force it to change.
 **Prompt to paste**
 
 ```
-Write the one-page plan for this tool from what we have decided so far. Use these headings: the job, the user, what is out, the wow, what already exists, cost, the design, the steps a user follows, the front door, the test, the next three additions. Five lines at most under each. Mark anything you had to assume.
+Write the one-page plan for this tool from what we have decided so far. Use these headings: the job, the user, what is out, the wow, what already exists, build or buy, cost, the design, the folder layout, the steps, the front door, the test, who reviewed it, gates, next three additions, part, the plan, the first version, tested by. Five lines at most under each. Mark anything you had to assume.
 
 Then write the front door, the first thing a new user reads: one sentence that would make a stranger stop, two sentences on who it is for and what they get, and one thing they can try in five minutes.
 
-Then write one worked example: a realistic input and the result I should expect. Say that the example is invented.
+Then write one worked example for each kind of request the tool handles differently (most first versions need one): a realistic input and the result I should expect. Say that each example is invented.
 ```
 
 ## 7. Review
@@ -247,6 +254,8 @@ Then write one worked example: a realistic input and the result I should expect.
 - Who reviewed it and when: a name, or "a fresh AI session"
 
 **The gate.** Can someone else explain it back to you?
+
+*In a chat with the coach:* Never review your own plan: you know what you meant. Until a person or a new chat has read it, the gate stays open, and the review goes under Test this next.
 
 **Prompt for a new chat with no history**
 
@@ -281,6 +290,8 @@ Do not improve the plan. Only report.
 - Its list of where it had to guess, and a note of what you fixed
 
 **The gate.** Did a fresh session finish the job, and have you read what it tripped on?
+
+*In a chat with the coach:* In a chat you cannot run the test. Leave this gate open, and put the exact test under Test this next. Never state a test result you did not see.
 
 **Prompt to build, in your working chat**
 
@@ -326,6 +337,8 @@ Give me two things.
 
 **The gate.** Is the level below in use before you build the next?
 
+*In a chat with the coach:* In the first session nothing is in use yet. Leave this gate open.
+
 **Prompt to paste**
 
 ```
@@ -334,6 +347,40 @@ I have used the first version of my tool [how many] times. Here is what happened
 From that, list the next three additions, smallest first. For each: what it changes, what could break, and how I would test it. Do not suggest anything I did not miss while using it.
 
 Then build only the first one. Stop and show me before you start the second.
+```
+
+## The one-page plan
+
+Fill this in as you go. Copy it into a document, or ask your chatbot to fill it in from your
+answers. An agent finds the same template in each new project folder as `base/plan.md`.
+
+```
+Plan: [name of the tool]
+
+Fill this in as you go through the nine steps. One page. If a section needs more than five
+lines, the scope is too big.
+
+**Think of it as:** [one everyday comparison]
+
+**North Star:** [one sentence: who can do what, that they could not do before]
+
+| Heading | Write here |
+| --- | --- |
+| The job | One sentence |
+| The user | One kind of person |
+| What is out | The things you will not do in the first version |
+| The wow | The one thing that makes people stop and look. Build it first |
+| What already exists | Up to five options, each with a link and the date you looked. A longer list goes in `_build/landscape.md` |
+| Build or buy | For each part of the first version: build it, buy it, or leave it as something done by hand |
+| Cost | Each dependency, its price and its limit |
+| The design | Which assistant, where files live, what stays manual |
+| The folder layout | Decide it now and do not change it |
+| The steps | What a user does, in order |
+| The front door | The first thing a user sees, and the one thing they can try in five minutes |
+| The test | A specific input, and what a good result looks like |
+| Who reviewed it | A name, or "a fresh AI session", and the date |
+| Gates | One line for each step so far: the gate, and pass, fail or open |
+| Next three additions | Smallest first. One at a time |
 ```
 
 ## Five rules that save the most time

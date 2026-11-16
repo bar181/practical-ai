@@ -1,4 +1,8 @@
-"""build.py [--check]: writes base/PROCESS.md and base/explainer.html from steps.py and the text below.
+"""build.py [--check]: writes everything that repeats the nine steps, from steps.py and the text below.
+
+    base/PROCESS.md and base/explainer.html     the steps in detail, and the guide
+    the step tables in base/AI-INSTRUCTIONS.md and level-2-files/agentic-process/SKILL.md
+    the template's checks, copied from the repository's workshop/tools/ so a new project needs nothing else
 
     python3 _build/build.py           write both files
     python3 _build/build.py --check   write nothing; exit 1 if either file differs from what would be written
@@ -8,12 +12,17 @@ scrolling explainer recipe, teacher voice, the Practical AI colours. Its two pic
 """
 import base64, pathlib, html, sys
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
-from steps import STEPS, LEVELS, WHO, TOTAL_MINUTES
+from steps import STEPS, LEVELS, WHO, TOTAL_MINUTES, COACH, SKILL, coach_prompt, COACH_FILE
+import re
 P = pathlib.Path(__file__).resolve().parents[1]          # the project folder
 b64 = lambda p: base64.b64encode((P/p).read_bytes()).decode()
 puppy = b64('_build/img/inspector.jpg'); me = b64('_build/img/creator.jpg')
 E = html.escape
-PROMPT = "Read the build coach at https://raw.githubusercontent.com/bar181/practical-ai/main/projects/agentic-process/base/AI-INSTRUCTIONS.md and follow it.\n\nMy idea: every Monday I turn last week's sales notes into an email for my team. I want an AI to draft it."
+import re
+PLAN_ROWS = re.findall(r"^\| (?!Heading |---)([^|]+?) \|", (P/'level-2-files/agentic-process/template/base/plan.md').read_text(encoding='utf-8'), re.M)
+for _st in STEPS:                                                  # the step 6 prompt lists the plan's own headings
+    _st['prompts'] = tuple((lab, txt.replace('{PLAN_HEADINGS}', ', '.join(r[0].lower() + r[1:] for r in PLAN_ROWS))) for lab, txt in _st['prompts'])
+PROMPT = coach_prompt("every Monday I turn last week's sales notes into an email for my team. I want an AI to draft it.")
 stages = [
  ('Decide', 'Steps 1 to 4', 'Scope, reuse check, outside help, cost.', 'You and the AI, in a chat.', 'You name one user and one job. The AI looks for what already exists and what it would cost.', 'Expect about 25 minutes. If something existing already does the whole job, you stop here and write a guide to it.'),
  ('Design', 'Steps 5 to 7', 'Simplest design, plan and front door, review.', 'The AI drafts. You cut.', 'The folder layout is fixed. The first screen a user sees is written before the tool is. Someone else reads the plan.', 'Expect about 20 minutes. Fix the layout here: moving files after the build breaks every link that points at them.'),
@@ -29,7 +38,7 @@ levels = [
 assert TOTAL_MINUTES == 60, 'the page says "about an hour": change that wording if the step times change'
 lev_html = '\n'.join(f'''    <article class="lv"><p class="tag">{l[0]}</p><h3>{html.escape(l[1])}</h3><dl><div><dt>Without it</dt><dd>{html.escape(l[2])}</dd></div><div class="with"><dt>With it</dt><dd>{html.escape(l[3])}</dd></div></dl><p class="basis">{html.escape(l[4])}</p></article>''' for l in levels)
 def card(st):
-    stories = ''.join(f'<li><b class="lvl">{LEVELS[i]}</b> As {E(WHO[i])}, {E(t)}</li>' for i, t in enumerate(st['stories']))
+    stories = ''.join(f'<li data-lvl="{LEVELS[i]}"><b class="lvl">{LEVELS[i]}</b> As {E(WHO[i])}, {E(t)}</li>' for i, t in enumerate(st['stories']))
     proof = ''.join(f'<li>{E(x)}</li>' for x in st['proof'])
     prompts = ''.join(f'<p class="lab">{E(lab)}</p><pre id="p{st["n"]}-{k}" tabindex="0">{E(txt)}</pre><button class="btn sm" type="button" data-copy="p{st["n"]}-{k}">Copy this prompt</button>' for k, (lab, txt) in enumerate(st['prompts']))
     return f'''  <details class="step"{" open" if st["n"] == 1 else ""}>
@@ -122,6 +131,9 @@ section>.wrap>p,.wrap>p{{max-width:36em}}h2+p{{margin-top:12px}}section .wrap>p+
 .gate{{margin-top:12px;padding:12px 14px;border-left:5px solid var(--hl);background:#fff7d6;border-radius:0 10px 10px 0;font:400 1rem/1.4 var(--display)}}
 .step pre{{margin:0;padding:14px;background:var(--bg);border:1px solid var(--line);border-radius:10px;white-space:pre-wrap;overflow-wrap:anywhere;font:400 .92rem/1.5 var(--mono)}}
 .btn.sm{{justify-self:start;min-height:44px;margin-top:2px;padding:0 18px;font-size:.95rem;background:var(--accent);color:#fff}}
+.lvpick{{margin:18px 0 0;padding:0;border:0;display:flex;flex-wrap:wrap;gap:8px;font:400 1rem/1.2 var(--display)}}.lvpick legend{{font:700 .92rem/1.2 var(--display);color:var(--accent);margin-bottom:8px}}
+.lvpick label{{display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:0 14px;border:1px solid var(--line);border-radius:999px;background:var(--panel);cursor:pointer}}.lvpick label:has(input:checked){{border-color:var(--accent);background:#e6ecf4;font-weight:700}}
+.steplist[data-lvl="Beginner"] .stories li:not([data-lvl="Beginner"]),.steplist[data-lvl="Advanced"] .stories li:not([data-lvl="Advanced"]),.steplist[data-lvl="Expert"] .stories li:not([data-lvl="Expert"]){{display:none}}
 .all{{margin-top:18px;background:var(--panel);color:var(--accent);border:2px solid var(--accent)}}
 /* three levels */
 .levels{{display:grid;gap:14px;margin-top:22px}}
@@ -169,7 +181,7 @@ footer{{padding:26px 0 44px;font:400 .88rem/1.45 var(--display);color:var(--mute
   <path class="rail" d="M70,42 H530"/><path class="go" pathLength="1" d="M70,42 H530"/>
   <g><circle cx="70" cy="42" r="26"/><text class="n" x="70" y="49">1-4</text><text x="70" y="108">Decide</text></g>
   <g><circle cx="223" cy="42" r="26"/><text class="n" x="223" y="49">5-7</text><text x="223" y="108">Design</text></g>
-  <g><circle cx="377" cy="42" r="26"/><text class="n" x="377" y="49">8</text><text x="377" y="108">Test</text></g>
+  <g><circle cx="377" cy="42" r="26"/><text class="n" x="377" y="49">8</text><text x="377" y="108">Build, test</text></g>
   <g><circle cx="530" cy="42" r="26"/><text class="n" x="530" y="49">9</text><text x="530" y="108">Grow</text></g></svg></div>
 <ol class="steps">
 {steps_html}
@@ -178,6 +190,8 @@ footer{{padding:26px 0 44px;font:400 .88rem/1.45 var(--display);color:var(--mute
 
 <section class="wrap" aria-labelledby="steps-h"><span class="tag">Step by step</span><h2 id="steps-h">The nine steps, one at a time</h2>
   <p>Open a step to see why it exists, who it helps, what you should be holding when it is done, and a prompt to paste into your chatbot. The times are estimates and add up to about an hour for steps 1 to 8.</p>
+  <fieldset class="lvpick" id="lvpick" hidden><legend>Show user stories for</legend>
+    <label><input type="radio" name="lv" value="" checked> Every level</label><label><input type="radio" name="lv" value="Beginner"> Beginner</label><label><input type="radio" name="lv" value="Advanced"> Advanced</label><label><input type="radio" name="lv" value="Expert"> Expert</label></fieldset>
   <button class="btn all" type="button" id="all" aria-expanded="false">Open all nine steps</button>
   <div class="steplist">
 {cards_html}
@@ -204,10 +218,12 @@ footer{{padding:26px 0 44px;font:400 .88rem/1.45 var(--display);color:var(--mute
   <p>Paste this into the chatbot you already use. Change the last line to a job you repeat. Five minutes is an estimate.</p>
   <pre id="prompt" tabindex="0">{html.escape(PROMPT)}</pre>
   <button class="btn" type="button" id="copy">Copy the prompt</button>
+  <p>If your chatbot says it cannot open the link, open <a href="https://github.com/bar181/practical-ai/blob/main/projects/agentic-process/base/AI-INSTRUCTIONS.md" style="color:#fff">the coach on GitHub</a>, copy all of it, and paste it in before your idea.</p>
   <ul class="where">
     <li><b>Beginner:</b> the coach above, or the nine prompts one at a time. Nothing to install.</li>
-    <li><b>Advanced:</b> the skill and the project template, in level-2-files.</li>
-    <li><b>Expert:</b> gates, the fresh-run test and the score sheet, in level-3-files.</li>
+    <li><b>Advanced:</b> <a href="https://github.com/bar181/practical-ai/tree/main/projects/agentic-process/level-2-files" style="color:#fff">one skill folder</a> to copy into your coding agent. It works in any repository.</li>
+    <li><b>Expert:</b> <a href="https://github.com/bar181/practical-ai/tree/main/projects/agentic-process/level-3-files" style="color:#fff">gates, the fresh-run test and the score sheet</a>.</li>
+    <li><b>Teaching:</b> <a href="https://raw.githack.com/bar181/practical-ai/main/projects/agentic-process/base/training.html" style="color:#fff">the 30-minute training</a>, with slides, a timer and a presenter window.</li>
   </ul>
   <a class="btn" href="https://github.com/bar181/practical-ai">Open Practical AI on GitHub</a>
 </div></div>
@@ -242,6 +258,9 @@ footer{{padding:26px 0 44px;font:400 .88rem/1.45 var(--display);color:var(--mute
   const sync=()=>{{const open=cards.every(d=>d.open);all.setAttribute('aria-expanded',open);all.textContent=open?'Close all nine steps':'Open all nine steps'}};
   all.addEventListener('click',()=>{{const open=all.getAttribute('aria-expanded')!=='true';cards.forEach(d=>d.open=open);sync()}});
   cards.forEach(d=>d.addEventListener('toggle',sync));sync();
+  /* show only one level's user stories. Without the script every level shows */
+  const pick=document.getElementById('lvpick'),list=document.querySelector('.steplist');pick.hidden=false;
+  pick.addEventListener('change',e=>{{if(e.target.value)list.dataset.lvl=e.target.value;else delete list.dataset.lvl}});
 }})();
 </script>
 </body>
@@ -266,6 +285,8 @@ def process_md():
         L.append(f"| {st['n']} | [**{st['name']}**](#{anchor}) | {st['writes']} | {st['gate']} | {('about ' + str(st['minutes']) + ' min') if st['minutes'] else 'repeats'} |")
     L += ["", f"Steps 1 to 8 add up to about {TOTAL_MINUTES} minutes the first time. Every time on this page is an estimate: nobody",
           "has yet been timed.", "",
+          "**A small job can take the short path:** steps 1, 6 and 8 in full, steps 2 to 5 in a line each, and step 7 folded into the test.",
+          "The coach offers it when the job is one person turning one kind of input into one result in a chat.", "",
           "## Who does what", "",
           "| Step | The AI does | You do |", "| --- | --- | --- |",
           "| 1 to 4 | Asks the questions, searches for what exists, lists costs | Answer honestly. Say no to anything outside the one job |",
@@ -279,8 +300,15 @@ def process_md():
         L += ["", f"**What to expect.** {st['expect']}", "", "**Proof you are done**", ""]
         L += [f"- {x}" for x in st['proof']]
         L += ["", f"**The gate.** {st['gate']}", ""]
+        if COACH[st['n']][1]: L += [f"*In a chat with the coach:* {COACH[st['n']][1]}.", ""]
         for lab, txt in st['prompts']:
             L += [f"**{lab}**", "", "```", txt, "```", ""]
+    plan = (SKILL_DIR/'template/base/plan.md').read_text(encoding='utf-8').replace('{{TITLE}}', '[name of the tool]')
+    plan = plan.split('\n## Status')[0].strip().split('\n', 1)[1].strip()
+    L += ["## The one-page plan", "",
+          "Fill this in as you go. Copy it into a document, or ask your chatbot to fill it in from your",
+          "answers. An agent finds the same template in each new project folder as `base/plan.md`.", "",
+          "```", "Plan: [name of the tool]", "", plan, "```", ""]
     L += ["## Five rules that save the most time", "",
           "1. **Name the wow first.** Decide the one thing that makes people stop, and build it first.",
           "2. **Fix the layout before you build.** Moving files later breaks every link that points at them.",
@@ -289,9 +317,247 @@ def process_md():
           "5. **One addition, one change request.** Small changes get reviewed. Big ones get waved through.", ""]
     return "\n".join(L)
 
-outputs = {P/'base/explainer.html': page, P/'base/PROCESS.md': process_md()}
+from lesson import SEGMENTS, WATCH, COACH_PROMPT, REVIEW_PROMPT
+STARTER = P.parent/'artifact-studio/level-2-files/artifact-studio/assets/starters/deck-workshop.html'
+
+def lesson_md():
+    L = ["<!-- Written by _build/build.py from _build/lesson.py. Change the source, not this file. -->",
+         "# Teach Agentic Process in 30 minutes", "",
+         "A lesson plan for one teacher and any number of learners. Nobody needs to code. Each learner",
+         "needs a chatbot they already use, and one job they repeat at work.", "",
+         "**By the end** each learner has a one-page plan for a small AI tool of their own, and knows the",
+         "one test that finds its faults.", "",
+         "**Present from** [`training.html`](training.html): the slides for this plan, with a lesson timer,",
+         "these notes, and a presenter window that keeps them off the projector. Open it from the link in the",
+         "project's README, or on GitHub open the file, choose **Download raw file**, and open it in a browser.", "",
+         "## Before the lesson", "",
+         "| Do this | Time |", "| --- | --- |",
+         "| Open [`training.html`](training.html) on the screen you will present from. Press N to see your notes | 1 minute |",
+         "| Keep [the guide](explainer.html) open in a second tab, to show a step card if asked | 1 minute |",
+         "| Ask each learner to bring one job they do every week that starts from a blank page | The day before |", "",
+         "## The lesson", "",
+         "| Minutes | You do | You say | Learners do |", "| --- | --- | --- | --- |"]
+    for g in SEGMENTS:
+        L.append(f"| {g['start']} to {g['end']} | {g['do']} | {g['say']} | {g['learners']} |")
+    L += ["", "## The two prompts learners paste", "", "**At minute 12, the coach:**", "", "```", COACH_PROMPT, "```", "",
+          "**At minute 22, the review in a new chat:**", "", "```", REVIEW_PROMPT, "```", "",
+          "## What to watch for", "", "| You see | It means | Say |", "| --- | --- | --- |"]
+    L += [f"| {a} | {b} | {c} |" for a, b, c in WATCH]
+    L += ["", "## After the lesson", "",
+          "Ask each learner to finish steps 5 to 8 in their own time and to send you two things: the plan,",
+          "and what the fresh chat said was unclear. The second one tells you more than the first.", "",
+          "This plan has not yet been taught. The timings are estimates. Change them by hand in this",
+          "file after your first run, or in `_build/lesson.py` and rebuild if you keep the whole repository.", ""]
+    return "\n".join(L)
+
+def slide_html(label, title, body, note, seg, turn, pic):
+    out, lst = [], None
+    for line in body:
+        kind = 'ol' if line.startswith('1. ') else 'ul' if line.startswith('- ') else None
+        if kind != lst:
+            if lst: out.append(f'</{lst}>')
+            if kind: out.append(f'<{kind}>')
+            lst = kind
+        if kind: out.append(f'<li>{E(line[3:] if kind == "ol" else line[2:])}</li>')
+        elif line == 'PROMPT': out.append(f'<pre class="pr">{E(COACH_PROMPT)}</pre>')
+        elif line.startswith('> '): out.append(f'<p class="q">&#8220;{E(line[2:])}&#8221;</p>')
+        else: out.append(f'<p>{E(line)}</p>')
+    if lst: out.append(f'</{lst}>')
+    cls = 'dk-s' + (' turn' if turn else '') + (' lead' if pic else '')
+    picture = '<i class="dk-pic" role="img" aria-label="A puppy in a plaid suit and tie, sitting upright: the inspector."></i>' if pic else ''
+    return (f'    <section class="{cls}" data-seg="{seg}">{picture}<div><p class="k">{E(label)}</p><h2>{E(title)}</h2>'
+            + ''.join(out) + f'</div><aside class="dk-note">{E(note)}</aside></section>')
+
+def training_html():
+    starter = STARTER.read_text(encoding='utf-8')
+    style = starter.split('<style>', 1)[1].split('</style>', 1)[0]
+    engine = starter.split('<script>', 1)[1].split('</script>', 1)[0]
+    slides, n = [], 0
+    for i, g in enumerate(SEGMENTS):
+        for (label, title, body, note) in g['slides']:
+            n += 1
+            slides.append(slide_html(label, title, body, note, i, label.startswith(('Your turn', 'Turn to', 'A stranger')), label == 'Think of it as'))
+    rows = ''.join(f'<tr><th scope="row">{g["start"]} to {g["end"]}</th><td>{E(g["do"])}</td><td>{E(g["say"])}</td><td>{E(g["learners"])}</td></tr>' for g in SEGMENTS)
+    watch = ''.join(f'<tr><th scope="row">{E(a)}</th><td>{E(b)}</td><td>{E(c)}</td></tr>' for a, b, c in WATCH)
+    segs = ','.join(f'[{g["start"]},{g["end"]},"{g["name"]}"]' for g in SEGMENTS)
+    return f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Teach Agentic Process in 30 minutes</title>
+<!-- Written by projects/agentic-process/_build/build.py from _build/lesson.py. Change the source, not this file.
+     Made with Artifact Studio: the workshop deck starter, its styles and its slide engine, unchanged. Voice: practical instructor. -->
+<style>{style}
+/* added for this lesson: a timer, a prompt on a slide, and the teacher's handout under the deck */
+.dw .dk-s.lead .dk-pic{{--slide-photo:url(data:image/jpeg;base64,{puppy})}}
+.dw .pr{{margin:2.4cqw 0 0;padding:2cqw 2.4cqw;background:#fffdf6;color:#14302d;border-radius:1cqw;white-space:pre-wrap;overflow-wrap:anywhere;font:400 2.2cqw/1.4 ui-monospace,Menlo,Consolas,monospace;text-align:left}}
+.dk-top .wrap,.hand .wrap{{max-width:1080px;margin-inline:auto;padding-inline:12px}}
+.dk-top .how{{font-size:.98rem}}
+.tm{{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;max-width:1080px;margin:0 auto 12px;padding:10px 12px;color:var(--fog);font:700 1rem/1.3 var(--display)}}
+.tm button{{min-height:44px;border-radius:999px;border:0;background:var(--reed);color:var(--pine);font:700 1rem/1 var(--display);padding:0 18px}}
+.tm .clock{{font-variant-numeric:tabular-nums;font-size:1.3rem}}.tm .seg{{font-weight:400;color:#c2cede}}.tm .warn{{color:#ffe27a}}
+.hand{{background:#fffdf6;color:#14302d;padding:40px 0 48px;font:400 1.05rem/1.5 var(--display)}}
+.hand h2{{font:700 clamp(1.5rem,4.4vw,2.1rem)/1.1 var(--display);margin:34px 0 12px}}.hand h2:first-child{{margin-top:0}}
+.hand p{{max-width:40em;margin-top:10px}}
+.tw{{overflow-x:auto}}.hand table{{border-collapse:collapse;width:100%;min-width:560px;font-size:.96rem}}
+.hand th,.hand td{{text-align:left;vertical-align:top;padding:10px;border-bottom:1px solid #d9d2bf}}.hand thead th{{font-size:.86rem;color:#3f5a56}}
+.hand pre{{margin:10px 0 0;padding:14px;background:#f1ece0;border-radius:10px;white-space:pre-wrap;overflow-wrap:anywhere;font:400 .92rem/1.5 ui-monospace,Menlo,Consolas,monospace;max-width:46em}}
+.hand .cp{{min-height:44px;margin-top:8px;border-radius:999px;border:0;background:#0d4f4a;color:#fffdf6;font:700 .95rem/1 var(--display);padding:0 18px}}
+.me{{display:flex;gap:16px;align-items:flex-start;margin-top:36px;padding-top:24px;border-top:1px solid #d9d2bf}}.me img{{flex:none;width:64px;height:64px;border-radius:50%}}
+.me a{{color:#0d4f4a;font-weight:700;display:inline-flex;min-height:44px;align-items:center}}
+.tm:not(.on){{display:none}}
+.pvb button{{min-height:44px;border-radius:999px;border:0;background:var(--reed);color:var(--pine);font:700 1rem/1 var(--display);padding:0 18px;margin-top:6px}}.pvb:not(.on){{display:none}}
+#pv{{display:none}}
+.presenter body{{padding:0}}.presenter .dk-top,.presenter .dk-hold,.presenter .hand,.presenter .tm{{display:none}}
+.presenter #pv{{display:grid;gap:14px;max-width:900px;margin:0 auto;padding:18px;color:var(--fog);font:400 1.1rem/1.45 var(--display)}}
+#pv .row{{display:flex;flex-wrap:wrap;gap:10px;align-items:center}}#pv button{{min-height:48px;min-width:64px;border-radius:999px;border:1.5px solid #5b6b7a;background:var(--pine-2);color:var(--fog);font:700 1.05rem/1 var(--display);padding:0 18px}}
+#pv .clock{{font:700 2.4rem/1 var(--display);font-variant-numeric:tabular-nums}}#pv .lab{{font:700 .86rem/1.2 var(--display);color:var(--reed)}}
+#pv .now{{font:700 1.6rem/1.2 var(--display)}}#pv .note{{background:var(--pine-2);border-radius:10px;padding:14px 16px;font-size:1.2rem}}#pv .next{{color:#c2cede}}#pv .warn{{color:#ffe27a}}
+</style>
+</head>
+<body>
+<header class="dk-top"><div class="wrap">
+  <h1>Teach Agentic Process in 30 minutes</h1>
+  <p>Slides for one lesson. Each learner leaves with a one-page plan for an AI tool of their own, and the one test that finds its faults.</p>
+  <p class="how">To present: put the slides in full screen on the projector, and open the presenter window on your own screen. It shows your notes, the next slide and the lesson timer, and moves the slides. With one screen, press N to show your notes under the slide. The teacher's plan is under the slides.</p>
+  <details class="how"><summary>Before the lesson</summary><p>The day before, ask each learner to bring one job they do every week that starts from a blank page. On the day, open this page on the screen you present from, and keep the guide open in a second tab in case someone asks about a step.</p></details>
+  <p class="how pvb"><button type="button" id="pvopen">Open the presenter window</button> <span id="pvmsg" aria-live="polite"></span></p>
+</div></header>
+<section id="pv" aria-label="Presenter window">
+  <div class="row"><span class="clock" id="pvclock">0:00</span><button type="button" id="pvgo">Start the timer</button><span id="pvseg"></span></div>
+  <p class="warn" id="pvwarn" aria-live="polite"></p>
+  <div><p class="lab" id="pvn">Slide 1</p><p class="now" id="pvnow"></p></div>
+  <div><p class="lab">Your notes</p><p class="note" id="pvnote"></p></div>
+  <p class="next" id="pvnext"></p>
+  <div class="row"><button type="button" id="pvprev" aria-label="Previous slide">&#8592; Back</button><button type="button" id="pvnextb" aria-label="Next slide">Next &#8594;</button></div>
+  <p class="next">Keep this window on your own screen. The slides window follows it.</p>
+</section>
+<div class="tm" id="tm" role="group" aria-label="Lesson timer"><button type="button" id="tmgo">Start the 30-minute timer</button><span class="clock" id="tmclock" aria-live="off">0:00</span><span class="seg" id="tmseg">Minutes 0 to 3: The hook</span><span class="warn" id="tmwarn" aria-live="polite"></span></div>
+<div class="dk-hold">
+<div class="dk dw" tabindex="0" role="region" aria-roledescription="slide deck" aria-label="Teach Agentic Process in 30 minutes, {n} slides">
+{chr(10).join(slides)}
+    <div class="dk-bar"><button class="dk-prev" type="button" aria-label="Previous slide">&#8592;</button><span class="dk-n" aria-live="polite">1</span><button class="dk-next" type="button" aria-label="Next slide">&#8594;</button><button class="dk-notes-b" type="button" aria-pressed="false">Notes</button><button class="dk-full" type="button">Full screen</button></div>
+  </div>
+</div>
+<main class="hand"><div class="wrap">
+  <h2>The lesson, minute by minute</h2>
+  <div class="tw" tabindex="0" role="region" aria-label="The lesson, minute by minute"><table><thead><tr><th scope="col">Minutes</th><th scope="col">You do</th><th scope="col">You say</th><th scope="col">Learners do</th></tr></thead><tbody>{rows}</tbody></table></div>
+  <h2>The two prompts learners paste</h2>
+  <p>At minute 12, the coach. Learners change the last line to their own job.</p>
+  <pre id="pc">{E(COACH_PROMPT)}</pre><button class="cp" type="button" data-copy="pc">Copy the coach prompt</button>
+  <p>At minute 22, the review, in a new chat with no history.</p>
+  <pre id="pr">{E(REVIEW_PROMPT)}</pre><button class="cp" type="button" data-copy="pr">Copy the review prompt</button>
+  <h2>What to watch for</h2>
+  <div class="tw" tabindex="0" role="region" aria-label="What to watch for"><table><thead><tr><th scope="col">You see</th><th scope="col">It means</th><th scope="col">Say</th></tr></thead><tbody>{watch}</tbody></table></div>
+  <h2>After the lesson</h2>
+  <p>Ask each learner to finish steps 5 to 8 in their own time, and to send you two things: the plan, and what the fresh chat said was unclear. The second tells you more than the first.</p>
+  <p>This lesson has not yet been taught. Every timing is an estimate.</p>
+  <div class="me"><img src="data:image/jpeg;base64,{me}" width="64" height="64" alt="Bradley Ross"><div><b>Made by Bradley Ross</b><p style="margin-top:4px">An agentic AI architect and developer for businesses of every size, from start-up to enterprise. He builds and teaches practical AI.</p><a href="https://www.linkedin.com/in/bradaross/">Connect with Bradley on LinkedIn</a></div></div>
+</div></main>
+<script>{engine}
+/* the lesson timer: which segment the clock says you should be in, and whether the slide on screen is behind */
+(()=>{{const S=[{segs}],tm=document.getElementById('tm'),go=document.getElementById('tmgo'),clock=document.getElementById('tmclock'),seg=document.getElementById('tmseg'),warn=document.getElementById('tmwarn');
+  tm.classList.add('on');let t0=null,held=0,tick=null;
+  const slideSeg=()=>{{const c=document.querySelector('.dk-s.cur');return c?+c.dataset.seg:0}};
+  const show=()=>{{const ms=held+(t0?Date.now()-t0:0),m=ms/60000,mm=Math.floor(m),ss=Math.floor((ms/1000)%60);
+    clock.textContent=mm+':'+String(ss).padStart(2,'0');const k=S.findIndex(x=>m<x[1]);const cur=S[k<0?S.length-1:k];
+    seg.textContent=(m>=30?'Time is up. ':'')+'Minutes '+cur[0]+' to '+cur[1]+': '+cur[2]+(m<30?' ('+Math.max(0,Math.ceil(cur[1]-m))+' min left)':'');
+    const s=slideSeg();warn.textContent=t0&&k>=0&&s<k?'The slide on screen is behind the clock':''}};
+  go.addEventListener('click',()=>{{if(t0){{held+=Date.now()-t0;t0=null;clearInterval(tick);go.textContent='Carry on'}}else{{t0=Date.now();tick=setInterval(show,1000);go.textContent='Pause'}}show()}});
+  document.addEventListener('keyup',show);document.addEventListener('click',show);
+  /* the presenter window: a second copy of this page, opened with #presenter. The two windows talk by postMessage,
+     which also works for a file opened from the computer. The slides window owns the slides and the timer. */
+  const P=location.hash==='#presenter';
+  if(P){{document.documentElement.classList.add('presenter');const $i=id=>document.getElementById(id),send=c=>{{try{{opener&&opener.postMessage({{ap:'cmd',c}},'*')}}catch(e){{}}}};
+    $i('pvprev').addEventListener('click',()=>send('prev'));$i('pvnextb').addEventListener('click',()=>send('next'));$i('pvgo').addEventListener('click',()=>send('timer'));
+    document.addEventListener('keydown',e=>{{if(e.key==='ArrowRight'||e.key===' '){{e.preventDefault();send('next')}}else if(e.key==='ArrowLeft'){{e.preventDefault();send('prev')}}}});
+    addEventListener('message',e=>{{const d=e.data;if(!d||d.ap!=='state')return;$i('pvn').textContent='Slide '+d.i+' of '+d.n;$i('pvnow').textContent=d.title;$i('pvnote').textContent=d.note;
+      $i('pvnext').textContent=d.next?'Next: '+d.next:'This is the last slide';$i('pvclock').textContent=d.clock;$i('pvseg').textContent=d.seg;$i('pvwarn').textContent=d.warn;$i('pvgo').textContent=d.go}});
+    if(!opener)$i('pvnow').textContent='Open this window with the button on the slides page.';send('hello');return}}
+  const slides=[...document.querySelectorAll('.dk-s')],pvb=document.querySelector('.pvb');pvb.classList.add('on');let pw=null;
+  const state=()=>{{if(!pw||pw.closed)return;const i=slides.findIndex(s=>s.classList.contains('cur')),s=slides[i],nx=slides[i+1];
+    pw.postMessage({{ap:'state',i:i+1,n:slides.length,title:s.querySelector('h2').textContent,note:(s.querySelector('.dk-note')||{{}}).textContent||'',next:nx?nx.querySelector('h2').textContent:'',clock:clock.textContent,seg:seg.textContent,warn:warn.textContent,go:go.textContent}},'*')}};
+  document.getElementById('pvopen').addEventListener('click',()=>{{pw=open(location.href.split('#')[0]+'#presenter','ap-presenter','width=820,height=640');
+    document.getElementById('pvmsg').textContent=pw?'Presenter window open. Put this window in full screen on the projector.':'Your browser blocked the window. Allow pop-ups for this page, or press N for notes under the slide.'}});
+  addEventListener('message',e=>{{const d=e.data;if(!d||d.ap!=='cmd')return;if(e.source)pw=e.source;
+    if(d.c==='next')document.querySelector('.dk-next').click();else if(d.c==='prev')document.querySelector('.dk-prev').click();else if(d.c==='timer')go.click();show();state()}});
+  new MutationObserver(state).observe(document.querySelector('.dk-stage')||document.body,{{subtree:true,attributes:true,attributeFilter:['class']}});setInterval(state,1000);
+  document.querySelectorAll('[data-copy]').forEach(b=>b.addEventListener('click',async()=>{{const was=b.textContent;try{{await navigator.clipboard.writeText(document.getElementById(b.dataset.copy).textContent);b.textContent='Copied'}}catch(e){{b.textContent='Select the text and copy it'}}setTimeout(()=>b.textContent=was,2200)}}));
+}})();
+</script>
+</body>
+</html>
+"""
+
+def nine_steps_svg():
+    """The README picture: nine steps in a row with a gate after each. A marker walks them and waits at each gate."""
+    W, x0, dx = 820, 58, 88
+    split = {'Reuse check': ('Reuse', 'check'), 'Outside help': ('Outside', 'help'), 'Simplest design': ('Simplest', 'design'),
+             'Plan and front door': ('Plan and', 'front door'), 'Build and test': ('Build and', 'test')}
+    stages = [('Decide', 1, 4), ('Design', 5, 7), ('Test', 8, 8), ('Grow', 9, 9)]
+    out = [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} 270" role="img" aria-labelledby="t d" font-family="system-ui,-apple-system,\'Segoe UI\',Roboto,Helvetica,Arial,sans-serif">',
+           '<title id="t">Nine steps, a gate after each</title>',
+           '<desc id="d">Nine steps in a row, from scope to grow, grouped into four stages: decide, design, test and grow. A marker moves along them and stops at the gate after each step. The eighth step, build and test, is highlighted.</desc>',
+           '<!-- Written by projects/agentic-process/_build/build.py from _build/steps.py. -->',
+           '<style>', '.mk{animation:walk 27s infinite}']
+    keys = []
+    for i in range(9):
+        a, b = i * 100 / 9, (i + .55) * 100 / 9
+        keys += [f'{a:.2f}%{{transform:translate({i*dx}px,0)}}', f'{b:.2f}%{{transform:translate({i*dx + 34}px,0)}}']
+    keys.append(f'100%{{transform:translate({8*dx + 34}px,0)}}')
+    out += ['@keyframes walk{' + ''.join(keys) + '}', '@media (prefers-reduced-motion:reduce){.mk{animation:none;transform:translate(' + str(7*dx) + 'px,0)}}', '</style>',
+            f'<rect width="{W}" height="270" rx="20" fill="#0c2340"/>']
+    for name, a, b in stages:
+        xa, xb = x0 + (a-1)*dx - 30, x0 + (b-1)*dx + 30
+        out += [f'<rect x="{xa}" y="30" width="{xb-xa}" height="30" rx="15" fill="#17365f"/>', f'<text x="{(xa+xb)/2}" y="51" fill="#ffd23f" font-size="16" font-weight="700" text-anchor="middle">{name}</text>']
+    out.append(f'<path d="M{x0},120 H{x0 + 8*dx + 34}" stroke="#2f5a8f" stroke-width="4"/>')
+    for st in STEPS:
+        i = st['n'] - 1; cx = x0 + i*dx; hi = st['n'] == 8
+        out += [f'<circle cx="{cx}" cy="120" r="24" fill="{"#ffd23f" if hi else "#1d4273"}" stroke="{"#ffd23f" if hi else "#5d86c0"}" stroke-width="3"/>',
+                f'<text x="{cx}" y="127" fill="{"#0c2340" if hi else "#fff"}" font-size="20" font-weight="800" text-anchor="middle">{st["n"]}</text>',
+                f'<rect x="{cx + 34 - 7}" y="113" width="14" height="14" fill="#ffd23f" transform="rotate(45 {cx + 34} 120)"/>']
+        l1, l2 = split.get(st['name'], (st['name'], ''))
+        col = '#ffd23f' if hi else '#d5e2f5'
+        out.append(f'<text x="{cx}" y="174" fill="{col}" font-size="15" font-weight="{"700" if hi else "500"}" text-anchor="middle">{l1}</text>')
+        if l2: out.append(f'<text x="{cx}" y="193" fill="{col}" font-size="15" font-weight="{"700" if hi else "500"}" text-anchor="middle">{l2}</text>')
+    out += [f'<g class="mk"><circle cx="{x0}" cy="84" r="9" fill="#fff"/><path d="M{x0-6},94 L{x0},104 L{x0+6},94 Z" fill="#fff"/></g>',
+            f'<text x="{x0 - 30}" y="238" fill="#d5e2f5" font-size="16"><tspan fill="#ffd23f">&#9670;</tspan> a gate: a question you answer before you go on</text>',
+            f'<text x="{W - 30}" y="238" fill="#ffd23f" font-size="16" font-weight="700" text-anchor="end">Step 8: a stranger tests it</text>', '</svg>']
+    return '\n'.join(out) + '\n'
+
+SKILL_DIR = P/'level-2-files/agentic-process'
+TOOLS = P.parents[1]/'workshop/tools'
+def cell(x): return x.replace('|', '\\|')
+def coach_table():
+    rows = ["| # | Step | What you do | Gate question |", "| --- | --- | --- | --- |"]
+    for st in STEPS:
+        do, note = COACH[st['n']]
+        rows.append(f"| {st['n']} | {st['name']} | {cell(do)} | \"{cell(st['gate'])}\"" + (f" {cell(note)}." if note else "") + " |")
+    return "\n".join(rows)
+def skill_table():
+    rows = ["| # | Step | You do | Gate | Check |", "| --- | --- | --- | --- | --- |"]
+    for st in STEPS:
+        do, check = SKILL[st['n']]
+        rows.append(f"| {st['n']} | {st['name']} | {cell(do)} | {cell(st['gate'])} | {cell(check) if check else 'Your answer, written in the plan'} |")
+    return "\n".join(rows)
+def fill(path, table, name='steps', text=None, inline=False):
+    text = text if text is not None else path.read_text(encoding='utf-8')
+    sep = '' if inline else '\n'
+    pat = r"(<!-- " + name + r":start[^>]*-->)" + ("" if inline else r"\n") + r".*?(<!-- " + name + r":end -->)"
+    assert re.search(pat, text, flags=re.S), f'no {name} markers in {path}'
+    return re.sub(pat, lambda m: m.group(1) + sep + table + sep + m.group(2), text, flags=re.S)
+
+outputs = {P/'base/explainer.html': page, P/'base/PROCESS.md': process_md(),
+           P/'base/TEACH-IN-30-MINUTES.md': lesson_md(), P/'base/training.html': training_html(),
+           P/'base/AI-INSTRUCTIONS.md': fill(P/'base/AI-INSTRUCTIONS.md', '. '.join(PLAN_ROWS) + '.', 'plan', fill(P/'base/AI-INSTRUCTIONS.md', coach_table()), inline=True),
+           P/'README.md': fill(P/'README.md', '```\n' + PROMPT + '\n```', 'prompt'),
+           P/'_build/img/nine-steps.svg': nine_steps_svg(),
+           SKILL_DIR/'SKILL.md': fill(SKILL_DIR/'SKILL.md', skill_table())}
+for name in ('gates.py', 'check_project.py', 'check_links.py', 'check_filled.py'):
+    outputs[SKILL_DIR/'template/_build/checks'/name] = (TOOLS/name).read_text(encoding='utf-8')
 if '--check' in sys.argv:
     stale = [str(f.relative_to(P)) for f, text in outputs.items() if not f.exists() or f.read_text(encoding='utf-8') != text]
-    sys.exit(('Out of date, run python3 _build/build.py: ' + ', '.join(stale)) if stale else print('build: both files are up to date'))
+    sys.exit(('Out of date, run python3 _build/build.py: ' + ', '.join(stale)) if stale else print(f'build: all {len(outputs)} files are up to date'))
 for f, text in outputs.items():
-    f.write_text(text, encoding='utf-8'); print(f'{f.relative_to(P)}: {len(text)//1024} KB')
+    f.parent.mkdir(parents=True, exist_ok=True); f.write_text(text, encoding='utf-8'); print(f'{f.relative_to(P)}: {len(text)//1024} KB')

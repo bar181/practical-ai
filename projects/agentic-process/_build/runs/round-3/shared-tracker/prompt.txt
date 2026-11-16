@@ -1,0 +1,3 @@
+Read the build coach [saved as COACH.md in the run folder] and follow it.
+
+My idea: five of us in a sales team share one spreadsheet of deals. After each call, whoever made it is supposed to update the row, and nobody does. I want an AI to read our call notes each Friday and suggest the updates for each row, for our team lead to approve. We all use Microsoft Copilot at work. I am not technical.

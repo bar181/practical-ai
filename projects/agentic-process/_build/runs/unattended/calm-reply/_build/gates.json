@@ -1,0 +1,5 @@
+[
+ {"name": "layout", "proves": "The folder follows the showcase layout", "run": "python3 _build/checks/check_project.py ."},
+ {"name": "links", "proves": "No Markdown link in this project is broken", "run": "python3 _build/checks/check_links.py ."},
+ {"name": "examples", "proves": "Each worked example has the promised shape and a reply body of 120 words or fewer", "run": "python3 _build/checks/check_examples.py ."}
+]
