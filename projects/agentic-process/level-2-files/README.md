@@ -13,6 +13,7 @@ the order of work.
 | The skill | [`agentic-process/SKILL.md`](agentic-process/SKILL.md) | Runs the nine steps and stops at each gate |
 | The template | [`agentic-process/template/`](agentic-process/template/) | A project folder with the front page, the agent file, a plan, paste-in instructions and its own checks, all with the blanks marked |
 | The script | [`agentic-process/new_project.py`](agentic-process/new_project.py) | Copies the template and fills in the name |
+| Autopilot | [`AUTOPILOT.md`](AUTOPILOT.md) | One prompt: a spec and your guidance in, a draft pull request with a runnable demo out. Not yet run end to end |
 
 All three are in one folder, [`agentic-process/`](agentic-process/). Copy that folder into your
 agent's skills (for Claude Code, `.claude/skills/` in your repository) and it works in any

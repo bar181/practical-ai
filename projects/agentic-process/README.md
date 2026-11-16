@@ -8,11 +8,11 @@
 
 **An AI agent will happily build the wrong thing three times.** Agentic Process is the order of
 work that stops it: nine steps, a gate after each, and a test in a fresh chat, run before anyone
-else sees the result. It is free. It is written for any chatbot (so far it has been
-tested in Claude only), or hand it to your coding agent.
+else sees the result. It is free. Use it in any chatbot (so far tested in Claude only),
+hand it to your coding agent, or give the agent a spec and let it run to a draft pull request on its own.
 
-**North Star:** anyone who repeats a job at work can turn it into a small AI tool that someone
-else can use, and know it works before anyone relies on it.
+**North Star:** a person, or an agent working alone, can take an idea or a spec to a tool that someone
+else can use, without rebuilding it three times on the way.
 [Why it exists, and what it is worth to you](https://raw.githack.com/bar181/practical-ai/main/projects/agentic-process/base/north-star.html).
 
 | Start with | What it is | Time |
@@ -56,7 +56,7 @@ path: steps 1, 6 and 8 in full, steps 2 to 5 in a line each, step 7 folded into 
 | **New to this** (Beginner) | The coach, pasted into any chatbot | A one-page plan and a first prompt you can test today |
 | **Building with an agent** (Advanced) | [One skill folder](level-2-files/) to copy into your agent's skills. Works in any repository | A project folder with its own checks, the front page and the first version in place |
 | **Running agents unattended** (Expert) | [Gates, the fresh-run test and the score sheet](level-3-files/) | Proof of what works, before a person spends time on it |
-| **Teaching or learning it properly** | [The course](https://raw.githack.com/bar181/practical-ai/main/projects/agentic-process/base/course.html): five chapters, a scrolling diagram of the nine steps, three ways to run it, the automation levels, and a present mode | A tool of your own, taken through steps 1 to 8 and tested by a stranger, with step 9 planned |
+| **Building from a spec you already have** (Autopilot) | [One prompt](level-2-files/AUTOPILOT.md) for a coding agent or a scheduled task: your spec and guidance in | A draft pull request with a runnable demo, gate results and what the agent assumed. You review and merge |
 
 ### 3. See it used
 
@@ -111,16 +111,23 @@ the wood, draw it, have someone check the drawing, build the smallest platform y
 | Builds the first version and tests it in a fresh session | Read what the test tripped on and decide what to fix |
 | Makes each addition | Approve each one, and use the tool yourself |
 
-## The course
+## Autopilot: a spec in, a draft pull request out
 
-<!-- course:start -->
-**[How to use Agentic Process](https://raw.githack.com/bar181/practical-ai/main/projects/agentic-process/base/course.html)**: How this project works, why each of its nine steps exists, and how to run it yourself: in a chat window, with a coding agent, or from a spec you already have. Five chapters: why it exists; the nine steps as a
-scrolling diagram, with why each exists and its time; three ways to run it (any chatbot, a coding agent, a spec you
-already have); automation and the levels, with what has been tried; your first tool. About 25 minutes to read and
-60 for a first run, both estimates. Press Present to teach from it. It has not been taught yet.
-<!-- course:end -->
+The same nine steps, run by a coding agent without you guiding each one. You give it a spec, such
+as any plan in [`workshop/plans/`](../../workshop/plans/), and a few lines of guidance. It fills the
+plan from the spec and marks every choice the spec did not make as assumed, checks what already
+exists, builds a demo you can run, tests it with fresh sessions, and opens a draft pull request.
+You decide twice: when you write the spec, and when you review the pull request.
 
-Each chapter ends with notes for whoever presents it.
+```
+Use the agentic-process skill on autopilot.
+Spec: workshop/plans/learning-system/README.md and the draft it links to
+Guidance: a demo for developers first; invented data only; one command runs it
+Work in this repository. Open a draft pull request. Never merge.
+```
+
+Run it in a Claude Code session, save it as a scheduled routine, or put it in an issue for a
+coding agent: [how, and what comes back](level-2-files/AUTOPILOT.md).
 
 ## Status
 
@@ -131,6 +138,7 @@ Each chapter ends with notes for whoever presents it.
 | The coach | Fresh AI sessions, six runs in Claude. **Not yet run in ChatGPT, Gemini or Copilot, or by a person** |
 | The skill folder | One agent working unattended, in an empty repository: it built and tested a first tool |
 | The North Star page, the guide and the course | Checked in a browser at phone and laptop size with an accessibility scan. **The course has not been taught** |
+| Autopilot | **Not yet run end to end.** Written on 16 November 2026 |
 | The links in this page | Open once this project is merged into the main branch |
 
 Every round of testing, with the logs, is in [`_build/runs/`](_build/runs/README.md).

@@ -12,7 +12,7 @@ G = "https://github.com/bar181/practical-ai/blob/main/projects/agentic-process/"
 STEP = {s['n']: s for s in STEPS}
 _PLAN = (pathlib.Path(__file__).resolve().parents[1] / "level-2-files/agentic-process/template/base/plan.md").read_text(encoding="utf-8").split("\n## Status")[0]
 PLAN_ROWS = re.findall(r"^\| (?!Heading |---)([^|]+?) \|", _PLAN, re.M)
-NORTH_STAR = "Anyone who repeats a job at work can turn it into a small AI tool that someone else can use, and know it works before anyone relies on it."
+NORTH_STAR = "A person, or an agent working alone, can take an idea or a spec to a tool that someone else can use, without rebuilding it three times on the way."
 
 
 def md(text):

@@ -319,7 +319,7 @@ def process_md():
     return "\n".join(L)
 
 from pages import north_star_html
-from course_page import course_html, course_outline_md
+from course_page import course_html
 GH = "https://raw.githack.com/bar181/practical-ai/main/projects/agentic-process/base/"
 
 def nine_steps_svg():
@@ -383,7 +383,7 @@ def fill(path, table, name='steps', text=None, inline=False):
 outputs = {P/'base/explainer.html': page, P/'base/PROCESS.md': process_md(),
            P/'base/north-star.html': north_star_html(me, 'explainer.html', 'course.html'), P/'base/course.html': course_html(me, puppy, 'north-star.html', 'explainer.html'),
            P/'base/AI-INSTRUCTIONS.md': fill(P/'base/AI-INSTRUCTIONS.md', '. '.join(PLAN_ROWS) + '.', 'plan', fill(P/'base/AI-INSTRUCTIONS.md', coach_table()), inline=True),
-           P/'README.md': fill(P/'README.md', course_outline_md(GH + 'course.html'), 'course', fill(P/'README.md', '```\n' + PROMPT + '\n```', 'prompt')),
+           P/'README.md': fill(P/'README.md', '```\n' + PROMPT + '\n```', 'prompt'),
            P/'_build/img/nine-steps.svg': nine_steps_svg(),
            SKILL_DIR/'SKILL.md': fill(SKILL_DIR/'SKILL.md', skill_table())}
 for name in ('gates.py', 'check_project.py', 'check_links.py', 'check_filled.py'):

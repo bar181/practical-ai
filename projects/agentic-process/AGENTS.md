@@ -20,6 +20,7 @@ Take the first of these that you can do.
 | How to use this project, as a visual course with a present mode | [`base/course.html`](base/course.html), written from `_build/course.py` |
 | The nine steps, with a purpose, proof and prompt for each | [`base/PROCESS.md`](base/PROCESS.md). It is written by `_build/build.py` from `_build/steps.py`: change the source |
 | The plan to fill in | The end of [`base/PROCESS.md`](base/PROCESS.md), and `base/plan.md` in every new project folder |
+| To build from a spec without a person at each step | [`level-2-files/AUTOPILOT.md`](level-2-files/AUTOPILOT.md), and the Autopilot section of the skill |
 | A new project folder | Run `python3 projects/agentic-process/level-2-files/agentic-process/new_project.py <slug> "<Title>"` from the repository root. It makes `projects/<slug>/` from [the template](level-2-files/agentic-process/template/), with its own checks |
 | How to test what you built | [`level-3-files/fresh-run/`](level-3-files/fresh-run/) |
 | Checks to run from step 5 on | `python3 projects/<slug>/_build/checks/gates.py projects/<slug>`. It runs the new project's `_build/gates.json`. This project's own gates are in [`level-3-files/gates.json`](level-3-files/gates.json) |

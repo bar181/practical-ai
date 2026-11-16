@@ -194,13 +194,6 @@ def course_html(me, puppy, north_url, guide_url):
 """
 
 
-def course_outline_md(course_url):
-    return (f"**[{COURSE['title']}]({course_url})**: {COURSE['purpose']} Five chapters: why it exists; the nine steps as a\n"
-            "scrolling diagram, with why each exists and its time; three ways to run it (any chatbot, a coding agent, a spec you\n"
-            f"already have); automation and the levels, with what has been tried; your first tool. About {COURSE['read']} minutes to read and\n"
-            f"{COURSE['run']} for a first run, both estimates. Press Present to teach from it. It has not been taught yet.")
-
-
 CSS = """
 .bar{position:fixed;top:0;left:0;right:0;height:4px;z-index:20}.bar i{display:block;height:100%;width:0;background:var(--hl)}
 .top{position:sticky;top:0;z-index:15;display:flex;gap:4px;align-items:center;flex-wrap:wrap;padding:8px 14px;background:var(--navy)}

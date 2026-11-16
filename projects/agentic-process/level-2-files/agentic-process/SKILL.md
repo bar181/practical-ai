@@ -1,6 +1,6 @@
 ---
 name: agentic-process
-description: Takes an idea for a small AI tool from a sentence to a first version someone else can try, in nine steps with a gate after each. Use when asked to "start a new tool", "plan a tool", "build this project", "follow the process", "set up a project folder", "what is the next step on this tool", or to review whether a tool is ready to share.
+description: Takes an idea or a spec for a small AI tool to a first version someone else can try, in nine steps with a gate after each, with a person deciding at each gate or, on autopilot, from a spec to a draft pull request. Use when asked to "start a new tool", "plan a tool", "build this project", "build this spec on autopilot", "follow the process", "set up a project folder", "what is the next step on this tool", or to review whether a tool is ready to share.
 ---
 
 # Agentic process
@@ -24,6 +24,34 @@ which carries its own checks.
    say no, or if the tool needs shared files, more than one person using it, or anything paid.
    People who only receive the result, such as customers, do not count; text pasted into the
    chat is not a file. Working unattended, take all nine steps: a person can shorten it later.
+
+## Autopilot: from a spec to a pull request
+
+Use this when the person gives you a spec (a plan, a draft, notes) and guidance, and says
+"autopilot", or when you run on a schedule. The person decides by writing the spec and by
+reviewing the pull request. You decide everything in between, and record why.
+
+1. **Read the inputs.** The spec, any draft it links to, and the guidance. Guidance wins over the
+   spec when they differ. Write both paths at the top of the plan.
+2. **Steps 1 to 6 from the spec.** Take each answer from the spec. Where the spec is silent, make
+   the smallest reasonable choice and mark it `Assumed:` in the plan. Do not stop to ask. Still
+   run the reuse check: if something already does the whole job, stop, write the guide to it,
+   and go to step 6 below with that guide as the result.
+3. **Build a demo the person can run.** The beginner version, as the template describes. If the
+   spec's first version needs code (a database, a script), build the smallest working version
+   in `level-2-files/` with one command that shows it working on invented data, and add that
+   command to `_build/gates.json` as a gate named `demo`.
+4. **Steps 7 and 8 with fresh sessions.** Use sub-agents with no memory of this work for the
+   review and for two test runs (see "The fresh-session test"). Fix repeats and blocking points,
+   then run one more round. Without sub-agents, prepare the test folders and mark the gates open.
+5. **Every gate passes or is open, never failed.** Run
+   `python3 <project>/_build/checks/gates.py <project>`. Fix any failure. After two failed fixes
+   of one gate, stop and hand back with that gate failed.
+6. **Hand back as a draft pull request.** A branch named `build/<slug>`, one commit, and a draft
+   pull request whose description has: the four headings (Decided. Assumed. Not checked. Test
+   this next.), each gate with pass or open and why, the gate output, and the command that runs
+   the demo. Without a way to open a pull request, leave the branch and write the description to
+   `_build/HANDBACK.md`. Never merge.
 
 ## The nine steps
 
