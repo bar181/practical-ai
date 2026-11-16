@@ -27,7 +27,7 @@ you would be proud to present. Free, no sign-up, nothing to install.
 use, after any answer or with your own notes:
 
 ```
-Read the design guide at https://raw.githubusercontent.com/bar181/practical-ai/scaffold/structure/projects/artifact-studio/base/AI-INSTRUCTIONS.md
+Read the design guide at https://raw.githubusercontent.com/bar181/practical-ai/main/projects/artifact-studio/base/AI-INSTRUCTIONS.md
 
 Then show this as an HTML presentation in the keynote voice, and tell me three ways I could tailor it for my own business.
 ```
@@ -41,7 +41,7 @@ just say "show this as a presentation". Using agents? Add the
 [skill](projects/artifact-studio/level-2-files/) or the
 [MCP server](projects/artifact-studio/level-3-files/).
 
-**3. Make it yours.** Fork this repository, or [download it](https://github.com/bar181/practical-ai/archive/refs/heads/scaffold/structure.zip) into Google Drive, SharePoint
+**3. Make it yours.** Fork this repository, or [download it](https://github.com/bar181/practical-ai/archive/refs/heads/main.zip) into Google Drive, SharePoint
 or your Documents, and connect your AI to the folder. Then fill in
 [your preferences](projects/artifact-studio/level-2-files/preferences.md): your colours, your
 tone, the things you never want.

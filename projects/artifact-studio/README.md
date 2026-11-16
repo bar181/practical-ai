@@ -41,7 +41,7 @@ Paste this into ChatGPT, Claude, Gemini or the chatbot you already use. The note
 example, so there is nothing to prepare.
 
 ```
-Read the design guide at https://raw.githubusercontent.com/bar181/practical-ai/scaffold/structure/projects/artifact-studio/base/AI-INSTRUCTIONS.md
+Read the design guide at https://raw.githubusercontent.com/bar181/practical-ai/main/projects/artifact-studio/base/AI-INSTRUCTIONS.md
 
 Then show me a one-page report as an HTML page, from these notes:
 
@@ -60,19 +60,36 @@ When you are done, tell me three ways I could tailor this for my own business.
 ```
 
 You should get something like this. It is the same request, already built:
-[`base/example.html`](base/example.html).
+[`base/examples/report.html`](base/examples/report.html).
 
 <p align="center"><img src="_build/img/example-report.webp" width="640" alt="Screen capture of a one-page business report made by AI from eight lines of notes: a headline saying October was the best month this year, three key numbers, a bar chart and what happens next"></p>
 
-- **Your chatbot cannot open the link?** Open [`base/AI-INSTRUCTIONS.md`](https://github.com/bar181/practical-ai/blob/scaffold/structure/projects/artifact-studio/base/AI-INSTRUCTIONS.md),
+- **Your chatbot cannot open the link?** Open [`base/AI-INSTRUCTIONS.md`](https://github.com/bar181/practical-ai/blob/main/projects/artifact-studio/base/AI-INSTRUCTIONS.md),
   press the copy button at the top right, and paste it in before the notes.
 - **Now add a photo.** Attach any photo of your own and say: `Open with my photo as a slow pan and zoom, like a documentary shot, and set the title in huge letters filled with the photo.`
 - **Now make it a deck.** In the same chat, say: `Show the same notes as a keynote-style slide deck: black slides, one idea each, huge type.`
-- **Browse everything it can make.** Download two files and open them in a browser.
-  [`base/studio.html`](base/studio.html) is the highlights: photo effects, scroll effects, layouts,
-  post previews and a tab for each of seven voices. [`base/components.html`](base/components.html) is everything
-  else: pages, decks, more post previews, parts, and a picker that chooses a template for you. Keep
-  them in the same folder and each links to the other.
+- **Browse everything it can make.** Download [`base/studio.html`](base/studio.html) and open it in
+  a browser. It is the whole library in one file. The highlights come first: photo effects, scroll
+  effects, layouts, post previews and a tab for each of seven voices. The components follow:
+  pages, decks, parts, and a picker that chooses a template for you.
+- **See one worked example per voice.** Each file in [`base/examples/`](base/examples/) is one
+  request: the prompt to copy, the sample input and the finished page.
+
+| Worked example | What it shows |
+| --- | --- |
+| [`voice-visionary.html`](base/examples/voice-visionary.html) | Huge type, pictures with words over them, a frosted card. About this repository |
+| [`voice-storyteller.html`](base/examples/voice-storyteller.html) | The customer as the hero, with a hook, a plan and an ending |
+| [`voice-emotional.html`](base/examples/voice-emotional.html) | One personal story, and the offer named only at the end |
+| [`voice-explainer.html`](base/examples/voice-explainer.html) | A lesson to teach from: analogy, steps, a worked example, questions |
+| [`voice-practical.html`](base/examples/voice-practical.html) | A field guide: the core idea, one analogy, steps for today |
+| [`voice-analyst.html`](base/examples/voice-analyst.html) | The answer first, then three findings with a chart each |
+| [`voice-brief.html`](base/examples/voice-brief.html) | A decision memo a busy person reads in three minutes |
+| [`social-posts.html`](base/examples/social-posts.html) | Three drafts of a post, shown as they will look in the feed |
+| [`photo-effects.html`](base/examples/photo-effects.html) | Nine effects from one picture, each with its sentence |
+| [`report.html`](base/examples/report.html) | The one-page report from the request above |
+
+The finished pages are hand-built references, not the output of one chat. Paste a prompt into
+your own assistant and you get a page in that manner. Yours will differ.
 
 ### 2. Use it every day
 
@@ -81,7 +98,7 @@ Set it up once, in the place you already work. Then after any answer, you say
 
 | You use | Do this once | Takes |
 | --- | --- | --- |
-| **A chatbot** | Make a Project in Claude or ChatGPT, or a Gem in Gemini. Paste [`base/AI-INSTRUCTIONS.md`](https://github.com/bar181/practical-ai/blob/scaffold/structure/projects/artifact-studio/base/AI-INSTRUCTIONS.md) into its instructions | 2 minutes |
+| **A chatbot** | Make a Project in Claude or ChatGPT, or a Gem in Gemini. Paste [`base/AI-INSTRUCTIONS.md`](https://github.com/bar181/practical-ai/blob/main/projects/artifact-studio/base/AI-INSTRUCTIONS.md) into its instructions | 2 minutes |
 | **An assistant that loads skills** | Add the folder [`level-2-files/artifact-studio/`](level-2-files/artifact-studio/) as a skill | 5 minutes |
 | **Agents, or a team** | Connect the MCP server in [`level-3-files/`](level-3-files/). Your agents then browse the library and choose for themselves | 10 minutes |
 
@@ -92,7 +109,7 @@ connector yet: the server runs on your own computer.
 
 - **Put your brand on file.** Fill in [`level-2-files/preferences.md`](level-2-files/preferences.md):
   your colours, your tone, the things you never want. A short ask then comes back in your style.
-- **Keep your own copy.** Fork this repository, or [download it](https://github.com/bar181/practical-ai/archive/refs/heads/scaffold/structure.zip) and save the
+- **Keep your own copy.** Fork this repository, or [download it](https://github.com/bar181/practical-ai/archive/refs/heads/main.zip) and save the
   `artifact-studio` folder in Google Drive, SharePoint or your Documents. Then connect your AI to
   that folder.
 - **Ask your AI to tailor it.** With the folder connected, say:
@@ -327,6 +344,7 @@ used it yet, so tell us what you find.
 | Part | State |
 | --- | --- |
 | Gallery, picker, palette maker | Built. Rebuilds from `_build/` |
+| Worked examples | Ten files. Each finished page is a hand-built reference. **None is the output of running its prompt** in a chat |
 | Chatbots | Built with Claude. **Not yet run** in the other assistants named on this page |
 | The beginner prompt | Run once, on 15 November 2026, in a fresh Claude session given the instructions as text: 6 of 6 on the skill's test for this report, with every figure traced to the notes. One run, one assistant |
 | The one-link prompt | The link opens. **Not yet tried** from inside each chatbot |
@@ -340,7 +358,7 @@ Every company, person and figure in the templates and the example is made up, an
 Two places are about this repository instead and name its author: the visionary page and the
 post previews. Their drafts are examples, written from his own teaching phrases.
 Two photographs inside the templates, the lake and the sunset, were taken by the repository
-owner. The other eight pictures were supplied by the owner as finished images, not taken as
+owner. The other twelve pictures were supplied by the owner as finished images, not taken as
 photographs. None carries location data. The times on this page are estimates, not measurements.
 
 ## How it is laid out
@@ -353,13 +371,12 @@ artifact-studio/
   AGENTS.md               instructions for AI agents
   LICENSE                 Apache-2.0
   base/
-    studio.html           the highlights: photo effects, scroll effects, layouts, voices
-    components.html       everything else: pages, decks, social formats, parts, the skill
+    studio.html           the kitchen sink: the whole library in one file
     AI-INSTRUCTIONS.md    copy into your chatbot
-    example.html          one finished business report
+    examples/             ten worked examples: a prompt, its sample input, the finished page
   level-2-files/          Advanced: your brand on file, and the skill
   level-3-files/          Expert: the MCP server for agents
-  _build/                 what the two gallery files are built from. You do not need it
+  _build/                 what the library and the examples are built from. You do not need it
 ```
 
 ## About the creator

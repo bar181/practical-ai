@@ -26,7 +26,7 @@ person's content only; check it; return it with the delivery note below.
 | The skeleton every page is built on | [`page-skeleton.html`](level-2-files/artifact-studio/assets/page-skeleton.html) |
 | The rules, and the cards for each recipe, voice and look | [`level-2-files/artifact-studio/references/`](level-2-files/artifact-studio/references/) |
 | Every template with its fit scores, and reference code for each | [`level-3-files/mcp/library/`](level-3-files/mcp/library/): `index.json`, `sources/` and `svg/` |
-| What a good result looks like | [`base/example.html`](base/example.html): one finished report. Its request and notes are in the README |
+| What a good result looks like | [`base/examples/`](base/examples/): one worked example for each voice, for post previews, for photo effects and for a report. Each shows the prompt, the sample input and the finished page |
 | The person's standing preferences | A file named `preferences.md`, if they have one. The template is [`level-2-files/preferences.md`](level-2-files/preferences.md) |
 | Designs the person liked, in their own words | [`level-3-files/mcp/inspiration/`](level-3-files/mcp/inspiration/), or call `list_inspiration` |
 
@@ -66,8 +66,8 @@ Check before sharing: <the numbers, names and claims a person must verify>
 
 ## To change the library
 
-Edit the files in [`_build/`](_build/), run `python3 _build/build.py`, and check that both gallery
-files open: `base/studio.html` and `base/components.html`. Never edit a generated file. Each one says so at the top.
+Edit the files in [`_build/`](_build/), run `python3 _build/build.py`, and check that
+`base/studio.html` and the files in `base/examples/` open. Never edit a generated file. Each one says so at the top.
 
 ## Known limits
 

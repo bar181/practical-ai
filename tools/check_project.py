@@ -4,7 +4,7 @@ The showcase layout, used by everything in projects/. base/ is enough to try the
   README.md        the hook, a "Try it" quick start, the North Star and a Status section
   AGENTS.md        instructions for AI agents
   LICENSE
-  base/            the few files a beginner needs. Files only, six at most
+  base/            the few files a beginner needs: six at most, plus an optional examples/ folder of worked examples (files only)
   level-2-files/   optional. What an advanced user adds, with a README.md
   level-3-files/   optional. Connections for agents, with a README.md
   _build/          optional. What the project is built from
@@ -48,8 +48,12 @@ else:                                                                # the showc
         inside = os.listdir(os.path.join(root, "base"))
         if not inside: problems.append("base/ is empty")
         if len(inside) > 6: problems.append(f"base/ holds {len(inside)} things. Six at most: it is what a beginner opens")
-        sub = [d for d in inside if os.path.isdir(os.path.join(root, "base", d))]
-        if sub: problems.append("base/ should hold files only. Found folders: " + ", ".join(sorted(sub)))
+        sub = [d for d in inside if os.path.isdir(os.path.join(root, "base", d)) and d != "examples"]
+        if sub: problems.append("base/ may hold one folder, examples/. Found: " + ", ".join(sorted(sub)))
+        if exists("base", "examples"):
+            ex = os.listdir(os.path.join(root, "base", "examples"))
+            if not ex: problems.append("base/examples/ is empty")
+            if any(os.path.isdir(os.path.join(root, "base", "examples", d)) for d in ex): problems.append("base/examples/ should hold files only")
     for lv in ("level-2-files", "level-3-files"):
         if exists(lv) and not exists(lv, "README.md"): problems.append(f"{lv}/ has no README.md")
     if exists("level-3-files") and not exists("level-2-files"): problems.append("level-3-files/ without level-2-files/")

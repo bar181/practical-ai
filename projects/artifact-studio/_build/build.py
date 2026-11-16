@@ -97,6 +97,7 @@ def md_view(name,title,path,raw=None):
     else: inner=md_html(path)
     return f'<div class="view" id="v-{name}" data-title="{html.escape(title)}"><article class="md"><div class="wrap">{inner}</div></article></div>'
 
+_sent0=open(os.path.join(HERE,'sentences.md')).read()
 # every view file: css always, script and markup kept by name
 css=[];VIEW={};VJS={};LIB=[];LV={};VCSS={};VFILE={}
 for f in sorted(glob.glob(os.path.join(HERE,'views','*.html'))):
@@ -133,18 +134,18 @@ VOICES=['voice-keynote','voice-story','voice-emotional','voice-teacher','voice-p
 RECIPES=['recipe-report','recipe-proposal','recipe-explainer','recipe-landing']
 CONCEPTS=(('card','31-cards.html','components/cards.html','Cards'),('layout','32-layouts.html','components/layouts.html','Layouts'),('colour','33-colour.html','components/colour.html','Colour'))
 G_VOICES=('Voices',VOICES,'One message, told six ways. Tap a voice:'); G_RECIPES=('Recipes',RECIPES,'Four whole pages. Tap a recipe:')
-# two files. Highlights: the photo and scroll effects, the looks and layouts, and one tab for each voice. Components: everything else.
+# one kitchen sink. Two rows of tabs: the highlights first, then the components to build with. A group named '#' is a heading in the tab bar.
 POSTS=['post-linkedin','post-instagram','post-tiktok','post-facebook','post-email','post-blog']
-HIGHLIGHT_GROUPS=[('Photo effects',['photo'],''),('Scroll effects',['scroll'],''),('Layouts',['lookvoice','looks','layouts'],'Looks set the mood and layouts set the order:'),('Socials',['socials'],'')]+[(LABEL[v],[v],'') for v in VOICES]
-COMPONENT_GROUPS=[('Pages',RECIPES,'Four whole pages. Tap one:'),('Decks',['deck-visionary','deck-story','deck-briefing','deck-workshop'],'Four slide decks on one engine:'),('Socials',POSTS+['social'],'See each draft the way your audience will. Tap a platform:'),
+STUDIO_GROUPS=[('#','Highlights',[]),('Photo effects',['photo'],''),('Scroll effects',['scroll'],''),('Layouts',['lookvoice','looks','layouts'],'Looks set the mood and layouts set the order:'),
+  ('Socials',['socials']+POSTS+['social'],'See each draft the way your audience will. The use case first, then a tab for each platform:')]+[(LABEL[v],[v],'') for v in VOICES]+[
+  ('#','Components',[]),('Pages',RECIPES,'Four whole pages. Tap one:'),('Decks',['deck-visionary','deck-story','deck-briefing','deck-workshop'],'Four slide decks on one engine:'),
   ('Parts',['parts','svg'],'The pieces a page is made of:'),('Design',['cards','colour'],'The ideas behind a good page:'),('Pick',['pick','mix'],'Let the studio suggest, or choose every part yourself:'),
   ('Reference',['c-recipes','c-voices','c-parts','c-spec','c-brief','c-sentences'],'The reference sheets, the two forms and every sentence:'),
   ('Skill',['s-skill','s-single','s-skel','s-rules','s-check'],'What the assistant follows. "AI instructions" is the paste-in version:'),
   ('Guide',['use'],'')]
-OUT={'highlights':'base/studio.html','components':'base/components.html'}
-WHERE={n:OUT[k] for k,gs in (('highlights',HIGHLIGHT_GROUPS),('components',COMPONENT_GROUPS)) for _,vs,_ in gs for n in vs}   # which file shows each tab
+WHERE={n:'base/studio.html' for g,vs,_ in STUDIO_GROUPS if g!='#' for n in vs}   # which file shows each tab
 pv=lambda view: WHERE[view]+'#'+view
-LABEL.update({'socials':'Socials','post-linkedin':'LinkedIn','post-instagram':'Instagram','post-tiktok':'TikTok','post-facebook':'Facebook','post-email':'Email','post-blog':'Short blog','social':'Picture formats','cards':'Cards','layouts':'Six layouts','colour':'Colour','parts':'Page parts','photo':'Photo effects','scroll':'Scroll effects','lookvoice':'Looks and voices','svg':'Animated SVG','looks':'Nine looks','pick':'Pick for me','mix':'Mix it myself','deck-visionary':'Visionary','deck-story':'Story','deck-briefing':'Briefing','deck-workshop':'Workshop'})
+LABEL.update({'socials':'Three drafts','post-linkedin':'LinkedIn','post-instagram':'Instagram','post-tiktok':'TikTok','post-facebook':'Facebook','post-email':'Email','post-blog':'Short blog','social':'Picture formats','cards':'Cards','layouts':'Six layouts','colour':'Colour','parts':'Page parts','photo':'Photo effects','scroll':'Scroll effects','lookvoice':'Looks and voices','svg':'Animated SVG','looks':'Nine looks','pick':'Pick for me','mix':'Mix it myself','deck-visionary':'Visionary','deck-story':'Story','deck-briefing':'Briefing','deck-workshop':'Workshop'})
 FILES={t['id']:t['file'].split('#')[0] for t in C.TEMPLATES if t['kind'] in('page','voice','deck')}
 FILES.update({'cards':'components/cards.html','layouts':'components/layouts.html','colour':'components/colour.html','social':'social/formats.html','parts':'components/page-parts.html','photo':'components/photo-parts.html','svg':'components/animated-svg.html','looks':'looks/nine-looks.html'})
 FTITLE={'cards':'Six kinds of card','layouts':'Six layouts','colour':'Colour: five ideas and a palette maker','social':'Seven social formats','parts':'Twelve page parts','photo':'Nine photo effects','scroll':'Three scroll effects','lookvoice':'Looks and voices','svg':'Twelve animated SVG parts','looks':'Nine looks'}
@@ -177,11 +178,12 @@ PAGE_INDEX={'templates':[dict(t,tab=TAB[t['id']]) for t in C.TEMPLATES],'rules':
 data=json.dumps({'rows':A['rows'],'pal':A['pal'],'index':PAGE_INDEX},separators=(',',':'))
 def title_of(n): return LABEL.get(n) or re.search(r'data-title="([^"]*)"',VIEW[n]).group(1)
 PREFIX={}
-def build(key,out,title,lead,groups,other=None):
+def build(key,out,title,lead,groups,other=None,panel=None):
     single=len(groups)==1 and len(groups[0][1])==1
-    order=[n for _,vs,_ in groups for n in vs]
+    order=[n for g,vs,_ in groups if g!='#' for n in vs]
     radios=[];g_row=[];s_rows=[];tcss=[]
     for i,(gl,vs,cap) in enumerate(groups):
+        if gl=='#': g_row.append(f'<span class="tabs-h">{html.escape(vs)}</span>'); continue
         for n in vs:
             radios.append(f'<input class="tabr" type="radio" name="tab" id="t-{n}" aria-label="{html.escape(gl if len(vs)==1 else gl+": "+VNAME.get(n,title_of(n)))}"{" checked" if n==order[0] else ""}>')
             tcss.append(f'#t-{n}:checked~#v-{n}{{display:block}}\n#t-{n}:focus-visible~.tabs label[for="t-{n}"]{{outline:3px solid var(--reed);outline-offset:2px}}')
@@ -194,12 +196,12 @@ def build(key,out,title,lead,groups,other=None):
             s_rows.append(f'<div class="tabs-s s{i}"><span>{html.escape(cap)}</span>'+''.join(f'<label for="t-{n}">{html.escape(title_of(n))}</label>' for n in vs)+'</div>')
     nav='<nav class="tabs" aria-label="Sections"><div class="tabs-g">'+''.join(g_row)+'</div>'+''.join(s_rows)+'</nav>'
     if single: radios=[]; nav=''; tcss=[f'#v-{order[0]}{{display:block}}','.mast{padding-bottom:14px}']
-    here=os.path.basename(out); elsewhere={n:os.path.basename(f) for n,f in WHERE.items() if os.path.basename(f)!=here and n not in order}
+    elsewhere={n:'../studio.html' for n in WHERE if n not in order} if panel else {}   # a worked example sends a link to another tab back to the kitchen sink
     mast_x=f'<p class="mast-x"><a href="{other[0]}">{html.escape(other[1])}</a></p>' if other else ''
     mast=f'<header class="mast"><div class="wrap"><p class="mast-t"><span>{PREFIX.get(key,"Artifact studio template") if single else "Artifact studio"}</span> {html.escape(title)}</p><p class="mast-l">{html.escape(lead)}</p>{mast_x}</div></header>'
     body=[]
     for k,n in enumerate(order):
-        t=about(n,VIEW[n],key); prev=order[k-1] if k else None; nxt=order[k+1] if k+1<len(order) else None
+        t=re.sub(r'(<div class="view[^"]*"[^>]*>)',lambda m:m.group(1)+panel,VIEW[n],count=1) if panel else about(n,VIEW[n],key); assert not panel or panel in t, n; prev=order[k-1] if k else None; nxt=order[k+1] if k+1<len(order) else None
         pager='<nav class="pager" aria-label="Previous and next tab"><div>'+(f'<label for="t-{prev}">← {html.escape(title_of(prev))}</label>' if prev else '<span></span>')+(f'<label for="t-{nxt}">{html.escape(title_of(nxt))} →</label>' if nxt else '<span></span>')+'</div></nav>'
         body.append(t if single else t[:t.rindex('</div>')]+pager+'</div>')
     js=LIB+[x for n in order for x in VJS[n]]
@@ -217,8 +219,30 @@ def build(key,out,title,lead,groups,other=None):
     kb=round(len(t.encode())/1024); t=t.replace('__KB__',f'{kb:,}')
     left=re.findall(r'__[A-Z]+__|^\s*@@\w+',re.sub(r'data:[^")]+','',re.sub(r'<pre>.*?</pre>','',t,flags=re.S)),flags=re.M); assert not left, left
     open(os.path.join(ROOT,out),'w').write(t); print(f'{key}: {kb} KB, {len(order)} tabs -> {out}')
-build('highlights',OUT['highlights'],'','The highlights: photo effects, scroll effects, layouts, post previews for social media, and a tab for each of seven voices. Tap a tab.',HIGHLIGHT_GROUPS,('components.html','Components: pages, decks, more post previews, parts and the skill →'))
-build('components',OUT['components'],'Components','Everything else you can build with: pages, decks, post previews for six platforms, parts, design ideas, a picker, the skill and a guide. Tap a tab.',COMPONENT_GROUPS,('studio.html','← Highlights: photo effects, scroll effects, layouts, socials and voices'))
+build('studio','base/studio.html','','The kitchen sink. Highlights first: photo effects, scroll effects, layouts, post previews and a tab for each of seven voices. Then the components to build with. Tap a tab.',STUDIO_GROUPS)
+# ---- worked examples: one file each, with the prompt, the sample input and the finished result
+RAW_MAIN='https://raw.githubusercontent.com/bar181/practical-ai/main/projects/artifact-studio/base/AI-INSTRUCTIONS.md'
+PREFIX['example']='Artifact Studio worked example:'
+_first=lambda f: html.unescape(re.sub(r'<[^>]+>','',re.search(r'<blockquote>(.*?)</blockquote>',open(os.path.join(HERE,'views',f)).read(),re.S).group(1)))
+EXAMPLES=[ # file, view, what it shows, notes, the ask (None: the view's own short ask)
+ ('voice-visionary','voice-keynote','the visionary voice','practical-ai.txt',None),
+ ('voice-storyteller','voice-story','the storyteller voice','first-reply.txt',None),
+ ('voice-emotional','voice-emotional','the emotional voice, a personal story','personal-story.txt',None),
+ ('voice-explainer','voice-teacher','the explainer, in the teacher voice','how-to-use.txt',None),
+ ('voice-practical','voice-practical','the practical instructor voice','first-reply.txt',None),
+ ('voice-analyst','voice-analyst','the analyst voice','first-reply.txt',None),
+ ('voice-brief','voice-brief','the executive brief voice','first-reply.txt',None),
+ ('social-posts','socials','three drafts of a post, shown as previews','post-drafts.txt',_first('86-socials.html')),
+ ('photo-effects','photo','photo effects from one picture','one-picture.txt','Open with my picture as a slow pan and zoom, like a documentary shot. Then set one word in huge letters filled with the picture, and finish with the picture as a postcard I can tap to turn over.')]
+EX_OF={view:f'base/examples/{name}.html' for name,view,_,_,_ in EXAMPLES}
+_kn=dict(re.findall(r'data-n="(\w+)" data-count="(\d+)"',VIEW['voice-keynote']))
+for name,view,what,notes,q in EXAMPLES:
+    txt=open(os.path.join(HERE,'examples',notes)).read().strip().format(**_kn) if notes=='practical-ai.txt' else open(os.path.join(HERE,'examples',notes)).read().strip()
+    prompt=f'Read the design guide at {RAW_MAIN} and follow it.\n\n{q or html.unescape(LV[view][0])}\n\nMy notes:\n\n{txt}'
+    panel=(f'<aside class="about ex" aria-label="How this example was made"><div class="wrap"><p><b>Worked example: {html.escape(what)}.</b> Three parts. The prompt is the first two paragraphs of the box. The sample input is everything after "My notes". The finished result is the page below.</p>'
+           f'<div class="codeb"><pre tabindex="0">{html.escape(prompt)}</pre><button class="copy" type="button">Copy</button></div>'
+           '<p class="about-n">The result below is the hand-built reference for this example, not the output of one chat. Paste the box into your own assistant and you get a page in this manner. Yours will differ, and you should check it. <a href="../studio.html">Open the whole library</a></p></div></aside>')
+    build('example',f'base/examples/{name}.html',what[0].upper()+what[1:],'One request, its sample input and the finished page.',[('x',[view],'')],panel=panel)
 # ---- starters: a deck as one small file with system fonts and no photograph, for an agent to copy and fill
 def write_starters():
     lib=open(os.path.join(HERE,'views','01-lib.html')).read()
@@ -318,7 +342,7 @@ def write_index(parts,photo):
     for t in C.TEMPLATES:
         view=TAB[t['id']]; lv=LV.get(t['id'])
         ask={'short':lv[0],'full':lv[1],'with_skill':lv[2]} if lv else {'short':t['ask']}
-        e=dict(id=t['id'],kind=t['kind'],title=t['title'],summary=t['summary'],preview=pv(view),source=SRC+VFILE[view],fit=t['fit'],options=C.OPTIONS[t['kind']],ask=ask)
+        e=dict(id=t['id'],kind=t['kind'],title=t['title'],summary=t['summary'],preview=pv(view),**({'example':EX_OF[view]} if view in EX_OF else {}),source=SRC+VFILE[view],fit=t['fit'],options=C.OPTIONS[t['kind']],ask=ask)
         for k in('look','size','voice'):
             if k in t: e[k]=t[k]
         if t['kind']=='voice': e['default_look']=C.RULES['look_for_voice'][t['id']]
@@ -341,7 +365,7 @@ def write_index(parts,photo):
     kinds=['page','voice','deck','social']
     counts={'templates':len(tpl),**{k+'s' if k!='social' else 'social_formats':sum(t['kind']==k for t in tpl) for k in kinds},'components':len(comp),'page_parts':len(parts),'photo_parts':len(photo),'animated_svg':sum(c['group']=='svg' for c in comp),'design_ideas':sum(c['group'] in('card','layout','colour') for c in comp),'post_previews':sum(c['group']=='post' for c in comp),'looks':len(looks)}
     idx=dict(name='artifact-studio',generated=datetime.date.today().isoformat(),
-             read_me='Paths are relative to the project folder. "preview" is the file and tab that shows it: base/studio.html holds the highlights and base/components.html holds the rest. "starter", where present, is a small complete file to copy and fill. "source" is reference code: one style block, the markup and one script, not a complete file. A post preview also needs the frame styles in sources/02-posts-lib.html. "fit" scores run 0 to 3. To choose, score = 3 x goal fit + 2 x audience fit, highest first.',
+             read_me='Paths are relative to the project folder. "preview" is the tab of base/studio.html that shows it. "example", where present, is a worked example: one file with the prompt, the sample input and the finished page. "starter", where present, is a small complete file to copy and fill. "source" is reference code: one style block, the markup and one script, not a complete file. A post preview also needs the frame styles in sources/02-posts-lib.html. "fit" scores run 0 to 3. To choose, score = 3 x goal fit + 2 x audience fit, highest first.',
              counts=counts,social_styles=C.SOCIAL_STYLES,facets={f:[dict(id=k,label=v) for k,v in v2] for f,v2 in C.FACETS.items()},rules=C.RULES,templates=tpl,components=comp,
              looks=[dict(name=l,preview=pv('looks'),card='level-2-files/artifact-studio/references/looks.md') for l in looks])
     os.makedirs(os.path.join(LIBRARY,'sources'),exist_ok=True); os.makedirs(os.path.join(LIBRARY,'svg'),exist_ok=True)
@@ -410,3 +434,6 @@ def export_docs():
     write_index(parts,photo)
     open(sk,'w').write('\n'.join(c).rstrip()+'\n'); print('docs:',len(lv),'level sets,',len(parts),'page parts,',len(photo),'photo parts')
 export_docs()
+# sentences.md is written here and shown as a tab, so a change to any ask needs one more pass before the page is current
+if _sent0!=open(os.path.join(HERE,'sentences.md')).read() and '--again' not in sys.argv:
+    print('sentences changed: building once more'); os.execv(sys.executable,[sys.executable,os.path.abspath(__file__),'--again'])

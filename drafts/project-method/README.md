@@ -15,6 +15,9 @@ its shape was right. [`base/LESSONS.md`](base/LESSONS.md) lists each wrong turn 
 would have prevented it. This method is those rules, in order, checked against how others
 build with agents ([`base/SOURCES.md`](base/SOURCES.md)).
 
+Before you start a new tool, read
+[what the first build taught us](../../plans/plans-template/BUILD-PROCESS.md#what-the-first-build-taught-us).
+
 ## Use it today
 
 | You want | Do this | Takes |

@@ -18,7 +18,10 @@ each. Nothing is built until its North Star page is approved at stage 3.
 - [ ] Have a student run each Beginner level and record what they could not do
 - [ ] Move each older draft in `drafts/` to the showcase layout in `projects/README.md` when it is next worked on
 - [ ] Update the project method and its scaffold to the showcase layout
-- [ ] At the pull request, change `scaffold/structure` to `main` in the links inside the two READMEs
+- [ ] Fix the six contradictions in the artifact studio's paste-in instructions, listed in [the final review](reports/2026-11-15-artifact-studio-final-review.md)
+- [ ] Run each worked example's prompt in a fresh chat, and replace the hand-built reference or keep its label
+- [ ] Confirm each supplied picture can be published under the repository's licence
+- [ ] Turn on branch protection for `main`: a pull request and the owner's review before any merge
 - [ ] Run the beginner prompt from the artifact studio README in ChatGPT and Gemini, and record what came back
 - [ ] Try the artifact studio MCP server inside a desktop assistant
 - [ ] Give the artifact studio to one other person for a real job
