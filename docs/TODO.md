@@ -2,7 +2,7 @@
 
 Actions, not tools. The tools are in the one list: [`tool-inventory.md`](tool-inventory.md).
 
-Every tool follows the [project method](../workshop/drafts/project-method/): nine stages, a gate after
+Every tool follows [Agentic Process](../projects/agentic-process/): nine steps, a gate after
 each. Nothing is built until its North Star page is approved at stage 3.
 
 ## Next, in order
@@ -17,13 +17,16 @@ each. Nothing is built until its North Star page is approved at stage 3.
 
 - [ ] Have a student run each Beginner level and record what they could not do
 - [ ] Move each older draft in `workshop/drafts/` to the showcase layout in `projects/README.md` when it is next worked on
-- [ ] Update the project method and its scaffold to the showcase layout
-- [ ] Run each worked example's prompt in a fresh chat, and replace the hand-built reference or keep its label
+- [ ] Run the Agentic Process coach on a real idea in ChatGPT, Gemini and Claude, and record what came back
+- [x] Run each worked example's prompt in a fresh chat: done on 16 November 2026, ten of ten, all in Claude
+- [ ] Turn on GitHub Pages so the HTML pages open from a link on a phone (GitHub shows HTML files as code)
+- [ ] Re-run the Agentic Process skill with a second agent after the 16 November fixes
 - [ ] Turn on branch protection for `main`: a pull request and the owner's review before any merge
 - [ ] Run the beginner prompt from the artifact studio README in ChatGPT and Gemini, and record what came back
 - [ ] Try the artifact studio MCP server inside a desktop assistant
 - [ ] Give the artifact studio to one other person for a real job
-- [ ] Take one tool through the project method from stage 1
+- [ ] Build the next tool, Document to action brief, with Agentic Process from step 1, and time it
+- [ ] Teach each 30-minute lesson once and correct its timings
 - [ ] Draft a commercial-grade one-pager for each promoted project
 
 ## Waiting on a decision

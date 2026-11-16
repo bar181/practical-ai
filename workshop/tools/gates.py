@@ -6,7 +6,8 @@ A gate is one command that must exit with code 0. A project lists its gates in g
      {"name": "pages", "proves": "...", "run": "...", "slow": true}]
 
 Commands run from the folder that holds gates.json, in order. That is the project folder, or its base/ folder
-when the project keeps everything there. Gates marked slow run only with --all.
+when the project keeps everything there. A showcase may keep the file in level-3-files/ or in _build/; its
+commands still run from the project folder. Gates marked slow run only with --all.
 The run stops at nothing: every gate is run, so one report shows everything that is wrong.
 Exit code 0 only if every gate that ran passed.
 """
@@ -17,7 +18,14 @@ if len(sys.argv) < 2:
 project = os.path.abspath(sys.argv[1]); run_all = "--all" in sys.argv
 if not os.path.exists(os.path.join(project, "gates.json")) and os.path.exists(os.path.join(project, "base", "gates.json")):
     project = os.path.join(project, "base")                          # a project that keeps everything in base/ keeps its gates there too
-gates = json.load(open(os.path.join(project, "gates.json"), encoding="utf-8"))
+gates_file = os.path.join(project, "gates.json")
+if not os.path.exists(gates_file) and os.path.exists(os.path.join(project, "level-3-files", "gates.json")):
+    gates_file = os.path.join(project, "level-3-files", "gates.json")   # a showcase keeps its gates with its expert files. Commands still run from the project folder
+if not os.path.exists(gates_file) and os.path.exists(os.path.join(project, "_build", "gates.json")):
+    gates_file = os.path.join(project, "_build", "gates.json")          # a new showcase starts with its gates beside its build files
+if not os.path.exists(gates_file):
+    sys.exit(f"No gates.json in {project}, its _build/ or its level-3-files/. Write one: a list of checks, each with name, proves and run.")
+gates = json.load(open(gates_file, encoding="utf-8"))
 TAIL = 6                                                             # lines of a failed gate's output to show
 results = []
 for g in gates:

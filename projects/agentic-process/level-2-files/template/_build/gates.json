@@ -1,0 +1,12 @@
+[
+ {
+  "name": "layout",
+  "proves": "The folder follows the showcase layout",
+  "run": "python3 ../../workshop/tools/check_project.py ."
+ },
+ {
+  "name": "links",
+  "proves": "No Markdown link in the repository is broken",
+  "run": "python3 ../../workshop/tools/check_links.py ../.."
+ }
+]

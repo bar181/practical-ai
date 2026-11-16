@@ -1,6 +1,6 @@
 # Decision support assistant: North Star
 
-Stages 1 to 3 of the [project method](../../drafts/project-method/base/METHOD.md). Written
+Stages 1 to 3 of the [project method](../../../projects/agentic-process/base/PROCESS.md). Written
 15 November 2026. **Not yet approved.** Complexity: intermediate.
 
 **Think of it as** a junior consultant who never skips a step. It frames the question, breaks it

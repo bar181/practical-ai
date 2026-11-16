@@ -94,7 +94,7 @@ Never write as if a person said it, and never put a person's name on a page.
 | Field | |
 | --- | --- |
 | Inspired by | Barbara Minto's pyramid principle |
-| Order | A title that is the conclusion. The answer in two sentences. Three numbers. Three findings, each with a full-sentence heading, one chart and a "so what". How it was measured. What it does not show. Next steps with owner and date. |
+| Order | A title that is the conclusion. The answer in two sentences. Three numbers. Up to three findings, each with its own full-sentence heading, its own chart and its own "so what". Show only the findings the content holds. A finding with two or more values to compare gets a chart; one with nothing to compare has no chart and is still a finding. How it was measured. What it does not show. Next steps with owner and date. |
 | Sentences | Declarative. A number in most of them. |
 | Page behaviour | Charts can be touched to read values. Nothing else moves. |
 | Look | Quiet. One data colour, grey for comparison. Sources under each chart. One picture at most, at the top. |

@@ -11,7 +11,7 @@ writing it down once saves doing it from memory each time.
 
 | Skill | What it does | Used by |
 | --- | --- | --- |
-| [`project-builder`](project-builder/) | Takes a tool from an idea to something another person can use, through seven stages with a gate after each | The [project method](../drafts/project-method/), level 2 |
+| [`agentic-process`](../../projects/agentic-process/level-2-files/agentic-process/) | Takes a tool from an idea to a first version someone else can try, in nine steps with a gate after each. It lives with its project, not in this folder |
 | [`plan-writer`](plan-writer/) | Researches a tool and writes its plan from the template, then updates the indexes | Every plan in [`../plans/`](../plans/) |
 | [`artifact-studio`](../../projects/artifact-studio/level-2-files/artifact-studio/) | Turns any content into one polished HTML page by choosing a recipe, a voice and a look, then building and checking it. Holds the canonical recipe, voice and look cards | [Artifact studio](../../projects/artifact-studio/) |
 | [`voice-drafter`](voice-drafter/) | Drafts a post in one person's voice from their voice file, and turns feedback into a rule | [Voice post drafter](../drafts/voice-post-drafter/) |

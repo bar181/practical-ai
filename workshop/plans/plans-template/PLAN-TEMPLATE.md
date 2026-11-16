@@ -28,7 +28,7 @@ Level 1 is described in most detail, because it is built first. The later levels
 outlines and will change.
 
 A tool has a base, which holds everything, and up to three levels, each holding only what it adds.
-The layout and the stages are in the [project method](../../drafts/project-method/).
+The layout and the stages are in the [project method](../../../projects/agentic-process/).
 
 | Level | What it involves | Complexity |
 | --- | --- | --- |

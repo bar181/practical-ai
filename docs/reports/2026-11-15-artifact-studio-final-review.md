@@ -6,7 +6,10 @@ the author marking their own work.
 **Think of it as** a house that photographs well and has passed its own inspection, and that
 nobody has lived in yet.
 
-**Overall: 70 out of 100.** The library is complete and checked. What holds the score down is
+**Overall: 70 out of 100 on 15 November.** Scored again on 16 November at 78: see
+[the scores after the fixes](2026-11-16-scores-after-the-fixes.md).
+
+**The 15 November verdict:** The library is complete and checked. What holds the score down is
 evidence: almost nothing has been tried by anyone but its author.
 
 ## Scores

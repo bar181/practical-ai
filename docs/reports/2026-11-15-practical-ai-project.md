@@ -132,7 +132,7 @@ rule. The studio page, both indexes, the skill's reference sheets and the server
 | Complete the first project, clean architecture, daily use | Front doors rewritten around "use it today". Background papers moved to `docs/`. Training leftovers removed. A layout check enforces the rule |
 | Skills, server and other features reviewed against best practice | A script checks all 12 skills against the published rules. Findings below |
 | Several examples of the requirement, then the output | Six, above. They are also the skill's test cases |
-| Optimise the process; the method as a separate project with an agentic level 2 | `workshop/drafts/project-method/`, below |
+| Optimise the process; the method as a separate project with an agentic level 2 | `projects/agentic-process/`, below |
 
 ### The method, as its own project
 

@@ -191,7 +191,7 @@ What changed, and where it came from:
 | A progress note in every tool, read at the start of a session | Published practice for agents that work across many sessions: carry the work in files, not in memory |
 | A table for how much method a small tool needs | Published practice: match the ceremony to the size of the job |
 
-The sources, with links and dates, are in `workshop/drafts/project-method/base/SOURCES.md`. The seven North Star pages are stages 1 to 3 of this method, waiting at its first stop.
+The sources, with links and dates, are in `projects/agentic-process/base/SOURCES.md`. The seven North Star pages are stages 1 to 3 of this method, waiting at its first stop.
 
 ## What was checked, and what was not
 

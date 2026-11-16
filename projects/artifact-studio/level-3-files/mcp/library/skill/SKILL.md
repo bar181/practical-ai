@@ -35,7 +35,9 @@ craft. Where it and this skill disagree, this skill wins. This
 ## Steps
 
 1. **Intake.** Find five things in what you were given: the content, any media, the audience, the
-   one job of the page, and where it will be seen (phone, meeting screen, print). Infer what you
+   one job of the page, and where it will be seen (phone, meeting screen, print). If the request names
+   two jobs, the page does the one its reader will act on and the other becomes a section; a kind
+   or recipe the person names wins over that. Infer what you
    can. Ask at most two questions, and only when you cannot tell the audience or the job. If you cannot
    ask at all, decide, and say what you decided under Assumed.
    If there is a preferences file (a file named `preferences.md`, or a section headed Preferences
@@ -56,15 +58,17 @@ craft. Where it and this skill disagree, this skill wins. This
    only when the person asks for its colours or it is the page's main picture (the method is in
    `references/looks.md`); a palette built from their one brand
    colour (the method is in `references/design-ideas.md`); the default look for the chosen voice.
-5. **Outline.** The voice gives the order. The recipe is a checklist of what a page of that kind
+5. **Outline.** For a page, the voice gives the order (a deck follows its starter).  The recipe is a checklist of what a page of that kind
    usually holds. Build in the voice's order, then go down the recipe's list: put in each section
    the content can fill, where it fits that order, and leave out any it cannot fill. Never pad a
-   section, and never show one number twice to satisfy both lists. Where the two disagree on a
-   count or a heading, the voice wins. Write the words. List every gap and every assumption.
+   section, and never show one number twice to satisfy both lists. A tile and a chart of the same
+   measure is not showing it twice: the tile gives the figure, the chart gives its comparison. A
+   beat in the voice's own order that the content cannot fill is left out too, and listed under
+   Missing. Where the two disagree on a count or a heading, the voice wins. Write the words. List every gap and every assumption.
    A voice may ask for something the notes do not hold. Wording, structure and an analogy are yours
    to write: say so under Assumed. A number, a name, a date, a quote, an option or a recommendation
-   the person did not give is a gap. You may offer a recommendation if the page labels it as
-   proposed.
+   the person did not give is a gap. By default, leave it out. Offer a recommendation only when
+   the person asked what to do, and label it on the page as proposed.
 6. **Parts.** Choose a component from `references/components.md` for each section that needs one,
    and the kind of card and the layout from `references/design-ideas.md`.
    Every part must carry content. Use at most three moving parts on a page.
@@ -114,7 +118,9 @@ The library also holds decks, social post pictures, post previews and animated S
 follow the same rules as pages: one self-contained file, the person's own content, the checklist
 before showing. A deck or a social picture has no recipe card. Start from its starter in
 `assets/starters/` in this skill: a complete small file you copy and fill. The starter already has
-an order, and that order stands.
+an order, and that order stands: build in the starter's order and take the tone, the look and what
+to avoid from its voice. Skip a slide the content cannot fill. A number appears on one slide; the
+closing slide may bring one back.
 
 | Deck starter | Voice that goes with it |
 | --- | --- |
@@ -143,9 +149,11 @@ saved finds with `artifact-studio:list_inspiration`, or in `level-3-files/mcp/in
 ## Rules that never bend
 
 - **No invented facts.** No made-up numbers, names, dates, customers or quotations. A gap is
-  never filled with a guess. If the page would mislead without it, a number, a name, a date or a
-  price the reader will act on, mark it on the page as `[needs: what is missing]`. Otherwise leave
-  the page clean. Either way, list it in the delivery note.
+  never filled with a guess. Mark a gap on the page as `[needs: what is missing]` in one case
+  only: the page shows a number, a name, a date or a price the reader will act on, and part of it
+  is missing. A whole section or beat the content cannot fill is left out, not marked. A beat that
+  can be filled but lacks one such field keeps the beat and marks the field: a next step with no
+  owner shows `[needs: owner]`. Every gap, marked or not, is listed in the delivery note.
 - **Quotes are real or absent.** Use a customer's words only when the person supplied them.
 - **A voice is a style, not a person.** The voices are inspired by well-known communicators. Never
   write as if that person said or endorsed anything, and never use their name on the page.

@@ -96,9 +96,9 @@ could not find the examples, and this section is what that taught.
 - Real content everywhere. No placeholder text.
 - A button says what happens when it is pressed.
 - Dates, prices and names are copied from the content, not retyped from memory.
-- A gap that would mislead the reader is marked `[needs: ...]` in the page: a number, a name, a
-  date or a price they will act on. Every gap is listed in the delivery note. Do not mark the
-  rest on the page.
+- A number, a name, a date or a price the reader will act on, shown on the page with part of it
+  missing, is marked `[needs: ...]`. A whole section the content cannot fill is left out, not
+  marked. Every gap is listed in the delivery note.
 
 ## Accessibility
 

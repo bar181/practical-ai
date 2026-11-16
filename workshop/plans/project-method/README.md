@@ -1,6 +1,9 @@
-# Plan: project method
+# Plan: Agentic Process (was: project method)
 
-**Draft:** [`workshop/drafts/project-method/`](../../drafts/project-method/). **Complexity:** beginner to intermediate.
+> **Built on 16 November 2026.** This plan is done. The tool is [Agentic Process](../../../projects/agentic-process/), the second showcase. The earlier draft is in [the archive](../archive/project-method-draft/REPLACED.md). What follows is the plan as it was written, kept for the record.
+
+
+**Draft:** [`projects/agentic-process/`](../../../projects/agentic-process/). **Complexity:** beginner to intermediate.
 
 ## Overview
 
@@ -24,7 +27,7 @@ can use, without rebuilding it three times on the way.
 
 ## Reuse check
 
-Done on 15 November 2026 and recorded in [`SOURCES.md`](../../drafts/project-method/base/SOURCES.md):
+Done on 15 November 2026 and recorded in [`SOURCES.md`](../archive/project-method-draft/base/SOURCES.md):
 the explore, plan, build, verify routines published for coding agents, spec-driven development,
 and harnesses for agents that work across many sessions. The skill rules come from the published
 Agent Skills authoring guide, and `workshop/tools/check_skills.py` checks them. The layout and the lessons

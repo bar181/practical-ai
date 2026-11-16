@@ -12,7 +12,7 @@ not repeated here.
 
 ## Levels
 
-Every plan describes the same levels. The [project method](../drafts/project-method/) builds them
+Every plan describes the same levels. The [project method](../../projects/agentic-process/) builds them
 one at a time.
 
 | Level | For | Means |

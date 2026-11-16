@@ -15,7 +15,7 @@ Claude, Gemini, Microsoft Copilot and other chatbots, and with personal agents.
 <p align="center">
   <a href="#try-it-in-five-minutes"><b>Try it in five minutes</b></a> &nbsp;·&nbsp;
   <a href="#the-jobs-you-repeat">The jobs it helps with</a> &nbsp;·&nbsp;
-  <a href="#what-comes-next">What comes next</a> &nbsp;·&nbsp;
+  <a href="#ready-now-agentic-process">Build your own</a> &nbsp;·&nbsp;
   <a href="#created-by-bradley-ross">Who made this</a>
 </p>
 
@@ -27,6 +27,7 @@ Claude, Gemini, Microsoft Copilot and other chatbots, and with personal agents.
 | **Using a chatbot every day** | Paste [the instructions](projects/artifact-studio/base/AI-INSTRUCTIONS.md) into a Project or a Gem once. Then just ask | 10 minutes, once |
 | **Teaching a class** | Present the [explainer](projects/artifact-studio/base/examples/voice-explainer.html): it teaches how to use the tool, step by step | One lesson |
 | **Building with agents** | Add the [skill](projects/artifact-studio/level-2-files/) or the [MCP server](projects/artifact-studio/level-3-files/) | 15 minutes |
+| **Someone with an idea for a tool** | Paste [the build coach](projects/agentic-process/base/AI-INSTRUCTIONS.md) into your chatbot and tell it the idea | 5 minutes to start |
 | **An AI agent** | Follow [`AGENTS.md`](AGENTS.md) | |
 
 The pages in this repository are HTML files. GitHub shows an HTML file as code, so download it and
@@ -140,19 +141,41 @@ made with it for a real request is
 [a progress report on the project itself](docs/reports/2026-11-16-project-one-progress.html). Nobody else has
 used it yet, so your feedback counts.
 
+## Ready now: Agentic Process
+
+**Your AI can build almost anything. That is the problem.** An agent will happily build the wrong
+thing three times. Agentic Process is the order of work that stops it: nine steps, a gate after
+each, and a test by a fresh AI session before any person sees the result.
+
+<p align="center">
+  <a href="projects/agentic-process/"><img src="projects/agentic-process/_build/img/nine-steps.svg" width="800" alt="Animation: nine steps in a row, from scope to grow. A marker moves along them and stops at a gate after each step."></a>
+</p>
+
+| You are | You use | You get |
+| --- | --- | --- |
+| New to this | [The build coach](projects/agentic-process/base/AI-INSTRUCTIONS.md), pasted into any chatbot | A one-page plan and a first prompt you can test today |
+| Building with an agent | [The skill and the project template](projects/agentic-process/level-2-files/) | A project folder with the front page and first version in place |
+| Running agents unattended | [Gates, the fresh-run test and a score sheet](projects/agentic-process/level-3-files/) | Proof of what works before a person spends time on it |
+
+It came out of the first project, which changed its folder layout four times. It was then used to
+build itself, in one sitting. Nobody but its author has built a tool with it yet.
+
+<p align="center"><a href="projects/agentic-process/"><b>Open Agentic Process</b></a></p>
+
+## Teach it
+
+Each project has a lesson plan you can run in 30 minutes:
+[Artifact Studio](projects/artifact-studio/base/TEACH-IN-30-MINUTES.md) and
+[Agentic Process](projects/agentic-process/base/TEACH-IN-30-MINUTES.md). Neither has been taught
+yet, so the timings are estimates.
+
 ## What comes next
 
-**Project 2 is the template and the process.** Artifact Studio was built the hard way: the folder
-layout changed four times. The next project is the project template and the agentic build
-process themselves, built by following that process. If the method cannot build its own
-template, it is not ready for anything else.
+**Document to action brief**, the first lesson in the classroom list: turn a supplier notice or a
+report into key facts, obligations, dates and questions. It will be built with Agentic Process
+from step 1, and timed.
 
-- [What the first build taught us](workshop/plans/plans-template/BUILD-PROCESS.md#what-the-first-build-taught-us): eleven lessons, each tied to a step
-- [The nine-step build process](workshop/plans/plans-template/BUILD-PROCESS.md)
-- [The project method](workshop/drafts/project-method/), a draft that still describes an earlier layout
-- [The layout every project follows](projects/README.md)
-
-After that, the tools in [the priorities](docs/practical-ai-priorities.md), one pull request each.
+After that, the tools in [the priorities](docs/practical-ai-priorities.md), one change request each.
 
 ## Get started at your level
 
@@ -193,7 +216,7 @@ room.
 
 | Folder | What it holds |
 | --- | --- |
-| [`projects/`](projects/) | Tools you can try in five minutes. One so far: Artifact Studio |
+| [`projects/`](projects/) | Tools you can try in five minutes. Two so far: Artifact Studio and Agentic Process |
 | [`docs/`](docs/) | What gets built next, the to-do list and dated reports |
 | [`workshop/`](workshop/) | How the tools get built: plans, earlier drafts, skills and checking scripts. You do not need it to use a tool |
 
@@ -207,8 +230,8 @@ Inside every project, `base/` is enough to try the tool. Beside it, `level-2-fil
 - Every status line says who has and has not tried the thing. "Built" is not "used".
 
 `python3 workshop/tools/check_project.py projects/artifact-studio` checks a project against the layout in
-[`projects/README.md`](projects/README.md). How a tool gets built is the
-[project method](workshop/drafts/project-method/): nine stages, a gate after each.
+[`projects/README.md`](projects/README.md). How a tool gets built is
+[Agentic Process](projects/agentic-process/): nine steps, a gate after each.
 
 </details>
 

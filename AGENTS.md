@@ -9,7 +9,7 @@ connectors. Each tool has a plan in `workshop/plans/`. A showcase you can try is
 | Make a page, a slide deck or a social post | [`projects/artifact-studio/AGENTS.md`](projects/artifact-studio/AGENTS.md): the path from a request to a finished file |
 | Understand what the repository holds | [`README.md`](README.md) |
 | Decide what to build next | [`docs/practical-ai-priorities.md`](docs/practical-ai-priorities.md): the owner's priorities. The inventory and research behind it are in [`docs/tool-inventory.md`](docs/tool-inventory.md) |
-| Start a new tool, or continue one | [`workshop/drafts/project-method/AGENTS.md`](workshop/drafts/project-method/AGENTS.md) and the [`project-builder`](workshop/skills/project-builder/) skill |
+| Start a new tool, or continue one | [`projects/agentic-process/AGENTS.md`](projects/agentic-process/AGENTS.md): nine steps, a gate after each, and a folder template |
 | Write or update a plan for a tool | [`workshop/skills/plan-writer/`](workshop/skills/plan-writer/) |
 | Check what already exists before building | [`workshop/skills/landscape-review/`](workshop/skills/landscape-review/) |
 | See how the work has been reviewed | [`docs/SELF-REVIEW.md`](docs/SELF-REVIEW.md) |

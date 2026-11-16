@@ -10,7 +10,7 @@ One HTML file. Each draft sits in a plain frame in the shape of the place it is 
 
 | Going to | Frame | Show |
 | --- | --- | --- |
-| LinkedIn, Facebook | Feed post | Name and one line about the person. The text, cut after three lines with a control to read the rest. The picture. The row of actions as plain words |
+| LinkedIn, Facebook | Feed post | Name and one line about the person. A frame at most 360 pixels wide with 15 pixel text on every screen. The text, cut after three lines as they render in the frame (a blank line counts as a line) with a control to read the rest. Real feeds cut in slightly different places: say so under Check before sharing. The picture. Pictures in one row cropped to one shape, four by three. The row of actions as plain text, not buttons: Like, Comment, Share |
 | Instagram | Picture-first post | The picture first, square or four by five, with a few words on it. Then the caption and at most three tags. A carousel is pictures the reviewer can swipe |
 | TikTok, other short video | Upright frame, nine by sixteen | One frame per beat with the words that will be on screen, and the words the person says underneath. Three beats is enough |
 | Email | Inbox line, then the message | Sender, subject and preview text above an HTML message at phone width, with one picture and one button |
@@ -33,7 +33,9 @@ the two behaviours, `sources/86-socials.html` shows three drafts side by side, a
 4. **Their content only.** Facts, numbers and credentials come from the person's notes. Mark a
    gap as `[needs: ...]`.
 5. **No invented engagement.** Never show likes, comments, views or follower counts.
-6. **Name the platform in words above the frame.** Never draw a platform's logo, and do not copy
+6. **Plain frames.** A white frame on a pale grey page with dark text, whatever the voice. The name
+   line shows the person's name if they gave it, and the words "Your name" if they did not.
+   **Name the platform in words above the frame.** Never draw a platform's logo, and do not copy
    its interface. A plain frame in the right shape is the point.
 7. **Stop at the preview.** Nothing is posted, scheduled or sent. A person presses post.
 

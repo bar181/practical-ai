@@ -7,7 +7,7 @@ A draft that passes review moves to [`projects/`](../../projects/).
 
 | Draft | Tool |
 | --- | --- |
-| [`project-method/`](project-method/) | Project method: how a tool here gets built |
+| Project method | Finished and moved: it is now [Agentic Process](../../projects/agentic-process/) |
 | [`dashboard/`](dashboard/) | Dashboard |
 | [`estimator/`](estimator/) | Estimator |
 | [`inbox-daily-summary/`](inbox-daily-summary/) | Inbox triage and daily summary |

@@ -360,7 +360,7 @@ of the scaffolding, and the method written up as its own project.
 | Skills and server reviewed | `workshop/tools/check_skills.py` checks all 12 skills against the published rules. It found three long reference files with no contents list, and no skill with test cases. Both fixed for the artifact studio. The server's instructions were stale and are rewritten, and two tools were added |
 | Worked examples | Six, each a request, the notes, what was picked, the output and a list of what a good result must have. They are also the skill's test cases |
 | Clean scaffolding | One rule, a layout check that enforces it, and one command that runs every gate. Background papers moved to `docs/`. Training leftovers removed. Retired work in `workshop/plans/archive/` |
-| The method as a project | `workshop/drafts/project-method/`: seven stages, a gate after each, a scaffold, and an agentic level 2 built on a skill and the gate runner |
+| The method as a project | `projects/agentic-process/`: seven stages, a gate after each, a scaffold, and an agentic level 2 built on a skill and the gate runner |
 
 Scored on the same seven lines as round 5, plus one for the scaffolding:
 

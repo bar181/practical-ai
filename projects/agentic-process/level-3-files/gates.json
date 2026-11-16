@@ -1,0 +1,7 @@
+[
+ {"name": "layout", "proves": "This project follows the layout it tells others to follow", "run": "python3 ../../workshop/tools/check_project.py ."},
+ {"name": "template", "proves": "A project made from the template passes the layout check and carries its own gates file", "run": "d=$(mktemp -d) && python3 level-2-files/new_project.py trial-tool 'Trial tool' \"$d\" && python3 ../../workshop/tools/check_project.py \"$d/trial-tool\" && test -f \"$d/trial-tool/_build/gates.json\""},
+ {"name": "first-showcase", "proves": "Artifact Studio, the first showcase, passes the layout check", "run": "python3 ../../workshop/tools/check_project.py ../artifact-studio"},
+ {"name": "links", "proves": "No Markdown link in the repository is broken", "run": "python3 ../../workshop/tools/check_links.py ../.."},
+ {"name": "skills", "proves": "This project's skill follows the authoring rules", "run": "python3 ../../workshop/tools/check_skills.py level-2-files"}
+]

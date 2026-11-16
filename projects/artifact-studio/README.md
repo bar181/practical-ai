@@ -74,6 +74,7 @@ You should get something like this. It is the same request, already built:
   a browser. It is the whole library in one file. The highlights come first: photo effects, scroll
   effects, layouts, post previews and a tab for each of seven voices. The components follow:
   pages, decks, parts, and a picker that chooses a template for you.
+- **Teaching it?** There is a [30-minute lesson plan](base/TEACH-IN-30-MINUTES.md).
 - **See one worked example per voice.** Each file in [`base/examples/`](base/examples/) is one
   request: the prompt to copy, the sample input, and the page an AI made from them.
 
@@ -341,7 +342,7 @@ sentence, and gets back something they are proud to send, on the first or second
 
 ## Status
 
-**Tested on 16 November 2026.** Built by its author, then put through thirteen independent runs by
+**Tested on 16 November 2026.** Built by its author, then put through 22 independent runs by
 fresh AI sessions. Its owner is the only person who has used it, so tell us what you find.
 
 | Part | State |
@@ -350,7 +351,7 @@ fresh AI sessions. Its owner is the only person who has used it, so tell us what
 | Worked examples | Ten files. Each page was made by an AI assistant from its prompt in a fresh session on 16 November 2026 and is unedited. All ten pass the automated checks in Chrome. The sessions were Claude; no other assistant has been tried |
 | Chatbots | Built with Claude. **Not yet run** in the other assistants named on this page |
 | A real request | On 16 November 2026 the assistant that wrote the instructions followed them to make [a progress report on this project](../../docs/reports/2026-11-16-project-one-progress.html). A first real use, not an independent test |
-| The paste-in instructions | Thirteen independent runs on 16 November 2026, each in a fresh Claude session. Every run finished its page. Together they reported about 150 points of friction; the dozen that recurred are fixed. **Not yet tried** in ChatGPT, Gemini or any assistant other than Claude |
+| The paste-in instructions | 22 independent runs on 16 November 2026, each in a fresh Claude session: thirteen, then three rounds of three on the fixed text. Every run finished its page. The first thirteen reported about 230 points of friction. Across the three re-test rounds the points that would change the page fell from 13 to 9 to 6. Those 6 are fixed and **not re-tested**. The logs are in [`_build/examples/runs/`](_build/examples/runs/). **Not yet tried** in ChatGPT, Gemini or any assistant other than Claude |
 | The one-link prompt | A fresh Claude session fetched the instructions from the link and finished its page from them alone. **Not yet tried** from inside ChatGPT, Gemini or the others |
 | The skill | Run end to end by a second agent on 16 November 2026: it made a six-slide deck and reported ten places where the skill and its reference cards disagreed. The ones about decks are fixed |
 | MCP server | An agent with only the server's tools made a page. It found the server broke when its folder was copied alone; that is fixed and tested. Not yet tried in a desktop assistant. Nothing is hosted |
@@ -377,7 +378,8 @@ artifact-studio/
   base/
     studio.html           the kitchen sink: the whole library in one file
     AI-INSTRUCTIONS.md    copy into your chatbot
-    examples/             ten worked examples: a prompt, its sample input, the finished page
+    examples/             ten worked examples: a prompt, its sample input, the page an AI made
+    TEACH-IN-30-MINUTES.md  a lesson plan
   level-2-files/          Advanced: your brand on file, and the skill
   level-3-files/          Expert: the MCP server for agents
   _build/                 what the library and the examples are built from. You do not need it
