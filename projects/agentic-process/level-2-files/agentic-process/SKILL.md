@@ -13,8 +13,9 @@ every stage.
 
 ## Before you start
 
-1. Read `PROCESS.md` in this project's `base/` folder if you can reach it. It is the process on
-   one page. The steps below are the same process, written for you.
+1. Read `PROCESS.md` in this project's `base/` folder if you can reach it. For each step it gives
+   the purpose, what to expect, the proof you need before the gate, and a prompt. Use its proof
+   list as the evidence for each gate. The table below is the same process, written for you.
 2. If the person has a plan already, find which step it has reached. Start there, not at step 1.
 3. Find the project folder. If there is none, make one from the template (step 5).
 

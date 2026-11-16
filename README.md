@@ -157,10 +157,10 @@ each, and a test by a fresh AI session before any person sees the result.
 | Building with an agent | [The skill and the project template](projects/agentic-process/level-2-files/) | A project folder with the front page and first version in place |
 | Running agents unattended | [Gates, the fresh-run test and a score sheet](projects/agentic-process/level-3-files/) | Proof of what works before a person spends time on it |
 
-It came out of the first project, which changed its folder layout four times. It was then used to
-build itself, in one sitting. Nobody but its author has built a tool with it yet.
+Start with [the guide](https://raw.githack.com/bar181/practical-ai/main/projects/agentic-process/base/explainer.html): one page with all nine steps, each with its purpose, what to expect,
+proof you are done and a prompt to copy. Nobody but its author has built a tool with it yet.
 
-<p align="center"><a href="projects/agentic-process/"><b>Open Agentic Process</b></a></p>
+<p align="center"><a href="https://raw.githack.com/bar181/practical-ai/main/projects/agentic-process/base/explainer.html"><b>Read the guide</b></a> &nbsp;·&nbsp; <a href="projects/agentic-process/"><b>Open Agentic Process</b></a></p>
 
 ## Teach it
 

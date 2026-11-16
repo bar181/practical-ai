@@ -16,13 +16,13 @@ Take the first of these that you can do.
 
 | You need | Read |
 | --- | --- |
-| The nine steps and their gates | [`base/PROCESS.md`](base/PROCESS.md) |
+| The nine steps, with a purpose, proof and prompt for each | [`base/PROCESS.md`](base/PROCESS.md). It is written by `_build/build.py` from `_build/steps.py`: change the source |
 | The plan to fill in | [`base/plan-template.md`](base/plan-template.md) |
 | A new project folder | From the repository root, run `python3 projects/agentic-process/level-2-files/new_project.py <slug> "<Title>"`. It makes `projects/<slug>/` from [`level-2-files/template/`](level-2-files/template/) |
 | How to test what you built | [`level-3-files/fresh-run/`](level-3-files/fresh-run/) |
 | Checks to run from step 5 on | The new project's own `_build/gates.json`, with `python3 workshop/tools/gates.py projects/<slug>` from the repository root. This project's gates are in [`level-3-files/gates.json`](level-3-files/gates.json) |
 | How to score the result | [`level-3-files/scorecard.md`](level-3-files/scorecard.md) |
-| What went wrong last time | [Project one, step by step](base/examples/project-one-through-the-nine-steps.md) |
+| Two worked examples | [`base/examples/`](base/examples/): the unedited results of two fresh sessions |
 
 ## Output contract
 
@@ -40,5 +40,5 @@ Assumed. Not checked. Test this next.
 
 ## Known limits
 
-- The skill has not been run by a second agent. Treat the first runs as tests.
-- The time comparisons in the README are one author's two projects, not a study.
+- The skill has been run once by a second agent. Its fixes have not been re-run. Treat the next runs as tests.
+- Every time in the README and the guide is an estimate.

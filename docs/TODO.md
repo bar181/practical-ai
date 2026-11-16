@@ -13,6 +13,21 @@ each. Nothing is built until its North Star page is approved at stage 3.
 - [ ] Write a North Star page for "summarise a document", the one researched tool with no page
 - [ ] Read the small-business plugin's skills before designing any Advanced level, and record what it already covers
 
+## Agentic Process
+
+From [the review from the user's side](reports/2026-11-16-agentic-process-user-review.md), most value first.
+
+- [ ] Bundle the checks into `level-2-files/` so the skill and template work in any repository
+- [ ] Generate the coach's and the skill's gate tables from `_build/steps.py`
+- [ ] Add a short path to the coach for small jobs, and test it with two fresh sessions
+- [ ] Fold the landscape review's search order into the skill's step 2
+- [ ] Point the Expert page at the template's starter gates, and add one worked unattended run
+- [ ] Move the run logs from `level-3-files/fresh-run/runs/` to `_build/runs/`
+- [ ] Make `base/plan-template.md` the one source of the template's plan
+- [ ] Re-run the skill with a second agent after these changes
+- [ ] Add an Expert worked example
+- [ ] Owner: teach the 30-minute lesson once and time each section
+
 ## Across all tools
 
 - [ ] Have a student run each Beginner level and record what they could not do
