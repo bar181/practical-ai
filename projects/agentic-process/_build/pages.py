@@ -4,15 +4,21 @@
 Both follow Artifact Studio's instructions: the North Star page uses the teacher voice and the explainer recipe; the
 course decks use the briefing manner, light, for a lecture hall. Look: the Practical AI colours.
 """
-import html, re, pathlib
+import html, re, pathlib, math
 from steps import STEPS, LEVELS, WHO, coach_prompt, pasted_prompt, COACH_FILE
-from course import COURSE, MODULES, CAPSTONE, INSTRUCTOR
+from course import COURSE, MODULES, CAPSTONE, INSTRUCTOR, MEMORY_OFF, PRIVACY, module_minutes, total_minutes
 
 E = html.escape
 G = "https://github.com/bar181/practical-ai/blob/main/projects/agentic-process/"
 STEP = {s['n']: s for s in STEPS}
 _PLAN = (pathlib.Path(__file__).resolve().parents[1] / "level-2-files/agentic-process/template/base/plan.md").read_text(encoding="utf-8").split("\n## Status")[0]
 PLAN_ROWS = re.findall(r"^\| (?!Heading |---)([^|]+?) \|", _PLAN, re.M)
+def hours():
+    """The course time, rounded up to the half hour, as words a reader expects."""
+    h = math.ceil(total_minutes() / 30) / 2
+    return f"{int(h)}" if h == int(h) else f"{int(h)} and a half"
+
+
 NORTH_STAR = "Anyone who repeats a job at work can turn it into a small AI tool that someone else can use, and know it works before anyone relies on it."
 
 
@@ -63,7 +69,7 @@ def arrow(x1, y1, x2, y2, col="#48546a"):
 
 def diagram(name):
     if name == "cost":
-        b = '<text x="40" y="40" font-size="18" fill="#48546a">An illustration, not data: where the effort goes</text>'
+        b = '<text x="40" y="40" font-size="18" fill="#48546a">An illustration, not data: where the time and the checking go</text>'
         for i, (lab, d, bld) in enumerate([("Before AI", 25, 75), ("With AI", 75, 25)]):
             y = 80 + i * 110
             b += f'<text x="40" y="{y + 38}" font-size="20" font-weight="700" fill="#14202e">{lab}</text>'
@@ -119,7 +125,7 @@ def diagram(name):
 def north_star_html(me, guide_url, course_url):
     lv = [("Beginner", "Someone with a job they repeat, using any chatbot",
            "Trial and error in a chat until something works on the day; next week you start again",
-           "A one-page plan, a prompt they can reuse, and a test that tells them when it breaks"),
+           "A one-page plan, a prompt they can reuse, and a test they can rerun whenever they change it"),
           ("Advanced", "A builder working with a coding agent",
            "The agent builds fast and the shape is found by rebuilding; folders move and links break",
            "A project folder with its own checks, a front page written before the tool, and a stranger's test before polish"),
@@ -129,8 +135,9 @@ def north_star_html(me, guide_url, course_url):
     cards = ''.join(f'<article class="lv"><h3>{a}</h3><p class="who">{E(b)}</p><p class="lab">Without it</p><p>{E(c)}</p><p class="lab">With it</p><p>{E(d)}</p></article>' for a, b, c, d in lv)
     alt = [("Prompting alone", "Fast for one answer", "Nothing checks the job, what already exists, or whether anyone else can use the result"),
            ("Spec-driven toolkits such as GitHub Spec Kit, Kiro and BMAD", "Turn a specification into plans, tasks and code, inside a developer's tools", "Start once you have decided to build, and are made for developers"),
-           ("Agentic Process", "Starts before the spec: should this be built at all? Works in any chatbot, and with a coding agent", "Small tools, one user and one job. Not a replacement for a full engineering method on a large codebase")]
+           ("Agentic Process", "Starts before the spec: should this be built at all? Written for any chatbot, tested in Claude so far, and works with a coding agent", "Small tools, one user and one job. Not a replacement for a full engineering method on a large codebase")]
     rows = ''.join(f'<tr><th scope="row">{E(a)}</th><td>{E(b)}</td><td>{E(c)}</td></tr>' for a, b, c in alt)
+    nine = ''.join(f'<li><b>{E(s["name"])}</b> <span>{E(s["gate"])}</span></li>' for s in STEPS)
     css = BASE_CSS + """
 header{background:var(--navy);color:#fff;padding:44px 0 40px}.wrap{max-width:900px;margin-inline:auto;padding-inline:20px}
 .kick{font:700 .92rem/1.2 var(--sans);color:var(--hl)}
@@ -153,6 +160,8 @@ ul.not{margin-top:12px;padding-left:1.2em;max-width:40em}ul.not li+li{margin-top
 .go{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
 footer{margin-top:56px;background:var(--navy);color:#dfe6ef;padding:28px 0 36px}footer a{color:var(--hl)}footer .me{margin-top:16px}
 .src{font-size:.88rem;color:var(--muted);margin-top:10px;max-width:46em}
+ol.nine{margin-top:14px;padding-left:1.6em;max-width:44em}ol.nine li+li{margin-top:6px}ol.nine span{color:var(--muted)}ol.nine li::marker{font-weight:800;color:var(--blue)}
+#cp{margin:10px 0}
 """
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -184,7 +193,7 @@ footer{margin-top:56px;background:var(--navy);color:#dfe6ef;padding:28px 0 36px}
 <section aria-labelledby="value"><p class="lab">The value proposition</p><h2 id="value">Build the right small tool once, and prove it works with a stranger before you rely on it.</h2>
   <p class="vp">For anyone who uses AI at work: nine short steps that stop you building the wrong thing, check what already exists, and test the result with a fresh chat that knows nothing, in the chatbot you already have, for free.</p>
   <div class="lvs">{cards}</div>
-  <p>The larger gain is quality, not speed. Every time in the project is an estimate, because nobody has been timed yet.</p>
+  <p>We expect the larger gain to be quality, not speed. Every time in the project is an estimate, because nobody has been timed yet.</p>
 </section>
 
 <section aria-labelledby="done"><p class="lab">How you know it is working</p><h2 id="done">The test of the North Star is a stranger finishing the job.</h2>
@@ -196,7 +205,7 @@ footer{margin-top:56px;background:var(--navy);color:#dfe6ef;padding:28px 0 36px}
 
 <section aria-labelledby="diff"><p class="lab">Where it fits</p><h2 id="diff">It starts earlier than spec-driven toolkits, and it works outside a code editor.</h2>
   <div class="tw" tabindex="0" role="region" aria-label="How Agentic Process compares"><table><thead><tr><th scope="col">Approach</th><th scope="col">What it does well</th><th scope="col">Where it stops</th></tr></thead><tbody>{rows}</tbody></table></div>
-  <p class="src">Spec-driven toolkits, checked on 16 November 2026: GitHub Spec Kit runs specify, plan, tasks and implement with a coding agent; Kiro writes requirements, a design and tasks; the BMAD Method uses role-based agents from analyst to developer. They suit large builds by developers. Agentic Process can sit in front of them.</p>
+  <p class="src">Spec-driven toolkits, checked on 16 November 2026: <a href="https://github.github.com/spec-kit/">GitHub Spec Kit</a> runs specify, plan, tasks and implement with a coding agent; <a href="https://kiro.dev/docs/specs/">Kiro</a> writes requirements, a design and tasks; the <a href="https://github.com/bmad-code-org/BMAD-METHOD">BMAD Method</a> uses role-based agents from analyst to developer. They suit large builds by developers. Agentic Process is designed to sit in front of them; that has not been tried yet.</p>
 </section>
 
 <section aria-labelledby="not"><p class="lab">What it is not</p><h2 id="not">Four things this project does not claim.</h2>
@@ -208,11 +217,18 @@ footer{margin-top:56px;background:var(--navy);color:#dfe6ef;padding:28px 0 36px}
   </ul>
 </section>
 
+<section aria-labelledby="steps"><p class="lab">The nine steps</p><h2 id="steps">Four stages, a gate after every step.</h2>
+  <ol class="nine">{nine}</ol>
+  <p>The quickest way to run them: paste this into any chatbot and change the last line to your job.</p>
+  <pre id="cp" tabindex="0">{E(coach_prompt("[one job you do on your own, in one sentence]"))}</pre><button class="btn" type="button" data-copy="cp">Copy the coach prompt</button>
+</section>
+
 <section aria-labelledby="start"><p class="lab">Start</p><h2 id="start">Three ways in.</h2>
   <div class="go"><a class="btn" href="{guide_url}">Read the guide to the nine steps</a><a class="btn ghost" href="{course_url}">Take the course</a><a class="btn ghost" href="{G}base/AI-INSTRUCTIONS.md">Paste the coach</a></div>
 </section>
 </main>
-<footer><div class="wrap"><p>Made with Artifact Studio's instructions: explainer recipe, teacher voice, the Practical AI colours. Written on 16 November 2026.</p>{creator(me)}</div></footer>
+<footer><div class="wrap"><p>Part of <a href="https://github.com/bar181/practical-ai">Practical AI</a>: tools a person can use with an AI assistant the same day. <a href="{G}README.md">Agentic Process on GitHub</a>. Written on 16 November 2026.</p>{creator(me)}</div></footer>
+<script>document.querySelectorAll('[data-copy]').forEach(b=>b.addEventListener('click',async()=>{{const w=b.textContent;try{{await navigator.clipboard.writeText(document.getElementById(b.dataset.copy).textContent);b.textContent='Copied'}}catch(e){{b.textContent='Select the text and copy it'}}setTimeout(()=>b.textContent=w,2200)}}));</script>
 </body>
 </html>
 """
@@ -220,37 +236,52 @@ footer{margin-top:56px;background:var(--navy);color:#dfe6ef;padding:28px 0 36px}
 
 # ---------------------------------------------------------------- the course
 def step_lesson(L):
-    """A lesson that teaches one or two of the nine steps: content from steps.py."""
+    """A lesson that teaches one or two of the nine steps: content from steps.py, the do-list from where the learner works."""
     nums = L['step'] if isinstance(L['step'], tuple) else (L['step'],)
     sts = [STEP[n] for n in nums]
     title = L.get('title') or ' and '.join(s['name'] for s in sts)
-    part = L.get('part')
-    out = dict(id=L['id'], minutes=L['minutes'], title=title, steps=nums,
+    part, many = L.get('part'), len(sts) > 1
+    lab = lambda s, t: f"Step {s['n']}: {t[0][0].lower() + t[0][1:]}" if many else t[0]
+    timed = lambda t: re.sub(r"^About (\d+) minutes?", r"The step itself takes about \1 minutes", t)
+    out = dict(id=L['id'], minutes=L['minutes'], title=title, steps=nums, chat=L.get('chat'), links=L.get('links'),
                objective=' '.join(s['purpose'] for s in sts) if not part else (sts[0]['purpose'].split('. ')[0] + '.' if part == 'build' else "Hand the first version to a stranger, a new chat with only your instructions, and collect where it had to guess."),
-               stories=[(LEVELS[i], WHO[i], s['stories'][i]) for s in sts for i in range(3)][:3] if not part else [],
-               expect=' '.join(s['expect'] for s in sts) if part != 'test' else sts[0]['expect'],
-               proof=[p for s in sts for p in s['proof']] if not part else (sts[0]['proof'][:1] if part == 'build' else sts[0]['proof'][1:]),
+               stories=[(LEVELS[i], WHO[i], s['stories'][i]) for s in sts for i in range(3)] if not part else [],
+               expect=' '.join(timed(s['expect']) for s in sts) if not part else ("Expect a first version that is smaller than you imagined: instructions, rules, the format of the result, and one worked example beside them." if part == 'build' else timed(sts[0]['expect'])),
+               proof=[p for s in sts for p in s['proof']] if not part else (sts[0]['proof'][:1] if part == 'build' else [sts[0]['proof'][1], "Its list of where it had to guess"]),
                gate=[(s['n'], s['gate']) for s in sts] if part != 'build' else [],
-               prompts=[pr for s in sts for pr in s['prompts']] if not part else ([sts[0]['prompts'][0]] if part == 'build' else [sts[0]['prompts'][1]]))
-    steps_txt = ["Read what this step is for (above) and what to expect (below).",
-                 "Open the chat you used in lesson 1.3, or a new one, and paste the prompt" + ("s" if len(out['prompts']) > 1 else "") + ". Fill in the brackets.",
-                 "Check what comes back against \"Proof you are done\". Tick each one you have.",
-                 "Answer the gate question. If the answer is no, fix the step before you go on.",
-                 "Add the result to your plan."]
-    if part == 'test':
-        steps_txt = ["Open a new chat: a temporary chat, or one with memory turned off.", "Paste the test prompt, then your instructions, then one real input.",
-                     "Do not help it. Wait for the result and its list of guesses.", "Read the list of guesses before the result.", "Answer the gate question."]
-    out['do'] = steps_txt
+               prompts=[(lab(s, pr), pr[1]) for s in sts for pr in s['prompts']] if not part else ([sts[0]['prompts'][0]] if part == 'build' else [sts[0]['prompts'][1]]))
+    plural = "s, one after the other" if len(out['prompts']) > 1 else ""
+    if L.get('chat') == 'new':
+        do = ["Open a new chat. " + MEMORY_OFF,
+              "Paste the prompt below, then " + ("your instructions and one real input. " + PRIVACY if part == 'test' else "your plan and front door") + ".",
+              "Do not help it or explain anything. Wait for its answer and its list of where it had to guess.",
+              "Read the list of guesses before anything else. Each guess is a gap in what you wrote.",
+              "Answer the gate question, then take the fixes back to the coach chat."]
+    elif part == 'build':
+        do = ["In the coach chat, paste the prompt below with your plan in the brackets.",
+              "Build only the beginner version. Keep the worked example beside the instructions, not inside them.",
+              "Ask the chat: What did you decide, what did you assume and what did you not check?",
+              "Save the instructions where your plan says they live. Lesson 4.2 tests them."]
+    else:
+        do = ["Read what this lesson is for (above) and what to expect (below).",
+              f"In the coach chat from lesson 1.3, paste the prompt{plural}. Fill in the brackets. If you closed that chat, open a new one and paste your plan first.",
+              "Check what comes back against \"Proof you are done\". Tick each one you have.",
+              "Answer the gate question. If the answer is no, fix the step before you go on.",
+              "Add the result to your plan."]
+    out['do'] = do
     return out
 
 
 def lesson_view(L, m):
     if 'step' in L: L = step_lesson(L)
+    if L.get('prompt_from_step'):
+        L['prompts'] = [("Prompt for the addition, on the date you decide", STEP[L['prompt_from_step']]['prompts'][0][1])]
+        L['gate'] = [(L['prompt_from_step'], STEP[L['prompt_from_step']]['gate'])]
     rid = f"l{L['id']}"
     parts = [f'<section class="pg" id="{rid}" aria-labelledby="{rid}-h" data-lesson="{L["id"]}">',
-             f'<p class="crumb"><a href="#m{m["n"]}">Module {m["n"]}: {E(m["title"])}</a> · Lesson {L["id"].replace("-", ".")}' + (f' · {E(L["track"])} track' if L.get("track") else '') + '</p>',
+             f'<p class="crumb"><a href="#m{m["n"]}">Module {m["n"]}: {E(m["title"])}</a> · Lesson {L["id"].replace("-", ".")}' + (f' · {E(L["track"])} track, optional' if L.get("track") else '') + '</p>',
              f'<h2 id="{rid}-h" tabindex="-1">{E(L["title"])}</h2>',
-             f'<p class="meta">About {L["minutes"]} minutes' + (f' · Step{"s" if len(L["steps"]) > 1 else ""} {" and ".join(map(str, L["steps"]))} of nine' if L.get("steps") else '') + '</p>',
+             f'<p class="meta">This lesson: about {L["minutes"]} minutes' + (f' · Step{"s" if len(L["steps"]) > 1 else ""} {" and ".join(map(str, L["steps"]))} of nine' if L.get("steps") else f' · Teaches step {L["step_ref"]} of nine' if L.get("step_ref") else '') + ('' if not L.get("chat") else ' · In a new chat that remembers nothing' if L["chat"] == "new" else ' · In the coach chat') + '</p>',
              f'<p class="obj"><b>You will:</b> {md(L["objective"])}</p>']
     if L.get('body'):
         parts.append('<div class="body">' + ''.join(f'<p>{md(b)}</p>' for b in L['body']) + '</div>')
@@ -277,6 +308,7 @@ def lesson_view(L, m):
 
 
 def deck_view(m):
+    core = module_minutes(m)[1]
     slides = []
     for i, (kind, title, body, notes) in enumerate(m['slides'], 1):
         if kind == 'title':
@@ -292,13 +324,13 @@ def deck_view(m):
         elif kind == 'lab':
             inner = f'<p class="k">Lab</p><h3>{E(title)}</h3><ol>' + ''.join(f'<li>{E(p)}</li>' for p in body) + '</ol>'
         else:
-            inner = f'<p class="k">{"Take away" if kind == "recap" else ""}</p><h3>{E(title)}</h3><ul>' + ''.join(f'<li>{E(p)}</li>' for p in body) + '</ul>'
+            inner = f'<h3>{E(title)}</h3><ul>' + ''.join(f'<li>{E(p)}</li>' for p in body) + '</ul>'
         slides.append(f'<section class="sl {kind}" aria-roledescription="slide" aria-label="Slide {i} of {len(m["slides"])}"><div class="si">{inner}</div>'
-                      f'<p class="sf">Module {m["n"]} · {i} / {len(m["slides"])}</p><aside class="nt"><b>Instructor notes.</b> {E(notes)}</aside></section>')
-    return (f'<div class="deck" tabindex="0" role="region" aria-roledescription="slide deck" aria-label="Lecture slides for module {m["n"]}, {len(m["slides"])} slides">'
+                      f'<p class="sf">Module {m["n"]} · {i} / {len(m["slides"])}</p><aside class="nt"><b>Instructor notes.</b> {E(notes.replace("{LAB}", str(core)))}</aside></section>')
+    return (f'<div class="deck" data-m="{m["n"]}" tabindex="0" role="region" aria-roledescription="slide deck" aria-label="Lecture slides for module {m["n"]}, {len(m["slides"])} slides">'
             f'<div class="stage">{"".join(slides)}</div>'
             '<div class="dbar"><button type="button" class="prev" aria-label="Previous slide">&#8592;</button><span class="cnt" aria-live="polite"></span>'
-            '<button type="button" class="next" aria-label="Next slide">&#8594;</button><button type="button" class="nts" aria-pressed="false">Instructor notes</button>'
+            '<button type="button" class="next" aria-label="Next slide">&#8594;</button><button type="button" class="nts" aria-pressed="false">Instructor notes</button><button type="button" class="pw">Presenter window</button>'
             '<button type="button" class="fs">Full screen</button></div></div>')
 
 
@@ -317,15 +349,16 @@ def quiz_view(m):
 
 
 def module_view(m):
-    lessons = ''.join(f'<li><a href="#l{L["id"]}">{L["id"].replace("-", ".")} {E(L.get("title") or step_lesson(L)["title"])}</a> <span class="mins">{L["minutes"]} min</span>'
+    total, core = module_minutes(m)
+    lessons = ''.join(f'<li><a href="#l{L["id"]}">{L["id"].replace("-", ".")} {E(L.get("title") or step_lesson(L)["title"])}</a> <span class="mins">{L["minutes"]} min{", optional" if L.get("optional") else ""}</span>'
                       f'<span class="tick" data-tick="{L["id"]}" aria-hidden="true"></span></li>' for L in m['lessons'])
     return f'''<section class="pg" id="m{m["n"]}" aria-labelledby="m{m["n"]}-h">
 <p class="crumb"><a href="#home">Course home</a> · Module {m["n"]} of {len(MODULES)}</p>
 <h2 id="m{m["n"]}-h" tabindex="-1">Module {m["n"]}: {E(m["title"])}</h2>
-<p class="meta">About {m["minutes"]} minutes · {len(m["slides"])} slides · {len(m["lessons"])} lessons · a three-question check</p>
+<p class="meta">About {total} minutes: a {m["lecture"]}-minute lecture ({len(m["slides"])} slides), {core} minutes of lessons, and a three-question check</p>
 <p class="obj"><b>Purpose.</b> {E(m["purpose"])}</p>
 <h3>By the end you can</h3><ul class="outc">{"".join(f"<li>{E(o)}</li>" for o in m["outcomes"])}</ul>
-<h3>1. The lecture</h3><p>Present it full screen, or click through on your own. The instructor notes are under each slide.</p>
+<h3>1. The lecture</h3><p>Click through on your own, or present it: press Full screen for the room and Presenter window for your notes. Press Instructor notes (or N) to show the notes under the slide.</p>
 {deck_view(m)}
 <h3>2. The lessons, step by step</h3><ol class="lessons">{lessons}</ol>
 <h3>3. Check yourself</h3>{quiz_view(m)}
@@ -335,18 +368,19 @@ def module_view(m):
 
 def course_html(me, north_url, guide_url):
     all_lessons = [(m, L) for m in MODULES for L in m['lessons']]
+    core_ids = [L['id'] for m, L in all_lessons if not L.get('optional')]
     nav = ['<li><a href="#home">Course home</a></li>']
     for m in MODULES:
         sub = ''.join(f'<li><a href="#l{L["id"]}">{L["id"].replace("-", ".")} {E(L.get("title") or step_lesson(L)["title"])}</a></li>' for L in m['lessons'])
         nav.append(f'<li><a href="#m{m["n"]}"><b>Module {m["n"]}</b> {E(m["title"])}</a><ol>{sub}</ol></li>')
     nav.append('<li><a href="#capstone"><b>Capstone</b></a></li><li><a href="#teach">For instructors</a></li>')
-    mods = ''.join(f'<li><a class="mc" href="#m{m["n"]}"><span class="mn">Module {m["n"]}</span><b>{E(m["title"])}</b><span>{E(m["purpose"])}</span><span class="mins">About {m["minutes"]} minutes · {len(m["lessons"])} lessons</span></a></li>' for m in MODULES)
-    total = sum(m['minutes'] for m in MODULES)
+    mods = ''.join(f'<li><a class="mc" href="#m{m["n"]}"><span class="mn">Module {m["n"]}</span><b>{E(m["title"])}</b><span>{E(m["purpose"])}</span><span class="mins">About {module_minutes(m)[0]} minutes · {len(m["lessons"])} lessons</span></a></li>' for m in MODULES)
     rub = ''.join(f'<tr><th scope="row">{E(a)}</th><td>{E(b)}</td><td>{c}</td></tr>' for a, b, c in CAPSTONE['rubric'])
     fmts = ''.join(f'<tr><th scope="row">{E(a)}</th><td>{E(b)}</td></tr>' for a, b in INSTRUCTOR['formats'])
     watch = ''.join(f'<tr><th scope="row">{E(a)}</th><td>{E(b)}</td></tr>' for a, b in INSTRUCTOR['watch'])
     lessons_html = '\n'.join(lesson_view(dict(L), m) for m, L in all_lessons)
     order = [f"l{L['id']}" for m, L in all_lessons]
+    needs = [n.replace("{HOURS}", hours()) for n in COURSE["needs"]]
     css = BASE_CSS + """
 .top{background:var(--navy);color:#fff}.top .in{max-width:1240px;margin:0 auto;padding:14px 16px;display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center}
 .top .t{font:800 1.15rem/1.2 var(--sans)}.top .t span{display:block;font-weight:400;font-size:.9rem;color:#c9d6e6}
@@ -419,6 +453,12 @@ html:not(.js) .sl{position:relative;display:flex;aspect-ratio:16/9;border:1px so
 html:not(.js) .nt{display:block;position:absolute;left:-9999px}html:not(.js) .dbar{display:none}
 .dg{display:block}
 footer{max-width:1240px;margin:0 auto;padding:10px 16px 40px}
+/* print a module page: every slide, each with its notes, one to a page */
+@media print{.top,nav.side,.dbar,.notebox,.done,.pn,footer,[data-copy],[data-check]{display:none!important}.lay{display:block;padding:0}.pg{border:0;padding:0}
+  .stage{aspect-ratio:auto;overflow:visible;border:0;background:none;display:block}
+  .sl{position:relative;display:flex!important;aspect-ratio:16/9;border:1px solid #999;border-radius:0;break-inside:avoid;page-break-inside:avoid;margin-bottom:2mm}
+  .sl .nt{display:block;position:absolute;top:100%;left:0;right:0;padding-top:3mm;font-size:11pt}.sl{margin-bottom:60mm;break-after:page;page-break-after:always}
+  .js .ans{display:block}}
 """
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -431,31 +471,33 @@ footer{max-width:1240px;margin:0 auto;padding:10px 16px 40px}
 <style>{css}</style>
 </head>
 <body>
-<header class="top"><div class="in"><p class="t">{E(COURSE["title"])}<span>{E(COURSE["subtitle"])} · {len(MODULES)} modules · {len(all_lessons)} lessons · about {round(total / 60 * 2) / 2:g} hours</span></p>
-<p class="prog"><span id="progtxt">0 of {len(all_lessons)} lessons done</span><span class="bar" aria-hidden="true"><i id="progbar"></i></span></p><p><a href="{north_url}">North Star</a> · <a href="{guide_url}">The guide</a></p></div></header>
+<header class="top"><div class="in"><p class="t">{E(COURSE["title"])}<span>{E(COURSE["subtitle"])} · {len(MODULES)} modules · {len(core_ids)} core lessons · about {hours()} hours</span></p>
+<p class="prog"><span id="progtxt">0 of {len(core_ids)} core lessons done</span><span class="bar" aria-hidden="true"><i id="progbar"></i></span></p><p><a href="{north_url}">North Star</a> · <a href="{guide_url}">The guide</a></p></div></header>
 <div class="lay">
 <nav class="side" aria-label="Course"><details open id="navd"><summary>Course contents</summary><ol>{"".join(nav)}</ol></details></nav>
 <main id="main">
 <section class="pg" id="home" aria-labelledby="home-h">
   <div class="home-hero"><h2 id="home-h" tabindex="-1">{E(COURSE["title"])}</h2><p>{E(COURSE["purpose"])}</p></div>
-  <div class="facts"><div><b>Who it is for</b>{E(COURSE["audience"])}</div><div><b>What you need</b><ul class="needs">{"".join(f"<li>{E(x)}</li>" for x in COURSE["needs"])}</ul></div><div><b>How it runs</b>Each module has a lecture deck, step-by-step lessons, a three-question check and an assignment. It ends with a capstone: your own tool, through all nine steps.</div></div>
+  <div class="facts"><div><b>Who it is for</b>{E(COURSE["audience"])}</div><div><b>What you need</b><ul class="needs">{"".join(f"<li>{E(x)}</li>" for x in needs)}</ul></div><div><b>How it runs</b>Each module has a lecture deck, step-by-step lessons, a three-question check and an assignment. It ends with a capstone: your own tool through steps 1 to 8, with step 9 planned.</div></div>
   <h3>By the end of the course you can</h3><ol>{"".join(f"<li>{E(o)}</li>" for o in COURSE["outcomes"])}</ol>
-  <h3>The modules</h3><ol class="mods">{mods}<li><a class="mc" href="#capstone"><span class="mn">Capstone</span><b>{E(CAPSTONE["title"].split(": ")[1])}</b><span>{E(CAPSTONE["purpose"])}</span></a></li></ol>
+  <h3>The modules</h3><ol class="mods">{mods}<li><a class="mc" href="#capstone"><span class="mn">Capstone</span><b>{E(CAPSTONE["name"])}</b><span>{E(CAPSTONE["purpose"])}</span></a></li></ol>
   <p class="note">{E(COURSE["honest"])} Your progress is kept in this browser only.</p>
   <div class="pn"><span></span><a class="btn" href="#m1">Start Module 1</a></div>
 </section>
 {"".join(module_view(m) for m in MODULES)}
 {lessons_html}
 <section class="pg" id="capstone" aria-labelledby="cap-h">
-  <p class="crumb"><a href="#home">Course home</a> · Capstone</p><h2 id="cap-h" tabindex="-1">{E(CAPSTONE["title"])}</h2>
+  <p class="crumb"><a href="#home">Course home</a> · Capstone</p><h2 id="cap-h" tabindex="-1">{E(CAPSTONE["title"])}: {E(CAPSTONE["name"])}</h2>
   <p class="obj"><b>Purpose.</b> {E(CAPSTONE["purpose"])}</p>
+  <p class="gate"><b>If you stop at step 2.</b> {E(CAPSTONE["stop"])}</p>
   <h3>Hand in</h3><ul class="proof">{"".join(f'<li><label><input type="checkbox" data-proof="cap-{i}"> {E(d)}</label></li>' for i, d in enumerate(CAPSTONE["deliver"]))}</ul>
   <h3>How it is marked, out of 100</h3><div class="tw" tabindex="0" role="region" aria-label="Capstone rubric"><table><thead><tr><th scope="col">Measure</th><th scope="col">What full marks looks like</th><th scope="col">Points</th></tr></thead><tbody>{rub}</tbody></table></div>
-  <p class="note">The full nine steps, with a prompt for each, are in <a href="PROCESS.md">the steps page</a> and <a href="{guide_url}">the guide</a>.</p>
+  <p class="note">{E(CAPSTONE["alone"])} The nine steps, with a prompt for each, are in <a href="{G}base/PROCESS.md">the steps page</a> and <a href="{guide_url}">the guide</a>.</p>
 </section>
 <section class="pg" id="teach" aria-labelledby="teach-h">
   <p class="crumb"><a href="#home">Course home</a> · For instructors</p><h2 id="teach-h" tabindex="-1">For instructors</h2>
-  <p class="obj">Each module's lecture has instructor notes under every slide: press <b>Instructor notes</b> under a deck, or N when the deck has focus. Present full screen from the button under each deck.</p>
+  <p class="obj">{E(INSTRUCTOR["how"])}</p>
+  <h3>Presenting</h3><p>{E(INSTRUCTOR["present"])} Without a second screen, press <b>Instructor notes</b> (or N when the deck has focus) to show the notes under the slide.</p>
   <h3>Three ways to run it</h3><div class="tw" tabindex="0" role="region" aria-label="Formats"><table><thead><tr><th scope="col">Format</th><th scope="col">How</th></tr></thead><tbody>{fmts}</tbody></table></div>
   <h3>Before the first session</h3><ul>{"".join(f"<li>{E(b)}</li>" for b in INSTRUCTOR["before"])}</ul>
   <h3>What to watch for</h3><div class="tw" tabindex="0" role="region" aria-label="What to watch for"><table><thead><tr><th scope="col">You see</th><th scope="col">Say or do</th></tr></thead><tbody>{watch}</tbody></table></div>
@@ -466,7 +508,7 @@ footer{max-width:1240px;margin:0 auto;padding:10px 16px 40px}
 <script>
 /* Everything above reads without this script. It adds: one page at a time, the slide decks, the checks, and progress kept in this browser. */
 (()=>{{document.documentElement.classList.add('js');
-const ORDER={order!r},LESSONS=ORDER.length,KEY='ap-course-v1';
+const ORDER={order!r},CORE={core_ids!r},LESSONS=CORE.length,KEY='ap-course-v1';
 let st={{done:{{}},proof:{{}}}};try{{st=JSON.parse(localStorage.getItem(KEY))||st}}catch(e){{}}
 const save=()=>{{try{{localStorage.setItem(KEY,JSON.stringify(st))}}catch(e){{}}}};
 const pages=[...document.querySelectorAll('.pg')],links=[...document.querySelectorAll('nav.side a')];
@@ -476,9 +518,9 @@ function show(){{const id=(location.hash||'#home').slice(1);const pg=document.ge
 addEventListener('hashchange',show);
 /* previous and next under each lesson */
 ORDER.forEach((id,i)=>{{const pg=document.getElementById(id),d=document.createElement('div');d.className='pn';
-  d.innerHTML=(i?'<a class="btn ghost" href="#'+ORDER[i-1]+'">&#8592; Previous lesson</a>':'<span></span>')+(i<LESSONS-1?'<a class="btn" href="#'+ORDER[i+1]+'">Next lesson &#8594;</a>':'<a class="btn" href="#capstone">The capstone &#8594;</a>');pg.appendChild(d)}});
+  d.innerHTML=(i?'<a class="btn ghost" href="#'+ORDER[i-1]+'">&#8592; Previous lesson</a>':'<span></span>')+(i<ORDER.length-1?'<a class="btn" href="#'+ORDER[i+1]+'">Next lesson &#8594;</a>':'<a class="btn" href="#capstone">The capstone &#8594;</a>');pg.appendChild(d)}});
 /* progress */
-function paint(){{const n=Object.keys(st.done).filter(k=>st.done[k]).length;document.getElementById('progtxt').textContent=n+' of '+LESSONS+' lessons done';document.getElementById('progbar').style.width=(100*n/LESSONS)+'%';
+function paint(){{const n=CORE.filter(k=>st.done[k]).length;document.getElementById('progtxt').textContent=n+' of '+LESSONS+' core lessons done';document.getElementById('progbar').style.width=(100*n/LESSONS)+'%';
   document.querySelectorAll('[data-done]').forEach(b=>{{const on=!!st.done[b.dataset.done];b.setAttribute('aria-pressed',on);b.textContent=on?'Done: mark as not done':'Mark this lesson complete'}});
   document.querySelectorAll('[data-tick]').forEach(t=>t.classList.toggle('on',!!st.done[t.dataset.tick]));
   document.querySelectorAll('[data-proof]').forEach(c=>c.checked=!!st.proof[c.dataset.proof])}}
@@ -493,10 +535,21 @@ document.querySelectorAll('.qz').forEach(f=>f.querySelector('[data-check]').addE
 /* slide decks */
 document.querySelectorAll('.deck').forEach(d=>{{const sl=[...d.querySelectorAll('.sl')],cnt=d.querySelector('.cnt'),nb=d.querySelector('.nts');let i=0;
   const box=document.createElement('div');box.className='notebox';box.setAttribute('aria-live','polite');d.appendChild(box);
-  const go=k=>{{i=Math.max(0,Math.min(sl.length-1,k));sl.forEach((s,j)=>s.classList.toggle('cur',j===i));cnt.textContent=(i+1)+' / '+sl.length;box.innerHTML=sl[i].querySelector('.nt').innerHTML}};
+  const go=k=>{{i=Math.max(0,Math.min(sl.length-1,k));sl.forEach((s,j)=>s.classList.toggle('cur',j===i));cnt.textContent=(i+1)+' / '+sl.length;box.innerHTML=sl[i].querySelector('.nt').innerHTML;if(typeof paintPw==='function')paintPw()}};
   d.querySelector('.prev').addEventListener('click',()=>go(i-1));d.querySelector('.next').addEventListener('click',()=>go(i+1));
   const notes=()=>{{const on=!d.classList.contains('notes');d.classList.toggle('notes',on);nb.setAttribute('aria-pressed',on)}};nb.addEventListener('click',notes);
   d.querySelector('.fs').addEventListener('click',()=>{{try{{document.fullscreenElement?document.exitFullscreen():d.requestFullscreen()}}catch(e){{}}}});
+  /* the presenter window: notes, the next slide and a timer on the instructor's screen; it moves the slides too */
+  let pw=null,t0=0;const pb=d.querySelector('.pw');
+  const paintPw=()=>{{if(!pw||pw.closed)return;const q=x=>pw.document.getElementById(x),nx=sl[i+1];q('c').textContent='Slide '+(i+1)+' of '+sl.length;
+    q('n').innerHTML=sl[i].querySelector('.nt').innerHTML;q('x').textContent=nx?'Next: '+nx.querySelector('h3').textContent:'Last slide'}};
+  pb.addEventListener('click',()=>{{try{{pw=window.open('','ap-presenter-'+d.dataset.m,'width=900,height=640')}}catch(e){{pw=null}}
+    if(!pw){{if(!d.classList.contains('notes'))notes();pb.textContent='Pop-ups are blocked: notes are below the slide';return}}
+    pw.document.title='Presenter: module '+d.dataset.m;
+    pw.document.body.innerHTML='<style>body{{font:1.25rem/1.5 system-ui,sans-serif;margin:24px;color:#14202e}}#c,#tm{{font-weight:700}}#x{{color:#48546a;margin-top:18px}}button{{font:700 1.1rem system-ui;min-height:48px;padding:0 20px;margin:16px 8px 0 0}}</style><p><span id="c"></span> · <span id="tm">0:00</span></p><div id="n"></div><p id="x"></p><button id="b">Previous</button><button id="f">Next</button>';
+    pw.document.getElementById('b').onclick=()=>go(i-1);pw.document.getElementById('f').onclick=()=>go(i+1);
+    pw.document.addEventListener('keydown',e=>{{if(['ArrowRight','PageDown'].includes(e.key))go(i+1);else if(['ArrowLeft','PageUp'].includes(e.key))go(i-1)}});
+    t0=Date.now();const tick=setInterval(()=>{{if(!pw||pw.closed){{clearInterval(tick);return}}const s=Math.floor((Date.now()-t0)/1000);pw.document.getElementById('tm').textContent=Math.floor(s/60)+':'+String(s%60).padStart(2,'0')}},1000);paintPw()}});
   d.addEventListener('keydown',e=>{{if(e.target.closest('button')&&(e.key===' '||e.key==='Enter'))return;
     if(['ArrowRight','PageDown',' '].includes(e.key)){{e.preventDefault();go(i+1)}}else if(['ArrowLeft','PageUp'].includes(e.key)){{e.preventDefault();go(i-1)}}
     else if(e.key==='Home'){{go(0)}}else if(e.key==='End'){{go(sl.length-1)}}else if(e.key==='n'||e.key==='N'){{notes()}}}});
@@ -510,13 +563,12 @@ paint();show()}})();
 
 
 def course_outline_md(course_url):
-    total = sum(m['minutes'] for m in MODULES)
     L = [f"**[{COURSE['title']}]({course_url})**: {COURSE['purpose']} {len(MODULES)} modules, about "
-         f"{round(total / 60 * 2) / 2:g} hours, each with a lecture deck, step-by-step lessons, a three-question check and an",
+         f"{hours()} hours, each with a lecture deck, step-by-step lessons, a three-question check and an",
          "assignment, then a capstone. It has not been taught yet.", "",
          "| Module | Purpose | Lessons | Time |", "| --- | --- | --- | --- |"]
     for m in MODULES:
-        names = '; '.join((Lx.get('title') or step_lesson(Lx)['title']) for Lx in m['lessons'])
-        L.append(f"| {m['n']}. {m['title']} | {m['purpose']} | {names} | about {m['minutes']} min |")
-    L.append(f"| Capstone | {CAPSTONE['purpose']} | All nine steps on one real job | homework |")
+        names = '; '.join((Lx.get('title') or step_lesson(Lx)['title']) + (' (optional)' if Lx.get('optional') else '') for Lx in m['lessons'])
+        L.append(f"| {m['n']}. {m['title']} | {m['purpose']} | {names} | about {module_minutes(m)[0]} min |")
+    L.append(f"| Capstone | {CAPSTONE['purpose']} | {CAPSTONE['name']}, step 9 planned | homework |")
     return "\n".join(L)

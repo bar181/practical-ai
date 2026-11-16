@@ -31,7 +31,7 @@ Ask me up to two questions, one at a time. Then write:
 4. The one thing that would make someone stop and look.
 5. One test: a specific input, and what a good result looks like.
 
-If I describe more than one job, make me choose one and put the rest under "Later".
+If I describe more than one job, make me choose one and put the rest under "Next".
 
 My job: [describe the job you repeat]"""),)),
 
@@ -95,7 +95,7 @@ End with one line: does the first version cost nothing new, or how much? If it n
   expect="About 5 minutes. Expect the design to be smaller than you imagined: often one saved prompt and one place to keep it.",
   proof=("Three lines: which assistant, where the files live, and what stays manual",
          "A short list a beginner could copy out: what goes in, what the AI does, what comes out, who checks it",
-         "For a project folder: the layout check passes"),
+         "For a project folder (Advanced only): the layout check passes"),
   gate="Could a beginner draw it?",
   prompts=(("Prompt to paste", """Design the simplest version of this tool that does the one job: [the one-sentence job].
 

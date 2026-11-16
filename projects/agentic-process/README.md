@@ -19,7 +19,7 @@ else can use, and know it works before anyone relies on it.
 | --- | --- | --- |
 | [**The North Star**](https://raw.githack.com/bar181/practical-ai/main/projects/agentic-process/base/north-star.html) | One page: the purpose, the value at your level, and where it fits | 5 minutes |
 | [**The guide**](https://raw.githack.com/bar181/practical-ai/main/projects/agentic-process/base/explainer.html) | All nine steps, each with its purpose, who it helps, proof and a prompt | 10 minutes |
-| [**The course**](https://raw.githack.com/bar181/practical-ai/main/projects/agentic-process/base/course.html) | Five modules, each with a lecture deck and step-by-step lessons, then a capstone | about 3.5 hours |
+| [**The course**](https://raw.githack.com/bar181/practical-ai/main/projects/agentic-process/base/course.html) | Five modules, each with a lecture deck and step-by-step lessons, then a capstone | about 4.5 hours |
 
 The links open the pages through raw.githack.com, a free service that shows a GitHub HTML file as
 a page, once this branch is merged. Otherwise download the file from [`base/`](base/) and open it
@@ -56,7 +56,7 @@ path: steps 1, 6 and 8 in full, steps 2 to 5 in a line each, step 7 folded into 
 | **New to this** (Beginner) | The coach, pasted into any chatbot | A one-page plan and a first prompt you can test today |
 | **Building with an agent** (Advanced) | [One skill folder](level-2-files/) to copy into your agent's skills. Works in any repository | A project folder with its own checks, the front page and the first version in place |
 | **Running agents unattended** (Expert) | [Gates, the fresh-run test and the score sheet](level-3-files/) | Proof of what works, before a person spends time on it |
-| **Teaching or learning it properly** | [The course](https://raw.githack.com/bar181/practical-ai/main/projects/agentic-process/base/course.html): five modules, lecture decks with instructor notes, lessons, checks and a capstone | A tool of your own, taken through all nine steps |
+| **Teaching or learning it properly** | [The course](https://raw.githack.com/bar181/practical-ai/main/projects/agentic-process/base/course.html): five modules, lecture decks with instructor notes, lessons, checks and a capstone | A tool of your own, taken through steps 1 to 8 and tested by a stranger, with step 9 planned |
 
 ### 3. See it used
 
@@ -114,17 +114,17 @@ the wood, draw it, have someone check the drawing, build the smallest platform y
 ## The course
 
 <!-- course:start -->
-**[Build the right AI tool](https://raw.githack.com/bar181/practical-ai/main/projects/agentic-process/base/course.html)**: Learn to turn a job you repeat into a small AI tool that someone else can use, and to prove it works before anyone relies on it. 5 modules, about 3.5 hours, each with a lecture deck, step-by-step lessons, a three-question check and an
+**[Build the right AI tool](https://raw.githack.com/bar181/practical-ai/main/projects/agentic-process/base/course.html)**: Learn to turn a job you repeat into a small AI tool that someone else can use, and to prove it works before anyone relies on it. 5 modules, about 4 and a half hours, each with a lecture deck, step-by-step lessons, a three-question check and an
 assignment, then a capstone. It has not been taught yet.
 
 | Module | Purpose | Lessons | Time |
 | --- | --- | --- | --- |
-| 1. Why process beats prompts | See why an AI that builds fast makes the expensive mistakes earlier, and meet the nine steps that catch them. | The problem: the wrong thing, built well; The North Star and the nine steps; Your first run: the coach, on the short path | about 40 min |
-| 2. Decide: is it worth building? | Before anything is built, name one job, check what already does it, and know what it would cost. | Scope; Reuse check; Outside help and cost | about 45 min |
-| 3. Design: the plan before the build | Choose the fewest parts, write the plan and the first screen before the tool exists, and have someone else explain it back. | Simplest design; Plan and front door; Review | about 45 min |
-| 4. Build and test: let a stranger break it | Build the smallest version, hand it to a fresh session that has only your instructions, and fix what it trips on. | Build the smallest version; The fresh-chat test; Read the friction log and fix | about 50 min |
-| 5. Grow, and work at your level | Add one thing at a time once the tool is in use, and see how the same steps run with a coding agent and with agents that work unattended. | Grow; Advanced: the skill folder in your repository; Expert: gates and unattended agents | about 40 min |
-| Capstone | Take one real job of your own through all nine steps and hand in a first version a stranger has tested. | All nine steps on one real job | homework |
+| 1. Why process beats prompts | See why an AI that builds fast moves the expensive mistakes earlier, and meet the nine steps that catch them. | The problem: the wrong thing, built well; The North Star and the nine steps; Your first run: the coach, on the short path | about 53 min |
+| 2. Decide: is it worth building? | Before anything is built, name one job, check what already does it, and know what it would cost. | Scope; Reuse check; Outside help and cost | about 55 min |
+| 3. Design: the plan before the build | Choose the fewest parts, write the plan and the first screen before the tool exists, and have a stranger explain it back. | Simplest design; Plan and front door; Review | about 55 min |
+| 4. Build and test: let a stranger break it | Build the smallest version, hand it to a fresh chat that has only your instructions, and fix what it trips on. | Build the smallest version; The fresh-chat test; Read the friction log and fix | about 65 min |
+| 5. Grow, and work at your level | Plan how the tool grows once it is in use, and see how the same steps run with a coding agent and with agents that work unattended. | Plan the next addition; Advanced: the skill folder in your repository (optional); Expert: gates and unattended agents (optional) | about 27 min |
+| Capstone | Take one real job of your own through steps 1 to 8, hand in a first version a stranger has tested, and plan step 9. | Your tool, steps 1 to 8, step 9 planned | homework |
 <!-- course:end -->
 
 The course includes an instructor guide: three formats (one day, five weeks, or a 30-minute
