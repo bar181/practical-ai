@@ -88,15 +88,16 @@ and the research is in [`docs/tool-inventory.md`](docs/tool-inventory.md).
 
 **Your AI gives brilliant answers. Then it shows them on a grey page.** Artifact Studio is a
 curated library of modern design templates. Say "show this as a presentation" and get a deck or a
-report you would be proud to present.
+report you would be proud to present. Give it one photo and it moves like a film.
 
 <p align="center">
-  <a href="projects/artifact-studio/"><img src="projects/artifact-studio/_build/img/show-keynote.webp" width="800" alt="Animated screen capture of the keynote template in Artifact Studio: huge white type on black, one idea per screen"></a>
+  <a href="projects/artifact-studio/"><img src="projects/artifact-studio/_build/img/show-photo-effects.webp" width="800" alt="Animated screen capture of photo effects made from one photograph with Artifact Studio: a sketch draws itself and becomes the photo, the camera pans across a lake, a divider slides between two colour grades, a postcard flips over, and a huge word is filled with the picture"></a>
 </p>
 
 <p align="center">
-  <img src="projects/artifact-studio/_build/img/voice-storyteller.webp" width="49%" alt="Screen capture of the storyteller voice in Artifact Studio: a sunset photograph with a story opening in serif type">
-  <img src="projects/artifact-studio/_build/img/nine-looks.webp" width="40%" alt="Screen capture of nine design looks in Artifact Studio, shown side by side with the same content">
+  <img src="projects/artifact-studio/_build/img/fx-line-art.webp" width="32%" alt="Screen capture of a pencil sketch, traced from a photograph, drawing itself">
+  <img src="projects/artifact-studio/_build/img/fx-photo-type.webp" width="32%" alt="Screen capture of one huge word with a photograph inside its letters">
+  <img src="projects/artifact-studio/_build/img/fx-postcard.webp" width="32%" alt="Screen capture of a photograph flipped over like a postcard to show a note">
 </p>
 
 <p align="center">

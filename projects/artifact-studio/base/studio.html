@@ -356,6 +356,9 @@ footer p{border-top:1px solid rgba(232,237,243,.2);padding-top:22px;max-width:40
 .md li.task input:checked+span{color:var(--slate);text-decoration:line-through}
 .view>.md:not(:first-child){padding-top:34px}
 .md.sub h2:first-child{margin-top:0}
+#t-photo:checked~#v-photo{display:block}
+#t-photo:focus-visible~.tabs label[for="t-photo"]{outline:3px solid var(--reed);outline-offset:2px}
+:is(#t-photo):checked~.tabs .g0{background:var(--fog);color:var(--pine);border-color:var(--fog)}
 #t-voice-keynote:checked~#v-voice-keynote{display:block}
 #t-voice-keynote:focus-visible~.tabs label[for="t-voice-keynote"]{outline:3px solid var(--reed);outline-offset:2px}
 #t-voice-keynote:checked~.tabs .tabs-s label[for="t-voice-keynote"]{background:var(--reed);color:var(--pine)}
@@ -377,8 +380,8 @@ footer p{border-top:1px solid rgba(232,237,243,.2);padding-top:22px;max-width:40
 #t-voice-brief:checked~#v-voice-brief{display:block}
 #t-voice-brief:focus-visible~.tabs label[for="t-voice-brief"]{outline:3px solid var(--reed);outline-offset:2px}
 #t-voice-brief:checked~.tabs .tabs-s label[for="t-voice-brief"]{background:var(--reed);color:var(--pine)}
-:is(#t-voice-keynote,#t-voice-story,#t-voice-teacher,#t-voice-pitch,#t-voice-practical,#t-voice-analyst,#t-voice-brief):checked~.tabs .g0{background:var(--fog);color:var(--pine);border-color:var(--fog)}
-:is(#t-voice-keynote,#t-voice-story,#t-voice-teacher,#t-voice-pitch,#t-voice-practical,#t-voice-analyst,#t-voice-brief):checked~.tabs .s0{display:flex}
+:is(#t-voice-keynote,#t-voice-story,#t-voice-teacher,#t-voice-pitch,#t-voice-practical,#t-voice-analyst,#t-voice-brief):checked~.tabs .g1{background:var(--fog);color:var(--pine);border-color:var(--fog)}
+:is(#t-voice-keynote,#t-voice-story,#t-voice-teacher,#t-voice-pitch,#t-voice-practical,#t-voice-analyst,#t-voice-brief):checked~.tabs .s1{display:flex}
 #t-recipe-report:checked~#v-recipe-report{display:block}
 #t-recipe-report:focus-visible~.tabs label[for="t-recipe-report"]{outline:3px solid var(--reed);outline-offset:2px}
 #t-recipe-report:checked~.tabs .tabs-s label[for="t-recipe-report"]{background:var(--reed);color:var(--pine)}
@@ -391,8 +394,8 @@ footer p{border-top:1px solid rgba(232,237,243,.2);padding-top:22px;max-width:40
 #t-recipe-landing:checked~#v-recipe-landing{display:block}
 #t-recipe-landing:focus-visible~.tabs label[for="t-recipe-landing"]{outline:3px solid var(--reed);outline-offset:2px}
 #t-recipe-landing:checked~.tabs .tabs-s label[for="t-recipe-landing"]{background:var(--reed);color:var(--pine)}
-:is(#t-recipe-report,#t-recipe-proposal,#t-recipe-explainer,#t-recipe-landing):checked~.tabs .g1{background:var(--fog);color:var(--pine);border-color:var(--fog)}
-:is(#t-recipe-report,#t-recipe-proposal,#t-recipe-explainer,#t-recipe-landing):checked~.tabs .s1{display:flex}
+:is(#t-recipe-report,#t-recipe-proposal,#t-recipe-explainer,#t-recipe-landing):checked~.tabs .g2{background:var(--fog);color:var(--pine);border-color:var(--fog)}
+:is(#t-recipe-report,#t-recipe-proposal,#t-recipe-explainer,#t-recipe-landing):checked~.tabs .s2{display:flex}
 #t-deck-visionary:checked~#v-deck-visionary{display:block}
 #t-deck-visionary:focus-visible~.tabs label[for="t-deck-visionary"]{outline:3px solid var(--reed);outline-offset:2px}
 #t-deck-visionary:checked~.tabs .tabs-s label[for="t-deck-visionary"]{background:var(--reed);color:var(--pine)}
@@ -405,25 +408,22 @@ footer p{border-top:1px solid rgba(232,237,243,.2);padding-top:22px;max-width:40
 #t-deck-workshop:checked~#v-deck-workshop{display:block}
 #t-deck-workshop:focus-visible~.tabs label[for="t-deck-workshop"]{outline:3px solid var(--reed);outline-offset:2px}
 #t-deck-workshop:checked~.tabs .tabs-s label[for="t-deck-workshop"]{background:var(--reed);color:var(--pine)}
-:is(#t-deck-visionary,#t-deck-story,#t-deck-briefing,#t-deck-workshop):checked~.tabs .g2{background:var(--fog);color:var(--pine);border-color:var(--fog)}
-:is(#t-deck-visionary,#t-deck-story,#t-deck-briefing,#t-deck-workshop):checked~.tabs .s2{display:flex}
+:is(#t-deck-visionary,#t-deck-story,#t-deck-briefing,#t-deck-workshop):checked~.tabs .g3{background:var(--fog);color:var(--pine);border-color:var(--fog)}
+:is(#t-deck-visionary,#t-deck-story,#t-deck-briefing,#t-deck-workshop):checked~.tabs .s3{display:flex}
 #t-social:checked~#v-social{display:block}
 #t-social:focus-visible~.tabs label[for="t-social"]{outline:3px solid var(--reed);outline-offset:2px}
-:is(#t-social):checked~.tabs .g3{background:var(--fog);color:var(--pine);border-color:var(--fog)}
+:is(#t-social):checked~.tabs .g4{background:var(--fog);color:var(--pine);border-color:var(--fog)}
 #t-parts:checked~#v-parts{display:block}
 #t-parts:focus-visible~.tabs label[for="t-parts"]{outline:3px solid var(--reed);outline-offset:2px}
 #t-parts:checked~.tabs .tabs-s label[for="t-parts"]{background:var(--reed);color:var(--pine)}
-#t-photo:checked~#v-photo{display:block}
-#t-photo:focus-visible~.tabs label[for="t-photo"]{outline:3px solid var(--reed);outline-offset:2px}
-#t-photo:checked~.tabs .tabs-s label[for="t-photo"]{background:var(--reed);color:var(--pine)}
 #t-svg:checked~#v-svg{display:block}
 #t-svg:focus-visible~.tabs label[for="t-svg"]{outline:3px solid var(--reed);outline-offset:2px}
 #t-svg:checked~.tabs .tabs-s label[for="t-svg"]{background:var(--reed);color:var(--pine)}
 #t-looks:checked~#v-looks{display:block}
 #t-looks:focus-visible~.tabs label[for="t-looks"]{outline:3px solid var(--reed);outline-offset:2px}
 #t-looks:checked~.tabs .tabs-s label[for="t-looks"]{background:var(--reed);color:var(--pine)}
-:is(#t-parts,#t-photo,#t-svg,#t-looks):checked~.tabs .g4{background:var(--fog);color:var(--pine);border-color:var(--fog)}
-:is(#t-parts,#t-photo,#t-svg,#t-looks):checked~.tabs .s4{display:flex}
+:is(#t-parts,#t-svg,#t-looks):checked~.tabs .g5{background:var(--fog);color:var(--pine);border-color:var(--fog)}
+:is(#t-parts,#t-svg,#t-looks):checked~.tabs .s5{display:flex}
 #t-cards:checked~#v-cards{display:block}
 #t-cards:focus-visible~.tabs label[for="t-cards"]{outline:3px solid var(--reed);outline-offset:2px}
 #t-cards:checked~.tabs .tabs-s label[for="t-cards"]{background:var(--reed);color:var(--pine)}
@@ -433,16 +433,16 @@ footer p{border-top:1px solid rgba(232,237,243,.2);padding-top:22px;max-width:40
 #t-colour:checked~#v-colour{display:block}
 #t-colour:focus-visible~.tabs label[for="t-colour"]{outline:3px solid var(--reed);outline-offset:2px}
 #t-colour:checked~.tabs .tabs-s label[for="t-colour"]{background:var(--reed);color:var(--pine)}
-:is(#t-cards,#t-layouts,#t-colour):checked~.tabs .g5{background:var(--fog);color:var(--pine);border-color:var(--fog)}
-:is(#t-cards,#t-layouts,#t-colour):checked~.tabs .s5{display:flex}
+:is(#t-cards,#t-layouts,#t-colour):checked~.tabs .g6{background:var(--fog);color:var(--pine);border-color:var(--fog)}
+:is(#t-cards,#t-layouts,#t-colour):checked~.tabs .s6{display:flex}
 #t-pick:checked~#v-pick{display:block}
 #t-pick:focus-visible~.tabs label[for="t-pick"]{outline:3px solid var(--reed);outline-offset:2px}
 #t-pick:checked~.tabs .tabs-s label[for="t-pick"]{background:var(--reed);color:var(--pine)}
 #t-mix:checked~#v-mix{display:block}
 #t-mix:focus-visible~.tabs label[for="t-mix"]{outline:3px solid var(--reed);outline-offset:2px}
 #t-mix:checked~.tabs .tabs-s label[for="t-mix"]{background:var(--reed);color:var(--pine)}
-:is(#t-pick,#t-mix):checked~.tabs .g6{background:var(--fog);color:var(--pine);border-color:var(--fog)}
-:is(#t-pick,#t-mix):checked~.tabs .s6{display:flex}
+:is(#t-pick,#t-mix):checked~.tabs .g7{background:var(--fog);color:var(--pine);border-color:var(--fog)}
+:is(#t-pick,#t-mix):checked~.tabs .s7{display:flex}
 #t-c-recipes:checked~#v-c-recipes{display:block}
 #t-c-recipes:focus-visible~.tabs label[for="t-c-recipes"]{outline:3px solid var(--reed);outline-offset:2px}
 #t-c-recipes:checked~.tabs .tabs-s label[for="t-c-recipes"]{background:var(--reed);color:var(--pine)}
@@ -461,8 +461,8 @@ footer p{border-top:1px solid rgba(232,237,243,.2);padding-top:22px;max-width:40
 #t-c-sentences:checked~#v-c-sentences{display:block}
 #t-c-sentences:focus-visible~.tabs label[for="t-c-sentences"]{outline:3px solid var(--reed);outline-offset:2px}
 #t-c-sentences:checked~.tabs .tabs-s label[for="t-c-sentences"]{background:var(--reed);color:var(--pine)}
-:is(#t-c-recipes,#t-c-voices,#t-c-parts,#t-c-spec,#t-c-brief,#t-c-sentences):checked~.tabs .g7{background:var(--fog);color:var(--pine);border-color:var(--fog)}
-:is(#t-c-recipes,#t-c-voices,#t-c-parts,#t-c-spec,#t-c-brief,#t-c-sentences):checked~.tabs .s7{display:flex}
+:is(#t-c-recipes,#t-c-voices,#t-c-parts,#t-c-spec,#t-c-brief,#t-c-sentences):checked~.tabs .g8{background:var(--fog);color:var(--pine);border-color:var(--fog)}
+:is(#t-c-recipes,#t-c-voices,#t-c-parts,#t-c-spec,#t-c-brief,#t-c-sentences):checked~.tabs .s8{display:flex}
 #t-s-skill:checked~#v-s-skill{display:block}
 #t-s-skill:focus-visible~.tabs label[for="t-s-skill"]{outline:3px solid var(--reed);outline-offset:2px}
 #t-s-skill:checked~.tabs .tabs-s label[for="t-s-skill"]{background:var(--reed);color:var(--pine)}
@@ -478,11 +478,11 @@ footer p{border-top:1px solid rgba(232,237,243,.2);padding-top:22px;max-width:40
 #t-s-check:checked~#v-s-check{display:block}
 #t-s-check:focus-visible~.tabs label[for="t-s-check"]{outline:3px solid var(--reed);outline-offset:2px}
 #t-s-check:checked~.tabs .tabs-s label[for="t-s-check"]{background:var(--reed);color:var(--pine)}
-:is(#t-s-skill,#t-s-single,#t-s-skel,#t-s-rules,#t-s-check):checked~.tabs .g8{background:var(--fog);color:var(--pine);border-color:var(--fog)}
-:is(#t-s-skill,#t-s-single,#t-s-skel,#t-s-rules,#t-s-check):checked~.tabs .s8{display:flex}
+:is(#t-s-skill,#t-s-single,#t-s-skel,#t-s-rules,#t-s-check):checked~.tabs .g9{background:var(--fog);color:var(--pine);border-color:var(--fog)}
+:is(#t-s-skill,#t-s-single,#t-s-skel,#t-s-rules,#t-s-check):checked~.tabs .s9{display:flex}
 #t-use:checked~#v-use{display:block}
 #t-use:focus-visible~.tabs label[for="t-use"]{outline:3px solid var(--reed);outline-offset:2px}
-:is(#t-use):checked~.tabs .g9{background:var(--fog);color:var(--pine);border-color:var(--fog)}
+:is(#t-use):checked~.tabs .g10{background:var(--fog);color:var(--pine);border-color:var(--fog)}
 .ph2{background-image:var(--photo2)}
 [data-count]{display:inline!important;font:inherit!important;color:inherit!important;margin:0!important;letter-spacing:inherit!important}
 /* horizontal bars: thin, rounded at the data end, value at the tip */
@@ -1132,8 +1132,9 @@ html[data-view=voice-keynote]{scroll-snap-type:y proximity}
 </head>
 <body>
 <div class="progress" aria-hidden="true"><i></i></div>
-<header class="mast"><div class="wrap"><p class="mast-t"><span>Artifact studio</span> </p><p class="mast-l">Everything in one page: voices, pages, decks, social formats and parts, then a picker, the cards, the skill and a guide. Tap a tab.</p></div></header>
-<input class="tabr" type="radio" name="tab" id="t-voice-keynote" aria-label="Voices: Keynote" checked>
+<header class="mast"><div class="wrap"><p class="mast-t"><span>Artifact studio</span> </p><p class="mast-l">Everything in one page: twelve photo effects first, then voices, pages, decks, social formats and parts, a picker, the cards, the skill and a guide. Tap a tab.</p></div></header>
+<input class="tabr" type="radio" name="tab" id="t-photo" aria-label="Photo effects" checked>
+<input class="tabr" type="radio" name="tab" id="t-voice-keynote" aria-label="Voices: Keynote">
 <input class="tabr" type="radio" name="tab" id="t-voice-story" aria-label="Voices: Storyteller">
 <input class="tabr" type="radio" name="tab" id="t-voice-teacher" aria-label="Voices: Teacher">
 <input class="tabr" type="radio" name="tab" id="t-voice-pitch" aria-label="Voices: Pitch">
@@ -1150,7 +1151,6 @@ html[data-view=voice-keynote]{scroll-snap-type:y proximity}
 <input class="tabr" type="radio" name="tab" id="t-deck-workshop" aria-label="Decks: Workshop">
 <input class="tabr" type="radio" name="tab" id="t-social" aria-label="Social">
 <input class="tabr" type="radio" name="tab" id="t-parts" aria-label="Parts: Page parts">
-<input class="tabr" type="radio" name="tab" id="t-photo" aria-label="Parts: Photo parts">
 <input class="tabr" type="radio" name="tab" id="t-svg" aria-label="Parts: Animated SVG">
 <input class="tabr" type="radio" name="tab" id="t-looks" aria-label="Parts: Looks">
 <input class="tabr" type="radio" name="tab" id="t-cards" aria-label="Design: Cards">
@@ -1170,7 +1170,295 @@ html[data-view=voice-keynote]{scroll-snap-type:y proximity}
 <input class="tabr" type="radio" name="tab" id="t-s-rules" aria-label="Skill: Build rules">
 <input class="tabr" type="radio" name="tab" id="t-s-check" aria-label="Skill: Checklist">
 <input class="tabr" type="radio" name="tab" id="t-use" aria-label="Guide">
-<nav class="tabs" aria-label="Sections"><div class="tabs-g"><label class="g0" for="t-voice-keynote">Voices</label><label class="g1" for="t-recipe-report">Pages</label><label class="g2" for="t-deck-visionary">Decks</label><label class="g3" for="t-social">Social</label><label class="g4" for="t-parts">Parts</label><label class="g5" for="t-cards">Design</label><label class="g6" for="t-pick">Pick</label><label class="g7" for="t-c-recipes">Reference</label><label class="g8" for="t-s-skill">Skill</label><label class="g9" for="t-use">Guide</label></div><div class="tabs-s s0"><span>One message, told seven ways. Tap a voice:</span><label for="t-voice-keynote">Keynote</label><label for="t-voice-story">Storyteller</label><label for="t-voice-teacher">Teacher</label><label for="t-voice-pitch">Pitch</label><label for="t-voice-practical">Practical</label><label for="t-voice-analyst">Analyst</label><label for="t-voice-brief">Brief</label></div><div class="tabs-s s1"><span>Four whole pages. Tap one:</span><label for="t-recipe-report">Report</label><label for="t-recipe-proposal">Proposal</label><label for="t-recipe-explainer">Explainer</label><label for="t-recipe-landing">Landing page</label></div><div class="tabs-s s2"><span>Four slide decks on one engine:</span><label for="t-deck-visionary">Visionary</label><label for="t-deck-story">Story</label><label for="t-deck-briefing">Briefing</label><label for="t-deck-workshop">Workshop</label></div><div class="tabs-s s4"><span>The pieces a page is made of:</span><label for="t-parts">Page parts</label><label for="t-photo">Photo parts</label><label for="t-svg">Animated SVG</label><label for="t-looks">Looks</label></div><div class="tabs-s s5"><span>The ideas behind a good page:</span><label for="t-cards">Cards</label><label for="t-layouts">Layouts</label><label for="t-colour">Colour</label></div><div class="tabs-s s6"><span>Let the studio suggest, or choose every part yourself:</span><label for="t-pick">Pick for me</label><label for="t-mix">Mix it myself</label></div><div class="tabs-s s7"><span>The reference sheets, the two forms and every sentence:</span><label for="t-c-recipes">Recipe cards</label><label for="t-c-voices">Voice cards</label><label for="t-c-parts">Parts list</label><label for="t-c-spec">Design spec</label><label for="t-c-brief">Content brief</label><label for="t-c-sentences">All sentences</label></div><div class="tabs-s s8"><span>What the assistant follows. &quot;AI instructions&quot; is the paste-in version:</span><label for="t-s-skill">The skill</label><label for="t-s-single">AI instructions</label><label for="t-s-skel">Page skeleton</label><label for="t-s-rules">Build rules</label><label for="t-s-check">Checklist</label></div></nav>
+<nav class="tabs" aria-label="Sections"><div class="tabs-g"><label class="g0" for="t-photo">Photo effects</label><label class="g1" for="t-voice-keynote">Voices</label><label class="g2" for="t-recipe-report">Pages</label><label class="g3" for="t-deck-visionary">Decks</label><label class="g4" for="t-social">Social</label><label class="g5" for="t-parts">Parts</label><label class="g6" for="t-cards">Design</label><label class="g7" for="t-pick">Pick</label><label class="g8" for="t-c-recipes">Reference</label><label class="g9" for="t-s-skill">Skill</label><label class="g10" for="t-use">Guide</label></div><div class="tabs-s s1"><span>One message, told seven ways. Tap a voice:</span><label for="t-voice-keynote">Keynote</label><label for="t-voice-story">Storyteller</label><label for="t-voice-teacher">Teacher</label><label for="t-voice-pitch">Pitch</label><label for="t-voice-practical">Practical</label><label for="t-voice-analyst">Analyst</label><label for="t-voice-brief">Brief</label></div><div class="tabs-s s2"><span>Four whole pages. Tap one:</span><label for="t-recipe-report">Report</label><label for="t-recipe-proposal">Proposal</label><label for="t-recipe-explainer">Explainer</label><label for="t-recipe-landing">Landing page</label></div><div class="tabs-s s3"><span>Four slide decks on one engine:</span><label for="t-deck-visionary">Visionary</label><label for="t-deck-story">Story</label><label for="t-deck-briefing">Briefing</label><label for="t-deck-workshop">Workshop</label></div><div class="tabs-s s5"><span>The pieces a page is made of:</span><label for="t-parts">Page parts</label><label for="t-svg">Animated SVG</label><label for="t-looks">Looks</label></div><div class="tabs-s s6"><span>The ideas behind a good page:</span><label for="t-cards">Cards</label><label for="t-layouts">Layouts</label><label for="t-colour">Colour</label></div><div class="tabs-s s7"><span>Let the studio suggest, or choose every part yourself:</span><label for="t-pick">Pick for me</label><label for="t-mix">Mix it myself</label></div><div class="tabs-s s8"><span>The reference sheets, the two forms and every sentence:</span><label for="t-c-recipes">Recipe cards</label><label for="t-c-voices">Voice cards</label><label for="t-c-parts">Parts list</label><label for="t-c-spec">Design spec</label><label for="t-c-brief">Content brief</label><label for="t-c-sentences">All sentences</label></div><div class="tabs-s s9"><span>What the assistant follows. &quot;AI instructions&quot; is the paste-in version:</span><label for="t-s-skill">The skill</label><label for="t-s-single">AI instructions</label><label for="t-s-skel">Page skeleton</label><label for="t-s-rules">Build rules</label><label for="t-s-check">Checklist</label></div></nav>
+<div class="view" id="v-photo" data-tab="photo" data-title="Photo components">
+<header class="hero">
+  <div class="ph" role="img" aria-label="An overcast lake seen from the shore: a bare tree trunk on the right, dry cattails in front, a dark line of evergreens on the far side."></div>
+  <div class="hero-copy">
+    <h1><span style="--i:0">One</span> <span style="--i:1">photo,</span> <span style="--i:2">twelve</span> <span style="--i:3">components</span></h1>
+    <p>Every effect on this page is built from a single lake photo. Each one comes with the sentence that asks for it.</p>
+  </div>
+</header>
+
+<main>
+<section class="intro wrap">
+  <div class="measure">
+    <p>Pick a component, copy its sentence, attach your own photo and paste both into Claude or ChatGPT. That is the whole method.</p>
+    <p>Nothing here loads a library. It is one file of HTML, CSS and a little JavaScript, so each effect is small enough for an assistant to write in one reply.</p>
+  </div>
+  <ul class="contents">
+    <li><a href="#pan" data-jump="pan">Pan and zoom</a></li>
+    <li><a href="#parallax" data-jump="parallax">Parallax window</a></li>
+    <li><a href="#type" data-jump="type">Photo-filled type</a></li>
+    <li><a href="#tour" data-jump="tour">Scrolling photo tour</a></li>
+    <li><a href="#draw" data-jump="draw">Self-drawing line art</a></li>
+    <li><a href="#chart" data-jump="chart">Chart from the photo</a></li>
+    <li><a href="#compare" data-jump="compare">Before and after</a></li>
+    <li><a href="#looks" data-jump="looks">Looks and voices</a></li>
+    <li><a href="#glass" data-jump="glass">Frosted glass card</a></li>
+    <li><a href="#bento" data-jump="bento">Bento grid</a></li>
+    <li><a href="#swipe" data-jump="swipe">Swipe gallery</a></li>
+    <li><a href="#postcard" data-jump="postcard">Flip postcard</a></li>
+  </ul>
+</section>
+
+<!-- 1 -->
+<section class="spec" id="pan">
+  <div class="spec-head wrap"><h2>Pan and zoom</h2><p class="measure">A still photo that moves slowly reads as film. Use it to open a page or to hold a quote.</p></div>
+  <div class="demo frame kb"><div class="ph" role="img" aria-label="The lake photo, zooming slowly toward the small island."></div></div>
+  <div class="recipe wrap">
+    <div class="ask"><h3>Ask for it like this</h3><blockquote>Fill the frame with my photo and zoom in very slowly toward the island, like a documentary shot. Loop it back out.</blockquote><button class="copy" type="button">Copy</button></div>
+    <dl class="facts"><div><dt>Effort</dt><dd>Easy. One sentence.</dd></div><div><dt>Made here with</dt><dd>One CSS animation</dd></div><div><dt>Grow into</dt><dd>GSAP or Motion, for timed sequences of shots</dd></div><div><dt>Seen in</dt><dd>Documentary title cards and photo essays</dd></div></dl>
+  </div>
+</section>
+
+<!-- 2 -->
+<section class="spec" id="parallax">
+  <div class="spec-head wrap"><h2>Parallax window</h2><p class="measure">The photo moves slower than the page, so the frame feels like a window with depth behind it.</p></div>
+  <div class="demo frame px sd"><div class="ph" role="img" aria-label="The lake photo, drifting behind its frame as the page scrolls."></div><p class="px-card ui">The card and the photo travel at different speeds. Scroll up and down to see it.</p></div>
+  <div class="recipe wrap">
+    <div class="ask"><h3>Ask for it like this</h3><blockquote>Put my photo in a wide window and move it slower than the page as I scroll. Float a small caption card over it that moves the other way.</blockquote><button class="copy" type="button">Copy</button></div>
+    <dl class="facts"><div><dt>Effort</dt><dd>Easy. One sentence.</dd></div><div><dt>Made here with</dt><dd>CSS scroll-driven animation, plus a short script for older browsers</dd></div><div><dt>Grow into</dt><dd>GSAP ScrollTrigger, Lenis for smooth scrolling</dd></div><div><dt>Seen in</dt><dd>Product pages that tie movement to the scroll</dd></div></dl>
+  </div>
+</section>
+
+<!-- 3 -->
+<section class="spec" id="type">
+  <div class="spec-head wrap"><h2>Photo-filled type</h2><p class="measure">One word, large enough that the letters become windows. Good for a chapter break.</p></div>
+  <div class="demo tf sd"><p class="tf-word" role="img" aria-label="The word quiet, with the lake photo showing through the letters.">quiet</p><p>The cloud and the far shore slide through the letters as you scroll.</p></div>
+  <div class="recipe wrap">
+    <div class="ask"><h3>Ask for it like this</h3><blockquote>Write one huge word on a dark band and fill the letters with my photo. Slide the photo sideways inside the letters as I scroll.</blockquote><button class="copy" type="button">Copy</button></div>
+    <dl class="facts"><div><dt>Effort</dt><dd>Easy. One sentence.</dd></div><div><dt>Made here with</dt><dd>CSS background-clip on text</dd></div><div><dt>Grow into</dt><dd>GSAP SplitText, to move each letter on its own</dd></div><div><dt>Seen in</dt><dd>Magazine covers and award-site title screens</dd></div></dl>
+  </div>
+</section>
+
+<!-- 4 -->
+<section class="spec" id="tour">
+  <div class="spec-head wrap"><h2>Scrolling photo tour</h2><p class="measure">The photo stays put while the text scrolls. Each paragraph moves the camera to the part it talks about.</p></div>
+  <div class="demo tour">
+    <div class="tour-stage"><div class="tour-frame"><img class="tour-img" alt="The lake photo. It zooms to a different detail with each step of the text."><p class="tour-count ui" aria-hidden="true">1 of 7</p></div></div>
+    <ol class="tour-steps">
+      <li data-fx=".5" data-fy=".5" data-z="1"><h3>Start wide</h3><p>One frame, 2016 by 1512 pixels, taken from the shore under full cloud.</p></li>
+      <li data-fx=".36" data-fy=".28" data-z="1.7"><h3>The sky does most of the work</h3><p>Cloud fills the top 57% of the picture. That much even tone is why text sits on it so easily.</p></li>
+      <li data-fx=".3" data-fy=".575" data-z="3"><h3>The far shore</h3><p>A band of evergreens crosses the frame just past halfway down. It is the darkest strip in the photo.</p></li>
+      <li data-fx=".86" data-fy=".56" data-z="3.2"><h3>The island</h3><p>To the right of the trunk a small wooded island stands taller than the shoreline behind it.</p></li>
+      <li data-fx=".567" data-fy=".62" data-z="4"><h3>The detail you would miss</h3><p>A single bare shrub stands in open water. Zooming is how a page says: look here.</p></li>
+      <li data-fx=".76" data-fy=".3" data-z="2"><h3>The tree</h3><p>The trunk runs the full height of the frame and splits it into a wide part and a narrow part.</p></li>
+      <li data-fx=".28" data-fy=".76" data-z="2.4"><h3>The reeds</h3><p>Dry cattails and fallen leaves fill the bottom third. They are the only warm colours in the picture.</p></li>
+    </ol>
+  </div>
+  <div class="recipe wrap">
+    <div class="ask"><h3>Ask for it like this</h3><blockquote>Pin my photo while I scroll. I will give you seven short paragraphs. For each one, zoom the photo to the part it describes.</blockquote><button class="copy" type="button">Copy</button></div>
+    <dl class="facts"><div><dt>Effort</dt><dd>Moderate. You say where to look; expect one round of nudging the zooms.</dd></div><div><dt>Made here with</dt><dd>Sticky positioning and an IntersectionObserver</dd></div><div><dt>Grow into</dt><dd>Scrollama, the step-trigger library used in newsrooms</dd></div><div><dt>Seen in</dt><dd>The Pudding, and the New York Times feature Snow Fall</dd></div></dl>
+  </div>
+</section>
+
+<!-- 5 -->
+<section class="spec" id="draw">
+  <div class="spec-head wrap"><h2>Self-drawing line art</h2><p class="measure">A sketch that draws itself as you scroll, then gives way to the real photo. The treeline, island and trunk were traced from the photo's own pixels.</p></div>
+  <div class="demo draw sd" data-range="contain">
+    <div class="draw-stage">
+      <div class="draw-frame">
+        <div class="ph draw-photo"></div>
+        <svg viewBox="0 0 1600 1200" preserveAspectRatio="none" role="img" aria-label="A line drawing of the lake scene that draws itself, then fades into the photo."><path pathLength="1" class="" style="--s:0;--d:0.26" d="M0,691 L10,694 L20,693 L30,694 L40,695 L50,692 L60,687 L70,688 L80,684 L90,683 L100,680 L110,681 L120,678 L130,680 L140,686 L150,686 L160,684 L170,687 L180,684 L190,681 L200,682 L210,683 L220,683 L230,681 L240,683 L250,687 L260,687 L270,684 L280,687 L290,686 L300,686 L310,686 L320,687 L330,685 L340,685 L350,687 L360,687 L370,686 L380,688 L390,688 L400,690 L410,686 L420,689 L430,686 L440,690 L450,691 L460,691 L470,689 L480,684 L490,691 L500,685 L510,682 L520,686 L530,687 L540,686 L550,684 L560,687 L570,686 L580,687 L590,686 L600,686 L610,686 L620,688 L630,688 L640,688 L650,688 L660,691 L670,691 L680,690 L690,691 L700,688 L710,690 L720,689 L730,691 L740,691 L750,689 L760,691 L770,691 L780,693 L790,691 L800,691 L810,692 L820,691 L830,691 L840,688 L850,689 L860,687 L870,689 L880,692 L890,692 L900,692 L910,691 L920,692 L930,693 L940,692 L950,691 L960,691 L970,692 L980,692 L990,693 L1000,692 L1010,692 L1020,692 L1030,692 L1040,692 L1050,692 L1060,692 L1070,693 L1080,692 L1090,692 L1100,692 L1110,693 L1120,692 L1130,692 L1140,692"/><path pathLength="1" class="thin" style="--s:0.06;--d:0.24" d="M1140,714 L1130,715 L1120,715 L1110,715 L1100,715 L1090,715 L1080,715 L1070,715 L1060,715 L1050,715 L1040,715 L1030,715 L1020,716 L1010,716 L1000,716 L990,716 L980,716 L970,716 L960,716 L950,716 L940,716 L930,716 L920,716 L910,717 L900,717 L890,717 L880,717 L870,717 L860,717 L850,717 L840,717 L830,717 L820,718 L810,718 L800,718 L790,718 L780,718 L770,718 L760,718 L750,719 L740,719 L730,719 L720,719 L710,719 L700,719 L690,720 L680,720 L670,720 L660,720 L650,721 L640,721 L630,721 L620,721 L610,721 L600,721 L590,722 L580,722 L570,722 L560,722 L550,722 L540,722 L530,723 L520,723 L510,723 L500,723 L490,723 L480,724 L470,724 L460,724 L450,724 L440,724 L430,725 L420,725 L410,725 L400,725 L390,725 L380,725 L370,726 L360,726 L350,726 L340,726 L330,726 L320,726 L310,726 L300,727 L290,727 L280,727 L270,727 L260,727 L250,727 L240,728 L230,728 L220,728 L210,728 L200,728 L190,728 L180,729 L170,729 L160,729 L150,729 L140,729 L130,729 L120,730 L110,730 L100,730 L90,730 L80,730 L70,730 L60,730 L50,731 L40,731 L30,731 L20,731 L10,731 L0,732"/><path pathLength="1" class="" style="--s:0.2;--d:0.16" d="M1250,696 L1260,696 L1270,696 L1280,691 L1290,688 L1300,685 L1310,655 L1320,661 L1330,672 L1340,661 L1350,660 L1360,663 L1370,655 L1380,655 L1390,655 L1400,642 L1410,650 L1420,656 L1430,653 L1440,664 L1450,658 L1460,667 L1470,681 L1480,694 L1490,693 L1500,695 L1510,694 L1520,693 L1530,693 L1540,691 L1550,689 L1560,689 L1570,688 L1580,687 L1590,688"/><path pathLength="1" class="" style="--s:0.3;--d:0.2" d="M1137,0 L1137,50 L1138,100 L1139,150 L1141,200 L1143,250 L1145,300 L1148,350 L1151,400 L1155,450 L1159,500 L1163,550 L1168,600 L1173,650 L1178,700 L1184,750 L1190,800 L1197,850 L1203,900 L1211,950 L1218,1000"/><path pathLength="1" class="" style="--s:0.34;--d:0.2" d="M1206,0 L1207,50 L1208,100 L1210,150 L1211,200 L1213,250 L1216,300 L1219,350 L1222,400 L1225,450 L1229,500 L1233,550 L1238,600 L1242,650 L1247,700 L1253,750 L1259,800 L1265,850 L1271,900 L1278,950 L1285,1000"/><path pathLength="1" class="thin" style="--s:0.42;--d:0.16" d="M1210,483 l4,54 M1215,540 l-1,37 M1230,843 l-1,65 M1171,116 l-2,34 M1215,571 l-3,69 M1229,629 l-1,53 M1185,658 l-2,58 M1150,80 l-3,40 M1225,816 l0,53 M1185,551 l4,43 M1180,24 l1,54 M1214,436 l1,30 M1196,342 l1,57 M1151,50 l3,31 M1191,130 l-2,49 M1189,37 l0,25 M1199,234 l4,28 M1210,404 l3,50 M1176,94 l1,37 M1164,364 l-3,46 M1202,439 l-1,32 M1189,272 l-3,25 M1208,496 l5,36 M1174,212 l-1,37 M1197,449 l3,32 M1214,450 l1,25"/><path pathLength="1" class="" style="--s:0.44;--d:0.2" d="M1150,175 Q1040,150 960,120 Q900,95 862,88 M1040,150 Q1010,110 985,70 M990,128 Q950,150 905,165 M1010,137 Q1000,95 1030,60 M1152,235 Q1090,260 1040,300 Q1010,330 1000,345 M1090,262 Q1075,300 1085,335 M1160,400 Q1110,415 1070,450 Q1060,470 1085,478 M1208,235 Q1262,270 1284,320 Q1296,380 1272,446 M1205,95 Q1270,60 1330,22 M1270,60 Q1300,75 1320,110 M1600,95 Q1500,110 1418,128 Q1450,90 1470,60 M1500,110 Q1520,150 1560,170"/><path pathLength="1" class="" style="--s:0.5;--d:0.08" d="M905,760 Q880,740 872,728 M905,760 Q896,735 890,722 M905,760 Q906,738 910,724 M905,760 Q922,742 934,730 M905,760 Q930,752 942,746 M880,762 h52"/><path pathLength="1" class="thin" style="--s:0.5;--d:0.16" d="M60,760 h76 M827,745 h159 M106,734 h68 M924,749 h83 M693,723 h156 M810,759 h59 M204,731 h76 M51,753 h126 M781,769 h129 M280,780 h125 M297,783 h160 M394,771 h130 M656,741 h166 M530,751 h142 M344,746 h144 M815,747 h162 M1454,791 h45 M1312,783 h46 M1309,743 h72 M1361,762 h87 M1365,780 h66"/><path pathLength="1" class="thin" style="--s:0.56;--d:0.22" d="M7,919 Q2,847 -2,775 M9,888 Q9,839 10,791 M17,893 Q13,841 9,789 M24,907 Q23,858 23,809 M39,868 Q32,827 26,786 M42,912 Q43,849 44,787 M50,904 Q45,848 40,793 M63,944 Q67,861 72,779 M66,859 Q59,808 52,758 M79,954 Q76,868 74,783 M80,930 Q83,861 86,793 M89,865 Q93,816 98,767 M100,885 Q94,836 88,788 M105,932 Q103,853 102,775 M112,962 Q110,877 108,793 M125,949 Q125,873 126,797 M129,943 Q122,849 115,756 M143,856 Q145,807 148,759 M150,923 Q143,844 136,765 M153,868 Q156,830 159,792 M161,904 Q165,839 170,775 M173,945 Q177,856 181,767 M183,906 Q189,832 195,759 M185,940 Q186,845 187,751 M192,919 Q186,841 180,764 M207,879 Q211,834 215,789 M209,951 Q211,856 214,761 M223,847 Q221,808 220,770 M228,930 Q230,852 233,775 M235,869 Q240,812 245,755 M245,908 Q252,832 259,757 M251,897 Q254,831 258,766 M260,925 Q259,848 259,772 M267,894 Q263,833 260,772 M277,864 Q272,819 267,774 M287,952 Q294,857 301,763 M288,885 Q294,835 300,786 M298,901 Q298,839 299,777 M308,953 Q307,863 307,774 M318,907 Q321,829 325,751 M325,891 Q319,826 313,762 M328,925 Q321,848 315,771 M340,887 Q337,816 335,746 M344,898 Q344,838 344,779 M355,945 Q361,865 367,786 M364,949 Q359,862 354,775 M368,910 Q362,848 357,786 M381,942 Q377,866 373,791 M387,882 Q382,821 378,760 M392,913 Q396,834 400,755 M400,876 Q397,826 394,777 M413,934 Q414,842 415,751 M418,959 Q423,862 429,766 M427,908 Q434,849 441,791 M438,909 Q438,846 438,784 M443,895 Q444,841 446,787 M453,893 Q456,828 459,763 M459,947 Q465,868 472,789 M465,892 Q472,840 479,788 M478,896 Q479,844 481,792 M485,948 Q491,864 498,781 M488,924 Q482,851 476,778 M496,892 Q497,826 499,761 M510,908 Q503,838 496,769 M515,912 Q520,853 526,794 M520,919 Q518,849 516,780 M530,866 Q531,811 532,757 M543,933 Q547,850 551,768 M545,921 Q546,856 547,791 M556,933 Q551,845 547,757 M564,941 Q563,859 562,777 M571,963 Q566,869 561,776 M580,923 Q576,843 572,764 M590,870 Q591,816 592,762 M592,905 Q585,832 578,759 M600,906 Q601,834 603,762 M609,865 Q613,814 617,763 M618,931 Q618,865 618,799 M630,882 Q626,822 623,763 M639,877 Q637,823 635,770 M646,937 Q644,858 642,780 M649,918 Q651,855 654,793 M656,885 Q660,839 664,793 M664,891 Q659,848 654,805 M675,955 Q672,881 670,808 M685,902 Q687,845 690,789 M695,928 Q699,863 704,799 M697,947 Q694,861 691,776 M707,925 Q700,851 693,777 M718,971 Q719,875 720,780 M722,898 Q728,838 735,778 M731,894 Q737,834 744,774 M738,967 Q741,883 744,799 M749,906 Q751,850 754,795 M757,907 Q762,857 767,808 M763,891 Q770,849 777,808 M771,975 Q765,894 759,814 M780,901 Q779,853 779,805 M790,989 Q794,891 798,794 M794,933 Q797,871 800,810 M800,913 Q802,867 804,822 M813,935 Q817,886 821,838 M821,988 Q827,898 833,809 M827,970 Q821,907 816,845 M832,1010 Q833,931 835,852 M847,965 Q842,918 838,872 M849,964 Q855,916 861,869 M858,1010 Q852,936 847,862 M864,1006 Q864,928 864,851 M873,939 Q872,885 871,832 M887,965 Q885,889 884,813 M894,965 Q892,890 891,816 M896,982 Q892,897 888,812 M906,969 Q904,897 903,825 M917,925 Q919,870 922,816 M922,957 Q927,891 933,826 M928,912 Q933,867 939,822 M942,1005 Q938,919 934,833 M949,943 Q943,887 938,832 M954,949 Q961,898 968,847 M965,1008 Q963,917 962,826 M974,934 Q970,873 966,812 M978,1010 Q976,936 974,862 M988,925 Q981,874 974,823 M997,967 Q994,921 991,875 M1004,982 Q1007,928 1011,874 M1014,964 Q1015,904 1017,845 M1017,1008 Q1017,933 1018,859 M1027,1010 Q1026,938 1025,867 M1032,1010 Q1026,948 1021,886 M1043,1009 Q1042,943 1041,877 M1048,1010 Q1047,945 1046,881 M1056,1009 Q1053,959 1050,910 M1068,1010 Q1069,948 1071,886 M1078,1010 Q1084,935 1091,860 M1081,1010 Q1084,949 1087,889 M1089,1010 Q1092,940 1096,870 M1096,908 Q1095,856 1094,804 M1111,1010 Q1111,932 1112,854 M1112,1010 Q1111,937 1111,865 M1124,1009 Q1126,937 1129,865 M1308,1010 Q1305,938 1303,867 M1319,1010 Q1316,943 1314,876 M1324,929 Q1329,898 1334,867 M1331,905 Q1334,854 1337,803 M1338,996 Q1341,905 1345,814 M1350,920 Q1354,868 1359,817 M1358,1010 Q1362,950 1367,891 M1365,1010 Q1372,948 1379,886 M1371,957 Q1371,867 1372,778 M1380,938 Q1381,898 1382,858 M1385,956 Q1391,902 1397,849 M1395,981 Q1389,887 1384,793 M1400,969 Q1394,897 1389,825 M1411,985 Q1412,931 1413,877 M1418,956 Q1418,899 1418,843 M1426,945 Q1428,873 1431,801 M1436,977 Q1435,885 1435,793 M1445,980 Q1440,881 1435,783 M1452,956 Q1452,907 1453,858 M1457,964 Q1462,898 1468,833 M1469,930 Q1471,874 1474,819 M1475,995 Q1471,908 1468,822 M1483,965 Q1486,895 1489,826 M1491,967 Q1484,896 1478,825 M1496,933 Q1495,878 1495,823 M1504,938 Q1500,900 1497,863 M1516,1010 Q1510,953 1504,897 M1522,949 Q1525,886 1528,824 M1533,1010 Q1531,947 1530,884 M1539,1010 Q1539,951 1540,892 M1546,1010 Q1540,933 1535,856 M1559,980 Q1558,915 1558,851 M1564,1010 Q1559,924 1554,839 M1573,1010 Q1579,955 1585,901 M1581,1010 Q1586,951 1591,892 M1586,1004 Q1584,919 1583,834 M1593,965 Q1587,900 1581,835"/><path pathLength="1" class="" style="--s:0.66;--d:0.12" d="M2,761 v22 M59,752 v23 M116,757 v20 M174,761 v17 M222,748 v17 M285,746 v23 M341,728 v21 M390,727 v18 M445,751 v21 M503,727 v17 M559,744 v23 M619,754 v20 M673,762 v20 M729,767 v19 M784,768 v24 M837,849 v21 M895,784 v21 M956,830 v22 M1014,845 v21 M1070,865 v24 M1116,842 v18 M1348,862 v23 M1406,825 v16 M1461,790 v16 M1522,824 v20 M1570,860 v22"/><path pathLength="1" class="" style="--s:0.7;--d:0.08" d="M0,1010 Q300,985 620,1040 T1150,1030 T1600,1000"/></svg>
+      </div>
+      <p class="draw-hint ui">Keep scrolling. Far shore first, then the tree, then the reeds, then the photo.</p>
+    </div>
+  </div>
+  <div class="recipe wrap">
+    <div class="ask"><h3>Ask for it like this</h3><blockquote>Trace the main shapes in my photo as a simple line drawing. Draw the lines as I scroll, far things first, then fade the real photo in underneath.</blockquote><button class="copy" type="button">Copy</button></div>
+    <dl class="facts"><div><dt>Effort</dt><dd>Harder. The assistant has to analyse the photo. Ask for a looser sketch if the first one is off.</dd></div><div><dt>Made here with</dt><dd>SVG paths and stroke-dashoffset, tied to scroll</dd></div><div><dt>Grow into</dt><dd>GSAP DrawSVG or Anime.js; Lottie or Rive for animation drawn by a designer</dd></div><div><dt>Seen in</dt><dd>Explainer intros and Codrops demos</dd></div></dl>
+  </div>
+</section>
+
+<!-- 6 -->
+<section class="spec" id="chart">
+  <div class="spec-head wrap"><h2>Chart from the photo</h2><p class="measure">A chart is a component too. These numbers are measured from the photo, so the chart and the picture tell the same story.</p></div>
+  <div class="demo wrap">
+    <figure class="fig" style="margin:0">
+      <h3>How bright the photo is, from its top edge to its bottom edge</h3>
+      <p class="sub ui">Average brightness of 48 horizontal bands. The strip underneath shows each band's average colour. Touch the chart to read a band.</p>
+      <div class="plot" id="bright"></div>
+      <details class="table"><summary class="ui">Show the 48 values as a table</summary><div class="table-scroll" tabindex="0" role="region" aria-label="Brightness values"><table id="bright-table"><thead><tr><th>Distance down the photo</th><th>Brightness</th><th>Part</th></tr></thead><tbody></tbody></table></div></details>
+    </figure>
+    <figure class="fig" style="margin:16px 0 0">
+      <h3>Six colours cover the frame</h3>
+      <p class="sub ui">Every pixel grouped into its nearest of six colours. Width shows each colour's share.</p>
+      <div class="palbar" id="palbar" role="img" aria-label="A bar split into six colours by their share of the photo."></div>
+      <ul class="pallist ui" id="pallist"></ul>
+    </figure>
+  </div>
+  <div class="recipe wrap">
+    <div class="ask"><h3>Ask for it like this</h3><blockquote>Measure how bright my photo is from top to bottom and chart it as a line with a soft fill. Put a strip of the real colours under the axis. Label only the highest and lowest points, and let me touch the chart to read the rest.</blockquote><button class="copy" type="button">Copy</button></div>
+    <dl class="facts"><div><dt>Effort</dt><dd>Moderate. The chart is easy; ask the assistant to show how it measured.</dd></div><div><dt>Made here with</dt><dd>Hand-written SVG, sized to your screen</dd></div><div><dt>Grow into</dt><dd>Observable Plot for quick charts, D3 for custom ones, ECharts for dashboards</dd></div><div><dt>Seen in</dt><dd>The Pudding's data stories</dd></div></dl>
+  </div>
+</section>
+
+<!-- 7 -->
+<section class="spec" id="compare">
+  <div class="spec-head wrap"><h2>Before and after</h2><p class="measure">Two versions of one picture with a divider to drag. It makes a change obvious without a word of explanation.</p></div>
+  <div class="demo frame ba" id="ba">
+    <div class="ph" role="img" aria-label="The photo as it was taken."></div>
+    <div class="ba-b"><div class="ph" role="img" aria-label="The same photo with a warm colour grade."></div></div>
+    <span class="ba-tag a ui">As shot</span><span class="ba-tag b ui">Graded</span>
+    <div class="ba-line" aria-hidden="true"></div>
+    <input id="ba-range" type="range" min="0" max="100" value="50" aria-label="Move the divider between the original photo and the graded photo">
+  </div>
+  <div class="recipe wrap">
+    <div class="ask"><h3>Ask for it like this</h3><blockquote>Show my photo as shot and with a warm sunset grade, as one picture with a divider I can drag from side to side.</blockquote><button class="copy" type="button">Copy</button></div>
+    <dl class="facts"><div><dt>Effort</dt><dd>Easy. One sentence.</dd></div><div><dt>Made here with</dt><dd>A range slider, a CSS filter and clip-path</dd></div><div><dt>Grow into</dt><dd>Nothing needed. Supply two real photos in place of the filter.</dd></div><div><dt>Seen in</dt><dd>Renovation portfolios and satellite image comparisons</dd></div></dl>
+  </div>
+</section>
+
+<!-- 8 -->
+<section class="spec" id="looks">
+  <div class="spec-head wrap"><h2>Looks and voices</h2><p class="measure">The same photo and the same message, five ways. A look sets the mood; a voice sets how it speaks. Describe both and a page stops sounding generic.</p></div>
+  <div class="demo" id="looksbox" data-look="fog">
+    <div class="frame looks-photo"><div class="ph" role="img" aria-label="The lake photo, shown in the selected look."></div><i class="l1"></i><i class="l2"></i><div class="looks-cap"><p class="looks-line" id="looks-line"></p></div></div>
+    <div class="looks-bar" role="group" aria-label="Choose a look" id="looks-bar"></div>
+    <div class="wrap"><p class="looks-voice"><b id="looks-voice"></b><span class="ui" id="looks-by"></span></p></div>
+  </div>
+  <div class="recipe wrap">
+    <div class="ask"><h3>Ask for it like this</h3><blockquote id="looks-ask"></blockquote><button class="copy" type="button">Copy</button></div>
+    <dl class="facts"><div><dt>Effort</dt><dd>Easy. Name the look and the voice in the same sentence.</dd></div><div><dt>Made here with</dt><dd>CSS filters, blend modes and the View Transitions API for the cross-fade</dd></div><div><dt>Grow into</dt><dd>A saved style card per look, so every page you make can reuse it</dd></div><div><dt>Seen in</dt><dd>Photo app filters and brand style guides</dd></div></dl>
+  </div>
+</section>
+
+<!-- 9 -->
+<section class="spec" id="glass">
+  <div class="spec-head wrap"><h2>Frosted glass card</h2><p class="measure">Facts float over the photo on a pane that blurs what is behind it. The photo stays the star and the text stays readable.</p></div>
+  <div class="demo frame glass-scene sd">
+    <div class="ph" role="img" aria-label="The lake photo behind a frosted glass card."></div>
+    <div class="glass">
+      <h3>About this photo</h3>
+      <dl>
+        <div><dt>Size</dt><dd>2016 × 1512 px</dd></div>
+        <div><dt>Sky</dt><dd>Top 57% of the frame</dd></div>
+        <div><dt>Darkest strip</dt><dd>The far shore</dd></div>
+        <div><dt>Largest colour</dt><dd><i></i>#a5b9d8, 35%</dd></div>
+      </dl>
+    </div>
+  </div>
+  <div class="recipe wrap">
+    <div class="ask"><h3>Ask for it like this</h3><blockquote>Float the key facts in a frosted glass card over my photo. Keep the card over the sky so dark text stays readable.</blockquote><button class="copy" type="button">Copy</button></div>
+    <dl class="facts"><div><dt>Effort</dt><dd>Easy. One sentence.</dd></div><div><dt>Made here with</dt><dd>CSS backdrop-filter</dd></div><div><dt>Grow into</dt><dd>Magic UI or Aceternity UI, for ready-made animated cards</dd></div><div><dt>Seen in</dt><dd>Phone lock screens and weather apps</dd></div></dl>
+  </div>
+</section>
+
+<!-- 10 -->
+<section class="spec" id="bento">
+  <div class="spec-head wrap"><h2>Bento grid</h2><p class="measure">A summary as a tray of tiles in different sizes. Each tile holds one fact, so the eye can land anywhere.</p></div>
+  <div class="demo wrap">
+    <div class="bento">
+      <div class="tile photo"><div class="ph" data-crop=".86,.56,3.6" role="img" aria-label="Close view of the wooded island."></div><span class="ui">The island, from the same file</span></div>
+      <div class="tile dark"><span class="n">12</span><span class="ui">photo components on this tab</span></div>
+      <div class="tile sky"><span class="n">0</span><span class="ui">libraries loaded</span></div>
+      <div class="tile wide"><div class="chips" id="chips" aria-hidden="true"></div><span class="ui">The photo's six main colours, largest first</span></div>
+      <div class="tile"><svg id="spark" viewBox="0 0 100 40" preserveAspectRatio="none" role="img" aria-label="Small line showing brightness from the top of the photo to the bottom."></svg><span class="ui">Brightness, top to bottom</span></div>
+      <div class="tile"><span class="n">1,694<small>KB</small></span><span class="ui">the whole studio: one file, photos and fonts included</span></div>
+      <div class="tile say dark">Every tile here is a true fact about this page.</div>
+    </div>
+  </div>
+  <div class="recipe wrap">
+    <div class="ask"><h3>Ask for it like this</h3><blockquote>Summarise this as a bento grid: one tall photo tile, three big-number tiles, a colour palette tile and a small chart tile.</blockquote><button class="copy" type="button">Copy</button></div>
+    <dl class="facts"><div><dt>Effort</dt><dd>Easy. List the tiles you want.</dd></div><div><dt>Made here with</dt><dd>CSS grid</dd></div><div><dt>Grow into</dt><dd>shadcn/ui and Magic UI, which ship bento layouts</dd></div><div><dt>Seen in</dt><dd>Product launch summaries</dd></div></dl>
+  </div>
+</section>
+
+<!-- 11 -->
+<section class="spec" id="swipe">
+  <div class="spec-head wrap"><h2>Swipe gallery</h2><p class="measure">Cards in a row that snap into place one at a time. On a phone it is the most natural way to browse a set.</p></div>
+  <div class="demo">
+    <div class="swipe" tabindex="0" role="region" aria-label="Six details from the photo. Swipe or scroll sideways.">
+      <article><div class="ph" data-crop=".86,.56,4.4" role="img" aria-label="The island."></div><h3>The island</h3><p>Evergreens on a low rise, right of the trunk.</p></article>
+      <article><div class="ph" data-crop=".567,.625,6" role="img" aria-label="A bare shrub standing in the water."></div><h3>The shrub</h3><p>Alone in open water, easy to miss at full size.</p></article>
+      <article><div class="ph" data-crop=".745,.34,3.6" role="img" aria-label="The tree trunk and its bare branches."></div><h3>The bark</h3><p>The trunk and a few bare branches against cloud.</p></article>
+      <article><div class="ph" data-crop=".2,.74,3.4" role="img" aria-label="Dry cattails."></div><h3>The cattails</h3><p>Dry stalks and seed heads along the near shore.</p></article>
+      <article><div class="ph" data-crop=".18,.58,4.4" role="img" aria-label="The far shoreline."></div><h3>The far shore</h3><p>A thin dark line of trees between sky and water.</p></article>
+      <article><div class="ph" data-crop=".33,.2,2.4" role="img" aria-label="Layered cloud."></div><h3>The cloud</h3><p>Soft bands of grey and blue, most of the picture.</p></article>
+    </div>
+  </div>
+  <div class="recipe wrap">
+    <div class="ask"><h3>Ask for it like this</h3><blockquote>Crop six details from my photo and show them as cards I can swipe sideways, snapping one card at a time. Give each a two-word title and one line.</blockquote><button class="copy" type="button">Copy</button></div>
+    <dl class="facts"><div><dt>Effort</dt><dd>Easy. One sentence.</dd></div><div><dt>Made here with</dt><dd>CSS scroll snap. No script.</dd></div><div><dt>Grow into</dt><dd>Motion or GSAP, for dragging with momentum</dd></div><div><dt>Seen in</dt><dd>App store listings and social carousels</dd></div></dl>
+  </div>
+</section>
+
+<!-- 12 -->
+<section class="spec" id="postcard">
+  <div class="spec-head wrap"><h2>Flip postcard</h2><p class="measure">A photo with a second side. Put the picture on the front and the message on the back.</p></div>
+  <div class="demo card-wrap">
+    <button class="card3d" id="card" type="button" aria-pressed="false" aria-label="Postcard. Turn it over.">
+      <span class="card-inner">
+        <span class="face front ph"></span>
+        <span class="face back">
+          <span class="note">Grey sky, flat water, one bare tree. It did not look like much until I zoomed in.</span>
+          <span class="addr"><span class="stamp ph"></span><span class="lines"><i></i><i></i><i></i></span></span>
+        </span>
+      </span>
+    </button>
+    <p class="card-hint ui">Tap the postcard to turn it over.</p>
+  </div>
+  <div class="recipe wrap">
+    <div class="ask"><h3>Ask for it like this</h3><blockquote>Make my photo a postcard with a white border. When I tap it, flip it over in 3D and show a short handwritten-style note, a stamp and address lines on the back.</blockquote><button class="copy" type="button">Copy</button></div>
+    <dl class="facts"><div><dt>Effort</dt><dd>Easy. One sentence.</dd></div><div><dt>Made here with</dt><dd>CSS 3D transforms and one line of script</dd></div><div><dt>Grow into</dt><dd>React Bits and Aceternity UI, which ship tilt and 3D cards</dd></div><div><dt>Seen in</dt><dd>Invitations, team pages and product cards</dd></div></dl>
+  </div>
+</section>
+</main>
+
+<section class="shelves">
+  <div class="wrap">
+    <h2>Where to look next</h2>
+    <p class="lede">The simple version of any page borrows ideas from the best work. The advanced version plugs in the free tools that work is built with.</p>
+
+    <div class="shelf">
+      <h3>Pages worth studying</h3>
+      <ul>
+        <li><a href="https://pudding.cool/">The Pudding</a><span>Data stories built on a pinned chart with text scrolling past.</span></li>
+        <li><a href="https://www.nytimes.com/projects/2012/snow-fall/">Snow Fall, The New York Times</a><span>The 2012 feature that made scrollytelling a format.</span></li>
+        <li><a href="https://joshworth.com/dev/pixelspace/pixelspace_solarsystem.html">If the Moon Were Only 1 Pixel</a><span>The size of the solar system, explained by scrolling sideways.</span></li>
+        <li><a href="https://www.apple.com/airpods-pro/">Apple AirPods Pro</a><span>A product that turns and comes apart as you scroll.</span></li>
+        <li><a href="https://www.awwwards.com/">Awwwards</a><span>A daily winner, with each entry tagged by the tools behind it.</span></li>
+        <li><a href="https://tympanus.net/codrops/">Codrops</a><span>Experimental effects published with their source code.</span></li>
+        <li><a href="https://shorthand.com/the-craft/scrollytelling-examples/">Shorthand's scrollytelling picks</a><span>Twelve examples with notes on which elements each one uses.</span></li>
+        <li><a href="https://www.maglr.com/blog/best-scrollytelling-examples">Maglr's ten for 2026</a><span>News, corporate and education examples side by side.</span></li>
+      </ul>
+    </div>
+
+    <div class="shelf">
+      <h3>Free tools to grow into</h3>
+      <ul>
+        <li><a href="https://gsap.com/">GSAP</a><span>The standard for scroll and timeline animation. Free with every plugin, under its own no-charge licence.</span></li>
+        <li><a href="https://motion.dev/">Motion</a><span>Animation for React, Vue and plain JavaScript. MIT licence.</span></li>
+        <li><a href="https://animejs.com/">Anime.js</a><span>Small and friendly, strong on SVG. MIT licence.</span></li>
+        <li><a href="https://github.com/russellsamora/scrollama">Scrollama</a><span>Step triggers for scrollytelling. MIT licence.</span></li>
+        <li><a href="https://github.com/darkroomengineering/lenis">Lenis</a><span>Smooth scrolling that other effects sit on top of.</span></li>
+        <li><a href="https://web.dev/blog/web-platform-10-2026">Built into browsers</a><span>Scroll-driven animations and view transitions now work without any library.</span></li>
+        <li><a href="https://observablehq.com/plot/">Observable Plot</a><span>A chart in a few lines. ISC licence.</span></li>
+        <li><a href="https://d3js.org/">D3</a><span>Total control for custom charts. ISC licence.</span></li>
+        <li><a href="https://echarts.apache.org/">Apache ECharts</a><span>A large catalogue of interactive charts. Apache 2.0 licence.</span></li>
+        <li><a href="https://ui.shadcn.com/">shadcn/ui</a><span>Accessible components you copy into your project.</span></li>
+        <li><a href="https://magicui.design/">Magic UI</a><span>Animated components for landing pages. MIT licence.</span></li>
+        <li><a href="https://ui.aceternity.com/">Aceternity UI</a><span>Dramatic, dark, cinematic components.</span></li>
+        <li><a href="https://reactbits.dev/">React Bits</a><span>Animated text, backgrounds and cards with open source.</span></li>
+        <li><a href="https://threejs.org/">Three.js, Lottie and Rive</a><span>For 3D scenes and for animation drawn by a designer.</span></li>
+      </ul>
+    </div>
+
+    <div class="shelf">
+      <h3>Skills and plugins that already exist</h3>
+      <ul>
+        <li><a href="https://github.com/anthropics/skills">Anthropic's skills: frontend-design, web-artifacts-builder, theme-factory</a><span>Design judgement, a build kit for richer artifacts and ready-made themes.</span></li>
+        <li><a href="https://skills.sh/doodledood/claude-code-plugins/scrollytelling">scrollytelling</a><span>A community skill that asks which scroll pattern and which library you want.</span></li>
+        <li><a href="https://skills.sh/rshvr/elite-web-design/elite-gsap">elite-gsap</a><span>A community skill of GSAP recipes: ScrollTrigger, SplitText, SVG.</span></li>
+        <li><a href="https://skills.sh/freshtechbro/claudedesignskills/animated-component-libraries">animated-component-libraries</a><span>A community skill covering Magic UI and React Bits.</span></li>
+      </ul>
+      <p class="note">Community skills are not reviewed by anyone. Read a skill before you install it.</p>
+    </div>
+  </div>
+</section>
+<footer><div class="wrap"><p class="ui">Built on 14 November 2026 from one photo. Tool and licence notes were checked the same day; follow each link before you rely on one. The line under this page's top edge is a thirteenth component: a reading progress bar.</p></div></footer>
+<nav class="pager" aria-label="Previous and next tab"><div><span></span><label for="t-voice-keynote">Keynote →</label></div></nav></div>
 <div class="view" id="v-voice-keynote" data-tab="voices" data-title="The keynote"><aside class="about" aria-label="About this example"><div class="wrap"><p><b>The keynote voice.</b> Inspired by Steve Jobs&#x27;s product launches. Use it when the reader should feel that something new is possible.</p><p class="about-n">A full example follows. <a href="#anat-voice-keynote" data-jump="anat-voice-keynote">How it is built, and the sentence that asks for it</a></p></div></aside>
   <section class="kn-s"><h1 class="see">Every enquiry is a person, waiting.</h1><p class="kn-note">Scroll. One idea per screen.</p></section>
   <section class="kn-s"><div class="kn-big see">26<small>hours</small></div><p class="see" style="--i:1">That is how long they wait for us today.</p></section>
@@ -1190,7 +1478,7 @@ html[data-view=voice-keynote]{scroll-snap-type:y proximity}
     </div>
 <div class="levels"><div class="ask"><h3><b>Short ask:</b> one sentence</h3><blockquote>Turn my notes into a keynote-style page: one idea per screen, huge type, almost no words.</blockquote><button class="copy" type="button">Copy</button></div><div class="ask"><h3><b>Full ask:</b> you name the voice, look and parts</h3><blockquote>Build a keynote-style page from my notes. Black background, one sans-serif typeface. Open with the problem as one huge number, reveal the answer in three words, show my photo once full screen, compare before and after as two numbers, and finish with "one more thing". Screens snap as I scroll.</blockquote><button class="copy" type="button">Copy</button></div><div class="ask"><h3><b>With the skill:</b> it does the whole job</h3><blockquote>Use the artifact-studio skill. Recipe: scrolling explainer. Voice: keynote. Look: black and white, with one colour taken from my attached photo. Content: the attached notes. Mark any number you could not find in my notes instead of inventing one.</blockquote><button class="copy" type="button">Copy</button></div></div>
   </div></section>
-<nav class="pager" aria-label="Previous and next tab"><div><span></span><label for="t-voice-story">Storyteller →</label></div></nav></div>
+<nav class="pager" aria-label="Previous and next tab"><div><label for="t-photo">← Photo effects</label><label for="t-voice-story">Storyteller →</label></div></nav></div>
 <div class="view" id="v-voice-story" data-tab="voices" data-title="The storyteller"><aside class="about" aria-label="About this example"><div class="wrap"><p><b>The storyteller voice.</b> Inspired by Donald Miller&#x27;s story framework. Use it when the reader should see themselves in the problem and act.</p><p class="about-n">A full example follows. <a href="#anat-voice-story" data-jump="anat-voice-story">How it is built, and the sentence that asks for it</a></p></div></aside>
   <header class="st-hero"><div class="ph" role="img" aria-label="A dog on a lead watches the sun set over calm water and a line of grey rocks."></div>
     <div><span class="st-beat">The hook</span><h1>At 6:40 on a Tuesday evening, walking the dog along the water, Priya finally sent the message she had been putting off for a year.</h1></div></header>
@@ -1696,295 +1984,7 @@ html[data-view=voice-keynote]{scroll-snap-type:y proximity}
     <div class="demo wrap"><div class="pc-swap"><div class="old"><b>Before</b><ul><li>Replies when someone is back at a desk</li><li>Every reply typed from scratch</li><li>Nobody knows how long people waited</li></ul></div><div class="new"><b>Now</b><ul><li>A draft is ready within a minute</li><li>A person reads it, fixes it and sends it</li><li>Reply times are reported every month</li></ul></div></div></div>
 <div class="recipe wrap"><div class="ask"><h3>Ask for it like this</h3><blockquote>Show the change as two lists side by side: the old way struck through on a pale panel, the new way on a dark panel. Three lines each.</blockquote><button class="copy" type="button">Copy</button></div><dl class="facts"><div><dt>Effort</dt><dd>Easy. One sentence.</dd></div><div><dt>Made here with</dt><dd>CSS only</dd></div><div><dt>Grow into</dt><dd>Nothing needed</dd></div><div><dt>Use it for</dt><dd>Change announcements, proposals, case studies</dd></div></dl></div>
   </section>
-<nav class="pager" aria-label="Previous and next tab"><div><label for="t-social">← Social formats</label><label for="t-photo">Photo parts →</label></div></nav></div>
-<div class="view" id="v-photo" data-tab="photo" data-title="Photo components">
-<header class="hero">
-  <div class="ph" role="img" aria-label="An overcast lake seen from the shore: a bare tree trunk on the right, dry cattails in front, a dark line of evergreens on the far side."></div>
-  <div class="hero-copy">
-    <h1><span style="--i:0">One</span> <span style="--i:1">photo,</span> <span style="--i:2">twelve</span> <span style="--i:3">components</span></h1>
-    <p>Every effect on this page is built from a single lake photo. Each one comes with the sentence that asks for it.</p>
-  </div>
-</header>
-
-<main>
-<section class="intro wrap">
-  <div class="measure">
-    <p>Pick a component, copy its sentence, attach your own photo and paste both into Claude or ChatGPT. That is the whole method.</p>
-    <p>Nothing here loads a library. It is one file of HTML, CSS and a little JavaScript, so each effect is small enough for an assistant to write in one reply.</p>
-  </div>
-  <ul class="contents">
-    <li><a href="#pan" data-jump="pan">Pan and zoom</a></li>
-    <li><a href="#parallax" data-jump="parallax">Parallax window</a></li>
-    <li><a href="#type" data-jump="type">Photo-filled type</a></li>
-    <li><a href="#tour" data-jump="tour">Scrolling photo tour</a></li>
-    <li><a href="#draw" data-jump="draw">Self-drawing line art</a></li>
-    <li><a href="#chart" data-jump="chart">Chart from the photo</a></li>
-    <li><a href="#compare" data-jump="compare">Before and after</a></li>
-    <li><a href="#looks" data-jump="looks">Looks and voices</a></li>
-    <li><a href="#glass" data-jump="glass">Frosted glass card</a></li>
-    <li><a href="#bento" data-jump="bento">Bento grid</a></li>
-    <li><a href="#swipe" data-jump="swipe">Swipe gallery</a></li>
-    <li><a href="#postcard" data-jump="postcard">Flip postcard</a></li>
-  </ul>
-</section>
-
-<!-- 1 -->
-<section class="spec" id="pan">
-  <div class="spec-head wrap"><h2>Pan and zoom</h2><p class="measure">A still photo that moves slowly reads as film. Use it to open a page or to hold a quote.</p></div>
-  <div class="demo frame kb"><div class="ph" role="img" aria-label="The lake photo, zooming slowly toward the small island."></div></div>
-  <div class="recipe wrap">
-    <div class="ask"><h3>Ask for it like this</h3><blockquote>Fill the frame with my photo and zoom in very slowly toward the island, like a documentary shot. Loop it back out.</blockquote><button class="copy" type="button">Copy</button></div>
-    <dl class="facts"><div><dt>Effort</dt><dd>Easy. One sentence.</dd></div><div><dt>Made here with</dt><dd>One CSS animation</dd></div><div><dt>Grow into</dt><dd>GSAP or Motion, for timed sequences of shots</dd></div><div><dt>Seen in</dt><dd>Documentary title cards and photo essays</dd></div></dl>
-  </div>
-</section>
-
-<!-- 2 -->
-<section class="spec" id="parallax">
-  <div class="spec-head wrap"><h2>Parallax window</h2><p class="measure">The photo moves slower than the page, so the frame feels like a window with depth behind it.</p></div>
-  <div class="demo frame px sd"><div class="ph" role="img" aria-label="The lake photo, drifting behind its frame as the page scrolls."></div><p class="px-card ui">The card and the photo travel at different speeds. Scroll up and down to see it.</p></div>
-  <div class="recipe wrap">
-    <div class="ask"><h3>Ask for it like this</h3><blockquote>Put my photo in a wide window and move it slower than the page as I scroll. Float a small caption card over it that moves the other way.</blockquote><button class="copy" type="button">Copy</button></div>
-    <dl class="facts"><div><dt>Effort</dt><dd>Easy. One sentence.</dd></div><div><dt>Made here with</dt><dd>CSS scroll-driven animation, plus a short script for older browsers</dd></div><div><dt>Grow into</dt><dd>GSAP ScrollTrigger, Lenis for smooth scrolling</dd></div><div><dt>Seen in</dt><dd>Product pages that tie movement to the scroll</dd></div></dl>
-  </div>
-</section>
-
-<!-- 3 -->
-<section class="spec" id="type">
-  <div class="spec-head wrap"><h2>Photo-filled type</h2><p class="measure">One word, large enough that the letters become windows. Good for a chapter break.</p></div>
-  <div class="demo tf sd"><p class="tf-word" role="img" aria-label="The word quiet, with the lake photo showing through the letters.">quiet</p><p>The cloud and the far shore slide through the letters as you scroll.</p></div>
-  <div class="recipe wrap">
-    <div class="ask"><h3>Ask for it like this</h3><blockquote>Write one huge word on a dark band and fill the letters with my photo. Slide the photo sideways inside the letters as I scroll.</blockquote><button class="copy" type="button">Copy</button></div>
-    <dl class="facts"><div><dt>Effort</dt><dd>Easy. One sentence.</dd></div><div><dt>Made here with</dt><dd>CSS background-clip on text</dd></div><div><dt>Grow into</dt><dd>GSAP SplitText, to move each letter on its own</dd></div><div><dt>Seen in</dt><dd>Magazine covers and award-site title screens</dd></div></dl>
-  </div>
-</section>
-
-<!-- 4 -->
-<section class="spec" id="tour">
-  <div class="spec-head wrap"><h2>Scrolling photo tour</h2><p class="measure">The photo stays put while the text scrolls. Each paragraph moves the camera to the part it talks about.</p></div>
-  <div class="demo tour">
-    <div class="tour-stage"><div class="tour-frame"><img class="tour-img" alt="The lake photo. It zooms to a different detail with each step of the text."><p class="tour-count ui" aria-hidden="true">1 of 7</p></div></div>
-    <ol class="tour-steps">
-      <li data-fx=".5" data-fy=".5" data-z="1"><h3>Start wide</h3><p>One frame, 2016 by 1512 pixels, taken from the shore under full cloud.</p></li>
-      <li data-fx=".36" data-fy=".28" data-z="1.7"><h3>The sky does most of the work</h3><p>Cloud fills the top 57% of the picture. That much even tone is why text sits on it so easily.</p></li>
-      <li data-fx=".3" data-fy=".575" data-z="3"><h3>The far shore</h3><p>A band of evergreens crosses the frame just past halfway down. It is the darkest strip in the photo.</p></li>
-      <li data-fx=".86" data-fy=".56" data-z="3.2"><h3>The island</h3><p>To the right of the trunk a small wooded island stands taller than the shoreline behind it.</p></li>
-      <li data-fx=".567" data-fy=".62" data-z="4"><h3>The detail you would miss</h3><p>A single bare shrub stands in open water. Zooming is how a page says: look here.</p></li>
-      <li data-fx=".76" data-fy=".3" data-z="2"><h3>The tree</h3><p>The trunk runs the full height of the frame and splits it into a wide part and a narrow part.</p></li>
-      <li data-fx=".28" data-fy=".76" data-z="2.4"><h3>The reeds</h3><p>Dry cattails and fallen leaves fill the bottom third. They are the only warm colours in the picture.</p></li>
-    </ol>
-  </div>
-  <div class="recipe wrap">
-    <div class="ask"><h3>Ask for it like this</h3><blockquote>Pin my photo while I scroll. I will give you seven short paragraphs. For each one, zoom the photo to the part it describes.</blockquote><button class="copy" type="button">Copy</button></div>
-    <dl class="facts"><div><dt>Effort</dt><dd>Moderate. You say where to look; expect one round of nudging the zooms.</dd></div><div><dt>Made here with</dt><dd>Sticky positioning and an IntersectionObserver</dd></div><div><dt>Grow into</dt><dd>Scrollama, the step-trigger library used in newsrooms</dd></div><div><dt>Seen in</dt><dd>The Pudding, and the New York Times feature Snow Fall</dd></div></dl>
-  </div>
-</section>
-
-<!-- 5 -->
-<section class="spec" id="draw">
-  <div class="spec-head wrap"><h2>Self-drawing line art</h2><p class="measure">A sketch that draws itself as you scroll, then gives way to the real photo. The treeline, island and trunk were traced from the photo's own pixels.</p></div>
-  <div class="demo draw sd" data-range="contain">
-    <div class="draw-stage">
-      <div class="draw-frame">
-        <div class="ph draw-photo"></div>
-        <svg viewBox="0 0 1600 1200" preserveAspectRatio="none" role="img" aria-label="A line drawing of the lake scene that draws itself, then fades into the photo."><path pathLength="1" class="" style="--s:0;--d:0.26" d="M0,691 L10,694 L20,693 L30,694 L40,695 L50,692 L60,687 L70,688 L80,684 L90,683 L100,680 L110,681 L120,678 L130,680 L140,686 L150,686 L160,684 L170,687 L180,684 L190,681 L200,682 L210,683 L220,683 L230,681 L240,683 L250,687 L260,687 L270,684 L280,687 L290,686 L300,686 L310,686 L320,687 L330,685 L340,685 L350,687 L360,687 L370,686 L380,688 L390,688 L400,690 L410,686 L420,689 L430,686 L440,690 L450,691 L460,691 L470,689 L480,684 L490,691 L500,685 L510,682 L520,686 L530,687 L540,686 L550,684 L560,687 L570,686 L580,687 L590,686 L600,686 L610,686 L620,688 L630,688 L640,688 L650,688 L660,691 L670,691 L680,690 L690,691 L700,688 L710,690 L720,689 L730,691 L740,691 L750,689 L760,691 L770,691 L780,693 L790,691 L800,691 L810,692 L820,691 L830,691 L840,688 L850,689 L860,687 L870,689 L880,692 L890,692 L900,692 L910,691 L920,692 L930,693 L940,692 L950,691 L960,691 L970,692 L980,692 L990,693 L1000,692 L1010,692 L1020,692 L1030,692 L1040,692 L1050,692 L1060,692 L1070,693 L1080,692 L1090,692 L1100,692 L1110,693 L1120,692 L1130,692 L1140,692"/><path pathLength="1" class="thin" style="--s:0.06;--d:0.24" d="M1140,714 L1130,715 L1120,715 L1110,715 L1100,715 L1090,715 L1080,715 L1070,715 L1060,715 L1050,715 L1040,715 L1030,715 L1020,716 L1010,716 L1000,716 L990,716 L980,716 L970,716 L960,716 L950,716 L940,716 L930,716 L920,716 L910,717 L900,717 L890,717 L880,717 L870,717 L860,717 L850,717 L840,717 L830,717 L820,718 L810,718 L800,718 L790,718 L780,718 L770,718 L760,718 L750,719 L740,719 L730,719 L720,719 L710,719 L700,719 L690,720 L680,720 L670,720 L660,720 L650,721 L640,721 L630,721 L620,721 L610,721 L600,721 L590,722 L580,722 L570,722 L560,722 L550,722 L540,722 L530,723 L520,723 L510,723 L500,723 L490,723 L480,724 L470,724 L460,724 L450,724 L440,724 L430,725 L420,725 L410,725 L400,725 L390,725 L380,725 L370,726 L360,726 L350,726 L340,726 L330,726 L320,726 L310,726 L300,727 L290,727 L280,727 L270,727 L260,727 L250,727 L240,728 L230,728 L220,728 L210,728 L200,728 L190,728 L180,729 L170,729 L160,729 L150,729 L140,729 L130,729 L120,730 L110,730 L100,730 L90,730 L80,730 L70,730 L60,730 L50,731 L40,731 L30,731 L20,731 L10,731 L0,732"/><path pathLength="1" class="" style="--s:0.2;--d:0.16" d="M1250,696 L1260,696 L1270,696 L1280,691 L1290,688 L1300,685 L1310,655 L1320,661 L1330,672 L1340,661 L1350,660 L1360,663 L1370,655 L1380,655 L1390,655 L1400,642 L1410,650 L1420,656 L1430,653 L1440,664 L1450,658 L1460,667 L1470,681 L1480,694 L1490,693 L1500,695 L1510,694 L1520,693 L1530,693 L1540,691 L1550,689 L1560,689 L1570,688 L1580,687 L1590,688"/><path pathLength="1" class="" style="--s:0.3;--d:0.2" d="M1137,0 L1137,50 L1138,100 L1139,150 L1141,200 L1143,250 L1145,300 L1148,350 L1151,400 L1155,450 L1159,500 L1163,550 L1168,600 L1173,650 L1178,700 L1184,750 L1190,800 L1197,850 L1203,900 L1211,950 L1218,1000"/><path pathLength="1" class="" style="--s:0.34;--d:0.2" d="M1206,0 L1207,50 L1208,100 L1210,150 L1211,200 L1213,250 L1216,300 L1219,350 L1222,400 L1225,450 L1229,500 L1233,550 L1238,600 L1242,650 L1247,700 L1253,750 L1259,800 L1265,850 L1271,900 L1278,950 L1285,1000"/><path pathLength="1" class="thin" style="--s:0.42;--d:0.16" d="M1210,483 l4,54 M1215,540 l-1,37 M1230,843 l-1,65 M1171,116 l-2,34 M1215,571 l-3,69 M1229,629 l-1,53 M1185,658 l-2,58 M1150,80 l-3,40 M1225,816 l0,53 M1185,551 l4,43 M1180,24 l1,54 M1214,436 l1,30 M1196,342 l1,57 M1151,50 l3,31 M1191,130 l-2,49 M1189,37 l0,25 M1199,234 l4,28 M1210,404 l3,50 M1176,94 l1,37 M1164,364 l-3,46 M1202,439 l-1,32 M1189,272 l-3,25 M1208,496 l5,36 M1174,212 l-1,37 M1197,449 l3,32 M1214,450 l1,25"/><path pathLength="1" class="" style="--s:0.44;--d:0.2" d="M1150,175 Q1040,150 960,120 Q900,95 862,88 M1040,150 Q1010,110 985,70 M990,128 Q950,150 905,165 M1010,137 Q1000,95 1030,60 M1152,235 Q1090,260 1040,300 Q1010,330 1000,345 M1090,262 Q1075,300 1085,335 M1160,400 Q1110,415 1070,450 Q1060,470 1085,478 M1208,235 Q1262,270 1284,320 Q1296,380 1272,446 M1205,95 Q1270,60 1330,22 M1270,60 Q1300,75 1320,110 M1600,95 Q1500,110 1418,128 Q1450,90 1470,60 M1500,110 Q1520,150 1560,170"/><path pathLength="1" class="" style="--s:0.5;--d:0.08" d="M905,760 Q880,740 872,728 M905,760 Q896,735 890,722 M905,760 Q906,738 910,724 M905,760 Q922,742 934,730 M905,760 Q930,752 942,746 M880,762 h52"/><path pathLength="1" class="thin" style="--s:0.5;--d:0.16" d="M60,760 h76 M827,745 h159 M106,734 h68 M924,749 h83 M693,723 h156 M810,759 h59 M204,731 h76 M51,753 h126 M781,769 h129 M280,780 h125 M297,783 h160 M394,771 h130 M656,741 h166 M530,751 h142 M344,746 h144 M815,747 h162 M1454,791 h45 M1312,783 h46 M1309,743 h72 M1361,762 h87 M1365,780 h66"/><path pathLength="1" class="thin" style="--s:0.56;--d:0.22" d="M7,919 Q2,847 -2,775 M9,888 Q9,839 10,791 M17,893 Q13,841 9,789 M24,907 Q23,858 23,809 M39,868 Q32,827 26,786 M42,912 Q43,849 44,787 M50,904 Q45,848 40,793 M63,944 Q67,861 72,779 M66,859 Q59,808 52,758 M79,954 Q76,868 74,783 M80,930 Q83,861 86,793 M89,865 Q93,816 98,767 M100,885 Q94,836 88,788 M105,932 Q103,853 102,775 M112,962 Q110,877 108,793 M125,949 Q125,873 126,797 M129,943 Q122,849 115,756 M143,856 Q145,807 148,759 M150,923 Q143,844 136,765 M153,868 Q156,830 159,792 M161,904 Q165,839 170,775 M173,945 Q177,856 181,767 M183,906 Q189,832 195,759 M185,940 Q186,845 187,751 M192,919 Q186,841 180,764 M207,879 Q211,834 215,789 M209,951 Q211,856 214,761 M223,847 Q221,808 220,770 M228,930 Q230,852 233,775 M235,869 Q240,812 245,755 M245,908 Q252,832 259,757 M251,897 Q254,831 258,766 M260,925 Q259,848 259,772 M267,894 Q263,833 260,772 M277,864 Q272,819 267,774 M287,952 Q294,857 301,763 M288,885 Q294,835 300,786 M298,901 Q298,839 299,777 M308,953 Q307,863 307,774 M318,907 Q321,829 325,751 M325,891 Q319,826 313,762 M328,925 Q321,848 315,771 M340,887 Q337,816 335,746 M344,898 Q344,838 344,779 M355,945 Q361,865 367,786 M364,949 Q359,862 354,775 M368,910 Q362,848 357,786 M381,942 Q377,866 373,791 M387,882 Q382,821 378,760 M392,913 Q396,834 400,755 M400,876 Q397,826 394,777 M413,934 Q414,842 415,751 M418,959 Q423,862 429,766 M427,908 Q434,849 441,791 M438,909 Q438,846 438,784 M443,895 Q444,841 446,787 M453,893 Q456,828 459,763 M459,947 Q465,868 472,789 M465,892 Q472,840 479,788 M478,896 Q479,844 481,792 M485,948 Q491,864 498,781 M488,924 Q482,851 476,778 M496,892 Q497,826 499,761 M510,908 Q503,838 496,769 M515,912 Q520,853 526,794 M520,919 Q518,849 516,780 M530,866 Q531,811 532,757 M543,933 Q547,850 551,768 M545,921 Q546,856 547,791 M556,933 Q551,845 547,757 M564,941 Q563,859 562,777 M571,963 Q566,869 561,776 M580,923 Q576,843 572,764 M590,870 Q591,816 592,762 M592,905 Q585,832 578,759 M600,906 Q601,834 603,762 M609,865 Q613,814 617,763 M618,931 Q618,865 618,799 M630,882 Q626,822 623,763 M639,877 Q637,823 635,770 M646,937 Q644,858 642,780 M649,918 Q651,855 654,793 M656,885 Q660,839 664,793 M664,891 Q659,848 654,805 M675,955 Q672,881 670,808 M685,902 Q687,845 690,789 M695,928 Q699,863 704,799 M697,947 Q694,861 691,776 M707,925 Q700,851 693,777 M718,971 Q719,875 720,780 M722,898 Q728,838 735,778 M731,894 Q737,834 744,774 M738,967 Q741,883 744,799 M749,906 Q751,850 754,795 M757,907 Q762,857 767,808 M763,891 Q770,849 777,808 M771,975 Q765,894 759,814 M780,901 Q779,853 779,805 M790,989 Q794,891 798,794 M794,933 Q797,871 800,810 M800,913 Q802,867 804,822 M813,935 Q817,886 821,838 M821,988 Q827,898 833,809 M827,970 Q821,907 816,845 M832,1010 Q833,931 835,852 M847,965 Q842,918 838,872 M849,964 Q855,916 861,869 M858,1010 Q852,936 847,862 M864,1006 Q864,928 864,851 M873,939 Q872,885 871,832 M887,965 Q885,889 884,813 M894,965 Q892,890 891,816 M896,982 Q892,897 888,812 M906,969 Q904,897 903,825 M917,925 Q919,870 922,816 M922,957 Q927,891 933,826 M928,912 Q933,867 939,822 M942,1005 Q938,919 934,833 M949,943 Q943,887 938,832 M954,949 Q961,898 968,847 M965,1008 Q963,917 962,826 M974,934 Q970,873 966,812 M978,1010 Q976,936 974,862 M988,925 Q981,874 974,823 M997,967 Q994,921 991,875 M1004,982 Q1007,928 1011,874 M1014,964 Q1015,904 1017,845 M1017,1008 Q1017,933 1018,859 M1027,1010 Q1026,938 1025,867 M1032,1010 Q1026,948 1021,886 M1043,1009 Q1042,943 1041,877 M1048,1010 Q1047,945 1046,881 M1056,1009 Q1053,959 1050,910 M1068,1010 Q1069,948 1071,886 M1078,1010 Q1084,935 1091,860 M1081,1010 Q1084,949 1087,889 M1089,1010 Q1092,940 1096,870 M1096,908 Q1095,856 1094,804 M1111,1010 Q1111,932 1112,854 M1112,1010 Q1111,937 1111,865 M1124,1009 Q1126,937 1129,865 M1308,1010 Q1305,938 1303,867 M1319,1010 Q1316,943 1314,876 M1324,929 Q1329,898 1334,867 M1331,905 Q1334,854 1337,803 M1338,996 Q1341,905 1345,814 M1350,920 Q1354,868 1359,817 M1358,1010 Q1362,950 1367,891 M1365,1010 Q1372,948 1379,886 M1371,957 Q1371,867 1372,778 M1380,938 Q1381,898 1382,858 M1385,956 Q1391,902 1397,849 M1395,981 Q1389,887 1384,793 M1400,969 Q1394,897 1389,825 M1411,985 Q1412,931 1413,877 M1418,956 Q1418,899 1418,843 M1426,945 Q1428,873 1431,801 M1436,977 Q1435,885 1435,793 M1445,980 Q1440,881 1435,783 M1452,956 Q1452,907 1453,858 M1457,964 Q1462,898 1468,833 M1469,930 Q1471,874 1474,819 M1475,995 Q1471,908 1468,822 M1483,965 Q1486,895 1489,826 M1491,967 Q1484,896 1478,825 M1496,933 Q1495,878 1495,823 M1504,938 Q1500,900 1497,863 M1516,1010 Q1510,953 1504,897 M1522,949 Q1525,886 1528,824 M1533,1010 Q1531,947 1530,884 M1539,1010 Q1539,951 1540,892 M1546,1010 Q1540,933 1535,856 M1559,980 Q1558,915 1558,851 M1564,1010 Q1559,924 1554,839 M1573,1010 Q1579,955 1585,901 M1581,1010 Q1586,951 1591,892 M1586,1004 Q1584,919 1583,834 M1593,965 Q1587,900 1581,835"/><path pathLength="1" class="" style="--s:0.66;--d:0.12" d="M2,761 v22 M59,752 v23 M116,757 v20 M174,761 v17 M222,748 v17 M285,746 v23 M341,728 v21 M390,727 v18 M445,751 v21 M503,727 v17 M559,744 v23 M619,754 v20 M673,762 v20 M729,767 v19 M784,768 v24 M837,849 v21 M895,784 v21 M956,830 v22 M1014,845 v21 M1070,865 v24 M1116,842 v18 M1348,862 v23 M1406,825 v16 M1461,790 v16 M1522,824 v20 M1570,860 v22"/><path pathLength="1" class="" style="--s:0.7;--d:0.08" d="M0,1010 Q300,985 620,1040 T1150,1030 T1600,1000"/></svg>
-      </div>
-      <p class="draw-hint ui">Keep scrolling. Far shore first, then the tree, then the reeds, then the photo.</p>
-    </div>
-  </div>
-  <div class="recipe wrap">
-    <div class="ask"><h3>Ask for it like this</h3><blockquote>Trace the main shapes in my photo as a simple line drawing. Draw the lines as I scroll, far things first, then fade the real photo in underneath.</blockquote><button class="copy" type="button">Copy</button></div>
-    <dl class="facts"><div><dt>Effort</dt><dd>Harder. The assistant has to analyse the photo. Ask for a looser sketch if the first one is off.</dd></div><div><dt>Made here with</dt><dd>SVG paths and stroke-dashoffset, tied to scroll</dd></div><div><dt>Grow into</dt><dd>GSAP DrawSVG or Anime.js; Lottie or Rive for animation drawn by a designer</dd></div><div><dt>Seen in</dt><dd>Explainer intros and Codrops demos</dd></div></dl>
-  </div>
-</section>
-
-<!-- 6 -->
-<section class="spec" id="chart">
-  <div class="spec-head wrap"><h2>Chart from the photo</h2><p class="measure">A chart is a component too. These numbers are measured from the photo, so the chart and the picture tell the same story.</p></div>
-  <div class="demo wrap">
-    <figure class="fig" style="margin:0">
-      <h3>How bright the photo is, from its top edge to its bottom edge</h3>
-      <p class="sub ui">Average brightness of 48 horizontal bands. The strip underneath shows each band's average colour. Touch the chart to read a band.</p>
-      <div class="plot" id="bright"></div>
-      <details class="table"><summary class="ui">Show the 48 values as a table</summary><div class="table-scroll" tabindex="0" role="region" aria-label="Brightness values"><table id="bright-table"><thead><tr><th>Distance down the photo</th><th>Brightness</th><th>Part</th></tr></thead><tbody></tbody></table></div></details>
-    </figure>
-    <figure class="fig" style="margin:16px 0 0">
-      <h3>Six colours cover the frame</h3>
-      <p class="sub ui">Every pixel grouped into its nearest of six colours. Width shows each colour's share.</p>
-      <div class="palbar" id="palbar" role="img" aria-label="A bar split into six colours by their share of the photo."></div>
-      <ul class="pallist ui" id="pallist"></ul>
-    </figure>
-  </div>
-  <div class="recipe wrap">
-    <div class="ask"><h3>Ask for it like this</h3><blockquote>Measure how bright my photo is from top to bottom and chart it as a line with a soft fill. Put a strip of the real colours under the axis. Label only the highest and lowest points, and let me touch the chart to read the rest.</blockquote><button class="copy" type="button">Copy</button></div>
-    <dl class="facts"><div><dt>Effort</dt><dd>Moderate. The chart is easy; ask the assistant to show how it measured.</dd></div><div><dt>Made here with</dt><dd>Hand-written SVG, sized to your screen</dd></div><div><dt>Grow into</dt><dd>Observable Plot for quick charts, D3 for custom ones, ECharts for dashboards</dd></div><div><dt>Seen in</dt><dd>The Pudding's data stories</dd></div></dl>
-  </div>
-</section>
-
-<!-- 7 -->
-<section class="spec" id="compare">
-  <div class="spec-head wrap"><h2>Before and after</h2><p class="measure">Two versions of one picture with a divider to drag. It makes a change obvious without a word of explanation.</p></div>
-  <div class="demo frame ba" id="ba">
-    <div class="ph" role="img" aria-label="The photo as it was taken."></div>
-    <div class="ba-b"><div class="ph" role="img" aria-label="The same photo with a warm colour grade."></div></div>
-    <span class="ba-tag a ui">As shot</span><span class="ba-tag b ui">Graded</span>
-    <div class="ba-line" aria-hidden="true"></div>
-    <input id="ba-range" type="range" min="0" max="100" value="50" aria-label="Move the divider between the original photo and the graded photo">
-  </div>
-  <div class="recipe wrap">
-    <div class="ask"><h3>Ask for it like this</h3><blockquote>Show my photo as shot and with a warm sunset grade, as one picture with a divider I can drag from side to side.</blockquote><button class="copy" type="button">Copy</button></div>
-    <dl class="facts"><div><dt>Effort</dt><dd>Easy. One sentence.</dd></div><div><dt>Made here with</dt><dd>A range slider, a CSS filter and clip-path</dd></div><div><dt>Grow into</dt><dd>Nothing needed. Supply two real photos in place of the filter.</dd></div><div><dt>Seen in</dt><dd>Renovation portfolios and satellite image comparisons</dd></div></dl>
-  </div>
-</section>
-
-<!-- 8 -->
-<section class="spec" id="looks">
-  <div class="spec-head wrap"><h2>Looks and voices</h2><p class="measure">The same photo and the same message, five ways. A look sets the mood; a voice sets how it speaks. Describe both and a page stops sounding generic.</p></div>
-  <div class="demo" id="looksbox" data-look="fog">
-    <div class="frame looks-photo"><div class="ph" role="img" aria-label="The lake photo, shown in the selected look."></div><i class="l1"></i><i class="l2"></i><div class="looks-cap"><p class="looks-line" id="looks-line"></p></div></div>
-    <div class="looks-bar" role="group" aria-label="Choose a look" id="looks-bar"></div>
-    <div class="wrap"><p class="looks-voice"><b id="looks-voice"></b><span class="ui" id="looks-by"></span></p></div>
-  </div>
-  <div class="recipe wrap">
-    <div class="ask"><h3>Ask for it like this</h3><blockquote id="looks-ask"></blockquote><button class="copy" type="button">Copy</button></div>
-    <dl class="facts"><div><dt>Effort</dt><dd>Easy. Name the look and the voice in the same sentence.</dd></div><div><dt>Made here with</dt><dd>CSS filters, blend modes and the View Transitions API for the cross-fade</dd></div><div><dt>Grow into</dt><dd>A saved style card per look, so every page you make can reuse it</dd></div><div><dt>Seen in</dt><dd>Photo app filters and brand style guides</dd></div></dl>
-  </div>
-</section>
-
-<!-- 9 -->
-<section class="spec" id="glass">
-  <div class="spec-head wrap"><h2>Frosted glass card</h2><p class="measure">Facts float over the photo on a pane that blurs what is behind it. The photo stays the star and the text stays readable.</p></div>
-  <div class="demo frame glass-scene sd">
-    <div class="ph" role="img" aria-label="The lake photo behind a frosted glass card."></div>
-    <div class="glass">
-      <h3>About this photo</h3>
-      <dl>
-        <div><dt>Size</dt><dd>2016 × 1512 px</dd></div>
-        <div><dt>Sky</dt><dd>Top 57% of the frame</dd></div>
-        <div><dt>Darkest strip</dt><dd>The far shore</dd></div>
-        <div><dt>Largest colour</dt><dd><i></i>#a5b9d8, 35%</dd></div>
-      </dl>
-    </div>
-  </div>
-  <div class="recipe wrap">
-    <div class="ask"><h3>Ask for it like this</h3><blockquote>Float the key facts in a frosted glass card over my photo. Keep the card over the sky so dark text stays readable.</blockquote><button class="copy" type="button">Copy</button></div>
-    <dl class="facts"><div><dt>Effort</dt><dd>Easy. One sentence.</dd></div><div><dt>Made here with</dt><dd>CSS backdrop-filter</dd></div><div><dt>Grow into</dt><dd>Magic UI or Aceternity UI, for ready-made animated cards</dd></div><div><dt>Seen in</dt><dd>Phone lock screens and weather apps</dd></div></dl>
-  </div>
-</section>
-
-<!-- 10 -->
-<section class="spec" id="bento">
-  <div class="spec-head wrap"><h2>Bento grid</h2><p class="measure">A summary as a tray of tiles in different sizes. Each tile holds one fact, so the eye can land anywhere.</p></div>
-  <div class="demo wrap">
-    <div class="bento">
-      <div class="tile photo"><div class="ph" data-crop=".86,.56,3.6" role="img" aria-label="Close view of the wooded island."></div><span class="ui">The island, from the same file</span></div>
-      <div class="tile dark"><span class="n">12</span><span class="ui">photo components on this tab</span></div>
-      <div class="tile sky"><span class="n">0</span><span class="ui">libraries loaded</span></div>
-      <div class="tile wide"><div class="chips" id="chips" aria-hidden="true"></div><span class="ui">The photo's six main colours, largest first</span></div>
-      <div class="tile"><svg id="spark" viewBox="0 0 100 40" preserveAspectRatio="none" role="img" aria-label="Small line showing brightness from the top of the photo to the bottom."></svg><span class="ui">Brightness, top to bottom</span></div>
-      <div class="tile"><span class="n">1,694<small>KB</small></span><span class="ui">the whole studio: one file, photos and fonts included</span></div>
-      <div class="tile say dark">Every tile here is a true fact about this page.</div>
-    </div>
-  </div>
-  <div class="recipe wrap">
-    <div class="ask"><h3>Ask for it like this</h3><blockquote>Summarise this as a bento grid: one tall photo tile, three big-number tiles, a colour palette tile and a small chart tile.</blockquote><button class="copy" type="button">Copy</button></div>
-    <dl class="facts"><div><dt>Effort</dt><dd>Easy. List the tiles you want.</dd></div><div><dt>Made here with</dt><dd>CSS grid</dd></div><div><dt>Grow into</dt><dd>shadcn/ui and Magic UI, which ship bento layouts</dd></div><div><dt>Seen in</dt><dd>Product launch summaries</dd></div></dl>
-  </div>
-</section>
-
-<!-- 11 -->
-<section class="spec" id="swipe">
-  <div class="spec-head wrap"><h2>Swipe gallery</h2><p class="measure">Cards in a row that snap into place one at a time. On a phone it is the most natural way to browse a set.</p></div>
-  <div class="demo">
-    <div class="swipe" tabindex="0" role="region" aria-label="Six details from the photo. Swipe or scroll sideways.">
-      <article><div class="ph" data-crop=".86,.56,4.4" role="img" aria-label="The island."></div><h3>The island</h3><p>Evergreens on a low rise, right of the trunk.</p></article>
-      <article><div class="ph" data-crop=".567,.625,6" role="img" aria-label="A bare shrub standing in the water."></div><h3>The shrub</h3><p>Alone in open water, easy to miss at full size.</p></article>
-      <article><div class="ph" data-crop=".745,.34,3.6" role="img" aria-label="The tree trunk and its bare branches."></div><h3>The bark</h3><p>The trunk and a few bare branches against cloud.</p></article>
-      <article><div class="ph" data-crop=".2,.74,3.4" role="img" aria-label="Dry cattails."></div><h3>The cattails</h3><p>Dry stalks and seed heads along the near shore.</p></article>
-      <article><div class="ph" data-crop=".18,.58,4.4" role="img" aria-label="The far shoreline."></div><h3>The far shore</h3><p>A thin dark line of trees between sky and water.</p></article>
-      <article><div class="ph" data-crop=".33,.2,2.4" role="img" aria-label="Layered cloud."></div><h3>The cloud</h3><p>Soft bands of grey and blue, most of the picture.</p></article>
-    </div>
-  </div>
-  <div class="recipe wrap">
-    <div class="ask"><h3>Ask for it like this</h3><blockquote>Crop six details from my photo and show them as cards I can swipe sideways, snapping one card at a time. Give each a two-word title and one line.</blockquote><button class="copy" type="button">Copy</button></div>
-    <dl class="facts"><div><dt>Effort</dt><dd>Easy. One sentence.</dd></div><div><dt>Made here with</dt><dd>CSS scroll snap. No script.</dd></div><div><dt>Grow into</dt><dd>Motion or GSAP, for dragging with momentum</dd></div><div><dt>Seen in</dt><dd>App store listings and social carousels</dd></div></dl>
-  </div>
-</section>
-
-<!-- 12 -->
-<section class="spec" id="postcard">
-  <div class="spec-head wrap"><h2>Flip postcard</h2><p class="measure">A photo with a second side. Put the picture on the front and the message on the back.</p></div>
-  <div class="demo card-wrap">
-    <button class="card3d" id="card" type="button" aria-pressed="false" aria-label="Postcard. Turn it over.">
-      <span class="card-inner">
-        <span class="face front ph"></span>
-        <span class="face back">
-          <span class="note">Grey sky, flat water, one bare tree. It did not look like much until I zoomed in.</span>
-          <span class="addr"><span class="stamp ph"></span><span class="lines"><i></i><i></i><i></i></span></span>
-        </span>
-      </span>
-    </button>
-    <p class="card-hint ui">Tap the postcard to turn it over.</p>
-  </div>
-  <div class="recipe wrap">
-    <div class="ask"><h3>Ask for it like this</h3><blockquote>Make my photo a postcard with a white border. When I tap it, flip it over in 3D and show a short handwritten-style note, a stamp and address lines on the back.</blockquote><button class="copy" type="button">Copy</button></div>
-    <dl class="facts"><div><dt>Effort</dt><dd>Easy. One sentence.</dd></div><div><dt>Made here with</dt><dd>CSS 3D transforms and one line of script</dd></div><div><dt>Grow into</dt><dd>React Bits and Aceternity UI, which ship tilt and 3D cards</dd></div><div><dt>Seen in</dt><dd>Invitations, team pages and product cards</dd></div></dl>
-  </div>
-</section>
-</main>
-
-<section class="shelves">
-  <div class="wrap">
-    <h2>Where to look next</h2>
-    <p class="lede">The simple version of any page borrows ideas from the best work. The advanced version plugs in the free tools that work is built with.</p>
-
-    <div class="shelf">
-      <h3>Pages worth studying</h3>
-      <ul>
-        <li><a href="https://pudding.cool/">The Pudding</a><span>Data stories built on a pinned chart with text scrolling past.</span></li>
-        <li><a href="https://www.nytimes.com/projects/2012/snow-fall/">Snow Fall, The New York Times</a><span>The 2012 feature that made scrollytelling a format.</span></li>
-        <li><a href="https://joshworth.com/dev/pixelspace/pixelspace_solarsystem.html">If the Moon Were Only 1 Pixel</a><span>The size of the solar system, explained by scrolling sideways.</span></li>
-        <li><a href="https://www.apple.com/airpods-pro/">Apple AirPods Pro</a><span>A product that turns and comes apart as you scroll.</span></li>
-        <li><a href="https://www.awwwards.com/">Awwwards</a><span>A daily winner, with each entry tagged by the tools behind it.</span></li>
-        <li><a href="https://tympanus.net/codrops/">Codrops</a><span>Experimental effects published with their source code.</span></li>
-        <li><a href="https://shorthand.com/the-craft/scrollytelling-examples/">Shorthand's scrollytelling picks</a><span>Twelve examples with notes on which elements each one uses.</span></li>
-        <li><a href="https://www.maglr.com/blog/best-scrollytelling-examples">Maglr's ten for 2026</a><span>News, corporate and education examples side by side.</span></li>
-      </ul>
-    </div>
-
-    <div class="shelf">
-      <h3>Free tools to grow into</h3>
-      <ul>
-        <li><a href="https://gsap.com/">GSAP</a><span>The standard for scroll and timeline animation. Free with every plugin, under its own no-charge licence.</span></li>
-        <li><a href="https://motion.dev/">Motion</a><span>Animation for React, Vue and plain JavaScript. MIT licence.</span></li>
-        <li><a href="https://animejs.com/">Anime.js</a><span>Small and friendly, strong on SVG. MIT licence.</span></li>
-        <li><a href="https://github.com/russellsamora/scrollama">Scrollama</a><span>Step triggers for scrollytelling. MIT licence.</span></li>
-        <li><a href="https://github.com/darkroomengineering/lenis">Lenis</a><span>Smooth scrolling that other effects sit on top of.</span></li>
-        <li><a href="https://web.dev/blog/web-platform-10-2026">Built into browsers</a><span>Scroll-driven animations and view transitions now work without any library.</span></li>
-        <li><a href="https://observablehq.com/plot/">Observable Plot</a><span>A chart in a few lines. ISC licence.</span></li>
-        <li><a href="https://d3js.org/">D3</a><span>Total control for custom charts. ISC licence.</span></li>
-        <li><a href="https://echarts.apache.org/">Apache ECharts</a><span>A large catalogue of interactive charts. Apache 2.0 licence.</span></li>
-        <li><a href="https://ui.shadcn.com/">shadcn/ui</a><span>Accessible components you copy into your project.</span></li>
-        <li><a href="https://magicui.design/">Magic UI</a><span>Animated components for landing pages. MIT licence.</span></li>
-        <li><a href="https://ui.aceternity.com/">Aceternity UI</a><span>Dramatic, dark, cinematic components.</span></li>
-        <li><a href="https://reactbits.dev/">React Bits</a><span>Animated text, backgrounds and cards with open source.</span></li>
-        <li><a href="https://threejs.org/">Three.js, Lottie and Rive</a><span>For 3D scenes and for animation drawn by a designer.</span></li>
-      </ul>
-    </div>
-
-    <div class="shelf">
-      <h3>Skills and plugins that already exist</h3>
-      <ul>
-        <li><a href="https://github.com/anthropics/skills">Anthropic's skills: frontend-design, web-artifacts-builder, theme-factory</a><span>Design judgement, a build kit for richer artifacts and ready-made themes.</span></li>
-        <li><a href="https://skills.sh/doodledood/claude-code-plugins/scrollytelling">scrollytelling</a><span>A community skill that asks which scroll pattern and which library you want.</span></li>
-        <li><a href="https://skills.sh/rshvr/elite-web-design/elite-gsap">elite-gsap</a><span>A community skill of GSAP recipes: ScrollTrigger, SplitText, SVG.</span></li>
-        <li><a href="https://skills.sh/freshtechbro/claudedesignskills/animated-component-libraries">animated-component-libraries</a><span>A community skill covering Magic UI and React Bits.</span></li>
-      </ul>
-      <p class="note">Community skills are not reviewed by anyone. Read a skill before you install it.</p>
-    </div>
-  </div>
-</section>
-<footer><div class="wrap"><p class="ui">Built on 14 November 2026 from one photo. Tool and licence notes were checked the same day; follow each link before you rely on one. The line under this page's top edge is a thirteenth component: a reading progress bar.</p></div></footer>
-<nav class="pager" aria-label="Previous and next tab"><div><label for="t-parts">← Page parts</label><label for="t-svg">Animated SVG →</label></div></nav></div>
+<nav class="pager" aria-label="Previous and next tab"><div><label for="t-social">← Social formats</label><label for="t-svg">Animated SVG →</label></div></nav></div>
 <div class="view" id="v-svg" data-title="Animated SVG">
   <section class="sv"><div class="wrap">
     <h1>Twelve animated SVG parts</h1>
@@ -2085,7 +2085,7 @@ html[data-view=voice-keynote]{scroll-snap-type:y proximity}
     </div>
 <div class="levels"><div class="ask"><h3><b>Short ask:</b> one sentence</h3><blockquote>Add a small animated picture of a line going up next to my headline.</blockquote><button class="copy" type="button">Copy</button></div><div class="ask"><h3><b>Full ask:</b> you name the voice, look and parts</h3><blockquote>Add the "line-draw" animated SVG from the artifact studio beside my headline, recoloured to my accent colour, with alt text that says what the trend is. Keep it under 160 pixels tall and make sure it is still readable with motion turned off.</blockquote><button class="copy" type="button">Copy</button></div><div class="ask"><h3><b>With the skill:</b> it does the whole job</h3><blockquote>Use the artifact-studio skill. Component: line-draw.svg, recoloured to my brand. Place it beside the headline.</blockquote><button class="copy" type="button">Copy</button></div></div>
   </div></section>
-<nav class="pager" aria-label="Previous and next tab"><div><label for="t-photo">← Photo parts</label><label for="t-looks">Looks →</label></div></nav></div>
+<nav class="pager" aria-label="Previous and next tab"><div><label for="t-parts">← Page parts</label><label for="t-looks">Looks →</label></div></nav></div>
 <div class="view" id="v-looks" data-title="Looks">
   <section class="lk"><div class="wrap">
     <h1>Nine looks</h1>
@@ -4442,6 +4442,92 @@ STUDIO.deck=root=>{$$('.dk',root).forEach(dk=>{const slides=$$('.dk-s',dk);if(!s
 </script>
 <script>
 try{(()=>{
+onView("photo",root=>{
+const DATA=STUDIO.data;
+/* tour */
+{const src=getComputedStyle(html).getPropertyValue('--photo').trim().replace(/^url\(\s*["']?/,'').replace(/["']?\s*\)$/,'');
+ const img=$('.tour-img'),frame=$('.tour-frame'),steps=$$('.tour-steps li'),count=$('.tour-count');let cur=0;
+ img.src=src;
+ const place=()=>{const s=steps[cur],z=+s.dataset.z,fx=+s.dataset.fx,fy=+s.dataset.fy,w=frame.clientWidth,h=frame.clientHeight;
+   const tx=clamp(w/2-fx*w*z,w-w*z,0),ty=clamp(h/2-fy*h*z,h-h*z,0);
+   img.style.transform=`translate(${tx.toFixed(1)}px,${ty.toFixed(1)}px) scale(${z})`;
+   count.textContent=`${cur+1} of ${steps.length}`;steps.forEach((e,i)=>e.classList.toggle('on',i===cur));};
+ const io=new IntersectionObserver(es=>{for(const e of es)if(e.isIntersecting){cur=steps.indexOf(e.target);place();}},{rootMargin:'-52% 0px -44% 0px'});
+ steps.forEach(s=>io.observe(s));addEventListener('resize',place);place();}
+
+/* chart */
+const ROWS=DATA.rows,N=ROWS.length;
+const part=i=>i<27?'Sky':i<29?'Far shore':i<32?'Water':i<40?'Reeds':'Leaves';
+const pct=i=>Math.round((i+.5)/N*100);
+{const host=$('#bright');const tip=document.createElement('div');tip.className='tip ui';
+ const draw=()=>{
+  const W=host.clientWidth,H=Math.round(clamp(W*.62,230,330)),m={l:34,r:12,t:22,b:54},iw=W-m.l-m.r,ih=H-m.t-m.b;
+  const x=i=>m.l+(i+.5)/N*iw,y=v=>m.t+(1-v/100)*ih;
+  const svg=el('svg',{viewBox:`0 0 ${W} ${H}`,height:H,role:'img',tabindex:0,'aria-label':'Line chart of brightness from the top of the photo to the bottom. It stays near 70% through the sky, drops to 22% at the far shore, recovers to 64% on the water, then falls to about 25% in the reeds and leaves.'});
+  for(const t of [0,25,50,75,100]){svg.append(el('line',{x1:m.l,x2:W-m.r,y1:y(t),y2:y(t),stroke:'#d3dae4','stroke-width':1}));svg.append(el('text',{x:m.l-6,y:y(t)+4,'text-anchor':'end'},t===100?'100%':t));}
+  const pts=ROWS.map((r,i)=>[x(i),y(r.b)]);
+  const d='M'+pts.map(p=>p[0].toFixed(1)+','+p[1].toFixed(1)).join(' L');
+  svg.append(el('path',{d:d+` L${pts[N-1][0].toFixed(1)},${y(0)} L${pts[0][0].toFixed(1)},${y(0)} Z`,fill:'#34506f','fill-opacity':.1}));
+  svg.append(el('path',{d,class:'line',pathLength:1}));
+  const sy=m.t+ih+8,bw=iw/N;
+  ROWS.forEach((r,i)=>svg.append(el('rect',{x:(m.l+i*bw).toFixed(2),y:sy,width:(bw+.6).toFixed(2),height:14,fill:r.c})));
+  for(const b of [27,29,32,40])svg.append(el('rect',{x:(m.l+b*bw-1).toFixed(2),y:sy-1,width:2,height:16,fill:'#f3f6fa'}));
+  for(const [a,b,name] of [[0,27,'Sky'],[32,40,'Reeds'],[40,48,'Leaves']])svg.append(el('text',{x:m.l+(a+b)/2*bw,y:sy+31,'text-anchor':'middle'},name));
+  const lo=ROWS.reduce((a,r,i)=>r.b<ROWS[a].b?i:a,0),hi=ROWS.reduce((a,r,i)=>r.b>ROWS[a].b?i:a,0);
+  for(const i of [lo,hi])svg.append(el('circle',{cx:pts[i][0],cy:pts[i][1],r:5,fill:'#34506f',stroke:'#f3f6fa','stroke-width':2}));
+  svg.append(el('text',{x:pts[lo][0]-10,y:pts[lo][1]+4,'text-anchor':'end',class:'strong'},`Far shore ${Math.round(ROWS[lo].b)}%`));
+  svg.append(el('text',{x:clamp(pts[hi][0],m.l+62,W-m.r-62),y:pts[hi][1]-12,'text-anchor':'middle',class:'strong'},`Brightest cloud ${Math.round(ROWS[hi].b)}%`));
+  const cross=el('line',{y1:m.t,y2:m.t+ih,stroke:'#1b2228','stroke-width':1,visibility:'hidden'}),dot=el('circle',{r:5,fill:'#34506f',stroke:'#f3f6fa','stroke-width':2,visibility:'hidden'});
+  svg.append(cross,dot);
+  let at=-1;
+  const show=i=>{at=clamp(i,0,N-1);const r=ROWS[at];cross.setAttribute('x1',x(at));cross.setAttribute('x2',x(at));cross.setAttribute('visibility','visible');
+    dot.setAttribute('cx',x(at));dot.setAttribute('cy',y(r.b));dot.setAttribute('visibility','visible');
+    tip.textContent='';const b=document.createElement('b');b.textContent=`Brightness ${r.b.toFixed(0)}%`;const s=document.createElement('span');const sw=document.createElement('i');sw.style.background=r.c;s.append(sw,`${part(at)}, ${pct(at)}% of the way down`);tip.append(b,s);
+    tip.style.visibility='visible';const tw=tip.offsetWidth;tip.style.transform=`translate(${clamp(x(at)-tw/2,0,W-tw).toFixed(0)}px,${Math.max(0,y(r.b)-64).toFixed(0)}px)`;};
+  const hide=()=>{at=-1;cross.setAttribute('visibility','hidden');dot.setAttribute('visibility','hidden');tip.style.visibility='hidden'};
+  const fromEvent=e=>{const b=svg.getBoundingClientRect();show(Math.floor((e.clientX-b.left-m.l)/iw*N))};
+  svg.addEventListener('pointermove',fromEvent);svg.addEventListener('pointerdown',fromEvent);svg.addEventListener('pointerleave',e=>{if(e.pointerType==='mouse')hide()});
+  svg.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();show((at<0?0:at)+(e.key==='ArrowRight'?1:-1))}else if(e.key==='Escape')hide()});
+  svg.addEventListener('blur',hide);
+  host.replaceChildren(svg,tip);};
+ let lastW=0;const redraw=()=>{if(host.clientWidth&&host.clientWidth!==lastW){lastW=host.clientWidth;draw()}};
+ redraw();addEventListener('resize',redraw);
+ if(!reduce)new IntersectionObserver((es,o)=>{if(es[0].isIntersecting){host.classList.add('play');o.disconnect()}},{threshold:.5}).observe(host);
+ const tb=$('#bright-table tbody');ROWS.forEach((r,i)=>{const tr=document.createElement('tr');for(const v of [pct(i)+'%',r.b.toFixed(1)+'%',part(i)]){const td=document.createElement('td');td.textContent=v;tr.append(td)}tb.append(tr)});
+}
+/* palette, chips, sparkline */
+{const bar=$('#palbar'),list=$('#pallist'),chips=$('#chips');
+ for(const c of DATA.pal){const s=document.createElement('span');s.style.cssText=`flex:${c.share} 0 0;background:${c.hex}`;bar.append(s);
+  const li=document.createElement('li'),sw=document.createElement('i'),b=document.createElement('b');sw.style.background=c.hex;b.textContent=c.share.toFixed(0)+'%';li.append(sw,b,' '+c.hex);list.append(li);
+  const ch=document.createElement('i');ch.style.background=c.hex;chips.append(ch);}
+ const sp=$('#spark');sp.append(el('path',{d:'M'+ROWS.map((r,i)=>(i/(N-1)*100).toFixed(1)+','+(38-r.b/100*36).toFixed(1)).join(' L'),fill:'none',stroke:'#34506f','stroke-width':2,'vector-effect':'non-scaling-stroke','stroke-linejoin':'round'}));}
+
+/* before and after */
+{const ba=$('#ba'),r=$('#ba-range');r.addEventListener('input',()=>ba.style.setProperty('--x',r.value+'%'));}
+
+/* looks and voices */
+{const LOOKS=[
+  {id:'fog',name:'As shot',line:'Think of a web page as a recipe. Same ingredients, different dish.',voice:'Voice: the patient teacher',by:'Inspired by David Malan. Analogy first, then an example, then the detail.',ask:'Keep my photo as shot. Voice: a patient teacher. Open with an everyday analogy, then one worked example, then the detail.'},
+  {id:'ink',name:'Ink',line:'One photo. Twelve pages.',voice:'Voice: the keynote',by:'Inspired by Steve Jobs. One idea per screen and almost no text.',ask:'Make my photo high-contrast black and white. Voice: a keynote. One idea per screen, very short sentences, huge type.'},
+  {id:'dusk',name:'Dusk',line:'The photo was nearly deleted. Grey sky, bare tree, nothing to see. Then someone zoomed in.',voice:'Voice: the storyteller',by:'Inspired by Don Miller. A hook, a hero, a twist and an ending that stays with you.',ask:'Grade my photo like dusk, warm at the top and deep blue at the bottom. Voice: a storyteller. Start with a hook, give it a twist, end on a line that lingers.'},
+  {id:'film',name:'Faded film',line:'This is not a picture of a lake. It is the minute before you went back inside.',voice:'Voice: the pitch',by:'Inspired by Don Draper. First person, emotional, about the feeling and never the feature.',ask:'Make my photo look like faded film, soft and slightly brown. Voice: an emotional pitch in the first person, about the feeling and never the feature.'},
+  {id:'blue',name:'Blueprint',line:'Pick a component. Copy the sentence. Ship the page.',voice:'Voice: the practical instructor',by:'A best guess at Bradley Ross. Core concept first, one analogy, then steps you can use today.',ask:'Turn my photo into a two-colour blueprint in navy and pale blue. Voice: a practical instructor. Core concept first, one analogy, then steps I can follow today.'}];
+ const box=$('#looksbox'),bar=$('#looks-bar');
+ const set=id=>{const L=LOOKS.find(l=>l.id===id);box.dataset.look=id;$('#looks-line').textContent=L.line;$('#looks-voice').textContent=L.voice;$('#looks-by').textContent=L.by;$('#looks-ask').textContent=L.ask;
+   $$('button',bar).forEach(b=>b.setAttribute('aria-pressed',b.dataset.id===id))};
+ for(const L of LOOKS){const b=document.createElement('button');b.type='button';b.dataset.id=L.id;b.textContent=L.name;
+   b.addEventListener('click',()=>{if(document.startViewTransition&&!reduce)document.startViewTransition(()=>set(L.id));else set(L.id)});bar.append(b);}
+ set('fog');}
+
+/* postcard */
+{const c=$('#card');c.addEventListener('click',()=>{const on=c.getAttribute('aria-pressed')!=='true';c.setAttribute('aria-pressed',on);$('.card-hint').textContent=on?'Tap again to see the photo.':'Tap the postcard to turn it over.'});
+ if(!reduce&&matchMedia('(hover:hover)').matches){c.addEventListener('pointermove',e=>{const b=c.getBoundingClientRect();c.style.setProperty('--ry',((e.clientX-b.left)/b.width-.5)*14+'deg');c.style.setProperty('--rx',(.5-(e.clientY-b.top)/b.height)*10+'deg')});
+  c.addEventListener('pointerleave',()=>{c.style.setProperty('--rx','0deg');c.style.setProperty('--ry','0deg')});}}
+});
+})()}catch(err){console.error(err)}
+</script>
+<script>
+try{(()=>{
 onView("voice-keynote",root=>{root.classList.add('anim');STUDIO.seen(root)});
 })()}catch(err){console.error(err)}
 </script>
@@ -4564,92 +4650,6 @@ onView("parts",root=>{root.classList.add('anim');STUDIO.seen(root);STUDIO.countU
     $$('.pc-plan .amt',root).forEach(a=>{a.firstChild.textContent='$'+(y?a.dataset.y:a.dataset.m);a.querySelector('small').textContent=y?'a year':'a month'})}));
   const tabs=$$('.pc-tabs [role=tab]',root),pick=t=>{tabs.forEach(x=>{const on=x===t;x.setAttribute('aria-selected',on);x.tabIndex=on?0:-1;document.getElementById(x.getAttribute('aria-controls')).hidden=!on})};
   tabs.forEach((t,i)=>{t.addEventListener('click',()=>pick(t));t.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();const n=tabs[(i+(e.key==='ArrowRight'?1:tabs.length-1))%tabs.length];pick(n);n.focus()}})});
-});
-})()}catch(err){console.error(err)}
-</script>
-<script>
-try{(()=>{
-onView("photo",root=>{
-const DATA=STUDIO.data;
-/* tour */
-{const src=getComputedStyle(html).getPropertyValue('--photo').trim().replace(/^url\(\s*["']?/,'').replace(/["']?\s*\)$/,'');
- const img=$('.tour-img'),frame=$('.tour-frame'),steps=$$('.tour-steps li'),count=$('.tour-count');let cur=0;
- img.src=src;
- const place=()=>{const s=steps[cur],z=+s.dataset.z,fx=+s.dataset.fx,fy=+s.dataset.fy,w=frame.clientWidth,h=frame.clientHeight;
-   const tx=clamp(w/2-fx*w*z,w-w*z,0),ty=clamp(h/2-fy*h*z,h-h*z,0);
-   img.style.transform=`translate(${tx.toFixed(1)}px,${ty.toFixed(1)}px) scale(${z})`;
-   count.textContent=`${cur+1} of ${steps.length}`;steps.forEach((e,i)=>e.classList.toggle('on',i===cur));};
- const io=new IntersectionObserver(es=>{for(const e of es)if(e.isIntersecting){cur=steps.indexOf(e.target);place();}},{rootMargin:'-52% 0px -44% 0px'});
- steps.forEach(s=>io.observe(s));addEventListener('resize',place);place();}
-
-/* chart */
-const ROWS=DATA.rows,N=ROWS.length;
-const part=i=>i<27?'Sky':i<29?'Far shore':i<32?'Water':i<40?'Reeds':'Leaves';
-const pct=i=>Math.round((i+.5)/N*100);
-{const host=$('#bright');const tip=document.createElement('div');tip.className='tip ui';
- const draw=()=>{
-  const W=host.clientWidth,H=Math.round(clamp(W*.62,230,330)),m={l:34,r:12,t:22,b:54},iw=W-m.l-m.r,ih=H-m.t-m.b;
-  const x=i=>m.l+(i+.5)/N*iw,y=v=>m.t+(1-v/100)*ih;
-  const svg=el('svg',{viewBox:`0 0 ${W} ${H}`,height:H,role:'img',tabindex:0,'aria-label':'Line chart of brightness from the top of the photo to the bottom. It stays near 70% through the sky, drops to 22% at the far shore, recovers to 64% on the water, then falls to about 25% in the reeds and leaves.'});
-  for(const t of [0,25,50,75,100]){svg.append(el('line',{x1:m.l,x2:W-m.r,y1:y(t),y2:y(t),stroke:'#d3dae4','stroke-width':1}));svg.append(el('text',{x:m.l-6,y:y(t)+4,'text-anchor':'end'},t===100?'100%':t));}
-  const pts=ROWS.map((r,i)=>[x(i),y(r.b)]);
-  const d='M'+pts.map(p=>p[0].toFixed(1)+','+p[1].toFixed(1)).join(' L');
-  svg.append(el('path',{d:d+` L${pts[N-1][0].toFixed(1)},${y(0)} L${pts[0][0].toFixed(1)},${y(0)} Z`,fill:'#34506f','fill-opacity':.1}));
-  svg.append(el('path',{d,class:'line',pathLength:1}));
-  const sy=m.t+ih+8,bw=iw/N;
-  ROWS.forEach((r,i)=>svg.append(el('rect',{x:(m.l+i*bw).toFixed(2),y:sy,width:(bw+.6).toFixed(2),height:14,fill:r.c})));
-  for(const b of [27,29,32,40])svg.append(el('rect',{x:(m.l+b*bw-1).toFixed(2),y:sy-1,width:2,height:16,fill:'#f3f6fa'}));
-  for(const [a,b,name] of [[0,27,'Sky'],[32,40,'Reeds'],[40,48,'Leaves']])svg.append(el('text',{x:m.l+(a+b)/2*bw,y:sy+31,'text-anchor':'middle'},name));
-  const lo=ROWS.reduce((a,r,i)=>r.b<ROWS[a].b?i:a,0),hi=ROWS.reduce((a,r,i)=>r.b>ROWS[a].b?i:a,0);
-  for(const i of [lo,hi])svg.append(el('circle',{cx:pts[i][0],cy:pts[i][1],r:5,fill:'#34506f',stroke:'#f3f6fa','stroke-width':2}));
-  svg.append(el('text',{x:pts[lo][0]-10,y:pts[lo][1]+4,'text-anchor':'end',class:'strong'},`Far shore ${Math.round(ROWS[lo].b)}%`));
-  svg.append(el('text',{x:clamp(pts[hi][0],m.l+62,W-m.r-62),y:pts[hi][1]-12,'text-anchor':'middle',class:'strong'},`Brightest cloud ${Math.round(ROWS[hi].b)}%`));
-  const cross=el('line',{y1:m.t,y2:m.t+ih,stroke:'#1b2228','stroke-width':1,visibility:'hidden'}),dot=el('circle',{r:5,fill:'#34506f',stroke:'#f3f6fa','stroke-width':2,visibility:'hidden'});
-  svg.append(cross,dot);
-  let at=-1;
-  const show=i=>{at=clamp(i,0,N-1);const r=ROWS[at];cross.setAttribute('x1',x(at));cross.setAttribute('x2',x(at));cross.setAttribute('visibility','visible');
-    dot.setAttribute('cx',x(at));dot.setAttribute('cy',y(r.b));dot.setAttribute('visibility','visible');
-    tip.textContent='';const b=document.createElement('b');b.textContent=`Brightness ${r.b.toFixed(0)}%`;const s=document.createElement('span');const sw=document.createElement('i');sw.style.background=r.c;s.append(sw,`${part(at)}, ${pct(at)}% of the way down`);tip.append(b,s);
-    tip.style.visibility='visible';const tw=tip.offsetWidth;tip.style.transform=`translate(${clamp(x(at)-tw/2,0,W-tw).toFixed(0)}px,${Math.max(0,y(r.b)-64).toFixed(0)}px)`;};
-  const hide=()=>{at=-1;cross.setAttribute('visibility','hidden');dot.setAttribute('visibility','hidden');tip.style.visibility='hidden'};
-  const fromEvent=e=>{const b=svg.getBoundingClientRect();show(Math.floor((e.clientX-b.left-m.l)/iw*N))};
-  svg.addEventListener('pointermove',fromEvent);svg.addEventListener('pointerdown',fromEvent);svg.addEventListener('pointerleave',e=>{if(e.pointerType==='mouse')hide()});
-  svg.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();show((at<0?0:at)+(e.key==='ArrowRight'?1:-1))}else if(e.key==='Escape')hide()});
-  svg.addEventListener('blur',hide);
-  host.replaceChildren(svg,tip);};
- let lastW=0;const redraw=()=>{if(host.clientWidth&&host.clientWidth!==lastW){lastW=host.clientWidth;draw()}};
- redraw();addEventListener('resize',redraw);
- if(!reduce)new IntersectionObserver((es,o)=>{if(es[0].isIntersecting){host.classList.add('play');o.disconnect()}},{threshold:.5}).observe(host);
- const tb=$('#bright-table tbody');ROWS.forEach((r,i)=>{const tr=document.createElement('tr');for(const v of [pct(i)+'%',r.b.toFixed(1)+'%',part(i)]){const td=document.createElement('td');td.textContent=v;tr.append(td)}tb.append(tr)});
-}
-/* palette, chips, sparkline */
-{const bar=$('#palbar'),list=$('#pallist'),chips=$('#chips');
- for(const c of DATA.pal){const s=document.createElement('span');s.style.cssText=`flex:${c.share} 0 0;background:${c.hex}`;bar.append(s);
-  const li=document.createElement('li'),sw=document.createElement('i'),b=document.createElement('b');sw.style.background=c.hex;b.textContent=c.share.toFixed(0)+'%';li.append(sw,b,' '+c.hex);list.append(li);
-  const ch=document.createElement('i');ch.style.background=c.hex;chips.append(ch);}
- const sp=$('#spark');sp.append(el('path',{d:'M'+ROWS.map((r,i)=>(i/(N-1)*100).toFixed(1)+','+(38-r.b/100*36).toFixed(1)).join(' L'),fill:'none',stroke:'#34506f','stroke-width':2,'vector-effect':'non-scaling-stroke','stroke-linejoin':'round'}));}
-
-/* before and after */
-{const ba=$('#ba'),r=$('#ba-range');r.addEventListener('input',()=>ba.style.setProperty('--x',r.value+'%'));}
-
-/* looks and voices */
-{const LOOKS=[
-  {id:'fog',name:'As shot',line:'Think of a web page as a recipe. Same ingredients, different dish.',voice:'Voice: the patient teacher',by:'Inspired by David Malan. Analogy first, then an example, then the detail.',ask:'Keep my photo as shot. Voice: a patient teacher. Open with an everyday analogy, then one worked example, then the detail.'},
-  {id:'ink',name:'Ink',line:'One photo. Twelve pages.',voice:'Voice: the keynote',by:'Inspired by Steve Jobs. One idea per screen and almost no text.',ask:'Make my photo high-contrast black and white. Voice: a keynote. One idea per screen, very short sentences, huge type.'},
-  {id:'dusk',name:'Dusk',line:'The photo was nearly deleted. Grey sky, bare tree, nothing to see. Then someone zoomed in.',voice:'Voice: the storyteller',by:'Inspired by Don Miller. A hook, a hero, a twist and an ending that stays with you.',ask:'Grade my photo like dusk, warm at the top and deep blue at the bottom. Voice: a storyteller. Start with a hook, give it a twist, end on a line that lingers.'},
-  {id:'film',name:'Faded film',line:'This is not a picture of a lake. It is the minute before you went back inside.',voice:'Voice: the pitch',by:'Inspired by Don Draper. First person, emotional, about the feeling and never the feature.',ask:'Make my photo look like faded film, soft and slightly brown. Voice: an emotional pitch in the first person, about the feeling and never the feature.'},
-  {id:'blue',name:'Blueprint',line:'Pick a component. Copy the sentence. Ship the page.',voice:'Voice: the practical instructor',by:'A best guess at Bradley Ross. Core concept first, one analogy, then steps you can use today.',ask:'Turn my photo into a two-colour blueprint in navy and pale blue. Voice: a practical instructor. Core concept first, one analogy, then steps I can follow today.'}];
- const box=$('#looksbox'),bar=$('#looks-bar');
- const set=id=>{const L=LOOKS.find(l=>l.id===id);box.dataset.look=id;$('#looks-line').textContent=L.line;$('#looks-voice').textContent=L.voice;$('#looks-by').textContent=L.by;$('#looks-ask').textContent=L.ask;
-   $$('button',bar).forEach(b=>b.setAttribute('aria-pressed',b.dataset.id===id))};
- for(const L of LOOKS){const b=document.createElement('button');b.type='button';b.dataset.id=L.id;b.textContent=L.name;
-   b.addEventListener('click',()=>{if(document.startViewTransition&&!reduce)document.startViewTransition(()=>set(L.id));else set(L.id)});bar.append(b);}
- set('fog');}
-
-/* postcard */
-{const c=$('#card');c.addEventListener('click',()=>{const on=c.getAttribute('aria-pressed')!=='true';c.setAttribute('aria-pressed',on);$('.card-hint').textContent=on?'Tap again to see the photo.':'Tap the postcard to turn it over.'});
- if(!reduce&&matchMedia('(hover:hover)').matches){c.addEventListener('pointermove',e=>{const b=c.getBoundingClientRect();c.style.setProperty('--ry',((e.clientX-b.left)/b.width-.5)*14+'deg');c.style.setProperty('--rx',(.5-(e.clientY-b.top)/b.height)*10+'deg')});
-  c.addEventListener('pointerleave',()=>{c.style.setProperty('--rx','0deg');c.style.setProperty('--ry','0deg')});}}
 });
 })()}catch(err){console.error(err)}
 </script>

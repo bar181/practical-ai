@@ -1,13 +1,13 @@
 # Artifact Studio: turn any AI answer into a beautiful slide deck or report
 
 <p align="center">
-  <img src="_build/img/show-keynote.webp" width="800" alt="Animated screen capture of the keynote template in Artifact Studio. Huge white type on black, one idea per screen: Every enquiry is a person, waiting. 26 hours. By then, they have called someone else. What if the answer was already written?">
+  <img src="_build/img/show-photo-effects.webp" width="800" alt="Animated screen capture of photo effects made by an AI chatbot from one photograph: a pencil sketch draws itself and becomes the photo, the camera pans and zooms across a lake, a divider slides between two colour grades, a postcard flips over, and one huge word is filled with the picture">
 </p>
 
 <h3 align="center">Your AI gives brilliant answers. Then it shows them on a grey page.</h3>
 
-<p align="center"><b>Say "show this as a presentation" and get one you would be proud to present.</b><br>
-The page above is the keynote template from the library. Your chatbot builds yours from it.</p>
+<p align="center"><b>One photo. One sentence. A page that moves like a film.</b><br>
+Everything above is a single photograph, and each effect comes with the sentence that asks for it.</p>
 
 **Artifact Studio is a free, curated library of modern design templates that turns any AI answer
 into a professional slide deck, report or web page.** Use it with the chatbot you already have:
@@ -57,9 +57,11 @@ You should get something like this. It is the same request, already built:
 
 - **Your chatbot cannot open the link?** Open [`base/AI-INSTRUCTIONS.md`](https://github.com/bar181/practical-ai/blob/scaffold/structure/projects/artifact-studio/base/AI-INSTRUCTIONS.md),
   press the copy button at the top right, and paste it in before the notes.
+- **Now add a photo.** Attach any photo of your own and say: `Open with my photo as a slow pan and zoom, like a documentary shot, and set the title in huge letters filled with the photo.`
 - **Now make it a deck.** In the same chat, say: `Show the same notes as a keynote-style slide deck: black slides, one idea each, huge type.`
 - **Browse everything it can make.** Download [`base/studio.html`](base/studio.html) and open it in
-  a browser. It is the whole gallery in one file, with a picker that chooses a template for you.
+  a browser. It is the whole gallery in one file. It opens on the twelve photo effects, and has a picker that
+  chooses a template for you.
 
 ### 2. Use it every day
 
@@ -135,11 +137,48 @@ layout and the first draft, and you keep the judgement.
 
 ## What is inside
 
-<!-- counts -->20 templates (4 pages, 7 voices, 4 decks, 5 social formats), 53 components (12 page parts, 12 photo parts, 12 animated SVG files, 17 design ideas for cards, layouts and colour) and 9 looks<!-- /counts -->. Every one comes with the sentence that asks for it.
+### Photo effects: the part people remember
+
+One photograph becomes twelve different things. Each is small enough for a chatbot to write in a
+single reply, and none needs a library or an app.
+
+<p align="center">
+  <img src="_build/img/fx-line-art.webp" width="49%" alt="Screen capture of a self-drawing line art effect: a pencil sketch of a lake and a tree, traced from the photograph, draws itself as you scroll">
+  <img src="_build/img/fx-before-after.webp" width="49%" alt="Screen capture of a before and after effect: one photograph with a divider you drag between the original and a warmer colour grade">
+</p>
+<p align="center">
+  <img src="_build/img/fx-photo-type.webp" width="49%" alt="Screen capture of photo-filled type: one huge word on a dark band, its letters filled with the photograph">
+  <img src="_build/img/fx-postcard.webp" width="49%" alt="Screen capture of a flip postcard effect: the photograph turned over to show a handwritten note, a stamp and address lines">
+</p>
+<p align="center">
+  <img src="_build/img/fx-glass-card.webp" width="49%" alt="Screen capture of a frosted glass card floating over a lake photograph, holding four facts about the picture">
+  <img src="_build/img/fx-tour.webp" width="49%" alt="Screen capture of a scrolling photo tour: the photograph stays pinned and zooms to each detail as its caption scrolls past">
+</p>
+
+| Effect | What it does | Say this |
+| --- | --- | --- |
+| **Pan and zoom** | A still photo moves slowly, like a documentary shot | "Fill the frame with my photo and zoom in very slowly toward the main subject, like a documentary shot. Loop it back out." |
+| **Self-drawing line art** | A sketch traced from your photo draws itself, then becomes the photo | "Trace the main shapes in my photo as a simple line drawing. Draw the lines as I scroll, far things first, then fade the real photo in underneath." |
+| **Photo-filled type** | One huge word, with your photo inside the letters | "Write one huge word on a dark band and fill the letters with my photo. Slide the photo sideways inside the letters as I scroll." |
+| **Scrolling photo tour** | The photo stays put and zooms to each detail as you read | "Pin my photo while I scroll. For each of my paragraphs, zoom the photo to the part it describes." |
+| **Before and after** | Two versions with a divider you drag | "Show my photo as shot and with a warm sunset grade, as one picture with a divider I can drag." |
+| **Flip postcard** | Tap the photo and it turns over to a note | "Make my photo a postcard with a white border. When I tap it, flip it over in 3D and show a short handwritten-style note on the back." |
+
+Six more are in the gallery: parallax window, chart from the photo, frosted glass card, bento
+grid, swipe gallery, and matched looks and voices.
+
+### The rest of the kit
+
+The effects sit on a full library: <!-- counts -->20 templates (4 pages, 7 voices, 4 decks, 5 social formats), 53 components (12 page parts, 12 photo parts, 12 animated SVG files, 17 design ideas for cards, layouts and colour) and 9 looks<!-- /counts -->. Every one
+comes with the sentence that asks for it.
 
 ### Seven voices: tell your story the way great communicators do
 
 The same facts land differently depending on who is telling them. Pick a voice by name.
+
+<p align="center">
+  <img src="_build/img/show-keynote.webp" width="720" alt="Animated screen capture of the keynote voice: huge white type on black, one idea per screen">
+</p>
 
 <p align="center">
   <img src="_build/img/voice-storyteller.webp" width="49%" alt="Screen capture of the storyteller voice: a sunset photograph over water with a story opening set in serif type">
@@ -161,17 +200,6 @@ The same facts land differently depending on who is telling them. Pick a voice b
 | **Executive brief** | The board decision memo | A busy person has to decide |
 
 Each voice describes a style. Nothing is written by, or endorsed by, the people named.
-
-### Cinematic photo effects, from a single photo
-
-<p align="center">
-  <img src="_build/img/show-photo-effects.webp" width="720" alt="Animated screen capture of two photo effects: a still lake photograph that slowly pans and zooms like a documentary shot, then one huge word whose letters are filled with the same photograph">
-</p>
-
-Twelve photo parts built from one picture, each small enough for a chatbot to write in one reply:
-pan and zoom, parallax window, photo-filled type, scrolling photo tour, self-drawing line art,
-chart from the photo, before and after, frosted glass card, bento grid, swipe gallery, flip
-postcard, and matched looks and voices.
 
 ### Decks you present straight from the browser
 

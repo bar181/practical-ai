@@ -133,12 +133,12 @@ VOICES=['voice-keynote','voice-story','voice-teacher','voice-pitch','voice-pract
 RECIPES=['recipe-report','recipe-proposal','recipe-explainer','recipe-landing']
 CONCEPTS=(('card','31-cards.html','components/cards.html','Cards'),('layout','32-layouts.html','components/layouts.html','Layouts'),('colour','33-colour.html','components/colour.html','Colour'))
 G_VOICES=('Voices',VOICES,'One message, told seven ways. Tap a voice:'); G_RECIPES=('Recipes',RECIPES,'Four whole pages. Tap a recipe:')
-STUDIO_GROUPS=[G_VOICES,('Pages',RECIPES,'Four whole pages. Tap one:'),('Decks',['deck-visionary','deck-story','deck-briefing','deck-workshop'],'Four slide decks on one engine:'),('Social',['social'],''),
-  ('Parts',['parts','photo','svg','looks'],'The pieces a page is made of:'),('Design',['cards','layouts','colour'],'The ideas behind a good page:'),('Pick',['pick','mix'],'Let the studio suggest, or choose every part yourself:'),
+STUDIO_GROUPS=[('Photo effects',['photo'],''),G_VOICES,('Pages',RECIPES,'Four whole pages. Tap one:'),('Decks',['deck-visionary','deck-story','deck-briefing','deck-workshop'],'Four slide decks on one engine:'),('Social',['social'],''),
+  ('Parts',['parts','svg','looks'],'The pieces a page is made of:'),('Design',['cards','layouts','colour'],'The ideas behind a good page:'),('Pick',['pick','mix'],'Let the studio suggest, or choose every part yourself:'),
   ('Reference',['c-recipes','c-voices','c-parts','c-spec','c-brief','c-sentences'],'The reference sheets, the two forms and every sentence:'),
   ('Skill',['s-skill','s-single','s-skel','s-rules','s-check'],'What the assistant follows. "AI instructions" is the paste-in version:'),
   ('Guide',['use'],'')]
-LABEL.update({'cards':'Cards','layouts':'Layouts','colour':'Colour','parts':'Page parts','photo':'Photo parts','svg':'Animated SVG','looks':'Looks','pick':'Pick for me','mix':'Mix it myself','deck-visionary':'Visionary','deck-story':'Story','deck-briefing':'Briefing','deck-workshop':'Workshop'})
+LABEL.update({'cards':'Cards','layouts':'Layouts','colour':'Colour','parts':'Page parts','photo':'Photo effects','svg':'Animated SVG','looks':'Looks','pick':'Pick for me','mix':'Mix it myself','deck-visionary':'Visionary','deck-story':'Story','deck-briefing':'Briefing','deck-workshop':'Workshop'})
 FILES={t['id']:t['file'].split('#')[0] for t in C.TEMPLATES if t['kind'] in('page','voice','deck')}
 FILES.update({'cards':'components/cards.html','layouts':'components/layouts.html','colour':'components/colour.html','social':'social/formats.html','parts':'components/page-parts.html','photo':'components/photo-parts.html','svg':'components/animated-svg.html','looks':'looks/nine-looks.html'})
 FTITLE={'cards':'Six kinds of card','layouts':'Six layouts','colour':'Colour: five ideas and a palette maker','social':'Seven social formats','parts':'Twelve page parts','photo':'Twelve photo parts','svg':'Twelve animated SVG parts','looks':'Nine looks'}
@@ -206,7 +206,7 @@ def build(key,out,title,lead,groups):
     kb=round(len(t.encode())/1024); t=t.replace('__KB__',f'{kb:,}')
     left=re.findall(r'__[A-Z]+__|^\s*@@\w+',re.sub(r'data:[^")]+','',re.sub(r'<pre>.*?</pre>','',t,flags=re.S)),flags=re.M); assert not left, left
     open(os.path.join(ROOT,out),'w').write(t); print(f'{key}: {kb} KB, {len(order)} tabs -> {out}')
-build('studio','base/studio.html','','Everything in one page: voices, pages, decks, social formats and parts, then a picker, the cards, the skill and a guide. Tap a tab.',STUDIO_GROUPS)
+build('studio','base/studio.html','','Everything in one page: twelve photo effects first, then voices, pages, decks, social formats and parts, a picker, the cards, the skill and a guide. Tap a tab.',STUDIO_GROUPS)
 # ---- starters: a deck as one small file with system fonts and no photograph, for an agent to copy and fill
 def write_starters():
     lib=open(os.path.join(HERE,'views','01-lib.html')).read()
