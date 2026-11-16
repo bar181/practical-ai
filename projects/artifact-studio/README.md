@@ -255,6 +255,7 @@ used it yet, so tell us what you find.
 | --- | --- |
 | Gallery, picker, palette maker | Built. Rebuilds from `_build/` |
 | Chatbots | Built with Claude. **Not yet run** in the other assistants named on this page |
+| The beginner prompt | Run once, on 15 November 2026, in a fresh Claude session given the instructions as text: 6 of 6 on the skill's test for this report, with every figure traced to the notes. One run, one assistant |
 | The one-link prompt | The link opens. **Not yet tried** from inside each chatbot |
 | The skill | Written. Not yet run end to end by a second agent |
 | MCP server | Tested through a client. Not yet tried in a desktop assistant. Nothing is hosted |

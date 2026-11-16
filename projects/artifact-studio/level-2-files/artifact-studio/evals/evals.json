@@ -1,7 +1,7 @@
 {
  "skill": "artifact-studio",
  "how_to_run": "Give a fresh assistant the skill and one prompt. Score the result one point for each line in expected. base/example.html in the project is one result for case 04 that scores full marks.",
- "status": "Written. Not yet run against a fresh assistant.",
+ "status": "Case 04 was run once on 15 November 2026 by a fresh Claude session given the single-file instructions: 6 of 6. The other five cases have not been run against a fresh assistant.",
  "evals": [
   {
    "id": "01-briefing-deck",
