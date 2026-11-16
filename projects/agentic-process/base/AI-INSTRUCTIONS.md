@@ -43,7 +43,7 @@ the next stage until the current one passes.
 | # | Step | What you do | Gate question |
 | --- | --- | --- | --- |
 | 1 | Scope | Find one user and one job. List what is out. Ask what would make people stop and look. Write one test: a specific input and what a good result looks like | "Can you say the job in one sentence?" |
-| 2 | Reuse check | Look for what already does this: features of the assistant they use, free tools, common practice | "After what already exists, is there still something to build? If not, stop and write a guide to that thing." If the answer is no, stop: hand over a short guide to that thing and the note, in place of the plan. The assistant they already use counts only if one plain sentence typed into it gives a result the person would send unchanged. You cannot know that unseen: go on, and put "try one plain sentence first" under Test this next. |
+| 2 | Reuse check | Look for what already does this: features of the assistant they use, free tools, common practice | "After what already exists, is there still something to build? If not, stop and write a guide to that thing." If the answer is no, stop: hand over a short guide to that thing and the note, in place of the plan. The assistant they already use counts only if one plain sentence typed into it gives a result the person would send unchanged. Ask them to try one now. If they cannot, go on, and put "try one plain sentence first" under Test this next. |
 | 3 | Outside help | For whatever is left, list paid options with what each covers and how it charges. Do not pick a provider: decide only build, buy or by hand for each part | "Do you know what you would build and what you would buy?" |
 | 4 | Cost | List every dependency of the first version with its price and its limit | "Does the first version cost nothing, or an amount you accept?" With prices not checked, the gate passes only if the first version buys nothing new. Say so. |
 | 5 | Simplest design | Say which assistant, where files live, and what stays manual. Propose a folder layout and fix it | "Could a beginner draw it?" |
@@ -59,12 +59,14 @@ If the job is one person turning one kind of input into one result inside a chat
 from notes, a summary of a document), offer the short path before step 1:
 
 - **Step 1** in full.
-- **Steps 2 to 5** in one line each. Step 2: ask them to type one plain sentence into their
-  chatbot first; if the result is good enough to send unchanged, stop, no tool is needed.
+- **Steps 2 to 5** in one line each. Step 2: ask them to try one plain sentence in their chatbot
+  now; if the result is good enough to send unchanged, stop, no tool is needed. If they cannot
+  try it now, go on, and put it under Test this next.
   Steps 3 and 4: nothing to buy, the chatbot they already have. Step 5: the prompt is kept in a
   note they can copy from.
-- **Step 6** in full: show the one-page plan, then the prompt and one worked example.
-- **Step 7** is skipped. Step 8 does its job.
+- **Step 6** in full: show a short plan with seven headings (The job. The user. What is out.
+  The wow. The steps. The test. Next three additions.), then the prompt and one worked example.
+- **Step 7** is folded into the test at step 8.
 - **Step 8** in full: the exact fresh-chat test.
 - **Step 9** stays open.
 

@@ -99,7 +99,7 @@ My job: [describe the job you repeat]
 
 **The gate.** After what already exists, is there still something to build? If not, stop and write a guide to that thing.
 
-*In a chat with the coach:* If the answer is no, stop: hand over a short guide to that thing and the note, in place of the plan. The assistant they already use counts only if one plain sentence typed into it gives a result the person would send unchanged. You cannot know that unseen: go on, and put "try one plain sentence first" under Test this next.
+*In a chat with the coach:* If the answer is no, stop: hand over a short guide to that thing and the note, in place of the plan. The assistant they already use counts only if one plain sentence typed into it gives a result the person would send unchanged. Ask them to try one now. If they cannot, go on, and put "try one plain sentence first" under Test this next.
 
 **Prompt to paste**
 

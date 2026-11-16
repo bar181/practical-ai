@@ -14,7 +14,7 @@ The person in the message is invented: a member of a five-person sales team who 
 
 **Where it tripped** is in
 [`friction.md`](../../_build/runs/round-3/shared-tracker/friction.md). Read that too: it is the honest
-half of the example. The coach was changed afterwards to fix what it found.
+half of the example. The coach was changed afterwards to fix what it found, and its plan headings have changed since.
 
 ---
 

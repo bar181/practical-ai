@@ -18,6 +18,7 @@ project's README, or on GitHub open the file, choose **Download raw file**, and 
 | Open [`training.html`](training.html) on the screen you will present from. Press N to see your notes | 1 minute |
 | Keep [the guide](explainer.html) open in a second tab, to show a step card if asked | 1 minute |
 | Ask each learner to bring one job they do on their own every week that starts from a blank page | The day before |
+| Post the project's link in the class chat, so nobody types the prompt from the screen: github.com/bar181/practical-ai, then projects, then agentic-process | 1 minute |
 | If several learners use a chatbot that cannot open links, put the coach's text in a shared document | 5 minutes |
 
 ## The lesson
@@ -26,8 +27,8 @@ project's README, or on GitHub open the file, choose **Download raw file**, and 
 | --- | --- | --- | --- |
 | 0 to 3 | Show the first slide | "An AI will build whatever you ask. It will also build the wrong thing, quickly and with confidence. Today is about the order of work that stops that." | Listen |
 | 3 to 7 | Show the inspector slide | "Think of a building site with an inspector. Nothing moves to the next stage until the current one is signed off. Our sign-off is a question called a gate." | Say one job they repeat, in one sentence, to the person beside them |
-| 7 to 12 | Show the four stages, then the step card | "Nine steps in four stages. Every step has a purpose, a proof you are done, a prompt to paste, and a gate: the question you answer before you move on." | Write down which step they usually skip |
-| 12 to 22 | Share the prompt. Walk the room | "Paste it in. Change the last line to your job. Say yes to the short path: it does steps 1, 6 and 8 in full and the rest in a line each, so it fits in ten minutes. Stop when it shows you the plan." | Run the coach on their own idea, on the short path, until it shows them the one-page plan |
+| 7 to 10 | Show the four stages, then the step card | "Nine steps in four stages. Every step has a purpose, a proof you are done, a prompt to paste, and a gate: the question you answer before you move on." | Write down which step they usually skip |
+| 10 to 22 | Share the prompt. Walk the room | "Paste it in. Change the last line to your job. Say yes to the short path: it does steps 1, 6 and 8 in full and the rest in a line each, Stop when it shows you the plan." | Run the coach on their own idea, on the short path, until it shows them the one-page plan |
 | 22 to 26 | Share the review prompt | "You cannot see your own gaps, because you know what you meant. This is step 7: hand your plan to a stranger, a new chat that has never seen it. The short path folds this into the test at step 8. In class we do it now, because it is the habit that matters most." | Open a new chat, paste the review prompt and their plan so far, and read what it had to guess |
 | 26 to 30 | Ask the three questions, then show the card | "What will you do first when you are back at your desk?" | Answer aloud. Write the next step on their plan |
 
@@ -71,12 +72,13 @@ You have never seen this project. Read the plan below. Explain it back in five s
 | The coach found an existing tool | The process worked | "Good. You just saved a week. Write the guide to that tool." |
 | A learner skipping the questions to get to the build | The usual habit | "The inspector does not let you choose curtains yet." |
 | A chatbot that cannot open the link | Common | Show the next slide: paste the coach, then "Follow the build coach pasted above." |
-| A learner whose job involves a team or shared files | The coach takes all nine steps, about an hour | "Pick a part you do on your own for today. The team version is your homework." |
+| A learner whose job involves a team or shared files | The coach takes all nine steps, about an hour | "Pick a part you do on your own for today. The team version can wait for another day." |
 | The coach offers the short path | A small job, in a chat | "Say yes. You will still do steps 1, 6 and 8 in full." |
 
 ## After the lesson
 
-Homework: each learner runs the step 8 test in a new chat and sends you two things: the plan,
-and what the new chat said was unclear. The second one tells you more than the first.
+Homework: each learner goes back to the coach chat, types *carry on to step 8*, runs the fresh-chat
+test it gives them, and sends you two things: the plan, and what the new chat had to guess.
+The second tells you more than the first.
 
 This plan has not yet been taught. The timings are estimates: change them after your first run.

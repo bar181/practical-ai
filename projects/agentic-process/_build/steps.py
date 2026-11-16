@@ -194,7 +194,7 @@ TOTAL_MINUTES = sum(s["minutes"] for s in STEPS)   # steps 1 to 8; step 9 repeat
 COACH = {
  1: ("Find one user and one job. List what is out. Ask what would make people stop and look. Write one test: a specific input and what a good result looks like", ""),
  2: ("Look for what already does this: features of the assistant they use, free tools, common practice",
-     "If the answer is no, stop: hand over a short guide to that thing and the note, in place of the plan. The assistant they already use counts only if one plain sentence typed into it gives a result the person would send unchanged. You cannot know that unseen: go on, and put \"try one plain sentence first\" under Test this next"),
+     "If the answer is no, stop: hand over a short guide to that thing and the note, in place of the plan. The assistant they already use counts only if one plain sentence typed into it gives a result the person would send unchanged. Ask them to try one now. If they cannot, go on, and put \"try one plain sentence first\" under Test this next"),
  3: ("For whatever is left, list paid options with what each covers and how it charges. Do not pick a provider: decide only build, buy or by hand for each part", ""),
  4: ("List every dependency of the first version with its price and its limit",
      "With prices not checked, the gate passes only if the first version buys nothing new. Say so"),
@@ -212,9 +212,9 @@ SKILL = {
  2: ("Search in the order under \"Step 2 in detail\" below. Put up to five options in the plan, a longer list in `_build/landscape.md`", "If something does the whole job, stop and write a guide to it. Instructions written for an assistant the user already has count as building, unless one plain sentence already gives a result they would send unchanged"),
  3: ("List paid options for what is left. Do not pick a provider: decide only build, buy or by hand for each part, and write it under \"Build or buy\" in the plan", ""),
  4: ("Every dependency of the first version with its price and limit", ""),
- 5: ("Which assistant, where files live, what stays manual. Make the folder from the template (see \"Make the folder\")", "The design is three lines in the plan. In the new folder, `python3 _build/checks/gates.py .` passes layout and links. `filled` fails until step 6"),
- 6: ("Fill `base/plan.md`. Write the README's hook, its \"Try it in five minutes\" section and at least one worked example: one for each kind of request the beginner version handles differently. Most first versions have one or two", "The `filled` gate passes: no blanks are left from the template"),
+ 5: ("Which assistant, where files live, what stays manual. Make the folder from the template (see \"Make the folder\")", "The design is three lines in the plan. In the new folder, `python3 _build/checks/gates.py .` passes layout and links. `filled` fails until step 6, `built` until step 8"),
+ 6: ("Fill `base/plan.md`. Write the README's hook, its \"Try it in five minutes\" section and at least one worked example: one for each kind of request the beginner version handles differently. Most first versions have one or two", "The `filled` gate passes: the front page, the agent file and the plan have no blanks left"),
  7: ("A person, or a fresh session given only `base/plan.md`, explains it back", "The reviewer's summary matches the plan. With neither available, the gate stays open: say so and go on to step 8, whose test also reads the plan"),
- 8: ("Build the beginner version. Run the fresh-session test (see \"The fresh-session test\")", "The fresh session finished the job. Its friction log has been read and the recurring points fixed"),
+ 8: ("Build the beginner version. Run the fresh-session test (see \"The fresh-session test\")", "The `built` gate passes. The fresh session finished the job. Its friction log has been read and the points in two or more logs fixed"),
  9: ("One addition at a time, each its own change request", "Someone other than the builder has used the level below"),
 }

@@ -336,6 +336,7 @@ def lesson_md():
          "| Open [`training.html`](training.html) on the screen you will present from. Press N to see your notes | 1 minute |",
          "| Keep [the guide](explainer.html) open in a second tab, to show a step card if asked | 1 minute |",
          "| Ask each learner to bring one job they do on their own every week that starts from a blank page | The day before |",
+         "| Post the project's link in the class chat, so nobody types the prompt from the screen: github.com/bar181/practical-ai, then projects, then agentic-process | 1 minute |",
          "| If several learners use a chatbot that cannot open links, put the coach's text in a shared document | 5 minutes |", "",
          "## The lesson", "",
          "| Minutes | You do | You say | Learners do |", "| --- | --- | --- | --- |"]
@@ -348,8 +349,9 @@ def lesson_md():
           "## What to watch for", "", "| You see | It means | Say |", "| --- | --- | --- |"]
     L += [f"| {a} | {b} | {c} |" for a, b, c in WATCH]
     L += ["", "## After the lesson", "",
-          "Homework: each learner runs the step 8 test in a new chat and sends you two things: the plan,",
-          "and what the new chat said was unclear. The second one tells you more than the first.", "",
+          "Homework: each learner goes back to the coach chat, types *carry on to step 8*, runs the fresh-chat",
+          "test it gives them, and sends you two things: the plan, and what the new chat had to guess.",
+          "The second tells you more than the first.", "",
           "This plan has not yet been taught. The timings are estimates: change them after your first run.", ""]
     return "\n".join(L)
 
@@ -395,7 +397,7 @@ def training_html():
 /* added for this lesson: a timer, a prompt on a slide, and the teacher's handout under the deck */
 .dw h2+ol,.dw h2+ul{{margin-top:2.6cqw}}
 .dw .dk-s.lead .dk-pic{{--slide-photo:url(data:image/jpeg;base64,{puppy})}}
-.dw .pr{{margin:2.4cqw 0 0;padding:2cqw 2.4cqw;background:#fffdf6;color:#14302d;border-radius:1cqw;white-space:pre-wrap;overflow-wrap:anywhere;font:400 2.2cqw/1.4 ui-monospace,Menlo,Consolas,monospace;text-align:left}}
+.dw .pr{{margin:2.4cqw 0 0;padding:2cqw 2.4cqw;background:#fffdf6;color:#14302d;border-radius:1cqw;white-space:pre-wrap;overflow-wrap:anywhere;font:400 2cqw/1.35 ui-monospace,Menlo,Consolas,monospace;text-align:left}}
 .dk-top .wrap,.hand .wrap{{max-width:1080px;margin-inline:auto;padding-inline:12px}}
 .dk-top .how{{font-size:.98rem}}
 .tm{{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;max-width:1080px;margin:0 auto 12px;padding:10px 12px;color:var(--fog);font:700 1rem/1.3 var(--display)}}
@@ -425,7 +427,7 @@ def training_html():
   <h1>Teach Agentic Process in 30 minutes</h1>
   <p>Slides for one lesson. Each learner leaves with a one-page plan for an AI tool of their own, and the one test that finds its faults.</p>
   <p class="how">To present: put the slides in full screen on the projector, and open the presenter window on your own screen. It shows your notes, the next slide and the lesson timer, and moves the slides. With one screen, press N to show your notes under the slide. The teacher's plan is under the slides.</p>
-  <details class="how"><summary>Before the lesson</summary><p>The day before, ask each learner to bring one job they do every week that starts from a blank page. On the day, open this page on the screen you present from, and keep the guide open in a second tab in case someone asks about a step.</p></details>
+  <details class="how"><summary>Before the lesson</summary><p>The day before, ask each learner to bring one job they do every week that starts from a blank page. Post the project's link in the class chat, so nobody types the prompt from the screen. On the day, open this page on the screen you present from, and keep the guide open in a second tab in case someone asks about a step.</p></details>
   <p class="how pvb"><button type="button" id="pvopen">Open the presenter window</button> <span id="pvmsg" aria-live="polite"></span></p>
 </div></header>
 <section id="pv" aria-label="Presenter window">
@@ -459,7 +461,7 @@ def training_html():
   <h2>What to watch for</h2>
   <div class="tw" tabindex="0" role="region" aria-label="What to watch for"><table><thead><tr><th scope="col">You see</th><th scope="col">It means</th><th scope="col">Say</th></tr></thead><tbody>{watch}</tbody></table></div>
   <h2>After the lesson</h2>
-  <p>Homework: each learner runs the step 8 test in a new chat and sends you two things: the plan, and what the new chat said was unclear. The second tells you more than the first.</p>
+  <p>Homework: each learner goes back to the coach chat, types <i>carry on to step 8</i>, runs the fresh-chat test it gives them, and sends you two things: the plan, and what the new chat had to guess. The second tells you more than the first.</p>
   <p>This lesson has not yet been taught. Every timing is an estimate.</p>
   <div class="me"><img src="data:image/jpeg;base64,{me}" width="64" height="64" alt="Bradley Ross"><div><b>Made by Bradley Ross</b><p style="margin-top:4px">An agentic AI architect and developer for businesses of every size, from start-up to enterprise. He builds and teaches practical AI.</p><a href="https://www.linkedin.com/in/bradaross/">Connect with Bradley on LinkedIn</a></div></div>
 </div></main>

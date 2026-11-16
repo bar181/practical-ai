@@ -36,10 +36,10 @@ The gate is the same question in every version of this process. The check is how
 | 2 | Reuse check | Search in the order under "Step 2 in detail" below. Put up to five options in the plan, a longer list in `_build/landscape.md` | After what already exists, is there still something to build? If not, stop and write a guide to that thing. | If something does the whole job, stop and write a guide to it. Instructions written for an assistant the user already has count as building, unless one plain sentence already gives a result they would send unchanged |
 | 3 | Outside help | List paid options for what is left. Do not pick a provider: decide only build, buy or by hand for each part, and write it under "Build or buy" in the plan | Do you know what you would build and what you would buy? | Your answer, written in the plan |
 | 4 | Cost | Every dependency of the first version with its price and limit | Does the first version cost nothing, or an amount you accept? | Your answer, written in the plan |
-| 5 | Simplest design | Which assistant, where files live, what stays manual. Make the folder from the template (see "Make the folder") | Could a beginner draw it? | The design is three lines in the plan. In the new folder, `python3 _build/checks/gates.py .` passes layout and links. `filled` fails until step 6 |
-| 6 | Plan and front door | Fill `base/plan.md`. Write the README's hook, its "Try it in five minutes" section and at least one worked example: one for each kind of request the beginner version handles differently. Most first versions have one or two | Is the beginner version fully described? | The `filled` gate passes: no blanks are left from the template |
+| 5 | Simplest design | Which assistant, where files live, what stays manual. Make the folder from the template (see "Make the folder") | Could a beginner draw it? | The design is three lines in the plan. In the new folder, `python3 _build/checks/gates.py .` passes layout and links. `filled` fails until step 6, `built` until step 8 |
+| 6 | Plan and front door | Fill `base/plan.md`. Write the README's hook, its "Try it in five minutes" section and at least one worked example: one for each kind of request the beginner version handles differently. Most first versions have one or two | Is the beginner version fully described? | The `filled` gate passes: the front page, the agent file and the plan have no blanks left |
 | 7 | Review | A person, or a fresh session given only `base/plan.md`, explains it back | Can someone else explain it back to you? | The reviewer's summary matches the plan. With neither available, the gate stays open: say so and go on to step 8, whose test also reads the plan |
-| 8 | Build and test | Build the beginner version. Run the fresh-session test (see "The fresh-session test") | Did a fresh session finish the job, and have you read what it tripped on? | The fresh session finished the job. Its friction log has been read and the recurring points fixed |
+| 8 | Build and test | Build the beginner version. Run the fresh-session test (see "The fresh-session test") | Did a fresh session finish the job, and have you read what it tripped on? | The `built` gate passes. The fresh session finished the job. Its friction log has been read and the points in two or more logs fixed |
 | 9 | Grow | One addition at a time, each its own change request | Is the level below in use before you build the next? | Someone other than the builder has used the level below |
 <!-- steps:end -->
 
@@ -84,9 +84,13 @@ level-3-files/     what a team adds. Only if it holds something usable
 _build/            gates.json, checks/, runs/ for fresh-session tests, img/ for the README's picture
 ```
 
-The new folder starts with three gates in `_build/gates.json`: the layout, the links, and
-`filled`, which fails while any blank from the template is left and passes once step 6 is done.
-Until step 6, expect `filled` to fail and stop only if another gate fails. Add one
+Code a builder runs (a script, a package file, tests) goes in `level-2-files/`. Nothing else sits
+beside these.
+
+The new folder starts with four gates in `_build/gates.json`: the layout, the links, `filled`
+(the front page, agent file and plan have no blanks left) and `built` (the beginner version has
+no blanks left). Expect `filled` to fail until step 6 and `built` until step 8; stop on any
+other failure. Add one
 whenever a step produces something a command can check. A gate is a name, what it proves, and
 one command that fails when the thing is not true.
 

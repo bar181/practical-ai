@@ -32,11 +32,12 @@ for folder, _, files in os.walk(dest):
             text = f.read()
         with open(path, "w", encoding="utf-8") as f:
             f.write(text.replace("{{SLUG}}", slug).replace("{{TITLE}}", title))
-blanks = set()                                                    # every template line with a blank, for check_filled.py
+BLANK = re.compile(r"(?<!!)\[(?!needs:)(?!x\])(?! \])([^\]\[`]{4,400})\](?![(\[:])")   # the same rule as check_filled.py
+blanks = set()                                                    # every template line that still holds a blank
 for name in ("README.md", "AGENTS.md", os.path.join("base", "plan.md"), os.path.join("base", "AI-INSTRUCTIONS.md")):
     path = os.path.join(dest, name)
     if os.path.exists(path):
-        blanks |= {l.strip() for l in open(path, encoding="utf-8") if "[" in l and l.strip()}
+        blanks |= {l.strip() for l in open(path, encoding="utf-8") if BLANK.search(l)}
 with open(os.path.join(dest, "_build", "checks", "blanks.txt"), "w", encoding="utf-8") as f:
     f.write("\n".join(sorted(blanks)) + "\n")
 rel = os.path.relpath(dest)
