@@ -21,7 +21,7 @@ repository: a new project carries its own checks and needs nothing else from her
 ## Use it
 
 1. Copy the folder [`agentic-process/`](agentic-process/) into your repository. For Claude Code:
-   `git clone --depth 1 https://github.com/bar181/practical-ai /tmp/pai && cp -r /tmp/pai/projects/agentic-process/level-2-files/agentic-process .claude/skills/`. For any other coding agent, put it anywhere and tell the agent to
+   `git clone --depth 1 https://github.com/bar181/practical-ai /tmp/pai && mkdir -p .claude/skills && cp -r /tmp/pai/projects/agentic-process/level-2-files/agentic-process .claude/skills/`. For any other coding agent, put it anywhere and tell the agent to
    read `SKILL.md` in it first.
 2. Say to your agent: "Use the agentic-process skill. The idea: turn a meeting transcript into a
    list of actions, each with an owner and a date. Start at step 1."

@@ -90,7 +90,8 @@ beside these.
 The new folder starts with four gates in `_build/gates.json`: the layout, the links, `filled`
 (the front page, agent file and plan have no blanks left) and `built` (the beginner version has
 no blanks left). Expect `filled` to fail until step 6 and `built` until step 8; stop on any
-other failure. Add one
+other failure. A placeholder the tool's own users fill in, such as `[paste your notes]`, goes
+inside a code block, where the checks leave it alone. Add one
 whenever a step produces something a command can check. A gate is a name, what it proves, and
 one command that fails when the thing is not true.
 

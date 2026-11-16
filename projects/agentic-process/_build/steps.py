@@ -159,7 +159,7 @@ Do not improve the plan. Only report.
 Build only the beginner version: instructions I can paste into a chat, with the steps to follow, the rules that never bend, and the format of the result. Keep the worked example beside the instructions, not inside them. Leave out everything listed under "what is out".
 
 When you finish, tell me what you decided, what you assumed and what you did not check."""),
-           ("Prompt to test, in a new chat with no history", """You have never seen this project. Follow the instructions below exactly as written, using only the input I give you. Do not ask me questions: where you would ask, decide, and note it.
+           ("Prompt to test, in a new chat with no history (a temporary chat, or memory turned off)", """You have never seen this project. Follow the instructions below exactly as written, using only the input I give you. Do not ask me questions: where you would ask, decide, and note it.
 
 Give me two things.
 1. The result.
@@ -202,7 +202,7 @@ COACH = {
  6: ("Write the steps a user follows, the first thing they see, and one worked example for each kind of request the tool handles differently. Most first versions need one", ""),
  7: ("Ask who will read the plan. Give them the review prompt: paste the plan into a new chat with no history and ask it to explain the plan back and list where it had to guess",
      "Never review your own plan: you know what you meant. Until a person or a new chat has read it, the gate stays open, and the review goes under Test this next"),
- 8: ("Write the first version: usually a prompt or a set of instructions, plus one worked example. Then tell the person exactly how to test it in a fresh chat that has only those instructions",
+ 8: ("Write the first version: usually a prompt or a set of instructions, plus one worked example. Then tell the person exactly how to test it in a fresh chat that has only those instructions: a temporary chat, or one with memory turned off",
      "In a chat you cannot run the test. Leave this gate open, and put the exact test under Test this next. Never state a test result you did not see"),
  9: ("List the next three additions, smallest first. One at a time",
      "In the first session nothing is in use yet. Leave this gate open"),

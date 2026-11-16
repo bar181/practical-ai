@@ -336,13 +336,13 @@ def lesson_md():
          "| Open [`training.html`](training.html) on the screen you will present from. Press N to see your notes | 1 minute |",
          "| Keep [the guide](explainer.html) open in a second tab, to show a step card if asked | 1 minute |",
          "| Ask each learner to bring one job they do on their own every week that starts from a blank page | The day before |",
-         "| Post the project's link in the class chat, so nobody types the prompt from the screen: github.com/bar181/practical-ai, then projects, then agentic-process | 1 minute |",
+         "| Copy the coach prompt from the slides page and post it in the class chat, so nobody types it from the screen | 1 minute |",
          "| If several learners use a chatbot that cannot open links, put the coach's text in a shared document | 5 minutes |", "",
          "## The lesson", "",
          "| Minutes | You do | You say | Learners do |", "| --- | --- | --- | --- |"]
     for g in SEGMENTS:
         L.append(f"| {g['start']} to {g['end']} | {g['do']} | {g['say']} | {g['learners']} |")
-    L += ["", "## The prompts learners paste", "", "**At minute 12, the coach:**", "", "```", COACH_PROMPT, "```", "",
+    L += ["", "## The prompts learners paste", "", f"**At minute {SEGMENTS[3]['start']}, the coach:**", "", "```", COACH_PROMPT, "```", "",
           "**If the chatbot cannot open the link:** open the coach on GitHub, press Raw, copy all of it, paste it into the chat, then:", "", "```", PASTED_PROMPT, "```", "",
           "**At minute 22, the review in a new chat:**", "", "```", REVIEW_PROMPT, "```", "",
           "## The three check questions, at minute 26", ""] + [f"{i}. **{q}** {a}" for i, (q, a) in enumerate(CHECKS, 1)] + ["",
@@ -427,7 +427,7 @@ def training_html():
   <h1>Teach Agentic Process in 30 minutes</h1>
   <p>Slides for one lesson. Each learner leaves with a one-page plan for an AI tool of their own, and the one test that finds its faults.</p>
   <p class="how">To present: put the slides in full screen on the projector, and open the presenter window on your own screen. It shows your notes, the next slide and the lesson timer, and moves the slides. With one screen, press N to show your notes under the slide. The teacher's plan is under the slides.</p>
-  <details class="how"><summary>Before the lesson</summary><p>The day before, ask each learner to bring one job they do every week that starts from a blank page. Post the project's link in the class chat, so nobody types the prompt from the screen. On the day, open this page on the screen you present from, and keep the guide open in a second tab in case someone asks about a step.</p></details>
+  <details class="how"><summary>Before the lesson</summary><p>The day before, ask each learner to bring one job they do every week that starts from a blank page. Copy the coach prompt below and post it in the class chat, so nobody types it from the screen. On the day, open this page on the screen you present from, and keep the guide open in a second tab in case someone asks about a step.</p></details>
   <p class="how pvb"><button type="button" id="pvopen">Open the presenter window</button> <span id="pvmsg" aria-live="polite"></span></p>
 </div></header>
 <section id="pv" aria-label="Presenter window">
@@ -450,7 +450,7 @@ def training_html():
   <h2>The lesson, minute by minute</h2>
   <div class="tw" tabindex="0" role="region" aria-label="The lesson, minute by minute"><table><thead><tr><th scope="col">Minutes</th><th scope="col">You do</th><th scope="col">You say</th><th scope="col">Learners do</th></tr></thead><tbody>{rows}</tbody></table></div>
   <h2>The prompts learners paste</h2>
-  <p>At minute 12, the coach. Learners change the last line to their own job.</p>
+  <p>At minute {SEGMENTS[3]['start']}, the coach. Learners change the last line to their own job.</p>
   <pre id="pc">{E(COACH_PROMPT)}</pre><button class="cp" type="button" data-copy="pc">Copy the coach prompt</button>
   <p>If the chatbot cannot open the link: open the coach on GitHub, press Raw, copy all of it, paste it into the chat, then this.</p>
   <pre id="pp">{E(PASTED_PROMPT)}</pre><button class="cp" type="button" data-copy="pp">Copy the second prompt</button>
@@ -474,14 +474,14 @@ def training_html():
     clock.textContent=mm+':'+String(ss).padStart(2,'0');const k=S.findIndex(x=>m<x[1]);const cur=S[k<0?S.length-1:k];
     seg.textContent=(m>=30?'Time is up. ':'')+'Minutes '+cur[0]+' to '+cur[1]+': '+cur[2]+(m<30?' ('+Math.max(0,Math.ceil(cur[1]-m))+' min left)':'');
     const s=slideSeg();warn.textContent=t0&&k>=0&&s<k?'The slide on screen is behind the clock':''}};
-  go.addEventListener('click',()=>{{if(t0){{held+=Date.now()-t0;t0=null;clearInterval(tick);go.textContent='Carry on'}}else{{t0=Date.now();tick=setInterval(show,1000);go.textContent='Pause'}}show()}});
+  go.addEventListener('click',()=>{{setTimeout(()=>{{go.blur();document.querySelector('.dk').focus()}});if(t0){{held+=Date.now()-t0;t0=null;clearInterval(tick);go.textContent='Carry on'}}else{{t0=Date.now();tick=setInterval(show,1000);go.textContent='Pause'}}show()}});
   document.addEventListener('keyup',show);document.addEventListener('click',show);
   /* the presenter window: a second copy of this page, opened with #presenter. The two windows talk by postMessage,
      which also works for a file opened from the computer. The slides window owns the slides and the timer. */
   const P=location.hash==='#presenter';
   if(P){{document.documentElement.classList.add('presenter');const $i=id=>document.getElementById(id),send=c=>{{try{{opener&&opener.postMessage({{ap:'cmd',c}},'*')}}catch(e){{}}}};
     $i('pvprev').addEventListener('click',()=>send('prev'));$i('pvnextb').addEventListener('click',()=>send('next'));$i('pvgo').addEventListener('click',()=>send('timer'));
-    document.addEventListener('keydown',e=>{{if(e.key==='ArrowRight'||e.key===' '){{e.preventDefault();send('next')}}else if(e.key==='ArrowLeft'){{e.preventDefault();send('prev')}}}});
+    document.addEventListener('keydown',e=>{{if(['ArrowRight',' ','PageDown','Enter'].includes(e.key)&&!e.target.closest('button')){{e.preventDefault();send('next')}}else if(['ArrowLeft','PageUp'].includes(e.key)){{e.preventDefault();send('prev')}}}});
     addEventListener('message',e=>{{const d=e.data;if(!d||d.ap!=='state')return;$i('pvn').textContent='Slide '+d.i+' of '+d.n;$i('pvnow').textContent=d.title;$i('pvnote').textContent=d.note;
       $i('pvnext').textContent=d.next?'Next: '+d.next:'This is the last slide';$i('pvclock').textContent=d.clock;$i('pvseg').textContent=d.seg;$i('pvwarn').textContent=d.warn;$i('pvgo').textContent=d.go}});
     if(!opener)$i('pvnow').textContent='Open this window with the button on the slides page.';send('hello');return}}

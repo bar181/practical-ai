@@ -51,7 +51,7 @@ SEGMENTS = [
   learners="Run the coach on their own idea, on the short path, until it shows them the one-page plan",
   slides=[("Your turn", "Paste this. Change the last line to your job.",
            ["PROMPT", "Say yes to the short path. Stop when it shows you the plan. Twelve minutes."],
-           "Stop talking. Start a twelve-minute timer. Walk the room. If the coach does not offer the short path, the learner types: use the short path. The full nine steps take about an hour. If a chatbot says it cannot open the link, show the next slide."),
+           "Stop talking. Start a twelve-minute timer. Walk the room. If the coach does not offer the short path, the job is too big for today: the learner picks the part they do on their own. The full nine steps take about an hour. If a chatbot says it cannot open the link, show the next slide."),
           ("Link will not open?", "Paste the coach yourself.",
            ["1. On GitHub, open " + COACH_FILE + ".", "1. Press Raw. Select all. Copy. Paste it into the chat.", "1. Then type: Follow the build coach pasted above. My idea: and your job."],
            "Some chatbots cannot open links. This takes one minute. If the room has many, put the coach's text in a shared document before the lesson.")]),

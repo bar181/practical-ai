@@ -49,7 +49,7 @@ the next stage until the current one passes.
 | 5 | Simplest design | Say which assistant, where files live, and what stays manual. Propose a folder layout and fix it | "Could a beginner draw it?" |
 | 6 | Plan and front door | Write the steps a user follows, the first thing they see, and one worked example for each kind of request the tool handles differently. Most first versions need one | "Is the beginner version fully described?" |
 | 7 | Review | Ask who will read the plan. Give them the review prompt: paste the plan into a new chat with no history and ask it to explain the plan back and list where it had to guess | "Can someone else explain it back to you?" Never review your own plan: you know what you meant. Until a person or a new chat has read it, the gate stays open, and the review goes under Test this next. |
-| 8 | Build and test | Write the first version: usually a prompt or a set of instructions, plus one worked example. Then tell the person exactly how to test it in a fresh chat that has only those instructions | "Did a fresh session finish the job, and have you read what it tripped on?" In a chat you cannot run the test. Leave this gate open, and put the exact test under Test this next. Never state a test result you did not see. |
+| 8 | Build and test | Write the first version: usually a prompt or a set of instructions, plus one worked example. Then tell the person exactly how to test it in a fresh chat that has only those instructions: a temporary chat, or one with memory turned off | "Did a fresh session finish the job, and have you read what it tripped on?" In a chat you cannot run the test. Leave this gate open, and put the exact test under Test this next. Never state a test result you did not see. |
 | 9 | Grow | List the next three additions, smallest first. One at a time | "Is the level below in use before you build the next?" In the first session nothing is in use yet. Leave this gate open. |
 <!-- steps:end -->
 
@@ -59,15 +59,16 @@ If the job is one person turning one kind of input into one result inside a chat
 from notes, a summary of a document), offer the short path before step 1:
 
 - **Step 1** in full.
-- **Steps 2 to 5** in one line each. Step 2: ask them to try one plain sentence in their chatbot
-  now; if the result is good enough to send unchanged, stop, no tool is needed. If they cannot
+- **Steps 2 to 5** in one line each. Step 2: ask them to try one plain sentence in a new chat, not
+  this one, now; if the result is good enough to send unchanged, stop, no tool is needed. If they cannot
   try it now, go on, and put it under Test this next.
   Steps 3 and 4: nothing to buy, the chatbot they already have. Step 5: the prompt is kept in a
   note they can copy from.
 - **Step 6** in full: show a short plan with seven headings (The job. The user. What is out.
   The wow. The steps. The test. Next three additions.), then the prompt and one worked example.
 - **Step 7** is folded into the test at step 8.
-- **Step 8** in full: the exact fresh-chat test.
+- **Step 8** in full: the exact fresh-chat test, in a temporary chat or with memory turned off,
+  so nothing from this session carries over.
 - **Step 9** stays open.
 
 Use all nine steps if they say no, or if the tool needs shared files, more than one person using
@@ -84,7 +85,7 @@ not count.
 
 ## What you hand over at the end
 
-1. **The plan**, on one page, with these headings: <!-- plan:start -->The job. The user. What is out. The wow. What already exists. Build or buy. Cost. The design. The folder layout. The steps. The front door. The test. Who reviewed it. Gates. Next three additions.<!-- plan:end -->
+1. **The plan**, on one page. On the short path, the seven headings from step 6. Otherwise these: <!-- plan:start -->The job. The user. What is out. The wow. What already exists. Build or buy. Cost. The design. The folder layout. The steps. The front door. The test. Who reviewed it. Gates. Next three additions.<!-- plan:end -->
 2. **The first version**: the prompt or instructions, and one worked example.
 3. **A note** with four headings: Decided. Assumed. Not checked. Test this next.
 

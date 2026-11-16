@@ -15,7 +15,7 @@ RUBRIC = [  # measure, morning, now, evidence for now
  ("A beginner gets value fast", 78, 78, "A short path for small jobs, a stop line and a ready-made second prompt if the link fails. Six coach runs; none in ChatGPT, none by a person"),
  ("Base content is worth its place", 82, 86, "Six items, each with a reader. One plan template. Examples made by the current or a recent coach"),
  ("Each step is easy to follow", 85, 86, "Purpose, a user story per level with a filter, what to expect, proof, the gate and a prompt"),
- ("The Advanced level works where builders work", 62, 76, "One folder that works in any repository. The third audit found a bug that stopped a finished project passing; fixed, and a gate now proves a filled project passes. Not re-audited"),
+ ("The Advanced level works where builders work", 62, 80, "One folder that works in any repository. The fourth audit ran it in an empty repository, filled a project by hand and saw every check pass; its one blocking point, a copy command, is fixed"),
  ("The Expert level is usable as given", 66, 78, "Four starter gates, a full unattended run as a worked example, one rule for which test points to fix first"),
  ("The scaffolding is clean", 78, 84, "Test logs in _build/runs, every repeated page written by one build, a place named for code"),
  ("The files agree with each other", 70, 86, "The third audit found the steps, gates and plan headings word for word the same in all four places"),
@@ -23,21 +23,21 @@ RUBRIC = [  # measure, morning, now, evidence for now
  ("Evidence of real value", 25, 25, "AI sessions only. No person has used it, and no chatbot other than Claude has run it"),
 ]
 # The independent newcomer audit: a fresh session reading the project as three people. Before = first audit, after = second.
-AUDIT = [("Beginner, uses ChatGPT", 64, 60, 72), ("Builder with a coding agent", 60, 70, 52), ("Teacher with a class tomorrow", 52, 58, 70)]
-AUDIT_FOUND = [(4, 16, 23), (4, 12, 19), (1, 12, 16)]   # blocking, confusing, minor, per audit
+AUDIT = [("Beginner, uses ChatGPT", 64, 60, 72, 72), ("Builder with a coding agent", 60, 70, 52, 76), ("Teacher with a class tomorrow", 52, 58, 70, 74)]
+AUDIT_FOUND = [(4, 16, 23), (4, 12, 19), (1, 12, 16), (1, 7, 20)]   # blocking, confusing, minor, per audit
 # GitHub, read through the GitHub API on 16 November 2026.
 GITHUB = {"stars": 0, "forks": 0, "watchers": 0, "topics": 0, "releases": 0, "community_profile": 42,
           "description": "Suite of practical ai assisted workflows and automation tools - no fluff, just productivity",
           "homepage": "none", "pages": "off", "discussions": "off", "template": "no", "traffic": "not readable from this session"}
 TESTS = [  # what ran on Agentic Process, all on 16 November 2026, all Claude sessions
- ("Coach runs by fresh sessions", 6), ("Skill runs by a second agent", 2), ("Fresh-session tests of a tool the skill built", 2), ("Newcomer audits", 3)]
+ ("Coach runs by fresh sessions", 6), ("Skill runs by a second agent", 2), ("Fresh-session tests of a tool the skill built", 2), ("Newcomer audits", 4)]
 
 
 def bars(rows):
     """rows: (name, value, value, ...). The last value is drawn in the data colour, the others in greys."""
     out = []
     for name, *vals in rows:
-        cls = ['was', 'mid', 'now'][-len(vals):] if len(vals) <= 3 else ['was'] * (len(vals) - 1) + ['now']
+        cls = ['was', 'mid', 'now'][-len(vals):] if len(vals) <= 3 else ['was'] * (len(vals) - 2) + ['mid', 'now']
         spans = ''.join(f'<span class="bar {c}" style="--v:{v}%" title="{v}"><b>{v}</b></span>' for c, v in zip(cls, vals))
         out.append(f'<div class="pair" role="listitem"><span class="nm">{E(name)}</span>{spans}</div>')
     return '\n'.join(out)
@@ -45,7 +45,7 @@ def bars(rows):
 
 def page():
     rub_before = round(sum(r[1] for r in RUBRIC) / len(RUBRIC)); rub_now = round(sum(r[2] for r in RUBRIC) / len(RUBRIC))
-    au = [round(sum(a[i] for a in AUDIT) / 3) for i in (1, 2, 3)]
+    au = [round(sum(a[i] for a in AUDIT) / 3) for i in (1, 2, 3, 4)]
     at80 = sum(1 for r in RUBRIC if r[2] >= 80)
     rub_rows = ''.join(f'<tr><th scope="row">{E(m)}</th><td>{a}</td><td><b>{b}</b></td><td>{E(ev)}</td></tr>' for m, a, b, ev in RUBRIC)
     below = [m for m, a, b, ev in RUBRIC if b < 80]
@@ -98,10 +98,10 @@ footer{{margin-top:50px;background:var(--accent);color:#dfe6ef;padding:28px 0 36
 <header><div class="wrap">
   <p class="meta">Report for the owner of Practical AI · 16 November 2026 · Project two: Agentic Process</p>
   <h1>Agentic Process is ready to try and to teach; nobody but its author has used it yet.</h1>
-  <p class="answer">Three independent audits and nine test runs found and fixed the faults a newcomer would hit at every level; the last audit's fixes have not been audited again. GitHub shows none of this yet: no stars, no topics and no page that opens on a phone, and the links work only once the branch is merged.</p>
+  <p class="answer">Four independent audits and nine test runs found and fixed the faults a newcomer would hit at every level; every newcomer's score rose, and the last audit's fixes have not been audited again. GitHub shows none of this yet: no stars, no topics and no page that opens on a phone, and the links work only once the branch is merged.</p>
   <div class="tiles">
     <div class="tile"><b>{rub_before} → {rub_now}</b><span>The end-user rubric, out of 100, this morning and now. <i>{len(below)} of 10</i> measures still below 80.</span></div>
-    <div class="tile"><b>{au[0]} → {au[1]} → {au[2]}</b><span>An independent newcomer's average score across three audits, as a beginner, a builder and a teacher.</span></div>
+    <div class="tile"><b>{au[0]} → {au[3]}</b><span>An independent newcomer's average score, first audit to fourth (then {au[1]} and {au[2]} between), as a beginner, a builder and a teacher.</span></div>
     <div class="tile"><b>0</b><span>People outside the author who have used it. Every test so far was an AI session, in Claude.</span></div>
   </div>
 </div></header>
@@ -118,18 +118,18 @@ footer{{margin-top:50px;background:var(--accent);color:#dfe6ef;padding:28px 0 36
   <p style="margin-top:14px">For teaching there is a 30-minute training: ten slides on Artifact Studio's workshop deck, a lesson timer, and a presenter window that keeps the notes off the projector.</p>
 </section>
 
-<section aria-labelledby="f1"><p class="lab">Finding 1</p><h2 id="f1">Across three audits the teacher's score rose from {AUDIT[2][1]} to {AUDIT[2][3]} and the beginner's from {AUDIT[0][1]} to {AUDIT[0][3]}; the builder's fell to {AUDIT[1][3]} on a bug now fixed.</h2>
+<section aria-labelledby="f1"><p class="lab">Finding 1</p><h2 id="f1">Over four audits every newcomer's score rose: the teacher's from {AUDIT[2][1]} to {AUDIT[2][4]}, the builder's from {AUDIT[1][1]} to {AUDIT[1][4]}, the beginner's from {AUDIT[0][1]} to {AUDIT[0][4]}.</h2>
   <figure>
-    <div class="key"><span>First audit</span><span class="k1">Second, after its fixes</span><span class="k2">Third, scored as if merged</span></div>
-    <div class="chart" role="list" aria-label="Newcomer scores out of 100, three audits">
-{bars([(n, a, b, c) for n, a, b, c in AUDIT])}
+    <div class="key"><span>First and second audits</span><span class="k1">Third</span><span class="k2">Fourth</span></div>
+    <div class="chart" role="list" aria-label="Newcomer scores out of 100, four audits">
+{bars([(n, a, b, c, d) for n, a, b, c, d in AUDIT])}
     </div>
-    <figcaption>Unit: "would this be useful to me today", out of 100. Each audit was one fresh Claude session that read the whole project as three people and ran the builder's commands in an empty repository. The first two counted the links that do not work until the merge; the third was asked to score as if merged, so it is not a like-for-like comparison. Problems found (blocking, confusing, minor): {", then ".join(f"{x[0]}, {x[1]}, {x[2]}" for x in AUDIT_FOUND)}.</figcaption>
+    <figcaption>Unit: "would this be useful to me today", out of 100. Each audit was one fresh Claude session that read the whole project as three people and ran the builder's commands in an empty repository. The first two counted the links that do not work until the merge; the third and fourth were asked to score as if merged, so the first two are not like for like with the last two. Problems found (blocking, confusing, minor): {", then ".join(f"{x[0]}, {x[1]}, {x[2]}" for x in AUDIT_FOUND)}.</figcaption>
   </figure>
-  <p class="so"><b>So what.</b> Each audit found new faults, some of them introduced by the previous round's fixes: a heading bug in the second, and in the third a check that a finished project could never pass. Both are fixed, and a gate now fills a new project and expects every check to pass, so that class of fault cannot return unnoticed. A fourth audit would show whether the builder's score recovers.</p>
+  <p class="so"><b>So what.</b> Each audit found new faults, some of them introduced by the previous round's fixes: a heading bug in the second, and in the third a check that a finished project could never pass. Both are fixed, and a gate now fills a new project and expects every check to pass, so that class of fault cannot return unnoticed. The fourth audit confirmed the builder's path recovered; its one blocking point, a copy command, is fixed and not audited again.</p>
 </section>
 
-<section aria-labelledby="f2"><p class="lab">Finding 2</p><h2 id="f2">{['None','One','Two','Three','Four','Five','Six','Seven','Eight','Nine','Ten'][at80]} of ten measures reach 80 or more; the builder's path is fixed but not re-audited, and real use stays at {RUBRIC[-1][2]}.</h2>
+<section aria-labelledby="f2"><p class="lab">Finding 2</p><h2 id="f2">{['None','One','Two','Three','Four','Five','Six','Seven','Eight','Nine','Ten'][at80]} of ten measures reach 80 or more; real use stays at {RUBRIC[-1][2]}.</h2>
   <figure>
     <div class="key"><span>This morning's review</span><span class="k2">Now</span></div>
     <div class="chart" role="list" aria-label="End-user rubric, out of 100, this morning and now">
@@ -140,7 +140,7 @@ footer{{margin-top:50px;background:var(--accent);color:#dfe6ef;padding:28px 0 36
   <details><summary>The rubric as a table, with the evidence</summary>
     <div class="tw" tabindex="0" role="region" aria-label="The rubric with evidence"><table><thead><tr><th scope="col">Measure</th><th scope="col">Morning</th><th scope="col">Now</th><th scope="col">Evidence now</th></tr></thead><tbody>{rub_rows}</tbody></table></div>
   </details>
-  <p class="so"><b>So what.</b> The largest gain is that the files now agree: every page that repeats the steps is written from one source, and a gate fails if one drifts. The builder's path gained most in substance (one folder, any repository) but is scored cautiously until it is audited again. The last measure cannot move from here: it needs people.</p>
+  <p class="so"><b>So what.</b> The largest gain is that the files now agree: every page that repeats the steps is written from one source, and a gate fails if one drifts. The builder's path gained most in substance: one folder, any repository, and an independent session filled a project by hand and saw every check pass. The last measure cannot move from here: it needs people.</p>
 </section>
 
 <section aria-labelledby="f3"><p class="lab">Finding 3</p><h2 id="f3">On GitHub the repository shows none of the signals a visitor looks for, and the ones it could show are mostly vanity.</h2>

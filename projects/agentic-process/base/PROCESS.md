@@ -303,7 +303,7 @@ Build only the beginner version: instructions I can paste into a chat, with the 
 When you finish, tell me what you decided, what you assumed and what you did not check.
 ```
 
-**Prompt to test, in a new chat with no history**
+**Prompt to test, in a new chat with no history (a temporary chat, or memory turned off)**
 
 ```
 You have never seen this project. Follow the instructions below exactly as written, using only the input I give you. Do not ask me questions: where you would ask, decide, and note it.

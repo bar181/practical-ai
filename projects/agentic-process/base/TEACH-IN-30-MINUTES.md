@@ -18,7 +18,7 @@ project's README, or on GitHub open the file, choose **Download raw file**, and 
 | Open [`training.html`](training.html) on the screen you will present from. Press N to see your notes | 1 minute |
 | Keep [the guide](explainer.html) open in a second tab, to show a step card if asked | 1 minute |
 | Ask each learner to bring one job they do on their own every week that starts from a blank page | The day before |
-| Post the project's link in the class chat, so nobody types the prompt from the screen: github.com/bar181/practical-ai, then projects, then agentic-process | 1 minute |
+| Copy the coach prompt from the slides page and post it in the class chat, so nobody types it from the screen | 1 minute |
 | If several learners use a chatbot that cannot open links, put the coach's text in a shared document | 5 minutes |
 
 ## The lesson
@@ -34,7 +34,7 @@ project's README, or on GitHub open the file, choose **Download raw file**, and 
 
 ## The prompts learners paste
 
-**At minute 12, the coach:**
+**At minute 10, the coach:**
 
 ```
 Read the build coach at https://raw.githubusercontent.com/bar181/practical-ai/main/projects/agentic-process/base/AI-INSTRUCTIONS.md and follow it. If you cannot open it, say so and stop: do not make up a coach of your own.
