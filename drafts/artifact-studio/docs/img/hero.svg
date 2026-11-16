@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img" aria-labelledby="t d" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif">
+<title id="t">Rough notes and one sentence become a finished piece</title>
+<desc id="d">On the left, a page of rough notes. In the middle, one sentence typed to an assistant. On the right, the result, which changes in turn: a slide deck, a one-page report, a social post.</desc>
+<style>
+.cy{opacity:0;animation:show 12s infinite}
+.out{opacity:0;animation:pop 12s infinite;transform-box:fill-box;transform-origin:center}
+.b{animation-delay:4s}.c{animation-delay:8s}
+.flow{stroke-dasharray:6 10;animation:flow 1.2s linear infinite}
+.cur{animation:blink 1s steps(1) infinite}
+@keyframes show{0%{opacity:0}4%,29%{opacity:1}33.3%,100%{opacity:0}}
+@keyframes pop{0%,7%{opacity:0;transform:translateY(14px) scale(.96)}13%,29%{opacity:1;transform:none}33.3%,100%{opacity:0;transform:none}}
+@keyframes flow{to{stroke-dashoffset:-16}}
+@keyframes blink{50%{opacity:0}}
+@media (prefers-reduced-motion:reduce){.cy,.out,.flow,.cur{animation:none}.a{opacity:1}}
+</style>
+<rect width="800" height="400" rx="20" fill="#0c2340"/>
+
+<!-- notes -->
+<text x="130" y="62" text-anchor="middle" fill="#ffd23f" font-size="24" font-weight="700">Your notes</text>
+<g transform="rotate(-3 130 215)">
+  <rect x="42" y="92" width="176" height="232" rx="6" fill="#fffdf5"/>
+  <g stroke="#0c2340" stroke-width="5" stroke-linecap="round" opacity=".78">
+    <path d="M62 126h96"/><path d="M62 154h132" opacity=".5"/><path d="M62 178h118" opacity=".5"/>
+    <path d="M62 214h70"/><path d="M62 242h136" opacity=".5"/><path d="M62 266h104" opacity=".5"/><path d="M62 290h124" opacity=".5"/>
+  </g>
+  <circle cx="186" cy="126" r="13" fill="none" stroke="#c0271d" stroke-width="4"/>
+  <path d="M150 210c18-10 34 8 50-2" fill="none" stroke="#c0271d" stroke-width="4" stroke-linecap="round"/>
+</g>
+
+<!-- one sentence -->
+<text x="400" y="62" text-anchor="middle" fill="#ffd23f" font-size="24" font-weight="700">One sentence</text>
+<path class="flow" d="M236 208h44" stroke="#8fb3e8" stroke-width="4" stroke-linecap="round"/>
+<rect x="290" y="166" width="220" height="84" rx="18" fill="#17365f" stroke="#8fb3e8" stroke-width="2"/>
+<g fill="#fff" font-size="24" font-weight="600" text-anchor="middle">
+  <text class="cy a" x="400" y="216">Make it a deck.</text>
+  <text class="cy b" x="400" y="216">Make it a report.</text>
+  <text class="cy c" x="400" y="216">Make it a post.</text>
+</g>
+<rect class="cur" x="494" y="196" width="3" height="26" fill="#ffd23f"/>
+<path class="flow" d="M520 208h44" stroke="#8fb3e8" stroke-width="4" stroke-linecap="round"/>
+
+<!-- what comes back -->
+<text x="672" y="62" text-anchor="middle" fill="#ffd23f" font-size="24" font-weight="700">Ready to send</text>
+
+<g class="out a">
+  <rect x="574" y="136" width="196" height="118" rx="6" fill="#f4f6fa"/>
+  <rect x="574" y="136" width="196" height="7" rx="3" fill="#2f6fed"/>
+  <rect x="590" y="158" width="62" height="6" rx="3" fill="#2f6fed"/>
+  <rect x="590" y="176" width="78" height="62" rx="5" fill="#fff" stroke="#d5dbe6"/>
+  <rect x="676" y="176" width="78" height="62" rx="5" fill="#fff" stroke="#d5dbe6"/>
+  <text x="600" y="214" fill="#0c2340" font-size="30" font-weight="800">41</text>
+  <text x="686" y="214" fill="#0c2340" font-size="30" font-weight="800">58</text>
+  <rect x="600" y="224" width="46" height="5" rx="2" fill="#9aa6b8"/><rect x="686" y="224" width="54" height="5" rx="2" fill="#9aa6b8"/>
+  <text x="672" y="304" text-anchor="middle" fill="#fff" font-size="24" font-weight="600">A slide deck</text>
+</g>
+
+<g class="out b">
+  <rect x="604" y="92" width="136" height="180" rx="6" fill="#f3f8f1"/>
+  <rect x="618" y="110" width="92" height="9" rx="4" fill="#12301a"/><rect x="618" y="126" width="64" height="9" rx="4" fill="#12301a"/>
+  <rect x="618" y="150" width="32" height="26" rx="4" fill="#fff" stroke="#cfe0cb"/><rect x="656" y="150" width="32" height="26" rx="4" fill="#fff" stroke="#cfe0cb"/><rect x="694" y="150" width="32" height="26" rx="4" fill="#fff" stroke="#cfe0cb"/>
+  <rect x="618" y="192" width="80" height="10" rx="3" fill="#c5d6c1"/><rect x="618" y="208" width="108" height="10" rx="3" fill="#1f7a1f"/>
+  <rect x="618" y="234" width="100" height="5" rx="2" fill="#9db09a"/><rect x="618" y="246" width="84" height="5" rx="2" fill="#9db09a"/>
+  <text x="672" y="304" text-anchor="middle" fill="#fff" font-size="24" font-weight="600">A one-page report</text>
+</g>
+
+<g class="out c">
+  <rect x="590" y="96" width="164" height="164" rx="8" fill="#c0271d"/>
+  <rect x="608" y="116" width="34" height="5" rx="2" fill="#ffd23f"/>
+  <text x="608" y="176" fill="#fff" font-size="27" font-weight="800">Get ready</text>
+  <text x="608" y="206" fill="#fff" font-size="27" font-weight="800">for winter.</text>
+  <rect x="608" y="226" width="86" height="6" rx="3" fill="#ffd23f"/>
+  <text x="672" y="304" text-anchor="middle" fill="#fff" font-size="24" font-weight="600">A social post</text>
+</g>
+
+<text x="400" y="364" text-anchor="middle" fill="#b9cbe6" font-size="22">Free. For Claude or ChatGPT. Nothing to install.</text>
+</svg>

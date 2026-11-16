@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-labelledby="t d" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif">
+<title id="t">Every tool comes at three levels</title>
+<desc id="d">Three steps rising left to right. Beginner: paste and go, for anyone. Advanced: a skill and connectors, for people who build with AI. Expert: your own setup, for teams. Each step lights up in turn.</desc>
+<style>
+.glow{opacity:0;animation:lit 9s infinite}
+.g2{animation-delay:3s}.g3{animation-delay:6s}
+@keyframes lit{0%{opacity:0}6%,28%{opacity:1}33.3%,100%{opacity:0}}
+@media (prefers-reduced-motion:reduce){.glow{animation:none}.g1{opacity:1}}
+</style>
+<rect width="720" height="300" rx="20" fill="#0c2340"/>
+
+<g>
+  <rect x="20" y="130" width="218" height="150" rx="12" fill="#17365f"/>
+  <rect class="glow g1" x="20" y="130" width="218" height="150" rx="12" fill="none" stroke="#ffd23f" stroke-width="4"/>
+  <text x="40" y="170" fill="#ffd23f" font-size="18" font-weight="700">Level 1</text>
+  <text x="40" y="204" fill="#fff" font-size="28" font-weight="800">Beginner</text>
+  <text x="40" y="236" fill="#d5e2f5" font-size="20">Paste and go.</text>
+  <text x="40" y="262" fill="#d5e2f5" font-size="20">For anyone.</text>
+</g>
+<g>
+  <rect x="251" y="78" width="218" height="202" rx="12" fill="#1d4273"/>
+  <rect class="glow g2" x="251" y="78" width="218" height="202" rx="12" fill="none" stroke="#ffd23f" stroke-width="4"/>
+  <text x="271" y="118" fill="#ffd23f" font-size="18" font-weight="700">Level 2</text>
+  <text x="271" y="152" fill="#fff" font-size="28" font-weight="800">Advanced</text>
+  <text x="271" y="184" fill="#d5e2f5" font-size="20">A skill, plus</text>
+  <text x="271" y="210" fill="#d5e2f5" font-size="20">connectors.</text>
+  <text x="271" y="262" fill="#d5e2f5" font-size="20">For builders.</text>
+</g>
+<g>
+  <rect x="482" y="26" width="218" height="254" rx="12" fill="#245089"/>
+  <rect class="glow g3" x="482" y="26" width="218" height="254" rx="12" fill="none" stroke="#ffd23f" stroke-width="4"/>
+  <text x="502" y="66" fill="#ffd23f" font-size="18" font-weight="700">Level 3</text>
+  <text x="502" y="100" fill="#fff" font-size="28" font-weight="800">Expert</text>
+  <text x="502" y="132" fill="#d5e2f5" font-size="20">Your own data,</text>
+  <text x="502" y="158" fill="#d5e2f5" font-size="20">server and</text>
+  <text x="502" y="184" fill="#d5e2f5" font-size="20">schedule.</text>
+  <text x="502" y="262" fill="#d5e2f5" font-size="20">For teams.</text>
+</g>
+</svg>
