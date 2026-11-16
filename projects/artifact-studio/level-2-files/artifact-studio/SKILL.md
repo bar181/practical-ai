@@ -1,6 +1,6 @@
 ---
 name: artifact-studio
-description: Turns any content (notes, documents, data, images, video) into one polished, self-contained HTML page, slide deck or social post picture by choosing a template, a voice and a look, then building and checking it. Use when asked to "make a page", "build an artifact", "turn this into a report", "make a proposal page", "make a landing page", "explain this as a scrolling page", "make this look good", "use the keynote voice" (or storyteller, teacher, practical instructor, analyst, executive brief), or "use the artifact studio".
+description: Turns any content (notes, documents, data, images, video) into one polished, self-contained HTML page, slide deck or social post picture by choosing a template, a voice and a look, then building and checking it. Use when asked to "make a page", "build an artifact", "turn this into a report", "make a proposal page", "make a landing page", "explain this as a scrolling page", "make this look good", "use the keynote voice" (or storyteller, personal story, teacher, practical instructor, analyst, executive brief), or "use the artifact studio".
 ---
 
 # Artifact studio

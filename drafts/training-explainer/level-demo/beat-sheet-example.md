@@ -2,7 +2,7 @@
 
 Synthetic example. Topic: what an AI agent is. Length: 3 minutes.
 
-## As a lecture builder (inspired by David Malan)
+## As a lecture builder (inspired by the great professors at Harvard)
 
 | Beat | Time | Said | Shown |
 | --- | --- | --- | --- |

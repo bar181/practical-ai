@@ -44,7 +44,7 @@ A landing page has one job: get one kind of visitor to take one action. Everythi
 
 ### The keynote
 
-The keynote voice sells a vision by removing everything else. Inspired by Steve Jobs's product launches. This page is about the Practical AI repository itself. The six counts are checked against the library every time it is built, and five minutes is an estimate, not a measurement.
+The keynote voice sells a vision by removing everything else. Inspired by the product launches of visionary tech CEOs. This page is about the Practical AI repository itself. The six counts are checked against the library every time it is built, and five minutes is an estimate, not a measurement.
 
 - **Short ask:** Turn my notes into a keynote-style page: one idea per screen, huge type, almost no words.
 - **Full ask:** Build a keynote-style page from my notes. Black background, one sans-serif typeface, white and grey only. Use three screens of huge type alone for the argument. Between them: my photo full screen, moving slower than the page, with one line over it. A screen with a short paragraph beside a second photo. A small looping line drawing. My numbers as bars with no axes, each bar labelled with its number. The next step as three short lines on a frosted glass card over a photo. Screens snap as I scroll.
@@ -60,11 +60,19 @@ The storyteller voice makes the customer the hero and the company the guide. Ins
 
 ### The explainer
 
-The explainer is a lesson you can teach from. It uses the teacher voice, which makes a hard idea feel obvious by starting somewhere familiar. Inspired by David Malan's lectures. This one teaches how to use the studio itself, so you can run it in a class.
+The explainer is a lesson you can teach from. It uses the teacher voice, which makes a hard idea feel obvious by starting somewhere familiar. Inspired by the great professors at Harvard. This one teaches how to use the studio itself, so you can run it in a class.
 
 - **Short ask:** Explain this like a great teacher: start with an everyday analogy, then one example, then the detail.
 - **Full ask:** Build a one-page lesson from my notes that I can teach from. Open with the question over a picture with one line of text on it. Give one everyday analogy in very large type with a simple hand-drawn sketch that draws itself. Then the steps as a scrolling section with a diagram that stays on screen and lights up each step, with one example per step. Add a worked example I can step through line by line, a five-minute exercise, three check-yourself questions that open on click, and a one-sentence recap that reuses the analogy. Black and white with a single highlight colour.
 - **With the skill:** Use the artifact-studio skill. Recipe: scrolling explainer. Voice: teacher. Look: black and white with one highlight colour. Content: the attached procedure. Keep every step of my procedure; if the analogy stops fitting at some step, say so rather than bending the step.
+
+### The personal story
+
+The personal story voice sells a feeling and lets the offer arrive last. Inspired by the classic advertising pitch that tells one personal story and never lists a feature. The narrator, the mother and the drawer are invented for the demo. When you use this voice, the memory has to be a true one of yours.
+
+- **Short ask:** Tell this as a personal story: one memory, the feeling in it, and name what I am offering only at the end.
+- **Full ask:** Build a page from my notes as a personal story, in the first person. Open with one true memory of mine in a single short line. Show two or three keepsakes as slightly crooked photographs with paper borders and a handwritten-style caption each. Then one photograph filling the screen, moving slowly, with one line over it. Name the feeling in one sentence of large type. Name what I am offering only on the last screen, small. Dark warm colours, faded photographs, serif type. Ask me for the memory before you write. Do not invent one.
+- **With the skill:** Use the artifact-studio skill. Recipe: scrolling explainer. Voice: personal story. Look: faded film. Content: the attached notes and photos, and the memory I describe. If I have not given you a true memory, ask for one before you build.
 
 ### The practical instructor
 
@@ -94,7 +102,7 @@ The executive brief voice exists to get a decision from busy people. It is the p
 
 ### Visionary deck
 
-The visionary deck is for a room. It makes people feel that something has changed, and it leaves the detail for the conversation afterwards. It follows the manner of Steve Jobs's product launches: a picture, a villain, one rule, three things, one number, and a quiet last slide. The company and figures are invented.
+The visionary deck is for a room. It makes people feel that something has changed, and it leaves the detail for the conversation afterwards. It follows the manner of the product launches of visionary tech CEOs: a picture, a villain, one rule, three things, one number, and a quiet last slide. The company and figures are invented.
 
 - **Short ask:** Turn my notes into a keynote-style deck: black slides, one idea each, huge type. Put my photo full screen behind two of the slides, with the words over it.
 - **Full ask:** Build a nine-slide deck from my notes in the keynote voice, black with white type. Slide 1 the feeling in one sentence, 2 my photo filling the slide with one line over it, 3 the problem as one number, 4 what it cost, 5 the idea as one rule, 6 three things in three words, 7 the proof number with the old one struck through, 8 what it bought, 9 "one more thing" with the next step. Put my photos behind slides 2, 4 and 5, full screen, with the words over them. No bullet lists. Make it one HTML file I can present with arrow keys.

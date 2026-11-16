@@ -70,7 +70,7 @@ You should get something like this. It is the same request, already built:
 - **Now make it a deck.** In the same chat, say: `Show the same notes as a keynote-style slide deck: black slides, one idea each, huge type.`
 - **Browse everything it can make.** Download two files and open them in a browser.
   [`base/studio.html`](base/studio.html) is the highlights: photo effects, scroll effects, layouts,
-  post previews and one message told in six voices. [`base/components.html`](base/components.html) is everything
+  post previews and a tab for each of seven voices. [`base/components.html`](base/components.html) is everything
   else: pages, decks, more post previews, parts, and a picker that chooses a template for you. Keep
   them in the same folder and each links to the other.
 
@@ -180,13 +180,13 @@ chart from the photo, scrollytelling with a pinned picture, and matched looks an
 
 ### The rest of the kit
 
-The effects sit on a full library: <!-- counts -->19 templates (4 pages, 6 voices, 4 decks, 5 social formats), 60 components (12 page parts, 13 photo parts, 12 animated SVG files, 17 design ideas for cards, layouts and colour, 6 post previews) and 9 looks<!-- /counts -->. Every one
+The effects sit on a full library: <!-- counts -->20 templates (4 pages, 7 voices, 4 decks, 5 social formats), 60 components (12 page parts, 13 photo parts, 12 animated SVG files, 17 design ideas for cards, layouts and colour, 6 post previews) and 9 looks<!-- /counts -->. Every one
 comes with the sentence that asks for it.
 
 ### A full artifact, in the style you ask for
 
 One sentence picks the style. The same notes become a deck you present, a lesson you teach from,
-a report that argues from evidence, or a guide people act on today.
+a story people feel, a report that argues from evidence, or a guide people act on today.
 
 <p align="center">
   <img src="_build/img/style-visionary.webp" width="720" alt="Animated screen capture of the visionary deck: black slides with one idea each in huge white type, then full-screen pictures of a city at sunset, a house in fog and a lightbulb splashed with colour, each with a few words over it">
@@ -196,6 +196,7 @@ a report that argues from evidence, or a guide people act on today.
 | --- | --- | --- |
 | **Visionary** | A slide deck, or a page that scrolls one idea per screen. Huge type, full-screen pictures with a few words over them, a frosted glass card, and numbers as bars with no axes | "Turn my notes into a keynote-style deck: black slides, one idea each, huge type. Put my photo full screen behind two of the slides, with the words over it." |
 | **Explainer** | A lesson you can teach from: an analogy, a sketch that draws itself, steps you scroll through while a diagram keeps your place, a worked example and questions to check | "Explain this like a great teacher: start with an everyday analogy, then one example, then the detail." |
+| **Emotional** | A personal story: one memory, a few keepsakes as crooked photographs, one picture filling the screen, and the offer named only at the end | "Tell this as a personal story: one memory, the feeling in it, and name what I am offering only at the end." |
 | **Analyst** | A report that gives the answer first, then earns it with three findings and a chart each | "Write this up as an evidence-first one-pager: the answer at the top, then three findings with a chart each." |
 | **Practical** | A field guide: the core idea, one analogy, and steps to tick off today | "Turn this into a practical one-page guide: the core idea, one analogy, then steps I can do today." |
 
@@ -205,6 +206,14 @@ and what is in the kit on day one.
 <p align="center">
   <img src="_build/img/style-visionary-page.webp" width="49%" alt="Animated screen capture of the visionary page on a phone: black screens of huge white type, a house in fog behind the words So it guesses, a dog at a laptop beside the words Meet your smart intern, three rings labelled daily, weekly and monthly, and bars that count what is in the library">
   <img src="_build/img/style-visionary-glass.webp" width="49%" alt="Screen capture of the visionary page's next step: a frosted glass card over a city skyline at sunset that reads Start in five minutes, paste one link, ask in one sentence, check what comes back">
+</p>
+
+The emotional page tells one personal story and never lists a feature. Its narrator is invented;
+yours has to be true.
+
+<p align="center">
+  <img src="_build/img/style-emotional.webp" width="49%" alt="Animated screen capture of the emotional page on a phone: the line My mother kept a drawer in italic type on a dark page, then three keepsakes shown as crooked photographs with handwritten captions, then a painted portrait filling the screen">
+  <img src="_build/img/style-emotional-end.webp" width="49%" alt="Screen capture of the emotional page: two dancers in bright colours fill the screen under the words So tell it who the page is for">
 </p>
 
 The explainer in the gallery teaches this project. It is built to be taught from in class:
@@ -219,7 +228,7 @@ the smart intern analogy, the four steps, and how to write a good ask.
   <img src="_build/img/style-practical.webp" width="49%" alt="Screen capture of the practical guide: the headline Answer in the first hour, a picture of a small dog at a laptop beside a boxed analogy, and three numbers">
 </p>
 
-### Six voices: tell your story the way great communicators do
+### Seven voices: tell your story the way great communicators do
 
 The same facts land differently depending on who is telling them. Pick a voice by name.
 
@@ -230,14 +239,15 @@ The same facts land differently depending on who is telling them. Pick a voice b
 
 | Voice | Inspired by | Use it when |
 | --- | --- | --- |
-| **Keynote** | Steve Jobs's product launches | The reader should feel that something new is possible |
+| **Keynote** | The product launches of visionary tech CEOs | The reader should feel that something new is possible |
 | **Storyteller** | Donald Miller's story framework | Your customer is the hero and you are the guide |
-| **Teacher** | David Malan's lectures | Someone has to understand how a thing works. The explainer uses this voice |
+| **Personal story** | The classic advertising pitch that sells a feeling through one true story | The reader should feel something first and remember it |
+| **Teacher** | The great professors at Harvard | Someone has to understand how a thing works. The explainer uses this voice |
 | **Practical instructor** | Bradley Ross's own teaching style | People need the core idea, one analogy and steps for today |
 | **Analyst** | Barbara Minto's pyramid principle | The evidence has to carry the argument |
 | **Executive brief** | The board decision memo | A busy person has to decide |
 
-Each voice describes a style. Nothing is written by, or endorsed by, the people named.
+Each voice describes a style. Nothing is written by, or endorsed by, the people or places named.
 
 ### Post previews: see the draft the way your audience will
 
@@ -356,8 +366,10 @@ artifact-studio/
 
 <img src="_build/img/bradley-ross.jpg" width="140" alt="Bradley Ross, creator of Artifact Studio and Practical AI">
 
-**Bradley Ross** builds and teaches practical AI.
+**Bradley Ross** is an agentic AI architect and developer for businesses of every size, from
+start-up to enterprise. He builds and teaches practical AI.
 
+- **Specialty:** deterministic AI, and advanced AI research into AI with learning transfer abilities.
 - **Harvard CS50:** 10 terms as a Teaching Fellow.
 - **Agentics Foundation:** Director, working with and sharing teaching with the top agentic
   engineers in the world.

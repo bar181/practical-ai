@@ -60,6 +60,7 @@ communicator's style. Never write as if that person said it, and never put their
 | --- | --- | --- | --- |
 | Keynote | The world as it is, as one line or one painful number. The catch or the consequence. The idea in a few words. Proof as enormous numbers. The next step. A short closing line. | Black, one typeface, enormous numbers. One idea per screen, screens snap. A picture fills the screen or sits beside one short paragraph. | Bullet lists, more than twelve words a screen |
 | Storyteller | A hook with a time and place. A character who wants something. The problem at three depths. A guide: empathy, then proof. A three-step plan. One call to action. Failure beside success. An ending that returns to the opening. | Colours from the photograph, large serif, slow push-ins, story beats named in small type. | The company before the fourth beat. An invented customer shown as real |
+| Personal story | One true memory in the first person. Two or three keepsakes. The feeling, named in one sentence. What has changed and what has not. The offer, named once, at the end. | A dark, warm room. Serif type. Faded photographs with paper borders. Everything arrives slowly. | Features, numbers, charts, the product name before the end. An invented memory: ask for a true one |
 | Teacher | One question. An everyday analogy, very large. One worked example. Pseudocode or a diagram stepped through. A harder case. Check-yourself questions. A recap reusing the analogy. | Black and white, one highlight, monospace code. The reader steps and answers. | Two new ideas in one step |
 | Practical instructor | The core idea in one sentence. One boxed analogy. Three numbers. Numbered steps with a time each. Three levels. Common mistakes. One next step. | Field guide: two colours, tick boxes, a progress bar, tables. | Theory before the first step |
 | Analyst | The conclusion as the title. The answer in two sentences. Three numbers. Three findings: full-sentence heading, one chart, a "so what". Method. Limits. Next steps with owner and date. | Quiet, one data colour, grey for comparison, source under each chart. | Topic headings, hidden limits |
@@ -70,7 +71,7 @@ communicator's style. Never write as if that person said it, and never put their
 - **From a photo.** Take the five or six colours that cover most of the picture. Darkest becomes
   text. Lightest, or a paler step of the largest, becomes the background. The most vivid that is
   not skin or sky becomes the accent, used sparingly. Check text contrast is 4.5 to 1 or better.
-- **Defaults by voice.** Keynote: black and white. Storyteller: the photo's colours. Teacher: white
+- **Defaults by voice.** Keynote: black and white. Storyteller: the photo's colours. Personal story: faded film. Teacher: white
   with one highlight. Practical instructor: field guide. Analyst: quiet, one
   data colour. Executive brief: paper memo.
 

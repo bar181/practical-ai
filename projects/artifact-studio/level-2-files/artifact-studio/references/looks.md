@@ -154,6 +154,7 @@ A cool photo gives a calm page. A warm photo gives an emotional one. Do not figh
 | --- | --- |
 | Keynote | Keynote black |
 | Storyteller | Colours from the photo, or Editorial |
+| Personal story | Faded film |
 | Teacher | Clean, with one highlight colour |
 | Practical instructor | Field guide |
 | Analyst | Dashboard |

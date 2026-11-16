@@ -127,9 +127,9 @@ MD={ # name: (title, path, note shown above a copy-ready block or None to render
  's-rules':('Build rules',SKILL+'/references/build-rules.md',None),
  's-check':('Checklist',SKILL+'/references/pre-ship-checklist.md',None)}
 for n,(title,path,raw) in MD.items(): VIEW[n]=md_view(n,title,path,raw); VJS[n]=[]
-LABEL={'voice-keynote':'Visionary','voice-story':'Storyteller','voice-teacher':'Explainer','voice-practical':'Practical','voice-analyst':'Analyst','voice-brief':'Brief',
+LABEL={'voice-keynote':'Visionary','voice-story':'Storyteller','voice-emotional':'Emotional','voice-teacher':'Explainer','voice-practical':'Practical','voice-analyst':'Analyst','voice-brief':'Brief',
        'recipe-report':'Report','recipe-proposal':'Proposal','recipe-explainer':'Explainer','recipe-landing':'Landing page'}
-VOICES=['voice-keynote','voice-story','voice-teacher','voice-practical','voice-analyst','voice-brief']
+VOICES=['voice-keynote','voice-story','voice-emotional','voice-teacher','voice-practical','voice-analyst','voice-brief']
 RECIPES=['recipe-report','recipe-proposal','recipe-explainer','recipe-landing']
 CONCEPTS=(('card','31-cards.html','components/cards.html','Cards'),('layout','32-layouts.html','components/layouts.html','Layouts'),('colour','33-colour.html','components/colour.html','Colour'))
 G_VOICES=('Voices',VOICES,'One message, told six ways. Tap a voice:'); G_RECIPES=('Recipes',RECIPES,'Four whole pages. Tap a recipe:')
@@ -154,7 +154,7 @@ TAB={t['id']:(t['id'] if t['kind']!='social' else 'social') for t in C.TEMPLATES
 _v=open(SKILL+'/references/voices.md').read()
 _use={n.strip():u.strip() for u,n in re.findall(r'^\| ([^|]+) \| ([^|]+) \|$',_v[_v.index('## Choosing'):_v.index('## Keynote')],re.M) if n.strip() not in ('Use','---')}
 _by=dict(re.findall(r'^## ([^\n]+)\n\n\| Field \| \|\n\| --- \| --- \|\n\| Inspired by \| ([^|]+) \|',_v,re.M))
-VNAME={'voice-keynote':'Keynote','voice-story':'Storyteller','voice-teacher':'Teacher','voice-practical':'Practical instructor','voice-analyst':'Analyst','voice-brief':'Executive brief'}
+VNAME={'voice-keynote':'Keynote','voice-story':'Storyteller','voice-emotional':'Personal story','voice-teacher':'Teacher','voice-practical':'Practical instructor','voice-analyst':'Analyst','voice-brief':'Executive brief'}
 def about(n,t,key='all'):
     if n in VNAME:
         k=VNAME[n]; u=_use[k]; by=_by[k].strip(); by=by[0].lower()+by[1:] if by.startswith(('The ','A ')) else by; txt=f'<b>The {k.lower()} voice.</b> Inspired by {html.escape(by)}. Use it when the reader should {u[0].lower()+u[1:]}.'
@@ -170,7 +170,7 @@ def about(n,t,key='all'):
     t=t.replace('<section class="anat">',f'<section class="anat" id="anat-{n}">',1)
     return re.sub(r'(<div class="view"[^>]*>)',lambda m:m.group(1)+strip,t,count=1)
 # pictures beyond the two in assets.json: each file in photos/ named here becomes a CSS variable, --ph-NAME
-EXTRA={k:f'--ph-{k}:url("data:image/jpeg;base64,{base64.b64encode(open(os.path.join(HERE,"photos",k+".jpg"),"rb").read()).decode()}");' for k in ('toronto','dog','puzzle','class','fog','bulb','cat','home')}
+EXTRA={k:f'--ph-{k}:url("data:image/jpeg;base64,{base64.b64encode(open(os.path.join(HERE,"photos",k+".jpg"),"rb").read()).decode()}");' for k in ('toronto','dog','puzzle','class','fog','bulb','cat','home','flower','portrait','dancers','heart')}
 SHELL=open(os.path.join(HERE,'shell.html')).read()
 BASE=open(os.path.join(HERE,'base.css')).read()
 PAGE_INDEX={'templates':[dict(t,tab=TAB[t['id']]) for t in C.TEMPLATES],'rules':C.RULES,'labels':{f:dict(v) for f,v in C.FACETS.items()},'social_styles':C.SOCIAL_STYLES,'palette_roles':C.PALETTE_ROLES,'palette_rule':C.palette(0)['rule']}
@@ -217,7 +217,7 @@ def build(key,out,title,lead,groups,other=None):
     kb=round(len(t.encode())/1024); t=t.replace('__KB__',f'{kb:,}')
     left=re.findall(r'__[A-Z]+__|^\s*@@\w+',re.sub(r'data:[^")]+','',re.sub(r'<pre>.*?</pre>','',t,flags=re.S)),flags=re.M); assert not left, left
     open(os.path.join(ROOT,out),'w').write(t); print(f'{key}: {kb} KB, {len(order)} tabs -> {out}')
-build('highlights',OUT['highlights'],'','The highlights: photo effects, scroll effects, layouts, post previews for social media, and one message told in six voices. Tap a tab.',HIGHLIGHT_GROUPS,('components.html','Components: pages, decks, more post previews, parts and the skill →'))
+build('highlights',OUT['highlights'],'','The highlights: photo effects, scroll effects, layouts, post previews for social media, and a tab for each of seven voices. Tap a tab.',HIGHLIGHT_GROUPS,('components.html','Components: pages, decks, more post previews, parts and the skill →'))
 build('components',OUT['components'],'Components','Everything else you can build with: pages, decks, post previews for six platforms, parts, design ideas, a picker, the skill and a guide. Tap a tab.',COMPONENT_GROUPS,('studio.html','← Highlights: photo effects, scroll effects, layouts, socials and voices'))
 # ---- starters: a deck as one small file with system fonts and no photograph, for an agent to copy and fill
 def write_starters():

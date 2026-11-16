@@ -3,9 +3,9 @@
  "generated": "2026-11-15",
  "read_me": "Paths are relative to the project folder. \"preview\" is the file and tab that shows it: base/studio.html holds the highlights and base/components.html holds the rest. \"starter\", where present, is a small complete file to copy and fill. \"source\" is reference code: one style block, the markup and one script, not a complete file. A post preview also needs the frame styles in sources/02-posts-lib.html. \"fit\" scores run 0 to 3. To choose, score = 3 x goal fit + 2 x audience fit, highest first.",
  "counts": {
-  "templates": 19,
+  "templates": 20,
   "pages": 4,
-  "voices": 6,
+  "voices": 7,
   "decks": 4,
   "social_formats": 5,
   "components": 60,
@@ -128,6 +128,7 @@
   "look_for_voice": {
    "voice-keynote": "Keynote black",
    "voice-story": "Cinematic",
+   "voice-emotional": "Faded film",
    "voice-teacher": "Clean",
    "voice-practical": "Field guide",
    "voice-analyst": "Dashboard",
@@ -290,6 +291,31 @@
     "with_skill": "Use the artifact-studio skill. Recipe: landing page. Voice: storyteller. Look: take the palette from my attached photo. Content: the attached customer interview notes. Invent nothing about the customer; where a story beat has no material, ask me one question."
    },
    "default_look": "Cinematic"
+  },
+  {
+   "id": "voice-emotional",
+   "kind": "voice",
+   "title": "Personal story voice",
+   "summary": "First person. One true memory, the feeling it carries, and the offer named only at the end.",
+   "preview": "base/studio.html#voice-emotional",
+   "source": "level-3-files/mcp/library/sources/44-voice-emotional.html",
+   "fit": {
+    "goal": {
+     "inspire": 3,
+     "sell": 2
+    },
+    "audience": {
+     "public": 2,
+     "customer": 2
+    }
+   },
+   "options": "Recipe: any of the four pages, or a deck. Look: the default named with it, or any of the nine. Parts: any that suit the voice.",
+   "ask": {
+    "short": "Tell this as a personal story: one memory, the feeling in it, and name what I am offering only at the end.",
+    "full": "Build a page from my notes as a personal story, in the first person. Open with one true memory of mine in a single short line. Show two or three keepsakes as slightly crooked photographs with paper borders and a handwritten-style caption each. Then one photograph filling the screen, moving slowly, with one line over it. Name the feeling in one sentence of large type. Name what I am offering only on the last screen, small. Dark warm colours, faded photographs, serif type. Ask me for the memory before you write. Do not invent one.",
+    "with_skill": "Use the artifact-studio skill. Recipe: scrolling explainer. Voice: personal story. Look: faded film. Content: the attached notes and photos, and the memory I describe. If I have not given you a true memory, ask for one before you build."
+   },
+   "default_look": "Faded film"
   },
   {
    "id": "voice-teacher",

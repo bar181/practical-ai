@@ -129,6 +129,10 @@ Start at Beginner. It is the whole tool. The other levels only remove steps.
   <img src="docs/assets/bradley-ross-avatar.webp" width="150" alt="Cartoon avatar of Bradley Ross with a small friendly robot, in front of a red-brick campus building">
 </p>
 
+**Bradley Ross** is an agentic AI architect and developer for businesses of every size, from
+start-up to enterprise.
+
+- **Specialty:** deterministic AI, and advanced AI research into AI with learning transfer abilities.
 - **Harvard CS50:** 10 terms as a Teaching Fellow.
 - **Agentics Foundation:** Director, working with and sharing teaching with the top agentic
   engineers in the world.

@@ -12,7 +12,7 @@ their voice, their face or their phrases.
 
 | Field | |
 | --- | --- |
-| Inspired by | David Malan's lectures: a big-type everyday analogy, then an example, then the complexity, then pseudocode |
+| Inspired by | The great professors at Harvard: a big-type everyday analogy, then an example, then the complexity, then pseudocode |
 | Beats | An everyday analogy. A worked example. Complexity added one layer at a time. Pseudocode or a summary rule |
 | On-screen rule | One big-type analogy, then the steps. Never a wall of text |
 | Visuals | Physical props, a live demonstration, large type |
@@ -23,7 +23,7 @@ their voice, their face or their phrases.
 
 | Field | |
 | --- | --- |
-| Inspired by | Steve Jobs keynotes: a vision told with almost no text on screen |
+| Inspired by | The product launches of visionary tech CEOs: a vision told with almost no text on screen |
 | Beats | The problem everyone accepts. A better way. The reveal. What it means for you |
 | On-screen rule | A few words or one number per screen |
 | Visuals | One striking image at a time, with a lot of empty space |
@@ -45,7 +45,7 @@ their voice, their face or their phrases.
 
 | Field | |
 | --- | --- |
-| Inspired by | Don Draper, the fictional advertising executive: deep emotion, told in the first person |
+| Inspired by | The classic advertising pitch: deep emotion, told in the first person |
 | Beats | A personal memory. The feeling behind it. The idea as the answer to that feeling |
 | On-screen rule | A single phrase, at the end |
 | Visuals | Old photographs and close, intimate shots |

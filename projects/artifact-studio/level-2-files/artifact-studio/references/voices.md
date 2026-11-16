@@ -2,19 +2,20 @@
 
 A voice decides what is said, in what order, and how the page behaves. It is more than tone. The
 same facts told in two voices produce two different pages. Each voice has a full example in the
-studio demo (Voices tab), all six making the same case with the same facts.
+studio: one tab for each voice in `base/studio.html`.
 
 These are the canonical voice cards for this repository. Other tools that need a teaching or
 writing style should point here instead of keeping their own copy.
 
-Each voice is inspired by a well-known communicator. That is a description of a style. Never write
-as if the person said it, and never put their name on a page.
+Each voice is inspired by a well-known way of communicating. That is a description of a style.
+Never write as if a person said it, and never put a person's name on a page.
 
 ## Contents
 
 - Choosing
 - Keynote
 - Storyteller
+- Personal story
 - Teacher
 - Practical instructor
 - Analyst
@@ -27,6 +28,7 @@ as if the person said it, and never put their name on a page.
 | --- | --- |
 | Feel that something new is possible | Keynote |
 | See themselves in the problem and act | Storyteller |
+| Feel something first and remember it | Personal story |
 | Understand how something works | Teacher |
 | Do the thing today | Practical instructor |
 | Be convinced by evidence | Analyst |
@@ -36,7 +38,7 @@ as if the person said it, and never put their name on a page.
 
 | Field | |
 | --- | --- |
-| Inspired by | Steve Jobs's product launches |
+| Inspired by | The product launches of visionary tech CEOs |
 | Order | The world as it is, as one line or one painful number. The catch or the consequence. The idea in a few words. Proof as enormous numbers, or as bars with no axes. The next step. A closing line short enough to repeat. |
 | Sentences | Very short. One idea each. Present tense. |
 | Page behaviour | One idea per screen. Screens snap into place. Words arrive in order. |
@@ -54,11 +56,22 @@ as if the person said it, and never put their name on a page.
 | Look | Colours taken from the photograph. Large serif type. Each story beat named in small type. |
 | Avoid | The company appearing before the fourth beat. An invented customer presented as real. |
 
+## Personal story
+
+| Field | |
+| --- | --- |
+| Inspired by | The classic advertising pitch that sells a feeling through one personal story |
+| Order | One memory in the first person. Two or three keepsakes. The feeling inside them, named in one sentence. What has changed and what has not. What to do. The offer, named once, at the end. |
+| Sentences | First person. Short. Never more than two on a screen. |
+| Page behaviour | Everything arrives slowly. One photograph fills the screen and moves. Nothing bounces. |
+| Look | A dark, warm room. Serif type. Photographs faded and warm, a little crooked, with a paper border. |
+| Avoid | Feature lists, numbers, charts, the product name before the end. An invented memory: ask the person for a true one. |
+
 ## Teacher
 
 | Field | |
 | --- | --- |
-| Inspired by | David Malan's lectures |
+| Inspired by | The great professors at Harvard |
 | Order | One question. An everyday analogy in very large type. One worked example with real values. The same idea as pseudocode or a diagram, stepped through. A harder case handled by what is already on the board. Questions to check understanding. A recap that reuses the analogy. |
 | Sentences | Plain, second person, one new term at a time |
 | Page behaviour | The reader does something: steps through, then answers |

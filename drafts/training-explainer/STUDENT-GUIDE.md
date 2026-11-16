@@ -21,10 +21,10 @@ Read [`level-simple/style-cards.md`](level-simple/style-cards.md) and choose by 
 
 | Style | Inspired by | Best for |
 | --- | --- | --- |
-| Lecture builder | David Malan | Technical topics for beginners |
-| Keynote vision | Steve Jobs | Big ideas and senior audiences |
+| Lecture builder | The great professors at Harvard | Technical topics for beginners |
+| Keynote vision | Visionary tech CEOs at a product launch | Big ideas and senior audiences |
 | Short story | Don Miller, with Nat Geo style imagery | Case studies and why-it-matters lessons |
-| Emotional pitch | Don Draper | Anything that needs buy-in |
+| Emotional pitch | The classic advertising pitch that tells one personal story | Anything that needs buy-in |
 | Dry and sarcastic | Gen X humour | Sceptical audiences and myth-busting |
 
 Rules for choosing:
