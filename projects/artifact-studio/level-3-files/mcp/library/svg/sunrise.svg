@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="s-sunrise" viewBox="0 0 320 180" role="img" aria-labelledby="t-sunrise">
+<title id="t-sunrise">A sun rising over lines of water</title>
+<desc>Use as a small opening picture for a fresh start or a result. Plays once. At rest the sun is up.</desc>
+<style>#s-sunrise .s{fill:var(--sand,#d2b78c);animation:sunrise-r 2.4s cubic-bezier(.2,.7,.2,1) both}#s-sunrise .y{stroke:var(--sand,#d2b78c);stroke-width:4;stroke-linecap:round;transform-origin:160px 96px;animation:sunrise-f 1s 1.6s ease-out both}#s-sunrise .w{stroke:var(--soft,#a5b9d8);stroke-width:5;stroke-linecap:round}#s-sunrise .h{fill:#fff}@keyframes sunrise-r{from{transform:translateY(70px)}to{transform:translateY(0)}}@keyframes sunrise-f{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:scale(1)}}@media (prefers-reduced-motion:reduce){#s-sunrise *{animation:none!important}}</style>
+<g class="y"><path d="M160 22V40M96 46 108 58M224 46 212 58M70 96H88M232 96H250"/></g><circle class="s" cx="160" cy="96" r="38"/><rect class="h" x="0" y="112" width="320" height="68"/><path class="w" d="M30 124H290M70 142H250M110 160H210"/>
+</svg>

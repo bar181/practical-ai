@@ -16,8 +16,10 @@ each. Nothing is built until its North Star page is approved at stage 3.
 ## Across all tools
 
 - [ ] Have a student run each Beginner level and record what they could not do
-- [ ] Move each older draft in `drafts/` to the base-and-levels layout when it is next worked on
-- [ ] Run the six worked examples in a fresh chat and record the scores: `drafts/artifact-studio/base/examples/`
+- [ ] Move each older draft in `drafts/` to the showcase layout in `projects/README.md` when it is next worked on
+- [ ] Update the project method and its scaffold to the showcase layout
+- [ ] At the pull request, change `scaffold/structure` to `main` in the links inside the two READMEs
+- [ ] Run the beginner prompt from the artifact studio README in ChatGPT and Gemini, and record what came back
 - [ ] Try the artifact studio MCP server inside a desktop assistant
 - [ ] Give the artifact studio to one other person for a real job
 - [ ] Take one tool through the project method from stage 1

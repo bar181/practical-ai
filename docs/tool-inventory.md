@@ -36,7 +36,7 @@ Closed as a draft on 15 November 2026. Built and checked by its author. Not yet 
 
 | Tool | What it does | Beginner: a student can run it | Advanced: skills and connectors | Demand |
 | --- | --- | --- | --- | --- |
-| [Artifact studio](../drafts/artifact-studio/) | Pages, slide decks and social posts from your notes, from a library of 20 templates. | Paste the instructions into any assistant, copy the sentence from an example, attach your notes, and check every number. | The `artifact-studio` skill and a preferences file, so a short ask gives your look and voice. Expert: an MCP server with ten tools gives any assistant the library. | #7, and just outside the ten |
+| [Artifact studio](../projects/artifact-studio/) | Pages, slide decks and social posts from your notes, from a library of 20 templates. | Paste the instructions into any assistant, copy the sentence from an example, attach your notes, and check every number. | The `artifact-studio` skill and a preferences file, so a short ask gives your look and voice. Expert: an MCP server with ten tools gives any assistant the library. | #7, and just outside the ten |
 
 ### North Star page written, not approved
 

@@ -1,0 +1,79 @@
+{
+ "skill": "artifact-studio",
+ "how_to_run": "Give a fresh assistant the skill and one prompt. Score the result one point for each line in expected. base/example.html in the project is one result for case 04 that scores full marks.",
+ "status": "Written. Not yet run against a fresh assistant.",
+ "evals": [
+  {
+   "id": "01-briefing-deck",
+   "prompt": "I need to get the partners to agree to Saturday opening at the clinic. Make me a short deck for Thursday's meeting from these notes.\n\nNotes:\n- We are a physiotherapy clinic with four physiotherapists\n- Evening appointments are booked three weeks ahead\n- 41 people are on the waiting list for an evening or weekend appointment\n- Spring survey: 58 of 90 patients said they would use a Saturday\n- Proposal: Saturday 9 to 1, two physiotherapists (8 hours) and reception (4 hours), which gives 8 appointments\n- Other option we discussed: later weekday evenings, about 6 extra staff hours a week\n- Not sure if Saturday people would be new patients or just weekday ones moving\n- Not sure the two who volunteered will want to keep doing it\n- Want an eight-week trial",
+   "expected": [
+    "The first slide states the recommendation in one sentence",
+    "Every number on the slides appears in the notes: 41, 58 of 90, 12 hours, 8 appointments, eight weeks",
+    "The options slide includes doing nothing, and marks the recommended option",
+    "A slide says what is not known",
+    "The missing start date is marked as missing, not invented",
+    "The file opens with no internet connection and arrow keys move between slides"
+   ]
+  },
+  {
+   "id": "02-workshop-deck",
+   "prompt": "New staff start Monday. I want ten minutes at the start of the shift to teach the allergen check before anyone packs an order. Here is how we do it.\n\nNotes:\n- We are a bakery. Orders are packed at the bench from trays\n- Every order label has an allergen line. Every tray has a tray card saying what is in the batch\n- The check: read the allergen line on the label, match it against the tray card, and if they differ or one is missing, stop and ask the shift lead\n- Real case we use in training: an order for two loaves with no sesame, and the tray was a seeded batch\n- The one people miss: what was baked on the tray before. Plain rolls baked after almond croissants are not safe for a nut-free order\n- It should take under a minute\n- I want a card for the wall by the packing bench",
+   "expected": [
+    "The first slide promises one skill the person can use that day",
+    "There are three steps or fewer, each something a person can do",
+    "One worked example is shown whole, taken from the notes",
+    "One slide is an exercise with a time limit, and it looks different from the others",
+    "The last slide can be printed as a card",
+    "Nothing about allergens is stated that is not in the notes"
+   ]
+  },
+  {
+   "id": "03-social-set",
+   "prompt": "We are running winter service week. I need a square post and a three-slide carousel for it. Make them stand out. Our colours are navy and yellow.\n\nNotes:\n- We are a bike shop\n- Winter service week is 12 to 18 January\n- A full winter service is $60 that week. It is usually $85\n- It covers brakes (pads checked, cables adjusted), gears (cleaned, indexed, oiled) and tyres (checked for cuts, pumped)\n- People book at the counter",
+   "expected": [
+    "Each picture has one idea and a headline of seven words or fewer",
+    "The dates and both prices match the notes exactly",
+    "The carousel runs hook, then the three things, then the ask",
+    "The colours are navy and yellow, and every text can be read against its background",
+    "The shop's name is a placeholder, because the notes did not give one"
+   ]
+  },
+  {
+   "id": "04-one-page-report",
+   "prompt": "Turn my October notes into one page I can send to my business partner. She reads on her phone and wants the answer first. Our colour is green.\n\nNotes:\n- We are a landscaping company with two crews\n- October revenue $84,200. September was $71,500\n- Jobs completed: 23 in October, 19 in September\n- Quotes that became jobs: 46%, up from 38%\n- We started sending quotes within two days of the visit. It used to take six\n- One van was off the road for four days. Crews shared. No jobs moved\n- November: hire one seasonal worker for leaf clearance\n- Need to decide about a second van by 15 November",
+   "expected": [
+    "The headline is the answer, not a title such as \"October report\"",
+    "The three figures match the notes, and each says what it was before",
+    "Change is written in words, not shown by colour alone",
+    "Profit is marked as missing, because the notes gave no costs",
+    "On a phone nothing scrolls sideways and all text is readable",
+    "The page shows everything with scripts turned off"
+   ],
+   "reference_output": [
+    "base/example.html"
+   ]
+  },
+  {
+   "id": "05-brand-palette",
+   "prompt": "All I have is our pink, the one on the sign. I need the rest of the colours for our pages and posts.\n\nNotes:\n- We are a florist\n- The pink on the sign is a deep pink, around 320 on the colour wheel\n- No other brand colours have ever been chosen",
+   "expected": [
+    "There are seven colours, each with a named job",
+    "There is exactly one accent colour, for buttons and links",
+    "The greys carry a trace of the pink",
+    "Every text and background pair is listed with its ratio, and each passes",
+    "The result says how much of a page each colour should take"
+   ]
+  },
+  {
+   "id": "06-inspiration-card",
+   "prompt": "I just saw an annual review that opened with one huge number and nothing else. Every section did the same with a smaller one. Loved it. Keep that for me.\n\nNotes:\n- It was a charity's annual review, on their website\n- The first screen was one number and a few words\n- Each section opened with a smaller number\n- The last section had no number, just a sentence",
+   "expected": [
+    "The card describes structure and rhythm in the assistant's own words",
+    "It names no organisation and copies no text, figure or picture from the original",
+    "It names the closest template in the library and how this differs",
+    "It proposes one of three outcomes: keep as a note, change a template, or build a new part",
+    "It has tags, so it can be found when a report is next made"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,61 @@
+<style>
+#v-recipe-report{--c-bar:#0f6b63;--c-quiet:#b9c7c4;--c-muted:#55635f;--c-ink:#14211f;background:#f4f6f5;color:#14211f;font:400 1.02rem/1.55 var(--sans)}
+.rp-s{max-width:900px;margin-inline:auto;padding:36px 20px 0}
+.rp-top{display:flex;justify-content:space-between;gap:12px;align-items:baseline;flex-wrap:wrap;border-bottom:3px solid #0f6b63;padding-bottom:12px}
+.rp-top h1{font:700 clamp(1.6rem,5.4vw,2.4rem)/1.1 var(--sans);letter-spacing:-.02em}
+.rp-top span{font-size:.86rem;color:#55635f}
+.rp-sum{margin-top:18px;font:400 1.24rem/1.4 var(--plex);max-width:30em}
+.rp-kpis{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px}
+.rp-kpis div{background:#fff;border:1px solid #dfe5e3;border-radius:10px;padding:14px}
+.rp-kpis span{font-size:.82rem;color:#55635f;display:block}
+.rp-kpis b{display:block;font:700 clamp(1.8rem,7vw,2.5rem)/1.05 var(--sans);letter-spacing:-.025em;font-variant-numeric:tabular-nums;margin-top:6px}
+.rp-kpis em{font-style:normal;font-size:.82rem;display:block;margin-top:6px;color:#0f6b63;font-weight:700}
+.rp-kpis em.flat{color:#55635f;font-weight:400}
+.rp-card{background:#fff;border:1px solid #dfe5e3;border-radius:10px;padding:18px 16px;margin-top:14px}
+.rp-card h2{font:700 1.08rem/1.25 var(--sans)}
+.rp-card .sub{font-size:.82rem;color:#55635f;margin-top:4px}
+.rp-roles{width:100%;border-collapse:collapse;font-size:.9rem;margin-top:10px;font-family:var(--sans);font-variant-numeric:tabular-nums}
+.rp-roles th,.rp-roles td{padding:9px 6px;border-bottom:1px solid #e6ebe9;text-align:right}
+.rp-roles th:first-child,.rp-roles td:first-child{text-align:left}
+.rp-roles thead th{font-weight:400;color:#55635f}
+.rp-roles .low td:last-child{font-weight:700}
+.rp-roles .low td:last-child::after{content:" \25BC";font-size:.7em}
+.rp-roles i{display:block;height:6px;border-radius:0 3px 3px 0;background:#0f6b63;margin-top:4px}
+.rp-two{display:grid;gap:14px;margin-top:14px}
+.rp-two .rp-card{margin:0}
+.rp-two ul{margin:10px 0 0;padding-left:1.1em;display:grid;gap:6px;font-size:.95rem}
+.rp-end{padding-bottom:64px}
+@media(min-width:760px){.rp-kpis{grid-template-columns:repeat(4,1fr)}.rp-two{grid-template-columns:1fr 1fr}}
+</style>
+<div class="view" id="v-recipe-report" data-tab="recipes" data-title="One-page report">
+  <section class="rp-s"><header class="rp-top"><h1>Service report: April</h1><span>Temporary staffing. Prepared for the client's operations lead.</span></header>
+    <p class="rp-sum">We filled 91% of the shifts you asked for in April, the best month this year. Forklift operators are still the hard role: one shift in five went unfilled.</p>
+    <div class="rp-kpis"><div><span>Shifts requested</span><b><span data-count="412">412</span></b><em class="flat">388 in March</em></div><div><span>Shifts filled</span><b><span data-count="91">91</span>%</b><em>up 5 points on March</em></div><div><span>Median time to fill</span><b><span data-count="3.2">3.2</span> h</b><em>40 minutes faster</em></div><div><span>Your rating of our staff</span><b><span data-count="4.6">4.6</span></b><em class="flat">out of 5, unchanged</em></div></div>
+    <p class="sample-note" style="margin-top:10px">Example report. The agency, client and figures are invented for this demo.</p></section>
+  <section class="rp-s">
+    <div class="rp-card"><h2>Fill rate has climbed nine points in twelve months</h2><p class="sub">Share of requested shifts filled, by month. Touch the chart to read a month.</p><div class="lc" id="rp-line"></div></div>
+    <div class="rp-card"><h2>Four of five roles are above 95%. Forklift operators are not.</h2><p class="sub">April, by role. The bar shows the share filled.</p>
+      <table class="rp-roles"><thead><tr><th scope="col">Role</th><th scope="col">Asked</th><th scope="col">Filled</th><th scope="col">Share</th></tr></thead><tbody>
+        <tr><td>Warehouse picker<i style="width:88%"></i></td><td>180</td><td>158</td><td>88%</td></tr>
+        <tr class="low"><td>Forklift operator<i style="width:81%"></i></td><td>64</td><td>52</td><td>81%</td></tr>
+        <tr><td>Office cover<i style="width:100%"></i></td><td>58</td><td>58</td><td>100%</td></tr>
+        <tr><td>Event staff<i style="width:97%"></i></td><td>70</td><td>68</td><td>97%</td></tr>
+        <tr><td>Drivers<i style="width:98%"></i></td><td>40</td><td>39</td><td>98%</td></tr></tbody></table></div>
+    <div class="rp-two"><div class="rp-card"><h2>What changed in April</h2><ul><li>Weekend requests arrived two days earlier, after the new Thursday cut-off.</li><li>Six new pickers finished site induction.</li><li>Two licensed forklift operators left the pool.</li></ul></div>
+      <div class="rp-card"><h2>What we will do in May</h2><ul><li>Fund forklift licences for four pickers who asked for them.</li><li>Hold a second induction day on 14 May.</li><li>Report forklift fill rate to you weekly until it passes 90%.</li></ul></div></div></section>
+  <div class="rp-end"></div>
+  <section class="anat"><div class="wrap">
+    <h2>Behind this page</h2>
+    <p class="measure">A one-page report answers "how did it go and what happens next" before the reader has to scroll far. This one uses the analyst voice with a quiet look.</p>
+    <div class="anat-grid">
+      <div><h3>Recipe: the order of the page</h3><ol><li>Title, period and who it is for</li><li>The whole month in two sentences</li><li>Four numbers, each with its change</li><li>One trend chart with a sentence for a heading</li><li>One breakdown table, with the weak row marked</li><li>What changed</li><li>What happens next</li></ol></div>
+      <div><h3>Components used</h3><ul><li>Big numbers that count up</li><li>A line chart you can touch</li><li>A table with a small bar in each row</li><li>Two plain lists</li></ul><h3 style="margin-top:16px">Goes well with</h3><ul><li>Voices: the analyst, the executive brief</li><li>Looks: quiet, one data colour</li></ul></div>
+    </div>
+@@levels Turn this spreadsheet into a one-page report: a two-sentence summary, four key numbers, one chart and what happens next. || Build a one-page monthly report from my spreadsheet in the analyst voice. Title and period, a two-sentence summary, four key numbers each with its change from last month, one trend line with a full-sentence heading, one breakdown table with a small bar per row and the weakest row marked, then "what changed" and "what we will do next". One data colour, grey for comparisons. || Use the artifact-studio skill. Recipe: one-page report. Voice: analyst. Look: quiet, one data colour from my brand spec. Content: the attached spreadsheet and last month's report. Check that the breakdown rows add up to the totals and tell me if they do not.
+  </div></section>
+</div>
+<script>
+onView("recipe-report",root=>{STUDIO.countUp(root);
+  STUDIO.line($('#rp-line',root),{vals:[82,84,83,85,86,88,87,89,88,86,86,91],labels:['May','June','July','August','September','October','November','December','January','February','March','April'],max:100,ticks:[0,50,100],fmt:v=>Math.round(v)+'%',color:'#0f6b63',surface:'#fff',first:'82%',last:'91%',label:'Fill rate by month, rising from 82% last May to 91% in April.'});
+});
+</script>

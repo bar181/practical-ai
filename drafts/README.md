@@ -7,7 +7,6 @@ A draft that passes review moves to [`projects/`](../projects/).
 
 | Draft | Tool |
 | --- | --- |
-| [`artifact-studio/`](artifact-studio/) | Artifact studio |
 | [`project-method/`](project-method/) | Project method: how a tool here gets built |
 | [`dashboard/`](dashboard/) | Dashboard |
 | [`estimator/`](estimator/) | Estimator |
@@ -19,9 +18,9 @@ A draft that passes review moves to [`projects/`](../projects/).
 | [`website-publishing/`](website-publishing/) | Publishing a website |
 | [`weekly-brief/`](weekly-brief/) | Weekly brief with research |
 
-## Two layouts, for now
+## Layouts
 
-`artifact-studio/` and `project-method/` use the current layout: a base, and levels that hold only what they
-add. The other nine are first copies in an earlier layout (`level-demo`, `level-simple`, `level-working`,
-`level-automated`). Each moves over when it is next worked on, starting from stage 1 of the
-[project method](project-method/). `python3 tools/check_project.py drafts/<tool>` lists what is left.
+The first showcase, the artifact studio, has moved to [`projects/`](../projects/), which describes the layout
+every new project uses. `project-method/` here still describes an earlier one and is due an update. The other
+nine are first copies in the original layout (`level-demo`, `level-simple`, `level-working`,
+`level-automated`). Each moves over when it is next worked on.

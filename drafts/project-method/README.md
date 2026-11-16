@@ -10,7 +10,7 @@ starts. The inspector here is a short script, and it never gets tired or polite.
 **North Star:** a person, or an agent working alone, can take an idea to a tool that someone else
 can use, without rebuilding it three times on the way.
 
-**Where it came from:** the [artifact studio](../artifact-studio/) was rebuilt three times before
+**Where it came from:** the [artifact studio](../../projects/artifact-studio/) was rebuilt three times before
 its shape was right. [`base/LESSONS.md`](base/LESSONS.md) lists each wrong turn and the rule that
 would have prevented it. This method is those rules, in order, checked against how others
 build with agents ([`base/SOURCES.md`](base/SOURCES.md)).

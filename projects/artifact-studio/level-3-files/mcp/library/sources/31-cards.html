@@ -1,0 +1,81 @@
+<style>
+.cd-rules{list-style:none;margin:22px 0 0;padding:0;display:grid;gap:8px;max-width:44em}
+.cd-rules li{background:#fff;border-left:4px solid var(--rust);border-radius:8px;padding:10px 14px;font:400 1rem/1.4 var(--display)}
+.cd-rules b{color:var(--pine)}
+.cd-row{display:grid;gap:14px}@media(min-width:700px){.cd-row{grid-template-columns:repeat(3,1fr)}.cd-row.two{grid-template-columns:repeat(2,1fr)}}
+.cd{background:#fff;border:1px solid var(--mist);border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:8px;color:var(--pine)}
+.cd h3{font:700 1.15rem/1.2 var(--display);margin:0}.cd p{font:400 .98rem/1.45 var(--display);color:var(--slate);margin:0}
+.cd .go{margin-top:auto;padding-top:6px;font:700 .95rem/1 var(--display);color:var(--rust)}
+.cd-stat b{font:700 2.6rem/1 var(--display);letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.cd-stat .lab{font:700 .9rem/1.2 var(--display);color:var(--slate)}.cd-stat .chg{font:400 .9rem/1.3 var(--display);color:#1f6b45}.cd-stat .chg.down{color:#8a2d1c}
+.cd-media{padding:0;overflow:hidden}.cd-media .pic{aspect-ratio:16/9;background:linear-gradient(135deg,#34506f,#a5b9d8 55%,#d2b78c)}.cd-media .in{padding:16px 18px 18px;display:flex;flex-direction:column;gap:8px;flex:1}
+.cd-media .meta{font:400 .84rem/1 var(--mono);color:var(--slate)}
+.cd-quote blockquote{margin:0;font:400 1.15rem/1.4 var(--text);color:var(--pine)}
+.cd-who{display:flex;gap:10px;align-items:center;margin-top:auto;padding-top:8px}.cd-who i{width:40px;height:40px;border-radius:50%;background:var(--pine);color:var(--fog);display:grid;place-items:center;font:700 .9rem/1 var(--display);font-style:normal}
+.cd-who span{font:400 .9rem/1.3 var(--display);color:var(--slate)}.cd-who b{display:block;color:var(--pine)}
+.cd-price .amt{font:700 2rem/1 var(--display)}.cd-price .amt small{font:400 .9rem/1 var(--display);color:var(--slate)}
+.cd-price ul{margin:4px 0 0;padding:0 0 0 18px;font:400 .95rem/1.5 var(--display);color:var(--slate)}
+.cd-price .btn,.cd-task .btn{margin-top:auto;display:block;text-align:center;border-radius:999px;padding:12px;font:700 .95rem/1 var(--display);border:1.5px solid var(--pine);color:var(--pine);background:#fff}
+.cd-price.best{border:2px solid var(--pine)}.cd-price.best .btn,.cd-task .btn{background:var(--pine);color:var(--fog)}
+.cd-price .tag{align-self:flex-start;background:var(--reed);color:var(--pine);border-radius:999px;padding:5px 10px;font:700 .78rem/1 var(--display)}
+.cd-task .chip{align-self:flex-start;border-radius:999px;padding:5px 10px;font:700 .78rem/1 var(--display);background:#fde9b8;color:#5a3d00}.cd-task .chip.ok{background:#d8efe2;color:#14472e}
+.cd-task .due{font:400 .88rem/1 var(--mono);color:var(--slate)}
+</style>
+<div class="view" id="v-cards" data-title="Cards">
+  <div class="wrap shelf-head"><h2>Cards</h2>
+    <p class="measure">A card is a box that holds one thing: one article, one number, one person, one offer. Six kinds cover most pages. Each comes with the sentence that asks for it. All names and figures are invented.</p>
+    <ul class="cd-rules">
+      <li><b>One subject for each card.</b> If you need the word "and" to describe it, make two cards.</li>
+      <li><b>The most important thing first.</b> A reader should get the point from the top third.</li>
+      <li><b>One main action.</b> A second action is quieter. A third belongs on the page the card leads to.</li>
+      <li><b>The same padding and the same order in every card of a row.</b> Rows line up because the cards match.</li>
+      <li><b>No card inside a card, and a light hand with shadows.</b> A border or a soft tint is usually enough.</li>
+    </ul></div>
+
+  <section class="spec" id="cd-summary"><div class="spec-head wrap"><h2>Summary card</h2><p class="measure">A title, one line and a way in. The plain card that leads to more detail. Use it for a list of services, articles or projects.</p></div>
+    <div class="demo wrap"><div class="cd-row">
+      <article class="cd"><h3>Kitchen design</h3><p>We measure, draw three layouts and price each one.</p><span class="go">See how it works</span></article>
+      <article class="cd"><h3>Fitting</h3><p>One team from first day to last, with a named lead.</p><span class="go">See a week on site</span></article>
+      <article class="cd"><h3>Aftercare</h3><p>A visit at six weeks, and a number that is answered.</p><span class="go">Read the promise</span></article></div></div>
+@@ask Show my three services as summary cards in a row: a short title, one sentence, and one link each. Same padding and same order in every card. || Easy. One sentence. || HTML and CSS grid || A filterable list, when there are more than nine || Services, articles, projects, a list of next steps
+  </section>
+
+  <section class="spec" id="cd-stat"><div class="spec-head wrap"><h2>Stat card</h2><p class="measure">One number, what it measures, and how it has changed. The change is written in words and never shown by colour alone.</p></div>
+    <div class="demo wrap"><div class="cd-row">
+      <article class="cd cd-stat"><span class="lab">Median first reply</span><b>38 min</b><span class="chg">Down from 26 hours</span></article>
+      <article class="cd cd-stat"><span class="lab">Site visits a month</span><b>31</b><span class="chg">Up from 18</span></article>
+      <article class="cd cd-stat"><span class="lab">Quotes waiting</span><b>7</b><span class="chg down">Up from 4. Needs attention</span></article></div></div>
+@@ask Show my three key figures as stat cards: the label on top, the number large, and one line under it saying what it was before. Say the change in words, not only in colour. || Easy. One sentence. || HTML and CSS || A small trend line in each card, from the animated SVG parts || Reports, dashboards, the top of a proposal
+  </section>
+
+  <section class="spec" id="cd-media"><div class="spec-head wrap"><h2>Media card</h2><p class="measure">A picture, then a title, a line of detail and one action. Every picture in a row has the same shape, so the titles line up.</p></div>
+    <div class="demo wrap"><div class="cd-row">
+      <article class="cd cd-media"><div class="pic" role="img" aria-label="Placeholder for a photograph of a finished kitchen"></div><div class="in"><span class="meta">Case study</span><h3>A galley kitchen with room to turn</h3><p>Nine days on site. One wall moved.</p><span class="go">See the before and after</span></div></article>
+      <article class="cd cd-media"><div class="pic" role="img" aria-label="Placeholder for a photograph of a family kitchen"></div><div class="in"><span class="meta">Case study</span><h3>A table the whole family fits around</h3><p>Twelve days on site. No walls moved.</p><span class="go">See the before and after</span></div></article>
+      <article class="cd cd-media"><div class="pic" role="img" aria-label="Placeholder for a photograph of a small flat kitchen"></div><div class="in"><span class="meta">Guide</span><h3>What a small kitchen really costs</h3><p>Five line items, with our last ten jobs as the range.</p><span class="go">Read the guide</span></div></article></div></div>
+@@ask Show these three case studies as media cards: a 16 by 9 photo on top, a small label, a title, one line of detail and one link. Use my photos, cropped to the same shape. || Easy with photos attached || HTML and CSS, aspect-ratio for the picture || Pan and zoom on the picture, from the photo parts || Case studies, products, articles, team pages
+  </section>
+
+  <section class="spec" id="cd-quote"><div class="spec-head wrap"><h2>Quote card</h2><p class="measure">What a customer said, who said it and what they are to you. Use only words a real person gave you. These are invented to show the shape.</p></div>
+    <div class="demo wrap"><div class="cd-row two">
+      <article class="cd cd-quote"><blockquote>&#8220;They answered within the hour. Nobody else answered that week.&#8221;</blockquote><div class="cd-who"><i aria-hidden="true">RM</i><span><b>Customer name</b>Kitchen, fitted in March</span></div></article>
+      <article class="cd cd-quote"><blockquote>&#8220;The price on the first page was the price on the last invoice.&#8221;</blockquote><div class="cd-who"><i aria-hidden="true">JT</i><span><b>Customer name</b>Bathroom, fitted in May</span></div></article></div></div>
+@@ask Show these two customer quotes as quote cards: the quote in a serif face, then the person's initials in a circle, their name, and what we did for them. Use only the quotes I attached. || Easy. One sentence. || HTML and CSS || A swipe gallery, when there are more than three || Landing pages, proposals, the end of a case study
+  </section>
+
+  <section class="spec" id="cd-price"><div class="spec-head wrap"><h2>Option card</h2><p class="measure">A choice with a price: the name, the price, three things it includes and one button. Mark the one you recommend, and say why in its label.</p></div>
+    <div class="demo wrap"><div class="cd-row">
+      <article class="cd cd-price"><h3>Refresh</h3><div class="amt">$9,400 <small>fixed</small></div><ul><li>New doors and worktops</li><li>Five days on site</li><li>Existing layout kept</li></ul><span class="btn">Choose Refresh</span></article>
+      <article class="cd cd-price best"><span class="tag">Most chosen</span><h3>Refit</h3><div class="amt">$18,200 <small>fixed</small></div><ul><li>New units, worktops and floor</li><li>Nine days on site</li><li>Layout redrawn</li></ul><span class="btn">Choose Refit</span></article>
+      <article class="cd cd-price"><h3>Rebuild</h3><div class="amt">$31,000 <small>from</small></div><ul><li>Walls and services moved</li><li>Three weeks on site</li><li>Drawings for approval</li></ul><span class="btn">Talk to us first</span></article></div></div>
+@@ask Show my three options as option cards: name, price, three things each includes and one button. Mark the middle one as most chosen with a small label and a stronger border. Use my prices exactly. || Easy. Check every price. || HTML and CSS || The price table part, with a monthly and yearly switch || Proposals, pricing pages, a choice of plans
+  </section>
+
+  <section class="spec" id="cd-task"><div class="spec-head wrap"><h2>Action card</h2><p class="measure">One thing someone has to do: its state, what it is, when it is due and the button that does it. The state is written out, so it reads without colour.</p></div>
+    <div class="demo wrap"><div class="cd-row">
+      <article class="cd cd-task"><span class="chip">Waiting on you</span><h3>Approve the drawings</h3><span class="due">Due Friday</span><p>Three layouts. Pick one, or tell us what to change.</p><span class="btn">Open the drawings</span></article>
+      <article class="cd cd-task"><span class="chip">Waiting on you</span><h3>Choose a worktop</h3><span class="due">Due in 9 days</span><p>Samples are in the box we left with you.</p><span class="btn">See the samples</span></article>
+      <article class="cd cd-task"><span class="chip ok">Done</span><h3>Pay the deposit</h3><span class="due">Paid 2 June</span><p>Thank you. Your receipt is in your inbox.</p></article></div></div>
+@@ask Show the next three things my customer has to do as action cards: a status label in words, the task, the due date, one line of help and one button. Finished tasks show no button. || Medium. Needs real dates and states. || HTML and CSS || A project portal that updates itself || Customer portals, onboarding, a weekly to-do
+  </section>
+</div>

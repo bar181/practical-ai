@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="s-wave-divider" viewBox="0 0 1200 120" role="img" aria-labelledby="t-wave-divider">
+<title id="t-wave-divider">Two waves drifting past each other</title>
+<desc>Use between two sections in place of a rule. Stretch it to the full width. Loops slowly.</desc>
+<style>#s-wave-divider .a{fill:var(--soft,#a5b9d8);opacity:.55;animation:wave-divider-w 14s linear infinite}#s-wave-divider .b{fill:var(--soft,#a5b9d8);animation:wave-divider-w 9s linear infinite reverse}@keyframes wave-divider-w{from{transform:translateX(0)}to{transform:translateX(-600px)}}@media (prefers-reduced-motion:reduce){#s-wave-divider *{animation:none!important}}</style>
+<path class="a" d="M0 60Q150 10 300 60T600 60T900 60T1200 60T1500 60T1800 60V120H0Z"/><path class="b" d="M0 78Q150 44 300 78T600 78T900 78T1200 78T1500 78T1800 78V120H0Z"/>
+</svg>

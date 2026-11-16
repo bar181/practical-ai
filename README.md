@@ -13,10 +13,40 @@ it can help. Each tool here hands it exactly that, for one job you repeat. It wo
 Claude, Gemini, Microsoft Copilot and other chatbots, and with personal agents.
 
 <p align="center">
-  <a href="#ready-now-artifact-studio"><b>Try the first tool, free</b></a> &nbsp;·&nbsp;
+  <a href="#try-it-in-five-minutes"><b>Try it in five minutes</b></a> &nbsp;·&nbsp;
   <a href="#the-jobs-you-repeat">The jobs it helps with</a> &nbsp;·&nbsp;
   <a href="#created-by-bradley-ross">Who made this</a>
 </p>
+
+## Try it in five minutes
+
+The first tool is ready: **Artifact Studio** turns any AI answer into a slide deck or a report
+you would be proud to present. Free, no sign-up, nothing to install.
+
+**1. See it on your own AI.** Paste this into ChatGPT, Claude, Gemini or the chatbot you already
+use, after any answer or with your own notes:
+
+```
+Read the design guide at https://raw.githubusercontent.com/bar181/practical-ai/scaffold/structure/projects/artifact-studio/base/AI-INSTRUCTIONS.md
+
+Then show this as an HTML presentation in the keynote voice, and tell me three ways I could tailor it for my own business.
+```
+
+No notes to hand? The [Artifact Studio page](projects/artifact-studio/#try-it-in-five-minutes)
+has a version with sample notes built in, and the finished result to compare.
+
+**2. Use it every day.** Make a Project in Claude or ChatGPT, or a Gem in Gemini, and paste
+[the instructions](projects/artifact-studio/base/AI-INSTRUCTIONS.md) into it once. After that you
+just say "show this as a presentation". Using agents? Add the
+[skill](projects/artifact-studio/level-2-files/) or the
+[MCP server](projects/artifact-studio/level-3-files/).
+
+**3. Make it yours.** Fork this repository, or [download it](https://github.com/bar181/practical-ai/archive/refs/heads/scaffold/structure.zip) into Google Drive, SharePoint
+or your Documents, and connect your AI to the folder. Then fill in
+[your preferences](projects/artifact-studio/level-2-files/preferences.md): your colours, your
+tone, the things you never want.
+
+**If you are an AI agent:** follow [`AGENTS.md`](AGENTS.md). We wrote instructions just for you.
 
 ## Practical, not breakthrough
 
@@ -61,19 +91,19 @@ curated library of modern design templates. Say "show this as a presentation" an
 report you would be proud to present.
 
 <p align="center">
-  <a href="drafts/artifact-studio/"><img src="drafts/artifact-studio/base/img/show-keynote.webp" width="800" alt="Animated screen capture of the keynote template in Artifact Studio: huge white type on black, one idea per screen"></a>
+  <a href="projects/artifact-studio/"><img src="projects/artifact-studio/_build/img/show-keynote.webp" width="800" alt="Animated screen capture of the keynote template in Artifact Studio: huge white type on black, one idea per screen"></a>
 </p>
 
 <p align="center">
-  <img src="drafts/artifact-studio/base/img/voice-storyteller.webp" width="49%" alt="Screen capture of the storyteller voice in Artifact Studio: a sunset photograph with a story opening in serif type">
-  <img src="drafts/artifact-studio/base/img/nine-looks.webp" width="40%" alt="Screen capture of nine design looks in Artifact Studio, shown side by side with the same content">
+  <img src="projects/artifact-studio/_build/img/voice-storyteller.webp" width="49%" alt="Screen capture of the storyteller voice in Artifact Studio: a sunset photograph with a story opening in serif type">
+  <img src="projects/artifact-studio/_build/img/nine-looks.webp" width="40%" alt="Screen capture of nine design looks in Artifact Studio, shown side by side with the same content">
 </p>
 
 <p align="center">
-  <img src="drafts/artifact-studio/base/img/by-hand-or-studio.svg" width="720" alt="Animation comparing a presentation made by hand, one hour to several days, with Artifact Studio, a solid draft in about 5 minutes">
+  <img src="projects/artifact-studio/_build/img/by-hand-or-studio.svg" width="720" alt="Animation comparing a presentation made by hand, one hour to several days, with Artifact Studio, a solid draft in about 5 minutes">
 </p>
 
-<p align="center"><a href="drafts/artifact-studio/"><b>Open Artifact Studio</b></a></p>
+<p align="center"><a href="projects/artifact-studio/"><b>Open Artifact Studio</b></a></p>
 
 It was built and checked by its author. Nobody else has used it yet, so your feedback counts.
 
@@ -107,26 +137,20 @@ room.
 
 **More information, training or feedback:** [linkedin.com/in/bradaross](https://www.linkedin.com/in/bradaross/)
 
-## If you are someone's agent
-
-Do not work from this page. Read [`AGENTS.md`](AGENTS.md). It routes you by task. To make a page, a
-deck or a social post, go straight to
-[`drafts/artifact-studio/base/AGENTS.md`](drafts/artifact-studio/base/AGENTS.md).
-
 <details>
 <summary>How the repository is organised, and the ground rules</summary>
 
 | Folder | What it holds |
 | --- | --- |
-| [`drafts/`](drafts/) | Tools you can try. Usable, not yet used by anyone but their author |
-| [`projects/`](projects/) | Tools another person has used for a real job. Empty so far |
+| [`projects/`](projects/) | Showcases you can try in five minutes. One so far |
+| [`drafts/`](drafts/) | Earlier work in progress |
 | [`docs/`](docs/) | The one list of tools, the to-do list and the reports |
 | [`plans/`](plans/) | A plan for each tool on the list, and [`archive/`](plans/archive/) for what was replaced |
 | [`skills/`](skills/) | Skills an assistant can load, one folder each |
 | [`tools/`](tools/) | Small scripts that check the repository |
 
-Inside every tool, `base/` holds everything. Beside it sit a landing page, a North Star page and
-one guide per level: Beginner, Advanced, Expert.
+Inside every project, `base/` is enough to try the tool. Beside it, `level-2-files/` and
+`level-3-files/` hold what an advanced user or an agent adds.
 
 - Reuse what already exists before building anything new.
 - A person approves anything that posts, sends, pays or publishes.
@@ -134,9 +158,8 @@ one guide per level: Beginner, Advanced, Expert.
 - Every claim about something that changes often carries the date it was checked.
 - Every status line says who has and has not tried the thing. "Built" is not "used".
 
-Each tool lists its checks in a `gates.json`. Run them with
-`python3 tools/gates.py drafts/artifact-studio`. It ends with "All gates that ran passed" or
-"DO NOT SHIP" and the reason. How a tool gets built is the
+`python3 tools/check_project.py projects/artifact-studio` checks a project against the layout in
+[`projects/README.md`](projects/README.md). How a tool gets built is the
 [project method](drafts/project-method/): nine stages, a gate after each.
 
 </details>

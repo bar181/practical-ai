@@ -29,7 +29,7 @@ that shows what to do first and what is blocked, in under ten minutes.
 | [Spec-driven development](https://www.verdent.ai/guides/coding/spec-driven-development) | 15 Nov 2026 | Tasks are the unit that can be handed out. Each is small enough to review alone |
 | Task lists and planning modes built into coding assistants | Known from using the products, not researched today | They hold the steps for one session and are gone after it. They show order, not what blocks what, and they draw nothing a decision maker can read |
 | Work breakdown structures, the critical path and Gantt charts | Long-standing project practice, no single source | Break work down until each piece has one owner and one result. The longest chain of dependent tasks sets the finish date |
-| [The artifact studio](../../drafts/artifact-studio/) in this repository | 15 Nov 2026 | Its templates, looks and one-file output are reused for every view |
+| [The artifact studio](../../projects/artifact-studio/) in this repository | 15 Nov 2026 | Its templates, looks and one-file output are reused for every view |
 
 **Decision:** build on top. The task file is plain and small, and close to what Task Master
 already writes, so a plan can move between them. What these tools lack is what this one adds: a

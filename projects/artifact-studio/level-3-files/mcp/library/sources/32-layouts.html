@@ -1,0 +1,58 @@
+<style>
+.ly-pick{margin-top:22px;border-collapse:collapse;width:100%;max-width:46em;background:#fff;border-radius:10px;overflow:hidden}
+.ly-pick th,.ly-pick td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--mist);font:400 .98rem/1.35 var(--display);vertical-align:top}.ly-pick th{font-weight:700}
+.ly-two{display:grid;gap:18px;align-items:start}@media(min-width:760px){.ly-two{grid-template-columns:1.25fr 1fr}}
+.ly-s{background:#fff;border:1px solid var(--mist);border-radius:12px;padding:5%;aspect-ratio:16/10;display:grid;gap:4%;container-type:inline-size}
+.ly-s i{display:block;background:var(--mist);border-radius:4px;font-style:normal}.ly-s .d{background:var(--pine)}.ly-s .a{background:var(--rust)}.ly-s .m{background:var(--sky)}
+.ly-notes{margin:0;padding:0;list-style:none;display:grid;gap:8px}.ly-notes li{font:400 .98rem/1.4 var(--display);color:var(--slate)}.ly-notes b{color:var(--pine)}
+.ly-col{grid-template-columns:1fr;justify-items:center;align-content:start;gap:5%}.ly-col i{width:58%;height:5cqw}.ly-col .d{height:8cqw;width:46%;justify-self:center;margin-right:12%}
+.ly-f{grid-template-columns:1fr;align-content:start}.ly-f i{height:4.4cqw}.ly-f i:nth-child(1){width:92%}.ly-f i:nth-child(2){width:100%;background:var(--mist)}.ly-f i:nth-child(3){width:64%}.ly-f i:nth-child(4){width:88%;background:var(--mist)}.ly-f i:nth-child(5){width:34%}.ly-f i:nth-child(6){width:70%;background:var(--mist)}.ly-f i:nth-child(7){width:28%}
+.ly-z{grid-template:auto 1fr auto/1fr 1fr;align-items:center}.ly-z i{height:5cqw}.ly-z .tl{width:34%}.ly-z .tr{width:30%;justify-self:end}.ly-z .mid{grid-column:1/-1;height:100%;background:linear-gradient(to top left,transparent 48.6%,var(--sky) 49%,var(--sky) 51%,transparent 51.4%);border-radius:0}.ly-z .bl{width:60%}.ly-z .br{width:42%;justify-self:end;height:7cqw}
+.ly-sp{grid-template-columns:1fr 1fr;padding:0;gap:0;overflow:hidden}.ly-sp>div{padding:10%;display:grid;gap:8%;align-content:center}.ly-sp>div+div{background:var(--sky);border-radius:0}.ly-sp i{height:5cqw}.ly-sp .d{width:80%;height:7cqw}.ly-sp .a{width:44%;height:6cqw}
+.ly-g{grid-template-columns:repeat(3,1fr);grid-auto-rows:1fr}.ly-g i{border-radius:6px}
+.ly-b{grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(3,1fr)}.ly-b i{border-radius:6px}.ly-b .d{grid-column:span 2;grid-row:span 2}.ly-b .w{grid-column:span 2}.ly-b .t{grid-row:span 2}
+</style>
+<div class="view" id="v-layouts" data-title="Layouts">
+  <div class="wrap shelf-head"><h2>Layouts</h2>
+    <p class="measure">A layout decides where the eye goes first and what it meets next. Six cover most pages. Pick by what the reader has to do, not by what looks new.</p>
+    <table class="ly-pick"><thead><tr><th scope="col">The reader has to</th><th scope="col">Use</th></tr></thead><tbody>
+      <tr><td>Read something through</td><td>Single column</td></tr><tr><td>Scan a long page for the part they need</td><td>Headings down the left</td></tr>
+      <tr><td>Do one thing</td><td>Corner to corner</td></tr><tr><td>Weigh two things, or see a picture beside a message</td><td>Split screen</td></tr>
+      <tr><td>Browse many things of one kind</td><td>Card grid</td></tr><tr><td>Take in several different things at a glance</td><td>Bento grid</td></tr></tbody></table></div>
+
+  <section class="spec" id="ly-column"><div class="spec-head wrap"><h2>Single column</h2><p class="measure">One column of text at a comfortable width, with nothing beside it. The layout for anything meant to be read from top to bottom.</p></div>
+    <div class="demo wrap ly-two"><div class="ly-s ly-col" role="img" aria-label="Wireframe: a heading and lines of text in one centred column"><i class="d"></i><i></i><i></i><i></i><i></i><i></i></div>
+      <ul class="ly-notes"><li><b>Use it for</b> reports, explainers, letters, anything over 300 words.</li><li><b>The rule</b> keep lines to about 60 to 75 characters. Wider than that and readers lose their place.</li><li><b>Avoid it when</b> the reader is comparing things. A column hides one option while showing another.</li></ul></div>
+@@ask Lay this out as one reading column, about 65 characters wide, centred on wide screens. Nothing in the margins. || Easy. One sentence. || CSS max-width in ch units || A scrolling explainer with a picture that changes beside the column || Reports, explainers, letters
+  </section>
+
+  <section class="spec" id="ly-f"><div class="spec-head wrap"><h2>Headings down the left</h2><p class="measure">On a long page people read the first lines across, then run down the left edge looking for a heading that matters to them. This is often called the F-pattern. Give the left edge something worth finding.</p></div>
+    <div class="demo wrap ly-two"><div class="ly-s ly-f" role="img" aria-label="Wireframe: dark headings of different lengths at the left edge with grey text between them"><i class="d"></i><i></i><i class="d"></i><i></i><i class="d"></i><i></i><i class="d"></i></div>
+      <ul class="ly-notes"><li><b>Use it for</b> guides, questions and answers, policies, search results.</li><li><b>The rule</b> start every heading and every first sentence with the words that carry the meaning. "Refunds: 14 days" beats "Information about our approach to refunds".</li><li><b>Avoid it when</b> the page has one job. Then the reader should not have to hunt.</li></ul></div>
+@@ask This page will be scanned, not read. Put a plain heading on every section, start each heading with its key word, and put the answer in the first sentence under it. || Easy. Mostly a writing job. || HTML headings in order, no script || A contents list that follows you down the page || Guides, questions and answers, long reports
+  </section>
+
+  <section class="spec" id="ly-z"><div class="spec-head wrap"><h2>Corner to corner</h2><p class="measure">On a page with few words the eye starts top left, crosses to the top right, drops diagonally and ends bottom right. This is the Z-pattern. Put your name where the eye starts and the button where it ends.</p></div>
+    <div class="demo wrap ly-two"><div class="ly-s ly-z" role="img" aria-label="Wireframe: a name top left, a link top right, a diagonal line, a message bottom left and a button bottom right"><i class="d tl"></i><i class="tr"></i><i class="mid"></i><i class="d bl"></i><i class="a br"></i></div>
+      <ul class="ly-notes"><li><b>Use it for</b> landing pages, sign-up pages, a social picture, the first screen of a proposal.</li><li><b>The rule</b> one action, placed where the eye finishes. A long page repeats the shape: picture left then right, section by section.</li><li><b>Avoid it when</b> there is a lot to read. The eye will not zigzag through paragraphs.</li></ul></div>
+@@ask Make the first screen follow the eye from corner to corner: our name top left, one small link top right, the main message low on the left and one button low on the right. One action only. || Easy. One sentence. || CSS grid || Sections that alternate picture and text down the page || Landing pages, sign-up pages, first screens
+  </section>
+
+  <section class="spec" id="ly-split"><div class="spec-head wrap"><h2>Split screen</h2><p class="measure">Two halves of equal weight: a message and a picture, or two choices. On a phone the halves stack, so decide which comes first.</p></div>
+    <div class="demo wrap ly-two"><div class="ly-s ly-sp" role="img" aria-label="Wireframe: text and a button on the left half, a picture on the right half"><div><i class="d"></i><i></i><i></i><i class="a"></i></div><div></div></div>
+      <ul class="ly-notes"><li><b>Use it for</b> a message that needs its picture, a before and after, a choice between two paths.</li><li><b>The rule</b> the halves must be equals. If one is clearly less important, it is a sidebar, and a sidebar should be narrower.</li><li><b>Avoid it when</b> there are three things. Three halves do not exist.</li></ul></div>
+@@ask Make this a split screen: the message and one button on the left, my photo filling the right. On a phone, show the message first and the photo under it. || Easy with a photo attached || CSS grid, two equal columns || A before and after slider, from the photo parts || Landing pages, case studies, a choice of two
+  </section>
+
+  <section class="spec" id="ly-grid"><div class="spec-head wrap"><h2>Card grid</h2><p class="measure">Rows of matching cards. Nothing is more important than anything else, which is the point: the reader browses and chooses.</p></div>
+    <div class="demo wrap ly-two"><div class="ly-s ly-g" role="img" aria-label="Wireframe: six equal tiles in two rows of three"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <ul class="ly-notes"><li><b>Use it for</b> products, services, articles, a team, anything where the items are of one kind.</li><li><b>The rule</b> every card the same height, every picture the same shape, the same order inside each.</li><li><b>Avoid it when</b> one item matters most. A grid cannot say so.</li></ul></div>
+@@ask Show these as a card grid: three across on a wide screen, one on a phone. Every card the same height and every photo the same shape. || Easy. One sentence. || CSS grid with auto-fit || Filters, when there are more than nine || Products, services, articles, team pages
+  </section>
+
+  <section class="spec" id="ly-bento"><div class="spec-head wrap"><h2>Bento grid</h2><p class="measure">Tiles of different sizes packed into one block, like a lunch box. One tile is clearly the largest. The rest support it.</p></div>
+    <div class="demo wrap ly-two"><div class="ly-s ly-b" role="img" aria-label="Wireframe: one large dark tile with five smaller tiles of different shapes packed around it"><i class="d"></i><i class="m t"></i><i></i><i class="w"></i><i class="a"></i><i></i></div>
+      <ul class="ly-notes"><li><b>Use it for</b> a summary of several different things: a result, a quote, a number, a picture.</li><li><b>The rule</b> one dominant tile. Keep the same padding and the same corner in every tile, or it looks like a jumble.</li><li><b>Avoid it when</b> the items are of one kind. Then it is a card grid pretending.</li></ul></div>
+@@ask Summarise this as a bento grid: one large tile for the main result, and four or five smaller tiles for a number, a quote, a photo and the next step. Same padding and corners on every tile. Stack to one column on a phone. || Medium. Decide the main tile first. || CSS grid with tiles spanning rows and columns || The bento grid in the photo parts, with one photograph cut across the tiles || Summaries, launch pages, a year in review
+  </section>
+</div>

@@ -1,0 +1,68 @@
+<style>
+#v-voice-teacher{background:#fff;color:#111;font:400 1.14rem/1.55 var(--work)}
+.te-s{max-width:860px;margin-inline:auto;padding:64px 22px 0}
+.te-q{font:700 clamp(2.2rem,8.4vw,4.6rem)/1.02 var(--display);letter-spacing:-.02em}
+.te-s h2{font:700 clamp(1.5rem,5vw,2.2rem)/1.1 var(--display);margin-bottom:.5em}
+.te-tag{display:inline-block;font:700 .82rem/1 var(--display);color:#fff;background:#b3261e;border-radius:4px;padding:6px 9px;margin-bottom:16px}
+.te-analogy{background:#111;color:#fff;margin-top:64px;padding:72px 22px}
+.te-analogy div{max-width:860px;margin-inline:auto}
+.te-analogy .te-q{color:#fff}
+.te-analogy p{margin-top:20px;max-width:28em;color:#d4d4d4;font-size:1.22rem}
+.te-analogy .te-tag{background:#fff;color:#111}
+.te-analogy p.te-q{font-size:clamp(2.4rem,9.6vw,5rem);color:#fff;margin-top:0;max-width:none}
+.te-time{list-style:none;margin:22px 0 0;padding:0;display:grid;gap:0;border-left:3px solid #111}
+.te-time li{display:grid;grid-template-columns:4.2em 1fr;gap:12px;padding:12px 0 12px 16px;position:relative}
+.te-time li::before{content:"";position:absolute;left:-8px;top:19px;width:13px;height:13px;border-radius:50%;background:#fff;border:3px solid #111}
+.te-time li:last-child::before{background:#b3261e;border-color:#b3261e}
+.te-time time{font:400 1rem/1.5 var(--mono)}
+.te-code{margin:20px 0 0;background:#f4f4f2;border-radius:10px;padding:16px 6px;overflow-x:auto;font:400 clamp(.8rem,3.4vw,.98rem)/1.75 var(--mono);counter-reset:l}
+.te-code span{display:block;padding:0 12px 0 0;white-space:pre;border-left:4px solid transparent;counter-increment:l}
+.te-code span::before{content:counter(l);display:inline-block;width:1.6em;text-align:right;margin-right:10px;color:#999}
+.te-code span.hot{background:#ffe8a3;border-left-color:#b3261e}
+.te-why{min-height:4.6em;margin-top:14px;padding:14px 16px;border-left:4px solid #b3261e;background:#fff7f6}
+.te-btns{display:flex;gap:10px;margin-top:14px}
+.te-btns button{font:700 .95rem/1 var(--display);min-height:46px;padding:0 20px;border-radius:8px;border:2px solid #111;background:#111;color:#fff;cursor:pointer}
+.te-btns button.alt{background:#fff;color:#111}
+.te-check details{border-top:1px solid #ddd;padding:6px 0}
+.te-check details:last-child{border-bottom:1px solid #ddd}
+.te-check summary{cursor:pointer;min-height:48px;display:flex;align-items:center;font-weight:700}
+.te-check details p{padding:0 0 14px;color:#444}
+.te-recap{padding-bottom:84px}
+.te-recap p{font:700 clamp(1.5rem,5.4vw,2.6rem)/1.12 var(--display);letter-spacing:-.015em}
+.te-recap mark{background:#ffe8a3;padding:0 .12em}
+</style>
+<div class="view" id="v-voice-teacher" data-tab="voices" data-title="The teacher">
+  <section class="te-s"><span class="te-tag">Today's question</span><h1 class="te-q">How do you answer everyone within the hour, without hiring anyone?</h1></section>
+  <section class="te-analogy"><div><span class="te-tag">Think of it as</span><p class="te-q">The host at a busy restaurant.</p>
+    <p>The host does not cook your meal. The host looks up, says "we see you, your table is nearly ready", and tells the kitchen you are here. You stop wondering whether to leave.</p>
+    <p>A first reply does the same job. It is not the quote. It is the looking up.</p></div></section>
+  <section class="te-s"><span class="te-tag">A real example</span><h2>One enquiry, minute by minute</h2>
+    <ol class="te-time"><li><time>6:40</time><span>A message arrives through the website form.</span></li><li><time>6:41</time><span>A draft reply is ready. It thanks her by name, repeats what she asked for and offers two visit dates.</span></li><li><time>6:55</time><span>The office manager reads it, changes one date and presses send.</span></li><li><time>6:56</time><span>The customer has an answer. Sixteen minutes, start to finish.</span></li></ol></section>
+  <section class="te-s"><span class="te-tag">In pseudocode</span><h2>First, the simple version</h2>
+    <pre class="te-code" id="te-code" aria-label="Pseudocode for answering an enquiry"><span>when an enquiry arrives:</span><span>  if the office is closed:</span><span>    send "got it, reply by 9"</span><span>  draft a reply from our template</span><span>  if the draft contains a guess:</span><span>    mark the guess</span><span>  show the draft to a person</span><span>  if the person approves:</span><span>    send it</span></pre>
+    <p class="te-why" id="te-why" aria-live="polite">Press Step to walk through it one line at a time.</p>
+    <div class="te-btns"><button type="button" id="te-next">Step</button><button type="button" class="alt" id="te-reset">Start again</button></div></section>
+  <section class="te-s te-check"><span class="te-tag">Check yourself</span><h2>Three questions before you go</h2>
+    <details><summary>Why does a person still press send?</summary><p>Because a draft can be wrong, and a wrong promise costs more than a slow one. The machine does the typing. The person does the deciding.</p></details>
+    <details><summary>What should the first reply never include?</summary><p>A price. The host does not quote the bill at the door. The first reply confirms, sets a time and stops.</p></details>
+    <details><summary>What happens at 2 in the morning?</summary><p>Lines 2 and 3. An instant note says a person will reply by 9. The draft waits for that person.</p></details></section>
+  <section class="te-s te-recap"><span class="te-tag">So</span><p>The first reply is <mark>the looking up</mark>, not the meal. Draft it by machine. Send it by hand.</p></section>
+  <section class="anat"><div class="wrap">
+    <h2>Behind this page</h2>
+    <p class="measure">The teacher voice makes a hard idea feel obvious by starting somewhere familiar. Inspired by David Malan's lectures. The company and the timings are invented for the demo.</p>
+    <div class="anat-grid">
+      <div><h3>How it is built</h3><ol><li>One question, stated plainly</li><li>An everyday analogy in very large type</li><li>One concrete example with real times</li><li>The same idea as pseudocode, stepped through line by line</li><li>A harder case, handled by lines already on the board</li><li>Questions to check understanding</li><li>A one-sentence recap that reuses the analogy</li></ol></div>
+      <div><h3>Design rules</h3><ul><li>Black and white, with one highlight colour that means "look here"</li><li>The analogy gets the biggest type on the page</li><li>Complexity rises one step at a time, never two</li><li>Code is set in a monospace face with numbered lines</li><li>Every section is tagged with what kind of thing it is</li><li>The reader does something: steps through, then answers</li></ul></div>
+    </div>
+@@levels Explain this like a great teacher: start with an everyday analogy, then one example, then the detail. || Build a one-page lesson from my notes. Open with the question. Give one everyday analogy in very large type, then one worked example with real times, then the same idea as numbered pseudocode I can step through line by line, then three check-yourself questions that open on click, and a one-sentence recap that reuses the analogy. Black and white with a single highlight colour. || Use the artifact-studio skill. Recipe: scrolling explainer. Voice: teacher. Look: black and white with one highlight colour. Content: the attached procedure. Keep every step of my procedure; if the analogy stops fitting at some step, say so rather than bending the step.
+  </div></section>
+</div>
+<script>
+onView("voice-teacher",root=>{
+  const lines=$$('#te-code span',root),why=$('#te-why',root);let i=-1;
+  const notes=['Everything starts with one event: a message lands.','First branch. Is anyone at their desk right now?','If not, the customer still hears something at once. This is the host looking up.','The draft comes from your own template, so it sounds like you.','A draft may contain a guess, such as a date nobody has confirmed.','Guesses are marked, so the reader checks the right thing first.','Nothing goes out unseen. This line is the whole safety system.','The person decides. Approval can include edits.','Only now does the customer get the full reply.'];
+  const paint=()=>{lines.forEach((l,k)=>l.classList.toggle('hot',k===i));why.textContent=i<0?'Press Step to walk through it one line at a time.':`Line ${i+1}. ${notes[i]}`;};
+  $('#te-next',root).addEventListener('click',()=>{i=(i+1)%lines.length;paint()});
+  $('#te-reset',root).addEventListener('click',()=>{i=-1;paint()});
+});
+</script>

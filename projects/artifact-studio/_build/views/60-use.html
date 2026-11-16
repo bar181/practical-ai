@@ -1,0 +1,51 @@
+<style>
+.us-s{max-width:900px;margin-inline:auto;padding:52px 20px 0}
+.us-s h3{font-size:1.3rem;margin-bottom:.4em}
+.us-s>p{max-width:34em}
+.us-lv{display:grid;gap:12px;margin-top:8px}
+.us-lv div{border-radius:14px;padding:20px;display:grid;gap:8px;background:#f3f6fa}
+.us-lv div:nth-child(2){background:var(--mist)}
+.us-lv div:nth-child(3){background:var(--pine);color:var(--fog)}
+.us-lv b{font:700 1.5rem/1 var(--display)}
+.us-lv span{font:400 .95rem/1.45 var(--display)}
+.us-lv dl{margin:4px 0 0;display:grid;gap:6px;font:400 .9rem/1.4 var(--display)}
+.us-lv dt{opacity:.7}.us-lv dd{margin:0}
+.us-steps{margin:8px 0 0;padding-left:1.3em;display:grid;gap:10px;max-width:34em}
+.us-rules{margin:8px 0 0;padding-left:1.1em;display:grid;gap:8px;max-width:34em}
+.us-files{margin-top:8px;overflow-x:auto}
+.us-files table{min-width:520px;background:#f3f6fa;border-radius:10px}
+.us-files th,.us-files td{padding:10px 12px;vertical-align:top}
+.us-files td:nth-child(2),.us-files th:nth-child(2){text-align:left}
+.us-files code{font:400 .84rem/1.4 var(--mono)}
+.us-test{display:grid;gap:10px;margin-top:8px}
+.us-end{padding-bottom:88px}
+@media(min-width:760px){.us-lv{grid-template-columns:repeat(3,1fr)}}
+</style>
+<div class="view" id="v-use" data-tab="use" data-title="How to use">
+  <div class="wrap shelf-head"><h2>How to use the studio</h2>
+    <p class="measure">The studio is a menu. You point at what you want and the assistant builds it from your own content. Everything you need is in the base: this page, the template library with every template as a file of its own, the cards, the forms and the skill. A level only adds to the base.</p></div>
+  <section class="us-s"><h3>Three levels, by what you add</h3>
+    <div class="us-lv">
+      <div><b>Level 1</b><span>Nothing to install.</span><dl><dt>You add</dt><dd>Two instruction files: one for the assistant, one for you</dd><dt>You get</dt><dd>Any example here, rebuilt from your own notes</dd><dt>Depends on</dt><dd>Any chat assistant that can make a web page</dd></dl></div>
+      <div><b>Level 2</b><span>Your preferences on file.</span><dl><dt>You add</dt><dd>One preferences file, and the skill installed</dd><dt>You get</dt><dd>Pages in your colours, voice and layout without saying so each time</dd><dt>Depends on</dt><dd>An assistant that keeps files for you, such as a Project, or one that loads skills</dd></dl></div>
+      <div><b>Level 3</b><span>Connected. One connection built.</span><dl><dt>You add</dt><dd>An MCP server, so your assistant can browse this library and pick from it by itself</dd><dt>You get</dt><dd>No pasting of instructions or files. You say what you need</dd><dt>Depends on</dt><dd>An assistant that runs MCP servers. Tested with a client only, not yet in a desktop assistant</dd></dl></div>
+    </div></section>
+  <section class="us-s"><h3>For people: six steps</h3>
+    <ol class="us-steps"><li>Once: open the Skill tab, copy "AI instructions" and paste it into your assistant's Project instructions.</li><li>Open a template you like and copy the sentence under it. Not sure which? The Pick tab suggests one. It covers pages, slide decks and social posts.</li><li>Paste it into the assistant and attach your notes. Add a photo if the page should use one.</li><li>Read what comes back on your phone first. Most people will see it there.</li><li>Ask for changes by naming parts: "make the big numbers a ring", "use the teacher voice for the opening".</li><li>Check every number and name against your notes before you share it.</li></ol></section>
+  <section class="us-s"><h3>For agents: the skill</h3>
+    <p>The repository holds a skill called <b>artifact-studio</b>. It turns any content into a page by following the same menu, in this order: intake, recipe, voice, look, outline, parts, build, check.</p>
+    <ul class="us-rules"><li>It invents no facts. A gap in the content is marked on the page and listed for the person.</li><li>It uses real customer words for quotes, or leaves the quote out.</li><li>It builds one self-contained file that works on a phone and with motion turned off.</li><li>It reads a preferences file first, if there is one.</li><li>It runs the pre-ship checklist and reports the result.</li><li>Anything that posts, sends or publishes waits for a person.</li></ul></section>
+  <section class="us-s"><h3>Where things are in the repository</h3>
+    <div class="us-files" tabindex="0" role="region" aria-label="Where things are in the repository"><table><thead><tr><th>You want</th><th>Open</th></tr></thead><tbody>
+      <tr><td>This page</td><td><code>base/studio.html</code></td></tr>
+      <tr><td>Instructions to paste into your assistant</td><td><code>base/AI-INSTRUCTIONS.md</code></td></tr>
+      <tr><td>One finished report to open</td><td><code>base/example.html</code></td></tr>
+      <tr><td>The preferences file to fill in</td><td><code>level-2-files/preferences.md</code></td></tr>
+      <tr><td>The skill, with its cards and starter files</td><td><code>level-2-files/artifact-studio/</code></td></tr>
+      <tr><td>The MCP server</td><td><code>level-3-files/mcp/</code></td></tr>
+      <tr><td>Instructions for agents</td><td><code>AGENTS.md</code></td></tr>
+      <tr><td>The source this page is built from</td><td><code>_build/</code></td></tr>
+    </tbody></table></div></section>
+  <section class="us-s us-end"><h3>What has and has not been tested</h3>
+    <div class="us-test"><div class="pc-call good"><b>Checked</b>Every tab renders in Chrome at phone and desktop width with no script errors, and the tabs switch with scripts turned off.</div><div class="pc-call warn"><b>Not yet checked</b>The sentences have not been run in fresh chats and scored. The results sheet for that test is in the repository.</div><div class="pc-call note"><b>Invented</b>Every company, person and figure in the examples is made up. The two photographs are real.</div></div></section>
+</div>
