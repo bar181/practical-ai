@@ -19,7 +19,8 @@ b64 = lambda p: base64.b64encode((P/p).read_bytes()).decode()
 puppy = b64('_build/img/inspector.jpg'); me = b64('_build/img/creator.jpg')
 E = html.escape
 import re
-PLAN_ROWS = re.findall(r"^\| (?!Heading |---)([^|]+?) \|", (P/'level-2-files/agentic-process/template/base/plan.md').read_text(encoding='utf-8'), re.M)
+PLAN_ROWS = re.findall(r"^\| (?!Heading |---)([^|]+?) \|", (P/'level-2-files/agentic-process/template/base/plan.md').read_text(encoding='utf-8').split('\n## Status')[0], re.M)
+assert 'Part' not in PLAN_ROWS and len(PLAN_ROWS) >= 10, PLAN_ROWS
 for _st in STEPS:                                                  # the step 6 prompt lists the plan's own headings
     _st['prompts'] = tuple((lab, txt.replace('{PLAN_HEADINGS}', ', '.join(r[0].lower() + r[1:] for r in PLAN_ROWS))) for lab, txt in _st['prompts'])
 PROMPT = coach_prompt("every Monday I turn last week's sales notes into an email for my team. I want an AI to draft it.")
@@ -231,7 +232,7 @@ footer{{padding:26px 0 44px;font:400 .88rem/1.45 var(--display);color:var(--mute
 <section class="wrap"><span class="tag">Check yourself</span><h2>Three questions before you go</h2>
   <details><summary>Your reuse check finds a free tool that already does the whole job. What now?</summary><p>Stop. Write a short guide to that tool. The second gate exists to save you from building what already exists.</p></details>
   <details><summary>Why fix the folder layout at step 5, before anything is built?</summary><p>Because every file you write afterwards points at other files. Moving them later breaks those links, and you pay for the move again each time the shape changes.</p></details>
-  <details><summary>A fresh session finishes the job and its log lists twelve problems. Did the test pass?</summary><p>It passed the gate, and it gave you the next hour's work. Fix the points that appear in more than one log first. Then run it again.</p></details>
+  <details><summary>A fresh session finishes the job and its log lists twelve problems. Did the test pass?</summary><p>It passed the gate, and it gave you the next hour's work. Fix first every point that appears in two or more logs, then every blocking point. Then run it again.</p></details>
 </section>
 
 <section class="wrap"><span class="tag">So</span>
@@ -285,7 +286,7 @@ def process_md():
         L.append(f"| {st['n']} | [**{st['name']}**](#{anchor}) | {st['writes']} | {st['gate']} | {('about ' + str(st['minutes']) + ' min') if st['minutes'] else 'repeats'} |")
     L += ["", f"Steps 1 to 8 add up to about {TOTAL_MINUTES} minutes the first time. Every time on this page is an estimate: nobody",
           "has yet been timed.", "",
-          "**A small job can take the short path:** steps 1, 6 and 8 in full, steps 2 to 5 in a line each, and step 7 folded into the test.",
+          "**A small job can take the short path:** steps 1, 6 and 8 in full, steps 2 to 5 in a line each, step 7 folded into the test, and step 9 left open.",
           "The coach offers it when the job is one person turning one kind of input into one result in a chat.", "",
           "## Who does what", "",
           "| Step | The AI does | You do |", "| --- | --- | --- |",
@@ -317,11 +318,11 @@ def process_md():
           "5. **One addition, one change request.** Small changes get reviewed. Big ones get waved through.", ""]
     return "\n".join(L)
 
-from lesson import SEGMENTS, WATCH, COACH_PROMPT, REVIEW_PROMPT
+from lesson import SEGMENTS, WATCH, COACH_PROMPT, REVIEW_PROMPT, PASTED_PROMPT, CHECKS
 STARTER = P.parent/'artifact-studio/level-2-files/artifact-studio/assets/starters/deck-workshop.html'
 
 def lesson_md():
-    L = ["<!-- Written by _build/build.py from _build/lesson.py. Change the source, not this file. -->",
+    L = ["<!-- Written by _build/build.py from _build/lesson.py. In the repository, change lesson.py and rebuild. A copy you keep can be edited by hand. -->",
          "# Teach Agentic Process in 30 minutes", "",
          "A lesson plan for one teacher and any number of learners. Nobody needs to code. Each learner",
          "needs a chatbot they already use, and one job they repeat at work.", "",
@@ -334,20 +335,22 @@ def lesson_md():
          "| Do this | Time |", "| --- | --- |",
          "| Open [`training.html`](training.html) on the screen you will present from. Press N to see your notes | 1 minute |",
          "| Keep [the guide](explainer.html) open in a second tab, to show a step card if asked | 1 minute |",
-         "| Ask each learner to bring one job they do every week that starts from a blank page | The day before |", "",
+         "| Ask each learner to bring one job they do on their own every week that starts from a blank page | The day before |",
+         "| If several learners use a chatbot that cannot open links, put the coach's text in a shared document | 5 minutes |", "",
          "## The lesson", "",
          "| Minutes | You do | You say | Learners do |", "| --- | --- | --- | --- |"]
     for g in SEGMENTS:
         L.append(f"| {g['start']} to {g['end']} | {g['do']} | {g['say']} | {g['learners']} |")
-    L += ["", "## The two prompts learners paste", "", "**At minute 12, the coach:**", "", "```", COACH_PROMPT, "```", "",
+    L += ["", "## The prompts learners paste", "", "**At minute 12, the coach:**", "", "```", COACH_PROMPT, "```", "",
+          "**If the chatbot cannot open the link:** open the coach on GitHub, press Raw, copy all of it, paste it into the chat, then:", "", "```", PASTED_PROMPT, "```", "",
           "**At minute 22, the review in a new chat:**", "", "```", REVIEW_PROMPT, "```", "",
+          "## The three check questions, at minute 26", ""] + [f"{i}. **{q}** {a}" for i, (q, a) in enumerate(CHECKS, 1)] + ["",
           "## What to watch for", "", "| You see | It means | Say |", "| --- | --- | --- |"]
     L += [f"| {a} | {b} | {c} |" for a, b, c in WATCH]
     L += ["", "## After the lesson", "",
-          "Ask each learner to finish steps 5 to 8 in their own time and to send you two things: the plan,",
-          "and what the fresh chat said was unclear. The second one tells you more than the first.", "",
-          "This plan has not yet been taught. The timings are estimates. Change them by hand in this",
-          "file after your first run, or in `_build/lesson.py` and rebuild if you keep the whole repository.", ""]
+          "Homework: each learner runs the step 8 test in a new chat and sends you two things: the plan,",
+          "and what the new chat said was unclear. The second one tells you more than the first.", "",
+          "This plan has not yet been taught. The timings are estimates: change them after your first run.", ""]
     return "\n".join(L)
 
 def slide_html(label, title, body, note, seg, turn, pic):
@@ -390,6 +393,7 @@ def training_html():
      Made with Artifact Studio: the workshop deck starter, its styles and its slide engine, unchanged. Voice: practical instructor. -->
 <style>{style}
 /* added for this lesson: a timer, a prompt on a slide, and the teacher's handout under the deck */
+.dw h2+ol,.dw h2+ul{{margin-top:2.6cqw}}
 .dw .dk-s.lead .dk-pic{{--slide-photo:url(data:image/jpeg;base64,{puppy})}}
 .dw .pr{{margin:2.4cqw 0 0;padding:2cqw 2.4cqw;background:#fffdf6;color:#14302d;border-radius:1cqw;white-space:pre-wrap;overflow-wrap:anywhere;font:400 2.2cqw/1.4 ui-monospace,Menlo,Consolas,monospace;text-align:left}}
 .dk-top .wrap,.hand .wrap{{max-width:1080px;margin-inline:auto;padding-inline:12px}}
@@ -399,7 +403,7 @@ def training_html():
 .tm .clock{{font-variant-numeric:tabular-nums;font-size:1.3rem}}.tm .seg{{font-weight:400;color:#c2cede}}.tm .warn{{color:#ffe27a}}
 .hand{{background:#fffdf6;color:#14302d;padding:40px 0 48px;font:400 1.05rem/1.5 var(--display)}}
 .hand h2{{font:700 clamp(1.5rem,4.4vw,2.1rem)/1.1 var(--display);margin:34px 0 12px}}.hand h2:first-child{{margin-top:0}}
-.hand p{{max-width:40em;margin-top:10px}}
+.hand p{{max-width:40em;margin-top:10px}}.hand ol{{max-width:44em;padding-left:1.3em}}.hand li+li{{margin-top:8px}}
 .tw{{overflow-x:auto}}.hand table{{border-collapse:collapse;width:100%;min-width:560px;font-size:.96rem}}
 .hand th,.hand td{{text-align:left;vertical-align:top;padding:10px;border-bottom:1px solid #d9d2bf}}.hand thead th{{font-size:.86rem;color:#3f5a56}}
 .hand pre{{margin:10px 0 0;padding:14px;background:#f1ece0;border-radius:10px;white-space:pre-wrap;overflow-wrap:anywhere;font:400 .92rem/1.5 ui-monospace,Menlo,Consolas,monospace;max-width:46em}}
@@ -443,15 +447,19 @@ def training_html():
 <main class="hand"><div class="wrap">
   <h2>The lesson, minute by minute</h2>
   <div class="tw" tabindex="0" role="region" aria-label="The lesson, minute by minute"><table><thead><tr><th scope="col">Minutes</th><th scope="col">You do</th><th scope="col">You say</th><th scope="col">Learners do</th></tr></thead><tbody>{rows}</tbody></table></div>
-  <h2>The two prompts learners paste</h2>
+  <h2>The prompts learners paste</h2>
   <p>At minute 12, the coach. Learners change the last line to their own job.</p>
   <pre id="pc">{E(COACH_PROMPT)}</pre><button class="cp" type="button" data-copy="pc">Copy the coach prompt</button>
+  <p>If the chatbot cannot open the link: open the coach on GitHub, press Raw, copy all of it, paste it into the chat, then this.</p>
+  <pre id="pp">{E(PASTED_PROMPT)}</pre><button class="cp" type="button" data-copy="pp">Copy the second prompt</button>
   <p>At minute 22, the review, in a new chat with no history.</p>
   <pre id="pr">{E(REVIEW_PROMPT)}</pre><button class="cp" type="button" data-copy="pr">Copy the review prompt</button>
+  <h2>The three check questions, at minute 26</h2>
+  <ol>{''.join(f"<li><b>{E(q)}</b> {E(a)}</li>" for q, a in CHECKS)}</ol>
   <h2>What to watch for</h2>
   <div class="tw" tabindex="0" role="region" aria-label="What to watch for"><table><thead><tr><th scope="col">You see</th><th scope="col">It means</th><th scope="col">Say</th></tr></thead><tbody>{watch}</tbody></table></div>
   <h2>After the lesson</h2>
-  <p>Ask each learner to finish steps 5 to 8 in their own time, and to send you two things: the plan, and what the fresh chat said was unclear. The second tells you more than the first.</p>
+  <p>Homework: each learner runs the step 8 test in a new chat and sends you two things: the plan, and what the new chat said was unclear. The second tells you more than the first.</p>
   <p>This lesson has not yet been taught. Every timing is an estimate.</p>
   <div class="me"><img src="data:image/jpeg;base64,{me}" width="64" height="64" alt="Bradley Ross"><div><b>Made by Bradley Ross</b><p style="margin-top:4px">An agentic AI architect and developer for businesses of every size, from start-up to enterprise. He builds and teaches practical AI.</p><a href="https://www.linkedin.com/in/bradaross/">Connect with Bradley on LinkedIn</a></div></div>
 </div></main>

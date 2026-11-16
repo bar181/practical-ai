@@ -4,7 +4,7 @@ The showcase layout, used by everything in projects/. base/ is enough to try the
   README.md        the hook, a "Try it" quick start, the North Star and a Status section
   AGENTS.md        instructions for AI agents
   LICENSE
-  base/            the few files a beginner needs: six at most, plus an optional examples/ folder of worked examples (files only)
+  base/            the few files a beginner needs: six things at most, counting an optional examples/ folder of worked examples (files only)
   level-2-files/   optional. What an advanced user adds, with a README.md
   level-3-files/   optional. Connections for agents, with a README.md
   _build/          optional. What the project is built from

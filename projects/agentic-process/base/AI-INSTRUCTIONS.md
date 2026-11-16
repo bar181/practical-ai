@@ -82,7 +82,7 @@ not count.
 
 ## What you hand over at the end
 
-1. **The plan**, on one page, with these headings: <!-- plan:start -->The job. The user. What is out. The wow. What already exists. Build or buy. Cost. The design. The folder layout. The steps. The front door. The test. Who reviewed it. Gates. Next three additions. Part. The plan. The first version. Tested by.<!-- plan:end -->
+1. **The plan**, on one page, with these headings: <!-- plan:start -->The job. The user. What is out. The wow. What already exists. Build or buy. Cost. The design. The folder layout. The steps. The front door. The test. Who reviewed it. Gates. Next three additions.<!-- plan:end -->
 2. **The first version**: the prompt or instructions, and one worked example.
 3. **A note** with four headings: Decided. Assumed. Not checked. Test this next.
 

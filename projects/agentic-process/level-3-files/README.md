@@ -8,7 +8,7 @@ that the wiring is safe.
 
 | What | Where | What it does |
 | --- | --- | --- |
-| Gates | Your project's `_build/gates.json` | A list of commands, each proving one thing. An agent runs them after every stage and stops at the first failure |
+| Gates | Your project's `_build/gates.json` | A list of commands, each proving one thing. An agent runs them after every step and stops if one fails |
 | The fresh-run test | [`fresh-run/`](fresh-run/) | Hands the tool to a new AI session that knows nothing, and collects where it tripped |
 | The score sheet | [`scorecard.md`](scorecard.md) | Ten measures, what 80 looks like for each, and rules for scoring your own work |
 
@@ -48,8 +48,9 @@ so a broken template is caught before anyone uses it.
 
 1. Copy [the skill folder](../level-2-files/agentic-process/) into the agent's skills, and give
    it one approved idea in writing.
-2. Tell it to run the gates after every step from step 5, and to stop if any gate fails. The
-   script runs every gate, so one report shows everything that is wrong.
+2. Tell it to run the gates after every step from step 5, and to stop if one fails. The script
+   runs every gate, so one report shows everything that is wrong. Until step 6, `filled` fails
+   by design: it is the one gate the agent expects to fail.
 3. At step 8 it prepares the fresh-run folders. You, or an orchestrating agent, start a fresh
    session for each folder with [`fresh-run/RULES.md`](fresh-run/RULES.md).
 4. The agent reads the friction logs, fixes the recurring points, runs the gates again and hands

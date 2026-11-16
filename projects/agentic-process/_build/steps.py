@@ -5,6 +5,7 @@ the gate, and one or more prompts to paste. Times are estimates and the pages sa
 """
 COACH_URL = "https://raw.githubusercontent.com/bar181/practical-ai/main/projects/agentic-process/base/AI-INSTRUCTIONS.md"
 COACH_FILE = "github.com/bar181/practical-ai: projects/agentic-process/base/AI-INSTRUCTIONS.md"
+def pasted_prompt(idea): return f"Follow the build coach pasted above.\n\nMy idea: {idea}"
 def coach_prompt(idea): return f"Read the build coach at {COACH_URL} and follow it. If you cannot open it, say so and stop: do not make up a coach of your own.\n\nMy idea: {idea}"
 LEVELS = ("Beginner", "Advanced", "Expert")
 WHO = ("someone with a job I repeat every week", "a builder working with a coding agent", "a team lead whose agents work unattended")
@@ -148,7 +149,7 @@ Do not improve the plan. Only report.
   stories=("I want to test my prompt in a new chat, so that I know it works without everything I said earlier.",
            "I want a friction log from a fresh session, so that I fix what tripped it and not what I guess is wrong.",
            "I want several fresh sessions run at once with different requests, so that the faults are found before a person spends time on it."),
-  expect="About 15 minutes for the first round. Expect a list of problems even when the job gets done. That list is the test working. Fix the points that appear more than once first, then run it again.",
+  expect="About 15 minutes for the first round. Expect a list of problems even when the job gets done. That list is the test working. Fix first every point that appears in two or more logs, then every blocking point. Then run it again.",
   proof=("The first version: instructions someone can paste, or a folder someone can open",
          "The result the fresh session produced, unedited",
          "Its list of where it had to guess, and a note of what you fixed"),

@@ -29,7 +29,7 @@ walks you through all nine. Or take the steps one at a time with the prompts bel
 Steps 1 to 8 add up to about 60 minutes the first time. Every time on this page is an estimate: nobody
 has yet been timed.
 
-**A small job can take the short path:** steps 1, 6 and 8 in full, steps 2 to 5 in a line each, and step 7 folded into the test.
+**A small job can take the short path:** steps 1, 6 and 8 in full, steps 2 to 5 in a line each, step 7 folded into the test, and step 9 left open.
 The coach offers it when the job is one person turning one kind of input into one result in a chat.
 
 ## Who does what
@@ -228,7 +228,7 @@ This layout is now fixed. Tell me if anything later would force it to change.
 **Prompt to paste**
 
 ```
-Write the one-page plan for this tool from what we have decided so far. Use these headings: the job, the user, what is out, the wow, what already exists, build or buy, cost, the design, the folder layout, the steps, the front door, the test, who reviewed it, gates, next three additions, part, the plan, the first version, tested by. Five lines at most under each. Mark anything you had to assume.
+Write the one-page plan for this tool from what we have decided so far. Use these headings: the job, the user, what is out, the wow, what already exists, build or buy, cost, the design, the folder layout, the steps, the front door, the test, who reviewed it, gates, next three additions. Five lines at most under each. Mark anything you had to assume.
 
 Then write the front door, the first thing a new user reads: one sentence that would make a stranger stop, two sentences on who it is for and what they get, and one thing they can try in five minutes.
 
@@ -281,7 +281,7 @@ Do not improve the plan. Only report.
 - **Advanced.** As a builder working with a coding agent, I want a friction log from a fresh session, so that I fix what tripped it and not what I guess is wrong.
 - **Expert.** As a team lead whose agents work unattended, I want several fresh sessions run at once with different requests, so that the faults are found before a person spends time on it.
 
-**What to expect.** About 15 minutes for the first round. Expect a list of problems even when the job gets done. That list is the test working. Fix the points that appear more than once first, then run it again.
+**What to expect.** About 15 minutes for the first round. Expect a list of problems even when the job gets done. That list is the test working. Fix first every point that appears in two or more logs, then every blocking point. Then run it again.
 
 **Proof you are done**
 
@@ -366,21 +366,21 @@ lines, the scope is too big.
 
 | Heading | Write here |
 | --- | --- |
-| The job | One sentence |
-| The user | One kind of person |
-| What is out | The things you will not do in the first version |
-| The wow | The one thing that makes people stop and look. Build it first |
-| What already exists | Up to five options, each with a link and the date you looked. A longer list goes in `_build/landscape.md` |
-| Build or buy | For each part of the first version: build it, buy it, or leave it as something done by hand |
-| Cost | Each dependency, its price and its limit |
-| The design | Which assistant, where files live, what stays manual |
-| The folder layout | Decide it now and do not change it |
-| The steps | What a user does, in order |
-| The front door | The first thing a user sees, and the one thing they can try in five minutes |
-| The test | A specific input, and what a good result looks like |
-| Who reviewed it | A name, or "a fresh AI session", and the date |
-| Gates | One line for each step so far: the gate, and pass, fail or open |
-| Next three additions | Smallest first. One at a time |
+| The job | [One sentence] |
+| The user | [One kind of person] |
+| What is out | [The things you will not do in the first version] |
+| The wow | [The one thing that makes people stop and look. Build it first] |
+| What already exists | [Up to five options, each with a link and the date you looked. A longer list goes in `_build/landscape.md`] |
+| Build or buy | [For each part of the first version: build it, buy it, or leave it as something done by hand] |
+| Cost | [Each dependency, its price and its limit] |
+| The design | [Which assistant, where files live, what stays manual] |
+| The folder layout | [Decide it now and do not change it] |
+| The steps | [What a user does, in order] |
+| The front door | [The first thing a user sees, and the one thing they can try in five minutes] |
+| The test | [A specific input, and what a good result looks like] |
+| Who reviewed it | [A name, or "a fresh AI session", and the date] |
+| Gates | [One line for each step so far: the gate, and pass, fail or open] |
+| Next three additions | [Smallest first. One at a time] |
 ```
 
 ## Five rules that save the most time

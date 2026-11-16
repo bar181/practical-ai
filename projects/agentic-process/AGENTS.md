@@ -22,7 +22,7 @@ Take the first of these that you can do.
 | How to test what you built | [`level-3-files/fresh-run/`](level-3-files/fresh-run/) |
 | Checks to run from step 5 on | `python3 projects/<slug>/_build/checks/gates.py projects/<slug>`. It runs the new project's `_build/gates.json`. This project's own gates are in [`level-3-files/gates.json`](level-3-files/gates.json) |
 | How to score the result | [`level-3-files/scorecard.md`](level-3-files/scorecard.md) |
-| Two worked examples | [`base/examples/`](base/examples/): the unedited results of two fresh sessions |
+| Three worked examples | [`base/examples/`](base/examples/): the unedited results of fresh sessions, one of them an agent working unattended |
 
 ## Output contract
 
@@ -33,9 +33,9 @@ Assumed. Not checked. Test this next.
 ## Rules that never bend
 
 1. One user and one job. A second job goes under "Next".
-2. Stop at a failed gate. Fix the step before you go on.
+2. Stop at a failed gate. Fix the step before you go on. A gate you cannot answer without a person is open, not failed. `filled` fails by design until step 6.
 3. Fix the folder layout at step 5 and do not change it.
-4. Say what a result is: hand-built is a reference, made by a chat from a prompt is an example.
+4. Say what a result is: one you wrote yourself is a reference, one a fresh session made from the prompt is an example.
 5. A person approves anything that is merged, posted, sent, paid or published.
 
 ## Known limits

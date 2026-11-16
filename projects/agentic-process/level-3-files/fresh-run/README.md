@@ -23,8 +23,9 @@ know about each other.
 
 | What you see | What it means | Do this |
 | --- | --- | --- |
-| The same point in three or more logs | The instructions are wrong | Fix the instructions |
-| A point in one log only | It may be that request, or that session | Note it. Fix it if it is cheap |
+| The same point in two or more logs | The instructions are wrong | Fix it first |
+| A blocking point in one log only | A different guess would change the result | Fix it next |
+| A minor point in one log only | It may be that request, or that session | Note it. Fix it if it is cheap |
 | The run did not finish | A real break, such as a missing file or a wrong path | Fix this first |
 | The result is good and the log is long | The session guessed well. A weaker assistant will not | Fix the blocking points |
 

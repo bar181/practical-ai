@@ -20,7 +20,7 @@ which carries its own checks.
 2. Find the project folder. If there is none, you make one at step 5. Keep your answers to steps
    1 to 4 in your notes until then, and copy them into `base/plan.md` at step 5.
 3. Small job? If it is one person turning one kind of input into one result inside a chat, offer
-   the short path: steps 1, 6 and 8 in full, the others in one line each. Use all nine if they
+   the short path: steps 1, 6 and 8 in full, steps 2 to 5 in a line each, step 7 folded into the test, and step 9 left open. Use all nine if they
    say no, or if the tool needs shared files, more than one person using it, or anything paid.
    People who only receive the result, such as customers, do not count; text pasted into the
    chat is not a file. Working unattended, take all nine steps: a person can shorten it later.
@@ -78,14 +78,15 @@ Every project uses this layout. Fix it now and do not change it later.
 README.md          hook, one picture, the value, then "Try it in five minutes" as the first section
 AGENTS.md          the path for an agent
 LICENSE
-base/              what a beginner needs: six things at most, plus examples/
+base/              what a beginner needs: six things at most, counting examples/
 level-2-files/     what a builder adds. Only if it holds something usable
 level-3-files/     what a team adds. Only if it holds something usable
 _build/            gates.json, checks/, runs/ for fresh-session tests, img/ for the README's picture
 ```
 
 The new folder starts with three gates in `_build/gates.json`: the layout, the links, and
-`filled`, which fails while any blank from the template is left and passes once step 6 is done. Add one
+`filled`, which fails while any blank from the template is left and passes once step 6 is done.
+Until step 6, expect `filled` to fail and stop only if another gate fails. Add one
 whenever a step produces something a command can check. A gate is a name, what it proves, and
 one command that fails when the thing is not true.
 
@@ -99,7 +100,7 @@ one command that fails when the thing is not true.
    result, a hand-over note and `friction.md`: every place it had to guess, quoted, numbered and
    marked BLOCKING (a different guess would change the result) or MINOR.
 3. Do not help it. Read `friction.md` before the result.
-4. Fix the points that appear in more than one log. Run a second round.
+4. Fix first every point that appears in two or more logs, then every blocking point. Run a second round.
 
 If you cannot start a new session, prepare the folder, say the test was not run, and leave the
 gate open.

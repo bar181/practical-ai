@@ -5,8 +5,14 @@ Each segment has a start and end minute, what the teacher does, says, and what l
 A slide is (label, title, body, note). body is a list of lines; a line starting with "1." is a numbered list item,
 "- " a checklist item, "> " a quotation, "PROMPT" puts the coach prompt on the slide.
 """
-from steps import coach_prompt, COACH_FILE
-COACH_PROMPT = coach_prompt("[one job you repeat, in one sentence]")
+from steps import coach_prompt, pasted_prompt, COACH_FILE
+COACH_PROMPT = coach_prompt("[one job you do on your own, in one sentence]")
+PASTED_PROMPT = pasted_prompt("[one job you do on your own, in one sentence]")
+CHECKS = [
+ ("The reuse check finds a free tool that does the whole job. What now?", "Stop, and write a short guide to that tool. The second gate exists to save you from building what already exists."),
+ ("Why fix the folder layout before anything is built?", "Every file points at other files. Moving them later breaks those links, and you pay for the move each time the shape changes."),
+ ("A fresh session finishes the job and lists twelve problems. Did the test pass?", "Yes. It finished, and the twelve problems are the next hour of work: first the ones in two or more logs, then the blocking ones."),
+]
 REVIEW_PROMPT = ("You have never seen this project. Read the plan below. Explain it back in five sentences, then list every "
                  "place where you had to guess, quoting the line. Do not improve the plan. Only report.\n\n[paste your plan so far]")
 
@@ -44,9 +50,11 @@ SEGMENTS = [
   do="Share the prompt. Walk the room", say="\"Paste it in. Change the last line to your job. Say yes to the short path: it does steps 1, 6 and 8 in full and the rest in a line each, so it fits in ten minutes. Stop when it shows you the plan.\"",
   learners="Run the coach on their own idea, on the short path, until it shows them the one-page plan",
   slides=[("Your turn", "Paste this. Change the last line to your job.",
-           ["PROMPT", "Say yes to the short path. Stop when it shows you the plan. Ten minutes.",
-            "Link will not open? On GitHub, open " + COACH_FILE + ". Copy all of it and paste it in before your idea."],
-           "Stop talking. Start a ten-minute timer. Walk the room. The full nine steps take about an hour, which is why the class uses the short path. If a chatbot says it cannot open the link, the slide shows the file to copy instead.")]),
+           ["PROMPT", "Say yes to the short path. Stop when it shows you the plan. Ten minutes."],
+           "Stop talking. Start a ten-minute timer. Walk the room. If the coach does not offer the short path, the learner types: use the short path. The full nine steps take about an hour. If a chatbot says it cannot open the link, show the next slide."),
+          ("Link will not open?", "Paste the coach yourself.",
+           ["1. On GitHub, open " + COACH_FILE + ".", "1. Press Raw. Select all. Copy. Paste it into the chat.", "1. Then type: Follow the build coach pasted above. My idea: and your job."],
+           "Some chatbots cannot open links. This takes one minute. If the room has many, put the coach's text in a shared document before the lesson.")]),
  dict(start=22, end=26, name="Your turn: a stranger reads it",
   do="Share the review prompt", say="\"You cannot see your own gaps, because you know what you meant. This is step 7: hand your plan to a stranger, a new chat that has never seen it. The short path folds this into the test at step 8. In class we do it now, because it is the habit that matters most.\"",
   learners="Open a new chat, paste the review prompt and their plan so far, and read what it had to guess",
@@ -57,19 +65,19 @@ SEGMENTS = [
   do="Ask the three questions, then show the card", say="\"What will you do first when you are back at your desk?\"",
   learners="Answer aloud. Write the next step on their plan",
   slides=[("Check yourself", "Three questions.",
-           ["- The reuse check finds a free tool that does the whole job. What now?", "- Why fix the folder layout before anything is built?",
-            "- A fresh session finishes the job and lists twelve problems. Did the test pass?"],
-           "Answers: stop and write a guide to the free tool. Because every file points at other files, and moving them breaks links. Yes: it finished, and the twelve problems are the next hour's work."),
+           ["- " + q for q, a in CHECKS],
+           "Answers. " + " ".join(f"{i}. {a}" for i, (q, a) in enumerate(CHECKS, 1))),
           ("Keep this", "One job. Check what exists. Fix the layout. Let a stranger test it.",
            ["The guide, the coach and every prompt: github.com/bar181/practical-ai, in projects/agentic-process"],
-           "End on the card. Ask them to finish steps 5 to 8 in their own time and send you two things: the plan, and what the fresh chat said was unclear.")]),
+           "End on the card. Homework: run the step 8 test in a new chat, and send you two things: the plan, and what the new chat said was unclear.")]),
 ]
 
 WATCH = [
  ("A learner describing three jobs", "The scope is too wide", "\"Which one would you miss most on Monday? That one. The others go under Next.\""),
  ("The coach found an existing tool", "The process worked", "\"Good. You just saved a week. Write the guide to that tool.\""),
  ("A learner skipping the questions to get to the build", "The usual habit", "\"The inspector does not let you choose curtains yet.\""),
- ("A chatbot that cannot open the link", "Common", "\"Open the file, copy all of it, paste it in before your idea.\""),
+ ("A chatbot that cannot open the link", "Common", "Show the next slide: paste the coach, then \"Follow the build coach pasted above.\""),
+ ("A learner whose job involves a team or shared files", "The coach takes all nine steps, about an hour", "\"Pick a part you do on your own for today. The team version is your homework.\""),
  ("The coach offers the short path", "A small job, in a chat", "\"Say yes. You will still do steps 1, 6 and 8 in full.\""),
 ]
 

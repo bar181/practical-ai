@@ -235,7 +235,7 @@ This layout is now fixed. Tell me if anything later would force it to change.</p
       <p class="lab">What to expect</p><p>About 10 minutes. Expect to cut. If a section of the plan needs more than five lines, the scope has grown.</p>
       <p class="lab">Proof you are done</p><ul class="proof"><li>The plan template, filled in, on one page</li><li>The first screen: a hook, and one thing a person can try in five minutes</li><li>One worked example: an input, and the result you would be happy with</li></ul>
       <p class="gate"><b>The gate.</b> Is the beginner version fully described?</p>
-      <p class="lab">Prompt to paste</p><pre id="p6-0" tabindex="0">Write the one-page plan for this tool from what we have decided so far. Use these headings: the job, the user, what is out, the wow, what already exists, build or buy, cost, the design, the folder layout, the steps, the front door, the test, who reviewed it, gates, next three additions, part, the plan, the first version, tested by. Five lines at most under each. Mark anything you had to assume.
+      <p class="lab">Prompt to paste</p><pre id="p6-0" tabindex="0">Write the one-page plan for this tool from what we have decided so far. Use these headings: the job, the user, what is out, the wow, what already exists, build or buy, cost, the design, the folder layout, the steps, the front door, the test, who reviewed it, gates, next three additions. Five lines at most under each. Mark anything you had to assume.
 
 Then write the front door, the first thing a new user reads: one sentence that would make a stranger stop, two sentences on who it is for and what they get, and one thing they can try in five minutes.
 
@@ -266,7 +266,7 @@ Do not improve the plan. Only report.
     <div class="in">
       <p class="lab">Purpose</p><p>Build the smallest version that does the job, then hand it to a stranger: a new AI session that has only your instructions. It finds what you cannot.</p>
       <p class="lab">User stories</p><ul class="stories"><li data-lvl="Beginner"><b class="lvl">Beginner</b> As someone with a job I repeat every week, I want to test my prompt in a new chat, so that I know it works without everything I said earlier.</li><li data-lvl="Advanced"><b class="lvl">Advanced</b> As a builder working with a coding agent, I want a friction log from a fresh session, so that I fix what tripped it and not what I guess is wrong.</li><li data-lvl="Expert"><b class="lvl">Expert</b> As a team lead whose agents work unattended, I want several fresh sessions run at once with different requests, so that the faults are found before a person spends time on it.</li></ul>
-      <p class="lab">What to expect</p><p>About 15 minutes for the first round. Expect a list of problems even when the job gets done. That list is the test working. Fix the points that appear more than once first, then run it again.</p>
+      <p class="lab">What to expect</p><p>About 15 minutes for the first round. Expect a list of problems even when the job gets done. That list is the test working. Fix first every point that appears in two or more logs, then every blocking point. Then run it again.</p>
       <p class="lab">Proof you are done</p><ul class="proof"><li>The first version: instructions someone can paste, or a folder someone can open</li><li>The result the fresh session produced, unedited</li><li>Its list of where it had to guess, and a note of what you fixed</li></ul>
       <p class="gate"><b>The gate.</b> Did a fresh session finish the job, and have you read what it tripped on?</p>
       <p class="lab">Prompt to build, in your working chat</p><pre id="p8-0" tabindex="0">Build the first version of this tool from the plan: [paste the plan].
@@ -339,7 +339,7 @@ My idea: every Monday I turn last week&#x27;s sales notes into an email for my t
 <section class="wrap"><span class="tag">Check yourself</span><h2>Three questions before you go</h2>
   <details><summary>Your reuse check finds a free tool that already does the whole job. What now?</summary><p>Stop. Write a short guide to that tool. The second gate exists to save you from building what already exists.</p></details>
   <details><summary>Why fix the folder layout at step 5, before anything is built?</summary><p>Because every file you write afterwards points at other files. Moving them later breaks those links, and you pay for the move again each time the shape changes.</p></details>
-  <details><summary>A fresh session finishes the job and its log lists twelve problems. Did the test pass?</summary><p>It passed the gate, and it gave you the next hour's work. Fix the points that appear in more than one log first. Then run it again.</p></details>
+  <details><summary>A fresh session finishes the job and its log lists twelve problems. Did the test pass?</summary><p>It passed the gate, and it gave you the next hour's work. Fix first every point that appears in two or more logs, then every blocking point. Then run it again.</p></details>
 </section>
 
 <section class="wrap"><span class="tag">So</span>

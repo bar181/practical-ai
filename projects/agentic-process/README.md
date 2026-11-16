@@ -44,10 +44,11 @@ My idea: every Monday I turn last week's sales notes into an email for my team. 
 
 It walks you through the steps one at a time, asks at most two questions in each, and ends with a
 one-page plan and a first version you can test. For a small job like this one it offers a short
-path: steps 1, 6 and 8 in full, steps 2 to 5 in a line each, and step 7 folded into the test. You can start in five minutes; a full first run takes about an hour.
+path: steps 1, 6 and 8 in full, steps 2 to 5 in a line each, step 7 folded into the test, and step 9 left open. You can start in five minutes; a full first run takes about an hour.
 
 - **It cannot open the link?** Open [`base/AI-INSTRUCTIONS.md`](base/AI-INSTRUCTIONS.md), press
-  **Raw**, select all, copy, and paste it in before your idea.
+  **Raw**, select all, copy, and paste it into the chat. Then type: *Follow the build coach pasted
+  above. My idea:* and your job.
 - **Rather go one step at a time?** [The nine steps in detail](base/PROCESS.md) give each step a
   purpose, user stories, what to expect, proof you are done, and a prompt to paste.
 
@@ -118,18 +119,16 @@ use, without rebuilding it three times on the way.
 
 ## Status
 
-**Built on 16 November 2026.** By its author, in one sitting, by following its own steps.
+**Built on 16 November 2026, by its author.** Nobody else has used it yet.
 
-| Part | State |
+| Part | Who has tried it |
 | --- | --- |
-| The coach | Run six times by new AI sessions that had only the coach, across three rounds and three invented people. Every run handed over a plan, a first version and a note. Blocking points per run: 4 to 5 in round 1, 3 to 4 in round 2, 2 to 3 in round 3. The round 3 points are fixed and **not re-tested**. In round 3 the short path was chosen for the small job and all nine steps for the team job, as intended. Not yet run in ChatGPT, Gemini or Copilot, or by a person |
-| The process | Nine steps, each with a purpose, user stories, proof and a prompt. Used by its author to build this project. Nobody else has followed it yet |
-| The template and the skill | Run end to end by a second agent on 16 November 2026, on an invented idea. The layout check passed first time. Two commands failed as written: the skill gave no path for the template script, and the template had no gates file. Both are fixed and tested by the author, **not yet re-run** by a second agent. [Its log](_build/runs/skill-run/SKILL-RUN.md) lists 8 blocking points. No real tool has been built from the template |
-| The fresh-run test | Used on both projects in this repository by their author. The logs are in [`_build/runs/`](_build/runs/) |
-| The training | Made with Artifact Studio's workshop deck, from one source with the lesson plan. Checked at phone and laptop width with an accessibility scan and with scripts off. **Not yet taught.** Opens from the link once this branch is merged |
-| The guide | Made by following Artifact Studio's instructions, from the same source as the detailed steps page. Checked in Chrome at three widths with an accessibility scan, with scripts off, and in the WebKit engine that Safari is built on. Not checked on a real phone. The raw.githack.com link works only once this branch is merged |
-| The times | All estimates. Nobody has been timed |
-| Real use | **None yet.** Nobody outside its author has built a tool with it |
+| The coach | Fresh AI sessions, six runs in Claude. **Not yet run in ChatGPT, Gemini or Copilot, or by a person** |
+| The skill folder | One agent working unattended, in an empty repository: it built and tested a first tool |
+| The guide and the training | Checked in a browser at phone, laptop and projector size. **Not yet taught** |
+| The links in this page | Open once this project is merged into the main branch |
+
+Every round of testing, with the logs, is in [`_build/runs/`](_build/runs/README.md).
 
 ## How it is laid out
 
