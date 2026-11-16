@@ -1,0 +1,43 @@
+name: I built a tool with Agentic Process
+description: Two minutes. Tells us whether the process works for people other than its author.
+title: "Built with Agentic Process: "
+labels: ["agentic-process", "built-one"]
+body:
+  - type: input
+    id: job
+    attributes:
+      label: The job, in one sentence
+      description: Use invented details. Do not include client names or private data.
+    validations:
+      required: true
+  - type: dropdown
+    id: chatbot
+    attributes:
+      label: Where you ran it
+      options: [ChatGPT, Claude, Gemini, Copilot, A coding agent, Other]
+    validations:
+      required: true
+  - type: input
+    id: minutes
+    attributes:
+      label: Minutes from your first paste to a one-page plan
+    validations:
+      required: true
+  - type: dropdown
+    id: fresh
+    attributes:
+      label: Did a fresh chat, with only your instructions, finish the job?
+      options: ["Yes", "Yes, after fixes", "No", "Did not test"]
+    validations:
+      required: true
+  - type: dropdown
+    id: other
+    attributes:
+      label: Has someone other than you used the tool?
+      options: ["Yes", "Not yet"]
+    validations:
+      required: true
+  - type: textarea
+    id: tripped
+    attributes:
+      label: What tripped you or the fresh chat (optional)

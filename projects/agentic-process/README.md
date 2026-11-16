@@ -143,6 +143,8 @@ taster), what to prepare, and what to watch for.
 
 Every round of testing, with the logs, is in [`_build/runs/`](_build/runs/README.md).
 
+**Built a tool with it?** [Tell us in two minutes](https://github.com/bar181/practical-ai/issues/new?template=i-built-one.yml): the form records the three numbers the North Star is measured by.
+
 ## How it is laid out
 
 ```
