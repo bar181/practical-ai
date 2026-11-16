@@ -9,7 +9,7 @@
 **An AI agent will happily build the wrong thing three times.** Agentic Process is the order of
 work that stops it: nine steps, a gate after each, and a test in a fresh chat, run before anyone
 else sees the result. It is free. Use it in any chatbot (so far tested in Claude only),
-hand it to your coding agent, or give the agent a spec and let it run to a draft pull request on its own.
+hand it to your coding agent, or give the agent a spec and let it build the tool on its own.
 
 **North Star:** a person, or an agent working alone, can take an idea or a spec to a tool that someone
 else can use, without rebuilding it three times on the way.
@@ -47,7 +47,7 @@ path: steps 1, 6 and 8 in full, steps 2 to 5 in a line each, step 7 folded into 
 | **New to this** (Beginner) | The coach, pasted into any chatbot | A one-page plan and a first prompt you can test today |
 | **Building with an agent** (Advanced) | [One skill folder](level-2-files/) to copy into your agent's skills. Works in any repository | A project folder with its own checks, the front page and the first version in place |
 | **Running agents unattended** (Expert) | [Gates, the fresh-run test and the score sheet](level-3-files/) | Proof of what works, before a person spends time on it |
-| **Building from a spec you already have** (Autopilot) | [One prompt](level-2-files/AUTOPILOT.md) for a coding agent or a scheduled task: your spec and guidance in | A draft pull request with a runnable demo, gate results and what the agent assumed. You review and merge |
+| **Building from a spec you already have** (Autopilot) | [One prompt](level-2-files/AUTOPILOT.md) for a coding agent or a scheduled task: your spec, guidance and where it should end up | A tested tool with a demo, gate results and what the agent assumed: a draft pull request, or a package for your chatbot project or Drive folder |
 
 ### 3. See it used
 
@@ -102,23 +102,29 @@ the wood, draw it, have someone check the drawing, build the smallest platform y
 | Builds the first version and tests it in a fresh session | Read what the test tripped on and decide what to fix |
 | Makes each addition | Approve each one, and use the tool yourself |
 
-## Autopilot: a spec in, a draft pull request out
+## Autopilot: a spec in, a finished tool out
 
-The same nine steps, run by a coding agent without you guiding each one. You give it a spec, such
-as any plan in [`workshop/plans/`](../../workshop/plans/), and a few lines of guidance. It fills the
-plan from the spec and marks every choice the spec did not make as assumed, checks what already
-exists, builds a demo you can run, tests it with fresh sessions, and opens a draft pull request.
-You decide twice: when you write the spec, and when you review the pull request.
+The same nine steps, run by a coding agent without you guiding each one. You give it a spec, a few
+lines of guidance, and where the tool should end up. It fills the plan from the spec and marks
+every choice the spec did not make as assumed, checks what already exists, builds the tool and a
+demo, tests them with fresh sessions, and hands back a note of what it decided and assumed. You
+decide twice: when you write the spec, and when you review the result.
+
+It builds any tool written as a workflow of steps. For a project on GitHub, the result is a draft
+pull request. For someone who works in a chatbot, it is a package to save in a chatbot project or
+a Drive folder: the instructions, any skills, a worked example and how to run it. For example, a
+decision-support tool that researches a decision and writes a SWOT, laid out by
+[Artifact Studio](../artifact-studio/) if you ask.
 
 ```
 Use the agentic-process skill on autopilot.
 Spec: workshop/plans/learning-system/README.md and the draft it links to
 Guidance: a demo for developers first; invented data only; one command runs it
-Work in this repository. Open a draft pull request. Never merge.
+Deliver to: repository
+Never merge, post or send anything.
 ```
 
-Run it in a Claude Code session, save it as a scheduled routine, or put it in an issue for a
-coding agent: [how, and what comes back](level-2-files/AUTOPILOT.md).
+[How to run it, and what comes back for each target](level-2-files/AUTOPILOT.md).
 
 ## Status
 

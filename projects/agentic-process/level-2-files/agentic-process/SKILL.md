@@ -25,11 +25,15 @@ which carries its own checks.
    People who only receive the result, such as customers, do not count; text pasted into the
    chat is not a file. Working unattended, take all nine steps: a person can shorten it later.
 
-## Autopilot: from a spec to a pull request
+## Autopilot: from a spec to a finished tool
 
-Use this when the person gives you a spec (a plan, a draft, notes) and guidance, and says
-"autopilot", or when you run on a schedule. The person decides by writing the spec and by
-reviewing the pull request. You decide everything in between, and record why.
+Use this when the person gives you a spec (a plan, a draft, notes), guidance and a delivery
+target, and says "autopilot", or when you run on a schedule. The person decides by writing the
+spec and by reviewing what you hand back. You decide everything in between, and record why.
+Any tool that can be written as a workflow of steps fits, such as a chatbot tool that researches
+a decision and writes a SWOT. The target is `repository` (a draft pull request), `chatbot` (a
+package to install in a chatbot project) or `folder` (a local or Drive folder). Without one, ask
+once, or use `folder` when no person is there.
 
 1. **Read the inputs and check the spec is ready.** The spec, any draft it links to, and the
    guidance. Guidance wins over the spec when they differ. Write both paths at the top of the
@@ -41,21 +45,25 @@ reviewing the pull request. You decide everything in between, and record why.
    the smallest reasonable choice and mark it `Assumed:` in the plan. Do not stop to ask. Still
    run the reuse check: if something already does the whole job, stop, write the guide to it,
    and go to step 6 below with that guide as the result.
-3. **Build a demo the person can run.** The beginner version, as the template describes. If the
-   spec's first version needs code (a database, a script), build the smallest working version
-   in `level-2-files/` with one command that shows it working on invented data, and add that
-   command to `_build/gates.json` as a gate named `demo`.
+3. **Build the tool and a demo.** The instructions in `base/AI-INSTRUCTIONS.md` are the system
+   prompt the tool runs on, with its workflow steps. Put any skill it needs in `level-2-files/`.
+   The README's "Try it in five minutes" says where to save it (a chatbot project, a Drive
+   folder, a repository) and how to run it each time. For a chatbot tool the demo is one worked
+   example a fresh chat makes from the instructions, in `base/examples/`. If the tool needs code,
+   build the smallest working version in `level-2-files/` with one command that runs it on
+   invented data, and add that command to `_build/gates.json` as a gate named `demo`. If the
+   spec asks for good-looking results, the instructions hand them to Artifact Studio.
 4. **Steps 7 and 8 with fresh sessions.** Use sub-agents with no memory of this work for the
    review and for two test runs (see "The fresh-session test"). Fix repeats and blocking points,
    then run one more round. Without sub-agents, prepare the test folders and mark the gates open.
 5. **Every gate passes or is open, never failed.** Run
    `python3 <project>/_build/checks/gates.py <project>`. Fix any failure. After two failed fixes
    of one gate, stop and hand back with that gate failed.
-6. **Hand back as a draft pull request.** A branch named `build/<slug>`, one commit, and a draft
-   pull request whose description has: the four headings (Decided. Assumed. Not checked. Test
-   this next.), each gate with pass or open and why, the gate output, and the command that runs
-   the demo. Without a way to open a pull request, leave the branch and write the description to
-   `_build/HANDBACK.md`. Never merge.
+6. **Hand back.** Always write `_build/HANDBACK.md`: the four headings (Decided. Assumed. Not
+   checked. Test this next.), each gate with pass or open and why, the gate output, and how to
+   run the demo. Then deliver to the target. `repository`: a branch `build/<slug>`, one commit,
+   and a draft pull request whose description is the hand-back; never merge. `chatbot`: the
+   folder, plus a short list of what to paste where. `folder`: write it where the person said.
 
 ## The nine steps
 
