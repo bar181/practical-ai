@@ -172,9 +172,15 @@ yet, so the timings are estimates.
 
 ## What comes next
 
-**Document to action brief**, the first lesson in the classroom list: turn a supplier notice or a
-report into key facts, obligations, dates and questions. It will be built with Agentic Process
-from step 1, and timed.
+The first class: three lessons that teach one habit, checking every AI-made item against its
+source before you act. Each has a plan written with Agentic Process, waiting on the owner's review.
+
+1. [**Document to action brief**](workshop/plans/document-to-action-brief/): a supplier notice
+   becomes facts, obligations, dates and questions, each with the line it came from.
+2. [**Write and edit in my voice**](workshop/plans/write-in-my-voice/): three samples become a
+   voice guide, and a revised draft keeps every fact and promise.
+3. [**Meeting notes to actions**](workshop/plans/meeting-notes-to-actions/): a transcript becomes
+   actions, with every owner or date nobody agreed to flagged.
 
 After that, the tools in [the priorities](docs/practical-ai-priorities.md), one change request each.
 

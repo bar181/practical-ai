@@ -79,7 +79,7 @@ Level 1 is the Beginner level: a student can run it in any chat assistant with n
 - **Needs** the [learnings database](../learning-system/NORTH-STAR.md) and the
   [core memory system](../core-memory/README.md) to exist first. Without a shelf, the mail room has
   nowhere to send anything.
-- **Works beside** the [meeting to actions](../meeting-to-actions/) plan. This page first proposed absorbing it. Research on 15 November 2026 found meeting notes to actions is one of the most wanted simple tools, so it stays a tool of its own and the hub files what it produces.
+- **Works beside** the [meeting notes to actions](../meeting-notes-to-actions/) plan. This page first proposed absorbing it. Research on 15 November 2026 found meeting notes to actions is one of the most wanted simple tools, so it stays a tool of its own and the hub files what it produces.
 - **Feeds** the weekly brief, the inbox summary and decision support.
 
 ## Open questions
