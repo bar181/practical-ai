@@ -97,7 +97,7 @@ Never write as if a person said it, and never put a person's name on a page.
 | Order | A title that is the conclusion. The answer in two sentences. Three numbers. Three findings, each with a full-sentence heading, one chart and a "so what". How it was measured. What it does not show. Next steps with owner and date. |
 | Sentences | Declarative. A number in most of them. |
 | Page behaviour | Charts can be touched to read values. Nothing else moves. |
-| Look | Quiet. One data colour, grey for comparison. Sources under each chart. |
+| Look | Quiet. One data colour, grey for comparison. Sources under each chart. One picture at most, at the top. |
 | Avoid | Headings that name a topic. Hiding the limits. Decoration that is not data. |
 
 ## Executive brief

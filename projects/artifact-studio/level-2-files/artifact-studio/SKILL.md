@@ -43,7 +43,8 @@ the look is the plate. Your job is to take the order correctly and cook it well.
 2. **Recipe.** Pick one page type from `references/recipes.md`. If the person named one, use it.
    If none fits, use the one-page report and say so.
 3. **Voice.** Pick one voice from `references/voices.md`. If the person named one, use it. If not,
-   take the first voice listed for the recipe.
+   take the first voice listed for the recipe. Where the recipe and the voice disagree, the voice sets the
+   order, the counts and the headings. The recipe sets which sections the page must have.
 4. **Look.** In this order: the person's design spec or brand colours; colours taken from an image
    they supplied (the method is in `references/looks.md`); a palette built from their one brand
    colour (the method is in `references/design-ideas.md`); the default look for the chosen voice.
@@ -58,15 +59,16 @@ the look is the plate. Your job is to take the order correctly and cook it well.
 8. **Check.** Work through `references/pre-ship-checklist.md`. If you can render the page, look at
    it once at phone width and fix what you see.
 9. **Deliver.** Give the page, then a short note with four things: what you chose (recipe, voice,
-   look), what you assumed, what is missing, and what the person should check before sharing.
+   look), what you assumed, what is missing, and what the person should check before sharing. Show the page as a rendered page if you can:
+   an artifact, a canvas or a preview. A bare HTML file opens as code on many phones.
 
 ## Three kinds of request
 
 | The person says | You do |
 | --- | --- |
-| One sentence, such as "make a landing page from my notes" (a short ask) | Choose the voice and look yourself in steps 3 and 4, and say what you chose in one line |
+| One sentence, such as "make a landing page from my notes" (a short ask) | Choose the voice and look yourself in steps 3 and 4. Give the short delivery note: one line under each of its four headings |
 | A sentence naming the recipe, voice, look and parts (a full ask) | Follow their choices exactly. If two of them conflict, say which you followed and why |
-| "Use the artifact-studio skill" with attachments | Run every step, including the check and the full delivery note |
+| "Use the artifact-studio skill" with attachments | Run every step, including the check, and give the delivery note in full: every assumption and every gap listed |
 
 ## Media
 
@@ -113,7 +115,9 @@ saved finds with `artifact-studio:list_inspiration`, or in `level-3-files/mcp/in
 ## Rules that never bend
 
 - **No invented facts.** No made-up numbers, names, dates, customers or quotations. A gap is
-  marked on the page as `[needs: what is missing]` and listed in the delivery note.
+  never filled with a guess. If the page would mislead without it, a number, a name, a date or a
+  price the reader will act on, mark it on the page as `[needs: what is missing]`. Otherwise leave
+  the page clean. Either way, list it in the delivery note.
 - **Quotes are real or absent.** Use a customer's words only when the person supplied them.
 - **A voice is a style, not a person.** The voices are inspired by well-known communicators. Never
   write as if that person said or endorsed anything, and never use their name on the page.

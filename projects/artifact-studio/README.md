@@ -68,6 +68,8 @@ You should get something like this. It is the same request, already built:
   press the copy button at the top right, and paste it in before the notes.
 - **Now add a photo.** Attach any photo of your own and say: `Open with my photo as a slow pan and zoom, like a documentary shot, and set the title in huge letters filled with the photo.`
 - **Now make it a deck.** In the same chat, say: `Show the same notes as a keynote-style slide deck: black slides, one idea each, huge type.`
+- **It shows code, not a page?** That happens with a bare HTML file on a phone. Say "show this as
+  an artifact" in Claude, or ask your chatbot for a preview of the page.
 - **Browse everything it can make.** Download [`base/studio.html`](base/studio.html) and open it in
   a browser. It is the whole library in one file. The highlights come first: photo effects, scroll
   effects, layouts, post previews and a tab for each of seven voices. The components follow:
@@ -346,6 +348,7 @@ used it yet, so tell us what you find.
 | Gallery, picker, palette maker | Built. Rebuilds from `_build/` |
 | Worked examples | Ten files. Each finished page is a hand-built reference. **None is the output of running its prompt** in a chat |
 | Chatbots | Built with Claude. **Not yet run** in the other assistants named on this page |
+| A real request | On 16 November 2026 the assistant that wrote the instructions followed them to make [a progress report on this project](../../docs/reports/2026-11-16-project-one-progress.html). A first real use, not an independent test |
 | The beginner prompt | Run once, on 15 November 2026, in a fresh Claude session given the instructions as text: 6 of 6 on the skill's test for this report, with every figure traced to the notes. One run, one assistant |
 | The one-link prompt | The link opens. **Not yet tried** from inside each chatbot |
 | The skill | Written. Not yet run end to end by a second agent |

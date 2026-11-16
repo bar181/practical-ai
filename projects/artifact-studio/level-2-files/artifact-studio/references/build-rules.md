@@ -53,7 +53,9 @@ could not find the examples, and this section is what that taught.
 
 ## Colour and type
 
-- Name four to six colours as tokens at the top of the style block and use only those.
+- Name at most seven colours as tokens at the top of the style block and use only those: background,
+  panel, border, secondary text, main text, accent and highlight. A page with a chart adds one
+  data colour. The accent is for what to act on. The data colour is never the accent.
 - Text against its background: at least 4.5 to 1 for body text, 3 to 1 for large headings.
 - One or two typefaces. If two, make them clearly different.
 - Meaning never depends on colour alone. A warning has an icon and a label as well.
@@ -64,9 +66,10 @@ could not find the examples, and this section is what that taught.
 - At most three moving parts on a page.
 - Everything is readable before any animation runs. Never leave content at zero opacity waiting
   for a scroll.
-- Tie movement to scrolling with CSS scroll-driven animations where the browser supports them, and
-  with the skeleton's small script elsewhere. Check support with
-  `@supports ((animation-timeline: view()) and (animation-range: entry))`.
+- Tie movement to scrolling with the skeleton's small script, which sets one custom property from
+  the scroll position and behaves the same in every browser. Keep the skeleton's CSS-only form,
+  inside `@supports ((animation-timeline: view()) and (animation-range: entry))`, so the page
+  still moves with scripts off.
 - Wrap every animation in the reduced-motion guard. With motion off, the page shows its final
   state.
 - No sound. No video that plays with sound by itself.
@@ -74,7 +77,7 @@ could not find the examples, and this section is what that taught.
 ## Charts
 
 - One chart, one point. The heading says the point as a sentence.
-- One data colour, grey for the comparison. Thin bars with the value at the end. Two-pixel lines.
+- One data colour, its own token and never the accent. Grey for the comparison. Thin bars with the value at the end. Two-pixel lines.
 - Label the values that matter. Leave the rest to touch or a table.
 - State the unit and the source under the chart.
 - Every number on a chart came from the person's content. Show derived numbers in a table.
@@ -92,7 +95,9 @@ could not find the examples, and this section is what that taught.
 - Real content everywhere. No placeholder text.
 - A button says what happens when it is pressed.
 - Dates, prices and names are copied from the content, not retyped from memory.
-- Gaps are marked `[needs: ...]` in the page and listed in the delivery note.
+- A gap that would mislead the reader is marked `[needs: ...]` in the page: a number, a name, a
+  date or a price they will act on. Every gap is listed in the delivery note. Do not mark the
+  rest on the page.
 
 ## Accessibility
 

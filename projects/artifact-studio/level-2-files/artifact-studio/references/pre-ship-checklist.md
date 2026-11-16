@@ -25,7 +25,7 @@ result. A person then looks at the page on a phone and checks the facts.
 - [ ] Real content everywhere. No placeholder text
 - [ ] Every number, name, date and quote can be found in the content that was supplied
 - [ ] Totals add up, and derived numbers show their working
-- [ ] Every gap is marked on the page and listed for the person
+- [ ] A gap that would mislead the reader is marked on the page, and every gap is listed for the person
 - [ ] Customer quotes are real. Example content is labelled as an example
 - [ ] Nothing private, and nothing that belongs to someone else
 

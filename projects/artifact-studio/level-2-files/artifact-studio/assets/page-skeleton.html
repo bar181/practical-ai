@@ -53,8 +53,8 @@ button,.button{font:700 1rem/1 var(--display);min-height:48px;padding:0 22px;bor
 (()=>{
 const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches,html=document.documentElement;
 const clamp=(v,a=0,b=1)=>Math.min(b,Math.max(a,v));
-/* scroll driver for browsers without native scroll-driven animations */
-if(!CSS.supports('(animation-timeline: view()) and (animation-range: entry)')&&!reduce){
+/* scroll driver. It runs in every browser, so the effect is the same everywhere. The CSS-only form above is for pages opened with scripts off. */
+if(!reduce){
   html.classList.add('sd-js');const els=[...document.querySelectorAll('.sd')];let tick=false;
   const upd=()=>{tick=false;const vh=innerHeight;for(const e of els){const r=e.getBoundingClientRect();e.style.setProperty('--p',clamp((vh-r.top)/(vh+r.height)).toFixed(4))}};
   addEventListener('scroll',()=>{if(!tick){tick=true;requestAnimationFrame(upd)}},{passive:true});addEventListener('resize',upd);upd();

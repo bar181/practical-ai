@@ -16,7 +16,7 @@ evidence: almost nothing has been tried by anyone but its author.
 | The landing page | 86 | A hook, four callouts, one picture, then "Try it in five minutes". Not yet seen rendered on GitHub by the author of this review |
 | The kitchen sink, `base/studio.html` | 90 | One file, 46 tabs. Every tab checked at three widths in Chrome for script errors, sideways scroll and accessibility |
 | Worked examples, `base/examples/` | 66 | Ten files, each with a prompt and sample input. Every finished page is a hand-built reference. None is the output of running its prompt |
-| The paste-in instructions | 60 | Run once in a fresh Claude session: 6 of 6 on the skill's test. That run found six contradictions, listed below. They are not fixed |
+| The paste-in instructions | 60 | Run once in a fresh Claude session: 6 of 6 on the skill's test. That run found six contradictions, listed below. They were fixed on 16 November, after this score |
 | The one-link prompt | 55 | The link opens. Never tried from inside ChatGPT, Gemini or any chatbot other than Claude |
 | The skill and the MCP server | 70 | Pass their own checks. No second agent has run the skill. The server has not been tried in a desktop assistant |
 | Honesty of the status lines | 92 | Each says who has and has not tried the thing. Estimates are labelled |
@@ -39,6 +39,25 @@ evidence: almost nothing has been tried by anyone but its author.
 5. **Size.** `base/` is 9 MB: the kitchen sink is 2.9 MB and the examples carry their own fonts
    and pictures.
 6. **Branch protection on `main`** could not be set by the assistant. The owner sets it by hand.
+
+## Added on 16 November: the instructions were fixed and then used
+
+All six contradictions are fixed, with two more the author had introduced: a picture on the
+brief page, whose voice forbids pictures, and a scroll rule that no longer matched the library.
+The instructions have not been scored again.
+
+The author then used the instructions for a real request from the owner: a page on the progress
+and value of this project. The result is
+[`2026-11-16-project-one-progress.html`](2026-11-16-project-one-progress.html). Following the
+steps exposed three gaps, now closed:
+
+1. A request with two jobs had no rule. Now the page does the job its reader will act on, and
+   the other job becomes a section.
+2. Nothing said how to hand the page over. A bare HTML file showed as code on the owner's phone.
+   The delivery step now says to show a rendered page where the assistant can.
+3. The analyst voice said nothing about pictures, and its example had one. It now allows one.
+
+This is a first real use by the tool's author. It is not an independent test.
 
 ## What changed in the last session
 

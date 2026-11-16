@@ -1,6 +1,6 @@
 {
  "name": "artifact-studio",
- "generated": "2026-11-15",
+ "generated": "2026-11-16",
  "read_me": "Paths are relative to the project folder. \"preview\" is the tab of base/studio.html that shows it. \"example\", where present, is a worked example: one file with the prompt, the sample input and the finished page. \"starter\", where present, is a small complete file to copy and fill. \"source\" is reference code: one style block, the markup and one script, not a complete file. A post preview also needs the frame styles in sources/02-posts-lib.html. \"fit\" scores run 0 to 3. To choose, score = 3 x goal fit + 2 x audience fit, highest first.",
  "counts": {
   "templates": 20,

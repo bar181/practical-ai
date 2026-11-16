@@ -122,7 +122,9 @@ What is in it, now that the first project is finished:
 <p align="center"><a href="projects/artifact-studio/"><b>Open Artifact Studio</b></a></p>
 
 It was built and checked by its author, and scored 70 out of 100 in
-[his own final review](docs/reports/2026-11-15-artifact-studio-final-review.md). Nobody else has
+[his own final review](docs/reports/2026-11-15-artifact-studio-final-review.md). The first page
+made with it for a real request is
+[a progress report on the project itself](docs/reports/2026-11-16-project-one-progress.html). Nobody else has
 used it yet, so your feedback counts.
 
 ## What comes next

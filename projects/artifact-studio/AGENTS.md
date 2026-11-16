@@ -49,13 +49,14 @@ Return two things.
 ```
 Chose: <template>, <voice>, <look>. <one line on why, if you chose>
 Assumed: <each assumption, one per line, or "nothing">
-Missing: <each gap marked [needs: ...] on the page, or "nothing">
+Missing: <every gap, one per line, or "nothing". Say which are marked [needs: ...] on the page>
 Check before sharing: <the numbers, names and claims a person must verify>
 ```
 
 ## Rules that never bend
 
-1. No invented facts. Mark gaps as `[needs: ...]`.
+1. No invented facts. A gap that would mislead the reader is marked `[needs: ...]` on the page.
+   Every gap is listed in the delivery note.
 2. A voice is a style. Never attribute words to the person who inspired it.
 3. Every company, person and figure in the templates is invented, except on the visionary page
    and the post previews, which are about this repository and name its author. Adapt the pattern and never

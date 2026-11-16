@@ -20,7 +20,7 @@ get wrong.
 | Field | |
 | --- | --- |
 | Job | Answer "how did it go, and what happens next" near the top |
-| Sections, in order | Title, period and reader. The whole period in two sentences. Four numbers, each with its change. One trend chart with a full-sentence heading. One breakdown table with the weak row marked. What changed. What happens next. |
+| Sections, in order | Title, period and reader. The whole period in two sentences. Three or four numbers, each with its change. One trend chart with a full-sentence heading. One breakdown table with the weak row marked. What changed. What happens next. |
 | Parts | Big numbers, line chart, table with a bar per row, two plain lists |
 | Voices that fit | Analyst, executive brief |
 | Look | Quiet. One data colour, grey for comparisons |
