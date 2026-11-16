@@ -1,7 +1,10 @@
 # practical-ai
 
-Practical AI tools a person or a small team can set up and use, mostly without writing code. No
-fluff, just productivity.
+Practical AI tools a person can use the same day. No fluff, just productivity.
+
+**North Star:** every tool comes at two depths. A **Beginner** level a student or a business owner
+runs in any chat assistant with nothing installed, and **Advanced** levels, with skills and
+connectors, for someone who works with agents every day.
 
 **Think of it as** a workshop wall. Each tool has its outline painted on the board, so you can see
 what is there, what is being made and what is still an idea.
@@ -12,32 +15,32 @@ what is there, what is being made and what is still an idea.
 | --- | --- |
 | Looking for something to use today | [`drafts/artifact-studio/`](drafts/artifact-studio/): pages, slide decks and social posts from your notes |
 | An agent | [`AGENTS.md`](AGENTS.md) |
-| Wondering what else is planned | [`docs/PRIORITIES.md`](docs/PRIORITIES.md) and [`plans/`](plans/) |
-| Building a tool here | [`drafts/project-method/`](drafts/project-method/): nine stages, a gate after each |
+| Wondering what else is planned | [`docs/PRIORITIES.md`](docs/PRIORITIES.md): the one list of potential builds, each with its Beginner and Advanced level, and the ten most in-demand simple tools |
+| Building a tool here | [`drafts/project-method/`](drafts/project-method/): nine stages, a gate after each. It serves the tools and is not the point of the repository |
 
 ## Layout
 
 | Folder | What it holds |
 | --- | --- |
-| [`docs/`](docs/) | The priority list, the to-do list, the self-review and the reports |
-| [`plans/`](plans/) | One folder for each planned tool, the plan template, and [`archive/`](plans/archive/) for what was replaced |
+| [`docs/`](docs/) | The one list of potential builds, the to-do list, the self-review and the reports |
+| [`plans/`](plans/) | One folder for each tool on the list, the plan template, and [`archive/`](plans/archive/) for what was replaced |
 | [`drafts/`](drafts/) | Tools being built. Usable, not yet used by anyone but their author |
 | [`projects/`](projects/) | Tools another person has used for a real job. Empty so far |
 | [`skills/`](skills/) | Skills an assistant can load, one folder each |
 | [`tools/`](tools/) | Four small scripts that check the repository: links, skills, layout, and a gate runner |
 
-A tool moves one way: a line in the priority list, a plan, a draft, a project.
+A tool moves one way: a North Star page or a plan, a line on the list, a draft, a project.
 
 ## How every tool is laid out
 
 One rule: **`base/` holds everything. A level holds only what it adds.**
 
-| | Holds | You depend on |
-| --- | --- | --- |
-| `base/` | The thing itself, its examples and its source | A browser |
-| `level-1/` | Instructions: for the assistant and for you | Any chat assistant |
-| `level-2/` | What makes it repeatable: a preferences file, a skill, gates | An assistant that keeps files |
-| `level-3/` | Connections: an MCP server, a plugin, a schedule | Other systems |
+| | Called | For | Holds | You depend on |
+| --- | --- | --- | --- | --- |
+| `base/` | Base | Everyone | The thing itself, its examples and its source | A browser |
+| `level-1/` | Beginner | Students and business owners | Instructions to paste, for the assistant and for you. Nothing to install | Any chat assistant |
+| `level-2/` | Advanced | Someone who builds with agents | A skill, connectors, a preferences file, gates | An assistant that runs skills and connectors |
+| `level-3/` | Expert | The owner's own setup | A database, an MCP server, a plugin, a schedule | Other systems |
 
 Each tool also has two front doors, `README.md` for people and `AGENTS.md` for agents, and a
 `gates.json` listing the checks it must pass.

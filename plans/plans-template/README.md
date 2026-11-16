@@ -21,18 +21,18 @@ and deliberately light on everything after it.
 
 ## By hand
 
-1. **Check the index.** Open [`../README.md`](../README.md). If the tool is already there, update its plan instead of adding a new one.
+1. **Check the list.** Open [`../../docs/PRIORITIES.md`](../../docs/PRIORITIES.md). If the tool is already there, update its plan instead of adding a new one.
 2. **Pick a slug.** Lowercase words joined by hyphens, for example `expense-form`.
 3. **Copy the template** to `plans/<slug>/README.md`.
 4. **Work through the build process**, steps 1 to 6, filling the template as you go. Keep to these rules:
    - Write the one-line promise from the user's side: what they get, not how it works.
    - Lead with an analogy from everyday life.
    - Write the scope before anything else, including what is out.
-   - Describe level 1 fully. Give each later level one line.
+   - Describe level 1, the Beginner level, fully: a student must be able to run it. Give each later level one line that names its skill and connectors.
    - Name what the tool reuses before describing anything new.
    - Put anything you do not know under Open questions. Never guess.
 5. **Flag the complexity** using the scale below, for the tool overall and for each level.
-6. **Update the indexes.** Add a row to [`../README.md`](../README.md) and to [`../../docs/TODO.md`](../../docs/TODO.md), and set the Plan flag in [`../../docs/PRIORITIES.md`](../../docs/PRIORITIES.md).
+6. **Update the one list.** Add the tool's row to [`../../docs/PRIORITIES.md`](../../docs/PRIORITIES.md), with its Beginner and Advanced lines. That is the only index.
 7. **Open a pull request.** Do not commit to the main branch.
 
 ## With the skills

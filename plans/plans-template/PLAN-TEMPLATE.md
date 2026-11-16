@@ -33,9 +33,9 @@ The layout and the stages are in the [project method](../../drafts/project-metho
 | Level | What it involves | Complexity |
 | --- | --- | --- |
 | Base | One line: what a person can open and use with nothing set up | |
-| Level 1 | Three or four sentences: what the person prepares, what they give the assistant, what they get back, what they check | |
-| Level 2 | One line: what makes it repeatable, such as a preferences file or a skill | |
-| Level 3 | One line: the connections, such as an MCP server or a schedule | |
+| Level 1, Beginner: for students | Three or four sentences a student can follow in any chat assistant: what they prepare, what they paste, what they get back, what they check | Beginner |
+| Level 2, Advanced: skills and connectors | One line: the skill, and the connectors to where the work lives | Intermediate |
+| Level 3, Expert: automation | One line, or "None": a database, an MCP server or a schedule | Advanced |
 | Commercial grade | One line: what a commercial build adds | Explained, not built here |
 
 ## Established best practices

@@ -40,11 +40,13 @@ evidence; a comparison with the previous score.
 **Where the data lives:** rubrics are public and live in the repository. Scores belong to the
 project they score.
 
+Level 1 is the Beginner level: a student can run it in any chat assistant with nothing installed. Levels 2 and 3 are the Advanced levels, with skills and connectors, for someone who works with agents every day.
+
 | | Holds | Done when |
 | --- | --- | --- |
 | Base | The format, five rubrics, three invented pieces of work each scored twice to show a fair and an inflated review | A reader can tell the fair review from the inflated one |
-| Level 1 | Paste the instructions, the rubric and the work into a fresh chat. Get scores, evidence and the three changes that would raise the score most | Two fresh chats score the same work within five points of each other |
-| Level 2 | A skill that runs the review in a separate session and writes it beside the work | The project method's stage 8 is one command |
+| Level 1, Beginner | Paste the instructions, the rubric and the work into a fresh chat. Get scores, evidence and the three changes that would raise the score most | Two fresh chats score the same work within five points of each other |
+| Level 2, Advanced | A skill that runs the review in a separate session and writes it beside the work | The project method's stage 8 is one command |
 
 ## Open questions
 

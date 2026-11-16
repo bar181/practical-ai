@@ -67,12 +67,14 @@ Nothing private is kept in this repository.
 
 ### Levels
 
+Level 1 is the Beginner level: a student can run it in any chat assistant with nothing installed. Levels 2 and 3 are the Advanced levels, with skills and connectors, for someone who works with agents every day.
+
 | | Holds | Done when |
 | --- | --- | --- |
 | Base | The seven steps, a template for each, three invented decisions worked end to end (a hire, a price change, a new service), and a rubric for a good recommendation | Each invented decision can be read in ten minutes and its sources all resolve |
-| Level 1 | You paste the instructions and describe the decision. The assistant walks the seven steps, stopping after step 1 and after step 2 for your correction. You get a brief and a deck | A real decision is worked in one sitting and every link in it opens |
-| Level 2 | A skill that keeps the working folder, runs the link check itself and scores its own recommendation against the rubric | A recommendation with an unverified source cannot be marked finished |
-| Level 3 | Connections: add your own material to the folder (transcripts, papers, spreadsheets) and have it indexed for retrieval. Reads from the core memory system | "Add these three transcripts" changes the evidence table, with each claim traced to its file |
+| Level 1, Beginner | You paste the instructions and describe the decision. The assistant walks the seven steps, stopping after step 1 and after step 2 for your correction. You get a brief and a deck | A real decision is worked in one sitting and every link in it opens |
+| Level 2, Advanced | A skill that keeps the working folder, runs the link check itself and scores its own recommendation against the rubric | A recommendation with an unverified source cannot be marked finished |
+| Level 3, Expert | Connections: add your own material to the folder (transcripts, papers, spreadsheets) and have it indexed for retrieval. Reads from the core memory system | "Add these three transcripts" changes the evidence table, with each claim traced to its file |
 
 ## Depends on, and feeds
 

@@ -65,19 +65,21 @@ person owns. The repository holds invented examples only.
 
 ### Levels
 
+Level 1 is the Beginner level: a student can run it in any chat assistant with nothing installed. Levels 2 and 3 are the Advanced levels, with skills and connectors, for someone who works with agents every day.
+
 | | Holds | Done when |
 | --- | --- | --- |
 | Base | The intake step, four invented sources with the records each should produce, and the rules for what is worth keeping | A reader can predict the records for a fifth example |
-| Level 1 | You paste a transcript, a thread or a page with the instructions. The assistant returns candidate records as rows. You delete the ones you do not want and paste the rest into your sheet | Five real sources produce records you would have filed yourself, and none you would not |
-| Level 2 | A skill that reads through the connectors you already have, shows the review queue, and files what you accept | A meeting from this week is filed in under two minutes, and nothing is filed without your say |
-| Level 3 | Scheduled intake from sources you name, through their APIs or webhooks, into a queue that waits for review | A week of meetings is waiting in the queue on Friday, with nothing filed unreviewed |
+| Level 1, Beginner | You paste a transcript, a thread or a page with the instructions. The assistant returns candidate records as rows. You delete the ones you do not want and paste the rest into your sheet | Five real sources produce records you would have filed yourself, and none you would not |
+| Level 2, Advanced | A skill that reads through the connectors you already have, shows the review queue, and files what you accept | A meeting from this week is filed in under two minutes, and nothing is filed without your say |
+| Level 3, Expert | Scheduled intake from sources you name, through their APIs or webhooks, into a queue that waits for review | A week of meetings is waiting in the queue on Friday, with nothing filed unreviewed |
 
 ## Depends on, and feeds
 
 - **Needs** the [learnings database](../learning-system/NORTH-STAR.md) and the
   [core memory system](../core-memory/README.md) to exist first. Without a shelf, the mail room has
   nowhere to send anything.
-- **Absorbs** the earlier [meeting to actions](../meeting-to-actions/) plan as its first source.
+- **Works beside** the [meeting to actions](../meeting-to-actions/) plan. This page first proposed absorbing it. Research on 15 November 2026 found meeting notes to actions is one of the most wanted simple tools, so it stays a tool of its own and the hub files what it produces.
 - **Feeds** the weekly brief, the inbox summary and decision support.
 
 ## Open questions

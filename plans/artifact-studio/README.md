@@ -2,7 +2,7 @@
 
 Pick a page type, a voice and a look from a menu of working examples, and get a page worth sharing built from your own content.
 
-| Complexity | Research | Simple level | Draft |
+| Complexity | Research | Level 1 | Draft |
 | --- | --- | --- | --- |
 | Beginner to advanced | Done: landscape review in the draft | [Drafted](../../drafts/artifact-studio/) | [`drafts/artifact-studio/`](../../drafts/artifact-studio/) |
 
@@ -24,15 +24,17 @@ Anyone who asks an assistant for a report, a proposal, an explainer or a landing
 
 ## What might be involved at each level
 
-The simple level is described in most detail, because it is built first. The later levels are
+Level 1 is described in most detail, because it is built first. The later levels are
 outlines and will change.
+
+Level 1 is the Beginner level: a student can run it in any chat assistant with nothing installed. Levels 2 and 3 are the Advanced levels, with skills and connectors, for someone who works with agents every day.
 
 | Level | What it involves | Complexity |
 | --- | --- | --- |
-| Demo | A base that holds everything: a library of 20 templates (pages, voices, decks, social formats) and 36 parts, an index for people and one for agents, and one studio page that shows them all in tabs with a picker. Every template carries the sentence that asks for it. This tool trials the base-plus-levels layout | Beginner |
-| Simple | Level 1, nothing to install. Paste the instructions for the assistant into a Project once. Then copy a sentence from any example, attach your notes, and check every number against them. | Beginner |
-| Working | Level 2, your preferences on file. Fill in one preferences file: default recipe, voice and look, brand, layout and format rules. Install the skill if the assistant loads skills. A short ask then gives a page that looks and sounds like yours. | Intermediate |
-| Automated | Level 3, connected. One connection is built: an MCP server that gives an assistant the library as tools, so it can choose a template, read its reference code and rules, and file a note about a design the person likes. Tested with a client only. Other slots are listed in the draft: content in, the page out to a web address, a plugin, and runs on a schedule | Advanced |
+| Base | A base that holds everything: a library of 20 templates (pages, voices, decks, social formats) and 36 parts, an index for people and one for agents, and one studio page that shows them all in tabs with a picker. Every template carries the sentence that asks for it. This tool trials the base-plus-levels layout | Beginner |
+| Level 1, Beginner: for students | Level 1, nothing to install. Paste the instructions for the assistant into a Project once. Then copy a sentence from any example, attach your notes, and check every number against them. | Beginner |
+| Level 2, Advanced: skills and connectors | Level 2, your preferences on file. Fill in one preferences file: default recipe, voice and look, brand, layout and format rules. Install the skill if the assistant loads skills. A short ask then gives a page that looks and sounds like yours. | Intermediate |
+| Level 3, Expert: automation | Level 3, connected. One connection is built: an MCP server that gives an assistant the library as tools, so it can choose a template, read its reference code and rules, and file a note about a design the person likes. Tested with a client only. Other slots are listed in the draft: content in, the page out to a web address, a plugin, and runs on a schedule | Advanced |
 | Commercial grade | A design system with an owner, approved voices, facts traced to a source of record, an accessibility audit, a named reviewer and a release step with an audit trail. | Explained, not built here |
 
 ## Established best practices
@@ -57,15 +59,15 @@ Follow the [build process](../plans-template/BUILD-PROCESS.md). Tick each as it 
 
 - [ ] **Reuse check:** what is built in, what is open source, and whether to stop here
 - [ ] **Build or license:** the lean for each level, with outside providers reviewed but not selected
-- [ ] **Dependencies and pricing:** what the simple level depends on and what it costs
+- [ ] **Dependencies and pricing:** what the Beginner level depends on and what it costs
 - [ ] **Where it lives:** which assistant, where the files are kept, what stays manual
 
 ## First step
 
 1. Research established best practices. Record each one with a source link and the date checked.
-2. Write the simple level solution and its overview.
+2. Write the Beginner level solution and its overview.
 
-The working level and beyond are planned only after the simple level is in use.
+The Advanced level and beyond are planned only after the Beginner level is in use.
 
 ## Open questions
 

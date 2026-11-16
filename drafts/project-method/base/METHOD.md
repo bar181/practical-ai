@@ -206,12 +206,15 @@ and committing. Do one stage, or one piece of stage 6, in a session.
 
 Every tool has a base and up to three levels.
 
-| | Holds | A person depends on |
-| --- | --- | --- |
-| `base/` | Everything: the thing itself, its examples, its source | Nothing but a browser or a reader |
-| `level-1/` | Only instructions: for the assistant, and for the person using it | Any chat assistant |
-| `level-2/` | Only what makes it repeatable or agentic: a preferences file, a skill, gates | An assistant that keeps files and runs skills |
-| `level-3/` | Only connections: an MCP server, a plugin, a schedule, an outside store | Other systems |
+| | Called | For | Holds | A person depends on |
+| --- | --- | --- | --- | --- |
+| `base/` | Base | Everyone | Everything: the thing itself, its examples, its source | Nothing but a browser or a reader |
+| `level-1/` | Beginner | Students and business owners | Only instructions: for the assistant, and for the person using it. Nothing to install | Any chat assistant |
+| `level-2/` | Advanced | Someone who builds with agents | Only what makes it repeatable or agentic: a skill, connectors, a preferences file, gates | An assistant that runs skills and connectors |
+| `level-3/` | Expert | The owner's own setup | Only what needs another system: a database, an MCP server, a plugin, a schedule | Other systems |
+
+The Beginner level is the test of the tool. If a student cannot run it in a chat assistant in
+under an hour, the tool is not ready for an Advanced level.
 
 A level never copies the base. If you find yourself copying, the thing belongs in the base.
 

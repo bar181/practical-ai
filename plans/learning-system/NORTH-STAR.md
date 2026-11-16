@@ -108,12 +108,14 @@ is a note of what exists, not a test of either.
 
 ### Levels
 
+Level 1 is the Beginner level: a student can run it in any chat assistant with nothing installed. Levels 2 and 3 are the Advanced levels, with skills and connectors, for someone who works with agents every day.
+
 | | Holds | Done when |
 | --- | --- | --- |
 | Base | The column list, the fixed labels, twelve invented rows, a one-page viewer that filters a file you open, and the rules for writing a good rule | A person can open the viewer, load the example file and find a row by label in three taps |
-| Level 1 | You keep a private CSV, Excel file or Google Sheet. You paste the instructions into your assistant. When something goes wrong or works, you say "log that", and it gives you a row to paste. Before new work you paste the relevant rows in | Ten real rows are logged in a week, and one is used to avoid a repeat |
-| Level 2 | A skill that writes the row itself through a Google Sheets connection, checks for a near-duplicate first, and reads accepted rows at the start of a task | The skill logs a row, finds it again by label, and raises `seen` on a repeat instead of adding a copy |
-| Level 3 | Supabase: one table, full-text and vector columns, hybrid search behind an MCP server with tools to log, find and review | A question in different words from the rule still finds it, and filters by label and status are exact |
+| Level 1, Beginner | You keep a private CSV, Excel file or Google Sheet. You paste the instructions into your assistant. When something goes wrong or works, you say "log that", and it gives you a row to paste. Before new work you paste the relevant rows in | Ten real rows are logged in a week, and one is used to avoid a repeat |
+| Level 2, Advanced | A skill that writes the row itself through a Google Sheets connection, checks for a near-duplicate first, and reads accepted rows at the start of a task | The skill logs a row, finds it again by label, and raises `seen` on a repeat instead of adding a copy |
+| Level 3, Expert | Supabase: one table, full-text and vector columns, hybrid search behind an MCP server with tools to log, find and review | A question in different words from the rule still finds it, and filters by label and status are exact |
 
 ## Depends on, and feeds
 

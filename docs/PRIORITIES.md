@@ -1,123 +1,169 @@
-# Priorities
+# Potential builds
 
-What this repository is working toward, re-ranked on 15 November 2026.
+The one list of practical AI tools this repository may build. Rewritten on 15 November 2026.
+There is no other list: [`plans/`](../plans/) holds the pages this one links to, and
+[`TODO.md`](TODO.md) holds actions, not tools.
 
-**Think of it as** the order of work on a building site. Foundations before walls, and the walls everyone leans on before the ones only one room needs.
+**North Star:** practical AI tools a person can use the same day. Every tool comes at two depths.
+A **Beginner** level a student or a business owner runs in any chat assistant with nothing
+installed, and **Advanced** levels, with skills and connectors, for someone who works with agents
+every day.
 
-## Built
+**Think of it as** a cookbook where every recipe is printed twice: once for a home kitchen with a
+pan and a hob, and once for a professional kitchen with the full line.
 
-| Tool | What it does | State | Where |
+## The levels, and who each is for
+
+| Level | For | What it is | Depends on |
 | --- | --- | --- | --- |
-| Artifact studio | A library of templates for pages, slide decks and social posts, with rules that pick the right one and an assistant that builds it from your content. | **Closed as a draft**, 15 November 2026. Built and checked by its author. Not yet used by anyone else | [Draft](../drafts/artifact-studio/), [close-out](../drafts/artifact-studio/docs/close-out.md) |
-| Project method | How a tool here gets built: nine stages, a gate after each, a scaffold, and an agentic level 2. | Draft, in use. The studio is the first tool closed with it | [Draft](../drafts/project-method/) |
+| Base | Everyone | The thing itself, a worked example with invented data, and the template | A browser or a reader |
+| Level 1, **Beginner** | Students and business owners | Instructions to paste, a template to fill, one example to copy. No install, no code, under an hour | Any chat assistant |
+| Level 2, **Advanced** | Someone who builds with agents | A skill, and connectors to where the work already lives: mail, calendar, drive, sheets. Gates so it repeats | An assistant that runs skills and connectors |
+| Level 3, **Expert**, only where it earns its place | The owner's own setup | A database, an MCP server, a schedule or a second agent | Other systems |
 
-## What to build next
+A tool is not on this list unless its Beginner level can be described in two sentences.
 
-Ranked by score. The six new candidates and the learnings database each have a North Star page: one to three pages on who it is for, what already exists and what is in scope. **None is approved yet.** Approving one is stage 3 of the project method.
+## Part 1. Builds with a North Star page or a plan
 
-| # | Tool | What it does | Score | State | Where |
+26 tools. Grouped by how far each has got, not ranked. The Demand column points to Part 2: a
+number means independent research found people already doing this job with AI.
+
+### Built
+
+Closed as a draft on 15 November 2026. Built and checked by its author. Not yet used by anyone else.
+
+| Tool | What it does | Beginner: a student can run it | Advanced: skills and connectors | Demand |
+| --- | --- | --- | --- | --- |
+| [Artifact studio](../drafts/artifact-studio/) | Pages, slide decks and social posts from your notes, from a library of 20 templates. | Paste the instructions into any assistant, copy the sentence from an example, attach your notes, and check every number. | The `artifact-studio` skill and a preferences file, so a short ask gives your look and voice. Expert: an MCP server with ten tools gives any assistant the library. | #7, and just outside the ten |
+
+### North Star page written, not approved
+
+One to three pages each: who it is for, what already exists, what is in scope. Nothing is built
+until a person approves the page.
+
+| Tool | What it does | Beginner: a student can run it | Advanced: skills and connectors | Demand |
+| --- | --- | --- | --- | --- |
+| [Decision support assistant](../plans/decision-support/) | A decision worked the way a consulting team would, in seven steps, with every link checked. | Describe a decision. The assistant walks seven steps with a template for each and stops twice for your correction. You get a one-page recommendation. | A skill that keeps the working folder in Google Drive, checks every link, scores its own recommendation, and builds the brief and deck with the artifact studio. | #6 |
+| [Source and link verifier](../plans/source-verifier/) | Every link in a document opened on a known date and checked against the sentence it supports. | Paste a document into an assistant that can browse. Get a table: each link, whether it opens, and whether it supports its sentence. | A skill that checks a whole Google Drive folder, writes a dated report, and runs as a gate so a document with a dead link cannot be marked finished. | #1, in part |
+| [Learnings database](../plans/learning-system/NORTH-STAR.md) | One row for every error, redo and thing that unexpectedly worked, in a store you own, read before similar work starts. | Keep a private sheet with the given columns. Say "log that" when something breaks or unexpectedly works, paste the row, and paste the relevant rows in before similar work. | A skill that writes and finds rows through a Google Sheets connector and checks for duplicates first. Expert: Supabase with keyword and similarity search behind an MCP server. |  |
+| [Task decomposition and dependency graph](../plans/task-graph/) | A goal becomes tasks with what depends on what, drawn five ways from one file. | Describe a goal. The assistant asks up to five questions and returns the tasks, what blocks what, and one picture: a tree or a Mermaid diagram. | A skill that keeps the task file, redraws all five views (tree, Mermaid, sticky notes, Gantt, ready list) and saves them to a Google Drive folder. Expert: an MCP server an agent works from. |  |
+| [Core memory system](../plans/core-memory/) | Notes, policies, websites, code and repository pointers as labelled records in a store you own. Not a wiki. | One private sheet with labels. Say "keep this", paste the row it gives you, and paste the rows you need when you ask a question. | A skill that files and finds records through a Google Sheets connector, exactly by kind and label, and retires what is replaced. Expert: Supabase with similarity search behind an MCP server. |  |
+| [Connections hub](../plans/connections-hub/) | Reads a meeting, an email thread, a web page or a file and files what is worth keeping, after you review it. | Paste one transcript, thread or page. The assistant proposes the records worth keeping. Delete what you do not want and paste the rest into your sheets. | A skill that reads through connectors you already have (Gmail, Google Drive, Granola, Zoom), shows a review queue and files what you accept into the two stores. |  |
+| [Rubric reviewer](../plans/rubric-reviewer/) | Any piece of work scored out of 100 against a rubric written beforehand, by a reviewer with fresh eyes. | Paste a rubric and a piece of work into a fresh chat. Get a score, evidence for each line and the three changes that would raise it most. | A skill that runs the review in a separate session, writes it beside the work, and serves as the scoring stage for every other tool. |  |
+
+### Drafted in the earlier layout
+
+A Beginner level exists as a draft. None has been reviewed by a second person. Each moves to the
+base-and-levels layout when it is next worked on. Plans are in [`plans/`](../plans/).
+
+| Tool | What it does | Beginner: a student can run it | Advanced: skills and connectors | Demand |
+| --- | --- | --- | --- | --- |
+| [Weekly brief with research](../drafts/weekly-brief/) | One page a week: what changed outside, with links, and what your own documents and transcripts say. | Give a watch list of topics and attach the week's documents. Get one page with a link for every outside item. Check the links yourself. | The `weekly-brief` skill with web search and a Google Drive connector to a folder of transcripts and documents, a saved watch list, and the same shape every week. | #1 |
+| [Inbox triage and daily summary](../drafts/inbox-daily-summary/) | One morning summary across email, calendar and social media feedback, with replies drafted for approval. | Paste or connect today's email and calendar. Get one summary: needs you today, drafted and waiting, meetings, can wait. Nothing is sent without you. | The `morning-summary` skill with Gmail and Google Calendar connectors: replies written in your voice as drafts, finished threads filed, run each morning. | #5 |
+| [Voice post drafter](../drafts/voice-post-drafter/) | A draft post or newsletter that sounds like you, for you to edit and publish yourself. | Build a voice file from three to five things you wrote. Give a point of view. Get one draft for one channel and edit it yourself. | The `voice-drafter` skill keeps the voice file and applies saved feedback every time. Source material from a Google Drive folder, post pictures from the artifact studio. | #2 and 7 |
+| [Dashboard](../drafts/dashboard/) | Your key numbers on one page, each showing where it came from. | Put five to eight figures in one sheet. Ask for a one-page dashboard that shows the source of each number. | The `dashboard-builder` skill with a Google Sheets connector, then connectors to the systems the numbers come from: sales, accounting, customers. | #9 |
+| [Estimator](../drafts/estimator/) | A first-draft quote with its reasoning, from your own price list and written rules. Three example businesses. | Put your price list and rules in a sheet. Paste a job description. Get a first-draft quote that shows every step. | The `quote-drafter` skill reads the price list through a Google Sheets connector, saves the quote to Google Drive and hands it to the proposal builder. |  |
+| [Publishing a website](../drafts/website-publishing/) | A page goes from a chat artifact to a hosted site. | Build the page as an artifact and share its link. Check it on a phone and check nothing private is in it. | The `publish-check` skill runs the checklist, then a hosting connection such as Cloudflare puts the page at your own address. Expert: a repository that deploys on every approved change. |  |
+| [Short video guide](../drafts/short-video/) | The right route for a short video by length and purpose, finished in under 30 minutes. | Write a four-beat script of about 50 words, pick one of four routes, and follow its steps in that tool's own app. | The `script-and-beat-sheet` skill with a saved prompt set per route and your voice file, so every video sounds like you. |  |
+| [Training explainer with avatar](../drafts/training-explainer/) | A topic becomes a taught video in a teaching style chosen from a menu. | Fill in a five-line brief, pick a teaching style, build a beat sheet and a script, and record it yourself over slides. | A skill that turns the brief into a script and slides from the artifact studio, with generated visuals and your own cloned voice from a provider you choose. |  |
+
+### Plan only
+
+| Tool | What it does | Beginner: a student can run it | Advanced: skills and connectors | Demand |
+| --- | --- | --- | --- | --- |
+| [Meeting to actions](../plans/meeting-to-actions/) | A transcript becomes decisions, owners and dates. | Paste a transcript. Get decisions, actions with an owner and a date, open questions and a follow-up email. Check names and dates. | A skill that reads the transcript from your meeting recorder through a connector (Granola and Zoom each have one), writes actions to a sheet and drafts the follow-up email. | #4 |
+| [Expense form creator](../plans/expense-form/) | A folder of receipt photos becomes a categorised expense form. | Upload receipt photos with your category list. Get a filled form: date, supplier, amount, tax, category. Check every line against the photo. | A skill that reads a connected Google Drive folder of receipts and writes rows through a Google Sheets connector, with your accounting and tax codes in the category list. | #10 |
+| [Lead responder](../plans/lead-responder/) | A fast, qualified reply to every new enquiry, drafted for approval. | Write what makes an enquiry a good fit and one reply you are proud of. Paste each new enquiry. Get a draft reply and whether it fits. You send it. | A skill with a Gmail connector that watches the inbox and web forms, drafts with real meeting times from the calendar, logs each lead to a sheet and waits for approval. | #8, in part |
+| [Website chatbot](../plans/website-chatbot/) | A site assistant that answers from your own notes and captures enquiries. | Write one page of facts and the ten questions you hear most. Load it into a chat Project and test it with awkward questions. | Embedded on the site, answering only from notes kept in a connected Google Drive folder or sheet, and writing a name and a question to a sheet when it cannot answer. | #8, in part |
+| [Proposal builder](../plans/proposal-builder/) | Notes from a client conversation, or a finished estimate, become a formatted proposal. | Give your proposal template, your notes and the price. Get a filled proposal and a list of what it assumed. | A skill that builds the proposal with the artifact studio from templates and past proposals in a connected Google Drive folder, with prices from the estimator. |  |
+| [Client onboarding kit](../plans/client-onboarding-kit/) | A welcome pack and a checklist for each new client. | Give a welcome template, a checklist and your notes from the sales conversation. Get a tailored pack for week one. | A skill that fills the pack from your customer records and the signed proposal through connectors, and puts the checklist dates in the calendar. |  |
+| [Client project tracking and support site](../plans/client-project-portal/) | A page each client can open to see where their project stands. | One page per client: where the project stands, what was done, what is next. Ask the assistant to revise it and share the link. | A skill that rebuilds each page from a project sheet through a Google Sheets connector and publishes it. Expert: sign-in with a hosted service such as Supabase. |  |
+| [Student AI assistant](../plans/student-assistant/) | A course assistant that answers from the lesson material and names the lesson it used. | A chat Project holding the course materials, told to answer only from them, name the lesson, and say when the material does not cover the question. | A skill with a Google Drive connector to the lesson folder, embedded in the training website, with a sheet of the questions the material could not answer. |  |
+| [Training website](../plans/training-website/) | A course site with lessons, a schedule and a built-in assistant. | One page per course built as an artifact: the outline, this week's lesson, what is due, links to materials. | A skill that builds lesson pages from a Google Drive folder of materials, with a schedule that updates itself and the student assistant embedded. |  |
+| [Daily builder](../plans/daily-builder/) | A scheduled agent that takes the next item on this list through the project method and opens a pull request. | Not a student tool. By hand: ask the assistant to take the next item here, draft its Beginner level and stop for your review. | The `project-builder` skill with a fixed rubric, a second agent that scores the work, and a GitHub connection that opens a pull request for every run. |  |
+
+The [project method](../drafts/project-method/) is how any of these gets built. It supports the
+tools and is not one of them.
+
+## Part 2. The ten most in-demand simple tools
+
+Researched on 15 November 2026 from usage studies and surveys, without looking at Part 1 first.
+The question was: what do people and small businesses already use AI for most, that is simple
+enough to teach in one sitting?
+
+| # | Mini project | Why it is in demand | Beginner | Advanced | Already on the list? |
 | --- | --- | --- | --- | --- | --- |
-| 1 | Learnings database | One row for every error, redo and thing that unexpectedly worked, kept in a store you own and read before similar work starts. | 90 | North Star, not approved. An earlier draft exists | [North Star](../plans/learning-system/NORTH-STAR.md), [earlier draft](../drafts/learning-system/) |
-| 2 | Task decomposition and dependency graph | A goal becomes tasks with what depends on what, drawn as a tree, a Mermaid diagram, a sticky-note board, a Gantt chart or a ready list. | 89 | North Star, not approved | [North Star](../plans/task-graph/README.md) |
-| 3 | Decision support assistant | A decision worked the way a consulting team would: define, structure, prioritise, plan, analyse, synthesise, recommend, with every link checked. | 82 | North Star, not approved | [North Star](../plans/decision-support/README.md) |
-| 4 | Core memory system | Notes, policies, calendar facts, websites, code and repository pointers as labelled records in a store you own. Not a wiki. | 80 | North Star, not approved | [North Star](../plans/core-memory/README.md) |
-| 5 | Rubric reviewer | Any piece of work scored out of 100 against a rubric written beforehand, with evidence for each line, by a reviewer with fresh eyes. | 79 | North Star, not approved. Proposed by the assistant | [North Star](../plans/rubric-reviewer/README.md) |
-| 6 | Source and link verifier | Every link in a document opened on a known date and checked against the sentence it supports. | 76 | North Star, not approved. Proposed by the assistant | [North Star](../plans/source-verifier/README.md) |
-| 7 | Estimator | A first-draft quote with its reasoning, built from your own price list and written rules. Examples for consulting, kitchen renovation and staffing. | 71 | Draft, earlier layout | [Draft](../drafts/estimator/) |
-| 8 | Proposal builder | Notes from a client conversation, or a finished estimate, become a formatted proposal. | 69 | Plan | [Plan](../plans/proposal-builder/) |
-| 9 | Connections hub | Reads a meeting, an email thread, a web page or a file you point it at, and files what is worth keeping as labelled records, after you review them. | 66 | North Star, not approved | [North Star](../plans/connections-hub/README.md) |
-| 10 | Client onboarding kit | A welcome pack and a checklist for each new client, tailored from what you already know about them. | 65 | Plan | [Plan](../plans/client-onboarding-kit/) |
-| 11 | Weekly brief with research | A one-page weekly brief: industry and social media research with links, plus what your own documents and meeting transcripts say. | 63 | Draft, earlier layout | [Draft](../drafts/weekly-brief/), [plan](../plans/weekly-brief/) |
-| 12 | Inbox triage and daily summary | One morning summary across your connected sources: email, calendar and social media feedback, with replies drafted for approval. | 62 | Draft, earlier layout | [Draft](../drafts/inbox-daily-summary/), [plan](../plans/inbox-daily-summary/) |
-| 13 | Voice post drafter | A draft post or newsletter that sounds like you, for you to edit and publish yourself. | 61 | Draft, earlier layout | [Draft](../drafts/voice-post-drafter/), [plan](../plans/voice-post-drafter/) |
-| 14 | Daily builder | A scheduled agent that takes the next item on this list through the project method and opens a pull request for review. | 60 | Plan | [Plan](../plans/daily-builder/) |
-| 15 | Dashboard | Your key numbers on one page. Starts from a spreadsheet, then connects to your sales, accounting and customer systems. | 59 | Draft, earlier layout | [Draft](../drafts/dashboard/), [plan](../plans/dashboard/) |
-| 16 | Publishing a website | Take a page from a chatbot artifact to a hosted site: a shared link first, then a hosting platform, then a repository that deploys. | 57 | Draft, earlier layout | [Draft](../drafts/website-publishing/), [plan](../plans/website-publishing/) |
-| 17 | Client project tracking and support site | A page each client can open to see where their project stands and get help. | 55 | Plan | [Plan](../plans/client-project-portal/) |
-| 18 | Short video guide | Pick the right route by length and purpose and finish a short video in under 30 minutes. | 54 | Draft, earlier layout | [Draft](../drafts/short-video/), [plan](../plans/short-video/) |
-| 19 | Training explainer with avatar | Turn a topic into a taught video in a teaching style chosen from a menu. | 50 | Draft, earlier layout | [Draft](../drafts/training-explainer/), [plan](../plans/training-explainer/) |
-| 20 | Expense form creator | A folder of receipt photos becomes a categorised expense form. | 50 | Plan | [Plan](../plans/expense-form/) |
-| 21 | Lead responder | A fast, qualified reply to every new enquiry, drafted for approval. | 49 | Plan | [Plan](../plans/lead-responder/) |
-| 22 | Website chatbot | A site assistant that answers from your own notes and captures enquiries. | 47 | Plan | [Plan](../plans/website-chatbot/) |
-| 23 | Training website | A course site with lessons, a schedule and a built-in assistant. | 45 | Plan | [Plan](../plans/training-website/) |
-| 24 | Student AI assistant | A course assistant that answers from the lesson material and names the lesson it used. | 43 | Plan | [Plan](../plans/student-assistant/) |
+| 1 | **Research brief with checked sources** | Pew: 57% of workers who use chatbots at work have researched a topic with one. A May 2026 poll of 524 business leaders: 69% search for information. Pythian: 66%. | Ask a question in a fixed shape. Get one page: the answer, what is uncertain, and a dated link for every claim. Open three of the links yourself. | A skill with web search that runs the source verifier on its own brief and saves it to Google Drive. Put on a schedule, it is the weekly brief. | Partly: weekly brief (draft), source verifier (North Star). No one-off brief |
+| 2 | **Rewrite and draft in my voice** | The largest study of ChatGPT use names writing the most common work task. A summary of the paper puts it near 40% of work messages, two thirds of them edits to the person's own text. Pew: editing 52%, drafting 47%. | Build a voice file from five things you wrote. Paste any email or paragraph and ask for it tighter, warmer or shorter, in your voice. | A skill that keeps the voice file and leaves the result as a draft in your mail through a Gmail connector. | Partly: voice post drafter (draft) covers posts, not everyday editing |
+| 3 | **Summarise a document** | Leaders poll: 68% summarise documents. Adobe: 77% of workers who use AI summarise information with it. Pythian: 43%. | Attach a report or a contract. Get a fixed shape: what it says, what it asks of you, what is missing, with the page for each point. | A skill that works through a Google Drive folder and writes one row per document to a sheet. | No. New |
+| 4 | **Meeting notes to actions** | Listed first in two of the automation guides read (The Rundown, Krater) and named in a third (G2). Pythian: 41% take notes with AI. Section: summarising meeting notes is one of the basic uses that describe 70% of the workforce. | Paste a transcript. Get decisions, actions with an owner and a date, open questions and a follow-up email. Check names and dates. | A skill that reads the transcript from your meeting recorder through a connector (Granola and Zoom each have one), writes actions to a sheet and drafts the follow-up email. | Yes: meeting to actions (plan) |
+| 5 | **Email triage and reply drafts** | Leaders poll: 58% draft emails. Email management is one of G2's six categories, and email drafting is on Krater's list of first automations. | Paste or connect today's email and calendar. Get one summary: needs you today, drafted and waiting, meetings, can wait. Nothing is sent without you. | The `morning-summary` skill with Gmail and Google Calendar connectors: replies written in your voice as drafts, finished threads filed, run each morning. | Yes: inbox triage and daily summary (draft) |
+| 6 | **Decision helper** | Microsoft's 2026 Work Trend Index: nearly half of Copilot chat use supports analysis, decisions and problem-solving. The ChatGPT study says its value comes through decision support. | Describe a decision. The assistant walks seven steps with a template for each and stops twice for your correction. You get a one-page recommendation. | A skill that keeps the working folder in Google Drive, checks every link, scores its own recommendation, and builds the brief and deck with the artifact studio. | Yes: decision support assistant (North Star) |
+| 7 | **One piece into a week of posts** | QuickBooks, January 2026: marketing is the most common small-business use, at 45% of those using AI. Bluevine: marketing and sales 37%. Content repurposing is on Krater's list. | Paste one article or talk and your voice file. Get five posts for the channels you use. Edit and post them yourself. | A skill that also makes the post pictures with the artifact studio and lays the week out in a sheet. | Yes: voice post drafter (draft) with the artifact studio (built) |
+| 8 | **Customer reply assistant** | PYMNTS, October 2026: customer service and calls is the widest small-business use, at 58% of AI users. QuickBooks: 37%. | Write one page of facts and your ten most common questions. Paste a customer message. Get a reply drafted only from your page. | A skill with a Gmail connector that drafts replies for approval and logs each question to a sheet. Later the same page sits behind a website chatbot. | Partly: website chatbot and lead responder (plans) |
+| 9 | **Ask your spreadsheet** | Bluevine, April 2026: data analysis and business insights is the most common use, at 39%. A survey of 311 decision-makers: 36%. Section: automated reporting is one of only three uses that reached real workflows. | Upload a spreadsheet and ask one question. Get the answer, the rows it used and one chart. Check the total against your own. | A skill with a Google Sheets connector that answers from the live sheet and builds the dashboard from it. | Partly: dashboard (draft) shows numbers, it does not answer questions |
+| 10 | **Receipts and invoices into a sheet** | QuickBooks: bookkeeping 35%. PYMNTS lists bookkeeping among the four most common uses. Data entry and reconciliation is on Krater's list. | Upload receipt photos with your category list. Get a filled form: date, supplier, amount, tax, category. Check every line against the photo. | A skill that reads a connected Google Drive folder of receipts and writes rows through a Google Sheets connector, with your accounting and tax codes in the category list. | Yes: expense form creator (plan) |
 
-Meeting to actions, number 19 on the earlier list, is now the first source of the connections hub. Its [plan](../plans/meeting-to-actions/) is kept.
+**Just outside the ten:** a report or a deck from your notes (Anthropic, June 2026: documents and
+reports are the output of 15% of conversations; already built here as the artifact studio),
+scheduling and calendar planning (30% in one small-business survey), and a brainstorming partner
+(Adobe: 69%).
 
-## How the scores are made
+### What this says about Part 1
 
-Five lines, 20 points each. They are the assistant's judgement from what the owner has said. Change any number and the order follows.
+- **Five of the ten already have a plan, a draft or a North Star page.** Four are partly covered.
+  One, summarising a document, is new.
+- **Five of the seven North Star pages match no demand at all:** the learnings database, the task
+  graph, core memory, the connections hub and the rubric reviewer. They are equipment for someone
+  who builds with agents. Students did not ask for them. They belong at the Advanced end.
+- **Meeting notes to actions stands on its own.** The connections hub page proposed absorbing it.
+  The research says it is one of the most wanted simple tools, so it stays a tool.
+- **The fastest Beginner wins are 3, 2 and 4:** each is one pasted instruction and one template.
 
-| Line | 20 looks like |
+### How the ten were chosen, and the limits
+
+Each candidate was counted by how many independent sources named it, then ordered by that count
+and by how simple its Beginner level is. The order is a judgement, not a measurement.
+
+- The surveys asked different people different questions, so their percentages cannot be compared
+  with each other.
+- Three sources are vendor guides to automation. They show what is commonly built, not how often.
+- One sitting. Nothing here was tested with students.
+
+### Sources, all read 15 November 2026
+
+| Source | What it is |
 | --- | --- |
-| Need | The owner would use it this week |
-| Foundation | Other tools on this list are built on it |
-| Reuse | Level 1 can be reached with what already exists here or elsewhere |
-| Share | It can be shared and taught with no private data in it |
-| Low risk | Few outside products to depend on, and little that can go wrong |
+| [How people are using ChatGPT](https://openai.com/index/how-people-are-using-chatgpt/) and [the paper](https://www.nber.org/papers/w34255) | OpenAI and Harvard, 1.5 million conversations |
+| [A summary of the same paper](https://c3.unu.edu/blog/what-over-2-5-billion-daily-messages-reveal-about-how-people-use-chatgpt) | United Nations University |
+| [2026 Work Trend Index](https://microsoft.com/en-us/worklab/work-trend-index/agents-human-agency-and-the-opportunity-for-every-organization), [summary](https://smartbridge.com/ai/work-trend-index-annual-report-highlights-insights) | Microsoft, Copilot use in one week of February 2026 |
+| [Anthropic Economic Index, June 2026](https://www.anthropic.com/research/economic-index-june-2026-report) | What Claude conversations produce |
+| [Pew Research Center](https://pewresearch.org/?p=200020) | Workers who use chatbots at work |
+| [Leaders poll, May 2026](https://www.staffingindustry.com/news/global-daily-news/ai-use-rises-though-strategic-adoption-lags-survey-finds) | 524 business leaders in the United States and United Kingdom |
+| [AI Proficiency Report, January 2026](https://www.sectionai.com/ai/the-ai-proficiency-report-january-2026) | Section, 5,000 knowledge workers |
+| [AI use study](https://www.adobe.com/acrobat/resources/ai-use-iceberg-study.html) | Adobe |
+| [AI in the workplace survey](https://www.pythian.com/blog/ai-in-the-workplace-employee-productivity-sentiment-survey) | Pythian, 2025 |
+| [SMB Growth Report, October 2026](https://www.pymnts.com/report/study/ai-goes-to-work-how-smbs-grow-without-growing-payroll/) | PYMNTS |
+| [2026 AI Impact Report, as reported](https://stacker.com/stories/small-business/77-small-businesses-now-use-ai-regularly-heres-where-theyre-starting) | Intuit QuickBooks, 34,364 owners |
+| [Small business AI trends 2026](https://www.bluevine.com/blog/small-business-ai-trends-report-2026) | Bluevine, 942 owners, April 2026 |
+| [Survey of 311 decision-makers](https://securitybrief.news/story/us-smbs-use-ai-mainly-for-data-analysis-schedules) | Businesses under 500 employees |
+| [The Rundown](https://app.therundown.ai/blog/ai-workflow-automation-examples-business), [Krater](https://krater.ai/blog/ai-for-business-automation), [G2](https://learn.g2.com/how-to-automate-tasks-with-ai) | Guides to first automations. Vendors |
 
-| # | Tool | Need | Foundation | Reuse | Share | Low risk | Score |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Learnings database | 19 | 19 | 18 | 17 | 17 | 90 |
-| 2 | Task decomposition and dependency graph | 17 | 16 | 19 | 19 | 18 | 89 |
-| 3 | Decision support assistant | 18 | 13 | 17 | 18 | 16 | 82 |
-| 4 | Core memory system | 17 | 18 | 15 | 15 | 15 | 80 |
-| 5 | Rubric reviewer | 10 | 15 | 18 | 19 | 17 | 79 |
-| 6 | Source and link verifier | 11 | 14 | 16 | 19 | 16 | 76 |
-| 7 | Estimator | 15 | 8 | 16 | 16 | 16 | 71 |
-| 8 | Proposal builder | 13 | 8 | 16 | 16 | 16 | 69 |
-| 9 | Connections hub | 16 | 14 | 13 | 13 | 10 | 66 |
-| 10 | Client onboarding kit | 13 | 6 | 15 | 15 | 16 | 65 |
-| 11 | Weekly brief with research | 15 | 8 | 14 | 14 | 12 | 63 |
-| 12 | Inbox triage and daily summary | 15 | 7 | 14 | 13 | 13 | 62 |
+### Check before building any Advanced level
 
-## Why the top ones rank where they do
+- **A small-business plugin already ships skills for several of these jobs:** inbox, proposals,
+  leads, invoices, reports and customer replies. Seen in an assistant's skill list on 15 November
+  2026. Read it at stage 2. Where it does the job, the Advanced level is "install that", and the
+  work here is the Beginner level and the teaching.
+- **Published skills lean toward code.** One directory says seven of its ten most installed
+  skills are for building interfaces
+  ([source](https://agenticskills.io/learn/what-are-claude-skills)). Everyday business skills are
+  less crowded.
 
-**1. Learnings database.** The same mistake is never made twice, by you or your agents. The smallest of the store tools, with a draft and a skill already here. The project method writes to it at every close, and the memory system reuses its row shape and viewer. Build it first and two other tools get cheaper.
+## What left this list
 
-**2. Task decomposition and dependency graph.** You and your agents always know what to do first and what is blocked. Nothing private in it, so it can be shared and taught as it is. Every view reuses the artifact studio. It plans every other tool on this list, and it is the last step of a decision.
+Archived, not deleted, in [`plans/archive/`](../plans/archive/):
 
-**3. Decision support assistant.** A recommendation you can defend, in one sitting, with the working shown. Closest to the owner's paid work, and the frameworks are public and well described. The deliverables already exist in the studio. Ranked below the task graph only because it ends in one.
-
-**4. Core memory system.** Anything you asked to be kept is found in one question, with its source. A foundation for the hub, the brief and decision support. Ranked fourth because it should follow the learnings database, on the same row shape, and because the line between a record and a document needs settling first.
-
-**5. Rubric reviewer.** "It looks good" becomes a number and a reason. Small, and the project method needs it at stage 8. Six rounds of self-review here showed what goes wrong without it. Scored low on need because the owner has not asked for it.
-
-**6. Source and link verifier.** You are never caught citing a page that is gone or says something else. The owner named link checking as what sets this work apart. It may turn out to be a step inside decision support and the weekly brief, not a tool of its own. Stage 2 decides.
-
-**9. Connections hub.** Something said on Monday is found by label on Friday, with nobody filing by hand. The owner asked for it, and it will matter. It ranks ninth because it has nowhere to file until the two stores exist, and because it leans on outside products that change monthly.
-
-## The order they depend on each other
-
-| Build | Then | Because |
-| --- | --- | --- |
-| Learnings database | Core memory system | Same row shape, same viewer, same search. The second is cheaper once the first exists |
-| Both stores | Connections hub | The hub keeps nothing itself. It needs somewhere to file |
-| Task graph | Decision support assistant | A recommendation ends in a plan of next steps |
-| Rubric reviewer, source verifier | Decision support, weekly brief | Both are checks those tools run on themselves |
-| Artifact studio | Task graph, decision support, proposal builder | Their outputs are studio templates |
-
-## Three rules for every tool on this list
-
-- **Storage stays outside the repository.** A tool that keeps things keeps them in a file, a sheet or a database the person owns. The repository holds the shape of a record and invented examples, so it can be shared with nobody's history in it.
-- **No wiki.** The memory system and the learnings database are separate stores of labelled records. Nothing here rewrites records into linked pages.
-- **Searched exactly first.** Labels, keywords, topics and flags come from fixed lists and are matched exactly. Similarity search is added at level 3 and never replaces them.
-
-## Not scheduled
-
-Any of these can move up.
-
-| Tool | What it does |
-| --- | --- |
-| Course program manager | Schedules, reminders and surveys for a cohort, with a summary of the results. |
-| Daily topic scout | A morning list of topics with draft posts, ready for review. |
-| Call agent | A voice agent that answers common questions and books appointments. Inbound first. |
-| Outreach agent | Follow-up sequences drafted in your voice and sent only on approval. |
-| Sales department blueprint | A map of sales and marketing roles to agents, assembled from the tools above. |
-| Song and jingle add-on | A short generated track for a video or page. |
-| Invoice chaser | Reminder messages for overdue invoices, matched in tone to each customer and sent only on approval. |
-| Review responder | A reply to every public review, in your voice, for approval. |
-| Meeting prep brief | A one-page brief before each meeting: who is attending, the history and the open items. |
-| Procedure writer | A recorded walkthrough becomes a step by step procedure. |
-| Contract red flags | A contract becomes a plain-language list of terms worth a second look. |
-| Hiring kit | A role brief becomes a job post, an interview guide and a scoring rubric. |
+- The ranked list of 24 with scores, from earlier on 15 November 2026. It ranked tools by how much
+  they supported the build method, which is the drift this rewrite corrects.
+- Twelve ideas that never had a plan.

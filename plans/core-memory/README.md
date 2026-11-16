@@ -86,12 +86,14 @@ filters. It never replaces them.
 
 ### Levels
 
+Level 1 is the Beginner level: a student can run it in any chat assistant with nothing installed. Levels 2 and 3 are the Advanced levels, with skills and connectors, for someone who works with agents every day.
+
 | | Holds | Done when |
 | --- | --- | --- |
 | Base | The column list, the six kinds, twenty invented records, the same one-page viewer as the learnings database, and rules for a good title and label | A person finds a record by kind and label in three taps |
-| Level 1 | A private file or Google Sheet you own. You paste the instructions into your assistant, say "keep this", and paste the row it gives you. To recall, you paste the sheet or a filtered part of it | Twenty real records filed in a week, and five found again on request |
-| Level 2 | A skill that files and finds through a Google Sheets connection, marks an older record superseded when a newer one replaces it, and always returns the source | A superseded policy is not returned as current |
-| Level 3 | Supabase with full-text and vector columns behind an MCP server: keep, find, supersede, forget | A question in different words finds the record. "Forget" removes it from every answer |
+| Level 1, Beginner | A private file or Google Sheet you own. You paste the instructions into your assistant, say "keep this", and paste the row it gives you. To recall, you paste the sheet or a filtered part of it | Twenty real records filed in a week, and five found again on request |
+| Level 2, Advanced | A skill that files and finds through a Google Sheets connection, marks an older record superseded when a newer one replaces it, and always returns the source | A superseded policy is not returned as current |
+| Level 3, Expert | Supabase with full-text and vector columns behind an MCP server: keep, find, supersede, forget | A question in different words finds the record. "Forget" removes it from every answer |
 
 ## Depends on, and feeds
 

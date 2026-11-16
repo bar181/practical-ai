@@ -2,7 +2,7 @@
 
 A scheduled agent that researches and builds the next item on this list, then opens a pull request for review.
 
-| Complexity | Research | Simple level | Draft |
+| Complexity | Research | Level 1 | Draft |
 | --- | --- | --- | --- |
 | Intermediate to advanced | Not started | Not started | None yet |
 
@@ -18,21 +18,23 @@ A maintainer who wants steady progress without doing every first draft by hand.
 
 ## Scope
 
-- **In:** the simple level described below.
-- **Out:** the working level and beyond, until the simple level is in use.
+- **In:** the Beginner level described below.
+- **Out:** the Advanced level and beyond, until the Beginner level is in use.
 - **It works when:** to be written before anything is built.
 
 ## What might be involved at each level
 
-The simple level is described in most detail, because it is built first. The later levels are
+Level 1 is described in most detail, because it is built first. The later levels are
 outlines and will change.
+
+Level 1 is the Beginner level: a student can run it in any chat assistant with nothing installed. Levels 2 and 3 are the Advanced levels, with skills and connectors, for someone who works with agents every day.
 
 | Level | What it involves | Complexity |
 | --- | --- | --- |
-| Demo | One recorded run: the plan it wrote, what it built and the review it requested. | Beginner |
-| Simple | Run it by hand. Ask your assistant to take the top unfinished item, follow the plan template, write the plan and the simple level, and stop for your review. Do this for two items before scheduling anything. | Intermediate |
-| Working | A fixed rubric, a second agent that scores the work, and a pull request for every run. | Advanced |
-| Automated | Runs on a schedule with connections to the repository, file storage and a hosting route. | Advanced |
+| Base | One recorded run: the plan it wrote, what it built and the review it requested. | Beginner |
+| Level 1, Beginner: for students | Run it by hand. Ask your assistant to take the top unfinished item, follow the plan template, write the plan and the Beginner level, and stop for your review. Do this for two items before scheduling anything. | Intermediate |
+| Level 2, Advanced: skills and connectors | The `project-builder` skill with a fixed rubric, a second agent that scores the work, and a GitHub connection that opens a pull request for every run. | Advanced |
+| Level 3, Expert: automation | Runs on a schedule with connections to the repository, file storage and a hosting route. | Advanced |
 | Commercial grade | Budgets, run logs, alerts on failure and a human approval step that cannot be skipped. | Explained, not built here |
 
 ## Established best practices
@@ -49,15 +51,15 @@ Follow the [build process](../plans-template/BUILD-PROCESS.md). Tick each as it 
 
 - [ ] **Reuse check:** what is built in, what is open source, and whether to stop here
 - [ ] **Build or license:** the lean for each level, with outside providers reviewed but not selected
-- [ ] **Dependencies and pricing:** what the simple level depends on and what it costs
+- [ ] **Dependencies and pricing:** what the Beginner level depends on and what it costs
 - [ ] **Where it lives:** which assistant, where the files are kept, what stays manual
 
 ## First step
 
 1. Research established best practices. Record each one with a source link and the date checked.
-2. Write the simple level solution and its overview.
+2. Write the Beginner level solution and its overview.
 
-The working level and beyond are planned only after the simple level is in use.
+The Advanced level and beyond are planned only after the Beginner level is in use.
 
 ## Open questions
 

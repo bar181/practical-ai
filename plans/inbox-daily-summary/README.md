@@ -2,7 +2,7 @@
 
 One morning summary across your connected sources: email, calendar and social media feedback, with replies drafted.
 
-| Complexity | Research | Simple level | Draft |
+| Complexity | Research | Level 1 | Draft |
 | --- | --- | --- | --- |
 | Beginner to intermediate | Done: landscape review in the draft | [Drafted](../../drafts/inbox-daily-summary/) | [`drafts/inbox-daily-summary/`](../../drafts/inbox-daily-summary/) |
 
@@ -18,21 +18,23 @@ Anyone whose day starts in three different apps.
 
 ## Scope
 
-- **In:** the simple level described below.
-- **Out:** the working level and beyond, until the simple level is in use.
+- **In:** the Beginner level described below.
+- **Out:** the Advanced level and beyond, until the Beginner level is in use.
 - **It works when:** to be written before anything is built.
 
 ## What might be involved at each level
 
-The simple level is described in most detail, because it is built first. The later levels are
+Level 1 is described in most detail, because it is built first. The later levels are
 outlines and will change.
+
+Level 1 is the Beginner level: a student can run it in any chat assistant with nothing installed. Levels 2 and 3 are the Advanced levels, with skills and connectors, for someone who works with agents every day.
 
 | Level | What it involves | Complexity |
 | --- | --- | --- |
-| Demo | A sample summary built from a synthetic inbox, calendar and comment feed. | Beginner |
-| Simple | Connect your email and calendar to your assistant and ask for a morning summary in a fixed shape: needs you today, drafted and waiting, today's meetings, can wait. Paste in social media comments by hand. Nothing is sent without you. | Beginner |
-| Working | A saved instruction that includes social media feedback, writes replies in your voice and files what is finished. | Intermediate |
-| Automated | Runs every morning on a schedule and arrives on your phone. | Advanced |
+| Base | A sample summary built from a synthetic inbox, calendar and comment feed. | Beginner |
+| Level 1, Beginner: for students | Connect your email and calendar to your assistant and ask for a morning summary in a fixed shape: needs you today, drafted and waiting, today's meetings, can wait. Paste in social media comments by hand. Nothing is sent without you. | Beginner |
+| Level 2, Advanced: skills and connectors | The `morning-summary` skill with Gmail and Google Calendar connectors. It includes social media feedback, writes replies in your voice as drafts and files what is finished. | Intermediate |
+| Level 3, Expert: automation | Runs every morning on a schedule and arrives on your phone. | Advanced |
 | Commercial grade | Shared inboxes, delegation rules, and records of what was sent and by whom. | Explained, not built here |
 
 ## Established best practices
@@ -49,15 +51,15 @@ Follow the [build process](../plans-template/BUILD-PROCESS.md). Tick each as it 
 
 - [ ] **Reuse check:** what is built in, what is open source, and whether to stop here
 - [ ] **Build or license:** the lean for each level, with outside providers reviewed but not selected
-- [ ] **Dependencies and pricing:** what the simple level depends on and what it costs
+- [ ] **Dependencies and pricing:** what the Beginner level depends on and what it costs
 - [ ] **Where it lives:** which assistant, where the files are kept, what stays manual
 
 ## First step
 
 1. Research established best practices. Record each one with a source link and the date checked.
-2. Write the simple level solution and its overview.
+2. Write the Beginner level solution and its overview.
 
-The working level and beyond are planned only after the simple level is in use.
+The Advanced level and beyond are planned only after the Beginner level is in use.
 
 ## Open questions
 

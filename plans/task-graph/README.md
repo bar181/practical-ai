@@ -64,12 +64,14 @@ kept in this repository. Level 2 can write the outputs to a Google Drive folder 
 
 ### Levels
 
+Level 1 is the Beginner level: a student can run it in any chat assistant with nothing installed. Levels 2 and 3 are the Advanced levels, with skills and connectors, for someone who works with agents every day.
+
 | | Holds | Done when |
 | --- | --- | --- |
 | Base | The task file format, three invented plans (a decision, a client project, a coding project), the five templates, and a check that finds loops and tasks with no "done when" | Each invented plan opens in all five templates from the same file |
-| Level 1 | You describe the goal to your assistant with the pasted instructions. It asks up to five questions, returns the task file and the view you asked for. You correct the dependencies | A real goal becomes a plan a second person can follow without asking what comes first |
-| Level 2 | A skill that keeps the task file, redraws every view when it changes, and saves outputs to a folder you choose | Changing one dependency updates all five views, and the check catches a loop |
-| Level 3 | An MCP server: break down, add, link, ready, done. Hand-over to a tracker for large coding projects | An agent works a plan through the "ready" tool alone and never starts a blocked task |
+| Level 1, Beginner | You describe the goal to your assistant with the pasted instructions. It asks up to five questions, returns the task file and the view you asked for. You correct the dependencies | A real goal becomes a plan a second person can follow without asking what comes first |
+| Level 2, Advanced | A skill that keeps the task file, redraws every view when it changes, and saves outputs to a folder you choose | Changing one dependency updates all five views, and the check catches a loop |
+| Level 3, Expert | An MCP server: break down, add, link, ready, done. Hand-over to a tracker for large coding projects | An agent works a plan through the "ready" tool alone and never starts a blocked task |
 
 ## Depends on, and feeds
 

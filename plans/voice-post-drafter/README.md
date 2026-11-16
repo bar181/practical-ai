@@ -2,7 +2,7 @@
 
 A draft post or newsletter that sounds like you, for you to edit and publish yourself.
 
-| Complexity | Research | Simple level | Draft |
+| Complexity | Research | Level 1 | Draft |
 | --- | --- | --- | --- |
 | Beginner | Done: landscape review in the draft | [Drafted](../../drafts/voice-post-drafter/) | [`drafts/voice-post-drafter/`](../../drafts/voice-post-drafter/) |
 
@@ -18,21 +18,23 @@ People who know they should post and do not, because a blank page takes an hour.
 
 ## Scope
 
-- **In:** the simple level described below.
-- **Out:** the working level and beyond, until the simple level is in use.
+- **In:** the Beginner level described below.
+- **Out:** the Advanced level and beyond, until the Beginner level is in use.
 - **It works when:** to be written before anything is built.
 
 ## What might be involved at each level
 
-The simple level is described in most detail, because it is built first. The later levels are
+Level 1 is described in most detail, because it is built first. The later levels are
 outlines and will change.
+
+Level 1 is the Beginner level: a student can run it in any chat assistant with nothing installed. Levels 2 and 3 are the Advanced levels, with skills and connectors, for someone who works with agents every day.
 
 | Level | What it involves | Complexity |
 | --- | --- | --- |
-| Demo | A sample voice file, a topic, the draft it produced and the feedback given. | Beginner |
-| Simple | Build a voice file with three parts: three to five posts you wrote, rules you never break, and facts you may state. Paste the drafter instructions into a chatbot Project and attach the file. Give it a point of view, get one draft for one channel, edit it yourself, and add one line of feedback to the rules. | Beginner |
-| Working | One draft per channel, with feedback saved and applied every time. | Intermediate |
-| Automated | A daily topic scout that queues topics and drafts for review. | Advanced |
+| Base | A sample voice file, a topic, the draft it produced and the feedback given. | Beginner |
+| Level 1, Beginner: for students | Build a voice file with three parts: three to five posts you wrote, rules you never break, and facts you may state. Paste the drafter instructions into a chatbot Project and attach the file. Give it a point of view, get one draft for one channel, edit it yourself, and add one line of feedback to the rules. | Beginner |
+| Level 2, Advanced: skills and connectors | The `voice-drafter` skill keeps the voice file and applies saved feedback every time. Source material from a Google Drive folder, post pictures from the artifact studio. | Intermediate |
+| Level 3, Expert: automation | A daily topic scout that queues topics and drafts for review. | Advanced |
 | Commercial grade | Several authors, an approval chain and brand compliance checks. | Explained, not built here |
 
 ## Established best practices
@@ -49,15 +51,15 @@ Follow the [build process](../plans-template/BUILD-PROCESS.md). Tick each as it 
 
 - [ ] **Reuse check:** what is built in, what is open source, and whether to stop here
 - [ ] **Build or license:** the lean for each level, with outside providers reviewed but not selected
-- [ ] **Dependencies and pricing:** what the simple level depends on and what it costs
+- [ ] **Dependencies and pricing:** what the Beginner level depends on and what it costs
 - [ ] **Where it lives:** which assistant, where the files are kept, what stays manual
 
 ## First step
 
 1. Research established best practices. Record each one with a source link and the date checked.
-2. Write the simple level solution and its overview.
+2. Write the Beginner level solution and its overview.
 
-The working level and beyond are planned only after the simple level is in use.
+The Advanced level and beyond are planned only after the Beginner level is in use.
 
 ## Open questions
 

@@ -2,7 +2,7 @@
 
 Turn a topic into a taught video in a teaching style chosen from a menu.
 
-| Complexity | Research | Simple level | Draft |
+| Complexity | Research | Level 1 | Draft |
 | --- | --- | --- | --- |
 | Intermediate | Done: landscape review in the draft | [Drafted](../../drafts/training-explainer/) | [`drafts/training-explainer/`](../../drafts/training-explainer/) |
 
@@ -18,21 +18,23 @@ Instructors, course builders and anyone who explains things for a living.
 
 ## Scope
 
-- **In:** the simple level described below.
-- **Out:** the working level and beyond, until the simple level is in use.
+- **In:** the Beginner level described below.
+- **Out:** the Advanced level and beyond, until the Beginner level is in use.
 - **It works when:** to be written before anything is built.
 
 ## What might be involved at each level
 
-The simple level is described in most detail, because it is built first. The later levels are
+Level 1 is described in most detail, because it is built first. The later levels are
 outlines and will change.
+
+Level 1 is the Beginner level: a student can run it in any chat assistant with nothing installed. Levels 2 and 3 are the Advanced levels, with skills and connectors, for someone who works with agents every day.
 
 | Level | What it involves | Complexity |
 | --- | --- | --- |
-| Demo | One topic written as two beat sheets, and one finished video per style. | Beginner |
-| Simple | Fill in a five-line brief: topic, audience, three to five core areas, style, length. Pick one of five style cards, each with a named inspiration. Write the last line first, build a beat sheet, write the script to it, and record it yourself over slides or stills. | Beginner |
-| Working | Script, generated visuals and your own cloned voice, assembled by hand. | Intermediate |
-| Automated | An agent produces the whole piece with your avatar and stops at your approval. | Advanced |
+| Base | One topic written as two beat sheets, and one finished video per style. | Beginner |
+| Level 1, Beginner: for students | Fill in a five-line brief: topic, audience, three to five core areas, style, length. Pick one of five style cards, each with a named inspiration. Write the last line first, build a beat sheet, write the script to it, and record it yourself over slides or stills. | Beginner |
+| Level 2, Advanced: skills and connectors | A skill that turns the brief into a script and slides from the artifact studio, with generated visuals and your own cloned voice from a provider you choose. | Intermediate |
+| Level 3, Expert: automation | An agent produces the whole piece with your avatar and stops at your approval. | Advanced |
 | Commercial grade | A course-wide style guide, review by a subject expert, captions and translation. | Explained, not built here |
 
 ## Established best practices
@@ -49,15 +51,15 @@ Follow the [build process](../plans-template/BUILD-PROCESS.md). Tick each as it 
 
 - [ ] **Reuse check:** what is built in, what is open source, and whether to stop here
 - [ ] **Build or license:** the lean for each level, with outside providers reviewed but not selected
-- [ ] **Dependencies and pricing:** what the simple level depends on and what it costs
+- [ ] **Dependencies and pricing:** what the Beginner level depends on and what it costs
 - [ ] **Where it lives:** which assistant, where the files are kept, what stays manual
 
 ## First step
 
 1. Research established best practices. Record each one with a source link and the date checked.
-2. Write the simple level solution and its overview.
+2. Write the Beginner level solution and its overview.
 
-The working level and beyond are planned only after the simple level is in use.
+The Advanced level and beyond are planned only after the Beginner level is in use.
 
 ## Open questions
 

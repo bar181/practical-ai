@@ -2,7 +2,7 @@
 
 A one-page weekly brief: industry and social media research with links, plus what your own documents and meeting transcripts say.
 
-| Complexity | Research | Simple level | Draft |
+| Complexity | Research | Level 1 | Draft |
 | --- | --- | --- | --- |
 | Beginner to intermediate | Done: landscape review in the draft | [Drafted](../../drafts/weekly-brief/) | [`drafts/weekly-brief/`](../../drafts/weekly-brief/) |
 
@@ -18,21 +18,23 @@ Owners and team leads who want to stay current without reading everything.
 
 ## Scope
 
-- **In:** the simple level described below.
-- **Out:** the working level and beyond, until the simple level is in use.
+- **In:** the Beginner level described below.
+- **Out:** the Advanced level and beyond, until the Beginner level is in use.
 - **It works when:** to be written before anything is built.
 
 ## What might be involved at each level
 
-The simple level is described in most detail, because it is built first. The later levels are
+Level 1 is described in most detail, because it is built first. The later levels are
 outlines and will change.
+
+Level 1 is the Beginner level: a student can run it in any chat assistant with nothing installed. Levels 2 and 3 are the Advanced levels, with skills and connectors, for someone who works with agents every day.
 
 | Level | What it involves | Complexity |
 | --- | --- | --- |
-| Demo | A sample brief with linked sources and a synthetic set of meeting notes. | Beginner |
-| Simple | Give your assistant a short watch list of topics and attach the week's transcripts and documents. Ask for one page: what changed outside, with a link for every item, what was decided inside, and what needs attention. Check the links yourself. | Beginner |
-| Working | A connected folder of transcripts and documents, a saved watch list, and the same shape every week. | Intermediate |
-| Automated | Runs weekly on a schedule and compares against last week's brief. | Advanced |
+| Base | A sample brief with linked sources and a synthetic set of meeting notes. | Beginner |
+| Level 1, Beginner: for students | Give your assistant a short watch list of topics and attach the week's transcripts and documents. Ask for one page: what changed outside, with a link for every item, what was decided inside, and what needs attention. Check the links yourself. | Beginner |
+| Level 2, Advanced: skills and connectors | The `weekly-brief` skill with web search and a Google Drive connector to a folder of transcripts and documents, a saved watch list, and the same shape every week. | Intermediate |
+| Level 3, Expert: automation | Runs weekly on a schedule and compares against last week's brief. | Advanced |
 | Commercial grade | Briefs by role, source quality rules, and an archive that can be searched. | Explained, not built here |
 
 ## Established best practices
@@ -49,15 +51,15 @@ Follow the [build process](../plans-template/BUILD-PROCESS.md). Tick each as it 
 
 - [ ] **Reuse check:** what is built in, what is open source, and whether to stop here
 - [ ] **Build or license:** the lean for each level, with outside providers reviewed but not selected
-- [ ] **Dependencies and pricing:** what the simple level depends on and what it costs
+- [ ] **Dependencies and pricing:** what the Beginner level depends on and what it costs
 - [ ] **Where it lives:** which assistant, where the files are kept, what stays manual
 
 ## First step
 
 1. Research established best practices. Record each one with a source link and the date checked.
-2. Write the simple level solution and its overview.
+2. Write the Beginner level solution and its overview.
 
-The working level and beyond are planned only after the simple level is in use.
+The Advanced level and beyond are planned only after the Beginner level is in use.
 
 ## Open questions
 

@@ -17,11 +17,11 @@ platform you can stand on. Extend it only once you are using it.
 | 1 | Scope | One user, one job, what is in, what is out, and how you will know it works | Go when the job fits in one sentence |
 | 2 | Reuse check | What already exists: built in, open source, established practice | **Stop** if something existing does the whole job. Write a guide, not a tool |
 | 3 | Provider review | Outside providers for anything you cannot do with step 2. Review, do not select | Go with a build-or-license view for each level |
-| 4 | Dependencies and pricing | Every dependency for the level you are about to build, with its cost and its limits | Go when the simple level has a known cost, ideally zero |
+| 4 | Dependencies and pricing | Every dependency for the level you are about to build, with its cost and its limits | Go when the Beginner level has a known cost, ideally zero |
 | 5 | Architecture | The simplest set of tools: which assistant, where files live, what stays manual | Go when a beginner could draw it |
-| 6 | Plan and steps | The plan, and the step by step process a person will follow | Go when the simple level is fully described |
+| 6 | Plan and steps | The plan, and the step by step process a person will follow | Go when the Beginner level is fully described |
 | 7 | Review | Someone other than the author checks the plan against the scope | Go when the reviewer can explain it back |
-| 8 | Build the simplest version and test | The simple level, tested on synthetic data and then by one real user | Go when it passes the check from step 1 |
+| 8 | Build the simplest version and test | The Beginner level, tested on synthetic data and then by one real user | Go when it passes the check from step 1 |
 | 9 | Build incrementally | One level at a time. What you learned. Any skill worth keeping | Move up only when the level below is in use |
 
 ## Each step in detail
@@ -51,7 +51,7 @@ Take inspiration freely. Record where each idea came from.
 
 ### 3. Provider review
 
-Only for what steps 1 and 2 cannot cover, and mostly for levels above simple.
+Only for what steps 1 and 2 cannot cover, and mostly for levels above Beginner.
 
 - **Review, do not select.** List the options with what each covers, how it charges, and its limits.
   Choosing comes later, when that level is actually being built.
@@ -76,7 +76,7 @@ Decide for the level you are about to build. Leave later levels as options.
 | Who pays: the builder or each user | So nobody is surprised |
 | What happens if it goes away or changes its price | So there is a way out |
 
-The simple level should run on what a person already has. If it cannot, say what it costs before
+The Beginner level should run on what a person already has. If it cannot, say what it costs before
 anyone starts.
 
 ### 5. Architecture
@@ -90,7 +90,7 @@ anyone starts.
 ### 6. Plan and steps
 
 - Fill in [`PLAN-TEMPLATE.md`](PLAN-TEMPLATE.md).
-- Describe the simple level fully. Give each later level one line.
+- Describe the Beginner level fully. Give each later level one line.
 - Write the steps a person follows as a numbered list they could do with the plan closed.
 
 ### 7. Review
@@ -101,14 +101,14 @@ anyone starts.
 
 ### 8. Build the simplest version and test
 
-- Build the simple level only.
+- Build the Beginner level only.
 - Test with synthetic data first, against the acceptance check from step 1.
 - Then have one real user follow the steps without help. Watch where they stop.
 - Fix the steps before you fix the tool.
 
 ### 9. Build incrementally
 
-- Add one level at a time: demo, simple, working, automated.
+- Add one level at a time: Beginner, then Advanced, then Expert.
 - Move up only when the level below is being used.
 - Each time you repeat a procedure, consider turning it into a skill and adding it to
   [`../../skills/`](../../skills/).
@@ -118,7 +118,7 @@ anyone starts.
 
 1. Building before checking what exists.
 2. Choosing a provider during research, then designing around it.
-3. Designing the automated level before the simple level works.
+3. Designing the Expert level before the Beginner level works.
 4. Testing only by the person who built it.
 5. Finding out what it costs after people depend on it.
 6. No written check, so "it works" is an opinion.

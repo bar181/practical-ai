@@ -34,9 +34,9 @@ Nothing is built until a person approves it.
 | | Holds | Done when |
 | --- | --- | --- |
 | Base | [One line] | [How anyone can tell] |
-| Level 1 | [Three or four sentences: what the person prepares, what they give the assistant, what they get back, what they check] | [How anyone can tell] |
-| Level 2 | [One line] | |
-| Level 3 | [One line] | |
+| Level 1, Beginner | [Three or four sentences a student can follow in any chat assistant: what they prepare, what they paste, what they get back, what they check] | [How anyone can tell] |
+| Level 2, Advanced | [One line: the skill, and the connectors it uses] | |
+| Level 3, Expert | [One line, or "None": a database, a server or a schedule] | |
 
 ## Open questions
 

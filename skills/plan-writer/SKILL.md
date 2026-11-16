@@ -35,7 +35,7 @@ everything after it. Work in the repository's `plans/` folder.
     - **Think of it as:** one everyday analogy.
     - **Overview:** two to four plain sentences.
     - **Scope:** from step 5.
-    - **Levels table:** one line for the base. Three or four sentences for level 1: what the person prepares, what they give the assistant, what they get back, what they check. One line each for working, automated and commercial grade.
+    - **Levels table:** one line for the base. Three or four sentences for level 1, the Beginner level, which a student must be able to run in any chat assistant with nothing installed: what they prepare, what they paste, what they get back, what they check. One line for level 2, the Advanced level, naming its skill and connectors. One line each for level 3 and commercial grade.
     - **Established best practices:** the list from step 7, with links and dates.
     - **What it reuses:** from the landscape review.
     - **Decisions to record:** tick only what is settled. For dependencies and pricing, cover level 1 only.
@@ -49,15 +49,14 @@ everything after it. Work in the repository's `plans/` folder.
 
 ## Update the indexes
 
-14. `plans/README.md`: add or update the tool's row (name with link, one line, complexity, research status, level 1 status).
-15. `docs/TODO.md`: add or update the tool's row. Research is "Done" only if every practice has a source link and a date.
-16. `docs/PRIORITIES.md`: set the Plan flag to a link to the plan. Add the tool to the list if it is new, at the end of the additional options unless told where it ranks.
+14. `docs/PRIORITIES.md`: add or update the tool's row in the group that matches its state, with one line each for what it does, its Beginner level and its Advanced level. This is the only list of tools. Do not add the tool anywhere else.
+15. `docs/TODO.md`: add an action only if a person has to decide something.
 
 ## Finish
 
-17. **Show a summary:** the files you changed, the complexity you chose and why, what already exists, the practices you found, and the open questions.
-18. **Note any skill worth keeping.** If you repeated a procedure that others will repeat, propose adding it to `skills/`.
-19. **Commit on a branch and open a pull request.** Never commit to the main branch.
+16. **Show a summary:** the files you changed, the complexity you chose and why, what already exists, the practices you found, and the open questions.
+17. **Note any skill worth keeping.** If you repeated a procedure that others will repeat, propose adding it to `skills/`.
+18. **Commit on a branch and open a pull request.** Never commit to the main branch.
 
 ## Rules
 

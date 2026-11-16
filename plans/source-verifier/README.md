@@ -40,11 +40,13 @@ it cannot read, which are marked "could not read" and never guessed.
 
 **Where the data lives:** nowhere. It reads a document and returns a table.
 
+Level 1 is the Beginner level: a student can run it in any chat assistant with nothing installed. Levels 2 and 3 are the Advanced levels, with skills and connectors, for someone who works with agents every day.
+
 | | Holds | Done when |
 | --- | --- | --- |
 | Base | The four results, three invented documents with known good and bad links, the table format | The check finds every planted bad link |
-| Level 1 | Paste the instructions and a document into an assistant that can browse. Get the table | A real brief with ten links is checked in five minutes |
-| Level 2 | A skill, and a gate any project can add to its `gates.json` for outside links | A document with a dead link cannot pass |
+| Level 1, Beginner | Paste the instructions and a document into an assistant that can browse. Get the table | A real brief with ten links is checked in five minutes |
+| Level 2, Advanced | A skill, and a gate any project can add to its `gates.json` for outside links | A document with a dead link cannot pass |
 
 ## Open questions
 
