@@ -1,0 +1,14 @@
+Read the design guide at https://raw.githubusercontent.com/bar181/practical-ai/main/projects/artifact-studio/base/AI-INSTRUCTIONS.md and follow it.
+
+Turn my notes into a keynote-style page: one idea per screen, huge type, almost no words.
+
+My notes:
+
+- Practical AI is a free, open set of tools for the jobs people repeat every day, week and month
+- The idea I teach: AI is a smart intern. It has read every book in the world and it has never met you
+- Without a brief it guesses, and good thinking arrives on a grey page
+- It is not about breakthroughs. AI does the draft. You keep the judgement
+- The first tool is Artifact Studio. In its library today: 20 templates, 17 design ideas, 13 photo effects, 12 page parts, 12 animated drawings and 9 looks
+- To start: paste one link, ask in one sentence, check what comes back. About five minutes, which is my estimate
+- Closing line: put your smart intern to work
+- Three pictures attached: a house in fog, a dog at a laptop, a city at sunset

@@ -39,7 +39,7 @@ of piece this is, how it should speak, and what it should look like.
 | Your assistant to do the choosing | Connect the MCP server | 10 minutes, once |
 
 The studio page is published beside this report as "Artifact studio". The files are in the
-repository at [`drafts/artifact-studio/`](https://github.com/bar181/practical-ai/tree/studio/component-gallery/drafts/artifact-studio).
+repository at [`workshop/drafts/artifact-studio/`](https://github.com/bar181/practical-ai/tree/studio/component-gallery/drafts/artifact-studio).
 
 ### Six worked examples: the request, then what came back
 
@@ -125,14 +125,14 @@ rule. The studio page, both indexes, the skill's reference sheets and the server
 | You asked | Done |
 | --- | --- |
 | Hosting the server: you will try it first | Left as it is. Nothing hosted |
-| Archive the old level pages, do not delete | [`plans/archive/`](https://github.com/bar181/practical-ai/tree/studio/component-gallery/plans/archive) records each retired thing, what replaced it and where it is. The three pages are still on your account, untouched |
+| Archive the old level pages, do not delete | [`workshop/plans/archive/`](https://github.com/bar181/practical-ai/tree/studio/component-gallery/plans/archive) records each retired thing, what replaced it and where it is. The three pages are still on your account, untouched |
 | The other nine tools: best judgement | **Not renamed.** See the judgement calls below |
 | A components catalogue for other concepts: cards, layouts, colour | Three tabs, 17 ideas, a palette maker. In the index, the skill and the server |
 | Be grounded on the purpose | Re-read before starting: a suite of tools a person can use, products not a course, scaffolding as the core value |
 | Complete the first project, clean architecture, daily use | Front doors rewritten around "use it today". Background papers moved to `docs/`. Training leftovers removed. A layout check enforces the rule |
 | Skills, server and other features reviewed against best practice | A script checks all 12 skills against the published rules. Findings below |
 | Several examples of the requirement, then the output | Six, above. They are also the skill's test cases |
-| Optimise the process; the method as a separate project with an agentic level 2 | `drafts/project-method/`, below |
+| Optimise the process; the method as a separate project with an agentic level 2 | `workshop/drafts/project-method/`, below |
 
 ### The method, as its own project
 
@@ -154,9 +154,9 @@ agentic version: a small harness.
 | Part of the harness | What it does |
 | --- | --- |
 | The `project-builder` skill | Finds the tool's stage, does that stage's work, runs its gate, and stops at the three decisions in bold above |
-| `tools/gates.py` | Runs a tool's gates and ends with "All gates that ran passed" or "DO NOT SHIP" |
-| `tools/check_project.py` | Checks the layout: two front doors, gates, a base, numbered levels |
-| `tools/check_links.py`, `tools/check_skills.py` | No broken link. Every skill follows the authoring rules |
+| `workshop/tools/gates.py` | Runs a tool's gates and ends with "All gates that ran passed" or "DO NOT SHIP" |
+| `workshop/tools/check_project.py` | Checks the layout: two front doors, gates, a base, numbered levels |
+| `workshop/tools/check_links.py`, `workshop/tools/check_skills.py` | No broken link. Every skill follows the authoring rules |
 | `new_project.py` and the scaffold | A new tool starts with the right folders and a first gate, in one command |
 
 The agent never changes a gate to make it pass, and never deletes retired work. **No agent has yet
@@ -164,7 +164,7 @@ taken a tool through all seven stages with it.** That run is the test of level 2
 
 ### Is it working?
 
-`python3 tools/gates.py drafts/artifact-studio --all`
+`python3 workshop/tools/gates.py drafts/artifact-studio --all`
 
 | Gate | What it proves | Result |
 | --- | --- | --- |
@@ -201,7 +201,7 @@ to compare side by side.
 
 1. **The nine older drafts were not renamed.** A bulk rename would make them look converted while
    each level still held a full copy. Each moves over when it is next worked on, from stage 1.
-   `tools/check_project.py` lists what is left for any of them.
+   `workshop/tools/check_project.py` lists what is left for any of them.
 2. **The script that generated the plans was archived.** It encoded the earlier layout and lived
    outside the repository. The Markdown files are now the source.
 3. **Tool names on the server were not prefixed.** Assistants already name a tool by its server.

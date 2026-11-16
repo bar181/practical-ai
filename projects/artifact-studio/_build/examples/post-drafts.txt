@@ -6,5 +6,5 @@ Topic: I have released Artifact Studio, a free design brief for AI chatbots. It 
 - How to start: paste one link, add your notes, ask in one sentence
 - It gets you most of the way to a solid draft. You check it and you sign it
 - The link: github.com/bar181/practical-ai
-- My voice: short sentences, plain words, one analogy, and an ending that is a step or a question. Three posts I am proud of are attached
+- My voice: short sentences, plain words, one analogy, and an ending that is a step or a question. I have no earlier posts to attach, so go by this description
 - Pictures attached: a cartoon of a bored video call, a dog at a laptop, a lightbulb full of paint

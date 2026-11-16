@@ -240,14 +240,28 @@ EXAMPLES=[ # file, view, what it shows, notes, the ask (None: the view's own sho
  ('social-posts','socials','three drafts of a post, shown as previews','post-drafts.txt',_first('86-socials.html')),
  ('photo-effects','photo','photo effects from one picture','one-picture.txt','Open with my picture as a slow pan and zoom, like a documentary shot. Then set one word in huge letters filled with the picture, and finish with the picture as a postcard I can tap to turn over.')]
 EX_OF={view:f'base/examples/{name}.html' for name,view,_,_,_ in EXAMPLES}
-_kn=dict(re.findall(r'data-n="(\w+)" data-count="(\d+)"',VIEW['voice-keynote']))
-for name,view,what,notes,q in EXAMPLES:
-    txt=open(os.path.join(HERE,'examples',notes)).read().strip().format(**_kn) if notes=='practical-ai.txt' else open(os.path.join(HERE,'examples',notes)).read().strip()
-    prompt=f'Read the design guide at {RAW_MAIN} and follow it.\n\n{q or html.unescape(LV[view][0])}\n\nMy notes:\n\n{txt}'
-    panel=(f'<aside class="about ex" aria-label="How this example was made"><div class="wrap"><p><b>Worked example: {html.escape(what)}.</b> Three parts. The prompt is the first two paragraphs of the box. The sample input is everything after "My notes". The finished result is the page below.</p>'
-           f'<div class="codeb"><pre tabindex="0">{html.escape(prompt)}</pre><button class="copy" type="button">Copy</button></div>'
-           '<p class="about-n">The result below is the hand-built reference for this example, not the output of one chat. Paste the box into your own assistant and you get a page in this manner. Yours will differ, and you should check it. <a href="../studio.html">Open the whole library</a></p></div></aside>')
-    build('example',f'base/examples/{name}.html',what[0].upper()+what[1:],'One request, its sample input and the finished page.',[('x',[view],'')],panel=panel)
+# Each worked example is the unedited page an AI assistant made from its prompt in a fresh session. The runs are kept in examples/runs/.
+RUNS=os.path.join(HERE,'examples','runs'); TAB_OF={name:view for name,view,_,_,_ in EXAMPLES}; TAB_OF['report']='recipe-report'
+WHAT={name:what for name,_,what,_,_ in EXAMPLES}; WHAT['report']='a one-page report'
+def write_examples():
+    box='max-width:880px;margin:0 auto;padding:0 20px'
+    for name in sorted(os.listdir(RUNS)):
+        d=os.path.join(RUNS,name)
+        if not os.path.exists(os.path.join(d,'out.html')): continue
+        page=open(os.path.join(d,'out.html')).read(); prompt=open(os.path.join(d,'prompt.txt')).read().strip(); note=open(os.path.join(d,'note.md')).read().strip()
+        pre='margin:10px 0 0;padding:12px 14px;background:#fff;color:#14202e;border:1px solid #c9d1de;border-radius:8px;white-space:pre-wrap;overflow-wrap:anywhere;font:400 14px/1.5 ui-monospace,Menlo,Consolas,monospace;max-height:22em;overflow:auto'
+        panel=(f'<aside aria-label="How this example was made" style="background:#0c2340;color:#fff;font:400 16px/1.5 system-ui,-apple-system,Segoe UI,sans-serif;padding:22px 0 24px;text-align:left"><div style="{box}">'
+               f'<p style="margin:0;font-weight:700;font-size:1.15rem;color:#ffd23f">Worked example: {html.escape(WHAT[name])}</p>'
+               '<p style="margin:8px 0 0;color:#fff;max-width:44em">An AI assistant made the page below on 16 November 2026 from the prompt in this box. It worked in a fresh session with only the prompt, the design guide and the pictures. Nothing was edited afterwards. Paste the same prompt into your own assistant and you get a page in this manner. Yours will differ.</p>'
+               f'<details style="margin-top:12px"><summary style="cursor:pointer;font-weight:700;min-height:44px;display:flex;align-items:center;color:#fff">The prompt and the sample input</summary><pre tabindex="0" style="{pre}">{html.escape(prompt)}</pre></details>'
+               f'<details><summary style="cursor:pointer;font-weight:700;min-height:44px;display:flex;align-items:center;color:#fff">What the assistant said about its page</summary><pre tabindex="0" style="{pre}">{html.escape(note)}</pre></details>'
+               f'<p style="margin:10px 0 0"><a href="../studio.html#{TAB_OF[name]}" style="color:#ffd23f;font-weight:700">Compare it with the hand-built version in the library</a></p></div></aside>')
+        foot=FOOT.replace('<aside class="me" id="about-the-creator" aria-label="About the creator">','<aside aria-label="About the creator" style="background:#0c2340;color:#fff;padding:34px 0 40px;font:400 16px/1.45 system-ui,-apple-system,Segoe UI,sans-serif;text-align:left">').replace('<div class="wrap">',f'<div style="{box};display:flex;gap:18px;align-items:flex-start">').replace('<img ','<img style="flex:none;border-radius:50%;border:3px solid #ffd23f" ').replace('<p class="me-k">','<p style="margin:0;font-weight:700;font-size:1.3rem;line-height:1.15;color:#fff">').replace('<p>Bradley','<p style="margin:6px 0 0;max-width:38em;color:#dfe6ef">Bradley').replace('<a class="me-b" ','<a style="display:inline-flex;align-items:center;min-height:46px;margin-top:14px;padding:0 20px;border-radius:999px;background:#ffd23f;color:#0c2340;font-weight:700;text-decoration:none" ').replace('<span class="me-s">','<span style="display:block;margin-top:8px;color:#b9c5d3;font-size:.9rem">')
+        m=re.search(r'<body[^>]*>',page); assert m and '</body>' in page, name
+        page=page[:m.end()]+'\n'+panel+'\n'+page[m.end():]; page=page.replace('</body>',foot+'\n</body>',1)
+        open(os.path.join(ROOT,'base','examples',name+'.html'),'w').write(page)
+    print('examples:',len([n for n in os.listdir(RUNS) if os.path.exists(os.path.join(RUNS,n,'out.html'))]),'-> base/examples/')
+write_examples()
 # ---- starters: a deck as one small file with system fonts and no photograph, for an agent to copy and fill
 def write_starters():
     lib=open(os.path.join(HERE,'views','01-lib.html')).read()
@@ -376,6 +390,9 @@ def write_index(parts,photo):
              looks=[dict(name=l,preview=pv('looks'),card='level-2-files/artifact-studio/references/looks.md') for l in looks])
     os.makedirs(os.path.join(LIBRARY,'sources'),exist_ok=True); os.makedirs(os.path.join(LIBRARY,'svg'),exist_ok=True)
     json.dump(idx,open(os.path.join(LIBRARY,'index.json'),'w'),indent=1)
+    # a copy of the skill inside the library, so the server's folder works when it is moved by itself
+    sk=os.path.join(LIBRARY,'skill'); shutil.rmtree(sk,ignore_errors=True)
+    shutil.copytree(SKILL,sk,ignore=shutil.ignore_patterns('evals','SKILL-single-file.md'))
     keep={os.path.basename(x['source']) for x in tpl+comp if x['source'].startswith(SRC)}|{'02-posts-lib.html','86-socials.html'}   # the shared frame styles, and the page that shows three drafts side by side
     for f in os.listdir(os.path.join(LIBRARY,'sources')):   # a view removed from views/ leaves the library too
         if f.endswith('.html') and f!='shell.html' and f not in keep: os.remove(os.path.join(LIBRARY,'sources',f))

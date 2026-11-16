@@ -55,7 +55,7 @@ flowchart TD
 | Index | `base/templates/README.md` and `index.json` | The list, for people and for agents. Generated, so it cannot drift |
 | Catalogue | `base/source/catalog.py` | Fit scores and the rule that picks. One file feeds the page, the server and the index |
 | Studio page | `base/studio.html` | Everything in tabs, with a picker |
-| Skill | `skills/artifact-studio/` | How an assistant builds and checks |
+| Skill | `workshop/skills/artifact-studio/` | How an assistant builds and checks |
 | Agents' door | `AGENTS.md` | Eight steps from request to file |
 | Intake | `base/inspiration/` | How a design you like becomes a note, a change or a new part |
 | Outside help | `base/RESOURCES.md` | What to use when the studio is the wrong tool |

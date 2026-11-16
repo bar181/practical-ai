@@ -2,7 +2,7 @@
 
 Actions, not tools. The tools are in the one list: [`tool-inventory.md`](tool-inventory.md).
 
-Every tool follows the [project method](../drafts/project-method/): nine stages, a gate after
+Every tool follows the [project method](../workshop/drafts/project-method/): nine stages, a gate after
 each. Nothing is built until its North Star page is approved at stage 3.
 
 ## Next, in order
@@ -16,7 +16,7 @@ each. Nothing is built until its North Star page is approved at stage 3.
 ## Across all tools
 
 - [ ] Have a student run each Beginner level and record what they could not do
-- [ ] Move each older draft in `drafts/` to the showcase layout in `projects/README.md` when it is next worked on
+- [ ] Move each older draft in `workshop/drafts/` to the showcase layout in `projects/README.md` when it is next worked on
 - [ ] Update the project method and its scaffold to the showcase layout
 - [ ] Run each worked example's prompt in a fresh chat, and replace the hand-built reference or keep its label
 - [ ] Turn on branch protection for `main`: a pull request and the owner's review before any merge

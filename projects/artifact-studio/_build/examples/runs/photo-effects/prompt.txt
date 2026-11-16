@@ -1,0 +1,7 @@
+Read the design guide at https://raw.githubusercontent.com/bar181/practical-ai/main/projects/artifact-studio/base/AI-INSTRUCTIONS.md and follow it.
+
+Open with my picture as a slow pan and zoom, like a documentary shot. Then set one word in huge letters filled with the picture, and finish with the picture as a postcard I can tap to turn over.
+
+My notes:
+
+One picture of my own is attached. Any picture works: a place, a product, a person who has agreed to be shown.

@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Decision brief: enquiry replies after the trial</title>
+<style>
+  /* Seven colour tokens, plus one data colour for the chart. */
+  :root {
+    --paper: #f6f7f4;   /* the sheet */
+    --desk: #e3e6e2;    /* behind the sheet, and quiet panels */
+    --ink: #19211f;     /* main text */
+    --muted: #4f5a57;   /* secondary text, and the comparison bar */
+    --rule: #b4bcb8;    /* lines */
+    --accent: #1a4c8b;  /* only for what to act on */
+    --mark: #e6edf7;    /* soft highlight behind the recommended row */
+    --data: #8a5a1e;    /* chart bars only */
+  }
+
+  * { box-sizing: border-box; }
+
+  html {
+    font-size: 17px;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  body {
+    margin: 0;
+    background: var(--desk);
+    color: var(--ink);
+    font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, Georgia, "Times New Roman", serif;
+    line-height: 1.5;
+  }
+
+  .sheet {
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 1.4rem 1.1rem 2rem;
+    max-width: 50rem;
+  }
+
+  h1 {
+    font-size: 1.62rem;
+    line-height: 1.16;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin: 0 0 0.9rem;
+    max-width: 22em;
+  }
+
+  /* Memo header: to, from, date, decision needed by, period. */
+  .memo {
+    margin: 0;
+    padding: 0.6rem 0;
+    border-top: 2px solid var(--ink);
+    border-bottom: 1px solid var(--rule);
+    display: grid;
+    grid-template-columns: max-content minmax(0, 1fr);
+    gap: 0.15rem 0.9rem;
+  }
+  .memo dt { color: var(--muted); }
+  .memo dd { margin: 0; }
+  .memo .deadline { color: var(--accent); font-weight: 700; }
+  .needs {
+    font-family: ui-monospace, "Cascadia Mono", Menlo, Consolas, monospace;
+    font-size: 0.86em;
+    border: 1px dashed var(--ink);
+    padding: 0 0.3em;
+  }
+
+  section {
+    padding: 0.9rem 0 0;
+    margin-top: 0.9rem;
+    border-top: 1px solid var(--rule);
+  }
+  .memo + section { border-top: 0; margin-top: 0; }
+
+  h2 {
+    font-size: 1.06rem;
+    line-height: 1.25;
+    font-weight: 700;
+    margin: 0 0 0.35rem;
+  }
+
+  p { margin: 0 0 0.5rem; }
+  .body > :last-child { margin-bottom: 0; }
+
+  .decision {
+    font-size: 1.16rem;
+    line-height: 1.34;
+    font-weight: 700;
+  }
+
+  ol.background {
+    margin: 0;
+    padding-left: 1.3rem;
+  }
+  ol.background li { margin-bottom: 0.3rem; padding-left: 0.15rem; }
+
+  /* Three numbers with their change. */
+  .stats {
+    list-style: none;
+    margin: 0.7rem 0 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    border-top: 1px solid var(--rule);
+  }
+  .stats li {
+    padding: 0.45rem 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .stats .label { display: block; color: var(--muted); font-size: 0.9rem; line-height: 1.3; }
+  .stats .now { display: block; font-size: 1.5rem; line-height: 1.2; font-weight: 700; }
+  .stats .was { display: block; font-size: 0.9rem; line-height: 1.35; }
+
+  /* The one chart: thin bars drawn in HTML, no image. */
+  figure.chart { margin: 0.8rem 0 0; }
+  .chart h3 {
+    font-size: 1rem;
+    line-height: 1.3;
+    font-weight: 700;
+    margin: 0 0 0.4rem;
+  }
+  .bars { list-style: none; margin: 0; padding: 0; }
+  .bars li {
+    display: grid;
+    grid-template-columns: 7.2rem 1fr;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.14rem 0;
+    font-size: 0.9rem;
+    line-height: 1.25;
+  }
+  .bars .track { display: flex; align-items: center; gap: 0.4rem; min-width: 0; }
+  .bars .bar {
+    display: block;
+    height: 0.62rem;
+    background: var(--data);
+    border: 1px solid var(--data);
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .bars .before .bar { background: var(--paper); border: 2px solid var(--muted); }
+  .bars .value { font-weight: 700; font-size: 1rem; }
+  .chart figcaption { color: var(--muted); font-size: 0.86rem; line-height: 1.35; margin-top: 0.35rem; }
+
+  /* The one options table. It fits a phone; the wrapper is a safety net. */
+  .table-wrap { overflow-x: auto; }
+  .table-wrap:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+  table.options {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+    line-height: 1.35;
+  }
+  .options th, .options td {
+    text-align: left;
+    vertical-align: top;
+    padding: 0.4rem 0.45rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .options thead th {
+    color: var(--muted);
+    font-weight: 400;
+    border-bottom: 1px solid var(--ink);
+    padding-top: 0;
+  }
+  .options tbody th { font-weight: 700; width: 31%; }
+  .options td.cost { width: 27%; }
+  .options tr.pick th, .options tr.pick td {
+    background: var(--mark);
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .tag {
+    display: block;
+    margin-top: 0.2rem;
+    font-size: 0.84rem;
+    font-weight: 700;
+  }
+  .tag.recommended { color: var(--accent); }
+  .tag.weak { color: var(--ink); font-weight: 400; font-style: italic; }
+  .working { color: var(--muted); }
+
+  ul.risks, ul.steps { list-style: none; margin: 0; padding: 0; }
+  ul.risks li, ul.steps li { margin-bottom: 0.4rem; }
+  ul.risks li:last-child, ul.steps li:last-child { margin-bottom: 0; }
+  .risks .control { display: block; padding-left: 0.9rem; border-left: 2px solid var(--rule); margin-top: 0.1rem; }
+  .steps .when { font-weight: 700; }
+
+  /* Wide screens and paper: headings move into the margin, text stays 60 to 75 characters wide. */
+  @media (min-width: 46rem) {
+    body { padding: 1.6rem 1rem; }
+    .sheet { padding: 2.4rem 2.6rem 2.6rem; border: 1px solid var(--rule); }
+    h1 { font-size: 2rem; }
+    section {
+      display: grid;
+      grid-template-columns: 9.5rem minmax(0, 34rem);
+      column-gap: 0.8rem;
+    }
+    h2 { margin: 0; }
+    .stats { grid-template-columns: repeat(3, 1fr); column-gap: 1rem; border-top: 0; }
+    .stats li { border-top: 1px solid var(--rule); border-bottom: 0; padding-bottom: 0; }
+  }
+
+  @media print {
+    @page { margin: 9mm 16mm; }
+    html { font-size: 9pt; }
+    body { background: none; padding: 0; line-height: 1.34; }
+    .sheet { max-width: none; padding: 0; border: 0; background: none; }
+    h1 { font-size: 1.7rem; margin-bottom: 0.55rem; max-width: none; }
+    .memo { grid-template-columns: max-content minmax(0, 1fr) max-content minmax(0, 1.6fr); padding: 0.35rem 0; }
+    .memo .wide { grid-column: 2 / -1; }
+    section {
+      display: grid;
+      grid-template-columns: 8.5rem minmax(0, 1fr);
+      column-gap: 0.8rem;
+      padding-top: 0.4rem;
+      margin-top: 0.4rem;
+      break-inside: avoid;
+    }
+    h2 { margin: 0; }
+    p { margin-bottom: 0.3rem; }
+    .body > p, ol.background, ul.risks, ul.steps { max-width: 34rem; }
+    .evidence { display: grid; grid-template-columns: 15rem minmax(0, 1fr); column-gap: 1.6rem; margin-top: 0.5rem; align-items: start; }
+    .stats { grid-template-columns: 1fr; border-top: 0; margin-top: 0; align-content: start; }
+    .stats li { border-top: 1px solid var(--rule); border-bottom: 0; padding: 0.15rem 0 0.25rem; }
+    .stats .now { font-size: 1.25rem; display: inline; margin-right: 0.3rem; }
+    .stats .was { display: inline; }
+    .risks .control { display: inline; padding-left: 0; border-left: 0; font-style: italic; }
+    .options tbody th { width: 27%; }
+    .options td.cost { width: 24%; }
+    figure.chart { margin-top: 0; border-top: 1px solid var(--rule); padding-top: 0.25rem; }
+    .bars li { padding: 0.05rem 0; }
+    .options th, .options td { padding: 0.26rem 0.4rem; }
+    ol.background li, ul.risks li, ul.steps li { margin-bottom: 0.18rem; }
+  }
+</style>
+</head>
+<body>
+<main class="sheet">
+
+  <h1>Enquiry replies: keep drafting them, or let the trial end on 31 May</h1>
+
+  <dl class="memo">
+    <dt>To</dt>
+    <dd>The owners</dd>
+    <dt>From</dt>
+    <dd><span class="needs">[needs: who is sending this]</span></dd>
+    <dt>Date</dt>
+    <dd><span class="needs">[needs: date sent]</span></dd>
+    <dt>Decision needed by</dt>
+    <dd class="deadline">26 May</dd>
+    <dt>Period covered</dt>
+    <dd class="wide">February to April: 90 days, all 214 enquiries</dd>
+  </dl>
+
+  <section aria-labelledby="h-decision">
+    <h2 id="h-decision">The decision</h2>
+    <div class="body">
+      <p class="decision">Do we keep drafting a first reply to every enquiry after the trial ends on 31 May?</p>
+      <p>During the trial our median first reply fell from 26 hours to 38 minutes, and site visits booked rose from 18 a month to 31. It costs about $1,800 a year, and jobs won are not counted yet, so the trial does not show whether it brings in more work.</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-background">
+    <h2 id="h-background">Background</h2>
+    <div class="body">
+      <ol class="background">
+        <li>We are a home renovation company. Enquiries arrive by web form, email and telephone. Before the trial, 12% were answered within the hour.</li>
+        <li>What changed: a reply is drafted the moment a message arrives. A member of staff reads it, fixes it and sends it.</li>
+        <li>Our rules: a person approves every reply. The first reply confirms and offers a visit. It never states a price.</li>
+        <li>Setting it up took about an hour. We collected three replies we are proud of, wrote our rules on half a page, saved both in a chat project, tested it on five old enquiries, then used it on the next real one.</li>
+      </ol>
+
+      <div class="evidence">
+      <ul class="stats">
+        <li>
+          <span class="label">Median first reply</span>
+          <span class="now">38 minutes</span>
+          <span class="was">Was 26 hours.</span>
+        </li>
+        <li>
+          <span class="label">Answered within the hour</span>
+          <span class="now">81%</span>
+          <span class="was">Was 12%. Up 69 points (81 − 12).</span>
+        </li>
+        <li>
+          <span class="label">Office manager's time on replies</span>
+          <span class="now">2.5 hours a week</span>
+          <span class="was">Was 6. Frees 3.5 hours a week (6 − 2.5).</span>
+        </li>
+      </ul>
+
+      <figure class="chart">
+        <h3>Site visits booked rose in every month of the trial, from 18 a month before it to 31 in April.</h3>
+        <ul class="bars">
+          <li class="before">
+            <span class="name">Before the trial</span>
+            <span class="track"><span class="bar" style="width:58.06%"></span><span class="value">18</span></span>
+          </li>
+          <li>
+            <span class="name">February</span>
+            <span class="track"><span class="bar" style="width:70.97%"></span><span class="value">22</span></span>
+          </li>
+          <li>
+            <span class="name">March</span>
+            <span class="track"><span class="bar" style="width:90.32%"></span><span class="value">28</span></span>
+          </li>
+          <li>
+            <span class="name">April</span>
+            <span class="track"><span class="bar" style="width:100%"></span><span class="value">31</span></span>
+          </li>
+        </ul>
+        <figcaption>Site visits booked a month. "Before the trial" is the average of the three months before it. Source: the company's trial notes. About one visit in four becomes a job.</figcaption>
+      </figure>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-options">
+    <h2 id="h-options">Options</h2>
+    <div class="body">
+      <div class="table-wrap" role="region" aria-labelledby="h-options" tabindex="0">
+        <table class="options">
+          <thead>
+            <tr>
+              <th scope="col">Option</th>
+              <th scope="col">Cost a year</th>
+              <th scope="col">What we know</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="pick">
+              <th scope="row">A. Keep drafting first replies
+                <span class="tag recommended">Recommended</span>
+              </th>
+              <td class="cost">About $1,800 <span class="working">($150 a month × 12)</span></td>
+              <td>The trial results: median first reply 38 minutes, 81% answered within the hour, 2.5 hours a week of the office manager's time.</td>
+            </tr>
+            <tr>
+              <th scope="row">B. Hire a part-time coordinator</th>
+              <td class="cost">About $26,000, which is about $24,200 more than A <span class="working">(26,000 − 1,800)</span></td>
+              <td>Not tried. We have a cost for it and no results.</td>
+            </tr>
+            <tr>
+              <th scope="row">C. Do nothing: the trial ends on 31 May
+                <span class="tag weak">Weak point: the slowest replies</span>
+              </th>
+              <td class="cost">No tool cost</td>
+              <td>How things were before the trial: median first reply 26 hours, 12% answered within the hour, 6 hours a week of the office manager's time.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-recommendation">
+    <h2 id="h-recommendation">Recommendation</h2>
+    <div class="body">
+      <p><strong>Choose option A.</strong> Keep drafting first replies after 31 May, keep the three rules as they are, and start counting jobs won. In the trial the median first reply went from 26 hours to 38 minutes, the office manager got back 3.5 hours a week, and the cost is about $1,800 a year against about $26,000 for a coordinator.</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-risks">
+    <h2 id="h-risks">Risks and controls</h2>
+    <div class="body">
+      <ul class="risks">
+        <li><strong>A drafted reply goes out wrong.</strong>
+          <span class="control">Control, in place: a person approves every reply, and the first reply never states a price.</span></li>
+        <li><strong>The rise in visits may not come from faster replies.</strong> This is one company, there was no comparison group, and spring is the busy season.
+          <span class="control">Control, proposed: keep recording site visits booked each month after spring and compare.</span></li>
+        <li><strong>We do not know the effect on jobs won.</strong> They are not counted yet.
+          <span class="control">Control, proposed: count jobs won from now on.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-next">
+    <h2 id="h-next">Next steps</h2>
+    <div class="body">
+      <ul class="steps">
+        <li><span class="when">By 26 May:</span> the owners choose A, B or C.</li>
+        <li><span class="when">31 May:</span> the trial ends. Under A, drafting carries on with the same three rules. Under C, it stops.</li>
+        <li><span class="when">If A is chosen:</span> the owners name who counts jobs won.</li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+</body>
+</html>

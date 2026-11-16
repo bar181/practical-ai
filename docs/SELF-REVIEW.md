@@ -68,7 +68,7 @@ Found and fixed in this round:
 
 Still open, and not fixable by the author alone:
 
-- Run the sentence test: `drafts/artifact-studio/docs/sentence-test.md`.
+- Run the sentence test: `workshop/drafts/artifact-studio/docs/sentence-test.md`.
 - Have a second agent run the skill on fresh content.
 - Watch one person do level 1 from the student guide.
 - Check on a real phone, in Safari and in Firefox.
@@ -357,10 +357,10 @@ of the scaffolding, and the method written up as its own project.
 | Asked for | What exists now |
 | --- | --- |
 | Design ideas: cards, layouts, colour | Three tabs, 17 ideas, each with a live example, a rule and the sentence that asks for it. A palette maker turns one brand colour into seven, and checks contrast for every one of the 360 hues |
-| Skills and server reviewed | `tools/check_skills.py` checks all 12 skills against the published rules. It found three long reference files with no contents list, and no skill with test cases. Both fixed for the artifact studio. The server's instructions were stale and are rewritten, and two tools were added |
+| Skills and server reviewed | `workshop/tools/check_skills.py` checks all 12 skills against the published rules. It found three long reference files with no contents list, and no skill with test cases. Both fixed for the artifact studio. The server's instructions were stale and are rewritten, and two tools were added |
 | Worked examples | Six, each a request, the notes, what was picked, the output and a list of what a good result must have. They are also the skill's test cases |
-| Clean scaffolding | One rule, a layout check that enforces it, and one command that runs every gate. Background papers moved to `docs/`. Training leftovers removed. Retired work in `plans/archive/` |
-| The method as a project | `drafts/project-method/`: seven stages, a gate after each, a scaffold, and an agentic level 2 built on a skill and the gate runner |
+| Clean scaffolding | One rule, a layout check that enforces it, and one command that runs every gate. Background papers moved to `docs/`. Training leftovers removed. Retired work in `workshop/plans/archive/` |
+| The method as a project | `workshop/drafts/project-method/`: seven stages, a gate after each, a scaffold, and an agentic level 2 built on a skill and the gate runner |
 
 Scored on the same seven lines as round 5, plus one for the scaffolding:
 
@@ -409,7 +409,7 @@ alone. In order of value:
 1. **Open the four studio artifacts on a phone** and say whether every tab shows content. This
    confirms or refutes the round 3 fix. Five minutes.
 2. **Run the sentence test.** The beginner sentence for each of the four recipes, in two
-   assistants, with the sheet in `drafts/artifact-studio/docs/sentence-test.md`. About an
+   assistants, with the sheet in `workshop/drafts/artifact-studio/docs/sentence-test.md`. About an
    hour.
 3. **Give the artifact-studio skill to a second agent** with one set of real notes, and compare
    what comes back against the pre-ship checklist.

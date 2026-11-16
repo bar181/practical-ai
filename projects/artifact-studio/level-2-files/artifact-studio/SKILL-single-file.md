@@ -12,25 +12,31 @@ material. You add structure and craft. You never add facts.
 Think of it as ordering at a counter: the recipe is the dish, the voice is how they like it, the
 look is the plate.
 
-If a front-end design skill is available (for example `frontend-design`), load it as well.
+If a front-end design skill is available (for example `frontend-design`), you may load it for
+craft. Where it and this guide disagree, this guide wins.
 
 ## Steps
 
 1. **Intake.** Find the content, any media, the audience, the one job of the page, and where it
    will be seen. If the request names two jobs, the page does the one its reader will act on and
    the other becomes a section. Infer what you can. Ask at most two questions, only if you cannot tell the
-   audience or the job.
+   audience or the job. If you cannot ask at all, decide, and say what you decided under Assumed.
    If there is a preferences file (a file named `preferences.md`, or a section headed Preferences
    in your instructions), read it before you choose anything. It sets the defaults for recipe,
    voice, look, layout and format. What the person says in this request overrides it. Do not ask
    a question the file already answers. Say in the delivery note which preferences you applied.
-2. **Recipe.** Pick one from the table. If named, use it. If none fits, use the one-page report.
+2. **Kind and recipe.** First settle what is being made, with the table under these steps. For a
+   page, pick one recipe. If named, use it. If none fits, use the one-page report.
 3. **Voice.** Pick one from the table. If named, use it. Otherwise take the recipe's first voice.
-4. **Look.** In order: the person's design spec; colours taken from an image they supplied; the
-   voice's default look.
-5. **Outline.** Map the content onto the recipe's sections in the voice's order. Write the words.
-   List every gap and assumption. Where the recipe and the voice disagree, the voice sets the
-   order, the counts and the headings. The recipe sets which sections the page must have.
+   For a post, an email or a blog, the voice is the person's own.
+4. **Look.** In order: the person's design spec; colours taken from a picture, only when the
+   person asks for its colours or it is the page's main picture; the voice's default look.
+   Pictures attached as illustrations do not change the look.
+5. **Outline.** The voice gives the order. The recipe is a checklist of what a page of that kind
+   usually holds. Build in the voice's order, then go down the recipe's list: put in each section
+   the content can fill, where it fits that order, and leave out any it cannot fill. Never pad a
+   section, and never show one number twice to satisfy both lists. Where the two disagree on a
+   count or a heading, the voice wins. Write the words. List every gap and assumption.
 6. **Parts.** One component per section that needs one. Each must carry content. At most three
    moving parts on a page.
 7. **Build.** One self-contained HTML file, following the build rules.
@@ -45,6 +51,17 @@ If a front-end design skill is available (for example `frontend-design`), load i
 | One sentence (beginner) | Choose voice and look yourself. Give the short note: one line under each of the four headings |
 | Names recipe, voice, look, parts (advanced) | Follow them exactly |
 | "Use the artifact-studio skill" (expert) | Every step, the check, and the note in full: every assumption and every gap listed |
+| Anything in between | Treat it as a one-sentence request and follow whatever it names |
+
+| What is being made | Do this |
+| --- | --- |
+| A page | Pick a recipe from the next table |
+| A page, with a voice named and no recipe | The recipe that lists that voice. If none does, the voice's order is the whole page |
+| A decision brief or a memo | No recipe. The executive brief voice is the whole page |
+| A slide deck | The deck section below. Visionary deck with the keynote voice, story deck with the storyteller, briefing deck with the analyst or the executive brief, workshop deck with the teacher or the practical instructor |
+| A social post, an email or a blog post | The post preview in the deck section below. No recipe |
+| A page led by pictures or photo effects | No recipe and no voice. Use the parts the person names, in the order they name them |
+| A picture for a post | The social post picture in the deck section below |
 
 ## Recipes
 
@@ -57,6 +74,12 @@ If a front-end design skill is available (for example `frontend-design`), load i
 
 ## Voices
 
+A voice may ask for something the notes do not hold. Wording, structure and an analogy are yours
+to write: say so under Assumed. Facts are not yours to write: a number, a name, a date, a quote, an
+option or a recommendation the person did not give is a gap. You may offer a recommendation if the
+page labels it as proposed. A real person named in the notes is named on the page only if the notes
+say they agreed. Otherwise tell it without the name.
+
 A voice changes the order of the content, not only the wording. Each is inspired by a
 communicator's style. Never write as if that person said it, and never put their name on a page.
 
@@ -68,14 +91,17 @@ communicator's style. Never write as if that person said it, and never put their
 | Teacher | One question. An everyday analogy, very large. One worked example. Pseudocode or a diagram stepped through. A harder case. Check-yourself questions. A recap reusing the analogy. | Black and white, one highlight, monospace code. The reader steps and answers. | Two new ideas in one step |
 | Practical instructor | The core idea in one sentence. One boxed analogy. Three numbers. Numbered steps with a time each. Three levels. Common mistakes. One next step. | Field guide: two colours, tick boxes, a progress bar, tables. | Theory before the first step |
 | Analyst | The conclusion as the title. The answer in two sentences. Three numbers. Three findings: full-sentence heading, one chart, a "so what". Method. Limits. Next steps with owner and date. | Quiet, one data colour, grey for comparison, source under each chart. One picture at most, at the top. | Topic headings, hidden limits |
-| Executive brief | Header: to, from, date, decision needed by. The decision. Numbered background. One options table including "do nothing". Recommendation. Risks with controls. Next steps. | A paper page, serif, one accent, no images, no motion. | More than one page |
+| Executive brief | Header: to, from, date, decision needed by. The decision. Numbered background. One options table including "do nothing". Recommendation. Risks with controls. Next steps. | A paper page, serif, one accent, no photographs, no motion. A table or one small chart is allowed. | More than one page: it should print on one sheet, or read in three minutes on a phone |
 
 ## Look
 
 - **From a photo.** Take the five or six colours that cover most of the picture. Darkest becomes
   text. Lightest, or a paler step of the largest, becomes the background. The most vivid that is
   not skin or sky becomes the accent, used sparingly. Check text contrast is 4.5 to 1 or better.
-- **Defaults by voice.** Keynote: black and white. Storyteller: the photo's colours. Personal story: faded film. Teacher: white
+- **Nothing to go on.** With no design spec, no brand colour and no picture, use the voice's
+  default below. Say under Assumed that the colours are yours.
+- **Defaults by voice.** Keynote: black and white. Storyteller: the photo's colours, or warm paper
+  and dark ink when there is no photo. Personal story: faded film. Teacher: white
   with one highlight. Practical instructor: field guide. Analyst: quiet, one
   data colour. Executive brief: paper memo.
 
@@ -92,7 +118,8 @@ swipe gallery, flip card.
 
 - One HTML file, CSS and script inside, no build step, opens with no network. Embed fonts and
   images or use system fonts.
-- Design at 390 pixels wide first. Nothing scrolls sideways except a table inside its own
+- Design at 390 pixels wide first. "Side by side" means side by side on a wide screen and a row
+  to swipe, or a stack, on a phone. Nothing scrolls sideways except a table inside its own
   container. Tap targets 44 pixels. Use `svh` with a pixel cap, not bare `vh`.
 - Seven named colour tokens at most, plus one data colour if the page has a chart. Body text
   contrast 4.5 to 1. Meaning never by colour alone.
@@ -104,8 +131,9 @@ swipe gallery, flip card.
   behaves the same in every browser. Add the CSS-only form inside
   `@supports ((animation-timeline: view()) and (animation-range: entry))` so it still moves with
   scripts off. No sound.
-- Charts: one point per chart, stated as a sentence. One data colour, which is its own token and
-  never the accent. Label the values that
+- Charts: one point per chart, stated as a sentence. One data colour, which is its own token. Two
+  values are a comparison, not a trend: draw two bars. Where the source is the person's own notes,
+  write "Source: your notes". Label the values that
   matter. Unit and source underneath. Only numbers from the content.
 - Images: alt text that says what is shown, cropped to the subject at phone width, saved without
   location data. Video: controls, a poster, never autoplay with sound.
@@ -148,7 +176,9 @@ recommended one marked) and action (status in words, task, due date, one button)
 | Take in several different things at a glance | Tiles of different sizes, one clearly the largest |
 
 **Colour.** About 60 parts calm background, 30 parts text and structure, 10 parts accent, judged by
-eye. One accent, used only for what to act on. A chart's data colour is a separate colour, never the accent. Greys carry a trace of the brand colour. Ordinary
+eye. One accent, used for what to act on. A chart's data colour is its own token. It may be the brand
+colour: then make buttons and links a darker step of it, and give links an underline. The
+comparison grey in a chart is the border colour. Greys carry a trace of the brand colour. Ordinary
 text needs a contrast of 4.5 to 1 against its background, large text 3 to 1. Never use colour alone
 to carry a meaning: write the word as well.
 
@@ -174,10 +204,10 @@ The same steps make three other things.
   portraits: the hook, the steps, the ask.
 - **A post preview.** When the person asks for social posts, an email or a blog post, never hand
   back a list of text. Show each draft in a plain frame in the shape its audience will see: a feed
-  post (name, the text cut after three lines with a control to read the rest, the picture, the
-  actions as plain words), an upright video frame for each beat with its on-screen words, an inbox
-  line above an HTML email, or a finished blog page. Write in the person's own voice: ask for two
-  or three posts they are proud of and match them. When there is a choice to make, show three
+  post (name, the text cut after about three lines with a control to read the rest, one picture
+  for each draft when there are several, the actions as plain words), an upright video frame for each beat with its on-screen words, an inbox
+  line above an HTML email, or a finished blog page. Write in the person's own voice: match two or three posts they are proud of. With none to hand,
+  go by how they describe their voice and say so in the note. When there is a choice to make, show three
   drafts side by side, each with a different way in, and name the way in above each. Name the
   platform in words above the frame. Never draw a platform's logo or copy its interface, and never
   show invented likes, comments or follower counts. Stop at the preview: nothing is posted or sent.

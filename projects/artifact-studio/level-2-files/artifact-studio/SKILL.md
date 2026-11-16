@@ -14,7 +14,8 @@ the look is the plate. Your job is to take the order correctly and cook it well.
 
 ## Before you start
 
-- If a front-end design skill is available (for example `frontend-design`), load it as well. This
+- If a front-end design skill is available (for example `frontend-design`), you may load it for
+craft. Where it and this skill disagree, this skill wins. This
   skill decides what page to make. That one helps with visual craft.
 - Read the reference files only as you need them:
 
@@ -29,32 +30,45 @@ the look is the plate. Your job is to take the order correctly and cook it well.
 | `references/build-rules.md` | Before writing any HTML |
 | `references/pre-ship-checklist.md` | Before showing the page to the person |
 | `assets/page-skeleton.html` | As the starting file for every page |
-| `evals/evals.json` | To test this skill: six requests, each with what a good result must contain |
+| `evals/evals.json` | Only to test this skill, never while doing a person's work: six requests, each with what a good result must contain |
 
 ## Steps
 
 1. **Intake.** Find five things in what you were given: the content, any media, the audience, the
    one job of the page, and where it will be seen (phone, meeting screen, print). Infer what you
-   can. Ask at most two questions, and only when you cannot tell the audience or the job.
+   can. Ask at most two questions, and only when you cannot tell the audience or the job. If you cannot
+   ask at all, decide, and say what you decided under Assumed.
    If there is a preferences file (a file named `preferences.md`, or a section headed Preferences
    in your instructions), read it before you choose anything. It sets the defaults for recipe,
    voice, look, layout and format. What the person says in this request overrides it. Do not ask
    a question the file already answers. Say in the delivery note which preferences you applied.
-2. **Recipe.** Pick one page type from `references/recipes.md`. If the person named one, use it.
-   If none fits, use the one-page report and say so.
+2. **Kind and recipe.** First settle what is being made. A page: pick one page type from
+   `references/recipes.md`; if the person named one, use it; if none fits, use the one-page report
+   and say so. A page with a voice named and no recipe: the recipe that lists that voice, or the
+   voice's order alone. A decision brief or memo: no recipe, the executive brief voice is the whole
+   page. A page led by pictures or photo effects: no recipe and no voice, use the parts the person
+   names in the order they name them. A deck, a social picture or a post preview: see "Decks,
+   pictures and posts" below.
 3. **Voice.** Pick one voice from `references/voices.md`. If the person named one, use it. If not,
-   take the first voice listed for the recipe. Where the recipe and the voice disagree, the voice sets the
-   order, the counts and the headings. The recipe sets which sections the page must have.
-4. **Look.** In this order: the person's design spec or brand colours; colours taken from an image
-   they supplied (the method is in `references/looks.md`); a palette built from their one brand
+   take the first voice listed for the recipe. For a post, an email or a blog, the voice is the
+   person's own.
+4. **Look.** In this order: the person's design spec or brand colours; colours taken from a picture,
+   only when the person asks for its colours or it is the page's main picture (the method is in
+   `references/looks.md`); a palette built from their one brand
    colour (the method is in `references/design-ideas.md`); the default look for the chosen voice.
-5. **Outline.** Map the content onto the recipe's sections, in the voice's order. Write the words.
-   Where the content has nothing for a section, either drop the section or mark the gap. List every
-   gap and every assumption as you go.
+5. **Outline.** The voice gives the order. The recipe is a checklist of what a page of that kind
+   usually holds. Build in the voice's order, then go down the recipe's list: put in each section
+   the content can fill, where it fits that order, and leave out any it cannot fill. Never pad a
+   section, and never show one number twice to satisfy both lists. Where the two disagree on a
+   count or a heading, the voice wins. Write the words. List every gap and every assumption.
+   A voice may ask for something the notes do not hold. Wording, structure and an analogy are yours
+   to write: say so under Assumed. A number, a name, a date, a quote, an option or a recommendation
+   the person did not give is a gap. You may offer a recommendation if the page labels it as
+   proposed.
 6. **Parts.** Choose a component from `references/components.md` for each section that needs one,
    and the kind of card and the layout from `references/design-ideas.md`.
    Every part must carry content. Use at most three moving parts on a page.
-7. **Build.** Start from `assets/page-skeleton.html`. Follow `references/build-rules.md`. Produce
+7. **Build.** Start from `assets/page-skeleton.html`, or from the starter for a deck or a picture. Follow `references/build-rules.md`. Produce
    one self-contained HTML file.
 8. **Check.** Work through `references/pre-ship-checklist.md`. If you can render the page, look at
    it once at phone width and fix what you see.
@@ -85,18 +99,32 @@ the look is the plate. Your job is to take the order correctly and cook it well.
 
 ## Choosing for the person
 
-When the person says what they need and not which template, choose for them. The library's index
-is `level-3-files/mcp/library/index.json`, beside this skill's folder in the project. Each template has a fit score from 0 to 3
+When the person says what they need and not which template, choose for them. If you can read the
+library's index, `level-3-files/mcp/library/index.json` in the project this skill came from, use
+its scores. If you cannot, choose by the tables above and say so. Each template has a fit score from 0 to 3
 for six goals (report, decide, sell, teach, inspire, announce) and five readers (customer,
 executive, team, public, learner). Score each as three times the goal fit plus twice the reader
 fit and take the highest: one page with one voice, or one deck, or one social format. Say what
 you chose and why in one line, and offer the runner-up. With the studio's MCP server connected,
 call `artifact-studio:recommend` and it does the scoring.
 
+## Decks, pictures and posts
+
 The library also holds decks, social post pictures, post previews and animated SVG parts. They
-follow the same rules as pages: one self-contained file, the person's own content, the checklist before showing.
-For a deck or a social picture, start from its starter in
-`assets/starters/` in this skill: a complete small file you copy and fill.
+follow the same rules as pages: one self-contained file, the person's own content, the checklist
+before showing. A deck or a social picture has no recipe card. Start from its starter in
+`assets/starters/` in this skill: a complete small file you copy and fill. The starter already has
+an order, and that order stands.
+
+| Deck starter | Voice that goes with it |
+| --- | --- |
+| `deck-visionary.html` | Keynote |
+| `deck-story.html` | Storyteller |
+| `deck-briefing.html` | Analyst or executive brief. It is a deck, so the brief's "one page, no images" does not apply |
+| `deck-workshop.html` | Teacher or practical instructor |
+
+A slide is a fixed 16 by 9 stage, so "design at 390 pixels first" means the slides stay readable
+as a column on a phone. A deck's call to action is a line of text, not a button.
 
 When the person asks for social posts, an email or a blog post, read
 `references/post-previews.md`. Never hand back a list of text: show each draft in a frame shaped

@@ -108,7 +108,7 @@ Never write as if a person said it, and never put a person's name on a page.
 | Order | Header: to, from, date, decision needed by. The decision. Background in numbered paragraphs. Options in one table, including "do nothing". Recommendation in two sentences. Risks, each with its control. Next steps. |
 | Sentences | Formal and complete. No adjectives that are not facts. |
 | Page behaviour | None. It is a document. |
-| Look | A paper page, one column, serif type, one accent colour for rules and headings |
+| Look | A paper page, one column, serif type, one accent colour for rules and headings. No photographs. A table or one small chart is allowed. |
 | Avoid | Images, animation, more than one page |
 
 ## Blank card

@@ -75,11 +75,11 @@ You should get something like this. It is the same request, already built:
   effects, layouts, post previews and a tab for each of seven voices. The components follow:
   pages, decks, parts, and a picker that chooses a template for you.
 - **See one worked example per voice.** Each file in [`base/examples/`](base/examples/) is one
-  request: the prompt to copy, the sample input and the finished page.
+  request: the prompt to copy, the sample input, and the page an AI made from them.
 
 | Worked example | What it shows |
 | --- | --- |
-| [`voice-visionary.html`](base/examples/voice-visionary.html) | Huge type, pictures with words over them, a frosted card. About this repository |
+| [`voice-visionary.html`](base/examples/voice-visionary.html) | One idea per screen in huge type, with three pictures. About this repository |
 | [`voice-storyteller.html`](base/examples/voice-storyteller.html) | The customer as the hero, with a hook, a plan and an ending |
 | [`voice-emotional.html`](base/examples/voice-emotional.html) | One personal story, and the offer named only at the end |
 | [`voice-explainer.html`](base/examples/voice-explainer.html) | A lesson to teach from: analogy, steps, a worked example, questions |
@@ -87,11 +87,12 @@ You should get something like this. It is the same request, already built:
 | [`voice-analyst.html`](base/examples/voice-analyst.html) | The answer first, then three findings with a chart each |
 | [`voice-brief.html`](base/examples/voice-brief.html) | A decision memo a busy person reads in three minutes |
 | [`social-posts.html`](base/examples/social-posts.html) | Three drafts of a post, shown as they will look in the feed |
-| [`photo-effects.html`](base/examples/photo-effects.html) | Nine effects from one picture, each with its sentence |
+| [`photo-effects.html`](base/examples/photo-effects.html) | Three effects from one picture: a slow pan, a word filled with the picture, a postcard |
 | [`report.html`](base/examples/report.html) | The one-page report from the request above |
 
-The finished pages are hand-built references, not the output of one chat. Paste a prompt into
-your own assistant and you get a page in that manner. Yours will differ.
+Each finished page is what an AI assistant made from that prompt in a fresh session on
+16 November 2026, unedited. They are plainer than the hand-built versions in the library, and
+that is the point: this is what you can expect. Yours will differ.
 
 ### 2. Use it every day
 
@@ -340,22 +341,22 @@ sentence, and gets back something they are proud to send, on the first or second
 
 ## Status
 
-**Closed as a draft on 15 November 2026.** Built and checked by its author only. Nobody else has
-used it yet, so tell us what you find.
+**Tested on 16 November 2026.** Built by its author, then put through thirteen independent runs by
+fresh AI sessions. Its owner is the only person who has used it, so tell us what you find.
 
 | Part | State |
 | --- | --- |
 | Gallery, picker, palette maker | Built. Rebuilds from `_build/` |
-| Worked examples | Ten files. Each finished page is a hand-built reference. **None is the output of running its prompt** in a chat |
+| Worked examples | Ten files. Each page was made by an AI assistant from its prompt in a fresh session on 16 November 2026 and is unedited. All ten pass the automated checks in Chrome. The sessions were Claude; no other assistant has been tried |
 | Chatbots | Built with Claude. **Not yet run** in the other assistants named on this page |
 | A real request | On 16 November 2026 the assistant that wrote the instructions followed them to make [a progress report on this project](../../docs/reports/2026-11-16-project-one-progress.html). A first real use, not an independent test |
-| The beginner prompt | Run once, on 15 November 2026, in a fresh Claude session given the instructions as text: 6 of 6 on the skill's test for this report, with every figure traced to the notes. One run, one assistant |
-| The one-link prompt | The link opens. **Not yet tried** from inside each chatbot |
-| The skill | Written. Not yet run end to end by a second agent |
-| MCP server | Tested through a client. Not yet tried in a desktop assistant. Nothing is hosted |
-| Post previews | Built on 15 November 2026 and checked in Chrome. **Not yet asked for** in a fresh chat. The example drafts have not been posted anywhere |
-| Real use | **None yet.** Nobody has presented a deck or sent a report made with it |
-| Devices | Chrome only. Not checked on a phone, Safari or Firefox |
+| The paste-in instructions | Thirteen independent runs on 16 November 2026, each in a fresh Claude session. Every run finished its page. Together they reported about 150 points of friction; the dozen that recurred are fixed. **Not yet tried** in ChatGPT, Gemini or any assistant other than Claude |
+| The one-link prompt | A fresh Claude session fetched the instructions from the link and finished its page from them alone. **Not yet tried** from inside ChatGPT, Gemini or the others |
+| The skill | Run end to end by a second agent on 16 November 2026: it made a six-slide deck and reported ten places where the skill and its reference cards disagreed. The ones about decks are fixed |
+| MCP server | An agent with only the server's tools made a page. It found the server broke when its folder was copied alone; that is fixed and tested. Not yet tried in a desktop assistant. Nothing is hosted |
+| Post previews | A fresh session made three drafts side by side from the prompt. The example drafts have not been posted anywhere |
+| Real use | The owner asked for one page, a progress report, and used it. **No one else** has presented a deck or sent a report made with it |
+| Devices | Every tab checked in Chrome and in the WebKit engine that Safari is built on. Not checked on a real phone, in Firefox or with a screen reader |
 
 Every company, person and figure in the templates and the example is made up, and each says so.
 Two places are about this repository instead and name its author: the visionary page and the

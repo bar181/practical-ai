@@ -16,8 +16,8 @@ from mcp.types import ToolAnnotations
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.normpath(os.path.join(HERE, "..", ".."))                       # the project folder
-SKILL = os.path.join(ROOT, "level-2-files", "artifact-studio")                # the skill: rules, cards and starter files
-LIBRARY = os.path.join(HERE, "library")                                       # the index and reference code, written by the build
+LIBRARY = os.path.join(HERE, "library")                                       # the index, reference code and a copy of the skill, written by the build
+SKILL = os.path.join(LIBRARY, "skill")                                        # rules, cards and starter files. A copy, so this folder works when moved by itself
 sys.path.insert(0, HERE)
 import catalog                                                                # the same rules the studio page uses
 
@@ -31,9 +31,19 @@ def _index():
 
 
 def _read(rel):
-    path = os.path.normpath(os.path.join(ROOT, rel))
-    if not path.startswith(ROOT + os.sep):
+    """Read a file named by the index. Index paths start at the project folder. The two kinds this server serves,
+    library files and skill files, are found inside this folder's own library, so the server works when its folder is copied alone."""
+    rel = rel.replace("\\", "/")
+    for prefix, base in (("level-3-files/mcp/library/", LIBRARY), ("level-2-files/artifact-studio/", SKILL)):
+        if rel.startswith(prefix):
+            path = os.path.normpath(os.path.join(base, rel[len(prefix):])); root = base
+            break
+    else:
+        path = os.path.normpath(os.path.join(ROOT, rel)); root = ROOT
+    if not path.startswith(root + os.sep):
         raise ValueError("path is outside the studio")
+    if not os.path.exists(path):
+        raise FileNotFoundError(f"The library has no file '{rel}'. Run the build, or call studio_overview to see what exists.")
     with open(path, encoding="utf-8") as f:
         text = f.read()
     return text if len(text) <= MAX else text[:MAX] + "\n[cut: the file is longer than this tool returns]"

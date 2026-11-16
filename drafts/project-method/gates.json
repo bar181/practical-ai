@@ -1,7 +1,0 @@
-[
- {"name": "layout", "proves": "This project follows the layout it tells others to follow", "run": "python3 ../../tools/check_project.py ."},
- {"name": "scaffold", "proves": "A project made from the scaffold passes the layout check and its own gates", "run": "d=$(mktemp -d) && python3 base/new_project.py trial-tool 'Trial tool' \"$d\" && python3 ../../tools/check_project.py \"$d/trial-tool\""},
- {"name": "reference", "proves": "The first showcase, the artifact studio, passes the layout check", "run": "python3 ../../tools/check_project.py ../../projects/artifact-studio"},
- {"name": "links", "proves": "No Markdown link in the repository is broken", "run": "python3 ../../tools/check_links.py ../.."},
- {"name": "skills", "proves": "Every skill follows the published authoring rules", "run": "python3 ../../tools/check_skills.py ../../skills"}
-]

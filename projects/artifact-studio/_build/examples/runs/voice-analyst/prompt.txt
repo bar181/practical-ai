@@ -1,0 +1,19 @@
+Read the design guide at https://raw.githubusercontent.com/bar181/practical-ai/main/projects/artifact-studio/base/AI-INSTRUCTIONS.md and follow it.
+
+Write this up as an evidence-first one-pager: the answer at the top, then three findings with a chart each.
+
+My notes:
+
+- We are a home renovation company. Enquiries arrive by web form, email and telephone
+- Before the trial our median first reply took 26 hours. 12% of enquiries were answered within the hour
+- The trial ran from February to April, 90 days, all 214 enquiries. A reply is drafted the moment a message arrives. A member of staff reads it, fixes it and sends it
+- After: median first reply 38 minutes. 81% of enquiries answered within the hour
+- Site visits booked a month: 18 before (the average of the three months before), then 22, 28 and 31
+- About one visit in four becomes a job
+- The office manager's time on replies: 6 hours a week before, 2.5 after
+- Cost: about $150 a month, so about $1,800 a year. A part-time coordinator would cost about $26,000 a year
+- How we set it up, in about an hour: collected three replies we are proud of, wrote our rules on half a page, saved both in a chat project, tested it on five old enquiries, then used it on the next real one
+- Our rules: a person approves every reply. The first reply confirms and offers a visit. It never states a price
+- What this does not show: one company, no comparison group, spring is the busy season, and jobs won are not counted yet
+- The trial ends on 31 May. The owners need to decide by 26 May
+- A customer story we may tell: Priya wrote to three companies about her kitchen on a Tuesday evening. By Wednesday night none had answered

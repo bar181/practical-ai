@@ -66,4 +66,4 @@ previews and for photo effects. Post previews for six platforms. A personal stor
 links pointed at `main`. Two named inspirations replaced with descriptions of a style.
 
 The lessons for the next build are in
-[the build process](../../plans/plans-template/BUILD-PROCESS.md#what-the-first-build-taught-us).
+[the build process](../../workshop/plans/plans-template/BUILD-PROCESS.md#what-the-first-build-taught-us).

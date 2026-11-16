@@ -21,7 +21,8 @@ people who turn motion off.
 - One HTML file. CSS in one `<style>`, script inside the file. No build step.
 - It opens from a folder with no network. Fonts and images are embedded, or the page uses system
   fonts and no images.
-- Start from `assets/page-skeleton.html`. Keep its token block, its motion guard and its scroll
+- Start from `assets/page-skeleton.html`, or from the starter in `assets/starters/` for a deck or a
+  social picture. Keep its token block, its motion guard and its scroll
   helper.
 - If the page will be published as a Claude artifact, only cdnjs, jsDelivr, unpkg and Google Fonts
   load from outside. Everything else is blocked without an error.

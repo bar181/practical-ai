@@ -22,4 +22,4 @@ a-project/
   _build/            what the project is built from. Not needed to use it
 ```
 
-`python3 tools/check_project.py projects/<name>` checks a folder against this.
+`python3 workshop/tools/check_project.py projects/<name>` checks a folder against this.

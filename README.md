@@ -19,6 +19,19 @@ Claude, Gemini, Microsoft Copilot and other chatbots, and with personal agents.
   <a href="#created-by-bradley-ross">Who made this</a>
 </p>
 
+## Start here
+
+| You are | Do this | Time |
+| --- | --- | --- |
+| **New to AI, on a phone or a laptop** | Copy the prompt in [Try it in five minutes](#try-it-in-five-minutes) into the chatbot you already use | 5 minutes |
+| **Using a chatbot every day** | Paste [the instructions](projects/artifact-studio/base/AI-INSTRUCTIONS.md) into a Project or a Gem once. Then just ask | 10 minutes, once |
+| **Teaching a class** | Present the [explainer](projects/artifact-studio/base/examples/voice-explainer.html): it teaches how to use the tool, step by step | One lesson |
+| **Building with agents** | Add the [skill](projects/artifact-studio/level-2-files/) or the [MCP server](projects/artifact-studio/level-3-files/) | 15 minutes |
+| **An AI agent** | Follow [`AGENTS.md`](AGENTS.md) | |
+
+The pages in this repository are HTML files. GitHub shows an HTML file as code, so download it and
+open it in a browser to see the page. The times are estimates.
+
 ## Try it in five minutes
 
 The first tool is finished: **Artifact Studio** turns any AI answer into a mini website, a slide
@@ -134,9 +147,9 @@ layout changed four times. The next project is the project template and the agen
 process themselves, built by following that process. If the method cannot build its own
 template, it is not ready for anything else.
 
-- [What the first build taught us](plans/plans-template/BUILD-PROCESS.md#what-the-first-build-taught-us): eleven lessons, each tied to a step
-- [The nine-step build process](plans/plans-template/BUILD-PROCESS.md)
-- [The project method](drafts/project-method/), a draft that still describes an earlier layout
+- [What the first build taught us](workshop/plans/plans-template/BUILD-PROCESS.md#what-the-first-build-taught-us): eleven lessons, each tied to a step
+- [The nine-step build process](workshop/plans/plans-template/BUILD-PROCESS.md)
+- [The project method](workshop/drafts/project-method/), a draft that still describes an earlier layout
 - [The layout every project follows](projects/README.md)
 
 After that, the tools in [the priorities](docs/practical-ai-priorities.md), one pull request each.
@@ -180,12 +193,9 @@ room.
 
 | Folder | What it holds |
 | --- | --- |
-| [`projects/`](projects/) | Showcases you can try in five minutes. One so far: Artifact Studio |
-| [`drafts/`](drafts/) | Earlier work in progress |
-| [`docs/`](docs/) | The one list of tools, the to-do list and the reports |
-| [`plans/`](plans/) | A plan for each tool on the list, and [`archive/`](plans/archive/) for what was replaced |
-| [`skills/`](skills/) | Skills an assistant can load, one folder each |
-| [`tools/`](tools/) | Small scripts that check the repository |
+| [`projects/`](projects/) | Tools you can try in five minutes. One so far: Artifact Studio |
+| [`docs/`](docs/) | What gets built next, the to-do list and dated reports |
+| [`workshop/`](workshop/) | How the tools get built: plans, earlier drafts, skills and checking scripts. You do not need it to use a tool |
 
 Inside every project, `base/` is enough to try the tool. Beside it, `level-2-files/` and
 `level-3-files/` hold what an advanced user or an agent adds.
@@ -196,9 +206,9 @@ Inside every project, `base/` is enough to try the tool. Beside it, `level-2-fil
 - Every claim about something that changes often carries the date it was checked.
 - Every status line says who has and has not tried the thing. "Built" is not "used".
 
-`python3 tools/check_project.py projects/artifact-studio` checks a project against the layout in
+`python3 workshop/tools/check_project.py projects/artifact-studio` checks a project against the layout in
 [`projects/README.md`](projects/README.md). How a tool gets built is the
-[project method](drafts/project-method/): nine stages, a gate after each.
+[project method](workshop/drafts/project-method/): nine stages, a gate after each.
 
 </details>
 

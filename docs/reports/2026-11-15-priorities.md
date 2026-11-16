@@ -23,7 +23,7 @@ A report for the owner, 15 November 2026. The artifact studio is closed, the met
 | Why it ranks here | The smallest of the store tools, with a draft and a skill already here. The project method writes to it at every close, and the memory system reuses its row shape and viewer. Build it first and two other tools get cheaper. |
 | The shape | Level 1 is a private CSV, Excel file or Google Sheet. Level 3 is Supabase with keyword and similarity search together. |
 | Built on | Research on agents that learn from written lessons without retraining, an open-source harness whose learned rules can be reviewed and revoked, and hybrid search in Postgres. |
-| North Star | [`plans/learning-system/NORTH-STAR.md`](https://github.com/bar181/practical-ai/blob/studio/component-gallery/plans/learning-system/NORTH-STAR.md) |
+| North Star | [`workshop/plans/learning-system/NORTH-STAR.md`](https://github.com/bar181/practical-ai/blob/studio/component-gallery/plans/learning-system/NORTH-STAR.md) |
 
 ### 2. Task decomposition and dependency graph: 89 of 100
 
@@ -34,7 +34,7 @@ A report for the owner, 15 November 2026. The artifact studio is closed, the met
 | Why it ranks here | Nothing private in it, so it can be shared and taught as it is. Every view reuses the artifact studio. It plans every other tool on this list, and it is the last step of a decision. |
 | The shape | One small task file. Five views drawn from it: a tree, a Mermaid diagram, a sticky-note board, a Gantt chart and a "ready now" list. |
 | Built on | Two open-source task tools for coding agents, one that only shows work with nothing blocking it and one that turns a requirements page into a tasks file, plus long-standing project practice. |
-| North Star | [`plans/task-graph/README.md`](https://github.com/bar181/practical-ai/blob/studio/component-gallery/plans/task-graph/README.md) |
+| North Star | [`workshop/plans/task-graph/README.md`](https://github.com/bar181/practical-ai/blob/studio/component-gallery/plans/task-graph/README.md) |
 
 ### 3. Decision support assistant: 82 of 100
 
@@ -45,7 +45,7 @@ A report for the owner, 15 November 2026. The artifact studio is closed, the met
 | Why it ranks here | Closest to the owner's paid work, and the frameworks are public and well described. The deliverables already exist in the studio. Ranked below the task graph only because it ends in one. |
 | The shape | Seven steps, a template for each, ending in a briefing deck and a plan. Level 3 adds your own material: transcripts, papers, spreadsheets. |
 | Built on | The seven-step process attributed to McKinsey, issue trees with no overlaps or gaps, a hypothesis on each branch, and answer-first presentation. An existing consulting skill does the structuring in text. Its listing describes no link checking and no visuals, which are the two things this adds. |
-| North Star | [`plans/decision-support/README.md`](https://github.com/bar181/practical-ai/blob/studio/component-gallery/plans/decision-support/README.md) |
+| North Star | [`workshop/plans/decision-support/README.md`](https://github.com/bar181/practical-ai/blob/studio/component-gallery/plans/decision-support/README.md) |
 
 ### 4. Core memory system: 80 of 100
 
@@ -56,7 +56,7 @@ A report for the owner, 15 November 2026. The artifact studio is closed, the met
 | Why it ranks here | A foundation for the hub, the brief and decision support. Ranked fourth because it should follow the learnings database, on the same row shape, and because the line between a record and a document needs settling first. |
 | The shape | Six kinds of record to start: note, policy, calendar fact, website, code block, repository pointer. Same row shape and viewer as the learnings database. |
 | Built on | Three open-source memory layers that each solve a different problem, and a warning from the field: products change their terms within months, so own the store. |
-| North Star | [`plans/core-memory/README.md`](https://github.com/bar181/practical-ai/blob/studio/component-gallery/plans/core-memory/README.md) |
+| North Star | [`workshop/plans/core-memory/README.md`](https://github.com/bar181/practical-ai/blob/studio/component-gallery/plans/core-memory/README.md) |
 
 ### 5. Rubric reviewer: 79 of 100
 
@@ -67,7 +67,7 @@ A report for the owner, 15 November 2026. The artifact studio is closed, the met
 | Why it ranks here | Small, and the project method needs it at stage 8. Six rounds of self-review here showed what goes wrong without it. Scored low on need because the owner has not asked for it. |
 | The shape | A rubric format, five rubrics, and a reviewing skill that runs in a fresh session. |
 | Built on | Published advice to keep doing and checking apart, and this repository's own six rounds of self-review. |
-| North Star | [`plans/rubric-reviewer/README.md`](https://github.com/bar181/practical-ai/blob/studio/component-gallery/plans/rubric-reviewer/README.md). Proposed by the assistant, not asked for |
+| North Star | [`workshop/plans/rubric-reviewer/README.md`](https://github.com/bar181/practical-ai/blob/studio/component-gallery/plans/rubric-reviewer/README.md). Proposed by the assistant, not asked for |
 
 ### 6. Source and link verifier: 76 of 100
 
@@ -78,7 +78,7 @@ A report for the owner, 15 November 2026. The artifact studio is closed, the met
 | Why it ranks here | The owner named link checking as what sets this work apart. It may turn out to be a step inside decision support and the weekly brief, not a tool of its own. Stage 2 decides. |
 | The shape | Four results for each claim and its link: supports, partly supports, does not support, gone. |
 | Built on | The repository's own link gate, which checks inside links only. Researched lightly so far. |
-| North Star | [`plans/source-verifier/README.md`](https://github.com/bar181/practical-ai/blob/studio/component-gallery/plans/source-verifier/README.md). Proposed by the assistant, not asked for |
+| North Star | [`workshop/plans/source-verifier/README.md`](https://github.com/bar181/practical-ai/blob/studio/component-gallery/plans/source-verifier/README.md). Proposed by the assistant, not asked for |
 
 ### 9. Connections hub: 66 of 100
 
@@ -89,7 +89,7 @@ A report for the owner, 15 November 2026. The artifact studio is closed, the met
 | Why it ranks here | The owner asked for it, and it will matter. It ranks ninth because it has nowhere to file until the two stores exist, and because it leans on outside products that change monthly. |
 | The shape | Four sources to start: a meeting, an email thread, a web page, a file. One intake step, and a review queue. It keeps nothing itself. |
 | Built on | An official meeting-notes MCP server suited to chat but not to unattended runs, and connectors for mail, calendar and drive that already exist. |
-| North Star | [`plans/connections-hub/README.md`](https://github.com/bar181/practical-ai/blob/studio/component-gallery/plans/connections-hub/README.md) |
+| North Star | [`workshop/plans/connections-hub/README.md`](https://github.com/bar181/practical-ai/blob/studio/component-gallery/plans/connections-hub/README.md) |
 
 ## How your five fit together
 
@@ -191,7 +191,7 @@ What changed, and where it came from:
 | A progress note in every tool, read at the start of a session | Published practice for agents that work across many sessions: carry the work in files, not in memory |
 | A table for how much method a small tool needs | Published practice: match the ceremony to the size of the job |
 
-The sources, with links and dates, are in `drafts/project-method/base/SOURCES.md`. The seven North Star pages are stages 1 to 3 of this method, waiting at its first stop.
+The sources, with links and dates, are in `workshop/drafts/project-method/base/SOURCES.md`. The seven North Star pages are stages 1 to 3 of this method, waiting at its first stop.
 
 ## What was checked, and what was not
 

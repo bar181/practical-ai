@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>October report: revenue up $12,700 on September</title>
+<style>
+  /* Seven colour tokens built from one green hue, plus one data colour for the chart. */
+  :root {
+    --bg: #F5F9F7;        /* page background, very light */
+    --panel: #E9F1EC;     /* panel colour */
+    --line: #B9CABF;      /* border */
+    --muted: #4F5F54;     /* secondary text, and the grey comparison bar */
+    --ink: #142419;       /* main text, very dark */
+    --accent: #196B35;    /* only for what to act on */
+    --highlight: #D3EEDC; /* soft highlight */
+    --data: #2A6DB0;      /* chart data colour, never the accent */
+  }
+
+  * { box-sizing: border-box; }
+
+  html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.55;
+  }
+
+  .page {
+    max-width: 36rem;
+    margin: 0 auto;
+    padding: 20px 20px 48px;
+  }
+
+  h1, h2, h3, p, ul, ol, dl, dd, figure { margin: 0; }
+  ul, ol { padding: 0; list-style: none; }
+
+  .meta {
+    font-size: 0.875rem;
+    color: var(--muted);
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--line);
+  }
+  .meta div + div { margin-top: 2px; }
+  .meta b { color: var(--ink); font-weight: 600; }
+
+  h1 {
+    font-size: 1.7rem;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    font-weight: 700;
+    margin-top: 18px;
+    text-wrap: balance;
+  }
+
+  .answer {
+    font-size: 1.12rem;
+    line-height: 1.5;
+    margin-top: 14px;
+  }
+
+  .jump {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    margin-top: 6px;
+    color: var(--accent);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  a:focus-visible, .scroll:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  section { margin-top: 34px; }
+
+  .label {
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
+
+  h2 {
+    font-size: 1.22rem;
+    line-height: 1.3;
+    font-weight: 700;
+    text-wrap: balance;
+  }
+
+  section > p { margin-top: 10px; }
+
+  /* Three numbers */
+  .stats { display: grid; gap: 10px; margin-top: 12px; }
+  .stat {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 14px 16px;
+  }
+  .stat dt { font-size: 0.9rem; color: var(--muted); font-weight: 600; }
+  .stat .num {
+    font-size: 2.3rem;
+    line-height: 1.1;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.02em;
+    margin-top: 2px;
+  }
+  .stat .was { font-size: 0.95rem; margin-top: 4px; }
+
+  /* Chart */
+  .chart {
+    margin-top: 14px;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 16px;
+  }
+  .bar-row + .bar-row { margin-top: 14px; }
+  .bar-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    font-size: 0.95rem;
+  }
+  .bar-head .month { font-weight: 600; }
+  .bar-head .value { font-weight: 700; font-variant-numeric: tabular-nums; }
+  .track { margin-top: 5px; height: 12px; }
+  .bar { display: block; height: 12px; border-radius: 2px; }
+  .bar.before { background: var(--muted); }
+  .bar.now { background: var(--data); }
+  .diff { margin-top: 14px; font-size: 0.95rem; font-weight: 600; }
+  figcaption {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid var(--line);
+    font-size: 0.82rem;
+    color: var(--muted);
+  }
+
+  .sowhat {
+    margin-top: 12px;
+    padding-left: 12px;
+    border-left: 3px solid var(--ink);
+  }
+  .sowhat b { font-weight: 700; }
+
+  /* Table */
+  .scroll {
+    margin-top: 14px;
+    overflow-x: auto;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+    line-height: 1.35;
+    font-variant-numeric: tabular-nums;
+  }
+  caption {
+    caption-side: bottom;
+    text-align: left;
+    padding: 10px 12px;
+    font-size: 0.82rem;
+    color: var(--muted);
+    border-top: 1px solid var(--line);
+  }
+  th, td { text-align: left; vertical-align: top; padding: 10px 10px; }
+  thead th {
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--muted);
+    background: var(--panel);
+    border-bottom: 1px solid var(--line);
+  }
+  tbody th { font-weight: 600; }
+  tbody tr + tr th, tbody tr + tr td { border-top: 1px solid var(--line); }
+  tr.weak th, tr.weak td { background: var(--panel); }
+  tr.weak th { border-left: 4px solid var(--ink); }
+  .tag {
+    display: inline-block;
+    margin-top: 4px;
+    padding: 1px 7px;
+    border: 1px solid var(--ink);
+    border-radius: 4px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  /* Lists in method and limits */
+  .plain { margin-top: 10px; }
+  .plain li { padding-left: 16px; position: relative; }
+  .plain li + li { margin-top: 8px; }
+  .plain li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.72em;
+    width: 7px;
+    height: 2px;
+    background: var(--muted);
+  }
+  .working { font-variant-numeric: tabular-nums; }
+
+  /* Next steps */
+  .steps { display: grid; gap: 10px; margin-top: 14px; }
+  .step {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 14px 16px;
+  }
+  .step.act {
+    background: var(--highlight);
+    border-color: var(--accent);
+    border-left: 5px solid var(--accent);
+  }
+  .status {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .step.act .status { color: var(--accent); }
+  .task { font-size: 1.08rem; font-weight: 700; line-height: 1.3; margin-top: 2px; }
+  .facts {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 2px 12px;
+    margin-top: 8px;
+    font-size: 0.95rem;
+  }
+  .facts dt { color: var(--muted); }
+  .facts dd { font-weight: 600; }
+  .step.act .facts dt { color: var(--ink); }
+
+  .needs {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 0.86em;
+    font-weight: 600;
+    border: 1px dashed var(--ink);
+    border-radius: 3px;
+    padding: 0 4px;
+  }
+
+  footer {
+    margin-top: 36px;
+    padding-top: 12px;
+    border-top: 1px solid var(--line);
+    font-size: 0.82rem;
+    color: var(--muted);
+  }
+
+  @media (min-width: 620px) {
+    .page { padding-top: 36px; }
+    h1 { font-size: 2rem; }
+    .stats { grid-template-columns: repeat(3, 1fr); }
+    .stat .num { font-size: 2rem; }
+    .steps { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+<main class="page">
+
+  <header>
+    <div class="meta">
+      <div><b>Monthly report</b> for a landscaping company with two crews</div>
+      <div><b>Period:</b> October, compared with September</div>
+      <div><b>Reader:</b> business partner</div>
+    </div>
+
+    <h1>October beat September: revenue up $12,700, four more jobs done, and more quotes became jobs</h1>
+
+    <p class="answer">October brought in $84,200, about 18% more than September's $71,500, and 23 jobs were completed against 19. One thing needs a decision from us: a second van, by 15 November.</p>
+    <a class="jump" href="#next">Go to the decision and next steps</a>
+  </header>
+
+  <section aria-labelledby="h-numbers">
+    <p class="label">Three numbers</p>
+    <h2 id="h-numbers">All three headline numbers went up in October.</h2>
+    <dl class="stats">
+      <div class="stat">
+        <dt>Revenue</dt>
+        <dd class="num">$84,200</dd>
+        <dd class="was">Up $12,700 from $71,500 in September, about 18% more.</dd>
+      </div>
+      <div class="stat">
+        <dt>Jobs completed</dt>
+        <dd class="num">23</dd>
+        <dd class="was">Up 4 from 19 in September.</dd>
+      </div>
+      <div class="stat">
+        <dt>Quotes that became jobs</dt>
+        <dd class="num">46%</dd>
+        <dd class="was">Up 8 points from 38% before.</dd>
+      </div>
+    </dl>
+  </section>
+
+  <section aria-labelledby="h-f1">
+    <p class="label">What changed, finding 1 of 3</p>
+    <h2 id="h-f1">Revenue rose from $71,500 in September to $84,200 in October.</h2>
+    <figure class="chart" role="group" aria-label="Bar chart of revenue. September $71,500. October $84,200.">
+      <div class="bar-row">
+        <div class="bar-head"><span class="month">September</span><span class="value">$71,500</span></div>
+        <div class="track"><span class="bar before" style="width:84.92%"></span></div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-head"><span class="month">October</span><span class="value">$84,200</span></div>
+        <div class="track"><span class="bar now" style="width:100%"></span></div>
+      </div>
+      <p class="diff">Difference: $12,700 more in October.</p>
+      <figcaption>Unit: dollars of revenue for the month. Bars start at zero. Source: the notes supplied for this report.</figcaption>
+    </figure>
+    <p class="sowhat"><b>So what:</b> October was the stronger month on money and on work done. Four more jobs were completed, 23 against 19.</p>
+  </section>
+
+  <section aria-labelledby="h-f2">
+    <p class="label">What changed, finding 2 of 3</p>
+    <h2 id="h-f2">More quotes became jobs, and quotes now go out within two days of the visit instead of six.</h2>
+    <p>46% of quotes became jobs, up from 38%. We started sending quotes within two days of the visit. It used to take six.</p>
+    <p class="sowhat"><b>So what:</b> both moved the right way together. The notes do not show that the faster quotes caused the higher rate.</p>
+  </section>
+
+  <section aria-labelledby="h-f3">
+    <p class="label">What changed, finding 3 of 3</p>
+    <h2 id="h-f3">The one weak point was a van off the road for four days, and it cost no jobs.</h2>
+    <p>One van was off the road for four days. The crews shared, and no jobs moved.</p>
+    <div class="scroll" role="region" aria-label="October measures compared with before" tabindex="0">
+      <table>
+        <caption>"Before" is September for revenue and jobs. The notes do not say which month the other "before" figures are from.</caption>
+        <thead>
+          <tr><th scope="col">Measure</th><th scope="col">Before</th><th scope="col">October</th><th scope="col">Change</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">Revenue</th><td>$71,500</td><td>$84,200</td><td>Up $12,700</td></tr>
+          <tr><th scope="row">Jobs completed</th><td>19</td><td>23</td><td>Up 4</td></tr>
+          <tr><th scope="row">Quotes that became jobs</th><td>38%</td><td>46%</td><td>Up 8 points</td></tr>
+          <tr><th scope="row">Days from visit to quote</th><td>6</td><td>Within 2</td><td>Faster</td></tr>
+          <tr class="weak"><th scope="row">Days a van was off the road<br><span class="tag">Weak point</span></th><td>Not in the notes</td><td>4</td><td>No jobs moved</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="sowhat"><b>So what:</b> the breakdown cost no jobs this time because the crews shared. A decision about a second van is needed by 15 November.</p>
+  </section>
+
+  <section aria-labelledby="h-method">
+    <p class="label">Method</p>
+    <h2 id="h-method">Every figure comes from our own notes, and each change is October minus the earlier figure.</h2>
+    <ul class="plain working">
+      <li>Revenue: $84,200 − $71,500 = $12,700. Then $12,700 ÷ $71,500 = 17.8%, shown as about 18%.</li>
+      <li>Jobs completed: 23 − 19 = 4.</li>
+      <li>Quotes that became jobs: 46% − 38% = 8 percentage points.</li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="h-limits">
+    <p class="label">Limits</p>
+    <h2 id="h-limits">Two months make a comparison, not a trend, and the notes leave some things out.</h2>
+    <ul class="plain">
+      <li>There are only two months of figures. That is enough to compare, not enough to call a trend.</li>
+      <li>The notes have no costs or profit, so this report cannot say whether October made more money after costs.</li>
+      <li>The notes have no split by crew or by type of job, so the table compares measures and does not break revenue down.</li>
+      <li>The notes do not say which month the 38% and the six days are from.</li>
+      <li>There is no earlier figure for van days off the road.</li>
+    </ul>
+  </section>
+
+  <section id="next" aria-labelledby="h-next">
+    <p class="label">What happens next</p>
+    <h2 id="h-next">November has one decision due by the 15th and one hire to make.</h2>
+    <div class="steps">
+      <div class="step act">
+        <p class="status">Decision needed</p>
+        <p class="task">Decide about a second van</p>
+        <dl class="facts">
+          <dt>Date</dt><dd>By 15 November</dd>
+          <dt>Owner</dt><dd><span class="needs">[needs: who decides]</span></dd>
+        </dl>
+      </div>
+      <div class="step">
+        <p class="status">Planned</p>
+        <p class="task">Hire one seasonal worker for leaf clearance</p>
+        <dl class="facts">
+          <dt>Date</dt><dd>November</dd>
+          <dt>Owner</dt><dd><span class="needs">[needs: who hires]</span></dd>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <footer>Built only from the notes supplied. The only numbers added are the differences worked out under Method.</footer>
+
+</main>
+</body>
+</html>

@@ -58,4 +58,4 @@ Build #1 and #2 first. The learnings database helps a new session start with wha
 
 **Repository baseline.** This report uses `scaffold/structure` at `99551d4`. The branch records Artifact Studio as a closed draft checked by its author. The agentic North Star pages remain proposals, including the refreshed learnings database, which has an earlier draft. The branch’s project index records zero tools promoted after outside use. [Branch snapshot](https://github.com/bar181/practical-ai/tree/99551d4) · [Artifact Studio status](../projects/artifact-studio/README.md#status) · [Project index](../projects/README.md)
 
-The [repository inventory and original demand research](tool-inventory.md) and the [archived 24-tool ranking](../plans/archive/priorities-2026-11-15.md) retain the full branch history. The two lists above are proposed build priorities.
+The [repository inventory and original demand research](tool-inventory.md) and the [archived 24-tool ranking](../workshop/plans/archive/priorities-2026-11-15.md) retain the full branch history. The two lists above are proposed build priorities.

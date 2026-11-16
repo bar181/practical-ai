@@ -72,6 +72,8 @@ Edit the files in [`_build/`](_build/), run `python3 _build/build.py`, and check
 
 ## Known limits
 
-- The skill has not yet been run end to end by a second agent. Treat the first runs as tests.
-- The MCP server has been tested with a client on the machine that built it, not inside a desktop
-  assistant. Nothing is hosted.
+- A second agent ran the skill end to end on 16 November 2026 and an agent built a page from the
+  MCP tools alone. Both worked and both reported friction; the logs are in
+  [`_build/examples/runs/`](_build/examples/runs/). Read `friction.md` there before you trust a rule
+  that looks odd.
+- The MCP server has not been tried inside a desktop assistant. Nothing is hosted.
