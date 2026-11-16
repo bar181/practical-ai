@@ -6,16 +6,16 @@ You do not need this folder to use the studio. It is what the studio is built fr
 python3 build.py
 ```
 
-That rebuilds `../base/studio.html`, `../base/AI-INSTRUCTIONS.md`, the starter files in the skill,
+That rebuilds `../base/studio.html` (the highlights), `../base/components.html` (everything else), `../base/AI-INSTRUCTIONS.md`, the starter files in the skill,
 and the library the MCP server reads. It needs Python and the `markdown` package.
 
 | Here | What it is |
 | --- | --- |
 | `catalog.py` | Every template, its fit scores and the rules that pick between them. The one source |
-| `views/` | One file per tab of the studio page: style, markup, script |
+| `views/` | One file per tab of the two gallery files: style, markup, script. `build.py` lists which tabs go in which file |
 | `shell.html`, `base.css` | The page frame and shared styles |
 | `svg/` | The twelve animated SVG parts |
-| `forms/`, `sentences.md` | Text shown as tabs in the studio page. `sentences.md` is written by the build |
+| `forms/`, `sentences.md` | Text shown as tabs in `components.html`. `sentences.md` is written by the build |
 | `assets.json` | Fonts and photographs, already encoded, so the build needs nothing else |
 | `photos/`, `prepare_assets.py` | The ten pictures. `prepare_assets.py` encodes the lake and the sunset into `assets.json`; `build.py` reads the other eight straight from this folder, and each becomes a CSS variable named `--ph-NAME` |
 | `licences/` | The licence for each embedded font |

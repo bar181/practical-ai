@@ -64,8 +64,8 @@ Check before sharing: <the numbers, names and claims a person must verify>
 
 ## To change the library
 
-Edit the files in [`_build/`](_build/), run `python3 _build/build.py`, and check the studio page
-opens. Never edit a generated file. Each one says so at the top.
+Edit the files in [`_build/`](_build/), run `python3 _build/build.py`, and check that both gallery
+files open: `base/studio.html` and `base/components.html`. Never edit a generated file. Each one says so at the top.
 
 ## Known limits
 

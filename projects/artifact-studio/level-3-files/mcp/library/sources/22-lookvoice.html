@@ -1,0 +1,49 @@
+<div class="view" id="v-lookvoice" data-tab="lookvoice" data-title="Looks and voices">
+<header class="hero">
+  <div class="ph" style="background-image:var(--ph-bulb);background-position:50% 30%;transform-origin:60% 40%" role="img" aria-label="A lightbulb bursting with coloured paint."></div>
+  <div class="hero-copy">
+    <h1><span style="--i:0">One</span> <span style="--i:1">message,</span> <span style="--i:2">five</span> <span style="--i:3">moods</span></h1>
+    <p>A look sets the mood. A voice sets how it speaks. Name both in one sentence.</p>
+  </div>
+</header>
+
+<main>
+<section class="intro wrap">
+  <div class="measure">
+    <p>Tap a look below. The photo, the line of text and the sentence that asks for it all change together.</p>
+    <p>The other two tabs in this group show nine complete looks with the same content, and six layouts with the rule for each.</p>
+  </div>
+</section>
+
+<section class="spec" id="looks">
+  <div class="spec-head wrap"><h2>Looks and voices</h2><p class="measure">The same photo and the same message, five ways. A look sets the mood; a voice sets how it speaks. Describe both and a page stops sounding generic.</p></div>
+  <div class="demo" id="looksbox" data-look="fog">
+    <div class="frame looks-photo"><div class="ph" role="img" aria-label="The lake photo, shown in the selected look."></div><i class="l1"></i><i class="l2"></i><div class="looks-cap"><p class="looks-line" id="looks-line"></p></div></div>
+    <div class="looks-bar" role="group" aria-label="Choose a look" id="looks-bar"></div>
+    <div class="wrap"><p class="looks-voice"><b id="looks-voice"></b><span class="ui" id="looks-by"></span></p></div>
+  </div>
+  <div class="recipe wrap">
+    <div class="ask"><h3>Ask for it like this</h3><blockquote id="looks-ask"></blockquote><button class="copy" type="button">Copy</button></div>
+    <dl class="facts"><div><dt>Effort</dt><dd>Easy. Name the look and the voice in the same sentence.</dd></div><div><dt>Made here with</dt><dd>CSS filters, blend modes and the View Transitions API for the cross-fade</dd></div><div><dt>Grow into</dt><dd>A saved style card per look, so every page you make can reuse it</dd></div><div><dt>Seen in</dt><dd>Photo app filters and brand style guides</dd></div></dl>
+  </div>
+</section>
+</main>
+<footer><div class="wrap"><p class="ui">The five looks are applied to one lake photograph with CSS filters. Each voice describes a style; nothing is written by, or endorsed by, the people named.</p></div></footer>
+</div>
+<script>
+onView("lookvoice",root=>{
+/* looks and voices */
+{const LOOKS=[
+  {id:'fog',name:'As shot',line:'Think of a web page as a recipe. Same ingredients, different dish.',voice:'Voice: the patient teacher',by:'Inspired by David Malan. Analogy first, then an example, then the detail.',ask:'Keep my photo as shot. Voice: a patient teacher. Open with an everyday analogy, then one worked example, then the detail.'},
+  {id:'ink',name:'Ink',line:'One photo. Twelve pages.',voice:'Voice: the keynote',by:'Inspired by Steve Jobs. One idea per screen and almost no text.',ask:'Make my photo high-contrast black and white. Voice: a keynote. One idea per screen, very short sentences, huge type.'},
+  {id:'dusk',name:'Dusk',line:'The photo was nearly deleted. Grey sky, bare tree, nothing to see. Then someone zoomed in.',voice:'Voice: the storyteller',by:'Inspired by Don Miller. A hook, a hero, a twist and an ending that stays with you.',ask:'Grade my photo like dusk, warm at the top and deep blue at the bottom. Voice: a storyteller. Start with a hook, give it a twist, end on a line that lingers.'},
+  {id:'film',name:'Faded film',line:'This is not a picture of a lake. It is the minute before you went back inside.',voice:'Voice: first person',by:'A memory, told in the first person. About the feeling and never the feature.',ask:'Make my photo look like faded film, soft and slightly brown. Voice: first person and emotional, about the feeling and never the feature.'},
+  {id:'blue',name:'Blueprint',line:'Pick a component. Copy the sentence. Ship the page.',voice:'Voice: the practical instructor',by:'A best guess at Bradley Ross. Core concept first, one analogy, then steps you can use today.',ask:'Turn my photo into a two-colour blueprint in navy and pale blue. Voice: a practical instructor. Core concept first, one analogy, then steps I can follow today.'}];
+ const box=$('#looksbox'),bar=$('#looks-bar');
+ const set=id=>{const L=LOOKS.find(l=>l.id===id);box.dataset.look=id;$('#looks-line').textContent=L.line;$('#looks-voice').textContent=L.voice;$('#looks-by').textContent=L.by;$('#looks-ask').textContent=L.ask;
+   $$('button',bar).forEach(b=>b.setAttribute('aria-pressed',b.dataset.id===id))};
+ for(const L of LOOKS){const b=document.createElement('button');b.type='button';b.dataset.id=L.id;b.textContent=L.name;
+   b.addEventListener('click',()=>{if(document.startViewTransition&&!reduce)document.startViewTransition(()=>set(L.id));else set(L.id)});bar.append(b);}
+ set('fog');}
+});
+</script>

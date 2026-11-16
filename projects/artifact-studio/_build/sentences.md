@@ -44,11 +44,11 @@ A landing page has one job: get one kind of visitor to take one action. Everythi
 
 ### The keynote
 
-The keynote voice sells a vision by removing everything else. Inspired by Steve Jobs's product launches. The company and every figure here are invented for the demo.
+The keynote voice sells a vision by removing everything else. Inspired by Steve Jobs's product launches. This page is about the Practical AI repository itself. The six counts are checked against the library every time it is built, and five minutes is an estimate, not a measurement.
 
 - **Short ask:** Turn my notes into a keynote-style page: one idea per screen, huge type, almost no words.
-- **Full ask:** Build a keynote-style page from my notes. Black background, one sans-serif typeface. Open with the problem as one huge number, reveal the answer in three words, show my photo once full screen, compare before and after as two numbers, and finish with "one more thing". Screens snap as I scroll.
-- **With the skill:** Use the artifact-studio skill. Recipe: scrolling explainer. Voice: keynote. Look: black and white, with one colour taken from my attached photo. Content: the attached notes. Mark any number you could not find in my notes instead of inventing one.
+- **Full ask:** Build a keynote-style page from my notes. Black background, one sans-serif typeface, white and grey only. Use three screens of huge type alone for the argument. Between them: my photo full screen, moving slower than the page, with one line over it. A screen with a short paragraph beside a second photo. A small looping line drawing. My numbers as bars with no axes, each bar labelled with its number. The next step as three short lines on a frosted glass card over a photo. Screens snap as I scroll.
+- **With the skill:** Use the artifact-studio skill. Recipe: scrolling explainer. Voice: keynote. Look: keynote black. Parts: parallax window, frosted glass card, one animated SVG, one bar chart with no axes. Content: the attached notes and photos. Mark any number you could not find in my notes instead of inventing one.
 
 ### The storyteller
 
@@ -246,7 +246,7 @@ Effort: Easy. One sentence. Use it for: Change announcements, proposals, case st
 
 A still photo that moves slowly reads as film. Use it to open a page or to hold a quote.
 
-> Fill the frame with my photo and zoom in very slowly toward the island, like a documentary shot. Loop it back out.
+> Fill the frame with my photo and zoom in very slowly toward the family on the lawn, like a documentary shot. Loop it back out.
 
 Effort: Easy. One sentence. Seen in: Documentary title cards and photo essays.
 
@@ -266,6 +266,54 @@ One word, large enough that the letters become windows. Good for a chapter break
 
 Effort: Easy. One sentence. Seen in: Magazine covers and award-site title screens.
 
+### Before and after
+
+Two versions of one picture with a divider to drag. It makes a change obvious without a word of explanation.
+
+> Show my photo as shot and with a warm sunset grade, as one picture with a divider I can drag from side to side.
+
+Effort: Easy. One sentence. Seen in: Renovation portfolios and satellite image comparisons.
+
+### Frosted glass card
+
+Facts float over the photo on a pane that blurs what is behind it. The photo stays the star and the text stays readable.
+
+> Float the key facts in a frosted glass card over my photo. Keep the card over the sky so dark text stays readable.
+
+Effort: Easy. One sentence. Seen in: Phone lock screens and weather apps.
+
+### Flip postcard
+
+A photo with a second side. Put the picture on the front and the message on the back.
+
+> Make my photo a postcard with a white border. When I tap it, flip it over in 3D and show a short handwritten-style note, a stamp and address lines on the back.
+
+Effort: Easy. One sentence. Seen in: Invitations, team pages and product cards.
+
+### Swipe gallery
+
+Cards in a row that snap into place one at a time. On a phone it is the most natural way to browse a set.
+
+> Show my six pictures as cards I can swipe sideways, snapping one card at a time. Give each a two-word title and one line.
+
+Effort: Easy. One sentence. Seen in: App store listings and social carousels.
+
+### Bento grid
+
+A summary as a tray of tiles in different sizes. Each tile holds one fact, so the eye can land anywhere.
+
+> Summarise this as a bento grid: one tall photo tile, three big-number tiles, a colour palette tile and a small chart tile.
+
+Effort: Easy. List the tiles you want. Seen in: Product launch summaries.
+
+### Chart from the photo
+
+A chart is a component too. These numbers are measured from the photo, so the chart and the picture tell the same story.
+
+> Measure how bright my photo is from top to bottom and chart it as a line with a soft fill. Put a strip of the real colours under the axis. Label only the highest and lowest points, and let me touch the chart to read the rest.
+
+Effort: Moderate. The chart is easy; ask the assistant to show how it measured. Seen in: The Pudding's data stories.
+
 ### Scrolling photo tour
 
 The photo stays put while the text scrolls. Each paragraph moves the camera to the part it talks about.
@@ -282,21 +330,13 @@ A sketch that draws itself as you scroll, then gives way to the real photo. The 
 
 Effort: Harder. The assistant has to analyse the photo. Ask for a looser sketch if the first one is off. Seen in: Explainer intros and Codrops demos.
 
-### Chart from the photo
+### Scrollytelling
 
-A chart is a component too. These numbers are measured from the photo, so the chart and the picture tell the same story.
+The standard form. A picture stays in place while short steps scroll past, and it changes when a step reaches the middle of the screen.
 
-> Measure how bright my photo is from top to bottom and chart it as a line with a soft fill. Put a strip of the real colours under the axis. Label only the highest and lowest points, and let me touch the chart to read the rest.
+> Pin a picture while I scroll. I will give you four short steps and a picture for each. Change the picture when its step reaches the middle of the screen, and show which step I am on.
 
-Effort: Moderate. The chart is easy; ask the assistant to show how it measured. Seen in: The Pudding's data stories.
-
-### Before and after
-
-Two versions of one picture with a divider to drag. It makes a change obvious without a word of explanation.
-
-> Show my photo as shot and with a warm sunset grade, as one picture with a divider I can drag from side to side.
-
-Effort: Easy. One sentence. Seen in: Renovation portfolios and satellite image comparisons.
+Effort: Easy. Give the steps and a picture for each. Seen in: News features and data stories.
 
 ### Looks and voices
 
@@ -307,35 +347,3 @@ The same photo and the same message, five ways. A look sets the mood; a voice se
 - **Dusk:** Grade my photo like dusk, warm at the top and deep blue at the bottom. Voice: a storyteller. Start with a hook, give it a twist, end on a line that lingers.
 - **Faded film:** Make my photo look like faded film, soft and slightly brown. Voice: first person and emotional, about the feeling and never the feature.
 - **Blueprint:** Turn my photo into a two-colour blueprint in navy and pale blue. Voice: a practical instructor. Core concept first, one analogy, then steps I can follow today.
-
-### Frosted glass card
-
-Facts float over the photo on a pane that blurs what is behind it. The photo stays the star and the text stays readable.
-
-> Float the key facts in a frosted glass card over my photo. Keep the card over the sky so dark text stays readable.
-
-Effort: Easy. One sentence. Seen in: Phone lock screens and weather apps.
-
-### Bento grid
-
-A summary as a tray of tiles in different sizes. Each tile holds one fact, so the eye can land anywhere.
-
-> Summarise this as a bento grid: one tall photo tile, three big-number tiles, a colour palette tile and a small chart tile.
-
-Effort: Easy. List the tiles you want. Seen in: Product launch summaries.
-
-### Swipe gallery
-
-Cards in a row that snap into place one at a time. On a phone it is the most natural way to browse a set.
-
-> Crop six details from my photo and show them as cards I can swipe sideways, snapping one card at a time. Give each a two-word title and one line.
-
-Effort: Easy. One sentence. Seen in: App store listings and social carousels.
-
-### Flip postcard
-
-A photo with a second side. Put the picture on the front and the message on the back.
-
-> Make my photo a postcard with a white border. When I tap it, flip it over in 3D and show a short handwritten-style note, a stamp and address lines on the back.
-
-Effort: Easy. One sentence. Seen in: Invitations, team pages and product cards.

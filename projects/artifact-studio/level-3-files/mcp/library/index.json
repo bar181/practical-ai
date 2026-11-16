@@ -1,16 +1,16 @@
 {
  "name": "artifact-studio",
  "generated": "2026-11-15",
- "read_me": "Paths are relative to the project folder. \"preview\" is the tab of the studio page that shows it. \"starter\", where present, is a small complete file to copy and fill. \"source\" is reference code: one style block, the markup and one script, not a complete file. \"fit\" scores run 0 to 3. To choose, score = 3 x goal fit + 2 x audience fit, highest first.",
+ "read_me": "Paths are relative to the project folder. \"preview\" is the file and tab that shows it: base/studio.html holds the highlights and base/components.html holds the rest. \"starter\", where present, is a small complete file to copy and fill. \"source\" is reference code: one style block, the markup and one script, not a complete file. \"fit\" scores run 0 to 3. To choose, score = 3 x goal fit + 2 x audience fit, highest first.",
  "counts": {
   "templates": 19,
   "pages": 4,
   "voices": 6,
   "decks": 4,
   "social_formats": 5,
-  "components": 53,
+  "components": 54,
   "page_parts": 12,
-  "photo_parts": 12,
+  "photo_parts": 13,
   "animated_svg": 12,
   "design_ideas": 17,
   "looks": 9
@@ -139,7 +139,7 @@
    "kind": "page",
    "title": "One-page report",
    "summary": "How a week, month or project went: the answer, the numbers, what changed, what is next.",
-   "preview": "base/studio.html#recipe-report",
+   "preview": "base/components.html#recipe-report",
    "source": "level-3-files/mcp/library/sources/51-recipe-report.html",
    "fit": {
     "goal": {
@@ -165,7 +165,7 @@
    "kind": "page",
    "title": "Proposal",
    "summary": "Something a customer has to say yes to: the job as understood, three options, a schedule, one accept button.",
-   "preview": "base/studio.html#recipe-proposal",
+   "preview": "base/components.html#recipe-proposal",
    "source": "level-3-files/mcp/library/sources/52-recipe-proposal.html",
    "fit": {
     "goal": {
@@ -189,7 +189,7 @@
    "kind": "page",
    "title": "Scrolling explainer",
    "summary": "How something works, told as a picture that changes while short steps scroll past.",
-   "preview": "base/studio.html#recipe-explainer",
+   "preview": "base/components.html#recipe-explainer",
    "source": "level-3-files/mcp/library/sources/53-recipe-explainer.html",
    "fit": {
     "goal": {
@@ -216,7 +216,7 @@
    "kind": "page",
    "title": "Landing page",
    "summary": "One offer and one action for people arriving cold: promise, proof, plan, price, questions.",
-   "preview": "base/studio.html#recipe-landing",
+   "preview": "base/components.html#recipe-landing",
    "source": "level-3-files/mcp/library/sources/54-recipe-landing.html",
    "fit": {
     "goal": {
@@ -259,8 +259,8 @@
    "options": "Recipe: any of the four pages, or a deck. Look: the default named with it, or any of the nine. Parts: any that suit the voice.",
    "ask": {
     "short": "Turn my notes into a keynote-style page: one idea per screen, huge type, almost no words.",
-    "full": "Build a keynote-style page from my notes. Black background, one sans-serif typeface. Open with the problem as one huge number, reveal the answer in three words, show my photo once full screen, compare before and after as two numbers, and finish with \"one more thing\". Screens snap as I scroll.",
-    "with_skill": "Use the artifact-studio skill. Recipe: scrolling explainer. Voice: keynote. Look: black and white, with one colour taken from my attached photo. Content: the attached notes. Mark any number you could not find in my notes instead of inventing one."
+    "full": "Build a keynote-style page from my notes. Black background, one sans-serif typeface, white and grey only. Use three screens of huge type alone for the argument. Between them: my photo full screen, moving slower than the page, with one line over it. A screen with a short paragraph beside a second photo. A small looping line drawing. My numbers as bars with no axes, each bar labelled with its number. The next step as three short lines on a frosted glass card over a photo. Screens snap as I scroll.",
+    "with_skill": "Use the artifact-studio skill. Recipe: scrolling explainer. Voice: keynote. Look: keynote black. Parts: parallax window, frosted glass card, one animated SVG, one bar chart with no axes. Content: the attached notes and photos. Mark any number you could not find in my notes instead of inventing one."
    },
    "default_look": "Keynote black"
   },
@@ -396,7 +396,7 @@
    "kind": "deck",
    "title": "Visionary deck",
    "summary": "Eight black slides in the keynote manner: a villain, one rule, three things, one number, one more thing.",
-   "preview": "base/studio.html#deck-visionary",
+   "preview": "base/components.html#deck-visionary",
    "source": "level-3-files/mcp/library/sources/81-deck-visionary.html",
    "fit": {
     "goal": {
@@ -426,7 +426,7 @@
    "kind": "deck",
    "title": "Story deck",
    "summary": "Seven warm slides that follow a story: a person, a problem, a guide, a plan, an ask, the stakes, the ending.",
-   "preview": "base/studio.html#deck-story",
+   "preview": "base/components.html#deck-story",
    "source": "level-3-files/mcp/library/sources/82-deck-story.html",
    "fit": {
     "goal": {
@@ -453,7 +453,7 @@
    "kind": "deck",
    "title": "Briefing deck",
    "summary": "Six light slides for a decision: the answer first, three reasons, two numbers, the options, what is not known, the decision and a date.",
-   "preview": "base/studio.html#deck-briefing",
+   "preview": "base/components.html#deck-briefing",
    "source": "level-3-files/mcp/library/sources/83-deck-briefing.html",
    "fit": {
     "goal": {
@@ -482,7 +482,7 @@
    "kind": "deck",
    "title": "Workshop deck",
    "summary": "Seven slides that teach one skill: a promise, a picture, three steps, a worked example, an exercise, a check and a card to keep.",
-   "preview": "base/studio.html#deck-workshop",
+   "preview": "base/components.html#deck-workshop",
    "source": "level-3-files/mcp/library/sources/84-deck-workshop.html",
    "fit": {
     "goal": {
@@ -510,7 +510,7 @@
    "kind": "social",
    "title": "Square post",
    "summary": "1080 by 1080. One claim or quote in seven words or fewer.",
-   "preview": "base/studio.html#social",
+   "preview": "base/components.html#social",
    "source": "level-3-files/mcp/library/sources/85-social.html",
    "fit": {
     "goal": {
@@ -535,7 +535,7 @@
    "kind": "social",
    "title": "Portrait stat post",
    "summary": "1080 by 1350. One number, what it means, and a before-and-after bar.",
-   "preview": "base/studio.html#social",
+   "preview": "base/components.html#social",
    "source": "level-3-files/mcp/library/sources/85-social.html",
    "fit": {
     "goal": {
@@ -561,7 +561,7 @@
    "kind": "social",
    "title": "Story",
    "summary": "1080 by 1920. A photograph above, two short lines below.",
-   "preview": "base/studio.html#social",
+   "preview": "base/components.html#social",
    "source": "level-3-files/mcp/library/sources/85-social.html",
    "fit": {
     "goal": {
@@ -586,7 +586,7 @@
    "kind": "social",
    "title": "Three-slide carousel",
    "summary": "Three pictures of 1080 by 1350: the hook, the steps, the ask.",
-   "preview": "base/studio.html#social",
+   "preview": "base/components.html#social",
    "source": "level-3-files/mcp/library/sources/85-social.html",
    "fit": {
     "goal": {
@@ -616,7 +616,7 @@
    "kind": "social",
    "title": "Link preview",
    "summary": "1200 by 630. The picture shown when a page is shared as a link.",
-   "preview": "base/studio.html#social",
+   "preview": "base/components.html#social",
    "source": "level-3-files/mcp/library/sources/85-social.html",
    "fit": {
     "goal": {
@@ -646,7 +646,7 @@
    "use": "Results, impact pages, the top of a report",
    "ask": "Show my three key numbers as large tiles that count up from zero when they scroll into view. One short label under each.",
    "effort": "Easy. One sentence.",
-   "preview": "base/studio.html#parts",
+   "preview": "base/components.html#parts",
    "source": "level-3-files/mcp/library/sources/30-parts.html"
   },
   {
@@ -656,7 +656,7 @@
    "use": "Project plans, company history, onboarding",
    "ask": "Lay out these five stages as a vertical timeline with a date and one line each. Fill the line with colour as I scroll down it.",
    "effort": "Easy. One sentence and your dates.",
-   "preview": "base/studio.html#parts",
+   "preview": "base/components.html#parts",
    "source": "level-3-files/mcp/library/sources/30-parts.html"
   },
   {
@@ -666,7 +666,7 @@
    "use": "How it works sections, explainers, training",
    "ask": "Draw my four-step process as a simple diagram: numbered circles joined by a line, with a one-word label under each. Draw the line when it scrolls into view.",
    "effort": "Easy. One sentence and your steps.",
-   "preview": "base/studio.html#parts",
+   "preview": "base/components.html#parts",
    "source": "level-3-files/mcp/library/sources/30-parts.html"
   },
   {
@@ -676,7 +676,7 @@
    "use": "Proposals, decision briefs, plan pages",
    "ask": "Compare my three options in a table with four rows. Use ticks and dashes, put cost on the last row, and pick out the recommended column in a solid colour.",
    "effort": "Easy. One sentence and your options.",
-   "preview": "base/studio.html#parts",
+   "preview": "base/components.html#parts",
    "source": "level-3-files/mcp/library/sources/30-parts.html"
   },
   {
@@ -686,7 +686,7 @@
    "use": "Landing pages and proposals",
    "ask": "Show my three plans as price cards with a switch between monthly and yearly prices. Highlight the middle plan. One line under each price.",
    "effort": "Easy. One sentence and your prices.",
-   "preview": "base/studio.html#parts",
+   "preview": "base/components.html#parts",
    "source": "level-3-files/mcp/library/sources/30-parts.html"
   },
   {
@@ -696,7 +696,7 @@
    "use": "Landing pages, proposals, help pages",
    "ask": "Add a questions and answers section where each question opens when I tap it. Use a plus sign that turns into a cross.",
    "effort": "Easy. One sentence and your questions.",
-   "preview": "base/studio.html#parts",
+   "preview": "base/components.html#parts",
    "source": "level-3-files/mcp/library/sources/30-parts.html"
   },
   {
@@ -706,7 +706,7 @@
    "use": "Landing pages, case studies, proposals",
    "ask": "Set this customer quote large in italics on a dark panel, with the customer's first name and town underneath.",
    "effort": "Easy. One sentence and a real quote.",
-   "preview": "base/studio.html#parts",
+   "preview": "base/components.html#parts",
    "source": "level-3-files/mcp/library/sources/30-parts.html"
   },
   {
@@ -716,7 +716,7 @@
    "use": "Pages with more than one kind of reader",
    "ask": "Put these three short answers behind tabs, one tab per audience. Make the tabs work with the arrow keys.",
    "effort": "Easy. One sentence.",
-   "preview": "base/studio.html#parts",
+   "preview": "base/components.html#parts",
    "source": "level-3-files/mcp/library/sources/30-parts.html"
   },
   {
@@ -726,7 +726,7 @@
    "use": "Reports, proposals, results pages",
    "ask": "Chart these four values as thin horizontal bars with the number at the end of each. Make the \"before\" bar grey and the rest one colour. Grow the bars when they scroll into view.",
    "effort": "Easy. One sentence and your numbers.",
-   "preview": "base/studio.html#parts",
+   "preview": "base/components.html#parts",
    "source": "level-3-files/mcp/library/sources/30-parts.html"
   },
   {
@@ -736,7 +736,7 @@
    "use": "One headline figure on a report or landing page",
    "ask": "Show 81% as a ring that fills when it scrolls into view, with the number and one line of explanation beside it.",
    "effort": "Easy. One sentence.",
-   "preview": "base/studio.html#parts",
+   "preview": "base/components.html#parts",
    "source": "level-3-files/mcp/library/sources/30-parts.html"
   },
   {
@@ -746,7 +746,7 @@
    "use": "Guides, checklists, anything with a risk to flag",
    "ask": "Add three callout boxes: a note, a warning and a confirmation. Give each an icon and a bold label as well as its colour.",
    "effort": "Easy. One sentence.",
-   "preview": "base/studio.html#parts",
+   "preview": "base/components.html#parts",
    "source": "level-3-files/mcp/library/sources/30-parts.html"
   },
   {
@@ -756,7 +756,7 @@
    "use": "Change announcements, proposals, case studies",
    "ask": "Show the change as two lists side by side: the old way struck through on a pale panel, the new way on a dark panel. Three lines each.",
    "effort": "Easy. One sentence.",
-   "preview": "base/studio.html#parts",
+   "preview": "base/components.html#parts",
    "source": "level-3-files/mcp/library/sources/30-parts.html"
   },
   {
@@ -764,7 +764,7 @@
    "group": "photo",
    "name": "Pan and zoom",
    "use": "A still photo that moves slowly reads as film. Use it to open a page or to hold a quote.",
-   "ask": "Fill the frame with my photo and zoom in very slowly toward the island, like a documentary shot. Loop it back out.",
+   "ask": "Fill the frame with my photo and zoom in very slowly toward the family on the lawn, like a documentary shot. Loop it back out.",
    "effort": "Easy. One sentence.",
    "preview": "base/studio.html#photo",
    "source": "level-3-files/mcp/library/sources/20-photo.html"
@@ -790,36 +790,6 @@
    "source": "level-3-files/mcp/library/sources/20-photo.html"
   },
   {
-   "id": "photo-scrolling-photo-tour",
-   "group": "photo",
-   "name": "Scrolling photo tour",
-   "use": "The photo stays put while the text scrolls. Each paragraph moves the camera to the part it talks about.",
-   "ask": "Pin my photo while I scroll. I will give you seven short paragraphs. For each one, zoom the photo to the part it describes.",
-   "effort": "Moderate. You say where to look; expect one round of nudging the zooms.",
-   "preview": "base/studio.html#photo",
-   "source": "level-3-files/mcp/library/sources/20-photo.html"
-  },
-  {
-   "id": "photo-self-drawing-line-art",
-   "group": "photo",
-   "name": "Self-drawing line art",
-   "use": "A sketch that draws itself as you scroll, then gives way to the real photo. The treeline, island and trunk were traced from the photo's own pixels.",
-   "ask": "Trace the main shapes in my photo as a simple line drawing. Draw the lines as I scroll, far things first, then fade the real photo in underneath.",
-   "effort": "Harder. The assistant has to analyse the photo. Ask for a looser sketch if the first one is off.",
-   "preview": "base/studio.html#photo",
-   "source": "level-3-files/mcp/library/sources/20-photo.html"
-  },
-  {
-   "id": "photo-chart-from-the-photo",
-   "group": "photo",
-   "name": "Chart from the photo",
-   "use": "A chart is a component too. These numbers are measured from the photo, so the chart and the picture tell the same story.",
-   "ask": "Measure how bright my photo is from top to bottom and chart it as a line with a soft fill. Put a strip of the real colours under the axis. Label only the highest and lowest points, and let me touch the chart to read the rest.",
-   "effort": "Moderate. The chart is easy; ask the assistant to show how it measured.",
-   "preview": "base/studio.html#photo",
-   "source": "level-3-files/mcp/library/sources/20-photo.html"
-  },
-  {
    "id": "photo-before-and-after",
    "group": "photo",
    "name": "Before and after",
@@ -830,41 +800,11 @@
    "source": "level-3-files/mcp/library/sources/20-photo.html"
   },
   {
-   "id": "photo-looks-and-voices",
-   "group": "photo",
-   "name": "Looks and voices",
-   "use": "The same photo and the same message, five ways. A look sets the mood; a voice sets how it speaks. Describe both and a page stops sounding generic.",
-   "ask": "",
-   "effort": "Easy. Name the look and the voice in the same sentence.",
-   "preview": "base/studio.html#photo",
-   "source": "level-3-files/mcp/library/sources/20-photo.html"
-  },
-  {
    "id": "photo-frosted-glass-card",
    "group": "photo",
    "name": "Frosted glass card",
    "use": "Facts float over the photo on a pane that blurs what is behind it. The photo stays the star and the text stays readable.",
    "ask": "Float the key facts in a frosted glass card over my photo. Keep the card over the sky so dark text stays readable.",
-   "effort": "Easy. One sentence.",
-   "preview": "base/studio.html#photo",
-   "source": "level-3-files/mcp/library/sources/20-photo.html"
-  },
-  {
-   "id": "photo-bento-grid",
-   "group": "photo",
-   "name": "Bento grid",
-   "use": "A summary as a tray of tiles in different sizes. Each tile holds one fact, so the eye can land anywhere.",
-   "ask": "Summarise this as a bento grid: one tall photo tile, three big-number tiles, a colour palette tile and a small chart tile.",
-   "effort": "Easy. List the tiles you want.",
-   "preview": "base/studio.html#photo",
-   "source": "level-3-files/mcp/library/sources/20-photo.html"
-  },
-  {
-   "id": "photo-swipe-gallery",
-   "group": "photo",
-   "name": "Swipe gallery",
-   "use": "Cards in a row that snap into place one at a time. On a phone it is the most natural way to browse a set.",
-   "ask": "Crop six details from my photo and show them as cards I can swipe sideways, snapping one card at a time. Give each a two-word title and one line.",
    "effort": "Easy. One sentence.",
    "preview": "base/studio.html#photo",
    "source": "level-3-files/mcp/library/sources/20-photo.html"
@@ -880,13 +820,83 @@
    "source": "level-3-files/mcp/library/sources/20-photo.html"
   },
   {
+   "id": "photo-swipe-gallery",
+   "group": "photo",
+   "name": "Swipe gallery",
+   "use": "Cards in a row that snap into place one at a time. On a phone it is the most natural way to browse a set.",
+   "ask": "Show my six pictures as cards I can swipe sideways, snapping one card at a time. Give each a two-word title and one line.",
+   "effort": "Easy. One sentence.",
+   "preview": "base/studio.html#photo",
+   "source": "level-3-files/mcp/library/sources/20-photo.html"
+  },
+  {
+   "id": "photo-bento-grid",
+   "group": "photo",
+   "name": "Bento grid",
+   "use": "A summary as a tray of tiles in different sizes. Each tile holds one fact, so the eye can land anywhere.",
+   "ask": "Summarise this as a bento grid: one tall photo tile, three big-number tiles, a colour palette tile and a small chart tile.",
+   "effort": "Easy. List the tiles you want.",
+   "preview": "base/studio.html#photo",
+   "source": "level-3-files/mcp/library/sources/20-photo.html"
+  },
+  {
+   "id": "photo-chart-from-the-photo",
+   "group": "photo",
+   "name": "Chart from the photo",
+   "use": "A chart is a component too. These numbers are measured from the photo, so the chart and the picture tell the same story.",
+   "ask": "Measure how bright my photo is from top to bottom and chart it as a line with a soft fill. Put a strip of the real colours under the axis. Label only the highest and lowest points, and let me touch the chart to read the rest.",
+   "effort": "Moderate. The chart is easy; ask the assistant to show how it measured.",
+   "preview": "base/studio.html#photo",
+   "source": "level-3-files/mcp/library/sources/20-photo.html"
+  },
+  {
+   "id": "photo-scrolling-photo-tour",
+   "group": "photo",
+   "name": "Scrolling photo tour",
+   "use": "The photo stays put while the text scrolls. Each paragraph moves the camera to the part it talks about.",
+   "ask": "Pin my photo while I scroll. I will give you seven short paragraphs. For each one, zoom the photo to the part it describes.",
+   "effort": "Moderate. You say where to look; expect one round of nudging the zooms.",
+   "preview": "base/studio.html#scroll",
+   "source": "level-3-files/mcp/library/sources/21-scroll.html"
+  },
+  {
+   "id": "photo-self-drawing-line-art",
+   "group": "photo",
+   "name": "Self-drawing line art",
+   "use": "A sketch that draws itself as you scroll, then gives way to the real photo. The treeline, island and trunk were traced from the photo's own pixels.",
+   "ask": "Trace the main shapes in my photo as a simple line drawing. Draw the lines as I scroll, far things first, then fade the real photo in underneath.",
+   "effort": "Harder. The assistant has to analyse the photo. Ask for a looser sketch if the first one is off.",
+   "preview": "base/studio.html#scroll",
+   "source": "level-3-files/mcp/library/sources/21-scroll.html"
+  },
+  {
+   "id": "photo-scrollytelling",
+   "group": "photo",
+   "name": "Scrollytelling",
+   "use": "The standard form. A picture stays in place while short steps scroll past, and it changes when a step reaches the middle of the screen.",
+   "ask": "Pin a picture while I scroll. I will give you four short steps and a picture for each. Change the picture when its step reaches the middle of the screen, and show which step I am on.",
+   "effort": "Easy. Give the steps and a picture for each.",
+   "preview": "base/studio.html#scroll",
+   "source": "level-3-files/mcp/library/sources/21-scroll.html"
+  },
+  {
+   "id": "photo-looks-and-voices",
+   "group": "photo",
+   "name": "Looks and voices",
+   "use": "The same photo and the same message, five ways. A look sets the mood; a voice sets how it speaks. Describe both and a page stops sounding generic.",
+   "ask": "",
+   "effort": "Easy. Name the look and the voice in the same sentence.",
+   "preview": "base/studio.html#lookvoice",
+   "source": "level-3-files/mcp/library/sources/22-lookvoice.html"
+  },
+  {
    "id": "card-summary-card",
    "group": "card",
    "name": "Summary card",
    "use": "A title, one line and a way in. The plain card that leads to more detail. Use it for a list of services, articles or projects.",
    "ask": "Show my three services as summary cards in a row: a short title, one sentence, and one link each. Same padding and same order in every card.",
    "effort": "Easy. One sentence.",
-   "preview": "base/studio.html#cards",
+   "preview": "base/components.html#cards",
    "source": "level-3-files/mcp/library/sources/31-cards.html"
   },
   {
@@ -896,7 +906,7 @@
    "use": "One number, what it measures, and how it has changed. The change is written in words and never shown by colour alone.",
    "ask": "Show my three key figures as stat cards: the label on top, the number large, and one line under it saying what it was before. Say the change in words, not only in colour.",
    "effort": "Easy. One sentence.",
-   "preview": "base/studio.html#cards",
+   "preview": "base/components.html#cards",
    "source": "level-3-files/mcp/library/sources/31-cards.html"
   },
   {
@@ -906,7 +916,7 @@
    "use": "A picture, then a title, a line of detail and one action. Every picture in a row has the same shape, so the titles line up.",
    "ask": "Show these three case studies as media cards: a 16 by 9 photo on top, a small label, a title, one line of detail and one link. Use my photos, cropped to the same shape.",
    "effort": "Easy with photos attached",
-   "preview": "base/studio.html#cards",
+   "preview": "base/components.html#cards",
    "source": "level-3-files/mcp/library/sources/31-cards.html"
   },
   {
@@ -916,7 +926,7 @@
    "use": "What a customer said, who said it and what they are to you. Use only words a real person gave you. These are invented to show the shape.",
    "ask": "Show these two customer quotes as quote cards: the quote in a serif face, then the person's initials in a circle, their name, and what we did for them. Use only the quotes I attached.",
    "effort": "Easy. One sentence.",
-   "preview": "base/studio.html#cards",
+   "preview": "base/components.html#cards",
    "source": "level-3-files/mcp/library/sources/31-cards.html"
   },
   {
@@ -926,7 +936,7 @@
    "use": "A choice with a price: the name, the price, three things it includes and one button. Mark the one you recommend, and say why in its label.",
    "ask": "Show my three options as option cards: name, price, three things each includes and one button. Mark the middle one as most chosen with a small label and a stronger border. Use my prices exactly.",
    "effort": "Easy. Check every price.",
-   "preview": "base/studio.html#cards",
+   "preview": "base/components.html#cards",
    "source": "level-3-files/mcp/library/sources/31-cards.html"
   },
   {
@@ -936,7 +946,7 @@
    "use": "One thing someone has to do: its state, what it is, when it is due and the button that does it. The state is written out, so it reads without colour.",
    "ask": "Show the next three things my customer has to do as action cards: a status label in words, the task, the due date, one line of help and one button. Finished tasks show no button.",
    "effort": "Medium. Needs real dates and states.",
-   "preview": "base/studio.html#cards",
+   "preview": "base/components.html#cards",
    "source": "level-3-files/mcp/library/sources/31-cards.html"
   },
   {
@@ -1006,7 +1016,7 @@
    "use": "Give it the one colour you already have, as a position on the colour wheel from 0 to 359. It returns seven colours with a job each, and checks every pair of text and background. The first one shown is hue 45.",
    "ask": "Build my colours from one brand colour: a page background, a panel colour, a border, main text, secondary text, one accent for buttons and links, and a soft highlight. Keep a trace of the brand colour in the greys. Check every text and background pair for contrast and list the ratios.",
    "effort": "Easy. Give it your one colour.",
-   "preview": "base/studio.html#colour",
+   "preview": "base/components.html#colour",
    "source": "level-3-files/mcp/library/sources/33-colour.html"
   },
   {
@@ -1016,7 +1026,7 @@
    "use": "A rule borrowed from decorating a room. The largest share is calm, the next gives structure, and the smallest draws the eye. Judge it by eye: it is about weight, not a count of pixels. On a dense screen such as a dashboard the calm share is nearer 90.",
    "ask": "Use my colours in a 60, 30, 10 balance: about 60 percent calm background, 30 percent text and structure, and 10 percent accent. Use the accent only on the things I want people to click or notice first.",
    "effort": "Easy. One sentence.",
-   "preview": "base/studio.html#colour",
+   "preview": "base/components.html#colour",
    "source": "level-3-files/mcp/library/sources/33-colour.html"
   },
   {
@@ -1026,7 +1036,7 @@
    "use": "Nine shades of one colour, from nearly white to nearly black, where each step looks the same size to the eye. Older colour sums make yellow steps look bigger than blue ones. The OKLCH way of writing colour fixes that, and current browsers understand it.",
    "ask": "Make a nine-step scale of my brand colour from nearly white to nearly black, with even steps of lightness. Write the colours in OKLCH with a hex value beside each. Use the scale for backgrounds, borders and text of that colour.",
    "effort": "Easy. One sentence.",
-   "preview": "base/studio.html#colour",
+   "preview": "base/components.html#colour",
    "source": "level-3-files/mcp/library/sources/33-colour.html"
   },
   {
@@ -1036,7 +1046,7 @@
    "use": "Start from your colour and turn the wheel, keeping the lightness and strength the same. Because only the direction changes, the colours feel like a set. One of them is still the accent. The others are for charts, labels and pictures.",
    "ask": "Give me two more colours that go with my brand colour, for charts and labels: keep the same lightness and strength and change only the hue. Show neighbours, the opposite, and the softened opposite, and say which you would use.",
    "effort": "Easy. One sentence.",
-   "preview": "base/studio.html#colour",
+   "preview": "base/components.html#colour",
    "source": "level-3-files/mcp/library/sources/33-colour.html"
   },
   {
@@ -1046,7 +1056,7 @@
    "use": "Contrast is a ratio between the text and what is behind it, from 1 to 1 (invisible) up to 21 to 1 (black on white). Ordinary text needs 4.5. Two of these four pairs pass. The other two use colours that look fine side by side and still fail as text.",
    "ask": "Check every pair of text colour and background on this page. List each pair with its contrast ratio, and fix any ordinary text under 4.5 to 1 or large text under 3 to 1 by changing the lightness, not the hue.",
    "effort": "Easy. One sentence.",
-   "preview": "base/studio.html#colour",
+   "preview": "base/components.html#colour",
    "source": "level-3-files/mcp/library/sources/33-colour.html"
   },
   {

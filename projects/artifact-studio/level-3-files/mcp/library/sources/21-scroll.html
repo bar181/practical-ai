@@ -1,0 +1,129 @@
+<style>
+/* the standard scrollyteller: a pinned frame of pictures and a column of steps */
+.sy-stage{position:sticky;top:0;z-index:3;background:var(--fog);padding:3px 0 0}
+.sy-frame{aspect-ratio:4/3;overflow:hidden;position:relative;background:var(--pine)}
+.sy-pic{position:absolute;inset:0;background-size:cover;background-position:50% 35%;opacity:0;transform:scale(1.06);transition:opacity .7s ease,transform 1.4s cubic-bezier(.3,.7,.15,1)}
+.sy-pic.on{opacity:1;transform:none}
+.sy-count{position:absolute;right:10px;bottom:14px;background:rgba(27,34,40,.72);color:var(--fog);padding:5px 10px;border-radius:999px;font-variant-numeric:tabular-nums}
+.sy-bar{position:absolute;left:0;right:0;bottom:0;height:5px;background:rgba(27,34,40,.5)}
+.sy-bar i{display:block;height:100%;background:var(--rust);transform-origin:0 50%;transform:scaleX(.25);transition:transform .6s ease}
+.sy-steps{list-style:none;margin:0;padding:0 20px}
+.sy-steps li{min-height:min(58svh,460px);display:flex;flex-direction:column;justify-content:center;gap:8px;color:var(--slate);transition:color .5s;padding-left:14px;border-left:3px solid transparent}
+.sy-steps li.on{color:inherit;border-left-color:var(--rust)}
+.sy-steps h3{font-size:1.5rem;line-height:1.1}
+.sy-steps p{max-width:26em}
+@media(min-width:860px){
+  .sy{display:grid;grid-template-columns:1.2fr 1fr;gap:44px;align-items:start;max-width:1080px;margin-inline:auto;padding-inline:20px}
+  .sy-stage{top:calc(50svh - 220px);padding:0}
+  .sy-frame{border-radius:10px}
+  .sy-steps{padding:0}
+  .sy-steps li{min-height:min(78svh,640px)}
+}
+@media (prefers-reduced-motion:reduce){.sy-pic,.sy-bar i,.sy-steps li{transition:none}.sy-pic{transform:none}}
+</style>
+<div class="view" id="v-scroll" data-tab="scroll" data-title="Scroll effects">
+<header class="hero">
+  <div class="ph" style="background-image:var(--ph-fog);background-position:50% 40%;transform-origin:62% 55%" role="img" aria-label="A house on stilts in fog with one lit window, and a person walking away along a wet road."></div>
+  <div class="hero-copy">
+    <h1><span style="--i:0">The</span> <span style="--i:1">page</span> <span style="--i:2">moves</span> <span style="--i:3">when</span> <span style="--i:4">you</span> <span style="--i:5">do</span></h1>
+    <p>Three effects that follow your scrolling. Each one comes with the sentence that asks for it.</p>
+  </div>
+</header>
+
+<main>
+<section class="intro wrap">
+  <div class="measure">
+    <p>Scrolling is the one thing every reader already knows how to do. These three turn it into the play button.</p>
+    <p>All three still read in order with motion turned off: the pictures and the text are simply shown.</p>
+  </div>
+  <ul class="contents">
+    <li><a href="#tour" data-jump="tour">Scrolling photo tour</a></li>
+    <li><a href="#draw" data-jump="draw">Self-drawing line art</a></li>
+    <li><a href="#scrolly" data-jump="scrolly">Scrollytelling</a></li>
+  </ul>
+</section>
+
+<section class="spec" id="tour">
+  <div class="spec-head wrap"><h2>Scrolling photo tour</h2><p class="measure">The photo stays put while the text scrolls. Each paragraph moves the camera to the part it talks about.</p></div>
+  <div class="demo tour">
+    <div class="tour-stage"><div class="tour-frame"><img class="tour-img" alt="The lake photo. It zooms to a different detail with each step of the text."><p class="tour-count ui" aria-hidden="true">1 of 7</p></div></div>
+    <ol class="tour-steps">
+      <li data-fx=".5" data-fy=".5" data-z="1"><h3>Start wide</h3><p>One frame, 2016 by 1512 pixels, taken from the shore under full cloud.</p></li>
+      <li data-fx=".36" data-fy=".28" data-z="1.7"><h3>The sky does most of the work</h3><p>Cloud fills the top 57% of the picture. That much even tone is why text sits on it so easily.</p></li>
+      <li data-fx=".3" data-fy=".575" data-z="3"><h3>The far shore</h3><p>A band of evergreens crosses the frame just past halfway down. It is the darkest strip in the photo.</p></li>
+      <li data-fx=".86" data-fy=".56" data-z="3.2"><h3>The island</h3><p>To the right of the trunk a small wooded island stands taller than the shoreline behind it.</p></li>
+      <li data-fx=".567" data-fy=".62" data-z="4"><h3>The detail you would miss</h3><p>A single bare shrub stands in open water. Zooming is how a page says: look here.</p></li>
+      <li data-fx=".76" data-fy=".3" data-z="2"><h3>The tree</h3><p>The trunk runs the full height of the frame and splits it into a wide part and a narrow part.</p></li>
+      <li data-fx=".28" data-fy=".76" data-z="2.4"><h3>The reeds</h3><p>Dry cattails and fallen leaves fill the bottom third. They are the only warm colours in the picture.</p></li>
+    </ol>
+  </div>
+  <div class="recipe wrap">
+    <div class="ask"><h3>Ask for it like this</h3><blockquote>Pin my photo while I scroll. I will give you seven short paragraphs. For each one, zoom the photo to the part it describes.</blockquote><button class="copy" type="button">Copy</button></div>
+    <dl class="facts"><div><dt>Effort</dt><dd>Moderate. You say where to look; expect one round of nudging the zooms.</dd></div><div><dt>Made here with</dt><dd>Sticky positioning and an IntersectionObserver</dd></div><div><dt>Grow into</dt><dd>Scrollama, the step-trigger library used in newsrooms</dd></div><div><dt>Seen in</dt><dd>The Pudding, and the New York Times feature Snow Fall</dd></div></dl>
+  </div>
+</section>
+
+<section class="spec" id="draw">
+  <div class="spec-head wrap"><h2>Self-drawing line art</h2><p class="measure">A sketch that draws itself as you scroll, then gives way to the real photo. The treeline, island and trunk were traced from the photo's own pixels.</p></div>
+  <div class="demo draw sd" data-range="contain">
+    <div class="draw-stage">
+      <div class="draw-frame">
+        <div class="ph draw-photo"></div>
+        <svg viewBox="0 0 1600 1200" preserveAspectRatio="none" role="img" aria-label="A line drawing of the lake scene that draws itself, then fades into the photo.">__PATHS__</svg>
+      </div>
+      <p class="draw-hint ui">Keep scrolling. Far shore first, then the tree, then the reeds, then the photo.</p>
+    </div>
+  </div>
+  <div class="recipe wrap">
+    <div class="ask"><h3>Ask for it like this</h3><blockquote>Trace the main shapes in my photo as a simple line drawing. Draw the lines as I scroll, far things first, then fade the real photo in underneath.</blockquote><button class="copy" type="button">Copy</button></div>
+    <dl class="facts"><div><dt>Effort</dt><dd>Harder. The assistant has to analyse the photo. Ask for a looser sketch if the first one is off.</dd></div><div><dt>Made here with</dt><dd>SVG paths and stroke-dashoffset, tied to scroll</dd></div><div><dt>Grow into</dt><dd>GSAP DrawSVG or Anime.js; Lottie or Rive for animation drawn by a designer</dd></div><div><dt>Seen in</dt><dd>Explainer intros and Codrops demos</dd></div></dl>
+  </div>
+</section>
+
+<section class="spec" id="scrolly">
+  <div class="spec-head wrap"><h2>Scrollytelling</h2><p class="measure">The standard form. A picture stays in place while short steps scroll past, and it changes when a step reaches the middle of the screen.</p></div>
+  <div class="demo sy">
+    <div class="sy-stage"><div class="sy-frame" id="sy-frame" role="img" aria-label="A cartoon of a worried person at a desk, looking at a screen full of unimpressed faces.">
+      <div class="sy-pic on" style="background-image:var(--ph-class)" aria-hidden="true"></div>
+      <div class="sy-pic" style="background-image:var(--ph-dog)" aria-hidden="true"></div>
+      <div class="sy-pic" style="background-image:var(--ph-bulb)" aria-hidden="true"></div>
+      <div class="sy-pic" style="background-image:var(--ph-cat)" aria-hidden="true"></div>
+      <span class="sy-count ui" id="sy-count">1 of 4</span>
+      <span class="sy-bar" aria-hidden="true"><i id="sy-bar"></i></span>
+    </div></div>
+    <ol class="sy-steps">
+      <li data-alt="A cartoon of a worried person at a desk, looking at a screen full of unimpressed faces."><h3>The grey page</h3><p>You ask an AI for a report. The answer is good. The page it arrives on is one nobody wants to read.</p></li>
+      <li data-alt="A small dog with its paws on a desk, looking closely at a laptop."><h3>The smart intern</h3><p>The AI is keen, fast and new here. Nobody has told it who the page is for.</p></li>
+      <li data-alt="A lightbulb bursting with coloured paint."><h3>The brief</h3><p>So you tell it three things: the job, the reader and the shape. One sentence.</p></li>
+      <li data-alt="A wide-eyed cat with its mouth open in delight."><h3>The reaction</h3><p>Same notes, same AI. This time people stop and look.</p></li>
+    </ol>
+  </div>
+  <div class="recipe wrap">
+    <div class="ask"><h3>Ask for it like this</h3><blockquote>Pin a picture while I scroll. I will give you four short steps and a picture for each. Change the picture when its step reaches the middle of the screen, and show which step I am on.</blockquote><button class="copy" type="button">Copy</button></div>
+    <dl class="facts"><div><dt>Effort</dt><dd>Easy. Give the steps and a picture for each.</dd></div><div><dt>Made here with</dt><dd>CSS sticky positioning and an IntersectionObserver</dd></div><div><dt>Grow into</dt><dd>Scrollama or GSAP ScrollTrigger, for finer control of each step</dd></div><div><dt>Seen in</dt><dd>News features and data stories</dd></div></dl>
+  </div>
+</section>
+</main>
+<footer><div class="wrap"><p class="ui">The tour and the line art use one lake photograph, and the sketch was traced from that photograph's own pixels. The scrollytelling story and its pictures are a demonstration.</p></div></footer>
+</div>
+<script>
+onView("scroll",root=>{
+/* tour */
+{const src=getComputedStyle(html).getPropertyValue('--photo').trim().replace(/^url\(\s*["']?/,'').replace(/["']?\s*\)$/,'');
+ const img=$('.tour-img'),frame=$('.tour-frame'),steps=$$('.tour-steps li'),count=$('.tour-count');let cur=0;
+ img.src=src;
+ const place=()=>{const s=steps[cur],z=+s.dataset.z,fx=+s.dataset.fx,fy=+s.dataset.fy,w=frame.clientWidth,h=frame.clientHeight;
+   const tx=clamp(w/2-fx*w*z,w-w*z,0),ty=clamp(h/2-fy*h*z,h-h*z,0);
+   img.style.transform=`translate(${tx.toFixed(1)}px,${ty.toFixed(1)}px) scale(${z})`;
+   count.textContent=`${cur+1} of ${steps.length}`;steps.forEach((e,i)=>e.classList.toggle('on',i===cur));};
+ const io=new IntersectionObserver(es=>{for(const e of es)if(e.isIntersecting){cur=steps.indexOf(e.target);place();}},{rootMargin:'-52% 0px -44% 0px'});
+ steps.forEach(s=>io.observe(s));addEventListener('resize',place);place();}
+
+/* scrollytelling */
+{const steps=$$('.sy-steps li',root),pics=$$('.sy-pic',root),frame=$('#sy-frame'),count=$('#sy-count'),bar=$('#sy-bar');
+ const set=k=>{steps.forEach((s,i)=>s.classList.toggle('on',i===k));pics.forEach((p,i)=>p.classList.toggle('on',i===k));
+   frame.setAttribute('aria-label',steps[k].dataset.alt);count.textContent=`${k+1} of ${steps.length}`;bar.style.transform=`scaleX(${(k+1)/steps.length})`};
+ const io=new IntersectionObserver(es=>{for(const e of es)if(e.isIntersecting)set(steps.indexOf(e.target))},{rootMargin:'-52% 0px -44% 0px'});
+ steps.forEach(s=>io.observe(s));set(0);}
+});
+</script>

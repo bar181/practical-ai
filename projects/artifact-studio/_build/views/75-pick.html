@@ -8,7 +8,7 @@
 .pk-o code{font:400 .84rem var(--mono);background:var(--mist);border-radius:4px;padding:.1em .35em;overflow-wrap:anywhere}
 .pk-o .ask{margin:2px 0 0;padding:12px 14px}.pk-o .ask blockquote{font-size:1.08rem}
 .pk-o .pk-go{display:flex;flex-wrap:wrap;gap:8px}
-.pk-o .pk-go label{min-height:44px;display:inline-flex;align-items:center;padding:0 16px;border-radius:999px;background:var(--pine);color:var(--fog);font:700 .9rem/1 var(--display);cursor:pointer}
+.pk-o .pk-go label,.pk-o .pk-go a{text-decoration:none;min-height:44px;display:inline-flex;align-items:center;padding:0 16px;border-radius:999px;background:var(--pine);color:var(--fog);font:700 .9rem/1 var(--display);cursor:pointer}
 </style>
 <div class="view" id="v-pick" data-title="Pick for me">
   <section class="mx"><div class="wrap">
@@ -45,7 +45,7 @@ onView("pick",root=>{
     return out};
   const out=$('#pk-out',root),val=n=>($(`input[name=pk-${n}]:checked`,root)||{}).value;
   const draw=()=>{out.replaceChildren(...STUDIO.recommend(val('goal'),val('audience'),val('format')).map(r=>{const li=h('li');
-    const go=h('div',{class:'pk-go'});r.templates.forEach(id=>{const t=T.find(x=>x.id===id),tab=t.tab&&document.getElementById('t-'+t.tab);if(tab){const l=h('label',{for:'t-'+t.tab});l.textContent='Open '+t.title;go.append(l)}});
+    const go=h('div',{class:'pk-go'});r.templates.forEach(id=>{const t=T.find(x=>x.id===id),tab=t.tab&&document.getElementById('t-'+t.tab);if(tab){const l=h('label',{for:'t-'+t.tab});l.textContent='Open '+t.title;go.append(l)}else if(t.tab&&STUDIO.elsewhere[t.tab]){const l=h('a',{href:STUDIO.elsewhere[t.tab]+'#'+t.tab});l.textContent='Open '+t.title;go.append(l)}});
     const hd=h('h3');hd.textContent=r.title;const w=h('p',{class:'pk-w'}),sb=h('b',{class:'pk-s '+r.strength});sb.textContent=r.strength[0].toUpperCase()+r.strength.slice(1)+' fit.';w.append(sb,' '+(r.note?r.note+' ':'')+r.why);
     const l=h('p',{class:'pk-l'});l.innerHTML='<b>Look:</b> '+r.look+'.';
     const a=h('div',{class:'ask'});a.innerHTML='<h3>Ask for it like this</h3><blockquote></blockquote><button class="copy" type="button">Copy</button>';$('blockquote',a).textContent=r.ask;

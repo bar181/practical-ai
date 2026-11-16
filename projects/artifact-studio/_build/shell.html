@@ -27,6 +27,7 @@
 .mast .mast-t{font:700 clamp(1.3rem,5.4vw,2.1rem)/1.1 var(--display);letter-spacing:-.012em;color:var(--fog);margin:0}
 .mast .mast-t span{color:var(--reed)}
 .mast .mast-l{font:400 .94rem/1.4 var(--display);color:#c2cede;margin:6px 0 0;max-width:40em}
+.mast .mast-x{margin:8px 0 0;font:700 .9rem/1.3 var(--display)}.mast .mast-x a{color:var(--reed);display:inline-flex;align-items:center;min-height:40px}
 .tabs{background:var(--pine);padding:6px 0 12px;position:relative;z-index:40}
 .tabs>div{display:flex;flex-wrap:wrap;gap:6px;padding:5px 20px;max-width:1080px;margin-inline:auto}
 .tabs label{flex:none;font:700 .86rem/1 var(--display);color:#dbe3ee;padding:0 12px;min-height:40px;display:flex;align-items:center;border-radius:999px;cursor:pointer;border:1.5px solid #5b6b7a;user-select:none;-webkit-user-select:none}
@@ -106,7 +107,7 @@
 <!--VIEWS-->
 <script>
 /* shared helpers. Each tab's own script follows in a separate script element, so a fault in one cannot stop the others. */
-const STUDIO={data:__DATA__};window.STUDIO=STUDIO;
+const STUDIO={data:__DATA__,elsewhere:__ELSEWHERE__};window.STUDIO=STUDIO;
 const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
 const html=document.documentElement;
 const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -152,7 +153,7 @@ const show=(name,move)=>{const v=routes[name];if(!v)return;
   if(move&&nav&&scrollY>nav.offsetTop)scrollTo({top:nav.offsetTop,behavior:'instant'});
   if(!done.has(name)){done.add(name);try{STUDIO.crops(v)}catch(err){console.error(err)}try{HOOKS[name]&&HOOKS[name](v)}catch(err){console.error(err)}}
   dispatchEvent(new Event('resize'));STUDIO.sd&&STUDIO.sd();};
-const go=name=>{const r=document.getElementById('t-'+name);if(!r)return;r.checked=true;show(name,true);try{history.replaceState(null,'','#'+name)}catch{}};
+const go=name=>{const r=document.getElementById('t-'+name);if(!r){if(STUDIO.elsewhere[name])location.href=STUDIO.elsewhere[name]+'#'+name;return}r.checked=true;show(name,true);try{history.replaceState(null,'','#'+name)}catch{}};
 radios.forEach(r=>r.addEventListener('change',()=>{if(r.checked){show(r.id.slice(2),true);try{history.replaceState(null,'','#'+r.id.slice(2))}catch{}}}));
 addEventListener('hashchange',()=>go(location.hash.slice(1)));
 document.addEventListener('click',e=>{
@@ -163,7 +164,7 @@ document.addEventListener('click',e=>{
       catch{const r=document.createRange();r.selectNodeContents(q);const s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selected. Copy it from the menu'}
       setTimeout(()=>b.textContent='Copy',2400)})();}
 });
-const first=location.hash.slice(1);if(routes[first])go(first);else{const c=radios.find(r=>r.checked)||radios[0];if(c){c.checked=true;show(c.id.slice(2),false)}else{const only=Object.keys(routes)[0];if(only)show(only,false)}}
+const first=location.hash.slice(1);if(routes[first])go(first);else if(STUDIO.elsewhere[first])location.replace(STUDIO.elsewhere[first]+'#'+first);else{const c=radios.find(r=>r.checked)||radios[0];if(c){c.checked=true;show(c.id.slice(2),false)}else{const only=Object.keys(routes)[0];if(only)show(only,false)}}
 })();
 </script>
 </body>

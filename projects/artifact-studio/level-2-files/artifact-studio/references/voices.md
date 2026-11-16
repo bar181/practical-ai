@@ -37,10 +37,10 @@ as if the person said it, and never put their name on a page.
 | Field | |
 | --- | --- |
 | Inspired by | Steve Jobs's product launches |
-| Order | The world as it is, as one painful number. The consequence. A question. The answer in three words. One image with the new number. Before and after. One more thing. A closing line short enough to repeat. |
+| Order | The world as it is, as one line or one painful number. The catch or the consequence. The idea in a few words. Proof as enormous numbers, or as bars with no axes. The next step. A closing line short enough to repeat. |
 | Sentences | Very short. One idea each. Present tense. |
 | Page behaviour | One idea per screen. Screens snap into place. Words arrive in order. |
-| Look | Black background, one typeface, white and grey. Numbers enormous. One photograph, once, full screen. |
+| Look | Black background, one typeface, white and grey. Numbers enormous. A picture fills the screen with a few words over it, or sits beside one short paragraph. |
 | Avoid | Bullet lists, charts with axes, more than about twelve words on a screen |
 
 ## Storyteller

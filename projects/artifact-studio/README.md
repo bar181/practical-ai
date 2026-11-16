@@ -59,9 +59,11 @@ You should get something like this. It is the same request, already built:
   press the copy button at the top right, and paste it in before the notes.
 - **Now add a photo.** Attach any photo of your own and say: `Open with my photo as a slow pan and zoom, like a documentary shot, and set the title in huge letters filled with the photo.`
 - **Now make it a deck.** In the same chat, say: `Show the same notes as a keynote-style slide deck: black slides, one idea each, huge type.`
-- **Browse everything it can make.** Download [`base/studio.html`](base/studio.html) and open it in
-  a browser. It is the whole gallery in one file. It opens on the twelve photo effects, and has a picker that
-  chooses a template for you.
+- **Browse everything it can make.** Download two files and open them in a browser.
+  [`base/studio.html`](base/studio.html) is the highlights: photo effects, scroll effects, layouts
+  and one message told in six voices. [`base/components.html`](base/components.html) is everything
+  else: pages, decks, social formats, parts, and a picker that chooses a template for you. Keep
+  them in the same folder and each links to the other.
 
 ### 2. Use it every day
 
@@ -139,16 +141,16 @@ layout and the first draft, and you keep the judgement.
 
 ### Photo effects: the part people remember
 
-One photograph becomes twelve different things. Each is small enough for a chatbot to write in a
-single reply, and none needs a library or an app.
+One picture and one sentence per effect. There are thirteen, each small enough for a chatbot to
+write in a single reply, and none needs a library or an app.
 
 <p align="center">
   <img src="_build/img/fx-line-art.webp" width="49%" alt="Screen capture of a self-drawing line art effect: a pencil sketch of a lake and a tree, traced from the photograph, draws itself as you scroll">
   <img src="_build/img/fx-before-after.webp" width="49%" alt="Screen capture of a before and after effect: one photograph with a divider you drag between the original and a warmer colour grade">
 </p>
 <p align="center">
-  <img src="_build/img/fx-photo-type.webp" width="49%" alt="Screen capture of photo-filled type: one huge word on a dark band, its letters filled with the photograph">
-  <img src="_build/img/fx-postcard.webp" width="49%" alt="Screen capture of a flip postcard effect: the photograph turned over to show a handwritten note, a stamp and address lines">
+  <img src="_build/img/fx-photo-type.webp" width="49%" alt="Screen capture of photo-filled type: the word spark in huge letters on a dark band, the letters filled with a picture of a lightbulb bursting with coloured paint">
+  <img src="_build/img/fx-postcard.webp" width="49%" alt="Screen capture of a flip postcard effect: a picture of a city skyline at sunset turned over to show a handwritten note, a stamp and address lines">
 </p>
 <p align="center">
   <img src="_build/img/fx-glass-card.webp" width="49%" alt="Screen capture of a frosted glass card floating over a lake photograph, holding four facts about the picture">
@@ -164,12 +166,12 @@ single reply, and none needs a library or an app.
 | **Before and after** | Two versions with a divider you drag | "Show my photo as shot and with a warm sunset grade, as one picture with a divider I can drag." |
 | **Flip postcard** | Tap the photo and it turns over to a note | "Make my photo a postcard with a white border. When I tap it, flip it over in 3D and show a short handwritten-style note on the back." |
 
-Six more are in the gallery: parallax window, chart from the photo, frosted glass card, bento
-grid, swipe gallery, and matched looks and voices.
+Seven more are in the gallery: parallax window, frosted glass card, swipe gallery, bento grid,
+chart from the photo, scrollytelling with a pinned picture, and matched looks and voices.
 
 ### The rest of the kit
 
-The effects sit on a full library: <!-- counts -->19 templates (4 pages, 6 voices, 4 decks, 5 social formats), 53 components (12 page parts, 12 photo parts, 12 animated SVG files, 17 design ideas for cards, layouts and colour) and 9 looks<!-- /counts -->. Every one
+The effects sit on a full library: <!-- counts -->19 templates (4 pages, 6 voices, 4 decks, 5 social formats), 54 components (12 page parts, 13 photo parts, 12 animated SVG files, 17 design ideas for cards, layouts and colour) and 9 looks<!-- /counts -->. Every one
 comes with the sentence that asks for it.
 
 ### A full artifact, in the style you ask for
@@ -183,12 +185,20 @@ a report that argues from evidence, or a guide people act on today.
 
 | Style | What you get | Say this |
 | --- | --- | --- |
-| **Visionary** | A slide deck. Huge type, one idea per slide, and full-screen pictures with a few words over them | "Turn my notes into a keynote-style deck: black slides, one idea each, huge type. Put my photo full screen behind two of the slides, with the words over it." |
+| **Visionary** | A slide deck, or a page that scrolls one idea per screen. Huge type, full-screen pictures with a few words over them, a frosted glass card, and numbers as bars with no axes | "Turn my notes into a keynote-style deck: black slides, one idea each, huge type. Put my photo full screen behind two of the slides, with the words over it." |
 | **Explainer** | A lesson you can teach from: an analogy, a sketch that draws itself, steps you scroll through while a diagram keeps your place, a worked example and questions to check | "Explain this like a great teacher: start with an everyday analogy, then one example, then the detail." |
 | **Analyst** | A report that gives the answer first, then earns it with three findings and a chart each | "Write this up as an evidence-first one-pager: the answer at the top, then three findings with a chart each." |
 | **Practical** | A field guide: the core idea, one analogy, and steps to tick off today | "Turn this into a practical one-page guide: the core idea, one analogy, then steps I can do today." |
 
-The explainer in the gallery teaches this project. It is the page Bradley built to use in class:
+The visionary page in the gallery is about this repository: the smart intern, the jobs you repeat,
+and what is in the kit on day one.
+
+<p align="center">
+  <img src="_build/img/style-visionary-page.webp" width="49%" alt="Animated screen capture of the visionary page on a phone: black screens of huge white type, a house in fog behind the words So it guesses, a dog at a laptop beside the words Meet your smart intern, three rings labelled daily, weekly and monthly, and bars that count what is in the library">
+  <img src="_build/img/style-visionary-glass.webp" width="49%" alt="Screen capture of the visionary page's next step: a frosted glass card over a city skyline at sunset that reads Start in five minutes, paste one link, ask in one sentence, check what comes back">
+</p>
+
+The explainer in the gallery teaches this project. It is built to be taught from in class:
 the smart intern analogy, the four steps, and how to write a good ask.
 
 <p align="center">
@@ -291,12 +301,13 @@ artifact-studio/
   AGENTS.md               instructions for AI agents
   LICENSE                 Apache-2.0
   base/
-    studio.html           the gallery: download it and browse every template
+    studio.html           the highlights: photo effects, scroll effects, layouts, voices
+    components.html       everything else: pages, decks, social formats, parts, the skill
     AI-INSTRUCTIONS.md    copy into your chatbot
     example.html          one finished business report
   level-2-files/          Advanced: your brand on file, and the skill
   level-3-files/          Expert: the MCP server for agents
-  _build/                 what the gallery is built from. You do not need it
+  _build/                 what the two gallery files are built from. You do not need it
 ```
 
 ## About the creator
