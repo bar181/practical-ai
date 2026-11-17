@@ -84,6 +84,12 @@ Support tools that make every other tool better. Each starts with a version a pe
 | 9 | **Connections hub** | Read a meeting or an email thread and propose what is worth keeping, for you to accept | Plan |
 | 10 | **Daily builder** | Take one approved item from this list through Agentic Process and hand back a reviewable change | Plan |
 
+### Side quest
+
+| Project | What it will do for you | Where it stands |
+| --- | --- | --- |
+| **Rare Find** | A five-minute quiz game your chatbot builds in the chat, where the correct answer nobody else thought of scores the most | Plan: [project 4](../projects/rare-find/) |
+
 The full list of ideas, sorted into everyday tasks, agent tools and hybrid projects, is in
 [the plans](../workshop/plans/README.md).
 

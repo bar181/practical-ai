@@ -1,6 +1,6 @@
 # Plans: every project idea, in three groups
 
-Each idea that has been identified, with where it stands. The order to build them in is
+Each idea that has been identified, with where it stands, in three groups and a side quest. The order to build them in is
 [the priority list](../../docs/README.md#what-comes-next). A new tool is built with
 [Agentic Process](../../projects/agentic-process/).
 
@@ -64,6 +64,14 @@ supplies judgement and approves.
 | Training explainer with avatar | A topic becomes a taught video in a chosen teaching style | [Draft](../drafts/training-explainer/) · [plan](training-explainer/) |
 | Training website | A course site with lessons, a schedule and an assistant | [Plan](training-website/) |
 | Student AI assistant | A course assistant that answers from the lesson material and names its source | [Plan](student-assistant/) |
+
+## 4. Side quests
+
+Not everything with AI is work. Light projects that show the fun side of having an AI co-worker.
+
+| Project | What it does | Where it stands |
+| --- | --- | --- |
+| Rare Find | A quick quiz game the chatbot builds in the chat: rarer correct answers score more | Plan: [project folder](../../projects/rare-find/) · [plan](../../projects/rare-find/base/PLAN.md) |
 
 ## Writing a plan
 
