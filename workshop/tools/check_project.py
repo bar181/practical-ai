@@ -9,7 +9,7 @@ The showcase layout, used by everything in projects/. base/ is enough to try the
   level-2-files/   optional. What an advanced user adds, with a README.md
   level-3-files/   optional. Connections for agents, with a README.md
   _build/          optional. What the project is built from
-  quality-results/ optional. What the tests showed, with the raw evidence
+  quality-results/ the evidence: README.md says what was checked, by whom, with links to the raw results
 Nothing else sits beside them.
 
 The earlier layout, still used by drafts/project-method and its scaffold: README.md, AGENTS.md, gates.json,
@@ -39,7 +39,7 @@ if folders or exists("gates.json"):                                  # the earli
         except ValueError as e:
             problems.append(f"gates.json does not parse: {e}")
 else:                                                                # the showcase layout
-    for need in ("README.md", "AGENTS.md", "CLAUDE.md", "LICENSE", "base"):
+    for need in ("README.md", "AGENTS.md", "CLAUDE.md", "LICENSE", "base", "quality-results/README.md"):
         if not exists(need): problems.append(f"missing {need}")
     for mark, why in (("**North Star:**", "one sentence saying what success is"), ("## Status", "who has and has not tried it")):
         if mark not in text: problems.append(f"README.md has no '{mark}' ({why})")

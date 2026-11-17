@@ -387,7 +387,8 @@ sentence, and gets back something they are proud to send, on the first or second
 ## Status
 
 **Tested on 16 November 2026.** Built by its author, then put through 22 independent runs by
-fresh AI sessions. Its owner is the only person who has used it, so tell us what you find.
+fresh AI sessions. Its owner is the only person who has used it, so tell us what you find. Every
+check, with its raw evidence and the library report: [`quality-results/`](quality-results/).
 
 | Part | State |
 | --- | --- |
@@ -427,6 +428,7 @@ artifact-studio/
     TEACH-IN-30-MINUTES.md  a lesson plan
   level-2-files/          Advanced: your brand on file, and the skill
   level-3-files/          Expert: the MCP server for agents
+  quality-results/        the evidence: what was checked, by whom, and the library report and deck
   _build/                 what the library and the examples are built from. You do not need it
 ```
 

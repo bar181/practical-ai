@@ -22,7 +22,7 @@ a-project/
   level-2-files/     Advanced: what you add to make it yours, with its own README
   level-3-files/     Expert: connections for agents, with its own README
   _build/            what the project is built from. Not needed to use it
-  quality-results/   optional: what the tests showed, with the raw evidence
+  quality-results/   the evidence: what was checked, by whom, with the raw results
 ```
 
 `python3 workshop/tools/check_project.py projects/<name>` checks a folder against this.

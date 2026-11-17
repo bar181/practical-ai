@@ -19,7 +19,7 @@ work. Reuse first: use an existing capability, wrap it, or build only the missin
 
 | Folder | Holds |
 | --- | --- |
-| `projects/<name>/` | A finished project: `README.md`, `AGENTS.md`, `CLAUDE.md`, `LICENSE`, `base/`, optional `level-2-files/`, `level-3-files/`, `quality-results/` and `_build/`. Its own images live in `_build/img/` so the folder works when copied alone |
+| `projects/<name>/` | A finished project: `README.md`, `AGENTS.md`, `CLAUDE.md`, `LICENSE`, `base/`, `quality-results/README.md` (its evidence), optional `level-2-files/`, `level-3-files/` and `_build/`. Its own images live in `_build/img/` so the folder works when copied alone |
 | `assets/images/` | Images shared across the repository |
 | `docs/` | `README.md` (both projects and the priority list) and `reports/` (one explainer page per project) |
 | `workshop/` | Plans, earlier drafts, skills and checking scripts |
