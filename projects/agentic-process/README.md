@@ -100,9 +100,9 @@ finds what you cannot see, because you know what you meant.
 
 | Level | For | What it adds |
 | --- | --- | --- |
-| **Base**: run it in chat | A business owner or office worker | A useful result today, and the four files to run it again |
-| **Level 2**: save, share and specify | Someone trained on AI, or a coder | A saved, shared workflow in a chatbot project, a skill or a shared folder. For coders: [one skill folder](level-2-files/) that turns an idea into a testable spec and a project folder in any repository |
-| **Level 3**: connect it and prove it | The owner, or a client setup | A folder, a tool server or GitHub, connected only when it saves a recurring manual step; [gates, fresh-session tests and every test log](level-3-files/) |
+| **Base**: the simplest version that works | Anyone, starting in minutes | A useful result today, and the four files to run it again |
+| **Level 2**: repeatable | Someone trained on AI, or a coder | A saved, shared workflow in a chatbot project, a skill or a shared folder. For coders: [one skill folder](level-2-files/) that turns an idea into a testable spec and a project folder in any repository |
+| **Level 3**: connected and automated | The owner, or a client setup | A folder, a tool server, GitHub or a schedule, connected only when it saves a recurring manual step; [gates, fresh-session tests and every test log](level-3-files/) |
 
 **More examples**, each made by a fresh session from this project's instructions, unedited, with
 invented people: [a Monday email from sales notes](base/examples/monday-email.md) (short path),

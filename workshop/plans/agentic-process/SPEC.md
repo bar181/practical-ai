@@ -34,6 +34,11 @@ looks like, and what a person checks. Next time, bring fresh input and run the s
 **North Star.** Someone can try a worked example, adapt it to their own task, and run it again
 without needing the original conversation.
 
+**Tools first.** The product is a useful tool. Beginner means the simplest version that works,
+which anyone can start in minutes; it does not mean a class for beginners. Level 3 means connected
+and automated. Teaching is secondary: every tool, this one included, gets an explainer written
+last, to help people use the finished tool. The method should produce tools, not lessons.
+
 **How the method serves this.** The nine steps are checks, each helping the person make one
 decision and adding to the four files (see `base/PROCESS.md`). Most jobs take the short path:
 steps 1, 6 and 8 in full. The method follows three ideas from Anthropic's own guidance: use the
@@ -56,9 +61,9 @@ Each level is useful on its own. Each adds one thing to the one before.
 
 | Level | For | What it adds | What is in this project |
 | --- | --- | --- | --- |
-| Base: run it in chat | A business owner or office worker | A useful result in their usual chat today, and the four files to run it again | The coach, the nine steps, a four-file template for a chatbot tool (`base/template/`), and worked examples, including one complete tool (`base/examples/decision-support/`) |
-| Level 2: save, share and specify | Someone trained on AI, or a coder | A saved, shared workflow: a chatbot project, a skill or a shared folder. For a coder: a rough idea turned into clear intent and a testable spec, a project folder in a repository, and Autopilot from a spec | The skill folder with its project template, and `AUTOPILOT.md` |
-| Level 3: connect it and prove it | The owner, or a client setup | Connections where work happens (a folder, a tool server, GitHub, a scheduler), only when they save a recurring manual step; gates a script runs; tests by fresh sessions | Gates, the fresh-run test, the score sheet and every test log (`level-3-files/`) |
+| Base (Beginner): the simplest version that works | Anyone, including a business owner or office worker | A useful result in their usual chat in minutes, and the four files to run it again | The coach, the nine steps, a four-file template for a chatbot tool (`base/template/`), and worked examples, including one complete tool (`base/examples/decision-support/`) |
+| Level 2 (Advanced): repeatable | Someone trained on AI, or a coder | A saved, shared workflow: a chatbot project, a skill or a shared folder. For a coder: a rough idea turned into clear intent and a testable spec, a project folder in a repository, and Autopilot from a spec | The skill folder with its project template, and `AUTOPILOT.md` |
+| Level 3 (Expert): connected and automated | The owner, or a client setup | Connections where work happens (a folder, a tool server, GitHub, a scheduler), only when they save a recurring manual step; gates a script runs; tests by fresh sessions | Gates, the fresh-run test, the score sheet and every test log (`level-3-files/`) |
 
 Tests belong to Level 3. A Base or Level 2 user never has to run one; they read the example
 that a test produced.
@@ -185,8 +190,10 @@ pull request.
 
 Deferred until the acceptance criteria hold:
 
-- End-user courses, guides and explainer pages. The three built so far (the guide, the North Star
-  page and the course) are parked in `projects/agentic-process/_build/deferred/` and not linked.
+- Courses. Teaching is not the product.
+- This project's explainer: written last, once version 1 is done. The pages built so far (the
+  guide, the North Star page and the course) are parked in `projects/agentic-process/_build/deferred/`
+  as drafts for it, and not linked.
 - A Slack bot or a tool server (UC-5).
 - A queue that builds several plans in a row.
 - Testing the coach in ChatGPT, Gemini or Copilot.

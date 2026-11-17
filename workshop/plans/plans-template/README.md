@@ -29,7 +29,7 @@ and deliberately light on everything after it.
    - Write the one-line promise from the user's side: what they get, not how it works.
    - Lead with an analogy from everyday life.
    - Write the scope before anything else, including what is out.
-   - Describe level 1, the Beginner level, fully: a student must be able to run it. Give each later level one line that names its skill and connectors.
+   - Describe level 1, the Beginner level, fully: the simplest version that works, which anyone can start in minutes. Give each later level one line that names its skill, connectors or automation.
    - Name what the tool reuses before describing anything new.
    - Put anything you do not know under Open questions. Never guess.
 5. **Flag the complexity** using the scale below, for the tool overall and for each level.
