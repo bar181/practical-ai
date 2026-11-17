@@ -27,11 +27,11 @@ best practice built in. Not a wall of text, and not a slide deck that took you h
 <p align="center">
   <a href="artifact-studio/"><img src="artifact-studio/_build/img/scroll-photo-effects.webp" width="31%" alt="Animated phone capture: one sunset photograph shown three ways as the page scrolls: a slow pan and zoom, the word SKY filled with the picture, then a postcard you can turn over"></a>
   <a href="artifact-studio/"><img src="artifact-studio/_build/img/scroll-emotional.webp" width="31%" alt="Animated phone capture of a personal story page: the line My mother kept a drawer, then keepsakes that fade in one at a time as you scroll, each with a short caption"></a>
-  <a href="artifact-studio/"><img src="artifact-studio/_build/img/example-tryit.webp" width="31%" alt="Animated phone capture of a monthly report as a keynote page: a garden picture in a slow pan and zoom, revenue counting up to 84,200 dollars, a bar chart, and the van decision due 5 December"></a>
+  <a href="artifact-studio/"><img src="artifact-studio/_build/img/scroll-lesson.webp" width="31%" alt="Animated phone capture of a lesson page, Treat AI like a smart intern: a robot clip, a vague brief against a full brief, frosted cards over painted scenes, the word Launch filled with a picture, and check-yourself questions"></a>
 </p>
 
 **The captures, in words:** one photo shown three ways; a personal story whose keepsakes appear as
-you scroll; and a month's numbers as a keynote page, made in one try from the try-it prompt.
+you scroll; and a lesson its author made for a client's course, in the teacher voice.
 
 <p align="center"><a href="artifact-studio/"><b>Make your first designer-quality report</b></a></p>
 

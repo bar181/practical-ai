@@ -3,9 +3,9 @@
 <p align="center">
   <img src="_build/img/scroll-photo-effects.webp" width="31%" alt="Animated phone capture: one sunset photograph shown three ways as the page scrolls: a slow pan and zoom, the word SKY filled with the picture, then a postcard you can turn over">
   <img src="_build/img/scroll-emotional.webp" width="31%" alt="Animated phone capture of a personal story page: the line My mother kept a drawer, then keepsakes that fade in one at a time as you scroll, a crayon balloon, a card with dancers and a painted portrait, each with a short caption">
-  <img src="_build/img/example-tryit.webp" width="31%" alt="Animated phone capture of the page made from the try-it prompt below: a garden picture in a slow pan and zoom under the words Two crews, then October revenue counting up to 84,200 dollars, a bar chart against September, 23 jobs, 46 percent of quotes won, and the van decision due 5 December">
+  <img src="_build/img/scroll-lesson.webp" width="31%" alt="Animated phone capture of a lesson page, Treat AI like a smart intern: a robot clip, a vague brief against a full brief, frosted cards over painted scenes, the word Launch filled with a picture, and check-yourself questions">
 </p>
-<p align="center"><sub><b>Photo effects</b> from one picture &nbsp;·&nbsp; <b>A story that unfolds</b> as you scroll &nbsp;·&nbsp; <b>Monthly numbers as a keynote</b>, from the prompt below</sub></p>
+<p align="center"><sub><b>Photo effects</b> from one picture &nbsp;·&nbsp; <b>A story that unfolds</b> as you scroll &nbsp;·&nbsp; <b>A lesson</b> made for a client</sub></p>
 
 <h3 align="center">Designer-quality reports, made by you.</h3>
 
@@ -52,8 +52,12 @@ Who reads it: my business partner,
 on her phone.
 ```
 
-Attach a photo of your work if you have one. **You get a page like the third one at the top:** a
-fresh Claude session made it from this prompt and one picture, in one try, unedited.
+<p align="center">
+  <img src="_build/img/example-tryit.webp" width="300" alt="Animated phone capture of the page made from this prompt: a garden picture in a slow pan and zoom under the words Two crews, then October revenue counting up to 84,200 dollars, a bar chart against September, 23 jobs, 46 percent of quotes won, and the van decision due 5 December">
+</p>
+
+Attach a photo of your work if you have one. **You get a page like this:** a fresh
+Claude session made it from this prompt and one picture, in one try, unedited.
 [Open the page](_build/examples/runs/2026-11-17-try-it-keynote-photo/report.html). With no photo,
 the same prompt gave a black keynote page with a van drawn in lines instead
 ([open it](_build/examples/runs/2026-11-17-try-it-keynote-no-photo/report.html)). Chatbot cannot
@@ -125,6 +129,11 @@ These two start from different notes, to show the range.
 **A personal story** (left): one memory, a few keepsakes, the offer named only at the end. **A
 lesson to teach from** (right): an analogy, steps you scroll through, a worked example.
 
+**Used for real:** the lesson at the top of this page, *Treat AI like a smart intern*, was made by
+the author with Artifact Studio for a client's course, in the teacher voice: a short robot clip, a
+vague brief beside a full one, frosted cards over painted scenes, a word filled with a picture and
+check-yourself questions. [Open the lesson](base/examples/client-lesson.html).
+
 | Voice | Best when |
 | --- | --- |
 | **Keynote** | The reader should feel something new is possible |
@@ -185,7 +194,8 @@ AI agents: [`AGENTS.md`](AGENTS.md).
 ## Status
 
 **17 November 2026.** Built by its author and tested by fresh Claude sessions: 22 runs of the design guide,
-then two runs of the try-it prompt above. Every run finished its page. Not yet tried in other chatbots, or by anyone else. All example content is
+then two runs of the try-it prompt above. Every run finished its page. Used once for real, by its author for a
+client's course. Not yet tried in other chatbots, or by anyone else. All example content is
 invented. [The evidence](quality-results/README.md).
 
 <img src="_build/img/bradley-ross-avatar.webp" width="110" alt="Cartoon avatar of Bradley Ross with a small friendly robot">

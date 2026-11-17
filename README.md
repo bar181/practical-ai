@@ -12,9 +12,9 @@ You ask your AI as you do today.</p>
 <p align="center">
   <img src="projects/artifact-studio/_build/img/scroll-photo-effects.webp" width="31%" alt="Animated phone capture: one sunset photograph shown three ways as the page scrolls: a slow pan and zoom, the word SKY filled with the picture, then a postcard you can turn over">
   <img src="projects/artifact-studio/_build/img/scroll-emotional.webp" width="31%" alt="Animated phone capture of a personal story page: the line My mother kept a drawer, then keepsakes that fade in one at a time as you scroll, a crayon balloon, a card with dancers and a painted portrait, each with a short caption">
-  <img src="projects/artifact-studio/_build/img/example-tryit.webp" width="31%" alt="Animated phone capture of the page made from the try-it prompt below: a garden picture in a slow pan and zoom under the words Two crews, then October revenue counting up to 84,200 dollars, a bar chart against September, 23 jobs, 46 percent of quotes won, and the van decision due 5 December">
+  <img src="projects/artifact-studio/_build/img/scroll-lesson.webp" width="31%" alt="Animated phone capture of a lesson page, Treat AI like a smart intern: a robot clip, a vague brief against a full brief, frosted cards over painted scenes, the word Launch filled with a picture, and check-yourself questions">
 </p>
-<p align="center"><sub><b>Photo effects</b> from one picture &nbsp;·&nbsp; <b>A story that unfolds</b> as you scroll &nbsp;·&nbsp; <b>Monthly numbers as a keynote</b>, from the prompt below</sub></p>
+<p align="center"><sub><b>Photo effects</b> from one picture &nbsp;·&nbsp; <b>A story that unfolds</b> as you scroll &nbsp;·&nbsp; <b>A lesson</b> made for a client</sub></p>
 
 <p align="center">
   <a href="projects/artifact-studio/"><b>Artifact Studio: designer-quality reports, made by you</b></a><br>
@@ -52,7 +52,11 @@ Who reads it: my business partner,
 on her phone.
 ```
 
-Attach a photo of your work if you have one. **You get a page like the third one above:** a fresh
+<p align="center">
+  <img src="projects/artifact-studio/_build/img/example-tryit.webp" width="300" alt="Animated phone capture of the page made from this prompt: a garden picture in a slow pan and zoom under the words Two crews, then October revenue counting up to 84,200 dollars, a bar chart against September, 23 jobs, 46 percent of quotes won, and the van decision due 5 December">
+</p>
+
+Attach a photo of your work if you have one. **You get a page like this:** a fresh
 Claude session made it from this prompt and one picture, in one try, unedited.
 [Open the page](projects/artifact-studio/_build/examples/runs/2026-11-17-try-it-keynote-photo/report.html).
 Your chatbot cannot open links? Paste the text of the
