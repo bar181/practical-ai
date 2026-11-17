@@ -13,12 +13,12 @@
 - **Fitted to the situation.** A contract before signing, a change of terms, a tender or a bill
   each get the one extra section that reader needs.
 
-<p align="center"><b><i>"Now I know what the letter wants from me, by when, and I can point to the line that says so."</i></b></p>
+<!-- QUOTE: waiting for the owner's own words. Proposed, not approved: "Now I know what the letter wants from me, by when, and I can point to the line that says so." -->
 
 ## Try it now: one prompt
 
-Copy all of this into the chatbot you use. It holds the instructions and an invented supplier
-notice, so you see the result before you use your own document. Tested so far in Claude; not yet
+Copy all of this into the chatbot you use (the copy button is at the top right of the box). It
+holds the instructions and an invented supplier notice, so you see the result before you use your own document. Tested so far in Claude; not yet
 in ChatGPT or Gemini.
 
 ```
@@ -97,6 +97,8 @@ whether the café is on the "standard plan" the notice mentions.
 
 ## Get started
 
+**Level 1: paste one prompt into the chatbot you use.** No setup.
+
 <p align="center">
   <img src="_build/img/how-it-works.svg" width="720" alt="How it works, in three steps. 1: paste the prompt and your document. 2: get the brief: the answer first, then what you must do, dates, open questions and key facts, each with the exact words. 3: find each quote, tick it, then decide. The AI lists. You check and decide.">
 </p>
@@ -109,6 +111,27 @@ whether the café is on the "standard plan" the notice mentions.
 
 Paste real documents only into a chatbot your workplace allows for them. A scan or photo with no
 selectable text will not work: copy the text out first.
+
+### Level 2: save it, so every document gets the same brief
+
+For anyone who gets documents like this every week. Install the full instructions,
+[`base/SKILL.md`](base/SKILL.md), once:
+
+- **Claude:** add it as a skill, or paste it into a Project's instructions.
+- **ChatGPT:** add it as a skill (it uses the same open Agent Skills format) or paste it into a
+  Project's instructions. Not yet tried.
+- **Gemini:** paste it into a Gem's instructions.
+
+Then just attach a document. Level 2 also adds your **house rules**: who you are, the documents you
+get, and who answers which question, so every brief fits your business.
+[Set up Level 2](level-2-files/README.md).
+
+### Level 3: hands-off (planned, not built)
+
+The brief runs on its own when a document arrives: a scheduled task watches an inbox label or a
+folder, writes each action and date to a register with an owner, drafts reminders for you to
+send, and puts anything unclear or costly in a review lane for a person. Nothing is sent or signed
+without you. [What Level 3 would include, and why](level-3-files/README.md).
 
 ## Fitted to your situation
 
@@ -125,27 +148,6 @@ Say what kind of document it is, or let the AI work it out. Each kind adds one s
 
 **Who reads it** changes the top: for a busy boss, three lines they can forward; for your team, a
 "who does it" column.
-
-## Level 2: save it, so every document gets the same brief
-
-For anyone who gets documents like this every week. Install the full instructions,
-[`base/SKILL.md`](base/SKILL.md), once:
-
-- **Claude:** add it as a skill, or paste it into a Project's instructions.
-- **ChatGPT:** add it as a skill (it uses the same open Agent Skills format) or paste it into a
-  Project's instructions.
-- **Gemini:** paste it into a Gem's instructions.
-
-Then just attach a document. Level 2 also adds your **house rules**: who you are, the documents you
-get, and who answers which question, so every brief fits your business.
-[Set up Level 2](level-2-files/README.md).
-
-## Level 3: hands-off (planned, not built)
-
-The brief runs on its own when a document arrives: a scheduled task watches an inbox label or a
-folder, writes each action and date to a register with an owner, drafts reminders for you to
-send, and puts anything unclear or costly in a review lane for a person. Nothing is sent or signed
-without you. [What Level 3 would include, and why](level-3-files/README.md).
 
 ## What it is not
 
@@ -180,7 +182,24 @@ questions with who could answer. It never fills a gap with a guess.
 No. It is free under the Apache 2.0 licence and runs in the chatbot you already pay for or use free.
 </details>
 
-**Quick start in one line:** "Hey chatbot, follow https://raw.githubusercontent.com/bar181/practical-ai/main/projects/document-to-action-brief/base/SKILL.md and brief me on this document: [paste it]". Not yet tested with the link.
+<details><summary><b>Where does my document go?</b></summary>
+
+Nothing is hosted. The brief is instructions you give your own chatbot, so your document goes only
+where it goes today. Paste real documents only into a chatbot your workplace allows for them.
+</details>
+
+<details><summary><b>Who has used it?</b></summary>
+
+Its author, in three fresh Claude sessions. Nobody else has used it yet.
+</details>
+
+## Quick start in one line
+
+```
+Hey chatbot, follow https://raw.githubusercontent.com/bar181/practical-ai/main/projects/document-to-action-brief/base/SKILL.md and brief me on this document: [paste it]
+```
+
+This one-line version is not yet tested. The tested prompt is in [Try it now](#try-it-now-one-prompt).
 
 ## Status
 
@@ -190,6 +209,9 @@ fresh Claude sessions: the try-it prompt above, a notice that leaves out its dat
 list, and a tender. Not yet tried in other chatbots, or by anyone else. Level 3 is not built. All
 example documents and businesses are invented. [The evidence](quality-results/README.md).
 
+## About Bradley Ross
+
 <img src="../agentic-process/_build/img/bradley-ross-avatar.webp" width="110" alt="Cartoon avatar of Bradley Ross with a small friendly robot">
 
 Made by **Bradley Ross**, who builds and teaches practical AI. Part of [Practical AI](../../README.md).
+[linkedin.com/in/bradaross](https://www.linkedin.com/in/bradaross/)

@@ -45,7 +45,7 @@ on her phone.
 
 **You get** a scrolling keynote page your partner can read on her phone.
 [Open the one](projects/artifact-studio/_build/examples/runs/2026-11-17-try-it-keynote-photo/report.html)
-a fresh Claude session made from this prompt and one photo, in one try, unedited.
+a fresh Claude session made from this prompt and one photo, in one try, unedited. GitHub shows the page as code: download it, then open it in your browser.
 Chatbot cannot open links? Paste the text of the
 [design guide](projects/artifact-studio/base/AI-INSTRUCTIONS.md) in place of the link.
 Before you share, check every number against your notes.
@@ -82,8 +82,6 @@ Each project page shows the exact steps for each level.
 **Designer-quality reports, made by you.** Your notes in; a report, deck, post or page out, with
 photos, motion and a story that flows.
 
-<p align="center"><b><i>"Better than I could do, as good as my designer, and I made it myself."</i></b></p>
-
 <p align="center">
   <img src="projects/artifact-studio/_build/img/example-tryit.webp" width="31%" alt="Animated phone capture of the page made from the try-it prompt: a garden picture in a slow pan and zoom under the words Two crews, then October revenue counting up to 84,200 dollars, a bar chart against September, 23 jobs, 46 percent of quotes won, and the van decision due 5 December">
   <img src="projects/artifact-studio/_build/img/scroll-photo-effects.webp" width="31%" alt="Animated phone capture: one sunset photograph shown three ways as the page scrolls: a slow pan and zoom, the word SKY filled with the picture, then a postcard you can turn over">
@@ -113,8 +111,6 @@ One build task, one unseen notice, one blind reviewer.</sub></p>
 policy or bill in; what you must do, the dates and the open questions out, each with the exact
 words to check.
 
-<p align="center"><b><i>"Now I know what the letter wants from me, by when, and I can point to the line that says so."</i></b></p>
-
 <p align="center">
   <img src="projects/document-to-action-brief/_build/img/how-it-works.svg" width="620" alt="How Document to action brief works in three steps: paste the prompt and your document; get the brief with the answer first and exact words on every line; find each quote, tick it, then decide. The AI lists. You check and decide.">
 </p>
@@ -124,11 +120,8 @@ words to check.
 
 ### What is ready, and what is next
 
-<p align="center">
-  <img src="assets/images/jobs-you-repeat.svg" width="800" alt="Card of the jobs you repeat. Ready now: a slide deck or report, posts for the week, the monthly report. Next: sort the inbox, meeting actions, receipts into a sheet. The AI does the drafting; you check it and make the call">
-</p>
-<p align="center"><sub>Ready now: reports, decks and posts, document briefs, and tools built with Agentic Process.
-<a href="docs/README.md#what-comes-next">The priority list</a> &nbsp;·&nbsp; <a href="workshop/plans/README.md">every idea</a></sub></p>
+Ready now: reports, decks and posts, document briefs, and tools built with Agentic Process.
+[The priority list](docs/README.md#what-comes-next) · [every idea](workshop/plans/README.md)
 
 ## Questions
 
@@ -176,7 +169,7 @@ is planned, not built yet.
 <details>
 <summary><b>Who has used it?</b></summary>
 
-Its author built and tested both projects in Claude, and used Artifact Studio for real for a
+Its author built and tested all three projects in Claude, and used Artifact Studio for real for a
 client's course (the before and after above). Nobody else has used them yet.
 
 </details>
@@ -192,9 +185,9 @@ tested prompt is the one under [Try it now](#try-it-now).
 
 ## Status
 
-**17 November 2026.** Both projects built by their author and tested in Claude. Not yet tried in
+**17 November 2026.** All three projects built by their author and tested in Claude. Not yet tried in
 other chatbots, or by anyone else. The evidence: [Artifact Studio](projects/artifact-studio/quality-results/README.md)
-· [Agentic Process](projects/agentic-process/quality-results/README.md).
+· [Agentic Process](projects/agentic-process/quality-results/README.md) · [Document to action brief](projects/document-to-action-brief/quality-results/README.md).
 
 ## About Bradley Ross
 
@@ -219,7 +212,7 @@ room.
 
 | Folder | What it holds |
 | --- | --- |
-| [`projects/`](projects/) | The projects: Artifact Studio and Agentic Process |
+| [`projects/`](projects/) | The projects: Artifact Studio, Agentic Process and Document to action brief |
 | [`docs/`](docs/) | A summary of the projects, the priority list, and an explainer page for each |
 | [`assets/images/`](assets/images/) | Images shared across the repository |
 | [`workshop/`](workshop/) | How tools get built: plans, earlier drafts, skills and checking scripts. You do not need it to use a tool |

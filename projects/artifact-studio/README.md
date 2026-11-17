@@ -79,7 +79,7 @@ the design and the voice change.
 [Open the lesson](base/examples/before-after/2-teacher.html) &nbsp;·&nbsp;
 [Open the story](base/examples/before-after/3-story.html) &nbsp;·&nbsp;
 [Read the plain version](base/examples/before-after/1-plain.md) &nbsp;·&nbsp;
-[All three, with notes](base/examples/before-after/)
+[All three, with notes](base/examples/before-after/)<br><sub>GitHub shows each page as code: download it, then open it in your browser.</sub>
 
 ### Try it yourself
 
@@ -174,12 +174,6 @@ steps: [`level-2-files/`](level-2-files/).
 **Level 3: connect your agents or your team.** The MCP server in [`level-3-files/`](level-3-files/)
 lets an agent browse the library and get a recommended template by itself. It runs on your own
 computer.
-
-| What you get | What it is |
-| --- | --- |
-| **A designed page** | Your report with animated diagrams, scrollytelling, photo effects, a keynote or a lesson. Ready now |
-| **Tailored for you** | The voice, look and effects chosen from the type of content and the audience. Through the skill or the MCP server above |
-| **A simple document** | A clean report as Markdown or a Word document, for when a page is too much. *Planned, not built yet* |
 
 ## Gallery: what else it makes
 

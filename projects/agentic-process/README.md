@@ -6,9 +6,9 @@
 
 **Are you an AI agent?** Go to [AGENTS.md](AGENTS.md) for instructions you can follow now.
 
-Developers trust AI coding agents because they work inside a harness. Most everyday AI work has
-none: you type a prompt, and hope. Agentic Process is a mini harness for work that is not code: a
-clear result, written steps, and a test before you rely on it.
+Most everyday AI work is a prompt and a hope. Agentic Process turns a job you repeat into a small
+tool: one instruction file you paste into a new chat, a worked example, and a short test, so the AI
+does the job the same way every time.
 
 - **Work you can rely on.** A fresh AI session tests the tool before you use it.
 - **The same way every time.** Written steps you save once, not a lucky prompt.
@@ -41,7 +41,7 @@ and a short test I can run to check it works.
 ```
 
 You get instructions you can paste into any new chat to do the job the same way every time, an
-example, and a short test. Tested so far in Claude.
+example, and a short test. Tested so far in Claude; not yet in ChatGPT or Gemini.
 
 <details>
 <summary><b>Have a coding agent? Let it do the whole build</b> (Claude Code, Codex)</summary>
@@ -117,7 +117,7 @@ person could act on its first screen as it is.
 | Tool | What it does, and how it scored |
 | --- | --- |
 | [**Document to action brief**](quality-results/2026-11-16-builder-pilot/agentic-process/document-to-action-brief/) | A supplier notice or report becomes what you must do, by when, and what is missing, each with the exact words.<br>*93/100 in the blind pilot, zero corrections.* |
-| [**Decision brief**](base/examples/decision-support/) | A business question becomes options weighed against your goals and limits, with dated sources and a recommendation.<br>*86 to 89 in blind grading, against 61 to 67 for a plain chatbot answer.* |
+| [**Decision brief**](base/examples/decision-support/) | A business question becomes options weighed against your goals and limits, with dated sources and a recommendation.<br>*86 to 89 in blind grading, against 61 to 67 for a plain chatbot answer: one question, three blind graders. Every grader also said a busy owner would rather receive the plain answer.* |
 | [**Learning log**](base/examples/learning-log/) | Each lesson recorded once, and brought back before similar work starts.<br>*Passed three fresh-session checks.* |
 
 <p align="center">
@@ -191,10 +191,12 @@ far only its author has used it.
 Hey chatbot, act as my agentic engineer using https://github.com/bar181/practical-ai/blob/main/projects/agentic-process/base/PROCESS.md and set up a tool for a job I repeat: <describe the job, who uses the result, and the mistake it must catch>.
 ```
 
+This one-line version is not yet tested. The tested prompt is in [Try it now](#try-it-now).
+
 ## Status
 
 **17 November 2026.** Built by its author with Claude. All testing so far was in Claude, including
-the blind reviews and the try-it prompt above. Not yet tried in other coding agents, or by anyone else. [The evidence](quality-results/README.md).
+the blind reviews and the try-it prompt above. Not yet tried in other chatbots or coding agents, or by anyone else. [The evidence](quality-results/README.md).
 
 ## About Bradley Ross
 

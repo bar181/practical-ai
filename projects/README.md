@@ -50,8 +50,6 @@ One build task, one unseen notice, one blind reviewer.</sub></p>
 policy or bill in; what you must do, the dates and the open questions out, each with the exact
 words to check.
 
-<p align="center"><b><i>"Now I know what the letter wants from me, by when, and I can point to the line that says so."</i></b></p>
-
 <p align="center">
   <a href="document-to-action-brief/"><img src="document-to-action-brief/_build/img/how-it-works.svg" width="560" alt="How Document to action brief works in three steps: paste the prompt and your document; get the brief with the answer first and exact words on every line; find each quote, tick it, then decide. The AI lists. You check and decide."></a>
 </p>
@@ -67,6 +65,8 @@ words to check.
 | **You get** | A report, deck, post or page | Instructions for the job, a guide and a tested example | The actions, dates and open questions, each with its exact words |
 | **Works with** | The chatbot you already use | The chatbot you already use. A coding agent can run the whole build | The chatbot you already use |
 | **Proof** | [22 fresh-session runs](artifact-studio/quality-results/README.md) | [The blind pilot](agentic-process/quality-results/README.md) | [3 fresh-session runs](document-to-action-brief/quality-results/README.md) |
+
+## Status
 
 All three were built and checked by their author, in Claude. Nobody else has used them yet.
 
