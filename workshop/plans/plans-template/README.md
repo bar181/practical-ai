@@ -1,9 +1,8 @@
 # Plans template
 
-> A new plan now follows [Agentic Process](../../drafts/agentic-process/): its one-page plan is
-> `base/plan.md` in [the project template](../../drafts/agentic-process/builder/agentic-process/template/).
-> [Document to action brief](../document-to-action-brief/) is the first plan written that way. The
-> fuller plan template below is kept for the older plans.
+> A new tool now follows [Agentic Process](../../drafts/agentic-process/): its
+> [one-page process](../../drafts/agentic-process/PROCESS.md) and [tool template](../../drafts/agentic-process/template/).
+> The fuller plan template below is kept for the older plans.
 
 Everything needed to add a plan to this repository, by hand or with a skill.
 

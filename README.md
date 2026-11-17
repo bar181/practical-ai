@@ -27,7 +27,7 @@ Claude, Gemini, Microsoft Copilot and other chatbots, and with personal agents.
 | **Using a chatbot every day** | Paste [the instructions](projects/artifact-studio/base/AI-INSTRUCTIONS.md) into a Project or a Gem once. Then just ask | 10 minutes, once |
 | **Want to see how a tool works first** | Open its [explainer](projects/artifact-studio/base/examples/voice-explainer.html): a page that shows the finished tool, step by step | 5 minutes |
 | **Building with agents** | Add the [skill](projects/artifact-studio/level-2-files/) or the [MCP server](projects/artifact-studio/level-3-files/) | 15 minutes |
-| **Someone with a job to turn into a tool** | Copy [the package template](workshop/drafts/agentic-process/package-template/) and fill it in with your chatbot | About an hour, an estimate |
+| **Someone with a job to turn into a tool** | Copy [the tool template](workshop/drafts/agentic-process/template/) and fill it in with your chatbot | About an hour, an estimate |
 | **An AI agent** | Follow [`AGENTS.md`](AGENTS.md) | |
 
 The pages in this repository are HTML files. GitHub shows an HTML file as code, so download it and
@@ -147,15 +147,20 @@ used it yet, so your feedback counts.
 plugins; add a thin layer for business rules or missing steps; build only what is still missing.
 How much already exists depends on the job and where it runs.
 
-**Agentic Process** is the shared builder behind every tool: a nine-step method with a check after
-each step, and a builder skill that follows it and tests the result with a fresh AI session. It is
-being rebuilt as version 2 in [`workshop/drafts/agentic-process/`](workshop/drafts/agentic-process/),
-keeping the parts of version 1 that proved their worth. See [its spec](workshop/drafts/agentic-process/SPEC.md)
-and [why it restarted](workshop/drafts/agentic-process/EVALUATION.md). Nothing has been run since the restart.
+**One file per tool.** Each tool is a README that explains it, one `SKILL.md` and a worked
+example. `SKILL.md` uses the open Agent Skills format, so the same file installs as a Claude skill,
+works in other tools that support the format, and can be pasted into any chatbot. No lock-in to one
+provider.
 
-The first tool built with it is [decision support](workshop/drafts/agentic-process/examples/decision-support/):
-it researches a business question, scores the options and recommends one. Fresh AI sessions tested
-it on two different decisions. No person has used it yet.
+**Agentic Process** is how a tool gets built: [a one-page process](workshop/drafts/agentic-process/PROCESS.md)
+with nine steps as a checklist, [a template](workshop/drafts/agentic-process/template/) and a thin
+builder skill. It is version 2, rewritten on 16 November 2026 ([its spec](workshop/drafts/agentic-process/SPEC.md)),
+and nothing in it has run yet.
+
+The first tool built this way is [decision support](workshop/drafts/agentic-process/examples/decision-support/):
+paste one file, type a business decision, and get a one-page brief with sources and a
+recommendation. Fresh AI sessions tested an earlier format of it on two decisions. No person has
+used it yet.
 
 ## Explainers
 
@@ -185,12 +190,12 @@ After that, the tools in [the priorities](docs/practical-ai-priorities.md), one 
 
 | Level | What you get |
 | --- | --- |
-| **Beginner** (Base) | An explainer with a quick start and worked example, plus one instruction file to paste or a direct link to an existing tool. You bring the input and start the run |
-| **Advanced** (Level 2) | A saved workflow, such as a Claude Project or a reusable skill, that you start whenever you need it |
-| **Expert** (Level 3) | A mostly automated workflow. Connected systems supply the inputs and receive the outputs, a trigger starts the run, and a person handles the exceptions and decisions that need them |
+| **Beginner** (Level 1, always) | Standalone in any chatbot: paste the file or share the link, add your context, get the result |
+| **Advanced** (Level 2) | Saved as a skill or project, started whenever needed |
+| **Expert** (Level 3) | Connected through MCP, endpoints or a trigger that supply inputs and take outputs. A person approves exceptions |
 
-The levels describe setup, not people: the same person can use Beginner for one job and Expert for
-another. Start at Beginner. It is the whole tool. The other levels only remove steps.
+Not every tool has all three: a level is added only when it removes setup or recurring work. The
+levels describe setup, not people. Start at Beginner. It is the whole tool.
 
 ## Created by Bradley Ross
 

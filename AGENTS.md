@@ -12,7 +12,7 @@ or build only the missing piece. Reuse Anthropic's own skills and plugins wherev
 | Make a page, a slide deck or a social post | [`projects/artifact-studio/AGENTS.md`](projects/artifact-studio/AGENTS.md): the path from a request to a finished file |
 | Understand what the repository holds | [`README.md`](README.md) |
 | Decide what to build next | [`docs/practical-ai-priorities.md`](docs/practical-ai-priorities.md): the owner's priorities. The inventory and research behind it are in [`docs/tool-inventory.md`](docs/tool-inventory.md) |
-| Start a new tool, or continue one | [Agentic Process](workshop/drafts/agentic-process/README.md): the [nine-step method](workshop/drafts/agentic-process/PROCESS.md), the builder skill and the package template. Version 2, restarted on 16 November 2026 |
+| Start a new tool, or continue one | [Agentic Process](workshop/drafts/agentic-process/README.md): the [nine-step method](workshop/drafts/agentic-process/PROCESS.md), the tool template and the builder skill. Each tool is a README, one portable `SKILL.md` and a worked example |
 | Write or update a plan for a tool | [`workshop/skills/plan-writer/`](workshop/skills/plan-writer/) |
 | Check what already exists before building | [`workshop/skills/landscape-review/`](workshop/skills/landscape-review/) |
 | See how the work has been reviewed | [`docs/SELF-REVIEW.md`](docs/SELF-REVIEW.md) |

@@ -1,10 +1,14 @@
 # Example: should an invented bakery start office catering?
 
-Made on 16 November 2026 by a new AI session that had only the tool's instructions and the message
-below. It could search the web and could not ask questions. The bakery is invented; the sources are
-real and were read that day. Nothing below the line is edited. Since this run, two lines were added
-to the instructions: an option must score above "do nothing" to lead, and a score that rests on a
-fact not found counts as 0 and is listed as a judgement call. Its log is in
+This is what a good result looks like. Made on 16 November 2026 in Claude by a new AI session
+that had only the tool's instructions and the message below. It could search the web and could not
+ask questions. The bakery is invented; the sources are real and were read that day. Nothing below
+the line is edited.
+
+It was made with the earlier version of the instructions. [`SKILL.md`](SKILL.md) has the same
+steps and rules, plus three later changes: the **Start** section, an option must score above
+"do nothing" to lead, and a score that rests on a fact not found counts as 0 and is listed as a
+judgement call. Its log is in
 [round 6](../../../../plans/archive/agentic-process/v1-project/level-3-files/test-runs/decision-support/round-6/friction.md).
 
 **The message:**

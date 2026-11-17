@@ -1,42 +1,77 @@
-# The process: nine steps, a gate after each
+# The process: one page
 
-The one process document for building a tool in this repository. The builder skill follows it.
+How a tool gets built in this repository. The [builder skill](builder/agentic-process/SKILL.md)
+follows it.
 
-**Think of it as** a site inspector on a small job: nothing moves to the next stage until the
-current one is signed off.
+**Think of each tool as** a recipe card: one card that works in any kitchen. You do not print a
+card for each brand of oven.
 
-## The short path, for most tools
+**The user's path:** open the explainer, give it your input, get a result.
 
-One person turns one kind of input into one result in a chat. Do steps 1, 5 and 8 in full, step 2
-in a few minutes, and the rest in a line each. Take all nine when the tool is used by more than
-one person, reads or writes files other people use, or costs money.
+## What a tool is
 
-## The nine steps
+```
+<tool-name>/
+  README.md     the explainer: what it does, quick start, what to give it, what you get, what to check
+  SKILL.md      the tool: one portable file in the open Agent Skills format
+  example.md    one worked example, unedited, with invented data
+  template.md   optional: only if the output has a fixed shape
+```
 
-| # | Step | Why | The decision it helps you make | Gate: go on when |
-| --- | --- | --- | --- | --- |
-| 1 | Scope | A tool that does one job gets finished; one that does five gets rebuilt | Which one job, for whom, and what is out | You can say the job in one sentence, with one test input and what a good result looks like |
-| 2 | Reuse check | The cheapest tool is the one you do not build | Use what exists, wrap it, or build only the missing piece | You know what exists, with links and dates. If something does the whole job, stop and write a short guide to it |
-| 3 | Outside help | Building or buying should be a choice made on purpose | What, if anything, to buy or connect | You know what you would build and what you would buy |
-| 4 | Cost | A tool people cannot afford to run is not finished | Whether it is worth running | It costs nothing, or an amount you accept |
-| 5 | Simplest design | The fewest moving parts that do the job | Where it runs, where it is saved, what stays manual | Someone else could draw it |
-| 6 | Plan | If the explainer cannot be written, the tool is not understood yet | The steps, the result, and what a person checks | The explainer's first lines and the workflow are written |
-| 7 | Review | You cannot see your own gaps, because you know what you meant | Whether a stranger understands it | Someone other than the author explains it back |
-| 8 | Build and test | A new session with only your instructions finds what you cannot | Ready to use, or what to fix first | A fresh session finished the job on two different inputs, and you have read what it tripped on |
-| 9 | Grow | Small additions get reviewed; big ones get waved through | What to add next, from real use | The level below is in use |
+`SKILL.md` is the one source of instructions. It works pasted into any chatbot on its own, so it
+holds everything essential, including the output shape. Its `name` matches its folder name. It
+starts by asking for any missing context in one reply. There is no stepper. The portable part is
+the instructions; connectors, permissions and scheduling still depend on where it runs.
+Start from the [template](template/).
 
-## What a finished Base tool contains
+## Reuse first
 
-| Part | What it is | Required |
+| What already exists | What we ship |
+| --- | --- |
+| Something does the whole job | A README only: what it is and a link, the platform it needs, setup steps, a small example. If it depends on a plugin, say what a person can paste in by hand for Level 1, and call it portable once that path has been run |
+| Something does part of it | A thin SKILL.md: the business rules and the missing steps |
+| Nothing fits | A full SKILL.md |
+
+Look at Anthropic's skills and plugins first, then the platform the person uses, then open
+source. In Claude, draft the SKILL.md with the skill-creator skill; elsewhere, fill in the template.
+
+## Levels
+
+| Level | What it is | It earns its place when |
 | --- | --- | --- |
-| Explainer | What it does, how to start, what goes in and comes out, what to check. It can be the README | Yes |
-| Runnable entry point | One instruction file to paste or save, or a direct link to an existing tool | Yes |
-| Worked example | One run, unedited, made by a fresh session, with invented data | Yes |
-| Workflow card | Trigger, inputs, steps, output, what a person checks, what happens when something is missing | When it helps |
+| 1 (required) | Standalone in any chatbot: paste the file or share the link, add your context, get the result | Always |
+| 2 | Saved as a skill or project, started whenever needed | It removes repeated setup |
+| 3 | Connected through MCP, endpoints or a trigger that supply inputs and take outputs. A person approves exceptions | It removes recurring work |
 
-## Rules for every tool
+## The nine steps, as a checklist
+
+For one person, one input and one result in a chat, do 1, 2, 5 and 8 properly and the rest in a
+line each.
+
+| # | Step | Done when |
+| --- | --- | --- |
+| 1 | Scope | The job fits one sentence, with one test input and what a good result looks like |
+| 2 | Reuse check | You know what exists, with links and dates, and which row of the reuse table applies |
+| 3 | Outside help | You know what, if anything, to buy or connect |
+| 4 | Cost | It costs nothing beyond the chatbot, or an amount the owner accepts |
+| 5 | Simplest design | The fewest files that do the job; levels only where they earn their place |
+| 6 | Plan | The README's first lines and the SKILL.md's steps are written |
+| 7 | Review | Someone other than the author can say what it does from the README |
+| 8 | Build and check | The short check below has been run and recorded |
+| 9 | Grow | Real use shows what to add next |
+
+## The short check
+
+1. Paste `SKILL.md` into a fresh chat and run the worked example's input.
+2. Run a different input of the same kind.
+3. Confirm it asks for missing context in one reply, follows the stated rules, and flags what it
+   is unsure of.
+4. Try the same file in a second chatbot before saying it works across chatbots.
+
+Record the results in the README. A check not run is written "not yet run".
+
+## Rules
 
 - Invent no facts. Missing data is reported as missing, never as zero.
-- Show judgement calls to the person; do not hide them in a rule.
 - A person approves anything that is sent, posted, paid, published or merged.
-- Tests use invented or anonymised data.
+- Nothing extra: no scripts, harnesses or folders a tool does not need.

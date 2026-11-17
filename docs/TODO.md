@@ -18,10 +18,11 @@ where they fit. Nothing is built until its North Star page is approved at stage 
 
 Restarted on 16 November 2026. The plan is in [its spec](../workshop/drafts/agentic-process/SPEC.md), section 9.
 
-- [ ] Align the builder skill and the package template with the new spec
-- [ ] AC-1: rebuild decision support from its workflow card and match the bakery result
-- [ ] AC-2: build the learning system as a Base tool from its spec, with no questions asked
-- [ ] Owner: answer the spec's open questions (drop the coach, the Level 3 pilot)
+- [ ] AC-1: run decision support's short check in Claude (the bakery, a different decision, the three behaviours)
+- [ ] AC-2: run the same check in a second chatbot
+- [ ] AC-3: build the learning system from its plan with the builder skill
+- [ ] Owner: answer the spec's two open questions (the plan template, the first Level 3 tool)
+- [ ] Later: give Artifact Studio one `SKILL.md` as its source of instructions, in place of `AI-INSTRUCTIONS.md`
 
 Version 1, archived. From [the review from the user's side](reports/2026-11-16-agentic-process-user-review.md):
 

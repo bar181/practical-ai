@@ -26,3 +26,11 @@ spec. Version 2 carries over the nine steps, the builder skill with its template
 Autopilot, the fair-test rules, the Base package template and the decision-support tool. Why:
 [`EVALUATION.md`](../../../drafts/agentic-process/EVALUATION.md). Links inside these folders are
 left as they were.
+
+## Version 2 restart notes and dropped parts, archived on 16 November 2026
+
+`v2-restart/` holds what the simpler version 2 outline dropped: the evaluation and lessons from
+the restart, Autopilot, the test rules, the builder's project template and its scaffolding script,
+the package template, and decision support's separate workflow card and instruction file.
+Replaced by one `SKILL.md` per tool, the template in `workshop/drafts/agentic-process/template/`,
+and the one-page `PROCESS.md`.
