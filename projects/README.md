@@ -25,12 +25,13 @@ with the impact of a professional website: beautiful photos, motion, a story tha
 best practice built in. Not a wall of text, and not a slide deck that took you hours.
 
 <p align="center">
-  <a href="artifact-studio/"><img src="artifact-studio/_build/img/style-analyst.webp" width="49%" alt="Screen capture of the analyst report: a headline that states the conclusion, the answer on a frosted glass card over a picture of coloured puzzle pieces, and three key numbers"></a>
-  <a href="artifact-studio/"><img src="artifact-studio/_build/img/style-practical.webp" width="49%" alt="Screen capture of the practical guide: the headline Answer in the first hour, a picture of a small dog at a laptop beside a boxed analogy, and three numbers"></a>
+  <a href="artifact-studio/#before-and-after-one-lesson-three-ways"><img src="artifact-studio/_build/img/before-plain.webp" width="31%" alt="Animated phone capture of the plain version: a white Markdown document titled AI as a Smart Intern, with headings, bullet lists and two small tables, scrolling top to bottom"></a>
+  <a href="artifact-studio/#before-and-after-one-lesson-three-ways"><img src="artifact-studio/_build/img/scroll-lesson.webp" width="31%" alt="Animated phone capture of the teaching page, Treat AI like a smart intern: a robot clip, a vague brief against a full brief in tabs, frosted cards over painted scenes, the word Launch filled with a picture, and check-yourself questions"></a>
+  <a href="artifact-studio/#before-and-after-one-lesson-three-ways"><img src="artifact-studio/_build/img/scroll-story.webp" width="31%" alt="Animated phone capture of the same lesson as a story: a dark candlelit page that opens on Monday, 8:40 a.m. Your desk, then story beats that arrive as you scroll, the robot clip, a glowing scroll, the word Launch and the guide card"></a>
 </p>
 
-**The captures, in words:** the same notes told two ways. Left, an evidence-first report: the
-answer and three numbers. Right, a field guide: the core idea and steps for today.
+**The captures, in words:** one lesson made three ways for a real client's course. Left, the plain
+version. Middle, a scrolling lesson. Right, the same lesson as a story. The same facts in all three.
 
 <p align="center"><a href="artifact-studio/"><b>Make your first designer-quality report</b></a></p>
 

@@ -1,7 +1,97 @@
 # Artifact Studio
 
-<p align="center"><img src="_build/img/show-photo-effects.webp" width="800" alt="Animated screen capture of photo effects made by an AI chatbot from one photograph: a pencil sketch draws itself and becomes the photo, the camera pans and zooms across a lake, a divider slides between two colour grades, a postcard flips over, and one huge word is filled with the picture"></p>
-<p align="center"><sub>One photo, one sentence per effect: a sketch that draws itself, a slow zoom, a before and after divider, a flipping postcard.</sub></p>
+## Before and after: one lesson, three ways
+
+<p align="center">
+  <img src="_build/img/before-plain.webp" width="31%" alt="Animated phone capture of the plain version: a white Markdown document titled AI as a Smart Intern, with headings, bullet lists and two small tables, scrolling top to bottom">
+  <img src="_build/img/scroll-lesson.webp" width="31%" alt="Animated phone capture of the teaching page, Treat AI like a smart intern: a robot clip, a vague brief against a full brief in tabs, frosted cards over painted scenes, the word Launch filled with a picture, and check-yourself questions">
+  <img src="_build/img/scroll-story.webp" width="31%" alt="Animated phone capture of the same lesson as a story: a dark candlelit page that opens on Monday, 8:40 a.m. Your desk, then story beats that arrive as you scroll, the robot clip, a glowing scroll, the word Launch and the guide card">
+</p>
+<p align="center"><sub><b>Before:</b> the plain version &nbsp;·&nbsp; <b>After:</b> a lesson &nbsp;·&nbsp; <b>After:</b> the same lesson as a story</sub></p>
+
+Bradley Ross needed a short lesson for a client's course: *Treat AI like a smart intern.* He wrote
+the content once and made three versions in new sessions. The facts are the same in all three. Only
+the design and the voice change.
+
+| | Before | After |
+| --- | --- | --- |
+| **First look** | A document like every other AI answer | A page that looks designed: painted scenes, a short clip, a photo-filled title |
+| **As you scroll** | Nothing moves | Scenes push in, frosted cards appear, the story arrives beat by beat |
+| **The brief example** | A table | Tabs: tap Vague or Briefed |
+| **Check yourself** | Answers printed under each question | Answers that open on tap |
+| **Facts** | The source only | The source only. The story adds an opening scene as framing |
+
+[Open the lesson](base/examples/before-after/2-teacher.html) &nbsp;·&nbsp;
+[Open the story](base/examples/before-after/3-story.html) &nbsp;·&nbsp;
+[Read the plain version](base/examples/before-after/1-plain.md) &nbsp;·&nbsp;
+[All three, with notes](base/examples/before-after/)
+
+### Try it yourself
+
+<details>
+<summary><b>Copy the full prompt</b>: the request, then the source content Bradley used</summary>
+
+```
+Use the Artifact Studio design guide at
+https://raw.githubusercontent.com/bar181/practical-ai/main/projects/artifact-studio/base/AI-INSTRUCTIONS.md
+Make this a scrolling lesson in the teacher voice, with the pictures I attach.
+Then make a second version that tells it as a story.
+
+Core content: AI as a Smart Intern
+Use the content below as the only source of facts for this piece. Do not add facts, numbers, names, quotes or claims that are not listed here. If something a reader needs is missing, mark it `[needs: ...]`.
+
+Core idea
+Treat AI like a smart intern. It is fast, well-read and eager to help, but it is brand new to your business. How you manage it decides what you get back.
+
+1. Meet your intern
+* It has read more than any person could and writes in seconds.
+* It never gets tired and never says "that's not my job."
+* It knows nothing about your clients, your prices or last week's meeting unless you tell it.
+
+2. Give it a proper brief
+* A one-line request makes it guess, so you get a generic answer.
+* A good brief says who it should be, who the work is for, what good looks like, and any limits.
+* Example (labelled as an example):
+  * Vague: "Write a follow-up email." The intern has to guess the client, the tone and the goal.
+  * Briefed: "You're my account manager. Write a follow-up to Dana, a client who asked for a spring quote. Friendly, under 120 words. End by offering two call times." This covers the role, reader, tone, length and next step.
+
+3. Expect confident mistakes
+* It sounds just as sure when it's wrong as when it's right.
+* When it doesn't know, it may fill the gap with something that only looks correct.
+* Check every name, number, date and quote before the work leaves your desk.
+
+4. Coach it instead of redoing it
+* When a draft misses, say exactly what to change, for example "shorter," "warmer" or "use our pricing."
+* A good intern gets better with specific feedback, and so does AI.
+* You bring judgment and context. It brings speed. ("The truth is the same, only the script differs.")
+
+5. Delegate the work, keep the decision
+* The intern drafts: first drafts, summaries, research to check, options to choose from.
+* You decide: anything sent, signed, paid or published.
+* Every workflow needs one point where a person reviews the work and says yes.
+
+Next step
+Pick one task you repeat every week and hand it to your intern:
+1. Write the brief: role, reader, goal, limits.
+2. Read the draft and check the facts.
+3. Give one round of specific feedback.
+4. Make the final call yourself.
+
+Check-yourself questions
+1. Why did the vague email prompt fail? The intern had to guess the client, the tone and the goal. A brief removes the guessing.
+2. The AI cites a statistic you've never seen. What now? Treat it like an intern's claim and find the source before you use it. Sounding confident doesn't make it true.
+3. Which step should AI never do alone? The final decision: sending, signing, paying or publishing. A person says yes.
+
+Recap
+A smart intern needs a clear brief, a careful review and a manager who makes the call. So does AI.
+
+Attribution
+Instructor: Bradley Ross, who builds and runs AI agents in production.
+```
+
+</details>
+
+Attach your own pictures, or leave them out. To see the "before", send the source content alone.
 
 <h3 align="center">Designer-quality reports, made by you.</h3>
 
@@ -12,10 +102,17 @@ professional website: beautiful photos, motion and a story that flows. Not a wal
 slide deck that took hours.
 
 <p align="center">
+  <a href="#before-and-after-one-lesson-three-ways"><b>Before and after</b></a> &nbsp;·&nbsp;
   <a href="#get-started-try-it-now"><b>Try it now</b></a> &nbsp;·&nbsp;
   <a href="#the-same-notes-told-in-different-voices">See the voices</a> &nbsp;·&nbsp;
   <a href="#photo-effects">See the effects</a>
 </p>
+
+<p align="center">
+  <img src="_build/img/scroll-photo-effects.webp" width="31%" alt="Animated phone capture: one sunset photograph shown three ways as the page scrolls: a slow pan and zoom, the word SKY filled with the picture, then a postcard you can turn over">
+  <img src="_build/img/scroll-emotional.webp" width="31%" alt="Animated phone capture of a personal story page: the line My mother kept a drawer, then keepsakes that fade in one at a time as you scroll, a crayon balloon, a card with dancers and a painted portrait, each with a short caption">
+</p>
+<p align="center"><sub><b>Photo effects</b> from one picture &nbsp;·&nbsp; <b>A personal story</b> that unfolds as you scroll</sub></p>
 
 ## Get started: try it now
 
@@ -23,11 +120,14 @@ Copy this into the chatbot you use. Keep the sample notes, or paste your own.
 Tested so far in Claude; not yet in ChatGPT or Gemini.
 
 ```
-Make my information look good. Use the
-Artifact Studio design guide at
+Make my information look stunning. Use
+the Artifact Studio design guide at
 https://raw.githubusercontent.com/bar181/practical-ai/main/projects/artifact-studio/base/AI-INSTRUCTIONS.md
-to turn it into an HTML report with a
-professional design.
+Make it a scrolling keynote page: huge
+numbers that count up, a chart that
+draws itself as I scroll, and my photo
+as a slow pan and zoom. No photo? Use a
+line drawing that draws itself.
 
 My information:
 - We are a landscaping company with
@@ -39,23 +139,27 @@ My information:
 - Quotes that became jobs: 46%,
   up from 38%
 - Need to decide about a second van
-  by 15 November
+  by 5 December
 
 Who reads it: my business partner,
-on her phone. She wants the answer first.
+on her phone.
 ```
 
 <p align="center">
-  <img src="_build/img/example-report.webp" width="560" alt="Screen capture of a one-page monthly report made by an AI chatbot from eight lines of notes about an invented landscaping company: the headline October beat September, revenue up 12,700 dollars, four more jobs done and more quotes became jobs; three key numbers for revenue, jobs completed and quotes won; and a bar chart comparing September and October">
+  <img src="_build/img/example-tryit.webp" width="300" alt="Animated phone capture of the page made from this prompt: a garden picture in a slow pan and zoom under the words Two crews, then October revenue counting up to 84,200 dollars, a bar chart against September, 23 jobs, 46 percent of quotes won, and the van decision due 5 December">
 </p>
 
-**You get a page like this,** made by a fresh Claude session from those notes in one try, unedited: the answer first, three numbers, a
-chart. [Open the page](base/examples/report.html). Chatbot cannot open links? Paste the text of
-[`base/AI-INSTRUCTIONS.md`](base/AI-INSTRUCTIONS.md) in place of the first line.
+Attach a photo of your work if you have one. **You get a page like this:** a fresh
+Claude session made it from this prompt and one picture, in one try, unedited.
+[Open the page](_build/examples/runs/2026-11-17-try-it-keynote-photo/report.html). With no photo,
+the same prompt gave a black keynote page with a van drawn in lines instead
+([open it](_build/examples/runs/2026-11-17-try-it-keynote-no-photo/report.html)). Chatbot cannot
+open links? Paste the text of [`base/AI-INSTRUCTIONS.md`](base/AI-INSTRUCTIONS.md) in place of the
+link.
 
 **Then make it yours.** Ask for a style or an effect in one sentence:
-`Now show it as a keynote deck`, `Open with my photo as a slow pan and zoom`, or
-`Tell this as a personal story`.
+`Now tell it as a story`, `Fill the word October with my photo`, or
+`Show it as a keynote deck`.
 
 **Before you share, check:** every number matches your notes, nothing is added that you did not
 write, and the headline says what you want the reader to take away.
@@ -84,15 +188,6 @@ One set of notes: a three-month trial of drafted replies to customer enquiries. 
 name, and the same facts come back as a different page.
 
 <p align="center">
-  <img src="_build/img/style-analyst.webp" width="49%" alt="Screen capture of the analyst report: a headline that states the conclusion, the answer on a frosted glass card over a picture of coloured puzzle pieces, and three key numbers">
-  <img src="_build/img/style-practical.webp" width="49%" alt="Screen capture of the practical guide: the headline Answer in the first hour, a picture of a small dog at a laptop beside a boxed analogy, and three numbers">
-</p>
-
-**An evidence-first report, or a field guide.** Left, the answer first with three findings. Right,
-the core idea and steps for today. Same trial, same numbers, one sentence apart:
-*"Write this up as an evidence-first one-pager."*
-
-<p align="center">
   <img src="_build/img/style-visionary.webp" width="720" alt="Animated screen capture of the visionary deck: black slides with one idea each in huge white type, then full-screen pictures of a city at sunset, a house in fog and a lightbulb splashed with colour, each with a few words over it">
 </p>
 
@@ -105,6 +200,15 @@ the core idea and steps for today. Same trial, same numbers, one sentence apart:
 
 **A story** from the same trial, with the customer as the hero and you as the guide.
 *"Tell this as a story where my customer is the hero."*
+
+<p align="center">
+  <img src="_build/img/style-analyst.webp" width="49%" alt="Screen capture of the analyst report: a headline that states the conclusion, the answer on a frosted glass card over a picture of coloured puzzle pieces, and three key numbers">
+  <img src="_build/img/style-practical.webp" width="49%" alt="Screen capture of the practical guide: the headline Answer in the first hour, a picture of a small dog at a laptop beside a boxed analogy, and three numbers">
+</p>
+
+**Or plain and practical,** from the same trial. Left, an evidence-first report with three findings.
+Right, a field guide with the core idea and steps for today:
+*"Write this up as an evidence-first one-pager."*
 
 ### More voices, other notes
 
@@ -178,7 +282,8 @@ AI agents: [`AGENTS.md`](AGENTS.md).
 ## Status
 
 **17 November 2026.** Built by its author and tested by fresh Claude sessions: 22 runs of the design guide,
-then the try-it prompt above. Every run finished its page. Not yet tried in other chatbots, or by anyone else. All example content is
+then two runs of the try-it prompt above. Every run finished its page. Used for real by its author, for a client's
+course (the before and after at the top). Not yet tried in other chatbots, or by anyone else. All example content is
 invented. [The evidence](quality-results/README.md).
 
 <img src="_build/img/bradley-ross-avatar.webp" width="110" alt="Cartoon avatar of Bradley Ross with a small friendly robot">

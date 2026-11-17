@@ -1,0 +1,23 @@
+Make my information look stunning. Use
+the Artifact Studio design guide at
+https://raw.githubusercontent.com/bar181/practical-ai/main/projects/artifact-studio/base/AI-INSTRUCTIONS.md
+Make it a scrolling keynote page: huge
+numbers that count up, a chart that
+draws itself as I scroll, and my photo
+as a slow pan and zoom. No photo? Use a
+line drawing that draws itself.
+
+My information:
+- We are a landscaping company with
+  two crews
+- October revenue $84,200.
+  September was $71,500
+- Jobs completed: 23 in October,
+  19 in September
+- Quotes that became jobs: 46%,
+  up from 38%
+- Need to decide about a second van
+  by 5 December
+
+Who reads it: my business partner,
+on her phone.

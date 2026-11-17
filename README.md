@@ -1,5 +1,17 @@
 # Practical AI
 
+<h3 align="center">Same content. Before and after.</h3>
+
+<p align="center">
+  <img src="projects/artifact-studio/_build/img/before-plain.webp" width="31%" alt="Animated phone capture of the plain version: a white Markdown document titled AI as a Smart Intern, with headings, bullet lists and two small tables, scrolling top to bottom">
+  <img src="projects/artifact-studio/_build/img/scroll-lesson.webp" width="31%" alt="Animated phone capture of the teaching page, Treat AI like a smart intern: a robot clip, a vague brief against a full brief in tabs, frosted cards over painted scenes, the word Launch filled with a picture, and check-yourself questions">
+  <img src="projects/artifact-studio/_build/img/scroll-story.webp" width="31%" alt="Animated phone capture of the same lesson as a story: a dark candlelit page that opens on Monday, 8:40 a.m. Your desk, then story beats that arrive as you scroll, the robot clip, a glowing scroll, the word Launch and the guide card">
+</p>
+<p align="center"><sub><b>Before:</b> the plain version &nbsp;·&nbsp; <b>After:</b> a lesson &nbsp;·&nbsp; <b>After:</b> the same lesson as a story</sub></p>
+
+<p align="center">One lesson, made for a real client's course in new sessions. The same facts in all three;<br>
+only the design and the voice change. <a href="projects/artifact-studio/#before-and-after-one-lesson-three-ways"><b>See all three and try it yourself</b></a></p>
+
 <p align="center">
   <img src="assets/images/practical-ai-pitch.svg" width="760" alt="Animation: Practical AI, better work from the AI you already use. Two projects light up in turn. Artifact Studio, design for your reports: rough notes in, a report, deck or post out. Agentic Process, structure for repeat jobs: a job you repeat in, a tested tool out. The AI drafts; you check and decide.">
 </p>
@@ -20,11 +32,14 @@ Copy this into the chatbot you use. Keep the sample notes, or paste your own.
 Tested so far in Claude; not yet in ChatGPT or Gemini.
 
 ```
-Make my information look good. Use the
-Artifact Studio design guide at
+Make my information look stunning. Use
+the Artifact Studio design guide at
 https://raw.githubusercontent.com/bar181/practical-ai/main/projects/artifact-studio/base/AI-INSTRUCTIONS.md
-to turn it into an HTML report with a
-professional design.
+Make it a scrolling keynote page: huge
+numbers that count up, a chart that
+draws itself as I scroll, and my photo
+as a slow pan and zoom. No photo? Use a
+line drawing that draws itself.
 
 My information:
 - We are a landscaping company with
@@ -36,23 +51,24 @@ My information:
 - Quotes that became jobs: 46%,
   up from 38%
 - Need to decide about a second van
-  by 15 November
+  by 5 December
 
 Who reads it: my business partner,
-on her phone. She wants the answer first.
+on her phone.
 ```
 
 <p align="center">
-  <img src="projects/artifact-studio/_build/img/example-report.webp" width="520" alt="Screen capture of a one-page report made by an AI chatbot from rough notes about an invented landscaping company: the headline October beat September, three key numbers and a bar chart">
+  <img src="projects/artifact-studio/_build/img/example-tryit.webp" width="300" alt="Animated phone capture of the page made from this prompt: a garden picture in a slow pan and zoom under the words Two crews, then October revenue counting up to 84,200 dollars, a bar chart against September, 23 jobs, 46 percent of quotes won, and the van decision due 5 December">
 </p>
 
-**You get a page like this:** the answer first, three key numbers and a chart. A fresh Claude
-session made it from these sample notes in one try, unedited. Your chatbot cannot open links? Paste
-the text of the [design guide](projects/artifact-studio/base/AI-INSTRUCTIONS.md) in place of the
-first line.
+Attach a photo of your work if you have one. **You get a page like this:** a fresh
+Claude session made it from this prompt and one picture, in one try, unedited.
+[Open the page](projects/artifact-studio/_build/examples/runs/2026-11-17-try-it-keynote-photo/report.html).
+Your chatbot cannot open links? Paste the text of the
+[design guide](projects/artifact-studio/base/AI-INSTRUCTIONS.md) in place of the link.
 
-**Then make it yours** in one sentence: `Now show it as a keynote deck` or
-`Open with my photo as a slow pan and zoom`. Before you share, check every number against your notes.
+**Then make it yours** in one sentence: `Now tell it as a story` or
+`Fill the word October with my photo`. Before you share, check every number against your notes.
 
 ## Artifact Studio: designer-quality reports, made by you
 
@@ -63,28 +79,28 @@ professional website: beautiful photos, motion and a story that flows, not a wal
 slide deck that took hours.
 
 <p align="center">
-  <img src="projects/artifact-studio/_build/img/fx-line-art.webp" width="32%" alt="Photo effect: a pencil sketch traced from a lake photograph draws itself as you scroll">
-  <img src="projects/artifact-studio/_build/img/fx-photo-type.webp" width="32%" alt="Photo effect: the word spark in huge letters filled with a picture">
-  <img src="projects/artifact-studio/_build/img/fx-postcard.webp" width="32%" alt="Photo effect: a picture turned over like a postcard to show a handwritten note">
+  <img src="projects/artifact-studio/_build/img/scroll-photo-effects.webp" width="31%" alt="Animated phone capture: one sunset photograph shown three ways as the page scrolls: a slow pan and zoom, the word SKY filled with the picture, then a postcard you can turn over">
+  <img src="projects/artifact-studio/_build/img/scroll-emotional.webp" width="31%" alt="Animated phone capture of a personal story page: the line My mother kept a drawer, then keepsakes that fade in one at a time as you scroll, each with a short caption">
 </p>
 
-**Photo effects** from one picture and one sentence: a sketch that draws itself, a word filled with
-your photo, a postcard that flips, a slow pan and zoom.
+**Photo effects** from one picture and one sentence (left): a slow pan and zoom, a word filled with
+your photo, a postcard that flips. **A personal story** (right) whose keepsakes appear as you scroll.
 
 <p align="center">
-  <img src="projects/artifact-studio/_build/img/style-analyst.webp" width="49%" alt="Screen capture of the analyst report: a headline that states the conclusion, the answer on a frosted glass card over a picture of coloured puzzle pieces, and three key numbers">
-  <img src="projects/artifact-studio/_build/img/style-practical.webp" width="49%" alt="Screen capture of the practical guide: the headline Answer in the first hour, a picture of a small dog at a laptop beside a boxed analogy, and three numbers">
+  <img src="projects/artifact-studio/_build/img/style-visionary.webp" width="49%" alt="Animated screen capture of a keynote deck: black slides with one idea each in huge white type, then full-screen pictures with a few words over each">
+  <img src="projects/artifact-studio/_build/img/voice-storyteller.webp" width="49%" alt="Screen capture of a story page: large serif words over a sunset by the water, beginning At 6:40 on a Tuesday evening">
 </p>
 
-**The same notes, in the voice your reader needs.** Left, an evidence-first report. Right, a field
-guide. Same trial, same numbers, one sentence apart. Seven voices in all, from keynote to executive brief.
+**The same notes, in the voice your reader needs.** Left, a keynote deck that makes the reader feel
+the problem. Right, a story with the customer as the hero. Same trial, same numbers, one sentence apart.
+Seven voices in all, from keynote to executive brief.
 
 <p align="center">
   <img src="projects/artifact-studio/_build/img/social-three-drafts.webp" width="720" alt="Three drafts of one LinkedIn post side by side, as they would look in the feed">
 </p>
 
 **And the parts:** post previews as the feed shows them, decks you present from the browser, nine
-looks, scrollytelling and animated diagrams.
+looks and animated diagrams.
 
 <p align="center"><a href="projects/artifact-studio/"><b>Make your first designer-quality report</b></a></p>
 
