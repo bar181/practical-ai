@@ -18,7 +18,9 @@ reading, carry on, and list your assumptions at the top of the hand-back.
 
 ## Steps
 
-1. **Scope.** Write the job in one sentence: who, what goes in, what comes out. One job only.
+1. **Scope.** Write the job in one sentence: who, what goes in, what comes out. One job only. If
+   a plan asks for levels or files that `PROCESS.md` does not, follow `PROCESS.md` and list the
+   difference in the hand-back. If the plan is not approved, build anyway and say so first.
 2. **Reuse check.** Look for something that already does it: Anthropic's skills and plugins
    first, then the platform the person uses, then open source. Record links and dates.
    - **It does the whole job:** write only a README from `template/README.md` in its reuse-only
@@ -31,13 +33,16 @@ reading, carry on, and list your assumptions at the top of the hand-back.
    Otherwise copy `template/SKILL.md`. Either way the file must work when pasted on its own:
    the Start section asks for missing context in one reply, and the output shape is in the file.
    Its `name` matches its folder name.
-4. **Make the worked example.** Run the skill on the invented input in a fresh chat if you can.
-   Save the result unedited as `example.md`, from `template/example.md`.
+4. **Make the worked example.** Run the skill on the invented input in a fresh chat. Save the
+   result unedited as `example.md`, from `template/example.md`. If you cannot start a fresh
+   chat, save the input only, write "Result: not yet run" under it, and say so in the hand-back.
+   Never write the result yourself.
 5. **Write the README** from `template/README.md`: what it does, the quick start (paste the file,
    add your input; the link as a shortcut), what to give it, what you get, what to check, and
    Level 2. Add Level 3 only if a connection removes recurring work.
-6. **Run the short check.** Paste the SKILL.md into a fresh chat with the example input, then a
-   different input. Record the results in the README's check table. Never write "passed" for a
+6. **Run the short check.** In fresh chats, paste the SKILL.md with: an input that is missing
+   something, the example input, and a different input. Record the results in the README's check
+   table. Never write "passed" for a
    check that was not run.
 
 ## Hand back

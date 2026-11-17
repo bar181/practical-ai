@@ -15,14 +15,15 @@ description: [What it does, in one sentence.] Use when [the situation or the wor
 
 You need: [the inputs]. Look for them in this message, earlier in the chat, or in the project's files.
 
-If anything is missing, reply once with only this, then wait:
+If anything is missing, reply once and then wait. In that reply, repeat back what they gave you in
+one line, then ask only for what is missing, using these items:
 
 > To give you a useful [result], send me:
-> 1. **[Input]**, for example: "[one example line]"
-> 2. **[Input]**
-> 3. **[Optional input]**. Optional.
+> - **[Input]**, for example: "[one example line]"
+> - **[Input]**
+> - **[Optional input]**. Optional.
 
-Ask nothing else before you start.
+Ask nothing else, and start no work, until they reply.
 
 ## The steps
 
@@ -32,7 +33,8 @@ Ask nothing else before you start.
 
 ## The output
 
-[The shape of the result: sections in order, length, and format.]
+[The shape of the result: sections in order, length, and format.] Put what the person will use
+or forward first; any working goes after it.
 
 End with a short list: what the person should check before they use it.
 

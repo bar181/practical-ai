@@ -79,8 +79,8 @@ Four things, and nothing else.
 | --- | --- | --- |
 | The process, one page, with the nine steps as a compact checklist | [`PROCESS.md`](PROCESS.md) | Written |
 | The tool template | [`template/`](template/) | Written |
-| A thin builder skill | [`builder/agentic-process/SKILL.md`](builder/agentic-process/SKILL.md) | Written, not yet run |
-| One working example | [`examples/decision-support/`](examples/decision-support/) | Converted to SKILL.md; the short check not yet run |
+| A thin builder skill | [`builder/agentic-process/SKILL.md`](builder/agentic-process/SKILL.md) | Run once (AC-3): built [`learning-log`](examples/learning-log/) with no help |
+| One working example | [`examples/decision-support/`](examples/decision-support/) | Passed the short check in Claude (AC-1) |
 
 The explainer for Agentic Process itself is [`README.md`](README.md).
 
@@ -99,10 +99,12 @@ reading, carries on and lists its assumptions. **Owner to confirm**; default: ca
 
 Replaces the version 1 test harness.
 
-1. Paste `SKILL.md` into a fresh chat and run the worked example's input.
-2. Run a different input of the same kind.
-3. Confirm it asks for missing context in one reply, applies the stated rules, and flags
-   uncertainty.
+1. Paste `SKILL.md` into a fresh chat with an input that is missing something: it asks for what
+   is missing in one reply, and waits.
+2. Paste it with the worked example's input: the result is usable and follows the stated rules.
+   If it passes, its unedited output becomes the worked example.
+3. Paste it with a different input, ideally with a fact that cannot be found: it flags the gap
+   and gives a concrete next step to settle it.
 4. Try the same file in a second chatbot before claiming it works across chatbots.
 
 The results go in the tool's README. A check not run says "not yet run".
@@ -111,9 +113,9 @@ The results go in the tool's README. A check not run says "not yet run".
 
 | ID | Criterion |
 | --- | --- |
-| AC-1 | Decision support passes the short check in Claude: the bakery example, a different decision, and the three behaviours in step 3 |
+| AC-1 | Decision support passes the three-input short check in Claude. **Met, 16 November 2026** |
 | AC-2 | Decision support passes the same check in a second chatbot |
-| AC-3 | The builder turns one plan (the learning system) into a tool in the section 2 layout, with the short check recorded and nothing extra |
+| AC-3 | The builder turns one plan (the learning system) into a tool in the section 2 layout, with the short check recorded and nothing extra. **Met, 16 November 2026**: the builder could not start a fresh session itself, so the check was run separately and passed |
 | AC-4 | The owner runs one tool from its README with their own input and gets a usable result without editing the file |
 
 ## 9. Out of scope
@@ -125,10 +127,12 @@ connection is built only when a tool needs one.
 
 ## 10. Next, in order
 
-1. Run AC-1 on decision support.
-2. Run AC-2 in a second chatbot.
-3. Run AC-3 on the learning-system plan.
-4. Move this draft to `projects/agentic-process/` once AC-1 and AC-3 hold.
+AC-1 and AC-3 hold. [The check records](../../../docs/reports/2026-11-16-decision-support-checks/).
+
+1. Run AC-2: paste decision support's `SKILL.md` into ChatGPT or Gemini with the bakery input.
+2. Owner: decide whether to make the brief read more like advice (fewer inline labels, plainer
+   wording when the rule picks a check), the one weakness every blind grader named.
+3. Move this draft to `projects/agentic-process/`, making `PROCESS.md` the single process.
 
 ## 11. How it is scored
 
@@ -143,12 +147,13 @@ Out of 100. No item counts users.
 | Small | 15 | Four parts in Agentic Process, three or four files per tool, nothing extra |
 
 Version 1 scored 44 against the owner's spec ([evaluation](../../plans/archive/agentic-process/v2-restart/EVALUATION.md)).
-Version 2 is not scored yet: nothing in it has run since the restart.
+Version 2 is not yet scored against this rubric.
 
-## 12. Open questions for the owner
+## 12. Owner decisions, 16 November 2026
 
-1. **Plan template:** point `workshop/plans/plans-template/BUILD-PROCESS.md` at
-   [`PROCESS.md`](PROCESS.md), so there is one process? Default: yes, when this draft moves to
-   `projects/`.
-2. **Level 3:** which recurring workflow should be the first connected tool? Default: none until
-   a Level 1 tool is in real use.
+1. **One process.** When this draft moves to `projects/`, [`PROCESS.md`](PROCESS.md) becomes the
+   single process. `workshop/plans/plans-template/BUILD-PROCESS.md` stays only as a short pointer
+   if other pages still link to it.
+2. **Level 3** stays unassigned until real use shows a recurring manual step worth automating.
+3. **Artifact Studio** moves to one `SKILL.md` later; it stays in the backlog while this pattern
+   is proven.

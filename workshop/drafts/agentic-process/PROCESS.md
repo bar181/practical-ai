@@ -62,10 +62,11 @@ line each.
 
 ## The short check
 
-1. Paste `SKILL.md` into a fresh chat and run the worked example's input.
-2. Run a different input of the same kind.
-3. Confirm it asks for missing context in one reply, follows the stated rules, and flags what it
-   is unsure of.
+1. Paste `SKILL.md` into a fresh chat with an input that is missing something. It should ask
+   for what is missing in one reply, and wait.
+2. Paste it with the worked example's input. The result should be usable and follow the rules.
+3. Paste it with a different input of the same kind, ideally one with a fact that cannot be
+   found. It should flag what it is unsure of and say how to settle it.
 4. Try the same file in a second chatbot before saying it works across chatbots.
 
 Record the results in the README. A check not run is written "not yet run".

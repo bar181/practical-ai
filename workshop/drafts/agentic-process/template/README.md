@@ -45,7 +45,7 @@ SKILL.md]. [Your input]"* instead of pasting.
 
 | Check | Result |
 | --- | --- |
-| Paste `SKILL.md` into a fresh chat and run the worked example | |
-| Run a different input of the same kind | |
-| Asks for missing context in one reply, follows the rules, flags uncertainty | |
+| An input missing something: asks for it in one reply, and waits | |
+| The worked example's input: usable, follows the rules | |
+| A different input: flags what it cannot find, with a next step | |
 | The same file in a second chatbot | |

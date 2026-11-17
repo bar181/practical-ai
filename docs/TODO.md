@@ -18,10 +18,12 @@ where they fit. Nothing is built until its North Star page is approved at stage 
 
 Restarted on 16 November 2026. The plan is in [its spec](../workshop/drafts/agentic-process/SPEC.md), section 9.
 
-- [ ] AC-1: run decision support's short check in Claude (the bakery, a different decision, the three behaviours)
-- [ ] AC-2: run the same check in a second chatbot
-- [ ] AC-3: build the learning system from its plan with the builder skill
-- [ ] Owner: answer the spec's two open questions (the plan template, the first Level 3 tool)
+- [x] AC-1: decision support's short check in Claude, passed 16 November 2026
+- [ ] AC-2: run the same check in a second chatbot (ChatGPT or Gemini)
+- [x] AC-3: the builder built the learning log from its plan; its check passed
+- [ ] Owner: decide whether to make the decision brief read more like advice (every blind grader preferred the plain answer's readability)
+- [ ] Owner: compare the new learning log with the older `learning-log` skill, then keep one
+- [ ] Move Agentic Process to `projects/` and make `PROCESS.md` the single process
 - [ ] Later: give Artifact Studio one `SKILL.md` as its source of instructions, in place of `AI-INSTRUCTIONS.md`
 
 Version 1, archived. From [the review from the user's side](reports/2026-11-16-agentic-process-user-review.md):

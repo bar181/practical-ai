@@ -3,8 +3,9 @@
 Turns a job you repeat into a tool someone can start in minutes: a README that explains it, one
 `SKILL.md` that works pasted into any chatbot or installed as a skill, and a worked example.
 
-**Status, 16 November 2026.** Version 2, written today. Nothing in it has run yet. Version 1 is in
-[the archive](../../plans/archive/agentic-process/).
+**Status, 16 November 2026.** Version 2. Decision support passed its check in fresh Claude chats,
+and the builder built a second tool, [learning log](examples/learning-log/), which passed its
+check too. No other chatbot has tried either. Version 1 is in [the archive](../../plans/archive/agentic-process/).
 
 ## Try the example tool
 
@@ -31,3 +32,4 @@ decision, and get a one-page brief with sources and a recommendation.
 | [`template/`](template/) | The tool template |
 | [`builder/`](builder/agentic-process/) | The builder skill |
 | [`examples/decision-support/`](examples/decision-support/) | The first tool |
+| [`examples/learning-log/`](examples/learning-log/) | The second, built by the builder skill on its own |

@@ -1,0 +1,11 @@
+Before I start: I'm about to update the website price page for December. Also, what is waiting for review, and is anything serious still open?
+
+Our log:
+```
+id,date,kind,rule,what_happened,expected,applies_to,labels,keywords,topics,severity,status,seen,source,sensitive
+L-1,2026-10-02,error,"When asking for a supplier email, give the order number and dates yourself; never let the assistant fill them in.","The assistant wrote a reorder email with a delivery date we never agreed.","An email using only the dates I gave.",supplier emails,wrong-fact,reorder;delivery date,suppliers/orders,medium,accepted,2,session,no
+L-2,2026-10-14,error,"When updating the website price page, check the item count before and after.","Two frames vanished from the price table after a reformat.","Every item kept.",website price page,data-loss,price table;missing items,website/prices,high,accepted,3,session,no
+L-3,2026-10-29,redo,"When quoting the Greenway Clinic job, use their contract rates, not list prices.","A quote went out at list price and had to be redone.","Contract rates on the first quote.",client quotes,wrong-fact,quote;contract rates,sales/quotes,high,proposed,1,person,
+L-4,2026-11-04,redo,"When building the monthly sales table, paste the raw export, not a summary.","Totals were off by one week.","One pass from the export.",monthly sales table,rebuild,sales;export,finance/sales,medium,proposed,,session,no
+L-5,2026-09-12,error,"When resizing photos for the website price page, keep the originals.","Originals were overwritten.","Originals kept.",website price page,data-loss,photos;resize,website/prices,low,retired,1,session,no
+```
