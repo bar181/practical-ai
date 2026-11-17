@@ -1,4 +1,0 @@
-[
- {"name": "layout", "proves": "The folder follows the repository's layout", "run": "python3 ../../tools/check_project.py ."},
- {"name": "links", "proves": "No Markdown link in this tool is broken", "run": "python3 ../../tools/check_links.py ."}
-]

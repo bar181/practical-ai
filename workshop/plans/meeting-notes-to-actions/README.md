@@ -2,7 +2,7 @@
 
 Written on 16 November 2026 by following [Agentic Process](../../../projects/agentic-process/),
 steps 1 to 6, with the one-page plan from its template. Step 2 was searched on the web on that
-date. It replaces the earlier [meeting to actions stub](../archive/meeting-to-actions-stub/).
+date.
 **The owner has not yet answered the gates;** each is marked open where it needs him.
 
 **Think of it as:** the colleague who always sends the notes, and who writes "no owner" in red

@@ -1,3 +1,0 @@
-Read the build coach [saved for you as run folder: COACH.md] and follow it.
-
-My idea: I teach a small-business AI class. I want a tool my students can use to turn a supplier notice or a business report into key facts, obligations, dates and questions, and then check each item against the page it came from. I build with a coding agent and keep my tools in a git repository. Students use whatever chatbot they already have.

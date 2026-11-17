@@ -115,14 +115,14 @@ is read twice: does it hold up, and would the recipient use it as it is. Details
 
 ## 9. Out of scope
 
-Dropped from version 1, kept in [the archive](../../../workshop/plans/archive/agentic-process/): the chatbot
+Dropped from version 1, and since deleted (the git history keeps them): the chatbot
 coach, courses and lessons, Autopilot, gates and check scripts inside each tool, the fresh-session
 test harness, the separate workflow card and instruction file, and generated pages. A Level 3
 connection is built only when a tool needs one.
 
 ## 10. Next, in order
 
-AC-1 and AC-3 hold. [The check records](../../../docs/reports/2026-11-16-decision-support-checks/).
+AC-1 and AC-3 hold. [The check records](../quality-results/2026-11-16-decision-support-checks/).
 
 1. Run AC-2: paste decision support's `SKILL.md` into ChatGPT or Gemini with the bakery input.
 2. Owner: decide whether to make the brief read more like advice (fewer inline labels, plainer
@@ -141,7 +141,7 @@ Out of 100. No item counts users.
 | Checked honestly | 20 | The short check is run and recorded for every tool; nothing claims more than was run |
 | Small | 15 | Four parts in Agentic Process, three or four files per tool, nothing extra |
 
-Version 1 scored 44 against the owner's spec ([evaluation](../../../workshop/plans/archive/agentic-process/v2-restart/EVALUATION.md)).
+Version 1 scored 44 against the owner's spec.
 Version 2 is not yet scored against this rubric.
 
 ## 12. Owner decisions, 16 November 2026

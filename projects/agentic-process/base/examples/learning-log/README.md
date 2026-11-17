@@ -75,7 +75,7 @@ database would remove the pasting, and is the next step to weigh once the log is
 ## The check
 
 Run on 16 November 2026, each in a fresh Claude chat with only `SKILL.md` and one message.
-[The logs](../../../../../docs/reports/2026-11-16-decision-support-checks/learning-log/).
+[The logs](../../../quality-results/2026-11-16-decision-support-checks/learning-log/).
 
 | Check | Result |
 | --- | --- |

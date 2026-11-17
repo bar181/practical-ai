@@ -65,7 +65,7 @@ the same question, graded blind three times: **86, 89 and 87 with the skill; 66,
 without**, the same decision each time, and every grader preferred the plain answer's
 readability. That finding is why the builder now has a recipient test. The builder also built a
 second tool, the [learning log](../base/examples/learning-log/), whose check passed (AC-3).
-[Raw reports](../../../docs/reports/2026-11-16-decision-support-checks/).
+[Raw reports](2026-11-16-decision-support-checks/).
 
 **The lesson that changed the builder:** a result can hold up and still not be used. Check both.
 

@@ -58,7 +58,7 @@ There is no Level 3. A person starts every decision, so nothing needs connecting
 ## The check
 
 Run on 16 November 2026, each in a fresh Claude chat with web search, only `SKILL.md` and one
-message, and no way to ask questions. [The logs](../../../../../docs/reports/2026-11-16-decision-support-checks/).
+message, and no way to ask questions. [The logs](../../../quality-results/2026-11-16-decision-support-checks/).
 
 | Check | Result |
 | --- | --- |
@@ -74,4 +74,4 @@ same decision both ways: test demand cheaply, then a small capped trial. The ski
 earned their points by dating every source, testing every limit and following a stated rule. But
 every grader said a busy owner would rather receive the plain answer, which reads like advice.
 The skill is more trustworthy, not yet more pleasant. See
-[the grades](../../../../../docs/reports/2026-11-16-decision-support-checks/).
+[the grades](../../../quality-results/2026-11-16-decision-support-checks/).

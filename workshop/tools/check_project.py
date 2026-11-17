@@ -3,6 +3,7 @@
 The showcase layout, used by everything in projects/. base/ is enough to try the tool.
   README.md        the hook, a "Try it" quick start, the North Star and a Status section
   AGENTS.md        instructions for AI agents
+  CLAUDE.md        points Claude Code at AGENTS.md
   LICENSE
   base/            the few files a beginner needs: six things at most, counting an optional template/ folder to copy and an optional examples/ folder of worked examples (a file, or a folder for a complete tool)
   level-2-files/   optional. What an advanced user adds, with a README.md
@@ -38,7 +39,7 @@ if folders or exists("gates.json"):                                  # the earli
         except ValueError as e:
             problems.append(f"gates.json does not parse: {e}")
 else:                                                                # the showcase layout
-    for need in ("README.md", "AGENTS.md", "LICENSE", "base"):
+    for need in ("README.md", "AGENTS.md", "CLAUDE.md", "LICENSE", "base"):
         if not exists(need): problems.append(f"missing {need}")
     for mark, why in (("**North Star:**", "one sentence saying what success is"), ("## Status", "who has and has not tried it")):
         if mark not in text: problems.append(f"README.md has no '{mark}' ({why})")
@@ -57,7 +58,7 @@ else:                                                                # the showc
     for lv in ("level-2-files", "level-3-files"):
         if exists(lv) and not exists(lv, "README.md"): problems.append(f"{lv}/ has no README.md")
     if exists("level-3-files") and not exists("level-2-files"): problems.append("level-3-files/ without level-2-files/")
-    allowed = {"README.md", "AGENTS.md", "LICENSE", "base", "level-2-files", "level-3-files", "_build", "quality-results"}
+    allowed = {"README.md", "AGENTS.md", "CLAUDE.md", "LICENSE", "base", "level-2-files", "level-3-files", "_build", "quality-results"}
     extra = sorted(d for d in os.listdir(root) if d not in allowed and not d.startswith("."))
     if extra: problems.append("found beside base/, and not part of the layout: " + ", ".join(extra))
 if problems:

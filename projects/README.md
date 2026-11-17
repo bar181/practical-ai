@@ -15,6 +15,7 @@ Showcases you can try in five minutes.
 a-project/
   README.md          the hook, the quick start, a sample input, the North Star, links to the levels
   AGENTS.md          instructions for AI agents
+  CLAUDE.md          points Claude Code at AGENTS.md
   LICENSE
   base/              the few files a beginner needs, and examples/: one worked example per style,
                      each with its prompt, its sample input and the finished result

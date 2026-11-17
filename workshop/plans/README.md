@@ -1,41 +1,71 @@
-# Plans
+# Plans: every project idea, in three groups
 
-One folder for each tool that has a North Star page or a plan. **The list of them, with what each
-does at the Beginner and Advanced levels, is [`docs/tool-inventory.md`](../../docs/tool-inventory.md).** It is
-not repeated here.
+Each idea that has been identified, with where it stands. The order to build them in is
+[the priority list](../../docs/README.md#what-comes-next). A new tool is built with
+[Agentic Process](../../projects/agentic-process/).
 
-| Here | What it is |
-| --- | --- |
-| A tool's folder | Its North Star page (one to three pages, for the newer ones) or its plan |
-| [`plans-template/`](plans-template/) | The template, the build process and how to add a plan |
-| [`archive/`](archive/) | What was replaced, kept and not deleted |
+**Where it stands:** **Ready** is a finished project. **Example built** means a working version
+exists inside Agentic Process. **Draft** is an earlier draft in [`../drafts/`](../drafts/), in an
+older layout. **Plan** is a plan or North Star page in this folder. **Idea** has no page yet.
 
-## Next up, in order
+## 1. Daily activities
 
-The first class, from [the owner's priorities](../../docs/practical-ai-priorities.md). Each plan was
-written on 16 November 2026 by following [Agentic Process](../../projects/agentic-process/) steps 1
-to 6, with a dated reuse check. Each waits on the owner for gates 2 and 7, and on one choice for all
-three: the fictional company the lessons share.
+AI doing tasks people already do, faster and checked. One person, one input, one result in the
+chatbot they already use.
 
-| # | Plan | The job | Lean |
-| --- | --- | --- | --- |
-| 1 | [Document to action brief](document-to-action-brief/) | A supplier notice or report becomes facts, obligations, dates and questions, each with the line it came from | Wrap: citing tools exist; the brief's shape and the checking habit do not |
-| 2 | [Write and edit in my voice](write-in-my-voice/) | Three samples become a voice guide; one draft is revised and every fact and promise is checked | Wrap: style features exist; the written guide and the facts check do not |
-| 3 | [Meeting notes to actions](meeting-notes-to-actions/) | A transcript becomes decisions, actions and a follow-up, with every unagreed owner or date flagged | Wrap: meeting tools list actions; none flags what was never agreed |
-
-All three teach the same habit: the AI drafts, and you check every item against the source before
-you act. That is the thread of the class.
-
-## Levels
-
-Every plan describes the same levels. The [Agentic Process method](../../projects/agentic-process/base/PROCESS.md) builds them
-one at a time.
-
-| Level | For | Means |
+| Project | What it does | Where it stands |
 | --- | --- | --- |
-| Level 1, Beginner | Students and business owners | No code, nothing installed. A chat assistant, pasted instructions and a template. Under an hour |
-| Level 2, Advanced | Someone who builds with agents | A skill and connectors to mail, calendar, drive or sheets. A few hours to set up |
-| Level 3, Expert | The owner's own setup | A database, an MCP server, hosting or a schedule. Needs someone technical |
+| Document to action brief | A supplier notice or report becomes what you must do, the dates and the open questions, each with the line it came from | Example built: [the pilot package](../../projects/agentic-process/quality-results/2026-11-16-builder-pilot/agentic-process/document-to-action-brief/) · [plan](document-to-action-brief/) |
+| Write and edit in my voice | Three samples become a voice guide; a draft is revised with every fact and promise kept | [Plan](write-in-my-voice/) |
+| Meeting notes to actions | A transcript becomes decisions, owners and dates, with anything nobody agreed flagged | [Plan](meeting-notes-to-actions/) |
+| Research brief with checked sources | One page comparing options, every claim linked to a source | [Draft](../drafts/weekly-brief/) · [plan](weekly-brief/) |
+| Inbox triage and daily summary | One morning summary across mail and calendar, with replies drafted for approval | [Draft](../drafts/inbox-daily-summary/) · [plan](inbox-daily-summary/) |
+| Posts for the week in my voice | One piece becomes a week of posts that sound like you, for you to edit and publish | [Draft](../drafts/voice-post-drafter/) · [plan](voice-post-drafter/) |
+| Ask your spreadsheet, or a dashboard | Your key numbers on one page, each showing where it came from | [Draft](../drafts/dashboard/) · [plan](dashboard/) |
+| Receipts into an expense sheet | Receipt photos become a categorised sheet, with unclear ones flagged | [Plan](expense-form/) |
+| Lead responder | A fast, qualified reply to each new enquiry, drafted for approval | [Plan](lead-responder/) |
+| Customer issue helper | A late order or refund handled from your one-page policy | Idea |
+| Summarise a document | A report or contract in a fixed, checkable shape | Idea, partly covered by the document to action brief |
+| Scheduling and calendar planning | A week planned around fixed commitments | Idea |
+| Brainstorming partner | Options generated, then sorted against your criteria | Idea |
 
-A plan is detailed about level 1 and gives each later level a line or two. A tool with no
-Beginner level a student could run does not belong on the list.
+## 2. Agentic projects
+
+Support tools for people who build with agents, like the two finished projects. They make other
+tools faster to build, safer to run or easier to trust.
+
+| Project | What it does | Where it stands |
+| --- | --- | --- |
+| Artifact Studio | Turns notes into a report, deck, post or page from a library of templates | **Ready:** [project](../../projects/artifact-studio/) |
+| Agentic Process | Turns a repeated job into a tested tool: a README, one `SKILL.md`, a worked example | **Ready:** [project](../../projects/agentic-process/) |
+| Learnings database | One row per lesson learned, read before similar work starts | Example built: [learning log](../../projects/agentic-process/base/examples/learning-log/) · [plan](learning-system/) · [draft](../drafts/learning-system/) |
+| Task and dependency graph | A goal becomes tasks, with what is ready and what is blocked | [Plan](task-graph/) |
+| Core memory | Policies, facts and pointers kept as records in a store you own | [Plan](core-memory/) |
+| Connections hub | A meeting, thread or file read, and what is worth keeping proposed for review | [Plan](connections-hub/) |
+| Rubric reviewer | Work scored against a rubric written in advance, with evidence | [Plan](rubric-reviewer/) |
+| Source and link verifier | Every link checked against the sentence it supports | [Plan](source-verifier/) |
+| Daily builder | One approved item taken through Agentic Process to a reviewable change | [Plan](daily-builder/) |
+
+## 3. Hybrid projects
+
+Larger jobs in several steps, where AI and people each do part: AI drafts and calculates, a person
+supplies judgement and approves.
+
+| Project | What it does | Where it stands |
+| --- | --- | --- |
+| Estimator | A first-draft quote from your price list and rules, with the reasoning shown | [Draft](../drafts/estimator/) |
+| Decision support | A decision taken from options to a recommendation, with sources and the working shown | Example built: [decision support](../../projects/agentic-process/base/examples/decision-support/) · [plan](decision-support/) |
+| Proposal builder | Client notes or a finished estimate become a formatted proposal | [Plan](proposal-builder/) |
+| Client onboarding kit | A welcome pack and checklist for each new client | [Plan](client-onboarding-kit/) |
+| Client project tracking site | A page each client opens to see where their project stands | [Plan](client-project-portal/) |
+| Website chatbot | A site assistant that answers from your notes and captures enquiries | [Plan](website-chatbot/) |
+| Publishing a website | A page taken from a chat artifact to a hosted site | [Draft](../drafts/website-publishing/) · [plan](website-publishing/) |
+| Short video guide | The right route for a short video, finished in under 30 minutes | [Draft](../drafts/short-video/) · [plan](short-video/) |
+| Training explainer with avatar | A topic becomes a taught video in a chosen teaching style | [Draft](../drafts/training-explainer/) · [plan](training-explainer/) |
+| Training website | A course site with lessons, a schedule and an assistant | [Plan](training-website/) |
+| Student AI assistant | A course assistant that answers from the lesson material and names its source | [Plan](student-assistant/) |
+
+## Writing a plan
+
+[`plans-template/`](plans-template/) holds the plan template and how to add a plan. The method
+itself is Agentic Process's [one-page process](../../projects/agentic-process/base/PROCESS.md).

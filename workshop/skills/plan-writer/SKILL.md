@@ -49,8 +49,8 @@ everything after it. Work in the repository's `workshop/plans/` folder.
 
 ## Update the indexes
 
-14. `docs/tool-inventory.md`: add or update the tool's row in the group that matches its state, with one line each for what it does, its Beginner level and its Advanced level. This is the only list of tools. Do not add the tool anywhere else.
-15. `docs/TODO.md`: add an action only if a person has to decide something.
+14. `workshop/plans/README.md`: add or update the tool's row in its group (daily activities, agentic projects or hybrid projects), with what it does and where it stands. This is the only list of tools. Do not add the tool anywhere else.
+15. `docs/README.md`: change the priority list only if the owner has decided the order.
 
 ## Finish
 

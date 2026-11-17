@@ -394,7 +394,7 @@ fresh AI sessions. Its owner is the only person who has used it, so tell us what
 | Gallery, picker, palette maker | Built. Rebuilds from `_build/` |
 | Worked examples | Ten files. Each page was made by an AI assistant from its prompt in a fresh session on 16 November 2026 and is unedited. All ten pass the automated checks in Chrome. The sessions were Claude; no other assistant has been tried |
 | Chatbots | Built with Claude. **Not yet run** in the other assistants named on this page |
-| A real request | On 16 November 2026 the assistant that wrote the instructions followed them to make [a progress report on this project](../../docs/reports/2026-11-16-project-one-progress.html). A first real use, not an independent test |
+| A real request | On 16 November 2026 the assistant that wrote the instructions followed them to make a progress report on this project. A first real use, not an independent test |
 | The paste-in instructions | 22 independent runs on 16 November 2026, each in a fresh Claude session: thirteen, then three rounds of three on the fixed text. Every run finished its page. The first thirteen reported about 230 points of friction. Across the three re-test rounds the points that would change the page fell from 13 to 9 to 6. Those 6 are fixed and **not re-tested**. The logs are in [`_build/examples/runs/`](_build/examples/runs/). **Not yet tried** in ChatGPT, Gemini or any assistant other than Claude |
 | The one-link prompt | A fresh Claude session fetched the instructions from the link and finished its page from them alone. **Not yet tried** from inside ChatGPT, Gemini or the others |
 | The skill | Run end to end by a second agent on 16 November 2026: it made a six-slide deck and reported ten places where the skill and its reference cards disagreed. The ones about decks are fixed |
@@ -418,6 +418,7 @@ location data. The times on this page are estimates, not measurements.
 artifact-studio/
   README.md               this page
   AGENTS.md               instructions for AI agents
+  CLAUDE.md               points Claude Code at AGENTS.md
   LICENSE                 Apache-2.0
   base/
     studio.html           the kitchen sink: the whole library in one file

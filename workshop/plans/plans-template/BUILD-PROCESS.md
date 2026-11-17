@@ -3,8 +3,7 @@
 The method now lives in one place: the Agentic Process
 [process page](../../../projects/agentic-process/base/PROCESS.md), with its nine steps as a checklist,
 and its [builder skill](../../../projects/agentic-process/level-2-files/agentic-process/SKILL.md),
-which runs it. Follow those. The longer guide that stood here is in the
-[archive](../archive/BUILD-PROCESS-2026-11-15.md), replaced on 16 November 2026.
+which runs it. Follow those. The longer guide that stood here was replaced on 16 November 2026.
 
 ## What the first build taught us
 
