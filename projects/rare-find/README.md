@@ -69,8 +69,9 @@ screen.
 
 **Can friends play on their own AI?** In Claude, yes. Share the artifact, and each friend plays the
 same prompts on their own Claude account and plan. They need a Claude account, and sharing by link
-needs a paid plan. Friends with view-only access may not be able to post scores; this is untested.
-In ChatGPT, not as a group: its group chats do not support canvas, so the game cannot run there for
+needs a paid plan. To post scores to the shared board, a friend needs edit access: Claude lets
+people with view access read shared data but not write it. With view access they can still play,
+see the board and join a live room. In ChatGPT, not as a group: its group chats do not support canvas, so the game cannot run there for
 a group. The file still opens in any browser.
 
 ## What is in this folder

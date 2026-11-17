@@ -164,6 +164,52 @@ with sync_playwright() as pw:
     check("leaving returns home", pg.evaluate("window.__rf.state().screen") == "home")
     check("no console errors offline", not errs, errs)
 
+    # ---- 2b. challenge codes: same prompts, played elsewhere, scores compared ----
+    pg.click("#b-practice"); pg.wait_for_timeout(200)
+    ch_prompts = []
+    for k in range(5):
+        ch_prompts.append(pid_of(pg)); answer(pg, pack(pg, pid_of(pg))["ranked"][k]["a"], 500); nxt(pg)
+    pg.wait_for_timeout(800); host_total = int(pg.inner_text("#final"))
+    pg.click("#b-share"); pg.wait_for_timeout(300)
+    shared = pg.evaluate("document.querySelector('#share-text').value") or ""
+    code = next((w for w in shared.replace("\n", " ").split() if w.startswith("RF")), "")
+    check("challenge: 'Challenge a friend' gives a code with the prompts and the score", code.startswith("RF1") and f"-{host_total}-" in code, shared)
+    friend = b.new_context(viewport={"width": 390, "height": 844}); fp = friend.new_page(); fe = []; fp.on("pageerror", lambda e: fe.append(str(e)))
+    fp.goto(GAME); fp.wait_for_timeout(200)
+    fp.click("#b-settings"); fp.click("#seg-count button[data-n='10']"); fp.click("#b-settings")
+    fp.goto(GAME + "#c-" + code); fp.wait_for_timeout(300)
+    check("challenge: a link with #c- and the code shows who challenged you and their score", fp.is_visible("#ch-banner") and str(host_total) in fp.inner_text("#ch-title"), fp.inner_text("#ch-banner"))
+    fp.click("#b-ch-play"); fp.wait_for_timeout(200)
+    got = []
+    for k in range(5):
+        got.append(pid_of(fp)); answer(fp, pack(fp, pid_of(fp))["gems"][0]["a"], 500); nxt(fp)
+    check("challenge: the friend plays exactly the same prompts, whatever their own settings", got == ch_prompts, (got, ch_prompts))
+    fp.wait_for_timeout(800)
+    check("challenge: the friend's end screen shows both scores", fp.is_visible("#vs-board") and str(host_total) in fp.inner_text("#vs-board") and "You" in fp.inner_text("#vs-board"), fp.inner_text("#vs-board"))
+    fp.click("#b-share"); fp.wait_for_timeout(300)
+    back = fp.evaluate("document.querySelector('#share-text').value") or ""
+    code2 = next((w for w in back.replace("\n", " ").split() if w.startswith("RF")), "")
+    pg.click("#b-tocard"); pg.wait_for_timeout(200); pg.fill("#code-in2", code2); pg.press("#code-in2", "Enter"); pg.wait_for_timeout(300)
+    check("challenge: the friend's code back puts both on that game's scoreboard", "500" in pg.inner_text("#chl-list") and "You" in pg.inner_text("#chl-list"), pg.inner_text("#chl-list"))
+    pg.click("#tab-play"); pg.fill("#code-in", "RF1zz-9999"); pg.press("#code-in", "Enter"); pg.wait_for_timeout(200)
+    check("challenge: a broken code is refused with a plain message", "does not look right" in pg.inner_text("#toast") and pg.evaluate("window.__rf.state().screen") == "home", pg.inner_text("#toast"))
+    check("challenge: no errors on the friend's page", not fe, fe)
+    # prompts per game: 10, and party mode with 25 by topic
+    fp.click("#b-end-back"); fp.click("#b-practice"); fp.wait_for_timeout(200)
+    check("settings: 10 prompts per game", fp.inner_text("#round") == "1 / 10", fp.inner_text("#round"))
+    fp.click("#b-quit"); fp.click("#b-leave-yes")
+    fp.click("#b-settings"); fp.click("#seg-count button[data-n='25']"); fp.click("#b-settings"); fp.click("#b-practice"); fp.wait_for_timeout(200)
+    cats = []
+    for k in range(25):
+        cats.append(fp.evaluate("()=>{const t=document.querySelector('#prompt-text').textContent;return window.__rf.packs.find(p=>p.prompt===t).cat}"))
+        if k == 0: check("party mode: 25 prompts, each labelled with its topic", fp.inner_text("#round") == "1 / 25" and "TOPIC 1 OF" in fp.inner_text("#cat"), (fp.inner_text("#round"), fp.inner_text("#cat")))
+        answer(fp, "x", 150); nxt(fp)
+    runs = [c for i, c in enumerate(cats) if i == 0 or cats[i - 1] != c]
+    check("party mode: prompts come grouped by topic", len(runs) == len(set(cats)), cats)
+    fp.wait_for_timeout(600)
+    check("party mode: the end screen scores out of 2500", "2500" in fp.inner_text("#end-of"), fp.inner_text("#end-of"))
+    friend.close()
+
     # ---- 3. timer runs out ----
     pg2 = b.new_page(); e2 = []; pg2.on("pageerror", lambda e: e2.append(str(e)))
     pg2.goto(GAME); pg2.wait_for_timeout(200)

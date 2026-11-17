@@ -110,6 +110,6 @@ each prompt; players emit their total. Messages can drop, so every message carri
 | --- | --- |
 | Answer lists are estimates and some will be argued | Labelled as estimates; Check with Claude |
 | A player tries to talk the judge into points | Answers that read like instructions are not sent; the answer is sent as data; Claude may only fix spelling |
-| Friends with view-only access cannot write to the scoreboard | The game says so at the end; the owner may need to give friends edit access. Untested |
+| Friends with view access cannot write to the scoreboard (Claude allows shared writes from editors only; confirmed when declaring the rules) | The game checks `user.can("data.write")` and tells them to ask for edit access; live rooms are open to everyone with the link |
 | 25 packs repeat after 5 days | Practice rounds help; more packs are the next content job |
 | The estimated chart is wrong for real players | Labelled; replaced by real scores at 5 players |
