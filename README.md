@@ -30,7 +30,7 @@ already use and get a one-page report your reader can take in on a phone. Then t
 slide deck, a social post or a page that opens with your photo.
 
 <p align="center">
-  <a href="projects/artifact-studio/"><img src="projects/artifact-studio/_build/img/example-report.webp" width="560" alt="Screen capture of a one-page business report made by an AI chatbot from eight lines of notes: a green headline saying October was the best month this year, three key numbers, a bar chart and what happens next"></a>
+  <a href="projects/artifact-studio/"><img src="projects/artifact-studio/_build/img/example-report.webp" width="560" alt="Screen capture of a one-page monthly report made by an AI chatbot from eight lines of notes about an invented landscaping company: the headline October beat September, revenue up 12,700 dollars, four more jobs done and more quotes became jobs; three key numbers for revenue, jobs completed and quotes won; and a bar chart comparing September and October"></a>
 </p>
 
 An AI chatbot made this page from eight lines of invented notes, in one try, unedited.

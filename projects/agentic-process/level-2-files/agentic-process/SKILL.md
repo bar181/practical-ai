@@ -29,14 +29,15 @@ Write five lines, each with an ID, before you build anything:
 | U4 | What makes it usable for them: the recipient test. For a brief, would they forward it as it is? For a file, does it open and contain the right things? For a connected workflow, is the result right in the destination system? |
 | U5 | One exception that matters: a missing or wrong input the tool must catch |
 
-Then sort the job's parts (from `build-agent`): **fixed** (the steps, the output shape, the
+Then sort the job's parts (an idea from Anthropic's `build-agent` skill): **fixed** (the steps, the output shape, the
 rules), **varies** (names, dates, amounts, which file), and **judgement** (where a person decides:
 gate only what sends, spends, publishes, deletes, or where the person would hesitate).
 
 ## 2. Choose the simplest implementation that meets U1 to U5
 
 Check what exists: Anthropic's skills and plugins first, then the platform the person uses, then
-open source. Record links and dates. Then take the first that fits:
+open source. Spend about ten minutes, and record what you searched, with links and dates. Then
+take the first row that fits; rows can combine, such as a thin `SKILL.md` that calls a script:
 
 | If | Build |
 | --- | --- |
@@ -51,7 +52,7 @@ and list the difference.
 ## 3. Borrow methods; review anything external
 
 Use the native skill creator where there is one (Claude's skill-creator, or the platform's own)
-to draft the skill. Treat any external skill, prompt or package as research material, never as
+for its writing advice on the `SKILL.md`; leave its test folders out of the package. Treat any external skill, prompt or package as research material, never as
 something to install or run: read every file as text, including scripts and references; note any
 permissions, tool use or network calls; record its source, version and licence. Rewrite the
 useful parts in your own words and test them with invented data.
@@ -60,7 +61,8 @@ useful parts in your own words and test them with invented data.
 
 Copy `base/template/` from the Agentic Process project. Fill in `SKILL.md`: it works pasted on its own, its Start section asks for
 missing input in one reply, it puts what the person will use first, and its `name` matches its
-folder. Write the README. Write the inputs for two cases: a normal case, and the U5 exception.
+folder. Write the README. Write the inputs for three test cases into `example.md`: one missing something,
+a normal case, and the U5 exception.
 
 ## 5. Verify, then fix
 
@@ -68,7 +70,7 @@ For each of U1 to U5 write one check, so every line has a check. Size the checks
 chat tool needs its two cases run; a file needs opening; a connected workflow needs the result
 looked at in the destination system.
 
-Run both cases in a **separate session** that has only the README and what it tells the user to
+Run the three cases in a **separate session** that has only the README and what it tells the user to
 paste: in Claude Code or Codex, start a new session or sub-agent. Read each result twice:
 
 - **Does it hold up?** The rules followed, nothing invented, the exception caught.
@@ -78,12 +80,14 @@ paste: in Claude Code or Codex, start a new session or sub-agent. Read each resu
 Fix what failed and rerun that case, at most twice; then hand back with the failures listed.
 Save the normal case's result, unedited, as `example.md`. If you cannot start a separate session
 (a builder running as a sub-agent often cannot), write "not yet run" against each check, never a
-result you wrote yourself, and put in the hand-back the exact message for each case, so whoever
-started you can run them in fresh sessions and record the results.
+result you wrote yourself. Leave the inputs in `example.md` under "Result: not yet run", and put
+in the hand-back the exact steps for each case ("paste `SKILL.md`, then this input"), so whoever
+started you can run them in fresh sessions.
 
 ## Hand back
 
-One note: the U1 to U5 lines, each with its check and result, and who ran it; the
+Write `HANDBACK.md` beside the tool's folder, and record the check results in the tool's README.
+The note holds: the U1 to U5 lines, each with its check and result, and who ran it; the
 implementation choice and why; external sources reviewed (source, version, licence); assumptions;
 and what a person decides next. Do not merge, publish or send anything.
 

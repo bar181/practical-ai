@@ -4,12 +4,12 @@
 get a one-page report your reader can take in on a phone: the answer first, three key numbers, a
 chart and what happens next.
 
-<p align="center"><img src="_build/img/example-report.webp" width="640" alt="Screen capture of a one-page business report made by an AI chatbot from eight lines of notes about a landscaping company: a green headline saying October was the best month this year, three key numbers for revenue, jobs and quotes won, a bar chart comparing September and October, and what happens next"></p>
+<p align="center"><img src="_build/img/example-report.webp" width="640" alt="Screen capture of a one-page monthly report made by an AI chatbot from eight lines of notes about an invented landscaping company: the headline October beat September, revenue up 12,700 dollars, four more jobs done and more quotes became jobs; three key numbers for revenue, jobs completed and quotes won; and a bar chart comparing September and October"></p>
 
-**The capture, in words:** an AI chatbot made this page from eight lines of notes about an
-invented landscaping company, in one try, unedited. It leads with the answer (October was the best
-month this year), then three numbers, a chart of September against October, and the two decisions
-coming up. [Open the page](base/examples/report.html).
+**The capture, in words:** an AI chatbot made this page from the eight lines of notes in the
+sample below, about an invented landscaping company, in one try, unedited. It leads with the answer
+(October beat September: revenue up $12,700, four more jobs, more quotes won), then three numbers,
+a chart of September against October, and further down the decision coming up. [Open the page](base/examples/report.html).
 
 <p align="center"><a href="#try-it-make-your-first-report-in-5-minutes"><b>Make your first report in 5 minutes</b></a> &nbsp;·&nbsp;
 <a href="#then-the-same-notes-as-a-deck-a-post-or-a-page-with-your-photo">Then a deck or a post</a> &nbsp;·&nbsp;
@@ -24,34 +24,27 @@ Free and open source. No sign-up. Nothing to install.
 Paste this into ChatGPT, Claude, Gemini or the chatbot you already use. The notes are invented, so
 there is nothing to prepare.
 
+**If your chatbot cannot open links,** open [`base/AI-INSTRUCTIONS.md`](https://github.com/bar181/practical-ai/blob/main/projects/artifact-studio/base/AI-INSTRUCTIONS.md)
+(in a downloaded copy: `projects/artifact-studio/base/AI-INSTRUCTIONS.md`), copy all of it, and
+paste it in place of the first line.
+
 ```
-Read the design guide at
-https://raw.githubusercontent.com/bar181/practical-ai/main/projects/artifact-studio/base/AI-INSTRUCTIONS.md
+Read the design guide at https://raw.githubusercontent.com/bar181/practical-ai/main/projects/artifact-studio/base/AI-INSTRUCTIONS.md
 
-Then show me a one-page report as an HTML
-page, from these notes:
+Then show me a one-page report as an HTML page, from these notes:
 
-- We are a landscaping company with two
-  crews
-- October revenue $84,200. September was
-  $71,500
-- Jobs completed: 23 in October, 19 in
-  September
+- We are a landscaping company with two crews
+- October revenue $84,200. September was $71,500
+- Jobs completed: 23 in October, 19 in September
 - Quotes that became jobs: 46%, up from 38%
-- We started sending quotes within two days
-  of the visit. It used to take six
-- One van was off the road for four days.
-  Crews shared. No jobs moved
-- November: hire one seasonal worker for
-  leaf clearance
-- Need to decide about a second van by 15
-  November
+- We started sending quotes within two days of the visit. It used to take six
+- One van was off the road for four days. Crews shared. No jobs moved
+- November: hire one seasonal worker for leaf clearance
+- Need to decide about a second van by 15 November
 
-My business partner reads on her phone and
-wants the answer first. Our colour is green.
+My business partner reads on her phone and wants the answer first. Our colour is green.
 
-When you are done, tell me three ways I
-could tailor this for my own business.
+When you are done, tell me three ways I could tailor this for my own business.
 ```
 
 ### 2. Compare what you get
@@ -61,13 +54,14 @@ You should get a page like the one above. The same request, already built:
 
 - **It shows code, not a page?** That happens with a bare HTML file on a phone. Say "show this as
   an artifact" in Claude, or ask your chatbot for a preview of the page.
-- **Your chatbot cannot open the link?** Open [`base/AI-INSTRUCTIONS.md`](https://github.com/bar181/practical-ai/blob/main/projects/artifact-studio/base/AI-INSTRUCTIONS.md),
-  press the copy button at the top right, and paste it in before the notes.
+- **It says it could not open the link?** Use the "cannot open links" step above.
+- **Yellow `[needs: ...]` tags on the page?** The chatbot marks what your notes did not say, such
+  as `[needs: owner]`, rather than invent it. Add the missing detail in a sentence, or leave it.
 
 ### 3. Use your own notes
 
-Keep the first line, the one with the design guide link. Replace everything after
-`from these notes:` with your own bullet points, then say who reads it and how:
+Keep the first lines, down to `from these notes:`. Replace the bullet points with your own, then
+say who reads it and how:
 
 ```
 My manager reads this on her phone before Monday's meeting.
@@ -80,9 +74,10 @@ not allow in that chatbot.
 ### 4. Check it before you share it (2 minutes)
 
 - [ ] **Every number matches your notes.** The AI lays out your figures; it can still copy one wrong.
-- [ ] **Nothing is added that you did not write:** no new names, dates, quotes or claims.
+- [ ] **Nothing is added that you did not write:** no new names, dates, quotes or claims, and no
+  reasons you did not give ("because", "the main cause").
 - [ ] **The headline says what you want the reader to take away.** If not, say "Change the headline to ...".
-- [ ] **Open it on your phone,** where your reader will.
+- [ ] **Open it on your phone,** where your reader will: send yourself the link or the file.
 
 Ask for any fix in a sentence: `The October revenue is 84,200, not 82,400.`
 

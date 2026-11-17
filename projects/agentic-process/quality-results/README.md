@@ -79,3 +79,13 @@ Ideas rewritten in our own words; no text or code copied, nothing installed.
 | [OpenAI cookbook: iterating development workflows with Codex](https://developers.openai.com/cookbook/examples/codex/iterating-development-workflows-with-codex) | 3 August 2026 | Not checked | A separate verification step that requires observed evidence, with external writes behind explicit approval |
 | [GitHub Spec Kit, agentic SDD](https://github.github.com/spec-kit/reference/agentic-sdd.html) | Read 16 November 2026 | MIT | Every important requirement has a matching check before the work is called done |
 | [Anthropic: Skills for enterprise](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/enterprise) | Read 16 November 2026 | Documentation | Read every file of an external skill, including scripts; look for network calls and tool use before trusting it |
+
+## 3. A cold run of the starter guide, 16 November 2026
+
+A fresh session read the README from the top and followed "Try it: build a tool" as a first-time
+visitor, playing the coding agent too. It built the tool in about 3.5 minutes and found 1 blocking
+and 15 minor points. The blocking one: run inside another agent, the builder could not start fresh
+sessions, so the tool came back built but not ready, and the README had not said the tests could
+fall to the person. Fixed: the README now says so up front, the build request names its catch, and
+the builder says where test inputs, results and the hand-back go.
+[Its friction notes and hand-back](2026-11-16-starter-run/).

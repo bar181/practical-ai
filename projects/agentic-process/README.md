@@ -18,7 +18,12 @@ hands back three files: a README, a `SKILL.md` that works in any chatbot, and a 
 ## Try it: build a tool in about 10 minutes
 
 You need a coding agent: Claude Code, Codex or similar. Open it in an empty folder, and paste
-this. The job in it is an example; swap in your own later.
+this. The job in it is an example; swap in your own later. The build takes about 5 minutes.
+
+**Then the tests, about 5 minutes more.** The builder tests the tool in fresh sessions when it can
+start them, which works when you run it as your main agent. If it cannot, it says "not yet run"
+and hands you three short messages: paste each into a fresh chat and read what comes back. Until
+then the tool is built, not ready.
 
 ```
 Read the builder skill at
@@ -32,6 +37,8 @@ Who uses the result: a café owner,
 in the chatbot they already use.
 Example input: write an invented
 one-page supplier notice.
+The catch: a notice that leaves out a date
+or an attachment it mentions.
 
 Put the tool in document-to-action-brief/.
 Hand back what you built, the checks
@@ -80,7 +87,7 @@ a fact rather than something to do, and it never said who to ask about the date.
 
 ## Use it with your own job
 
-Keep the first two lines of the request. Replace the rest with four answers:
+Keep the first three lines of the request. Replace the rest with four answers:
 
 1. **The job:** what you do by hand, every week or month. *"Turn a client's meeting notes into
    actions with owners and dates."*
