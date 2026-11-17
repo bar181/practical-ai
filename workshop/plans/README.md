@@ -15,7 +15,7 @@ chatbot they already use.
 
 | Project | What it does | Where it stands |
 | --- | --- | --- |
-| Document to action brief | A supplier notice or report becomes what you must do, the dates and the open questions, each with the line it came from | Example built: [the pilot package](../../projects/agentic-process/quality-results/2026-11-16-builder-pilot/agentic-process/document-to-action-brief/) · [plan](document-to-action-brief/) |
+| Document to action brief | A notice, contract, tender, policy, report or bill becomes what you must do, the dates and the open questions, each with the words it came from | **Ready:** [project](../../projects/document-to-action-brief/) |
 | Write and edit in my voice | Three samples become a voice guide; a draft is revised with every fact and promise kept | [Plan](write-in-my-voice/) |
 | Meeting notes to actions | A transcript becomes decisions, owners and dates, with anything nobody agreed flagged | [Plan](meeting-notes-to-actions/) |
 | Research brief with checked sources | One page comparing options, every claim linked to a source | [Draft](../drafts/weekly-brief/) · [plan](weekly-brief/) |

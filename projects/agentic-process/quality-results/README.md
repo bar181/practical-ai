@@ -14,7 +14,7 @@ still say "not yet run": the runs and the review below came afterwards.
 ## 1. Builder pilot: Document to action brief, 16 November 2026
 
 **The task.** Two fresh Claude sessions got the same build brief: turn the
-[document-to-action-brief plan](../../../workshop/plans/document-to-action-brief/README.md) into a tool an
+[document-to-action-brief plan](../../document-to-action-brief/_build/plan.md) into a tool an
 owner can use with the chatbot they already have; Level 1 only; invented documents. Same repository
 snapshot, same approved capabilities (read the repository, web search, write to one folder, no
 installs, no questions). One followed the builder skill. The other built however it judged best,
