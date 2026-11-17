@@ -1,14 +1,14 @@
 # Plans template
 
-> A new tool now follows [Agentic Process](../../drafts/agentic-process/): its
-> [one-page process](../../drafts/agentic-process/PROCESS.md) and [tool template](../../drafts/agentic-process/template/).
+> A new tool now follows [Agentic Process](../../../projects/agentic-process/): its
+> [one-page process](../../../projects/agentic-process/base/PROCESS.md) and [tool template](../../../projects/agentic-process/base/template/).
 > The fuller plan template below is kept for the older plans.
 
 Everything needed to add a plan to this repository, by hand or with a skill.
 
 | File | What it is |
 | --- | --- |
-| [`BUILD-PROCESS.md`](BUILD-PROCESS.md) | The nine steps for building any new productivity tool. Read this first |
+| [`BUILD-PROCESS.md`](BUILD-PROCESS.md) | A pointer to the Agentic Process method, the one source for how a tool is built. Read this first |
 | [`PLAN-TEMPLATE.md`](PLAN-TEMPLATE.md) | The plan README, with a note on what goes in each section |
 | [`../../skills/plan-writer/`](../../skills/plan-writer/) | A skill that researches a tool and writes its plan from the template |
 | [`../../skills/landscape-review/`](../../skills/landscape-review/) | A skill that checks what already exists before anything is built |

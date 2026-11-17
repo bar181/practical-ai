@@ -2,7 +2,7 @@
 
 Actions, not tools. The tools are in the one list: [`tool-inventory.md`](tool-inventory.md).
 
-Every tool follows [Agentic Process](../workshop/drafts/agentic-process/): nine steps, a check after
+Every tool follows [Agentic Process](../projects/agentic-process/): nine steps, a check after
 each. Each tool is a useful tool first, with a short explainer. Reuse Anthropic's skills and plugins
 where they fit. Nothing is built until its North Star page is approved at stage 3.
 
@@ -14,16 +14,16 @@ where they fit. Nothing is built until its North Star page is approved at stage 
 - [ ] Write a North Star page for "summarise a document", the one researched tool with no page
 - [ ] Read the small-business plugin's skills before designing any Advanced level, and record what it already covers
 
-## Agentic Process version 2
+## Agentic Process
 
-Restarted on 16 November 2026. The plan is in [its spec](../workshop/drafts/agentic-process/SPEC.md), section 9.
+Restarted and moved to `projects/` on 16 November 2026. [Its spec](../projects/agentic-process/_build/SPEC.md). [The builder pilot](../projects/agentic-process/quality-results/README.md): 93 vs 73.
 
 - [x] AC-1: decision support's short check in Claude, passed 16 November 2026
 - [ ] AC-2: run the same check in a second chatbot (ChatGPT or Gemini)
 - [x] AC-3: the builder built the learning log from its plan; its check passed
 - [ ] Owner: decide whether to make the decision brief read more like advice (every blind grader preferred the plain answer's readability)
 - [ ] Owner: compare the new learning log with the older `learning-log` skill, then keep one
-- [ ] Move Agentic Process to `projects/` and make `PROCESS.md` the single process
+- [x] Move Agentic Process to `projects/` and make `PROCESS.md` the single process, 16 November 2026
 - [ ] Later: give Artifact Studio one `SKILL.md` as its source of instructions, in place of `AI-INSTRUCTIONS.md`
 
 Version 1, archived. From [the review from the user's side](reports/2026-11-16-agentic-process-user-review.md):
@@ -50,7 +50,7 @@ Version 1, archived. From [the review from the user's side](reports/2026-11-16-a
 - [ ] Run the beginner prompt from the artifact studio README in ChatGPT and Gemini, and record what came back
 - [ ] Try the artifact studio MCP server inside a desktop assistant
 - [ ] Give the artifact studio to one other person for a real job
-- [ ] Build the next tool, Document to action brief, with Agentic Process from step 1, and time it
+- [x] Build Document to action brief with Agentic Process: done as the builder pilot, 16 November 2026
 - [ ] Teach each 30-minute lesson once and correct its timings
 - [ ] Draft a commercial-grade one-pager for each promoted project
 

@@ -10,7 +10,7 @@ channel, read by the next crew before they sail.
 **Status, 16 November 2026.** Built by the Agentic Process builder skill from the learning-system
 plan, with no help, as the builder check (AC-3). Three fresh Claude chats ran it; all three
 passed. No other chatbot has tried it, and nobody has used it on a real log. The plan is not yet
-approved, and this may replace the older [`learning-log` skill](../../../../skills/learning-log/)
+approved, and this may replace the older [`learning-log` skill](../../../../../workshop/skills/learning-log/)
 once the owner compares them.
 
 ## Try it: paste one file (5 minutes)

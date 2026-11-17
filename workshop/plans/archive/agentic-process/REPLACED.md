@@ -34,3 +34,8 @@ the restart, Autopilot, the test rules, the builder's project template and its s
 the package template, and decision support's separate workflow card and instruction file.
 Replaced by one `SKILL.md` per tool, the template in `workshop/drafts/agentic-process/template/`,
 and the one-page `PROCESS.md`.
+
+## Build process guide, archived on 16 November 2026
+
+`BUILD-PROCESS-2026-11-15.md` was the nine-step build guide in the plans template. Replaced by
+`projects/agentic-process/base/PROCESS.md`; the template keeps a short pointer.

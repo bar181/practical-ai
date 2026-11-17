@@ -13,57 +13,60 @@ it can help. Each tool here hands it exactly that, for one job you repeat. It wo
 Claude, Gemini, Microsoft Copilot and other chatbots, and with personal agents.
 
 <p align="center">
-  <a href="#try-it-in-five-minutes"><b>Try it in five minutes</b></a> &nbsp;·&nbsp;
+  <a href="#make-your-first-report-artifact-studio"><b>Make your first report</b></a> &nbsp;·&nbsp;
+  <a href="#build-a-tool-agentic-process"><b>Build a tool</b></a> &nbsp;·&nbsp;
   <a href="#the-jobs-you-repeat">The jobs it helps with</a> &nbsp;·&nbsp;
-  <a href="#how-each-tool-is-built">How each tool is built</a> &nbsp;·&nbsp;
   <a href="#created-by-bradley-ross">Who made this</a>
 </p>
 
-## Start here
+## Choose a project
 
-| You are | Do this | Time |
-| --- | --- | --- |
-| **New to AI, on a phone or a laptop** | Copy the prompt in [Try it in five minutes](#try-it-in-five-minutes) into the chatbot you already use | 5 minutes |
-| **Using a chatbot every day** | Paste [the instructions](projects/artifact-studio/base/AI-INSTRUCTIONS.md) into a Project or a Gem once. Then just ask | 10 minutes, once |
-| **Want to see how a tool works first** | Open its [explainer](projects/artifact-studio/base/examples/voice-explainer.html): a page that shows the finished tool, step by step | 5 minutes |
-| **Building with agents** | Add the [skill](projects/artifact-studio/level-2-files/) or the [MCP server](projects/artifact-studio/level-3-files/) | 15 minutes |
-| **Someone with a job to turn into a tool** | Copy [the tool template](workshop/drafts/agentic-process/template/) and fill it in with your chatbot | About an hour, an estimate |
-| **An AI agent** | Follow [`AGENTS.md`](AGENTS.md) | |
+Two projects are ready. Pick the one that matches what you want to do today.
 
-The pages in this repository are HTML files. GitHub shows an HTML file as code, so download it and
-open it in a browser to see the page. The times are estimates.
+### Make your first report: Artifact Studio
 
-## Try it in five minutes
+**For someone with rough notes and something to share.** Paste one prompt into the chatbot you
+already use and get a one-page report your reader can take in on a phone. Then the same notes as a
+slide deck, a social post or a page that opens with your photo.
 
-The first tool is finished: **Artifact Studio** turns any AI answer into a mini website, a slide
-deck, a report or a preview of your next post. Free, no sign-up, nothing to install.
+<p align="center">
+  <a href="projects/artifact-studio/"><img src="projects/artifact-studio/_build/img/example-report.webp" width="560" alt="Screen capture of a one-page business report made by an AI chatbot from eight lines of notes: a green headline saying October was the best month this year, three key numbers, a bar chart and what happens next"></a>
+</p>
 
-**1. See it on your own AI.** Paste this into ChatGPT, Claude, Gemini or the chatbot you already
-use, after any answer or with your own notes:
+An AI chatbot made this page from eight lines of invented notes, in one try, unedited.
 
-```
-Read the design guide at https://raw.githubusercontent.com/bar181/practical-ai/main/projects/artifact-studio/base/AI-INSTRUCTIONS.md
+<p align="center"><a href="projects/artifact-studio/#try-it-make-your-first-report-in-5-minutes"><b>Make your first report in 5 minutes</b></a></p>
 
-Then show this as an HTML presentation in the keynote voice, and tell me three ways I could tailor it for my own business.
-```
+### Build a tool: Agentic Process
 
-No notes to hand? The [Artifact Studio page](projects/artifact-studio/#try-it-in-five-minutes)
-has a version with sample notes built in. Or open a
-[worked example](projects/artifact-studio/base/examples/): each one shows a prompt, its sample
-input and the finished page.
+**For someone who builds tools or workflows with a coding agent** such as Claude Code or Codex.
+Paste one build request with a job you repeat. You get back a small package another person can
+start in five minutes: a README, one `SKILL.md` that works in any chatbot, and a worked example,
+tested in a fresh session before you get it.
 
-**2. Use it every day.** Make a Project in Claude or ChatGPT, or a Gem in Gemini, and paste
-[the instructions](projects/artifact-studio/base/AI-INSTRUCTIONS.md) into it once. After that you
-just say "show this as a presentation". Using agents? Add the
-[skill](projects/artifact-studio/level-2-files/) or the
-[MCP server](projects/artifact-studio/level-3-files/).
+<p align="center">
+  <a href="projects/agentic-process/"><img src="projects/agentic-process/_build/img/builder-flow.svg" width="400" alt="Animation of the builder: a job you repeat goes in; four steps light up in turn, name the usable result, pick the simplest build, build one SKILL.md, test it in a fresh session; out comes a checked package of README.md, SKILL.md and example.md"></a>
+</p>
 
-**3. Make it yours.** Fork this repository, or [download it](https://github.com/bar181/practical-ai/archive/refs/heads/main.zip) into Google Drive, SharePoint
-or your Documents, and connect your AI to the folder. Then fill in
-[your preferences](projects/artifact-studio/level-2-files/preferences.md): your colours, your
-tone, the things you never want.
+**In one blind pilot, a tool built with Agentic Process scored 93/100. The direct-build version
+scored 73/100 on the same brief.** Both found all nine key items in an unseen supplier notice; the
+Agentic Process version also put the missing date and form at the top, said who to ask, and needed
+no corrections before acting. One build task, one notice, one blind reviewer:
+[the evidence](projects/agentic-process/quality-results/README.md).
 
-**If you are an AI agent:** follow [`AGENTS.md`](AGENTS.md). We wrote instructions just for you.
+<p align="center"><a href="projects/agentic-process/#try-it-build-a-tool-in-about-10-minutes"><b>Build your first tool in about 10 minutes</b></a></p>
+
+### Not sure?
+
+| You are | Go to |
+| --- | --- |
+| **New to AI, on a phone or a laptop** | [Make your first report](projects/artifact-studio/#try-it-make-your-first-report-in-5-minutes) |
+| **Using a chatbot every day** | Artifact Studio's [one-time setup](projects/artifact-studio/#advanced-setup-use-it-every-day) |
+| **Building with a coding agent** | [Build a tool](projects/agentic-process/#try-it-build-a-tool-in-about-10-minutes) |
+| **An AI agent** | [`AGENTS.md`](AGENTS.md) |
+
+Some pages here are HTML files. GitHub shows an HTML file as code, so download it and open it in a
+browser to see the page. The times are estimates.
 
 ## Practical, not breakthrough
 
@@ -101,66 +104,21 @@ These are the jobs people most often use AI for, from usage studies and small-bu
 read in November 2026. What gets built next is in [`docs/practical-ai-priorities.md`](docs/practical-ai-priorities.md),
 and the research is in [`docs/tool-inventory.md`](docs/tool-inventory.md).
 
-## Ready now: Artifact Studio
-
-**"Make this look better" is not a solution. Give your AI a design brief.** Artifact Studio is a
-curated library of modern design templates. Say "show this as a presentation" and get a deck or a
-report you would be proud to present. Give it one photo and it moves like a film. Ask for
-three drafts of a post and see each one the way your audience will.
-
-<p align="center">
-  <a href="projects/artifact-studio/"><img src="projects/artifact-studio/_build/img/show-photo-effects.webp" width="800" alt="Animated screen capture of photo effects made from one photograph with Artifact Studio: a sketch draws itself and becomes the photo, the camera pans across a lake, a postcard flips over, and a word is filled with the photo"></a>
-</p>
-
-<p align="center">
-  <img src="projects/artifact-studio/_build/img/callouts.svg" width="800" alt="Four cards. One: present a mini website, not a slide show. Two: make this look better is not a solution. Three: give your agents a way to tell a proper story. Four: see your draft the way your audience will.">
-</p>
-
-What is in it, now that the first project is finished:
-
-| You get | What it is |
-| --- | --- |
-| [One file to browse](projects/artifact-studio/base/studio.html) | The whole library as one page you download and open, highlights first |
-| [Ten worked examples](projects/artifact-studio/base/examples/) | A prompt, its sample input and the finished page, for each of seven voices, for post previews, for photo effects and for a report |
-| Thirteen photo and scroll effects | Pan and zoom, parallax, a sketch that draws itself, scrollytelling and more, each with the sentence that asks for it |
-| Seven voices | Visionary, storyteller, emotional, explainer, practical, analyst and executive brief |
-| Post previews for six places | LinkedIn, Instagram, TikTok, Facebook, email and a short blog, shown as your audience will see them |
-| Pages, decks and parts | Four page types, four slide decks you present from the browser, and the parts to build your own |
-| [Instructions for any chatbot](projects/artifact-studio/base/AI-INSTRUCTIONS.md) | The whole procedure in one file you paste in once |
-| [A skill](projects/artifact-studio/level-2-files/) and [an MCP server](projects/artifact-studio/level-3-files/) | For people who work with agents |
-
-<p align="center">
-  <img src="projects/artifact-studio/_build/img/social-three-drafts.webp" width="800" alt="Screen capture of three drafts of one LinkedIn post shown side by side as they would look in a feed, each with a different opening and picture, and a button to choose it">
-</p>
-
-<p align="center"><a href="projects/artifact-studio/"><b>Open Artifact Studio</b></a></p>
-
-It was built and checked by its author, and scored 70 out of 100 in
-[his own final review](docs/reports/2026-11-15-artifact-studio-final-review.md). The first page
-made with it for a real request is
-[a progress report on the project itself](docs/reports/2026-11-16-project-one-progress.html). Nobody else has
-used it yet, so your feedback counts.
-
 ## How each tool is built
 
 **Reuse first.** For each job: use what already does it, such as Anthropic's own skills and
 plugins; add a thin layer for business rules or missing steps; build only what is still missing.
-How much already exists depends on the job and where it runs.
 
 **One file per tool.** Each tool is a README that explains it, one `SKILL.md` and a worked
 example. `SKILL.md` uses the open Agent Skills format, so the same file installs as a Claude skill,
 works in other tools that support the format, and can be pasted into any chatbot. No lock-in to one
 provider.
 
-**Agentic Process** is how a tool gets built: [a one-page process](workshop/drafts/agentic-process/PROCESS.md)
-with nine steps as a checklist, [a template](workshop/drafts/agentic-process/template/) and a thin
-builder skill. It is version 2, rewritten on 16 November 2026 ([its spec](workshop/drafts/agentic-process/SPEC.md)),
-and nothing in it has run yet.
-
-The first tool built this way is [decision support](workshop/drafts/agentic-process/examples/decision-support/):
-paste one file, type a business decision, and get a one-page brief with sources and a
-recommendation. Fresh AI sessions tested an earlier format of it on two decisions. No person has
-used it yet.
+**[Agentic Process](projects/agentic-process/)** builds them: it writes down the usable result,
+picks the simplest build, and tests the tool in a fresh session before handing it back. Tools it
+has made: [decision support](projects/agentic-process/base/examples/decision-support/), a
+[learning log](projects/agentic-process/base/examples/learning-log/), and the pilot's
+[document to action brief](projects/agentic-process/quality-results/2026-11-16-builder-pilot/agentic-process/document-to-action-brief/).
 
 ## Explainers
 
@@ -171,13 +129,13 @@ not a course. [Artifact Studio](projects/artifact-studio/) also has a page versi
 
 ## What comes next
 
-The next three tools. Each has a plan waiting on the owner's review, and each checks every AI-made item against its source before you act.
+The next tools. Each has a plan waiting on the owner's review, and each checks every AI-made item
+against its source before you act. [Document to action brief](projects/agentic-process/quality-results/2026-11-16-builder-pilot/agentic-process/document-to-action-brief/),
+the third planned tool, was built as the builder's pilot and is kept with its evidence.
 
-1. [**Document to action brief**](workshop/plans/document-to-action-brief/): a supplier notice
-   becomes facts, obligations, dates and questions, each with the line it came from.
-2. [**Write and edit in my voice**](workshop/plans/write-in-my-voice/): three samples become a
+1. [**Write and edit in my voice**](workshop/plans/write-in-my-voice/): three samples become a
    voice guide, and a revised draft keeps every fact and promise.
-3. [**Meeting notes to actions**](workshop/plans/meeting-notes-to-actions/): a transcript becomes
+2. [**Meeting notes to actions**](workshop/plans/meeting-notes-to-actions/): a transcript becomes
    actions, with every owner or date nobody agreed to flagged.
 
 After that, the tools in [the priorities](docs/practical-ai-priorities.md), one change request each.
@@ -224,9 +182,9 @@ room.
 
 | Folder | What it holds |
 | --- | --- |
-| [`projects/`](projects/) | Tools you can try in five minutes. One so far: Artifact Studio |
+| [`projects/`](projects/) | The two projects: Artifact Studio and Agentic Process |
 | [`docs/`](docs/) | What gets built next, the to-do list and dated reports |
-| [`workshop/`](workshop/) | How the tools get built: plans, drafts (including Agentic Process version 2), skills and checking scripts. You do not need it to use a tool |
+| [`workshop/`](workshop/) | How the tools get built: plans, earlier drafts, skills and checking scripts. You do not need it to use a tool |
 
 Inside every project, `base/` is enough to try the tool. Beside it, `level-2-files/` and
 `level-3-files/` hold the saved and the connected versions.
@@ -239,7 +197,7 @@ Inside every project, `base/` is enough to try the tool. Beside it, `level-2-fil
 
 `python3 workshop/tools/check_project.py projects/artifact-studio` checks a project against the layout in
 [`projects/README.md`](projects/README.md). How a tool gets built is
-[Agentic Process](workshop/drafts/agentic-process/): nine steps, a check after each, being rebuilt as version 2.
+[Agentic Process](projects/agentic-process/): it specifies the usable result, builds the simplest version and tests it in a fresh session.
 
 </details>
 

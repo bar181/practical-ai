@@ -1,6 +1,6 @@
 # Learnings database: North Star
 
-Stages 1 to 3 of the [project method](../../drafts/agentic-process/PROCESS.md). Written
+Stages 1 to 3 of the [project method](../../../projects/agentic-process/base/PROCESS.md). Written
 15 November 2026. **Not yet approved.** This page updates the direction of the earlier
 [plan](README.md) and [draft](../../drafts/learning-system/), which framed the tool as questions
 and answers.
@@ -119,7 +119,7 @@ Level 1 is the Beginner level: a student can run it in any chat assistant with n
 
 ## Depends on, and feeds
 
-- **Feeds** the [project method](../../drafts/agentic-process/): stage 9 writes its lessons here,
+- **Feeds** the [project method](../../../projects/agentic-process/): stage 9 writes its lessons here,
   and every stage starts by reading the rows that apply. `LESSONS.md` becomes the first import.
 - **Shares its row shape** with the [core memory system](../core-memory/README.md). Build this
   first: it is the smaller of the two.

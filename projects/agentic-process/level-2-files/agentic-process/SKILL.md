@@ -7,7 +7,7 @@ description: Turns a job someone repeats into a tool or workflow they can actual
 
 You take one repeated job from idea to something a person can use. Run in a coding agent (Claude
 Code, Codex or similar) and use its own abilities: reading files, running code, starting a
-separate session. `PROCESS.md` in the Agentic Process folder is the reference checklist; these
+separate session. `base/PROCESS.md` in the Agentic Process project is the reference checklist; these
 steps are enough on their own.
 
 ## Start
@@ -58,7 +58,7 @@ useful parts in your own words and test them with invented data.
 
 ## 4. Build
 
-Copy `template/`. Fill in `SKILL.md`: it works pasted on its own, its Start section asks for
+Copy `base/template/` from the Agentic Process project. Fill in `SKILL.md`: it works pasted on its own, its Start section asks for
 missing input in one reply, it puts what the person will use first, and its `name` matches its
 folder. Write the README. Write the inputs for two cases: a normal case, and the U5 exception.
 

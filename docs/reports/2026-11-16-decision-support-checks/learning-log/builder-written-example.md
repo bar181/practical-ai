@@ -2,7 +2,7 @@
 
 This shows what a good result should look like. **It was not made by a fresh chat.** No fresh
 chat could be started when the tool was built, so the builder wrote this on 16 November 2026 by
-following [`SKILL.md`](../../../../workshop/drafts/agentic-process/examples/learning-log/SKILL.md) step by step on the message below. Treat it as a target, not as
+following [`SKILL.md`](../../../../projects/agentic-process/base/examples/learning-log/SKILL.md) step by step on the message below. Treat it as a target, not as
 proof the file works, and replace it with an unedited fresh-chat result once one is run.
 Hartley & Moss, a two-person picture-framing shop, its log and its price list are invented.
 

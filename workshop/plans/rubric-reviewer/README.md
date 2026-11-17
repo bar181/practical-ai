@@ -1,6 +1,6 @@
 # Rubric reviewer: North Star
 
-Stages 1 to 3 of the [project method](../../drafts/agentic-process/PROCESS.md). Written
+Stages 1 to 3 of the [project method](../../../projects/agentic-process/base/PROCESS.md). Written
 15 November 2026. **Not yet approved.** Proposed by the assistant, not asked for by the owner.
 Complexity: beginner.
 

@@ -77,12 +77,12 @@ Four things, and nothing else.
 
 | Part | File | State |
 | --- | --- | --- |
-| The process, one page, with the nine steps as a compact checklist | [`PROCESS.md`](PROCESS.md) | Written |
-| The tool template | [`template/`](template/) | Written |
-| A thin builder skill | [`builder/agentic-process/SKILL.md`](builder/agentic-process/SKILL.md) | Built [`learning-log`](examples/learning-log/) (AC-3), then beat a direct build 93 to 73 in a blind pilot ([quality results](quality-results/)) |
-| One working example | [`examples/decision-support/`](examples/decision-support/) | Passed the short check in Claude (AC-1) |
+| The process, one page, with the nine steps as a compact checklist | [`PROCESS.md`](../base/PROCESS.md) | Written |
+| The tool template | [`base/template/`](../base/template/) | Written |
+| A thin builder skill | [`level-2-files/agentic-process/SKILL.md`](../level-2-files/agentic-process/SKILL.md) | Built [`learning-log`](../base/examples/learning-log/) (AC-3), then beat a direct build 93 to 73 in a blind pilot ([quality results](../quality-results/)) |
+| One working example | [`base/examples/decision-support/`](../base/examples/decision-support/) | Passed the short check in Claude (AC-1) |
 
-The explainer for Agentic Process itself is [`README.md`](README.md).
+The explainer for Agentic Process itself is [`README.md`](../README.md).
 
 ## 6. The builder
 
@@ -101,8 +101,8 @@ The builder writes the usable result as five lines (U1 to U5: who uses it, what 
 what they need, what makes it usable, one exception), gives each a check, and runs the checks in
 a separate session: an input missing something, the normal case, and the exception. Each result
 is read twice: does it hold up, and would the recipient use it as it is. Details in
-[`PROCESS.md`](PROCESS.md). What the checks teach about the builder goes in
-[`quality-results/`](quality-results/).
+[`PROCESS.md`](../base/PROCESS.md). What the checks teach about the builder goes in
+[`quality-results/`](../quality-results/).
 
 ## 8. Done when
 
@@ -115,7 +115,7 @@ is read twice: does it hold up, and would the recipient use it as it is. Details
 
 ## 9. Out of scope
 
-Dropped from version 1, kept in [the archive](../../plans/archive/agentic-process/): the chatbot
+Dropped from version 1, kept in [the archive](../../../workshop/plans/archive/agentic-process/): the chatbot
 coach, courses and lessons, Autopilot, gates and check scripts inside each tool, the fresh-session
 test harness, the separate workflow card and instruction file, and generated pages. A Level 3
 connection is built only when a tool needs one.
@@ -127,7 +127,7 @@ AC-1 and AC-3 hold. [The check records](../../../docs/reports/2026-11-16-decisio
 1. Run AC-2: paste decision support's `SKILL.md` into ChatGPT or Gemini with the bakery input.
 2. Owner: decide whether to make the brief read more like advice (fewer inline labels, plainer
    wording when the rule picks a check), the one weakness every blind grader named.
-3. Move this draft to `projects/agentic-process/`, making `PROCESS.md` the single process.
+3. Done 16 November 2026: moved to `projects/agentic-process/`; `PROCESS.md` is the single process.
 
 ## 11. How it is scored
 
@@ -141,13 +141,13 @@ Out of 100. No item counts users.
 | Checked honestly | 20 | The short check is run and recorded for every tool; nothing claims more than was run |
 | Small | 15 | Four parts in Agentic Process, three or four files per tool, nothing extra |
 
-Version 1 scored 44 against the owner's spec ([evaluation](../../plans/archive/agentic-process/v2-restart/EVALUATION.md)).
+Version 1 scored 44 against the owner's spec ([evaluation](../../../workshop/plans/archive/agentic-process/v2-restart/EVALUATION.md)).
 Version 2 is not yet scored against this rubric.
 
 ## 12. Owner decisions, 16 November 2026
 
-1. **One process.** When this draft moves to `projects/`, [`PROCESS.md`](PROCESS.md) becomes the
-   single process. `workshop/plans/plans-template/BUILD-PROCESS.md` stays only as a short pointer
+1. **One process.** [`PROCESS.md`](../base/PROCESS.md) is the single process, since the move to
+   `projects/` on 16 November 2026. `workshop/plans/plans-template/BUILD-PROCESS.md` stays only as a short pointer
    if other pages still link to it.
 2. **Level 3** stays unassigned until real use shows a recurring manual step worth automating.
 3. **Artifact Studio** moves to one `SKILL.md` later; it stays in the backlog while this pattern

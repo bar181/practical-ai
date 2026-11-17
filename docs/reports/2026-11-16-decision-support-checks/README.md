@@ -40,4 +40,4 @@ the brief, and the rule's "do nothing leads, so run the trial as the check" word
 by hand (it could not start a fresh session, which it disclosed), and three fresh-chat checks of
 the tool it built: [`l1/`](learning-log/l1/) missing context, [`l2/`](learning-log/l2/) the
 example, [`l3/`](learning-log/l3/) a different log with a retired row and empty cells. All three
-passed. The tool is in [`examples/learning-log/`](../../../workshop/drafts/agentic-process/examples/learning-log/).
+passed. The tool is in [`examples/learning-log/`](../../../projects/agentic-process/base/examples/learning-log/).

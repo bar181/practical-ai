@@ -7,7 +7,7 @@ A draft that passes review moves to [`projects/`](../../projects/).
 
 | Draft | Tool |
 | --- | --- |
-| [`agentic-process/`](agentic-process/) | Agentic Process version 2: the shared builder, restarted on 16 November 2026 from a new [spec](agentic-process/SPEC.md). Version 1 is in [the archive](../plans/archive/agentic-process/) |
+| Agentic Process | Finished and moved to [`projects/agentic-process/`](../../projects/agentic-process/) on 16 November 2026 |
 | [`dashboard/`](dashboard/) | Dashboard |
 | [`estimator/`](estimator/) | Estimator |
 | [`inbox-daily-summary/`](inbox-daily-summary/) | Inbox triage and daily summary |

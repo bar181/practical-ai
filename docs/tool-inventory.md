@@ -84,7 +84,7 @@ base-and-levels layout when it is next worked on. Plans are in [`workshop/plans/
 | [Training website](../workshop/plans/training-website/) | A course site with lessons, a schedule and a built-in assistant. | One page per course built as an artifact: the outline, this week's lesson, what is due, links to materials. | A skill that builds lesson pages from a Google Drive folder of materials, with a schedule that updates itself and the student assistant embedded. |  |
 | [Daily builder](../workshop/plans/daily-builder/) | A scheduled agent that takes the next item on this list through the project method and opens a pull request. | Not a student tool. By hand: ask the assistant to take the next item here, draft its Beginner level and stop for your review. | The `project-builder` skill with a fixed rubric, a second agent that scores the work, and a GitHub connection that opens a pull request for every run. |  |
 
-[Agentic Process](../workshop/drafts/agentic-process/), being rebuilt as version 2, is how any of these gets built. It supports the
+[Agentic Process](../projects/agentic-process/) is how any of these gets built. It supports the
 tools and is not one of them.
 
 ## Part 2. The ten most in-demand simple tools

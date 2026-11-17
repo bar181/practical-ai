@@ -14,4 +14,4 @@ time, and it does not depend on anyone remembering.
 
 A gate is one command that must succeed. A project lists its gates in `gates.json`, each with a
 line saying what it proves. How gates fit into building a tool is in
-[Agentic Process](../drafts/agentic-process/PROCESS.md).
+[Agentic Process](../../projects/agentic-process/base/PROCESS.md).

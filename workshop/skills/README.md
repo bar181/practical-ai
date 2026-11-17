@@ -11,7 +11,7 @@ writing it down once saves doing it from memory each time.
 
 | Skill | What it does | Used by |
 | --- | --- | --- |
-| [`agentic-process`](../drafts/agentic-process/builder/agentic-process/) | The builder: turns a repeated job into a tool (a README, one portable `SKILL.md` and a worked example), reusing what exists, and records a short check. It lives with Agentic Process version 2, not in this folder | Agentic Process |
+| [`agentic-process`](../../projects/agentic-process/level-2-files/agentic-process/) | The builder: turns a repeated job into a tool (a README, one portable `SKILL.md` and a worked example), reusing what exists, and records a short check. It lives with Agentic Process version 2, not in this folder | Agentic Process |
 | [`plan-writer`](plan-writer/) | Researches a tool and writes its plan from the template, then updates the indexes | Every plan in [`../plans/`](../plans/) |
 | [`artifact-studio`](../../projects/artifact-studio/level-2-files/artifact-studio/) | Turns any content into one polished HTML page by choosing a recipe, a voice and a look, then building and checking it. Holds the canonical recipe, voice and look cards | [Artifact studio](../../projects/artifact-studio/) |
 | [`voice-drafter`](voice-drafter/) | Drafts a post in one person's voice from their voice file, and turns feedback into a rule | [Voice post drafter](../drafts/voice-post-drafter/) |

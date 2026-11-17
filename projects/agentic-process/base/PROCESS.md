@@ -1,6 +1,6 @@
 # The process: one page
 
-How a tool gets built in this repository. The [builder skill](builder/agentic-process/SKILL.md)
+How a tool gets built in this repository. The [builder skill](../level-2-files/agentic-process/SKILL.md)
 follows it.
 
 **Think of each tool as** a recipe card: one card that works in any kitchen. You do not print a
@@ -9,7 +9,7 @@ card for each brand of oven.
 **The user's path:** open the explainer, give it your input, get a result.
 
 **The builder's path:** specify the usable result, choose the simplest implementation, build,
-verify in a separate session, fix, hand back. The [builder skill](builder/agentic-process/SKILL.md)
+verify in a separate session, fix, hand back. The [builder skill](../level-2-files/agentic-process/SKILL.md)
 runs it in a coding agent such as Claude Code or Codex.
 
 ## What a tool is
@@ -86,7 +86,7 @@ dig, rewrite or ask, it fails. Fix and rerun, at most twice. Before claiming it 
 chatbots, try one. Record each check, who ran it and what they saw, in the README. A check not run
 is written "not yet run".
 
-What the checks teach about the builder itself goes in [`quality-results/`](quality-results/).
+What the checks teach about the builder itself goes in [`quality-results/`](../quality-results/).
 
 ## Rules
 

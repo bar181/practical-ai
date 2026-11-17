@@ -1,175 +1,120 @@
-# Artifact Studio: turn any AI answer into a mini website, slide deck, report or social post
+# Artifact Studio: make your first report from rough notes
+
+**Have rough notes and something to share?** Paste one prompt into the chatbot you already use and
+get a one-page report your reader can take in on a phone: the answer first, three key numbers, a
+chart and what happens next.
+
+<p align="center"><img src="_build/img/example-report.webp" width="640" alt="Screen capture of a one-page business report made by an AI chatbot from eight lines of notes about a landscaping company: a green headline saying October was the best month this year, three key numbers for revenue, jobs and quotes won, a bar chart comparing September and October, and what happens next"></p>
+
+**The capture, in words:** an AI chatbot made this page from eight lines of notes about an
+invented landscaping company, in one try, unedited. It leads with the answer (October was the best
+month this year), then three numbers, a chart of September against October, and the two decisions
+coming up. [Open the page](base/examples/report.html).
+
+<p align="center"><a href="#try-it-make-your-first-report-in-5-minutes"><b>Make your first report in 5 minutes</b></a> &nbsp;·&nbsp;
+<a href="#then-the-same-notes-as-a-deck-a-post-or-a-page-with-your-photo">Then a deck or a post</a> &nbsp;·&nbsp;
+<a href="#what-is-inside">Everything inside</a></p>
+
+## Try it: make your first report in 5 minutes
+
+Free and open source. No sign-up. Nothing to install.
+
+### 1. Copy the sample
+
+Paste this into ChatGPT, Claude, Gemini or the chatbot you already use. The notes are invented, so
+there is nothing to prepare.
+
+```
+Read the design guide at
+https://raw.githubusercontent.com/bar181/practical-ai/main/projects/artifact-studio/base/AI-INSTRUCTIONS.md
+
+Then show me a one-page report as an HTML
+page, from these notes:
+
+- We are a landscaping company with two
+  crews
+- October revenue $84,200. September was
+  $71,500
+- Jobs completed: 23 in October, 19 in
+  September
+- Quotes that became jobs: 46%, up from 38%
+- We started sending quotes within two days
+  of the visit. It used to take six
+- One van was off the road for four days.
+  Crews shared. No jobs moved
+- November: hire one seasonal worker for
+  leaf clearance
+- Need to decide about a second van by 15
+  November
+
+My business partner reads on her phone and
+wants the answer first. Our colour is green.
+
+When you are done, tell me three ways I
+could tailor this for my own business.
+```
+
+### 2. Compare what you get
+
+You should get a page like the one above. The same request, already built:
+[`base/examples/report.html`](base/examples/report.html). Yours will differ.
+
+- **It shows code, not a page?** That happens with a bare HTML file on a phone. Say "show this as
+  an artifact" in Claude, or ask your chatbot for a preview of the page.
+- **Your chatbot cannot open the link?** Open [`base/AI-INSTRUCTIONS.md`](https://github.com/bar181/practical-ai/blob/main/projects/artifact-studio/base/AI-INSTRUCTIONS.md),
+  press the copy button at the top right, and paste it in before the notes.
+
+### 3. Use your own notes
+
+Keep the first line, the one with the design guide link. Replace everything after
+`from these notes:` with your own bullet points, then say who reads it and how:
+
+```
+My manager reads this on her phone before Monday's meeting.
+She wants the decision first. Our colour is navy.
+```
+
+Rough is fine: half-sentences, numbers, things to decide. Leave out anything your workplace does
+not allow in that chatbot.
+
+### 4. Check it before you share it (2 minutes)
+
+- [ ] **Every number matches your notes.** The AI lays out your figures; it can still copy one wrong.
+- [ ] **Nothing is added that you did not write:** no new names, dates, quotes or claims.
+- [ ] **The headline says what you want the reader to take away.** If not, say "Change the headline to ...".
+- [ ] **Open it on your phone,** where your reader will.
+
+Ask for any fix in a sentence: `The October revenue is 84,200, not 82,400.`
+
+## Then: the same notes as a deck, a post or a page with your photo
+
+<p align="center">
+  <img src="_build/img/one-source.svg" width="800" alt="Animation: one page of rough notes becomes a slide deck, then a one-page report, then a social post, each from a single sentence typed to the assistant">
+</p>
+
+**The animation, in words:** the same page of notes, and one sentence each time. "Show it as a
+deck" gives slides; "Now a report" gives the one-page report; "Now a post" gives a social post.
+
+Stay in the same chat and say one of these:
+
+- `Show the same notes as a keynote-style slide deck: black slides, one idea each, huge type.`
+- `Now write three LinkedIn posts from it, shown as they will look in the feed.`
+- Attach a photo and say: `Open with my photo as a slow pan and zoom, and set the title in huge letters filled with the photo.`
+- `Create another version for my operations team, as a how-to guide.`
+
+Same facts, new shape, new voice. Each takes about two minutes.
+
+## What is inside
+
+### Photo effects: the part people remember
 
 <p align="center">
   <img src="_build/img/show-photo-effects.webp" width="800" alt="Animated screen capture of photo effects made by an AI chatbot from one photograph: a pencil sketch draws itself and becomes the photo, the camera pans and zooms across a lake, a divider slides between two colour grades, a postcard flips over, and one huge word is filled with the picture">
 </p>
 
-<h3 align="center">"Make this look better" is not a solution. Give your AI a design brief.</h3>
-
-<p align="center"><b>Your AI gives brilliant answers. Then it shows them on a grey page.</b><br>
-One photo and one sentence, and the page moves like a film. Everything above is a single photograph.</p>
-
-<p align="center">
-  <img src="_build/img/callouts.svg" width="800" alt="Four cards. One: present a mini website, not a slide show. Two: make this look better is not a solution. Three: give your agents a way to tell a proper story. Four: see your draft the way your audience will.">
-</p>
-
-- **Present a mini website, not a slide show.** A deck is a stack of pictures. A page can move: a photo that pans, a chart that draws itself, steps that light up as you scroll.
-- **"Make this look better" is not a solution.** The AI does not know what better means to you. A brief names the job, the reader and the shape.
-- **Give your agents a way to tell a proper story.** This is the time of agentic software. Agents write the code and the report; hand them voices, templates and rules so the result is worth reading.
-- **See your draft the way your audience will.** A list of draft posts is more reading for everyone. Ask for each draft as it will look in the feed, then choose.
-
-**Artifact Studio is a free, curated library of modern design templates that turns any AI answer
-into a professional slide deck, report, web page or post preview.** Use it with the chatbot you already have:
-ChatGPT, Claude, Gemini, Microsoft Copilot, Grok, Perplexity, Mistral Le Chat or DeepSeek. Paste
-one link and say "show this as a presentation", or tailor it to your own brand. Running a personal
-agent such as Grok Bot or Muse, or agents of your own? Hand them the same library and they design
-for you.
-
-<p align="center">
-  <a href="#try-it-in-five-minutes"><b>Try it in five minutes</b></a> &nbsp;·&nbsp;
-  <a href="#what-is-inside">See what is inside</a> &nbsp;·&nbsp;
-  <a href="#if-you-are-an-ai-agent">For agents</a>
-</p>
-
-## Try it in five minutes
-
-Free and open source. No sign-up. Nothing to install.
-
-### 1. See it on your own AI
-
-Paste this into ChatGPT, Claude, Gemini or the chatbot you already use. The notes are a made-up
-example, so there is nothing to prepare.
-
-```
-Read the design guide at https://raw.githubusercontent.com/bar181/practical-ai/main/projects/artifact-studio/base/AI-INSTRUCTIONS.md
-
-Then show me a one-page report as an HTML page, from these notes:
-
-- We are a landscaping company with two crews
-- October revenue $84,200. September was $71,500
-- Jobs completed: 23 in October, 19 in September
-- Quotes that became jobs: 46%, up from 38%
-- We started sending quotes within two days of the visit. It used to take six
-- One van was off the road for four days. Crews shared. No jobs moved
-- November: hire one seasonal worker for leaf clearance
-- Need to decide about a second van by 15 November
-
-My business partner reads on her phone and wants the answer first. Our colour is green.
-
-When you are done, tell me three ways I could tailor this for my own business.
-```
-
-You should get something like this. It is the same request, already built:
-[`base/examples/report.html`](base/examples/report.html).
-
-<p align="center"><img src="_build/img/example-report.webp" width="640" alt="Screen capture of a one-page business report made by AI from eight lines of notes: a headline saying October was the best month this year, three key numbers, a bar chart and what happens next"></p>
-
-- **Your chatbot cannot open the link?** Open [`base/AI-INSTRUCTIONS.md`](https://github.com/bar181/practical-ai/blob/main/projects/artifact-studio/base/AI-INSTRUCTIONS.md),
-  press the copy button at the top right, and paste it in before the notes.
-- **Now add a photo.** Attach any photo of your own and say: `Open with my photo as a slow pan and zoom, like a documentary shot, and set the title in huge letters filled with the photo.`
-- **Now make it a deck.** In the same chat, say: `Show the same notes as a keynote-style slide deck: black slides, one idea each, huge type.`
-- **It shows code, not a page?** That happens with a bare HTML file on a phone. Say "show this as
-  an artifact" in Claude, or ask your chatbot for a preview of the page.
-- **Browse everything it can make.** Download [`base/studio.html`](base/studio.html) and open it in
-  a browser. It is the whole library in one file. The highlights come first: photo effects, scroll
-  effects, layouts, post previews and a tab for each of seven voices. The components follow:
-  pages, decks, parts, and a picker that chooses a template for you.
-- **Teaching it?** There is a [30-minute lesson plan](base/TEACH-IN-30-MINUTES.md).
-- **See one worked example per voice.** Each file in [`base/examples/`](base/examples/) is one
-  request: the prompt to copy, the sample input, and the page an AI made from them.
-
-| Worked example | What it shows |
-| --- | --- |
-| [`voice-visionary.html`](base/examples/voice-visionary.html) | One idea per screen in huge type, with three pictures. About this repository |
-| [`voice-storyteller.html`](base/examples/voice-storyteller.html) | The customer as the hero, with a hook, a plan and an ending |
-| [`voice-emotional.html`](base/examples/voice-emotional.html) | One personal story, and the offer named only at the end |
-| [`voice-explainer.html`](base/examples/voice-explainer.html) | A lesson to teach from: analogy, steps, a worked example, questions |
-| [`voice-practical.html`](base/examples/voice-practical.html) | A field guide: the core idea, one analogy, steps for today |
-| [`voice-analyst.html`](base/examples/voice-analyst.html) | The answer first, then three findings with a chart each |
-| [`voice-brief.html`](base/examples/voice-brief.html) | A decision memo a busy person reads in three minutes |
-| [`social-posts.html`](base/examples/social-posts.html) | Three drafts of a post, shown as they will look in the feed |
-| [`photo-effects.html`](base/examples/photo-effects.html) | Three effects from one picture: a slow pan, a word filled with the picture, a postcard |
-| [`report.html`](base/examples/report.html) | The one-page report from the request above |
-
-Each finished page is what an AI assistant made from that prompt in a fresh session on
-16 November 2026, unedited. They are plainer than the hand-built versions in the library, and
-that is the point: this is what you can expect. Yours will differ.
-
-### 2. Use it every day
-
-Set it up once, in the place you already work. Then after any answer, you say
-**"show this as a presentation"**.
-
-| You use | Do this once | Takes |
-| --- | --- | --- |
-| **A chatbot** | Make a Project in Claude or ChatGPT, or a Gem in Gemini. Paste [`base/AI-INSTRUCTIONS.md`](https://github.com/bar181/practical-ai/blob/main/projects/artifact-studio/base/AI-INSTRUCTIONS.md) into its instructions | 2 minutes |
-| **An assistant that loads skills** | Add the folder [`level-2-files/artifact-studio/`](level-2-files/artifact-studio/) as a skill | 5 minutes |
-| **Agents, or a team** | Connect the MCP server in [`level-3-files/`](level-3-files/). Your agents then browse the library and choose for themselves | 10 minutes |
-
-Start with the first row. It needs no connector and works in every chatbot. There is no hosted
-connector yet: the server runs on your own computer.
-
-### 3. Make it yours
-
-- **Put your brand on file.** Fill in [`level-2-files/preferences.md`](level-2-files/preferences.md):
-  your colours, your tone, the things you never want. A short ask then comes back in your style.
-- **Keep your own copy.** Fork this repository, or [download it](https://github.com/bar181/practical-ai/archive/refs/heads/main.zip) and save the
-  `artifact-studio` folder in Google Drive, SharePoint or your Documents. Then connect your AI to
-  that folder.
-- **Ask your AI to tailor it.** With the folder connected, say:
-  `Read this folder and tell me how to set it up for my business.`
-
-### If you are an AI agent
-
-Follow [`AGENTS.md`](AGENTS.md). We wrote instructions just for you.
-
-## One sentence, not one afternoon
-
-<p align="center">
-  <img src="_build/img/by-hand-or-studio.svg" width="800" alt="Animation comparing two ways to make a presentation. By hand: open PowerPoint, pick a theme, copy and paste, hunt for images, fix the alignment, start again, one hour to several days. With Artifact Studio: say show this as a visionary deck, then now a how-to guide for my ops team. A solid draft in about 5 minutes">
-</p>
-
-**By hand,** a deck you like takes anywhere from an hour to several days: open PowerPoint, pick a
-theme, copy and paste the content, hunt for images, add a chart, fix the alignment, start again.
-
-**Chatbots can already build pages and slide decks,** often called artifacts. Left alone, they
-build boring ones, and even experienced users lose hours asking for one fix after another.
-
-**Artifact Studio closes that gap.** It gives your AI what a designer would bring: proven
-templates, a voice, a look and rules for what good looks like. You get most of the way to a draft
-you can use, in the time it takes to type a sentence.
-
-## And that is not all: one set of notes, every version
-
-<p align="center">
-  <img src="_build/img/one-source.svg" width="800" alt="Animation: one page of rough notes becomes a slide deck, then a one-page report, then a social post, each from a single sentence">
-</p>
-
-The deck for the board is done. Now the operations team needs the same content as a how-to guide.
-You do not start again. You say:
-
-> Create another version of this for my operations team, as a report.
-
-Same facts, new shape, new voice. A deck becomes a report, a report becomes a week of posts.
-
-## Where it saves your time
-
-<p align="center">
-  <img src="_build/img/time-saved.svg" width="800" alt="Card showing where Artifact Studio saves time. A slide deck from your notes: 1 hour to several days by hand, about 5 minutes with the studio. A one-page report: 1 to 2 hours by hand, about 5 minutes. A second version for a new audience: 1 hour or more by hand, about 2 minutes">
-</p>
-
-| Job you repeat | By hand | With the studio | Your part |
-| --- | --- | --- | --- |
-| **A slide deck from your notes.** Start here | 1 hour to several days | About 5 minutes to a draft | Check every number. Decide what to cut |
-| **A one-page report**, weekly or monthly | 1 to 2 hours | About 5 minutes | Confirm the figures and the conclusion |
-| **A second version for a new audience** | 1 hour or more | About 2 minutes | Check the tone suits the reader |
-
-These are estimates, not measurements. The point is the shape of the saving: the AI does the
-layout and the first draft, and you keep the judgement.
-
-## What is inside
-
-### Photo effects: the part people remember
+**The capture, in words:** every effect here comes from a single photograph and one sentence each:
+a sketch that draws itself, a slow pan and zoom, a before and after divider, a postcard that flips,
+and a word filled with the picture.
 
 One picture and one sentence per effect. There are thirteen, each small enough for a chatbot to
 write in a single reply, and none needs a library or an app.
@@ -327,6 +272,110 @@ five **social formats**, twelve animated SVG parts, and design ideas for cards, 
 <p align="center">
   <img src="_build/img/example-social.webp" width="800" alt="Screen capture of four social media pictures made with Artifact Studio for a bike shop: a square post and a three-slide carousel in navy, red and yellow">
 </p>
+
+### Ten worked examples, each with its prompt
+
+Each file in [`base/examples/`](base/examples/) is one request: the prompt to copy, the sample
+input, and the page an AI made from them.
+
+| Worked example | What it shows |
+| --- | --- |
+| [`voice-visionary.html`](base/examples/voice-visionary.html) | One idea per screen in huge type, with three pictures. About this repository |
+| [`voice-storyteller.html`](base/examples/voice-storyteller.html) | The customer as the hero, with a hook, a plan and an ending |
+| [`voice-emotional.html`](base/examples/voice-emotional.html) | One personal story, and the offer named only at the end |
+| [`voice-explainer.html`](base/examples/voice-explainer.html) | A lesson to teach from: analogy, steps, a worked example, questions |
+| [`voice-practical.html`](base/examples/voice-practical.html) | A field guide: the core idea, one analogy, steps for today |
+| [`voice-analyst.html`](base/examples/voice-analyst.html) | The answer first, then three findings with a chart each |
+| [`voice-brief.html`](base/examples/voice-brief.html) | A decision memo a busy person reads in three minutes |
+| [`social-posts.html`](base/examples/social-posts.html) | Three drafts of a post, shown as they will look in the feed |
+| [`photo-effects.html`](base/examples/photo-effects.html) | Three effects from one picture: a slow pan, a word filled with the picture, a postcard |
+| [`report.html`](base/examples/report.html) | The one-page report from the request above |
+
+Each finished page is what an AI assistant made from that prompt in a fresh session on
+16 November 2026, unedited. They are plainer than the hand-built versions in the library, and
+that is the point: this is what you can expect. Yours will differ.
+
+## Why it works: a design brief, not "make this look better"
+
+<p align="center">
+  <img src="_build/img/callouts.svg" width="800" alt="Four cards. One: present a mini website, not a slide show. Two: make this look better is not a solution. Three: give your agents a way to tell a proper story. Four: see your draft the way your audience will.">
+</p>
+
+- **Present a mini website, not a slide show.** A deck is a stack of pictures. A page can move: a photo that pans, a chart that draws itself, steps that light up as you scroll.
+- **"Make this look better" is not a solution.** The AI does not know what better means to you. A brief names the job, the reader and the shape.
+- **Give your agents a way to tell a proper story.** This is the time of agentic software. Agents write the code and the report; hand them voices, templates and rules so the result is worth reading.
+- **See your draft the way your audience will.** A list of draft posts is more reading for everyone. Ask for each draft as it will look in the feed, then choose.
+
+**Artifact Studio is a free, curated library of modern design templates that turns any AI answer
+into a professional slide deck, report, web page or post preview.** Use it with the chatbot you already have:
+ChatGPT, Claude, Gemini, Microsoft Copilot, Grok, Perplexity, Mistral Le Chat or DeepSeek. Paste
+one link and say "show this as a presentation", or tailor it to your own brand. Running a personal
+agent such as Grok Bot or Muse, or agents of your own? Hand them the same library and they design
+for you.
+
+### One sentence, not one afternoon
+
+<p align="center">
+  <img src="_build/img/by-hand-or-studio.svg" width="800" alt="Animation comparing two ways to make a presentation. By hand: open PowerPoint, pick a theme, copy and paste, hunt for images, fix the alignment, start again, one hour to several days. With Artifact Studio: say show this as a visionary deck, then now a how-to guide for my ops team. A solid draft in about 5 minutes">
+</p>
+
+**By hand,** a deck you like takes anywhere from an hour to several days: open PowerPoint, pick a
+theme, copy and paste the content, hunt for images, add a chart, fix the alignment, start again.
+
+**Chatbots can already build pages and slide decks,** often called artifacts. Left alone, they
+build boring ones, and even experienced users lose hours asking for one fix after another.
+
+**Artifact Studio closes that gap.** It gives your AI what a designer would bring: proven
+templates, a voice, a look and rules for what good looks like. You get most of the way to a draft
+you can use, in the time it takes to type a sentence.
+
+### Where it saves your time
+
+<p align="center">
+  <img src="_build/img/time-saved.svg" width="800" alt="Card showing where Artifact Studio saves time. A slide deck from your notes: 1 hour to several days by hand, about 5 minutes with the studio. A one-page report: 1 to 2 hours by hand, about 5 minutes. A second version for a new audience: 1 hour or more by hand, about 2 minutes">
+</p>
+
+| Job you repeat | By hand | With the studio | Your part |
+| --- | --- | --- | --- |
+| **A slide deck from your notes.** Start here | 1 hour to several days | About 5 minutes to a draft | Check every number. Decide what to cut |
+| **A one-page report**, weekly or monthly | 1 to 2 hours | About 5 minutes | Confirm the figures and the conclusion |
+| **A second version for a new audience** | 1 hour or more | About 2 minutes | Check the tone suits the reader |
+
+These are estimates, not measurements. The point is the shape of the saving: the AI does the
+layout and the first draft, and you keep the judgement.
+
+## Advanced setup: use it every day
+
+### Set it up once
+
+Set it up once, in the place you already work. Then after any answer, you say
+**"show this as a presentation"**.
+
+| You use | Do this once | Takes |
+| --- | --- | --- |
+| **A chatbot** | Make a Project in Claude or ChatGPT, or a Gem in Gemini. Paste [`base/AI-INSTRUCTIONS.md`](https://github.com/bar181/practical-ai/blob/main/projects/artifact-studio/base/AI-INSTRUCTIONS.md) into its instructions | 2 minutes |
+| **An assistant that loads skills** | Add the folder [`level-2-files/artifact-studio/`](level-2-files/artifact-studio/) as a skill | 5 minutes |
+| **Agents, or a team** | Connect the MCP server in [`level-3-files/`](level-3-files/). Your agents then browse the library and choose for themselves | 10 minutes |
+
+Start with the first row. It needs no connector and works in every chatbot. There is no hosted
+connector yet: the server runs on your own computer.
+
+### Make it yours
+
+- **Put your brand on file.** Fill in [`level-2-files/preferences.md`](level-2-files/preferences.md):
+  your colours, your tone, the things you never want. A short ask then comes back in your style.
+- **Keep your own copy.** Fork this repository, or [download it](https://github.com/bar181/practical-ai/archive/refs/heads/main.zip) and save the
+  `artifact-studio` folder in Google Drive, SharePoint or your Documents. Then connect your AI to
+  that folder.
+- **Ask your AI to tailor it.** With the folder connected, say:
+  `Read this folder and tell me how to set it up for my business.`
+
+### If you are an AI agent
+
+Follow [`AGENTS.md`](AGENTS.md). We wrote instructions just for you.
+
+- **Browse everything it can make.** Download [`base/studio.html`](base/studio.html) and open it in a browser: the whole library in one file.
+- **Teaching it?** There is a [30-minute lesson plan](base/TEACH-IN-30-MINUTES.md).
 
 ## AI is a smart intern. This is its design brief
 
