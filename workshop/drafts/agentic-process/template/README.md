@@ -41,11 +41,16 @@ SKILL.md]. [Your input]"* instead of pasting.
      trigger), what it supplies and receives, and what a person still approves. Otherwise say
      "There is no Level 3" and why in one line. -->
 
-## The check
+## How it was checked
 
-| Check | Result |
-| --- | --- |
-| An input missing something: asks for it in one reply, and waits | |
-| The worked example's input: usable, follows the rules | |
-| A different input: flags what it cannot find, with a next step | |
-| The same file in a second chatbot | |
+Each line of the usable-result spec has one check, run in a separate session with only this README
+and what it tells you to paste.
+
+| ID | Spec line | Check | Result, who ran it, what they saw |
+| --- | --- | --- | --- |
+| U1 | [Who uses it] | [How it was checked] | |
+| U2 | [What they give it] | An input missing something: asks for it in one reply, and waits | |
+| U3 | [What they need to receive] | The normal case | |
+| U4 | [What makes it usable] | [The recipient test: would they use or forward it as it is?] | |
+| U5 | [One exception that matters] | [The exception case] | |
+| | Works in other chatbots | The same file in a second chatbot | |

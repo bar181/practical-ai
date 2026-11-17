@@ -79,7 +79,7 @@ Four things, and nothing else.
 | --- | --- | --- |
 | The process, one page, with the nine steps as a compact checklist | [`PROCESS.md`](PROCESS.md) | Written |
 | The tool template | [`template/`](template/) | Written |
-| A thin builder skill | [`builder/agentic-process/SKILL.md`](builder/agentic-process/SKILL.md) | Run once (AC-3): built [`learning-log`](examples/learning-log/) with no help |
+| A thin builder skill | [`builder/agentic-process/SKILL.md`](builder/agentic-process/SKILL.md) | Built [`learning-log`](examples/learning-log/) (AC-3), then beat a direct build 93 to 73 in a blind pilot ([quality results](quality-results/)) |
 | One working example | [`examples/decision-support/`](examples/decision-support/) | Passed the short check in Claude (AC-1) |
 
 The explainer for Agentic Process itself is [`README.md`](README.md).
@@ -95,19 +95,14 @@ was built, the reuse decision, the check results, assumptions, and what a person
 **When something is missing,** it asks once in one reply. If it cannot ask, it takes the plainest
 reading, carries on and lists its assumptions. **Owner to confirm**; default: carry on.
 
-## 7. The short check
+## 7. Verification
 
-Replaces the version 1 test harness.
-
-1. Paste `SKILL.md` into a fresh chat with an input that is missing something: it asks for what
-   is missing in one reply, and waits.
-2. Paste it with the worked example's input: the result is usable and follows the stated rules.
-   If it passes, its unedited output becomes the worked example.
-3. Paste it with a different input, ideally with a fact that cannot be found: it flags the gap
-   and gives a concrete next step to settle it.
-4. Try the same file in a second chatbot before claiming it works across chatbots.
-
-The results go in the tool's README. A check not run says "not yet run".
+The builder writes the usable result as five lines (U1 to U5: who uses it, what they give it,
+what they need, what makes it usable, one exception), gives each a check, and runs the checks in
+a separate session: an input missing something, the normal case, and the exception. Each result
+is read twice: does it hold up, and would the recipient use it as it is. Details in
+[`PROCESS.md`](PROCESS.md). What the checks teach about the builder goes in
+[`quality-results/`](quality-results/).
 
 ## 8. Done when
 

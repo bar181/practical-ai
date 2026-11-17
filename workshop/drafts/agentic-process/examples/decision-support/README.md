@@ -6,6 +6,11 @@ a written rule, a SWOT, and a recommendation you check and share. You decide.
 **Status, 16 November 2026.** Passed the three-input check in fresh Claude chats (below). No
 other chatbot has tried it, and nobody has used it on a real decision.
 
+**What already exists:** any chatbot with web search will research a question and recommend
+something when asked. What it lacks is a fixed rule for weighing the options against your goals
+and limits, a date on every source, and labels on every estimate. This file adds those; it builds
+no software.
+
 ## Try it: paste one file (5 minutes)
 
 1. Open [`SKILL.md`](SKILL.md), press **Raw**, and copy all of it.

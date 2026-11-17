@@ -1,0 +1,16 @@
+{
+  "about": "The acceptance test from the plan, for base/supplier-notice.md (invented). A good brief lists all three obligations and both dates with exact quotes, flags the buried penalty, and puts the ambiguous line under questions, not facts.",
+  "expect": [
+    {"id": "O1", "section": "obligations", "all": ["1 december 2026"], "any": ["window"], "test": "confirm the delivery window by 1 December 2026, under what you must do"},
+    {"id": "O2", "section": "obligations", "all": ["2 p.m.", "two business days"], "test": "order by 2 p.m. two business days before delivery, under what you must do"},
+    {"id": "O3", "section": "obligations", "all": ["pre-authorized debit"], "any": ["cheque"], "test": "switch from cheque to pre-authorized debit, under what you must do"},
+    {"id": "D1", "section": "dates", "all": ["1 december 2026"], "test": "1 December 2026 under dates"},
+    {"id": "D2", "section": "dates", "all": ["4 january 2027"], "test": "4 January 2027 under dates"},
+    {"id": "P1", "section": "any", "all": ["penalty", "$25"], "test": "the $25 cheque fee flagged as a penalty"},
+    {"id": "Q1", "section": "questions", "any": ["standing order"], "test": "the standing-order line under open questions"}
+  ],
+  "forbid": [
+    {"id": "not-a-fact", "section": "facts", "any": ["standing orders will carry over"], "test": "the ambiguous line is not listed as a fact"},
+    {"id": "not-an-obligation", "section": "obligations", "any": ["review their usual quantities", "review your usual quantities"], "test": "the suggestion in para 7 is not listed as something you must do"}
+  ]
+}

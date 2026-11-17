@@ -33,3 +33,4 @@ decision, and get a one-page brief with sources and a recommendation.
 | [`builder/`](builder/agentic-process/) | The builder skill |
 | [`examples/decision-support/`](examples/decision-support/) | The first tool |
 | [`examples/learning-log/`](examples/learning-log/) | The second, built by the builder skill on its own |
+| [`quality-results/`](quality-results/) | What the checks showed, and what each changed in the builder |

@@ -8,6 +8,10 @@ card for each brand of oven.
 
 **The user's path:** open the explainer, give it your input, get a result.
 
+**The builder's path:** specify the usable result, choose the simplest implementation, build,
+verify in a separate session, fix, hand back. The [builder skill](builder/agentic-process/SKILL.md)
+runs it in a coding agent such as Claude Code or Codex.
+
 ## What a tool is
 
 ```
@@ -16,6 +20,7 @@ card for each brand of oven.
   SKILL.md      the tool: one portable file in the open Agent Skills format
   example.md    one worked example, unedited, with invented data
   template.md   optional: only if the output has a fixed shape
+  scripts/      optional: only where a step needs exact behaviour (arithmetic, dates, matching)
 ```
 
 `SKILL.md` is the one source of instructions. It works pasted into any chatbot on its own, so it
@@ -24,16 +29,23 @@ starts by asking for any missing context in one reply. There is no stepper. The 
 the instructions; connectors, permissions and scheduling still depend on where it runs.
 Start from the [template](template/).
 
-## Reuse first
+## Choose the simplest implementation
 
-| What already exists | What we ship |
+First write the usable result in five lines: who uses it (U1), what they give it (U2), what they
+need to receive (U3), what makes it usable for them (U4), and one exception it must catch (U5).
+Then check what exists (Anthropic's skills and plugins, then the person's platform, then open
+source) and take the first row that fits:
+
+| If | Build |
 | --- | --- |
-| Something does the whole job | A README only: what it is and a link, the platform it needs, setup steps, a small example. If it depends on a plugin, say what a person can paste in by hand for Level 1, and call it portable once that path has been run |
-| Something does part of it | A thin SKILL.md: the business rules and the missing steps |
-| Nothing fits | A full SKILL.md |
+| Something existing does the whole job | A quick-start README only: the link, the platform it needs, setup, a small example |
+| The job is repeatable instructions and local rules | A thin `SKILL.md` (the default) |
+| A step needs exact behaviour | That step as a formula or a short script, called from the `SKILL.md` |
+| A connection removes recurring manual work | Level 3: the connection, with a person approving consequential steps |
 
-Look at Anthropic's skills and plugins first, then the platform the person uses, then open
-source. In Claude, draft the SKILL.md with the skill-creator skill; elsewhere, fill in the template.
+External skills and packages are research material: read every file as text, note scripts,
+permissions and network calls, record source, version and licence, and rewrite what is useful.
+Never install or run them.
 
 ## Levels
 
@@ -51,25 +63,30 @@ line each.
 | # | Step | Done when |
 | --- | --- | --- |
 | 1 | Scope | The job fits one sentence, with one test input and what a good result looks like |
-| 2 | Reuse check | You know what exists, with links and dates, and which row of the reuse table applies |
+| 2 | Reuse check | U1 to U5 are written; you know what exists, with links and dates, and which row of the table above applies |
 | 3 | Outside help | You know what, if anything, to buy or connect |
 | 4 | Cost | It costs nothing beyond the chatbot, or an amount the owner accepts |
 | 5 | Simplest design | The fewest files that do the job; levels only where they earn their place |
 | 6 | Plan | The README's first lines and the SKILL.md's steps are written |
 | 7 | Review | Someone other than the author can say what it does from the README |
-| 8 | Build and check | The short check below has been run and recorded |
+| 8 | Build and verify | Every U line has a check, and the verification below has been run and recorded |
 | 9 | Grow | Real use shows what to add next |
 
-## The short check
+## Verify
 
-1. Paste `SKILL.md` into a fresh chat with an input that is missing something. It should ask
-   for what is missing in one reply, and wait.
-2. Paste it with the worked example's input. The result should be usable and follow the rules.
-3. Paste it with a different input of the same kind, ideally one with a fact that cannot be
-   found. It should flag what it is unsure of and say how to settle it.
-4. Try the same file in a second chatbot before saying it works across chatbots.
+Run the cases in a separate session that has only the README and what it tells the user to paste:
 
-Record the results in the README. A check not run is written "not yet run".
+1. An input missing something: it asks for what is missing in one reply, and waits.
+2. The normal case: its unedited result becomes the worked example.
+3. The U5 exception: it catches it and says how to settle it.
+
+Read each result twice. **Does it hold up?** The rules followed, nothing invented, the exception
+caught. **Would the recipient use it as it is?** Read the first screen only; if they would have to
+dig, rewrite or ask, it fails. Fix and rerun, at most twice. Before claiming it works in other
+chatbots, try one. Record each check, who ran it and what they saw, in the README. A check not run
+is written "not yet run".
+
+What the checks teach about the builder itself goes in [`quality-results/`](quality-results/).
 
 ## Rules
 
