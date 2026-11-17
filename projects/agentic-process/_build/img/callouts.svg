@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 452" role="img" aria-labelledby="t d">
+<title id="t">Four reasons to build with Agentic Process</title>
+<desc id="d">Four cards. One: name the result before you build. Two: reuse what exists, build only what is missing. Three: one file that works in any chatbot. Four: tested in a fresh session before you get it.</desc>
+<style>
+.c{fill:#0c2340}.y{fill:#ffd23f}
+text{font-family:"Segoe UI","Helvetica Neue",Arial,sans-serif;font-weight:700}
+.h{font-size:31px;fill:#fff;letter-spacing:-.4px}.h tspan.y{fill:#ffd23f}
+.n{font-size:20px;fill:#ffd23f}
+g.k{opacity:0;animation:in .7s ease-out forwards}
+g.k2{animation-delay:.35s}g.k3{animation-delay:.7s}g.k4{animation-delay:1.05s}
+.bar{transform-box:fill-box;transform-origin:left;animation:grow 5s ease-in-out infinite alternate}
+@keyframes in{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes grow{from{transform:scaleX(.25)}to{transform:scaleX(1)}}
+@media (prefers-reduced-motion:reduce){g.k{opacity:1;animation:none}.bar{animation:none}}
+</style>
+<g class="k"><rect class="c" x="0" y="0" width="392" height="218" rx="18"/><text class="n" x="28" y="46">1</text>
+<text class="h" x="28" y="104"><tspan class="y">Name the result</tspan></text><text class="h" x="28" y="144">before you build.</text><rect class="y bar" x="28" y="176" width="150" height="8" rx="4"/></g>
+<g class="k k2"><rect class="c" x="408" y="0" width="392" height="218" rx="18"/><text class="n" x="436" y="46">2</text>
+<text class="h" x="436" y="104"><tspan class="y">Reuse what exists.</tspan></text><text class="h" x="436" y="144">Build only what is missing.</text><rect class="y bar" x="436" y="176" width="150" height="8" rx="4"/></g>
+<g class="k k3"><rect class="c" x="0" y="234" width="392" height="218" rx="18"/><text class="n" x="28" y="280">3</text>
+<text class="h" x="28" y="338">One file that works</text><text class="h" x="28" y="378">in <tspan class="y">any chatbot.</tspan></text><rect class="y bar" x="28" y="410" width="150" height="8" rx="4"/></g>
+<g class="k k4"><rect class="c" x="408" y="234" width="392" height="218" rx="18"/><text class="n" x="436" y="280">4</text>
+<text class="h" x="436" y="338"><tspan class="y">Tested</tspan> in a fresh session</text><text class="h" x="436" y="378">before you get it.</text><rect class="y bar" x="436" y="410" width="150" height="8" rx="4"/></g>
+</svg>
