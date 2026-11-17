@@ -6,7 +6,7 @@
 
 **Are you an AI agent?** Go to [AGENTS.md](AGENTS.md) for instructions you can follow now.
 
-> **Status: built and machine-tested, not yet played by people.** 66 of 66 automated checks pass at
+> **Status: built and machine-tested, not yet played by people.** 80 of 80 automated checks pass at
 > phone and desktop width. Nobody has played it in the real Claude artifact runtime yet. See
 > [Status](#status).
 
@@ -113,9 +113,10 @@ estimate: a model of typical play, averaging about 170 of 500. It says so on scr
 ## Status
 
 **17 November 2026.** Built by its author with Claude. It has been tested by an automated playtest
-(66 of 66 checks) and by fresh reviewer agents. Loops 0 to 3 scored 37, 68, 80 and 84 out of 100 on
-the earlier office-ladder version, and loop 4 scored an interim build 80. Every Claude feature was
-tested against a mock, not the real artifact runtime. Not yet tried: real players, a real
+(80 of 80 checks) and by fresh reviewer agents. Loops 0 to 3 scored 37, 68, 80 and 84 out of 100 on
+the earlier office-ladder version, loop 4 scored an interim build 80, and loop 5 scored this version
+71. All five of loop 5's top problems are fixed and checked by the playtest, but not yet re-scored.
+Every Claude feature was tested against a mock, not the real artifact runtime. Not yet tried: real players, a real
 multi-device game, a screen reader, and ChatGPT. The answer lists are Claude's estimates. The tier
 names, prompts, hosts and lists are this project's own. [The evidence](quality-results/README.md).
 
