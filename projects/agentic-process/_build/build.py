@@ -12,7 +12,7 @@ scrolling explainer recipe, teacher voice, the Practical AI colours. Its two pic
 """
 import base64, pathlib, html, sys
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
-from steps import STEPS, LEVELS, WHO, TOTAL_MINUTES, COACH, SKILL, coach_prompt, COACH_FILE
+from steps import STEPS, LEVELS, WHO, TOTAL_MINUTES, COACH, SKILL, PACKAGE, coach_prompt, COACH_FILE
 import re
 P = pathlib.Path(__file__).resolve().parents[1]          # the project folder
 b64 = lambda p: base64.b64encode((P/p).read_bytes()).decode()
@@ -277,17 +277,22 @@ def process_md():
          "**Think of it as** building a deck in the garden. Decide what it is for. Check whether a kit",
          "already exists. Price the wood. Pick the spot. Draw it. Have someone check the drawing. Build the",
          "smallest platform you can stand on. Extend it only once you are using it.", "",
+         "**What you end with: four files.** A workflow card (the spec: what goes in, the steps, what",
+         "comes out, what a person checks), the instructions your chatbot runs, one worked example made by",
+         "a fresh chat, and a short guide to setting it up and using it. [The template](template/) has all four.", "",
          "**Two ways to use this page.** Paste the [build coach](AI-INSTRUCTIONS.md) into a chatbot and it",
-         "walks you through all nine. Or take the steps one at a time with the prompts below.", "",
+         "walks you through. Or take the steps one at a time with the prompts below.", "",
          "## The steps at a glance", "",
-         "| # | Step | You write down | The gate | Time |", "| --- | --- | --- | --- | --- |"]
+         "| # | Step | The decision it helps you make | Adds to your package | The gate | Time |", "| --- | --- | --- | --- | --- | --- |"]
     for st in STEPS:
         anchor = f"{st['n']}-" + st['name'].lower().replace(' ', '-')
-        L.append(f"| {st['n']} | [**{st['name']}**](#{anchor}) | {st['writes']} | {st['gate']} | {('about ' + str(st['minutes']) + ' min') if st['minutes'] else 'repeats'} |")
+        dec, add = PACKAGE[st['n']]
+        L.append(f"| {st['n']} | [**{st['name']}**](#{anchor}) | {dec} | {add} | {st['gate']} | {('about ' + str(st['minutes']) + ' min') if st['minutes'] else 'repeats'} |")
     L += ["", f"Steps 1 to 8 add up to about {TOTAL_MINUTES} minutes the first time. Every time on this page is an estimate: nobody",
           "has yet been timed.", "",
-          "**A small job can take the short path:** steps 1, 6 and 8 in full, steps 2 to 5 in a line each, step 7 folded into the test, and step 9 left open.",
-          "The coach offers it when the job is one person turning one kind of input into one result in a chat.", "",
+          "**Most jobs take the short path:** one person turns one kind of input into one result in a chat.",
+          "Steps 1, 6 and 8 in full, steps 2 to 5 in a line each, step 7 folded into the test, step 9 left open.",
+          "It ends with the same four files. Take all nine steps when the tool is shared, uses shared files, or costs money.", "",
           "## Who does what", "",
           "| Step | The AI does | You do |", "| --- | --- | --- |",
           "| 1 to 4 | Asks the questions, searches for what exists, lists costs | Answer honestly. Say no to anything outside the one job |",
@@ -296,7 +301,9 @@ def process_md():
           "| 8 | Builds, and runs the fresh-session test | Read what the test tripped on. Decide what to fix |",
           "| 9 | Makes each addition | Approve each one. Use the tool yourself |", ""]
     for st in STEPS:
-        L += [f"## {st['n']}. {st['name']}", "", f"**Purpose.** {st['purpose']}", "", "**User stories**", ""]
+        dec, add = PACKAGE[st['n']]
+        L += [f"## {st['n']}. {st['name']}", "", f"**Purpose.** {st['purpose']}", "",
+              f"**The decision it helps you make.** {dec}.", "", f"**Adds to your package.** {add}.", "", "**User stories**", ""]
         L += [f"- **{LEVELS[i]}.** As {WHO[i]}, {t}" for i, t in enumerate(st['stories'])]
         L += ["", f"**What to expect.** {st['expect']}", "", "**Proof you are done**", ""]
         L += [f"- {x}" for x in st['proof']]
@@ -307,6 +314,8 @@ def process_md():
     plan = (SKILL_DIR/'template/base/plan.md').read_text(encoding='utf-8').replace('{{TITLE}}', '[name of the tool]')
     plan = plan.split('\n## Status')[0].strip().split('\n', 1)[1].strip()
     L += ["## The one-page plan", "",
+          "**On the short path you do not need this plan:** the workflow card in the four files replaces it.",
+          "Use it when you take all nine steps.", "",
           "Fill this in as you go. Copy it into a document, or ask your chatbot to fill it in from your",
           "answers. An agent finds the same template in each new project folder as `base/plan.md`.", "",
           "```", "Plan: [name of the tool]", "", plan, "```", ""]

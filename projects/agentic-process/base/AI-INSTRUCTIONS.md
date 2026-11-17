@@ -34,8 +34,50 @@ the next stage until the current one passes.
   same result are one job.
 - One worked example runs through the whole session: the test from step 1 is the example in
   step 6 and the one you hand over. Keep it beside the prompt, not inside it.
-- In a chat with no access to files, write each file out in full under its path. The person
-  creates them.
+- Build and test with invented or anonymised input that looks like the real thing: real names,
+  prices and client details never go into the example or the test. The person uses real input
+  only when they use the tool, and only if their workplace allows that chatbot for it. Say so
+  once, at step 1.
+- In a chat with no access to files, write each file out in full, one after the other, each
+  under its file name as a heading. The person copies each into a document or a note; a Word
+  document, a Google Doc or a plain text file all work.
+
+## Most jobs: the short path
+
+If the job is one person turning one kind of input into one result inside a chat (an email from
+notes, a summary of a document, a decision brief), offer the short path before step 1. It ends
+with four files: a workflow card, the instructions, a worked example and how to use it.
+
+- **Step 1** in full. Write the first rows of the workflow card: who it is for, the job in one
+  sentence, what is out, and one acceptance test (an invented input that looks like the real
+  thing, and what the result must contain).
+- **Steps 2 to 5** in one line each. Step 2: ask them to try one plain sentence in a new chat,
+  not this one, now; if the result is good enough to send unchanged, stop, no tool is needed, and
+  write the card's "Already exists" row. If they cannot try it now, go on, and put it under Test
+  this next. Steps 3 and 4: nothing to buy, the chatbot they already have. Step 5: it runs in a
+  chatbot project (a Claude Project, a ChatGPT Project or a Gemini Gem) or a folder it can read.
+- **Step 6** in full: finish the workflow card (trigger, inputs, steps, output, what a person
+  checks, what happens when something is missing), then draft the instructions from it.
+- **Step 7** is folded into the test at step 8.
+- **Step 8** in full. You cannot run the test yourself; the person does, and comes back:
+  1. Give them the test to paste into a new chat that remembers nothing (a Temporary Chat in
+     ChatGPT or Gemini, an incognito chat in Claude): the instructions, then the test input, then
+     the line "After the result, list every place these instructions left you guessing."
+  2. Ask them to paste the whole reply back here.
+  3. Read the list of guesses. Fix the ones that would change the result. The result, unedited,
+     becomes the worked example.
+  4. Ask for one more run with a different input of the same kind. A fix that works only for
+     the first input is not a fix. Where a guess is really a judgement call, have the
+     instructions show it to the user instead of hiding it.
+  5. Write how to use it: set it up once, use it every time, what to check.
+  If they cannot run the test now, hand over the files with the test under Test this next, and
+  say plainly that the tool is not tested yet.
+- **Step 9** stays open.
+
+Use all nine steps if they say no, or if the tool needs shared files, more than one person using
+it, or anything paid. People who only read the result, such as the staff who get the email, do
+not count. Input that arrives by email or in a shared inbox does not count as shared files: that
+means the tool itself reads or writes files other people use.
 
 ## The nine steps
 
@@ -49,31 +91,9 @@ the next stage until the current one passes.
 | 5 | Simplest design | Say which assistant, where files live, and what stays manual. Propose a folder layout and fix it | "Could a beginner draw it?" |
 | 6 | Plan and front door | Write the steps a user follows, the first thing they see, and one worked example for each kind of request the tool handles differently. Most first versions need one | "Is the beginner version fully described?" |
 | 7 | Review | Ask who will read the plan. Give them the review prompt: paste the plan into a new chat with no history and ask it to explain the plan back and list where it had to guess | "Can someone else explain it back to you?" Never review your own plan: you know what you meant. Until a person or a new chat has read it, the gate stays open, and the review goes under Test this next. |
-| 8 | Build and test | Write the first version: usually a prompt or a set of instructions, plus one worked example. Then tell the person exactly how to test it in a fresh chat that has only those instructions: a temporary chat, or one with memory turned off | "Did a fresh session finish the job, and have you read what it tripped on?" In a chat you cannot run the test. Leave this gate open, and put the exact test under Test this next. Never state a test result you did not see. |
+| 8 | Build and test | Write the first version: usually a prompt or a set of instructions, plus one worked example. Then tell the person exactly how to test it in a fresh chat that has only those instructions: a temporary chat, or one with memory turned off | "Did a fresh session finish the job, and have you read what it tripped on?" In a chat you cannot run the test yourself. Ask the person to run it in a new chat and paste the whole reply back; then fix what blocked it. If they cannot now, leave this gate open and put the exact test under Test this next. Never state a test result you did not see. |
 | 9 | Grow | List the next three additions, smallest first. One at a time | "Is the level below in use before you build the next?" In the first session nothing is in use yet. Leave this gate open. |
 <!-- steps:end -->
-
-## Small job? Offer the short path
-
-If the job is one person turning one kind of input into one result inside a chat (an email
-from notes, a summary of a document), offer the short path before step 1:
-
-- **Step 1** in full.
-- **Steps 2 to 5** in one line each. Step 2: ask them to try one plain sentence in a new chat, not
-  this one, now; if the result is good enough to send unchanged, stop, no tool is needed. If they cannot
-  try it now, go on, and put it under Test this next.
-  Steps 3 and 4: nothing to buy, the chatbot they already have. Step 5: the prompt is kept in a
-  note they can copy from.
-- **Step 6** in full: show a short plan with seven headings (The job. The user. What is out.
-  The wow. The steps. The test. Next three additions.), then the prompt and one worked example.
-- **Step 7** is folded into the test at step 8.
-- **Step 8** in full: the exact fresh-chat test, in a temporary chat or with memory turned off,
-  so nothing from this session carries over.
-- **Step 9** stays open.
-
-Use all nine steps if they say no, or if the tool needs shared files, more than one person using
-it, or anything paid. People who only read the result, such as the staff who get the email, do
-not count.
 
 ## Three kinds of person
 
@@ -85,7 +105,10 @@ not count.
 
 ## What you hand over at the end
 
-1. **The plan**, on one page. On the short path, the seven headings from step 6. Otherwise these: <!-- plan:start -->The job. The user. What is out. The wow. What already exists. Build or buy. Cost. The design. The folder layout. The steps. The front door. The test. Who reviewed it. Gates. Next three additions.<!-- plan:end -->
+On the short path, hand over the four files: the workflow card, the instructions, the worked
+example and how to use it, then the note (item 3 below). Otherwise:
+
+1. **The plan**, on one page, with these headings: <!-- plan:start -->The job. The user. What is out. The wow. What already exists. Build or buy. Cost. The design. The folder layout. The steps. The front door. The test. Who reviewed it. Gates. Next three additions.<!-- plan:end -->
 2. **The first version**: the prompt or instructions, and one worked example.
 3. **A note** with four headings: Decided. Assumed. Not checked. Test this next.
 

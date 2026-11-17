@@ -1,26 +1,57 @@
-# Agentic Process: from an idea to a tool people can try, in nine steps
+# Agentic Process: turn work you repeat into an AI tool you can run again
 
 <p align="center">
-  <img src="_build/img/nine-steps.svg" width="800" alt="Animation: nine steps in a row, from scope to grow. A marker moves along them and stops at a gate after each step. The eighth step, build and test, is highlighted.">
+  <img src="_build/img/nine-steps.svg" width="800" alt="Animation: nine steps in a row, from scope to grow. A marker moves along them and stops at a check after each step.">
 </p>
 
-<h3 align="center">Your AI can build almost anything. That is the problem.</h3>
+Start with one real job, such as drafting a weekly update or comparing suppliers. Leave with four
+files: a **workflow card** (what goes in, the steps, what comes out, what a person checks),
+**instructions** your chatbot runs, a **worked example**, and a short **setup guide**. Next time,
+bring fresh input and run the same workflow. It is free and works in the chatbot you already use.
 
-**An AI agent will happily build the wrong thing three times.** Agentic Process is the order of
-work that stops it: nine steps, a gate after each, and a test in a fresh chat, run before anyone
-else sees the result. It is free. Use it in any chatbot (so far tested in Claude only),
-hand it to your coding agent, or give the agent a spec and let it build the tool on its own.
+**Why bother:** misunderstandings are caught before they become rework. You decide what goes in,
+what good looks like and what a person checks, once, instead of explaining it again every week.
 
-**North Star:** a person, or an agent working alone, can take an idea or a spec to a tool that someone
-else can use, without rebuilding it three times on the way.
-**The spec:** [`workshop/plans/agentic-process/SPEC.md`](../../workshop/plans/agentic-process/SPEC.md) says what this
-project is for, who it serves, and when version 1 is done. Everything here follows it.
+**North Star:** someone can try a worked example, adapt it to their own task, and run it again
+without needing the original conversation. [The spec](../../workshop/plans/agentic-process/SPEC.md)
+says what this project is for and when it is done.
 
-## Try it in five minutes
+## Try it: a finished tool, in 5 minutes
 
-### 1. Ask the coach about your own idea
+**Decision support:** describe your business once, ask a business question, and get research
+with sources, the options compared, a recommendation, a SWOT and a two-minute brief.
 
-Paste this into the chatbot you already use. Change the last line to a job you repeat.
+1. Open a new chat in ChatGPT, Claude or Gemini. Web search helps: without it, the tool says so
+   and lists what to look up instead of researching.
+2. Open the tool's instructions,
+   [`decision-support/AI-INSTRUCTIONS.md`](base/examples/decision-support/AI-INSTRUCTIONS.md),
+   press **Raw**, and copy all of it into the chat. Do not send yet.
+3. Under it, in the same message, paste this sample from an invented bakery, and send:
+
+```
+Business profile: Harbour Lane Bakery. We sell bread, pastries and coffee to walk-in customers. Three shops in Hamilton, Ontario, 22 staff, about 1.4 million dollars in sales a year. Goals for the next twelve months: grow sales 10 percent, raise weekday afternoon sales, keep the team from burning out. Limits: up to 25,000 dollars to invest, no new building, the head baker already works six days. Risk: medium. My business partner has a say in big decisions.
+
+My question: should we start a weekday catering service for offices near our shops?
+```
+
+**What you get,** in a few minutes: research with sources, the options scored, a recommendation,
+a SWOT, a short brief and a list of what to check. Compare it with
+[the finished result](base/examples/decision-support/example.md), made by a fresh chat and
+unedited. Yours will differ in its sources and numbers. It worked if it has: "not now" among the
+options, a source and date for every fact (or "not found"), a score for each option, a
+recommendation that follows from those scores, and a check list at the end.
+
+**Now your own question:** replace the profile with your business, or leave it out and the tool
+asks six questions first. To keep the tool, keep the instructions in a note and paste them at the
+start of each chat, or save them once in a free ChatGPT or Claude project or a Gemini Gem:
+[how to set it up, step by step](base/examples/decision-support/README.md#set-it-up-once-about-5-minutes).
+Use real business figures only if your workplace allows that chatbot for them.
+
+## Make your own (the short path)
+
+Most jobs are one person turning one kind of input into one result. The easiest way is to let the
+coach build the four files with you, in about an hour the first time (an estimate). Paste this into
+your chatbot and change the last line to a job you repeat:
 
 <!-- prompt:start (written by _build/build.py) -->
 ```
@@ -30,80 +61,58 @@ My idea: every Monday I turn last week's sales notes into an email for my team. 
 ```
 <!-- prompt:end -->
 
-It walks you through the steps one at a time, asks at most two questions in each, and ends with a
-one-page plan and a first version you can test. For a small job like this one it offers a short
-path: steps 1, 6 and 8 in full, steps 2 to 5 in a line each, step 7 folded into the test, and step 9 left open. You can start in five minutes; a full first run takes about an hour.
+The coach asks at most two questions at a time. It writes the workflow card with you and drafts
+the instructions. Then it gives you a test: you paste it into a new chat that remembers nothing,
+and bring the whole reply back. It reads what the new chat had to guess, fixes the instructions,
+keeps that result as the worked example, and writes how to use the tool. Use invented or
+anonymised input for the test; real data is for using the tool, where your workplace allows it.
 
-- **It cannot open the link?** Open [`base/AI-INSTRUCTIONS.md`](base/AI-INSTRUCTIONS.md), press
-  **Raw**, select all, copy, and paste it into the chat. Then type: *Follow the build coach pasted
-  above. My idea:* and your job.
-- **Rather go one step at a time?** [The nine steps in detail](base/PROCESS.md) give each step a
-  purpose, user stories, what to expect, proof you are done, and a prompt to paste.
+If the chatbot cannot open the link, open [`base/AI-INSTRUCTIONS.md`](base/AI-INSTRUCTIONS.md),
+press **Raw**, copy all of it into the chat, and type: *Follow the build coach pasted above. My
+idea:* and your job. Prefer to fill the files in yourself? Copy [the template](base/template/).
 
-### 2. Use it at your level
+**Most readers can stop here.** The rest is for jobs that need more planning, and for people who
+build with coding agents.
 
-| You are | You use | You get |
+## When the job needs more planning: the nine checks
+
+Take all nine when the tool is used by more than one person, reads or writes files other people
+use, or costs money. Input that arrives by email does not count as shared files. Each check helps you make
+one decision and adds to the four files. [Each step in detail](base/PROCESS.md), with a prompt to paste.
+
+| # | Check | The decision it helps you make | Adds to your files |
+| --- | --- | --- | --- |
+| 1 | [Scope](base/PROCESS.md#1-scope) | Which one job, for whom, and what is out | The card: who, the job, what is out, the acceptance test |
+| 2 | [Reuse check](base/PROCESS.md#2-reuse-check) | Build, wrap something that exists, or stop | The card: what already exists |
+| 3 | [Outside help](base/PROCESS.md#3-outside-help) | What, if anything, to buy or connect | Setup guide: what it needs |
+| 4 | [Cost](base/PROCESS.md#4-cost) | Whether it is worth running | The card: what you will measure |
+| 5 | [Simplest design](base/PROCESS.md#5-simplest-design) | Where it runs and where it is saved | The card: where it runs; the setup steps |
+| 6 | [Plan](base/PROCESS.md#6-plan-and-front-door) | The steps, the result, and what a person checks | The rest of the card, and draft instructions |
+| 7 | [Review](base/PROCESS.md#7-review) | Whether a stranger understands the card | Fixes to the card |
+| 8 | [Build and test](base/PROCESS.md#8-build-and-test) | Whether it is ready, or what to fix first | Final instructions, the example, how to use it |
+| 9 | [Grow](base/PROCESS.md#9-grow) | What to add next, from real use | The next version |
+
+**Think of it as** a site inspector on a small job: nothing moves to the next stage until the
+current one is signed off. The final check is a fresh chat that has only your instructions. It
+finds what you cannot see, because you know what you meant.
+
+## Go further
+
+| Level | For | What it adds |
 | --- | --- | --- |
-| **New to this** (Beginner) | The coach, pasted into any chatbot | A one-page plan and a first prompt you can test today |
-| **Building with an agent** (Advanced) | [One skill folder](level-2-files/) to copy into your agent's skills. Works in any repository | A project folder with its own checks, the front page and the first version in place |
-| **Running agents unattended** (Expert) | [Gates, the fresh-run test and the score sheet](level-3-files/) | Proof of what works, before a person spends time on it |
-| **Building from a spec you already have** (Autopilot) | [One prompt](level-2-files/AUTOPILOT.md) for a coding agent or a scheduled task: your spec, guidance and where it should end up | A tested tool with a demo, gate results and what the agent assumed: a draft pull request, or a package for your chatbot project or Drive folder |
+| **Base**: run it in chat | A business owner or office worker | A useful result today, and the four files to run it again |
+| **Level 2**: save, share and specify | Someone trained on AI, or a coder | A saved, shared workflow in a chatbot project, a skill or a shared folder. For coders: [one skill folder](level-2-files/) that turns an idea into a testable spec and a project folder in any repository |
+| **Level 3**: connect it and prove it | The owner, or a client setup | A folder, a tool server or GitHub, connected only when it saves a recurring manual step; [gates, fresh-session tests and every test log](level-3-files/) |
 
-### 3. See it used
-
-| Example | Level | What it is |
-| --- | --- | --- |
-| [A Monday email from sales notes](base/examples/monday-email.md) | Beginner, short path | The plan, the prompt and the note a new AI session made from one paragraph, unedited |
-| [Deal updates for a sales team](base/examples/shared-tracker.md) | Beginner, all nine steps | The same for a team job, where the coach takes every step |
-| [Decision support: a complete tool](base/examples/decision-support/) | Beginner, end to end | A workflow card, the tool's instructions, a run by a fresh chat, and what three rounds of testing changed. Paste it into a chatbot project and ask a business question |
-| [An agent working unattended](base/examples/unattended-run.md) | Advanced and Expert | A coding agent with only the skill folder, in a repository it had never seen: the plan, the tool it built, two fresh-session tests and its hand-back |
-
-The people are invented. Each result was made by a session that had only this project's
-instructions. Nobody has used what they made.
+**More examples**, each made by a fresh session from this project's instructions, unedited, with
+invented people: [a Monday email from sales notes](base/examples/monday-email.md) (short path),
+[deal updates for a sales team](base/examples/shared-tracker.md) (all nine), and
+[an agent working unattended](base/examples/unattended-run.md) (Level 2 and 3). These three were
+made before the four-file package, so they hand back a plan and a prompt instead.
 
 **If you are an AI agent:** follow [`AGENTS.md`](AGENTS.md).
 
-## What you save
-
-Every figure here is an estimate. Nobody outside the author has yet been timed.
-
-| Who | Without the process | With it | You leave with |
-| --- | --- | --- | --- |
-| **Beginner** turning a repeated job into a reusable prompt | Trial and error in a chat until something works on the day. Next week you start again | About an hour the first time: the step times added up | A one-page plan, a prompt you can reuse and a test that tells you when it breaks |
-| **Advanced** building a small tool with an agent | The agent builds fast and you find the shape by rebuilding. Folders move and links break | The layout is fixed before the first file, and the front page is written before the tool | A project folder that passes its own checks, with a front page a stranger can follow |
-| **Expert** finding faults before users do | The author reviews their own work and passes it, because they know what they meant | Fresh sessions side by side, about ten minutes each | A numbered list of every place a stranger had to guess, and which ones change the result |
-
-The larger gain is quality, not speed: a stranger's test finds the faults the author cannot see.
-
-## The nine steps
-
-| # | Step | Why it exists | The gate |
-| --- | --- | --- | --- |
-| 1 | [Scope](base/PROCESS.md#1-scope) | A tool that does one job gets finished | Can you say the job in one sentence? |
-| 2 | [Reuse check](base/PROCESS.md#2-reuse-check) | The cheapest tool is the one you do not build | After what already exists, is there still something to build? If not, stop and write a guide to that thing |
-| 3 | [Outside help](base/PROCESS.md#3-outside-help) | Build or buy is decided on purpose | Do you know what you would build and what you would buy? |
-| 4 | [Cost](base/PROCESS.md#4-cost) | A tool people cannot afford to run is not finished | Does the first version cost nothing, or an amount you accept? |
-| 5 | [Simplest design](base/PROCESS.md#5-simplest-design) | Moving files later breaks every link | Could a beginner draw it? |
-| 6 | [Plan and front door](base/PROCESS.md#6-plan-and-front-door) | If the first screen cannot be written, the tool is not understood | Is the beginner version fully described? |
-| 7 | [Review](base/PROCESS.md#7-review) | You cannot see your own gaps | Can someone else explain it back to you? |
-| 8 | [Build and test](base/PROCESS.md#8-build-and-test) | A stranger finds what you cannot | Did a fresh session finish the job, and have you read what it tripped on? |
-| 9 | [Grow](base/PROCESS.md#9-grow) | Small additions get reviewed. Big ones get waved through | Is the level below in use before you build the next? |
-
-Each step in [the detailed page](base/PROCESS.md) also has a user story for each level, what to
-expect, proof you are done, and a prompt to paste.
-
-**Think of it as** building a deck in the garden: decide what it is for, check for a kit, price
-the wood, draw it, have someone check the drawing, build the smallest platform you can stand on.
-
-## What the AI does and what stays with you
-
-| The AI does | You do |
-| --- | --- |
-| Asks the questions, searches for what exists, drafts the plan | Say no to anything outside the one job |
-| Builds the first version and tests it in a fresh session | Read what the test tripped on and decide what to fix |
-| Makes each addition | Approve each one, and use the tool yourself |
-
-## Autopilot: a spec in, a finished tool out
+## Autopilot (Level 2, not yet proven): a spec in, a finished tool out
 
 The same nine steps, run by a coding agent without you guiding each one. You give it a spec, a few
 lines of guidance, and where the tool should end up. It fills the plan from the spec and marks
@@ -125,7 +134,8 @@ Deliver to: repository
 Never merge, post or send anything.
 ```
 
-[How to run it, and what comes back for each target](level-2-files/AUTOPILOT.md).
+[How to run it, and what comes back for each target](level-2-files/AUTOPILOT.md). Its progress is tracked
+separately, in [`AUTOPILOT-PROGRESS.md`](../../workshop/plans/agentic-process/AUTOPILOT-PROGRESS.md).
 
 ## Status
 
@@ -148,13 +158,14 @@ Every round of testing, with the logs, is in [`level-3-files/test-runs/`](level-
 agentic-process/
   README.md               this page
   AGENTS.md               the path for an AI agent
-  base/                   Beginner: everything you need
+  base/                   Base: everything you need
     AI-INSTRUCTIONS.md    the build coach: paste into your chatbot
-    PROCESS.md            the nine steps in detail, and the one-page plan to fill in
-    examples/             unedited runs: two of the coach, one of an agent working unattended
-  level-2-files/          Advanced: one skill folder, with the project template and its checks inside, and AUTOPILOT.md
-  level-3-files/          Expert: gates, the fresh-run test and a score sheet
-  _build/                 steps.py, the one source of the nine steps; build.py, which writes every generated file from it; runs/, the test logs; deferred/, end-user pages parked until version 1
+    PROCESS.md            the nine checks in detail, and the one-page plan to fill in
+    template/             the four files to copy: workflow card, instructions, example, how to use
+    examples/             a complete tool (decision-support/), and unedited runs of the coach and an agent
+  level-2-files/          Level 2: one skill folder, with the project template and its checks inside, and AUTOPILOT.md
+  level-3-files/          Level 3: gates, the fresh-run test, a score sheet, and every test log
+  _build/                 steps.py, the one source of the nine steps; build.py, which writes every generated file from it; deferred/, pages parked until version 1
 ```
 
 ## About the creator

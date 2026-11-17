@@ -13,6 +13,8 @@ This card is the spec. Write it before the instructions, and change it before yo
 | **A person checks** | [What, and against what. Who decides] |
 | **When something is missing** | [What the tool does instead of guessing] |
 | **Out of scope** | [What it will not do] |
+| **Already exists** | [What you checked first, such as asking your chatbot in one plain sentence, and why it is not enough] |
 | **Acceptance test** | [One specific input, and what the result must contain] |
 | **Where it runs** | [A chatbot project, a folder, a repository] |
 | **Saves time or improves quality?** | [What you will measure on the first three runs] |
+| **Last tested** | [Date, and what a fresh chat found] |

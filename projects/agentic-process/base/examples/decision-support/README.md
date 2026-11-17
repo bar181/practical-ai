@@ -16,12 +16,25 @@ yet.**
 
 ## Set it up once (about 5 minutes)
 
-1. Make a project in your chatbot: a Claude Project, a ChatGPT Project or a Gemini Gem. Or use a
-   folder your chatbot can read, such as a Drive folder connected to it.
-2. Paste [`AI-INSTRUCTIONS.md`](AI-INSTRUCTIONS.md) into the project's instructions.
-3. Add [`example.md`](example.md) as a project file, so it sees what a good brief looks like.
-4. Ask your first question. It asks six questions about your business once and writes a profile.
-   Save that profile as a file in the project. It will not ask again.
+**Simplest, in any chatbot:** keep [`AI-INSTRUCTIONS.md`](AI-INSTRUCTIONS.md) in a document or a
+note. Each time, start a new chat and paste the instructions, then your input, in one message.
+
+**Better, so you never paste the instructions again:** save them in a project. All three below
+are free.
+
+| Chatbot | Where | Paste the instructions into | Add as files |
+| --- | --- | --- | --- |
+| ChatGPT | Sidebar: **Projects**, then **New project** | The project's **Instructions** (in its settings) | [`example.md`](example.md) |
+| Claude | Sidebar: **Projects**, then **New project** | **Set project instructions** | [`example.md`](example.md), under project knowledge |
+| Gemini | gemini.google.com (not the phone app): **Gems**, then **New Gem** | **Instructions**, then **Save** | [`example.md`](example.md), as knowledge |
+
+Then start every chat from inside the project or Gem. To get a file from this page onto your
+computer, open it, press **Raw**, and save the page; a Word document or a Google Doc with the same
+text works too.
+
+The first time you ask a question, it asks six questions about your business and writes a
+profile. Save that profile in the project as a file (or keep it in your note and paste it in with
+your question). It will not ask again.
 
 The tool needs web search to research. Without it, it says so and lists what to look up.
 
@@ -29,11 +42,13 @@ The tool needs web search to research. Without it, it says so and lists what to 
 
 Open the project and type the decision, for example: *Should we start a weekday catering service
 for offices near our shops?* You get the research with sources, the options compared, a
-recommendation, a SWOT and a brief. If you want the brief laid out as a polished page and your
-project has [Artifact Studio](../../../../artifact-studio/), ask for a polished version.
+recommendation, a SWOT and a brief. For a polished one-page layout, you can also use
+[Artifact Studio](../../../../artifact-studio/), another tool in this collection that lays out
+documents and pages; it is optional.
 
 **Before you act, check:** every figure against its source, every line marked "assumed" or
-"proposal", and that the recommendation fits your goals. You decide.
+"proposal", and that the recommendation fits your goals. You decide. Use real business figures
+only if your workplace allows that chatbot for them.
 
 **Is it worth keeping?** On your first three real decisions, note the minutes from question to a
 brief you would share, and how many points you had to correct.
@@ -50,31 +65,31 @@ chat. Built on 16 November 2026.
 | 3 to 5 | Nothing to buy; costs nothing beyond the chatbot; the design is one instructions file in a chatbot project | Pass |
 | 6. Plan | The workflow card: trigger, inputs, steps, output, checks, what to do when something is missing, and an acceptance test | Pass |
 | 7. Review | Folded into the test, as the short path allows | |
-| 8. Build and test | The instructions, then two rounds by fresh sessions that had only the instructions and one message | See below |
+| 8. Build and test | The instructions, then nine runs by fresh sessions on two different decisions | See below |
 | 9. Grow | Left open until it is used on real decisions | Open |
 
-## What the test found, and what changed
+## What the tests found, and what changed
 
-A fresh chat with only the instructions and an invented bakery's question found **2 blocking
-points and 13 minor ones** in round 1. The biggest:
+Nine runs by fresh AI sessions, each with only the instructions and one message, on 16 November
+2026, all in Claude. Two invented decisions: the bakery's catering question, and a landscaping
+firm choosing between renting, buying used or leasing a truck.
 
-| What the fresh chat hit | The change that fixed it |
-| --- | --- |
-| "Score each option ... Recommend one option." There was no rule for turning the scores into a recommendation, so a reader who weighted sales growth most could pick a different option from the same table | A decision rule: limits are pass or fail; of the rest, the option better on the most goals wins, goals in the profile's order; a tie goes to the smaller step |
-| The fact that decides the question (how many nearby offices would order) cannot be found on the web, and nothing said whether to recommend anyway | If a deciding fact is "not found", recommend the smallest step that would find it out, and say so |
-| The SWOT came before the comparison, so the "leading option" had to be picked before it was justified | Compare and recommend first; the SWOT is for the recommended option |
+| Run | Decision | Blocking, minor | What it found, and the fix |
+| --- | --- | --- | --- |
+| 1 | Bakery | 2, 13 | No rule for turning scores into a recommendation. Fix: a written decision rule |
+| 2 | Bakery | 2, 11 | "The smallest step" could mean a few calls or a trial; a limit written as a fact had no pass-or-fail reading. Fix: limits become one-line tests, marked "assumed" when interpreted |
+| 3 | Bakery | 1, 11 | The trial rule and the scoring rule could point at different options. Fix: the trial becomes a scored option |
+| 4 | Bakery | 0, 10 | The fix held |
+| 5 | **Truck: a new decision** | **5, 8** | The rules had been tuned to the bakery: "include a trial" assumed a new product people buy, and nothing set a time horizon. Fix: one general rule, with a "check first" step instead of a trial option |
+| 6, 7 | Both, after that fix | 3, 7 and 2, 8 | What remained were real judgement calls: how to shape the smaller option, what "better" means, twelve months or four years. Fix: list every judgement call, the other reading, and whether it would change the answer |
+| 8, 9 | Both, after that fix | 1, 11 and 1, 10 | Both recommendations followed the scores and the rule. The one blocking point in each (a tie with "do nothing"; a score resting on a fact not found) is fixed and **not re-tested** |
 
-Round 2, with those fixes: **2 blocking, 11 minor**, both new and narrower. "The smallest step"
-could mean a few calls instead of a trial, and a limit written as a fact ("the head baker already
-works six days") had no pass-or-fail reading. The fixes: write each limit as a pass-or-fail test
-and mark any reading "assumed"; score worse as minus one; let risk set the size of the step; when
-a deciding fact is not found, recommend a capped trial with the cheap checks as its first steps.
+From run 8, a judgement call the instructions make the tool disclose counts as minor, not
+blocking, because the person sees it and checks it. Earlier runs counted it as blocking.
 
-Round 3: **1 blocking, 11 minor**. The trial rule and the scoring rule could point at different
-options. The fix, not yet re-tested: any question about starting something new includes a capped
-trial as one of its options. All three rounds recommended the same thing, a capped trial from one
-shop, with different proposed numbers each time.
+**The lesson for the method:** a fix that works for one input can break on the next. Step 8 now
+asks for one more run with a different input of the same kind.
 
-The full logs, unedited: [round 1](../../../level-3-files/test-runs/decision-support/round-1/friction.md)
-[round 2](../../../level-3-files/test-runs/decision-support/round-2/friction.md) and
-[round 3](../../../level-3-files/test-runs/decision-support/round-3/friction.md).
+The logs, unedited, are in [`level-3-files/test-runs/decision-support/`](../../../level-3-files/test-runs/decision-support/).
+The two decisions' final runs: [bakery](../../../level-3-files/test-runs/decision-support/round-6/result.md)
+(also [`example.md`](example.md)) and [truck](../../../level-3-files/test-runs/decision-support/new-decision-3/result.md).

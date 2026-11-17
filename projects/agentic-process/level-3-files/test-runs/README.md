@@ -23,6 +23,20 @@ points: no round repeated the list before it.
 | 1 | [`decision-support/round-1/`](decision-support/round-1/) | A three-shop bakery asks whether to start office catering | 2, 13 |
 | 2 | [`decision-support/round-2/`](decision-support/round-2/) | The same, after the round 1 fixes | 2, 11 |
 | 3 | [`decision-support/round-3/`](decision-support/round-3/) | The same, after the round 2 fixes | 1, 11 |
+| 4 | [`decision-support/round-4/`](decision-support/round-4/) | The same, after the round 3 fix | 0, 10 |
+| 5 | [`decision-support/new-decision/`](decision-support/new-decision/) | A landscaper: rent, buy used or lease a truck | 5, 8 |
+| 6 | [`decision-support/round-5/`](decision-support/round-5/) | The bakery, after one general rule | 3, 7 |
+| 7 | [`decision-support/new-decision-2/`](decision-support/new-decision-2/) | The truck, after one general rule | 2, 8 |
+| 8 | [`decision-support/round-6/`](decision-support/round-6/) | The bakery, judgement calls disclosed | 1, 11 |
+| 9 | [`decision-support/new-decision-3/`](decision-support/new-decision-3/) | The truck, judgement calls disclosed | 1, 10 |
+
+From run 8, a judgement call the instructions make the tool disclose counts as minor.
+
+## A beginner reading the README
+
+| Folder | Who (played by an AI session) | Blocking, minor |
+| --- | --- | --- |
+| [`beginner-walkthrough/`](beginner-walkthrough/friction.md) | An office manager who uses ChatGPT daily, starting at the README, then making a supplier-comparison tool | 3, 24, all three fixed and not re-tested |
 
 ## The skill folder, `level-2-files/agentic-process/`
 

@@ -1,11 +1,11 @@
 # Example: should an invented bakery start office catering?
 
-Made on 16 November 2026 by a new AI session that had only the tool's instructions (round 3 of
-testing) and the message below. It could search the web and could not ask questions. The bakery
-is invented; the sources are real and were read that day. Nothing below the line is edited.
-Since this run, one line was added to the instructions: a question about starting something new
-always gets a capped trial as one of its options. Its log is in
-[round 3](../../../level-3-files/test-runs/decision-support/round-3/friction.md).
+Made on 16 November 2026 by a new AI session that had only the tool's instructions and the message
+below. It could search the web and could not ask questions. The bakery is invented; the sources are
+real and were read that day. Nothing below the line is edited. Since this run, two lines were added
+to the instructions: an option must score above "do nothing" to lead, and a score that rests on a
+fact not found counts as 0 and is listed as a judgement call. Its log is in
+[round 6](../../../level-3-files/test-runs/decision-support/round-6/friction.md).
 
 **The message:**
 
@@ -19,145 +19,151 @@ always gets a capped trial as one of its options. Its log is in
 
 ## Business profile
 
-- **What you sell, and to whom:** bread, pastries and coffee to walk-in customers.
-- **Where and how big:** three shops in Hamilton, Ontario; 22 staff; about $1.4 million in sales a year.
+- **Business:** Harbour Lane Bakery. Bread, pastries and coffee, sold to walk-in customers.
+- **Where and size:** three shops in Hamilton, Ontario; 22 staff; about $1.4 million in sales a year.
 - **Goals for the next twelve months (in your order):** 1. grow sales 10 percent; 2. raise weekday afternoon sales; 3. keep the team from burning out.
 - **Limits:** up to $25,000 to invest; no new building; the head baker already works six days.
 - **Risk:** medium.
-- **Who else has a say:** your business partner, on big decisions.
+- **Who else decides:** your business partner, on big decisions.
 
-Please save this profile as a file in this project, so I never have to ask for it again.
+Save this profile and paste it at the top of your next question (or save it as a file in this project if you are using one), so I never have to ask again.
 
 ---
 
-## Step 1. Frame the decision
+## 1. Frame the decision
 
-**Question:** Should Harbour Lane Bakery start a weekday catering service for offices near its shops?
+**Question:** Should Harbour Lane Bakery start a weekday catering service for offices near its three shops?
 
-**Options:**
+**Options**
+- **A. Do nothing.** Stay walk-in only.
+- **B. Full weekday office catering** from all three shops: take orders, prepare platters, deliver to nearby offices.
+- **C. Eight-week pilot from one shop** (proposal). Pre-order breakfast and meeting boxes made from your existing menu, ordered by 2 pm the day before, delivered or picked up, a cap of 3 orders a day, spending cap $2,000 for packaging, insulated carriers, flyers and a simple order form. It tests the riskiest part: whether nearby offices order often enough, and whether the team can fill orders without the head baker working more.
 
-- **A. Full catering service.** Breakfast and lunch catering every weekday from all three shops, with regular delivery.
-- **B. Capped trial of afternoon office orders.** From one shop, a short menu made from what you already bake (pastry boxes, bread-based sandwich platters, coffee), ordered the day before and delivered on weekday afternoons to offices close by. Length, cap and menu are set out in Step 3 as proposals.
-- **C. Not now.** Keep the business as it is.
+## 2. Research
 
-**Criteria:** from your goals, (1) sales growth, (2) weekday afternoon sales, (3) no extra strain on the team; from your limits, (4) $25,000 or less, (5) no new building, (6) nothing added to the head baker's week.
+| Fact | Source and date |
+|---|---|
+| Canada's national office vacancy fell for the fourth quarter in a row, to 13.4% in Q2 2026 (Colliers). | CP24, 9 Jul 2026 |
+| Stricter office attendance rules are sending more workers to employer food services; Aramark's business-and-industry unit was its fastest-growing segment for seven quarters. Mostly US and Europe. | Bloomberg via Insurance Journal, 25 Aug 2025 |
+| A Toronto office-catering startup (launched Oct 2025) reports "strong volume"; its target is workplaces of 20 to 200 staff with recurring orders. No figures given. | Retail Insider, 3 Jun 2026 |
+| Hamilton Convention Centre breakfast (croissants, muffins, yogurt, fruit, coffee): $19.95 per person, plus 17% facility fee and 13% HST, minimum 25 guests. | HCC Breakfast Menu, prices valid to 31 Dec 2026; read 16 Nov 2026 |
+| A business directory lists 20 caterer companies in Hamilton. | Scott's Directories, read 16 Nov 2026 |
+| Potentially hazardous food must be kept at 4°C or lower or 60°C or higher, including during transport; at least one trained food handler or supervisor on site every hour the premises operates. | O. Reg. 493/17 (Ontario e-Laws), read 16 Nov 2026 |
+| A food premises in Hamilton needs a business licence; tell Public Health and Building and Licensing before building or renovating. | City of Hamilton, page modified 3 Feb 2026 |
+| Ontario general minimum wage is $17.95 an hour from 1 Oct 2026. | Hicks Morley, 1 Apr 2026 |
+| Number of offices and office workers near your three shops; Hamilton office vacancy | not found |
+| Fees on catering marketplaces such as ezCater | not found (page did not load) |
+| One-time cost of a full catering setup (vehicle, equipment) | not found (not researched) |
+| Whether your shops' current licence covers delivered catering | not found |
 
-## Step 2. Research
+**Estimates**
+- 10% sales growth = 0.10 × $1,400,000 = **$140,000 a year**. Over 260 weekdays (52 × 5, holidays not removed) that is about **$538 a weekday** across all three shops (estimate).
+- At the convention centre's $19.95 a person, $538 is about 27 people a day (538 ÷ 19.95). Your own prices will differ (estimate).
+- Every hour a staff member spends delivering costs at least $17.95 in wages before payroll costs (estimate, from the minimum wage).
 
-**Facts found**
+## 3. Compare and recommend
 
-1. Remote work in Canada is falling. In May 2025, 17.4% of employed people worked mostly from home, down from 18.7% a year earlier, and hybrid workers rose from 4.8% to 5.1% (Statistics Canada data reported by BNN Bloomberg, 26 Aug 2025).
-2. Nationally, downtown office vacancy fell 40 basis points in Q2 2026, and CBRE says "rising return-to-office expectations are resulting in a positive shift in leasing fundamentals" (CBRE, Canada Office Figures Q2 2026, 6 Jul 2026).
-3. CBRE describes Hamilton's downtown office market as "in transition": refurbished space is drawing stronger tenant interest and older buildings see softer demand (CBRE, Hamilton Office Figures Report July 2026, 16 Jul 2026).
-4. Workplace catering trends: office mandates of three or four days a week create steady, repeat catering needs; reliability (accurate orders, on-time delivery) matters more to many buyers than price; breakfast and morning events are growing; a typical office catering lunch costs about $18 to $25 per person; large workplace orders grew 30% faster year over year than regular orders in 2025 (DoorDash for Business, 17 Jun 2026). This is a US source; the currency is not stated on the page and is assumed to be US dollars.
-5. Bloomberg Intelligence estimates higher office traffic could lift large caterers' organic growth by up to 1% over twelve months (Insurance Journal, 25 Aug 2025). This is about big contract caterers, not bakeries.
-6. A Toronto-area corporate caterer (416 phone number; city not stated) lists a continental breakfast with pastries at $15 per person (minimum 15) and a sandwich and salad box at $18 per person; delivery fees are not stated (Eatertainment, "EAT Corporate Catering 2026" menu, no date on page; read 16 Nov 2026).
-7. In Hamilton, the convention centre charges $19.95 per person for a continental breakfast (minimum 25 guests), plus a 17% facility fee and 13% HST; prices are valid to 31 Dec 2026 (Hamilton Convention Centre breakfast menu, no publication date; read 16 Nov 2026). This is a venue, not a delivery competitor.
-8. Ontario's food premises rule says hazardous food must be kept at 4°C or lower, or 60°C or higher, including while it is transported (s. 27), and a food service premise must have at least one trained food handler or supervisor on site during operating hours (s. 32) (O. Reg. 493/17, version in force from 1 Jan 2025; read 16 Nov 2026).
+**Limits**
+| Test | A | B | C |
+|---|---|---|---|
+| No option may spend more than $25,000 | pass | unknown (setup cost not found) | pass ($2,000 cap, proposal) |
+| No option may need a new building | pass | pass | pass |
+| No option may add to the head baker's hours (assumed: you check this first) | pass | unknown | pass (order cap; orders filled by other staff, proposal) |
 
-**Not found**
+No option dropped.
 
-- How many offices or office workers are within reach of your three shops: not found.
-- Hamilton's 2026 office vacancy rate: not found (CBRE's Hamilton figures are in a PDF I could not read).
-- Hamilton bakeries or caterers that deliver to offices, and their prices: not found.
-- The cost of a delivery vehicle or driver in Hamilton: not found.
-- What Hamilton Public Health requires when a bakery adds catering delivery: not found.
+**Scores** (against doing nothing, next twelve months)
+| Goal | B. Full catering | C. Pilot |
+|---|---|---|
+| 1. Grow sales 10% | +1: a new source of sales | +1: some new sales, small |
+| 2. Weekday afternoon sales | 0: office orders are mostly for morning and lunch meetings (assumed) | 0: same |
+| 3. Avoid burnout | -1: new work across three shops | -1: new work, though capped |
+| **Total** | **0** | **0** |
 
-**Estimate**
+Do nothing scores 0 on every goal, total 0.
 
-- Your 10% sales goal is about $140,000 a year ($1.4 million x 10%). Spread over about 250 weekdays a year (assumed), that is about $560 a weekday. At $15 to $20 a person (facts 6 and 7), catering alone would need to feed about 28 to 37 people every weekday to meet the whole goal ($560 / $20 = 28; $560 / $15 = 37). Catering can help the goal; on its own it is unlikely to reach it quickly.
+**Leading option:** a three-way tie at 0. Goal 1 breaks it: B and C (+1) beat doing nothing (0). Goals 2 and 3 are tied. The smaller, easier option wins: **C, the pilot.**
 
-## Step 3. Compare and recommend
+**Check first:** yes. The number of offices near your shops is "not found", and if there are few, the pilot would not add sales and doing nothing would lead. Cheapest check: count offices within about ten minutes of each shop and ask ten office managers or regular customers whether they would order, and how often. Same week: ask City of Hamilton Public Health and Licensing whether your licence covers delivered orders, and ask your insurance broker about staff delivering in their own cars.
 
-**Limits as pass-or-fail tests**
+**Judgement calls** (check these first)
+1. *Head baker.* I read "already works six days" as a rule: no option may add to his or her hours. Other reading: it is background only. Would not change the leading option.
+2. *Afternoon sales.* I read this as sales made on weekday afternoons, which office catering mostly is not. Other reading: afternoon meeting orders count. Both B and C would gain +1; C still leads.
+3. *Burnout.* I scored any new work as worse. Other reading: a capped pilot using quiet afternoon hours is neutral. C would then score +1 and lead outright. No change.
+4. *Budget.* I read $25,000 as one-time spending. Other reading: it includes first-year wages. B becomes more likely to fail; C still leads.
+5. *Longer view.* Over two to three years full catering could add more sales than a pilot. No change: if the pilot works, it leads into B.
 
-| Test | A. Full service | B. Capped trial | C. Not now |
-| --- | --- | --- | --- |
-| L1. The option costs $25,000 or less to start. (assumed: "invest" means one-off spending, not ongoing wages) | Unclear: vehicle and staff costs not found | Pass (cap is a proposal, below) | Pass |
-| L2. The option runs from the three existing shops; no new building. | Pass | Pass | Pass |
-| L3. No option may add to the head baker's hours. (assumed: "already works six days" means no more can be added) | Fail (assumed): daily breakfast and lunch catering from three shops adds early bread and pastry volume, and nothing in the profile names anyone else to bake it | Pass, if the trial uses only items already baked and is made up by afternoon staff (proposal) | Pass |
+## 4. SWOT for the recommended option (C, the pilot)
 
-**Option A is dropped** because it fails L3. Check this line first: if someone other than the head baker can carry the extra baking, A comes back in.
-
-**Scores against goals (compared with doing nothing)**
-
-| Goal | B. Capped trial | C. Not now |
-| --- | --- | --- |
-| 1. Grow sales 10% | +1: adds new orders on top of walk-in sales | 0 |
-| 2. Weekday afternoon sales | +1: orders are delivered and made up on weekday afternoons (assumed: these count as afternoon sales) | 0 |
-| 3. Keep the team from burning out | -1: adds order-taking, packing and delivery to someone's day | 0 |
-| **Total** | **+1** | **0** |
-
-**Recommendation:** Option B, a short capped trial. It has the highest total. Your risk level is medium, which calls for a trial unless the facts are strong, and they are not: the fact that would decide this, whether offices near your shops would actually order, is not found. So the trial starts with the cheapest checks, a few calls, before any money is spent.
-
-**Trial design (all proposals):**
-
-- 8 weeks, from one shop: the one with the most offices close by.
-- Menu of three items made from what you already bake: a pastry box, a bread-based sandwich platter, and a coffee carafe.
-- Orders by noon the day before; delivery 1 pm to 4 pm on weekdays, within about 2 km of the shop; minimum order of 10 people.
-- Price set against the $15 to $20 a person you see from other caterers (facts 6 and 7).
-- Spending cap of $2,500 for insulated carriers, a thermometer, packaging and a simple order form.
-- Success at week 8: at least 5 paid orders a week, with at least 2 from repeat customers.
-
-**What would change this:** if the calls show several offices ready to order every week, and someone other than the head baker can do the extra baking within $25,000, move to the full service (A). If fewer than 3 of the first 10 offices you call show interest, choose not now (C).
-
-## Step 4. SWOT for the recommended option (B)
-
-| Strengths | Weaknesses |
-| --- | --- |
-| Uses products and shops you already have (profile). Small, capped spend, well under $25,000 (proposal). | Adds work for staff, which pulls against your goal of avoiding burnout (profile). One shop and a short menu limit what you can learn (proposal). |
+| **Strengths** | **Weaknesses** |
+|---|---|
+| Uses products you already make (option) | Adds work for a team you want to protect (profile) |
+| Three shops already near offices (profile) | One shop only, so small sales at first (option) |
+| Capped at $2,000 and eight weeks (proposal) | Head baker already at six days; little spare baking capacity (profile) |
 | **Opportunities** | **Threats** |
-| Fewer Canadians work mostly from home (BNN Bloomberg / Statistics Canada, 2025). Office mandates of three or four days create repeat catering orders (DoorDash, 2026). Breakfast and morning events are growing (DoorDash, 2026). | Hamilton's downtown office market is "in transition", with softer demand for older buildings (CBRE, 2026). Office buyers rank reliability above price, so one late delivery can lose a client (DoorDash, 2026). Food must stay at 4°C or lower, or 60°C or higher, while it is carried (O. Reg. 493/17). |
+| Office vacancy falling four quarters in a row (CP24, 9 Jul 2026) | Office demand near your shops: not found |
+| Employers using food to bring staff back (Insurance Journal, 25 Aug 2025; Retail Insider, 3 Jun 2026) | 20 caterers already listed in Hamilton (Scott's Directories) |
+| Convention-centre breakfast costs $19.95 a person plus fees, 25-guest minimum; room for smaller orders (HCC menu; assumed) | Food safety in transport and licence rules (O. Reg. 493/17; City of Hamilton); delivery wages at least $17.95/h (Hicks Morley) |
 
-## Step 5. The brief
+---
+
+## 5. The brief
 
 **Decision:** Should Harbour Lane Bakery start a weekday catering service for offices near its shops?
 
-**Recommendation:** Not the full service yet: run an 8-week, capped trial of day-ahead afternoon office orders from one shop, starting with calls to nearby offices (trial terms are proposals).
+**Recommendation:** Run an eight-week, pre-order office catering pilot from one shop, after a one-week check that enough nearby offices would order.
 
-**Why:**
+**Why**
+- It is the only option that adds sales while staying well inside the $25,000 limit and away from the head baker's hours.
+- Full catering and the pilot score the same against your goals; the pilot wins as the smaller, easier option.
+- Office demand near your shops is unknown. The pilot finds out for $2,000 (proposal), not tens of thousands.
 
-- It scores best against your goals: it adds sales and weekday afternoon sales, at a small cost to team workload.
-- A full daily service would add early baking, and your head baker already works six days (profile; this reading is assumed).
-- The deciding fact, whether nearby offices would order, is not found. Remote work is falling in Canada (Statistics Canada, 2025), but Hamilton's downtown office market is "in transition" (CBRE, 2026). A trial finds out cheaply.
+**SWOT**
 
-**SWOT:**
-
-| Strengths | Weaknesses |
-| --- | --- |
-| Uses products and shops you already have (profile). Small, capped spend, well under $25,000 (proposal). | Adds work for staff, against your goal of avoiding burnout (profile). One shop and a short menu limit what you learn (proposal). |
+| **Strengths** | **Weaknesses** |
+|---|---|
+| Existing products (option); shops near offices (profile); capped cost and time (proposal) | More work for the team (profile); small sales from one shop (option); head baker already at six days (profile) |
 | **Opportunities** | **Threats** |
-| Fewer Canadians work mostly from home (Statistics Canada, 2025). Office mandates create repeat catering orders; morning events are growing (DoorDash, 2026). | Hamilton's downtown office market is "in transition" (CBRE, 2026). Buyers rank reliability above price (DoorDash, 2026). Food must stay at 4°C or lower, or 60°C or higher, in transport (O. Reg. 493/17). |
+| Office vacancy falling (CP24, 9 Jul 2026); employers using food to bring staff back (Insurance Journal, 25 Aug 2025); convention-centre price $19.95 a person, 25-guest minimum (HCC menu) | Local office demand not found; 20 Hamilton caterers listed (Scott's); food-safety and licence rules (O. Reg. 493/17; City of Hamilton) |
 
-**Risks and how to reduce them:**
+**Risks and how to reduce them**
+1. *Too few orders.* Check offices first; stop at eight weeks if fewer than 10 orders a week (proposal).
+2. *Team overload.* Cap at 3 orders a day; the head baker takes no catering work; stop if overtime rises.
+3. *Food safety, licence or insurance gap.* Keep cold items at 4°C or lower in transport; confirm with City of Hamilton Public Health and Licensing and your insurance broker.
 
-1. Too little demand. Call 10 offices before spending anything; stop if fewer than 3 are interested (proposal).
-2. Staff strain. Use only items you already bake, give packing and delivery to staff with spare afternoon hours, and cap orders per day (proposal).
-3. Food safety and delivery. Keep cold food at 4°C or lower and hot food at 60°C or higher in transport (O. Reg. 493/17). Ask Hamilton Public Health what else applies, and ask your insurance broker whether staff delivering in their own cars are covered.
+**Next steps (next 30 days)**
+1. Pick the shop. Count offices within ten minutes and ask ten office managers or regulars if they would order.
+2. Call City of Hamilton (Public Health, Licensing) and your insurance broker. Ask your accountant how HST applies to delivered orders.
+3. Set two boxes, prices from your own costs, an order form and the cap; book the first orders.
 
-**Next steps (next 30 days):**
+**What would change this recommendation**
+- The office check finds little interest: do nothing.
+- Licence or insurance changes cost more than the pilot budget: do nothing for now.
+- The pilot reaches 10 orders a week with repeat offices (proposal): plan full catering, costed within $25,000.
+- None of the judgement calls would change it.
 
-1. Pick the shop with the most offices nearby and call 10 of them: would they order, how often, for how many people, at what price.
-2. Ask Hamilton Public Health about catering delivery, your insurance broker about delivery cover, and your accountant about HST on catering orders.
-3. Agree the trial terms (8 weeks, $2,500 cap, success at 5 paid orders a week) with your business partner.
+**Assumptions**
+- The head baker's six days is a hard limit.
+- Office orders fall mostly in morning and lunch, not afternoons.
+- $25,000 means one-time spending.
+- Staff other than the head baker can fill and deliver three orders a day.
 
-**What would change this recommendation:** strong committed demand from the calls plus a second baker within budget points to the full service; weak interest points to not now.
+**Sources**
+- Colliers via CP24, "Office, industrial real estate vacancies dropping amid strong demand", https://www.cp24.com/news/money/2026/07/09/office-industrial-real-estate-vacancies-dropping-amid-strong-demand-colliers-report/ , 9 Jul 2026
+- Bloomberg via Insurance Journal, "Stricter Return-to-Office Policies Are Boosting Growth for Catering Providers", https://amp.insurancejournal.com/news/international/2025/08/25/836685.htm , 25 Aug 2025
+- Retail Insider, "Toronto startup Nüu Catering bets office catering can help drive return-to-office culture", https://retail-insider.com/retail-insider/2026/06/toronto-startup-nuu-catering-bets-office-catering-can-help-drive-return-to-office-culture/ , 3 Jun 2026
+- Hamilton Convention Centre, "HCC Breakfast Menu", https://hccevents.ca/wp-content/uploads/2025/08/HCC-Breakfast-Menu.pdf , prices valid to 31 Dec 2026; read 16 Nov 2026
+- Scott's Directories, "Caterers Companies in Hamilton, Ontario", https://www.scottsdirectories.com/canada-b2b-database/ontario/hamilton/naics722320-caterers , read 16 Nov 2026
+- Government of Ontario, "O. Reg. 493/17: Food Premises", https://www.ontario.ca/laws/regulation/170493 , read 16 Nov 2026
+- City of Hamilton, "Food Premises & Food Handling Requirements", https://www.hamilton.ca/build-invest-grow/operating-business/health-requirements-inspections/food-premises-food-handling , modified 3 Feb 2026
+- Hicks Morley, "Ontario Minimum Wage to Increase October 1, 2026", https://hicksmorley.com/2026/04/01/ontario-minimum-wage-to-increase-october-1-2026/ , 1 Apr 2026
 
-**Assumptions:** "invest" means one-off spending; the head baker's hours cannot grow; afternoon deliveries count as afternoon sales; you have staff with spare afternoon hours; the US catering prices are in US dollars; about 250 weekdays a year.
+This is not legal or tax advice: licensing and food safety go to City of Hamilton Public Health and Licensing, insurance to your broker, and HST to your accountant.
 
-**Sources:**
+---
 
-- BNN Bloomberg, "More Canadians commuting as remote work declines, hybrid workers on-site more often", 26 Aug 2025: https://www.bnnbloomberg.ca/business/company-news/2025/08/26/more-canadians-commuting-as-remote-work-decline-hybrid-workers-on-site-more-often/
-- CBRE, "Canada Office Figures Q2 2026", 6 Jul 2026: https://www.cbre.com/insights/figures/canada-office-figures-q2-2026
-- CBRE, "Hamilton Office Figures Report July 2026", 16 Jul 2026: https://www.cbre.com/insights/reports/hamilton-office-figures-report-july-2026
-- DoorDash for Business, "6 Workplace Catering Trends Shaping Office Food in 2026", 17 Jun 2026: https://business.doordash.com/en-us/blog/workplace-catering-trends
-- Insurance Journal, "Stricter Return-to-Office Policies Are Boosting Growth for Catering Providers", 25 Aug 2025: https://amp.insurancejournal.com/news/international/2025/08/25/836685.htm
-- Eatertainment, "EAT Corporate Catering 2026" menu, no date on page, read 16 Nov 2026: https://www.eatertainment.com/wp-content/uploads/2026/03/EAT-Corporate-Catering-2026.pdf
-- Hamilton Convention Centre, "HCC Breakfast Menu", no date on page (prices valid to 31 Dec 2026), read 16 Nov 2026: https://hccevents.ca/wp-content/uploads/2025/08/HCC-Breakfast-Menu.pdf
-- Government of Ontario, O. Reg. 493/17 Food Premises, version in force from 1 Jan 2025, read 16 Nov 2026: https://www.ontario.ca/laws/regulation/170493
+## 6. Check list for you
 
-## Step 6. Check list
-
-- **Figures to check against their sources:** the 17.4% working mostly from home, the $15 and $19.95 per-person prices, the $18 to $25 lunch range (and its currency), and the 4°C / 60°C transport rule.
-- **Assumptions to confirm:** that the head baker cannot take on more, that "$25,000 to invest" means one-off spending, and that you have staff with spare weekday afternoon hours.
-- **People who should see this before it is decided:** your business partner, your head baker, and the manager of the shop that would run the trial.
+- **Figures to check:** 13.4% office vacancy (CP24), $19.95 convention-centre price (HCC menu), 4°C / 60°C rule (O. Reg. 493/17), $17.95 minimum wage (Hicks Morley), and my $140,000 and $538-a-weekday estimates.
+- **Assumptions to confirm:** the head baker limit, morning-and-lunch ordering, $25,000 as one-time spend, and staff able to fill three orders a day.
+- **People who should see this:** your business partner, the head baker, and the manager of the pilot shop.

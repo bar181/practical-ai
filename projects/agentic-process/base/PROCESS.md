@@ -9,28 +9,33 @@ a user story for each level, what to expect, what proves the step is done, and a
 already exists. Price the wood. Pick the spot. Draw it. Have someone check the drawing. Build the
 smallest platform you can stand on. Extend it only once you are using it.
 
+**What you end with: four files.** A workflow card (the spec: what goes in, the steps, what
+comes out, what a person checks), the instructions your chatbot runs, one worked example made by
+a fresh chat, and a short guide to setting it up and using it. [The template](template/) has all four.
+
 **Two ways to use this page.** Paste the [build coach](AI-INSTRUCTIONS.md) into a chatbot and it
-walks you through all nine. Or take the steps one at a time with the prompts below.
+walks you through. Or take the steps one at a time with the prompts below.
 
 ## The steps at a glance
 
-| # | Step | You write down | The gate | Time |
-| --- | --- | --- | --- | --- |
-| 1 | [**Scope**](#1-scope) | One user, one job, what is out, and the one thing that will make people stop and look | Can you say the job in one sentence? | about 5 min |
-| 2 | [**Reuse check**](#2-reuse-check) | What already does this: built in, free, common practice | After what already exists, is there still something to build? If not, stop and write a guide to that thing. | about 10 min |
-| 3 | [**Outside help**](#3-outside-help) | Paid services for whatever is left. Do not pick a provider. Decide only build, buy or by hand for each part | Do you know what you would build and what you would buy? | about 5 min |
-| 4 | [**Cost**](#4-cost) | Every dependency of the first version, with its price and its limit | Does the first version cost nothing, or an amount you accept? | about 5 min |
-| 5 | [**Simplest design**](#5-simplest-design) | Which assistant, where files live, what stays manual. The folder layout, fixed now | Could a beginner draw it? | about 5 min |
-| 6 | [**Plan and front door**](#6-plan-and-front-door) | The steps a person follows, the first screen they see, one worked example for each kind of request it handles | Is the beginner version fully described? | about 10 min |
-| 7 | [**Review**](#7-review) | Someone who is not the author reads the plan | Can someone else explain it back to you? | about 5 min |
-| 8 | [**Build and test**](#8-build-and-test) | The beginner version. Then a test by a fresh AI session that has only your instructions | Did a fresh session finish the job, and have you read what it tripped on? | about 15 min |
-| 9 | [**Grow**](#9-grow) | One addition, one change request. What you learned | Is the level below in use before you build the next? | repeats |
+| # | Step | The decision it helps you make | Adds to your package | The gate | Time |
+| --- | --- | --- | --- | --- | --- |
+| 1 | [**Scope**](#1-scope) | Which one job, for whom, and what is out | The card: For, The job, Out of scope, and the acceptance test | Can you say the job in one sentence? | about 5 min |
+| 2 | [**Reuse check**](#2-reuse-check) | Build, wrap something that exists, or stop | The card: Already exists. If you stop, a two-line guide to that thing replaces the package | After what already exists, is there still something to build? If not, stop and write a guide to that thing. | about 10 min |
+| 3 | [**Outside help**](#3-outside-help) | What, if anything, to buy or connect | README: what it needs before setup | Do you know what you would build and what you would buy? | about 5 min |
+| 4 | [**Cost**](#4-cost) | Whether it is worth running | The card: what you will measure to know it saves time or improves quality | Does the first version cost nothing, or an amount you accept? | about 5 min |
+| 5 | [**Simplest design**](#5-simplest-design) | Where it runs and where it is saved | The card: Where it runs. README: the setup steps | Could a beginner draw it? | about 5 min |
+| 6 | [**Plan and front door**](#6-plan-and-front-door) | The steps, the result, and what a person checks | The card: Trigger, Inputs, Steps, Output, A person checks, When something is missing. A first draft of the instructions | Is the beginner version fully described? | about 10 min |
+| 7 | [**Review**](#7-review) | Whether a stranger understands the card | Fixes to the card, before the instructions are final | Can someone else explain it back to you? | about 5 min |
+| 8 | [**Build and test**](#8-build-and-test) | Whether it is ready to use, or what to fix first | The instructions, final. The example, made by a fresh chat. README: how to use it every time | Did a fresh session finish the job, and have you read what it tripped on? | about 15 min |
+| 9 | [**Grow**](#9-grow) | What to add next, from real use | The next version, one change at a time | Is the level below in use before you build the next? | repeats |
 
 Steps 1 to 8 add up to about 60 minutes the first time. Every time on this page is an estimate: nobody
 has yet been timed.
 
-**A small job can take the short path:** steps 1, 6 and 8 in full, steps 2 to 5 in a line each, step 7 folded into the test, and step 9 left open.
-The coach offers it when the job is one person turning one kind of input into one result in a chat.
+**Most jobs take the short path:** one person turns one kind of input into one result in a chat.
+Steps 1, 6 and 8 in full, steps 2 to 5 in a line each, step 7 folded into the test, step 9 left open.
+It ends with the same four files. Take all nine steps when the tool is shared, uses shared files, or costs money.
 
 ## Who does what
 
@@ -46,6 +51,10 @@ The coach offers it when the job is one person turning one kind of input into on
 
 **Purpose.** Decide who the tool is for and the one job it does, before anything is built. A tool that does one job gets finished. A tool that does five gets rebuilt.
 
+**The decision it helps you make.** Which one job, for whom, and what is out.
+
+**Adds to your package.** The card: For, The job, Out of scope, and the acceptance test.
+
 **User stories**
 
 - **Beginner.** As someone with a job I repeat every week, I want to say the job in one sentence, so that the AI builds that and nothing else.
@@ -58,7 +67,7 @@ The coach offers it when the job is one person turning one kind of input into on
 
 - One sentence: who it is for, what goes in and what comes out
 - Three things the first version will not do
-- One test: a real input, and what a good result looks like
+- One test: an invented input that looks like the real thing, and what a good result looks like
 
 **The gate.** Can you say the job in one sentence?
 
@@ -82,6 +91,10 @@ My job: [describe the job you repeat]
 ## 2. Reuse check
 
 **Purpose.** Find out whether something you already have, or something free, does the job. The cheapest tool is the one you do not build.
+
+**The decision it helps you make.** Build, wrap something that exists, or stop.
+
+**Adds to your package.** The card: Already exists. If you stop, a two-line guide to that thing replaces the package.
 
 **User stories**
 
@@ -117,6 +130,10 @@ Then tell me plainly: does something existing do the whole job? If yes, tell me 
 
 **Purpose.** For whatever is left, list the services you could pay for, so that the choice between building and buying is made on purpose.
 
+**The decision it helps you make.** What, if anything, to buy or connect.
+
+**Adds to your package.** README: what it needs before setup.
+
 **User stories**
 
 - **Beginner.** As someone with a job I repeat every week, I want to know what I would have to pay for, so that there are no surprises after I start.
@@ -145,6 +162,10 @@ Then, for each part of the tool, say whether the first version should build it, 
 ## 4. Cost
 
 **Purpose.** Put a price and a limit on everything the first version depends on. A tool people cannot afford to run is not finished.
+
+**The decision it helps you make.** Whether it is worth running.
+
+**Adds to your package.** The card: what you will measure to know it saves time or improves quality.
 
 **User stories**
 
@@ -176,6 +197,10 @@ End with one line: does the first version cost nothing new, or how much? If it n
 ## 5. Simplest design
 
 **Purpose.** Choose the fewest moving parts that do the job, and fix where every file lives before any file is written.
+
+**The decision it helps you make.** Where it runs and where it is saved.
+
+**Adds to your package.** The card: Where it runs. README: the setup steps.
 
 **User stories**
 
@@ -209,6 +234,10 @@ This layout is now fixed. Tell me if anything later would force it to change.
 
 **Purpose.** Write the one-page plan and the first thing a user will see, before the tool exists. If the front door cannot be written, the tool is not understood yet.
 
+**The decision it helps you make.** The steps, the result, and what a person checks.
+
+**Adds to your package.** The card: Trigger, Inputs, Steps, Output, A person checks, When something is missing. A first draft of the instructions.
+
 **User stories**
 
 - **Beginner.** As someone with a job I repeat every week, I want one page I can read in two minutes, so that I know what I am about to build and how I will test it.
@@ -238,6 +267,10 @@ Then write one worked example for each kind of request the tool handles differen
 ## 7. Review
 
 **Purpose.** Have someone who is not the author read the plan and explain it back. You cannot see your own gaps, because you know what you meant.
+
+**The decision it helps you make.** Whether a stranger understands the card.
+
+**Adds to your package.** Fixes to the card, before the instructions are final.
 
 **User stories**
 
@@ -275,6 +308,10 @@ Do not improve the plan. Only report.
 
 **Purpose.** Build the smallest version that does the job, then hand it to a stranger: a new AI session that has only your instructions. It finds what you cannot.
 
+**The decision it helps you make.** Whether it is ready to use, or what to fix first.
+
+**Adds to your package.** The instructions, final. The example, made by a fresh chat. README: how to use it every time.
+
 **User stories**
 
 - **Beginner.** As someone with a job I repeat every week, I want to test my prompt in a new chat, so that I know it works without everything I said earlier.
@@ -288,10 +325,11 @@ Do not improve the plan. Only report.
 - The first version: instructions someone can paste, or a folder someone can open
 - The result the fresh session produced, unedited
 - Its list of where it had to guess, and a note of what you fixed
+- One more run with a different input of the same kind, after the fixes
 
 **The gate.** Did a fresh session finish the job, and have you read what it tripped on?
 
-*In a chat with the coach:* In a chat you cannot run the test. Leave this gate open, and put the exact test under Test this next. Never state a test result you did not see.
+*In a chat with the coach:* In a chat you cannot run the test yourself. Ask the person to run it in a new chat and paste the whole reply back; then fix what blocked it. If they cannot now, leave this gate open and put the exact test under Test this next. Never state a test result you did not see.
 
 **Prompt to build, in your working chat**
 
@@ -314,12 +352,16 @@ Give me two things.
 
 [paste the instructions]
 
-[paste one real input]
+[paste one input: invented, or with names and figures changed]
 ```
 
 ## 9. Grow
 
 **Purpose.** Add one thing at a time, and only after the level below is in use. Small additions get reviewed. Big ones get waved through.
+
+**The decision it helps you make.** What to add next, from real use.
+
+**Adds to your package.** The next version, one change at a time.
 
 **User stories**
 
@@ -350,6 +392,9 @@ Then build only the first one. Stop and show me before you start the second.
 ```
 
 ## The one-page plan
+
+**On the short path you do not need this plan:** the workflow card in the four files replaces it.
+Use it when you take all nine steps.
 
 Fill this in as you go. Copy it into a document, or ask your chatbot to fill it in from your
 answers. An agent finds the same template in each new project folder as `base/plan.md`.

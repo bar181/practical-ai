@@ -16,20 +16,29 @@ was rebuilt three times before its shape was right. The repository now holds 24 
 waiting to be built. Building each one by guiding an agent step by step costs the owner hours per
 project, and the result depends on how well the owner remembered every step that day.
 
-## 2. Purpose
+## 2. Purpose, goal and North Star
 
-**Agentic Process turns a spec and a few lines of guidance into a reviewed, working first version
-of a tool, delivered where the person works, with a person deciding only at the start and the end.**
-For a project on GitHub that is a draft pull request. For someone who works in a chatbot it is a
-tool package: the instructions, any skills, a worked example and how to install and run it.
+**Agentic Process turns work you repeat into an AI tool you can run again.**
 
-**North Star:** a person, or an agent working alone, can take an idea or a spec to a tool that
-someone else can use, without rebuilding it three times on the way.
+**Goal.** Start with one real job, such as drafting a weekly update or comparing suppliers. Leave
+with four files: a workflow card, runnable instructions, a worked example, and a short setup guide.
 
-The value is the method and its automation: a fixed order of work, gates a script can check, a
-test by a fresh session, and a hand-back a person can review in minutes. It is a general method:
-it builds any tool that can be written as a workflow of steps, not only code. Courses and guides for
-end users are not the product (see section 10).
+**Vision.** A business owner or office worker gets a useful result in their usual chat. Someone
+trained on AI can save and share the workflow. A coder can turn a rough idea into clear intent and
+a testable spec. A folder, a tool server (MCP) or GitHub is connected only when it saves a
+recurring manual step.
+
+**User value.** Catch misunderstandings before they become rework. Decide what goes in, what good
+looks like, and what a person checks. Next time, bring fresh input and run the same workflow.
+
+**North Star.** Someone can try a worked example, adapt it to their own task, and run it again
+without needing the original conversation.
+
+**How the method serves this.** The nine steps are checks, each helping the person make one
+decision and adding to the four files (see `base/PROCESS.md`). Most jobs take the short path:
+steps 1, 6 and 8 in full. The method follows three ideas from Anthropic's own guidance: use the
+simplest workflow that does the job; define success and test cases before tuning instructions;
+and test with a fresh session that did not write them.
 
 ## 3. Who it is for
 
@@ -47,9 +56,9 @@ Each level is useful on its own. Each adds one thing to the one before.
 
 | Level | For | What it adds | What is in this project |
 | --- | --- | --- | --- |
-| Base: run it in chat | A business owner or office worker | A result today, with nothing to set up | The coach, the nine steps, a four-file template for a chatbot tool (`base/template/`), and worked examples, including one complete tool (`base/examples/decision-support/`) |
-| Level 2: make it repeatable | Someone trained on AI, or a builder with a coding agent | A saved workflow: a chatbot project, a skill or a shared folder; or a project folder in a repository; and Autopilot from a spec | The skill folder with its project template, and `AUTOPILOT.md` |
-| Level 3: connect it and prove it | The owner, or a client setup | Connections where work happens (a folder, a tool server, GitHub, a scheduler), gates a script runs, and tests by fresh sessions | Gates, the fresh-run test, the score sheet and every test log (`level-3-files/`) |
+| Base: run it in chat | A business owner or office worker | A useful result in their usual chat today, and the four files to run it again | The coach, the nine steps, a four-file template for a chatbot tool (`base/template/`), and worked examples, including one complete tool (`base/examples/decision-support/`) |
+| Level 2: save, share and specify | Someone trained on AI, or a coder | A saved, shared workflow: a chatbot project, a skill or a shared folder. For a coder: a rough idea turned into clear intent and a testable spec, a project folder in a repository, and Autopilot from a spec | The skill folder with its project template, and `AUTOPILOT.md` |
+| Level 3: connect it and prove it | The owner, or a client setup | Connections where work happens (a folder, a tool server, GitHub, a scheduler), only when they save a recurring manual step; gates a script runs; tests by fresh sessions | Gates, the fresh-run test, the score sheet and every test log (`level-3-files/`) |
 
 Tests belong to Level 3. A Base or Level 2 user never has to run one; they read the example
 that a test produced.
@@ -185,31 +194,33 @@ Deferred until the acceptance criteria hold:
 
 ## 11. How the project is scored
 
-Out of 100. No item counts users.
+Out of 100. No item counts users. Rewritten on 16 November 2026 to match the goal in section 2;
+the earlier rubric weighted Autopilot at 25 and scored 57.
 
 | Item | Weight | What 100 looks like |
 | --- | --- | --- |
-| Spec and method are defined | 20 | This file, the nine steps from one source, every step with purpose, proof and gate |
-| Gates a machine can check | 20 | Every gate in section 7 exists and runs |
-| Autopilot works | 25 | AC-1 to AC-5 hold for a repository |
-| It generalises | 15 | AC-6 holds: a chatbot tool, not code |
-| Works in any repository | 10 | AC-7 holds |
-| Focus | 10 | Nothing in the project that section 10 defers |
+| A beginner gets a useful result fast | 15 | From the README, a finished example runs in minutes in any chatbot, with a way to tell it worked |
+| The four-file package is simple and complete | 15 | The template and the example tool each hold a card, instructions, an example and a setup guide a beginner can follow |
+| The method helps people decide | 15 | Each step names the decision it helps make and what it adds to the files; the short path is the default; the coach hands back the four files |
+| It is proven on fresh input | 15 | Fresh sessions run the example tool on at least two different inputs, its result follows its own rule, and the last fixes are re-tested |
+| The hand-back is reviewable and honest | 10 | Every change, test and open item is shown; nothing untested is called tested |
+| Coders get an idea, intent and spec path | 10 | One worked example from a messy request to intent to a testable spec, handed to an agent without explaining it again |
+| Level 3: gates and connections | 10 | The eight gates in section 7 exist and run; one connection example saves a manual step |
+| Autopilot | 10 | AC-1 and AC-6 hold (tracked in [`AUTOPILOT-PROGRESS.md`](AUTOPILOT-PROGRESS.md)) |
 
-## 12. Where it stands on 16 November 2026
+## 12. Where it stands on 16 November 2026, evening
 
-| Item | Score | Why |
-| --- | --- | --- |
-| Spec and method | 85 | This file; the method has been stable since the fourth audit |
-| Machine gates | 55 | Five of eight exist; `spec-ready`, `tested` and `handback` do not |
-| Autopilot | 20 | Written into the skill; never run |
-| Generalises | 40 | A chatbot tool package (decision support) was built from a workflow card with this method and tested in three rounds by fresh sessions: blocking points 2, 2, 1. It was built in a guided session, not by Autopilot, and the owner has not run it on a real decision |
-| Any repository | 90 | The template gate passes in an empty repository; one unattended run from an idea |
-| Focus | 85 | Base is the coach, the method, a four-file template and examples; tests and their logs are in Level 3; end-user pages are parked |
-| **Total** | **57** | Up from 52 |
-
-**Next, in order:** build the three missing gates (about 45 minutes), then run AC-1 on the
-learning-system spec and AC-6 on the decision-support spec, and read both hand-backs.
+| Item | Before today's pass | Now | Why |
+| --- | --- | --- | --- |
+| Beginner result | 50 | 80 | The README opens on the finished tool with a sample and a "you got it right if" list. A beginner walkthrough said yes to running it. Not yet run by a person, or in ChatGPT |
+| Four-file package | 60 | 75 | Setup steps for ChatGPT, Claude and Gemini projects, and a no-setup route. A person has not filled in the template yet |
+| Method helps decide | 65 | 80 | Every step names its decision and what it adds; the short path comes first; the coach's test loop is explicit. The changed coach is not re-tested |
+| Proven on fresh input | 55 | 75 | Nine runs on two decisions; the final run of each followed its rule with 1 blocking point, since fixed and not re-tested. Claude only |
+| Reviewable hand-back | 80 | 85 | [`HANDBACK-2026-11-16.md`](HANDBACK-2026-11-16.md) |
+| Coder path | 30 | 30 | Not built: the meeting-notes walkthrough is the next piece of work |
+| Level 3 | 55 | 55 | Five of eight gates; logs now in Level 3; no connection example |
+| Autopilot | 20 | 20 | Not run |
+| **Total** | **53** | **66** | |
 
 ## 13. Open questions for the owner
 

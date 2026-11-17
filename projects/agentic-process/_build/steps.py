@@ -20,7 +20,7 @@ STEPS = [
   expect="About 5 minutes. Expect to drop something you wanted: the first answer is usually two or three jobs.",
   proof=("One sentence: who it is for, what goes in and what comes out",
          "Three things the first version will not do",
-         "One test: a real input, and what a good result looks like"),
+         "One test: an invented input that looks like the real thing, and what a good result looks like"),
   gate="Can you say the job in one sentence?",
   prompts=(("Prompt to paste", """I want to turn a job I repeat into a small AI tool. Help me scope it.
 
@@ -152,7 +152,8 @@ Do not improve the plan. Only report.
   expect="About 15 minutes for the first round. Expect a list of problems even when the job gets done. That list is the test working. Fix first every point that appears in two or more logs, then every blocking point. Then run it again.",
   proof=("The first version: instructions someone can paste, or a folder someone can open",
          "The result the fresh session produced, unedited",
-         "Its list of where it had to guess, and a note of what you fixed"),
+         "Its list of where it had to guess, and a note of what you fixed",
+         "One more run with a different input of the same kind, after the fixes"),
   gate="Did a fresh session finish the job, and have you read what it tripped on?",
   prompts=(("Prompt to build, in your working chat", """Build the first version of this tool from the plan: [paste the plan].
 
@@ -167,7 +168,7 @@ Give me two things.
 
 [paste the instructions]
 
-[paste one real input]"""))),
+[paste one input: invented, or with names and figures changed]"""))),
 
  dict(n=9, name="Grow", gist="One addition at a time", minutes=0,
   writes="One addition, one change request. What you learned",
@@ -191,6 +192,21 @@ TOTAL_MINUTES = sum(s["minutes"] for s in STEPS)   # steps 1 to 8; step 9 repeat
 
 # How the coach (a chat, base/AI-INSTRUCTIONS.md) and the skill (an agent, level-2-files) do each step.
 # The gate question is the same everywhere: STEPS[n]["gate"]. The note says how that reader answers it.
+
+# For each step: the decision it helps the person make, and what it adds to the four-file package
+# (WORKFLOW.md, the card; AI-INSTRUCTIONS.md; example.md; README.md, how to use). See base/template/.
+PACKAGE = {
+ 1: ("Which one job, for whom, and what is out", "The card: For, The job, Out of scope, and the acceptance test"),
+ 2: ("Build, wrap something that exists, or stop", "The card: Already exists. If you stop, a two-line guide to that thing replaces the package"),
+ 3: ("What, if anything, to buy or connect", "README: what it needs before setup"),
+ 4: ("Whether it is worth running", "The card: what you will measure to know it saves time or improves quality"),
+ 5: ("Where it runs and where it is saved", "The card: Where it runs. README: the setup steps"),
+ 6: ("The steps, the result, and what a person checks", "The card: Trigger, Inputs, Steps, Output, A person checks, When something is missing. A first draft of the instructions"),
+ 7: ("Whether a stranger understands the card", "Fixes to the card, before the instructions are final"),
+ 8: ("Whether it is ready to use, or what to fix first", "The instructions, final. The example, made by a fresh chat. README: how to use it every time"),
+ 9: ("What to add next, from real use", "The next version, one change at a time"),
+}
+
 COACH = {
  1: ("Find one user and one job. List what is out. Ask what would make people stop and look. Write one test: a specific input and what a good result looks like", ""),
  2: ("Look for what already does this: features of the assistant they use, free tools, common practice",
@@ -203,7 +219,7 @@ COACH = {
  7: ("Ask who will read the plan. Give them the review prompt: paste the plan into a new chat with no history and ask it to explain the plan back and list where it had to guess",
      "Never review your own plan: you know what you meant. Until a person or a new chat has read it, the gate stays open, and the review goes under Test this next"),
  8: ("Write the first version: usually a prompt or a set of instructions, plus one worked example. Then tell the person exactly how to test it in a fresh chat that has only those instructions: a temporary chat, or one with memory turned off",
-     "In a chat you cannot run the test. Leave this gate open, and put the exact test under Test this next. Never state a test result you did not see"),
+     "In a chat you cannot run the test yourself. Ask the person to run it in a new chat and paste the whole reply back; then fix what blocked it. If they cannot now, leave this gate open and put the exact test under Test this next. Never state a test result you did not see"),
  9: ("List the next three additions, smallest first. One at a time",
      "In the first session nothing is in use yet. Leave this gate open"),
 }

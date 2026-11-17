@@ -147,7 +147,7 @@ footer{padding:26px 0 44px;font:400 .88rem/1.45 var(--display);color:var(--muted
       <p class="lab">Purpose</p><p>Decide who the tool is for and the one job it does, before anything is built. A tool that does one job gets finished. A tool that does five gets rebuilt.</p>
       <p class="lab">User stories</p><ul class="stories"><li data-lvl="Beginner"><b class="lvl">Beginner</b> As someone with a job I repeat every week, I want to say the job in one sentence, so that the AI builds that and nothing else.</li><li data-lvl="Advanced"><b class="lvl">Advanced</b> As a builder working with a coding agent, I want the scope written into the plan, so that the agent has something to refuse extra work against.</li><li data-lvl="Expert"><b class="lvl">Expert</b> As a team lead whose agents work unattended, I want one user and one job agreed before any agent starts, so that I am not reviewing five half-built features.</li></ul>
       <p class="lab">What to expect</p><p>About 5 minutes. Expect to drop something you wanted: the first answer is usually two or three jobs.</p>
-      <p class="lab">Proof you are done</p><ul class="proof"><li>One sentence: who it is for, what goes in and what comes out</li><li>Three things the first version will not do</li><li>One test: a real input, and what a good result looks like</li></ul>
+      <p class="lab">Proof you are done</p><ul class="proof"><li>One sentence: who it is for, what goes in and what comes out</li><li>Three things the first version will not do</li><li>One test: an invented input that looks like the real thing, and what a good result looks like</li></ul>
       <p class="gate"><b>The gate.</b> Can you say the job in one sentence?</p>
       <p class="lab">Prompt to paste</p><pre id="p1-0" tabindex="0">I want to turn a job I repeat into a small AI tool. Help me scope it.
 
@@ -267,7 +267,7 @@ Do not improve the plan. Only report.
       <p class="lab">Purpose</p><p>Build the smallest version that does the job, then hand it to a stranger: a new AI session that has only your instructions. It finds what you cannot.</p>
       <p class="lab">User stories</p><ul class="stories"><li data-lvl="Beginner"><b class="lvl">Beginner</b> As someone with a job I repeat every week, I want to test my prompt in a new chat, so that I know it works without everything I said earlier.</li><li data-lvl="Advanced"><b class="lvl">Advanced</b> As a builder working with a coding agent, I want a friction log from a fresh session, so that I fix what tripped it and not what I guess is wrong.</li><li data-lvl="Expert"><b class="lvl">Expert</b> As a team lead whose agents work unattended, I want several fresh sessions run at once with different requests, so that the faults are found before a person spends time on it.</li></ul>
       <p class="lab">What to expect</p><p>About 15 minutes for the first round. Expect a list of problems even when the job gets done. That list is the test working. Fix first every point that appears in two or more logs, then every blocking point. Then run it again.</p>
-      <p class="lab">Proof you are done</p><ul class="proof"><li>The first version: instructions someone can paste, or a folder someone can open</li><li>The result the fresh session produced, unedited</li><li>Its list of where it had to guess, and a note of what you fixed</li></ul>
+      <p class="lab">Proof you are done</p><ul class="proof"><li>The first version: instructions someone can paste, or a folder someone can open</li><li>The result the fresh session produced, unedited</li><li>Its list of where it had to guess, and a note of what you fixed</li><li>One more run with a different input of the same kind, after the fixes</li></ul>
       <p class="gate"><b>The gate.</b> Did a fresh session finish the job, and have you read what it tripped on?</p>
       <p class="lab">Prompt to build, in your working chat</p><pre id="p8-0" tabindex="0">Build the first version of this tool from the plan: [paste the plan].
 
@@ -281,7 +281,7 @@ Give me two things.
 
 [paste the instructions]
 
-[paste one real input]</pre><button class="btn sm" type="button" data-copy="p8-1">Copy this prompt</button>
+[paste one input: invented, or with names and figures changed]</pre><button class="btn sm" type="button" data-copy="p8-1">Copy this prompt</button>
     </div>
   </details>
   <details class="step">

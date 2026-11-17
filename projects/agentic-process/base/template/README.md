@@ -4,11 +4,22 @@
 
 ## Set it up once (about 5 minutes)
 
-1. Make a project in your chatbot: a Claude Project, a ChatGPT Project or a Gemini Gem. Or use a
-   folder your chatbot can read, such as a Drive folder connected to it.
-2. Paste [`AI-INSTRUCTIONS.md`](AI-INSTRUCTIONS.md) into the project's instructions.
-3. Add [`example.md`](example.md) as a project file, so the chatbot sees what good looks like.
-4. [Anything it needs once, such as a profile or a checklist, and where to save it.]
+**Simplest, in any chatbot:** keep [`AI-INSTRUCTIONS.md`](AI-INSTRUCTIONS.md) in a document or a
+note. Each time, start a new chat and paste the instructions, then your input, in one message.
+
+**Better, so you never paste the instructions again:** save them in a project. All three below
+are free.
+
+| Chatbot | Where | Paste the instructions into | Add as files |
+| --- | --- | --- | --- |
+| ChatGPT | Sidebar: **Projects**, then **New project** | The project's **Instructions** (in its settings) | [`example.md`](example.md) |
+| Claude | Sidebar: **Projects**, then **New project** | **Set project instructions** | [`example.md`](example.md), under project knowledge |
+| Gemini | gemini.google.com (not the phone app): **Gems**, then **New Gem** | **Instructions**, then **Save** | [`example.md`](example.md), as knowledge |
+
+Then start every chat from inside the project or Gem. To get a file from this page onto your
+computer, open it, press **Raw**, and save the page; a Word document or a Google Doc with the same
+text works too.
+[Anything it needs once, such as a profile or a checklist, and where to save it.]
 
 ## Use it every time
 
