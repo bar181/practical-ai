@@ -1,5 +1,30 @@
 # Plan: Document to action brief
 
+## Reassessed 17 November 2026: now project 3
+
+The owner chose this as project 3, which answers gate 2: it is worth a project of its own. What
+changed from the plan below, after a fresh check of what exists:
+
+- **Level 1 is the business person.** Owners, managers and leaders who must act on a document they
+  did not write. The classroom framing below is dropped.
+- **The output fits the situation.** Six kinds of document (a contract before signing, a change of
+  terms, a policy update, a tender, a report, a bill or official letter) each add one section, and
+  the reader (me, my boss, my team) changes the top.
+- **Try it is one paste.** The instructions and an invented notice in a single prompt, so a visitor
+  sees a result before using their own document.
+- **Level 2 saves it.** The same `SKILL.md` installs as a skill in Claude and in ChatGPT, which
+  adopted the open Agent Skills format, plus a house rules file.
+- **Level 3 is designed, not built:** scheduled watching of an inbox label or folder, an
+  obligations register with owners, a review lane for anything unclear or costly, drafted
+  reminders, and corrections fed to the learnings database. See `level-3-files/`.
+- **What it is not:** contract risk review. Anthropic's open-source Legal plugin and contract tools
+  such as Ironclad serve legal teams; Copilot in Word, NotebookLM and Acrobat summarise with
+  citations. None gives a business person this fixed, checkable brief with the habit of checking.
+- **The fictional company** (gate 3) is the invented Tallowmere Café, already used by the pilot.
+
+The plan as written on 16 November 2026 follows, unchanged.
+
+
 Written on 16 November 2026 by following [Agentic Process](../../../projects/agentic-process/),
 steps 1 to 6, with the one-page plan from its template. Steps 2 to 4 were searched on the web on
 that date. **The owner has not yet answered the gates;** each is marked open where it needs him.

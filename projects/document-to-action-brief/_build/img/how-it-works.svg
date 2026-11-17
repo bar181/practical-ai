@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 350" role="img" aria-labelledby="t d" font-family="system-ui,-apple-system,Segoe UI,Helvetica,Arial,sans-serif">
+<title id="t">How Document to action brief works</title>
+<desc id="d">Three steps. 1: paste the prompt and your document into the chatbot you use. 2: get a one-page brief: the answer first, then what you must do, dates, open questions and key facts, each with the exact words from the document. 3: check each quote against the page and tick it, then you decide what to do. At the bottom: the AI lists, you check and decide.</desc>
+<style>
+.s{opacity:0;animation:in 9s ease-out infinite}
+.s2{animation-delay:1.2s}.s3{animation-delay:2.4s}.r1{animation-delay:2.9s}.r2{animation-delay:3.3s}.r3{animation-delay:3.7s}.r4{animation-delay:4.1s}
+.k{opacity:0;animation:in 9s ease-out infinite}.k1{animation-delay:5.2s}.k2{animation-delay:5.7s}.k3{animation-delay:6.2s}.k4{animation-delay:6.7s}.f{animation-delay:7.3s}
+@keyframes in{0%{opacity:0;transform:translateY(6px)}6%{opacity:1;transform:none}92%{opacity:1}100%{opacity:0}}
+@media (prefers-reduced-motion:reduce){.s,.k{animation:none;opacity:1}}
+.h{font-size:20px;font-weight:700;fill:#0c2340}.p{font-size:15px;fill:#33415c}.n{font-size:15px;font-weight:700;fill:#0c2340}
+.lab{font-size:12.5px;font-weight:700;fill:#0c2340}.q{font-size:11.5px;fill:#5a6478;font-style:italic}
+</style>
+<rect width="800" height="360" rx="18" fill="#f4f6fa"/>
+<!-- step 1 -->
+<g class="s">
+  <circle cx="44" cy="44" r="16" fill="#ffd23f"/><text x="44" y="49.5" text-anchor="middle" class="n">1</text>
+  <text x="70" y="50" class="h">Paste</text>
+  <rect x="34" y="78" width="168" height="200" rx="10" fill="#fff" stroke="#c9d1de"/>
+  <rect x="50" y="96" width="110" height="9" rx="4" fill="#0c2340"/>
+  <rect x="50" y="116" width="136" height="7" rx="3" fill="#c9d1de"/><rect x="50" y="131" width="120" height="7" rx="3" fill="#c9d1de"/>
+  <rect x="50" y="146" width="132" height="7" rx="3" fill="#c9d1de"/><rect x="50" y="161" width="96" height="7" rx="3" fill="#ffd23f"/>
+  <rect x="50" y="176" width="128" height="7" rx="3" fill="#c9d1de"/><rect x="50" y="191" width="112" height="7" rx="3" fill="#c9d1de"/>
+  <rect x="50" y="206" width="134" height="7" rx="3" fill="#c9d1de"/><rect x="50" y="221" width="70" height="7" rx="3" fill="#ffd23f"/>
+  <text x="118" y="262" text-anchor="middle" class="p">Prompt + document</text>
+</g>
+<path class="s s2" d="M214 178 h40" stroke="#8fa0ba" stroke-width="3" stroke-dasharray="6 6" fill="none"/>
+<!-- step 2 -->
+<g class="s s2">
+  <circle cx="284" cy="44" r="16" fill="#ffd23f"/><text x="284" y="49.5" text-anchor="middle" class="n">2</text>
+  <text x="310" y="50" class="h">Get the brief</text>
+  <rect x="266" y="78" width="268" height="200" rx="10" fill="#fff" stroke="#c9d1de"/>
+  <rect x="266" y="78" width="268" height="40" rx="10" fill="#0c2340"/><rect x="266" y="104" width="268" height="14" fill="#0c2340"/>
+  <text x="282" y="103" font-size="13.5" font-weight="700" fill="#ffd23f">In short: 3 to do, first by 20 Nov</text>
+</g>
+<g class="s s3 r1"><text x="282" y="144" class="lab">What you must do</text><text x="282" y="160" class="q">"must be placed by 2:00 pm..."  Clause 1</text></g>
+<g class="s s3 r2"><text x="282" y="184" class="lab">Dates</text><text x="282" y="200" class="q">"take effect on 1 December 2026"</text></g>
+<g class="s s3 r3"><text x="282" y="224" class="lab">Open questions</text><text x="282" y="240" class="q">"Accounts on our standard plan..."  Clause 2</text></g>
+<g class="s s3 r4"><text x="282" y="264" class="lab">Key facts</text></g>
+<path class="s s3" d="M546 178 h40" stroke="#8fa0ba" stroke-width="3" stroke-dasharray="6 6" fill="none"/>
+<!-- step 3 -->
+<g class="s s3">
+  <circle cx="616" cy="44" r="16" fill="#ffd23f"/><text x="616" y="49.5" text-anchor="middle" class="n">3</text>
+  <text x="642" y="50" class="h">Check, decide</text>
+  <rect x="598" y="78" width="168" height="200" rx="10" fill="#fff" stroke="#c9d1de"/>
+  <text x="614" y="104" class="p">Find each quote</text>
+</g>
+<g font-size="22" font-weight="700" fill="#1f7a4d">
+  <g class="k k1"><rect x="614" y="122" width="26" height="26" rx="6" fill="#e3f4ea"/><text x="619" y="142">✓</text><text x="652" y="141" font-size="14" font-weight="400" fill="#33415c">Do</text></g>
+  <g class="k k2"><rect x="614" y="158" width="26" height="26" rx="6" fill="#e3f4ea"/><text x="619" y="178">✓</text><text x="652" y="177" font-size="14" font-weight="400" fill="#33415c">Dates</text></g>
+  <g class="k k3"><rect x="614" y="194" width="26" height="26" rx="6" fill="#e3f4ea"/><text x="619" y="214">✓</text><text x="652" y="213" font-size="14" font-weight="400" fill="#33415c">Questions</text></g>
+  <g class="k k4"><rect x="614" y="230" width="26" height="26" rx="6" fill="#e3f4ea"/><text x="619" y="250">✓</text><text x="652" y="249" font-size="14" font-weight="400" fill="#33415c">Facts</text></g>
+</g>
+<g class="k f">
+  <rect x="200" y="298" width="400" height="40" rx="20" fill="#0c2340"/>
+  <text x="400" y="324" text-anchor="middle" font-size="16" font-weight="700" fill="#ffd23f">The AI lists. You check and decide.</text>
+</g>
+</svg>
