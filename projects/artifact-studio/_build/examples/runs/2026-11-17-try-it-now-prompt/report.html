@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>October report: revenue up 17.8% on more jobs and more quotes won</title>
+<style>
+  :root {
+    --bg: #f7f7f4;        /* page background */
+    --panel: #ffffff;     /* cards */
+    --border: #b9c0b9;    /* borders and comparison grey in charts */
+    --muted: #545b55;     /* secondary text */
+    --ink: #1c211d;       /* main text */
+    --accent: #2b6142;    /* what to act on */
+    --highlight: #eef3ee; /* soft highlight */
+    --data: #2f7d55;      /* chart data colour */
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font: 17px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  main { max-width: 720px; margin: 0 auto; padding: 20px 16px 48px; }
+  .meta { font-size: 14px; color: var(--muted); margin: 0 0 8px; letter-spacing: .01em; }
+  h1 { font-size: 28px; line-height: 1.2; margin: 0 0 14px; letter-spacing: -.01em; }
+  .answer {
+    background: var(--panel); border: 1px solid var(--border); border-left: 4px solid var(--accent);
+    border-radius: 8px; padding: 14px 16px; margin: 0 0 20px; font-size: 18px;
+  }
+  .answer p { margin: 0; }
+  .answer p + p { margin-top: 8px; }
+  .answer strong { color: var(--accent); }
+
+  .tiles { display: grid; grid-template-columns: 1fr; gap: 10px; margin: 0 0 28px; padding: 0; list-style: none; }
+  .tile { background: var(--panel); border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px; }
+  .tile .label { font-size: 14px; color: var(--muted); margin: 0; }
+  .tile .num { font-size: 32px; font-weight: 700; line-height: 1.15; margin: 2px 0; font-variant-numeric: tabular-nums; }
+  .tile .was { font-size: 15px; color: var(--muted); margin: 0; }
+  .tile .was b { color: var(--ink); font-weight: 600; }
+
+  section { margin: 0 0 28px; }
+  h2 { font-size: 20px; line-height: 1.3; margin: 0 0 10px; }
+  h3 { font-size: 16px; margin: 0 0 8px; color: var(--muted); font-weight: 600; text-transform: none; }
+  p { margin: 0 0 10px; }
+  .card { background: var(--panel); border: 1px solid var(--border); border-radius: 8px; padding: 14px 16px; }
+
+  /* Two-bar comparison chart, built from HTML so it reads with scripts and styles off */
+  .chart { margin: 4px 0 6px; }
+  .row { display: grid; grid-template-columns: 92px 1fr; align-items: center; gap: 10px; margin: 8px 0; }
+  .row .who { font-size: 14px; color: var(--muted); }
+  .bar { height: 30px; border-radius: 4px; display: flex; align-items: center; justify-content: flex-end;
+         padding: 0 8px; font-size: 15px; font-weight: 600; font-variant-numeric: tabular-nums; min-width: 72px; }
+  .bar.sep { background: var(--border); color: var(--ink); }
+  .bar.oct { background: var(--data); color: #ffffff; }
+  .source { font-size: 13px; color: var(--muted); margin: 6px 0 10px; }
+  .sowhat { background: var(--highlight); border-radius: 6px; padding: 10px 12px; margin: 0; font-size: 16px; }
+  .sowhat b { color: var(--accent); }
+
+  .tablewrap { overflow-x: auto; margin: 4px 0 6px; }
+  table { border-collapse: collapse; width: 100%; font-size: 15px; font-variant-numeric: tabular-nums; }
+  th, td { text-align: right; padding: 8px 6px; border-bottom: 1px solid var(--border); white-space: nowrap; }
+  th:first-child, td:first-child { text-align: left; white-space: normal; }
+  thead th { font-size: 13px; color: var(--muted); font-weight: 600; }
+  tr.weak td { background: var(--highlight); }
+  .flag { display: inline-block; font-size: 12px; font-weight: 700; color: var(--accent);
+          border: 1px solid var(--accent); border-radius: 4px; padding: 0 5px; margin-left: 6px; }
+  .working { font-size: 14px; color: var(--muted); }
+
+  ul.plain { margin: 0; padding-left: 20px; }
+  ul.plain li { margin: 0 0 6px; }
+
+  .decision { border: 2px solid var(--accent); border-radius: 10px; background: var(--panel); padding: 16px; }
+  .decision .due { display: inline-block; background: var(--accent); color: #ffffff; font-weight: 700;
+                   border-radius: 6px; padding: 4px 10px; font-size: 15px; margin: 0 0 10px; }
+  .decision h2 { margin-top: 0; }
+
+  footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--border); padding-top: 12px; }
+
+  @media (min-width: 1000px) {
+    main { padding-top: 40px; }
+    h1 { font-size: 36px; }
+    .tiles { grid-template-columns: repeat(3, 1fr); }
+  }
+  @media (min-width: 600px) and (max-width: 999px) {
+    .tiles { grid-template-columns: repeat(3, 1fr); }
+    .tile .num { font-size: 28px; }
+  }
+  @media print { body { background: #fff; } .card, .tile, .answer { break-inside: avoid; } }
+</style>
+</head>
+<body>
+<main>
+
+  <p class="meta">Monthly report · October compared with September · For: business partner</p>
+  <h1>October revenue rose 17.8%, driven by more jobs and more quotes won</h1>
+
+  <div class="answer">
+    <p>October brought in <strong>$84,200</strong>, up $12,700 (17.8%) on September, from 23 jobs instead of 19, and 46% of quotes became jobs, up from 38%.</p>
+    <p>One decision is open: <strong>whether to get a second van, due by 15 November</strong> (see the end of this page).</p>
+  </div>
+
+  <ul class="tiles" aria-label="Key numbers">
+    <li class="tile">
+      <p class="label">Revenue, October</p>
+      <p class="num">$84,200</p>
+      <p class="was">September: $71,500. <b>Up $12,700 (17.8%)</b></p>
+    </li>
+    <li class="tile">
+      <p class="label">Jobs completed, October</p>
+      <p class="num">23</p>
+      <p class="was">September: 19. <b>Up 4 jobs (21%)</b></p>
+    </li>
+    <li class="tile">
+      <p class="label">Quotes that became jobs</p>
+      <p class="num">46%</p>
+      <p class="was">Before: 38%. <b>Up 8 points</b></p>
+    </li>
+  </ul>
+
+  <section aria-labelledby="f1">
+    <h2 id="f1">Revenue grew by $12,700, from $71,500 to $84,200</h2>
+    <div class="card">
+      <div class="chart" role="img" aria-label="Bar chart. Revenue: September $71,500, October $84,200.">
+        <div class="row"><span class="who">September</span><div class="bar sep" style="width:84.9%">$71,500</div></div>
+        <div class="row"><span class="who">October</span><div class="bar oct" style="width:100%">$84,200</div></div>
+      </div>
+      <p class="source">Unit: dollars, monthly revenue. Source: your notes.</p>
+      <p class="sowhat"><b>So what:</b> October was the stronger month by 17.8% ($12,700 ÷ $71,500).</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="f2">
+    <h2 id="f2">The growth came from more jobs, not bigger ones: average revenue per job dipped slightly</h2>
+    <div class="card">
+      <div class="tablewrap">
+        <table>
+          <caption class="source" style="caption-side: bottom; text-align: left;">Average per job = revenue ÷ jobs completed: $71,500 ÷ 19 = $3,763; $84,200 ÷ 23 = $3,661. Source: your notes.</caption>
+          <thead>
+            <tr><th scope="col">Measure</th><th scope="col">Sep</th><th scope="col">Oct</th><th scope="col">Change</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Jobs completed</td><td>19</td><td>23</td><td>+4 (+21%)</td></tr>
+            <tr class="weak"><td>Average revenue per job <span class="flag">Down</span></td><td>$3,763</td><td>$3,661</td><td>−$102 (−2.7%)</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="sowhat"><b>So what:</b> the crews did more work in October. Each job brought in about the same, slightly less on average.</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="f3">
+    <h2 id="f3">More quotes are turning into jobs: 46%, up from 38%</h2>
+    <div class="card">
+      <div class="chart" role="img" aria-label="Bar chart. Quotes that became jobs: before 38%, now 46%.">
+        <div class="row"><span class="who">Before</span><div class="bar sep" style="width:38%">38%</div></div>
+        <div class="row"><span class="who">Now</span><div class="bar oct" style="width:46%">46%</div></div>
+      </div>
+      <p class="source">Unit: share of quotes that became jobs, full bar = 100%. Source: your notes.</p>
+      <p class="sowhat"><b>So what:</b> for every 100 quotes sent, about 8 more now become jobs than before.</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="method">
+    <h2 id="method">Method</h2>
+    <p>All figures come from the owner's notes for September and October. Changes and the average per job are calculated from those figures; the working is shown beside each one.</p>
+  </section>
+
+  <section aria-labelledby="limits">
+    <h2 id="limits">Limits</h2>
+    <ul class="plain">
+      <li>Two months only. This is a comparison, not a trend.</li>
+      <li>Revenue only. No costs or profit are included, so this page cannot say whether October was more profitable.</li>
+      <li>No split by crew, so it cannot say which crew did the extra jobs.</li>
+      <li>The notes do not say which period the 38% quote rate covers. It is shown as "before".</li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="van">
+    <div class="decision">
+      <p class="due">Decision due by 15 November</p>
+      <h2 id="van">Second van: yes or no</h2>
+      <p><b>What this report shows that bears on it:</b> the business has two crews, completed 4 more jobs in October than in September, and is winning more of its quotes.</p>
+      <p><b>What this report does not have:</b> the cost of a van, how the current van is used, or whether work has been held up without one. Those are needed to decide.</p>
+    </div>
+  </section>
+
+  <footer>Prepared from the owner's notes. No costs, profit or van figures were supplied.</footer>
+
+</main>
+</body>
+</html>

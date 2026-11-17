@@ -13,10 +13,45 @@ slide deck that took hours.</p>
 slow pan and zoom, a before and after divider, a postcard that flips, a word filled with the picture.
 
 <p align="center">
-  <a href="#get-started-your-first-report"><b>Make your first report</b></a> &nbsp;·&nbsp;
+  <a href="#get-started-try-it-now"><b>Try it now</b></a> &nbsp;·&nbsp;
   <a href="#the-same-notes-told-seven-ways">See the styles</a> &nbsp;·&nbsp;
   <a href="#photo-effects">See the effects</a>
 </p>
+
+## Get started: try it now
+
+Copy this into ChatGPT, Claude, Gemini or the chatbot you use. Keep the sample notes, or paste your own.
+
+```
+Make my information look good. Use the Artifact Studio design guide at
+https://raw.githubusercontent.com/bar181/practical-ai/main/projects/artifact-studio/base/AI-INSTRUCTIONS.md
+to turn it into an HTML report with a professional design.
+More examples: https://github.com/bar181/practical-ai/tree/main/projects/artifact-studio
+
+My information:
+- We are a landscaping company with two crews
+- October revenue $84,200. September was $71,500
+- Jobs completed: 23 in October, 19 in September
+- Quotes that became jobs: 46%, up from 38%
+- Need to decide about a second van by 15 November
+
+Who reads it: my business partner, on her phone. She wants the answer first.
+```
+
+<p align="center">
+  <img src="_build/img/example-report.webp" width="560" alt="Screen capture of a one-page monthly report made by an AI chatbot from eight lines of notes about an invented landscaping company: the headline October beat September, revenue up 12,700 dollars, four more jobs done and more quotes became jobs; three key numbers for revenue, jobs completed and quotes won; and a bar chart comparing September and October">
+</p>
+
+**You get a page like this,** made from those notes in one try: the answer first, three numbers, a
+chart. [Open the page](base/examples/report.html). Chatbot cannot open links? Paste the text of
+[`base/AI-INSTRUCTIONS.md`](base/AI-INSTRUCTIONS.md) in place of the first line.
+
+**Then make it yours.** Ask for a style or an effect in one sentence:
+`Now show it as a keynote deck`, `Open with my photo as a slow pan and zoom`, or
+`Tell this as a personal story`.
+
+**Before you share, check:** every number matches your notes, nothing is added that you did not
+write, and the headline says what you want the reader to take away.
 
 ## What it adds to your AI
 
@@ -105,42 +140,6 @@ shot."* Thirteen effects in all, and none needs an app.
 
 Three drafts of one post, side by side, shown the way the feed shows them, in your voice. LinkedIn,
 Instagram, TikTok, Facebook, email and blog. Nothing is posted for you.
-
-## Get started: your first report
-
-Paste this into ChatGPT, Claude, Gemini or the chatbot you use. The notes are invented, so there is
-nothing to prepare.
-
-```
-Read the design guide at https://raw.githubusercontent.com/bar181/practical-ai/main/projects/artifact-studio/base/AI-INSTRUCTIONS.md
-
-Then show me a one-page report as an HTML page, from these notes:
-
-- We are a landscaping company with two crews
-- October revenue $84,200. September was $71,500
-- Jobs completed: 23 in October, 19 in September
-- Quotes that became jobs: 46%, up from 38%
-- We started sending quotes within two days of the visit. It used to take six
-- One van was off the road for four days. Crews shared. No jobs moved
-- November: hire one seasonal worker for leaf clearance
-- Need to decide about a second van by 15 November
-
-My business partner reads on her phone and wants the answer first. Our colour is green.
-
-When you are done, tell me three ways I could tailor this for my own business.
-```
-
-<p align="center">
-  <img src="_build/img/example-report.webp" width="560" alt="Screen capture of a one-page monthly report made by an AI chatbot from eight lines of notes about an invented landscaping company: the headline October beat September, revenue up 12,700 dollars, four more jobs done and more quotes became jobs; three key numbers for revenue, jobs completed and quotes won; and a bar chart comparing September and October">
-</p>
-
-**You get a page like this,** made from those notes in one try: the answer first, three numbers, a
-chart. [Open the page](base/examples/report.html). Then try your own notes, and say who reads them.
-
-**Before you share, check:** every number matches your notes, nothing is added that you did not
-write, and the headline says what you want the reader to take away.
-
-Chatbot cannot open the link? Paste the text of [`base/AI-INSTRUCTIONS.md`](https://github.com/bar181/practical-ai/blob/main/projects/artifact-studio/base/AI-INSTRUCTIONS.md) instead of the first line.
 
 ## Make it your standard
 

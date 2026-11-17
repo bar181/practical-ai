@@ -1,0 +1,11 @@
+Act as my agentic engineer. Use the method at
+https://raw.githubusercontent.com/bar181/practical-ai/main/projects/agentic-process/base/PROCESS.md
+to help me turn a job I repeat into a tool I can reuse.
+
+The job: every Monday I turn our team's meeting notes into a list of actions.
+Who uses the result: me, in ChatGPT, then I email the list to the team.
+The mistake it must catch: actions that nobody agreed to own, or with no date.
+
+Ask me for anything missing in one message. Then write the tool as one
+instruction file I can paste into a new chat, an example, and a short
+test I can run to check it works.

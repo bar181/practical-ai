@@ -11,6 +11,10 @@
 Neither replaces the features, plugins or skills already in your AI. Each adds what they are
 missing for one practical job.
 
+**Try before you clone anything:** each project page opens with a prompt you copy into the chatbot
+you already use. [Artifact Studio](artifact-studio/#get-started-try-it-now) ·
+[Agentic Process](agentic-process/#get-started-try-it-now).
+
 ## Artifact Studio: designer-quality reports you make yourself
 
 **"Better than I could do, as good as my designer, and I made it myself."** You already ask your AI for reports. Ask through Artifact Studio and the same request comes back

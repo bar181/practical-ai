@@ -1,122 +1,110 @@
-# Practical AI: better work from the AI you already use
+# Practical AI
 
 <p align="center">
-  <img src="assets/images/smart-intern.svg" width="800" alt="Animation: AI is a smart intern that has read every book and has never met you. It needs your priorities, your tone of voice, what your business does and how it can help you. Then it is ready to work">
+  <img src="assets/images/practical-ai-pitch.svg" width="760" alt="Animation: Practical AI, better work from the AI you already use. Two projects light up in turn. Artifact Studio, design for your reports: rough notes in, a report, deck or post out. Agentic Process, structure for repeat jobs: a job you repeat in, a tested tool out. The AI drafts; you check and decide.">
 </p>
 
-<h3 align="center">Your AI is a smart intern. Practical AI gives it a proven way to do the work.</h3>
+<h3 align="center">Professional-grade work from the AI you already use.</h3>
 
-<p align="center"><b>Better results on the jobs you repeat, every time, and faster.</b><br>
-Practical use cases for the AI you already have. The AI drafts. You check and decide.</p>
+<p align="center">Each project packs what an expert brings to one job: the skills, the templates, the examples and the method.<br>
+You ask your AI as you do today. The result looks and works like a professional made it.</p>
 
 <p align="center">
-  <a href="#artifact-studio-designer-quality-reports-you-make-yourself"><b>Artifact Studio</b></a> &nbsp;·&nbsp;
-  <a href="#agentic-process-an-agentic-engineer-at-your-side"><b>Agentic Process</b></a> &nbsp;·&nbsp;
-  <a href="#the-jobs-you-repeat">The jobs it helps with</a> &nbsp;·&nbsp;
-  <a href="#created-by-bradley-ross">Who made this</a>
+  <a href="projects/artifact-studio/"><b>Artifact Studio: designer-quality reports</b></a> &nbsp;·&nbsp;
+  <a href="projects/agentic-process/"><b>Agentic Process: an engineer at your side</b></a>
 </p>
 
-## What Practical AI is
+## Try it now, before you go any further
 
-Each project packs what an expert would bring to one practical job: the skills, the templates,
-the worked examples and the method. You ask your AI for something you already ask for, and the
-result is the work of a professional. It does not replace Claude's or ChatGPT's own features,
-plugins or skills; it adds the expertise around them.
+Copy this into ChatGPT, Claude, Gemini or the chatbot you use. Keep the sample notes, or paste your own.
 
-- **Higher quality.** Professional design for your reports, and tools that catch what people miss.
-- **The same standard every time.** A repeatable way of working with your AI, not a lucky prompt.
-- **Faster, too.** A first draft in minutes instead of hours. Times are estimates.
-- **You stay in charge.** Nothing is sent, posted, paid or published without you.
+```
+Make my information look good. Use the Artifact Studio design guide at
+https://raw.githubusercontent.com/bar181/practical-ai/main/projects/artifact-studio/base/AI-INSTRUCTIONS.md
+to turn it into an HTML report with a professional design.
+More examples: https://github.com/bar181/practical-ai/tree/main/projects/artifact-studio
 
-## Two tools, ready today
+My information:
+- We are a landscaping company with two crews
+- October revenue $84,200. September was $71,500
+- Jobs completed: 23 in October, 19 in September
+- Quotes that became jobs: 46%, up from 38%
+- Need to decide about a second van by 15 November
 
-### Artifact Studio: designer-quality reports you make yourself
-
-**"Better than I could do, as good as my designer, and I made it myself."** You already ask your AI for reports. Ask through Artifact Studio and the same request comes back
-with the impact of a professional website: beautiful photos, motion, a story that flows, and design
-best practice built in. Not a wall of text, and not a slide deck that took you hours.
+Who reads it: my business partner, on her phone. She wants the answer first.
+```
 
 <p align="center">
-  <a href="projects/artifact-studio/"><img src="projects/artifact-studio/_build/img/show-photo-effects.webp" width="640" alt="Animated screen capture of photo effects made by an AI chatbot from one photograph: a pencil sketch draws itself and becomes the photo, the camera pans and zooms across a lake, a divider slides between two colour grades, a postcard flips over, and one huge word is filled with the picture"></a>
+  <img src="projects/artifact-studio/_build/img/example-report.webp" width="520" alt="Screen capture of a one-page report made by an AI chatbot from rough notes about an invented landscaping company: the headline October beat September, three key numbers and a bar chart">
 </p>
 
-<p align="center"><a href="projects/artifact-studio/"><b>See what it makes</b></a></p>
+**You get a page like this:** the answer first, three key numbers and a chart, made from rough
+notes in one try. Your chatbot cannot open links? Paste the text of the
+[design guide](projects/artifact-studio/base/AI-INSTRUCTIONS.md) in place of the first line.
 
-### Agentic Process: an agentic engineer at your side
+## Artifact Studio: designer-quality reports, made by you
 
-**"Like having an engineer sitting with me, so every new job is set up the proper way."** Developers trust AI agents because they work inside a harness: a spec, steps and tests. Agentic
-Process brings that discipline to everyday jobs. Like an engineer beside you, it helps you define
-the result, pick the simplest way, build it properly, and test it before you rely on it.
+<p align="center"><b><i>"Better than I could do, as good as my designer, and I made it myself."</i></b></p>
+
+You already ask your AI for reports. Ask through Artifact Studio and you get the impact of a
+professional website: beautiful photos, motion and a story that flows, not a wall of text or a
+slide deck that took hours.
 
 <p align="center">
-  <a href="projects/agentic-process/"><img src="projects/agentic-process/_build/img/pilot-brief-direct.webp" width="49%" alt="Screen capture of a reply from a tool built the usual way: the facts of a supplier notice in a table, with the missing effective date buried among them"></a>
-  <a href="projects/agentic-process/"><img src="projects/agentic-process/_build/img/pilot-brief.webp" width="49%" alt="Screen capture of a reply from the tool built with Agentic Process: a warning first that the notice never gives its effective date and leaves out a form, and who to ask"></a>
+  <img src="projects/artifact-studio/_build/img/fx-line-art.webp" width="32%" alt="Photo effect: a pencil sketch traced from a lake photograph draws itself as you scroll">
+  <img src="projects/artifact-studio/_build/img/fx-photo-type.webp" width="32%" alt="Photo effect: the word spark in huge letters filled with a picture">
+  <img src="projects/artifact-studio/_build/img/fx-postcard.webp" width="32%" alt="Photo effect: a picture turned over like a postcard to show a handwritten note">
+</p>
+
+**Photo effects** from one picture and one sentence: a sketch that draws itself, a word filled with
+your photo, a postcard that flips, a slow pan and zoom.
+
+<p align="center">
+  <img src="projects/artifact-studio/_build/img/style-visionary-page.webp" width="32%" alt="The keynote voice on a phone: one idea per screen in huge white type over full-screen pictures">
+  <img src="projects/artifact-studio/_build/img/style-emotional.webp" width="32%" alt="The personal story voice on a phone: one memory, keepsakes as crooked photographs, a portrait filling the screen">
+  <img src="projects/artifact-studio/_build/img/style-explainer.webp" width="32%" alt="The teacher voice: the words a smart intern in large type above a sketch that draws itself">
+</p>
+
+**The same notes, in the voice your reader needs:** a keynote, a personal story, a lesson to teach
+from, an evidence-first report or a board brief.
+
+<p align="center">
+  <img src="projects/artifact-studio/_build/img/social-three-drafts.webp" width="720" alt="Three drafts of one LinkedIn post side by side, as they would look in the feed">
+</p>
+
+**And the parts:** post previews as the feed shows them, decks you present from the browser, nine
+looks, scrollytelling and animated diagrams.
+
+<p align="center"><a href="projects/artifact-studio/"><b>Make your first designer-quality report</b></a></p>
+
+## Agentic Process: an agentic engineer at your side
+
+<p align="center"><b><i>"Like having an engineer sitting with me, so every new job is set up the proper way."</i></b></p>
+
+Developers trust AI agents because they work inside a harness: a spec, steps and tests. Agentic
+Process brings that discipline to the jobs you repeat. It helps you define the result, pick the
+simplest way, build it properly and test it before you rely on it.
+
+<p align="center">
+  <img src="projects/agentic-process/_build/img/pilot-score.svg" width="620" alt="Animated chart: in one blind pilot on the same brief, the tool built with Agentic Process scored 93 out of 100 with 0 corrections; the direct build scored 73 out of 100 with 2 corrections">
 </p>
 
 **In one blind pilot, a tool built with Agentic Process scored 93/100. The direct-build version
-scored 73/100 on the same brief.** Left, the usual build buries the missing date. Right, Agentic
-Process puts it first and says who to ask. One task, one notice, one blind reviewer.
+scored 73/100 on the same brief.** It flagged the missing date and form and said who to ask; the
+other buried them. One task, one notice, one blind reviewer.
 
-<p align="center"><a href="projects/agentic-process/"><b>See how it works</b></a></p>
+<p align="center"><a href="projects/agentic-process/"><b>Set up your first job the proper way</b></a></p>
 
-### Not sure?
-
-| You are | Go to |
-| --- | --- |
-| **New to AI, on a phone or a laptop** | [Make your first report](projects/artifact-studio/#get-started-your-first-report) |
-| **Using a chatbot every day** | Artifact Studio's [one-time setup](projects/artifact-studio/#make-it-your-standard) |
-| **Building with a coding agent** | [Build a tool](projects/agentic-process/#get-started) |
-| **An AI agent** | [`AGENTS.md`](AGENTS.md) |
-
-Some pages here are HTML files. GitHub shows an HTML file as code, so download it and open it in a
-browser to see the page. The times are estimates.
-
-## The jobs you repeat
+## What it helps with
 
 <p align="center">
   <img src="assets/images/jobs-you-repeat.svg" width="800" alt="Card showing the jobs Practical AI helps with. Daily: sort the inbox, turn meetings into actions. Weekly: a slide deck or report, ready now, and posts for the week. Monthly: the monthly report and receipts into a sheet. The AI does the drafting. You check it and make the call">
 </p>
 
-| Job you repeat | The AI does | You do |
-| --- | --- | --- |
-| **A slide deck, report or mini website from your notes**<br>Weekly. Ready now | The design, the layout, the first draft | Check the numbers, decide what to cut |
-| **Sort the inbox and draft replies**<br>Daily. Drafted | Reads, sorts, drafts | Approve and send |
-| **Meeting notes to actions**<br>Daily. Planned | Pulls decisions, owners and dates | Confirm names and dates |
-| **Posts for the week from one piece**<br>Weekly. Previews ready now | Drafts in your voice, shown as they will look in the feed | Choose, edit and post |
-| **Research brief with checked sources**<br>Weekly. Partly drafted | Finds, reads, links every claim | Open the links, judge the answer |
-| **Receipts and invoices into a sheet**<br>Monthly. Planned | Reads each receipt and fills the form | Check each line against the photo |
-
-These are the jobs people most often use AI for, from usage studies and small-business surveys
-read in November 2026. What gets built next is in [the priority list](docs/README.md#what-comes-next), and every project
-idea is in [the plans](workshop/plans/README.md).
-
-## How each tool is built
-
-Every tool starts from who will use the result and the one mistake it must catch. It uses the
-leading tools that already do the job, adds only the steps and design they are missing, and is
-tested in a fresh session before anyone relies on it. [Agentic Process](projects/agentic-process/)
-is that method.
-
-## Three levels: how much is set up and automated
-
-<p align="center">
-  <img src="assets/images/levels.svg" width="640" alt="Animation: every Practical AI tool comes at three levels. Beginner: start in minutes, you start the run. Advanced: a saved project or skill you start any time. Expert: connected and automated, a trigger runs it and people decide the exceptions">
-</p>
-
-| Level | What you get |
-| --- | --- |
-| **Beginner** (Level 1, always) | Standalone in any chatbot: paste the file or share the link, add your context, get the result |
-| **Advanced** (Level 2) | Saved as a skill or project, started whenever needed |
-| **Expert** (Level 3) | Connected through MCP, endpoints or a trigger that supply inputs and take outputs. A person approves exceptions |
-
-Not every tool has all three: a level is added only when it removes setup or recurring work. The
-levels describe setup, not people. Start at Beginner. It is the whole tool.
-
-## What comes next
-
-[The priority list](docs/README.md#what-comes-next): the next tools in order, each with what it
-will do for you. Every idea, sorted into everyday tasks, agent tools and hybrid projects, is in
-[the plans](workshop/plans/README.md).
+Reports, decks and posts today; meeting actions, inbox replies, research briefs and receipts next.
+It adds to your AI's own features, plugins and skills rather than replacing them. Nothing is sent,
+posted or published without you. [The priority list](docs/README.md#what-comes-next) ·
+[every idea](workshop/plans/README.md).
 
 ## Created by Bradley Ross
 

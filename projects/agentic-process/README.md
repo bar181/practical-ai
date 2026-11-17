@@ -11,10 +11,60 @@ A mini harness for work that is not code: a clear result, written steps, and a t
 rely on it. In a blind pilot, a tool built this way scored 93/100; built the usual way, 73.</p>
 
 <p align="center">
-  <a href="#get-started"><b>Build your first tool</b></a> &nbsp;·&nbsp;
+  <a href="#get-started-try-it-now"><b>Try it now</b></a> &nbsp;·&nbsp;
   <a href="#the-proof">The proof</a> &nbsp;·&nbsp;
   <a href="#what-it-has-built">What it has built</a>
 </p>
+
+## Get started: try it now
+
+**In the chatbot you already use.** Copy this, and swap in your own job, who uses the result, and
+the mistake it must catch.
+
+```
+Act as my agentic engineer. Use the method at
+https://raw.githubusercontent.com/bar181/practical-ai/main/projects/agentic-process/base/PROCESS.md
+to help me turn a job I repeat into a tool I can reuse.
+
+The job: every Monday I turn our team's meeting notes into a list of actions.
+Who uses the result: me, in ChatGPT, then I email the list to the team.
+The mistake it must catch: actions that nobody agreed to own, or with no date.
+
+Ask me for anything missing in one message. Then write the tool as one
+instruction file I can paste into a new chat, an example, and a short
+test I can run to check it works.
+```
+
+You get one instruction file you can paste into any new chat to do the job the same way every
+time, an example, and a short test.
+
+**With a coding agent** such as Claude Code or Codex, the builder does the whole job, including
+running the tests in fresh sessions. Open it in an empty folder and paste:
+
+```
+Read the builder skill at
+https://raw.githubusercontent.com/bar181/practical-ai/main/projects/agentic-process/level-2-files/agentic-process/SKILL.md
+and follow it.
+
+The job: when a supplier sends a notice
+that changes our terms, work out what it
+makes us do and by when.
+Who uses the result: a café owner,
+in the chatbot they already use.
+Example input: write an invented
+one-page supplier notice.
+The catch: a notice that leaves out a date
+or an attachment it mentions.
+
+Put the tool in document-to-action-brief/.
+Hand back what you built, the checks
+you ran, and what you assumed.
+```
+
+**It is ready when** every check ran in a fresh session, the example is a real result, and the
+person could act on its first screen as it is. No coding agent? Copy [`base/template/`](base/template/)
+and follow [the one-page process](base/PROCESS.md). To skip the link, install
+[the builder skill](level-2-files/). AI agents: [`AGENTS.md`](AGENTS.md).
 
 ## What it adds
 
@@ -69,40 +119,6 @@ One build task, one notice, one blind reviewer: a strong signal, not a study.
 2. **Reuse first:** use what already does the job; build only what is missing.
 3. **Build the tool** for the chatbot people already use.
 4. **Test it fresh:** does it hold up, and would the person use it as it is? Fix, then hand back.
-
-## Get started
-
-Open a coding agent such as Claude Code or Codex in an empty folder, and paste this:
-
-```
-Read the builder skill at
-https://raw.githubusercontent.com/bar181/practical-ai/main/projects/agentic-process/level-2-files/agentic-process/SKILL.md
-and follow it.
-
-The job: when a supplier sends a notice
-that changes our terms, work out what it
-makes us do and by when.
-Who uses the result: a café owner,
-in the chatbot they already use.
-Example input: write an invented
-one-page supplier notice.
-The catch: a notice that leaves out a date
-or an attachment it mentions.
-
-Put the tool in document-to-action-brief/.
-Hand back what you built, the checks
-you ran, and what you assumed.
-```
-
-You get the tool, a guide and a real tested example. Then use it on your own job: keep the first
-three lines and give the job, who uses the result, an example input, and the mistake it must catch.
-
-**It is ready when** every check ran in a fresh session, the example is a real result, and the
-person could act on its first screen as it is. If the builder could not run its tests, it hands you
-the messages to paste into fresh chats.
-
-No coding agent? Copy [`base/template/`](base/template/) and follow [the one-page process](base/PROCESS.md) in any chatbot.
-To skip the link, install [the builder skill](level-2-files/). AI agents: [`AGENTS.md`](AGENTS.md).
 
 ## Status
 
