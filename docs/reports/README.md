@@ -1,23 +1,23 @@
 # Explainers: the two finished projects
 
 <p align="center">
-  <img src="../../assets/images/practical-ai-pitch.svg" width="720" alt="Animation: Practical AI saves time on the work you repeat, with one file for the chatbot you already use, a guide and a worked example. Two projects light up in turn. Artifact Studio: rough notes in, a report, deck or post out. Agentic Process: a job you repeat in, a tested README, SKILL.md and example out. The AI drafts; you check and decide.">
+  <img src="../../assets/images/practical-ai-pitch.svg" width="720" alt="Animation: Practical AI, better work from the AI you already use, with a proven process for the jobs you repeat, and faster. Artifact Studio, designed pages told well, and Agentic Process, tools that catch mistakes, light up in turn. The AI drafts; you check and decide.">
 </p>
 
-**The picture, in words:** Practical AI saves time on work you already do. Artifact Studio turns
-rough notes into a report, a deck or a post. Agentic Process turns a job you repeat into a tested
-tool. In both, the AI drafts and you check and decide.
+**The picture, in words:** Practical AI gets better work from the AI you already use. Artifact
+Studio turns rough notes into pages that look designed and tell a real story. Agentic Process
+turns a job you repeat into a tested tool that catches what people miss. In both, the AI drafts
+and you check and decide.
 
 ## Why this repository exists
 
-Most people already have an AI chatbot. What they lack is a reliable way to use it for the jobs
-they repeat every week, with results they can check. Each tool here is one such job, packaged so it
-starts in minutes and says what to check.
+Most people already have an AI chatbot. Left alone, it makes plain pages and misses what matters.
+What they lack is a proven way to get good work from it on the jobs they repeat, every time.
 
-**The pitch:** Practical AI saves time on work you already do. Each tool is one file you paste
-into the chatbot you have, a short guide and a worked example. Artifact Studio turns rough notes
-into a report, deck or post you are proud to share. Agentic Process turns a job you repeat into a
-tool someone else can start in five minutes, tested before you get it. The AI drafts; you decide.
+**The pitch:** Practical AI gets better work from the AI you already use. Artifact Studio gives
+your AI a designer's brief, so reports, decks and posts look designed and tell a real story.
+Agentic Process turns a job you repeat into a tool that catches what people miss, tested before
+you rely on it. Both are faster too. The AI drafts; you decide.
 
 ## The two explainer pages
 

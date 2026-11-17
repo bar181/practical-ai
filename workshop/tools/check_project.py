@@ -1,7 +1,7 @@
 """check_project.py PROJECT_FOLDER: does this folder follow the repository's layout?
 
 The showcase layout, used by everything in projects/. base/ is enough to try the tool.
-  README.md        the hook, a "Try it" quick start, the North Star and a Status section
+  README.md        a landing page: the value, examples, a "Get started" section and a Status section
   AGENTS.md        instructions for AI agents
   CLAUDE.md        points Claude Code at AGENTS.md
   LICENSE
@@ -41,11 +41,8 @@ if folders or exists("gates.json"):                                  # the earli
 else:                                                                # the showcase layout
     for need in ("README.md", "AGENTS.md", "CLAUDE.md", "LICENSE", "base", "quality-results/README.md"):
         if not exists(need): problems.append(f"missing {need}")
-    for mark, why in (("**North Star:**", "one sentence saying what success is"), ("## Status", "who has and has not tried it")):
-        if mark not in text: problems.append(f"README.md has no '{mark}' ({why})")
-    if not re.search(r"^## Try it", text, re.M): problems.append("README.md has no section starting '## Try it' (the quick start)")
-    first = [h for h in re.findall(r"^## (.+)$", text, re.M)]
-    if first and not first[0].startswith("Try it"): problems.append(f"the quick start must be the first section of the README. Found '{first[0]}' first")
+    if "## Status" not in text: problems.append("README.md has no '## Status' (who has and has not tried it)")
+    if not re.search(r"^## Get started", text, re.M): problems.append("README.md has no section starting '## Get started' (the first run)")
     if exists("base"):
         inside = os.listdir(os.path.join(root, "base"))
         if not inside: problems.append("base/ is empty")

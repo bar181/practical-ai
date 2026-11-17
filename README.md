@@ -1,78 +1,67 @@
-# Practical AI: AI tools for the work you repeat
+# Practical AI: better work from the AI you already use
 
 <p align="center">
   <img src="assets/images/smart-intern.svg" width="800" alt="Animation: AI is a smart intern that has read every book and has never met you. It needs your priorities, your tone of voice, what your business does and how it can help you. Then it is ready to work">
 </p>
 
-**Practical AI is a free set of tools that save time on work you already do, without lowering the
-quality.** Each tool does one job. It is one file you paste into the chatbot you already use
-(ChatGPT, Claude, Gemini, Microsoft Copilot and others), a short guide, and a worked example. The
-AI drafts. You check the result and make the call.
+<h3 align="center">Your AI is a smart intern. Practical AI gives it a proven way to do the work.</h3>
+
+<p align="center"><b>Better results on the jobs you repeat, every time, and faster.</b><br>
+Free tools for the chatbot or coding agent you already use. The AI drafts. You check and decide.</p>
 
 <p align="center">
-  <a href="#make-your-first-report-artifact-studio"><b>Make your first report</b></a> &nbsp;·&nbsp;
-  <a href="#build-a-tool-agentic-process"><b>Build a tool</b></a> &nbsp;·&nbsp;
+  <a href="#artifact-studio-pages-that-look-designed-and-tell-a-real-story"><b>Artifact Studio</b></a> &nbsp;·&nbsp;
+  <a href="#agentic-process-ai-tools-that-catch-what-people-miss"><b>Agentic Process</b></a> &nbsp;·&nbsp;
   <a href="#the-jobs-you-repeat">The jobs it helps with</a> &nbsp;·&nbsp;
   <a href="#created-by-bradley-ross">Who made this</a>
 </p>
 
-## What you get
+## Why it is better
 
-- **Time back.** A first draft of a report, a deck or a brief in minutes, not hours. The times on
-  these pages are estimates.
-- **Results you can check.** Tools quote their sources, label estimates and flag what is missing
-  instead of guessing.
-- **You stay in charge.** Nothing is sent, posted, paid or published without a person.
-- **No lock-in.** The same file works in any chatbot, and installs as a skill where skills are
-  supported.
+- **Higher quality.** Left alone, AI makes plain pages and misses what matters. These tools give it
+  a designer's brief and a tested method, so the result is worth sending.
+- **The same standard every time.** A repeatable process you and your AI follow on every job, not
+  a lucky prompt.
+- **Faster, too.** A first draft in minutes instead of hours. Times are estimates.
+- **You stay in charge.** Nothing is sent, posted, paid or published without you.
 
-Think of AI as a smart intern: it has read everything and has never met you. Each tool hands it
-what it needs for one job.
+## Two tools, ready today
 
-## Choose a project
+### Artifact Studio: pages that look designed and tell a real story
 
-Two projects are ready. Pick the one that matches what you want to do today.
-
-### Make your first report: Artifact Studio
-
-**For someone with rough notes and something to share.** Paste one prompt into the chatbot you
-already use and get a one-page report your reader can take in on a phone. Then the same notes as a
-slide deck, a social post or a page that opens with your photo.
+**For anyone who shares reports, decks or posts.** Your AI follows a designer's brief: real
+templates, photo effects, and voices from keynote to analyst. The same notes become the page your
+reader needs.
 
 <p align="center">
-  <a href="projects/artifact-studio/"><img src="projects/artifact-studio/_build/img/example-report.webp" width="560" alt="Screen capture of a one-page monthly report made by an AI chatbot from eight lines of notes about an invented landscaping company: the headline October beat September, revenue up 12,700 dollars, four more jobs done and more quotes became jobs; three key numbers for revenue, jobs completed and quotes won; and a bar chart comparing September and October"></a>
+  <a href="projects/artifact-studio/"><img src="projects/artifact-studio/_build/img/show-photo-effects.webp" width="640" alt="Animated screen capture of photo effects made by an AI chatbot from one photograph: a pencil sketch draws itself and becomes the photo, the camera pans and zooms across a lake, a divider slides between two colour grades, a postcard flips over, and one huge word is filled with the picture"></a>
 </p>
 
-An AI chatbot made this page from eight lines of invented notes, in one try, unedited.
+<p align="center"><a href="projects/artifact-studio/"><b>See what it makes</b></a></p>
 
-<p align="center"><a href="projects/artifact-studio/#try-it-make-your-first-report-in-5-minutes"><b>Make your first report in 5 minutes</b></a></p>
+### Agentic Process: AI tools that catch what people miss
 
-### Build a tool: Agentic Process
-
-**For someone who builds tools or workflows with a coding agent** such as Claude Code or Codex.
-Paste one build request with a job you repeat. You get back a small package another person can
-start in five minutes: a README, one `SKILL.md` that works in any chatbot, and a worked example,
-tested in a fresh session before you get it.
+**For anyone who builds tools with a coding agent.** It turns a job you repeat into a tool that does
+it well every time, and tests the tool before you rely on it.
 
 <p align="center">
-  <a href="projects/agentic-process/"><img src="projects/agentic-process/_build/img/builder-flow.svg" width="400" alt="Animation of the builder: a job you repeat goes in; four steps light up in turn, name the usable result, pick the simplest build, build one SKILL.md, test it in a fresh session; out comes a checked package of README.md, SKILL.md and example.md"></a>
+  <a href="projects/agentic-process/"><img src="projects/agentic-process/_build/img/pilot-brief-direct.webp" width="49%" alt="Screen capture of a reply from a tool built the usual way: the facts of a supplier notice in a table, with the missing effective date buried among them"></a>
+  <a href="projects/agentic-process/"><img src="projects/agentic-process/_build/img/pilot-brief.webp" width="49%" alt="Screen capture of a reply from the tool built with Agentic Process: a warning first that the notice never gives its effective date and leaves out a form, and who to ask"></a>
 </p>
 
 **In one blind pilot, a tool built with Agentic Process scored 93/100. The direct-build version
-scored 73/100 on the same brief.** Both found all nine key items in an unseen supplier notice; the
-Agentic Process version also put the missing date and form at the top, said who to ask, and needed
-no corrections before acting. One build task, one notice, one blind reviewer:
-[the evidence](projects/agentic-process/quality-results/README.md).
+scored 73/100 on the same brief.** Left, the usual build buries the missing date. Right, Agentic
+Process puts it first and says who to ask. One task, one notice, one blind reviewer.
 
-<p align="center"><a href="projects/agentic-process/#try-it-build-a-tool-in-about-10-minutes"><b>Build your first tool in about 10 minutes</b></a></p>
+<p align="center"><a href="projects/agentic-process/"><b>See how it works</b></a></p>
 
 ### Not sure?
 
 | You are | Go to |
 | --- | --- |
-| **New to AI, on a phone or a laptop** | [Make your first report](projects/artifact-studio/#try-it-make-your-first-report-in-5-minutes) |
-| **Using a chatbot every day** | Artifact Studio's [one-time setup](projects/artifact-studio/#advanced-setup-use-it-every-day) |
-| **Building with a coding agent** | [Build a tool](projects/agentic-process/#try-it-build-a-tool-in-about-10-minutes) |
+| **New to AI, on a phone or a laptop** | [Make your first report](projects/artifact-studio/#get-started-your-first-report) |
+| **Using a chatbot every day** | Artifact Studio's [one-time setup](projects/artifact-studio/#make-it-your-standard) |
+| **Building with a coding agent** | [Build a tool](projects/agentic-process/#get-started) |
 | **An AI agent** | [`AGENTS.md`](AGENTS.md) |
 
 Some pages here are HTML files. GitHub shows an HTML file as code, so download it and open it in a
@@ -99,10 +88,9 @@ idea is in [the plans](workshop/plans/README.md).
 
 ## How each tool is built
 
-**Reuse first:** use what already does the job, add a thin layer for your rules, and build only
-what is missing. **One file per tool:** a README, one `SKILL.md` in the open Agent Skills format,
-and a worked example. [Agentic Process](projects/agentic-process/) builds them and tests each one
-in a fresh session before handing it back.
+Every tool starts from who will use the result and the one mistake it must catch. It reuses what
+already does the job, works in the chatbot people already have, and is tested in a fresh session
+before anyone relies on it. [Agentic Process](projects/agentic-process/) is that method.
 
 ## Three levels: how much is set up and automated
 

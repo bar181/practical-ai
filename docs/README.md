@@ -7,10 +7,11 @@ A one-page summary for anyone deciding where to start. Updated 16 November 2026.
 Two projects are finished and ready to try. Each has an explainer page in
 [`reports/`](reports/) (download the HTML file and open it in a browser).
 
-### Artifact Studio: make your first report
+### Artifact Studio: pages that look designed and tell a real story
 
-**What it does:** turns rough notes into a one-page report, a slide deck, a social post or a page
-that opens with your photo, in the chatbot you already use.
+**What it does:** gives your AI a designer's brief, so rough notes become a report, a slide deck, a
+social post or a page that opens with your photo, in a voice that fits the reader. Better than the
+plain page a chatbot makes on its own, and faster than building it by hand.
 
 **How you use it:** paste one prompt with your notes, read the page that comes back, check the
 numbers against your notes, and share it. Then ask for the same notes as a deck or a post in one
@@ -24,11 +25,11 @@ only in Claude so far. [Open the project](../projects/artifact-studio/) ·
 [the explainer page](reports/artifact-studio.html) ·
 [the evidence](../projects/artifact-studio/quality-results/README.md).
 
-### Agentic Process: build a tool
+### Agentic Process: AI tools that catch what people miss
 
-**What it does:** turns a job you repeat into a small tool someone else can start in five minutes:
-a guide, one instruction file that works in any chatbot, and a worked example, tested in a fresh
-session before you get it.
+**What it does:** turns a job you repeat into a tool that does it well every time. Each tool is
+built around the one mistake it must catch, and tested in a fresh session before you rely on it.
+You get the tool, a guide and a real tested example, in about ten minutes.
 
 **How you use it:** paste one build request into a coding agent such as Claude Code, with the job,
 who will use the result and the one thing that usually goes wrong. Read the hand-back, run any
