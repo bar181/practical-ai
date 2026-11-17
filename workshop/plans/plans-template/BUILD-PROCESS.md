@@ -114,14 +114,21 @@ anyone starts.
   [`../../skills/`](../../skills/).
 - Go back to step 3 when a new level needs a provider. That is when you select.
 
+### The explainer
+
+Every tool has a short explainer: what it does, how to start, what goes in and comes out, and what to check, with one worked example. It can live in the README. Write it from the finished, tested tool. It explains the tool; it is
+not a course, and it never replaces making the tool simple. For a page version,
+[Artifact Studio](../../../projects/artifact-studio/) can lay it out.
+
 ## Ways this usually goes wrong
 
 1. Building before checking what exists.
 2. Choosing a provider during research, then designing around it.
 3. Designing the Expert level before the Beginner level works.
-4. Testing only by the person who built it.
-5. Finding out what it costs after people depend on it.
-6. No written check, so "it works" is an opinion.
+4. Teaching the tool instead of making it simple. The explainer explains the finished tool.
+5. Testing only by the person who built it.
+6. Finding out what it costs after people depend on it.
+7. No written check, so "it works" is an opinion.
 
 ## What the first build taught us
 

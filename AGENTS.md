@@ -1,8 +1,11 @@
 # For agents working in this repository
 
-Practical AI is a set of tools a person can use with an AI assistant the same day. Each has a
-Beginner level a student can run in any chat assistant, and Advanced levels with skills and
-connectors. Each tool has a plan in `workshop/plans/`. A showcase you can try is in `projects/`, and earlier work in progress is in `workshop/drafts/`.
+Practical AI is a set of tools a person can use with an AI assistant the same day. The tool is the
+product. Each has a Beginner level, the simplest version that works, started in minutes in any chat
+assistant; an Advanced level that makes it repeatable with skills and connectors; and an Expert
+level that is connected and automated. Levels describe setup and automation, not audience. Each
+has a short explainer: what it does, how to start, what goes in and comes out, and what to check, with one worked example. It can live in the README. Teaching is not the product. Reuse first: use an existing capability, wrap it,
+or build only the missing piece. Each tool has a plan in `workshop/plans/`. A showcase you can try is in `projects/`, and earlier work in progress is in `workshop/drafts/`.
 
 | You were asked to | Go to |
 | --- | --- |

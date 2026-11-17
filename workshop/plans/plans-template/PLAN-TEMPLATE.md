@@ -33,9 +33,10 @@ The layout and the stages are in the [project method](../../../projects/agentic-
 | Level | What it involves | Complexity |
 | --- | --- | --- |
 | Base | One line: what a person can open and use with nothing set up | |
-| Level 1, Beginner: for students | Three or four sentences a student can follow in any chat assistant: what they prepare, what they paste, what they get back, what they check | Beginner |
-| Level 2, Advanced: skills and connectors | One line: the skill, and the connectors to where the work lives | Intermediate |
-| Level 3, Expert: automation | One line, or "None": a database, an MCP server or a schedule | Advanced |
+| Level 1, Beginner: the simplest version that works | Three or four sentences anyone can follow in any chat assistant: what they prepare, what they paste, what they get back, what they check | Beginner |
+| Level 2, Advanced: repeatable | One line: the skill or saved project, and the connectors to where the work lives | Intermediate |
+| Level 3, Expert: connected and automated | One line, or "None": a database, an MCP server, a schedule, agents doing the work with a person approving | Advanced |
+| Explainer | One line: the short explainer (it can live in the README): what it does, how to start, what goes in and out, what to check, one worked example | Part of every delivery |
 | Commercial grade | One line: what a commercial build adds | Explained, not built here |
 
 ## Established best practices

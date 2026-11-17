@@ -98,11 +98,13 @@ finds what you cannot see, because you know what you meant.
 
 ## Go further
 
-| Level | For | What it adds |
+Levels describe setup and automation; anyone can choose any level.
+
+| Level | What runs | What it adds |
 | --- | --- | --- |
-| **Base**: run it in chat | A business owner or office worker | A useful result today, and the four files to run it again |
-| **Level 2**: save, share and specify | Someone trained on AI, or a coder | A saved, shared workflow in a chatbot project, a skill or a shared folder. For coders: [one skill folder](level-2-files/) that turns an idea into a testable spec and a project folder in any repository |
-| **Level 3**: connect it and prove it | The owner, or a client setup | A folder, a tool server or GitHub, connected only when it saves a recurring manual step; [gates, fresh-session tests and every test log](level-3-files/) |
+| **Base** | A person gives the input and starts it in chat, or through a tool that already exists | A useful result today, from one instruction file or a link, with a short explainer and a worked example |
+| **Level 2** | A saved workflow a person starts when needed | A Project or a reusable skill, using existing skills or plugins where they add value. For coders: [one skill folder](level-2-files/) that turns an idea into a testable spec and a project folder in any repository |
+| **Level 3** | A mostly connected and automated workflow | Connected inputs and outputs, a trigger or schedule, and a tested normal run and exception path. Today this level holds [gates, fresh-session tests and every test log](level-3-files/); no connected workflow has been built yet |
 
 **More examples**, each made by a fresh session from this project's instructions, unedited, with
 invented people: [a Monday email from sales notes](base/examples/monday-email.md) (short path),

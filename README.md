@@ -25,7 +25,7 @@ Claude, Gemini, Microsoft Copilot and other chatbots, and with personal agents.
 | --- | --- | --- |
 | **New to AI, on a phone or a laptop** | Copy the prompt in [Try it in five minutes](#try-it-in-five-minutes) into the chatbot you already use | 5 minutes |
 | **Using a chatbot every day** | Paste [the instructions](projects/artifact-studio/base/AI-INSTRUCTIONS.md) into a Project or a Gem once. Then just ask | 10 minutes, once |
-| **Teaching a class** | Present the [explainer](projects/artifact-studio/base/examples/voice-explainer.html): it teaches how to use the tool, step by step | One lesson |
+| **Want to see how a tool works first** | Open its [explainer](projects/artifact-studio/base/examples/voice-explainer.html): a page that shows the finished tool, step by step | 5 minutes |
 | **Building with agents** | Add the [skill](projects/artifact-studio/level-2-files/) or the [MCP server](projects/artifact-studio/level-3-files/) | 15 minutes |
 | **Someone with an idea for a tool** | Paste [the build coach](projects/agentic-process/base/AI-INSTRUCTIONS.md) into your chatbot and tell it the idea | 5 minutes to start |
 | **An AI agent** | Follow [`AGENTS.md`](AGENTS.md) | |
@@ -78,9 +78,10 @@ do the things AI is good at.
 **Think of it as** a cookbook where every recipe is printed twice: once for a home kitchen with a
 pan and a hob, and once for a professional kitchen with the full line.
 
-**North Star:** every tool comes at two depths. A **Beginner** level anyone can run in a chat
-assistant with nothing installed, and **Advanced** levels, with skills and connectors, for people
-who work with AI agents every day.
+**North Star:** every tool is useful on its own. **Beginner** is the simplest version that works:
+started in minutes in the chat assistant you already have, nothing installed. **Advanced** makes it
+repeatable with skills and connectors. **Expert** connects it where the work happens and automates
+it. Levels describe setup and automation, not who you are. Each tool has a short explainer: what it does, how to start, what goes in and comes out, and what to check, with one worked example. It can live in the README.
 
 ## The jobs you repeat
 
@@ -159,14 +160,16 @@ each, and a test by a fresh AI session before any person sees the result.
 
 What it is for, and when version 1 is done: [the spec](workshop/plans/agentic-process/SPEC.md). Nobody but its author has built a tool with it yet.
 
-## Teach it
+## Explainers
 
-[Artifact Studio](projects/artifact-studio/base/TEACH-IN-30-MINUTES.md) has a 30-minute lesson plan. It has not been taught yet.
+Every tool has a short explainer: what it does, how to start, what goes in and comes out, and what to check, with one worked example. It can live in the README. It explains the finished tool; it is not a course.
+[Artifact Studio](projects/artifact-studio/) has a page version, and a
+[30-minute lesson plan](projects/artifact-studio/base/TEACH-IN-30-MINUTES.md) for anyone who presents it.
 
 ## What comes next
 
-The first class: three lessons that teach one habit, checking every AI-made item against its
-source before you act. Each has a plan written with Agentic Process, waiting on the owner's review.
+The next three tools. Each has a plan written with Agentic Process, waiting on the owner's review,
+and each checks every AI-made item against its source before you act.
 
 1. [**Document to action brief**](workshop/plans/document-to-action-brief/): a supplier notice
    becomes facts, obligations, dates and questions, each with the line it came from.
@@ -183,9 +186,9 @@ After that, the tools in [the priorities](docs/practical-ai-priorities.md), one 
   <img src="docs/assets/levels.svg" width="640" alt="Animation: every Practical AI tool comes at three levels. Beginner, paste and go, for anyone. Advanced, a skill plus connectors, for builders. Expert, your own data, server and schedule, for teams">
 </p>
 
-**Beginner:** copy the instructions, paste them into your chatbot, type one sentence.
-**Advanced:** add a skill and connect it to your mail, calendar, drive or sheets.
-**Expert:** connect your own data, a server or a schedule, and let your agents use it.
+**Beginner:** the simplest version that works. Copy the instructions, paste them into your chatbot, type one sentence.
+**Advanced:** repeatable. Save it as a skill or a project and connect it to your mail, calendar, drive or sheets.
+**Expert:** connected and automated. Your own data, a server or a schedule, with agents doing the work and a person approving it.
 
 Start at Beginner. It is the whole tool. The other levels only remove steps.
 
