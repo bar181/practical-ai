@@ -25,13 +25,13 @@ with the impact of a professional website: beautiful photos, motion, a story tha
 best practice built in. Not a wall of text, and not a slide deck that took you hours.
 
 <p align="center">
-  <a href="artifact-studio/"><img src="artifact-studio/_build/img/scroll-photo-effects.webp" width="31%" alt="Animated phone capture: one sunset photograph shown three ways as the page scrolls: a slow pan and zoom, the word SKY filled with the picture, then a postcard you can turn over"></a>
-  <a href="artifact-studio/"><img src="artifact-studio/_build/img/scroll-emotional.webp" width="31%" alt="Animated phone capture of a personal story page: the line My mother kept a drawer, then keepsakes that fade in one at a time as you scroll, each with a short caption"></a>
-  <a href="artifact-studio/"><img src="artifact-studio/_build/img/scroll-lesson.webp" width="31%" alt="Animated phone capture of a lesson page, Treat AI like a smart intern: a robot clip, a vague brief against a full brief, frosted cards over painted scenes, the word Launch filled with a picture, and check-yourself questions"></a>
+  <a href="artifact-studio/#before-and-after-one-lesson-three-ways"><img src="artifact-studio/_build/img/before-plain.webp" width="31%" alt="Animated phone capture of the plain version: a white Markdown document titled AI as a Smart Intern, with headings, bullet lists and two small tables, scrolling top to bottom"></a>
+  <a href="artifact-studio/#before-and-after-one-lesson-three-ways"><img src="artifact-studio/_build/img/scroll-lesson.webp" width="31%" alt="Animated phone capture of the teaching page, Treat AI like a smart intern: a robot clip, a vague brief against a full brief in tabs, frosted cards over painted scenes, the word Launch filled with a picture, and check-yourself questions"></a>
+  <a href="artifact-studio/#before-and-after-one-lesson-three-ways"><img src="artifact-studio/_build/img/scroll-story.webp" width="31%" alt="Animated phone capture of the same lesson as a story: a dark candlelit page that opens on Monday, 8:40 a.m. Your desk, then story beats that arrive as you scroll, the robot clip, a glowing scroll, the word Launch and the guide card"></a>
 </p>
 
-**The captures, in words:** one photo shown three ways; a personal story whose keepsakes appear as
-you scroll; and a lesson its author made for a client's course, in the teacher voice.
+**The captures, in words:** one lesson made three ways for a real client's course. Left, the plain
+version. Middle, a scrolling lesson. Right, the same lesson as a story. The same facts in all three.
 
 <p align="center"><a href="artifact-studio/"><b>Make your first designer-quality report</b></a></p>
 

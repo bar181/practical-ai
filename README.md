@@ -1,5 +1,17 @@
 # Practical AI
 
+<h3 align="center">Same content. Before and after.</h3>
+
+<p align="center">
+  <img src="projects/artifact-studio/_build/img/before-plain.webp" width="31%" alt="Animated phone capture of the plain version: a white Markdown document titled AI as a Smart Intern, with headings, bullet lists and two small tables, scrolling top to bottom">
+  <img src="projects/artifact-studio/_build/img/scroll-lesson.webp" width="31%" alt="Animated phone capture of the teaching page, Treat AI like a smart intern: a robot clip, a vague brief against a full brief in tabs, frosted cards over painted scenes, the word Launch filled with a picture, and check-yourself questions">
+  <img src="projects/artifact-studio/_build/img/scroll-story.webp" width="31%" alt="Animated phone capture of the same lesson as a story: a dark candlelit page that opens on Monday, 8:40 a.m. Your desk, then story beats that arrive as you scroll, the robot clip, a glowing scroll, the word Launch and the guide card">
+</p>
+<p align="center"><sub><b>Before:</b> the plain version &nbsp;·&nbsp; <b>After:</b> a lesson &nbsp;·&nbsp; <b>After:</b> the same lesson as a story</sub></p>
+
+<p align="center">One lesson, made for a real client's course in new sessions. The same facts in all three;<br>
+only the design and the voice change. <a href="projects/artifact-studio/#before-and-after-one-lesson-three-ways"><b>See all three and try it yourself</b></a></p>
+
 <p align="center">
   <img src="assets/images/practical-ai-pitch.svg" width="760" alt="Animation: Practical AI, better work from the AI you already use. Two projects light up in turn. Artifact Studio, design for your reports: rough notes in, a report, deck or post out. Agentic Process, structure for repeat jobs: a job you repeat in, a tested tool out. The AI drafts; you check and decide.">
 </p>
@@ -8,13 +20,6 @@
 
 <p align="center">Each project packs what an expert brings to one job: the method, the templates and worked examples.<br>
 You ask your AI as you do today.</p>
-
-<p align="center">
-  <img src="projects/artifact-studio/_build/img/scroll-photo-effects.webp" width="31%" alt="Animated phone capture: one sunset photograph shown three ways as the page scrolls: a slow pan and zoom, the word SKY filled with the picture, then a postcard you can turn over">
-  <img src="projects/artifact-studio/_build/img/scroll-emotional.webp" width="31%" alt="Animated phone capture of a personal story page: the line My mother kept a drawer, then keepsakes that fade in one at a time as you scroll, a crayon balloon, a card with dancers and a painted portrait, each with a short caption">
-  <img src="projects/artifact-studio/_build/img/scroll-lesson.webp" width="31%" alt="Animated phone capture of a lesson page, Treat AI like a smart intern: a robot clip, a vague brief against a full brief, frosted cards over painted scenes, the word Launch filled with a picture, and check-yourself questions">
-</p>
-<p align="center"><sub><b>Photo effects</b> from one picture &nbsp;·&nbsp; <b>A story that unfolds</b> as you scroll &nbsp;·&nbsp; <b>A lesson</b> made for a client</sub></p>
 
 <p align="center">
   <a href="projects/artifact-studio/"><b>Artifact Studio: designer-quality reports, made by you</b></a><br>
@@ -74,13 +79,12 @@ professional website: beautiful photos, motion and a story that flows, not a wal
 slide deck that took hours.
 
 <p align="center">
-  <img src="projects/artifact-studio/_build/img/fx-line-art.webp" width="32%" alt="Photo effect: a pencil sketch traced from a lake photograph draws itself as you scroll">
-  <img src="projects/artifact-studio/_build/img/fx-photo-type.webp" width="32%" alt="Photo effect: the word spark in huge letters filled with a picture">
-  <img src="projects/artifact-studio/_build/img/fx-postcard.webp" width="32%" alt="Photo effect: a picture turned over like a postcard to show a handwritten note">
+  <img src="projects/artifact-studio/_build/img/scroll-photo-effects.webp" width="31%" alt="Animated phone capture: one sunset photograph shown three ways as the page scrolls: a slow pan and zoom, the word SKY filled with the picture, then a postcard you can turn over">
+  <img src="projects/artifact-studio/_build/img/scroll-emotional.webp" width="31%" alt="Animated phone capture of a personal story page: the line My mother kept a drawer, then keepsakes that fade in one at a time as you scroll, each with a short caption">
 </p>
 
-**Photo effects** from one picture and one sentence: a sketch that draws itself, a word filled with
-your photo, a postcard that flips, a slow pan and zoom.
+**Photo effects** from one picture and one sentence (left): a slow pan and zoom, a word filled with
+your photo, a postcard that flips. **A personal story** (right) whose keepsakes appear as you scroll.
 
 <p align="center">
   <img src="projects/artifact-studio/_build/img/style-visionary.webp" width="49%" alt="Animated screen capture of a keynote deck: black slides with one idea each in huge white type, then full-screen pictures with a few words over each">

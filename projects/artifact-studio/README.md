@@ -1,11 +1,97 @@
 # Artifact Studio
 
+## Before and after: one lesson, three ways
+
 <p align="center">
-  <img src="_build/img/scroll-photo-effects.webp" width="31%" alt="Animated phone capture: one sunset photograph shown three ways as the page scrolls: a slow pan and zoom, the word SKY filled with the picture, then a postcard you can turn over">
-  <img src="_build/img/scroll-emotional.webp" width="31%" alt="Animated phone capture of a personal story page: the line My mother kept a drawer, then keepsakes that fade in one at a time as you scroll, a crayon balloon, a card with dancers and a painted portrait, each with a short caption">
-  <img src="_build/img/scroll-lesson.webp" width="31%" alt="Animated phone capture of a lesson page, Treat AI like a smart intern: a robot clip, a vague brief against a full brief, frosted cards over painted scenes, the word Launch filled with a picture, and check-yourself questions">
+  <img src="_build/img/before-plain.webp" width="31%" alt="Animated phone capture of the plain version: a white Markdown document titled AI as a Smart Intern, with headings, bullet lists and two small tables, scrolling top to bottom">
+  <img src="_build/img/scroll-lesson.webp" width="31%" alt="Animated phone capture of the teaching page, Treat AI like a smart intern: a robot clip, a vague brief against a full brief in tabs, frosted cards over painted scenes, the word Launch filled with a picture, and check-yourself questions">
+  <img src="_build/img/scroll-story.webp" width="31%" alt="Animated phone capture of the same lesson as a story: a dark candlelit page that opens on Monday, 8:40 a.m. Your desk, then story beats that arrive as you scroll, the robot clip, a glowing scroll, the word Launch and the guide card">
 </p>
-<p align="center"><sub><b>Photo effects</b> from one picture &nbsp;·&nbsp; <b>A story that unfolds</b> as you scroll &nbsp;·&nbsp; <b>A lesson</b> made for a client</sub></p>
+<p align="center"><sub><b>Before:</b> the plain version &nbsp;·&nbsp; <b>After:</b> a lesson &nbsp;·&nbsp; <b>After:</b> the same lesson as a story</sub></p>
+
+Bradley Ross needed a short lesson for a client's course: *Treat AI like a smart intern.* He wrote
+the content once and made three versions in new sessions. The facts are the same in all three. Only
+the design and the voice change.
+
+| | Before | After |
+| --- | --- | --- |
+| **First look** | A document like every other AI answer | A page that looks designed: painted scenes, a short clip, a photo-filled title |
+| **As you scroll** | Nothing moves | Scenes push in, frosted cards appear, the story arrives beat by beat |
+| **The brief example** | A table | Tabs: tap Vague or Briefed |
+| **Check yourself** | Answers printed under each question | Answers that open on tap |
+| **Facts** | The source only | The source only. The story adds an opening scene as framing |
+
+[Open the lesson](base/examples/before-after/2-teacher.html) &nbsp;·&nbsp;
+[Open the story](base/examples/before-after/3-story.html) &nbsp;·&nbsp;
+[Read the plain version](base/examples/before-after/1-plain.md) &nbsp;·&nbsp;
+[All three, with notes](base/examples/before-after/)
+
+### Try it yourself
+
+<details>
+<summary><b>Copy the full prompt</b>: the request, then the source content Bradley used</summary>
+
+```
+Use the Artifact Studio design guide at
+https://raw.githubusercontent.com/bar181/practical-ai/main/projects/artifact-studio/base/AI-INSTRUCTIONS.md
+Make this a scrolling lesson in the teacher voice, with the pictures I attach.
+Then make a second version that tells it as a story.
+
+Core content: AI as a Smart Intern
+Use the content below as the only source of facts for this piece. Do not add facts, numbers, names, quotes or claims that are not listed here. If something a reader needs is missing, mark it `[needs: ...]`.
+
+Core idea
+Treat AI like a smart intern. It is fast, well-read and eager to help, but it is brand new to your business. How you manage it decides what you get back.
+
+1. Meet your intern
+* It has read more than any person could and writes in seconds.
+* It never gets tired and never says "that's not my job."
+* It knows nothing about your clients, your prices or last week's meeting unless you tell it.
+
+2. Give it a proper brief
+* A one-line request makes it guess, so you get a generic answer.
+* A good brief says who it should be, who the work is for, what good looks like, and any limits.
+* Example (labelled as an example):
+  * Vague: "Write a follow-up email." The intern has to guess the client, the tone and the goal.
+  * Briefed: "You're my account manager. Write a follow-up to Dana, a client who asked for a spring quote. Friendly, under 120 words. End by offering two call times." This covers the role, reader, tone, length and next step.
+
+3. Expect confident mistakes
+* It sounds just as sure when it's wrong as when it's right.
+* When it doesn't know, it may fill the gap with something that only looks correct.
+* Check every name, number, date and quote before the work leaves your desk.
+
+4. Coach it instead of redoing it
+* When a draft misses, say exactly what to change, for example "shorter," "warmer" or "use our pricing."
+* A good intern gets better with specific feedback, and so does AI.
+* You bring judgment and context. It brings speed. ("The truth is the same, only the script differs.")
+
+5. Delegate the work, keep the decision
+* The intern drafts: first drafts, summaries, research to check, options to choose from.
+* You decide: anything sent, signed, paid or published.
+* Every workflow needs one point where a person reviews the work and says yes.
+
+Next step
+Pick one task you repeat every week and hand it to your intern:
+1. Write the brief: role, reader, goal, limits.
+2. Read the draft and check the facts.
+3. Give one round of specific feedback.
+4. Make the final call yourself.
+
+Check-yourself questions
+1. Why did the vague email prompt fail? The intern had to guess the client, the tone and the goal. A brief removes the guessing.
+2. The AI cites a statistic you've never seen. What now? Treat it like an intern's claim and find the source before you use it. Sounding confident doesn't make it true.
+3. Which step should AI never do alone? The final decision: sending, signing, paying or publishing. A person says yes.
+
+Recap
+A smart intern needs a clear brief, a careful review and a manager who makes the call. So does AI.
+
+Attribution
+Instructor: Bradley Ross, who builds and runs AI agents in production.
+```
+
+</details>
+
+Attach your own pictures, or leave them out. To see the "before", send the source content alone.
 
 <h3 align="center">Designer-quality reports, made by you.</h3>
 
@@ -16,10 +102,17 @@ professional website: beautiful photos, motion and a story that flows. Not a wal
 slide deck that took hours.
 
 <p align="center">
+  <a href="#before-and-after-one-lesson-three-ways"><b>Before and after</b></a> &nbsp;·&nbsp;
   <a href="#get-started-try-it-now"><b>Try it now</b></a> &nbsp;·&nbsp;
   <a href="#the-same-notes-told-in-different-voices">See the voices</a> &nbsp;·&nbsp;
   <a href="#photo-effects">See the effects</a>
 </p>
+
+<p align="center">
+  <img src="_build/img/scroll-photo-effects.webp" width="31%" alt="Animated phone capture: one sunset photograph shown three ways as the page scrolls: a slow pan and zoom, the word SKY filled with the picture, then a postcard you can turn over">
+  <img src="_build/img/scroll-emotional.webp" width="31%" alt="Animated phone capture of a personal story page: the line My mother kept a drawer, then keepsakes that fade in one at a time as you scroll, a crayon balloon, a card with dancers and a painted portrait, each with a short caption">
+</p>
+<p align="center"><sub><b>Photo effects</b> from one picture &nbsp;·&nbsp; <b>A personal story</b> that unfolds as you scroll</sub></p>
 
 ## Get started: try it now
 
@@ -129,11 +222,6 @@ These two start from different notes, to show the range.
 **A personal story** (left): one memory, a few keepsakes, the offer named only at the end. **A
 lesson to teach from** (right): an analogy, steps you scroll through, a worked example.
 
-**Used for real:** the lesson at the top of this page, *Treat AI like a smart intern*, was made by
-the author with Artifact Studio for a client's course, in the teacher voice: a short robot clip, a
-vague brief beside a full one, frosted cards over painted scenes, a word filled with a picture and
-check-yourself questions. [Open the lesson](base/examples/client-lesson.html).
-
 | Voice | Best when |
 | --- | --- |
 | **Keynote** | The reader should feel something new is possible |
@@ -194,8 +282,8 @@ AI agents: [`AGENTS.md`](AGENTS.md).
 ## Status
 
 **17 November 2026.** Built by its author and tested by fresh Claude sessions: 22 runs of the design guide,
-then two runs of the try-it prompt above. Every run finished its page. Used once for real, by its author for a
-client's course. Not yet tried in other chatbots, or by anyone else. All example content is
+then two runs of the try-it prompt above. Every run finished its page. Used for real by its author, for a client's
+course (the before and after at the top). Not yet tried in other chatbots, or by anyone else. All example content is
 invented. [The evidence](quality-results/README.md).
 
 <img src="_build/img/bradley-ross-avatar.webp" width="110" alt="Cartoon avatar of Bradley Ross with a small friendly robot">
