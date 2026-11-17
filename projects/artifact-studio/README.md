@@ -1,7 +1,7 @@
 # Artifact Studio
 
 <p align="center"><img src="_build/img/show-photo-effects.webp" width="800" alt="Animated screen capture of photo effects made by an AI chatbot from one photograph: a pencil sketch draws itself and becomes the photo, the camera pans and zooms across a lake, a divider slides between two colour grades, a postcard flips over, and one huge word is filled with the picture"></p>
-<p align="center"><sub>One photograph, one sentence per effect: a sketch that draws itself, a slow pan and zoom, a before and after divider, a postcard that flips, a word filled with the picture.</sub></p>
+<p align="center"><sub>One photo, one sentence per effect: a sketch that draws itself, a slow zoom, a before and after divider, a flipping postcard.</sub></p>
 
 <h3 align="center">Designer-quality reports, made by you.</h3>
 
@@ -19,7 +19,8 @@ slide deck that took hours.
 
 ## Get started: try it now
 
-Copy this into ChatGPT, Claude, Gemini or the chatbot you use. Keep the sample notes, or paste your own.
+Copy this into the chatbot you use. Keep the sample notes, or paste your own.
+Tested so far in Claude; not yet in ChatGPT or Gemini.
 
 ```
 Make my information look good. Use the
@@ -27,8 +28,6 @@ Artifact Studio design guide at
 https://raw.githubusercontent.com/bar181/practical-ai/main/projects/artifact-studio/base/AI-INSTRUCTIONS.md
 to turn it into an HTML report with a
 professional design.
-More examples:
-https://github.com/bar181/practical-ai/tree/main/projects/artifact-studio
 
 My information:
 - We are a landscaping company with
@@ -50,7 +49,7 @@ on her phone. She wants the answer first.
   <img src="_build/img/example-report.webp" width="560" alt="Screen capture of a one-page monthly report made by an AI chatbot from eight lines of notes about an invented landscaping company: the headline October beat September, revenue up 12,700 dollars, four more jobs done and more quotes became jobs; three key numbers for revenue, jobs completed and quotes won; and a bar chart comparing September and October">
 </p>
 
-**You get a page like this,** made from those notes in one try: the answer first, three numbers, a
+**You get a page like this,** made by a fresh Claude session from those notes in one try, unedited: the answer first, three numbers, a
 chart. [Open the page](base/examples/report.html). Chatbot cannot open links? Paste the text of
 [`base/AI-INSTRUCTIONS.md`](base/AI-INSTRUCTIONS.md) in place of the first line.
 
@@ -112,8 +111,8 @@ the core idea and steps for today. Same trial, same numbers, one sentence apart:
 These two start from different notes, to show the range.
 
 <p align="center">
-  <img src="_build/img/style-emotional.webp" width="49%" alt="Animated screen capture of the emotional page on a phone: the line My mother kept a drawer in italic type on a dark page, then three keepsakes shown as crooked photographs with handwritten captions, then a painted portrait filling the screen">
-  <img src="_build/img/style-explainer.webp" width="49%" alt="Animated screen capture of the explainer: the words A smart intern in very large type, above a hand-drawn sketch that draws itself, showing an intern, a one-page brief and a finished page">
+  <img src="_build/img/style-emotional.webp" width="31%" alt="Animated screen capture of the emotional page on a phone: the line My mother kept a drawer in italic type on a dark page, then three keepsakes shown as crooked photographs with handwritten captions, then a painted portrait filling the screen">
+  <img src="_build/img/style-explainer.webp" width="66%" alt="Animated screen capture of the explainer: the words A smart intern in very large type, above a hand-drawn sketch that draws itself, showing an intern, a one-page brief and a finished page">
 </p>
 
 **A personal story** (left): one memory, a few keepsakes, the offer named only at the end. **A
@@ -158,7 +157,7 @@ Instagram, TikTok, Facebook, email and blog. Nothing is posted for you.
 
 Set it up once in the AI you already use, and every report gets the same design and the same bar.
 
-| What you get | |
+| What you get | What it is |
 | --- | --- |
 | **A designed page** | Your report with animated diagrams, scrollytelling, photo effects, a keynote or a lesson. Ready now |
 | **Tailored for you** | The voice, look and effects chosen from the type of content and the audience. Through the skill or the MCP server below |
@@ -178,8 +177,8 @@ AI agents: [`AGENTS.md`](AGENTS.md).
 
 ## Status
 
-**16 November 2026.** Built by its author and tested in 22 runs by fresh Claude sessions; every run
-finished its page. Not yet tried in other chatbots, or by anyone else. All example content is
+**17 November 2026.** Built by its author and tested by fresh Claude sessions: 22 runs of the design guide,
+then the try-it prompt above. Every run finished its page. Not yet tried in other chatbots, or by anyone else. All example content is
 invented. [The evidence](quality-results/README.md).
 
 <img src="_build/img/bradley-ross-avatar.webp" width="110" alt="Cartoon avatar of Bradley Ross with a small friendly robot">

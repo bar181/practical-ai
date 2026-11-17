@@ -23,7 +23,7 @@ and the library the MCP server reads. It needs Python and the `markdown` package
 | `img/` | The pictures on the landing page |
 | `build.py` | The build |
 
-`base/examples/report.html` is written by hand on the skill's page skeleton and is not rebuilt.
+`base/examples/report.html` was made by a fresh AI session from the sample prompt, unedited, and is not rebuilt.
 
 ## Credits and licences
 

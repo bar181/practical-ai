@@ -10,13 +10,14 @@
 You ask your AI as you do today.</p>
 
 <p align="center">
-  <a href="projects/artifact-studio/"><b>Artifact Studio: designer-quality reports</b></a> &nbsp;·&nbsp;
-  <a href="projects/agentic-process/"><b>Agentic Process: an engineer at your side</b></a>
+  <a href="projects/artifact-studio/"><b>Artifact Studio: designer-quality reports, made by you</b></a><br>
+  <a href="projects/agentic-process/"><b>Agentic Process: an agentic engineer at your side</b></a>
 </p>
 
-## Try it now: one prompt, any chatbot
+## Try it now: one prompt in your chatbot
 
-Copy this into ChatGPT, Claude, Gemini or the chatbot you use. Keep the sample notes, or paste your own.
+Copy this into the chatbot you use. Keep the sample notes, or paste your own.
+Tested so far in Claude; not yet in ChatGPT or Gemini.
 
 ```
 Make my information look good. Use the
@@ -24,8 +25,6 @@ Artifact Studio design guide at
 https://raw.githubusercontent.com/bar181/practical-ai/main/projects/artifact-studio/base/AI-INSTRUCTIONS.md
 to turn it into an HTML report with a
 professional design.
-More examples:
-https://github.com/bar181/practical-ai/tree/main/projects/artifact-studio
 
 My information:
 - We are a landscaping company with
@@ -47,9 +46,13 @@ on her phone. She wants the answer first.
   <img src="projects/artifact-studio/_build/img/example-report.webp" width="520" alt="Screen capture of a one-page report made by an AI chatbot from rough notes about an invented landscaping company: the headline October beat September, three key numbers and a bar chart">
 </p>
 
-**You get a page like this:** the answer first, three key numbers and a chart, made from rough
-notes in one try. Your chatbot cannot open links? Paste the text of the
-[design guide](projects/artifact-studio/base/AI-INSTRUCTIONS.md) in place of the first line.
+**You get a page like this:** the answer first, three key numbers and a chart. A fresh Claude
+session made it from these sample notes in one try, unedited. Your chatbot cannot open links? Paste
+the text of the [design guide](projects/artifact-studio/base/AI-INSTRUCTIONS.md) in place of the
+first line.
+
+**Then make it yours** in one sentence: `Now show it as a keynote deck` or
+`Open with my photo as a slow pan and zoom`. Before you share, check every number against your notes.
 
 ## Artifact Studio: designer-quality reports, made by you
 
@@ -74,7 +77,7 @@ your photo, a postcard that flips, a slow pan and zoom.
 </p>
 
 **The same notes, in the voice your reader needs.** Left, an evidence-first report. Right, a field
-guide. Same trial, same numbers, one sentence apart. Seven voices in all, from keynote to board brief.
+guide. Same trial, same numbers, one sentence apart. Seven voices in all, from keynote to executive brief.
 
 <p align="center">
   <img src="projects/artifact-studio/_build/img/social-three-drafts.webp" width="720" alt="Three drafts of one LinkedIn post side by side, as they would look in the feed">

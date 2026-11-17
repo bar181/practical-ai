@@ -1,13 +1,13 @@
 # Two tools for better work with your AI
 
 <p align="center">
-  <img src="../assets/images/practical-ai-pitch.svg" width="720" alt="Animation: Practical AI, better work from the AI you already use, with a proven process for the jobs you repeat, and faster. Two tools light up in turn. Artifact Studio, design for your reports: rough notes in, a report, deck or post out. Agentic Process, structure for repeat jobs: a job you repeat in, a tested tool out. The AI drafts; you check and decide.">
+  <img src="../assets/images/practical-ai-pitch.svg" width="720" alt="Animation: Practical AI, better work from the AI you already use, with a repeatable process with your AI, and time back. Two tools light up in turn. Artifact Studio, design for your reports: rough notes in, a report, deck or post out. Agentic Process, structure for repeat jobs: a job you repeat in, a tested tool out. The AI drafts; you check and decide.">
 </p>
 
-<h3 align="center">Better results on the jobs you repeat, every time, and faster.</h3>
+<h3 align="center">Professional-quality work. A repeatable process with your AI. Time back on the jobs you repeat.</h3>
 
 <p align="center"><b>Want reports with a designer's impact?</b> <a href="artifact-studio/">Artifact Studio</a><br>
-<b>Want an engineer's method for the jobs you hand to AI?</b> <a href="agentic-process/">Agentic Process</a></p>
+<b>Want an agentic engineer at your side?</b> <a href="agentic-process/">Agentic Process</a></p>
 
 Neither replaces the features, plugins or skills already in your AI. Each adds what they are
 missing for one practical job.
@@ -16,7 +16,7 @@ missing for one practical job.
 you already use. [Artifact Studio](artifact-studio/#get-started-try-it-now) ·
 [Agentic Process](agentic-process/#get-started-try-it-now).
 
-## Artifact Studio: designer-quality reports you make yourself
+## Artifact Studio: designer-quality reports, made by you
 
 <p align="center"><b><i>"Better than I could do, as good as my designer, and I made it myself."</i></b></p>
 

@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" role="img" aria-labelledby="t d" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif">
 <title id="t">Practical AI in one picture</title>
-<desc id="d">At the top: Practical AI gets better work from the AI you already use, with a proven process for the jobs you repeat, and faster. Below, two projects light up in turn. Artifact Studio, design for your reports: rough notes go in, a report, deck or post comes out. Agentic Process, structure for repeat jobs: a job you repeat goes in, a tested tool comes out: a guide, the instructions and a worked example. At the bottom: the AI drafts, you check and decide.</desc>
+<desc id="d">At the top: Practical AI gets better work from the AI you already use, with a repeatable process with your AI, and time back. Below, two projects light up in turn. Artifact Studio, design for your reports: rough notes go in, a report, deck or post comes out. Agentic Process, structure for repeat jobs: a job you repeat goes in, a tested tool comes out: a guide, the instructions and a worked example. At the bottom: the AI drafts, you check and decide.</desc>
 <style>
 .card{animation:lit 10s infinite}
 .b{animation-delay:5s}
@@ -12,7 +12,7 @@
 <rect width="800" height="520" rx="22" fill="#0c2340"/>
 <text x="400" y="58" text-anchor="middle" fill="#ffd23f" font-size="34" font-weight="700">Practical AI</text>
 <text x="400" y="96" text-anchor="middle" fill="#fff" font-size="24">Better work from the AI you already use.</text>
-<text x="400" y="128" text-anchor="middle" fill="#cfd8e6" font-size="22">A proven process for the jobs you repeat. Faster, too.</text>
+<text x="400" y="128" text-anchor="middle" fill="#cfd8e6" font-size="22">A repeatable process with your AI. Time back, too.</text>
 
 <rect class="card a" x="36" y="160" width="350" height="270" rx="18" fill="#17365f" stroke="#3d5f8f" stroke-width="3"/>
 <text x="211" y="202" text-anchor="middle" fill="#fff" font-size="26" font-weight="700">Artifact Studio</text>

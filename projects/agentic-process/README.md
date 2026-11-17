@@ -87,8 +87,10 @@ notice, a decision or a monthly report:
 - **Written steps.** Done the same way every time, not a lucky prompt.
 - **A test before you rely on it.** A fresh AI session tries the tool as a stranger would, and it
   is fixed until the person could act on the result as it is.
-- **The leading tools, not new ones.** It uses what you already have: your chatbot, Claude's skill
-  creator, existing plugins and skills. It adds only the structure and the steps they are missing.
+- **Reuse first.** It uses what you already have: your chatbot, Claude's skill creator, existing
+  plugins and skills. It adds only the structure and the steps they are missing.
+- **Time back.** You set the job up once. Next week starts from the saved instructions, not a
+  fresh prompt.
 
 ## The proof
 
@@ -142,8 +144,8 @@ AI agents: [`AGENTS.md`](AGENTS.md).
 
 ## Status
 
-**16 November 2026.** Built by its author with Claude. All testing so far was in Claude, including
-the blind reviews. Not yet tried in other coding agents, or by anyone else. [The evidence](quality-results/README.md).
+**17 November 2026.** Built by its author with Claude. All testing so far was in Claude, including
+the blind reviews and the try-it prompt above. Not yet tried in other coding agents, or by anyone else. [The evidence](quality-results/README.md).
 
 <img src="_build/img/bradley-ross-avatar.webp" width="110" alt="Cartoon avatar of Bradley Ross with a small friendly robot">
 
