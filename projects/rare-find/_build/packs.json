@@ -1,0 +1,8163 @@
+{
+ "version": 1,
+ "estimated": "Popularity rankings are Claude's estimate, written 17 November 2026, not survey data.",
+ "packs": [
+  {
+   "id": "fictional-weapon",
+   "prompt": "Name a fictional weapon",
+   "cat": "Pop culture",
+   "ranked": [
+    {
+     "a": "Lightsaber",
+     "aka": [
+      "light saber",
+      "light sabre",
+      "lightsabre"
+     ]
+    },
+    {
+     "a": "Mjolnir",
+     "aka": [
+      "Thor's hammer",
+      "Mjollnir"
+     ]
+    },
+    {
+     "a": "Excalibur",
+     "aka": []
+    },
+    {
+     "a": "Ray gun",
+     "aka": [
+      "raygun"
+     ]
+    },
+    {
+     "a": "Phaser",
+     "aka": []
+    },
+    {
+     "a": "Master Sword",
+     "aka": []
+    },
+    {
+     "a": "Elder Wand",
+     "aka": []
+    },
+    {
+     "a": "Blaster",
+     "aka": []
+    },
+    {
+     "a": "Batarang",
+     "aka": []
+    },
+    {
+     "a": "Captain America's shield",
+     "aka": [
+      "Cap's shield"
+     ]
+    }
+   ],
+   "gems": [
+    {
+     "a": "The Kragle",
+     "aka": [
+      "Kragle"
+     ]
+    },
+    {
+     "a": "Noisy Cricket",
+     "aka": []
+    },
+    {
+     "a": "Glamdring",
+     "aka": []
+    },
+    {
+     "a": "Vorpal sword",
+     "aka": [
+      "vorpal blade"
+     ]
+    },
+    {
+     "a": "Gravity Gun",
+     "aka": []
+    }
+   ],
+   "good": [
+    {
+     "a": "Sting",
+     "aka": []
+    },
+    {
+     "a": "Anduril",
+     "aka": [
+      "Flame of the West"
+     ]
+    },
+    {
+     "a": "Infinity Gauntlet",
+     "aka": []
+    },
+    {
+     "a": "Portal gun",
+     "aka": []
+    },
+    {
+     "a": "Buster Sword",
+     "aka": []
+    },
+    {
+     "a": "Keyblade",
+     "aka": []
+    },
+    {
+     "a": "Narsil",
+     "aka": []
+    },
+    {
+     "a": "Proton pack",
+     "aka": []
+    },
+    {
+     "a": "Lasso of Truth",
+     "aka": []
+    },
+    {
+     "a": "Gram",
+     "aka": [
+      "Balmung"
+     ]
+    },
+    {
+     "a": "Stormbreaker",
+     "aka": []
+    },
+    {
+     "a": "Sword of Gryffindor",
+     "aka": [
+      "Gryffindor's sword"
+     ]
+    },
+    {
+     "a": "BFG 9000",
+     "aka": [
+      "BFG"
+     ]
+    },
+    {
+     "a": "Bat'leth",
+     "aka": [
+      "batleth"
+     ]
+    },
+    {
+     "a": "Hookshot",
+     "aka": []
+    },
+    {
+     "a": "Needle",
+     "aka": []
+    },
+    {
+     "a": "Longclaw",
+     "aka": []
+    },
+    {
+     "a": "Hidden blade",
+     "aka": []
+    },
+    {
+     "a": "Leviathan Axe",
+     "aka": []
+    },
+    {
+     "a": "Energy sword",
+     "aka": []
+    },
+    {
+     "a": "Shrink ray",
+     "aka": []
+    },
+    {
+     "a": "Freeze ray",
+     "aka": []
+    },
+    {
+     "a": "Wand",
+     "aka": [
+      "magic wand"
+     ]
+    },
+    {
+     "a": "Sword of Omens",
+     "aka": []
+    },
+    {
+     "a": "Phaser rifle",
+     "aka": []
+    },
+    {
+     "a": "Wolverine's claws",
+     "aka": [
+      "adamantium claws"
+     ]
+    },
+    {
+     "a": "Hammer of Grabthar",
+     "aka": []
+    },
+    {
+     "a": "Plasma rifle",
+     "aka": []
+    },
+    {
+     "a": "Death ray",
+     "aka": []
+    },
+    {
+     "a": "Laser sword",
+     "aka": []
+    },
+    {
+     "a": "Disintegrator ray",
+     "aka": [
+      "disintegrator"
+     ]
+    },
+    {
+     "a": "Web shooters",
+     "aka": []
+    },
+    {
+     "a": "Spear of Destiny",
+     "aka": []
+    },
+    {
+     "a": "Trident of Poseidon",
+     "aka": [
+      "Poseidon's trident"
+     ]
+    },
+    {
+     "a": "Diamond sword",
+     "aka": []
+    },
+    {
+     "a": "Golden Gun",
+     "aka": []
+    },
+    {
+     "a": "Trident",
+     "aka": []
+    },
+    {
+     "a": "Neuralyzer",
+     "aka": []
+    },
+    {
+     "a": "Valyrian steel sword",
+     "aka": [
+      "Valyrian steel"
+     ]
+    }
+   ],
+   "wrong": [
+    "Sonic screwdriver",
+    "Spoon",
+    "Magic carpet"
+   ],
+   "note": "Legendary weapons such as Excalibur count.",
+   "top": 40
+  },
+  {
+   "id": "vegetable",
+   "prompt": "Name a vegetable",
+   "cat": "General",
+   "ranked": [
+    {
+     "a": "Carrot",
+     "aka": []
+    },
+    {
+     "a": "Broccoli",
+     "aka": []
+    },
+    {
+     "a": "Potato",
+     "aka": []
+    },
+    {
+     "a": "Lettuce",
+     "aka": []
+    },
+    {
+     "a": "Onion",
+     "aka": []
+    },
+    {
+     "a": "Cucumber",
+     "aka": []
+    },
+    {
+     "a": "Spinach",
+     "aka": []
+    },
+    {
+     "a": "Pea",
+     "aka": [
+      "peas"
+     ]
+    },
+    {
+     "a": "Tomato",
+     "aka": []
+    },
+    {
+     "a": "Pepper",
+     "aka": [
+      "bell pepper",
+      "capsicum"
+     ]
+    }
+   ],
+   "gems": [
+    {
+     "a": "Kohlrabi",
+     "aka": []
+    },
+    {
+     "a": "Salsify",
+     "aka": []
+    },
+    {
+     "a": "Romanesco",
+     "aka": []
+    },
+    {
+     "a": "Celeriac",
+     "aka": [
+      "celery root"
+     ]
+    },
+    {
+     "a": "Fiddlehead",
+     "aka": [
+      "fiddlehead fern"
+     ]
+    }
+   ],
+   "good": [
+    {
+     "a": "Kale",
+     "aka": []
+    },
+    {
+     "a": "Leek",
+     "aka": []
+    },
+    {
+     "a": "Parsnip",
+     "aka": []
+    },
+    {
+     "a": "Turnip",
+     "aka": []
+    },
+    {
+     "a": "Okra",
+     "aka": []
+    },
+    {
+     "a": "Artichoke",
+     "aka": []
+    },
+    {
+     "a": "Asparagus",
+     "aka": []
+    },
+    {
+     "a": "Bok choy",
+     "aka": [
+      "pak choi",
+      "bok choi"
+     ]
+    },
+    {
+     "a": "Swiss chard",
+     "aka": [
+      "chard"
+     ]
+    },
+    {
+     "a": "Radish",
+     "aka": []
+    },
+    {
+     "a": "Cauliflower",
+     "aka": []
+    },
+    {
+     "a": "Cabbage",
+     "aka": []
+    },
+    {
+     "a": "Celery",
+     "aka": []
+    },
+    {
+     "a": "Corn",
+     "aka": [
+      "sweetcorn",
+      "maize"
+     ]
+    },
+    {
+     "a": "Zucchini",
+     "aka": [
+      "courgette"
+     ]
+    },
+    {
+     "a": "Eggplant",
+     "aka": [
+      "aubergine"
+     ]
+    },
+    {
+     "a": "Beetroot",
+     "aka": [
+      "beet"
+     ]
+    },
+    {
+     "a": "Brussels sprout",
+     "aka": []
+    },
+    {
+     "a": "Green bean",
+     "aka": [
+      "string bean"
+     ]
+    },
+    {
+     "a": "Garlic",
+     "aka": []
+    },
+    {
+     "a": "Squash",
+     "aka": []
+    },
+    {
+     "a": "Pumpkin",
+     "aka": []
+    },
+    {
+     "a": "Rutabaga",
+     "aka": [
+      "swede"
+     ]
+    },
+    {
+     "a": "Jicama",
+     "aka": []
+    },
+    {
+     "a": "Watercress",
+     "aka": []
+    },
+    {
+     "a": "Arugula",
+     "aka": [
+      "rocket"
+     ]
+    },
+    {
+     "a": "Endive",
+     "aka": []
+    },
+    {
+     "a": "Daikon",
+     "aka": []
+    },
+    {
+     "a": "Sweet potato",
+     "aka": [
+      "yam"
+     ]
+    },
+    {
+     "a": "Mushroom",
+     "aka": []
+    },
+    {
+     "a": "Bean",
+     "aka": [
+      "beans",
+      "broad bean"
+     ]
+    },
+    {
+     "a": "Lentil",
+     "aka": [
+      "lentils"
+     ]
+    },
+    {
+     "a": "Shallot",
+     "aka": []
+    },
+    {
+     "a": "Spring onion",
+     "aka": [
+      "scallion",
+      "green onion"
+     ]
+    },
+    {
+     "a": "Butternut squash",
+     "aka": []
+    },
+    {
+     "a": "Cassava",
+     "aka": [
+      "yuca"
+     ]
+    },
+    {
+     "a": "Taro",
+     "aka": []
+    },
+    {
+     "a": "Lotus root",
+     "aka": []
+    },
+    {
+     "a": "Bamboo shoot",
+     "aka": []
+    },
+    {
+     "a": "Bean sprouts",
+     "aka": []
+    },
+    {
+     "a": "Snow peas",
+     "aka": [
+      "mangetout"
+     ]
+    },
+    {
+     "a": "Sugar snap peas",
+     "aka": []
+    },
+    {
+     "a": "Edamame",
+     "aka": []
+    },
+    {
+     "a": "Chickpea",
+     "aka": [
+      "chickpeas"
+     ]
+    },
+    {
+     "a": "Collard greens",
+     "aka": [
+      "collards"
+     ]
+    },
+    {
+     "a": "Mustard greens",
+     "aka": []
+    },
+    {
+     "a": "Fennel",
+     "aka": []
+    },
+    {
+     "a": "Horseradish",
+     "aka": []
+    },
+    {
+     "a": "Ginger",
+     "aka": []
+    },
+    {
+     "a": "Chili",
+     "aka": [
+      "chilli",
+      "chili pepper"
+     ]
+    },
+    {
+     "a": "Jalapeno",
+     "aka": []
+    },
+    {
+     "a": "Plantain",
+     "aka": []
+    },
+    {
+     "a": "Napa cabbage",
+     "aka": [
+      "Chinese cabbage"
+     ]
+    },
+    {
+     "a": "Red cabbage",
+     "aka": []
+    },
+    {
+     "a": "Water chestnut",
+     "aka": []
+    },
+    {
+     "a": "Samphire",
+     "aka": []
+    },
+    {
+     "a": "Sea kale",
+     "aka": []
+    },
+    {
+     "a": "Nettle",
+     "aka": []
+    },
+    {
+     "a": "Purslane",
+     "aka": []
+    }
+   ],
+   "wrong": [
+    "Apple",
+    "Banana",
+    "Rice",
+    "Apples",
+    "Orange",
+    "Grape",
+    "Strawberry"
+   ],
+   "note": "Tomato counts here, even though a botanist calls it a fruit.",
+   "top": 45
+  },
+  {
+   "id": "office",
+   "prompt": "Name something you find in an office",
+   "cat": "Office",
+   "ranked": [
+    {
+     "a": "Desk",
+     "aka": []
+    },
+    {
+     "a": "Chair",
+     "aka": [
+      "office chair",
+      "swivel chair",
+      "desk chair"
+     ]
+    },
+    {
+     "a": "Computer",
+     "aka": [
+      "PC",
+      "laptop"
+     ]
+    },
+    {
+     "a": "Stapler",
+     "aka": []
+    },
+    {
+     "a": "Printer",
+     "aka": []
+    },
+    {
+     "a": "Pen",
+     "aka": []
+    },
+    {
+     "a": "Paper",
+     "aka": []
+    },
+    {
+     "a": "Phone",
+     "aka": [
+      "telephone"
+     ]
+    },
+    {
+     "a": "Coffee machine",
+     "aka": [
+      "coffee maker"
+     ]
+    },
+    {
+     "a": "Whiteboard",
+     "aka": []
+    }
+   ],
+   "gems": [
+    {
+     "a": "Label maker",
+     "aka": []
+    },
+    {
+     "a": "Paper guillotine",
+     "aka": [
+      "guillotine",
+      "paper cutter"
+     ]
+    },
+    {
+     "a": "Franking machine",
+     "aka": [
+      "postage meter"
+     ]
+    },
+    {
+     "a": "Rolodex",
+     "aka": []
+    },
+    {
+     "a": "Letter opener",
+     "aka": []
+    }
+   ],
+   "good": [
+    {
+     "a": "Hole punch",
+     "aka": [
+      "hole puncher"
+     ]
+    },
+    {
+     "a": "Filing cabinet",
+     "aka": [
+      "file cabinet"
+     ]
+    },
+    {
+     "a": "Sticky notes",
+     "aka": [
+      "sticky note",
+      "post-it",
+      "post-it notes"
+     ]
+    },
+    {
+     "a": "Paper clip",
+     "aka": [
+      "paperclip"
+     ]
+    },
+    {
+     "a": "Shredder",
+     "aka": [
+      "paper shredder"
+     ]
+    },
+    {
+     "a": "Water cooler",
+     "aka": []
+    },
+    {
+     "a": "Projector",
+     "aka": []
+    },
+    {
+     "a": "Scanner",
+     "aka": []
+    },
+    {
+     "a": "Calendar",
+     "aka": []
+    },
+    {
+     "a": "Notice board",
+     "aka": [
+      "bulletin board",
+      "corkboard"
+     ]
+    },
+    {
+     "a": "Monitor",
+     "aka": []
+    },
+    {
+     "a": "Keyboard",
+     "aka": []
+    },
+    {
+     "a": "Mouse",
+     "aka": []
+    },
+    {
+     "a": "Pencil",
+     "aka": []
+    },
+    {
+     "a": "Highlighter",
+     "aka": []
+    },
+    {
+     "a": "Tape dispenser",
+     "aka": [
+      "sticky tape",
+      "tape"
+     ]
+    },
+    {
+     "a": "Rubber band",
+     "aka": [
+      "elastic band"
+     ]
+    },
+    {
+     "a": "Clipboard",
+     "aka": []
+    },
+    {
+     "a": "Calculator",
+     "aka": []
+    },
+    {
+     "a": "Envelope",
+     "aka": []
+    },
+    {
+     "a": "Office plant",
+     "aka": [
+      "plant"
+     ]
+    },
+    {
+     "a": "Coat rack",
+     "aka": []
+    },
+    {
+     "a": "Microwave",
+     "aka": []
+    },
+    {
+     "a": "Fridge",
+     "aka": [
+      "refrigerator"
+     ]
+    },
+    {
+     "a": "Kettle",
+     "aka": []
+    },
+    {
+     "a": "Fax machine",
+     "aka": [
+      "fax"
+     ]
+    },
+    {
+     "a": "Photocopier",
+     "aka": [
+      "copier",
+      "copy machine"
+     ]
+    },
+    {
+     "a": "Binder",
+     "aka": [
+      "ring binder"
+     ]
+    },
+    {
+     "a": "Desk lamp",
+     "aka": [
+      "lamp"
+     ]
+    },
+    {
+     "a": "Bin",
+     "aka": [
+      "trash can",
+      "wastebasket",
+      "garbage can"
+     ]
+    },
+    {
+     "a": "Staple remover",
+     "aka": []
+    },
+    {
+     "a": "Headphones",
+     "aka": [
+      "headset"
+     ]
+    },
+    {
+     "a": "Toilet",
+     "aka": [
+      "bathroom",
+      "restroom"
+     ]
+    },
+    {
+     "a": "Cubicle",
+     "aka": []
+    },
+    {
+     "a": "Mug",
+     "aka": [
+      "coffee mug"
+     ]
+    },
+    {
+     "a": "Water fountain",
+     "aka": []
+    },
+    {
+     "a": "Printer paper",
+     "aka": [
+      "copy paper"
+     ]
+    },
+    {
+     "a": "Stapler refill",
+     "aka": [
+      "staples"
+     ]
+    },
+    {
+     "a": "Lanyard",
+     "aka": []
+    },
+    {
+     "a": "Badge",
+     "aka": [
+      "ID badge"
+     ]
+    },
+    {
+     "a": "Notepad",
+     "aka": [
+      "notebook"
+     ]
+    },
+    {
+     "a": "Folder",
+     "aka": [
+      "file folder"
+     ]
+    },
+    {
+     "a": "Sofa",
+     "aka": [
+      "couch"
+     ]
+    },
+    {
+     "a": "Meeting room",
+     "aka": []
+    },
+    {
+     "a": "Laptop stand",
+     "aka": []
+    },
+    {
+     "a": "Mouse mat",
+     "aka": [
+      "mouse pad"
+     ]
+    },
+    {
+     "a": "Webcam",
+     "aka": []
+    },
+    {
+     "a": "Charger",
+     "aka": []
+    },
+    {
+     "a": "Cable",
+     "aka": []
+    },
+    {
+     "a": "Coffee",
+     "aka": []
+    },
+    {
+     "a": "Tea",
+     "aka": []
+    },
+    {
+     "a": "Desk drawer",
+     "aka": [
+      "drawer"
+     ]
+    },
+    {
+     "a": "Scissors",
+     "aka": []
+    },
+    {
+     "a": "Clock",
+     "aka": []
+    },
+    {
+     "a": "Ruler",
+     "aka": []
+    },
+    {
+     "a": "Marker",
+     "aka": [
+      "marker pen",
+      "sharpie"
+     ]
+    },
+    {
+     "a": "Boss",
+     "aka": [
+      "manager"
+     ]
+    },
+    {
+     "a": "Coworker",
+     "aka": [
+      "colleague",
+      "co-worker"
+     ]
+    },
+    {
+     "a": "Conference room",
+     "aka": [
+      "boardroom"
+     ]
+    },
+    {
+     "a": "Vending machine",
+     "aka": []
+    },
+    {
+     "a": "Fire extinguisher",
+     "aka": []
+    },
+    {
+     "a": "Elevator",
+     "aka": [
+      "lift"
+     ]
+    },
+    {
+     "a": "Window",
+     "aka": []
+    },
+    {
+     "a": "Stationery cupboard",
+     "aka": [
+      "supply closet"
+     ]
+    },
+    {
+     "a": "Eraser",
+     "aka": [
+      "rubber"
+     ]
+    },
+    {
+     "a": "Pencil sharpener",
+     "aka": []
+    },
+    {
+     "a": "Laminator",
+     "aka": []
+    }
+   ],
+   "wrong": [
+    "Bathtub",
+    "Bed",
+    "Lawnmower",
+    "Spanner",
+    "Painter",
+    "Pointer",
+    "Protector",
+    "Tractor"
+   ],
+   "note": "",
+   "top": 40
+  },
+  {
+   "id": "africa",
+   "prompt": "Name a country in Africa",
+   "cat": "Geography",
+   "ranked": [
+    {
+     "a": "Egypt",
+     "aka": []
+    },
+    {
+     "a": "South Africa",
+     "aka": []
+    },
+    {
+     "a": "Nigeria",
+     "aka": []
+    },
+    {
+     "a": "Kenya",
+     "aka": []
+    },
+    {
+     "a": "Morocco",
+     "aka": []
+    },
+    {
+     "a": "Ethiopia",
+     "aka": []
+    },
+    {
+     "a": "Ghana",
+     "aka": []
+    },
+    {
+     "a": "Madagascar",
+     "aka": []
+    },
+    {
+     "a": "Tanzania",
+     "aka": []
+    },
+    {
+     "a": "Algeria",
+     "aka": []
+    }
+   ],
+   "gems": [
+    {
+     "a": "Comoros",
+     "aka": []
+    },
+    {
+     "a": "Sao Tome and Principe",
+     "aka": [
+      "São Tomé and Príncipe",
+      "Sao Tome"
+     ]
+    },
+    {
+     "a": "Eswatini",
+     "aka": [
+      "Swaziland"
+     ]
+    },
+    {
+     "a": "Djibouti",
+     "aka": []
+    },
+    {
+     "a": "Equatorial Guinea",
+     "aka": []
+    }
+   ],
+   "good": [
+    {
+     "a": "Uganda",
+     "aka": []
+    },
+    {
+     "a": "Rwanda",
+     "aka": []
+    },
+    {
+     "a": "Libya",
+     "aka": []
+    },
+    {
+     "a": "Tunisia",
+     "aka": []
+    },
+    {
+     "a": "Sudan",
+     "aka": []
+    },
+    {
+     "a": "South Sudan",
+     "aka": []
+    },
+    {
+     "a": "Somalia",
+     "aka": []
+    },
+    {
+     "a": "Zimbabwe",
+     "aka": []
+    },
+    {
+     "a": "Zambia",
+     "aka": []
+    },
+    {
+     "a": "Angola",
+     "aka": []
+    },
+    {
+     "a": "Namibia",
+     "aka": []
+    },
+    {
+     "a": "Botswana",
+     "aka": []
+    },
+    {
+     "a": "Mozambique",
+     "aka": []
+    },
+    {
+     "a": "Malawi",
+     "aka": []
+    },
+    {
+     "a": "Senegal",
+     "aka": []
+    },
+    {
+     "a": "Mali",
+     "aka": []
+    },
+    {
+     "a": "Niger",
+     "aka": []
+    },
+    {
+     "a": "Chad",
+     "aka": []
+    },
+    {
+     "a": "Cameroon",
+     "aka": []
+    },
+    {
+     "a": "Ivory Coast",
+     "aka": [
+      "Côte d'Ivoire",
+      "Cote d'Ivoire"
+     ]
+    },
+    {
+     "a": "Democratic Republic of the Congo",
+     "aka": [
+      "DRC",
+      "DR Congo",
+      "Congo-Kinshasa"
+     ]
+    },
+    {
+     "a": "Republic of the Congo",
+     "aka": [
+      "Congo",
+      "Congo-Brazzaville"
+     ]
+    },
+    {
+     "a": "Gabon",
+     "aka": []
+    },
+    {
+     "a": "Liberia",
+     "aka": []
+    },
+    {
+     "a": "Sierra Leone",
+     "aka": []
+    },
+    {
+     "a": "Guinea",
+     "aka": []
+    },
+    {
+     "a": "Guinea-Bissau",
+     "aka": []
+    },
+    {
+     "a": "Burkina Faso",
+     "aka": []
+    },
+    {
+     "a": "Benin",
+     "aka": []
+    },
+    {
+     "a": "Togo",
+     "aka": []
+    },
+    {
+     "a": "Gambia",
+     "aka": [
+      "The Gambia"
+     ]
+    },
+    {
+     "a": "Mauritania",
+     "aka": []
+    },
+    {
+     "a": "Eritrea",
+     "aka": []
+    },
+    {
+     "a": "Burundi",
+     "aka": []
+    },
+    {
+     "a": "Lesotho",
+     "aka": []
+    },
+    {
+     "a": "Cape Verde",
+     "aka": [
+      "Cabo Verde"
+     ]
+    },
+    {
+     "a": "Mauritius",
+     "aka": []
+    },
+    {
+     "a": "Seychelles",
+     "aka": []
+    },
+    {
+     "a": "Central African Republic",
+     "aka": []
+    }
+   ],
+   "wrong": [
+    "Jamaica",
+    "Brazil",
+    "Dubai",
+    "Siberia",
+    "Sedan",
+    "Liberty",
+    "Nigel"
+   ],
+   "note": "",
+   "top": 60
+  },
+  {
+   "id": "breakfast",
+   "prompt": "Name a breakfast food",
+   "cat": "Food",
+   "ranked": [
+    {
+     "a": "Eggs",
+     "aka": [
+      "egg",
+      "scrambled eggs",
+      "fried eggs"
+     ]
+    },
+    {
+     "a": "Pancakes",
+     "aka": [
+      "pancake"
+     ]
+    },
+    {
+     "a": "Bacon",
+     "aka": []
+    },
+    {
+     "a": "Cereal",
+     "aka": []
+    },
+    {
+     "a": "Toast",
+     "aka": []
+    },
+    {
+     "a": "Waffles",
+     "aka": [
+      "waffle"
+     ]
+    },
+    {
+     "a": "Oatmeal",
+     "aka": [
+      "porridge",
+      "oats"
+     ]
+    },
+    {
+     "a": "French toast",
+     "aka": []
+    },
+    {
+     "a": "Yogurt",
+     "aka": [
+      "yoghurt"
+     ]
+    },
+    {
+     "a": "Sausage",
+     "aka": [
+      "sausages"
+     ]
+    }
+   ],
+   "gems": [
+    {
+     "a": "Shakshuka",
+     "aka": []
+    },
+    {
+     "a": "Congee",
+     "aka": [
+      "jook",
+      "rice porridge"
+     ]
+    },
+    {
+     "a": "Kedgeree",
+     "aka": []
+    },
+    {
+     "a": "Chilaquiles",
+     "aka": []
+    },
+    {
+     "a": "Kippers",
+     "aka": [
+      "kipper"
+     ]
+    }
+   ],
+   "good": [
+    {
+     "a": "Bagel",
+     "aka": []
+    },
+    {
+     "a": "Croissant",
+     "aka": []
+    },
+    {
+     "a": "Muffin",
+     "aka": []
+    },
+    {
+     "a": "Granola",
+     "aka": []
+    },
+    {
+     "a": "Hash browns",
+     "aka": [
+      "hash brown"
+     ]
+    },
+    {
+     "a": "Omelette",
+     "aka": [
+      "omelet"
+     ]
+    },
+    {
+     "a": "Eggs Benedict",
+     "aka": []
+    },
+    {
+     "a": "Smoothie",
+     "aka": []
+    },
+    {
+     "a": "Fruit",
+     "aka": []
+    },
+    {
+     "a": "Grits",
+     "aka": []
+    },
+    {
+     "a": "Biscuits and gravy",
+     "aka": []
+    },
+    {
+     "a": "Muesli",
+     "aka": []
+    },
+    {
+     "a": "Avocado toast",
+     "aka": []
+    },
+    {
+     "a": "Breakfast burrito",
+     "aka": []
+    },
+    {
+     "a": "Crepes",
+     "aka": [
+      "crepe"
+     ]
+    },
+    {
+     "a": "Doughnut",
+     "aka": [
+      "donut"
+     ]
+    },
+    {
+     "a": "Danish pastry",
+     "aka": [
+      "danish"
+     ]
+    },
+    {
+     "a": "English muffin",
+     "aka": []
+    },
+    {
+     "a": "Black pudding",
+     "aka": []
+    },
+    {
+     "a": "Baked beans",
+     "aka": [
+      "beans"
+     ]
+    },
+    {
+     "a": "Huevos rancheros",
+     "aka": []
+    },
+    {
+     "a": "Dosa",
+     "aka": []
+    },
+    {
+     "a": "Idli",
+     "aka": []
+    },
+    {
+     "a": "Natto",
+     "aka": []
+    },
+    {
+     "a": "Pain au chocolat",
+     "aka": []
+    },
+    {
+     "a": "Orange juice",
+     "aka": [
+      "juice",
+      "OJ"
+     ]
+    },
+    {
+     "a": "Fruit salad",
+     "aka": []
+    },
+    {
+     "a": "Bread",
+     "aka": []
+    },
+    {
+     "a": "Hash",
+     "aka": [
+      "corned beef hash"
+     ]
+    },
+    {
+     "a": "Cinnamon roll",
+     "aka": [
+      "cinnamon bun"
+     ]
+    },
+    {
+     "a": "Frittata",
+     "aka": []
+    },
+    {
+     "a": "Quiche",
+     "aka": []
+    },
+    {
+     "a": "Avocado on toast",
+     "aka": []
+    },
+    {
+     "a": "Waffle fries",
+     "aka": []
+    },
+    {
+     "a": "Pop-Tarts",
+     "aka": [
+      "pop tart"
+     ]
+    },
+    {
+     "a": "Toad in the hole",
+     "aka": []
+    },
+    {
+     "a": "Bubble and squeak",
+     "aka": []
+    },
+    {
+     "a": "Full English",
+     "aka": [
+      "full English breakfast",
+      "fry-up"
+     ]
+    },
+    {
+     "a": "Beans on toast",
+     "aka": []
+    },
+    {
+     "a": "Eggs and soldiers",
+     "aka": [
+      "soldiers"
+     ]
+    },
+    {
+     "a": "Kippers on toast",
+     "aka": []
+    },
+    {
+     "a": "Porridge oats",
+     "aka": []
+    },
+    {
+     "a": "Overnight oats",
+     "aka": []
+    },
+    {
+     "a": "Acai bowl",
+     "aka": [
+      "açaí bowl"
+     ]
+    },
+    {
+     "a": "Breakfast sandwich",
+     "aka": [
+      "bacon sandwich",
+      "bacon butty"
+     ]
+    },
+    {
+     "a": "Croque madame",
+     "aka": []
+    },
+    {
+     "a": "Churros",
+     "aka": []
+    },
+    {
+     "a": "Miso soup",
+     "aka": []
+    },
+    {
+     "a": "Rice",
+     "aka": []
+    },
+    {
+     "a": "Tamagoyaki",
+     "aka": []
+    },
+    {
+     "a": "Arepas",
+     "aka": [
+      "arepa"
+     ]
+    },
+    {
+     "a": "Pastry",
+     "aka": []
+    },
+    {
+     "a": "Cheerios",
+     "aka": []
+    },
+    {
+     "a": "Corn flakes",
+     "aka": [
+      "cornflakes"
+     ]
+    },
+    {
+     "a": "Scones",
+     "aka": [
+      "scone"
+     ]
+    },
+    {
+     "a": "Ham",
+     "aka": []
+    },
+    {
+     "a": "Poached egg",
+     "aka": [
+      "poached eggs"
+     ]
+    },
+    {
+     "a": "Boiled egg",
+     "aka": [
+      "boiled eggs"
+     ]
+    },
+    {
+     "a": "Peameal bacon",
+     "aka": [
+      "back bacon"
+     ]
+    },
+    {
+     "a": "Cream of wheat",
+     "aka": []
+    },
+    {
+     "a": "Frosted Flakes",
+     "aka": []
+    },
+    {
+     "a": "Rice Krispies",
+     "aka": []
+    },
+    {
+     "a": "Shredded wheat",
+     "aka": []
+    },
+    {
+     "a": "Bran flakes",
+     "aka": []
+    }
+   ],
+   "wrong": [
+    "Lasagne",
+    "Sushi",
+    "Steak pie",
+    "Pizza",
+    "Spaghetti"
+   ],
+   "note": "",
+   "top": 45
+  },
+  {
+   "id": "animated-film",
+   "prompt": "Name an animated film",
+   "cat": "Pop culture",
+   "ranked": [
+    {
+     "a": "Toy Story",
+     "aka": []
+    },
+    {
+     "a": "The Lion King",
+     "aka": [
+      "Lion King"
+     ]
+    },
+    {
+     "a": "Frozen",
+     "aka": []
+    },
+    {
+     "a": "Shrek",
+     "aka": []
+    },
+    {
+     "a": "Finding Nemo",
+     "aka": []
+    },
+    {
+     "a": "Up",
+     "aka": []
+    },
+    {
+     "a": "Coco",
+     "aka": []
+    },
+    {
+     "a": "Moana",
+     "aka": []
+    },
+    {
+     "a": "Aladdin",
+     "aka": []
+    },
+    {
+     "a": "The Incredibles",
+     "aka": [
+      "Incredibles"
+     ]
+    }
+   ],
+   "gems": [
+    {
+     "a": "The Triplets of Belleville",
+     "aka": [
+      "Triplets of Belleville"
+     ]
+    },
+    {
+     "a": "Song of the Sea",
+     "aka": []
+    },
+    {
+     "a": "Persepolis",
+     "aka": []
+    },
+    {
+     "a": "Mary and Max",
+     "aka": []
+    },
+    {
+     "a": "The Secret of Kells",
+     "aka": [
+      "Secret of Kells"
+     ]
+    }
+   ],
+   "good": [
+    {
+     "a": "Spirited Away",
+     "aka": []
+    },
+    {
+     "a": "My Neighbor Totoro",
+     "aka": [
+      "Totoro",
+      "My Neighbour Totoro"
+     ]
+    },
+    {
+     "a": "Zootopia",
+     "aka": [
+      "Zootropolis"
+     ]
+    },
+    {
+     "a": "Inside Out",
+     "aka": []
+    },
+    {
+     "a": "Ratatouille",
+     "aka": []
+    },
+    {
+     "a": "WALL-E",
+     "aka": [
+      "Wall E"
+     ]
+    },
+    {
+     "a": "Monsters, Inc.",
+     "aka": [
+      "Monsters Inc"
+     ]
+    },
+    {
+     "a": "Despicable Me",
+     "aka": []
+    },
+    {
+     "a": "Kung Fu Panda",
+     "aka": []
+    },
+    {
+     "a": "Tangled",
+     "aka": []
+    },
+    {
+     "a": "Beauty and the Beast",
+     "aka": []
+    },
+    {
+     "a": "The Little Mermaid",
+     "aka": [
+      "Little Mermaid"
+     ]
+    },
+    {
+     "a": "Snow White and the Seven Dwarfs",
+     "aka": [
+      "Snow White"
+     ]
+    },
+    {
+     "a": "Bambi",
+     "aka": []
+    },
+    {
+     "a": "Cinderella",
+     "aka": []
+    },
+    {
+     "a": "The Iron Giant",
+     "aka": [
+      "Iron Giant"
+     ]
+    },
+    {
+     "a": "Spider-Man: Into the Spider-Verse",
+     "aka": [
+      "Into the Spider-Verse",
+      "Spider-Verse"
+     ]
+    },
+    {
+     "a": "How to Train Your Dragon",
+     "aka": []
+    },
+    {
+     "a": "Ice Age",
+     "aka": []
+    },
+    {
+     "a": "Cars",
+     "aka": []
+    },
+    {
+     "a": "Encanto",
+     "aka": []
+    },
+    {
+     "a": "Coraline",
+     "aka": []
+    },
+    {
+     "a": "Fantastic Mr. Fox",
+     "aka": [
+      "Fantastic Mr Fox"
+     ]
+    },
+    {
+     "a": "Chicken Run",
+     "aka": []
+    },
+    {
+     "a": "The Lego Movie",
+     "aka": [
+      "Lego Movie"
+     ]
+    },
+    {
+     "a": "Akira",
+     "aka": []
+    },
+    {
+     "a": "Princess Mononoke",
+     "aka": []
+    },
+    {
+     "a": "Howl's Moving Castle",
+     "aka": []
+    },
+    {
+     "a": "Kiki's Delivery Service",
+     "aka": []
+    },
+    {
+     "a": "The Nightmare Before Christmas",
+     "aka": [
+      "Nightmare Before Christmas"
+     ]
+    },
+    {
+     "a": "Pinocchio",
+     "aka": []
+    },
+    {
+     "a": "Dumbo",
+     "aka": []
+    },
+    {
+     "a": "Mulan",
+     "aka": []
+    },
+    {
+     "a": "Hercules",
+     "aka": []
+    },
+    {
+     "a": "Tarzan",
+     "aka": []
+    },
+    {
+     "a": "Brave",
+     "aka": []
+    },
+    {
+     "a": "Soul",
+     "aka": []
+    },
+    {
+     "a": "Luca",
+     "aka": []
+    },
+    {
+     "a": "Megamind",
+     "aka": []
+    },
+    {
+     "a": "Madagascar",
+     "aka": []
+    },
+    {
+     "a": "Lilo and Stitch",
+     "aka": [
+      "Lilo & Stitch"
+     ]
+    },
+    {
+     "a": "Sleeping Beauty",
+     "aka": []
+    },
+    {
+     "a": "Peter Pan",
+     "aka": []
+    },
+    {
+     "a": "The Jungle Book",
+     "aka": [
+      "Jungle Book"
+     ]
+    },
+    {
+     "a": "Big Hero 6",
+     "aka": []
+    },
+    {
+     "a": "Wreck-It Ralph",
+     "aka": [
+      "Wreck it Ralph"
+     ]
+    },
+    {
+     "a": "Minions",
+     "aka": []
+    },
+    {
+     "a": "The Little Prince",
+     "aka": []
+    },
+    {
+     "a": "Bolt",
+     "aka": []
+    },
+    {
+     "a": "Turning Red",
+     "aka": []
+    },
+    {
+     "a": "Elemental",
+     "aka": []
+    },
+    {
+     "a": "Wish",
+     "aka": []
+    },
+    {
+     "a": "Lightyear",
+     "aka": []
+    },
+    {
+     "a": "Sing",
+     "aka": []
+    },
+    {
+     "a": "The Secret Life of Pets",
+     "aka": [
+      "Secret Life of Pets"
+     ]
+    },
+    {
+     "a": "The Croods",
+     "aka": [
+      "Croods"
+     ]
+    },
+    {
+     "a": "Trolls",
+     "aka": []
+    },
+    {
+     "a": "Rio",
+     "aka": []
+    },
+    {
+     "a": "Happy Feet",
+     "aka": []
+    },
+    {
+     "a": "Shark Tale",
+     "aka": []
+    },
+    {
+     "a": "Over the Hedge",
+     "aka": []
+    },
+    {
+     "a": "Ponyo",
+     "aka": []
+    },
+    {
+     "a": "Grave of the Fireflies",
+     "aka": []
+    },
+    {
+     "a": "Wallace and Gromit",
+     "aka": [
+      "Wallace & Gromit"
+     ]
+    },
+    {
+     "a": "Robots",
+     "aka": []
+    },
+    {
+     "a": "Flushed Away",
+     "aka": []
+    },
+    {
+     "a": "Bee Movie",
+     "aka": []
+    },
+    {
+     "a": "The Emperor's New Groove",
+     "aka": [
+      "Emperor's New Groove"
+     ]
+    },
+    {
+     "a": "Lady and the Tramp",
+     "aka": []
+    },
+    {
+     "a": "101 Dalmatians",
+     "aka": [
+      "One Hundred and One Dalmatians"
+     ]
+    },
+    {
+     "a": "The Princess and the Frog",
+     "aka": [
+      "Princess and the Frog"
+     ]
+    },
+    {
+     "a": "Treasure Planet",
+     "aka": []
+    },
+    {
+     "a": "Atlantis: The Lost Empire",
+     "aka": [
+      "Atlantis"
+     ]
+    },
+    {
+     "a": "Anastasia",
+     "aka": []
+    },
+    {
+     "a": "The Prince of Egypt",
+     "aka": [
+      "Prince of Egypt"
+     ]
+    },
+    {
+     "a": "Spirit: Stallion of the Cimarron",
+     "aka": [
+      "Spirit"
+     ]
+    },
+    {
+     "a": "The Land Before Time",
+     "aka": [
+      "Land Before Time"
+     ]
+    },
+    {
+     "a": "An American Tail",
+     "aka": [
+      "American Tail"
+     ]
+    },
+    {
+     "a": "All Dogs Go to Heaven",
+     "aka": []
+    },
+    {
+     "a": "The Bad Guys",
+     "aka": []
+    },
+    {
+     "a": "Puss in Boots",
+     "aka": []
+    },
+    {
+     "a": "Kubo and the Two Strings",
+     "aka": []
+    },
+    {
+     "a": "ParaNorman",
+     "aka": []
+    },
+    {
+     "a": "Klaus",
+     "aka": []
+    },
+    {
+     "a": "The Wild Robot",
+     "aka": [
+      "Wild Robot"
+     ]
+    },
+    {
+     "a": "Inside Out 2",
+     "aka": []
+    },
+    {
+     "a": "A Bug's Life",
+     "aka": [
+      "A Bugs Life"
+     ]
+    },
+    {
+     "a": "Pocahontas",
+     "aka": []
+    },
+    {
+     "a": "Fantasia",
+     "aka": []
+    },
+    {
+     "a": "Finding Dory",
+     "aka": []
+    },
+    {
+     "a": "Monsters University",
+     "aka": []
+    },
+    {
+     "a": "The Polar Express",
+     "aka": [
+      "Polar Express"
+     ]
+    },
+    {
+     "a": "The Super Mario Bros. Movie",
+     "aka": [
+      "Super Mario Bros Movie",
+      "Mario movie"
+     ]
+    },
+    {
+     "a": "Shrek the Third",
+     "aka": []
+    },
+    {
+     "a": "Shrek 2",
+     "aka": []
+    },
+    {
+     "a": "Toy Story 2",
+     "aka": []
+    },
+    {
+     "a": "Toy Story 3",
+     "aka": []
+    },
+    {
+     "a": "Toy Story 4",
+     "aka": []
+    },
+    {
+     "a": "Frozen II",
+     "aka": [
+      "Frozen 2"
+     ]
+    },
+    {
+     "a": "Moana 2",
+     "aka": []
+    },
+    {
+     "a": "Cars 2",
+     "aka": []
+    },
+    {
+     "a": "Incredibles 2",
+     "aka": []
+    },
+    {
+     "a": "Despicable Me 2",
+     "aka": []
+    },
+    {
+     "a": "Kung Fu Panda 2",
+     "aka": []
+    },
+    {
+     "a": "How to Train Your Dragon 2",
+     "aka": []
+    },
+    {
+     "a": "Zootopia 2",
+     "aka": []
+    }
+   ],
+   "wrong": [
+    "Jurassic Park",
+    "Titanic",
+    "Star Wars",
+    "The Matrix",
+    "Avatar",
+    "Barbie"
+   ],
+   "note": "",
+   "top": 40
+  },
+  {
+   "id": "instrument",
+   "prompt": "Name a musical instrument",
+   "cat": "General",
+   "ranked": [
+    {
+     "a": "Piano",
+     "aka": [
+      "grand piano"
+     ]
+    },
+    {
+     "a": "Guitar",
+     "aka": [
+      "electric guitar",
+      "acoustic guitar"
+     ]
+    },
+    {
+     "a": "Drums",
+     "aka": [
+      "drum",
+      "drum kit"
+     ]
+    },
+    {
+     "a": "Violin",
+     "aka": [
+      "fiddle"
+     ]
+    },
+    {
+     "a": "Flute",
+     "aka": []
+    },
+    {
+     "a": "Trumpet",
+     "aka": []
+    },
+    {
+     "a": "Saxophone",
+     "aka": [
+      "sax"
+     ]
+    },
+    {
+     "a": "Cello",
+     "aka": []
+    },
+    {
+     "a": "Clarinet",
+     "aka": []
+    },
+    {
+     "a": "Harp",
+     "aka": []
+    }
+   ],
+   "gems": [
+    {
+     "a": "Theremin",
+     "aka": []
+    },
+    {
+     "a": "Hurdy-gurdy",
+     "aka": []
+    },
+    {
+     "a": "Didgeridoo",
+     "aka": [
+      "didjeridu"
+     ]
+    },
+    {
+     "a": "Ocarina",
+     "aka": []
+    },
+    {
+     "a": "Nyckelharpa",
+     "aka": []
+    }
+   ],
+   "good": [
+    {
+     "a": "Bass guitar",
+     "aka": [
+      "bass"
+     ]
+    },
+    {
+     "a": "Ukulele",
+     "aka": [
+      "uke"
+     ]
+    },
+    {
+     "a": "Trombone",
+     "aka": []
+    },
+    {
+     "a": "Tuba",
+     "aka": []
+    },
+    {
+     "a": "Oboe",
+     "aka": []
+    },
+    {
+     "a": "Bassoon",
+     "aka": []
+    },
+    {
+     "a": "French horn",
+     "aka": [
+      "horn"
+     ]
+    },
+    {
+     "a": "Banjo",
+     "aka": []
+    },
+    {
+     "a": "Mandolin",
+     "aka": []
+    },
+    {
+     "a": "Harmonica",
+     "aka": []
+    },
+    {
+     "a": "Accordion",
+     "aka": []
+    },
+    {
+     "a": "Xylophone",
+     "aka": []
+    },
+    {
+     "a": "Bagpipes",
+     "aka": [
+      "bagpipe"
+     ]
+    },
+    {
+     "a": "Viola",
+     "aka": []
+    },
+    {
+     "a": "Double bass",
+     "aka": [
+      "upright bass",
+      "contrabass"
+     ]
+    },
+    {
+     "a": "Organ",
+     "aka": []
+    },
+    {
+     "a": "Keyboard",
+     "aka": []
+    },
+    {
+     "a": "Tambourine",
+     "aka": []
+    },
+    {
+     "a": "Triangle",
+     "aka": []
+    },
+    {
+     "a": "Cymbals",
+     "aka": [
+      "cymbal"
+     ]
+    },
+    {
+     "a": "Sitar",
+     "aka": []
+    },
+    {
+     "a": "Harpsichord",
+     "aka": []
+    },
+    {
+     "a": "Recorder",
+     "aka": []
+    },
+    {
+     "a": "Glockenspiel",
+     "aka": []
+    },
+    {
+     "a": "Marimba",
+     "aka": []
+    },
+    {
+     "a": "Kazoo",
+     "aka": []
+    },
+    {
+     "a": "Steel drum",
+     "aka": [
+      "steelpan",
+      "steel pan"
+     ]
+    },
+    {
+     "a": "Bongos",
+     "aka": [
+      "bongo"
+     ]
+    },
+    {
+     "a": "Tabla",
+     "aka": []
+    },
+    {
+     "a": "Koto",
+     "aka": []
+    },
+    {
+     "a": "Erhu",
+     "aka": []
+    },
+    {
+     "a": "Lute",
+     "aka": []
+    },
+    {
+     "a": "Piccolo",
+     "aka": []
+    },
+    {
+     "a": "Euphonium",
+     "aka": []
+    },
+    {
+     "a": "Cowbell",
+     "aka": []
+    },
+    {
+     "a": "Synthesizer",
+     "aka": [
+      "synth"
+     ]
+    },
+    {
+     "a": "Maracas",
+     "aka": [
+      "maraca"
+     ]
+    },
+    {
+     "a": "Castanets",
+     "aka": []
+    },
+    {
+     "a": "Timpani",
+     "aka": [
+      "kettle drum"
+     ]
+    },
+    {
+     "a": "Bugle",
+     "aka": []
+    },
+    {
+     "a": "Gong",
+     "aka": []
+    },
+    {
+     "a": "Bell",
+     "aka": [
+      "bells"
+     ]
+    },
+    {
+     "a": "Chimes",
+     "aka": [
+      "wind chimes"
+     ]
+    },
+    {
+     "a": "Pan flute",
+     "aka": [
+      "pan pipes",
+      "panpipes"
+     ]
+    },
+    {
+     "a": "Balalaika",
+     "aka": []
+    },
+    {
+     "a": "Bouzouki",
+     "aka": []
+    },
+    {
+     "a": "Djembe",
+     "aka": []
+    },
+    {
+     "a": "Cajon",
+     "aka": []
+    },
+    {
+     "a": "Melodica",
+     "aka": []
+    },
+    {
+     "a": "Zither",
+     "aka": []
+    },
+    {
+     "a": "Dulcimer",
+     "aka": []
+    },
+    {
+     "a": "Autoharp",
+     "aka": []
+    },
+    {
+     "a": "Hang drum",
+     "aka": [
+      "handpan"
+     ]
+    },
+    {
+     "a": "Vibraphone",
+     "aka": []
+    },
+    {
+     "a": "Celesta",
+     "aka": []
+    },
+    {
+     "a": "Washboard",
+     "aka": []
+    },
+    {
+     "a": "Spoons",
+     "aka": []
+    },
+    {
+     "a": "Lyre",
+     "aka": []
+    },
+    {
+     "a": "Snare drum",
+     "aka": []
+    },
+    {
+     "a": "Tin whistle",
+     "aka": [
+      "penny whistle"
+     ]
+    },
+    {
+     "a": "Pipe organ",
+     "aka": []
+    },
+    {
+     "a": "Congas",
+     "aka": [
+      "conga"
+     ]
+    },
+    {
+     "a": "Bass drum",
+     "aka": []
+    },
+    {
+     "a": "Hammond organ",
+     "aka": []
+    },
+    {
+     "a": "Clavichord",
+     "aka": []
+    },
+    {
+     "a": "Sousaphone",
+     "aka": []
+    },
+    {
+     "a": "Flugelhorn",
+     "aka": []
+    },
+    {
+     "a": "Cornet",
+     "aka": []
+    }
+   ],
+   "wrong": [
+    "Microphone",
+    "Speaker",
+    "Metronome"
+   ],
+   "note": "",
+   "top": 45
+  },
+  {
+   "id": "board-game",
+   "prompt": "Name a board game",
+   "cat": "Games",
+   "ranked": [
+    {
+     "a": "Monopoly",
+     "aka": []
+    },
+    {
+     "a": "Chess",
+     "aka": []
+    },
+    {
+     "a": "Scrabble",
+     "aka": []
+    },
+    {
+     "a": "Clue",
+     "aka": [
+      "Cluedo"
+     ]
+    },
+    {
+     "a": "Checkers",
+     "aka": [
+      "draughts"
+     ]
+    },
+    {
+     "a": "Risk",
+     "aka": []
+    },
+    {
+     "a": "Catan",
+     "aka": [
+      "Settlers of Catan"
+     ]
+    },
+    {
+     "a": "Trivial Pursuit",
+     "aka": []
+    },
+    {
+     "a": "Battleship",
+     "aka": []
+    },
+    {
+     "a": "Snakes and Ladders",
+     "aka": [
+      "Chutes and Ladders"
+     ]
+    }
+   ],
+   "gems": [
+    {
+     "a": "Hive",
+     "aka": []
+    },
+    {
+     "a": "Tigris and Euphrates",
+     "aka": [
+      "Tigris & Euphrates"
+     ]
+    },
+    {
+     "a": "Agricola",
+     "aka": []
+    },
+    {
+     "a": "Azul",
+     "aka": []
+    },
+    {
+     "a": "Twilight Struggle",
+     "aka": []
+    }
+   ],
+   "good": [
+    {
+     "a": "Go",
+     "aka": []
+    },
+    {
+     "a": "Backgammon",
+     "aka": []
+    },
+    {
+     "a": "Ticket to Ride",
+     "aka": []
+    },
+    {
+     "a": "Pandemic",
+     "aka": []
+    },
+    {
+     "a": "Carcassonne",
+     "aka": []
+    },
+    {
+     "a": "Mancala",
+     "aka": []
+    },
+    {
+     "a": "Connect Four",
+     "aka": [
+      "Connect 4"
+     ]
+    },
+    {
+     "a": "Sorry!",
+     "aka": [
+      "Sorry"
+     ]
+    },
+    {
+     "a": "Candy Land",
+     "aka": [
+      "Candyland"
+     ]
+    },
+    {
+     "a": "Operation",
+     "aka": []
+    },
+    {
+     "a": "The Game of Life",
+     "aka": [
+      "Game of Life",
+      "Life"
+     ]
+    },
+    {
+     "a": "Guess Who?",
+     "aka": [
+      "Guess Who"
+     ]
+    },
+    {
+     "a": "Stratego",
+     "aka": []
+    },
+    {
+     "a": "Othello",
+     "aka": [
+      "Reversi"
+     ]
+    },
+    {
+     "a": "Mahjong",
+     "aka": [
+      "mah-jong",
+      "mahjongg"
+     ]
+    },
+    {
+     "a": "Ludo",
+     "aka": [
+      "Parcheesi",
+      "Pachisi"
+     ]
+    },
+    {
+     "a": "Chinese checkers",
+     "aka": []
+    },
+    {
+     "a": "Codenames",
+     "aka": []
+    },
+    {
+     "a": "Pictionary",
+     "aka": []
+    },
+    {
+     "a": "Mouse Trap",
+     "aka": []
+    },
+    {
+     "a": "Wingspan",
+     "aka": []
+    },
+    {
+     "a": "Splendor",
+     "aka": []
+    },
+    {
+     "a": "Terraforming Mars",
+     "aka": []
+    },
+    {
+     "a": "Gloomhaven",
+     "aka": []
+    },
+    {
+     "a": "Sequence",
+     "aka": []
+    },
+    {
+     "a": "Scotland Yard",
+     "aka": []
+    },
+    {
+     "a": "Diplomacy",
+     "aka": []
+    },
+    {
+     "a": "Shogi",
+     "aka": []
+    },
+    {
+     "a": "Xiangqi",
+     "aka": [
+      "Chinese chess"
+     ]
+    },
+    {
+     "a": "Kingdomino",
+     "aka": []
+    },
+    {
+     "a": "Boggle",
+     "aka": []
+    },
+    {
+     "a": "Mastermind",
+     "aka": []
+    },
+    {
+     "a": "Trouble",
+     "aka": []
+    },
+    {
+     "a": "Kerplunk",
+     "aka": []
+    },
+    {
+     "a": "Hungry Hungry Hippos",
+     "aka": []
+    },
+    {
+     "a": "Ticket to Ride Europe",
+     "aka": []
+    },
+    {
+     "a": "Cranium",
+     "aka": []
+    },
+    {
+     "a": "Blokus",
+     "aka": []
+    },
+    {
+     "a": "Qwirkle",
+     "aka": []
+    },
+    {
+     "a": "Patchwork",
+     "aka": []
+    },
+    {
+     "a": "Root",
+     "aka": []
+    },
+    {
+     "a": "Everdell",
+     "aka": []
+    },
+    {
+     "a": "Cascadia",
+     "aka": []
+    },
+    {
+     "a": "Concordia",
+     "aka": []
+    },
+    {
+     "a": "Puerto Rico",
+     "aka": []
+    },
+    {
+     "a": "Power Grid",
+     "aka": []
+    },
+    {
+     "a": "Small World",
+     "aka": []
+    },
+    {
+     "a": "King of Tokyo",
+     "aka": []
+    },
+    {
+     "a": "Dixit",
+     "aka": []
+    },
+    {
+     "a": "Labyrinth",
+     "aka": []
+    },
+    {
+     "a": "Hare and Tortoise",
+     "aka": []
+    },
+    {
+     "a": "Nine Men's Morris",
+     "aka": []
+    },
+    {
+     "a": "Fox and Geese",
+     "aka": []
+    },
+    {
+     "a": "Halma",
+     "aka": []
+    },
+    {
+     "a": "Senet",
+     "aka": []
+    },
+    {
+     "a": "Ur",
+     "aka": [
+      "Royal Game of Ur"
+     ]
+    }
+   ],
+   "wrong": [
+    "Poker",
+    "Twister",
+    "Tetris",
+    "Solitaire",
+    "Charades",
+    "Hide and seek"
+   ],
+   "note": "",
+   "top": 40
+  },
+  {
+   "id": "superhero",
+   "prompt": "Name a superhero",
+   "cat": "Pop culture",
+   "ranked": [
+    {
+     "a": "Superman",
+     "aka": []
+    },
+    {
+     "a": "Batman",
+     "aka": []
+    },
+    {
+     "a": "Spider-Man",
+     "aka": [
+      "Spiderman"
+     ]
+    },
+    {
+     "a": "Iron Man",
+     "aka": [
+      "Ironman"
+     ]
+    },
+    {
+     "a": "Wonder Woman",
+     "aka": []
+    },
+    {
+     "a": "Captain America",
+     "aka": []
+    },
+    {
+     "a": "Hulk",
+     "aka": [
+      "Incredible Hulk"
+     ]
+    },
+    {
+     "a": "Thor",
+     "aka": []
+    },
+    {
+     "a": "Black Panther",
+     "aka": []
+    },
+    {
+     "a": "Wolverine",
+     "aka": []
+    }
+   ],
+   "gems": [
+    {
+     "a": "Squirrel Girl",
+     "aka": []
+    },
+    {
+     "a": "Booster Gold",
+     "aka": []
+    },
+    {
+     "a": "Ambush Bug",
+     "aka": []
+    },
+    {
+     "a": "Arm-Fall-Off-Boy",
+     "aka": []
+    },
+    {
+     "a": "The Tick",
+     "aka": [
+      "Tick"
+     ]
+    }
+   ],
+   "good": [
+    {
+     "a": "The Flash",
+     "aka": [
+      "Flash"
+     ]
+    },
+    {
+     "a": "Aquaman",
+     "aka": []
+    },
+    {
+     "a": "Green Lantern",
+     "aka": []
+    },
+    {
+     "a": "Black Widow",
+     "aka": []
+    },
+    {
+     "a": "Hawkeye",
+     "aka": []
+    },
+    {
+     "a": "Captain Marvel",
+     "aka": []
+    },
+    {
+     "a": "Ms. Marvel",
+     "aka": [
+      "Ms Marvel",
+      "Kamala Khan"
+     ]
+    },
+    {
+     "a": "Doctor Strange",
+     "aka": [
+      "Dr Strange",
+      "Dr. Strange"
+     ]
+    },
+    {
+     "a": "Ant-Man",
+     "aka": [
+      "Antman"
+     ]
+    },
+    {
+     "a": "Deadpool",
+     "aka": []
+    },
+    {
+     "a": "Storm",
+     "aka": []
+    },
+    {
+     "a": "Cyclops",
+     "aka": []
+    },
+    {
+     "a": "Daredevil",
+     "aka": []
+    },
+    {
+     "a": "Green Arrow",
+     "aka": []
+    },
+    {
+     "a": "Supergirl",
+     "aka": []
+    },
+    {
+     "a": "Batgirl",
+     "aka": []
+    },
+    {
+     "a": "Robin",
+     "aka": []
+    },
+    {
+     "a": "Nightwing",
+     "aka": []
+    },
+    {
+     "a": "Cyborg",
+     "aka": []
+    },
+    {
+     "a": "Shazam",
+     "aka": []
+    },
+    {
+     "a": "Silver Surfer",
+     "aka": []
+    },
+    {
+     "a": "Vision",
+     "aka": []
+    },
+    {
+     "a": "Scarlet Witch",
+     "aka": []
+    },
+    {
+     "a": "Falcon",
+     "aka": []
+    },
+    {
+     "a": "Moon Knight",
+     "aka": []
+    },
+    {
+     "a": "Luke Cage",
+     "aka": []
+    },
+    {
+     "a": "She-Hulk",
+     "aka": []
+    },
+    {
+     "a": "Hellboy",
+     "aka": []
+    },
+    {
+     "a": "Mr. Incredible",
+     "aka": [
+      "Mr Incredible"
+     ]
+    },
+    {
+     "a": "Static",
+     "aka": [
+      "Static Shock"
+     ]
+    },
+    {
+     "a": "Blue Beetle",
+     "aka": []
+    },
+    {
+     "a": "Martian Manhunter",
+     "aka": []
+    },
+    {
+     "a": "Gambit",
+     "aka": []
+    },
+    {
+     "a": "Rogue",
+     "aka": []
+    },
+    {
+     "a": "Jean Grey",
+     "aka": []
+    },
+    {
+     "a": "Mister Fantastic",
+     "aka": [
+      "Mr. Fantastic",
+      "Mr Fantastic"
+     ]
+    },
+    {
+     "a": "Human Torch",
+     "aka": []
+    },
+    {
+     "a": "Invisible Woman",
+     "aka": []
+    },
+    {
+     "a": "The Thing",
+     "aka": [
+      "Thing"
+     ]
+    },
+    {
+     "a": "Groot",
+     "aka": []
+    },
+    {
+     "a": "Rocket Raccoon",
+     "aka": [
+      "Rocket"
+     ]
+    },
+    {
+     "a": "Star-Lord",
+     "aka": [
+      "Starlord"
+     ]
+    },
+    {
+     "a": "Miles Morales",
+     "aka": []
+    },
+    {
+     "a": "Batwoman",
+     "aka": []
+    },
+    {
+     "a": "Iron Fist",
+     "aka": []
+    },
+    {
+     "a": "Jessica Jones",
+     "aka": []
+    },
+    {
+     "a": "Wasp",
+     "aka": [
+      "the wasp"
+     ]
+    },
+    {
+     "a": "Nova",
+     "aka": []
+    },
+    {
+     "a": "Captain Britain",
+     "aka": []
+    },
+    {
+     "a": "Valkyrie",
+     "aka": []
+    },
+    {
+     "a": "Mighty Mouse",
+     "aka": []
+    },
+    {
+     "a": "Underdog",
+     "aka": []
+    },
+    {
+     "a": "Plastic Man",
+     "aka": []
+    },
+    {
+     "a": "Power Girl",
+     "aka": []
+    },
+    {
+     "a": "Zatanna",
+     "aka": []
+    },
+    {
+     "a": "Raven",
+     "aka": []
+    },
+    {
+     "a": "Beast Boy",
+     "aka": []
+    },
+    {
+     "a": "Starfire",
+     "aka": []
+    },
+    {
+     "a": "Kid Flash",
+     "aka": []
+    },
+    {
+     "a": "Hawkman",
+     "aka": []
+    },
+    {
+     "a": "Hawkgirl",
+     "aka": []
+    },
+    {
+     "a": "Black Canary",
+     "aka": []
+    },
+    {
+     "a": "Huntress",
+     "aka": []
+    },
+    {
+     "a": "Firestorm",
+     "aka": []
+    },
+    {
+     "a": "The Atom",
+     "aka": [
+      "Atom"
+     ]
+    },
+    {
+     "a": "Captain Atom",
+     "aka": []
+    },
+    {
+     "a": "Elastigirl",
+     "aka": [
+      "Mrs. Incredible"
+     ]
+    },
+    {
+     "a": "Frozone",
+     "aka": []
+    },
+    {
+     "a": "Dash",
+     "aka": []
+    },
+    {
+     "a": "Violet",
+     "aka": []
+    },
+    {
+     "a": "Bucky",
+     "aka": [
+      "Winter Soldier"
+     ]
+    },
+    {
+     "a": "War Machine",
+     "aka": []
+    },
+    {
+     "a": "Spider-Gwen",
+     "aka": [
+      "Ghost-Spider"
+     ]
+    },
+    {
+     "a": "Venom",
+     "aka": []
+    },
+    {
+     "a": "Professor X",
+     "aka": [
+      "Charles Xavier"
+     ]
+    },
+    {
+     "a": "Colossus",
+     "aka": []
+    },
+    {
+     "a": "Nightcrawler",
+     "aka": []
+    },
+    {
+     "a": "Kitty Pryde",
+     "aka": [
+      "Shadowcat"
+     ]
+    },
+    {
+     "a": "Psylocke",
+     "aka": []
+    },
+    {
+     "a": "Iceman",
+     "aka": []
+    },
+    {
+     "a": "Angel",
+     "aka": []
+    },
+    {
+     "a": "Havok",
+     "aka": []
+    },
+    {
+     "a": "Dazzler",
+     "aka": []
+    },
+    {
+     "a": "Black Bolt",
+     "aka": []
+    },
+    {
+     "a": "Medusa",
+     "aka": []
+    },
+    {
+     "a": "Quicksilver",
+     "aka": []
+    },
+    {
+     "a": "Blade",
+     "aka": []
+    },
+    {
+     "a": "Ghost Rider",
+     "aka": []
+    },
+    {
+     "a": "The Punisher",
+     "aka": [
+      "Punisher"
+     ]
+    },
+    {
+     "a": "Spider-Woman",
+     "aka": [
+      "Spider Woman"
+     ]
+    },
+    {
+     "a": "Gamora",
+     "aka": []
+    },
+    {
+     "a": "Drax",
+     "aka": []
+    },
+    {
+     "a": "Mantis",
+     "aka": []
+    },
+    {
+     "a": "Nebula",
+     "aka": []
+    },
+    {
+     "a": "Okoye",
+     "aka": []
+    },
+    {
+     "a": "Shuri",
+     "aka": []
+    }
+   ],
+   "wrong": [
+    "Joker",
+    "Darth Vader",
+    "Sherlock Holmes",
+    "Catwoman",
+    "Lex Luthor",
+    "Thanos",
+    "Magneto"
+   ],
+   "note": "",
+   "top": 40
+  },
+  {
+   "id": "dog-breed",
+   "prompt": "Name a dog breed",
+   "cat": "Animals",
+   "ranked": [
+    {
+     "a": "Labrador Retriever",
+     "aka": [
+      "Labrador",
+      "Lab"
+     ]
+    },
+    {
+     "a": "German Shepherd",
+     "aka": [
+      "Alsatian"
+     ]
+    },
+    {
+     "a": "Golden Retriever",
+     "aka": [
+      "Golden"
+     ]
+    },
+    {
+     "a": "Poodle",
+     "aka": []
+    },
+    {
+     "a": "Bulldog",
+     "aka": [
+      "English Bulldog"
+     ]
+    },
+    {
+     "a": "Beagle",
+     "aka": []
+    },
+    {
+     "a": "Chihuahua",
+     "aka": [
+      "chiwawa"
+     ]
+    },
+    {
+     "a": "Siberian Husky",
+     "aka": [
+      "Husky"
+     ]
+    },
+    {
+     "a": "Dachshund",
+     "aka": [
+      "sausage dog",
+      "wiener dog"
+     ]
+    },
+    {
+     "a": "Rottweiler",
+     "aka": [
+      "rottie"
+     ]
+    }
+   ],
+   "gems": [
+    {
+     "a": "Xoloitzcuintli",
+     "aka": [
+      "Xolo",
+      "Mexican hairless"
+     ]
+    },
+    {
+     "a": "Lagotto Romagnolo",
+     "aka": [
+      "Lagotto"
+     ]
+    },
+    {
+     "a": "Bergamasco",
+     "aka": []
+    },
+    {
+     "a": "Mudi",
+     "aka": []
+    },
+    {
+     "a": "Otterhound",
+     "aka": []
+    }
+   ],
+   "good": [
+    {
+     "a": "Boxer",
+     "aka": []
+    },
+    {
+     "a": "Pug",
+     "aka": []
+    },
+    {
+     "a": "Shih Tzu",
+     "aka": []
+    },
+    {
+     "a": "Border Collie",
+     "aka": []
+    },
+    {
+     "a": "Great Dane",
+     "aka": []
+    },
+    {
+     "a": "Dalmatian",
+     "aka": []
+    },
+    {
+     "a": "Corgi",
+     "aka": [
+      "Welsh Corgi",
+      "Pembroke Welsh Corgi"
+     ]
+    },
+    {
+     "a": "Doberman",
+     "aka": [
+      "Dobermann",
+      "Doberman Pinscher"
+     ]
+    },
+    {
+     "a": "Yorkshire Terrier",
+     "aka": [
+      "Yorkie"
+     ]
+    },
+    {
+     "a": "French Bulldog",
+     "aka": [
+      "Frenchie"
+     ]
+    },
+    {
+     "a": "Cocker Spaniel",
+     "aka": []
+    },
+    {
+     "a": "Pomeranian",
+     "aka": []
+    },
+    {
+     "a": "Saint Bernard",
+     "aka": [
+      "St Bernard",
+      "St. Bernard"
+     ]
+    },
+    {
+     "a": "Greyhound",
+     "aka": []
+    },
+    {
+     "a": "Whippet",
+     "aka": []
+    },
+    {
+     "a": "Schnauzer",
+     "aka": []
+    },
+    {
+     "a": "Bernese Mountain Dog",
+     "aka": []
+    },
+    {
+     "a": "Australian Shepherd",
+     "aka": [
+      "Aussie"
+     ]
+    },
+    {
+     "a": "Shiba Inu",
+     "aka": [
+      "Shiba"
+     ]
+    },
+    {
+     "a": "Akita",
+     "aka": []
+    },
+    {
+     "a": "Basset Hound",
+     "aka": []
+    },
+    {
+     "a": "Bloodhound",
+     "aka": []
+    },
+    {
+     "a": "Maltese",
+     "aka": []
+    },
+    {
+     "a": "Newfoundland",
+     "aka": [
+      "newfie"
+     ]
+    },
+    {
+     "a": "Samoyed",
+     "aka": []
+    },
+    {
+     "a": "Weimaraner",
+     "aka": []
+    },
+    {
+     "a": "Vizsla",
+     "aka": []
+    },
+    {
+     "a": "Jack Russell Terrier",
+     "aka": [
+      "Jack Russell"
+     ]
+    },
+    {
+     "a": "Cavalier King Charles Spaniel",
+     "aka": [
+      "Cavalier"
+     ]
+    },
+    {
+     "a": "Bichon Frise",
+     "aka": [
+      "bichon"
+     ]
+    },
+    {
+     "a": "Afghan Hound",
+     "aka": []
+    },
+    {
+     "a": "Collie",
+     "aka": [
+      "Rough Collie"
+     ]
+    },
+    {
+     "a": "Chow Chow",
+     "aka": []
+    },
+    {
+     "a": "Basenji",
+     "aka": []
+    },
+    {
+     "a": "Pit bull",
+     "aka": [
+      "pitbull",
+      "American Pit Bull Terrier"
+     ]
+    },
+    {
+     "a": "Staffordshire Bull Terrier",
+     "aka": [
+      "Staffy"
+     ]
+    },
+    {
+     "a": "Labradoodle",
+     "aka": []
+    },
+    {
+     "a": "Cockapoo",
+     "aka": []
+    },
+    {
+     "a": "Mastiff",
+     "aka": []
+    },
+    {
+     "a": "Boston Terrier",
+     "aka": []
+    },
+    {
+     "a": "Old English Sheepdog",
+     "aka": [
+      "sheepdog"
+     ]
+    },
+    {
+     "a": "Goldendoodle",
+     "aka": []
+    },
+    {
+     "a": "Cavapoo",
+     "aka": []
+    },
+    {
+     "a": "Cavachon",
+     "aka": []
+    },
+    {
+     "a": "Puggle",
+     "aka": []
+    },
+    {
+     "a": "Bull Terrier",
+     "aka": []
+    },
+    {
+     "a": "Irish Setter",
+     "aka": [
+      "red setter"
+     ]
+    },
+    {
+     "a": "English Setter",
+     "aka": []
+    },
+    {
+     "a": "Springer Spaniel",
+     "aka": []
+    },
+    {
+     "a": "Pointer",
+     "aka": []
+    },
+    {
+     "a": "Great Pyrenees",
+     "aka": []
+    },
+    {
+     "a": "Malamute",
+     "aka": [
+      "Alaskan Malamute"
+     ]
+    },
+    {
+     "a": "Shar Pei",
+     "aka": []
+    },
+    {
+     "a": "Lhasa Apso",
+     "aka": []
+    },
+    {
+     "a": "Pekingese",
+     "aka": []
+    },
+    {
+     "a": "Papillon",
+     "aka": []
+    },
+    {
+     "a": "Havanese",
+     "aka": []
+    },
+    {
+     "a": "Bearded Collie",
+     "aka": []
+    },
+    {
+     "a": "Scottish Terrier",
+     "aka": [
+      "Scottie"
+     ]
+    },
+    {
+     "a": "West Highland Terrier",
+     "aka": [
+      "Westie"
+     ]
+    },
+    {
+     "a": "Airedale Terrier",
+     "aka": [
+      "Airedale"
+     ]
+    },
+    {
+     "a": "Irish Wolfhound",
+     "aka": []
+    },
+    {
+     "a": "Saluki",
+     "aka": []
+    },
+    {
+     "a": "Rhodesian Ridgeback",
+     "aka": []
+    },
+    {
+     "a": "Leonberger",
+     "aka": []
+    },
+    {
+     "a": "Keeshond",
+     "aka": []
+    },
+    {
+     "a": "Norwegian Elkhound",
+     "aka": []
+    },
+    {
+     "a": "Dogue de Bordeaux",
+     "aka": []
+    },
+    {
+     "a": "Cane Corso",
+     "aka": []
+    },
+    {
+     "a": "Italian Greyhound",
+     "aka": []
+    }
+   ],
+   "wrong": [
+    "Persian",
+    "Siamese",
+    "Pony",
+    "Maine Coon",
+    "Wolf",
+    "Fox"
+   ],
+   "note": "",
+   "top": 40
+  },
+  {
+   "id": "fruit",
+   "prompt": "Name a fruit",
+   "cat": "Food",
+   "ranked": [
+    {
+     "a": "Apple",
+     "aka": []
+    },
+    {
+     "a": "Banana",
+     "aka": []
+    },
+    {
+     "a": "Orange",
+     "aka": []
+    },
+    {
+     "a": "Strawberry",
+     "aka": []
+    },
+    {
+     "a": "Grape",
+     "aka": [
+      "grapes"
+     ]
+    },
+    {
+     "a": "Mango",
+     "aka": []
+    },
+    {
+     "a": "Pineapple",
+     "aka": []
+    },
+    {
+     "a": "Watermelon",
+     "aka": []
+    },
+    {
+     "a": "Peach",
+     "aka": []
+    },
+    {
+     "a": "Pear",
+     "aka": []
+    }
+   ],
+   "gems": [
+    {
+     "a": "Durian",
+     "aka": []
+    },
+    {
+     "a": "Rambutan",
+     "aka": []
+    },
+    {
+     "a": "Mangosteen",
+     "aka": []
+    },
+    {
+     "a": "Salak",
+     "aka": [
+      "snake fruit"
+     ]
+    },
+    {
+     "a": "Cherimoya",
+     "aka": [
+      "custard apple"
+     ]
+    }
+   ],
+   "good": [
+    {
+     "a": "Cherry",
+     "aka": []
+    },
+    {
+     "a": "Blueberry",
+     "aka": []
+    },
+    {
+     "a": "Raspberry",
+     "aka": []
+    },
+    {
+     "a": "Blackberry",
+     "aka": []
+    },
+    {
+     "a": "Kiwi",
+     "aka": [
+      "kiwifruit"
+     ]
+    },
+    {
+     "a": "Lemon",
+     "aka": []
+    },
+    {
+     "a": "Lime",
+     "aka": []
+    },
+    {
+     "a": "Grapefruit",
+     "aka": []
+    },
+    {
+     "a": "Plum",
+     "aka": []
+    },
+    {
+     "a": "Apricot",
+     "aka": []
+    },
+    {
+     "a": "Nectarine",
+     "aka": []
+    },
+    {
+     "a": "Pomegranate",
+     "aka": []
+    },
+    {
+     "a": "Papaya",
+     "aka": []
+    },
+    {
+     "a": "Passion fruit",
+     "aka": []
+    },
+    {
+     "a": "Coconut",
+     "aka": []
+    },
+    {
+     "a": "Fig",
+     "aka": []
+    },
+    {
+     "a": "Date",
+     "aka": []
+    },
+    {
+     "a": "Lychee",
+     "aka": [
+      "litchi"
+     ]
+    },
+    {
+     "a": "Guava",
+     "aka": []
+    },
+    {
+     "a": "Cantaloupe",
+     "aka": [
+      "melon"
+     ]
+    },
+    {
+     "a": "Honeydew",
+     "aka": []
+    },
+    {
+     "a": "Cranberry",
+     "aka": []
+    },
+    {
+     "a": "Gooseberry",
+     "aka": []
+    },
+    {
+     "a": "Clementine",
+     "aka": [
+      "mandarin",
+      "tangerine"
+     ]
+    },
+    {
+     "a": "Avocado",
+     "aka": []
+    },
+    {
+     "a": "Persimmon",
+     "aka": []
+    },
+    {
+     "a": "Quince",
+     "aka": []
+    },
+    {
+     "a": "Dragon fruit",
+     "aka": [
+      "pitaya"
+     ]
+    },
+    {
+     "a": "Star fruit",
+     "aka": [
+      "carambola"
+     ]
+    },
+    {
+     "a": "Jackfruit",
+     "aka": []
+    },
+    {
+     "a": "Kumquat",
+     "aka": []
+    },
+    {
+     "a": "Blackcurrant",
+     "aka": []
+    },
+    {
+     "a": "Elderberry",
+     "aka": []
+    },
+    {
+     "a": "Mulberry",
+     "aka": []
+    },
+    {
+     "a": "Tomato",
+     "aka": []
+    }
+   ],
+   "wrong": [
+    "Potato",
+    "Carrot",
+    "Peanut"
+   ],
+   "note": "Tomato and avocado count: a botanist calls them fruit.",
+   "top": 45
+  },
+  {
+   "id": "sport",
+   "prompt": "Name a sport played with a ball",
+   "cat": "Sport",
+   "ranked": [
+    {
+     "a": "Soccer",
+     "aka": [
+      "football"
+     ]
+    },
+    {
+     "a": "Basketball",
+     "aka": []
+    },
+    {
+     "a": "Baseball",
+     "aka": []
+    },
+    {
+     "a": "Tennis",
+     "aka": []
+    },
+    {
+     "a": "Golf",
+     "aka": []
+    },
+    {
+     "a": "Volleyball",
+     "aka": []
+    },
+    {
+     "a": "American football",
+     "aka": [
+      "gridiron"
+     ]
+    },
+    {
+     "a": "Cricket",
+     "aka": []
+    },
+    {
+     "a": "Rugby",
+     "aka": []
+    },
+    {
+     "a": "Table tennis",
+     "aka": [
+      "ping pong"
+     ]
+    }
+   ],
+   "gems": [
+    {
+     "a": "Sepak takraw",
+     "aka": []
+    },
+    {
+     "a": "Jai alai",
+     "aka": []
+    },
+    {
+     "a": "Pelota",
+     "aka": []
+    },
+    {
+     "a": "Roundnet",
+     "aka": [
+      "spikeball"
+     ]
+    },
+    {
+     "a": "Hurling",
+     "aka": []
+    }
+   ],
+   "good": [
+    {
+     "a": "Hockey",
+     "aka": [
+      "field hockey"
+     ]
+    },
+    {
+     "a": "Handball",
+     "aka": []
+    },
+    {
+     "a": "Water polo",
+     "aka": []
+    },
+    {
+     "a": "Netball",
+     "aka": []
+    },
+    {
+     "a": "Squash",
+     "aka": []
+    },
+    {
+     "a": "Badminton",
+     "aka": []
+    },
+    {
+     "a": "Bowling",
+     "aka": [
+      "ten-pin bowling"
+     ]
+    },
+    {
+     "a": "Softball",
+     "aka": []
+    },
+    {
+     "a": "Lacrosse",
+     "aka": []
+    },
+    {
+     "a": "Polo",
+     "aka": []
+    },
+    {
+     "a": "Dodgeball",
+     "aka": []
+    },
+    {
+     "a": "Kickball",
+     "aka": []
+    },
+    {
+     "a": "Pickleball",
+     "aka": []
+    },
+    {
+     "a": "Racquetball",
+     "aka": []
+    },
+    {
+     "a": "Snooker",
+     "aka": []
+    },
+    {
+     "a": "Pool",
+     "aka": [
+      "billiards"
+     ]
+    },
+    {
+     "a": "Croquet",
+     "aka": []
+    },
+    {
+     "a": "Bocce",
+     "aka": [
+      "boules",
+      "petanque"
+     ]
+    },
+    {
+     "a": "Gaelic football",
+     "aka": []
+    },
+    {
+     "a": "Australian rules football",
+     "aka": [
+      "AFL",
+      "Aussie rules"
+     ]
+    },
+    {
+     "a": "Futsal",
+     "aka": []
+    },
+    {
+     "a": "Beach volleyball",
+     "aka": []
+    },
+    {
+     "a": "Wiffle ball",
+     "aka": []
+    },
+    {
+     "a": "Rounders",
+     "aka": []
+    },
+    {
+     "a": "Paddle tennis",
+     "aka": [
+      "padel"
+     ]
+    },
+    {
+     "a": "Korfball",
+     "aka": []
+    },
+    {
+     "a": "Goalball",
+     "aka": []
+    },
+    {
+     "a": "Footvolley",
+     "aka": []
+    },
+    {
+     "a": "Teqball",
+     "aka": []
+    },
+    {
+     "a": "Sitting volleyball",
+     "aka": []
+    }
+   ],
+   "wrong": [
+    "Swimming",
+    "Boxing",
+    "Ice hockey"
+   ],
+   "note": "Badminton's shuttlecock counts here.",
+   "top": 45
+  },
+  {
+   "id": "dessert",
+   "prompt": "Name a dessert",
+   "cat": "Food",
+   "ranked": [
+    {
+     "a": "Ice cream",
+     "aka": []
+    },
+    {
+     "a": "Chocolate cake",
+     "aka": [
+      "cake"
+     ]
+    },
+    {
+     "a": "Cheesecake",
+     "aka": []
+    },
+    {
+     "a": "Apple pie",
+     "aka": [
+      "pie"
+     ]
+    },
+    {
+     "a": "Brownie",
+     "aka": [
+      "brownies"
+     ]
+    },
+    {
+     "a": "Cookies",
+     "aka": [
+      "cookie"
+     ]
+    },
+    {
+     "a": "Tiramisu",
+     "aka": []
+    },
+    {
+     "a": "Pudding",
+     "aka": []
+    },
+    {
+     "a": "Cupcake",
+     "aka": [
+      "cupcakes"
+     ]
+    },
+    {
+     "a": "Donut",
+     "aka": [
+      "doughnut"
+     ]
+    }
+   ],
+   "gems": [
+    {
+     "a": "Pavlova",
+     "aka": []
+    },
+    {
+     "a": "Baklava",
+     "aka": []
+    },
+    {
+     "a": "Kulfi",
+     "aka": []
+    },
+    {
+     "a": "Mochi",
+     "aka": []
+    },
+    {
+     "a": "Clafoutis",
+     "aka": []
+    }
+   ],
+   "good": [
+    {
+     "a": "Creme brulee",
+     "aka": [
+      "crème brûlée"
+     ]
+    },
+    {
+     "a": "Panna cotta",
+     "aka": []
+    },
+    {
+     "a": "Trifle",
+     "aka": []
+    },
+    {
+     "a": "Sundae",
+     "aka": []
+    },
+    {
+     "a": "Milkshake",
+     "aka": []
+    },
+    {
+     "a": "Mousse",
+     "aka": [
+      "chocolate mousse"
+     ]
+    },
+    {
+     "a": "Pecan pie",
+     "aka": []
+    },
+    {
+     "a": "Pumpkin pie",
+     "aka": []
+    },
+    {
+     "a": "Key lime pie",
+     "aka": []
+    },
+    {
+     "a": "Lemon tart",
+     "aka": []
+    },
+    {
+     "a": "Eclair",
+     "aka": [
+      "eclairs"
+     ]
+    },
+    {
+     "a": "Macarons",
+     "aka": [
+      "macaron"
+     ]
+    },
+    {
+     "a": "Gelato",
+     "aka": []
+    },
+    {
+     "a": "Sorbet",
+     "aka": []
+    },
+    {
+     "a": "Fudge",
+     "aka": []
+    },
+    {
+     "a": "Banana split",
+     "aka": []
+    },
+    {
+     "a": "Sticky toffee pudding",
+     "aka": []
+    },
+    {
+     "a": "Bread pudding",
+     "aka": []
+    },
+    {
+     "a": "Rice pudding",
+     "aka": []
+    },
+    {
+     "a": "Crumble",
+     "aka": [
+      "apple crumble"
+     ]
+    },
+    {
+     "a": "Cobbler",
+     "aka": []
+    },
+    {
+     "a": "Profiteroles",
+     "aka": []
+    },
+    {
+     "a": "Churros",
+     "aka": []
+    },
+    {
+     "a": "Flan",
+     "aka": []
+    },
+    {
+     "a": "Carrot cake",
+     "aka": []
+    },
+    {
+     "a": "Red velvet cake",
+     "aka": []
+    },
+    {
+     "a": "Black Forest cake",
+     "aka": [
+      "black forest gateau"
+     ]
+    },
+    {
+     "a": "Victoria sponge",
+     "aka": []
+    },
+    {
+     "a": "Jelly",
+     "aka": [
+      "jello"
+     ]
+    },
+    {
+     "a": "Strudel",
+     "aka": [
+      "apple strudel"
+     ]
+    },
+    {
+     "a": "Cannoli",
+     "aka": []
+    },
+    {
+     "a": "Gulab jamun",
+     "aka": []
+    },
+    {
+     "a": "Tres leches",
+     "aka": []
+    },
+    {
+     "a": "Eton mess",
+     "aka": []
+    },
+    {
+     "a": "Banoffee pie",
+     "aka": []
+    },
+    {
+     "a": "Frozen yogurt",
+     "aka": [
+      "froyo"
+     ]
+    },
+    {
+     "a": "Popsicle",
+     "aka": [
+      "ice lolly"
+     ]
+    }
+   ],
+   "wrong": [
+    "Lasagne",
+    "Pizza",
+    "Salad"
+   ],
+   "note": "",
+   "top": 40
+  },
+  {
+   "id": "bird",
+   "prompt": "Name a bird",
+   "cat": "Animals",
+   "ranked": [
+    {
+     "a": "Eagle",
+     "aka": []
+    },
+    {
+     "a": "Robin",
+     "aka": []
+    },
+    {
+     "a": "Owl",
+     "aka": []
+    },
+    {
+     "a": "Penguin",
+     "aka": []
+    },
+    {
+     "a": "Parrot",
+     "aka": []
+    },
+    {
+     "a": "Sparrow",
+     "aka": []
+    },
+    {
+     "a": "Crow",
+     "aka": []
+    },
+    {
+     "a": "Pigeon",
+     "aka": [
+      "dove"
+     ]
+    },
+    {
+     "a": "Flamingo",
+     "aka": []
+    },
+    {
+     "a": "Hawk",
+     "aka": []
+    }
+   ],
+   "gems": [
+    {
+     "a": "Hoatzin",
+     "aka": []
+    },
+    {
+     "a": "Shoebill",
+     "aka": []
+    },
+    {
+     "a": "Kakapo",
+     "aka": []
+    },
+    {
+     "a": "Potoo",
+     "aka": []
+    },
+    {
+     "a": "Lyrebird",
+     "aka": []
+    }
+   ],
+   "good": [
+    {
+     "a": "Blue jay",
+     "aka": [
+      "jay"
+     ]
+    },
+    {
+     "a": "Cardinal",
+     "aka": []
+    },
+    {
+     "a": "Hummingbird",
+     "aka": []
+    },
+    {
+     "a": "Swan",
+     "aka": []
+    },
+    {
+     "a": "Duck",
+     "aka": []
+    },
+    {
+     "a": "Goose",
+     "aka": []
+    },
+    {
+     "a": "Ostrich",
+     "aka": []
+    },
+    {
+     "a": "Emu",
+     "aka": []
+    },
+    {
+     "a": "Peacock",
+     "aka": [
+      "peafowl"
+     ]
+    },
+    {
+     "a": "Seagull",
+     "aka": [
+      "gull"
+     ]
+    },
+    {
+     "a": "Pelican",
+     "aka": []
+    },
+    {
+     "a": "Stork",
+     "aka": []
+    },
+    {
+     "a": "Heron",
+     "aka": []
+    },
+    {
+     "a": "Woodpecker",
+     "aka": []
+    },
+    {
+     "a": "Kingfisher",
+     "aka": []
+    },
+    {
+     "a": "Toucan",
+     "aka": []
+    },
+    {
+     "a": "Falcon",
+     "aka": []
+    },
+    {
+     "a": "Vulture",
+     "aka": []
+    },
+    {
+     "a": "Raven",
+     "aka": []
+    },
+    {
+     "a": "Magpie",
+     "aka": []
+    },
+    {
+     "a": "Starling",
+     "aka": []
+    },
+    {
+     "a": "Swallow",
+     "aka": []
+    },
+    {
+     "a": "Finch",
+     "aka": []
+    },
+    {
+     "a": "Canary",
+     "aka": []
+    },
+    {
+     "a": "Budgie",
+     "aka": [
+      "budgerigar"
+     ]
+    },
+    {
+     "a": "Cockatoo",
+     "aka": []
+    },
+    {
+     "a": "Macaw",
+     "aka": []
+    },
+    {
+     "a": "Albatross",
+     "aka": []
+    },
+    {
+     "a": "Puffin",
+     "aka": []
+    },
+    {
+     "a": "Kiwi",
+     "aka": []
+    },
+    {
+     "a": "Turkey",
+     "aka": []
+    },
+    {
+     "a": "Chicken",
+     "aka": [
+      "hen",
+      "rooster"
+     ]
+    },
+    {
+     "a": "Quail",
+     "aka": []
+    },
+    {
+     "a": "Pheasant",
+     "aka": []
+    },
+    {
+     "a": "Wren",
+     "aka": []
+    },
+    {
+     "a": "Blackbird",
+     "aka": []
+    },
+    {
+     "a": "Nightingale",
+     "aka": []
+    },
+    {
+     "a": "Osprey",
+     "aka": []
+    },
+    {
+     "a": "Condor",
+     "aka": []
+    },
+    {
+     "a": "Roadrunner",
+     "aka": []
+    },
+    {
+     "a": "Cuckoo",
+     "aka": []
+    },
+    {
+     "a": "Kookaburra",
+     "aka": []
+    },
+    {
+     "a": "Loon",
+     "aka": []
+    },
+    {
+     "a": "Crane",
+     "aka": []
+    },
+    {
+     "a": "Ibis",
+     "aka": []
+    },
+    {
+     "a": "Cassowary",
+     "aka": []
+    },
+    {
+     "a": "Bald eagle",
+     "aka": []
+    }
+   ],
+   "wrong": [
+    "Bat",
+    "Butterfly",
+    "Penguin suit"
+   ],
+   "note": "",
+   "top": 40
+  },
+  {
+   "id": "pizza",
+   "prompt": "Name a pizza topping",
+   "cat": "Food",
+   "ranked": [
+    {
+     "a": "Pepperoni",
+     "aka": []
+    },
+    {
+     "a": "Cheese",
+     "aka": [
+      "mozzarella"
+     ]
+    },
+    {
+     "a": "Mushroom",
+     "aka": [
+      "mushrooms"
+     ]
+    },
+    {
+     "a": "Sausage",
+     "aka": []
+    },
+    {
+     "a": "Onion",
+     "aka": [
+      "onions"
+     ]
+    },
+    {
+     "a": "Pineapple",
+     "aka": []
+    },
+    {
+     "a": "Ham",
+     "aka": []
+    },
+    {
+     "a": "Olives",
+     "aka": [
+      "olive"
+     ]
+    },
+    {
+     "a": "Green pepper",
+     "aka": [
+      "peppers",
+      "bell pepper"
+     ]
+    },
+    {
+     "a": "Bacon",
+     "aka": []
+    }
+   ],
+   "gems": [
+    {
+     "a": "Anchovy",
+     "aka": [
+      "anchovies"
+     ]
+    },
+    {
+     "a": "Truffle",
+     "aka": []
+    },
+    {
+     "a": "Fig",
+     "aka": [
+      "figs"
+     ]
+    },
+    {
+     "a": "Potato",
+     "aka": []
+    },
+    {
+     "a": "Clams",
+     "aka": []
+    }
+   ],
+   "good": [
+    {
+     "a": "Spinach",
+     "aka": []
+    },
+    {
+     "a": "Chicken",
+     "aka": []
+    },
+    {
+     "a": "Jalapeno",
+     "aka": [
+      "jalapenos"
+     ]
+    },
+    {
+     "a": "Tomato",
+     "aka": [
+      "tomatoes"
+     ]
+    },
+    {
+     "a": "Basil",
+     "aka": []
+    },
+    {
+     "a": "Garlic",
+     "aka": []
+    },
+    {
+     "a": "Artichoke",
+     "aka": []
+    },
+    {
+     "a": "Feta",
+     "aka": []
+    },
+    {
+     "a": "Salami",
+     "aka": []
+    },
+    {
+     "a": "Egg",
+     "aka": []
+    },
+    {
+     "a": "Sweetcorn",
+     "aka": [
+      "corn"
+     ]
+    },
+    {
+     "a": "Tuna",
+     "aka": []
+    },
+    {
+     "a": "Ground beef",
+     "aka": [
+      "beef"
+     ]
+    },
+    {
+     "a": "Meatballs",
+     "aka": []
+    },
+    {
+     "a": "Prosciutto",
+     "aka": []
+    },
+    {
+     "a": "Arugula",
+     "aka": [
+      "rocket"
+     ]
+    },
+    {
+     "a": "Sun-dried tomatoes",
+     "aka": []
+    },
+    {
+     "a": "Goat cheese",
+     "aka": [
+      "goats cheese"
+     ]
+    },
+    {
+     "a": "Ricotta",
+     "aka": []
+    },
+    {
+     "a": "Parmesan",
+     "aka": []
+    },
+    {
+     "a": "Pesto",
+     "aka": []
+    },
+    {
+     "a": "Chorizo",
+     "aka": []
+    },
+    {
+     "a": "Shrimp",
+     "aka": [
+      "prawns"
+     ]
+    },
+    {
+     "a": "Barbecue chicken",
+     "aka": [
+      "bbq chicken"
+     ]
+    },
+    {
+     "a": "Red onion",
+     "aka": []
+    },
+    {
+     "a": "Capers",
+     "aka": []
+    },
+    {
+     "a": "Broccoli",
+     "aka": []
+    },
+    {
+     "a": "Eggplant",
+     "aka": [
+      "aubergine"
+     ]
+    },
+    {
+     "a": "Zucchini",
+     "aka": [
+      "courgette"
+     ]
+    },
+    {
+     "a": "Hot honey",
+     "aka": [
+      "honey"
+     ]
+    },
+    {
+     "a": "Chili flakes",
+     "aka": [
+      "red pepper flakes"
+     ]
+    },
+    {
+     "a": "Gorgonzola",
+     "aka": []
+    },
+    {
+     "a": "Nduja",
+     "aka": []
+    },
+    {
+     "a": "Pulled pork",
+     "aka": []
+    },
+    {
+     "a": "Smoked salmon",
+     "aka": []
+    },
+    {
+     "a": "Kale",
+     "aka": []
+    }
+   ],
+   "wrong": [
+    "Chocolate",
+    "Ice cream",
+    "Gravy"
+   ],
+   "note": "",
+   "top": 55
+  },
+  {
+   "id": "city-europe",
+   "prompt": "Name a city in Europe",
+   "cat": "Geography",
+   "ranked": [
+    {
+     "a": "Paris",
+     "aka": []
+    },
+    {
+     "a": "London",
+     "aka": []
+    },
+    {
+     "a": "Rome",
+     "aka": []
+    },
+    {
+     "a": "Berlin",
+     "aka": []
+    },
+    {
+     "a": "Madrid",
+     "aka": []
+    },
+    {
+     "a": "Barcelona",
+     "aka": []
+    },
+    {
+     "a": "Amsterdam",
+     "aka": []
+    },
+    {
+     "a": "Vienna",
+     "aka": []
+    },
+    {
+     "a": "Prague",
+     "aka": []
+    },
+    {
+     "a": "Athens",
+     "aka": []
+    }
+   ],
+   "gems": [
+    {
+     "a": "Tallinn",
+     "aka": []
+    },
+    {
+     "a": "Ljubljana",
+     "aka": []
+    },
+    {
+     "a": "Valletta",
+     "aka": []
+    },
+    {
+     "a": "Bratislava",
+     "aka": []
+    },
+    {
+     "a": "Tbilisi",
+     "aka": []
+    }
+   ],
+   "good": [
+    {
+     "a": "Lisbon",
+     "aka": []
+    },
+    {
+     "a": "Dublin",
+     "aka": []
+    },
+    {
+     "a": "Brussels",
+     "aka": []
+    },
+    {
+     "a": "Copenhagen",
+     "aka": []
+    },
+    {
+     "a": "Stockholm",
+     "aka": []
+    },
+    {
+     "a": "Oslo",
+     "aka": []
+    },
+    {
+     "a": "Helsinki",
+     "aka": []
+    },
+    {
+     "a": "Budapest",
+     "aka": []
+    },
+    {
+     "a": "Warsaw",
+     "aka": []
+    },
+    {
+     "a": "Krakow",
+     "aka": [
+      "Kraków"
+     ]
+    },
+    {
+     "a": "Munich",
+     "aka": []
+    },
+    {
+     "a": "Milan",
+     "aka": []
+    },
+    {
+     "a": "Venice",
+     "aka": []
+    },
+    {
+     "a": "Florence",
+     "aka": []
+    },
+    {
+     "a": "Naples",
+     "aka": []
+    },
+    {
+     "a": "Seville",
+     "aka": []
+    },
+    {
+     "a": "Valencia",
+     "aka": []
+    },
+    {
+     "a": "Porto",
+     "aka": []
+    },
+    {
+     "a": "Edinburgh",
+     "aka": []
+    },
+    {
+     "a": "Manchester",
+     "aka": []
+    },
+    {
+     "a": "Liverpool",
+     "aka": []
+    },
+    {
+     "a": "Glasgow",
+     "aka": []
+    },
+    {
+     "a": "Zurich",
+     "aka": []
+    },
+    {
+     "a": "Geneva",
+     "aka": []
+    },
+    {
+     "a": "Hamburg",
+     "aka": []
+    },
+    {
+     "a": "Frankfurt",
+     "aka": []
+    },
+    {
+     "a": "Lyon",
+     "aka": []
+    },
+    {
+     "a": "Marseille",
+     "aka": []
+    },
+    {
+     "a": "Nice",
+     "aka": []
+    },
+    {
+     "a": "Bucharest",
+     "aka": []
+    },
+    {
+     "a": "Sofia",
+     "aka": []
+    },
+    {
+     "a": "Belgrade",
+     "aka": []
+    },
+    {
+     "a": "Zagreb",
+     "aka": []
+    },
+    {
+     "a": "Dubrovnik",
+     "aka": []
+    },
+    {
+     "a": "Riga",
+     "aka": []
+    },
+    {
+     "a": "Vilnius",
+     "aka": []
+    },
+    {
+     "a": "Reykjavik",
+     "aka": []
+    },
+    {
+     "a": "Istanbul",
+     "aka": []
+    },
+    {
+     "a": "Kyiv",
+     "aka": [
+      "Kiev"
+     ]
+    },
+    {
+     "a": "Salzburg",
+     "aka": []
+    },
+    {
+     "a": "Bruges",
+     "aka": []
+    },
+    {
+     "a": "Rotterdam",
+     "aka": []
+    },
+    {
+     "a": "Antwerp",
+     "aka": []
+    },
+    {
+     "a": "Cologne",
+     "aka": []
+    },
+    {
+     "a": "Birmingham",
+     "aka": []
+    },
+    {
+     "a": "Bordeaux",
+     "aka": []
+    },
+    {
+     "a": "Bologna",
+     "aka": []
+    },
+    {
+     "a": "Turin",
+     "aka": []
+    },
+    {
+     "a": "Granada",
+     "aka": []
+    },
+    {
+     "a": "Malaga",
+     "aka": [
+      "Málaga"
+     ]
+    },
+    {
+     "a": "Gothenburg",
+     "aka": []
+    },
+    {
+     "a": "Bergen",
+     "aka": []
+    }
+   ],
+   "wrong": [
+    "New York",
+    "Tokyo",
+    "Cairo"
+   ],
+   "note": "Istanbul counts: part of it is in Europe.",
+   "top": 45
+  },
+  {
+   "id": "colour",
+   "prompt": "Name a colour",
+   "cat": "General",
+   "ranked": [
+    {
+     "a": "Red",
+     "aka": []
+    },
+    {
+     "a": "Blue",
+     "aka": []
+    },
+    {
+     "a": "Green",
+     "aka": []
+    },
+    {
+     "a": "Yellow",
+     "aka": []
+    },
+    {
+     "a": "Purple",
+     "aka": []
+    },
+    {
+     "a": "Orange",
+     "aka": []
+    },
+    {
+     "a": "Pink",
+     "aka": []
+    },
+    {
+     "a": "Black",
+     "aka": []
+    },
+    {
+     "a": "White",
+     "aka": []
+    },
+    {
+     "a": "Brown",
+     "aka": []
+    }
+   ],
+   "gems": [
+    {
+     "a": "Puce",
+     "aka": []
+    },
+    {
+     "a": "Vermilion",
+     "aka": []
+    },
+    {
+     "a": "Chartreuse",
+     "aka": []
+    },
+    {
+     "a": "Cerulean",
+     "aka": []
+    },
+    {
+     "a": "Gamboge",
+     "aka": []
+    }
+   ],
+   "good": [
+    {
+     "a": "Grey",
+     "aka": [
+      "gray"
+     ]
+    },
+    {
+     "a": "Teal",
+     "aka": []
+    },
+    {
+     "a": "Turquoise",
+     "aka": []
+    },
+    {
+     "a": "Magenta",
+     "aka": []
+    },
+    {
+     "a": "Indigo",
+     "aka": []
+    },
+    {
+     "a": "Violet",
+     "aka": []
+    },
+    {
+     "a": "Maroon",
+     "aka": []
+    },
+    {
+     "a": "Navy",
+     "aka": [
+      "navy blue"
+     ]
+    },
+    {
+     "a": "Beige",
+     "aka": []
+    },
+    {
+     "a": "Gold",
+     "aka": []
+    },
+    {
+     "a": "Silver",
+     "aka": []
+    },
+    {
+     "a": "Crimson",
+     "aka": []
+    },
+    {
+     "a": "Scarlet",
+     "aka": []
+    },
+    {
+     "a": "Lavender",
+     "aka": []
+    },
+    {
+     "a": "Lilac",
+     "aka": []
+    },
+    {
+     "a": "Cyan",
+     "aka": []
+    },
+    {
+     "a": "Olive",
+     "aka": []
+    },
+    {
+     "a": "Lime",
+     "aka": []
+    },
+    {
+     "a": "Tan",
+     "aka": []
+    },
+    {
+     "a": "Cream",
+     "aka": []
+    },
+    {
+     "a": "Ivory",
+     "aka": []
+    },
+    {
+     "a": "Peach",
+     "aka": []
+    },
+    {
+     "a": "Coral",
+     "aka": []
+    },
+    {
+     "a": "Salmon",
+     "aka": []
+    },
+    {
+     "a": "Burgundy",
+     "aka": []
+    },
+    {
+     "a": "Aqua",
+     "aka": []
+    },
+    {
+     "a": "Amber",
+     "aka": []
+    },
+    {
+     "a": "Bronze",
+     "aka": []
+    },
+    {
+     "a": "Khaki",
+     "aka": []
+    },
+    {
+     "a": "Ochre",
+     "aka": []
+    },
+    {
+     "a": "Sienna",
+     "aka": []
+    },
+    {
+     "a": "Taupe",
+     "aka": []
+    },
+    {
+     "a": "Fuchsia",
+     "aka": []
+    },
+    {
+     "a": "Mauve",
+     "aka": []
+    },
+    {
+     "a": "Mint",
+     "aka": []
+    },
+    {
+     "a": "Emerald",
+     "aka": []
+    },
+    {
+     "a": "Sapphire",
+     "aka": []
+    },
+    {
+     "a": "Ruby",
+     "aka": []
+    },
+    {
+     "a": "Charcoal",
+     "aka": []
+    },
+    {
+     "a": "Plum",
+     "aka": []
+    },
+    {
+     "a": "Rust",
+     "aka": []
+    },
+    {
+     "a": "Sky blue",
+     "aka": []
+    },
+    {
+     "a": "Mustard",
+     "aka": []
+    },
+    {
+     "a": "Jade",
+     "aka": []
+    },
+    {
+     "a": "Azure",
+     "aka": []
+    },
+    {
+     "a": "Periwinkle",
+     "aka": []
+    },
+    {
+     "a": "Copper",
+     "aka": []
+    },
+    {
+     "a": "Cobalt",
+     "aka": []
+    },
+    {
+     "a": "Ultramarine",
+     "aka": []
+    }
+   ],
+   "wrong": [
+    "Rainbow",
+    "Glitter",
+    "Shiny"
+   ],
+   "note": "Shades count, such as Teal.",
+   "top": 40
+  },
+  {
+   "id": "zoo-animal",
+   "prompt": "Name a zoo animal",
+   "cat": "Animals",
+   "ranked": [
+    {
+     "a": "Lion",
+     "aka": []
+    },
+    {
+     "a": "Elephant",
+     "aka": []
+    },
+    {
+     "a": "Giraffe",
+     "aka": []
+    },
+    {
+     "a": "Monkey",
+     "aka": []
+    },
+    {
+     "a": "Tiger",
+     "aka": []
+    },
+    {
+     "a": "Zebra",
+     "aka": []
+    },
+    {
+     "a": "Penguin",
+     "aka": []
+    },
+    {
+     "a": "Bear",
+     "aka": []
+    },
+    {
+     "a": "Gorilla",
+     "aka": []
+    },
+    {
+     "a": "Hippo",
+     "aka": [
+      "hippopotamus"
+     ]
+    }
+   ],
+   "gems": [
+    {
+     "a": "Okapi",
+     "aka": []
+    },
+    {
+     "a": "Tapir",
+     "aka": []
+    },
+    {
+     "a": "Binturong",
+     "aka": []
+    },
+    {
+     "a": "Aye-aye",
+     "aka": []
+    },
+    {
+     "a": "Fossa",
+     "aka": []
+    }
+   ],
+   "good": [
+    {
+     "a": "Rhino",
+     "aka": [
+      "rhinoceros"
+     ]
+    },
+    {
+     "a": "Kangaroo",
+     "aka": []
+    },
+    {
+     "a": "Koala",
+     "aka": []
+    },
+    {
+     "a": "Panda",
+     "aka": [
+      "giant panda"
+     ]
+    },
+    {
+     "a": "Polar bear",
+     "aka": []
+    },
+    {
+     "a": "Cheetah",
+     "aka": []
+    },
+    {
+     "a": "Leopard",
+     "aka": []
+    },
+    {
+     "a": "Jaguar",
+     "aka": []
+    },
+    {
+     "a": "Flamingo",
+     "aka": []
+    },
+    {
+     "a": "Ostrich",
+     "aka": []
+    },
+    {
+     "a": "Crocodile",
+     "aka": []
+    },
+    {
+     "a": "Alligator",
+     "aka": []
+    },
+    {
+     "a": "Snake",
+     "aka": []
+    },
+    {
+     "a": "Chimpanzee",
+     "aka": [
+      "chimp"
+     ]
+    },
+    {
+     "a": "Orangutan",
+     "aka": []
+    },
+    {
+     "a": "Camel",
+     "aka": []
+    },
+    {
+     "a": "Meerkat",
+     "aka": []
+    },
+    {
+     "a": "Lemur",
+     "aka": []
+    },
+    {
+     "a": "Sloth",
+     "aka": []
+    },
+    {
+     "a": "Hyena",
+     "aka": []
+    },
+    {
+     "a": "Wolf",
+     "aka": []
+    },
+    {
+     "a": "Seal",
+     "aka": []
+    },
+    {
+     "a": "Sea lion",
+     "aka": []
+    },
+    {
+     "a": "Otter",
+     "aka": []
+    },
+    {
+     "a": "Red panda",
+     "aka": []
+    },
+    {
+     "a": "Komodo dragon",
+     "aka": []
+    },
+    {
+     "a": "Tortoise",
+     "aka": []
+    },
+    {
+     "a": "Peacock",
+     "aka": []
+    },
+    {
+     "a": "Parrot",
+     "aka": []
+    },
+    {
+     "a": "Baboon",
+     "aka": []
+    },
+    {
+     "a": "Antelope",
+     "aka": []
+    },
+    {
+     "a": "Bison",
+     "aka": []
+    },
+    {
+     "a": "Wildebeest",
+     "aka": []
+    },
+    {
+     "a": "Warthog",
+     "aka": []
+    },
+    {
+     "a": "Llama",
+     "aka": []
+    },
+    {
+     "a": "Alpaca",
+     "aka": []
+    },
+    {
+     "a": "Armadillo",
+     "aka": []
+    },
+    {
+     "a": "Anteater",
+     "aka": []
+    },
+    {
+     "a": "Porcupine",
+     "aka": []
+    },
+    {
+     "a": "Gazelle",
+     "aka": []
+    },
+    {
+     "a": "Emu",
+     "aka": []
+    },
+    {
+     "a": "Bat",
+     "aka": []
+    },
+    {
+     "a": "Iguana",
+     "aka": []
+    },
+    {
+     "a": "Python",
+     "aka": []
+    },
+    {
+     "a": "Capybara",
+     "aka": []
+    },
+    {
+     "a": "Gibbon",
+     "aka": []
+    },
+    {
+     "a": "Hornbill",
+     "aka": []
+    },
+    {
+     "a": "Pelican",
+     "aka": []
+    },
+    {
+     "a": "Cassowary",
+     "aka": []
+    },
+    {
+     "a": "Snow leopard",
+     "aka": []
+    }
+   ],
+   "wrong": [
+    "Unicorn",
+    "Dragon",
+    "Dinosaur"
+   ],
+   "top": 45
+  },
+  {
+   "id": "weather",
+   "prompt": "Name a type of weather",
+   "cat": "General",
+   "ranked": [
+    {
+     "a": "Rain",
+     "aka": [
+      "rainy"
+     ]
+    },
+    {
+     "a": "Snow",
+     "aka": [
+      "snowy"
+     ]
+    },
+    {
+     "a": "Sun",
+     "aka": [
+      "sunny",
+      "sunshine"
+     ]
+    },
+    {
+     "a": "Wind",
+     "aka": [
+      "windy"
+     ]
+    },
+    {
+     "a": "Storm",
+     "aka": [
+      "stormy"
+     ]
+    },
+    {
+     "a": "Fog",
+     "aka": [
+      "foggy"
+     ]
+    },
+    {
+     "a": "Hail",
+     "aka": []
+    },
+    {
+     "a": "Thunder",
+     "aka": []
+    },
+    {
+     "a": "Lightning",
+     "aka": []
+    },
+    {
+     "a": "Cloud",
+     "aka": [
+      "cloudy",
+      "clouds"
+     ]
+    }
+   ],
+   "gems": [
+    {
+     "a": "Graupel",
+     "aka": []
+    },
+    {
+     "a": "Virga",
+     "aka": []
+    },
+    {
+     "a": "Haboob",
+     "aka": []
+    },
+    {
+     "a": "Diamond dust",
+     "aka": []
+    },
+    {
+     "a": "Petrichor",
+     "aka": []
+    }
+   ],
+   "good": [
+    {
+     "a": "Sleet",
+     "aka": []
+    },
+    {
+     "a": "Drizzle",
+     "aka": []
+    },
+    {
+     "a": "Hurricane",
+     "aka": []
+    },
+    {
+     "a": "Tornado",
+     "aka": []
+    },
+    {
+     "a": "Blizzard",
+     "aka": []
+    },
+    {
+     "a": "Heatwave",
+     "aka": [
+      "heat wave"
+     ]
+    },
+    {
+     "a": "Frost",
+     "aka": []
+    },
+    {
+     "a": "Mist",
+     "aka": []
+    },
+    {
+     "a": "Drought",
+     "aka": []
+    },
+    {
+     "a": "Monsoon",
+     "aka": []
+    },
+    {
+     "a": "Typhoon",
+     "aka": []
+    },
+    {
+     "a": "Cyclone",
+     "aka": []
+    },
+    {
+     "a": "Thunderstorm",
+     "aka": []
+    },
+    {
+     "a": "Rainbow",
+     "aka": []
+    },
+    {
+     "a": "Hailstorm",
+     "aka": []
+    },
+    {
+     "a": "Sandstorm",
+     "aka": [
+      "dust storm"
+     ]
+    },
+    {
+     "a": "Gale",
+     "aka": []
+    },
+    {
+     "a": "Breeze",
+     "aka": []
+    },
+    {
+     "a": "Humidity",
+     "aka": []
+    },
+    {
+     "a": "Smog",
+     "aka": []
+    },
+    {
+     "a": "Ice storm",
+     "aka": []
+    },
+    {
+     "a": "Freezing rain",
+     "aka": []
+    },
+    {
+     "a": "Downpour",
+     "aka": []
+    },
+    {
+     "a": "Shower",
+     "aka": [
+      "showers"
+     ]
+    },
+    {
+     "a": "Flood",
+     "aka": []
+    },
+    {
+     "a": "Dew",
+     "aka": []
+    },
+    {
+     "a": "Overcast",
+     "aka": []
+    },
+    {
+     "a": "Squall",
+     "aka": []
+    },
+    {
+     "a": "Whiteout",
+     "aka": []
+    },
+    {
+     "a": "Waterspout",
+     "aka": []
+    },
+    {
+     "a": "Black ice",
+     "aka": []
+    },
+    {
+     "a": "Snowstorm",
+     "aka": []
+    },
+    {
+     "a": "Cold snap",
+     "aka": []
+    },
+    {
+     "a": "Heat",
+     "aka": []
+    },
+    {
+     "a": "Haze",
+     "aka": []
+    },
+    {
+     "a": "Clear sky",
+     "aka": [
+      "clear"
+     ]
+    },
+    {
+     "a": "Sun shower",
+     "aka": []
+    },
+    {
+     "a": "Fog bank",
+     "aka": []
+    }
+   ],
+   "wrong": [
+    "Earthquake",
+    "Volcano",
+    "Tsunami"
+   ],
+   "top": 55
+  },
+  {
+   "id": "sandwich",
+   "prompt": "Name a sandwich",
+   "cat": "Food",
+   "ranked": [
+    {
+     "a": "BLT",
+     "aka": []
+    },
+    {
+     "a": "Grilled cheese",
+     "aka": [
+      "cheese toastie"
+     ]
+    },
+    {
+     "a": "Ham and cheese",
+     "aka": []
+    },
+    {
+     "a": "Peanut butter and jelly",
+     "aka": [
+      "PB&J",
+      "PBJ",
+      "peanut butter and jam"
+     ]
+    },
+    {
+     "a": "Club sandwich",
+     "aka": [
+      "club"
+     ]
+    },
+    {
+     "a": "Tuna",
+     "aka": [
+      "tuna mayo"
+     ]
+    },
+    {
+     "a": "Turkey",
+     "aka": []
+    },
+    {
+     "a": "Egg salad",
+     "aka": [
+      "egg mayo"
+     ]
+    },
+    {
+     "a": "Reuben",
+     "aka": []
+    },
+    {
+     "a": "Sub",
+     "aka": [
+      "submarine",
+      "hoagie"
+     ]
+    }
+   ],
+   "gems": [
+    {
+     "a": "Francesinha",
+     "aka": []
+    },
+    {
+     "a": "Bauru",
+     "aka": []
+    },
+    {
+     "a": "Chivito",
+     "aka": []
+    },
+    {
+     "a": "Mitraillette",
+     "aka": []
+    },
+    {
+     "a": "Chip butty",
+     "aka": []
+    }
+   ],
+   "good": [
+    {
+     "a": "Cuban",
+     "aka": [
+      "cubano"
+     ]
+    },
+    {
+     "a": "Philly cheesesteak",
+     "aka": [
+      "cheesesteak"
+     ]
+    },
+    {
+     "a": "Banh mi",
+     "aka": []
+    },
+    {
+     "a": "Panini",
+     "aka": []
+    },
+    {
+     "a": "Croque monsieur",
+     "aka": []
+    },
+    {
+     "a": "Po' boy",
+     "aka": [
+      "po boy"
+     ]
+    },
+    {
+     "a": "Monte Cristo",
+     "aka": []
+    },
+    {
+     "a": "Sloppy joe",
+     "aka": []
+    },
+    {
+     "a": "French dip",
+     "aka": []
+    },
+    {
+     "a": "Meatball sub",
+     "aka": []
+    },
+    {
+     "a": "Chicken salad",
+     "aka": []
+    },
+    {
+     "a": "Egg and cress",
+     "aka": []
+    },
+    {
+     "a": "Cheese and pickle",
+     "aka": []
+    },
+    {
+     "a": "Fluffernutter",
+     "aka": []
+    },
+    {
+     "a": "Muffuletta",
+     "aka": []
+    },
+    {
+     "a": "Patty melt",
+     "aka": []
+    },
+    {
+     "a": "Tuna melt",
+     "aka": []
+    },
+    {
+     "a": "Bacon butty",
+     "aka": [
+      "bacon sandwich",
+      "bacon sarnie"
+     ]
+    },
+    {
+     "a": "Fish finger sandwich",
+     "aka": []
+    },
+    {
+     "a": "Cucumber sandwich",
+     "aka": []
+    },
+    {
+     "a": "Pastrami",
+     "aka": [
+      "pastrami on rye"
+     ]
+    },
+    {
+     "a": "Lobster roll",
+     "aka": []
+    },
+    {
+     "a": "Torta",
+     "aka": []
+    },
+    {
+     "a": "Katsu sando",
+     "aka": []
+    },
+    {
+     "a": "Open sandwich",
+     "aka": [
+      "smorrebrod"
+     ]
+    },
+    {
+     "a": "Jam sandwich",
+     "aka": []
+    },
+    {
+     "a": "Breakfast sandwich",
+     "aka": []
+    },
+    {
+     "a": "Caprese",
+     "aka": []
+    },
+    {
+     "a": "Toastie",
+     "aka": []
+    },
+    {
+     "a": "Chicken parm",
+     "aka": []
+    },
+    {
+     "a": "Roast beef",
+     "aka": []
+    },
+    {
+     "a": "Prawn mayo",
+     "aka": []
+    },
+    {
+     "a": "Coronation chicken",
+     "aka": []
+    },
+    {
+     "a": "Egg and bacon",
+     "aka": []
+    },
+    {
+     "a": "Ploughman's",
+     "aka": []
+    },
+    {
+     "a": "Cheese sandwich",
+     "aka": []
+    },
+    {
+     "a": "Ham sandwich",
+     "aka": []
+    },
+    {
+     "a": "Chicken sandwich",
+     "aka": []
+    },
+    {
+     "a": "Falafel wrap",
+     "aka": []
+    }
+   ],
+   "wrong": [
+    "Pizza",
+    "Taco",
+    "Burrito"
+   ],
+   "top": 45
+  },
+  {
+   "id": "sea-creature",
+   "prompt": "Name a sea creature",
+   "cat": "Animals",
+   "ranked": [
+    {
+     "a": "Shark",
+     "aka": []
+    },
+    {
+     "a": "Whale",
+     "aka": []
+    },
+    {
+     "a": "Dolphin",
+     "aka": []
+    },
+    {
+     "a": "Octopus",
+     "aka": []
+    },
+    {
+     "a": "Jellyfish",
+     "aka": []
+    },
+    {
+     "a": "Starfish",
+     "aka": [
+      "sea star"
+     ]
+    },
+    {
+     "a": "Crab",
+     "aka": []
+    },
+    {
+     "a": "Seahorse",
+     "aka": []
+    },
+    {
+     "a": "Sea turtle",
+     "aka": [
+      "turtle"
+     ]
+    },
+    {
+     "a": "Lobster",
+     "aka": []
+    }
+   ],
+   "gems": [
+    {
+     "a": "Nudibranch",
+     "aka": []
+    },
+    {
+     "a": "Sea pig",
+     "aka": []
+    },
+    {
+     "a": "Vampire squid",
+     "aka": []
+    },
+    {
+     "a": "Ocean sunfish",
+     "aka": [
+      "mola mola",
+      "sunfish"
+     ]
+    },
+    {
+     "a": "Sea butterfly",
+     "aka": []
+    }
+   ],
+   "good": [
+    {
+     "a": "Squid",
+     "aka": []
+    },
+    {
+     "a": "Seal",
+     "aka": []
+    },
+    {
+     "a": "Sea lion",
+     "aka": []
+    },
+    {
+     "a": "Walrus",
+     "aka": []
+    },
+    {
+     "a": "Manatee",
+     "aka": []
+    },
+    {
+     "a": "Dugong",
+     "aka": []
+    },
+    {
+     "a": "Stingray",
+     "aka": [
+      "ray"
+     ]
+    },
+    {
+     "a": "Manta ray",
+     "aka": []
+    },
+    {
+     "a": "Eel",
+     "aka": []
+    },
+    {
+     "a": "Clownfish",
+     "aka": []
+    },
+    {
+     "a": "Swordfish",
+     "aka": []
+    },
+    {
+     "a": "Tuna",
+     "aka": []
+    },
+    {
+     "a": "Shrimp",
+     "aka": [
+      "prawn"
+     ]
+    },
+    {
+     "a": "Clam",
+     "aka": []
+    },
+    {
+     "a": "Oyster",
+     "aka": []
+    },
+    {
+     "a": "Mussel",
+     "aka": []
+    },
+    {
+     "a": "Sea urchin",
+     "aka": []
+    },
+    {
+     "a": "Coral",
+     "aka": []
+    },
+    {
+     "a": "Sea anemone",
+     "aka": [
+      "anemone"
+     ]
+    },
+    {
+     "a": "Barracuda",
+     "aka": []
+    },
+    {
+     "a": "Pufferfish",
+     "aka": []
+    },
+    {
+     "a": "Orca",
+     "aka": [
+      "killer whale"
+     ]
+    },
+    {
+     "a": "Narwhal",
+     "aka": []
+    },
+    {
+     "a": "Beluga",
+     "aka": []
+    },
+    {
+     "a": "Hammerhead",
+     "aka": []
+    },
+    {
+     "a": "Krill",
+     "aka": []
+    },
+    {
+     "a": "Plankton",
+     "aka": []
+    },
+    {
+     "a": "Sea cucumber",
+     "aka": []
+    },
+    {
+     "a": "Lionfish",
+     "aka": []
+    },
+    {
+     "a": "Anglerfish",
+     "aka": []
+    },
+    {
+     "a": "Cod",
+     "aka": []
+    },
+    {
+     "a": "Salmon",
+     "aka": []
+    },
+    {
+     "a": "Hermit crab",
+     "aka": []
+    },
+    {
+     "a": "Sea otter",
+     "aka": []
+    },
+    {
+     "a": "Barnacle",
+     "aka": []
+    },
+    {
+     "a": "Cuttlefish",
+     "aka": []
+    },
+    {
+     "a": "Nautilus",
+     "aka": []
+    },
+    {
+     "a": "Marlin",
+     "aka": []
+    },
+    {
+     "a": "Sardine",
+     "aka": []
+    },
+    {
+     "a": "Mackerel",
+     "aka": []
+    },
+    {
+     "a": "Halibut",
+     "aka": []
+    },
+    {
+     "a": "Flounder",
+     "aka": []
+    },
+    {
+     "a": "Sea snake",
+     "aka": []
+    },
+    {
+     "a": "Blue whale",
+     "aka": []
+    },
+    {
+     "a": "Humpback whale",
+     "aka": []
+    },
+    {
+     "a": "Great white",
+     "aka": [
+      "great white shark"
+     ]
+    },
+    {
+     "a": "Moray eel",
+     "aka": []
+    },
+    {
+     "a": "Scallop",
+     "aka": []
+    },
+    {
+     "a": "Conch",
+     "aka": []
+    },
+    {
+     "a": "Sea slug",
+     "aka": []
+    }
+   ],
+   "wrong": [
+    "Frog",
+    "Hippo",
+    "Duck"
+   ],
+   "top": 40
+  },
+  {
+   "id": "body-part",
+   "prompt": "Name a part of the body",
+   "cat": "General",
+   "ranked": [
+    {
+     "a": "Arm",
+     "aka": []
+    },
+    {
+     "a": "Leg",
+     "aka": []
+    },
+    {
+     "a": "Head",
+     "aka": []
+    },
+    {
+     "a": "Hand",
+     "aka": []
+    },
+    {
+     "a": "Foot",
+     "aka": [
+      "feet"
+     ]
+    },
+    {
+     "a": "Eye",
+     "aka": [
+      "eyes"
+     ]
+    },
+    {
+     "a": "Nose",
+     "aka": []
+    },
+    {
+     "a": "Heart",
+     "aka": []
+    },
+    {
+     "a": "Finger",
+     "aka": []
+    },
+    {
+     "a": "Ear",
+     "aka": [
+      "ears"
+     ]
+    }
+   ],
+   "gems": [
+    {
+     "a": "Philtrum",
+     "aka": []
+    },
+    {
+     "a": "Lunula",
+     "aka": []
+    },
+    {
+     "a": "Glabella",
+     "aka": []
+    },
+    {
+     "a": "Hallux",
+     "aka": []
+    },
+    {
+     "a": "Tragus",
+     "aka": []
+    }
+   ],
+   "good": [
+    {
+     "a": "Mouth",
+     "aka": []
+    },
+    {
+     "a": "Knee",
+     "aka": []
+    },
+    {
+     "a": "Elbow",
+     "aka": []
+    },
+    {
+     "a": "Shoulder",
+     "aka": []
+    },
+    {
+     "a": "Toe",
+     "aka": []
+    },
+    {
+     "a": "Brain",
+     "aka": []
+    },
+    {
+     "a": "Lung",
+     "aka": [
+      "lungs"
+     ]
+    },
+    {
+     "a": "Liver",
+     "aka": []
+    },
+    {
+     "a": "Kidney",
+     "aka": []
+    },
+    {
+     "a": "Stomach",
+     "aka": []
+    },
+    {
+     "a": "Neck",
+     "aka": []
+    },
+    {
+     "a": "Chest",
+     "aka": []
+    },
+    {
+     "a": "Back",
+     "aka": []
+    },
+    {
+     "a": "Hip",
+     "aka": []
+    },
+    {
+     "a": "Ankle",
+     "aka": []
+    },
+    {
+     "a": "Wrist",
+     "aka": []
+    },
+    {
+     "a": "Thumb",
+     "aka": []
+    },
+    {
+     "a": "Lip",
+     "aka": [
+      "lips"
+     ]
+    },
+    {
+     "a": "Tongue",
+     "aka": []
+    },
+    {
+     "a": "Tooth",
+     "aka": [
+      "teeth"
+     ]
+    },
+    {
+     "a": "Hair",
+     "aka": []
+    },
+    {
+     "a": "Skin",
+     "aka": []
+    },
+    {
+     "a": "Chin",
+     "aka": []
+    },
+    {
+     "a": "Cheek",
+     "aka": []
+    },
+    {
+     "a": "Forehead",
+     "aka": []
+    },
+    {
+     "a": "Eyebrow",
+     "aka": []
+    },
+    {
+     "a": "Eyelash",
+     "aka": []
+    },
+    {
+     "a": "Nail",
+     "aka": [
+      "fingernail",
+      "toenail"
+     ]
+    },
+    {
+     "a": "Knuckle",
+     "aka": []
+    },
+    {
+     "a": "Heel",
+     "aka": []
+    },
+    {
+     "a": "Spine",
+     "aka": []
+    },
+    {
+     "a": "Rib",
+     "aka": []
+    },
+    {
+     "a": "Skull",
+     "aka": []
+    },
+    {
+     "a": "Bone",
+     "aka": []
+    },
+    {
+     "a": "Muscle",
+     "aka": []
+    },
+    {
+     "a": "Thigh",
+     "aka": []
+    },
+    {
+     "a": "Calf",
+     "aka": []
+    },
+    {
+     "a": "Shin",
+     "aka": []
+    },
+    {
+     "a": "Belly button",
+     "aka": [
+      "navel"
+     ]
+    },
+    {
+     "a": "Jaw",
+     "aka": []
+    },
+    {
+     "a": "Throat",
+     "aka": []
+    },
+    {
+     "a": "Bladder",
+     "aka": []
+    },
+    {
+     "a": "Pancreas",
+     "aka": []
+    },
+    {
+     "a": "Appendix",
+     "aka": []
+    },
+    {
+     "a": "Spleen",
+     "aka": []
+    },
+    {
+     "a": "Gallbladder",
+     "aka": []
+    },
+    {
+     "a": "Intestine",
+     "aka": [
+      "gut"
+     ]
+    },
+    {
+     "a": "Uvula",
+     "aka": []
+    },
+    {
+     "a": "Earlobe",
+     "aka": []
+    },
+    {
+     "a": "Armpit",
+     "aka": []
+    },
+    {
+     "a": "Palm",
+     "aka": []
+    },
+    {
+     "a": "Waist",
+     "aka": []
+    },
+    {
+     "a": "Tendon",
+     "aka": []
+    },
+    {
+     "a": "Collarbone",
+     "aka": []
+    },
+    {
+     "a": "Kneecap",
+     "aka": []
+    },
+    {
+     "a": "Eyelid",
+     "aka": []
+    },
+    {
+     "a": "Nostril",
+     "aka": []
+    },
+    {
+     "a": "Temple",
+     "aka": []
+    },
+    {
+     "a": "Pinky",
+     "aka": [
+      "little finger"
+     ]
+    }
+   ],
+   "wrong": [
+    "Wing",
+    "Fin",
+    "Antenna"
+   ],
+   "top": 50
+  },
+  {
+   "id": "transport",
+   "prompt": "Name a way to travel",
+   "cat": "General",
+   "ranked": [
+    {
+     "a": "Car",
+     "aka": []
+    },
+    {
+     "a": "Bus",
+     "aka": []
+    },
+    {
+     "a": "Train",
+     "aka": []
+    },
+    {
+     "a": "Plane",
+     "aka": [
+      "airplane",
+      "aeroplane"
+     ]
+    },
+    {
+     "a": "Bike",
+     "aka": [
+      "bicycle"
+     ]
+    },
+    {
+     "a": "Boat",
+     "aka": []
+    },
+    {
+     "a": "Motorcycle",
+     "aka": [
+      "motorbike"
+     ]
+    },
+    {
+     "a": "Truck",
+     "aka": [
+      "lorry"
+     ]
+    },
+    {
+     "a": "Taxi",
+     "aka": [
+      "cab"
+     ]
+    },
+    {
+     "a": "Ship",
+     "aka": []
+    }
+   ],
+   "gems": [
+    {
+     "a": "Funicular",
+     "aka": []
+    },
+    {
+     "a": "Penny-farthing",
+     "aka": []
+    },
+    {
+     "a": "Zeppelin",
+     "aka": [
+      "airship"
+     ]
+    },
+    {
+     "a": "Hovercraft",
+     "aka": []
+    },
+    {
+     "a": "Velomobile",
+     "aka": []
+    }
+   ],
+   "good": [
+    {
+     "a": "Helicopter",
+     "aka": []
+    },
+    {
+     "a": "Tram",
+     "aka": [
+      "streetcar"
+     ]
+    },
+    {
+     "a": "Subway",
+     "aka": [
+      "metro",
+      "underground",
+      "tube"
+     ]
+    },
+    {
+     "a": "Scooter",
+     "aka": []
+    },
+    {
+     "a": "Skateboard",
+     "aka": []
+    },
+    {
+     "a": "Van",
+     "aka": []
+    },
+    {
+     "a": "Ferry",
+     "aka": []
+    },
+    {
+     "a": "Submarine",
+     "aka": []
+    },
+    {
+     "a": "Rocket",
+     "aka": []
+    },
+    {
+     "a": "Hot air balloon",
+     "aka": [
+      "balloon"
+     ]
+    },
+    {
+     "a": "Canoe",
+     "aka": []
+    },
+    {
+     "a": "Kayak",
+     "aka": []
+    },
+    {
+     "a": "Sailboat",
+     "aka": [
+      "yacht"
+     ]
+    },
+    {
+     "a": "Tractor",
+     "aka": []
+    },
+    {
+     "a": "Ambulance",
+     "aka": []
+    },
+    {
+     "a": "Fire engine",
+     "aka": [
+      "fire truck"
+     ]
+    },
+    {
+     "a": "Limousine",
+     "aka": [
+      "limo"
+     ]
+    },
+    {
+     "a": "Jet ski",
+     "aka": []
+    },
+    {
+     "a": "Snowmobile",
+     "aka": []
+    },
+    {
+     "a": "Cable car",
+     "aka": []
+    },
+    {
+     "a": "Rickshaw",
+     "aka": []
+    },
+    {
+     "a": "Tuk-tuk",
+     "aka": []
+    },
+    {
+     "a": "Monorail",
+     "aka": []
+    },
+    {
+     "a": "Gondola",
+     "aka": []
+    },
+    {
+     "a": "Unicycle",
+     "aka": []
+    },
+    {
+     "a": "Tricycle",
+     "aka": []
+    },
+    {
+     "a": "Glider",
+     "aka": []
+    },
+    {
+     "a": "Blimp",
+     "aka": []
+    },
+    {
+     "a": "Segway",
+     "aka": []
+    },
+    {
+     "a": "Horse",
+     "aka": []
+    },
+    {
+     "a": "Sled",
+     "aka": [
+      "sledge",
+      "sleigh"
+     ]
+    },
+    {
+     "a": "Raft",
+     "aka": []
+    },
+    {
+     "a": "Golf cart",
+     "aka": []
+    },
+    {
+     "a": "Spaceship",
+     "aka": [
+      "spacecraft",
+      "space shuttle"
+     ]
+    },
+    {
+     "a": "Roller skates",
+     "aka": [
+      "rollerblades"
+     ]
+    },
+    {
+     "a": "Quad bike",
+     "aka": [
+      "ATV"
+     ]
+    },
+    {
+     "a": "Electric scooter",
+     "aka": [
+      "e-scooter"
+     ]
+    },
+    {
+     "a": "Walking",
+     "aka": [
+      "on foot",
+      "walk"
+     ]
+    },
+    {
+     "a": "Coach",
+     "aka": []
+    },
+    {
+     "a": "Minibus",
+     "aka": []
+    },
+    {
+     "a": "Moped",
+     "aka": []
+    },
+    {
+     "a": "Paddleboard",
+     "aka": []
+    },
+    {
+     "a": "Rowing boat",
+     "aka": [
+      "rowboat"
+     ]
+    },
+    {
+     "a": "Hang glider",
+     "aka": []
+    },
+    {
+     "a": "Parachute",
+     "aka": []
+    }
+   ],
+   "wrong": [
+    "Road",
+    "Engine",
+    "Wheel"
+   ],
+   "note": "On foot counts.",
+   "top": 55
+  },
+  {
+   "id": "playground-game",
+   "prompt": "Name a playground game",
+   "cat": "Games",
+   "ranked": [
+    {
+     "a": "Tag",
+     "aka": [
+      "tig",
+      "it"
+     ]
+    },
+    {
+     "a": "Hide and seek",
+     "aka": [
+      "hide and go seek"
+     ]
+    },
+    {
+     "a": "Hopscotch",
+     "aka": []
+    },
+    {
+     "a": "Skipping",
+     "aka": [
+      "jump rope"
+     ]
+    },
+    {
+     "a": "Red light green light",
+     "aka": []
+    },
+    {
+     "a": "Simon says",
+     "aka": []
+    },
+    {
+     "a": "Duck duck goose",
+     "aka": []
+    },
+    {
+     "a": "Tug of war",
+     "aka": []
+    },
+    {
+     "a": "Marbles",
+     "aka": []
+    },
+    {
+     "a": "Four square",
+     "aka": []
+    }
+   ],
+   "gems": [
+    {
+     "a": "Kick the can",
+     "aka": []
+    },
+    {
+     "a": "Red rover",
+     "aka": []
+    },
+    {
+     "a": "British bulldog",
+     "aka": [
+      "bulldog"
+     ]
+    },
+    {
+     "a": "Conkers",
+     "aka": []
+    },
+    {
+     "a": "Elastics",
+     "aka": []
+    }
+   ],
+   "good": [
+    {
+     "a": "Freeze tag",
+     "aka": []
+    },
+    {
+     "a": "Musical chairs",
+     "aka": []
+    },
+    {
+     "a": "Sardines",
+     "aka": []
+    },
+    {
+     "a": "Capture the flag",
+     "aka": []
+    },
+    {
+     "a": "Dodgeball",
+     "aka": []
+    },
+    {
+     "a": "Kickball",
+     "aka": []
+    },
+    {
+     "a": "Leapfrog",
+     "aka": []
+    },
+    {
+     "a": "Marco Polo",
+     "aka": []
+    },
+    {
+     "a": "Hot potato",
+     "aka": []
+    },
+    {
+     "a": "What's the time Mr Wolf",
+     "aka": []
+    },
+    {
+     "a": "Statues",
+     "aka": []
+    },
+    {
+     "a": "Follow the leader",
+     "aka": []
+    },
+    {
+     "a": "Sack race",
+     "aka": []
+    },
+    {
+     "a": "Egg and spoon race",
+     "aka": []
+    },
+    {
+     "a": "Three-legged race",
+     "aka": []
+    },
+    {
+     "a": "Rock paper scissors",
+     "aka": []
+    },
+    {
+     "a": "Jacks",
+     "aka": []
+    },
+    {
+     "a": "Hula hoop",
+     "aka": []
+    },
+    {
+     "a": "Frisbee",
+     "aka": []
+    },
+    {
+     "a": "Catch",
+     "aka": []
+    },
+    {
+     "a": "Piggy in the middle",
+     "aka": [
+      "monkey in the middle"
+     ]
+    },
+    {
+     "a": "Tetherball",
+     "aka": []
+    },
+    {
+     "a": "Handball",
+     "aka": []
+    },
+    {
+     "a": "Wall ball",
+     "aka": []
+    },
+    {
+     "a": "Stuck in the mud",
+     "aka": []
+    },
+    {
+     "a": "Cops and robbers",
+     "aka": []
+    },
+    {
+     "a": "Mother may I",
+     "aka": []
+    },
+    {
+     "a": "Ring around the rosie",
+     "aka": [
+      "ring a ring o' roses"
+     ]
+    },
+    {
+     "a": "Blind man's buff",
+     "aka": []
+    },
+    {
+     "a": "Musical statues",
+     "aka": []
+    },
+    {
+     "a": "Grandma's footsteps",
+     "aka": []
+    },
+    {
+     "a": "Chase",
+     "aka": []
+    },
+    {
+     "a": "Clapping games",
+     "aka": []
+    },
+    {
+     "a": "Slides",
+     "aka": [
+      "slide"
+     ]
+    },
+    {
+     "a": "Swings",
+     "aka": []
+    },
+    {
+     "a": "Seesaw",
+     "aka": []
+    },
+    {
+     "a": "Monkey bars",
+     "aka": []
+    },
+    {
+     "a": "Football",
+     "aka": []
+    },
+    {
+     "a": "Tag rugby",
+     "aka": []
+    },
+    {
+     "a": "Hide the thimble",
+     "aka": []
+    },
+    {
+     "a": "Sharks and minnows",
+     "aka": []
+    },
+    {
+     "a": "Mannequin",
+     "aka": []
+    },
+    {
+     "a": "Kiss chase",
+     "aka": []
+    }
+   ],
+   "wrong": [
+    "Chess",
+    "Video games",
+    "Monopoly"
+   ],
+   "top": 55
+  },
+  {
+   "id": "kitchen",
+   "prompt": "Name something in a kitchen",
+   "cat": "General",
+   "ranked": [
+    {
+     "a": "Fridge",
+     "aka": [
+      "refrigerator"
+     ]
+    },
+    {
+     "a": "Oven",
+     "aka": []
+    },
+    {
+     "a": "Stove",
+     "aka": [
+      "cooker",
+      "hob"
+     ]
+    },
+    {
+     "a": "Sink",
+     "aka": []
+    },
+    {
+     "a": "Microwave",
+     "aka": []
+    },
+    {
+     "a": "Kettle",
+     "aka": []
+    },
+    {
+     "a": "Toaster",
+     "aka": []
+    },
+    {
+     "a": "Knife",
+     "aka": [
+      "knives"
+     ]
+    },
+    {
+     "a": "Spoon",
+     "aka": []
+    },
+    {
+     "a": "Fork",
+     "aka": []
+    }
+   ],
+   "gems": [
+    {
+     "a": "Mandoline",
+     "aka": []
+    },
+    {
+     "a": "Spurtle",
+     "aka": []
+    },
+    {
+     "a": "Mezzaluna",
+     "aka": []
+    },
+    {
+     "a": "Chinois",
+     "aka": []
+    },
+    {
+     "a": "Bain-marie",
+     "aka": []
+    }
+   ],
+   "good": [
+    {
+     "a": "Pan",
+     "aka": [
+      "frying pan"
+     ]
+    },
+    {
+     "a": "Pot",
+     "aka": [
+      "saucepan"
+     ]
+    },
+    {
+     "a": "Plate",
+     "aka": []
+    },
+    {
+     "a": "Bowl",
+     "aka": []
+    },
+    {
+     "a": "Cup",
+     "aka": []
+    },
+    {
+     "a": "Mug",
+     "aka": []
+    },
+    {
+     "a": "Glass",
+     "aka": []
+    },
+    {
+     "a": "Dishwasher",
+     "aka": []
+    },
+    {
+     "a": "Blender",
+     "aka": []
+    },
+    {
+     "a": "Whisk",
+     "aka": []
+    },
+    {
+     "a": "Spatula",
+     "aka": []
+    },
+    {
+     "a": "Ladle",
+     "aka": []
+    },
+    {
+     "a": "Colander",
+     "aka": []
+    },
+    {
+     "a": "Cutting board",
+     "aka": [
+      "chopping board"
+     ]
+    },
+    {
+     "a": "Rolling pin",
+     "aka": []
+    },
+    {
+     "a": "Grater",
+     "aka": []
+    },
+    {
+     "a": "Peeler",
+     "aka": []
+    },
+    {
+     "a": "Tongs",
+     "aka": []
+    },
+    {
+     "a": "Can opener",
+     "aka": [
+      "tin opener"
+     ]
+    },
+    {
+     "a": "Corkscrew",
+     "aka": []
+    },
+    {
+     "a": "Oven mitt",
+     "aka": [
+      "oven glove"
+     ]
+    },
+    {
+     "a": "Tea towel",
+     "aka": [
+      "dish towel"
+     ]
+    },
+    {
+     "a": "Apron",
+     "aka": []
+    },
+    {
+     "a": "Cupboard",
+     "aka": [
+      "cabinet"
+     ]
+    },
+    {
+     "a": "Counter",
+     "aka": [
+      "worktop",
+      "countertop"
+     ]
+    },
+    {
+     "a": "Table",
+     "aka": []
+    },
+    {
+     "a": "Chair",
+     "aka": []
+    },
+    {
+     "a": "Bin",
+     "aka": [
+      "trash can"
+     ]
+    },
+    {
+     "a": "Sponge",
+     "aka": []
+    },
+    {
+     "a": "Dish soap",
+     "aka": [
+      "washing-up liquid"
+     ]
+    },
+    {
+     "a": "Timer",
+     "aka": []
+    },
+    {
+     "a": "Scales",
+     "aka": []
+    },
+    {
+     "a": "Measuring cup",
+     "aka": []
+    },
+    {
+     "a": "Sieve",
+     "aka": []
+    },
+    {
+     "a": "Funnel",
+     "aka": []
+    },
+    {
+     "a": "Baking tray",
+     "aka": []
+    },
+    {
+     "a": "Muffin tin",
+     "aka": []
+    },
+    {
+     "a": "Food processor",
+     "aka": []
+    },
+    {
+     "a": "Mixer",
+     "aka": [
+      "stand mixer"
+     ]
+    },
+    {
+     "a": "Coffee maker",
+     "aka": []
+    },
+    {
+     "a": "Teapot",
+     "aka": []
+    },
+    {
+     "a": "Spice rack",
+     "aka": []
+    },
+    {
+     "a": "Napkin",
+     "aka": []
+    },
+    {
+     "a": "Tablecloth",
+     "aka": []
+    },
+    {
+     "a": "Tap",
+     "aka": [
+      "faucet"
+     ]
+    },
+    {
+     "a": "Freezer",
+     "aka": []
+    },
+    {
+     "a": "Grill",
+     "aka": []
+    },
+    {
+     "a": "Wok",
+     "aka": []
+    },
+    {
+     "a": "Casserole dish",
+     "aka": []
+    },
+    {
+     "a": "Salt",
+     "aka": []
+    },
+    {
+     "a": "Pepper",
+     "aka": []
+    },
+    {
+     "a": "Bread bin",
+     "aka": []
+    },
+    {
+     "a": "Chopsticks",
+     "aka": []
+    },
+    {
+     "a": "Pressure cooker",
+     "aka": []
+    },
+    {
+     "a": "Slow cooker",
+     "aka": []
+    },
+    {
+     "a": "Air fryer",
+     "aka": []
+    },
+    {
+     "a": "Garlic press",
+     "aka": []
+    },
+    {
+     "a": "Pestle and mortar",
+     "aka": [
+      "mortar and pestle"
+     ]
+    }
+   ],
+   "wrong": [
+    "Bed",
+    "Bath",
+    "Sofa"
+   ],
+   "top": 45
+  }
+ ]
+}

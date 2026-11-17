@@ -5,7 +5,7 @@ nobody else thought of scores the most.
 
 | Complexity | Research | Level 1 | Draft |
 | --- | --- | --- | --- |
-| Beginner to intermediate | Done, 17 November 2026 | Drafted (the prompt in [`try-it-prompt-draft.txt`](try-it-prompt-draft.txt), not yet run) | This folder |
+| Beginner to intermediate | Done, 17 November 2026 | Drafted (the prompt in [`try-it-prompt.txt`](../base/try-it-prompt.txt), not yet run) | This folder |
 
 **Think of it as:** a pub quiz where the obvious answer is worth the least. Anyone can say
 "lightsaber". The person who says "the Kragle" gets the round.

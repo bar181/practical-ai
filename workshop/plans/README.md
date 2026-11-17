@@ -71,7 +71,7 @@ Not everything with AI is work. Light projects that show the fun side of having 
 
 | Project | What it does | Where it stands |
 | --- | --- | --- |
-| Rare Find | A quick quiz game the chatbot builds in the chat: rarer correct answers score more | Plan: [project folder](../../projects/rare-find/) · [plan](../../projects/rare-find/base/PLAN.md) |
+| Rare Find | A quick quiz game the chatbot builds in the chat: rarer correct answers score more | Plan: [project folder](../../projects/rare-find/) · [plan](../../projects/rare-find/_build/PLAN.md) |
 
 ## Writing a plan
 

@@ -1,3 +1,6 @@
+DRAFT, NOT YET TESTED. For a chatbot that cannot open base/game.html: it asks the
+chatbot to build a simpler version of Rare Find from scratch.
+
 Let's play Rare Find: a quiz where the correct answer nobody
 else thinks of scores the most.
 
@@ -16,9 +19,9 @@ family-friendly prompts on general knowledge and pop culture.)
    - a 30-second ring timer per prompt (15, 30 or 45 to
      choose at the start)
    - one answer per prompt; Enter submits
-   - scoring: most popular 25; 2nd and 3rd 35; 4th to 10th 50;
-     any other correct answer 75; a rare one 100; wrong or
-     out of time 0
+   - scoring: most popular 25, then 5 more for each place
+     down the top ten (10th is 70); any other correct answer
+     80; a rare one 100; wrong or out of time 0
    - forgive spelling: ignore case, accents, punctuation,
      spaces, hyphens and a leading "the"; allow 1 typo for
      5 to 8 letters and 2 for 9 or more; short answers and

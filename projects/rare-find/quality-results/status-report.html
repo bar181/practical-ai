@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rare Find: build status, 17 November 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#1b1733;--card:#262046;--line:#3a3266;--text:#f3f0ff;--muted:#b9b0de;--gold:#ffc93c;--violet:#a78bfa;--green:#4ade80;--blue:#7cb3ff;--red:#ff7b7b;--grey:#c9c4dd}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:17px/1.6 "Atkinson Hyperlegible",system-ui,sans-serif}
+main{max-width:860px;margin:0 auto;padding:48px 22px 80px}
+h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;line-height:1.1;margin:0}
+h1{font-size:clamp(2.2rem,6vw,3.6rem);font-weight:800;letter-spacing:-.02em}
+h2{font-size:1.6rem;font-weight:800;margin:56px 0 14px}
+h3{font-size:1.1rem;font-weight:800;margin-bottom:6px}
+p{margin:0 0 14px;max-width:68ch}
+.lede{font-size:1.2rem;color:var(--muted);margin-top:14px}
+.verdict{display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:center;background:var(--card);border:2px solid var(--line);border-radius:22px;padding:22px 26px;margin-top:30px}
+.score{font-family:"Bricolage Grotesque";font-weight:800;font-size:4.4rem;color:var(--gold);line-height:1}
+.score small{font-size:1.4rem;color:var(--muted)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 20px}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+table{width:100%;border-collapse:collapse;font-size:.95rem}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--muted);font-weight:700}
+.tag{display:inline-block;padding:1px 9px;border-radius:999px;font-weight:700;font-size:.85rem;color:#1b1733}
+.ok{background:var(--green)}.no{background:var(--red)}.part{background:var(--gold)}
+svg text{font-family:"Atkinson Hyperlegible",sans-serif}
+.flow{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));counter-reset:s}
+.flow div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;font-size:.95rem}
+.flow b{display:block;color:var(--gold);font-family:"Bricolage Grotesque";font-size:1.05rem;margin-bottom:4px}
+a{color:var(--gold)}
+ul{padding-left:20px;margin:0}li{margin:4px 0}
+.muted{color:var(--muted)}
+footer{margin-top:60px;color:var(--muted);font-size:.9rem}
+@media(max-width:560px){.verdict{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<main>
+<h1>Rare Find: where the build stands</h1>
+<p class="lede">Project 4, the side quest. A five-minute quiz in a Claude artifact where the right answer nobody else thought of scores the most. Status on 17 November 2026.</p>
+
+<div class="verdict">
+  <div class="score">{{L4}}<small>/100</small></div>
+  <div><h3>{{VERDICT_HEAD}}</h3><p style="margin:0">{{VERDICT_BODY}}</p></div>
+</div>
+
+<h2>Scores by loop</h2>
+<p>Each loop ended with a fresh reviewer agent that had not seen the game, scoring it with the project's game-review rubric (fun, feel, fairness, usability, opponents, trash talk, robustness, honesty). Below 70 is not ready; 70 to 84 is ready for friendly testers; 85 and up is ready to share.</p>
+<div class="card">
+<svg viewBox="0 0 640 250" role="img" aria-labelledby="sc-t" width="100%">
+  <title id="sc-t">Review scores by loop: baseline 37, loop 1 68, loop 2 80, loop 3 84, loop 4 {{L4}}</title>
+  <line x1="40" x2="630" y1="200" y2="200" stroke="#3a3266"/>
+  <line x1="40" x2="630" y1="{{Y70}}" y2="{{Y70}}" stroke="#b9b0de" stroke-dasharray="4 5" opacity=".6"/><text x="630" y="{{Y70m}}" fill="#b9b0de" font-size="12" text-anchor="end">70 friendly testers</text>
+  <line x1="40" x2="630" y1="{{Y85}}" y2="{{Y85}}" stroke="#ffc93c" stroke-dasharray="4 5" opacity=".7"/><text x="630" y="{{Y85m}}" fill="#ffc93c" font-size="12" text-anchor="end">85 ready to share</text>
+  {{BARS}}
+</svg>
+</div>
+
+<h2>What you asked for today, and what changed</h2>
+<table>
+<tr><th>Your request</th><th>What the game does now</th><th>Checked by</th></tr>
+<tr><td>More variety in points than ranks 4 to 10 all at 50</td><td>#1 scores 25 and each place adds 5, so #10 scores 70</td><td>Playtest: #1 25, #6 50, #10 70</td></tr>
+<tr><td>Confirm answers beyond the top ten score</td><td>Every right answer beyond the top ten scores 80, and a Gem 100. Nothing right scores 0</td><td>Playtest: Big Hero 6 80, a Gem 100</td></tr>
+<tr><td>Use an LLM to check the answer exists</td><td>On an answer not on the list, Claude checks it is real and right, and rates it common (80) or rare (100)</td><td>Playtest with a mock Claude</td></tr>
+<tr><td>"We allow it" should be the LLM check</td><td>The button now asks Claude. Without Claude it falls back to the room's word (80 solo, 50 in the ladder)</td><td>Playtest, both paths</td></tr>
+<tr><td>"big hero 5" should be worth 75+</td><td>Claude forgives small slips such as a wrong sequel number: it counts as Big Hero 6, 80 points</td><td>Playtest with a mock Claude</td></tr>
+<tr><td>A back to start button on all pages</td><td>"✕ Back to start" on the play, party and end screens, and Escape. On the play screen it asks first, and pauses the timer</td><td>Playtest</td></tr>
+</table>
+
+<h2>The points, one picture</h2>
+<div class="card">
+<svg viewBox="0 0 640 220" role="img" aria-labelledby="pt-t" width="100%">
+  <title id="pt-t">Points by answer: ranks 1 to 10 score 25 to 70 in steps of 5, a right answer beyond the top ten 80, a Gem 100</title>
+  {{POINTS}}
+</svg>
+</div>
+
+<h2>How Claude is used, and where it is not</h2>
+<div class="flow">
+  <div><b>Your answer</b>Matched against the word list first: spelling, plurals, other names, sequels.</div>
+  <div><b>On the list</b>Scored by the list alone. No AI involved. Instant.</div>
+  <div><b>Not on the list</b>"Not on our list, 0" and a <i>We allow it</i> button.</div>
+  <div><b>We allow it</b>Claude is asked: is it real, is it right, is it common or rare? Your text goes as data, never as instructions.</div>
+  <div><b>The verdict</b>Right and common 80, right and rare 100, wrong 0. No Claude: the room decides.</div>
+</div>
+<p style="margin-top:14px">Claude also writes the fresh last prompt, new categories on request, and the AI co-workers' trash talk. The co-workers' answers come from the same list by the same rules, so their scores never depend on the AI.</p>
+
+<h2>What is built, by level</h2>
+<div class="grid">
+  <div class="card"><h3>Level 1: play</h3><ul><li>Solo, 5 prompts, 15/30/45 s ring timer</li><li>16 prompts, no repeats game to game</li><li>Forgiving spelling, with 1,145 real words blocked from counting as slips</li><li>Reveal board, Gem banner, confetti (off with reduced motion)</li></ul></div>
+  <div class="card"><h3>Level 2: the office ladder</h3><ul><li>Four AI co-workers, each with a skill, a think time and a voice</li><li>Beat one to face the next</li><li>Progress and best scores saved</li></ul></div>
+  <div class="card"><h3>Level 3: Claude joins in</h3><ul><li>The Claude answer check</li><li>Trash talk after your answer, about the answer only</li><li>New categories and a fresh last prompt</li><li>Play together (beta): a room code, one prompt for everyone</li></ul></div>
+</div>
+
+<h2>What is not tested, plainly</h2>
+<table>
+<tr><th>Item</th><th>State</th></tr>
+<tr><td>The real Claude artifact runtime (answer check, trash talk, saving, rooms)</td><td><span class="tag no">Not tested</span> Every Claude feature ran against a mock. The artifact is published and its capabilities are now declared; before today they were not, so the Claude features would have stayed hidden</td></tr>
+<tr><td>How good Claude's verdicts and trash talk really are</td><td><span class="tag no">Not tested</span> The mock wrote the words</td></tr>
+<tr><td>A real multi-device party</td><td><span class="tag no">Not tested</span> Tested with a loopback mock and two pages in one browser</td></tr>
+<tr><td>A real screen reader</td><td><span class="tag part">Partly</span> Keyboard only and live announcements checked; no screen reader used</td></tr>
+<tr><td>ChatGPT</td><td><span class="tag part">Partly</span> The file plays in any browser; the Claude features hide. Not tried in ChatGPT's canvas</td></tr>
+<tr><td>Real players</td><td><span class="tag no">Not tested</span> Nobody but the author and the reviewer agents has played it</td></tr>
+</table>
+
+<h2>{{L4_HEAD}}</h2>
+{{L4_FINDINGS}}
+
+<h2>Next steps</h2>
+<ul>
+  <li><b>You:</b> open the artifact in Claude and play one ladder game. Type one answer that is not on the list and press We allow it. That is the first real test of the Claude check.</li>
+  <li><b>You:</b> share the artifact with one co-worker and try Play together on two devices.</li>
+  <li><b>Next loop:</b> fix what the first real run shows, then score again with a fresh reviewer.</li>
+  <li>No pull request yet, as you asked. The work is committed and pushed to the branch.</li>
+</ul>
+
+<footer>Rare Find, Practical AI, by Bradley Ross. Popularity in the game is Claude's estimate, not a survey. Prompts, tier names and answer lists are the project's own. Evidence: <code>projects/rare-find/quality-results/</code>.</footer>
+</main>
+</body>
+</html>
