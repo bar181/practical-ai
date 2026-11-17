@@ -13,12 +13,13 @@ DIC = "/usr/share/hunspell/en_US.dic"
 AFF = "/usr/share/hunspell/en_US.aff"
 # Expand every stem with the dictionary's own suffix rules, so "talking", "hustling" and "calms" are
 # real words too, not only the bare stems.
-sfx = {}
+sfx, pfx = {}, {}
 for line in open(AFF, encoding="latin-1"):
     f = line.split()
-    if len(f) >= 5 and f[0] == "SFX":
+    if len(f) >= 5 and f[0] in ("SFX", "PFX"):
         strip = "" if f[2] == "0" else f[2]; add = "" if f[3] == "0" else f[3].split("/")[0]
-        sfx.setdefault(f[1], []).append((strip, add, re.compile(f[4] + "$")))
+        if f[0] == "SFX": sfx.setdefault(f[1], []).append((strip, add, re.compile(f[4] + "$")))
+        else: pfx.setdefault(f[1], []).append((strip, add, re.compile("^" + f[4])))
 words = set()
 for l in open(DIC, encoding="latin-1").read().split("\n")[1:]:
     stem, _, flags = l.strip().partition("/")
@@ -28,6 +29,11 @@ for l in open(DIC, encoding="latin-1").read().split("\n")[1:]:
         for strip, add, cond in sfx.get(fl, []):
             if cond.search(stem) and stem.endswith(strip):
                 forms.add(stem[:len(stem) - len(strip)] + add)
+    # prefixes (re-, un-, dis- ...) apply to the stem and to its suffixed forms
+    for fl in flags:
+        for strip, add, cond in pfx.get(fl, []):
+            for w in list(forms):
+                if cond.search(w) and w.startswith(strip): forms.add(add + w[len(strip):])
     words |= {w for w in forms if len(w) >= 5}
 words = sorted(words)
 print(len(words), "dictionary words and forms")

@@ -30,12 +30,13 @@ The person who says "Shoebill" takes the round.
 ## How it plays
 
 1. **Today's game:** five prompts, the same for everyone on the same date, such as **"Name a bird"**.
-   Or a **practice round** of other prompts. The timer is 30 seconds, or 15 or 45 if you change it in
-   settings.
+   Or a **practice round** of 5, 10, or **party mode**: all 25 prompts, grouped by topic. The timer is
+   30 seconds, or 15 or 45 if you change it in settings.
 2. Type one answer. Spelling slips are forgiven, and the game shows what it counted.
 3. See your points, a comment from an AI host, and the top ten. The rare **Gems** stay hidden so you
    can play again.
-4. At the end, see your place on a chart from 0 to a perfect 500.
+4. At the end, see your place on a chart from 0 to a perfect score (500 for five prompts), then
+   **challenge a friend**.
 
 | Your answer | Points |
 | --- | --- |
@@ -56,6 +57,13 @@ film counts as Big Hero 6, worth 80. Think Claude got it wrong? **Check again**,
 commenting on each answer and its points. They tease the answer, never you. Pick one, or turn them
 off, in settings.
 
+**Challenge a friend.** At the end, press **Challenge a friend**. It copies a short message with a
+code such as `RF1a3k0p-245-cptgd-Sam`, which holds the exact prompts and your score. Your friend
+enters the code, or taps your link if you saved the game's link in settings. They play the same
+prompts in their own Claude, or in any browser with the game file. Then they send their code back.
+Paste it on the Scorecard and you both appear on that game's scoreboard. No server and no account
+are needed, so it works across chatbots.
+
 **Settings** sit behind the gear icon, closed until you open them. **✕ Back to start** is on every
 screen.
 
@@ -67,7 +75,8 @@ screen.
 | **Level 2:** your account | Scores saved to your Claude account; Claude checks unlisted answers; the hosts write fresh lines | A Claude artifact |
 | **Level 3:** with friends | A shared scoreboard for the day, a friends group with a code and an invite, and the chart switches to real scores once 5 people have played. **Play live with friends** (beta): a room code, so everyone answers the same prompt at once | A shared Claude artifact |
 
-**Can friends play on their own AI?** In Claude, yes. Share the artifact, and each friend plays the
+**Can friends play on their own AI?** Yes, by challenge code, wherever the game opens: a shared
+Claude artifact, or the game file in any browser. For a shared live scoreboard, use Claude. Share the artifact, and each friend plays the
 same prompts on their own Claude account and plan. They need a Claude account, and sharing by link
 needs a paid plan. To post scores to the shared board, a friend needs edit access: Claude lets
 people with view access read shared data but not write it. With view access they can still play,

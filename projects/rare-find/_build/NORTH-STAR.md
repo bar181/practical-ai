@@ -58,6 +58,27 @@ it", the room's word, 80. The game never waits more than 4 seconds; a late verdi
 typical play (per prompt: about 30% miss, 33% top three, 21% ranks 4 to 10, 14% beyond the top ten,
 2% Gems). That gives an average of about 170. It is labelled as an estimate everywhere.
 
+## Challenge codes: the simple way to join
+
+The owner's story: "I share the artifact, I send a link with the game and my score, others play the
+same game in their own chatbot, and the scoreboard for that day includes them."
+
+A code carries everything: `RF1` (format), one base-36 character per prompt (its place in the pack
+list, which only ever grows at the end), the score, one letter per answer's result, and a name. For
+example, `RF1a3k0p-245-cptgd-Sam`. "Challenge a friend" copies a message with the code. If the player
+saved the game's link in settings, the message holds `link#c-<code>`, which opens the challenge in
+one tap (a Claude artifact passes a plain `#name` to the page). The friend plays exactly those
+prompts and sends their own code back. Pasting it on the Scorecard adds them to that game's
+scoreboard. Both players keep the board locally. No server, no account, and no AI are needed, so it
+works in Claude, in a browser, or wherever the file opens. If the code is today's game and the
+friend has not played yet, it counts as their daily game.
+
+## Prompts per game
+
+5 (default), 10, or party mode: all 25 prompts, grouped by topic, with "Topic 2 of 8" on each
+prompt. Today's game is always 5, so daily scores compare. The chart and the perfect score scale with
+the count (100 per prompt).
+
 ## The commentators
 
 | Persona | Character |
