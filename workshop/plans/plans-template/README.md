@@ -1,7 +1,7 @@
 # Plans template
 
-> A new plan now follows [Agentic Process](../../../projects/agentic-process/): its one-page plan is
-> `base/plan.md` in [the project template](../../../projects/agentic-process/level-2-files/agentic-process/template/).
+> A new plan now follows [Agentic Process](../../drafts/agentic-process/): its one-page plan is
+> `base/plan.md` in [the project template](../../drafts/agentic-process/builder/agentic-process/template/).
 > [Document to action brief](../document-to-action-brief/) is the first plan written that way. The
 > fuller plan template below is kept for the older plans.
 

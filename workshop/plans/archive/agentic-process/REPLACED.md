@@ -16,3 +16,13 @@ general, with a lecture deck per module. It was retired on 16 November 2026 when
 for a course about this project itself: how it works, why each step exists, and how to run it,
 told visually. Its replacement is written from `_build/course.py` into the same file,
 [`base/course.html`](../../../../projects/agentic-process/base/course.html).
+
+## Version 1, archived on 16 November 2026
+
+`v1-project/` is the whole of Agentic Process version 1, as it stood in `projects/agentic-process/`,
+and `v1-plan/` holds its spec, Autopilot tracker and last hand-back. They were replaced by version
+2, a restart in [`workshop/drafts/agentic-process/`](../../../drafts/agentic-process/) with a new
+spec. Version 2 carries over the nine steps, the builder skill with its template and checks,
+Autopilot, the fair-test rules, the Base package template and the decision-support tool. Why:
+[`EVALUATION.md`](../../../drafts/agentic-process/EVALUATION.md). Links inside these folders are
+left as they were.

@@ -1,6 +1,6 @@
 # Plan: Document to action brief
 
-Written on 16 November 2026 by following [Agentic Process](../../../projects/agentic-process/),
+Written on 16 November 2026 by following [Agentic Process](../../drafts/agentic-process/),
 steps 1 to 6, with the one-page plan from its template. Steps 2 to 4 were searched on the web on
 that date. **The owner has not yet answered the gates;** each is marked open where it needs him.
 

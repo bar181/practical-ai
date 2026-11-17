@@ -1,6 +1,6 @@
 # Plan: Write and edit in my voice
 
-Written on 16 November 2026 by following [Agentic Process](../../../projects/agentic-process/),
+Written on 16 November 2026 by following [Agentic Process](../../drafts/agentic-process/),
 steps 1 to 6, with the one-page plan from its template. It is the classroom version of the
 [voice post drafter](../voice-post-drafter/), and reuses its draft and its dated
 [landscape review](../../drafts/voice-post-drafter/landscape-review.md). **The owner has not yet

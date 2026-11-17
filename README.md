@@ -15,7 +15,7 @@ Claude, Gemini, Microsoft Copilot and other chatbots, and with personal agents.
 <p align="center">
   <a href="#try-it-in-five-minutes"><b>Try it in five minutes</b></a> &nbsp;·&nbsp;
   <a href="#the-jobs-you-repeat">The jobs it helps with</a> &nbsp;·&nbsp;
-  <a href="#ready-now-agentic-process">Build your own</a> &nbsp;·&nbsp;
+  <a href="#how-each-tool-is-built">How each tool is built</a> &nbsp;·&nbsp;
   <a href="#created-by-bradley-ross">Who made this</a>
 </p>
 
@@ -27,7 +27,7 @@ Claude, Gemini, Microsoft Copilot and other chatbots, and with personal agents.
 | **Using a chatbot every day** | Paste [the instructions](projects/artifact-studio/base/AI-INSTRUCTIONS.md) into a Project or a Gem once. Then just ask | 10 minutes, once |
 | **Want to see how a tool works first** | Open its [explainer](projects/artifact-studio/base/examples/voice-explainer.html): a page that shows the finished tool, step by step | 5 minutes |
 | **Building with agents** | Add the [skill](projects/artifact-studio/level-2-files/) or the [MCP server](projects/artifact-studio/level-3-files/) | 15 minutes |
-| **Someone with an idea for a tool** | Paste [the build coach](projects/agentic-process/base/AI-INSTRUCTIONS.md) into your chatbot and tell it the idea | 5 minutes to start |
+| **Someone with a job to turn into a tool** | Copy [the package template](workshop/drafts/agentic-process/package-template/) and fill it in with your chatbot | About an hour, an estimate |
 | **An AI agent** | Follow [`AGENTS.md`](AGENTS.md) | |
 
 The pages in this repository are HTML files. GitHub shows an HTML file as code, so download it and
@@ -75,13 +75,12 @@ do the things AI is good at.
   your time on the part that needs you.
 - **A clear split.** Every tool says what the AI does and what stays your responsibility.
 
-**Think of it as** a cookbook where every recipe is printed twice: once for a home kitchen with a
-pan and a hob, and once for a professional kitchen with the full line.
+**Think of it as** a cookbook where every recipe works three ways: cooked by hand tonight, saved as
+the house recipe for any night, or run by a kitchen where the orders come in and the line cooks it.
 
-**North Star:** every tool is useful on its own. **Beginner** is the simplest version that works:
-started in minutes in the chat assistant you already have, nothing installed. **Advanced** makes it
-repeatable with skills and connectors. **Expert** connects it where the work happens and automates
-it. Levels describe setup and automation, not who you are. Each tool has a short explainer: what it does, how to start, what goes in and comes out, and what to check, with one worked example. It can live in the README.
+**North Star:** someone opens a tool and gets a usable result with their own input, fast. Each
+tool has a short explainer: what it does, how to start, what goes in and comes out, and what to
+check, with one worked example.
 
 ## The jobs you repeat
 
@@ -142,34 +141,32 @@ made with it for a real request is
 [a progress report on the project itself](docs/reports/2026-11-16-project-one-progress.html). Nobody else has
 used it yet, so your feedback counts.
 
-## Ready now: Agentic Process
+## How each tool is built
 
-**Your AI can build almost anything. That is the problem.** An agent will happily build the wrong
-thing three times. Agentic Process is the order of work that stops it: nine steps, a gate after
-each, and a test by a fresh AI session before any person sees the result.
+**Reuse first.** For each job: use what already does it, such as Anthropic's own skills and
+plugins; add a thin layer for business rules or missing steps; build only what is still missing.
+How much already exists depends on the job and where it runs.
 
-<p align="center">
-  <a href="projects/agentic-process/"><img src="projects/agentic-process/_build/img/nine-steps.svg" width="800" alt="Animation: nine steps in a row, from scope to grow. A marker moves along them and stops at a gate after each step."></a>
-</p>
+**Agentic Process** is the shared builder behind every tool: a nine-step method with a check after
+each step, and a builder skill that follows it and tests the result with a fresh AI session. It is
+being rebuilt as version 2 in [`workshop/drafts/agentic-process/`](workshop/drafts/agentic-process/),
+keeping the parts of version 1 that proved their worth. See [its spec](workshop/drafts/agentic-process/SPEC.md)
+and [why it restarted](workshop/drafts/agentic-process/EVALUATION.md). Nothing has been run since the restart.
 
-| You are | You use | You get |
-| --- | --- | --- |
-| New to this | [The build coach](projects/agentic-process/base/AI-INSTRUCTIONS.md), pasted into any chatbot | A one-page plan and a first prompt you can test today |
-| Building with an agent | [The skill and the project template](projects/agentic-process/level-2-files/) | A project folder with the front page and first version in place |
-| Running agents unattended | [Gates, the fresh-run test and a score sheet](projects/agentic-process/level-3-files/) | Proof of what works before a person spends time on it |
-
-What it is for, and when version 1 is done: [the spec](workshop/plans/agentic-process/SPEC.md). Nobody but its author has built a tool with it yet.
+The first tool built with it is [decision support](workshop/drafts/agentic-process/examples/decision-support/):
+it researches a business question, scores the options and recommends one. Fresh AI sessions tested
+it on two different decisions. No person has used it yet.
 
 ## Explainers
 
-Every tool has a short explainer: what it does, how to start, what goes in and comes out, and what to check, with one worked example. It can live in the README. It explains the finished tool; it is not a course.
-[Artifact Studio](projects/artifact-studio/) has a page version, and a
+Every tool has a short explainer: what it does, how to start, what goes in and comes out, and what
+to check, with one worked example. It can live in the README. It explains the finished tool; it is
+not a course. [Artifact Studio](projects/artifact-studio/) also has a page version, and a
 [30-minute lesson plan](projects/artifact-studio/base/TEACH-IN-30-MINUTES.md) for anyone who presents it.
 
 ## What comes next
 
-The next three tools. Each has a plan written with Agentic Process, waiting on the owner's review,
-and each checks every AI-made item against its source before you act.
+The next three tools. Each has a plan waiting on the owner's review, and each checks every AI-made item against its source before you act.
 
 1. [**Document to action brief**](workshop/plans/document-to-action-brief/): a supplier notice
    becomes facts, obligations, dates and questions, each with the line it came from.
@@ -180,17 +177,20 @@ and each checks every AI-made item against its source before you act.
 
 After that, the tools in [the priorities](docs/practical-ai-priorities.md), one change request each.
 
-## Get started at your level
+## Three levels: how much is set up and automated
 
 <p align="center">
-  <img src="docs/assets/levels.svg" width="640" alt="Animation: every Practical AI tool comes at three levels. Beginner, paste and go, for anyone. Advanced, a skill plus connectors, for builders. Expert, your own data, server and schedule, for teams">
+  <img src="docs/assets/levels.svg" width="640" alt="Animation: every Practical AI tool comes at three levels. Beginner: start in minutes, you start the run. Advanced: a saved project or skill you start any time. Expert: connected and automated, a trigger runs it and people decide the exceptions">
 </p>
 
-**Beginner:** the simplest version that works. Copy the instructions, paste them into your chatbot, type one sentence.
-**Advanced:** repeatable. Save it as a skill or a project and connect it to your mail, calendar, drive or sheets.
-**Expert:** connected and automated. Your own data, a server or a schedule, with agents doing the work and a person approving it.
+| Level | What you get |
+| --- | --- |
+| **Beginner** (Base) | An explainer with a quick start and worked example, plus one instruction file to paste or a direct link to an existing tool. You bring the input and start the run |
+| **Advanced** (Level 2) | A saved workflow, such as a Claude Project or a reusable skill, that you start whenever you need it |
+| **Expert** (Level 3) | A mostly automated workflow. Connected systems supply the inputs and receive the outputs, a trigger starts the run, and a person handles the exceptions and decisions that need them |
 
-Start at Beginner. It is the whole tool. The other levels only remove steps.
+The levels describe setup, not people: the same person can use Beginner for one job and Expert for
+another. Start at Beginner. It is the whole tool. The other levels only remove steps.
 
 ## Created by Bradley Ross
 
@@ -219,12 +219,12 @@ room.
 
 | Folder | What it holds |
 | --- | --- |
-| [`projects/`](projects/) | Tools you can try in five minutes. Two so far: Artifact Studio and Agentic Process |
+| [`projects/`](projects/) | Tools you can try in five minutes. One so far: Artifact Studio |
 | [`docs/`](docs/) | What gets built next, the to-do list and dated reports |
-| [`workshop/`](workshop/) | How the tools get built: plans, earlier drafts, skills and checking scripts. You do not need it to use a tool |
+| [`workshop/`](workshop/) | How the tools get built: plans, drafts (including Agentic Process version 2), skills and checking scripts. You do not need it to use a tool |
 
 Inside every project, `base/` is enough to try the tool. Beside it, `level-2-files/` and
-`level-3-files/` hold what an advanced user or an agent adds.
+`level-3-files/` hold the saved and the connected versions.
 
 - Reuse what already exists before building anything new.
 - A person approves anything that posts, sends, pays or publishes.
@@ -234,7 +234,7 @@ Inside every project, `base/` is enough to try the tool. Beside it, `level-2-fil
 
 `python3 workshop/tools/check_project.py projects/artifact-studio` checks a project against the layout in
 [`projects/README.md`](projects/README.md). How a tool gets built is
-[Agentic Process](projects/agentic-process/): nine steps, a gate after each.
+[Agentic Process](workshop/drafts/agentic-process/): nine steps, a check after each, being rebuilt as version 2.
 
 </details>
 

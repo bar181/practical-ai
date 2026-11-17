@@ -1,6 +1,6 @@
 # Connections hub: North Star
 
-Stages 1 to 3 of the [project method](../../../projects/agentic-process/base/PROCESS.md). Written
+Stages 1 to 3 of the [project method](../../drafts/agentic-process/PROCESS.md). Written
 15 November 2026. **Not yet approved.** Complexity: intermediate to advanced. The owner's working
 name is "connection and understanding master".
 

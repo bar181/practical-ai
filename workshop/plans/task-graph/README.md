@@ -1,6 +1,6 @@
 # Task decomposition and dependency graph: North Star
 
-Stages 1 to 3 of the [project method](../../../projects/agentic-process/base/PROCESS.md). Written
+Stages 1 to 3 of the [project method](../../drafts/agentic-process/PROCESS.md). Written
 15 November 2026. **Not yet approved.** Complexity: beginner to intermediate.
 
 **Think of it as** a recipe laid out before cooking. You can see every step, which ones must wait
@@ -76,7 +76,7 @@ Level 1 is the Beginner level: a student can run it in any chat assistant with n
 ## Depends on, and feeds
 
 - **Reuses** the artifact studio for every output.
-- **Feeds** the [project method](../../../projects/agentic-process/): stage 4 could produce its plan here.
+- **Feeds** the [project method](../../drafts/agentic-process/): stage 4 could produce its plan here.
 - **Feeds** the [decision support assistant](../decision-support/README.md): a recommendation ends
   in a plan of next steps.
 

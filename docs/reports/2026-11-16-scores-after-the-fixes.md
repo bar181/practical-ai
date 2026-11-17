@@ -58,7 +58,7 @@ smaller ones. The logs are in
 
 **Overall: 67 out of 100.** Built in one sitting on 16 November by following its own nine steps.
 Scored against its own sheet,
-[`level-3-files/scorecard.md`](../../projects/agentic-process/level-3-files/scorecard.md).
+[`level-3-files/scorecard.md`](../../workshop/plans/archive/agentic-process/v1-project/level-3-files/scorecard.md).
 
 | Measure | Score | Evidence | At 80? |
 | --- | --- | --- | --- |

@@ -2,8 +2,9 @@
 
 Actions, not tools. The tools are in the one list: [`tool-inventory.md`](tool-inventory.md).
 
-Every tool follows [Agentic Process](../projects/agentic-process/): nine steps, a gate after
-each. Nothing is built until its North Star page is approved at stage 3.
+Every tool follows [Agentic Process](../workshop/drafts/agentic-process/): nine steps, a check after
+each. Each tool is a useful tool first, with a short explainer. Reuse Anthropic's skills and plugins
+where they fit. Nothing is built until its North Star page is approved at stage 3.
 
 ## Next, in order
 
@@ -13,9 +14,16 @@ each. Nothing is built until its North Star page is approved at stage 3.
 - [ ] Write a North Star page for "summarise a document", the one researched tool with no page
 - [ ] Read the small-business plugin's skills before designing any Advanced level, and record what it already covers
 
-## Agentic Process
+## Agentic Process version 2
 
-From [the review from the user's side](reports/2026-11-16-agentic-process-user-review.md), most value first.
+Restarted on 16 November 2026. The plan is in [its spec](../workshop/drafts/agentic-process/SPEC.md), section 9.
+
+- [ ] Align the builder skill and the package template with the new spec
+- [ ] AC-1: rebuild decision support from its workflow card and match the bakery result
+- [ ] AC-2: build the learning system as a Base tool from its spec, with no questions asked
+- [ ] Owner: answer the spec's open questions (drop the coach, the Level 3 pilot)
+
+Version 1, archived. From [the review from the user's side](reports/2026-11-16-agentic-process-user-review.md):
 
 - [x] Bundle the checks into `level-2-files/` so the skill and template work in any repository
 - [x] Generate the coach's and the skill's gate tables from `_build/steps.py`
@@ -26,9 +34,6 @@ From [the review from the user's side](reports/2026-11-16-agentic-process-user-r
 - [x] Make `base/plan-template.md` the one source of the template's plan
 - [x] Re-run the skill with a second agent after these changes
 - [x] Add an Expert worked example
-- [ ] Run a fourth newcomer audit, to see whether the builder's score recovers after the filled-check fix
-- [ ] Run the coach's short path once with a timer, to check the lesson's twelve minutes
-- [ ] Owner: teach the 30-minute lesson once and time each section
 - [ ] Owner: add topics, a description, a social picture and GitHub Pages (see the report)
 - [ ] Owner: answer the open gates in the Document to action brief plan
 
@@ -36,10 +41,8 @@ From [the review from the user's side](reports/2026-11-16-agentic-process-user-r
 
 - [ ] Have a student run each Beginner level and record what they could not do
 - [ ] Move each older draft in `workshop/drafts/` to the showcase layout in `projects/README.md` when it is next worked on
-- [ ] Run the Agentic Process coach on a real idea in ChatGPT, Gemini and Claude, and record what came back
 - [x] Run each worked example's prompt in a fresh chat: done on 16 November 2026, ten of ten, all in Claude
 - [ ] Turn on GitHub Pages so the HTML pages open from a link on a phone (GitHub shows HTML files as code)
-- [ ] Re-run the Agentic Process skill with a second agent after the 16 November fixes
 - [ ] Turn on branch protection for `main`: a pull request and the owner's review before any merge
 - [ ] Run the beginner prompt from the artifact studio README in ChatGPT and Gemini, and record what came back
 - [ ] Try the artifact studio MCP server inside a desktop assistant

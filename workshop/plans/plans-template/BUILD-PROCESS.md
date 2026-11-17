@@ -1,7 +1,7 @@
 # How to build a new productivity tool
 
 > These nine steps are how a **plan** is written. They are the detail behind stages 1 to 4 of the
-> [project method](../../../projects/agentic-process/base/PROCESS.md), which covers the whole build and the gates.
+> [Agentic Process method](../../drafts/agentic-process/PROCESS.md), which covers the whole build and the gates.
 
 The steps every tool in this repository goes through, in order. Use it before writing a plan and
 again before starting each new level.

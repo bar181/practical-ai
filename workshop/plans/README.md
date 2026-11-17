@@ -13,7 +13,7 @@ not repeated here.
 ## Next up, in order
 
 The first class, from [the owner's priorities](../../docs/practical-ai-priorities.md). Each plan was
-written on 16 November 2026 by following [Agentic Process](../../projects/agentic-process/) steps 1
+written on 16 November 2026 by following [Agentic Process](../drafts/agentic-process/) steps 1
 to 6, with a dated reuse check. Each waits on the owner for gates 2 and 7, and on one choice for all
 three: the fictional company the lessons share.
 
@@ -28,7 +28,7 @@ you act. That is the thread of the class.
 
 ## Levels
 
-Every plan describes the same levels. The [project method](../../projects/agentic-process/) builds them
+Every plan describes the same levels. The [Agentic Process method](../drafts/agentic-process/PROCESS.md) builds them
 one at a time.
 
 | Level | For | Means |
