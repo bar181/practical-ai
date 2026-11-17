@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="s-flow-steps" viewBox="0 0 360 120" role="img" aria-labelledby="t-flow-steps">
+<title id="t-flow-steps">Three steps with a marker moving through them</title>
+<desc>Use above a three-step process. Loops. At rest it shows the three steps joined by a line.</desc>
+<style>#s-flow-steps .b{fill:#fff;stroke:var(--ink,#1b2228);stroke-width:2.5}#s-flow-steps .j{stroke:var(--soft,#a5b9d8);stroke-width:4;stroke-linecap:round}#s-flow-steps .m{fill:var(--accent,#774528);animation:flow-steps-m 3.6s ease-in-out infinite}#s-flow-steps text{font:700 22px system-ui,sans-serif;fill:var(--ink,#1b2228);text-anchor:middle}@keyframes flow-steps-m{0%,12%{transform:translateX(0)}38%,62%{transform:translateX(120px)}88%,100%{transform:translateX(240px)}}@media (prefers-reduced-motion:reduce){#s-flow-steps *{animation:none!important}}</style>
+<path class="j" d="M60 60H300"/><rect class="b" x="24" y="28" width="72" height="64" rx="12"/><rect class="b" x="144" y="28" width="72" height="64" rx="12"/><rect class="b" x="264" y="28" width="72" height="64" rx="12"/><text x="60" y="68">1</text><text x="180" y="68">2</text><text x="300" y="68">3</text><circle class="m" cx="60" cy="104" r="7"/>
+</svg>

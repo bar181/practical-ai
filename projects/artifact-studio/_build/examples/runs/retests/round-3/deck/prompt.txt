@@ -1,0 +1,5 @@
+Read the design guide at the link [saved for you as run folder: AI-INSTRUCTIONS.md]
+
+Then show this as an HTML presentation in the keynote voice, and tell me three ways I could tailor it for my own business.
+
+Here is what I want shown: We are a landscaping company with two crews. October revenue was $84,200; September was $71,500. Jobs completed: 23 in October, 19 in September. Quotes that became jobs: 46%, up from 38%. We started sending quotes within two days of the visit. It used to take six.

@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A Tuesday evening: the story of our first replies</title>
+<style>
+  /*
+    PROVISIONAL COLOURS. The storyteller look takes its colours from the photograph,
+    and no photograph was attached. These seven tokens plus one data colour are a
+    stand-in, chosen from the story itself (an evening, a lamp left on). Replace them
+    with colours taken from the photo when it arrives.
+  */
+  :root {
+    --bg: #eceeed;      /* page background */
+    --panel: #dde2e2;   /* panels and the photo space */
+    --line: #7d898f;    /* rules and borders */
+    --muted: #44525b;   /* secondary text */
+    --ink: #15202a;     /* main text */
+    --accent: #e3a32b;  /* the one thing to act on: the button */
+    --soft: #f5e6bf;    /* soft highlight */
+    --data: #2a6272;    /* chart colour, never the accent */
+
+    --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, "Times New Roman", serif;
+    --column: 39rem;
+    --gutter: clamp(1.25rem, 5vw, 2.5rem);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: 1.1875rem;
+    line-height: 1.6;
+    overflow-wrap: break-word;
+  }
+  h1, h2, h3, p, ol, ul, figure, dl, dd { margin: 0; padding: 0; }
+  ol, ul { list-style: none; }
+
+  a:focus-visible, summary:focus-visible {
+    outline: 3px solid var(--ink);
+    outline-offset: 4px;
+  }
+
+  /* ---------- the eight beats ---------- */
+  .beat {
+    padding: clamp(3.25rem, 11vw, 6rem) var(--gutter);
+    border-top: 1px solid var(--line);
+  }
+  .beat:first-of-type { border-top: 0; }
+  .beat > .col { max-width: var(--column); margin-inline: auto; }
+  .col > * + * { margin-top: 1.25rem; }
+
+  .beat-name {
+    font-size: 0.9375rem;
+    font-style: italic;
+    color: var(--muted);
+    line-height: 1.4;
+  }
+  h1 {
+    font-size: clamp(2.3rem, 9.6vw, 4.4rem);
+    line-height: 1.06;
+    font-weight: 400;
+    letter-spacing: -0.015em;
+    text-wrap: balance;
+  }
+  h2 {
+    font-size: clamp(1.85rem, 7.2vw, 3rem);
+    line-height: 1.12;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+  }
+  .beat-name + h1, .beat-name + h2 { margin-top: 0.6rem; }
+  h3 {
+    font-size: 1.1875rem;
+    line-height: 1.35;
+    font-weight: 700;
+  }
+  .col > h3 { margin-top: 2.75rem; }
+  .small { font-size: 0.9375rem; line-height: 1.5; color: var(--muted); }
+  .needs {
+    font-size: 0.9375rem;
+    line-height: 1.5;
+    background: var(--soft);
+    padding: 0.5rem 0.75rem;
+    border-left: 3px solid var(--ink);
+  }
+
+  /* ---------- beat 1: hook and photo ---------- */
+  .hook { padding-top: clamp(2rem, 7vw, 4rem); }
+  .hook .col { max-width: 72rem; }
+  .hook-words > * + * { margin-top: 1.25rem; }
+  .photo {
+    margin-top: 2rem;
+    --p: 0;
+    height: min(64svh, 540px);
+    min-height: 300px;
+    overflow: clip;
+    background: var(--panel);
+    position: relative;
+  }
+  .photo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  .photo-missing {
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    padding: 1.25rem;
+    border: 2px dashed var(--line);
+    color: var(--ink);
+    font-size: 1.0625rem;
+    line-height: 1.45;
+  }
+  .photo-missing p { max-width: 24rem; }
+  @media (min-width: 60rem) {
+    .hook .col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    .hook .col > * + * { margin-top: 0; }
+    .photo { margin-top: 0; height: min(78svh, 680px); }
+  }
+
+  /* ---------- beat 3: three depths ---------- */
+  .depths { margin-top: 2.25rem; }
+  .depths li {
+    padding: 1.25rem 0 1.25rem 0;
+    border-top: 1px solid var(--line);
+  }
+  .depths li:nth-child(2) { padding-left: 1.25rem; }
+  .depths li:nth-child(3) { padding-left: 2.5rem; }
+  .depths .depth-name {
+    display: block;
+    font-size: 0.9375rem;
+    font-style: italic;
+    color: var(--muted);
+    margin-bottom: 0.25rem;
+  }
+
+  /* ---------- promise lines (they push in slowly) ---------- */
+  .promise {
+    --p: 1;
+    font-size: clamp(1.6rem, 6.4vw, 2.5rem);
+    line-height: 1.18;
+    letter-spacing: -0.01em;
+    margin-top: 2.25rem;
+    padding: 1.5rem 0;
+    border-top: 3px solid var(--ink);
+    border-bottom: 1px solid var(--line);
+  }
+  .promise > span { display: block; transform-origin: left center; text-wrap: balance; }
+
+  /* ---------- stats: label, number, what it was before ---------- */
+  .stats { margin-top: 1rem; display: grid; gap: 0; }
+  .stat { padding: 1.25rem 0; border-top: 1px solid var(--line); }
+  .stat dt { font-size: 1rem; color: var(--muted); line-height: 1.35; }
+  .stat .now {
+    font-size: clamp(2.6rem, 12vw, 3.6rem);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-top: 0.25rem;
+    font-variant-numeric: lining-nums;
+  }
+  .stat .was { font-size: 1rem; line-height: 1.45; margin-top: 0.4rem; }
+  @media (min-width: 44rem) {
+    .stats { grid-template-columns: repeat(3, 1fr); column-gap: 1.75rem; }
+    .stat .now { font-size: 2.6rem; }
+  }
+
+  /* ---------- charts ---------- */
+  .chart { margin-top: 2.75rem; }
+  .chart h3 { margin-bottom: 1rem; }
+  .bars li {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    column-gap: 0.75rem;
+    align-items: baseline;
+    padding: 0.45rem 0;
+  }
+  .bars .label { font-size: 1rem; line-height: 1.3; }
+  .bars .value { font-size: 1.0625rem; font-weight: 700; font-variant-numeric: lining-nums tabular-nums; }
+  .bars .track { grid-column: 1 / -1; height: 10px; margin-top: 0.3rem; }
+  .bars .bar { display: block; height: 100%; min-width: 3px; background: var(--data); }
+  .bars .bar.before { background: var(--line); }
+  .chart figcaption { margin-top: 0.9rem; }
+
+  .limits {
+    margin-top: 2.25rem;
+    background: var(--soft);
+    padding: 1.25rem 1.25rem 1.4rem;
+  }
+  .limits ul { margin-top: 0.6rem; }
+  .limits li { padding-left: 1.1rem; position: relative; }
+  .limits li::before { content: ""; position: absolute; left: 0; top: 0.72em; width: 0.5rem; height: 2px; background: var(--ink); }
+
+  /* ---------- beat 5: steps, rules, questions ---------- */
+  .steps { counter-reset: step; margin-top: 2rem; }
+  .steps li {
+    counter-increment: step;
+    display: grid;
+    grid-template-columns: 2.75rem 1fr;
+    align-items: baseline;
+    padding: 1rem 0;
+    border-top: 1px solid var(--line);
+    font-size: 1.3125rem;
+    line-height: 1.35;
+  }
+  .steps li::before {
+    content: counter(step);
+    font-size: 2rem;
+    line-height: 1;
+    font-variant-numeric: lining-nums;
+  }
+  .rules { margin-top: 0.75rem; }
+  .rules li { padding: 0.6rem 0 0.6rem 1.1rem; position: relative; border-top: 1px solid var(--line); }
+  .rules li::before { content: ""; position: absolute; left: 0; top: 1.4em; width: 0.5rem; height: 2px; background: var(--ink); }
+
+  .questions { margin-top: 0.75rem; border-bottom: 1px solid var(--line); }
+  .questions details { border-top: 1px solid var(--line); }
+  .questions summary {
+    cursor: pointer;
+    min-height: 3rem;
+    padding: 0.7rem 2.25rem 0.7rem 0;
+    display: flex;
+    align-items: center;
+    position: relative;
+    list-style: none;
+    font-weight: 700;
+    line-height: 1.35;
+  }
+  .questions summary::-webkit-details-marker { display: none; }
+  .questions summary::after {
+    content: "+";
+    position: absolute;
+    right: 0.25rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1;
+  }
+  .questions details[open] summary::after { content: "\2212"; }
+  .questions details p { padding: 0 0 1.1rem; max-width: 34rem; }
+
+  /* ---------- beat 6 and 8: the ask ---------- */
+  .price { margin-top: 2rem; border-top: 1px solid var(--line); }
+  .price div { padding: 0.9rem 0; border-bottom: 1px solid var(--line); display: grid; gap: 0.1rem; }
+  .price dt { font-size: 1rem; color: var(--muted); }
+  .price dd { font-size: 1.5rem; line-height: 1.25; font-variant-numeric: lining-nums; }
+  .price dd small { display: block; font-size: 1rem; color: var(--muted); }
+  .ask { margin-top: 2rem; }
+  .button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 3.25rem;
+    padding: 0.7rem 1.6rem;
+    background: var(--accent);
+    color: var(--ink);
+    border: 2px solid var(--ink);
+    font: inherit;
+    font-size: 1.1875rem;
+    font-weight: 700;
+    line-height: 1.25;
+    text-decoration: none;
+    text-align: center;
+  }
+  .button:hover { background: var(--ink); color: var(--bg); }
+  @media (max-width: 30rem) { .button { display: flex; } }
+
+  /* ---------- beat 7: failure beside success ---------- */
+  .ways { margin-top: 2rem; display: grid; gap: 1rem; }
+  .way { padding: 1.25rem; }
+  .way.before { background: var(--panel); }
+  .way.during { border: 2px solid var(--ink); }
+  .way h3 { margin-bottom: 0.5rem; }
+  .way li { padding: 0.5rem 0; border-top: 1px solid var(--line); }
+  @media (min-width: 40rem) { .ways { grid-template-columns: 1fr 1fr; } }
+
+  footer {
+    padding: 2rem var(--gutter) 3rem;
+    border-top: 1px solid var(--line);
+  }
+  footer p { max-width: var(--column); margin-inline: auto; }
+
+  /* ---------- slow push-ins ----------
+     With scripts on, a small script sets --p (0 to 1) from the scroll position.
+     With scripts off, the @supports block below does the same in CSS.
+     At rest, and with reduced motion, nothing is scaled and nothing is hidden. */
+  @media (prefers-reduced-motion: no-preference) {
+    html.scroll-js .photo img {
+      transform: scale(calc(1 + 0.1 * var(--p)));
+    }
+    html.scroll-js .promise > span {
+      transform: scale(calc(0.93 + 0.07 * min(1, var(--p) * 2.5)));
+    }
+  }
+  @keyframes push-photo { from { transform: scale(1); } to { transform: scale(1.1); } }
+  @keyframes push-type { from { transform: scale(0.93); } to { transform: scale(1); } }
+  @supports ((animation-timeline: view()) and (animation-range: entry)) {
+    @media (prefers-reduced-motion: no-preference) {
+      html:not(.scroll-js) .photo img {
+        animation: push-photo linear both;
+        animation-timeline: view();
+        animation-range: entry 0% exit 100%;
+      }
+      html:not(.scroll-js) .promise > span {
+        animation: push-type linear both;
+        animation-timeline: view();
+        animation-range: entry 0% cover 40%;
+      }
+    }
+  }
+</style>
+</head>
+<body>
+<aside aria-label="How this example was made" style="background:#0c2340;color:#fff;font:400 16px/1.5 system-ui,-apple-system,Segoe UI,sans-serif;padding:22px 0 24px;text-align:left"><div style="max-width:880px;margin:0 auto;padding:0 20px"><p style="margin:0;font-weight:700;font-size:1.15rem;color:#ffd23f">Worked example: the storyteller voice</p><p style="margin:8px 0 0;color:#fff;max-width:44em">An AI assistant made the page below on 16 November 2026 from the prompt in this box. It worked in a fresh session with only the prompt, the design guide and the pictures. Nothing was edited afterwards. Paste the same prompt into your own assistant and you get a page in this manner. Yours will differ.</p><details style="margin-top:12px"><summary style="cursor:pointer;font-weight:700;min-height:44px;display:flex;align-items:center;color:#fff">The prompt and the sample input</summary><pre tabindex="0" style="margin:10px 0 0;padding:12px 14px;background:#fff;color:#14202e;border:1px solid #c9d1de;border-radius:8px;white-space:pre-wrap;overflow-wrap:anywhere;font:400 14px/1.5 ui-monospace,Menlo,Consolas,monospace;max-height:22em;overflow:auto">Read the design guide at https://raw.githubusercontent.com/bar181/practical-ai/main/projects/artifact-studio/base/AI-INSTRUCTIONS.md and follow it.
+
+Tell this as a story on one page, with my customer as the hero and us as the guide. Use my photo large.
+
+My notes:
+
+- We are a home renovation company. Enquiries arrive by web form, email and telephone
+- Before the trial our median first reply took 26 hours. 12% of enquiries were answered within the hour
+- The trial ran from February to April, 90 days, all 214 enquiries. A reply is drafted the moment a message arrives. A member of staff reads it, fixes it and sends it
+- After: median first reply 38 minutes. 81% of enquiries answered within the hour
+- Site visits booked a month: 18 before (the average of the three months before), then 22, 28 and 31
+- About one visit in four becomes a job
+- The office manager&#x27;s time on replies: 6 hours a week before, 2.5 after
+- Cost: about $150 a month, so about $1,800 a year. A part-time coordinator would cost about $26,000 a year
+- How we set it up, in about an hour: collected three replies we are proud of, wrote our rules on half a page, saved both in a chat project, tested it on five old enquiries, then used it on the next real one
+- Our rules: a person approves every reply. The first reply confirms and offers a visit. It never states a price
+- What this does not show: one company, no comparison group, spring is the busy season, and jobs won are not counted yet
+- The trial ends on 31 May. The owners need to decide by 26 May
+- A customer story we may tell: Priya wrote to three companies about her kitchen on a Tuesday evening. By Wednesday night none had answered</pre></details><details><summary style="cursor:pointer;font-weight:700;min-height:44px;display:flex;align-items:center;color:#fff">What the assistant said about its page</summary><pre tabindex="0" style="margin:10px 0 0;padding:12px 14px;background:#fff;color:#14202e;border:1px solid #c9d1de;border-radius:8px;white-space:pre-wrap;overflow-wrap:anywhere;font:400 14px/1.5 ui-monospace,Menlo,Consolas,monospace;max-height:22em;overflow:auto"># Delivery note
+
+The page is `out.html`. It is a draft, not a finished page: your photo was not attached, so the large photo space is empty and the colours are a stand-in.
+
+## Chose
+
+- **Kind of thing:** a page to be read, because you said &quot;on one page&quot;.
+- **Recipe:** landing page. It is the only recipe that lists the storyteller voice, and it fits &quot;one kind of visitor should take one action&quot;: the owners, deciding by 26 May.
+- **Voice:** storyteller. You asked for a story with your customer as the hero and you as the guide. The voice set the order, so the page runs in eight named beats: hook, hero, problem at three depths, guide (empathy then proof), three-step plan, one call to action, failure beside success, an ending that returns to the Tuesday evening.
+- **Look:** storyteller default is &quot;colours from the photograph&quot;. With no photograph, I used a provisional set: pale plaster background, blue-black text, one lamp-amber accent for the button only, one teal data colour for the charts. Large system serif. Beat names in small italic type.
+- **Parts:** three stat rows (number, what it was before), two thin bar charts (site visits by month; 26 hours against 38 minutes drawn to scale), three questions that open on tap, a before and during pair of lists, one button shown twice. One moving part: a slow push-in on the photo and on the two promise lines.
+- **Where the landing page sections went:** promise with a number (start of beat 4 and again in beat 8), picture of the result (the site visits chart), three things you get (beat 4), three steps and three questions (beat 5), price and button (beat 6), promise and button again (beat 8).
+- **Preferences applied:** none. No preferences file came with the message.
+- **Design skill:** the guide says to load a front-end design skill if one is available. One was, so I loaded it. Where it disagreed with the guide, the guide won.
+
+## Assumed
+
+- **The reader is the owners and the job is the decision due 26 May.** Your notes hold costs, limits and a decision date, which a customer would not be shown. If this page is meant for customers, it needs rebuilding with a different ask.
+- **Priya is the hero.** The notes do not say whether your company was one of her three, or whether she became your customer. The page claims neither.
+- **&quot;She wanted one thing first: an answer.&quot;** This is my reading of her writing to three companies. It is not in your notes.
+- **The 26 hours and 12% appear in beat 3 as &quot;one home renovation company&quot;, and beat 4 reveals it was you.** The storyteller voice keeps the company out until the fourth beat, and your own numbers are the only problem numbers I have.
+- **&quot;We know the wait Priya had, because people who wrote to us had it too.&quot;** The empathy line is built from your median of 26 hours. You gave no words of your own for it.
+- **The three steps are how each enquiry is handled** (drafted, read and fixed, sent). Your five setup actions became the answer to a question instead.
+- **I wrote the three questions myself**, so that each has an answer in your notes. Nobody supplied real questions.
+- **22, 28 and 31 are shown as the first, second and third trial months, in that order.** I did not put month names on them.
+- **&quot;The trial ran from February to April&quot; and &quot;the trial ends on 31 May&quot;** are both on the page. I worded the first as &quot;it covered February to April: 90 days and all 214 enquiries&quot;, reading it as the measured period.
+- **The button opens a new email** with the subject &quot;Reply trial: our decision&quot; and no address, because none was supplied.
+- **Derived numbers, with working shown on the page:** 88% not answered within the hour (100 less 12); 3.5 hours a week back (6 less 2.5); 81 visits in the trial against 54 at the old average, 27 more (22 + 28 + 31; 3 × 18); 26 hours is 1,560 minutes and 38 minutes is 2.4% of it; &quot;half of first replies took at least 26 hours&quot; (what a median means); &quot;26 hours from a Tuesday evening ends on Wednesday night&quot;; &quot;12 in every 100&quot; and &quot;81 in every 100&quot;.
+- **I did not multiply visits by one in four** to estimate jobs, because your notes say jobs won are not counted yet.
+
+## Missing
+
+- **Your photo.** Marked on the page as `[needs: your photo ...]`. Send it again and I will embed it, take the colours from it, crop it to its subject at phone width and write its alt text.
+- **The real colours.** They depend on the photo.
+- **Whether Priya is a real customer and has agreed to be named.** Marked on the page as `[needs: ...]`. If she is an example, the page must say so.
+- **A place for the opening.** The voice asks for a time and a place. Your notes give a time only. I did not invent a place.
+- **A customer&#x27;s own words.** The landing page recipe has a slot for them. None were supplied, so there is no quote.
+- **Your company name.** Not supplied, so it appears nowhere.
+- **An address for the decision email.** Add it in two places in the file, between `mailto:` and `?`.
+- **What exactly is being decided** (keep it, stop it, change it). The page says only that a decision is due.
+- **The year** of the trial and of the two May dates.
+- **Jobs won.** Not counted yet, and the page says so.
+
+## Check before sharing
+
+- Open the page on a phone. It was checked at 390 pixels wide: no sideways scrolling, tap targets 48 pixels or more, works with scripts off and with reduced motion on, makes no network requests.
+- Every number against your own records. I copied them from your notes and checked none of them.
+- &quot;February to April, 90 days.&quot; Three whole months from February to April is 89 days in an ordinary year. Confirm the dates.
+- The limits box (&quot;What this does not show&quot;) is visible in beat 4. Keep it there if you cut anything.
+- The push-in on the photo was tested with a blank test image only. Look at it once with the real photo in place.
+- Contrast of the provisional colours: main text on background 14.2 to 1; secondary text on background 6.9 to 1; main text on the amber button 7.5 to 1; main text on the soft highlight 13.3 to 1. These need checking again once the photo&#x27;s colours replace them.
+- Nothing has been sent or published. The button only opens a draft email.</pre></details><p style="margin:10px 0 0"><a href="../studio.html#voice-story" style="color:#ffd23f;font-weight:700">Compare it with the hand-built version in the library</a></p></div></aside>
+
+<main>
+
+  <!-- Beat 1 -->
+  <section class="beat hook" aria-labelledby="b1">
+    <div class="col">
+      <div class="hook-words">
+        <p class="beat-name">Beat 1 of 8, the hook</p>
+        <h1 id="b1">On a Tuesday evening, Priya wrote to three companies about her kitchen.</h1>
+        <p class="needs">[needs: confirmation that Priya is a real customer and has agreed to be named]</p>
+      </div>
+      <!--
+        THE PHOTO GOES HERE, LARGE.
+        Replace the whole <div class="photo-missing"> below with:
+          <img src="data:image/jpeg;base64,..." alt="Say what the photo shows">
+        The frame crops to the centre. To crop to the subject at phone width, set
+        object-position on .photo img, for example: object-position: 30% 50%.
+      -->
+      <figure class="photo" data-push>
+        <div class="photo-missing">
+          <p>[needs: your photo. None was attached to the message. This space is held for it at this size.]</p>
+        </div>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Beat 2 -->
+  <section class="beat" aria-labelledby="b2">
+    <div class="col">
+      <p class="beat-name">Beat 2 of 8, the hero</p>
+      <h2 id="b2">She wanted one thing first: an answer.</h2>
+      <p>Three companies. One kitchen. Three messages sent on the same evening.</p>
+    </div>
+  </section>
+
+  <!-- Beat 3 -->
+  <section class="beat" aria-labelledby="b3">
+    <div class="col">
+      <p class="beat-name">Beat 3 of 8, the problem at three depths</p>
+      <h2 id="b3">By Wednesday night, none had answered.</h2>
+      <ol class="depths">
+        <li>
+          <span class="depth-name">First depth: what she saw</span>
+          Three messages out. A day later, nothing back from any of the three.
+        </li>
+        <li>
+          <span class="depth-name">Second depth: how ordinary it is</span>
+          At one home renovation company, the median first reply took 26 hours. Counted from a Tuesday evening, 26 hours ends on Wednesday night. A median means half of the first replies took at least that long.
+        </li>
+        <li>
+          <span class="depth-name">Third depth: how rare a quick answer was</span>
+          At the same company, 12% of enquiries were answered within the hour. The other 88% were not (100 less 12).
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Beat 4 -->
+  <section class="beat" aria-labelledby="b4">
+    <div class="col">
+      <p class="beat-name">Beat 4 of 8, the guide: empathy, then proof</p>
+      <h2 id="b4">That company was us.</h2>
+      <p>Those were our numbers before the trial. We know the wait Priya had, because people who wrote to us had it too. Their enquiries reached us by web form, email and telephone, and the median first reply took 26 hours.</p>
+      <p>So we ran a trial. It covered February to April: 90 days and all 214 enquiries.</p>
+
+      <p class="promise" data-push><span>In the trial, 81% of enquiries were answered within the hour. A person approved every reply.</span></p>
+
+      <h3>Three things the trial gave</h3>
+      <dl class="stats">
+        <div class="stat">
+          <dt>Median first reply</dt>
+          <dd class="now">38 minutes</dd>
+          <dd class="was">Before the trial it was 26 hours.</dd>
+        </div>
+        <div class="stat">
+          <dt>Enquiries answered within the hour</dt>
+          <dd class="now">81%</dd>
+          <dd class="was">Before the trial it was 12%.</dd>
+        </div>
+        <div class="stat">
+          <dt>The office manager&rsquo;s time on replies</dt>
+          <dd class="now">2.5 hours a week</dd>
+          <dd class="was">Before the trial it was 6 hours a week. That is 3.5 hours back (6 less 2.5).</dd>
+        </div>
+      </dl>
+
+      <figure class="chart">
+        <h3 id="c1">Site visits booked rose in each month of the trial.</h3>
+        <ol class="bars" aria-labelledby="c1">
+          <li>
+            <span class="label">Before: average of the three months before</span>
+            <span class="value">18</span>
+            <span class="track" aria-hidden="true"><span class="bar before" style="width:58.06%"></span></span>
+          </li>
+          <li>
+            <span class="label">Trial, first month</span>
+            <span class="value">22</span>
+            <span class="track" aria-hidden="true"><span class="bar" style="width:70.97%"></span></span>
+          </li>
+          <li>
+            <span class="label">Trial, second month</span>
+            <span class="value">28</span>
+            <span class="track" aria-hidden="true"><span class="bar" style="width:90.32%"></span></span>
+          </li>
+          <li>
+            <span class="label">Trial, third month</span>
+            <span class="value">31</span>
+            <span class="track" aria-hidden="true"><span class="bar" style="width:100%"></span></span>
+          </li>
+        </ol>
+        <figcaption class="small">Unit: site visits booked a month. The three trial months add up to 81 visits (22 + 28 + 31). Three months at the old average would be 54 (3 &times; 18). That is 27 more. Source: our own notes on the trial.</figcaption>
+      </figure>
+
+      <aside class="limits" aria-labelledby="lim">
+        <h3 id="lim">What this does not show</h3>
+        <ul>
+          <li>It is one company.</li>
+          <li>There is no comparison group.</li>
+          <li>Spring is the busy season.</li>
+          <li>Jobs won are not counted yet.</li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Beat 5 -->
+  <section class="beat" aria-labelledby="b5">
+    <div class="col">
+      <p class="beat-name">Beat 5 of 8, the plan in three steps</p>
+      <h2 id="b5">Three steps for every enquiry.</h2>
+      <ol class="steps">
+        <li>A reply is drafted the moment a message arrives.</li>
+        <li>A member of staff reads it and fixes it.</li>
+        <li>That member of staff sends it.</li>
+      </ol>
+
+      <h3>Our rules</h3>
+      <ul class="rules">
+        <li>A person approves every reply.</li>
+        <li>The first reply confirms and offers a visit.</li>
+        <li>It never states a price.</li>
+      </ul>
+
+      <h3>Three questions</h3>
+      <div class="questions">
+        <details>
+          <summary>How long did it take to set up?</summary>
+          <p>About an hour. We collected three replies we are proud of, wrote our rules on half a page, saved both in a chat project, tested it on five old enquiries, then used it on the next real one.</p>
+        </details>
+        <details>
+          <summary>Do more visits mean more jobs?</summary>
+          <p>About one visit in four becomes a job. Jobs won are not counted yet, so this page claims none.</p>
+        </details>
+        <details>
+          <summary>Which enquiries did the trial count?</summary>
+          <p>All 214 from the 90 days. Enquiries arrive by web form, email and telephone.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Beat 6 -->
+  <section class="beat" aria-labelledby="b6">
+    <div class="col">
+      <p class="beat-name">Beat 6 of 8, the one call to action</p>
+      <h2 id="b6">One decision, due by 26 May.</h2>
+      <p>The trial ends on 31 May. The owners need to decide by 26 May.</p>
+      <dl class="price">
+        <div>
+          <dt>What it costs</dt>
+          <dd>About $150 a month <small>About $1,800 a year (12 &times; $150)</small></dd>
+        </div>
+        <div>
+          <dt>For comparison, a part-time coordinator</dt>
+          <dd>About $26,000 a year</dd>
+        </div>
+      </dl>
+      <!-- No address was supplied. Put the address between "mailto:" and "?" in both buttons. -->
+      <p class="ask"><a class="button" href="mailto:?subject=Reply%20trial%3A%20our%20decision">Email your decision by 26 May</a></p>
+    </div>
+  </section>
+
+  <!-- Beat 7 -->
+  <section class="beat" aria-labelledby="b7">
+    <div class="col">
+      <p class="beat-name">Beat 7 of 8, failure beside success</p>
+      <h2 id="b7">The same Tuesday evening message, two ways.</h2>
+      <div class="ways">
+        <div class="way before">
+          <h3>Before the trial</h3>
+          <ul>
+            <li>At the median, the first reply goes out 26 hours later, on Wednesday night.</li>
+            <li>12 in every 100 enquiries hear back within the hour.</li>
+            <li>The replies take 6 hours of the office manager&rsquo;s week.</li>
+          </ul>
+        </div>
+        <div class="way during">
+          <h3>During the trial</h3>
+          <ul>
+            <li>At the median, the first reply goes out 38 minutes later, read and approved by a person.</li>
+            <li>81 in every 100 enquiries hear back within the hour.</li>
+            <li>The replies take 2.5 hours of the office manager&rsquo;s week.</li>
+          </ul>
+        </div>
+      </div>
+
+      <figure class="chart">
+        <h3 id="c2">At the median, the wait for a first reply fell from 26 hours to 38 minutes.</h3>
+        <ol class="bars" aria-labelledby="c2">
+          <li>
+            <span class="label">Before the trial</span>
+            <span class="value">26 hours</span>
+            <span class="track" aria-hidden="true"><span class="bar before" style="width:100%"></span></span>
+          </li>
+          <li>
+            <span class="label">During the trial</span>
+            <span class="value">38 minutes</span>
+            <span class="track" aria-hidden="true"><span class="bar" style="width:2.44%"></span></span>
+          </li>
+        </ol>
+        <figcaption class="small">Unit: median time to the first reply, drawn to scale. 26 hours is 1,560 minutes (26 &times; 60). 38 minutes is 2.4% of that (38 &divide; 1,560). Source: our own notes on the trial.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Beat 8 -->
+  <section class="beat" aria-labelledby="b8">
+    <div class="col">
+      <p class="beat-name">Beat 8 of 8, the ending</p>
+      <h2 id="b8">Tuesday evening, again.</h2>
+      <p>Priya wrote to three companies about her kitchen. By Wednesday night none had answered. In our trial, the median first reply took 38 minutes.</p>
+      <p class="promise" data-push><span>81% of enquiries answered within the hour. A person approves every reply.</span></p>
+      <p class="ask"><a class="button" href="mailto:?subject=Reply%20trial%3A%20our%20decision">Email your decision by 26 May</a></p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p class="small">Every figure on this page comes from our own notes on the trial. The colours are provisional until the photograph is added.</p>
+</footer>
+
+<script>
+/* Slow push-ins. Sets one custom property, --p, on each marked element:
+   0 as it enters the bottom of the screen, 1 as it leaves the top. */
+(function () {
+  if (!window.matchMedia || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var els = Array.prototype.slice.call(document.querySelectorAll('[data-push]'));
+  if (!els.length) return;
+  document.documentElement.classList.add('scroll-js');
+  var waiting = false;
+  function update() {
+    waiting = false;
+    var vh = window.innerHeight;
+    for (var i = 0; i < els.length; i++) {
+      var r = els[i].getBoundingClientRect();
+      var p = (vh - r.top) / (vh + r.height);
+      p = p < 0 ? 0 : p > 1 ? 1 : p;
+      els[i].style.setProperty('--p', p.toFixed(3));
+    }
+  }
+  function ask() { if (!waiting) { waiting = true; requestAnimationFrame(update); } }
+  window.addEventListener('scroll', ask, { passive: true });
+  window.addEventListener('resize', ask);
+  update();
+})();
+</script>
+<aside aria-label="About the creator" style="background:#0c2340;color:#fff;padding:34px 0 40px;font:400 16px/1.45 system-ui,-apple-system,Segoe UI,sans-serif;text-align:left"><div style="max-width:880px;margin:0 auto;padding:0 20px;display:flex;gap:18px;align-items:flex-start"><img style="flex:none;border-radius:50%;border:3px solid #ffd23f" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCACQAJADASIAAhEBAxEB/8QAHAAAAQUBAQEAAAAAAAAAAAAAAAEDBQYHBAII/8QAOBAAAQMDAQYDBAoCAwEAAAAAAQACAwQFESEGEhMxQWEiUXEHQoHBFBUjMlJykaGx0TPhFmKCQ//EABsBAAIDAQEBAAAAAAAAAAAAAAAEAQMFAgYH/8QAJREAAgICAgICAgMBAAAAAAAAAAECAwQREiExQQUiUWETIzJi/9oADAMBAAIRAxEAPwDTUqRKnzKEQhCABCEIAEIQgAQjpk6BAOeWvogNAhCVBAiEqEAJhGEqRSAISoUEiIQhSQCEIQAIQq3tttE2wUDCwg1Ux3Yweg6lcTmoRcmdwg5yUUTddWw0cZdK4b5HhYD4nHyCrs1wukuXmeKBh/8AnEzJHq4/IKj2251Nyq+PKXvOdDk5cf6V8ttBPUxB0+Gg88DXCyLs+Teo9I3cb4yOty7ZTtoHzzEiGSoq6nye92434Dn8VGW2K7UEvGLpQ4nkx7m4WyWaxU7TvcMZOqlaqyQPbpCz9FV/LKXY2saEVoze3XK7N3Hy1L5oncw7G83101U2L66GZjKiFz2O032Dl8OalK+xNED2xtwHDUY5qiOrqqiuH1bUxkTU7hJTydS3PXt0V9ds4vtit+LXx6iaHDKyaJkkTg6Nwy1w5EL2uK0iM073wH7KV5ka38OeY/XK7lrJ7WzAktPQiEIXRyCEIQAIQhAAhCVACLJtvY5bnt3DRammpohK4fic4aZ7AY/fzWslZvf5oP8AltxlYBxWMjicfMgf7SeY9VjuAt2nfs7boYQ0MaPBoCrrQN8IGFXtnGb0bSOquFBE0OGcrA03I9dGSjEk7awbvJSGQDjC56UMaDhwTrXszkuCbr+olY+TGKtjX9NFTtqLJDXPjl4f28WgcNCAdDj+fgrzI1rm5BUJczwCJM6A5yml2yicvqUPYX6TTvuVBWyGSanlGvQ5zr+ytirVJVRRba1kLcBlVHvs/wCxByfmrKtGr/Ojz+Qv7GwQhCtKBEJUiABCEIAEISqAA8lge012dbdp7yysZJxHVxDWtGrgdRjtjC3xYjtPST122FVU1ULZHMlMYBbnLB91J5jXFbH8BNzbRZrXtFUUUDA+KlhxzEk5J+O60/ymq72hVQkBoauhkOdYod9x/UjC92vYoVcTJq1xnD/E5u9gHspeDYq1U0ss8NCyOaQFrjvEjHosblWj0ahY0tMbs/tLjp3Ri8wVTeId1v0aIzEn8rdf2TV39oM08tQyxwVTWRnxOqoTEW5/6nVdWzNoZS7Ww1cAbwYojHGwa7ridTn0Vi2h2ZgrtoRcZt0wzQCKZh0HEB8Dz8CQrYKMltBNTi+ygWr2g1cdUYq64tEhON007nhvqQ4K2/XdddKcxwVtuka5p8ToHtH6h5UhBsjQMqHTPoqV8rhhzzH4nDueqbZsTDDI+SjJgiJ3jGz7oPbyCurml4QvOttPbM22eust2u7TK0RVFNLwmhridQ7mD5HK15VKptIp7nTTUGGMfK3jsDRr5/rhW5adPtGHmw0oy/Ow6IQjCvEQQhCAEQhCkkEIQoAXGioe0kLYr6+XmXuAI8tP9q+ZVU21onBsddC0nDg2XHQdD8kpmVudfXof+OtULdS99DlpwQGtmma3yEhwFNzUlMICZnyP096QlVK0SuByDopjjNmbvOfkDQDuvPt66PZRacUc1qulBQ3SNk8rWufq1oI0HYK3VV/tU9RFTtqog97Thr3Ab3w6rPJdjbfcZ3TfRgZzqJATvN9D09FMWHYy2MMctdQtmqYHeGZ+S7tr5JrHYvfH2y5xx0crABlpxnAcQlk4cbNyFzh/6K4blBxHNlppGtlaMFucbwTbxII2vJ5jKurfGTi0U2OPDezlgpyKqSYnRwDGjuDqf3XemKbeMY3hgAkjPXPVPrWqjxW/yeYzbVOSivQISJcq0TBGEIHNACIQhAAlwhKgDymLjB9JoKiAc5I3NHqRougrw97Yxl7gwDXLjhQ1taJT09opOy88Zexso56HPQ9V332xPkLpKatniI1aGYLR8CNVUbhd6an2troaWRhgMgcxzHAtJIBdgjvlXW13ZlTCxrjnAXmL63XN6PaY9qsgmyGttDUiYCru1bgfgAH8BWOG2xTvy27XEu/NjP7KRpaanfKN3GeymoKWGMgnU+iupbLrbElpETSbO08RbUzT1c849+WYkgegwP2RdaljWbkeMjQAealLpVRUtM5znADCpltrYay7t4krRzMTSf8AI4c8eeAm6q+VmzMyLeNbZYWDda0eQwvSOqFrnl29gkSlCCAQEIQAYRhKhBIiEErFPabtfUVV3qLZQ1ToqODwEwvI4j+pJHQcvguJzUFtllVbslpFq9pe2MtnIt1seG1jmh0knWMHkB3PPsFiO0VzqJhKKmeWdzh4jI8uJJ9V6ZUyTvk4xcZdCS45Jx3PNSVjtMNfeBPN4twAhh5E+ax7rnOW5HtsTErx8XcEm/bOqGzT01hoZGtO8yJu8BzB5/NdVl2jqLdOOMXPi6+YV2gibwwwgFpHJVy/WGM5kphuuPMJeM1LqRTOpx+0S127biljLXiZuvmeSl3+0GibgOnbr5arGPqiqc/DYyVZ7Ls2WNa+oZg89VdVUt9MqldLXaLnV3qfaBwY3fZRN1JOhk7eipHtErZKa5WSCnc6N32j2lpwRjdGivFFC2ONsUY7aKme0KFr7vbc6mJj3Z9SP6TktQiWYVbtuiiOG2e01na7iXCSeiJw1znB72g+ozp5q4bL7YVlIxj7vPLVQvbl29guHkR/SzKWM1tcyL3c+LsOqsD3AFv4Wjwj5riEpuS0zS+QxMOimbnFaf6W9m3Wa7012gfJTFwLDhzHDBCkFhdmv9TaKl01NKGaYcHatI7rUbBtfa7rTw71VFDVOaN6KTLdexPNaaf5Pn9lTT2vBZEJMggEcilUlIIJwMnQKE2g2ptNhYRcKtrZsZEDPFIf/I5fHCy7ab2n3Cua+G0RihgOQZHYdK4fw34LiViiWwqlPwd23vtHhqqaa22IybrjuyVIO7kdQ3rg+ayZ5JdkaJuaJzSXwHB6g8imo6xhcGTAxP8AJ3I+hSU5OT2zQhBQWkdsTsvDj94KVtVaaGtjnGSxp8QH4TzUQ3HMFPMdhU2VKZpYmfPH+vmL9GtwVDJI2PjcHMcAWkdQnqyPiwlzT4/2KoNhvn0aAU8w3ogdHNOrO2Fc7ZWMqqcljg9o94fPySE6pV+TTqyK7uosboKiOCfEwDexU+JWVbGtp9QOo5KBlEcjsSNa4Do4ZUzanN3RGxoaPIDCuplp7OZw30SMLWU8WpGT1WW7U3IVl0qqlpxEwcNnoOv6q57Z3H6vojAwn6VMwhuPdb1KzSr3HtHF0jbqWn3sfJMbc3xQ/iuvDreTb0vX7HrK3ELp5B4pTloPUJq5XeKncWb29Jz3W6nHouCouM1RbuNTSboe8xtGBjGfvfzhLDT08ZMkYJfIBxHO1OPLPdO1xUF0eXzs2zLs5T8el+B5rpaiVol8MYAdwx5913CUx4AOiap24Je77ztT2Xmc65XfkSLRs7tbX2l7RFMXwZ1hkOWn08vgtc2cv9JfaXiU53JWgcSJx1b/AGO6+dmPweal7LeKi0V0NVTP3XtPwI6g9l1F6KrK1Lx5K4+V8sjpJHOe9xy5zjkuPc9V5XkckqX0MibueaanpWSsLXNBB8wn8r2Fy0BD/RZaX/BIQ38LtR/YTsNfuODalhid0J1afQqTLA4argqICCWtx+UjQ/0oa0SSNtljqHuiJ1xkY6jt6KToqqrtdQ2SN7m4OA8cj2KpsUwo6hsrW8OWM72OYI6hWmpq2tMbmuJilYHYA5hdRSa0w24vaNIsNwpb99kWshrmjJa04Dx5j+lPVD47JQS1EwADR4R1c7oFirKx8AbNROY18Z3t1uucd/NT+0e1U98oqVmcFrQDj3nn3ilLqeL3Hwbnxt6unws9HJdK6Wvq5JJ5g58mScnp/XRV65RVEoJnO9EOTI+vqfLsvQ3pc5AcH6+jRoB816mgLmYO60flTVVfGP7EPkM2WVZ/yvCG6B32Ric0ZaA7HPnp8l3RNEYyRr0HkoeGXgXGMDRpG4fj/tSu9k6qyL2hBo6oz4V4m1GqGnQLzKdCrDg5t7Up2peWxRlcj3YcuuumhfaqZscJZMwu4km/nfzy06YUJktH/9k=" width="72" height="72" alt="Bradley Ross"><div><p style="margin:0;font-weight:700;font-size:1.3rem;line-height:1.15;color:#fff">Made by Bradley Ross</p><p style="margin:6px 0 0;max-width:38em;color:#dfe6ef">Bradley is an agentic AI architect and developer for businesses of every size, from start-up to enterprise. He builds and teaches practical AI: 12 courses, more than 40 cohorts and more than 900 students.</p><a style="display:inline-flex;align-items:center;min-height:46px;margin-top:14px;padding:0 20px;border-radius:999px;background:#ffd23f;color:#0c2340;font-weight:700;text-decoration:none" href="https://www.linkedin.com/in/bradaross/">Connect with Bradley on LinkedIn</a><span style="display:block;margin-top:8px;color:#b9c5d3;font-size:.9rem">For training, questions or feedback.</span></div></div></aside>
+</body>
+</html>

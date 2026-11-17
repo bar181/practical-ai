@@ -1,0 +1,11 @@
+log that: I asked you to turn our November price list into a table for the website. Three frames
+priced "POA" were left out, and I only noticed after the page was live. I expected every item to
+come through, with POA kept as text. Applies to the website price page.
+
+Our log so far:
+```
+id,date,kind,rule,what_happened,expected,applies_to,labels,keywords,topics,severity,status,seen,source,sensitive
+L-1,2026-10-02,error,"When asking for a supplier email, give the order number and dates yourself; never let the assistant fill them in.","The assistant wrote a reorder email with a delivery date we never agreed. The supplier queried it.","An email using only the dates I gave.",supplier emails,wrong-fact,reorder;delivery date;email,suppliers/orders,medium,accepted,2,session,no
+L-2,2026-10-20,worked,"When writing product descriptions, give three past descriptions as examples first.","Pasting three old descriptions before asking gave text in our own voice on the first try.","Two or three rounds of rewording to sound like us.",website product pages,voice,description;tone;examples,website/products,low,accepted,1,session,no
+L-3,2026-11-04,redo,"When building the monthly sales table, paste the raw export, not a summary.","I pasted my own summary and the totals were off by one week, so the table was rebuilt from the export.","One pass from my summary.",monthly sales table,data-loss;rebuild,sales;export;totals,finance/sales,medium,proposed,1,session,no
+```

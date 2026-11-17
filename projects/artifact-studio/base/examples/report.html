@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>October report: revenue up $12,700 on September</title>
+<style>
+  /* Seven colour tokens built from one green hue, plus one data colour for the chart. */
+  :root {
+    --bg: #F5F9F7;        /* page background, very light */
+    --panel: #E9F1EC;     /* panel colour */
+    --line: #B9CABF;      /* border */
+    --muted: #4F5F54;     /* secondary text, and the grey comparison bar */
+    --ink: #142419;       /* main text, very dark */
+    --accent: #196B35;    /* only for what to act on */
+    --highlight: #D3EEDC; /* soft highlight */
+    --data: #2A6DB0;      /* chart data colour, never the accent */
+  }
+
+  * { box-sizing: border-box; }
+
+  html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.55;
+  }
+
+  .page {
+    max-width: 36rem;
+    margin: 0 auto;
+    padding: 20px 20px 48px;
+  }
+
+  h1, h2, h3, p, ul, ol, dl, dd, figure { margin: 0; }
+  ul, ol { padding: 0; list-style: none; }
+
+  .meta {
+    font-size: 0.875rem;
+    color: var(--muted);
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--line);
+  }
+  .meta div + div { margin-top: 2px; }
+  .meta b { color: var(--ink); font-weight: 600; }
+
+  h1 {
+    font-size: 1.7rem;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    font-weight: 700;
+    margin-top: 18px;
+    text-wrap: balance;
+  }
+
+  .answer {
+    font-size: 1.12rem;
+    line-height: 1.5;
+    margin-top: 14px;
+  }
+
+  .jump {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    margin-top: 6px;
+    color: var(--accent);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  a:focus-visible, .scroll:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  section { margin-top: 34px; }
+
+  .label {
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
+
+  h2 {
+    font-size: 1.22rem;
+    line-height: 1.3;
+    font-weight: 700;
+    text-wrap: balance;
+  }
+
+  section > p { margin-top: 10px; }
+
+  /* Three numbers */
+  .stats { display: grid; gap: 10px; margin-top: 12px; }
+  .stat {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 14px 16px;
+  }
+  .stat dt { font-size: 0.9rem; color: var(--muted); font-weight: 600; }
+  .stat .num {
+    font-size: 2.3rem;
+    line-height: 1.1;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.02em;
+    margin-top: 2px;
+  }
+  .stat .was { font-size: 0.95rem; margin-top: 4px; }
+
+  /* Chart */
+  .chart {
+    margin-top: 14px;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 16px;
+  }
+  .bar-row + .bar-row { margin-top: 14px; }
+  .bar-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    font-size: 0.95rem;
+  }
+  .bar-head .month { font-weight: 600; }
+  .bar-head .value { font-weight: 700; font-variant-numeric: tabular-nums; }
+  .track { margin-top: 5px; height: 12px; }
+  .bar { display: block; height: 12px; border-radius: 2px; }
+  .bar.before { background: var(--muted); }
+  .bar.now { background: var(--data); }
+  .diff { margin-top: 14px; font-size: 0.95rem; font-weight: 600; }
+  figcaption {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid var(--line);
+    font-size: 0.82rem;
+    color: var(--muted);
+  }
+
+  .sowhat {
+    margin-top: 12px;
+    padding-left: 12px;
+    border-left: 3px solid var(--ink);
+  }
+  .sowhat b { font-weight: 700; }
+
+  /* Table */
+  .scroll {
+    margin-top: 14px;
+    overflow-x: auto;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+    line-height: 1.35;
+    font-variant-numeric: tabular-nums;
+  }
+  caption {
+    caption-side: bottom;
+    text-align: left;
+    padding: 10px 12px;
+    font-size: 0.82rem;
+    color: var(--muted);
+    border-top: 1px solid var(--line);
+  }
+  th, td { text-align: left; vertical-align: top; padding: 10px 10px; }
+  thead th {
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--muted);
+    background: var(--panel);
+    border-bottom: 1px solid var(--line);
+  }
+  tbody th { font-weight: 600; }
+  tbody tr + tr th, tbody tr + tr td { border-top: 1px solid var(--line); }
+  tr.weak th, tr.weak td { background: var(--panel); }
+  tr.weak th { border-left: 4px solid var(--ink); }
+  .tag {
+    display: inline-block;
+    margin-top: 4px;
+    padding: 1px 7px;
+    border: 1px solid var(--ink);
+    border-radius: 4px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  /* Lists in method and limits */
+  .plain { margin-top: 10px; }
+  .plain li { padding-left: 16px; position: relative; }
+  .plain li + li { margin-top: 8px; }
+  .plain li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.72em;
+    width: 7px;
+    height: 2px;
+    background: var(--muted);
+  }
+  .working { font-variant-numeric: tabular-nums; }
+
+  /* Next steps */
+  .steps { display: grid; gap: 10px; margin-top: 14px; }
+  .step {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 14px 16px;
+  }
+  .step.act {
+    background: var(--highlight);
+    border-color: var(--accent);
+    border-left: 5px solid var(--accent);
+  }
+  .status {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .step.act .status { color: var(--accent); }
+  .task { font-size: 1.08rem; font-weight: 700; line-height: 1.3; margin-top: 2px; }
+  .facts {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 2px 12px;
+    margin-top: 8px;
+    font-size: 0.95rem;
+  }
+  .facts dt { color: var(--muted); }
+  .facts dd { font-weight: 600; }
+  .step.act .facts dt { color: var(--ink); }
+
+  .needs {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 0.86em;
+    font-weight: 600;
+    border: 1px dashed var(--ink);
+    border-radius: 3px;
+    padding: 0 4px;
+  }
+
+  footer {
+    margin-top: 36px;
+    padding-top: 12px;
+    border-top: 1px solid var(--line);
+    font-size: 0.82rem;
+    color: var(--muted);
+  }
+
+  @media (min-width: 620px) {
+    .page { padding-top: 36px; }
+    h1 { font-size: 2rem; }
+    .stats { grid-template-columns: repeat(3, 1fr); }
+    .stat .num { font-size: 2rem; }
+    .steps { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+<aside aria-label="How this example was made" style="background:#0c2340;color:#fff;font:400 16px/1.5 system-ui,-apple-system,Segoe UI,sans-serif;padding:22px 0 24px;text-align:left"><div style="max-width:880px;margin:0 auto;padding:0 20px"><p style="margin:0;font-weight:700;font-size:1.15rem;color:#ffd23f">Worked example: a one-page report</p><p style="margin:8px 0 0;color:#fff;max-width:44em">An AI assistant made the page below on 16 November 2026 from the prompt in this box. It worked in a fresh session with only the prompt, the design guide and the pictures. Nothing was edited afterwards. Paste the same prompt into your own assistant and you get a page in this manner. Yours will differ.</p><details style="margin-top:12px"><summary style="cursor:pointer;font-weight:700;min-height:44px;display:flex;align-items:center;color:#fff">The prompt and the sample input</summary><pre tabindex="0" style="margin:10px 0 0;padding:12px 14px;background:#fff;color:#14202e;border:1px solid #c9d1de;border-radius:8px;white-space:pre-wrap;overflow-wrap:anywhere;font:400 14px/1.5 ui-monospace,Menlo,Consolas,monospace;max-height:22em;overflow:auto">Read the design guide at https://raw.githubusercontent.com/bar181/practical-ai/main/projects/artifact-studio/base/AI-INSTRUCTIONS.md
+
+Then show me a one-page report as an HTML page, from these notes:
+
+- We are a landscaping company with two crews
+- October revenue $84,200. September was $71,500
+- Jobs completed: 23 in October, 19 in September
+- Quotes that became jobs: 46%, up from 38%
+- We started sending quotes within two days of the visit. It used to take six
+- One van was off the road for four days. Crews shared. No jobs moved
+- November: hire one seasonal worker for leaf clearance
+- Need to decide about a second van by 15 November
+
+My business partner reads on her phone and wants the answer first. Our colour is green.
+
+When you are done, tell me three ways I could tailor this for my own business.</pre></details><details><summary style="cursor:pointer;font-weight:700;min-height:44px;display:flex;align-items:center;color:#fff">What the assistant said about its page</summary><pre tabindex="0" style="margin:10px 0 0;padding:12px 14px;background:#fff;color:#14202e;border:1px solid #c9d1de;border-radius:8px;white-space:pre-wrap;overflow-wrap:anywhere;font:400 14px/1.5 ui-monospace,Menlo,Consolas,monospace;max-height:22em;overflow:auto"># Delivery note: October report
+
+The page is `out.html`. Open it in a browser. If you send the bare file to a phone it may open as code, so share it from somewhere that shows it as a page.
+
+## Chose
+
+- **Kind of thing:** a page to be read, because you asked for a one-page report for someone reading on a phone.
+- **Recipe:** one-page report. You named it.
+- **Voice:** analyst. You did not name a voice, and it is the first voice the guide lists for a report. It also puts the answer first, which is what your partner wants: the conclusion is the title, then the answer in two sentences, then three numbers, three findings, method, limits and next steps.
+- **Look:** built from your one colour, green. Seven colours on one green hue, plus one separate blue for the chart, because the guide says a chart&#x27;s colour must never be the accent. The strong green is used only for the one thing your partner has to act on: the van decision.
+- **Parts:** three number cards, one thin bar chart, one comparison table with the weak row marked in words, two next-step cards. No motion and no scripts.
+- **Preferences applied:** no preferences file came with the request, so none for recipe, voice, look, layout or format. The one standing preference I followed is about writing only: no long dashes.
+- **Contrast of each text and background pair** (4.5 to 1 is the minimum for ordinary text):
+
+| Text | Background | Ratio |
+| --- | --- | --- |
+| Main text `#142419` | Page `#F5F9F7` | 15.3 to 1 |
+| Main text `#142419` | Panel `#E9F1EC` | 14.1 to 1 |
+| Main text `#142419` | Highlight `#D3EEDC` | 13.1 to 1 |
+| Secondary text `#4F5F54` | Page `#F5F9F7` | 6.4 to 1 |
+| Secondary text `#4F5F54` | Panel `#E9F1EC` | 5.9 to 1 |
+| Accent green `#196B35` | Page `#F5F9F7` | 6.2 to 1 |
+| Accent green `#196B35` | Highlight `#D3EEDC` | 5.3 to 1 |
+
+The border is `#B9CABF`. The chart&#x27;s October bar is blue `#2A6DB0` (4.7 to 1 on the panel) and the September bar is the secondary grey-green (5.9 to 1). Both bars also carry the month and the value in words.
+
+## Assumed
+
+- **Which green.** You said green but gave no colour code, so I picked a mid green (hue 140). It is a stand-in for yours.
+- **46% is October.** Your note says &quot;46%, up from 38%&quot; without naming months. The page shows 46% as October and 38% as &quot;before&quot;, and says the notes do not date it.
+- **The two-day quotes are current.** Your note does not say when you started. The page says quotes &quot;now&quot; go out within two days and does not give a start date.
+- **The van is the weak row.** It is the only item in your notes that went wrong, so I marked it as the weak point, while saying it cost no jobs.
+- **No link claimed between faster quotes and more jobs won.** Your notes list both but do not say one caused the other, so the page says they moved together and nothing more.
+- **No link claimed between the van breakdown and the second-van decision.** The page puts them next to each other and does not say one led to the other.
+- **Three numbers, not four.** The analyst voice asks for three. Days to send a quote went into finding 2 and the table.
+- **Dollars.** Shown as &quot;$&quot; exactly as you wrote it, with no country.
+- **The page speaks as &quot;we&quot; and &quot;our&quot;,** as a report from you to your partner.
+
+## Missing
+
+- **Who owns each next step.** The analyst voice wants an owner and a date. You gave dates but no names, so both cards show `[needs: who decides]` and `[needs: who hires]` on the page.
+- **A real breakdown.** There is no split by crew, by type of job or by customer. The table compares measures instead.
+- **More than two months.** Two points make a comparison, not a trend. The chart heading says so honestly by stating only the two figures.
+- **Costs and profit.** The page says it cannot tell whether October made more after costs.
+- **The year, the company name, your partner&#x27;s name and your name.** None are on the page.
+- **An earlier figure for van days off the road,** and the number of vans you have now.
+- **Which month the 38% and the six days come from.**
+- **Where the figures come from** (your books, an invoicing system). The chart says &quot;the notes supplied for this report&quot;.
+- **Any detail on the van decision:** cost, buy or lease, what happens if you do nothing.
+
+## Check before sharing
+
+- Fill in the two `[needs: ...]` owners, or tell me the names and I will.
+- Confirm 46% is October&#x27;s figure and 38% is September&#x27;s.
+- Confirm 15 November is still ahead of you on the day you send this.
+- Check the worked numbers: $84,200 − $71,500 = $12,700, which is 17.8% of $71,500, shown as &quot;about 18%&quot;. 23 − 19 = 4 jobs. 46% − 38% = 8 points.
+- Give me your exact green (a colour code or your logo) if the stand-in is off.
+- Look at it once on your partner&#x27;s phone. I checked it at 390 pixels wide: nothing scrolls sideways, and at very narrow widths only the table scrolls inside its own box.
+- Nothing has been sent or published. That is yours to do.
+
+## Three ways to tailor this for your business
+
+1. **Use your real green.** Send a colour code, or a photo of your van or logo, and the seven colours are rebuilt from it so the page matches your signs and quotes.
+2. **Save your defaults once.** Keep a short `preferences.md` that says: one-page report, analyst voice, your green, partner reads on a phone. Each month you then paste new notes and get the same shape, so November sits beside October. Add a split by crew or by type of job and a third month, and the table becomes a real breakdown and the chart a real trend.
+3. **Pick a different recipe or voice for a different reader.** For the van decision, ask for the executive brief voice: it leads with the decision and lays out the options in one table, including &quot;do nothing&quot;. For customers, ask for the proposal recipe and your quotes go out as a page with three options, one marked, and a schedule. That fits the two-day quote habit you have just started.</pre></details><p style="margin:10px 0 0"><a href="../studio.html#recipe-report" style="color:#ffd23f;font-weight:700">Compare it with the hand-built version in the library</a></p></div></aside>
+
+<main class="page">
+
+  <header>
+    <div class="meta">
+      <div><b>Monthly report</b> for a landscaping company with two crews</div>
+      <div><b>Period:</b> October, compared with September</div>
+      <div><b>Reader:</b> business partner</div>
+    </div>
+
+    <h1>October beat September: revenue up $12,700, four more jobs done, and more quotes became jobs</h1>
+
+    <p class="answer">October brought in $84,200, about 18% more than September's $71,500, and 23 jobs were completed against 19. One thing needs a decision from us: a second van, by 15 November.</p>
+    <a class="jump" href="#next">Go to the decision and next steps</a>
+  </header>
+
+  <section aria-labelledby="h-numbers">
+    <p class="label">Three numbers</p>
+    <h2 id="h-numbers">All three headline numbers went up in October.</h2>
+    <dl class="stats">
+      <div class="stat">
+        <dt>Revenue</dt>
+        <dd class="num">$84,200</dd>
+        <dd class="was">Up $12,700 from $71,500 in September, about 18% more.</dd>
+      </div>
+      <div class="stat">
+        <dt>Jobs completed</dt>
+        <dd class="num">23</dd>
+        <dd class="was">Up 4 from 19 in September.</dd>
+      </div>
+      <div class="stat">
+        <dt>Quotes that became jobs</dt>
+        <dd class="num">46%</dd>
+        <dd class="was">Up 8 points from 38% before.</dd>
+      </div>
+    </dl>
+  </section>
+
+  <section aria-labelledby="h-f1">
+    <p class="label">What changed, finding 1 of 3</p>
+    <h2 id="h-f1">Revenue rose from $71,500 in September to $84,200 in October.</h2>
+    <figure class="chart" role="group" aria-label="Bar chart of revenue. September $71,500. October $84,200.">
+      <div class="bar-row">
+        <div class="bar-head"><span class="month">September</span><span class="value">$71,500</span></div>
+        <div class="track"><span class="bar before" style="width:84.92%"></span></div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-head"><span class="month">October</span><span class="value">$84,200</span></div>
+        <div class="track"><span class="bar now" style="width:100%"></span></div>
+      </div>
+      <p class="diff">Difference: $12,700 more in October.</p>
+      <figcaption>Unit: dollars of revenue for the month. Bars start at zero. Source: the notes supplied for this report.</figcaption>
+    </figure>
+    <p class="sowhat"><b>So what:</b> October was the stronger month on money and on work done. Four more jobs were completed, 23 against 19.</p>
+  </section>
+
+  <section aria-labelledby="h-f2">
+    <p class="label">What changed, finding 2 of 3</p>
+    <h2 id="h-f2">More quotes became jobs, and quotes now go out within two days of the visit instead of six.</h2>
+    <p>46% of quotes became jobs, up from 38%. We started sending quotes within two days of the visit. It used to take six.</p>
+    <p class="sowhat"><b>So what:</b> both moved the right way together. The notes do not show that the faster quotes caused the higher rate.</p>
+  </section>
+
+  <section aria-labelledby="h-f3">
+    <p class="label">What changed, finding 3 of 3</p>
+    <h2 id="h-f3">The one weak point was a van off the road for four days, and it cost no jobs.</h2>
+    <p>One van was off the road for four days. The crews shared, and no jobs moved.</p>
+    <div class="scroll" role="region" aria-label="October measures compared with before" tabindex="0">
+      <table>
+        <caption>"Before" is September for revenue and jobs. The notes do not say which month the other "before" figures are from.</caption>
+        <thead>
+          <tr><th scope="col">Measure</th><th scope="col">Before</th><th scope="col">October</th><th scope="col">Change</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">Revenue</th><td>$71,500</td><td>$84,200</td><td>Up $12,700</td></tr>
+          <tr><th scope="row">Jobs completed</th><td>19</td><td>23</td><td>Up 4</td></tr>
+          <tr><th scope="row">Quotes that became jobs</th><td>38%</td><td>46%</td><td>Up 8 points</td></tr>
+          <tr><th scope="row">Days from visit to quote</th><td>6</td><td>Within 2</td><td>Faster</td></tr>
+          <tr class="weak"><th scope="row">Days a van was off the road<br><span class="tag">Weak point</span></th><td>Not in the notes</td><td>4</td><td>No jobs moved</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="sowhat"><b>So what:</b> the breakdown cost no jobs this time because the crews shared. A decision about a second van is needed by 15 November.</p>
+  </section>
+
+  <section aria-labelledby="h-method">
+    <p class="label">Method</p>
+    <h2 id="h-method">Every figure comes from our own notes, and each change is October minus the earlier figure.</h2>
+    <ul class="plain working">
+      <li>Revenue: $84,200 − $71,500 = $12,700. Then $12,700 ÷ $71,500 = 17.8%, shown as about 18%.</li>
+      <li>Jobs completed: 23 − 19 = 4.</li>
+      <li>Quotes that became jobs: 46% − 38% = 8 percentage points.</li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="h-limits">
+    <p class="label">Limits</p>
+    <h2 id="h-limits">Two months make a comparison, not a trend, and the notes leave some things out.</h2>
+    <ul class="plain">
+      <li>There are only two months of figures. That is enough to compare, not enough to call a trend.</li>
+      <li>The notes have no costs or profit, so this report cannot say whether October made more money after costs.</li>
+      <li>The notes have no split by crew or by type of job, so the table compares measures and does not break revenue down.</li>
+      <li>The notes do not say which month the 38% and the six days are from.</li>
+      <li>There is no earlier figure for van days off the road.</li>
+    </ul>
+  </section>
+
+  <section id="next" aria-labelledby="h-next">
+    <p class="label">What happens next</p>
+    <h2 id="h-next">November has one decision due by the 15th and one hire to make.</h2>
+    <div class="steps">
+      <div class="step act">
+        <p class="status">Decision needed</p>
+        <p class="task">Decide about a second van</p>
+        <dl class="facts">
+          <dt>Date</dt><dd>By 15 November</dd>
+          <dt>Owner</dt><dd><span class="needs">[needs: who decides]</span></dd>
+        </dl>
+      </div>
+      <div class="step">
+        <p class="status">Planned</p>
+        <p class="task">Hire one seasonal worker for leaf clearance</p>
+        <dl class="facts">
+          <dt>Date</dt><dd>November</dd>
+          <dt>Owner</dt><dd><span class="needs">[needs: who hires]</span></dd>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <footer>Built only from the notes supplied. The only numbers added are the differences worked out under Method.</footer>
+
+</main>
+<aside aria-label="About the creator" style="background:#0c2340;color:#fff;padding:34px 0 40px;font:400 16px/1.45 system-ui,-apple-system,Segoe UI,sans-serif;text-align:left"><div style="max-width:880px;margin:0 auto;padding:0 20px;display:flex;gap:18px;align-items:flex-start"><img style="flex:none;border-radius:50%;border:3px solid #ffd23f" src="data:image/jpeg;base64,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" width="72" height="72" alt="Bradley Ross"><div><p style="margin:0;font-weight:700;font-size:1.3rem;line-height:1.15;color:#fff">Made by Bradley Ross</p><p style="margin:6px 0 0;max-width:38em;color:#dfe6ef">Bradley is an agentic AI architect and developer for businesses of every size, from start-up to enterprise. He builds and teaches practical AI: 12 courses, more than 40 cohorts and more than 900 students.</p><a style="display:inline-flex;align-items:center;min-height:46px;margin-top:14px;padding:0 20px;border-radius:999px;background:#ffd23f;color:#0c2340;font-weight:700;text-decoration:none" href="https://www.linkedin.com/in/bradaross/">Connect with Bradley on LinkedIn</a><span style="display:block;margin-top:8px;color:#b9c5d3;font-size:.9rem">For training, questions or feedback.</span></div></div></aside>
+</body>
+</html>

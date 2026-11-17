@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="s-spark-burst" viewBox="0 0 160 160" role="img" aria-labelledby="t-spark-burst">
+<title id="t-spark-burst">A burst of short rays</title>
+<desc>Use once beside a win, such as a target met. Plays once and fades to a small star.</desc>
+<style>#s-spark-burst .r{stroke:var(--accent,#774528);stroke-width:6;stroke-linecap:round;stroke-dasharray:1;transform-origin:80px 80px;animation:spark-burst-s .9s ease-out both}#s-spark-burst .k{fill:var(--sand,#d2b78c);transform-origin:80px 80px;animation:spark-burst-k .5s .1s cubic-bezier(.2,1.6,.4,1) both}@keyframes spark-burst-s{0%{stroke-dashoffset:1;opacity:1}60%{stroke-dashoffset:0;opacity:1}100%{stroke-dashoffset:0;opacity:.35}}@keyframes spark-burst-k{from{transform:scale(0)}to{transform:scale(1)}}@media (prefers-reduced-motion:reduce){#s-spark-burst *{animation:none!important}}</style>
+<g class="r"><path pathLength="1" d="M80 46V18"/><path pathLength="1" d="M104 56 124 36"/><path pathLength="1" d="M114 80H142"/><path pathLength="1" d="M104 104 124 124"/><path pathLength="1" d="M80 114V142"/><path pathLength="1" d="M56 104 36 124"/><path pathLength="1" d="M46 80H18"/><path pathLength="1" d="M56 56 36 36"/></g><path class="k" d="M80 58 87 73 103 80 87 87 80 102 73 87 57 80 73 73Z"/>
+</svg>

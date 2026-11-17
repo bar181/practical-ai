@@ -1,0 +1,16 @@
+Read the design guide at the link [saved for you as run folder: AI-INSTRUCTIONS.md] and follow it.
+
+Write three drafts of a LinkedIn post about my notes, in my voice. Take a different way in for each. Show each one as it will look in the feed, side by side, with the text cut where the feed would cut it. Do not post anything.
+
+My notes:
+
+Topic: I have released Artifact Studio, a free design brief for AI chatbots. It is part of Practical AI.
+
+- The problem: AI gives good answers and shows them on grey pages. "Make this look better" does not fix it
+- My analogy: AI is a smart intern. It has read every book in the world and it has never met you
+- What to tell it: the job, the reader and the shape
+- How to start: paste one link, add your notes, ask in one sentence
+- It gets you most of the way to a solid draft. You check it and you sign it
+- The link: github.com/bar181/practical-ai
+- My voice: short sentences, plain words, one analogy, and an ending that is a step or a question. I have no earlier posts to attach, so go by this description
+- Pictures attached: a cartoon of a bored video call, a dog at a laptop, a lightbulb full of paint

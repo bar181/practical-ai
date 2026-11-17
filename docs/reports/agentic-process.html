@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agentic Process: turn a job you repeat into a tool someone can use</title>
+<meta name="description" content="An explainer for people who build tools or workflows with a coding agent: what Agentic Process does, the four builder steps, what you get back, the evidence and where to start.">
+<style>
+  /* Recipe: scrolling explainer. Voice: teacher. Look: white with one highlight (teacher default). */
+  :root {
+    --bg: #ffffff;      /* page */
+    --panel: #f4f4f1;   /* code, boxes */
+    --line: #cbcbc4;    /* rules, borders, comparison bar */
+    --ink-2: #4a4a46;   /* secondary text */
+    --ink: #121212;     /* main text */
+    --accent: #1b45b4;  /* links, buttons: what to act on */
+    --mark: #dfe7fb;    /* the one highlight, a soft step of the accent */
+    --data: #3060d8;    /* chart data colour */
+    color-scheme: light;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font: 1.0625rem/1.55 system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    overflow-wrap: break-word; overflow-x: clip;
+  }
+  main { max-width: 38rem; margin: 0 auto; padding: 0 1.25rem 3rem; }
+  code, pre, .kw, .tag, dt, .num, .file {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  }
+  code { font-size: 0.92em; overflow-wrap: anywhere; }
+  h1, h2, h3, p, ol, ul, dl, dd, figure, blockquote { margin: 0; }
+  h1 { font-size: 2.3rem; font-size: clamp(2.1rem, 9.5vw, 3.6rem); line-height: 1.05; letter-spacing: -0.02em; font-weight: 800; text-wrap: balance; }
+  h2 { font-size: 1.6rem; line-height: 1.15; letter-spacing: -0.01em; font-weight: 800; text-wrap: balance; }
+  h3 { font-size: 1.25rem; line-height: 1.2; font-weight: 800; }
+  a { color: var(--accent); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+  :focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+  .kw { display: block; margin-bottom: 0.4rem; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-2); }
+  .muted { color: var(--ink-2); }
+  .small { font-size: 0.92rem; }
+  section { padding: 3rem 0; border-top: 2px solid var(--ink); }
+  section > * + * { margin-top: 1.1rem; }
+  .hl { background: var(--mark); box-shadow: 0.18em 0 0 var(--mark), -0.18em 0 0 var(--mark); }
+
+  /* 1. The question */
+  .open { padding: 2.25rem 0 3rem; }
+  .open > * + * { margin-top: 1.1rem; }
+  .lede { font-size: 1.15rem; }
+  .jump {
+    display: inline-flex; align-items: center; min-height: 48px; padding: 0 1.2rem;
+    background: var(--accent); color: #fff; font-weight: 700; text-decoration: none; border-radius: 0;
+  }
+
+  /* 2. The analogy, very large */
+  .analogy { min-height: 420px; min-height: min(70svh, 600px); display: grid; align-content: center; }
+  .big { font-size: 2.1rem; font-size: clamp(2rem, 9vw, 3.4rem); line-height: 1.08; letter-spacing: -0.02em; font-weight: 800; text-wrap: balance; }
+  .big-2 { font-size: 1.3rem; line-height: 1.3; font-weight: 600; }
+  .map { border-top: 2px solid var(--ink); }
+  .map > div { display: grid; grid-template-columns: 1fr; gap: 0.15rem; padding: 0.75rem 0; border-bottom: 1px solid var(--line); }
+  .map dt { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-2); }
+  .map dd { font-weight: 600; }
+  @media (min-width: 560px) { .map > div { grid-template-columns: 13rem 1fr; gap: 1rem; } }
+
+  /* 3. The worked example */
+  .req { position: relative; border: 2px solid var(--ink); background: var(--panel); }
+  .req pre { margin: 0; padding: 0.85rem 0.75rem; white-space: pre-wrap; overflow-wrap: anywhere; font-size: 0.78rem; line-height: 1.55; }
+  @media (min-width: 480px) { .req pre { padding: 1rem; font-size: 0.9rem; } }
+  .req-bar { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; flex-wrap: wrap; padding: 0.5rem 0.5rem 0.5rem 1rem; border-bottom: 2px solid var(--ink); background: var(--bg); }
+  .req-bar[hidden] { display: none; }
+  .req-bar .tag { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; }
+  button {
+    min-height: 44px; min-width: 44px; padding: 0.5rem 1.1rem;
+    font: inherit; font-weight: 700; color: #fff; background: var(--accent);
+    border: 2px solid var(--accent); border-radius: 0; cursor: pointer;
+  }
+  .status { font-size: 0.9rem; color: var(--ink-2); min-height: 1.4em; }
+  .time { list-style: none; padding: 0; border-top: 1px solid var(--line); }
+  .time li { display: grid; grid-template-columns: 5.2rem 1fr; gap: 0.75rem; padding: 0.7rem 0; border-bottom: 1px solid var(--line); }
+  .time b { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.85rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ink-2); padding-top: 0.15rem; }
+  .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.98rem; }
+  th, td { text-align: left; vertical-align: top; padding: 0.65rem 0.6rem 0.65rem 0; border-bottom: 1px solid var(--line); }
+  thead th { border-bottom: 2px solid var(--ink); font-size: 0.85rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ink-2); }
+  .file { font-weight: 700; white-space: nowrap; }
+
+  /* 4. The diagram that stays on screen, and the steps */
+  .steps { --stage: 0; }
+  .flow {
+    position: sticky; top: 0; z-index: 2;
+    margin: 1.25rem -1.25rem 0; padding: 0.35rem 1.25rem;
+    background: var(--bg); border-top: 2px solid var(--ink); border-bottom: 2px solid var(--ink);
+  }
+  .flow ol { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); }
+  .flow li { position: relative; --d: calc(var(--stage) - var(--i)); }
+  .flow li + li::before { content: "\2192"; content: "\2192" / ""; position: absolute; left: -0.45em; top: 50%; transform: translateY(-50%); color: var(--ink-2); }
+  .flow a {
+    position: relative; isolation: isolate;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    min-height: 56px; padding: 0.3rem 0.2rem 0.5rem;
+    color: var(--ink); text-decoration: none; font-weight: 700; line-height: 1.15; text-align: center;
+  }
+  .flow a .num { font-size: 0.8rem; color: var(--ink-2); }
+  .flow a::before, .flow a::after { content: ""; position: absolute; opacity: calc(1 - max(var(--d), -1 * var(--d))); }
+  .flow a::before { z-index: -1; top: 4px; bottom: 4px; left: 0.5em; right: 0.5em; background: var(--mark); }
+  .flow a::after { left: 0.5em; right: 0.5em; bottom: 4px; height: 4px; background: var(--ink); }
+  .flow .loop { margin-top: 0.15rem; font-size: 0.8rem; color: var(--ink-2); text-align: right; }
+  @media (prefers-reduced-motion: no-preference) {
+    html { scroll-behavior: smooth; }
+    .flow a::before, .flow a::after { transition: opacity 0.2s linear; }
+  }
+  .step {
+    min-height: 380px; min-height: min(60svh, 520px);
+    padding: 2.5rem 0; scroll-margin-top: 92px;
+    display: grid; align-content: center; gap: 1rem;
+  }
+  .step + .step { border-top: 1px solid var(--line); }
+  .step h3 { display: flex; align-items: baseline; gap: 0.75rem; }
+  .step h3 .num { font-size: 2.4rem; line-height: 1; }
+  .facts > div { display: grid; grid-template-columns: 4.6rem 1fr; gap: 0.75rem; padding: 0.7rem 0; border-top: 1px solid var(--line); }
+  .facts dt { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-2); line-height: 2; }
+  .facts dd ul { margin: 0.35rem 0 0; padding-left: 1.1rem; }
+  .facts dd li + li { margin-top: 0.3rem; }
+  .fact { background: var(--mark); padding: 0.8rem 1rem; border-left: 4px solid var(--ink); }
+  .handback { border: 2px solid var(--ink); padding: 1.1rem; }
+  .handback > * + * { margin-top: 0.6rem; }
+  @supports ((animation-timeline: view()) and (animation-range: entry)) {
+    html:not(.js) .steps { timeline-scope: --s1, --s2, --s3, --s4; }
+    html:not(.js) #step-1 { view-timeline: --s1 block; view-timeline-inset: 45% 54%; }
+    html:not(.js) #step-2 { view-timeline: --s2 block; view-timeline-inset: 45% 54%; }
+    html:not(.js) #step-3 { view-timeline: --s3 block; view-timeline-inset: 45% 54%; }
+    html:not(.js) #step-4 { view-timeline: --s4 block; view-timeline-inset: 45% 54%; }
+    html:not(.js) .flow a::before, html:not(.js) .flow a::after { animation: current-step linear both; animation-range: cover 0% cover 100%; }
+    html:not(.js) .flow li:nth-child(1) a::before, html:not(.js) .flow li:nth-child(1) a::after { animation-timeline: --s1; }
+    html:not(.js) .flow li:nth-child(2) a::before, html:not(.js) .flow li:nth-child(2) a::after { animation-timeline: --s2; }
+    html:not(.js) .flow li:nth-child(3) a::before, html:not(.js) .flow li:nth-child(3) a::after { animation-timeline: --s3; }
+    html:not(.js) .flow li:nth-child(4) a::before, html:not(.js) .flow li:nth-child(4) a::after { animation-timeline: --s4; }
+    @keyframes current-step { 0% { opacity: 0; } 1% { opacity: 1; } 99% { opacity: 1; } 100% { opacity: 0; } }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html:not(.js) .flow a::before, html:not(.js) .flow a::after { animation: none; }
+  }
+
+  /* 5. The harder case */
+  .quote { font-size: 1.4rem; line-height: 1.3; font-weight: 800; padding-left: 1rem; border-left: 6px solid var(--ink); }
+  .chart { border: 2px solid var(--ink); padding: 1rem; }
+  .chart > * + * { margin-top: 0.9rem; }
+  .chart h3 { font-size: 1.1rem; }
+  .bars { list-style: none; padding: 0; }
+  .bars li + li { margin-top: 0.9rem; }
+  .bar-label { display: flex; justify-content: space-between; gap: 1rem; font-weight: 700; }
+  .bar-label span:last-child { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+  .track { height: 22px; margin-top: 0.3rem; background: var(--bg); border: 1px solid var(--line); }
+  .fill { height: 100%; }
+  .fill.ap { width: 93%; background: var(--data); }
+  .fill.direct { width: 73%; background: var(--line); }
+  .scale { display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--ink-2); font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+  .excerpt { border: 2px dashed var(--ink-2); padding: 1rem; background: var(--panel); }
+  .excerpt > * + * { margin-top: 0.6rem; }
+  .excerpt .tag { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-2); }
+  .scope { background: var(--mark); padding: 1rem; border-left: 4px solid var(--ink); }
+  .scope > * + * { margin-top: 0.6rem; }
+
+  /* 6. Use cases and your own job */
+  .cards { list-style: none; padding: 0; display: grid; gap: 1rem; }
+  .card { border: 2px solid var(--ink); padding: 1rem; display: grid; gap: 0.6rem; align-content: start; }
+  .card h3 { font-size: 1.15rem; }
+  .card .state { font-size: 0.9rem; color: var(--ink-2); border-top: 1px solid var(--line); padding-top: 0.6rem; }
+  .card .state b { color: var(--ink); }
+  .answers { padding-left: 1.4rem; }
+  .answers li + li { margin-top: 0.7rem; }
+
+  /* 7. Check yourself */
+  .checks { list-style: none; padding: 0; border-top: 1px solid var(--line); }
+  .checks li { border-bottom: 1px solid var(--line); }
+  .checks label { display: grid; grid-template-columns: 28px 1fr; gap: 0.75rem; padding: 0.75rem 0; min-height: 44px; cursor: pointer; }
+  .checks input { width: 24px; height: 24px; margin: 0.1rem 0 0; accent-color: var(--accent); }
+  .checks input:checked + span { background: var(--mark); }
+  .count { font-weight: 700; }
+  .count[hidden] { display: none; }
+  details { border-bottom: 1px solid var(--line); }
+  details:first-of-type { border-top: 1px solid var(--line); }
+  summary { cursor: pointer; padding: 0.7rem 0; min-height: 44px; font-weight: 700; }
+  details p { padding: 0 0 0.9rem 1.15rem; }
+
+  /* 8. Recap and where to start */
+  .recap ol { padding-left: 1.4rem; font-weight: 600; }
+  .recap li + li { margin-top: 0.35rem; }
+  .start { border: 2px solid var(--ink); padding: 1.1rem; }
+  .start > * + * { margin-top: 0.8rem; }
+  .start .path { font-size: 1.15rem; font-weight: 700; }
+  .start a { display: inline-flex; align-items: center; min-height: 44px; }
+  .closing { font-size: 1.6rem; font-size: clamp(1.55rem, 7vw, 2.3rem); line-height: 1.12; letter-spacing: -0.02em; font-weight: 800; text-wrap: balance; }
+  footer { border-top: 1px solid var(--line); padding: 1.25rem 0 0; font-size: 0.9rem; color: var(--ink-2); }
+
+  @media (min-width: 1000px) {
+    .wide { width: min(64rem, 100vw - 2.5rem); margin-left: 50%; transform: translateX(-50%); }
+    .cards { grid-template-columns: 1fr 1fr; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
+  }
+</style>
+</head>
+<body>
+<main>
+
+  <!-- 1. One question -->
+  <header class="open">
+    <span class="kw">Agentic Process · an explainer for builders</span>
+    <h1>How do you turn a job you repeat into a tool someone else can use?</h1>
+    <p class="lede">Agentic Process is for people who build tools or workflows with a coding agent such as Claude Code or Codex. Give it a job you repeat. It hands back a small package someone can start in five minutes, and it <span class="hl">tests the package in a fresh session before you get it.</span></p>
+    <p><a class="jump" href="#request">See the build request</a></p>
+  </header>
+
+  <!-- 2. The analogy, very large -->
+  <section class="analogy" aria-labelledby="analogy-h">
+    <span class="kw">Think of it as</span>
+    <h2 id="analogy-h" class="big">A recipe card that works in any kitchen.</h2>
+    <p class="big-2">You do not print a card for each brand of oven. And <span class="hl">before you get the card, someone who has never seen your kitchen cooks from it.</span></p>
+    <dl class="map">
+      <div><dt>The card</dt><dd>One <code>SKILL.md</code> file: the tool itself</dd></div>
+      <div><dt>Any kitchen</dt><dd>Any chatbot: the file works pasted in on its own</dd></div>
+      <div><dt>The stranger who cooks</dt><dd>A fresh session that has only the README and what it says to paste</dd></div>
+    </dl>
+  </section>
+
+  <!-- 3. One worked example -->
+  <section id="request" aria-labelledby="example-h">
+    <span class="kw">One worked example</span>
+    <h2 id="example-h">One request in, three files out</h2>
+    <p>You need a coding agent: Claude Code, Codex or similar. Open it in an empty folder and paste this. The job in it is an example; swap in your own later.</p>
+    <div class="req">
+      <div class="req-bar" hidden>
+        <span class="tag">Build request</span>
+        <button type="button" id="copy">Copy the request</button>
+      </div>
+<pre id="req-text"><code>Read the builder skill at
+https://raw.githubusercontent.com/bar181/practical-ai/main/projects/agentic-process/level-2-files/agentic-process/SKILL.md
+and follow it.
+
+The job: when a supplier sends a notice
+that changes our terms, work out what it
+makes us do and by when.
+Who uses the result: a café owner,
+in the chatbot they already use.
+Example input: write an invented
+one-page supplier notice.
+The catch: a notice that leaves out a date
+or an attachment it mentions.
+
+Put the tool in document-to-action-brief/.
+Hand back what you built, the checks
+you ran, and what you assumed.</code></pre>
+    </div>
+    <p class="status" id="copy-status" aria-live="polite"></p>
+    <p class="small muted"><b>Your agent cannot open the link?</b> Download the repository, open the agent in its folder, and replace the first three lines with: <code>Follow projects/agentic-process/level-2-files/agentic-process/SKILL.md</code></p>
+
+    <ul class="time" aria-label="How long it takes">
+      <li><b>Build</b><span>About 5 minutes.</span></li>
+      <li><b>Tests</b><span>About 5 minutes more. If the builder cannot start fresh sessions, it says "not yet run" and hands you three short messages: paste each into a fresh chat and read what comes back. <span class="hl">Until then the tool is built, not ready.</span></span></li>
+    </ul>
+
+    <h3>What comes back</h3>
+    <p>A folder of three or four files. These three are always there:</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th scope="col">File</th><th scope="col">What it is</th></tr></thead>
+        <tbody>
+          <tr><td class="file">README.md</td><td>How to use the tool: a five-minute start, what to give it, what to check</td></tr>
+          <tr><td class="file">SKILL.md</td><td>The tool. Paste it into any chatbot with a notice</td></tr>
+          <tr><td class="file">example.md</td><td>A worked example, and practice notices to try it on</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>In the pilot, a fresh chat had only that tool's <code>SKILL.md</code> and a notice it had never seen. Its reply opened with a short summary and a warning that the notice never gives its Effective Date and leaves out the form it says is attached. Then came tables of what you must do, the dates and the open questions, each line with the exact words and where they are, and a column to tick each one against the page.</p>
+  </section>
+
+  <!-- 4. The diagram, stepped through -->
+  <section class="steps" aria-labelledby="steps-h">
+    <span class="kw">Inside the builder</span>
+    <h2 id="steps-h">Four steps, with one loop back to fix</h2>
+    <p>Between your request and the three files, the builder does four things in order. The bar below stays on screen and marks the step you are reading.</p>
+
+    <nav class="flow" aria-label="The four builder steps">
+      <ol>
+        <li style="--i: 1"><a href="#step-1"><span class="num">1</span>Name</a></li>
+        <li style="--i: 2"><a href="#step-2"><span class="num">2</span>Pick</a></li>
+        <li style="--i: 3"><a href="#step-3"><span class="num">3</span>Build</a></li>
+        <li style="--i: 4"><a href="#step-4"><span class="num">4</span>Test</a></li>
+      </ol>
+      <p class="loop">fails at 4? fix at 3, run 4 again</p>
+    </nav>
+
+    <article class="step" id="step-1" aria-labelledby="s1-h">
+      <h3 id="s1-h"><span class="num">1</span>Name the usable result</h3>
+      <dl class="facts">
+        <div><dt>Who</dt><dd>The builder, in your coding agent. If the job, the user or an input is missing, it asks you once, then gets on with it.</dd></div>
+        <div><dt>What</dt><dd>Before building anything it writes five lines:
+          <ul>
+            <li><b>U1</b> who uses the result</li>
+            <li><b>U2</b> what they give it</li>
+            <li><b>U3</b> what they need to receive</li>
+            <li><b>U4</b> what makes it usable for them</li>
+            <li><b>U5</b> one catch it must spot</li>
+          </ul></dd></div>
+        <div><dt>Here</dt><dd>U1 is the café owner, in the chatbot they already use. U5 is a notice that leaves out a date or an attachment it mentions.</dd></div>
+      </dl>
+      <p class="fact">In the pilot, U5 and U4 are what produced a practice notice with no date and a warning block on the first screen of the result.</p>
+    </article>
+
+    <article class="step" id="step-2" aria-labelledby="s2-h">
+      <h3 id="s2-h"><span class="num">2</span>Pick the simplest build</h3>
+      <dl class="facts">
+        <div><dt>Who</dt><dd>The builder. It checks what already exists: Anthropic's skills and plugins first, then the platform you use, then open source, for about ten minutes.</dd></div>
+        <div><dt>What</dt><dd>It takes the first row that fits:
+          <ul>
+            <li>Something existing does the whole job: <b>a quick-start README only</b></li>
+            <li>Repeatable instructions and local rules: <b>a thin <code>SKILL.md</code></b>, the default</li>
+            <li>A step needs exact behaviour, such as arithmetic, dates or matching: <b>that step as a formula or short script</b>, called from the <code>SKILL.md</code></li>
+            <li>A connection removes recurring manual work: <b>a connection</b>, with a person approving consequential steps</li>
+          </ul></dd></div>
+      </dl>
+      <p class="fact">In the pilot, the Agentic Process package had 4 files. The direct build had 12, including test scripts and a check sheet.</p>
+    </article>
+
+    <article class="step" id="step-3" aria-labelledby="s3-h">
+      <h3 id="s3-h"><span class="num">3</span>Build one SKILL.md</h3>
+      <dl class="facts">
+        <div><dt>Who</dt><dd>The builder, starting from the project's template.</dd></div>
+        <div><dt>What</dt><dd><code>SKILL.md</code> is the one source of instructions. It works pasted on its own, asks for missing input in one reply, and puts what the person will use first. The builder also writes the README and the inputs for three test cases.</dd></div>
+      </dl>
+      <p class="fact">External skills and packages are research material only: read as text, never installed or run.</p>
+    </article>
+
+    <article class="step" id="step-4" aria-labelledby="s4-h">
+      <h3 id="s4-h"><span class="num">4</span>Test it in a fresh session</h3>
+      <dl class="facts">
+        <div><dt>Who</dt><dd>A separate session that has only the README and what it says to paste. If the builder cannot start one, you: it hands you the exact messages.</dd></div>
+        <div><dt>What</dt><dd>Three cases: an input missing something, the normal case, and the catch. Each result is read twice:
+          <ul>
+            <li><b>Does it hold up?</b> Rules followed, nothing invented, the catch caught.</li>
+            <li><b>Would the person use it as it is?</b> Read only the first screen. If they would have to dig, rewrite or ask, it fails.</li>
+          </ul></dd></div>
+        <div><dt>Loop</dt><dd>Fix what failed and rerun that case, at most twice. The normal case's unedited result becomes <code>example.md</code>.</dd></div>
+      </dl>
+      <p class="fact">In the pilot, neither builder could start a separate session, so the runs were started from outside. Since then the builder puts the exact message for each case in the hand-back.</p>
+    </article>
+
+    <div class="handback">
+      <h3>Then it hands back</h3>
+      <p>A note with U1 to U5, each with its check, its result and who ran it; what it chose to build and why; what it assumed; and what you decide next. It merges, publishes and sends nothing.</p>
+    </div>
+  </section>
+
+  <!-- 5. The harder case -->
+  <section aria-labelledby="hard-h">
+    <span class="kw">The harder case</span>
+    <h2 id="hard-h">A notice that never gives its Effective Date</h2>
+    <p>The catch is where a tool earns its keep. In the pilot, two fresh sessions got the same build brief. One followed the builder. The other built however it judged best. Each package then ran in a fresh chat on an unseen, invented supplier notice whose Effective Date is never given, and a separate session reviewed both blind.</p>
+
+    <blockquote class="quote"><p>In one blind pilot, a tool built with Agentic Process scored 93/100. The direct-build version scored 73/100 on the same brief.</p></blockquote>
+
+    <figure class="chart">
+      <h3>On the same brief, the blind reviewer scored the Agentic Process version higher.</h3>
+      <ul class="bars">
+        <li>
+          <div class="bar-label"><span>Agentic Process</span><span>93</span></div>
+          <div class="track" aria-hidden="true"><div class="fill ap"></div></div>
+        </li>
+        <li>
+          <div class="bar-label"><span>Direct build</span><span>73</span></div>
+          <div class="track" aria-hidden="true"><div class="fill direct"></div></div>
+        </li>
+      </ul>
+      <div class="scale" aria-hidden="true"><span>0</span><span>100</span></div>
+      <figcaption class="small muted">Blind review score, out of 100. Source: the project's quality results, builder pilot, 16 November 2026.</figcaption>
+    </figure>
+
+    <h3>What that means for the person using it</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th scope="col"></th><th scope="col">Agentic Process</th><th scope="col">Direct build</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Key items found in the notice</th><td>All nine</td><td>All nine</td></tr>
+          <tr><th scope="row">The missing effective date and form</th><td>At the top, with who to ask</td><td>Filed the form as a fact rather than something to do, and never said who to ask about the date</td></tr>
+          <tr><th scope="row">Corrections before the owner could act</th><td><b>Zero</b></td><td>Two</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="excerpt">
+      <p class="tag">From the pilot result, unedited. The supplier and notice were invented for the test.</p>
+      <p><b>Warning:</b> Three things are missing. (1) The "Effective Date" is never stated, so I cannot tell you when the new prices and 30-day payment terms start. (2) The Account Update Form is described as "attached" but was not in what you sent, so I cannot tell you what it asks for. (3) ...</p>
+    </div>
+
+    <div class="scope">
+      <p><b>The scope:</b> one build task, one unseen notice and one blind reviewer. A signal, not a study.</p>
+      <p class="small">As of 16 November 2026 it has not been tried in Codex or any other coding agent, and nobody but its author has used it. The pilot is its only head-to-head comparison.</p>
+    </div>
+  </section>
+
+  <!-- Use cases and your own job -->
+  <section aria-labelledby="uses-h">
+    <span class="kw">Use cases</span>
+    <h2 id="uses-h">Jobs it has been pointed at</h2>
+    <div class="wide">
+      <ul class="cards">
+        <li class="card">
+          <h3>Supplier notices to actions</h3>
+          <p>Paste a supplier notice or a change of terms. Get what you must do, the dates and what is unclear, each line with the exact words it came from.</p>
+          <p class="state"><b>Status:</b> built by the builder in the pilot, run once on an unseen notice and reviewed blind.</p>
+        </li>
+        <li class="card">
+          <h3>A business decision brief</h3>
+          <p>Ask a business question. Get a one-page brief: the facts with sources, the options compared by a written rule, a SWOT, and a recommendation you check. You decide.</p>
+          <p class="state"><b>Status:</b> converted by hand. Passed its three-input check in fresh Claude chats.</p>
+        </li>
+        <li class="card">
+          <h3>A learning log</h3>
+          <p>Say "log that" when something goes wrong or works better than expected, and get one row for your log. Paste the log back before similar work and get the rules that apply.</p>
+          <p class="state"><b>Status:</b> built by the builder on its own. Passed three fresh-session checks.</p>
+        </li>
+        <li class="card">
+          <h3>Meeting notes to actions</h3>
+          <p>Turn a client's meeting notes into actions with owners and dates. The catch: notes that never say who owns an action.</p>
+          <p class="state"><b>Status:</b> the README's example of a job to describe. No tool built for it yet.</p>
+        </li>
+      </ul>
+    </div>
+
+    <h3>Use it with your own job</h3>
+    <p>Keep the first three lines of the build request. Replace the rest with four answers:</p>
+    <ol class="answers">
+      <li><b>The job:</b> what you do by hand, every week or month. <i>"Turn a client's meeting notes into actions with owners and dates."</i></li>
+      <li><b>Who uses the result,</b> and where. <i>"Me, in ChatGPT."</i></li>
+      <li><b>An example input:</b> a real one with private details removed, or ask for an invented one.</li>
+      <li><b>The catch:</b> what goes wrong when people do it by hand. <i>"Notes that never say who owns an action."</i> The builder tests for it.</li>
+    </ol>
+  </section>
+
+  <!-- 6. Check yourself -->
+  <section aria-labelledby="ready-h">
+    <span class="kw">Check yourself</span>
+    <h2 id="ready-h">Is it ready?</h2>
+    <p>Open the hand-back and the new folder. Tick each one as you check it. It is ready when all five hold.</p>
+    <ul class="checks">
+      <li><label><input type="checkbox" name="ready"><span><b>Every line of the spec has a check that ran.</b> The hand-back lists U1 to U5, each with a result.</span></label></li>
+      <li><label><input type="checkbox" name="ready"><span><b>The checks ran in a separate session,</b> and the hand-back says who ran them.</span></label></li>
+      <li><label><input type="checkbox" name="ready"><span><b><code>example.md</code> is a real result,</b> unedited, not something the builder wrote.</span></label></li>
+      <li><label><input type="checkbox" name="ready"><span><b>The catch was caught</b> in its own test case.</span></label></li>
+      <li><label><input type="checkbox" name="ready"><span><b>Read only the first screen of a result,</b> as the person who will use it. Could they act on it as it is? If they would have to dig, rewrite or ask, send it back.</span></label></li>
+    </ul>
+    <p class="count" id="count" aria-live="polite" hidden>0 of 5 ticked</p>
+
+    <div>
+      <details>
+        <summary>The hand-back says "not yet run" against the checks. Is the tool ready?</summary>
+        <p>No. It is built, not ready. Paste the messages from the hand-back into a fresh chat yourself and read what comes back.</p>
+      </details>
+      <details>
+        <summary>With no fresh session, may the builder write <code>example.md</code> itself?</summary>
+        <p>No. It writes "not yet run" against each check and leaves the inputs waiting, never a result it wrote itself.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- 7. Recap, reusing the analogy -->
+  <section class="recap" aria-labelledby="recap-h">
+    <span class="kw">Recap</span>
+    <h2 id="recap-h" class="big">Write one card, let a stranger cook from it, then hand it over.</h2>
+    <ol>
+      <li>Name the usable result</li>
+      <li>Pick the simplest build</li>
+      <li>Build one <code>SKILL.md</code></li>
+      <li>Test it in a fresh session</li>
+    </ol>
+
+    <div class="start">
+      <h3>Where to start</h3>
+      <p class="path"><code>projects/agentic-process/</code> in the <code>bar181/practical-ai</code> repository on GitHub.</p>
+      <p><a href="https://github.com/bar181/practical-ai/tree/main/projects/agentic-process">Open projects/agentic-process on GitHub</a></p>
+      <p class="small"><b>First time:</b> paste the build request above. <b>Doing it often:</b> install the builder skill in your coding agent so you just say "build a tool for this job". <b>No coding agent:</b> copy <code>base/template/</code> and follow the one-page process with any chatbot.</p>
+    </div>
+
+    <p class="closing">Someone describes a job they repeat, and gets back a tool another person can start in five minutes and trust.</p>
+  </section>
+
+  <footer>
+    <p>Made with Artifact Studio from the project's README, 16 November 2026.</p>
+  </footer>
+</main>
+<script>
+(() => {
+  const html = document.documentElement;
+  html.classList.add('js');
+
+  /* Copy button: shown only when scripts run. */
+  const bar = document.querySelector('.req-bar');
+  const btn = document.getElementById('copy');
+  const status = document.getElementById('copy-status');
+  const text = document.getElementById('req-text').textContent;
+  if (bar && btn) {
+    bar.hidden = false;
+    btn.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(text);
+        status.textContent = 'Copied. Paste it into your coding agent.';
+      } catch (e) {
+        const r = document.createRange();
+        r.selectNodeContents(document.getElementById('req-text'));
+        const s = getSelection(); s.removeAllRanges(); s.addRange(r);
+        status.textContent = 'Selected. Press Ctrl+C or Cmd+C to copy.';
+      }
+    });
+  }
+
+  /* Readiness count. */
+  const boxes = [...document.querySelectorAll('input[name="ready"]')];
+  const count = document.getElementById('count');
+  const upd = () => {
+    const n = boxes.filter(b => b.checked).length;
+    count.textContent = n === boxes.length ? 'All 5 ticked: ready to hand over.' : n + ' of 5 ticked';
+  };
+  if (count) { count.hidden = false; boxes.forEach(b => b.addEventListener('change', upd)); upd(); }
+
+  /* Scroll driver: sets one custom property, --stage, from the scroll position. */
+  const steps = document.querySelector('.steps');
+  const items = [...document.querySelectorAll('.step')];
+  let tick = false;
+  const stage = () => {
+    tick = false;
+    const mid = innerHeight * 0.5;
+    let s = 0;
+    items.forEach((el, i) => { const r = el.getBoundingClientRect(); if (r.top < mid && r.bottom > mid) s = i + 1; });
+    steps.style.setProperty('--stage', s);
+  };
+  addEventListener('scroll', () => { if (!tick) { tick = true; requestAnimationFrame(stage); } }, { passive: true });
+  addEventListener('resize', stage);
+  stage();
+})();
+</script>
+</body>
+</html>

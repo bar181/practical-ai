@@ -1,0 +1,79 @@
+# Artifact Studio: instructions for agents
+
+You are here because a person wants a web page, a slide deck, a social post picture or a preview
+of a post, an email or a blog made from their own content. This file is written for you. People start at the [README](README.md).
+
+## The path
+
+Take the first of these that you can do.
+
+| You can | Do this |
+| --- | --- |
+| Load skills | Load [`level-2-files/artifact-studio/SKILL.md`](level-2-files/artifact-studio/SKILL.md) and follow it. It is the whole procedure, with reference cards it reads when needed |
+| Call MCP tools, and the `artifact-studio` server is connected | Call `studio_overview`, then `recommend`. [`level-3-files/README.md`](level-3-files/README.md) lists every tool |
+| Neither | Read [`base/AI-INSTRUCTIONS.md`](base/AI-INSTRUCTIONS.md). It is the same procedure in one file |
+
+Whichever you use, the steps are the same: find out the job, the reader and the shape; choose a
+template, a voice and a look and say why in one line; build one self-contained file from the
+person's content only; check it; return it with the delivery note below.
+
+## Where things are
+
+| You need | Read |
+| --- | --- |
+| A complete small file to copy and fill, for a deck or a social picture | [`level-2-files/artifact-studio/assets/starters/`](level-2-files/artifact-studio/assets/starters/) |
+| How to show a social post, an email or a blog as its audience will see it | [`post-previews.md`](level-2-files/artifact-studio/references/post-previews.md), with working frames in [`sources/`](level-3-files/mcp/library/sources/) (`02-posts-lib.html` and `86` to `92`) |
+| The skeleton every page is built on | [`page-skeleton.html`](level-2-files/artifact-studio/assets/page-skeleton.html) |
+| The rules, and the cards for each recipe, voice and look | [`level-2-files/artifact-studio/references/`](level-2-files/artifact-studio/references/) |
+| Every template with its fit scores, and reference code for each | [`level-3-files/mcp/library/`](level-3-files/mcp/library/): `index.json`, `sources/` and `svg/` |
+| What a good result looks like | [`base/examples/`](base/examples/): one worked example for each voice, for post previews, for photo effects and for a report. Each shows the prompt, the sample input and the finished page |
+| The person's standing preferences | A file named `preferences.md`, if they have one. The template is [`level-2-files/preferences.md`](level-2-files/preferences.md) |
+| Designs the person liked, in their own words | [`level-3-files/mcp/inspiration/`](level-3-files/mcp/inspiration/), or call `list_inspiration` |
+
+## Inputs you can expect
+
+| Input | Form | If it is missing |
+| --- | --- | --- |
+| Content | Notes, a document, a spreadsheet, a transcript, a link | Ask for it. Do not write a page from nothing |
+| Media | Photos, a logo, a chart image, a video link | Build without. Never use a stock image as if it were theirs |
+| Preferences | `preferences.md` | Use the defaults for the template |
+| Request | A sentence, or a template id from the index | Choose with the rules above and say what you chose |
+
+## Output contract
+
+Return two things.
+
+1. **One HTML file.** Self-contained, phone first, readable with motion off and with scripts off.
+2. **A delivery note** with these four headings, in this order.
+
+```
+Chose: <template>, <voice>, <look>. <one line on why, if you chose>
+Assumed: <each assumption, one per line, or "nothing">
+Missing: <every gap, one per line, or "nothing". Say which are marked [needs: ...] on the page>
+Check before sharing: <the numbers, names and claims a person must verify>
+```
+
+## Rules that never bend
+
+1. No invented facts. A gap that would mislead the reader is marked `[needs: ...]` on the page.
+   Every gap is listed in the delivery note.
+2. A voice is a style. Never attribute words to the person who inspired it.
+3. Every company, person and figure in the templates is invented, except on the visionary page
+   and the post previews, which are about this repository and name its author. Adapt the pattern and never
+   carry the example content into the person's page.
+4. When the person shows you a design they like, record the idea in your own words. Do not copy
+   its text, pictures, logo, characters or code.
+5. Stop before anything is posted, sent or published. A person decides.
+
+## To change the library
+
+Edit the files in [`_build/`](_build/), run `python3 _build/build.py`, and check that
+`base/studio.html` and the files in `base/examples/` open. Never edit a generated file. Each one says so at the top.
+
+## Known limits
+
+- A second agent ran the skill end to end on 16 November 2026 and an agent built a page from the
+  MCP tools alone. Both worked and both reported friction; the logs are in
+  [`_build/examples/runs/`](_build/examples/runs/). Read `friction.md` there before you trust a rule
+  that looks odd.
+- The MCP server has not been tried inside a desktop assistant. Nothing is hosted.

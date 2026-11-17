@@ -1,0 +1,95 @@
+<style>
+.ph2{background-image:var(--photo2)}
+[data-count]{display:inline!important;font:inherit!important;color:inherit!important;margin:0!important;letter-spacing:inherit!important}
+/* horizontal bars: thin, rounded at the data end, value at the tip */
+.hb{display:grid;gap:10px;margin-top:14px;font:400 .9rem/1.2 var(--sans);font-variant-numeric:tabular-nums}
+.hb-row{display:grid;grid-template-columns:var(--lw,7.5em) 1fr;gap:10px;align-items:center}
+.hb-l{color:var(--c-muted,#4b596e)}
+.hb-t{display:flex;align-items:center;gap:8px}
+.hb-t i{display:block;height:18px;width:var(--v);background:var(--c-bar,#34506f);border-radius:0 4px 4px 0;transition:width 1.1s cubic-bezier(.2,.8,.2,1)}
+.hb-t i.quiet{background:var(--c-quiet,#aab6c6)}
+.hb-t b{font-weight:700}
+.anim .hb.see:not(.in) .hb-t i{width:0}
+/* line chart */
+.lc{position:relative;margin-top:10px;touch-action:pan-y}
+.lc svg{display:block;width:100%;overflow:visible}
+.lc text{font:400 12px var(--sans);fill:var(--c-muted,#4b596e)}
+.lc text.strong{font-weight:700;fill:var(--c-ink,#1b2228)}
+.lc .tip{position:absolute;top:0;left:0;pointer-events:none;background:#1b2228;color:#e8edf3;border-radius:8px;padding:7px 10px;white-space:nowrap;visibility:hidden;font:400 .82rem/1.3 var(--sans);font-variant-numeric:tabular-nums}
+.lc .tip b{display:block}
+@media (prefers-reduced-motion:reduce){.hb-t i{transition:none}.anim .hb.see:not(.in) .hb-t i{width:var(--v)}}
+</style>
+<script>
+/* STUDIO.line(host,{vals,labels,fmt,color,surface,first,last,max}): one series, 2px line, soft fill, end labels, touch to read */
+STUDIO.line=(host,o)=>{
+  const N=o.vals.length,fmt=o.fmt||(v=>v),color=o.color||'#34506f',surface=o.surface||'#fff',max=o.max||Math.max(...o.vals)*1.12;
+  const tip=document.createElement('div');tip.className='tip';let lastW=0;
+  const draw=()=>{const W=host.clientWidth;if(!W||W===lastW)return;lastW=W;
+    const H=Math.round(clamp(W*.5,190,300)),m={l:40,r:16,t:22,b:28},iw=W-m.l-m.r,ih=H-m.t-m.b,x=i=>m.l+i/(N-1)*iw,y=v=>m.t+(1-v/max)*ih;
+    const svg=el('svg',{viewBox:`0 0 ${W} ${H}`,height:H,role:'img',tabindex:0,'aria-label':o.label||'Line chart'});
+    for(const t of o.ticks||[0,max/2,max]){svg.append(el('line',{x1:m.l,x2:W-m.r,y1:y(t),y2:y(t),stroke:o.grid||'#dfe4ea','stroke-width':1}));svg.append(el('text',{x:m.l-6,y:y(t)+4,'text-anchor':'end'},fmt(t)))}
+    const pts=o.vals.map((v,i)=>[x(i),y(v)]),d='M'+pts.map(p=>p[0].toFixed(1)+','+p[1].toFixed(1)).join(' L');
+    svg.append(el('path',{d:d+` L${pts[N-1][0]},${y(0)} L${pts[0][0]},${y(0)} Z`,fill:color,'fill-opacity':.1}));
+    svg.append(el('path',{d,fill:'none',stroke:color,'stroke-width':2,'stroke-linejoin':'round','stroke-linecap':'round'}));
+    for(const i of [0,N-1])svg.append(el('circle',{cx:pts[i][0],cy:pts[i][1],r:5,fill:color,stroke:surface,'stroke-width':2}));
+    svg.append(el('text',{x:pts[0][0]+8,y:pts[0][1]-10,class:'strong'},o.first||fmt(o.vals[0])));
+    svg.append(el('text',{x:pts[N-1][0],y:pts[N-1][1]-12,'text-anchor':'end',class:'strong'},o.last||fmt(o.vals[N-1])));
+    svg.append(el('text',{x:m.l,y:H-6},o.labels[0]));svg.append(el('text',{x:W-m.r,y:H-6,'text-anchor':'end'},o.labels[N-1]));
+    const cross=el('line',{y1:m.t,y2:m.t+ih,stroke:'#1b2228','stroke-width':1,visibility:'hidden'}),dot=el('circle',{r:5,fill:color,stroke:surface,'stroke-width':2,visibility:'hidden'});svg.append(cross,dot);
+    let at=-1;
+    const show=i=>{at=clamp(i,0,N-1);cross.setAttribute('x1',x(at));cross.setAttribute('x2',x(at));cross.setAttribute('visibility','visible');dot.setAttribute('cx',x(at));dot.setAttribute('cy',y(o.vals[at]));dot.setAttribute('visibility','visible');
+      tip.textContent='';const b=document.createElement('b');b.textContent=fmt(o.vals[at]);tip.append(b,o.labels[at]);tip.style.visibility='visible';const tw=tip.offsetWidth;tip.style.transform=`translate(${clamp(x(at)-tw/2,0,W-tw).toFixed(0)}px,${Math.max(0,y(o.vals[at])-58).toFixed(0)}px)`};
+    const hide=()=>{at=-1;cross.setAttribute('visibility','hidden');dot.setAttribute('visibility','hidden');tip.style.visibility='hidden'};
+    const ev=e=>{const b=svg.getBoundingClientRect();show(Math.round((e.clientX-b.left-m.l)/iw*(N-1)))};
+    svg.addEventListener('pointermove',ev);svg.addEventListener('pointerdown',ev);svg.addEventListener('pointerleave',e=>{if(e.pointerType==='mouse')hide()});svg.addEventListener('blur',hide);
+    svg.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();show((at<0?0:at)+(e.key==='ArrowRight'?1:-1))}else if(e.key==='Escape')hide()});
+    host.replaceChildren(svg,tip)};
+  draw();addEventListener('resize',draw)};
+</script>
+
+<style>
+/* deck engine. At rest (no script) the slides are a readable column. The script turns them into a stage. */
+.dk-top{background:var(--pine);color:var(--fog);padding:34px 0 20px}
+.dk-top h1{font-size:clamp(2rem,8vw,3.4rem);line-height:1;color:var(--fog)}
+.dk-top p{margin-top:10px;max-width:34em;font:400 1.05rem/1.45 var(--display);color:#c2cede}
+.dk-hold{background:var(--pine);padding:0 0 34px}
+.dk{max-width:1080px;margin-inline:auto;display:grid;gap:10px;padding:0 12px;position:relative}
+.dk-s{aspect-ratio:16/9;container-type:inline-size;position:relative;overflow:hidden;border-radius:10px;display:grid;place-items:center;text-align:center;padding:6%}
+.dk-s>*{position:relative}
+.dk-bar{display:none}
+.dk.on{gap:0;padding:0 12px}
+.dk.on .dk-stage{position:relative;aspect-ratio:16/9;border-radius:10px;overflow:hidden;background:#000}
+.dk.on .dk-s{position:absolute;inset:0;border-radius:0;opacity:0;visibility:hidden;transition:opacity .35s ease,visibility 0s .35s}
+.dk.on .dk-s.cur{opacity:1;visibility:visible;transition:opacity .35s ease}
+.dk.on .dk-bar{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:10px 0 0;color:var(--fog);font:700 .95rem/1 var(--display)}
+.dk-bar button{min-width:44px;min-height:44px;border-radius:999px;border:1.5px solid #5b6b7a;background:var(--pine-2);color:var(--fog);font:700 1rem/1 var(--display);padding:0 14px;cursor:pointer}
+.dk-bar .dk-n{min-width:3.2em;text-align:center}@media(max-width:380px){.dk-bar button{padding:0 11px;font-size:.9rem}}.dk-bar .dk-notes-b{margin-left:auto}.dk-bar button[aria-pressed=true]{background:var(--reed);color:var(--pine);border-color:var(--reed)}
+.dk-note{display:none}
+.dk.on .dk-notes{display:none;margin-top:10px;background:var(--pine-2);color:var(--fog);border-radius:10px;padding:14px 16px;font:400 1rem/1.45 var(--display)}
+.dk.on.notes .dk-notes{display:block}.dk-notes b{display:block;color:var(--reed);font-size:.86rem;margin-bottom:4px}
+.dk:focus-visible{outline:3px solid var(--reed);outline-offset:4px}
+.dk-stage:fullscreen{border-radius:0;aspect-ratio:auto;display:grid;place-items:center}
+.dk-stage:fullscreen .dk-s{inset:auto;width:min(100vw,177.78vh);height:min(56.25vw,100vh)}
+@media(prefers-reduced-motion:reduce){.dk.on .dk-s{transition:none}}
+/* printing a deck file gives one slide per page, for a PDF handout */
+@page slide{size:13.333in 7.5in;margin:0}
+@media print{html[data-view^="deck-"] :is(.mast,.about,.dk-top,.dk-bar,.dk-notes,.anat,.tabs,.pager,.progress){display:none!important}
+  html[data-view^="deck-"] :is(.dk-hold,.dk){background:none;padding:0;max-width:none;display:block}
+  html[data-view^="deck-"] .dk.on .dk-stage{aspect-ratio:auto;overflow:visible;background:none;border-radius:0}
+  html[data-view^="deck-"] .dk-s{page:slide;position:relative!important;inset:auto!important;opacity:1!important;visibility:visible!important;border-radius:0;width:100%;aspect-ratio:16/9;break-after:page;break-inside:avoid;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+
+</style>
+<script>
+STUDIO.deck=root=>{$$('.dk',root).forEach(dk=>{const slides=$$('.dk-s',dk);if(!slides.length||dk.classList.contains('on'))return;
+  const stage=h('div',{class:'dk-stage'});slides[0].before(stage);slides.forEach(s=>stage.append(s));dk.classList.add('on');
+  const n=$('.dk-n',dk);let i=0;const notes=h('div',{class:'dk-notes','aria-live':'polite'});dk.append(notes);const nb=$('.dk-notes-b',dk);if(nb)nb.addEventListener('click',()=>{nb.setAttribute('aria-pressed',dk.classList.toggle('notes'))});
+  const go=k=>{i=Math.max(0,Math.min(slides.length-1,k));slides.forEach((s,j)=>{s.classList.toggle('cur',j===i);s.setAttribute('aria-hidden',j===i?'false':'true')});if(n)n.textContent=(i+1)+' / '+slides.length;const nt=$('.dk-note',slides[i]);notes.innerHTML='<b>What to say on slide '+(i+1)+'</b>';notes.append(nt?nt.textContent:'No note for this slide.');$('.dk-prev',dk).disabled=i===0;$('.dk-next',dk).disabled=i===slides.length-1};
+  $('.dk-prev',dk).addEventListener('click',()=>go(i-1));$('.dk-next',dk).addEventListener('click',()=>go(i+1));
+  const f=$('.dk-full',dk);if(f){if(!stage.requestFullscreen)f.hidden=true;else f.addEventListener('click',()=>{document.fullscreenElement?document.exitFullscreen():stage.requestFullscreen().catch(()=>{})})}
+  const key=e=>{const k=e.key;if((k===' '||k==='Enter')&&e.target.closest&&e.target.closest('button,a,input,select,textarea,summary'))return;if(k==='ArrowRight'||k===' '||k==='PageDown'){e.preventDefault();go(i+1)}else if(k==='ArrowLeft'||k==='PageUp'){e.preventDefault();go(i-1)}else if(k==='Home'){go(0)}else if(k==='End'){go(slides.length-1)}else if(k==='n'||k==='N'){nb&&nb.click()}};dk.addEventListener('keydown',key);
+  /* with nothing focused, the keys drive the deck on screen: a deck file opened to present needs no click first */
+  document.addEventListener('keydown',e=>{if(e.target===document.body&&dk.offsetParent)key(e)});
+  stage.addEventListener('click',e=>{const r=stage.getBoundingClientRect();go(i+((e.clientX-r.left)>r.width*.35?1:-1))});
+  let x0=null;stage.addEventListener('touchstart',e=>{x0=e.touches[0].clientX},{passive:true});stage.addEventListener('touchend',e=>{if(x0===null)return;const dx=e.changedTouches[0].clientX-x0;x0=null;if(Math.abs(dx)>40){go(i+(dx<0?1:-1));e.preventDefault()}});
+  go(0)})};
+</script>

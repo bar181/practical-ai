@@ -1,0 +1,91 @@
+<style>
+#v-voice-keynote{background:#000;color:#f5f5f7;font-family:var(--sans)}
+html[data-view=voice-keynote]{scroll-snap-type:y proximity}
+.kn-s{min-height:min(100svh,900px);display:grid;place-content:center;justify-items:center;text-align:center;padding:48px 24px;scroll-snap-align:start;position:relative;overflow:hidden;background:radial-gradient(120% 90% at 50% 0%,#1e1e23 0%,#000 72%)}
+.kn-s:first-of-type{min-height:0;padding:84px 24px 76px}
+.kn-s h1,.kn-s h2{font:700 clamp(2.4rem,9.4vw,6rem)/1.02 var(--sans);letter-spacing:-.035em;max-width:11em;color:#f5f5f7;text-wrap:balance}
+.kn-s p{font:400 clamp(1.1rem,3.7vw,1.7rem)/1.3 var(--sans);color:#a1a1a6;margin-top:18px;max-width:19em;text-wrap:balance}
+.kn-dim h2{color:#8e8e93}
+.kn-note{position:absolute;bottom:16px;left:0;right:0;font:400 .78rem/1.3 var(--sans);color:#8e8e93;margin:0;max-width:none}
+/* a picture that moves slower than the page, with words over it */
+.kn-px{overflow:clip}
+.kn-px .ph{position:absolute;inset:-18% 0;background-image:var(--ph-fog);background-position:50% 46%;transform:translateY(calc((var(--p) - .5)*20%))}
+.kn-px::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.5),rgba(0,0,0,.34) 50%,rgba(0,0,0,.72))}
+.kn-px>div:not(.ph){position:relative;z-index:1;display:grid;justify-items:center}
+.kn-px p{color:#f5f5f7}
+/* words beside a picture */
+.kn-duo{display:grid;gap:26px;align-items:center;width:min(100%,1040px);text-align:left;justify-items:start}
+.kn-duo h2{font-size:clamp(2.2rem,7.4vw,4.4rem);max-width:8em}
+.kn-duo p{max-width:17em}
+.kn-duo .kn-pic{width:100%;aspect-ratio:4/3;border-radius:18px;background:var(--ph-dog) 62% 38%/cover no-repeat #1c1c1e}
+@media(min-width:760px){.kn-duo{grid-template-columns:1fr 1fr;gap:56px}}
+/* a small picture that moves: three rings for the jobs that come round again */
+.kn-orbit{display:block;width:min(74vw,330px);height:auto;margin-bottom:26px}
+.kn-orbit .ring{fill:none;stroke:#3a3a3c;stroke-width:2}
+.kn-orbit .dot{fill:#f5f5f7}
+.kn-orbit g{transform-origin:160px 160px}
+.kn-orbit .o1{animation:kn-spin 5s linear infinite}.kn-orbit .o2{animation:kn-spin 11s linear infinite}.kn-orbit .o3{animation:kn-spin 23s linear infinite}
+.kn-orbit text{font:700 15px var(--sans);fill:#d1d1d6;text-anchor:middle;paint-order:stroke;stroke:#0b0b0d;stroke-width:8px;stroke-linejoin:round}
+@keyframes kn-spin{to{transform:rotate(360deg)}}
+/* a chart with no axes: the numbers are the labels */
+.kn-bars{list-style:none;margin:30px 0 0;padding:0;display:grid;gap:14px;width:min(100%,640px);text-align:left}
+.kn-bars li{display:grid;grid-template-columns:2.6ch 1fr;column-gap:14px;row-gap:5px;align-items:center}
+.kn-bars b{font:700 clamp(1.5rem,5.4vw,2.2rem)/1 var(--sans);letter-spacing:-.03em;font-variant-numeric:tabular-nums;text-align:right;color:#f5f5f7}
+.kn-bars span{font:400 clamp(1rem,3.4vw,1.2rem)/1.2 var(--sans);color:#a1a1a6}
+.kn-bars i{grid-column:1/-1;display:block;height:6px;border-radius:3px;background:linear-gradient(90deg,#f5f5f7,#8e8e93);width:var(--v,100%)}
+#v-voice-keynote.anim .kn-bars i{width:0;transition:width 1.2s cubic-bezier(.2,.8,.2,1);transition-delay:calc(var(--i,0)*110ms + 200ms)}
+#v-voice-keynote.anim .kn-bars.in i{width:var(--v,100%)}
+/* facts on frosted glass over a picture */
+.kn-glass{align-content:end;padding-bottom:10svh}
+.kn-glass .ph{position:absolute;inset:0;background-image:var(--ph-toronto);background-position:50% 64%}
+.kn-card{position:relative;z-index:1;width:min(100%,560px);padding:26px 24px 24px;border-radius:22px;border:1px solid rgba(255,255,255,.28);background:rgba(12,12,16,.5);-webkit-backdrop-filter:blur(18px) saturate(1.5);backdrop-filter:blur(18px) saturate(1.5);box-shadow:0 24px 60px rgba(0,0,0,.45)}
+.kn-card h2{font-size:clamp(2rem,7.6vw,3.6rem)}
+.kn-card ol{list-style:none;margin:18px 0 0;padding:0;display:grid;gap:8px;counter-reset:k}
+.kn-card li{font:400 clamp(1.05rem,3.6vw,1.35rem)/1.25 var(--sans);color:#f5f5f7;counter-increment:k;display:flex;gap:12px;justify-content:center}
+.kn-card li::before{content:counter(k);font-weight:700;color:#d1d1d6}
+.kn-card p{font-size:.95rem;color:#e5e5ea;margin-top:16px}
+#v-voice-keynote.anim .see{opacity:0;transform:translateY(26px) scale(.985);transition:opacity .9s ease,transform 1s cubic-bezier(.2,.8,.2,1);transition-delay:calc(var(--i,0)*190ms)}
+#v-voice-keynote.anim .see.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){#v-voice-keynote.anim .see{opacity:1;transform:none;transition:none}.kn-orbit g{animation:none}.kn-orbit .o2{transform:rotate(130deg)}.kn-orbit .o3{transform:rotate(250deg)}#v-voice-keynote.anim .kn-bars i{width:var(--v,100%);transition:none}}
+</style>
+<div class="view" id="v-voice-keynote" data-tab="voices" data-title="The keynote">
+  <section class="kn-s"><h1 class="see">AI has read every book in the world.</h1><p class="kn-note">Scroll. One idea per screen.</p></section>
+  <section class="kn-s kn-dim"><h2 class="see">It has never met you.</h2></section>
+  <section class="kn-s kn-px sd"><div class="ph" role="img" aria-label="A house on stilts in fog with one lit window, and a person walking away along a wet road."></div><div><h2 class="see">So it guesses.</h2><p class="see" style="--i:2">And your best thinking arrives on a grey page.</p></div></section>
+  <section class="kn-s"><div class="kn-duo"><div><h2 class="see">Meet your smart intern.</h2><p class="see" style="--i:1">Fast. Capable. New here. Tell it your priorities, your tone and what good looks like.</p></div><div class="kn-pic see" style="--i:2" role="img" aria-label="A small dog with its paws on a desk, looking closely at a laptop screen."></div></div></section>
+  <section class="kn-s">
+    <svg class="kn-orbit see" viewBox="0 0 320 320" role="img" aria-label="Three rings labelled daily, weekly and monthly. A dot goes round each ring at its own speed.">
+      <circle class="ring" cx="160" cy="160" r="52"/><circle class="ring" cx="160" cy="160" r="98"/><circle class="ring" cx="160" cy="160" r="144"/>
+      <g class="o1"><circle class="dot" cx="160" cy="108" r="8"/></g><g class="o2"><circle class="dot" cx="160" cy="62" r="8"/></g><g class="o3"><circle class="dot" cx="160" cy="16" r="8"/></g>
+      <text x="160" y="217">Daily</text><text x="160" y="263">Weekly</text><text x="160" y="309">Monthly</text>
+    </svg>
+    <h2 class="see" style="--i:1">Not breakthroughs. The jobs you repeat.</h2><p class="see" style="--i:2">AI does the draft. You keep the judgement.</p></section>
+  <section class="kn-s"><h2 class="see">On day one, the kit is already full.</h2>
+    <ul class="kn-bars see" style="--i:1" aria-label="What is in the Artifact Studio library">
+      <li style="--i:0"><b data-n="templates" data-count="20">20</b><span>templates</span><i></i></li>
+      <li style="--i:1"><b data-n="design_ideas" data-count="17">17</b><span>design ideas</span><i></i></li>
+      <li style="--i:2"><b data-n="photo_parts" data-count="13">13</b><span>photo effects</span><i></i></li>
+      <li style="--i:3"><b data-n="page_parts" data-count="12">12</b><span>page parts</span><i></i></li>
+      <li style="--i:4"><b data-n="animated_svg" data-count="12">12</b><span>animated drawings</span><i></i></li>
+      <li style="--i:5"><b data-n="looks" data-count="9">9</b><span>looks</span><i></i></li>
+    </ul></section>
+  <section class="kn-s kn-glass"><div class="ph" role="img" aria-label="A city skyline at sunset, mirrored in still water, under a cloud shaped like an infinity sign."></div>
+    <div class="kn-card see"><h2>Start in five minutes.</h2><ol><li>Paste one link.</li><li>Ask in one sentence.</li><li>Check what comes back.</li></ol><p>Free to use and to change.</p></div></section>
+  <section class="kn-s"><h2 class="see">Put your smart intern to work.</h2></section>
+  <section class="anat"><div class="wrap">
+    <h2>Behind this page</h2>
+    <p class="measure">The keynote voice sells a vision by removing everything else. Inspired by the product launches of visionary tech CEOs. This page is about the Practical AI repository itself. The six counts are checked against the library every time it is built, and five minutes is an estimate, not a measurement.</p>
+    <div class="anat-grid">
+      <div><h3>How it is built</h3><ol><li>The world as it is, in one line of huge type</li><li>The catch, said quietly</li><li>The consequence, over a picture that moves slower than the page</li><li>The idea, with a few words beside one picture</li><li>What it is for, under a small drawing that moves</li><li>The proof, as a chart with no axes</li><li>The next step, on frosted glass over a picture</li><li>A closing line short enough to repeat</li></ol></div>
+      <div><h3>Design rules</h3><ul><li>One idea per screen. If it needs two sentences, it is two screens.</li><li>Black background, one typeface, white and grey only. The pictures bring the colour.</li><li>Three screens are nothing but type. They carry the argument.</li><li>A picture fills the screen or sits beside one short paragraph. Never both.</li><li>A chart has no axes or gridlines. The numbers are the labels.</li><li>Each screen snaps into place and its words arrive in order</li></ul></div>
+    </div>
+@@levels Turn my notes into a keynote-style page: one idea per screen, huge type, almost no words. || Build a keynote-style page from my notes. Black background, one sans-serif typeface, white and grey only. Use three screens of huge type alone for the argument. Between them: my photo full screen, moving slower than the page, with one line over it. A screen with a short paragraph beside a second photo. A small looping line drawing. My numbers as bars with no axes, each bar labelled with its number. The next step as three short lines on a frosted glass card over a photo. Screens snap as I scroll. || Use the artifact-studio skill. Recipe: scrolling explainer. Voice: keynote. Look: keynote black. Parts: parallax window, frosted glass card, one animated SVG, one bar chart with no axes. Content: the attached notes and photos. Mark any number you could not find in my notes instead of inventing one.
+  </div></section>
+</div>
+<script>
+onView("voice-keynote",root=>{
+  const bars=$$('.kn-bars li',root),max=Math.max(...bars.map(li=>+$('b',li).dataset.count));
+  bars.forEach(li=>$('i',li).style.setProperty('--v',(+$('b',li).dataset.count/max*100).toFixed(1)+'%'));
+  root.classList.add('anim');STUDIO.seen(root);STUDIO.countUp(root);
+});
+</script>

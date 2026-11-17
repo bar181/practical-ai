@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="s-pulse-dot" viewBox="0 0 120 120" role="img" aria-labelledby="t-pulse-dot">
+<title id="t-pulse-dot">A dot with rings pulsing outward</title>
+<desc>Use to mark something live or waiting, such as an open enquiry. Loops. At rest it shows the dot and one ring.</desc>
+<style>#s-pulse-dot .d{fill:var(--accent,#774528)}#s-pulse-dot .r{fill:none;stroke:var(--accent,#774528);stroke-width:3;transform-box:fill-box;transform-origin:center;opacity:.35;animation:pulse-dot-p 2.2s ease-out infinite}#s-pulse-dot .r2{animation-delay:1.1s}@keyframes pulse-dot-p{from{transform:scale(.3);opacity:.8}to{transform:scale(1);opacity:0}}@media (prefers-reduced-motion:reduce){#s-pulse-dot *{animation:none!important}}</style>
+<circle class="r" cx="60" cy="60" r="48"/><circle class="r r2" cx="60" cy="60" r="48"/><circle class="d" cx="60" cy="60" r="13"/>
+</svg>

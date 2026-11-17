@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="s-ring-progress" viewBox="0 0 160 160" role="img" aria-labelledby="t-ring-progress">
+<title id="t-ring-progress">A ring that fills to a share of the whole</title>
+<desc>Use for one percentage. Change the number in the text and the dash length to match. Plays once.</desc>
+<style>#s-ring-progress .t{fill:none;stroke:var(--soft,#a5b9d8);stroke-width:14;opacity:.5}#s-ring-progress .r{fill:none;stroke:var(--accent,#774528);stroke-width:14;stroke-linecap:round;stroke-dasharray:81 100;transform:rotate(-90deg);transform-origin:80px 80px;animation:ring-progress-f 1.4s ease-out both}#s-ring-progress text{font:700 38px system-ui,sans-serif;fill:var(--ink,#1b2228);text-anchor:middle}@keyframes ring-progress-f{from{stroke-dasharray:0 100}to{stroke-dasharray:81 100}}@media (prefers-reduced-motion:reduce){#s-ring-progress *{animation:none!important}}</style>
+<circle class="t" cx="80" cy="80" r="58"/><circle class="r" pathLength="100" cx="80" cy="80" r="58"/><text x="80" y="93">81%</text>
+</svg>

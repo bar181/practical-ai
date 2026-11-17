@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Decision brief: enquiry replies after the trial</title>
+<style>
+  /* Seven colour tokens, plus one data colour for the chart. */
+  :root {
+    --paper: #f6f7f4;   /* the sheet */
+    --desk: #e3e6e2;    /* behind the sheet, and quiet panels */
+    --ink: #19211f;     /* main text */
+    --muted: #4f5a57;   /* secondary text, and the comparison bar */
+    --rule: #b4bcb8;    /* lines */
+    --accent: #1a4c8b;  /* only for what to act on */
+    --mark: #e6edf7;    /* soft highlight behind the recommended row */
+    --data: #8a5a1e;    /* chart bars only */
+  }
+
+  * { box-sizing: border-box; }
+
+  html {
+    font-size: 17px;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  body {
+    margin: 0;
+    background: var(--desk);
+    color: var(--ink);
+    font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, Georgia, "Times New Roman", serif;
+    line-height: 1.5;
+  }
+
+  .sheet {
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 1.4rem 1.1rem 2rem;
+    max-width: 50rem;
+  }
+
+  h1 {
+    font-size: 1.62rem;
+    line-height: 1.16;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin: 0 0 0.9rem;
+    max-width: 22em;
+  }
+
+  /* Memo header: to, from, date, decision needed by, period. */
+  .memo {
+    margin: 0;
+    padding: 0.6rem 0;
+    border-top: 2px solid var(--ink);
+    border-bottom: 1px solid var(--rule);
+    display: grid;
+    grid-template-columns: max-content minmax(0, 1fr);
+    gap: 0.15rem 0.9rem;
+  }
+  .memo dt { color: var(--muted); }
+  .memo dd { margin: 0; }
+  .memo .deadline { color: var(--accent); font-weight: 700; }
+  .needs {
+    font-family: ui-monospace, "Cascadia Mono", Menlo, Consolas, monospace;
+    font-size: 0.86em;
+    border: 1px dashed var(--ink);
+    padding: 0 0.3em;
+  }
+
+  section {
+    padding: 0.9rem 0 0;
+    margin-top: 0.9rem;
+    border-top: 1px solid var(--rule);
+  }
+  .memo + section { border-top: 0; margin-top: 0; }
+
+  h2 {
+    font-size: 1.06rem;
+    line-height: 1.25;
+    font-weight: 700;
+    margin: 0 0 0.35rem;
+  }
+
+  p { margin: 0 0 0.5rem; }
+  .body > :last-child { margin-bottom: 0; }
+
+  .decision {
+    font-size: 1.16rem;
+    line-height: 1.34;
+    font-weight: 700;
+  }
+
+  ol.background {
+    margin: 0;
+    padding-left: 1.3rem;
+  }
+  ol.background li { margin-bottom: 0.3rem; padding-left: 0.15rem; }
+
+  /* Three numbers with their change. */
+  .stats {
+    list-style: none;
+    margin: 0.7rem 0 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    border-top: 1px solid var(--rule);
+  }
+  .stats li {
+    padding: 0.45rem 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .stats .label { display: block; color: var(--muted); font-size: 0.9rem; line-height: 1.3; }
+  .stats .now { display: block; font-size: 1.5rem; line-height: 1.2; font-weight: 700; }
+  .stats .was { display: block; font-size: 0.9rem; line-height: 1.35; }
+
+  /* The one chart: thin bars drawn in HTML, no image. */
+  figure.chart { margin: 0.8rem 0 0; }
+  .chart h3 {
+    font-size: 1rem;
+    line-height: 1.3;
+    font-weight: 700;
+    margin: 0 0 0.4rem;
+  }
+  .bars { list-style: none; margin: 0; padding: 0; }
+  .bars li {
+    display: grid;
+    grid-template-columns: 7.2rem 1fr;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.14rem 0;
+    font-size: 0.9rem;
+    line-height: 1.25;
+  }
+  .bars .track { display: flex; align-items: center; gap: 0.4rem; min-width: 0; }
+  .bars .bar {
+    display: block;
+    height: 0.62rem;
+    background: var(--data);
+    border: 1px solid var(--data);
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .bars .before .bar { background: var(--paper); border: 2px solid var(--muted); }
+  .bars .value { font-weight: 700; font-size: 1rem; }
+  .chart figcaption { color: var(--muted); font-size: 0.86rem; line-height: 1.35; margin-top: 0.35rem; }
+
+  /* The one options table. It fits a phone; the wrapper is a safety net. */
+  .table-wrap { overflow-x: auto; }
+  .table-wrap:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+  table.options {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+    line-height: 1.35;
+  }
+  .options th, .options td {
+    text-align: left;
+    vertical-align: top;
+    padding: 0.4rem 0.45rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .options thead th {
+    color: var(--muted);
+    font-weight: 400;
+    border-bottom: 1px solid var(--ink);
+    padding-top: 0;
+  }
+  .options tbody th { font-weight: 700; width: 31%; }
+  .options td.cost { width: 27%; }
+  .options tr.pick th, .options tr.pick td {
+    background: var(--mark);
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .tag {
+    display: block;
+    margin-top: 0.2rem;
+    font-size: 0.84rem;
+    font-weight: 700;
+  }
+  .tag.recommended { color: var(--accent); }
+  .tag.weak { color: var(--ink); font-weight: 400; font-style: italic; }
+  .working { color: var(--muted); }
+
+  ul.risks, ul.steps { list-style: none; margin: 0; padding: 0; }
+  ul.risks li, ul.steps li { margin-bottom: 0.4rem; }
+  ul.risks li:last-child, ul.steps li:last-child { margin-bottom: 0; }
+  .risks .control { display: block; padding-left: 0.9rem; border-left: 2px solid var(--rule); margin-top: 0.1rem; }
+  .steps .when { font-weight: 700; }
+
+  /* Wide screens and paper: headings move into the margin, text stays 60 to 75 characters wide. */
+  @media (min-width: 46rem) {
+    body { padding: 1.6rem 1rem; }
+    .sheet { padding: 2.4rem 2.6rem 2.6rem; border: 1px solid var(--rule); }
+    h1 { font-size: 2rem; }
+    section {
+      display: grid;
+      grid-template-columns: 9.5rem minmax(0, 34rem);
+      column-gap: 0.8rem;
+    }
+    h2 { margin: 0; }
+    .stats { grid-template-columns: repeat(3, 1fr); column-gap: 1rem; border-top: 0; }
+    .stats li { border-top: 1px solid var(--rule); border-bottom: 0; padding-bottom: 0; }
+  }
+
+  @media print {
+    @page { margin: 9mm 16mm; }
+    html { font-size: 9pt; }
+    body { background: none; padding: 0; line-height: 1.34; }
+    .sheet { max-width: none; padding: 0; border: 0; background: none; }
+    h1 { font-size: 1.7rem; margin-bottom: 0.55rem; max-width: none; }
+    .memo { grid-template-columns: max-content minmax(0, 1fr) max-content minmax(0, 1.6fr); padding: 0.35rem 0; }
+    .memo .wide { grid-column: 2 / -1; }
+    section {
+      display: grid;
+      grid-template-columns: 8.5rem minmax(0, 1fr);
+      column-gap: 0.8rem;
+      padding-top: 0.4rem;
+      margin-top: 0.4rem;
+      break-inside: avoid;
+    }
+    h2 { margin: 0; }
+    p { margin-bottom: 0.3rem; }
+    .body > p, ol.background, ul.risks, ul.steps { max-width: 34rem; }
+    .evidence { display: grid; grid-template-columns: 15rem minmax(0, 1fr); column-gap: 1.6rem; margin-top: 0.5rem; align-items: start; }
+    .stats { grid-template-columns: 1fr; border-top: 0; margin-top: 0; align-content: start; }
+    .stats li { border-top: 1px solid var(--rule); border-bottom: 0; padding: 0.15rem 0 0.25rem; }
+    .stats .now { font-size: 1.25rem; display: inline; margin-right: 0.3rem; }
+    .stats .was { display: inline; }
+    .risks .control { display: inline; padding-left: 0; border-left: 0; font-style: italic; }
+    .options tbody th { width: 27%; }
+    .options td.cost { width: 24%; }
+    figure.chart { margin-top: 0; border-top: 1px solid var(--rule); padding-top: 0.25rem; }
+    .bars li { padding: 0.05rem 0; }
+    .options th, .options td { padding: 0.26rem 0.4rem; }
+    ol.background li, ul.risks li, ul.steps li { margin-bottom: 0.18rem; }
+  }
+</style>
+</head>
+<body>
+<aside aria-label="How this example was made" style="background:#0c2340;color:#fff;font:400 16px/1.5 system-ui,-apple-system,Segoe UI,sans-serif;padding:22px 0 24px;text-align:left"><div style="max-width:880px;margin:0 auto;padding:0 20px"><p style="margin:0;font-weight:700;font-size:1.15rem;color:#ffd23f">Worked example: the executive brief voice</p><p style="margin:8px 0 0;color:#fff;max-width:44em">An AI assistant made the page below on 16 November 2026 from the prompt in this box. It worked in a fresh session with only the prompt, the design guide and the pictures. Nothing was edited afterwards. Paste the same prompt into your own assistant and you get a page in this manner. Yours will differ.</p><details style="margin-top:12px"><summary style="cursor:pointer;font-weight:700;min-height:44px;display:flex;align-items:center;color:#fff">The prompt and the sample input</summary><pre tabindex="0" style="margin:10px 0 0;padding:12px 14px;background:#fff;color:#14202e;border:1px solid #c9d1de;border-radius:8px;white-space:pre-wrap;overflow-wrap:anywhere;font:400 14px/1.5 ui-monospace,Menlo,Consolas,monospace;max-height:22em;overflow:auto">Read the design guide at https://raw.githubusercontent.com/bar181/practical-ai/main/projects/artifact-studio/base/AI-INSTRUCTIONS.md and follow it.
+
+Write this as a one-page decision brief for busy executives. Decision first, then background, options, recommendation and risks.
+
+My notes:
+
+- We are a home renovation company. Enquiries arrive by web form, email and telephone
+- Before the trial our median first reply took 26 hours. 12% of enquiries were answered within the hour
+- The trial ran from February to April, 90 days, all 214 enquiries. A reply is drafted the moment a message arrives. A member of staff reads it, fixes it and sends it
+- After: median first reply 38 minutes. 81% of enquiries answered within the hour
+- Site visits booked a month: 18 before (the average of the three months before), then 22, 28 and 31
+- About one visit in four becomes a job
+- The office manager&#x27;s time on replies: 6 hours a week before, 2.5 after
+- Cost: about $150 a month, so about $1,800 a year. A part-time coordinator would cost about $26,000 a year
+- How we set it up, in about an hour: collected three replies we are proud of, wrote our rules on half a page, saved both in a chat project, tested it on five old enquiries, then used it on the next real one
+- Our rules: a person approves every reply. The first reply confirms and offers a visit. It never states a price
+- What this does not show: one company, no comparison group, spring is the busy season, and jobs won are not counted yet
+- The trial ends on 31 May. The owners need to decide by 26 May
+- A customer story we may tell: Priya wrote to three companies about her kitchen on a Tuesday evening. By Wednesday night none had answered</pre></details><details><summary style="cursor:pointer;font-weight:700;min-height:44px;display:flex;align-items:center;color:#fff">What the assistant said about its page</summary><pre tabindex="0" style="margin:10px 0 0;padding:12px 14px;background:#fff;color:#14202e;border:1px solid #c9d1de;border-radius:8px;white-space:pre-wrap;overflow-wrap:anywhere;font:400 14px/1.5 ui-monospace,Menlo,Consolas,monospace;max-height:22em;overflow:auto"># Delivery note
+
+Page: `out.html`. One self-contained file, system fonts, no scripts, no network requests. It prints on one sheet (checked on A4 and US Letter).
+
+## Chose
+
+- **Kind of thing:** a page to be read, because you asked for a one-page brief.
+- **Recipe:** one-page report. No recipe is a decision brief, and the guide says to use the one-page report when none fits. The proposal recipe is for a customer saying yes, which this is not.
+- **Voice:** executive brief. You asked for &quot;a one-page decision brief for busy executives&quot; in the order decision, background, options, recommendation, risks. That is this voice&#x27;s order. The voice adds a memo header and next steps.
+- **Look:** the voice&#x27;s default, a paper memo. Serif system type, one accent (blue, used only on the deadline and the recommended option), no images, no motion.
+- **Parts:** three numbers with what they were before, one thin bar chart of site visits booked, one options table. No moving parts.
+- **Colours and contrast:** main text on paper 15.3 to 1. Secondary text on paper 6.7 to 1. Accent on paper 8.0 to 1. Main text on the highlighted row 13.9 to 1. Accent on the highlighted row 7.3 to 1. Chart bars on paper 5.5 to 1.
+- **Preferences applied:** no preferences file came with the request. The only standing writing preference I had was &quot;no em-dashes&quot;, and the page and these notes follow it.
+
+## Assumed
+
+- **The reader is the owners.** Your notes say the owners decide, so the brief is addressed to them.
+- **The decision is whether to keep drafting first replies after the trial ends on 31 May.** Your notes give the deadline but never state the question.
+- **The three options are mine.** Your notes do not list options. I took A (keep it) from the trial, B (a part-time coordinator) from your cost comparison, and C (do nothing) because the voice requires it.
+- **&quot;Do nothing&quot; means the trial stops on 31 May and replies go back to how they were before:** 26 hours, 12% within the hour, 6 hours a week. Your notes do not say what happens if nobody decides.
+- **&quot;No tool cost&quot; under option C.** I assumed the $150 a month stops when the trial stops.
+- **Option B is &quot;not tried&quot;.** Your notes give a cost for a coordinator and nothing else.
+- **The recommendation (option A) is mine.** Your notes do not say what you recommend. The numbers point that way, but it is your call.
+- **Two of the three controls are mine** and are labelled &quot;proposed&quot; on the page: keep recording visits after spring, and count jobs won. The control labelled &quot;in place&quot; is your own rules.
+- **The risk &quot;a drafted reply goes out wrong&quot; is my wording.** Your notes give the rules but do not name the risk they guard against.
+- **22, 28 and 31 are February, March and April in that order.** Your notes say &quot;then 22, 28 and 31&quot; and that the trial ran February to April.
+- **The chart source reads &quot;the company&#x27;s trial notes&quot;.** You did not say where the counts come from.
+- **Derived numbers, with working shown on the page:** 69 points (81 − 12), 3.5 hours a week (6 − 2.5), $1,800 a year ($150 × 12), $24,200 more for a coordinator (26,000 − 1,800).
+- **&quot;One page&quot; means one printed sheet.**
+- **I left Priya&#x27;s story out.** The executive brief voice has no place for a story, and your notes say only that you &quot;may&quot; tell it.
+
+## Missing
+
+- **Who the brief is from.** Marked on the page as `[needs: who is sending this]`.
+- **The date it is sent.** Marked on the page as `[needs: date sent]`.
+- **The year.** &quot;26 May&quot; and &quot;31 May&quot; appear as you wrote them.
+- **Jobs won during the trial.** Not counted yet. The page says so in the summary and in the risks.
+- **Who will count jobs won, and from when.** The page says the owners name the person.
+- **Anything about option B beyond its cost.** Hours, what the coordinator would do, how fast replies would be.
+- **Whether Priya is a real customer, whether she has agreed to be named, and whether we were one of the three companies.**
+- **Which enquiries came by which route.** You name web form, email and telephone but give no split.
+
+## Check before sharing
+
+- **The dates do not agree.** Your notes say the trial &quot;ran from February to April, 90 days&quot; and also that &quot;the trial ends on 31 May&quot;. The page treats February to April as the period measured and 31 May as the end of the trial. Confirm that is right. February to April is also 89 days in most years and 90 only in a leap year.
+- **Read the recommendation as if you had to defend it.** It is my reading of your numbers, and it will go out under your name.
+- **Confirm options B and C are options the owners would recognise.**
+- **Confirm or delete the two &quot;proposed&quot; controls.**
+- **Fill in From and Date,** then remove the two `[needs: ...]` marks.
+- **The visit numbers do not prove the cause.** The page says so under Risks. Do not let the chart be quoted without that line.
+- **&quot;About one visit in four becomes a job&quot;** sits under the chart. I did not multiply it out into jobs, because jobs won are not counted yet.
+- **Open it as a page, not as code.** On many phones a bare HTML file opens as text. Print it or send a PDF if in doubt.
+- Nothing has been sent or published.</pre></details><p style="margin:10px 0 0"><a href="../studio.html#voice-brief" style="color:#ffd23f;font-weight:700">Compare it with the hand-built version in the library</a></p></div></aside>
+
+<main class="sheet">
+
+  <h1>Enquiry replies: keep drafting them, or let the trial end on 31 May</h1>
+
+  <dl class="memo">
+    <dt>To</dt>
+    <dd>The owners</dd>
+    <dt>From</dt>
+    <dd><span class="needs">[needs: who is sending this]</span></dd>
+    <dt>Date</dt>
+    <dd><span class="needs">[needs: date sent]</span></dd>
+    <dt>Decision needed by</dt>
+    <dd class="deadline">26 May</dd>
+    <dt>Period covered</dt>
+    <dd class="wide">February to April: 90 days, all 214 enquiries</dd>
+  </dl>
+
+  <section aria-labelledby="h-decision">
+    <h2 id="h-decision">The decision</h2>
+    <div class="body">
+      <p class="decision">Do we keep drafting a first reply to every enquiry after the trial ends on 31 May?</p>
+      <p>During the trial our median first reply fell from 26 hours to 38 minutes, and site visits booked rose from 18 a month to 31. It costs about $1,800 a year, and jobs won are not counted yet, so the trial does not show whether it brings in more work.</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-background">
+    <h2 id="h-background">Background</h2>
+    <div class="body">
+      <ol class="background">
+        <li>We are a home renovation company. Enquiries arrive by web form, email and telephone. Before the trial, 12% were answered within the hour.</li>
+        <li>What changed: a reply is drafted the moment a message arrives. A member of staff reads it, fixes it and sends it.</li>
+        <li>Our rules: a person approves every reply. The first reply confirms and offers a visit. It never states a price.</li>
+        <li>Setting it up took about an hour. We collected three replies we are proud of, wrote our rules on half a page, saved both in a chat project, tested it on five old enquiries, then used it on the next real one.</li>
+      </ol>
+
+      <div class="evidence">
+      <ul class="stats">
+        <li>
+          <span class="label">Median first reply</span>
+          <span class="now">38 minutes</span>
+          <span class="was">Was 26 hours.</span>
+        </li>
+        <li>
+          <span class="label">Answered within the hour</span>
+          <span class="now">81%</span>
+          <span class="was">Was 12%. Up 69 points (81 − 12).</span>
+        </li>
+        <li>
+          <span class="label">Office manager's time on replies</span>
+          <span class="now">2.5 hours a week</span>
+          <span class="was">Was 6. Frees 3.5 hours a week (6 − 2.5).</span>
+        </li>
+      </ul>
+
+      <figure class="chart">
+        <h3>Site visits booked rose in every month of the trial, from 18 a month before it to 31 in April.</h3>
+        <ul class="bars">
+          <li class="before">
+            <span class="name">Before the trial</span>
+            <span class="track"><span class="bar" style="width:58.06%"></span><span class="value">18</span></span>
+          </li>
+          <li>
+            <span class="name">February</span>
+            <span class="track"><span class="bar" style="width:70.97%"></span><span class="value">22</span></span>
+          </li>
+          <li>
+            <span class="name">March</span>
+            <span class="track"><span class="bar" style="width:90.32%"></span><span class="value">28</span></span>
+          </li>
+          <li>
+            <span class="name">April</span>
+            <span class="track"><span class="bar" style="width:100%"></span><span class="value">31</span></span>
+          </li>
+        </ul>
+        <figcaption>Site visits booked a month. "Before the trial" is the average of the three months before it. Source: the company's trial notes. About one visit in four becomes a job.</figcaption>
+      </figure>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-options">
+    <h2 id="h-options">Options</h2>
+    <div class="body">
+      <div class="table-wrap" role="region" aria-labelledby="h-options" tabindex="0">
+        <table class="options">
+          <thead>
+            <tr>
+              <th scope="col">Option</th>
+              <th scope="col">Cost a year</th>
+              <th scope="col">What we know</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="pick">
+              <th scope="row">A. Keep drafting first replies
+                <span class="tag recommended">Recommended</span>
+              </th>
+              <td class="cost">About $1,800 <span class="working">($150 a month × 12)</span></td>
+              <td>The trial results: median first reply 38 minutes, 81% answered within the hour, 2.5 hours a week of the office manager's time.</td>
+            </tr>
+            <tr>
+              <th scope="row">B. Hire a part-time coordinator</th>
+              <td class="cost">About $26,000, which is about $24,200 more than A <span class="working">(26,000 − 1,800)</span></td>
+              <td>Not tried. We have a cost for it and no results.</td>
+            </tr>
+            <tr>
+              <th scope="row">C. Do nothing: the trial ends on 31 May
+                <span class="tag weak">Weak point: the slowest replies</span>
+              </th>
+              <td class="cost">No tool cost</td>
+              <td>How things were before the trial: median first reply 26 hours, 12% answered within the hour, 6 hours a week of the office manager's time.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-recommendation">
+    <h2 id="h-recommendation">Recommendation</h2>
+    <div class="body">
+      <p><strong>Choose option A.</strong> Keep drafting first replies after 31 May, keep the three rules as they are, and start counting jobs won. In the trial the median first reply went from 26 hours to 38 minutes, the office manager got back 3.5 hours a week, and the cost is about $1,800 a year against about $26,000 for a coordinator.</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-risks">
+    <h2 id="h-risks">Risks and controls</h2>
+    <div class="body">
+      <ul class="risks">
+        <li><strong>A drafted reply goes out wrong.</strong>
+          <span class="control">Control, in place: a person approves every reply, and the first reply never states a price.</span></li>
+        <li><strong>The rise in visits may not come from faster replies.</strong> This is one company, there was no comparison group, and spring is the busy season.
+          <span class="control">Control, proposed: keep recording site visits booked each month after spring and compare.</span></li>
+        <li><strong>We do not know the effect on jobs won.</strong> They are not counted yet.
+          <span class="control">Control, proposed: count jobs won from now on.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-next">
+    <h2 id="h-next">Next steps</h2>
+    <div class="body">
+      <ul class="steps">
+        <li><span class="when">By 26 May:</span> the owners choose A, B or C.</li>
+        <li><span class="when">31 May:</span> the trial ends. Under A, drafting carries on with the same three rules. Under C, it stops.</li>
+        <li><span class="when">If A is chosen:</span> the owners name who counts jobs won.</li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+<aside aria-label="About the creator" style="background:#0c2340;color:#fff;padding:34px 0 40px;font:400 16px/1.45 system-ui,-apple-system,Segoe UI,sans-serif;text-align:left"><div style="max-width:880px;margin:0 auto;padding:0 20px;display:flex;gap:18px;align-items:flex-start"><img style="flex:none;border-radius:50%;border:3px solid #ffd23f" src="data:image/jpeg;base64,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" width="72" height="72" alt="Bradley Ross"><div><p style="margin:0;font-weight:700;font-size:1.3rem;line-height:1.15;color:#fff">Made by Bradley Ross</p><p style="margin:6px 0 0;max-width:38em;color:#dfe6ef">Bradley is an agentic AI architect and developer for businesses of every size, from start-up to enterprise. He builds and teaches practical AI: 12 courses, more than 40 cohorts and more than 900 students.</p><a style="display:inline-flex;align-items:center;min-height:46px;margin-top:14px;padding:0 20px;border-radius:999px;background:#ffd23f;color:#0c2340;font-weight:700;text-decoration:none" href="https://www.linkedin.com/in/bradaross/">Connect with Bradley on LinkedIn</a><span style="display:block;margin-top:8px;color:#b9c5d3;font-size:.9rem">For training, questions or feedback.</span></div></div></aside>
+</body>
+</html>

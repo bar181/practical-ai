@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>With drafted replies, our first reply went from 26 hours to 38 minutes and site visits rose</title>
+<style>
+  :root {
+    /* Seven named colour tokens, plus one data colour for the charts. */
+    --bg: #f3f5f6;        /* page background */
+    --panel: #ffffff;     /* chart and table panels */
+    --line: #d3d9dd;      /* rules and borders */
+    --text: #182026;      /* main text */
+    --muted: #53606a;     /* secondary text */
+    --compare: #7b8790;   /* grey for the comparison bar */
+    --accent: #a3163a;    /* only for what the reader must act on */
+    --data: #1f5fa5;      /* the one data colour, never the accent */
+
+    --serif: Charter, "Bitstream Charter", "Sitka Text", Cambria, Georgia, serif;
+    --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 1rem;
+    line-height: 1.55;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .page {
+    max-width: 39rem;
+    margin: 0 auto;
+    padding: 1.5rem 1.25rem 3rem;
+  }
+
+  p, ul, ol, figure, table, h1, h2 { margin: 0; }
+
+  .meta {
+    color: var(--muted);
+    font-size: 0.875rem;
+  }
+
+  h1 {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 1.75rem;
+    line-height: 1.18;
+    letter-spacing: -0.01em;
+    margin-top: 0.75rem;
+    text-wrap: balance;
+  }
+
+  .answer {
+    font-family: var(--serif);
+    font-size: 1.125rem;
+    line-height: 1.5;
+    margin-top: 1rem;
+  }
+
+  .decide {
+    margin-top: 1.25rem;
+    padding: 0.625rem 0 0.625rem 0.875rem;
+    border-left: 0.25rem solid var(--accent);
+    font-size: 0.9375rem;
+  }
+  .decide strong { color: var(--accent); }
+
+  /* Three numbers, set as a ruled ledger */
+  .numbers {
+    list-style: none;
+    padding: 0;
+    margin-top: 1.75rem;
+    border-top: 2px solid var(--text);
+  }
+  .numbers li {
+    display: grid;
+    grid-template-columns: 9.5rem 1fr;
+    column-gap: 0.875rem;
+    align-items: baseline;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .numbers .figure {
+    font-family: var(--serif);
+    font-size: 1.75rem;
+    font-weight: 700;
+    line-height: 1.1;
+    white-space: nowrap;
+  }
+  .numbers .what { display: block; font-weight: 600; }
+  .numbers .was { display: block; color: var(--muted); font-size: 0.875rem; }
+
+  section { margin-top: 2.5rem; }
+
+  h2 {
+    font-family: var(--serif);
+    font-size: 1.3125rem;
+    line-height: 1.25;
+    font-weight: 700;
+    text-wrap: balance;
+  }
+
+  section > p, section > ul, section > ol, .method p, .method ul, .method ol { margin-top: 0.75rem; }
+  section li + li { margin-top: 0.25rem; }
+  section ul, section ol { padding-left: 1.25rem; }
+
+  .sowhat strong { font-weight: 700; }
+
+  /* Charts: plain HTML bars so every label is real text */
+  figure.chart {
+    margin-top: 1rem;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    padding: 1rem 1rem 0.875rem;
+  }
+
+  .bars { list-style: none; padding: 0; margin: 0; }
+  .bars li + li { margin-top: 0.875rem; }
+  .bars .name { display: block; font-size: 0.875rem; }
+  .bars .row {
+    display: grid;
+    grid-template-columns: 1fr 4.75rem;
+    align-items: center;
+    column-gap: 0.625rem;
+    margin-top: 0.25rem;
+  }
+  .bars .track { display: block; height: 1.125rem; border-left: 1px solid var(--text); }
+  .bars .bar {
+    display: block;
+    height: 100%;
+    min-width: 2px;
+    width: calc(var(--v) / var(--max) * 100%);
+    background: var(--data);
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .bars .value { font-weight: 700; font-size: 1.0625rem; white-space: nowrap; }
+
+  .cols {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 0.625rem;
+  }
+  .cols li {
+    display: grid;
+    grid-template-rows: 9.5rem auto;
+    margin: 0;
+  }
+  .cols .plot {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    border-bottom: 1px solid var(--text);
+  }
+  .cols .value { font-weight: 700; font-size: 1.0625rem; line-height: 1.4; }
+  .cols .col {
+    display: block;
+    width: 62%;
+    max-width: 3.25rem;
+    height: calc(var(--v) / 31 * 7.5rem);
+    background: var(--data);
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .cols .name {
+    display: block;
+    text-align: center;
+    font-size: 0.8125rem;
+    line-height: 1.3;
+    padding-top: 0.375rem;
+  }
+
+  .bars .bar.before, .cols .col.before { background: var(--compare); }
+
+  figcaption {
+    margin-top: 0.875rem;
+    padding-top: 0.625rem;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 0.8125rem;
+    line-height: 1.45;
+  }
+
+  /* Table sits in its own container, the only thing allowed to scroll sideways */
+  .table-wrap {
+    margin-top: 1rem;
+    overflow-x: auto;
+    background: var(--panel);
+    border: 1px solid var(--line);
+  }
+  .table-wrap:focus-visible { outline: 3px solid var(--data); outline-offset: 2px; }
+  table { border-collapse: collapse; width: 100%; font-size: 0.875rem; line-height: 1.4; }
+  caption {
+    caption-side: bottom;
+    text-align: left;
+    color: var(--muted);
+    font-size: 0.8125rem;
+    padding: 0.625rem 0.75rem 0.75rem;
+    border-top: 1px solid var(--line);
+  }
+  th, td { text-align: left; vertical-align: top; padding: 0.5rem 0.75rem; }
+  thead th { border-bottom: 1px solid var(--text); font-weight: 700; }
+  tbody th { font-weight: 400; }
+  tbody tr + tr > * { border-top: 1px solid var(--line); }
+  tr.weak > * { border-top: 2px solid var(--text); }
+  .tag {
+    display: inline-block;
+    font-weight: 700;
+    border: 1px solid var(--text);
+    padding: 0 0.375rem;
+    margin-left: 0.25rem;
+    white-space: nowrap;
+    font-size: 0.8125rem;
+  }
+
+  .needs {
+    font-weight: 700;
+    border-bottom: 2px dotted var(--text);
+  }
+
+  .steps { list-style: none; padding: 0; border-top: 1px solid var(--line); }
+  .steps li {
+    display: grid;
+    grid-template-columns: 6.25rem 1fr;
+    column-gap: 1rem;
+    padding: 0.625rem 0;
+    margin: 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .steps .when { font-weight: 700; }
+  .steps .when.act { color: var(--accent); }
+
+  .foot {
+    margin-top: 2.5rem;
+    padding-top: 0.75rem;
+    border-top: 2px solid var(--text);
+    color: var(--muted);
+    font-size: 0.8125rem;
+  }
+
+  @media (min-width: 40rem) {
+    .page { padding-top: 3rem; }
+    h1 { font-size: 2.25rem; }
+    .answer { font-size: 1.25rem; }
+    .numbers { display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 1.5rem; }
+    .numbers li { display: block; border-bottom: 0; padding-bottom: 0; }
+    .numbers .figure { display: block; font-size: 2rem; margin-bottom: 0.25rem; }
+    .cols .col { max-width: 4rem; }
+  }
+
+  @media print {
+    @page { margin: 10mm 12mm; }
+    html { font-size: 8.2pt; }
+    body { background: #fff; line-height: 1.35; }
+    .page { max-width: none; padding: 0; }
+    h1 { font-size: 1.9rem; margin-top: 0.4rem; }
+    .answer { font-size: 1.1rem; line-height: 1.4; margin-top: 0.6rem; }
+    .decide { margin-top: 0.7rem; padding-top: 0.2rem; padding-bottom: 0.2rem; }
+    .numbers { display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 1.5rem; margin-top: 0.9rem; }
+    .numbers li { display: block; border-bottom: 0; padding: 0.5rem 0 0; }
+    .numbers .figure { display: block; font-size: 1.7rem; }
+    section { margin-top: 0; break-inside: avoid; }
+    h2 { font-size: 1.12rem; }
+    section > p, section > ul, section > ol, .method p, .method ul, .method ol { margin-top: 0.4rem; }
+    .method { display: grid; grid-template-columns: 1.5fr 1fr 1fr; column-gap: 1.6rem; }
+    .findings { display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 1.4rem; margin-top: 1.1rem; }
+    .findings section { display: flex; flex-direction: column; }
+    .findings h2 { min-height: 2.5em; }
+    .findings figure.chart { flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
+    .rest { display: grid; grid-template-columns: 2.1fr 1.15fr 0.95fr; column-gap: 1.6rem; row-gap: 1.3rem; margin-top: 1.1rem; align-items: start; }
+    .rest section:nth-child(1) { grid-column: 1 / -1; }
+    .steps li { grid-template-columns: 1fr; }
+    figure.chart { margin-top: 0.6rem; padding: 0.7rem 0.7rem 0.6rem; }
+    .cols li { grid-template-rows: 6.6rem auto; }
+    .cols .col { height: calc(var(--v) / 31 * 4.9rem); }
+    figcaption { margin-top: 0.6rem; padding-top: 0.4rem; }
+    .table-wrap { margin-top: 0.6rem; overflow: visible; }
+    th, td { padding: 0.3rem 0.5rem; }
+    .steps li { padding: 0.35rem 0; }
+    .foot { margin-top: 0.8rem; padding-top: 0.3rem; }
+  }
+</style>
+</head>
+<body>
+<aside aria-label="How this example was made" style="background:#0c2340;color:#fff;font:400 16px/1.5 system-ui,-apple-system,Segoe UI,sans-serif;padding:22px 0 24px;text-align:left"><div style="max-width:880px;margin:0 auto;padding:0 20px"><p style="margin:0;font-weight:700;font-size:1.15rem;color:#ffd23f">Worked example: the analyst voice</p><p style="margin:8px 0 0;color:#fff;max-width:44em">An AI assistant made the page below on 16 November 2026 from the prompt in this box. It worked in a fresh session with only the prompt, the design guide and the pictures. Nothing was edited afterwards. Paste the same prompt into your own assistant and you get a page in this manner. Yours will differ.</p><details style="margin-top:12px"><summary style="cursor:pointer;font-weight:700;min-height:44px;display:flex;align-items:center;color:#fff">The prompt and the sample input</summary><pre tabindex="0" style="margin:10px 0 0;padding:12px 14px;background:#fff;color:#14202e;border:1px solid #c9d1de;border-radius:8px;white-space:pre-wrap;overflow-wrap:anywhere;font:400 14px/1.5 ui-monospace,Menlo,Consolas,monospace;max-height:22em;overflow:auto">Read the design guide at https://raw.githubusercontent.com/bar181/practical-ai/main/projects/artifact-studio/base/AI-INSTRUCTIONS.md and follow it.
+
+Write this up as an evidence-first one-pager: the answer at the top, then three findings with a chart each.
+
+My notes:
+
+- We are a home renovation company. Enquiries arrive by web form, email and telephone
+- Before the trial our median first reply took 26 hours. 12% of enquiries were answered within the hour
+- The trial ran from February to April, 90 days, all 214 enquiries. A reply is drafted the moment a message arrives. A member of staff reads it, fixes it and sends it
+- After: median first reply 38 minutes. 81% of enquiries answered within the hour
+- Site visits booked a month: 18 before (the average of the three months before), then 22, 28 and 31
+- About one visit in four becomes a job
+- The office manager&#x27;s time on replies: 6 hours a week before, 2.5 after
+- Cost: about $150 a month, so about $1,800 a year. A part-time coordinator would cost about $26,000 a year
+- How we set it up, in about an hour: collected three replies we are proud of, wrote our rules on half a page, saved both in a chat project, tested it on five old enquiries, then used it on the next real one
+- Our rules: a person approves every reply. The first reply confirms and offers a visit. It never states a price
+- What this does not show: one company, no comparison group, spring is the busy season, and jobs won are not counted yet
+- The trial ends on 31 May. The owners need to decide by 26 May
+- A customer story we may tell: Priya wrote to three companies about her kitchen on a Tuesday evening. By Wednesday night none had answered</pre></details><details><summary style="cursor:pointer;font-weight:700;min-height:44px;display:flex;align-items:center;color:#fff">What the assistant said about its page</summary><pre tabindex="0" style="margin:10px 0 0;padding:12px 14px;background:#fff;color:#14202e;border:1px solid #c9d1de;border-radius:8px;white-space:pre-wrap;overflow-wrap:anywhere;font:400 14px/1.5 ui-monospace,Menlo,Consolas,monospace;max-height:22em;overflow:auto"># Delivery note
+
+Page: `out.html`. One self-contained file, system fonts, no script, no network requests.
+
+## Chose
+
+- **Kind of thing:** a page to be read, because you asked for a one-pager.
+- **Recipe:** one-page report. &quot;Evidence-first one-pager&quot; is not a recipe name in the guide, and this is the closest one.
+- **Voice:** analyst. It is the first voice of that recipe, and its order is the order you described: the conclusion as the title, the answer in two sentences, three numbers, three findings each with a full-sentence heading, one chart and a &quot;so what&quot;, then method, limits and next steps.
+- **Look:** the analyst default. Quiet page, one data colour (blue) for the trial, grey for the comparison, unit and source under each chart. You gave no design spec and no picture, so there is no picture on the page.
+- **Layout:** one column, built at 390 pixels wide first. In print it folds into columns and fits one sheet (see Check before sharing).
+- **Parts:** three plain bar charts drawn in HTML so every label is real text, one results table with the weak row marked, three numbers set as a ruled list. No moving parts and no buttons.
+- **Three numbers at the top:** 38 minutes (was 26 hours), 31 visits in the third trial month (was 18 a month), 2.5 hours a week (was 6).
+- **Three findings and their charts:** Speed (81% answered within the hour against 12%), Visits (18, then 22, 28, 31), Cost (about $1,800 a year against about $26,000).
+- **Preferences applied:** none. No preferences file came with the message.
+- **Colours:** seven tokens plus the data colour. Contrast against the page background: main text 15.1 to 1, secondary text 5.9 to 1, accent 7.0 to 1, data colour 5.9 to 1, comparison grey 3.4 to 1 (bars only, never text).
+
+## Assumed
+
+- **The reader is the owners and the job is the decision due by 26 May.** I could not ask, so I decided.
+- **The answer is mine, not yours.** Your notes give the evidence but never say &quot;keep it&quot;. I wrote: &quot;That evidence favours keeping the drafted replies after 31 May&quot;, with the limits in the same sentence. If you want the page neutral, change that one sentence.
+- **I call the thing &quot;drafted replies&quot;.** Your notes do not name the tool or say what drafts the reply, so the page does not either.
+- **22, 28 and 31 are the three trial months in order.** The chart labels them &quot;Trial month 1, 2, 3&quot; and the caption says February to April. I did not write February = 22 and so on, because the notes do not say it.
+- **The figures cover February to April, and the arrangement itself ends on 31 May.** Your notes say the trial &quot;ran from February to April&quot; and also &quot;ends on 31 May&quot;. I read those as the measured period and the end of the arrangement.
+- **The part-time coordinator is the alternative the owners are weighing.** The notes give the cost but do not say so outright.
+- **&quot;One visit in four becomes a job&quot; applies to the trial&#x27;s visits.** I used it for an estimate, labelled as an estimate on the page.
+- **Sums I worked from your figures, all shown with their working on the page:**
+  - 22 + 28 + 31 = 81 visits in the trial months
+  - 18 × 3 = 54 visits at the earlier rate, so 81 − 54 = 27 more
+  - 27 ÷ 4 = 6.75, written as &quot;about 7 more jobs&quot;
+  - 150 × 12 = 1,800 a year
+  - 26,000 − 1,800 = 24,200 a year less than a coordinator
+  - 6 − 2.5 = 3.5 hours a week given back
+  - &quot;more than a day&quot; for 26 hours
+- **Every source line says &quot;the company&#x27;s trial notes&quot;.** The notes do not say where the figures were recorded, so I named the only source I have.
+- **Priya&#x27;s story is left out.** The analyst voice has no place for it, it is not evidence from the trial, and the notes say only that you &quot;may&quot; tell it. I do not know whether Priya is a real customer or has agreed to be named.
+- **The limits paragraph adds one reading of your limits:** some of the rise in visits may be seasonal, and the extra jobs cannot be stated yet. That follows from your four limits. It is not a new fact.
+- **The breakdown table the recipe requires** is a before and during table of the measures. The &quot;weak row&quot; is jobs won, because it has no figure.
+
+## Missing
+
+- **The period and number of enquiries behind the two before figures (26 hours and 12%).** This is marked on the page as `[needs: the dates and the number of enquiries those two before figures cover]`, in the Method section. It is the one mark on the page.
+- Jobs won during the trial. The page says they are not counted yet.
+- Company name, author and the date of the report. The year is not in the notes either, so &quot;26 May&quot; and &quot;31 May&quot; carry no year.
+- An owner and a date for any step other than the decision. The analyst voice wants an owner and date on every next step. The notes give one: the owners, by 26 May. Nobody is named for acting on the decision or for counting jobs won, so the page lists only the decision and the end date.
+- The name of the tool, and what the $150 a month covers.
+- How reply times and the office manager&#x27;s hours were measured.
+- Whether the first-reply figures include telephone enquiries.
+- A comparison group, and any figures from a quieter season.
+
+## Check before sharing
+
+- **Read the answer sentence and agree with it**, or change it. It is my reading of your evidence.
+- **Fill or remove the `[needs: ...]` line** in Method before the owners see it.
+- **Check the estimate of about 7 more jobs.** It is the number most likely to be quoted and the least supported: it leans on &quot;about one in four&quot; and on visits that rose in the busy season.
+- **Check that 22, 28 and 31 are February, March and April in that order.**
+- **Check the coordinator comparison is fair** to show as a bar beside the tool. The page treats the two as alternatives.
+- **Print it once.** In Chrome it fits one sheet at both A4 and US Letter, but the print text is small (about 8 point). Other browsers and printer margins may push it to a second sheet.
+- **Open it as a rendered page.** A bare HTML file opens as code on many phones. Send it through something that shows it as a page.
+- What I checked by rendering it: no sideways scrolling at 320, 390 and 768 pixels wide, the page is complete with scripts off (there are none), no network requests, every number on the page traced to your notes or to a sum shown on the page, body text contrast above 4.5 to 1.
+- What I did not check: a real phone, Safari or Firefox, a screen reader.
+- Nothing has been sent, posted or published.</pre></details><p style="margin:10px 0 0"><a href="../studio.html#voice-analyst" style="color:#ffd23f;font-weight:700">Compare it with the hand-built version in the library</a></p></div></aside>
+
+<main class="page">
+
+  <header>
+    <p class="meta">Trial report for the owners. February to April, 90 days, all 214 enquiries.</p>
+    <h1>With drafted replies, our first reply went from 26 hours to 38 minutes and site visits rose</h1>
+    <p class="answer">During the 90-day trial the median first reply fell from 26 hours to 38 minutes, site visits booked rose from 18 a month to 31, and the cost is about $1,800 a year. That evidence favours keeping the drafted replies after 31 May, but it comes from one company in its busy season with no comparison group, and jobs won are not counted yet.</p>
+    <p class="decide"><strong>Decision needed from the owners by 26 May.</strong> The trial ends on 31 May.</p>
+  </header>
+
+  <ul class="numbers" aria-label="Three numbers from the trial">
+    <li>
+      <span class="figure">38 minutes</span>
+      <span><span class="what">Median first reply</span><span class="was">Down from 26 hours before the trial</span></span>
+    </li>
+    <li>
+      <span class="figure">31 visits</span>
+      <span><span class="what">Site visits booked in the third trial month</span><span class="was">Up from 18 a month before</span></span>
+    </li>
+    <li>
+      <span class="figure">2.5 hours</span>
+      <span><span class="what">Office manager's time on replies each week</span><span class="was">Down from 6 hours a week before</span></span>
+    </li>
+  </ul>
+
+  <div class="findings">
+
+    <section>
+      <h2>Speed: 81% of enquiries were answered within the hour, up from 12%</h2>
+      <figure class="chart">
+        <ul class="bars" style="--max: 100">
+          <li>
+            <span class="name">Before the trial</span>
+            <span class="row"><span class="track"><span class="bar before" style="--v: 12"></span></span><span class="value">12%</span></span>
+          </li>
+          <li>
+            <span class="name">During the trial</span>
+            <span class="row"><span class="track"><span class="bar" style="--v: 81"></span></span><span class="value">81%</span></span>
+          </li>
+        </ul>
+        <figcaption>Unit: share of enquiries answered within the hour, per cent. Grey bar is before the trial, blue bar is during it. Source: the company's trial notes.</figcaption>
+      </figure>
+      <p class="sowhat"><strong>So what:</strong> the typical enquiry used to wait more than a day for a first reply. It now waits 38 minutes, and a member of staff still reads, fixes and sends every reply.</p>
+    </section>
+
+    <section>
+      <h2>Visits: site visits booked rose each month, from 18 a month to 31</h2>
+      <figure class="chart">
+        <ul class="cols">
+          <li>
+            <span class="plot"><span class="value">18</span><span class="col before" style="--v: 18"></span></span>
+            <span class="name">Before the trial</span>
+          </li>
+          <li>
+            <span class="plot"><span class="value">22</span><span class="col" style="--v: 22"></span></span>
+            <span class="name">Trial month 1</span>
+          </li>
+          <li>
+            <span class="plot"><span class="value">28</span><span class="col" style="--v: 28"></span></span>
+            <span class="name">Trial month 2</span>
+          </li>
+          <li>
+            <span class="plot"><span class="value">31</span><span class="col" style="--v: 31"></span></span>
+            <span class="name">Trial month 3</span>
+          </li>
+        </ul>
+        <figcaption>Unit: site visits booked a month. Grey column is the average of the three months before the trial, blue columns are the trial months, February to April. Source: the company's trial notes.</figcaption>
+      </figure>
+      <p class="sowhat"><strong>So what:</strong> the trial months booked 81 visits (22 + 28 + 31) against 54 at the earlier rate (18 × 3), 27 more. At about one visit in four, that would be about 7 more jobs (27 ÷ 4 = 6.75). This is an estimate: jobs won are not counted yet, and spring is the busy season.</p>
+    </section>
+
+    <section>
+      <h2>Cost: about $1,800 a year, against about $26,000 for a part-time coordinator</h2>
+      <figure class="chart">
+        <ul class="bars" style="--max: 26000">
+          <li>
+            <span class="name">Drafted replies</span>
+            <span class="row"><span class="track"><span class="bar" style="--v: 1800"></span></span><span class="value">$1,800</span></span>
+          </li>
+          <li>
+            <span class="name">Part-time coordinator</span>
+            <span class="row"><span class="track"><span class="bar before" style="--v: 26000"></span></span><span class="value">$26,000</span></span>
+          </li>
+        </ul>
+        <figcaption>Unit: dollars a year, both figures approximate. Blue bar is the drafted replies, grey bar is the comparison. Source: the company's trial notes.</figcaption>
+      </figure>
+      <p class="sowhat"><strong>So what:</strong> about $150 a month is about $1,800 a year (150 × 12), which is about $24,200 a year less than a coordinator (26,000 − 1,800). The office manager's time on replies also fell from 6 hours a week to 2.5, which gives back 3.5 hours a week (6 − 2.5).</p>
+    </section>
+
+  </div>
+
+  <div class="rest">
+
+    <section>
+      <h2>Method: we used it on every enquiry for 90 days, and a person approved every reply</h2>
+      <div class="method">
+        <div>
+          <p>The trial ran from February to April and covered all 214 enquiries, which arrive by web form, email and telephone. What changed: a reply is drafted the moment a message arrives, then a member of staff reads it, fixes it and sends it.</p>
+          <p>The 26 hours and 12% are from before the trial. <span class="needs">[needs: the dates and the number of enquiries those two before figures cover]</span></p>
+        </div>
+        <div>
+          <p>Our rules for the trial:</p>
+          <ul>
+            <li>A person approves every reply.</li>
+            <li>The first reply confirms and offers a visit.</li>
+            <li>It never states a price.</li>
+          </ul>
+        </div>
+        <div>
+          <p>Setting it up took about an hour:</p>
+          <ol>
+            <li>Collected three replies we are proud of.</li>
+            <li>Wrote our rules on half a page.</li>
+            <li>Saved both in a chat project.</li>
+            <li>Tested it on five old enquiries.</li>
+            <li>Used it on the next real one.</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Results side by side: four measures moved, and jobs won is not counted yet</h2>
+      <div class="table-wrap" role="region" aria-label="Results before and during the trial" tabindex="0">
+        <table>
+          <caption>Source: the company's trial notes. The trial figures cover February to April.</caption>
+          <thead>
+            <tr><th scope="col">Measure</th><th scope="col">Before</th><th scope="col">Trial</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Median first reply</th><td>26 hours</td><td>38 minutes</td></tr>
+            <tr><th scope="row">Enquiries answered within the hour</th><td>12%</td><td>81%</td></tr>
+            <tr><th scope="row">Site visits booked a month</th><td>18</td><td>22, 28, 31</td></tr>
+            <tr><th scope="row">Office manager's time on replies</th><td>6 hours a week</td><td>2.5 hours a week</td></tr>
+            <tr class="weak"><th scope="row">Jobs won <span class="tag">Weak row</span></th><td>Not counted</td><td>Not counted yet</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2>Limits: this is one company in its busy season, with no comparison group</h2>
+      <ul>
+        <li>One company.</li>
+        <li>No comparison group.</li>
+        <li>Spring is the busy season, and the trial ran from February to April.</li>
+        <li>Jobs won are not counted yet.</li>
+      </ul>
+      <p>So some of the rise in site visits may be seasonal, and we cannot yet say how many extra jobs it produced.</p>
+    </section>
+
+    <section>
+      <h2>Next steps: the owners decide by 26 May, before the trial ends on 31 May</h2>
+      <ul class="steps">
+        <li><span class="when act">By 26 May</span><span>The owners decide whether to keep the drafted replies.</span></li>
+        <li><span class="when">31 May</span><span>The trial ends.</span></li>
+      </ul>
+    </section>
+
+  </div>
+
+  <p class="foot">Every figure on this page comes from the company's trial notes. Sums shown in brackets are worked from those figures.</p>
+
+</main>
+<aside aria-label="About the creator" style="background:#0c2340;color:#fff;padding:34px 0 40px;font:400 16px/1.45 system-ui,-apple-system,Segoe UI,sans-serif;text-align:left"><div style="max-width:880px;margin:0 auto;padding:0 20px;display:flex;gap:18px;align-items:flex-start"><img style="flex:none;border-radius:50%;border:3px solid #ffd23f" src="data:image/jpeg;base64,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" width="72" height="72" alt="Bradley Ross"><div><p style="margin:0;font-weight:700;font-size:1.3rem;line-height:1.15;color:#fff">Made by Bradley Ross</p><p style="margin:6px 0 0;max-width:38em;color:#dfe6ef">Bradley is an agentic AI architect and developer for businesses of every size, from start-up to enterprise. He builds and teaches practical AI: 12 courses, more than 40 cohorts and more than 900 students.</p><a style="display:inline-flex;align-items:center;min-height:46px;margin-top:14px;padding:0 20px;border-radius:999px;background:#ffd23f;color:#0c2340;font-weight:700;text-decoration:none" href="https://www.linkedin.com/in/bradaross/">Connect with Bradley on LinkedIn</a><span style="display:block;margin-top:8px;color:#b9c5d3;font-size:.9rem">For training, questions or feedback.</span></div></div></aside>
+</body>
+</html>

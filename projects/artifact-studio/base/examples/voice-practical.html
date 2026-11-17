@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Field guide: a first reply drafted the moment an enquiry arrives</title>
+<style>
+  /* Seven colour tokens. Two colours on paper: field green for structure, burnt orange for what to act on. */
+  :root {
+    --paper: #f4f0e4;     /* page background */
+    --panel: #e8e2cf;     /* panels and table heads */
+    --line: #b7b196;      /* quiet rules */
+    --ink: #1b2a1f;       /* main text and structure, 13.2 to 1 on paper */
+    --ink-soft: #48543f;  /* secondary text, 7.1 to 1 on paper */
+    --accent: #a8380b;    /* what to act on, 5.7 to 1 on paper */
+    --mark: #f6dcae;      /* soft highlight for gaps */
+    --pad: 1rem;
+    --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+    color-scheme: light;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font: 1.0625rem/1.55 var(--sans);
+    overflow-wrap: break-word;
+  }
+  main {
+    max-width: 38rem;
+    margin: 0 auto;
+    padding: 0 var(--pad) 3rem;
+  }
+  h1, h2, h3, p, ul, ol, dl, dd, table { margin: 0; padding: 0; }
+  ul, ol { list-style: none; }
+  :focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+
+  .label {
+    font: 700 0.75rem/1.3 var(--mono);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+
+  /* Header: title, core idea, why it matters */
+  .top { padding: 1.25rem 0 1.25rem; }
+  h1 {
+    font-size: 1.625rem;
+    line-height: 1.2;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    margin-top: 0.5rem;
+    text-wrap: balance;
+  }
+  .byline { margin-top: 0.6rem; color: var(--ink-soft); font-size: 0.9375rem; }
+  .why {
+    margin-top: 1rem;
+    padding-left: 0.875rem;
+    border-left: 4px solid var(--ink);
+  }
+  .why p + p { margin-top: 0.2rem; }
+
+  /* The diagram that stays on screen: five steps and a progress bar */
+  .tracker {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    margin: 0 calc(var(--pad) * -1);
+    padding: 0.375rem var(--pad) 0.5rem;
+    background: var(--paper);
+    border-top: 2px solid var(--ink);
+    border-bottom: 2px solid var(--ink);
+  }
+  .flow { display: flex; }
+  .flow li { flex: 1 1 0; min-width: 0; position: relative; }
+  .flow a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+    min-height: 44px;
+    padding: 0.2rem 0 0.1rem;
+    color: var(--ink);
+    text-decoration: none;
+    font: 700 0.75rem/1.1 var(--mono);
+  }
+  .flow .num {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    place-items: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 2px solid var(--ink);
+    border-radius: 50%;
+    background: var(--paper);
+  }
+  .flow .ok { display: none; }
+  /* connector with an arrow head, drawn from the step before */
+  .flow li + li::before {
+    content: "";
+    position: absolute;
+    top: calc(0.2rem + 0.75rem - 1px);
+    left: calc(-50% + 0.75rem);
+    right: calc(50% + 0.75rem + 5px);
+    border-top: 2px solid var(--ink);
+  }
+  .flow li + li::after {
+    content: "";
+    position: absolute;
+    top: calc(0.2rem + 0.75rem - 5px);
+    right: calc(50% + 0.75rem);
+    border-left: 6px solid var(--ink);
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+  }
+  .progress { display: flex; align-items: center; gap: 0.625rem; margin-top: 0.3rem; }
+  .bar {
+    flex: 1 1 auto;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 2px;
+    height: 0.625rem;
+    padding: 1px;
+    border: 2px solid var(--ink);
+  }
+  .seg { background: transparent; transition: background-color 0.2s; }
+  .count { flex: 0 0 auto; font: 700 0.75rem/1.2 var(--mono); color: var(--ink-soft); }
+
+  /* Ticked state, set by the script */
+  .flow .done .num { background: var(--ink); color: var(--paper); }
+  .flow .done .n { display: none; }
+  .flow .done .ok { display: inline; }
+  .seg.done { background: var(--ink); }
+  /* The same state with scripts off */
+  @supports selector(:has(*)) {
+    main:has(#tick-1:checked) .node-1 .num, main:has(#tick-2:checked) .node-2 .num,
+    main:has(#tick-3:checked) .node-3 .num, main:has(#tick-4:checked) .node-4 .num,
+    main:has(#tick-5:checked) .node-5 .num { background: var(--ink); color: var(--paper); }
+    main:has(#tick-1:checked) .node-1 .n, main:has(#tick-2:checked) .node-2 .n,
+    main:has(#tick-3:checked) .node-3 .n, main:has(#tick-4:checked) .node-4 .n,
+    main:has(#tick-5:checked) .node-5 .n { display: none; }
+    main:has(#tick-1:checked) .node-1 .ok, main:has(#tick-2:checked) .node-2 .ok,
+    main:has(#tick-3:checked) .node-3 .ok, main:has(#tick-4:checked) .node-4 .ok,
+    main:has(#tick-5:checked) .node-5 .ok { display: inline; }
+    main:has(#tick-1:checked) .seg-1, main:has(#tick-2:checked) .seg-2,
+    main:has(#tick-3:checked) .seg-3, main:has(#tick-4:checked) .seg-4,
+    main:has(#tick-5:checked) .seg-5 { background: var(--ink); }
+  }
+  .vh {
+    position: absolute; width: 1px; height: 1px; overflow: hidden;
+    clip-path: inset(50%); white-space: nowrap;
+  }
+
+  /* Sections */
+  section { margin-top: 2.25rem; scroll-margin-top: 7rem; }
+  h2 { font-size: 1.3125rem; line-height: 1.25; font-weight: 800; letter-spacing: -0.01em; }
+  h2 + p, h2 + .table-wrap, h2 + ul, h2 + ol { margin-top: 0.75rem; }
+  .lede { color: var(--ink-soft); }
+
+  /* Boxed analogy */
+  .analogy {
+    position: relative;
+    margin-top: 2.25rem;
+    padding: 1.4rem 1rem 1rem;
+    border: 2px solid var(--ink);
+    background: var(--panel);
+    scroll-margin-top: 7rem;
+  }
+  .analogy h2 {
+    position: absolute;
+    top: -0.75rem;
+    left: 0.75rem;
+    padding: 0.15rem 0.5rem;
+    background: var(--ink);
+    color: var(--paper);
+    font: 700 0.75rem/1.3 var(--mono);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .analogy .big { font-size: 1.1875rem; line-height: 1.4; font-weight: 600; }
+  .analogy .map { margin-top: 0.6rem; color: var(--ink-soft); font-size: 0.9375rem; }
+
+  /* Three numbers */
+  .stats { display: grid; gap: 0.625rem; }
+  .stat {
+    display: grid;
+    grid-template-columns: 6.75rem 1fr;
+    column-gap: 0.875rem;
+    align-items: center;
+    padding: 0.75rem 0.875rem;
+    border: 2px solid var(--ink);
+  }
+  .stat .label { grid-column: 1 / -1; margin-bottom: 0.25rem; }
+  .stat .num { font-weight: 800; font-size: 2.5rem; line-height: 1; letter-spacing: -0.02em; }
+  .stat .unit { display: block; font: 700 0.75rem/1.3 var(--mono); letter-spacing: 0; margin-top: 0.25rem; }
+  .stat .was { font-size: 0.9375rem; color: var(--ink-soft); }
+  .source { margin-top: 0.625rem; font-size: 0.875rem; color: var(--ink-soft); }
+  .limits {
+    margin-top: 0.75rem;
+    padding: 0.75rem 0.875rem;
+    border: 2px dashed var(--ink);
+    font-size: 0.9375rem;
+  }
+  .limits .label { display: block; color: var(--ink); margin-bottom: 0.2rem; }
+
+  /* Steps */
+  .steps { display: grid; gap: 0.875rem; margin-top: 0.875rem; }
+  .step {
+    border: 2px solid var(--ink);
+    scroll-margin-top: 7rem;
+  }
+  .step h3 {
+    display: grid;
+    grid-template-columns: 2.5rem 1fr;
+    align-items: stretch;
+    font-size: 1.0625rem;
+    line-height: 1.3;
+    font-weight: 800;
+    border-bottom: 2px solid var(--ink);
+  }
+  .step h3 .no {
+    display: grid;
+    place-items: center;
+    background: var(--ink);
+    color: var(--paper);
+    font: 700 1.125rem/1 var(--mono);
+  }
+  .step h3 .t { padding: 0.6rem 0.75rem; }
+  .step dl {
+    display: grid;
+    grid-template-columns: 3.25rem 1fr;
+    gap: 0.5rem 0.5rem;
+    padding: 0.75rem 0.75rem 0.25rem;
+  }
+  .step dt { padding-top: 0.2rem; }
+  .step dd ul { margin-top: 0.3rem; list-style: disc; padding-left: 1.1rem; }
+  .step dd li + li { margin-top: 0.15rem; }
+  .needs {
+    display: inline;
+    padding: 0.1rem 0.3rem;
+    background: var(--mark);
+    color: var(--ink);
+    border-bottom: 2px solid var(--accent);
+    font: 700 0.8125rem/1.6 var(--mono);
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+  }
+  .tick {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    min-height: 44px;
+    margin: 0.5rem 0.75rem 0.75rem;
+    padding: 0.5rem 0.75rem;
+    border: 2px dashed var(--accent);
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .tick input {
+    flex: 0 0 auto;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin: 0;
+    accent-color: var(--accent);
+  }
+  .tick:has(input:checked) { border-style: solid; }
+
+  /* Tables */
+  .table-wrap { overflow-x: auto; border: 2px solid var(--ink); }
+  .table-wrap + .table-wrap, p + .table-wrap, .table-wrap + p { margin-top: 0.875rem; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.9375rem; line-height: 1.4; }
+  caption {
+    caption-side: top;
+    text-align: left;
+    padding: 0.5rem 0.625rem;
+    background: var(--ink);
+    color: var(--paper);
+    font: 700 0.75rem/1.3 var(--mono);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  th, td { padding: 0.55rem 0.625rem; text-align: left; vertical-align: top; }
+  thead th {
+    background: var(--panel);
+    font: 700 0.75rem/1.3 var(--mono);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border-bottom: 2px solid var(--ink);
+  }
+  tbody tr + tr > * { border-top: 1px solid var(--line); }
+  tbody th { font-weight: 800; }
+  td.n, th.n { white-space: nowrap; }
+  .working { display: block; font-size: 0.8125rem; color: var(--ink-soft); }
+
+  /* One next step */
+  .next {
+    margin-top: 2.25rem;
+    padding: 1rem;
+    border: 2px solid var(--ink);
+    background: var(--panel);
+    scroll-margin-top: 7rem;
+  }
+  .next p { margin-top: 0.4rem; }
+  .next .row { display: flex; justify-content: flex-end; margin-top: 0.875rem; }
+  .button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 0.5rem 1.125rem;
+    background: var(--accent);
+    color: var(--paper);
+    font-weight: 800;
+    text-decoration: none;
+    border: 2px solid var(--accent);
+  }
+  .button:hover { background: var(--ink); border-color: var(--ink); }
+  .closing {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 2px solid var(--ink);
+    font-size: 1.1875rem;
+    font-weight: 800;
+    line-height: 1.3;
+    text-wrap: balance;
+  }
+
+  @media (min-width: 40rem) {
+    :root { --pad: 1.5rem; }
+    h1 { font-size: 2.125rem; }
+    .stats { grid-template-columns: repeat(3, 1fr); }
+    .stat { grid-template-columns: 1fr; align-content: start; row-gap: 0.4rem; }
+    .stat .label { min-height: 2.6em; margin-bottom: 0; }
+    .flow a { font-size: 0.8125rem; }
+  }
+  /* A short screen has no room for a pinned strip */
+  @media (max-height: 30rem) {
+    .tracker { position: static; }
+    section, .analogy, .step, .next { scroll-margin-top: 1rem; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .seg { transition: none; }
+  }
+  @media print {
+    .tracker { position: static; }
+    .button { display: none; }
+    section, .analogy, .next { margin-top: 1.25rem; }
+    .step, .stat, .analogy, .next, .table-wrap { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<aside aria-label="How this example was made" style="background:#0c2340;color:#fff;font:400 16px/1.5 system-ui,-apple-system,Segoe UI,sans-serif;padding:22px 0 24px;text-align:left"><div style="max-width:880px;margin:0 auto;padding:0 20px"><p style="margin:0;font-weight:700;font-size:1.15rem;color:#ffd23f">Worked example: the practical instructor voice</p><p style="margin:8px 0 0;color:#fff;max-width:44em">An AI assistant made the page below on 16 November 2026 from the prompt in this box. It worked in a fresh session with only the prompt, the design guide and the pictures. Nothing was edited afterwards. Paste the same prompt into your own assistant and you get a page in this manner. Yours will differ.</p><details style="margin-top:12px"><summary style="cursor:pointer;font-weight:700;min-height:44px;display:flex;align-items:center;color:#fff">The prompt and the sample input</summary><pre tabindex="0" style="margin:10px 0 0;padding:12px 14px;background:#fff;color:#14202e;border:1px solid #c9d1de;border-radius:8px;white-space:pre-wrap;overflow-wrap:anywhere;font:400 14px/1.5 ui-monospace,Menlo,Consolas,monospace;max-height:22em;overflow:auto">Read the design guide at https://raw.githubusercontent.com/bar181/practical-ai/main/projects/artifact-studio/base/AI-INSTRUCTIONS.md and follow it.
+
+Turn this into a practical one-page guide: the core idea, one analogy, then steps I can do today.
+
+My notes:
+
+- We are a home renovation company. Enquiries arrive by web form, email and telephone
+- Before the trial our median first reply took 26 hours. 12% of enquiries were answered within the hour
+- The trial ran from February to April, 90 days, all 214 enquiries. A reply is drafted the moment a message arrives. A member of staff reads it, fixes it and sends it
+- After: median first reply 38 minutes. 81% of enquiries answered within the hour
+- Site visits booked a month: 18 before (the average of the three months before), then 22, 28 and 31
+- About one visit in four becomes a job
+- The office manager&#x27;s time on replies: 6 hours a week before, 2.5 after
+- Cost: about $150 a month, so about $1,800 a year. A part-time coordinator would cost about $26,000 a year
+- How we set it up, in about an hour: collected three replies we are proud of, wrote our rules on half a page, saved both in a chat project, tested it on five old enquiries, then used it on the next real one
+- Our rules: a person approves every reply. The first reply confirms and offers a visit. It never states a price
+- What this does not show: one company, no comparison group, spring is the busy season, and jobs won are not counted yet
+- The trial ends on 31 May. The owners need to decide by 26 May
+- A customer story we may tell: Priya wrote to three companies about her kitchen on a Tuesday evening. By Wednesday night none had answered</pre></details><details><summary style="cursor:pointer;font-weight:700;min-height:44px;display:flex;align-items:center;color:#fff">What the assistant said about its page</summary><pre tabindex="0" style="margin:10px 0 0;padding:12px 14px;background:#fff;color:#14202e;border:1px solid #c9d1de;border-radius:8px;white-space:pre-wrap;overflow-wrap:anywhere;font:400 14px/1.5 ui-monospace,Menlo,Consolas,monospace;max-height:22em;overflow:auto"># Delivery note
+
+The page is `out.html`: one self-contained file, system fonts, no network requests. Open it in a browser to see it rendered. Nothing has been posted, sent or published.
+
+## Chose
+
+- **Kind of thing:** a page to be read, because you asked for a one-page guide.
+- **Recipe:** scrolling explainer. You named no recipe. It is the only one whose use (&quot;a process or idea must be understood&quot;) fits a how-to and that lists the practical instructor voice.
+- **Voice:** practical instructor. Your request names its order almost word for word: the core idea, one analogy, then steps for today.
+- **Look:** the voice&#x27;s default, field guide. Two colours on paper (field green for structure, burnt orange only for what to act on), tick boxes, a progress bar, tables. Seven colour tokens, no chart, so no data colour. Body text contrast is 13.2 to 1, secondary text 7.1 to 1, accent 5.7 to 1.
+- **Order on the page:** core idea as the title, why it matters, pinned diagram, boxed analogy, three numbers, five numbered steps, three levels, mistakes to avoid, where your own trial stands, one next step, closing line.
+- **Parts:** one pinned flow diagram of the five steps that doubles as the progress bar (the only moving part), three stat cards, five step blocks with tick boxes, three tables, one button.
+- **The three numbers:** median first reply (38 minutes, was 26 hours), answered within the hour (81%, was 12%), office manager&#x27;s time (2.5 hours a week, was 6). I kept site visits out of the top three because your own notes say spring is the busy season. They sit lower down with that warning beside them.
+- **Two jobs:** the request holds a how-to and an owners&#x27; decision. The page does the how-to, since that is what its reader acts on. The decision became the section &quot;Trial: where ours stands&quot;.
+- **Preferences applied:** none. No preferences file came with the request.
+- **Front-end design skill:** not loaded. The test rules allow only the named files.
+
+## Assumed
+
+- **Reader:** someone at another small firm who wants to set this up, addressed as &quot;you&quot;. The company speaks as &quot;we&quot;. Your &quot;steps I can do today&quot; points at a reader who has not done the setup, and you already have. If the reader is your own owners, the page wants the executive brief voice instead.
+- **&quot;One page&quot; means one web page**, not one printed sheet. It prints, but on more than one sheet.
+- **The analogy is mine.** Your notes held none and you asked for one. It is labelled &quot;Analogy&quot; and states no fact about your company: an assistant who leaves a typed reply on your desk for you to read, correct and sign.
+- **The closing line is mine**, built from the analogy.
+- **&quot;Three levels&quot;** I read as three depths of use, each built from your notes: practise on old enquiries, use it on one real enquiry, run it on every enquiry and measure.
+- **&quot;Mistakes to avoid&quot;** are your three rules turned round. Your notes record no mistakes that actually happened, so the heading does not say &quot;common&quot;.
+- **&quot;Who&quot; in steps 1 to 4 is &quot;You&quot;.** Your notes do not say who at your company did the setup.
+- **The fact attached to each step** is my placement. For example, the $150 a month sits at step 3 and the three ways enquiries arrive sit at step 4. Your notes do not tie those facts to those steps.
+- **22, 28 and 31 are shown &quot;in order&quot;** without month names. Your notes do not say which month each belongs to.
+- **Working shown:** about $150 a month × 12 = about $1,800 a year. No other number is derived.
+- **Ticks are remembered in the browser** on the reader&#x27;s own device (local storage). Nothing leaves the device.
+
+## Missing
+
+Marked on the page:
+
+- **How a new message reaches the chat project so that a reply is drafted at once.** The five setup steps do not explain it, and a reader following them would not get there. Marked `[needs: ...]` at step 5.
+
+Not marked on the page:
+
+- **A time for each step.** The voice asks for one each. Your notes give only the total, about an hour. The page shows the total.
+- **The name of the chat tool**, and what &quot;a chat project&quot; is for a reader who has never used one.
+- **Your company name.** The page says &quot;a home renovation company&quot;.
+- **The year** of the trial and of the 26 May and 31 May dates.
+- **What the owners are deciding.** The page repeats your sentence and no more.
+- **How a telephone enquiry gets a drafted reply.**
+- **The end of Priya&#x27;s story**, and whether your company was one of the three she wrote to.
+- **Jobs won.** Your notes say they are not counted yet. The page says so twice.
+- **Which months** the 22, 28 and 31 belong to.
+- **Real mistakes seen during the trial**, if there were any.
+- **A picture.** None was attached. The recipe&#x27;s pinned &quot;diagram or image&quot; is a drawn flow of the five steps.
+
+## Check before sharing
+
+- **Priya.** Has she agreed to be named? Your note says &quot;may tell&quot;, which could mean permitted or merely possible. The story sits near the top under &quot;Why it matters&quot;. Cut it or change it if she has not agreed.
+- **Trial dates.** Your notes say the trial ran February to April and also that it ends on 31 May. Both appear on the page as you wrote them. An outside reader may trip on this.
+- **The internal deadline.** &quot;The owners need to decide by 26 May&quot; is on a page written for outside readers. Remove the &quot;Trial: where ours stands&quot; section if that is not for them.
+- **The cost comparison.** $1,800 a year beside $26,000 a year reads as a saving. Your notes do not say the tool replaces a coordinator.
+- **The site visit figures.** 18, then 22, 28 and 31 look like a result. With no comparison group and a busy spring, they may not be.
+- **The `[needs: ...]` marker at step 5.** Fill it or remove the claim before the page goes out.
+- **The analogy.** Check you are happy for it to speak for your company.</pre></details><p style="margin:10px 0 0"><a href="../studio.html#voice-practical" style="color:#ffd23f;font-weight:700">Compare it with the hand-built version in the library</a></p></div></aside>
+
+<main>
+
+  <header class="top">
+    <p class="label">Field guide · one page · about an hour to set up</p>
+    <h1>Draft the first reply the moment an enquiry arrives, then have a person read it, fix it and send it.</h1>
+    <p class="byline">Written by a home renovation company, from our own trial.</p>
+    <div class="why">
+      <p class="label">Why it matters</p>
+      <p>Priya wrote to three companies about her kitchen on a Tuesday evening. By Wednesday night none had answered.</p>
+    </div>
+  </header>
+
+  <nav class="tracker" aria-label="The five steps and your progress">
+    <ol class="flow">
+      <li class="node-1"><a href="#step-1"><span class="num"><span class="n">1</span><span class="ok">✓<span class="vh"> done,</span></span></span><span>Collect</span></a></li>
+      <li class="node-2"><a href="#step-2"><span class="num"><span class="n">2</span><span class="ok">✓<span class="vh"> done,</span></span></span><span>Rules</span></a></li>
+      <li class="node-3"><a href="#step-3"><span class="num"><span class="n">3</span><span class="ok">✓<span class="vh"> done,</span></span></span><span>Save</span></a></li>
+      <li class="node-4"><a href="#step-4"><span class="num"><span class="n">4</span><span class="ok">✓<span class="vh"> done,</span></span></span><span>Test</span></a></li>
+      <li class="node-5"><a href="#step-5"><span class="num"><span class="n">5</span><span class="ok">✓<span class="vh"> done,</span></span></span><span>Use</span></a></li>
+    </ol>
+    <div class="progress">
+      <div class="bar" aria-hidden="true">
+        <span class="seg seg-1"></span><span class="seg seg-2"></span><span class="seg seg-3"></span><span class="seg seg-4"></span><span class="seg seg-5"></span>
+      </div>
+      <p class="count" id="count" aria-live="polite">Tick each step as you go</p>
+    </div>
+  </nav>
+
+  <section class="analogy" aria-labelledby="h-analogy">
+    <h2 id="h-analogy">Analogy</h2>
+    <p class="big">Think of an assistant who has a reply typed and waiting on your desk before you sit down. You read it, change what is wrong and sign it. Nothing leaves without your signature.</p>
+    <p class="map">The typing is the draft. The signature is the person who approves every reply.</p>
+  </section>
+
+  <section id="numbers" aria-labelledby="h-numbers">
+    <h2 id="h-numbers">Numbers: three from our trial</h2>
+    <ul class="stats">
+      <li class="stat">
+        <p class="label">Median first reply</p>
+        <p class="num">38<span class="unit">minutes</span></p>
+        <p class="was">Before the trial it was 26 hours.</p>
+      </li>
+      <li class="stat">
+        <p class="label">Answered within the hour</p>
+        <p class="num">81%<span class="unit">of enquiries</span></p>
+        <p class="was">Before the trial it was 12%.</p>
+      </li>
+      <li class="stat">
+        <p class="label">Office manager's time on replies</p>
+        <p class="num">2.5<span class="unit">hours a week</span></p>
+        <p class="was">Before the trial it was 6 hours a week.</p>
+      </li>
+    </ul>
+    <p class="source">Source: our own trial, February to April, 90 days, all 214 enquiries.</p>
+    <p class="limits"><span class="label">What this does not show</span>One company, no comparison group, spring is the busy season, and jobs won are not counted yet.</p>
+  </section>
+
+  <section id="steps" aria-labelledby="h-steps">
+    <h2 id="h-steps">Steps: five, about an hour in all</h2>
+    <p class="lede">This is how we set it up. Tick each step when it is done.</p>
+    <ol class="steps">
+
+      <li class="step" id="step-1">
+        <h3><span class="no">1</span><span class="t">Collect three replies you are proud of</span></h3>
+        <dl>
+          <dt class="label">Who</dt><dd>You.</dd>
+          <dt class="label">Do</dt><dd>Find three replies to enquiries that you have already sent and are proud of.</dd>
+          <dt class="label">Fact</dt><dd>We collected three. All five steps took us about an hour.</dd>
+        </dl>
+        <label class="tick"><input type="checkbox" id="tick-1"> Step 1 done</label>
+      </li>
+
+      <li class="step" id="step-2">
+        <h3><span class="no">2</span><span class="t">Write your rules on half a page</span></h3>
+        <dl>
+          <dt class="label">Who</dt><dd>You.</dd>
+          <dt class="label">Do</dt><dd>Write down what a first reply must do and what it must never do.</dd>
+          <dt class="label">Fact</dt><dd>Ours fit on half a page:
+            <ul>
+              <li>A person approves every reply.</li>
+              <li>The first reply confirms and offers a visit.</li>
+              <li>It never states a price.</li>
+            </ul>
+          </dd>
+        </dl>
+        <label class="tick"><input type="checkbox" id="tick-2"> Step 2 done</label>
+      </li>
+
+      <li class="step" id="step-3">
+        <h3><span class="no">3</span><span class="t">Save both in a chat project</span></h3>
+        <dl>
+          <dt class="label">Who</dt><dd>You.</dd>
+          <dt class="label">Do</dt><dd>Save the three replies and the half page of rules together in one chat project.</dd>
+          <dt class="label">Fact</dt><dd>The whole thing costs us about $150 a month.</dd>
+        </dl>
+        <label class="tick"><input type="checkbox" id="tick-3"> Step 3 done</label>
+      </li>
+
+      <li class="step" id="step-4">
+        <h3><span class="no">4</span><span class="t">Test it on five old enquiries</span></h3>
+        <dl>
+          <dt class="label">Who</dt><dd>You.</dd>
+          <dt class="label">Do</dt><dd>Run five old enquiries through it before you use it on a real one.</dd>
+          <dt class="label">Fact</dt><dd>Our enquiries arrive by web form, email and telephone.</dd>
+        </dl>
+        <label class="tick"><input type="checkbox" id="tick-4"> Step 4 done</label>
+      </li>
+
+      <li class="step" id="step-5">
+        <h3><span class="no">5</span><span class="t">Use it on the next real enquiry</span></h3>
+        <dl>
+          <dt class="label">Who</dt><dd>A member of staff, every time.</dd>
+          <dt class="label">Do</dt><dd>A reply is drafted the moment the message arrives. A member of staff reads it, fixes it and sends it. <span class="needs">[needs: how a new message reaches the chat project so that a reply is drafted at once]</span></dd>
+          <dt class="label">Fact</dt><dd>Our trial covered all 214 enquiries over 90 days.</dd>
+        </dl>
+        <label class="tick"><input type="checkbox" id="tick-5"> Step 5 done</label>
+      </li>
+
+    </ol>
+  </section>
+
+  <section id="levels" aria-labelledby="h-levels">
+    <h2 id="h-levels">Levels: three, from practice to every enquiry</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th scope="col">Level</th><th scope="col">What you do</th><th scope="col">What we did</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">1. Practice</th><td>Test it on old enquiries.</td><td>Five old enquiries, during setup.</td></tr>
+          <tr><th scope="row">2. One real enquiry</th><td>Use it on the next real one. A person approves the reply.</td><td>The next real enquiry after the test.</td></tr>
+          <tr><th scope="row">3. Every enquiry</th><td>Have a reply drafted for every enquiry, and measure how long the first reply takes.</td><td>All 214 enquiries, for 90 days.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="mistakes" aria-labelledby="h-mistakes">
+    <h2 id="h-mistakes">Mistakes to avoid</h2>
+    <p class="lede">Each one is a rule from our half page, turned round.</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th scope="col">Mistake</th><th scope="col">Our rule</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Sending a draft that nobody has read.</td><td>A person approves every reply.</td></tr>
+          <tr><td>Stating a price in the first reply.</td><td>The first reply never states a price.</td></tr>
+          <tr><td>Replying without offering a visit.</td><td>The first reply confirms and offers a visit.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="trial" aria-labelledby="h-trial">
+    <h2 id="h-trial">Trial: where ours stands</h2>
+    <p>The trial ends on 31 May. The owners need to decide by 26 May.</p>
+    <div class="table-wrap">
+      <table>
+        <caption>Cost a year</caption>
+        <tbody>
+          <tr><th scope="row">Drafted replies, checked by staff</th><td class="n">About $1,800<span class="working">about $150 a month × 12</span></td></tr>
+          <tr><th scope="row">A part-time coordinator</th><td class="n">About $26,000</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <caption>Site visits booked a month</caption>
+        <tbody>
+          <tr><th scope="row">Before<span class="working">the average of the three months before</span></th><td class="n">18</td></tr>
+          <tr><th scope="row">Then, in order</th><td class="n">22, 28 and 31</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>About one visit in four becomes a job. Jobs won are not counted yet, and spring is the busy season.</p>
+  </section>
+
+  <section class="next" aria-labelledby="h-next">
+    <h2 id="h-next">Next step: do step 1 today</h2>
+    <p>Find three replies you are proud of.</p>
+    <p class="row"><a class="button" href="#step-1">Go to step 1</a></p>
+  </section>
+
+  <p class="closing">The draft is instant. The signature is still a person's.</p>
+
+</main>
+<script>
+(function () {
+  var boxes = Array.prototype.slice.call(document.querySelectorAll('.tick input'));
+  var count = document.getElementById('count');
+  var KEY = 'field-guide-first-reply-ticks';
+  try {
+    var saved = JSON.parse(window.localStorage.getItem(KEY) || '[]');
+    boxes.forEach(function (box, i) { if (saved[i]) { box.checked = true; } });
+  } catch (e) {}
+  function update() {
+    var done = 0;
+    boxes.forEach(function (box, i) {
+      if (box.checked) { done += 1; }
+      document.querySelector('.node-' + (i + 1)).classList.toggle('done', box.checked);
+      document.querySelector('.seg-' + (i + 1)).classList.toggle('done', box.checked);
+    });
+    count.textContent = done + ' of ' + boxes.length + ' steps ticked';
+    try {
+      window.localStorage.setItem(KEY, JSON.stringify(boxes.map(function (box) { return box.checked; })));
+    } catch (e) {}
+  }
+  boxes.forEach(function (box) { box.addEventListener('change', update); });
+  update();
+}());
+</script>
+<aside aria-label="About the creator" style="background:#0c2340;color:#fff;padding:34px 0 40px;font:400 16px/1.45 system-ui,-apple-system,Segoe UI,sans-serif;text-align:left"><div style="max-width:880px;margin:0 auto;padding:0 20px;display:flex;gap:18px;align-items:flex-start"><img style="flex:none;border-radius:50%;border:3px solid #ffd23f" src="data:image/jpeg;base64,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" width="72" height="72" alt="Bradley Ross"><div><p style="margin:0;font-weight:700;font-size:1.3rem;line-height:1.15;color:#fff">Made by Bradley Ross</p><p style="margin:6px 0 0;max-width:38em;color:#dfe6ef">Bradley is an agentic AI architect and developer for businesses of every size, from start-up to enterprise. He builds and teaches practical AI: 12 courses, more than 40 cohorts and more than 900 students.</p><a style="display:inline-flex;align-items:center;min-height:46px;margin-top:14px;padding:0 20px;border-radius:999px;background:#ffd23f;color:#0c2340;font-weight:700;text-decoration:none" href="https://www.linkedin.com/in/bradaross/">Connect with Bradley on LinkedIn</a><span style="display:block;margin-top:8px;color:#b9c5d3;font-size:.9rem">For training, questions or feedback.</span></div></div></aside>
+</body>
+</html>

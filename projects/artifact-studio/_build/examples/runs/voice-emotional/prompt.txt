@@ -1,0 +1,17 @@
+Read the design guide at https://raw.githubusercontent.com/bar181/practical-ai/main/projects/artifact-studio/base/AI-INSTRUCTIONS.md and follow it.
+
+Tell this as a personal story: one memory, the feeling in it, and name what I am offering only at the end.
+
+My notes:
+
+The memory. This one is invented for the demo. Yours has to be true.
+
+- My mother kept a drawer for things people had made for her. Not for bills or batteries
+- In it: a crayon balloon I drew when I was six, a card from her sister from the year they learned to dance, and a portrait a friend painted. She said the hair was wrong. She kept it
+- She never kept a thing because it was useful
+
+What I want people to feel: we do not keep information. We keep the proof that someone thought of us.
+
+What I am offering, named only at the end: Artifact Studio. Free, from Practical AI.
+
+- Three pictures attached: the balloon drawing, the dancers on the card, the portrait

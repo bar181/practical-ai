@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="s-underline-draw" viewBox="0 0 320 40" role="img" aria-labelledby="t-underline-draw">
+<title id="t-underline-draw">A hand-drawn underline</title>
+<desc>Place under the one phrase that matters. Stretch to the width of the words. Plays once.</desc>
+<style>#s-underline-draw .u{fill:none;stroke:var(--accent,#774528);stroke-width:6;stroke-linecap:round;stroke-dasharray:1;animation:underline-draw-d .9s .2s ease-out both}@keyframes underline-draw-d{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}@media (prefers-reduced-motion:reduce){#s-underline-draw *{animation:none!important}}</style>
+<path class="u" pathLength="1" d="M8 22C70 10 130 30 190 18S280 12 312 20"/>
+</svg>

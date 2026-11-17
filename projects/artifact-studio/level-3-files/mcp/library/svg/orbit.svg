@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="s-orbit" viewBox="0 0 200 200" role="img" aria-labelledby="t-orbit">
+<title id="t-orbit">Three points circling one centre</title>
+<desc>Use for one idea with three supports, or a team around a customer. Loops slowly.</desc>
+<style>#s-orbit .c{fill:var(--ink,#1b2228)}#s-orbit .p{fill:none;stroke:var(--soft,#a5b9d8);stroke-width:2;stroke-dasharray:3 7}#s-orbit .o{transform-origin:100px 100px;animation:orbit-t 16s linear infinite}#s-orbit .s{fill:var(--accent,#774528)}#s-orbit .s2{fill:var(--sand,#d2b78c)}#s-orbit .s3{fill:var(--soft,#a5b9d8)}@keyframes orbit-t{to{transform:rotate(360deg)}}@media (prefers-reduced-motion:reduce){#s-orbit *{animation:none!important}}</style>
+<circle class="p" cx="100" cy="100" r="70"/><g class="o"><circle class="s" cx="100" cy="30" r="13"/><circle class="s s2" cx="160.6" cy="135" r="13"/><circle class="s s3" cx="39.4" cy="135" r="13"/></g><circle class="c" cx="100" cy="100" r="24"/>
+</svg>

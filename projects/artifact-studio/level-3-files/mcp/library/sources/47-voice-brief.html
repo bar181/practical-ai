@@ -1,0 +1,58 @@
+<style>
+#v-voice-brief{background:#d9dde2;color:#1a1d21;font:400 1.04rem/1.6 var(--plex)}
+.ex-page{max-width:760px;margin:0 auto;background:#fcfcfd;padding:36px 22px 44px;box-shadow:0 2px 30px rgba(26,29,33,.14)}
+@media(min-width:820px){.ex-page{margin:36px auto;padding:64px 72px 72px}}
+.ex-top{border-bottom:3px solid #1a2f52;padding-bottom:16px;margin-bottom:22px}
+.ex-top h1{font:700 clamp(1.5rem,5vw,2rem)/1.15 var(--plex);color:#1a2f52}
+.ex-head{margin:14px 0 0;display:grid;grid-template-columns:auto 1fr;gap:4px 18px;font:400 .9rem/1.45 var(--sans)}
+.ex-head dt{color:#5a6472}
+.ex-head dd{margin:0}
+.ex-page h2{font:700 1rem/1.3 var(--sans);color:#1a2f52;margin:28px 0 8px}
+.ex-page p{margin:0 0 .8em;max-width:36em}
+.ex-n{font:400 .86rem/1 var(--mono);color:#5a6472;margin-right:8px}
+.ex-decide{background:#eef1f6;border-left:4px solid #1a2f52;padding:14px 16px;margin-top:8px}
+.ex-decide p{margin:0}
+.ex-scroll{overflow-x:auto;margin-top:6px}
+.ex-opts{border-collapse:collapse;width:100%;font:400 .88rem/1.4 var(--sans)}
+@media(max-width:640px){.ex-opts thead{display:none}.ex-opts tr{display:block;border:1px solid #cfd5dd;margin-bottom:8px}.ex-opts td{display:grid;grid-template-columns:7.5em 1fr;gap:8px;border:0;border-bottom:1px solid #e3e7ec;padding:8px 10px}.ex-opts td::before{content:attr(data-l);color:#5a6472}.ex-opts td:first-child{display:block;font-weight:700;background:#eef1f6}.ex-opts td:first-child::before{content:none}.ex-opts td:last-child{border-bottom:0}}
+.ex-opts th,.ex-opts td{border:1px solid #cfd5dd;padding:9px 10px;text-align:left;vertical-align:top}
+.ex-opts td:nth-child(2),.ex-opts th:nth-child(2){text-align:left}
+.ex-opts thead th{background:#1a2f52;color:#fff;font-weight:700}
+.ex-opts tr.pick td{background:#eef1f6}
+.ex-opts tr.pick td:first-child{font-weight:700}
+.ex-risk{margin:0;padding-left:1.2em;display:grid;gap:6px}
+.ex-sign{margin-top:34px;padding-top:14px;border-top:1px solid #cfd5dd;font:400 .9rem/1.5 var(--sans);color:#5a6472}
+</style>
+<div class="view" id="v-voice-brief" data-tab="voices" data-title="The executive brief">
+  <article class="ex-page">
+    <header class="ex-top"><h1>Decision brief: a one-hour standard for first replies</h1>
+      <dl class="ex-head"><dt>To</dt><dd>The owners</dd><dt>From</dt><dd>Office manager</dd><dt>Date</dt><dd>12 May</dd><dt>Decision needed by</dt><dd>26 May</dd><dt>Reading time</dt><dd>Three minutes</dd></dl></header>
+    <h2>Decision required</h2>
+    <div class="ex-decide"><p>Approve option C: every enquiry receives a first reply within one working hour, drafted automatically and sent by a member of staff. Cost: about $150 a month.</p></div>
+    <h2>Background</h2>
+    <p><span class="ex-n">1.</span>Enquiries reach us by web form, email and telephone. Before the trial our median first reply took 26 hours, and 12% of enquiries were answered within the hour.</p>
+    <p><span class="ex-n">2.</span>From February to April we trialled drafted replies. Median reply time fell to 38 minutes, 81% of enquiries were answered within the hour, and booked site visits rose from 18 to 31 a month.</p>
+    <p><span class="ex-n">3.</span>The trial ends on 31 May. Without a decision we return to the previous arrangement.</p>
+    <h2>Options</h2>
+    <div class="ex-scroll" tabindex="0" role="region" aria-label="Options"><table class="ex-opts"><thead><tr><th>Option</th><th>Cost a year</th><th>Expected result</th><th>Main risk</th></tr></thead><tbody>
+      <tr><td data-l="">A. Return to the previous arrangement</td><td data-l="Cost a year">None</td><td data-l="Result">Replies in about a day. Visits return to about 18 a month.</td><td data-l="Main risk">Lost work we never hear about</td></tr>
+      <tr><td data-l="">B. Hire a part-time coordinator</td><td data-l="Cost a year">About $26,000</td><td data-l="Result">Replies within the hour in office hours</td><td data-l="Main risk">Cover for holidays and illness</td></tr>
+      <tr class="pick"><td data-l="">C. Drafted replies, sent by staff (recommended)</td><td data-l="Cost a year">About $1,800</td><td data-l="Result">As measured in the trial</td><td data-l="Main risk">A wrong draft sent unread</td></tr></tbody></table></div>
+    <h2>Recommendation</h2>
+    <p><span class="ex-n">4.</span>Option C. It delivers the result of option B at about one fifteenth of the cost, and it has already been tested here for 90 days.</p>
+    <h2>Risks and controls</h2>
+    <ul class="ex-risk"><li><b>A draft is sent without being read.</b> Control: nothing sends without a named member of staff pressing send. Reviewed monthly.</li><li><b>The first reply promises too much.</b> Control: first replies confirm and offer a visit. They never state a price.</li><li><b>The result was seasonal.</b> Control: measure again in November and report to the owners.</li></ul>
+    <h2>Next steps if approved</h2>
+    <p><span class="ex-n">5.</span>Standard takes effect 1 June. Office manager reports reply times and visits on the first Monday of each month.</p>
+    <p class="ex-sign">Example brief. The company, the dates and every figure are invented for this demo.</p>
+  </article>
+  <section class="anat"><div class="wrap">
+    <h2>Behind this page</h2>
+    <p class="measure">The executive brief voice exists to get a decision from busy people. It is the plainest voice here on purpose. It follows the convention of a board or cabinet decision memo. The company and figures are invented for the demo.</p>
+    <div class="anat-grid">
+      <div><h3>How it is built</h3><ol><li>A header: to, from, date, and when the decision is needed</li><li>The decision, stated before anything else</li><li>Background in numbered paragraphs, facts only</li><li>Options in one table, including "do nothing"</li><li>The recommendation and the reason in two sentences</li><li>Risks, each with its control</li><li>What happens next if the answer is yes</li></ol></div>
+      <div><h3>Design rules</h3><ul><li>It looks like a document: one column, serif text, a paper page</li><li>No images and no animation. Movement would cost trust.</li><li>Numbered paragraphs, so people can say "see paragraph 2"</li><li>One table, with the recommended row shaded</li><li>One accent colour, used for rules and headings</li><li>Short enough to read in three minutes, and it says so</li></ul></div>
+    </div>
+@@levels Write this as a one-page decision brief for busy executives. Decision first, then background, options, recommendation and risks. || Build a decision brief from my notes that looks like a paper memo. Header with to, from, date and decision deadline. State the decision first in a shaded box. Background in numbered paragraphs. One options table including "do nothing", with the recommended row shaded. Then the recommendation in two sentences, each risk with its control, and next steps. Serif type, one navy accent, no images, no animation. || Use the artifact-studio skill. Recipe: one-page report. Voice: executive brief. Look: paper memo, navy accent. Content: the attached notes and costs. Keep it to one printed page; if the content does not fit, tell me what you would cut rather than shrinking the type.
+  </div></section>
+</div>

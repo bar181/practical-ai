@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="s-check-draw" viewBox="0 0 120 120" role="img" aria-labelledby="t-check-draw">
+<title id="t-check-draw">A tick that draws inside a circle</title>
+<desc>Use to confirm that something is done or included. Plays once.</desc>
+<style>#s-check-draw .c{fill:none;stroke:var(--soft,#a5b9d8);stroke-width:6;stroke-dasharray:1;animation:check-draw-d .7s ease-out both}#s-check-draw .k{fill:none;stroke:var(--accent,#774528);stroke-width:9;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;animation:check-draw-d .45s .6s ease-out both}@keyframes check-draw-d{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}@media (prefers-reduced-motion:reduce){#s-check-draw *{animation:none!important}}</style>
+<circle class="c" pathLength="1" cx="60" cy="60" r="50"/><path class="k" pathLength="1" d="M36 62 53 79 86 44"/>
+</svg>

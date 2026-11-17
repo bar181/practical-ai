@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Artifact Studio, explained: rough notes in, a one-page report out</title>
+<meta name="description" content="An explainer for business owners and employees: what Artifact Studio does, the five-minute first run, the four-point check and four ways to use it.">
+<style>
+  :root {
+    /* Seven colour tokens, plus one data colour for the chart */
+    --bg: #FFFFFF;
+    --panel: #F3F3F1;
+    --border: #CFCFCB;
+    --muted: #4A4A4A;
+    --ink: #111111;
+    --mark: #FFE14D;
+    --on-ink: #FFFFFF;
+    --data: #1D4ED8;
+
+    --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+    --read: 40rem;
+    --wide: 66rem;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 1.0625rem;
+    line-height: 1.55;
+  }
+  a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 2px; }
+  :focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; box-shadow: 0 0 0 6px var(--mark); }
+  mark { background: var(--mark); color: var(--ink); padding: 0 .15em; }
+  code, pre, .mono { font-family: var(--mono); }
+  code { font-size: .92em; background: var(--panel); border: 1px solid var(--border); border-radius: 4px; padding: .05em .3em; }
+
+  .wrap { max-width: var(--read); margin: 0 auto; padding: 0 1.15rem; }
+  .wrap-wide { max-width: var(--wide); margin: 0 auto; padding: 0 1.15rem; }
+  section { padding: 3rem 0; border-top: 1px solid var(--border); }
+  .kicker {
+    font-family: var(--mono); font-size: .8rem; letter-spacing: .06em; text-transform: uppercase;
+    color: var(--muted); margin: 0 0 .6rem;
+  }
+  h1, h2, h3 { line-height: 1.15; margin: 0 0 .8rem; letter-spacing: -0.01em; }
+  h1 { font-size: clamp(2.1rem, 9vw, 3.6rem); font-weight: 800; }
+  h2 { font-size: clamp(1.6rem, 6.4vw, 2.3rem); font-weight: 800; }
+  h3 { font-size: 1.25rem; font-weight: 750; }
+  p { margin: 0 0 1rem; }
+  .lede { font-size: 1.2rem; }
+  .muted { color: var(--muted); }
+  .small { font-size: .9rem; }
+
+  /* Buttons and button-like links */
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+    min-height: 44px; padding: .6rem 1.1rem; border-radius: 8px;
+    background: var(--ink); color: var(--on-ink); border: 2px solid var(--ink);
+    font: inherit; font-weight: 700; text-decoration: none; cursor: pointer;
+  }
+  .btn.ghost { background: var(--bg); color: var(--ink); }
+
+  /* Hero */
+  header.hero { padding: 2.2rem 0 2.6rem; }
+  .facts { display: flex; flex-wrap: wrap; gap: .5rem; padding: 0; margin: 1.2rem 0 1.6rem; list-style: none; }
+  .facts li { border: 1px solid var(--ink); border-radius: 999px; padding: .25rem .8rem; font-size: .92rem; font-weight: 600; }
+  .job-figure { margin: 1.6rem 0 1.4rem; }
+  .job-figure svg { width: 100%; max-width: 32rem; height: auto; display: block; }
+  .job-figure figcaption { font-size: .92rem; color: var(--muted); margin-top: .5rem; }
+  .why { border-left: 4px solid var(--ink); padding: .2rem 0 .2rem 1rem; margin: 1.4rem 0; }
+  .why p:last-child { margin-bottom: 0; }
+
+  /* Analogy */
+  .analogy-big { font-size: clamp(2.6rem, 12vw, 5.2rem); font-weight: 850; line-height: 1.02; margin: 0 0 1.2rem; letter-spacing: -0.02em; }
+  .boxed { border: 2px solid var(--ink); border-radius: 10px; padding: 1.1rem 1.2rem; background: var(--bg); }
+  .boxed p:last-child { margin-bottom: 0; }
+  .brief-row { display: grid; gap: .8rem; margin: 1.4rem 0 1rem; padding: 0; list-style: none; }
+  .brief-row li { background: var(--panel); border: 1px solid var(--border); border-radius: 10px; padding: .9rem 1rem; }
+  .brief-row b { display: block; font-size: 1.05rem; }
+  .counts { font-family: var(--mono); font-size: .95rem; }
+
+  /* Worked example */
+  .badge {
+    display: inline-block; font-family: var(--mono); font-size: .78rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: .05em;
+    border: 2px dashed var(--ink); border-radius: 6px; padding: .2rem .55rem; margin-bottom: 1rem;
+  }
+  .halves { display: grid; gap: 1.2rem; }
+  .panel { background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 1rem; }
+  .panel h3 { font-size: 1rem; font-family: var(--mono); text-transform: uppercase; letter-spacing: .05em; color: var(--muted); }
+  .notes { margin: 0; padding-left: 1.2rem; font-family: var(--mono); font-size: .9rem; line-height: 1.5; }
+  .notes li { margin-bottom: .35rem; }
+  .mini { background: var(--bg); border: 1px solid var(--border); border-radius: 10px; padding: 1rem; }
+  .mini .head { font-size: 1.3rem; font-weight: 800; line-height: 1.2; margin-bottom: .9rem; }
+  .tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: .5rem; margin-bottom: 1rem; }
+  .tile { border: 1px solid var(--border); border-radius: 8px; padding: .55rem .5rem; }
+  .tile .lbl { font-size: .76rem; color: var(--muted); line-height: 1.25; }
+  .tile .num { font-size: 1.25rem; font-weight: 800; line-height: 1.2; }
+  .tile .was { font-size: .76rem; color: var(--muted); }
+  .chart-h { font-size: .98rem; font-weight: 700; margin: 0 0 .5rem; }
+  .chart svg { width: 100%; height: auto; display: block; }
+  .chart .src { font-size: .8rem; color: var(--muted); margin: .4rem 0 0; }
+
+  /* First run: the stepper */
+  .run { position: relative; }
+  .stepper {
+    position: sticky; top: 0; z-index: 5;
+    background: var(--bg); border-bottom: 1px solid var(--border);
+    padding: .7rem 0 .8rem; margin-bottom: 1.4rem;
+  }
+  .stepper ol { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: .3rem; }
+  .stepper li { text-align: center; font-size: .8rem; font-weight: 700; line-height: 1.2; }
+  .stepper a { text-decoration: none; display: block; min-height: 44px; padding-top: .1rem; border-radius: 6px; }
+  .stepper .dot {
+    display: inline-grid; place-items: center; width: 1.9rem; height: 1.9rem; margin: 0 auto .25rem;
+    border: 2px solid var(--ink); border-radius: 50%; font-family: var(--mono); font-size: .9rem; background: var(--bg);
+  }
+  .track { height: 6px; background: var(--panel); border: 1px solid var(--border); border-radius: 99px; margin-top: .55rem; overflow: hidden; }
+  .fill { height: 100%; width: 100%; background: var(--ink); transform-origin: left center; transform: scaleX(var(--p, 0)); }
+
+  .stage { padding: 1.4rem 0 2rem; scroll-margin-top: 7.5rem; }
+  .stage + .stage { border-top: 1px dashed var(--border); }
+  .stage .num-big { font-family: var(--mono); font-weight: 700; font-size: .85rem; color: var(--muted); margin-bottom: .2rem; }
+  .meta { display: grid; grid-template-columns: max-content 1fr; gap: .25rem .8rem; margin: 0 0 1rem; font-size: .95rem; }
+  .meta dt { font-weight: 700; }
+  .meta dd { margin: 0; }
+  .fact { background: var(--panel); border-left: 4px solid var(--mark); padding: .6rem .9rem; font-size: .95rem; margin: 1rem 0 0; }
+  .prompt { position: relative; margin: 1rem 0; }
+  .prompt pre {
+    margin: 0; background: var(--ink); color: var(--on-ink); border-radius: 10px;
+    padding: 1rem; font-size: .82rem; line-height: 1.5; white-space: pre-wrap; overflow-wrap: anywhere;
+  }
+  .prompt-bar { display: flex; align-items: center; gap: .8rem; margin-top: .6rem; flex-wrap: wrap; }
+  .copy-status { font-size: .9rem; font-weight: 600; min-height: 1.4em; }
+  .trouble { margin: 1rem 0 0; padding: 0; list-style: none; display: grid; gap: .6rem; }
+  .trouble li { border: 1px solid var(--border); border-radius: 8px; padding: .7rem .9rem; }
+  .trouble b { display: block; }
+
+  /* Use cases */
+  .cases { display: grid; gap: 1rem; margin-top: 1.4rem; }
+  .card { border: 2px solid var(--ink); border-radius: 12px; padding: 1.1rem 1.1rem 1.2rem; background: var(--bg); display: flex; flex-direction: column; }
+  .card .tag { font-family: var(--mono); font-size: .78rem; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; margin-bottom: .35rem; }
+  .card dl { margin: .2rem 0 0; }
+  .card dt { font-weight: 700; font-size: .85rem; text-transform: uppercase; letter-spacing: .04em; margin-top: .85rem; }
+  .card dd { margin: .2rem 0 0; }
+  .say { display: block; background: var(--panel); border: 1px solid var(--border); border-radius: 8px; padding: .6rem .75rem; font-family: var(--mono); font-size: .84rem; line-height: 1.5; overflow-wrap: anywhere; }
+  .est { font-size: .82rem; color: var(--muted); margin-top: 1rem; }
+
+  /* Check yourself */
+  .checks { list-style: none; margin: 1.2rem 0; padding: 0; display: grid; gap: .7rem; }
+  .checks label {
+    display: grid; grid-template-columns: 44px 1fr; gap: .4rem; align-items: start;
+    min-height: 44px; border: 2px solid var(--ink); border-radius: 10px; padding: .7rem .8rem .7rem .4rem; cursor: pointer;
+  }
+  .checks input { width: 26px; height: 26px; margin: .1rem auto 0; accent-color: var(--ink); cursor: pointer; }
+  .checks b { display: block; }
+  .checks label:has(input:checked) { background: var(--panel); }
+  .tally { font-weight: 700; }
+  .tally[hidden] { display: none; }
+
+  /* Recap and start */
+  .recap-big { font-size: clamp(2rem, 9vw, 3.4rem); font-weight: 850; line-height: 1.05; margin: 0 0 1rem; letter-spacing: -0.02em; }
+  .start { background: var(--ink); color: var(--on-ink); border-radius: 14px; padding: 1.4rem 1.2rem; margin-top: 1.6rem; }
+  .start a:not(.btn) { color: var(--on-ink); }
+  .start .btn { background: var(--mark); color: var(--ink); border-color: var(--mark); }
+  .start code { background: transparent; color: var(--on-ink); border-color: var(--muted); }
+  .status { font-size: .9rem; margin-top: 1rem; }
+
+  footer { border-top: 1px solid var(--border); padding: 1.6rem 0 2.4rem; font-size: .9rem; color: var(--muted); }
+
+  /* Wide screens: side by side from about 1000 pixels */
+  @media (min-width: 1000px) {
+    .halves { grid-template-columns: 1fr 1fr; align-items: start; }
+    .cases { grid-template-columns: 1fr 1fr; }
+    .brief-row { grid-template-columns: repeat(3, 1fr); }
+    .stepper li { font-size: .9rem; }
+  }
+
+  /* CSS-only scroll progress, for browsers that support it, so it moves with scripts off */
+  @supports ((animation-timeline: view()) and (animation-range: entry)) {
+    .run { view-timeline: --run block; }
+    .fill { animation: runfill linear both; animation-timeline: --run; animation-range: contain 0% contain 100%; }
+    @keyframes runfill { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .fill { animation: none !important; transform: scaleX(1); }
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    html { scroll-behavior: smooth; }
+  }
+</style>
+</head>
+<body>
+
+<!-- 1. One question, and the job -->
+<header class="hero">
+  <div class="wrap">
+    <p class="kicker">Artifact Studio, explained</p>
+    <h1>Have rough notes and something to <mark>share</mark>?</h1>
+    <p class="lede">Paste one prompt into the chatbot you already use and get a one-page report your reader can take in on a phone. Then say one sentence, and the same notes come back as a deck or a post.</p>
+    <ul class="facts" aria-label="What it costs you">
+      <li>Free and open source</li>
+      <li>No sign-up</li>
+      <li>Nothing to install</li>
+    </ul>
+
+    <figure class="job-figure">
+      <svg viewBox="0 0 360 210" role="img" aria-labelledby="job-title job-desc" xmlns="http://www.w3.org/2000/svg">
+        <title id="job-title">The job, as a diagram</title>
+        <desc id="job-desc">Rough notes go in on the left and become a one-page report. From the same notes, one more sentence each gives a slide deck or a social post.</desc>
+        <g fill="none" stroke="#111111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <!-- notes -->
+          <rect x="8" y="40" width="78" height="100" rx="6" fill="#F3F3F1"/>
+          <path d="M20 60h52M20 74h40M20 88h50M20 102h30M20 116h46"/>
+          <!-- arrow to report -->
+          <path d="M94 90h34"/><path d="M122 84l7 6-7 6"/>
+          <!-- report -->
+          <rect x="138" y="28" width="92" height="124" rx="6" fill="#FFFFFF"/>
+          <rect x="148" y="40" width="72" height="12" rx="2" fill="#FFE14D" stroke="none"/>
+          <path d="M148 64h22M174 64h22M200 64h20" stroke-width="5"/>
+          <path d="M156 132v-28M176 132v-42M196 132v-20" stroke-width="10"/>
+          <path d="M148 140h72"/>
+          <!-- arrows to deck and post -->
+          <path d="M238 70q20 -24 40 -26"/><path d="M272 38l7 6-8 5"/>
+          <path d="M238 110q20 24 40 26"/><path d="M271 131l8 5-7 6"/>
+          <!-- deck -->
+          <rect x="288" y="16" width="64" height="44" rx="4" fill="#111111"/>
+          <path d="M298 38h34" stroke="#FFFFFF" stroke-width="5"/>
+          <!-- post -->
+          <rect x="296" y="112" width="48" height="60" rx="4" fill="#FFFFFF"/>
+          <rect x="302" y="118" width="36" height="24" rx="2" fill="#F3F3F1"/>
+          <path d="M302 152h30M302 162h20"/>
+        </g>
+        <g font-family="system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif" font-size="13" font-weight="700" fill="#111111" text-anchor="middle">
+          <text x="47" y="160">Rough notes</text>
+          <text x="184" y="172">One-page report</text>
+          <text x="320" y="78">A deck</text>
+          <text x="320" y="192">A post</text>
+        </g>
+      </svg>
+      <figcaption>The job: rough notes in, a one-page report out. Then the same notes as a deck or a post, from one more sentence each.</figcaption>
+    </figure>
+
+    <div class="why">
+      <p><strong>Why it matters.</strong> "Make this look better" is not a solution. The AI does not know what better means to you. A brief names the job, the reader and the shape.</p>
+    </div>
+
+    <a class="btn" href="#first-run">Make your first report in 5 minutes</a>
+  </div>
+</header>
+
+<main>
+
+<!-- 2. The everyday analogy -->
+<section aria-labelledby="analogy-h">
+  <div class="wrap">
+    <p class="kicker" id="analogy-h">Think of it as</p>
+    <p class="analogy-big">AI is a smart <mark>intern</mark>.</p>
+    <p class="lede">A new hire who has read every book in the world and has never met you. It is fast and capable. It does not yet know your priorities, your tone or what good looks like in your business.</p>
+    <div class="boxed">
+      <p><strong>Artifact Studio is the design brief you hand that intern on day one.</strong> You bring the content and the judgement. The studio brings the taste.</p>
+    </div>
+  </div>
+</section>
+
+<!-- What it does -->
+<section aria-labelledby="does-h">
+  <div class="wrap">
+    <p class="kicker">What it does</p>
+    <h2 id="does-h">What it does: gives your AI what a designer would bring</h2>
+    <p>Artifact Studio is a free, curated library of design templates that turns an AI answer into a slide deck, a report, a web page or a post preview. You paste one link into your chatbot, and the brief inside tells it three things before it builds:</p>
+    <ul class="brief-row">
+      <li><b>A template</b>What kind of thing it is making: a one-page report, a proposal, a landing page, a scrolling explainer, a deck or a social post.</li>
+      <li><b>A voice</b>How it speaks and in what order: for example the analyst, who gives the answer first, or the teacher, who starts with an analogy.</li>
+      <li><b>A look</b>What it looks like: one of nine looks, or one built from your photo or your brand colour.</li>
+    </ul>
+    <p>It also hands over rules for what good looks like. The main one: it uses only your facts. Where your notes leave something out, it marks the gap instead of guessing.</p>
+    <p class="counts muted">In the library: 20 templates, 60 components, 9 looks. Every one comes with the sentence that asks for it.</p>
+  </div>
+</section>
+
+<!-- 3. One worked example -->
+<section aria-labelledby="example-h">
+  <div class="wrap-wide">
+    <div class="wrap" style="padding:0">
+      <p class="kicker">Worked example</p>
+      <h2 id="example-h">Worked example: eight lines of notes became this report</h2>
+      <span class="badge">Invented example</span>
+      <p>The landscaping company and every figure below are made up, so you can try it with nothing to prepare.</p>
+    </div>
+    <div class="halves">
+      <div class="panel">
+        <h3>In: rough notes</h3>
+        <ol class="notes">
+          <li>We are a landscaping company with two crews</li>
+          <li>October revenue $84,200. September was $71,500</li>
+          <li>Jobs completed: 23 in October, 19 in September</li>
+          <li>Quotes that became jobs: 46%, up from 38%</li>
+          <li>We started sending quotes within two days of the visit. It used to take six</li>
+          <li>One van was off the road for four days. Crews shared. No jobs moved</li>
+          <li>November: hire one seasonal worker for leaf clearance</li>
+          <li>Need to decide about a second van by 15 November</li>
+        </ol>
+        <p class="small muted" style="margin:.8rem 0 0">Plus one line about the reader: a business partner who reads on her phone and wants the answer first.</p>
+      </div>
+      <div class="panel">
+        <h3>Out: the top of the page (a simplified drawing)</h3>
+        <div class="mini">
+          <p class="head">October beat September: revenue up $12,700</p>
+          <div class="tiles">
+            <div class="tile"><div class="lbl">Revenue</div><div class="num">$84,200</div><div class="was">was $71,500</div></div>
+            <div class="tile"><div class="lbl">Jobs completed</div><div class="num">23</div><div class="was">was 19</div></div>
+            <div class="tile"><div class="lbl">Quotes won</div><div class="num">46%</div><div class="was">was 38%</div></div>
+          </div>
+          <div class="chart">
+            <p class="chart-h">October revenue was $12,700 higher than September's.</p>
+            <svg viewBox="0 0 320 112" role="img" aria-labelledby="ch-t ch-d" xmlns="http://www.w3.org/2000/svg">
+              <title id="ch-t">Revenue, September against October</title>
+              <desc id="ch-d">Two bars. September: 71,500 dollars. October: 84,200 dollars.</desc>
+              <g font-family="system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif" font-size="13" fill="#111111">
+                <text x="0" y="31">September</text>
+                <rect x="84" y="16" width="136" height="22" fill="#CFCFCB" stroke="#4A4A4A" stroke-width="1"/>
+                <text x="228" y="31">$71,500</text>
+                <text x="0" y="77" font-weight="700">October</text>
+                <rect x="84" y="62" width="160" height="22" fill="#1D4ED8"/>
+                <text x="252" y="77" font-weight="700">$84,200</text>
+                <line x1="84" y1="6" x2="84" y2="96" stroke="#4A4A4A" stroke-width="1"/>
+                <text x="84" y="110" font-size="11" fill="#4A4A4A">Bars start at $0</text>
+              </g>
+            </svg>
+            <p class="src">Unit: dollars, as written in the notes. Source: the invented sample notes. Working: $84,200 minus $71,500 is $12,700.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="wrap" style="padding:0;margin-top:1.2rem">
+      <p>An AI chatbot made the real page from these notes in one try, unedited. It leads with the answer, then three numbers, a chart of September against October, and further down the decision coming up. The full page is <a href="https://github.com/bar181/practical-ai/blob/main/projects/artifact-studio/base/examples/report.html"><code>base/examples/report.html</code></a> in the project. Yours will differ.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 4. The first run, stepped through with a diagram that stays on screen -->
+<section aria-labelledby="run-h" id="first-run">
+  <div class="wrap">
+    <p class="kicker">Your first run</p>
+    <h2 id="run-h">Your first report in 5 minutes, in four steps</h2>
+    <p>The same request as the worked example, run by you. The bar below stays at the top of the screen and fills as you go.</p>
+  </div>
+
+  <div class="run" id="run">
+    <div class="stepper" aria-label="The four steps">
+      <div class="wrap">
+        <ol>
+          <li><a href="#step-1"><span class="dot">1</span><br>Copy</a></li>
+          <li><a href="#step-2"><span class="dot">2</span><br>Compare</a></li>
+          <li><a href="#step-3"><span class="dot">3</span><br>Your notes</a></li>
+          <li><a href="#step-4"><span class="dot">4</span><br>Check</a></li>
+        </ol>
+        <div class="track" aria-hidden="true"><div class="fill"></div></div>
+      </div>
+    </div>
+
+    <div class="wrap">
+      <article class="stage" id="step-1" aria-labelledby="s1-h">
+        <p class="num-big">Step 1 of 4</p>
+        <h3 id="s1-h">Copy the sample prompt</h3>
+        <dl class="meta">
+          <dt>Who</dt><dd>You, in ChatGPT, Claude, Gemini or the chatbot you already use</dd>
+          <dt>What happens</dt><dd>You paste this in. The notes are invented, so there is nothing to prepare.</dd>
+        </dl>
+        <div class="prompt">
+          <pre id="sample-prompt">Read the design guide at https://raw.githubusercontent.com/bar181/practical-ai/main/projects/artifact-studio/base/AI-INSTRUCTIONS.md
+
+Then show me a one-page report as an HTML page, from these notes:
+
+- We are a landscaping company with two crews
+- October revenue $84,200. September was $71,500
+- Jobs completed: 23 in October, 19 in September
+- Quotes that became jobs: 46%, up from 38%
+- We started sending quotes within two days of the visit. It used to take six
+- One van was off the road for four days. Crews shared. No jobs moved
+- November: hire one seasonal worker for leaf clearance
+- Need to decide about a second van by 15 November
+
+My business partner reads on her phone and wants the answer first. Our colour is green.
+
+When you are done, tell me three ways I could tailor this for my own business.</pre>
+          <div class="prompt-bar">
+            <button type="button" class="btn" id="copy-btn" hidden>Copy the prompt</button>
+            <span class="copy-status" id="copy-status" role="status" aria-live="polite"></span>
+          </div>
+        </div>
+        <p><strong>If your chatbot cannot open links,</strong> open <code>base/AI-INSTRUCTIONS.md</code> in the project, copy all of it, and paste it in place of the first line.</p>
+        <p class="fact"><strong>One fact:</strong> it was tested in Claude, in 22 independent runs on 16 November 2026. It has not yet been tried in ChatGPT, Gemini or any other assistant.</p>
+      </article>
+
+      <article class="stage" id="step-2" aria-labelledby="s2-h">
+        <p class="num-big">Step 2 of 4</p>
+        <h3 id="s2-h">Compare what you get</h3>
+        <dl class="meta">
+          <dt>Who</dt><dd>You, reading what the chatbot built</dd>
+          <dt>What happens</dt><dd>You should get a page like the worked example above. Yours will differ.</dd>
+        </dl>
+        <ul class="trouble">
+          <li><b>It shows code, not a page?</b>That happens with a bare HTML file on a phone. Say "show this as an artifact" in Claude, or ask your chatbot for a preview of the page.</li>
+          <li><b>It says it could not open the link?</b>Use the "cannot open links" tip in step 1.</li>
+          <li><b>Yellow <code>[needs: ...]</code> tags on the page?</b>The chatbot marks what your notes did not say, such as <code>[needs: owner]</code>, rather than invent it. Add the missing detail in a sentence, or leave it.</li>
+        </ul>
+      </article>
+
+      <article class="stage" id="step-3" aria-labelledby="s3-h">
+        <p class="num-big">Step 3 of 4</p>
+        <h3 id="s3-h">Use your own notes</h3>
+        <dl class="meta">
+          <dt>Who</dt><dd>You, with your own notes</dd>
+          <dt>What happens</dt><dd>Keep the first lines, down to <code>from these notes:</code>. Replace the bullet points with your own, then say who reads it and how.</dd>
+        </dl>
+        <span class="say">My manager reads this on her phone before Monday's meeting.<br>She wants the decision first. Our colour is navy.</span>
+        <p class="fact"><strong>One fact:</strong> rough is fine. Half-sentences, numbers, things to decide. Leave out anything your workplace does not allow in that chatbot.</p>
+      </article>
+
+      <article class="stage" id="step-4" aria-labelledby="s4-h">
+        <p class="num-big">Step 4 of 4</p>
+        <h3 id="s4-h">Check it before you share it</h3>
+        <dl class="meta">
+          <dt>Who</dt><dd>You, before anyone else sees it</dd>
+          <dt>What happens</dt><dd>Four points, about 2 minutes. They are further down this page as tick boxes, after the four ways to use it.</dd>
+        </dl>
+        <a class="btn ghost" href="#check">Go to the four-point check</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 5. The harder case: the same notes, four jobs -->
+<section aria-labelledby="cases-h">
+  <div class="wrap-wide">
+    <div class="wrap" style="padding:0">
+      <p class="kicker">Four ways to use it</p>
+      <h2 id="cases-h">Same notes, new shape: four jobs you can give it</h2>
+      <p>Once your report is right, stay in the same chat and say one sentence. Same facts, new shape, new voice.</p>
+    </div>
+    <div class="cases">
+      <article class="card" aria-labelledby="c1-h">
+        <p class="tag">Use case 1</p>
+        <h3 id="c1-h">A monthly report for a partner</h3>
+        <dl>
+          <dt>Say this</dt>
+          <dd><span class="say">My business partner reads on her phone and wants the answer first. Our colour is green.</span></dd>
+          <dt>You get</dt>
+          <dd>A one-page report: the answer first, three key numbers, a chart and what happens next. The worked example above is this use case.</dd>
+          <dt>Your part</dt>
+          <dd>Confirm the figures and the conclusion.</dd>
+        </dl>
+        <p class="est">By hand: 1 to 2 hours. With the studio: about 5 minutes.</p>
+      </article>
+
+      <article class="card" aria-labelledby="c2-h">
+        <p class="tag">Use case 2</p>
+        <h3 id="c2-h">A deck for a team meeting</h3>
+        <dl>
+          <dt>Say this</dt>
+          <dd><span class="say">Show the same notes as a keynote-style slide deck: black slides, one idea each, huge type.</span></dd>
+          <dt>You get</dt>
+          <dd>One file you present straight from the browser. Open it, press the arrow keys, go full screen. No PowerPoint, no export. There are four kinds: visionary, story, briefing and workshop.</dd>
+          <dt>Your part</dt>
+          <dd>Check every number. Decide what to cut.</dd>
+        </dl>
+        <p class="est">By hand: 1 hour to several days. With the studio: about 5 minutes to a draft, or about 2 minutes in the same chat as your report.</p>
+      </article>
+
+      <article class="card" aria-labelledby="c3-h">
+        <p class="tag">Use case 3</p>
+        <h3 id="c3-h">Posts for the week</h3>
+        <dl>
+          <dt>Say this</dt>
+          <dd><span class="say">Write three drafts of a LinkedIn post about my notes, in my voice. Take a different way in for each. Show each one as it will look in the feed, side by side. Do not post anything.</span></dd>
+          <dt>You get</dt>
+          <dd>Three drafts side by side, each cut where a feed would cut it, so you judge the opening. It works for six places: LinkedIn, Instagram, TikTok, Facebook, an HTML email with its inbox line, and a short blog post.</dd>
+          <dt>Your part</dt>
+          <dd>Pick the draft and post it yourself: nothing is posted for you. For your own voice, paste three posts you are proud of and say "write in this voice".</dd>
+        </dl>
+        <p class="est">About 2 minutes in the same chat. Advanced: run the request on a schedule and review the previews over coffee. That needs an assistant that can run tasks on a schedule; the library does not set it up.</p>
+      </article>
+
+      <article class="card" aria-labelledby="c4-h">
+        <p class="tag">Use case 4</p>
+        <h3 id="c4-h">A page that opens with your own photo</h3>
+        <dl>
+          <dt>Say this</dt>
+          <dd><span class="say">Open with my photo as a slow pan and zoom, and set the title in huge letters filled with the photo.</span> <span class="small muted">Attach the photo first.</span></dd>
+          <dt>You get</dt>
+          <dd>A page that opens on your picture. There are thirteen photo effects, such as a sketch that draws itself, a before and after divider and a postcard that flips. Each needs one picture and one sentence, and none needs a library or an app.</dd>
+          <dt>Your part</dt>
+          <dd>Choose the photo. When it is the page's main picture, its colours can set the look.</dd>
+        </dl>
+        <p class="est">About 2 minutes in the same chat.</p>
+      </article>
+    </div>
+    <p class="small muted" style="margin-top:1rem">All times on this page are the project's estimates, not measurements. The point is the shape of the saving: the AI does the layout and the first draft, and you keep the judgement.</p>
+  </div>
+</section>
+
+<!-- 6. Check yourself -->
+<section aria-labelledby="check-h" id="check">
+  <div class="wrap">
+    <p class="kicker">Check yourself</p>
+    <h2 id="check-h">Check before you share: four points, about 2 minutes</h2>
+    <p>Tick each one as you check your page.</p>
+    <ul class="checks">
+      <li><label><input type="checkbox" name="check"><span><b>Does every number match your notes?</b>The AI lays out your figures; it can still copy one wrong.</span></label></li>
+      <li><label><input type="checkbox" name="check"><span><b>Is anything added that you did not write?</b>No new names, dates, quotes or claims, and no reasons you did not give ("because", "the main cause").</span></label></li>
+      <li><label><input type="checkbox" name="check"><span><b>Does the headline say what you want the reader to take away?</b>If not, say "Change the headline to ...".</span></label></li>
+      <li><label><input type="checkbox" name="check"><span><b>Have you opened it on your phone, where your reader will?</b>Send yourself the link or the file.</span></label></li>
+    </ul>
+    <p class="tally" id="tally" role="status" aria-live="polite" hidden>0 of 4 checked.</p>
+    <p>Ask for any fix in a sentence:</p>
+    <span class="say">The October revenue is 84,200, not 82,400.</span>
+  </div>
+</section>
+
+<!-- 7. Recap, reusing the analogy, and where to start -->
+<section aria-labelledby="recap-h">
+  <div class="wrap">
+    <p class="kicker">Recap</p>
+    <h2 id="recap-h" class="recap-big">The AI is your smart intern. Artifact Studio is its <mark>brief</mark>.</h2>
+    <p class="lede">You bring the notes and the judgement. The intern, with the brief, brings a one-page report, then a deck or a post from the same notes. You check it before anyone sees it.</p>
+
+    <div class="start" aria-labelledby="start-h">
+      <h2 id="start-h">Where to start</h2>
+      <p>The project page: <code>projects/artifact-studio/</code> in the <code>bar181/practical-ai</code> repository on GitHub. Begin with step 1 on that page: copy the sample.</p>
+      <a class="btn" href="https://github.com/bar181/practical-ai/tree/main/projects/artifact-studio">Open the project page</a>
+      <p class="status">github.com/bar181/practical-ai, folder projects/artifact-studio</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>The landscaping company and its figures are invented examples from the project's README.</p>
+    <p>Made with Artifact Studio from the project's README, 16 November 2026.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  // Copy button: shown only when scripts run, so it never sits there doing nothing.
+  var btn = document.getElementById('copy-btn');
+  var status = document.getElementById('copy-status');
+  var pre = document.getElementById('sample-prompt');
+  if (btn && pre) {
+    btn.hidden = false;
+    btn.addEventListener('click', function () {
+      var text = pre.textContent;
+      function done(ok) {
+        status.textContent = ok ? 'Copied. Paste it into your chatbot.' : 'Copy did not work here. Select the text and copy it.';
+      }
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(function () { done(true); }, function () { fallback(); });
+      } else { fallback(); }
+      function fallback() {
+        var r = document.createRange(); r.selectNodeContents(pre);
+        var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+        var ok = false; try { ok = document.execCommand('copy'); } catch (e) {}
+        done(ok);
+      }
+    });
+  }
+
+  // Tick-box tally
+  var boxes = document.querySelectorAll('.checks input');
+  var tally = document.getElementById('tally');
+  function count() {
+    var n = 0; boxes.forEach(function (b) { if (b.checked) n++; });
+    tally.textContent = n === 4 ? '4 of 4 checked. Ready to share.' : n + ' of 4 checked.';
+  }
+  if (tally && boxes.length) {
+    tally.hidden = false;
+    boxes.forEach(function (b) { b.addEventListener('change', count); });
+    count();
+  }
+
+  // Scroll progress: one custom property, --p, set from the scroll position.
+  var run = document.getElementById('run');
+  var cssDoesIt = window.CSS && CSS.supports && CSS.supports('(animation-timeline: view()) and (animation-range: entry)');
+  if (run && !cssDoesIt) {
+    var ticking = false;
+    function update() {
+      ticking = false;
+      var r = run.getBoundingClientRect();
+      var span = r.height - window.innerHeight;
+      var p = span > 0 ? -r.top / span : (r.top < 0 ? 1 : 0);
+      p = Math.max(0, Math.min(1, p));
+      run.style.setProperty('--p', p.toFixed(3));
+    }
+    window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+  }
+})();
+</script>
+</body>
+</html>
