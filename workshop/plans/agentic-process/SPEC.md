@@ -1,6 +1,6 @@
 # Agentic Process: specification
 
-**Version 1, written on 16 November 2026.** This is the source of truth for what Agentic Process is
+**Version 1.** This is the source of truth for what Agentic Process is
 for and when it is done. The README, the skill and every check follow it. Where they differ, this
 file wins and they are fixed. Decisions the owner has not yet confirmed are marked **Owner to
 confirm**, with the default this spec uses until then.
@@ -18,50 +18,59 @@ project, and the result depends on how well the owner remembered every step that
 
 ## 2. Purpose, goal and North Star
 
-**Agentic Process turns work you repeat into an AI tool you can run again.**
+**Agentic Process builds useful tools for work people repeat.**
 
-**Goal.** Start with one real job, such as drafting a weekly update or comparing suppliers. Leave
-with four files: a workflow card, runnable instructions, a worked example, and a short setup guide.
+**Goal.** Start with one real job, use the simplest suitable implementation, and get an output
+you can use. Bring fresh input next time without recreating the workflow.
 
-**Vision.** A business owner or office worker gets a useful result in their usual chat. Someone
-trained on AI can save and share the workflow. A coder can turn a rough idea into clear intent and
-a testable spec. A folder, a tool server (MCP) or GitHub is connected only when it saves a
-recurring manual step.
+**User value.** Save time or improve the quality of a specific result. Measure one of those
+outcomes against the usual way of doing the job. Every project has a short explainer that shows
+what it does, how to start, what goes in and comes out, and what to check. Include one worked
+example. The explainer can live in the README.
 
-**User value.** Catch misunderstandings before they become rework. Decide what goes in, what good
-looks like, and what a person checks. Next time, bring fresh input and run the same workflow.
+**North Star.** Someone opens a project and gets a usable result with their own input. At
+Level 3, connected systems supply the inputs and the workflow runs mostly on its own, with
+a person handling decisions or exceptions that need them.
 
-**North Star.** Someone can try a worked example, adapt it to their own task, and run it again
-without needing the original conversation.
+**How we build.** The nine steps in [PROCESS.md](../../../projects/agentic-process/base/PROCESS.md)
+are the builder's process. A simple chat tool takes the short path: scope, design and test,
+with a quick reuse check. The operator starts with the explainer and the runnable tool.
 
-**How the method serves this.** The nine steps are checks, each helping the person make one
-decision and adding to the four files (see `base/PROCESS.md`). Most jobs take the short path:
-steps 1, 6 and 8 in full. The method follows three ideas from Anthropic's own guidance: use the
-simplest workflow that does the job; define success and test cases before tuning instructions;
-and test with a fresh session that did not write them.
+### Reuse first
+
+1. **Use an existing capability** when it already does the job. Ship the explainer with the
+   setup and example an operator needs to use it.
+2. **Wrap an existing skill or plugin** when the job needs business rules, a specific output or
+   an extra step. Verify the inputs, permissions and output in the intended environment.
+3. **Build the missing piece** when existing tools leave a material gap. Anthropic's
+   `build-agent` can package recurring work as a reusable Claude skill. Our builder skill
+   applies this repository's process, selects what to reuse, fills the gaps, and delivers
+   a usable tool with an explainer and a tested example.
+
+Sources: [Anthropic's knowledge-work plugins](https://github.com/anthropics/knowledge-work-plugins)
+and [build-agent](https://github.com/anthropics/knowledge-work-plugins/blob/main/small-business/skills/build-agent/SKILL.md).
 
 ## 3. Who it is for
 
-| Who | Role | What they need from it |
+| Who | What they need |
+| --- | --- |
+| A person doing recurring work | A tool they can start quickly with their own input and use again |
+| A builder or coding agent | One builder skill and a shared nine-step method for producing a tool from an idea or spec |
+| A team or client operating a connected workflow | A mostly automated run that uses the systems where work already happens |
+
+## 3a. Implementation levels
+
+Levels describe setup and automation. The same person can choose any level.
+
+| Level | What runs | Minimum deliverable |
 | --- | --- | --- |
-| The repository owner | Primary user | Hand a plan from `workshop/plans/` to an agent and get back a pull request worth reviewing, without guiding each step |
-| A coding agent | Primary actor | One skill folder that says what to do, in what order, what to check, and when to stop |
-| A builder in another repository | Secondary user | The same skill folder, copied into their repository, working without anything else from here |
-| A person who works in a chatbot | Primary user | Describe a workflow (for example, research a decision and write a SWOT) and get back a tool package to save in a chatbot project or a Drive folder, and run whenever needed |
-| A person working step by step in a chatbot | Kept, not extended | The coach (`base/AI-INSTRUCTIONS.md`): the same nine steps, one question at a time. Frozen at its current state |
+| Base | A person provides input and starts the workflow in chat or through an existing tool | Explainer with a quick start and worked example, plus one runnable instruction file or a direct link to an existing tool |
+| Level 2 | A saved workflow a person starts when needed | A saved Project or reusable skill, using existing skills or plugins where they add value |
+| Level 3 | A mostly connected and automated workflow | Connected inputs and outputs, a trigger or schedule, and a tested normal run and exception path |
 
-## 3a. Levels
-
-Each level is useful on its own. Each adds one thing to the one before.
-
-| Level | For | What it adds | What is in this project |
-| --- | --- | --- | --- |
-| Base: run it in chat | A business owner or office worker | A useful result in their usual chat today, and the four files to run it again | The coach, the nine steps, a four-file template for a chatbot tool (`base/template/`), and worked examples, including one complete tool (`base/examples/decision-support/`) |
-| Level 2: save, share and specify | Someone trained on AI, or a coder | A saved, shared workflow: a chatbot project, a skill or a shared folder. For a coder: a rough idea turned into clear intent and a testable spec, a project folder in a repository, and Autopilot from a spec | The skill folder with its project template, and `AUTOPILOT.md` |
-| Level 3: connect it and prove it | The owner, or a client setup | Connections where work happens (a folder, a tool server, GitHub, a scheduler), only when they save a recurring manual step; gates a script runs; tests by fresh sessions | Gates, the fresh-run test, the score sheet and every test log (`level-3-files/`) |
-
-Tests belong to Level 3. A Base or Level 2 user never has to run one; they read the example
-that a test produced.
+**Shared scaffolding.** Keep one process document and one builder skill. A Base project needs
+an explainer and a runnable entry point. Add a workflow card, standalone example, setup file
+or custom runtime skill when it serves the job. The builder tests the result and records what ran.
 
 ## 4. Use cases
 
@@ -100,7 +109,8 @@ building: that is the one mid-run decision. If 2, 4 or 5 is missing, it chooses,
 `Assumed:`, and goes on. **Owner to confirm**: whether guidance can say "proceed on assumptions"
 to skip the stop. Default: yes.
 
-**Output: the same parts for every target.** Only how they are delivered changes.
+**Output by target.** The table describes a full Autopilot delivery. For a Base tool, the
+minimum in section 3a applies. A reused tool can be delivered as an explainer with a direct link.
 
 | Part | Where, in the project folder | Checked by |
 | --- | --- | --- |
@@ -118,9 +128,9 @@ to skip the stop. Default: yes.
 | `chatbot` | The folder, plus a short list of what to paste where: the instructions into the project's instructions, the skills and examples as project files |
 | `folder` | The folder written to the place the person named, such as a Drive folder their chatbot is connected to |
 
-**Optional: good-looking outputs.** When the tool's result is a document, a page or a deck, its
-instructions can hand the result to [Artifact Studio](../../../projects/artifact-studio/) to lay it
-out. This is a choice in the spec or the guidance, not a default.
+The **project explainer** is part of every delivery. The tool's own output, such as a document,
+page or deck, can use [Artifact Studio](../../../projects/artifact-studio/) for layout when
+the project calls for it.
 
 The hand-back note has four headings: Decided. Assumed. Not checked. Test this next.
 
@@ -133,7 +143,7 @@ Nine steps, a gate after each. The steps, their purpose, proof and prompts are d
 | --- | --- | --- |
 | Decide | 1 Scope, 2 Reuse check, 3 Outside help, 4 Cost | Answers come from the spec. The reuse check is always run, with dated sources. If something already does the whole job, the result is a guide to it, not a build |
 | Design | 5 Simplest design, 6 Plan and front door, 7 Review | The folder is made from the template at step 5 and its layout never changes. The review is done by a fresh session given only the plan |
-| Build and test | 8 Build and test | Build the beginner version and the demo. Two fresh sessions test it. Fix points that repeat, then blocking points. One more round |
+| Build and test | 8 Build and test | Build or assemble the Base version and the demo. Two fresh sessions test it. Fix points that repeat, then blocking points. One more round |
 | Grow | 9 Grow | Not run on autopilot. Additions are later pull requests |
 
 ## 7. Gates
@@ -185,12 +195,11 @@ pull request.
 
 Deferred until the acceptance criteria hold:
 
-- End-user courses, guides and explainer pages. The three built so far (the guide, the North Star
-  page and the course) are parked in `projects/agentic-process/_build/deferred/` and not linked.
+- End-user courses. Each project gets a short explainer for day-to-day use.
 - A Slack bot or a tool server (UC-5).
 - A queue that builds several plans in a row.
 - Testing the coach in ChatGPT, Gemini or Copilot.
-- Changes to the coach beyond keeping it in step with `steps.py`.
+- An additional runtime or plugin where the Base workflow already meets the acceptance check.
 
 ## 11. How the project is scored
 
@@ -199,16 +208,18 @@ the earlier rubric weighted Autopilot at 25 and scored 57.
 
 | Item | Weight | What 100 looks like |
 | --- | --- | --- |
-| A beginner gets a useful result fast | 15 | From the README, a finished example runs in minutes in any chatbot, with a way to tell it worked |
-| The four-file package is simple and complete | 15 | The template and the example tool each hold a card, instructions, an example and a setup guide a beginner can follow |
-| The method helps people decide | 15 | Each step names the decision it helps make and what it adds to the files; the short path is the default; the coach hands back the four files |
+| A person gets a useful Base result fast | 15 | From the explainer, a person can run a sample and get a usable result with fresh input in the stated environment |
+| The Base package is simple and complete | 15 | The explainer, runnable entry point and worked example are enough to adopt the tool |
+| The method helps people decide | 15 | Each step names the decision it helps make and what it adds to the files; the short path is the default for simple work and delivers the runnable tool and explainer |
 | It is proven on fresh input | 15 | Fresh sessions run the example tool on at least two different inputs, its result follows its own rule, and the last fixes are re-tested |
 | The hand-back is reviewable and honest | 10 | Every change, test and open item is shown; nothing untested is called tested |
 | Coders get an idea, intent and spec path | 10 | One worked example from a messy request to intent to a testable spec, handed to an agent without explaining it again |
-| Level 3: gates and connections | 10 | The eight gates in section 7 exist and run; one connection example saves a manual step |
+| Level 3: connections and automation | 10 | A connected workflow runs from its trigger to usable output with a demonstrated exception path |
 | Autopilot | 10 | AC-1 and AC-6 hold (tracked in [`AUTOPILOT-PROGRESS.md`](AUTOPILOT-PROGRESS.md)) |
 
-## 12. Where it stands on 16 November 2026, evening
+## 12. Evidence recorded on 16 November 2026
+
+These scores describe the build under the earlier rubric.
 
 | Item | Before today's pass | Now | Why |
 | --- | --- | --- | --- |
@@ -222,9 +233,21 @@ the earlier rubric weighted Autopilot at 25 and scored 57.
 | Autopilot | 20 | 20 | Not run |
 | **Total** | **53** | **66** | |
 
-## 13. Open questions for the owner
+## 13. Next implementation pass
 
-1. **The coach for chatbot users:** keep it frozen as now (default), or drop it from this project?
+1. Align the README, builder skill and project template with the Base package. Keep the
+   nine steps in their existing source. Use a pasteable instruction or direct tool link
+   for the Base entry point.
+2. Use the existing decision-support project to prove the smaller package. Check for a
+   suitable existing skill first, then run from the explainer on sample and fresh inputs.
+   Record the result, setup time and any manual work still required.
+3. For a later Level 3 pilot, take one working Base tool and connect only the steps that
+   remove recurring work. Verify the trigger, inputs, output and exception path in that
+   environment before calling it automated.
+
+## 14. Open questions for the owner
+
+1. **Level 3 pilot.** Which recurring workflow merits the first connected run?
 2. **Spec readiness stop:** may guidance say "proceed on assumptions" to skip it? Default: yes.
 3. **Demo for a chatbot-only tool:** is the instructions file plus one example output from a fresh
    session enough? Default: yes.
