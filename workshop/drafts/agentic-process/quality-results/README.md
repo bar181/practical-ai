@@ -60,3 +60,14 @@ second tool, the [learning log](../examples/learning-log/), whose check passed (
 [Raw reports](../../../../docs/reports/2026-11-16-decision-support-checks/).
 
 **The lesson that changed the builder:** a result can hold up and still not be used. Check both.
+
+## Methods borrowed into the builder, read 16 November 2026
+
+Ideas rewritten in our own words; no text or code copied, nothing installed.
+
+| Source | Version or date | Licence | What we took |
+| --- | --- | --- | --- |
+| Anthropic `build-agent` skill (small-business plugin) | Plugin 1.35.2 | Not stated in the package | Sort a job into fixed, varies and judgement; gate only what is consequential or where the owner hesitates; test on a known case before relying on it |
+| [OpenAI cookbook: iterating development workflows with Codex](https://developers.openai.com/cookbook/examples/codex/iterating-development-workflows-with-codex) | 3 August 2026 | Not checked | A separate verification step that requires observed evidence, with external writes behind explicit approval |
+| [GitHub Spec Kit, agentic SDD](https://github.github.com/spec-kit/reference/agentic-sdd.html) | Read 16 November 2026 | MIT | Every important requirement has a matching check before the work is called done |
+| [Anthropic: Skills for enterprise](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/enterprise) | Read 16 November 2026 | Documentation | Read every file of an external skill, including scripts; look for network calls and tool use before trusting it |
