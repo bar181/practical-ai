@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img" aria-labelledby="t d" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif">
+<title id="t">Blind pilot: 93 against 73</title>
+<desc id="d">Two bars grow from zero. The tool built with Agentic Process scored 93 out of 100 and needed 0 corrections. The direct-build version scored 73 out of 100 and needed 2 corrections. Same brief, one unseen notice, one blind reviewer.</desc>
+<style>
+.bar{transform-box:fill-box;transform-origin:left;animation:grow 1.6s ease-out both}
+.b2{animation-delay:.4s}
+.lab{opacity:0;animation:show .5s ease-out 1.6s forwards}
+@keyframes grow{from{transform:scaleX(0)}to{transform:none}}
+@keyframes show{to{opacity:1}}
+@media (prefers-reduced-motion:reduce){.bar,.lab{animation:none;opacity:1}}
+</style>
+<rect width="800" height="400" rx="22" fill="#0c2340"/>
+<text x="40" y="62" fill="#ffd23f" font-size="30" font-weight="700">One blind pilot, same brief</text>
+<text x="40" y="96" fill="#cfd8e6" font-size="20">An unseen supplier notice with its effective date missing</text>
+
+<text x="40" y="160" fill="#fff" font-size="24" font-weight="700">Agentic Process</text>
+<rect x="40" y="176" width="720" height="44" rx="10" fill="#17365f"/>
+<rect class="bar" x="40" y="176" width="670" height="44" rx="10" fill="#ffd23f"/>
+<text class="lab" x="696" y="207" text-anchor="end" fill="#0c2340" font-size="26" font-weight="800">93</text>
+<text class="lab" x="40" y="248" fill="#cfd8e6" font-size="19">0 corrections before acting. Flagged the missing date and form, said who to ask</text>
+
+<text x="40" y="300" fill="#fff" font-size="24" font-weight="700">Direct build</text>
+<rect x="40" y="316" width="720" height="44" rx="10" fill="#17365f"/>
+<rect class="bar b2" x="40" y="316" width="526" height="44" rx="10" fill="#8fb3e8"/>
+<text class="lab" x="552" y="347" text-anchor="end" fill="#0c2340" font-size="26" font-weight="800">73</text>
+<text class="lab" x="40" y="388" fill="#cfd8e6" font-size="19">2 corrections before acting</text>
+</svg>

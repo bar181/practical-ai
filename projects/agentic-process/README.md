@@ -1,29 +1,54 @@
-# Agentic Process: turn a job you repeat into a tool someone can use
-
-**For people who build tools or workflows with a coding agent** such as Claude Code or Codex. Give
-it a job you repeat. It hands back a small package someone can start in five minutes, and it tests
-the package in a fresh session before you get it.
+# Agentic Process
 
 <p align="center">
-  <img src="_build/img/builder-flow.svg" width="480" alt="Animation of the builder. A job you repeat goes in at the top. Four steps light up in turn: name the usable result, pick the simplest build, build one SKILL.md, and test it in a fresh session, with a loop back to fix. At the bottom, the package you get: README.md, SKILL.md and example.md, checked before you get it.">
+  <img src="_build/img/pilot-score.svg" width="720" alt="Animated chart: in one blind pilot on the same brief, the tool built with Agentic Process scored 93 out of 100 and needed 0 corrections; the direct-build version scored 73 out of 100 and needed 2 corrections.">
 </p>
 
-**The picture, in words:** you describe a job. The builder writes down who will use the result
-and the one catch it must spot, reuses anything that already does the job, builds one instruction
-file, then runs it in a fresh session on a normal case and on the catch. It fixes what fails and
-hands back three files: a README, a `SKILL.md` that works in any chatbot, and a worked example.
+<h3 align="center">An agentic engineer at your side, for everyday jobs.</h3>
 
-<p align="center"><a href="#try-it-build-a-tool-in-about-10-minutes"><b>Build your first tool in about 10 minutes</b></a></p>
+<p align="center"><b><i>"Like having an engineer sitting with me, so every new job is set up the proper way."</i></b></p>
 
-## Try it: build a tool in about 10 minutes
+A mini harness for work that is not code: a clear result, written steps, and a test before you
+rely on it.
 
-You need a coding agent: Claude Code, Codex or similar. Open it in an empty folder, and paste
-this. The job in it is an example; swap in your own later. The build takes about 5 minutes.
+<p align="center">
+  <a href="#get-started-try-it-now"><b>Try it now</b></a> &nbsp;·&nbsp;
+  <a href="#the-proof">The proof</a> &nbsp;·&nbsp;
+  <a href="#what-it-has-built">What it has built</a>
+</p>
 
-**Then the tests, about 5 minutes more.** The builder tests the tool in fresh sessions when it can
-start them, which works when you run it as your main agent. If it cannot, it says "not yet run"
-and hands you three short messages: paste each into a fresh chat and read what comes back. Until
-then the tool is built, not ready.
+## Get started: try it now
+
+**In the chatbot you already use.** Copy this, and swap in your own job, who uses the result, and
+the mistake it must catch.
+
+```
+Act as my agentic engineer. Use the method at
+https://raw.githubusercontent.com/bar181/practical-ai/main/projects/agentic-process/base/PROCESS.md
+to help me turn a job I repeat into a tool
+I can reuse.
+
+The job: every Monday I turn our team's
+meeting notes into a list of actions.
+Who uses the result: me, in ChatGPT, then
+I email the list to the team.
+The mistake it must catch: actions that
+nobody agreed to own, or with no date.
+
+Ask me for anything missing in one message.
+Then write the tool as one instruction file
+I can paste into a new chat, an example,
+and a short test I can run to check it works.
+```
+
+You get instructions you can paste into any new chat to do the job the same way every time, an
+example, and a short test.
+
+<details>
+<summary><b>Have a coding agent? Let it do the whole build</b> (Claude Code, Codex)</summary>
+
+The builder does the whole job, including running the tests in fresh sessions. Open it in an empty
+folder and paste:
 
 ```
 Read the builder skill at
@@ -45,102 +70,84 @@ Hand back what you built, the checks
 you ran, and what you assumed.
 ```
 
-**Your agent cannot open the link?** Download this repository, open the agent in its folder, and
-replace the first three lines with: `Follow projects/agentic-process/level-2-files/agentic-process/SKILL.md`.
+</details>
 
-### What you get
+**It is ready when** every check ran in a fresh session, the example is a real result, and the
+person could act on its first screen as it is.
 
-A folder of three or four files. The one the builder made for this job in our pilot, from the
-job's written plan rather than this exact request:
-[`document-to-action-brief/`](quality-results/2026-11-16-builder-pilot/agentic-process/document-to-action-brief/).
+## What it adds
 
-| File | What it is |
-| --- | --- |
-| `README.md` | How to use the tool: a five-minute start, what to give it, what to check |
-| `SKILL.md` | The tool: paste it into any chatbot with a notice |
-| `example.md` | A worked example, and practice notices to try it on |
+Developers trust AI coding agents because they work inside a harness: a spec, steps, tests and a
+hand-back. Most everyday work with AI has none of that. You type a prompt, and hope.
 
-Here is that tool at work. A fresh chat had only its `SKILL.md` and a notice it had never seen:
+Agentic Process is the engineer who sets it up properly with you, for jobs such as a supplier
+notice, a decision or a monthly report:
 
-<p align="center">
-  <img src="_build/img/pilot-brief.webp" width="720" alt="Screen capture of a chat reply from the tool built with Agentic Process. It names the document, sums up that the notice asks for four things with the earliest deadline 15 December 2026, then a warning that three things are missing: the Effective Date is never stated, the Account Update Form was not attached, and the overdue charge is marked with an asterisk that points to nothing. Below it, a table of what you must do, each row with the exact words from the notice and where they are.">
-</p>
+- **A clear result.** Who uses it, what they need, and the one mistake it must catch.
+- **Written steps.** Done the same way every time, not a lucky prompt.
+- **A test before you rely on it.** A fresh AI session tries the tool as a stranger would, and it
+  is fixed until the person could act on the result as it is.
+- **Reuse first.** It uses what you already have: your chatbot, Claude's skill creator, existing
+  plugins and skills. It adds only the structure and the steps they are missing.
+- **Time back.** You set the job up once. Next week starts from the saved instructions, not a
+  fresh prompt.
 
-**The capture, in words:** the reply opens with a short summary and a warning that the notice
-never gives its Effective Date and leaves out the form it says is attached. Then come tables of
-what you must do, the dates and the open questions, each line with the exact words and where they
-are, and a column to tick each one against the page. [The whole reply](quality-results/2026-11-16-builder-pilot/runs/agentic-process-result.md).
-
-### The evidence
+## The proof
 
 **In one blind pilot, a tool built with Agentic Process scored 93/100. The direct-build version
 scored 73/100 on the same brief.**
 
-Both versions found all nine key items in an unseen supplier notice. The Agentic Process version
-put the missing effective date and the missing form at the top, said who to ask, and needed zero
-corrections before the owner could act. The direct-build version needed two: it filed the form as
-a fact rather than something to do, and it never said who to ask about the date.
+<p align="center">
+  <img src="_build/img/pilot-brief-direct.webp" width="49%" alt="Screen capture of the reply from the tool built directly: a title, a line counting penalties, actions, dates and questions, then a key facts table where the missing effective date and the account form sit among the facts.">
+  <img src="_build/img/pilot-brief.webp" width="49%" alt="Screen capture of a chat reply from a tool built with Agentic Process, run on a supplier notice it had never seen. It sums up that the notice asks for four things, with the earliest deadline 15 December 2026, then warns that three things are missing: the Effective Date is never stated, the Account Update Form was not attached, and the overdue charge points to nothing. Below, a table of what you must do, each row with the exact words from the notice and where they are.">
+</p>
 
-**The scope:** one build task, one unseen notice and one blind reviewer. A signal, not a study.
-[The pilot and what it changed](quality-results/README.md) ·
-[the raw review](quality-results/2026-11-16-builder-pilot/runs/BLIND-REVIEW.md).
+<p align="center"><sub>Left: built the usual way, the missing date is buried in a table. Right: built with Agentic Process, it warns first.</sub></p>
 
-## Use it with your own job
+**Both tools found all nine key items in a notice neither had seen. Only the Agentic Process tool
+put the missing date and form first and said who to ask.** The owner could act on it with no
+corrections; the other needed two.
 
-Keep the first three lines of the request. Replace the rest with four answers:
+One build task, one notice, one blind reviewer: a strong signal, not a study.
+[The full pilot](quality-results/README.md) · [the raw review](quality-results/2026-11-16-builder-pilot/runs/BLIND-REVIEW.md).
 
-1. **The job:** what you do by hand, every week or month. *"Turn a client's meeting notes into
-   actions with owners and dates."*
-2. **Who uses the result,** and where. *"Me, in ChatGPT."*
-3. **An example input:** a real one with private details removed, or ask for an invented one.
-4. **The catch:** what goes wrong when people do it by hand. *"Notes that never say who owns an
-   action."* The builder tests for it.
+## What it has built
 
-The builder asks once if something is missing, then gets on with it.
-
-## Is it ready?
-
-Open the hand-back and the new folder. It is ready when:
-
-- [ ] **Every line of the spec has a check that ran.** The hand-back lists U1 to U5 (who uses it,
-  what they give it, what they need, what makes it usable, the catch), each with a result.
-- [ ] **The checks ran in a separate session,** and the hand-back says who ran them. "Not yet run"
-  means not ready: paste the messages from the hand-back into a fresh chat yourself.
-- [ ] **`example.md` is a real result,** unedited, not something the builder wrote.
-- [ ] **The catch was caught** in its own test case.
-- [ ] **Read only the first screen of a result,** as the person who will use it. Could they act on
-  it as it is? If they would have to dig, rewrite or ask, send it back.
-
-## Without a coding agent
-
-Copy [`base/template/`](base/template/) and follow [the one-page process](base/PROCESS.md) with
-any chatbot: write the five spec lines, fill in the `SKILL.md`, then test it in a new chat.
-
-## What is inside
-
-| Part | What it is |
+| Tool | What it does, and how it scored |
 | --- | --- |
-| [`base/PROCESS.md`](base/PROCESS.md) | The method on one page: the spec, the build choices, the nine steps as a checklist, and how to verify |
-| [`base/template/`](base/template/) | The three files every tool starts from |
-| [`base/examples/`](base/examples/) | Two tools built this way: [decision support](base/examples/decision-support/) and a [learning log](base/examples/learning-log/) |
-| [`level-2-files/agentic-process/`](level-2-files/agentic-process/) | The builder skill. Install it in your coding agent to skip pasting the link |
-| [`quality-results/`](quality-results/) | What each test showed, and what it changed in the builder |
-| [`_build/`](_build/) | The spec and the script that makes the screen capture. You do not need it |
+| [**Document to action brief**](quality-results/2026-11-16-builder-pilot/agentic-process/document-to-action-brief/) | A supplier notice or report becomes what you must do, by when, and what is missing, each with the exact words.<br>*93/100 in the blind pilot, zero corrections.* |
+| [**Decision brief**](base/examples/decision-support/) | A business question becomes options weighed against your goals and limits, with dated sources and a recommendation.<br>*86 to 89 in blind grading, against 61 to 67 for a plain chatbot answer.* |
+| [**Learning log**](base/examples/learning-log/) | Each lesson recorded once, and brought back before similar work starts.<br>*Passed three fresh-session checks.* |
 
-**Levels.** Beginner: paste the build request above. Advanced: install the builder skill so you
-just say "build a tool for this job". There is no Expert level yet: no connected workflow has been
-built with it.
+## How it works
 
-**North Star:** someone describes a job they repeat, and gets back a tool another person can start
-in five minutes and trust, checked before it is handed over.
+<p align="center">
+  <img src="_build/img/builder-flow.svg" width="420" alt="Animation of the builder. A job you repeat goes in at the top. Four steps light up in turn: name the usable result, pick the simplest build, build one SKILL.md, and test it in a fresh session, with a loop back to fix. At the bottom, the package you get: README.md, SKILL.md and example.md, checked before you get it.">
+</p>
+
+1. **Name the result:** who uses it, and the one mistake it must catch.
+2. **Reuse first:** use what already does the job; build only what is missing.
+3. **Write the instructions once,** for the chatbot people already use.
+4. **Test it fresh:** does it hold up, and would the person use it as it is? Fix, then hand back.
+
+## Make it your standard
+
+Set it up once, and every new job starts from the same method.
+
+| You use | Do this once |
+| --- | --- |
+| **A chatbot** | Paste [`base/PROCESS.md`](base/PROCESS.md) into a Claude or ChatGPT Project, or a Gemini Gem |
+| **An assistant that loads skills** | Add [the builder skill](level-2-files/) |
+| **No AI help at all** | Copy [`base/template/`](base/template/) and follow [the one-page process](base/PROCESS.md) |
+
+AI agents: [`AGENTS.md`](AGENTS.md).
 
 ## Status
 
-**16 November 2026.** Built by its author with Claude. The builder has made two tools on its own: the
-learning log, which passed three fresh-session checks, and the pilot's document-to-action brief,
-run once on an unseen notice and reviewed blind. Decision support was converted by hand. The checks
-were started from outside the builder, because a builder running inside another agent could not
-start sessions of its own. Not yet tried in Codex or any other coding agent, and nobody
-but its author has used it. The pilot above is its only head-to-head comparison.
+**17 November 2026.** Built by its author with Claude. All testing so far was in Claude, including
+the blind reviews and the try-it prompt above. Not yet tried in other coding agents, or by anyone else. [The evidence](quality-results/README.md).
 
-Part of [Practical AI](../../README.md). By [Bradley Ross](https://www.linkedin.com/in/bradaross/).
+<img src="_build/img/bradley-ross-avatar.webp" width="110" alt="Cartoon avatar of Bradley Ross with a small friendly robot">
+
+Made by **Bradley Ross**, who builds and teaches practical AI. Part of [Practical AI](../../README.md).
+[linkedin.com/in/bradaross](https://www.linkedin.com/in/bradaross/)

@@ -89,3 +89,11 @@ sessions, so the tool came back built but not ready, and the README had not said
 fall to the person. Fixed: the README now says so up front, the build request names its catch, and
 the builder says where test inputs, results and the hand-back go.
 [Its friction notes and hand-back](2026-11-16-starter-run/).
+
+## 4. The try-it-now prompt in a plain chatbot, 17 November 2026
+
+A fresh Claude session, acting as a chatbot with no coding tools, got the "In the chatbot you
+already use" prompt from the README with a meeting-notes job. In one reply it produced the
+instruction file, a worked example and a 10-minute test, with no questions needed. It labelled the
+example as written by hand, because a single chat cannot run a separate session; the test replaces
+it with a real run. [The prompt, the reply and its notes](2026-11-17-chatbot-prompt/).

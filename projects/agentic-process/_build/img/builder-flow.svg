@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 860" role="img" aria-labelledby="t d" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif">
 <title id="t">How the builder turns a job you repeat into a checked tool</title>
-<desc id="d">A job you repeat goes in at the top. Four steps light up in turn: one, name the usable result, who uses it and the one catch to spot; two, pick the simplest build, reusing what exists; three, build one SKILL.md with a README and an example; four, test it in a fresh session, asking whether it holds up and whether the reader would use it, with a loop back to fix. At the bottom, the package you get: README.md, SKILL.md and example.md, checked before you get it.</desc>
+<desc id="d">A job you repeat goes in at the top. Four steps light up in turn: one, name the usable result, who uses it and the one catch to spot; two, pick the simplest build, reusing what exists; three, write the instructions once, with a guide and an example; four, test it in a fresh session, asking whether it holds up and whether the reader would use it, with a loop back to fix. At the bottom, the package you get: a guide, the instructions and a worked example, checked before you get it.</desc>
 <style>
 .st{animation:lit 12s infinite}
 .s2{animation-delay:2.4s}.s3{animation-delay:4.8s}.s4{animation-delay:7.2s}
@@ -37,8 +37,8 @@
 
   <rect class="st s3" x="84" y="420" width="520" height="104" rx="16" fill="#17365f" stroke="#3d5f8f" stroke-width="3"/>
   <circle cx="58" cy="472" r="20" fill="#ffd23f"/><text x="58" y="481" text-anchor="middle" fill="#0c2340" font-size="24">3</text>
-  <text x="108" y="464">Build one SKILL.md</text>
-  <text x="108" y="498" font-size="20" font-weight="400" fill="#cfd8e6">Works pasted into any chatbot, or installed</text>
+  <text x="108" y="464">Write the instructions once</text>
+  <text x="108" y="498" font-size="20" font-weight="400" fill="#cfd8e6">Paste into any chatbot, or install as a skill</text>
 
   <rect class="st s4" x="84" y="540" width="520" height="132" rx="16" fill="#17365f" stroke="#3d5f8f" stroke-width="3"/>
   <circle cx="58" cy="592" r="20" fill="#ffd23f"/><text x="58" y="601" text-anchor="middle" fill="#0c2340" font-size="24">4</text>
@@ -56,9 +56,9 @@
   <rect x="40" y="700" width="560" height="134" rx="16" fill="#fffdf5"/>
   <text x="66" y="738" fill="#0c2340" font-size="24" font-weight="700">You get</text>
   <g font-size="21" font-weight="600" fill="#0c2340">
-    <rect x="66" y="756" width="150" height="40" rx="9" fill="#ffd23f"/><text x="141" y="783" text-anchor="middle">README.md</text>
-    <rect x="232" y="756" width="150" height="40" rx="9" fill="#ffd23f"/><text x="307" y="783" text-anchor="middle">SKILL.md</text>
-    <rect x="398" y="756" width="176" height="40" rx="9" fill="#ffd23f"/><text x="486" y="783" text-anchor="middle">example.md</text>
+    <rect x="66" y="756" width="150" height="40" rx="9" fill="#ffd23f"/><text x="141" y="783" text-anchor="middle">A guide</text>
+    <rect x="232" y="756" width="150" height="40" rx="9" fill="#ffd23f"/><text x="307" y="783" text-anchor="middle">Instructions</text>
+    <rect x="398" y="756" width="176" height="40" rx="9" fill="#ffd23f"/><text x="486" y="783" text-anchor="middle">An example</text>
   </g>
   <path d="M68 816l8 8 14-16" fill="none" stroke="#2e7d32" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
   <text x="100" y="824" fill="#3a4658" font-size="19">Checked before you get it</text>
