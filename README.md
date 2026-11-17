@@ -4,34 +4,43 @@
   <img src="assets/images/practical-ai-pitch.svg" width="760" alt="Animation: Practical AI, better work from the AI you already use. Two projects light up in turn. Artifact Studio, design for your reports: rough notes in, a report, deck or post out. Agentic Process, structure for repeat jobs: a job you repeat in, a tested tool out. The AI drafts; you check and decide.">
 </p>
 
-<h3 align="center">Professional-grade work from the AI you already use.</h3>
+<h3 align="center">Professional-quality work. A repeatable process with your AI. Time back on the jobs you repeat.</h3>
 
-<p align="center">Each project packs what an expert brings to one job: the skills, the templates, the examples and the method.<br>
-You ask your AI as you do today. The result looks and works like a professional made it.</p>
+<p align="center">Each project packs what an expert brings to one job: the method, the templates and worked examples.<br>
+You ask your AI as you do today.</p>
 
 <p align="center">
   <a href="projects/artifact-studio/"><b>Artifact Studio: designer-quality reports</b></a> &nbsp;·&nbsp;
   <a href="projects/agentic-process/"><b>Agentic Process: an engineer at your side</b></a>
 </p>
 
-## Try it now, before you go any further
+## Try it now: one prompt, any chatbot
 
 Copy this into ChatGPT, Claude, Gemini or the chatbot you use. Keep the sample notes, or paste your own.
 
 ```
-Make my information look good. Use the Artifact Studio design guide at
+Make my information look good. Use the
+Artifact Studio design guide at
 https://raw.githubusercontent.com/bar181/practical-ai/main/projects/artifact-studio/base/AI-INSTRUCTIONS.md
-to turn it into an HTML report with a professional design.
-More examples: https://github.com/bar181/practical-ai/tree/main/projects/artifact-studio
+to turn it into an HTML report with a
+professional design.
+More examples:
+https://github.com/bar181/practical-ai/tree/main/projects/artifact-studio
 
 My information:
-- We are a landscaping company with two crews
-- October revenue $84,200. September was $71,500
-- Jobs completed: 23 in October, 19 in September
-- Quotes that became jobs: 46%, up from 38%
-- Need to decide about a second van by 15 November
+- We are a landscaping company with
+  two crews
+- October revenue $84,200.
+  September was $71,500
+- Jobs completed: 23 in October,
+  19 in September
+- Quotes that became jobs: 46%,
+  up from 38%
+- Need to decide about a second van
+  by 15 November
 
-Who reads it: my business partner, on her phone. She wants the answer first.
+Who reads it: my business partner,
+on her phone. She wants the answer first.
 ```
 
 <p align="center">
@@ -60,13 +69,12 @@ slide deck that took hours.
 your photo, a postcard that flips, a slow pan and zoom.
 
 <p align="center">
-  <img src="projects/artifact-studio/_build/img/style-visionary-page.webp" width="32%" alt="The keynote voice on a phone: one idea per screen in huge white type over full-screen pictures">
-  <img src="projects/artifact-studio/_build/img/style-emotional.webp" width="32%" alt="The personal story voice on a phone: one memory, keepsakes as crooked photographs, a portrait filling the screen">
-  <img src="projects/artifact-studio/_build/img/style-explainer.webp" width="32%" alt="The teacher voice: the words a smart intern in large type above a sketch that draws itself">
+  <img src="projects/artifact-studio/_build/img/style-analyst.webp" width="49%" alt="Screen capture of the analyst report: a headline that states the conclusion, the answer on a frosted glass card over a picture of coloured puzzle pieces, and three key numbers">
+  <img src="projects/artifact-studio/_build/img/style-practical.webp" width="49%" alt="Screen capture of the practical guide: the headline Answer in the first hour, a picture of a small dog at a laptop beside a boxed analogy, and three numbers">
 </p>
 
-**The same notes, in the voice your reader needs:** a keynote, a personal story, a lesson to teach
-from, an evidence-first report or a board brief.
+**The same notes, in the voice your reader needs.** Left, an evidence-first report. Right, a field
+guide. Same trial, same numbers, one sentence apart. Seven voices in all, from keynote to board brief.
 
 <p align="center">
   <img src="projects/artifact-studio/_build/img/social-three-drafts.webp" width="720" alt="Three drafts of one LinkedIn post side by side, as they would look in the feed">
@@ -95,13 +103,14 @@ other buried them. One task, one notice, one blind reviewer.
 
 <p align="center"><a href="projects/agentic-process/"><b>Set up your first job the proper way</b></a></p>
 
-## What it helps with
+## What is ready, and what is next
 
 <p align="center">
-  <img src="assets/images/jobs-you-repeat.svg" width="800" alt="Card showing the jobs Practical AI helps with. Daily: sort the inbox, turn meetings into actions. Weekly: a slide deck or report, ready now, and posts for the week. Monthly: the monthly report and receipts into a sheet. The AI does the drafting. You check it and make the call">
+  <img src="assets/images/jobs-you-repeat.svg" width="800" alt="Card of the jobs you repeat. Ready now: a slide deck or report, posts for the week, the monthly report. Next: sort the inbox, meeting actions, receipts into a sheet. The AI does the drafting; you check it and make the call">
 </p>
 
-Reports, decks and posts today; meeting actions, inbox replies, research briefs and receipts next.
+Ready now: reports, decks and posts, and tools built with Agentic Process. Next: meeting actions,
+inbox replies, research briefs and receipts.
 It adds to your AI's own features, plugins and skills rather than replacing them. Nothing is sent,
 posted or published without you. [The priority list](docs/README.md#what-comes-next) ·
 [every idea](workshop/plans/README.md).

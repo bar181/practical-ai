@@ -1,20 +1,19 @@
 # Artifact Studio
 
 <p align="center"><img src="_build/img/show-photo-effects.webp" width="800" alt="Animated screen capture of photo effects made by an AI chatbot from one photograph: a pencil sketch draws itself and becomes the photo, the camera pans and zooms across a lake, a divider slides between two colour grades, a postcard flips over, and one huge word is filled with the picture"></p>
+<p align="center"><sub>One photograph, one sentence per effect: a sketch that draws itself, a slow pan and zoom, a before and after divider, a postcard that flips, a word filled with the picture.</sub></p>
 
 <h3 align="center">Designer-quality reports, made by you.</h3>
 
-<p align="center"><b>"Better than I could do, as good as my designer, and I made it myself."</b><br>
-You already ask your AI for reports. Ask through Artifact Studio and you get the impact of a
-professional website: beautiful photos, motion and a story that flows, not a wall of text or a
-slide deck that took hours.</p>
+<p align="center"><b><i>"Better than I could do, as good as my designer, and I made it myself."</i></b></p>
 
-**The capture, in words:** one photograph, one sentence per effect: a sketch that draws itself, a
-slow pan and zoom, a before and after divider, a postcard that flips, a word filled with the picture.
+You already ask your AI for reports. Ask through Artifact Studio and you get the impact of a
+professional website: beautiful photos, motion and a story that flows. Not a wall of text, or a
+slide deck that took hours.
 
 <p align="center">
   <a href="#get-started-try-it-now"><b>Try it now</b></a> &nbsp;·&nbsp;
-  <a href="#the-same-notes-told-seven-ways">See the styles</a> &nbsp;·&nbsp;
+  <a href="#the-same-notes-told-in-different-voices">See the voices</a> &nbsp;·&nbsp;
   <a href="#photo-effects">See the effects</a>
 </p>
 
@@ -23,19 +22,28 @@ slow pan and zoom, a before and after divider, a postcard that flips, a word fil
 Copy this into ChatGPT, Claude, Gemini or the chatbot you use. Keep the sample notes, or paste your own.
 
 ```
-Make my information look good. Use the Artifact Studio design guide at
+Make my information look good. Use the
+Artifact Studio design guide at
 https://raw.githubusercontent.com/bar181/practical-ai/main/projects/artifact-studio/base/AI-INSTRUCTIONS.md
-to turn it into an HTML report with a professional design.
-More examples: https://github.com/bar181/practical-ai/tree/main/projects/artifact-studio
+to turn it into an HTML report with a
+professional design.
+More examples:
+https://github.com/bar181/practical-ai/tree/main/projects/artifact-studio
 
 My information:
-- We are a landscaping company with two crews
-- October revenue $84,200. September was $71,500
-- Jobs completed: 23 in October, 19 in September
-- Quotes that became jobs: 46%, up from 38%
-- Need to decide about a second van by 15 November
+- We are a landscaping company with
+  two crews
+- October revenue $84,200.
+  September was $71,500
+- Jobs completed: 23 in October,
+  19 in September
+- Quotes that became jobs: 46%,
+  up from 38%
+- Need to decide about a second van
+  by 15 November
 
-Who reads it: my business partner, on her phone. She wants the answer first.
+Who reads it: my business partner,
+on her phone. She wants the answer first.
 ```
 
 <p align="center">
@@ -66,45 +74,50 @@ never ask for these, because they do not know they exist.
 - **Fitted to the content and the reader.** Seven voices and nine looks, so a board memo, a lesson
   and a personal story each get the shape they need.
 - **The same standard every time.** The answer first, nothing invented, gaps marked, not guessed.
-  And a first draft in minutes, not an afternoon.
-
-| Level | You get |
-| --- | --- |
-| **Beginner** | A clean report as Markdown or a Word document, structured for its reader. *Planned: today every request makes an HTML page* |
-| **Advanced** | The same report as a designed page: animated SVG, scrollytelling, photo effects, a keynote or a lesson |
-| **Expert** | Tailored for you: the voice, look and effects chosen from the type of content and the audience |
-
-## The same notes, told seven ways
-
-One set of notes. Ask for a voice by name, and you get a different kind of page.
 
 <p align="center">
-  <img src="_build/img/style-visionary.webp" width="720" alt="Animated screen capture of the visionary deck: black slides with one idea each in huge white type, then full-screen pictures of a city at sunset, a house in fog and a lightbulb splashed with colour, each with a few words over it">
+  <img src="_build/img/time-saved.svg" width="620" alt="Where it saves your time: a slide deck from your notes, by hand 1 hour to several days, with the studio about 5 minutes; a one-page report, by hand 1 to 2 hours, with the studio about 5 minutes; a second version for a new audience, by hand 1 hour or more, with the studio about 2 minutes. Estimates, not measurements.">
 </p>
 
-**A keynote deck:** one idea per screen, huge type, full-screen pictures. *"Turn my notes into a keynote-style deck."*
+## The same notes, told in different voices
 
-<p align="center">
-  <img src="_build/img/style-emotional.webp" width="49%" alt="Animated screen capture of the emotional page on a phone: the line My mother kept a drawer in italic type on a dark page, then three keepsakes shown as crooked photographs with handwritten captions, then a painted portrait filling the screen">
-  <img src="_build/img/style-emotional-end.webp" width="49%" alt="Screen capture of the emotional page: two dancers in bright colours fill the screen under the words So tell it who the page is for">
-</p>
-
-**A personal story:** one memory, a few keepsakes, and the offer named only at the end. *"Tell this as a personal story."*
-
-<p align="center">
-  <img src="_build/img/style-explainer.webp" width="49%" alt="Animated screen capture of the explainer: the words A smart intern in very large type, above a hand-drawn sketch that draws itself, showing an intern, a one-page brief and a finished page">
-  <img src="_build/img/style-explainer-steps.webp" width="49%" alt="Screen capture of the explainer's steps: a diagram of four steps, copy, paste, ask and check, stays at the top with the third step lit, above that step's instructions and an example to copy">
-</p>
-
-**A lesson to teach from:** an analogy, steps you scroll through, a worked example. *"Explain this like a great teacher."*
+One set of notes: a three-month trial of drafted replies to customer enquiries. Ask for a voice by
+name, and the same facts come back as a different page.
 
 <p align="center">
   <img src="_build/img/style-analyst.webp" width="49%" alt="Screen capture of the analyst report: a headline that states the conclusion, the answer on a frosted glass card over a picture of coloured puzzle pieces, and three key numbers">
   <img src="_build/img/style-practical.webp" width="49%" alt="Screen capture of the practical guide: the headline Answer in the first hour, a picture of a small dog at a laptop beside a boxed analogy, and three numbers">
 </p>
 
-**An evidence-first report, or a field guide:** the answer first with three findings, or the core
-idea and steps for today. *"Write this up as an evidence-first one-pager."*
+**An evidence-first report, or a field guide.** Left, the answer first with three findings. Right,
+the core idea and steps for today. Same trial, same numbers, one sentence apart:
+*"Write this up as an evidence-first one-pager."*
+
+<p align="center">
+  <img src="_build/img/style-visionary.webp" width="720" alt="Animated screen capture of the visionary deck: black slides with one idea each in huge white type, then full-screen pictures of a city at sunset, a house in fog and a lightbulb splashed with colour, each with a few words over it">
+</p>
+
+**A keynote deck** from the same trial: one idea per screen, huge type, full-screen pictures.
+*"Turn my notes into a keynote-style deck."*
+
+<p align="center">
+  <img src="_build/img/voice-storyteller.webp" width="560" alt="Screen capture of the storyteller voice: a sunset photograph over water with a story opening set in serif type">
+</p>
+
+**A story** from the same trial, with the customer as the hero and you as the guide.
+*"Tell this as a story where my customer is the hero."*
+
+### More voices, other notes
+
+These two start from different notes, to show the range.
+
+<p align="center">
+  <img src="_build/img/style-emotional.webp" width="49%" alt="Animated screen capture of the emotional page on a phone: the line My mother kept a drawer in italic type on a dark page, then three keepsakes shown as crooked photographs with handwritten captions, then a painted portrait filling the screen">
+  <img src="_build/img/style-explainer.webp" width="49%" alt="Animated screen capture of the explainer: the words A smart intern in very large type, above a hand-drawn sketch that draws itself, showing an intern, a one-page brief and a finished page">
+</p>
+
+**A personal story** (left): one memory, a few keepsakes, the offer named only at the end. **A
+lesson to teach from** (right): an analogy, steps you scroll through, a worked example.
 
 | Voice | Best when |
 | --- | --- |
@@ -144,6 +157,14 @@ Instagram, TikTok, Facebook, email and blog. Nothing is posted for you.
 ## Make it your standard
 
 Set it up once in the AI you already use, and every report gets the same design and the same bar.
+
+| What you get | |
+| --- | --- |
+| **A designed page** | Your report with animated diagrams, scrollytelling, photo effects, a keynote or a lesson. Ready now |
+| **Tailored for you** | The voice, look and effects chosen from the type of content and the audience. Through the skill or the MCP server below |
+| **A simple document** | A clean report as Markdown or a Word document, for when a page is too much. *Planned, not built yet* |
+
+**Set it up:**
 
 | You use | Do this once |
 | --- | --- |

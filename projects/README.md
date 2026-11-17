@@ -6,47 +6,51 @@
 
 <h3 align="center">Better results on the jobs you repeat, every time, and faster.</h3>
 
-<p align="center"><b>Want reports with a designer's impact?</b> Artifact Studio. &nbsp;·&nbsp; <b>Want an engineer's method for the jobs you hand to AI?</b> Agentic Process.</p>
+<p align="center"><b>Want reports with a designer's impact?</b> <a href="artifact-studio/">Artifact Studio</a><br>
+<b>Want an engineer's method for the jobs you hand to AI?</b> <a href="agentic-process/">Agentic Process</a></p>
 
 Neither replaces the features, plugins or skills already in your AI. Each adds what they are
 missing for one practical job.
 
-**Try before you clone anything:** each project page opens with a prompt you copy into the chatbot
+**Try it before you download anything:** each project page opens with a prompt you copy into the chatbot
 you already use. [Artifact Studio](artifact-studio/#get-started-try-it-now) ·
 [Agentic Process](agentic-process/#get-started-try-it-now).
 
 ## Artifact Studio: designer-quality reports you make yourself
 
-**"Better than I could do, as good as my designer, and I made it myself."** You already ask your AI for reports. Ask through Artifact Studio and the same request comes back
+<p align="center"><b><i>"Better than I could do, as good as my designer, and I made it myself."</i></b></p>
+
+You already ask your AI for reports. Ask through Artifact Studio and the same request comes back
 with the impact of a professional website: beautiful photos, motion, a story that flows, and design
 best practice built in. Not a wall of text, and not a slide deck that took you hours.
 
 <p align="center">
-  <a href="artifact-studio/"><img src="artifact-studio/_build/img/style-visionary-page.webp" width="49%" alt="Animated screen capture of the visionary page on a phone: black screens of huge white type, a house in fog behind the words, a dog at a laptop beside the words Meet your smart intern, and bars that count what is in the library"></a>
-  <a href="artifact-studio/"><img src="artifact-studio/_build/img/style-emotional.webp" width="49%" alt="Animated screen capture of the emotional page on a phone: the line My mother kept a drawer in italic type, three keepsakes shown as crooked photographs with handwritten captions, then a painted portrait filling the screen"></a>
+  <a href="artifact-studio/"><img src="artifact-studio/_build/img/style-analyst.webp" width="49%" alt="Screen capture of the analyst report: a headline that states the conclusion, the answer on a frosted glass card over a picture of coloured puzzle pieces, and three key numbers"></a>
+  <a href="artifact-studio/"><img src="artifact-studio/_build/img/style-practical.webp" width="49%" alt="Screen capture of the practical guide: the headline Answer in the first hour, a picture of a small dog at a laptop beside a boxed analogy, and three numbers"></a>
 </p>
 
-**The captures, in words:** the same idea told two ways. Left, a keynote: one idea per screen in
-huge type. Right, a personal story: one memory, a few keepsakes, the offer only at the end.
+**The captures, in words:** the same notes told two ways. Left, an evidence-first report: the
+answer and three numbers. Right, a field guide: the core idea and steps for today.
 
-<p align="center"><a href="artifact-studio/"><b>See what it makes</b></a></p>
+<p align="center"><a href="artifact-studio/"><b>Make your first designer-quality report</b></a></p>
 
 ## Agentic Process: an agentic engineer at your side
 
-**"Like having an engineer sitting with me, so every new job is set up the proper way."** Developers trust AI agents because they work inside a harness: a spec, steps and tests. Agentic
+<p align="center"><b><i>"Like having an engineer sitting with me, so every new job is set up the proper way."</i></b></p>
+
+Developers trust AI agents because they work inside a harness: a spec, steps and tests. Agentic
 Process brings that discipline to everyday jobs. Like an engineer beside you, it helps you define
 the result, pick the simplest way, build it properly, and test it before you rely on it.
 
 <p align="center">
-  <a href="agentic-process/"><img src="agentic-process/_build/img/pilot-brief-direct.webp" width="49%" alt="Screen capture of a reply from a tool built the usual way: the facts of a supplier notice in a table, with the missing effective date buried among them"></a>
-  <a href="agentic-process/"><img src="agentic-process/_build/img/pilot-brief.webp" width="49%" alt="Screen capture of a reply from the tool built with Agentic Process: a warning first that the notice never gives its effective date and leaves out a form, and who to ask"></a>
+  <a href="agentic-process/"><img src="agentic-process/_build/img/pilot-score.svg" width="620" alt="Animated chart: in one blind pilot on the same brief, the tool built with Agentic Process scored 93 out of 100 with 0 corrections; the direct build scored 73 out of 100 with 2 corrections"></a>
 </p>
 
 **In one blind pilot, a tool built with Agentic Process scored 93/100. The direct-build version
-scored 73/100 on the same brief.** Left, the usual build buries the missing date. Right, Agentic
-Process warns first and says who to ask. One task, one notice, one blind reviewer.
+scored 73/100 on the same brief.** The Agentic Process tool flagged the missing date and form first
+and said who to ask; the other buried them. One task, one notice, one blind reviewer.
 
-<p align="center"><a href="agentic-process/"><b>See how it works</b></a></p>
+<p align="center"><a href="agentic-process/"><b>Set up your first job the proper way</b></a></p>
 
 ## Side by side
 
@@ -54,8 +58,8 @@ Process warns first and says who to ask. One task, one notice, one blind reviewe
 | --- | --- | --- |
 | **Like having** | A designer on call | An agentic engineer beside you |
 | **You bring** | Your notes, and who will read them | A job you repeat, and who uses the result |
-| **You get** | A report, deck, post or page | A tested tool, a guide and a real example |
-| **Works with** | The chatbot you already use | A coding agent, or any chatbot by hand |
+| **You get** | A report, deck, post or page | Instructions for the job, a guide and a tested example |
+| **Works with** | The chatbot you already use | The chatbot you already use. A coding agent can run the whole build |
 | **Proof** | [22 fresh-session runs](artifact-studio/quality-results/README.md) | [The blind pilot](agentic-process/quality-results/README.md) |
 
 Both were built and checked by their author, in Claude. Nobody else has used them yet.

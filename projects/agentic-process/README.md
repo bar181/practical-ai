@@ -6,9 +6,10 @@
 
 <h3 align="center">An agentic engineer at your side, for everyday jobs.</h3>
 
-<p align="center"><b>"Like having an engineer sitting with me, so every new job is set up the proper way."</b><br>
+<p align="center"><b><i>"Like having an engineer sitting with me, so every new job is set up the proper way."</i></b></p>
+
 A mini harness for work that is not code: a clear result, written steps, and a test before you
-rely on it. In a blind pilot, a tool built this way scored 93/100; built the usual way, 73.</p>
+rely on it.
 
 <p align="center">
   <a href="#get-started-try-it-now"><b>Try it now</b></a> &nbsp;·&nbsp;
@@ -24,22 +25,30 @@ the mistake it must catch.
 ```
 Act as my agentic engineer. Use the method at
 https://raw.githubusercontent.com/bar181/practical-ai/main/projects/agentic-process/base/PROCESS.md
-to help me turn a job I repeat into a tool I can reuse.
+to help me turn a job I repeat into a tool
+I can reuse.
 
-The job: every Monday I turn our team's meeting notes into a list of actions.
-Who uses the result: me, in ChatGPT, then I email the list to the team.
-The mistake it must catch: actions that nobody agreed to own, or with no date.
+The job: every Monday I turn our team's
+meeting notes into a list of actions.
+Who uses the result: me, in ChatGPT, then
+I email the list to the team.
+The mistake it must catch: actions that
+nobody agreed to own, or with no date.
 
-Ask me for anything missing in one message. Then write the tool as one
-instruction file I can paste into a new chat, an example, and a short
-test I can run to check it works.
+Ask me for anything missing in one message.
+Then write the tool as one instruction file
+I can paste into a new chat, an example,
+and a short test I can run to check it works.
 ```
 
-You get one instruction file you can paste into any new chat to do the job the same way every
-time, an example, and a short test.
+You get instructions you can paste into any new chat to do the job the same way every time, an
+example, and a short test.
 
-**With a coding agent** such as Claude Code or Codex, the builder does the whole job, including
-running the tests in fresh sessions. Open it in an empty folder and paste:
+<details>
+<summary><b>Have a coding agent? Let it do the whole build</b> (Claude Code, Codex)</summary>
+
+The builder does the whole job, including running the tests in fresh sessions. Open it in an empty
+folder and paste:
 
 ```
 Read the builder skill at
@@ -61,10 +70,10 @@ Hand back what you built, the checks
 you ran, and what you assumed.
 ```
 
+</details>
+
 **It is ready when** every check ran in a fresh session, the example is a real result, and the
-person could act on its first screen as it is. No coding agent? Copy [`base/template/`](base/template/)
-and follow [the one-page process](base/PROCESS.md). To skip the link, install
-[the builder skill](level-2-files/). AI agents: [`AGENTS.md`](AGENTS.md).
+person could act on its first screen as it is.
 
 ## What it adds
 
@@ -83,31 +92,30 @@ notice, a decision or a monthly report:
 
 ## The proof
 
+**In one blind pilot, a tool built with Agentic Process scored 93/100. The direct-build version
+scored 73/100 on the same brief.**
+
 <p align="center">
   <img src="_build/img/pilot-brief-direct.webp" width="49%" alt="Screen capture of the reply from the tool built directly: a title, a line counting penalties, actions, dates and questions, then a key facts table where the missing effective date and the account form sit among the facts.">
   <img src="_build/img/pilot-brief.webp" width="49%" alt="Screen capture of a chat reply from a tool built with Agentic Process, run on a supplier notice it had never seen. It sums up that the notice asks for four things, with the earliest deadline 15 December 2026, then warns that three things are missing: the Effective Date is never stated, the Account Update Form was not attached, and the overdue charge points to nothing. Below, a table of what you must do, each row with the exact words from the notice and where they are.">
 </p>
 
-**In one blind pilot, a tool built with Agentic Process scored 93/100. The direct-build version
-scored 73/100 on the same brief.** Both found all nine key items in a notice neither had seen. Only
-the Agentic Process tool put the missing date and form first and said who to ask, and the owner
-could act on it with no corrections. The other needed two.
+<p align="center"><sub>Left: built the usual way, the missing date is buried in a table. Right: built with Agentic Process, it warns first.</sub></p>
 
-**The two captures, in words:** the same supplier notice, given to two tools built from the same
-brief. Left, a tool built the usual way: the facts are there, but the missing effective date is
-buried in a table. Right, the tool built with Agentic Process: it warns first that the date and a
-form are missing, and says who to ask.
+**Both tools found all nine key items in a notice neither had seen. Only the Agentic Process tool
+put the missing date and form first and said who to ask.** The owner could act on it with no
+corrections; the other needed two.
 
 One build task, one notice, one blind reviewer: a strong signal, not a study.
 [The full pilot](quality-results/README.md) · [the raw review](quality-results/2026-11-16-builder-pilot/runs/BLIND-REVIEW.md).
 
 ## What it has built
 
-| Tool | What it does for you | Quality, checked |
-| --- | --- | --- |
-| [**Document to action brief**](quality-results/2026-11-16-builder-pilot/agentic-process/document-to-action-brief/) | A supplier notice or report becomes what you must do, by when, and what is missing, each with the exact words | 93/100 in the blind pilot, zero corrections |
-| [**Decision brief**](base/examples/decision-support/) | A business question becomes options weighed against your goals and limits, with dated sources and a recommendation | Scored 86 to 89 in blind grading, against 61 to 67 for a plain chatbot answer |
-| [**Learning log**](base/examples/learning-log/) | Each lesson recorded once, and brought back before similar work starts | Passed three fresh-session checks |
+| Tool | What it does, and how it scored |
+| --- | --- |
+| [**Document to action brief**](quality-results/2026-11-16-builder-pilot/agentic-process/document-to-action-brief/) | A supplier notice or report becomes what you must do, by when, and what is missing, each with the exact words.<br>*93/100 in the blind pilot, zero corrections.* |
+| [**Decision brief**](base/examples/decision-support/) | A business question becomes options weighed against your goals and limits, with dated sources and a recommendation.<br>*86 to 89 in blind grading, against 61 to 67 for a plain chatbot answer.* |
+| [**Learning log**](base/examples/learning-log/) | Each lesson recorded once, and brought back before similar work starts.<br>*Passed three fresh-session checks.* |
 
 ## How it works
 
@@ -117,8 +125,20 @@ One build task, one notice, one blind reviewer: a strong signal, not a study.
 
 1. **Name the result:** who uses it, and the one mistake it must catch.
 2. **Reuse first:** use what already does the job; build only what is missing.
-3. **Build the tool** for the chatbot people already use.
+3. **Write the instructions once,** for the chatbot people already use.
 4. **Test it fresh:** does it hold up, and would the person use it as it is? Fix, then hand back.
+
+## Make it your standard
+
+Set it up once, and every new job starts from the same method.
+
+| You use | Do this once |
+| --- | --- |
+| **A chatbot** | Paste [`base/PROCESS.md`](base/PROCESS.md) into a Claude or ChatGPT Project, or a Gemini Gem |
+| **An assistant that loads skills** | Add [the builder skill](level-2-files/) |
+| **No AI help at all** | Copy [`base/template/`](base/template/) and follow [the one-page process](base/PROCESS.md) |
+
+AI agents: [`AGENTS.md`](AGENTS.md).
 
 ## Status
 
