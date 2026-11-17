@@ -2,30 +2,40 @@
 
 <p align="center"><img src="_build/img/show-photo-effects.webp" width="800" alt="Animated screen capture of photo effects made by an AI chatbot from one photograph: a pencil sketch draws itself and becomes the photo, the camera pans and zooms across a lake, a divider slides between two colour grades, a postcard flips over, and one huge word is filled with the picture"></p>
 
-<h3 align="center">Pages, decks and posts that look designed and tell a real story.</h3>
+<h3 align="center">Professional design for the reports your AI already makes.</h3>
 
-<p align="center"><b>Your AI, with a designer's brief.</b><br>
-Ask your chatbot for a report or a deck and you usually get something plain.
-Artifact Studio gives it what a designer would bring, so the result is worth sending.</p>
+<p align="center"><b>Scrollytelling, photo effects, animated diagrams, a visionary keynote, a lesson you can teach from.</b><br>
+Your AI can make all of these. Most people never ask, because they do not know they exist.
+Artifact Studio puts them on a menu: name one in a sentence, and your AI adds the design.</p>
 
 **The capture, in words:** one photograph, one sentence per effect: a sketch that draws itself, a
 slow pan and zoom, a before and after divider, a postcard that flips, a word filled with the picture.
 
 <p align="center">
   <a href="#get-started-your-first-report"><b>Make your first report</b></a> &nbsp;·&nbsp;
-  <a href="#the-same-notes-told-seven-ways">See the voices</a> &nbsp;·&nbsp;
+  <a href="#the-same-notes-told-seven-ways">See the styles</a> &nbsp;·&nbsp;
   <a href="#photo-effects">See the effects</a>
 </p>
 
-## Why it is better
+## What it adds to your AI
 
-- **Designed, not default.** Real templates, nine looks and thirteen photo effects, instead of
-  the plain page a chatbot makes on its own.
-- **Told the way great communicators tell it.** Pick a voice, from keynote to analyst, and the same
-  facts land the way you need them to.
-- **The same standard every time.** A repeatable brief your AI follows on every page: the answer
-  first, nothing invented, and gaps marked rather than guessed.
-- **And faster.** A first draft in minutes, not an afternoon. Times are estimates.
+Claude, ChatGPT and Gemini already turn notes into a report or a page. Artifact Studio does not
+replace that. It adds what a designer would bring to it:
+
+- **Effects you did not know you could ask for.** Scrollytelling, a photo that pans and zooms, a
+  sketch that draws itself, animated diagrams, charts that build as you scroll.
+- **A presentation or a lesson, not just a report.** A visionary keynote with one idea per screen,
+  or a teaching page with an analogy, steps and a worked example.
+- **Fitted to the content and the reader.** Seven voices and nine looks, so a board memo, a lesson
+  and a personal story each get the shape they need.
+- **The same standard every time.** The answer first, nothing invented, gaps marked, not guessed.
+  And a first draft in minutes, not an afternoon.
+
+| Level | You get |
+| --- | --- |
+| **Beginner** | A clean report as Markdown or a Word document, structured for its reader. *Planned: today every request makes an HTML page* |
+| **Advanced** | The same report as a designed page: animated SVG, scrollytelling, photo effects, a keynote or a lesson |
+| **Expert** | Tailored for you: the voice, look and effects chosen from the type of content and the audience |
 
 ## The same notes, told seven ways
 
@@ -132,7 +142,7 @@ Chatbot cannot open the link? Paste the text of [`base/AI-INSTRUCTIONS.md`](http
 
 ## Make it your standard
 
-Set it up once and every page meets the same bar.
+Set it up once in the AI you already use, and every report gets the same design and the same bar.
 
 | You use | Do this once |
 | --- | --- |

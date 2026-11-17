@@ -1,18 +1,22 @@
 # Two tools for better work with your AI
 
 <p align="center">
-  <img src="../assets/images/practical-ai-pitch.svg" width="720" alt="Animation: Practical AI, better work from the AI you already use, with a proven process for the jobs you repeat, and faster. Two tools light up in turn. Artifact Studio, designed pages told well: rough notes in, a report, deck or post out. Agentic Process, tools that catch mistakes: a job you repeat in, a tested tool out. The AI drafts; you check and decide.">
+  <img src="../assets/images/practical-ai-pitch.svg" width="720" alt="Animation: Practical AI, better work from the AI you already use, with a proven process for the jobs you repeat, and faster. Two tools light up in turn. Artifact Studio, design for your reports: rough notes in, a report, deck or post out. Agentic Process, structure for repeat jobs: a job you repeat in, a tested tool out. The AI drafts; you check and decide.">
 </p>
 
 <h3 align="center">Better results on the jobs you repeat, every time, and faster.</h3>
 
-<p align="center"><b>Share reports, decks or posts?</b> Artifact Studio. &nbsp;·&nbsp; <b>Build tools with a coding agent?</b> Agentic Process.</p>
+<p align="center"><b>Want your reports to look professional?</b> Artifact Studio. &nbsp;·&nbsp; <b>Repeat a job with AI and want it done the same way every time?</b> Agentic Process.</p>
 
-## Artifact Studio: pages that look designed and tell a real story
+Neither replaces the features, plugins or skills already in your AI. Each adds what they are
+missing for one practical job.
 
-**Left alone, a chatbot makes a plain page.** Artifact Studio gives it a designer's brief: real
-templates, photo effects, and voices from keynote to analyst. The same notes become the page your
-reader needs, to the same standard every time.
+## Artifact Studio: professional design for the reports your AI already makes
+
+**Your AI can already make scrollytelling pages, photo effects, animated diagrams, a visionary
+keynote or a lesson to teach from.** Most people never ask, because they do not know these exist.
+Artifact Studio puts them on a menu: name one in a sentence, and your AI adds the design. The same
+notes become a presentation, a lesson or a report, fitted to the reader.
 
 <p align="center">
   <a href="artifact-studio/"><img src="artifact-studio/_build/img/style-visionary-page.webp" width="49%" alt="Animated screen capture of the visionary page on a phone: black screens of huge white type, a house in fog behind the words, a dog at a laptop beside the words Meet your smart intern, and bars that count what is in the library"></a>
@@ -24,10 +28,11 @@ huge type. Right, a personal story: one memory, a few keepsakes, the offer only 
 
 <p align="center"><a href="artifact-studio/"><b>See what it makes</b></a></p>
 
-## Agentic Process: AI tools that catch what people miss
+## Agentic Process: a mini harness for work that is not code
 
-**Most AI tools are built and used without ever being tested.** Agentic Process builds each tool
-around the one mistake it must catch, then tests it in a fresh session before you rely on it.
+**Developers give AI coding agents a harness: a spec, steps and tests.** Everyday work with AI has
+none of that. Agentic Process adds it to the jobs you repeat: a clear result, written steps, the
+one mistake to catch, and a test in a fresh session before you rely on it.
 
 <p align="center">
   <a href="agentic-process/"><img src="agentic-process/_build/img/pilot-brief-direct.webp" width="49%" alt="Screen capture of a reply from a tool built the usual way: the facts of a supplier notice in a table, with the missing effective date buried among them"></a>
@@ -44,7 +49,7 @@ Process warns first and says who to ask. One task, one notice, one blind reviewe
 
 | | Artifact Studio | Agentic Process |
 | --- | --- | --- |
-| **Better because** | A designer's brief: templates, looks, voices, effects | Built around the mistake it must catch, then tested |
+| **Adds to your AI** | Design it already supports but you would not know to ask for | Structure: a clear result, written steps, a test |
 | **You bring** | Your notes, and who will read them | A job you repeat, and who uses the result |
 | **You get** | A report, deck, post or page | A tested tool, a guide and a real example |
 | **Works with** | The chatbot you already use | A coding agent, or any chatbot by hand |

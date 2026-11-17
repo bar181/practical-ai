@@ -7,31 +7,34 @@
 <h3 align="center">Your AI is a smart intern. Practical AI gives it a proven way to do the work.</h3>
 
 <p align="center"><b>Better results on the jobs you repeat, every time, and faster.</b><br>
-Free tools for the chatbot or coding agent you already use. The AI drafts. You check and decide.</p>
+Practical use cases for the AI you already have. The AI drafts. You check and decide.</p>
 
 <p align="center">
-  <a href="#artifact-studio-pages-that-look-designed-and-tell-a-real-story"><b>Artifact Studio</b></a> &nbsp;·&nbsp;
-  <a href="#agentic-process-ai-tools-that-catch-what-people-miss"><b>Agentic Process</b></a> &nbsp;·&nbsp;
+  <a href="#artifact-studio-professional-design-for-the-reports-your-ai-already-makes"><b>Artifact Studio</b></a> &nbsp;·&nbsp;
+  <a href="#agentic-process-a-mini-harness-for-work-that-is-not-code"><b>Agentic Process</b></a> &nbsp;·&nbsp;
   <a href="#the-jobs-you-repeat">The jobs it helps with</a> &nbsp;·&nbsp;
   <a href="#created-by-bradley-ross">Who made this</a>
 </p>
 
-## Why it is better
+## What Practical AI is
 
-- **Higher quality.** Left alone, AI makes plain pages and misses what matters. These tools give it
-  a designer's brief and a tested method, so the result is worth sending.
-- **The same standard every time.** A repeatable process you and your AI follow on every job, not
-  a lucky prompt.
+Each project takes one specific, practical job and gives you a better way to do it with the AI you
+already have. It does not replace Claude's or ChatGPT's own features, plugins or skills. It points
+you to the right ones and adds what they are missing: the design, the structure and the checks.
+
+- **Higher quality.** Professional design for your reports, and tools that catch what people miss.
+- **The same standard every time.** A repeatable way of working with your AI, not a lucky prompt.
 - **Faster, too.** A first draft in minutes instead of hours. Times are estimates.
 - **You stay in charge.** Nothing is sent, posted, paid or published without you.
 
 ## Two tools, ready today
 
-### Artifact Studio: pages that look designed and tell a real story
+### Artifact Studio: professional design for the reports your AI already makes
 
-**For anyone who shares reports, decks or posts.** Your AI follows a designer's brief: real
-templates, photo effects, and voices from keynote to analyst. The same notes become the page your
-reader needs.
+**For anyone who shares reports, presentations or lessons.** Your AI can already make scrollytelling
+pages, photo effects, animated diagrams, a visionary keynote or a lesson to teach from. Most people
+never ask, because they do not know these exist. Artifact Studio puts them on a menu: name one in a
+sentence, and your AI adds the design.
 
 <p align="center">
   <a href="projects/artifact-studio/"><img src="projects/artifact-studio/_build/img/show-photo-effects.webp" width="640" alt="Animated screen capture of photo effects made by an AI chatbot from one photograph: a pencil sketch draws itself and becomes the photo, the camera pans and zooms across a lake, a divider slides between two colour grades, a postcard flips over, and one huge word is filled with the picture"></a>
@@ -39,10 +42,11 @@ reader needs.
 
 <p align="center"><a href="projects/artifact-studio/"><b>See what it makes</b></a></p>
 
-### Agentic Process: AI tools that catch what people miss
+### Agentic Process: a mini harness for work that is not code
 
-**For anyone who builds tools with a coding agent.** It turns a job you repeat into a tool that does
-it well every time, and tests the tool before you rely on it.
+**For anyone who repeats a job with AI.** Developers give coding agents a harness: a spec, steps and
+tests. Agentic Process gives the same structure to everyday work, such as a supplier notice or a
+decision: a clear result, written steps, and a test before you rely on it.
 
 <p align="center">
   <a href="projects/agentic-process/"><img src="projects/agentic-process/_build/img/pilot-brief-direct.webp" width="49%" alt="Screen capture of a reply from a tool built the usual way: the facts of a supplier notice in a table, with the missing effective date buried among them"></a>
@@ -88,9 +92,10 @@ idea is in [the plans](workshop/plans/README.md).
 
 ## How each tool is built
 
-Every tool starts from who will use the result and the one mistake it must catch. It reuses what
-already does the job, works in the chatbot people already have, and is tested in a fresh session
-before anyone relies on it. [Agentic Process](projects/agentic-process/) is that method.
+Every tool starts from who will use the result and the one mistake it must catch. It uses the
+leading tools that already do the job, adds only the steps and design they are missing, and is
+tested in a fresh session before anyone relies on it. [Agentic Process](projects/agentic-process/)
+is that method.
 
 ## Three levels: how much is set up and automated
 

@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" role="img" aria-labelledby="t d" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif">
 <title id="t">Practical AI in one picture</title>
-<desc id="d">At the top: Practical AI gets better work from the AI you already use, with a proven process for the jobs you repeat, and faster. Below, two projects light up in turn. Artifact Studio, designed pages told well: rough notes go in, a report, deck or post comes out. Agentic Process, tools that catch mistakes: a job you repeat goes in, a tested tool comes out, a README, one SKILL.md and a worked example. At the bottom: the AI drafts, you check and decide.</desc>
+<desc id="d">At the top: Practical AI gets better work from the AI you already use, with a proven process for the jobs you repeat, and faster. Below, two projects light up in turn. Artifact Studio, design for your reports: rough notes go in, a report, deck or post comes out. Agentic Process, structure for repeat jobs: a job you repeat goes in, a tested tool comes out, a README, one SKILL.md and a worked example. At the bottom: the AI drafts, you check and decide.</desc>
 <style>
 .card{animation:lit 10s infinite}
 .b{animation-delay:5s}
@@ -16,7 +16,7 @@
 
 <rect class="card a" x="36" y="160" width="350" height="270" rx="18" fill="#17365f" stroke="#3d5f8f" stroke-width="3"/>
 <text x="211" y="202" text-anchor="middle" fill="#fff" font-size="26" font-weight="700">Artifact Studio</text>
-<text x="211" y="232" text-anchor="middle" fill="#cfd8e6" font-size="19">Designed pages, told well</text>
+<text x="211" y="232" text-anchor="middle" fill="#cfd8e6" font-size="19">Design for your reports</text>
 <g transform="translate(64 262)">
   <rect width="92" height="112" rx="6" fill="#fffdf5"/>
   <g stroke="#0c2340" stroke-width="4" stroke-linecap="round" opacity=".7"><path d="M14 22h52"/><path d="M14 44h64" opacity=".5"/><path d="M14 64h58" opacity=".5"/><path d="M14 86h40"/></g>
@@ -33,7 +33,7 @@
 
 <rect class="card b" x="414" y="160" width="350" height="270" rx="18" fill="#17365f" stroke="#3d5f8f" stroke-width="3"/>
 <text x="589" y="202" text-anchor="middle" fill="#fff" font-size="26" font-weight="700">Agentic Process</text>
-<text x="589" y="232" text-anchor="middle" fill="#cfd8e6" font-size="19">Tools that catch mistakes</text>
+<text x="589" y="232" text-anchor="middle" fill="#cfd8e6" font-size="19">Structure for repeat jobs</text>
 <g transform="translate(442 262)">
   <rect width="92" height="112" rx="6" fill="#fffdf5"/>
   <text x="46" y="50" text-anchor="middle" fill="#0c2340" font-size="16" font-weight="700">A job</text>

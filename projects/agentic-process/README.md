@@ -4,11 +4,10 @@
   <img src="_build/img/pilot-score.svg" width="720" alt="Animated chart: in one blind pilot on the same brief, the tool built with Agentic Process scored 93 out of 100 and needed 0 corrections; the direct-build version scored 73 out of 100 and needed 2 corrections.">
 </p>
 
-<h3 align="center">AI tools that catch what people miss.</h3>
+<h3 align="center">A mini harness for work that is not code.</h3>
 
-<p align="center"><b>Turn a job you repeat into a tool that does it well every time.</b><br>
-Agentic Process works with your coding agent to build the tool, then tests it before you rely on it.
-In a blind pilot, its tool scored 93 out of 100. A tool built the usual way scored 73.</p>
+<p align="center"><b>Structure for the jobs you repeat with AI: a clear result, written steps, and a test before you rely on it.</b><br>
+In a blind pilot, a tool built this way scored 93 out of 100. The same job built the usual way scored 73.</p>
 
 <p align="center">
   <a href="#get-started"><b>Build your first tool</b></a> &nbsp;·&nbsp;
@@ -16,15 +15,20 @@ In a blind pilot, its tool scored 93 out of 100. A tool built the usual way scor
   <a href="#what-it-has-built">What it has built</a>
 </p>
 
-## Why it is better
+## What it adds
 
-- **Better results.** Every tool is built around who will use it and the one mistake it must
-  catch, then tested on exactly that mistake.
-- **Checked before you rely on it.** A fresh AI session tries the tool, as a stranger would. If the
-  person could not act on the result as it is, the tool is fixed first.
-- **A repeatable process with your AI.** The same four steps for every job, so each new tool starts
-  from a method that already works.
-- **And faster.** A tested tool in about ten minutes. Times are estimates.
+Developers wrap AI coding agents in a harness: a spec, steps, tests and a hand-back, so the result
+can be trusted. Most everyday work with AI has none of that. You type a prompt, and hope.
+
+Agentic Process gives that structure to everyday jobs, such as a supplier notice, a decision or a
+monthly report:
+
+- **A clear result.** Who uses it, what they need, and the one mistake it must catch.
+- **Written steps.** Done the same way every time, not a lucky prompt.
+- **A test before you rely on it.** A fresh AI session tries the tool as a stranger would, and it
+  is fixed until the person could act on the result as it is.
+- **The leading tools, not new ones.** It uses what you already have: your chatbot, Claude's skill
+  creator, existing plugins and skills. It adds only the structure and the steps they are missing.
 
 ## The proof
 

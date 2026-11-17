@@ -1,23 +1,24 @@
 # Explainers: the two finished projects
 
 <p align="center">
-  <img src="../../assets/images/practical-ai-pitch.svg" width="720" alt="Animation: Practical AI, better work from the AI you already use, with a proven process for the jobs you repeat, and faster. Artifact Studio, designed pages told well, and Agentic Process, tools that catch mistakes, light up in turn. The AI drafts; you check and decide.">
+  <img src="../../assets/images/practical-ai-pitch.svg" width="720" alt="Animation: Practical AI, better work from the AI you already use, with a proven process for the jobs you repeat, and faster. Artifact Studio, design for your reports, and Agentic Process, structure for repeat jobs, light up in turn. The AI drafts; you check and decide.">
 </p>
 
 **The picture, in words:** Practical AI gets better work from the AI you already use. Artifact
-Studio turns rough notes into pages that look designed and tell a real story. Agentic Process
-turns a job you repeat into a tested tool that catches what people miss. In both, the AI drafts
-and you check and decide.
+Studio adds professional design to your reports. Agentic Process adds structure to the jobs you
+repeat. In both, the AI drafts and you check and decide.
 
 ## Why this repository exists
 
 Most people already have an AI chatbot. Left alone, it makes plain pages and misses what matters.
 What they lack is a proven way to get good work from it on the jobs they repeat, every time.
 
-**The pitch:** Practical AI gets better work from the AI you already use. Artifact Studio gives
-your AI a designer's brief, so reports, decks and posts look designed and tell a real story.
-Agentic Process turns a job you repeat into a tool that catches what people miss, tested before
-you rely on it. Both are faster too. The AI drafts; you decide.
+**The pitch:** Practical AI takes specific, practical jobs and gives you a better way to do them
+with the AI you already have. Artifact Studio is professional design for the reports your AI
+already makes: scrollytelling, photo effects, animated diagrams, keynotes and lessons, on a menu you
+can ask from. Agentic Process is a mini harness for work that is not code: a clear result, written
+steps and a test before you rely on it. Neither replaces your AI's own features; each adds what
+they are missing.
 
 ## The two explainer pages
 
