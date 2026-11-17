@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>October update: two crews, three numbers, one decision</title>
+<script>document.documentElement.classList.add('js');</script>
+<style>
+  @property --p { syntax: '<number>'; inherits: true; initial-value: 1; }
+
+  :root {
+    /* Keynote look: black and white. Four tokens plus one data colour. */
+    --bg: #000000;      /* page */
+    --line: #5e5e5e;    /* borders and the comparison bar: 3.1 to 1 on black */
+    --muted: #b3b3b3;   /* secondary text: 10.0 to 1 on black */
+    --text: #ffffff;    /* main text: 21 to 1 on black */
+    --data: #ffffff;    /* the chart's data colour */
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; margin: 0; }
+  html {
+    background: var(--bg);
+    color: var(--text);
+    scroll-snap-type: y mandatory;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 1.125rem;
+    line-height: 1.3;
+  }
+
+  .screen {
+    position: relative;
+    min-height: 560px;
+    min-height: min(100svh, 1100px);
+    display: grid;
+    align-content: center;
+    padding: 56px max(24px, env(safe-area-inset-right)) 56px max(24px, env(safe-area-inset-left));
+    scroll-snap-align: start;
+    border-bottom: 1px solid #1a1a1a;
+  }
+  .wrap { width: 100%; max-width: 1000px; margin: 0 auto; }
+
+  .kicker {
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 18px;
+  }
+  h1, .statement {
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.02;
+  }
+  h1 { font-size: clamp(2.75rem, 13vw, 7.5rem); }
+  .statement { font-size: clamp(2.25rem, 10vw, 5.5rem); max-width: 14ch; }
+
+  .big {
+    font-size: clamp(3.5rem, 20vw, 11rem);
+    font-weight: 800;
+    letter-spacing: -0.045em;
+    line-height: 0.95;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+  .was {
+    margin-top: 20px;
+    font-size: clamp(1.25rem, 5vw, 1.75rem);
+    color: var(--muted);
+  }
+
+  .hint {
+    position: absolute;
+    left: 50%;
+    bottom: 24px;
+    transform: translateX(-50%);
+    color: var(--muted);
+    font-size: 1.5rem;
+  }
+
+  .sr {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+  }
+
+  /* Chart: two bars that grow as the screen scrolls in */
+  .chart-title { font-size: clamp(1.6rem, 7vw, 3rem); font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; max-width: 20ch; }
+  figure { margin-top: 28px; }
+  .chart { display: block; width: 100%; max-width: 560px; height: auto; }
+  .chart text { fill: var(--text); font-size: 16px; font-family: inherit; }
+  .chart .cat { fill: var(--muted); }
+  .chart .value { font-weight: 700; }
+  .bar {
+    transform-box: fill-box;
+    transform-origin: 50% 100%;
+    transform: scaleY(var(--p));
+  }
+  .bar-now { fill: var(--data); }
+  .bar-before { fill: var(--line); }
+  .axis { stroke: var(--muted); stroke-width: 1.5; }
+  figcaption { margin-top: 14px; color: var(--muted); font-size: 1rem; line-height: 1.45; }
+
+  /* Next step: message, then a line drawing that draws itself */
+  .split { display: grid; gap: 36px; }
+  .drawing { display: block; width: 100%; max-width: 480px; height: auto; }
+  .drawing path {
+    fill: none;
+    stroke: var(--text);
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 1px 2px;
+    stroke-dashoffset: calc((1 - clamp(0, (var(--p) - var(--d, 0)) * 1.6, 1)) * 1px);
+  }
+  .drawing-label { margin-top: 10px; color: var(--muted); font-size: 0.95rem; }
+
+  @media (min-width: 1000px) {
+    .split { grid-template-columns: 1fr 1fr; align-items: center; }
+  }
+
+  /* Scripts off: the same drawing driven by CSS where the browser supports it */
+  @keyframes reveal { from { --p: 0; } to { --p: 1; } }
+  @supports ((animation-timeline: view()) and (animation-range: entry)) {
+    @media (prefers-reduced-motion: no-preference) {
+      html:not(.js) [data-scroll] {
+        animation: reveal linear both;
+        animation-timeline: view();
+        animation-range: entry 0% cover 40%;
+      }
+    }
+  }
+
+  /* Reduced motion: everything shown complete, nothing moves */
+  @media (prefers-reduced-motion: reduce) {
+    [data-scroll] { --p: 1 !important; animation: none !important; }
+  }
+</style>
+</head>
+<body>
+<main>
+
+  <!-- 1. The world as it is -->
+  <section class="screen">
+    <div class="wrap">
+      <p class="kicker">Landscaping · October update</p>
+      <h1>Two crews. Here is our October.</h1>
+    </div>
+    <p class="hint" aria-hidden="true">&darr;</p>
+  </section>
+
+  <!-- 2. The idea in a few words -->
+  <section class="screen">
+    <div class="wrap">
+      <p class="statement">October beat September on all three numbers.</p>
+    </div>
+  </section>
+
+  <!-- 3. Proof: revenue -->
+  <section class="screen">
+    <div class="wrap">
+      <h2 class="kicker">Revenue</h2>
+      <p class="big"><span data-count="84200" data-prefix="$" aria-hidden="true">$84,200</span><span class="sr">$84,200</span></p>
+      <p class="was">September: $71,500</p>
+    </div>
+  </section>
+
+  <!-- 4. Proof: the revenue comparison as a chart that draws itself -->
+  <section class="screen" data-scroll>
+    <div class="wrap">
+      <h2 class="chart-title" id="chart-title">October: $12,700 more revenue than September.</h2>
+      <figure>
+        <svg class="chart" viewBox="0 0 320 262" role="img" aria-labelledby="chart-title chart-desc">
+          <desc id="chart-desc">Two bars. September revenue $71,500. October revenue $84,200.</desc>
+          <rect class="bar bar-before" x="50" y="67.15" width="90" height="152.85"/>
+          <rect class="bar bar-now" x="180" y="40" width="90" height="180"/>
+          <line class="axis" x1="30" y1="220" x2="290" y2="220"/>
+          <text class="value" x="95" y="56" text-anchor="middle">$71,500</text>
+          <text class="value" x="225" y="29" text-anchor="middle">$84,200</text>
+          <text class="cat" x="95" y="246" text-anchor="middle">September</text>
+          <text class="cat" x="225" y="246" text-anchor="middle">October</text>
+        </svg>
+        <figcaption>$84,200 &minus; $71,500 = $12,700<br>Dollars. Source: your notes.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 5. Proof: jobs -->
+  <section class="screen">
+    <div class="wrap">
+      <h2 class="kicker">Jobs completed</h2>
+      <p class="big"><span data-count="23" aria-hidden="true">23</span><span class="sr">23</span></p>
+      <p class="was">September: 19</p>
+    </div>
+  </section>
+
+  <!-- 6. Proof: quotes won -->
+  <section class="screen">
+    <div class="wrap">
+      <h2 class="kicker">Quotes that became jobs</h2>
+      <p class="big"><span data-count="46" data-suffix="%" aria-hidden="true">46%</span><span class="sr">46%</span></p>
+      <p class="was">September: 38%</p>
+    </div>
+  </section>
+
+  <!-- 7. The next step, beside a line drawing that draws itself -->
+  <section class="screen" data-scroll>
+    <div class="wrap split">
+      <div>
+        <h2 class="kicker">Next step</h2>
+        <p class="statement">Second van: decide by 5&nbsp;December.</p>
+      </div>
+      <div>
+        <svg class="drawing" viewBox="0 0 320 170" role="img" aria-label="Line drawing of a work van with a leaf on its side. An illustration, not a photo of our van.">
+          <path pathLength="1" style="--d:0" d="M8 157 H312"/>
+          <path pathLength="1" style="--d:0.02" d="M20 135 V55 Q20 45 30 45 H200 Q210 45 216 53 L248 95 H282 Q295 95 295 108 V135 H262 A22 22 0 0 0 218 135 H102 A22 22 0 0 0 58 135 Z"/>
+          <path pathLength="1" style="--d:0.12" d="M204 58 H211 L238 90 H204 Z"/>
+          <path pathLength="1" style="--d:0.16" d="M196 50 V128"/>
+          <path pathLength="1" style="--d:0.2" d="M206 102 H216"/>
+          <path pathLength="1" style="--d:0.22" d="M284 108 H292"/>
+          <path pathLength="1" style="--d:0.26" d="M224 137 a16 16 0 1 0 32 0 a16 16 0 1 0 -32 0"/>
+          <path pathLength="1" style="--d:0.28" d="M64 137 a16 16 0 1 0 32 0 a16 16 0 1 0 -32 0"/>
+          <path pathLength="1" style="--d:0.3" d="M88 102 Q100 66 142 70 Q136 106 88 102 Z"/>
+          <path pathLength="1" style="--d:0.35" d="M88 102 Q112 90 128 78"/>
+        </svg>
+        <p class="drawing-label">Illustration</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. A short closing line -->
+  <section class="screen">
+    <div class="wrap">
+      <p class="statement">Two crews. A better October. One decision left.</p>
+    </div>
+  </section>
+
+</main>
+
+<script>
+(function () {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  // Movement tied to scrolling: one custom property, --p, from 0 to 1 per screen.
+  var scrollEls = [].slice.call(document.querySelectorAll('[data-scroll]'));
+  var ticking = false;
+  function viewport() { return window.innerHeight || document.documentElement.clientHeight; }
+  function update() {
+    ticking = false;
+    var vh = viewport();
+    scrollEls.forEach(function (el) {
+      var top = el.getBoundingClientRect().top;
+      var p = Math.max(0, Math.min(1, (vh - top) / (vh * 0.75)));
+      el.style.setProperty('--p', p.toFixed(3));
+    });
+  }
+  function onScroll() { if (!ticking) { ticking = true; requestAnimationFrame(update); } }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+  update();
+
+  // Count-up: starts when a number comes into view, always ends on the real figure.
+  if (!('IntersectionObserver' in window)) return;
+  var fmt = new Intl.NumberFormat('en-US');
+  function show(el, v) {
+    el.textContent = (el.dataset.prefix || '') + fmt.format(v) + (el.dataset.suffix || '');
+  }
+  function run(el) {
+    var to = Number(el.dataset.count), start = null, dur = 1200;
+    function step(t) {
+      if (start === null) start = t;
+      var k = Math.min(1, (t - start) / dur);
+      show(el, Math.round(to * (1 - Math.pow(1 - k, 3))));
+      if (k < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      io.unobserve(e.target);
+      run(e.target);
+    });
+  }, { threshold: 0 });
+  var vh = viewport();
+  [].slice.call(document.querySelectorAll('[data-count]')).forEach(function (el) {
+    var r = el.getBoundingClientRect();
+    if (r.top < vh && r.bottom > 0) return; // already on screen: leave the real figure
+    show(el, 0);
+    io.observe(el);
+  });
+})();
+</script>
+</body>
+</html>

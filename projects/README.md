@@ -25,12 +25,13 @@ with the impact of a professional website: beautiful photos, motion, a story tha
 best practice built in. Not a wall of text, and not a slide deck that took you hours.
 
 <p align="center">
-  <a href="artifact-studio/"><img src="artifact-studio/_build/img/style-analyst.webp" width="49%" alt="Screen capture of the analyst report: a headline that states the conclusion, the answer on a frosted glass card over a picture of coloured puzzle pieces, and three key numbers"></a>
-  <a href="artifact-studio/"><img src="artifact-studio/_build/img/style-practical.webp" width="49%" alt="Screen capture of the practical guide: the headline Answer in the first hour, a picture of a small dog at a laptop beside a boxed analogy, and three numbers"></a>
+  <a href="artifact-studio/"><img src="artifact-studio/_build/img/scroll-photo-effects.webp" width="31%" alt="Animated phone capture: one sunset photograph shown three ways as the page scrolls: a slow pan and zoom, the word SKY filled with the picture, then a postcard you can turn over"></a>
+  <a href="artifact-studio/"><img src="artifact-studio/_build/img/scroll-emotional.webp" width="31%" alt="Animated phone capture of a personal story page: the line My mother kept a drawer, then keepsakes that fade in one at a time as you scroll, each with a short caption"></a>
+  <a href="artifact-studio/"><img src="artifact-studio/_build/img/example-tryit.webp" width="31%" alt="Animated phone capture of a monthly report as a keynote page: a garden picture in a slow pan and zoom, revenue counting up to 84,200 dollars, a bar chart, and the van decision due 5 December"></a>
 </p>
 
-**The captures, in words:** the same notes told two ways. Left, an evidence-first report: the
-answer and three numbers. Right, a field guide: the core idea and steps for today.
+**The captures, in words:** one photo shown three ways; a personal story whose keepsakes appear as
+you scroll; and a month's numbers as a keynote page, made in one try from the try-it prompt.
 
 <p align="center"><a href="artifact-studio/"><b>Make your first designer-quality report</b></a></p>
 

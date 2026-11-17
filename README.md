@@ -10,6 +10,13 @@
 You ask your AI as you do today.</p>
 
 <p align="center">
+  <img src="projects/artifact-studio/_build/img/scroll-photo-effects.webp" width="31%" alt="Animated phone capture: one sunset photograph shown three ways as the page scrolls: a slow pan and zoom, the word SKY filled with the picture, then a postcard you can turn over">
+  <img src="projects/artifact-studio/_build/img/scroll-emotional.webp" width="31%" alt="Animated phone capture of a personal story page: the line My mother kept a drawer, then keepsakes that fade in one at a time as you scroll, a crayon balloon, a card with dancers and a painted portrait, each with a short caption">
+  <img src="projects/artifact-studio/_build/img/example-tryit.webp" width="31%" alt="Animated phone capture of the page made from the try-it prompt below: a garden picture in a slow pan and zoom under the words Two crews, then October revenue counting up to 84,200 dollars, a bar chart against September, 23 jobs, 46 percent of quotes won, and the van decision due 5 December">
+</p>
+<p align="center"><sub><b>Photo effects</b> from one picture &nbsp;·&nbsp; <b>A story that unfolds</b> as you scroll &nbsp;·&nbsp; <b>Monthly numbers as a keynote</b>, from the prompt below</sub></p>
+
+<p align="center">
   <a href="projects/artifact-studio/"><b>Artifact Studio: designer-quality reports, made by you</b></a><br>
   <a href="projects/agentic-process/"><b>Agentic Process: an agentic engineer at your side</b></a>
 </p>
@@ -20,11 +27,14 @@ Copy this into the chatbot you use. Keep the sample notes, or paste your own.
 Tested so far in Claude; not yet in ChatGPT or Gemini.
 
 ```
-Make my information look good. Use the
-Artifact Studio design guide at
+Make my information look stunning. Use
+the Artifact Studio design guide at
 https://raw.githubusercontent.com/bar181/practical-ai/main/projects/artifact-studio/base/AI-INSTRUCTIONS.md
-to turn it into an HTML report with a
-professional design.
+Make it a scrolling keynote page: huge
+numbers that count up, a chart that
+draws itself as I scroll, and my photo
+as a slow pan and zoom. No photo? Use a
+line drawing that draws itself.
 
 My information:
 - We are a landscaping company with
@@ -36,23 +46,20 @@ My information:
 - Quotes that became jobs: 46%,
   up from 38%
 - Need to decide about a second van
-  by 15 November
+  by 5 December
 
 Who reads it: my business partner,
-on her phone. She wants the answer first.
+on her phone.
 ```
 
-<p align="center">
-  <img src="projects/artifact-studio/_build/img/example-report.webp" width="520" alt="Screen capture of a one-page report made by an AI chatbot from rough notes about an invented landscaping company: the headline October beat September, three key numbers and a bar chart">
-</p>
+Attach a photo of your work if you have one. **You get a page like the third one above:** a fresh
+Claude session made it from this prompt and one picture, in one try, unedited.
+[Open the page](projects/artifact-studio/_build/examples/runs/2026-11-17-try-it-keynote-photo/report.html).
+Your chatbot cannot open links? Paste the text of the
+[design guide](projects/artifact-studio/base/AI-INSTRUCTIONS.md) in place of the link.
 
-**You get a page like this:** the answer first, three key numbers and a chart. A fresh Claude
-session made it from these sample notes in one try, unedited. Your chatbot cannot open links? Paste
-the text of the [design guide](projects/artifact-studio/base/AI-INSTRUCTIONS.md) in place of the
-first line.
-
-**Then make it yours** in one sentence: `Now show it as a keynote deck` or
-`Open with my photo as a slow pan and zoom`. Before you share, check every number against your notes.
+**Then make it yours** in one sentence: `Now tell it as a story` or
+`Fill the word October with my photo`. Before you share, check every number against your notes.
 
 ## Artifact Studio: designer-quality reports, made by you
 
@@ -72,19 +79,20 @@ slide deck that took hours.
 your photo, a postcard that flips, a slow pan and zoom.
 
 <p align="center">
-  <img src="projects/artifact-studio/_build/img/style-analyst.webp" width="49%" alt="Screen capture of the analyst report: a headline that states the conclusion, the answer on a frosted glass card over a picture of coloured puzzle pieces, and three key numbers">
-  <img src="projects/artifact-studio/_build/img/style-practical.webp" width="49%" alt="Screen capture of the practical guide: the headline Answer in the first hour, a picture of a small dog at a laptop beside a boxed analogy, and three numbers">
+  <img src="projects/artifact-studio/_build/img/style-visionary.webp" width="49%" alt="Animated screen capture of a keynote deck: black slides with one idea each in huge white type, then full-screen pictures with a few words over each">
+  <img src="projects/artifact-studio/_build/img/voice-storyteller.webp" width="49%" alt="Screen capture of a story page: large serif words over a sunset by the water, beginning At 6:40 on a Tuesday evening">
 </p>
 
-**The same notes, in the voice your reader needs.** Left, an evidence-first report. Right, a field
-guide. Same trial, same numbers, one sentence apart. Seven voices in all, from keynote to executive brief.
+**The same notes, in the voice your reader needs.** Left, a keynote deck that makes the reader feel
+the problem. Right, a story with the customer as the hero. Same trial, same numbers, one sentence apart.
+Seven voices in all, from keynote to executive brief.
 
 <p align="center">
   <img src="projects/artifact-studio/_build/img/social-three-drafts.webp" width="720" alt="Three drafts of one LinkedIn post side by side, as they would look in the feed">
 </p>
 
 **And the parts:** post previews as the feed shows them, decks you present from the browser, nine
-looks, scrollytelling and animated diagrams.
+looks and animated diagrams.
 
 <p align="center"><a href="projects/artifact-studio/"><b>Make your first designer-quality report</b></a></p>
 

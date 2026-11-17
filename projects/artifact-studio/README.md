@@ -1,7 +1,11 @@
 # Artifact Studio
 
-<p align="center"><img src="_build/img/show-photo-effects.webp" width="800" alt="Animated screen capture of photo effects made by an AI chatbot from one photograph: a pencil sketch draws itself and becomes the photo, the camera pans and zooms across a lake, a divider slides between two colour grades, a postcard flips over, and one huge word is filled with the picture"></p>
-<p align="center"><sub>One photo, one sentence per effect: a sketch that draws itself, a slow zoom, a before and after divider, a flipping postcard.</sub></p>
+<p align="center">
+  <img src="_build/img/scroll-photo-effects.webp" width="31%" alt="Animated phone capture: one sunset photograph shown three ways as the page scrolls: a slow pan and zoom, the word SKY filled with the picture, then a postcard you can turn over">
+  <img src="_build/img/scroll-emotional.webp" width="31%" alt="Animated phone capture of a personal story page: the line My mother kept a drawer, then keepsakes that fade in one at a time as you scroll, a crayon balloon, a card with dancers and a painted portrait, each with a short caption">
+  <img src="_build/img/example-tryit.webp" width="31%" alt="Animated phone capture of the page made from the try-it prompt below: a garden picture in a slow pan and zoom under the words Two crews, then October revenue counting up to 84,200 dollars, a bar chart against September, 23 jobs, 46 percent of quotes won, and the van decision due 5 December">
+</p>
+<p align="center"><sub><b>Photo effects</b> from one picture &nbsp;·&nbsp; <b>A story that unfolds</b> as you scroll &nbsp;·&nbsp; <b>Monthly numbers as a keynote</b>, from the prompt below</sub></p>
 
 <h3 align="center">Designer-quality reports, made by you.</h3>
 
@@ -23,11 +27,14 @@ Copy this into the chatbot you use. Keep the sample notes, or paste your own.
 Tested so far in Claude; not yet in ChatGPT or Gemini.
 
 ```
-Make my information look good. Use the
-Artifact Studio design guide at
+Make my information look stunning. Use
+the Artifact Studio design guide at
 https://raw.githubusercontent.com/bar181/practical-ai/main/projects/artifact-studio/base/AI-INSTRUCTIONS.md
-to turn it into an HTML report with a
-professional design.
+Make it a scrolling keynote page: huge
+numbers that count up, a chart that
+draws itself as I scroll, and my photo
+as a slow pan and zoom. No photo? Use a
+line drawing that draws itself.
 
 My information:
 - We are a landscaping company with
@@ -39,23 +46,23 @@ My information:
 - Quotes that became jobs: 46%,
   up from 38%
 - Need to decide about a second van
-  by 15 November
+  by 5 December
 
 Who reads it: my business partner,
-on her phone. She wants the answer first.
+on her phone.
 ```
 
-<p align="center">
-  <img src="_build/img/example-report.webp" width="560" alt="Screen capture of a one-page monthly report made by an AI chatbot from eight lines of notes about an invented landscaping company: the headline October beat September, revenue up 12,700 dollars, four more jobs done and more quotes became jobs; three key numbers for revenue, jobs completed and quotes won; and a bar chart comparing September and October">
-</p>
-
-**You get a page like this,** made by a fresh Claude session from those notes in one try, unedited: the answer first, three numbers, a
-chart. [Open the page](base/examples/report.html). Chatbot cannot open links? Paste the text of
-[`base/AI-INSTRUCTIONS.md`](base/AI-INSTRUCTIONS.md) in place of the first line.
+Attach a photo of your work if you have one. **You get a page like the third one at the top:** a
+fresh Claude session made it from this prompt and one picture, in one try, unedited.
+[Open the page](_build/examples/runs/2026-11-17-try-it-keynote-photo/report.html). With no photo,
+the same prompt gave a black keynote page with a van drawn in lines instead
+([open it](_build/examples/runs/2026-11-17-try-it-keynote-no-photo/report.html)). Chatbot cannot
+open links? Paste the text of [`base/AI-INSTRUCTIONS.md`](base/AI-INSTRUCTIONS.md) in place of the
+link.
 
 **Then make it yours.** Ask for a style or an effect in one sentence:
-`Now show it as a keynote deck`, `Open with my photo as a slow pan and zoom`, or
-`Tell this as a personal story`.
+`Now tell it as a story`, `Fill the word October with my photo`, or
+`Show it as a keynote deck`.
 
 **Before you share, check:** every number matches your notes, nothing is added that you did not
 write, and the headline says what you want the reader to take away.
@@ -84,15 +91,6 @@ One set of notes: a three-month trial of drafted replies to customer enquiries. 
 name, and the same facts come back as a different page.
 
 <p align="center">
-  <img src="_build/img/style-analyst.webp" width="49%" alt="Screen capture of the analyst report: a headline that states the conclusion, the answer on a frosted glass card over a picture of coloured puzzle pieces, and three key numbers">
-  <img src="_build/img/style-practical.webp" width="49%" alt="Screen capture of the practical guide: the headline Answer in the first hour, a picture of a small dog at a laptop beside a boxed analogy, and three numbers">
-</p>
-
-**An evidence-first report, or a field guide.** Left, the answer first with three findings. Right,
-the core idea and steps for today. Same trial, same numbers, one sentence apart:
-*"Write this up as an evidence-first one-pager."*
-
-<p align="center">
   <img src="_build/img/style-visionary.webp" width="720" alt="Animated screen capture of the visionary deck: black slides with one idea each in huge white type, then full-screen pictures of a city at sunset, a house in fog and a lightbulb splashed with colour, each with a few words over it">
 </p>
 
@@ -105,6 +103,15 @@ the core idea and steps for today. Same trial, same numbers, one sentence apart:
 
 **A story** from the same trial, with the customer as the hero and you as the guide.
 *"Tell this as a story where my customer is the hero."*
+
+<p align="center">
+  <img src="_build/img/style-analyst.webp" width="49%" alt="Screen capture of the analyst report: a headline that states the conclusion, the answer on a frosted glass card over a picture of coloured puzzle pieces, and three key numbers">
+  <img src="_build/img/style-practical.webp" width="49%" alt="Screen capture of the practical guide: the headline Answer in the first hour, a picture of a small dog at a laptop beside a boxed analogy, and three numbers">
+</p>
+
+**Or plain and practical,** from the same trial. Left, an evidence-first report with three findings.
+Right, a field guide with the core idea and steps for today:
+*"Write this up as an evidence-first one-pager."*
 
 ### More voices, other notes
 
@@ -178,7 +185,7 @@ AI agents: [`AGENTS.md`](AGENTS.md).
 ## Status
 
 **17 November 2026.** Built by its author and tested by fresh Claude sessions: 22 runs of the design guide,
-then the try-it prompt above. Every run finished its page. Not yet tried in other chatbots, or by anyone else. All example content is
+then two runs of the try-it prompt above. Every run finished its page. Not yet tried in other chatbots, or by anyone else. All example content is
 invented. [The evidence](quality-results/README.md).
 
 <img src="_build/img/bradley-ross-avatar.webp" width="110" alt="Cartoon avatar of Bradley Ross with a small friendly robot">
