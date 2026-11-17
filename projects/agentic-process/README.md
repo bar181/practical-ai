@@ -4,10 +4,11 @@
   <img src="_build/img/pilot-score.svg" width="720" alt="Animated chart: in one blind pilot on the same brief, the tool built with Agentic Process scored 93 out of 100 and needed 0 corrections; the direct-build version scored 73 out of 100 and needed 2 corrections.">
 </p>
 
-<h3 align="center">A mini harness for work that is not code.</h3>
+<h3 align="center">An agentic engineer at your side, for everyday jobs.</h3>
 
-<p align="center"><b>Structure for the jobs you repeat with AI: a clear result, written steps, and a test before you rely on it.</b><br>
-In a blind pilot, a tool built this way scored 93 out of 100. The same job built the usual way scored 73.</p>
+<p align="center"><b>"Like having an engineer sitting with me, so every new job is set up the proper way."</b><br>
+A mini harness for work that is not code: a clear result, written steps, and a test before you
+rely on it. In a blind pilot, a tool built this way scored 93/100; built the usual way, 73.</p>
 
 <p align="center">
   <a href="#get-started"><b>Build your first tool</b></a> &nbsp;·&nbsp;
@@ -17,11 +18,11 @@ In a blind pilot, a tool built this way scored 93 out of 100. The same job built
 
 ## What it adds
 
-Developers wrap AI coding agents in a harness: a spec, steps, tests and a hand-back, so the result
-can be trusted. Most everyday work with AI has none of that. You type a prompt, and hope.
+Developers trust AI coding agents because they work inside a harness: a spec, steps, tests and a
+hand-back. Most everyday work with AI has none of that. You type a prompt, and hope.
 
-Agentic Process gives that structure to everyday jobs, such as a supplier notice, a decision or a
-monthly report:
+Agentic Process is the engineer who sets it up properly with you, for jobs such as a supplier
+notice, a decision or a monthly report:
 
 - **A clear result.** Who uses it, what they need, and the one mistake it must catch.
 - **Written steps.** Done the same way every time, not a lucky prompt.

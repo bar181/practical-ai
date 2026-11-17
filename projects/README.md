@@ -6,17 +6,16 @@
 
 <h3 align="center">Better results on the jobs you repeat, every time, and faster.</h3>
 
-<p align="center"><b>Want your reports to look professional?</b> Artifact Studio. &nbsp;·&nbsp; <b>Repeat a job with AI and want it done the same way every time?</b> Agentic Process.</p>
+<p align="center"><b>Want reports with a designer's impact?</b> Artifact Studio. &nbsp;·&nbsp; <b>Want an engineer's method for the jobs you hand to AI?</b> Agentic Process.</p>
 
 Neither replaces the features, plugins or skills already in your AI. Each adds what they are
 missing for one practical job.
 
-## Artifact Studio: professional design for the reports your AI already makes
+## Artifact Studio: designer-quality reports you make yourself
 
-**Your AI can already make scrollytelling pages, photo effects, animated diagrams, a visionary
-keynote or a lesson to teach from.** Most people never ask, because they do not know these exist.
-Artifact Studio puts them on a menu: name one in a sentence, and your AI adds the design. The same
-notes become a presentation, a lesson or a report, fitted to the reader.
+**"Better than I could do, as good as my designer, and I made it myself."** You already ask your AI for reports. Ask through Artifact Studio and the same request comes back
+with the impact of a professional website: beautiful photos, motion, a story that flows, and design
+best practice built in. Not a wall of text, and not a slide deck that took you hours.
 
 <p align="center">
   <a href="artifact-studio/"><img src="artifact-studio/_build/img/style-visionary-page.webp" width="49%" alt="Animated screen capture of the visionary page on a phone: black screens of huge white type, a house in fog behind the words, a dog at a laptop beside the words Meet your smart intern, and bars that count what is in the library"></a>
@@ -28,11 +27,11 @@ huge type. Right, a personal story: one memory, a few keepsakes, the offer only 
 
 <p align="center"><a href="artifact-studio/"><b>See what it makes</b></a></p>
 
-## Agentic Process: a mini harness for work that is not code
+## Agentic Process: an agentic engineer at your side
 
-**Developers give AI coding agents a harness: a spec, steps and tests.** Everyday work with AI has
-none of that. Agentic Process adds it to the jobs you repeat: a clear result, written steps, the
-one mistake to catch, and a test in a fresh session before you rely on it.
+**"Like having an engineer sitting with me, so every new job is set up the proper way."** Developers trust AI agents because they work inside a harness: a spec, steps and tests. Agentic
+Process brings that discipline to everyday jobs. Like an engineer beside you, it helps you define
+the result, pick the simplest way, build it properly, and test it before you rely on it.
 
 <p align="center">
   <a href="agentic-process/"><img src="agentic-process/_build/img/pilot-brief-direct.webp" width="49%" alt="Screen capture of a reply from a tool built the usual way: the facts of a supplier notice in a table, with the missing effective date buried among them"></a>
@@ -49,7 +48,7 @@ Process warns first and says who to ask. One task, one notice, one blind reviewe
 
 | | Artifact Studio | Agentic Process |
 | --- | --- | --- |
-| **Adds to your AI** | Design it already supports but you would not know to ask for | Structure: a clear result, written steps, a test |
+| **Like having** | A designer on call | An agentic engineer beside you |
 | **You bring** | Your notes, and who will read them | A job you repeat, and who uses the result |
 | **You get** | A report, deck, post or page | A tested tool, a guide and a real example |
 | **Works with** | The chatbot you already use | A coding agent, or any chatbot by hand |

@@ -7,7 +7,7 @@ A one-page summary for anyone deciding where to start. Updated 16 November 2026.
 Two projects are finished and ready to try. Each has an explainer page in
 [`reports/`](reports/) (download the HTML file and open it in a browser).
 
-### Artifact Studio: professional design for the reports your AI already makes
+### Artifact Studio: designer-quality reports you make yourself
 
 **What it does:** your AI can already make scrollytelling pages, photo effects, animated diagrams,
 a visionary keynote or a lesson to teach from, but most people do not know to ask. Artifact Studio
@@ -26,7 +26,7 @@ only in Claude so far. [Open the project](../projects/artifact-studio/) ·
 [the explainer page](reports/artifact-studio.html) ·
 [the evidence](../projects/artifact-studio/quality-results/README.md).
 
-### Agentic Process: a mini harness for work that is not code
+### Agentic Process: an agentic engineer at your side
 
 **What it does:** gives a job you repeat with AI the structure developers give coding agents: a
 clear result, written steps, the one mistake to catch, and a test in a fresh session before you

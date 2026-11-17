@@ -2,11 +2,12 @@
 
 <p align="center"><img src="_build/img/show-photo-effects.webp" width="800" alt="Animated screen capture of photo effects made by an AI chatbot from one photograph: a pencil sketch draws itself and becomes the photo, the camera pans and zooms across a lake, a divider slides between two colour grades, a postcard flips over, and one huge word is filled with the picture"></p>
 
-<h3 align="center">Professional design for the reports your AI already makes.</h3>
+<h3 align="center">Designer-quality reports, made by you.</h3>
 
-<p align="center"><b>Scrollytelling, photo effects, animated diagrams, a visionary keynote, a lesson you can teach from.</b><br>
-Your AI can make all of these. Most people never ask, because they do not know they exist.
-Artifact Studio puts them on a menu: name one in a sentence, and your AI adds the design.</p>
+<p align="center"><b>"Better than I could do, as good as my designer, and I made it myself."</b><br>
+You already ask your AI for reports. Ask through Artifact Studio and you get the impact of a
+professional website: beautiful photos, motion and a story that flows, not a wall of text or a
+slide deck that took hours.</p>
 
 **The capture, in words:** one photograph, one sentence per effect: a sketch that draws itself, a
 slow pan and zoom, a before and after divider, a postcard that flips, a word filled with the picture.
@@ -19,8 +20,9 @@ slow pan and zoom, a before and after divider, a postcard that flips, a word fil
 
 ## What it adds to your AI
 
-Claude, ChatGPT and Gemini already turn notes into a report or a page. Artifact Studio does not
-replace that. It adds what a designer would bring to it:
+Claude, ChatGPT and Gemini already turn notes into a report or a page. Artifact Studio adds what
+a designer would bring: the templates, the effects, the examples and the design rules. Most people
+never ask for these, because they do not know they exist.
 
 - **Effects you did not know you could ask for.** Scrollytelling, a photo that pans and zooms, a
   sketch that draws itself, animated diagrams, charts that build as you scroll.

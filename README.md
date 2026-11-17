@@ -10,17 +10,18 @@
 Practical use cases for the AI you already have. The AI drafts. You check and decide.</p>
 
 <p align="center">
-  <a href="#artifact-studio-professional-design-for-the-reports-your-ai-already-makes"><b>Artifact Studio</b></a> &nbsp;·&nbsp;
-  <a href="#agentic-process-a-mini-harness-for-work-that-is-not-code"><b>Agentic Process</b></a> &nbsp;·&nbsp;
+  <a href="#artifact-studio-designer-quality-reports-you-make-yourself"><b>Artifact Studio</b></a> &nbsp;·&nbsp;
+  <a href="#agentic-process-an-agentic-engineer-at-your-side"><b>Agentic Process</b></a> &nbsp;·&nbsp;
   <a href="#the-jobs-you-repeat">The jobs it helps with</a> &nbsp;·&nbsp;
   <a href="#created-by-bradley-ross">Who made this</a>
 </p>
 
 ## What Practical AI is
 
-Each project takes one specific, practical job and gives you a better way to do it with the AI you
-already have. It does not replace Claude's or ChatGPT's own features, plugins or skills. It points
-you to the right ones and adds what they are missing: the design, the structure and the checks.
+Each project packs what an expert would bring to one practical job: the skills, the templates,
+the worked examples and the method. You ask your AI for something you already ask for, and the
+result is the work of a professional. It does not replace Claude's or ChatGPT's own features,
+plugins or skills; it adds the expertise around them.
 
 - **Higher quality.** Professional design for your reports, and tools that catch what people miss.
 - **The same standard every time.** A repeatable way of working with your AI, not a lucky prompt.
@@ -29,12 +30,11 @@ you to the right ones and adds what they are missing: the design, the structure 
 
 ## Two tools, ready today
 
-### Artifact Studio: professional design for the reports your AI already makes
+### Artifact Studio: designer-quality reports you make yourself
 
-**For anyone who shares reports, presentations or lessons.** Your AI can already make scrollytelling
-pages, photo effects, animated diagrams, a visionary keynote or a lesson to teach from. Most people
-never ask, because they do not know these exist. Artifact Studio puts them on a menu: name one in a
-sentence, and your AI adds the design.
+**"Better than I could do, as good as my designer, and I made it myself."** You already ask your AI for reports. Ask through Artifact Studio and the same request comes back
+with the impact of a professional website: beautiful photos, motion, a story that flows, and design
+best practice built in. Not a wall of text, and not a slide deck that took you hours.
 
 <p align="center">
   <a href="projects/artifact-studio/"><img src="projects/artifact-studio/_build/img/show-photo-effects.webp" width="640" alt="Animated screen capture of photo effects made by an AI chatbot from one photograph: a pencil sketch draws itself and becomes the photo, the camera pans and zooms across a lake, a divider slides between two colour grades, a postcard flips over, and one huge word is filled with the picture"></a>
@@ -42,11 +42,11 @@ sentence, and your AI adds the design.
 
 <p align="center"><a href="projects/artifact-studio/"><b>See what it makes</b></a></p>
 
-### Agentic Process: a mini harness for work that is not code
+### Agentic Process: an agentic engineer at your side
 
-**For anyone who repeats a job with AI.** Developers give coding agents a harness: a spec, steps and
-tests. Agentic Process gives the same structure to everyday work, such as a supplier notice or a
-decision: a clear result, written steps, and a test before you rely on it.
+**"Like having an engineer sitting with me, so every new job is set up the proper way."** Developers trust AI agents because they work inside a harness: a spec, steps and tests. Agentic
+Process brings that discipline to everyday jobs. Like an engineer beside you, it helps you define
+the result, pick the simplest way, build it properly, and test it before you rely on it.
 
 <p align="center">
   <a href="projects/agentic-process/"><img src="projects/agentic-process/_build/img/pilot-brief-direct.webp" width="49%" alt="Screen capture of a reply from a tool built the usual way: the facts of a supplier notice in a table, with the missing effective date buried among them"></a>
