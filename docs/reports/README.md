@@ -30,7 +30,7 @@ open it in a browser.
 | --- | --- | --- |
 | [`artifact-studio.html`](artifact-studio.html) | Anyone with rough notes and something to share | The first report in five minutes, your own notes, the check before sharing, and the deck, post and photo versions |
 | [`agentic-process.html`](agentic-process.html) | Anyone who builds tools with a coding agent | The four builder steps, the build request, what you get back, the 93 vs 73 pilot, and how to tell it is ready |
-| [`rare-find.html`](rare-find.html) | Anyone who wants to build a game, or any tool, with an AI agent | How Rare Find was built: seven steps with a time each, three levels, the review loops and the mistakes found along the way. Practical instructor voice |
+| [`rare-find.html`](rare-find.html) | Anyone who wants to build a game, or any tool, with an AI agent | How Rare Find was built: real screens in a slow pan and zoom, a phone that follows seven steps, a before and after slider, three levels and the mistakes found. Practical instructor voice. Generated from `projects/rare-find/_build/explainer/` |
 
 **Also here:** the Artifact Studio library report from 15 November 2026,
 [`2026-11-15-artifact-studio-library.html`](2026-11-15-artifact-studio-library.html), and its deck,

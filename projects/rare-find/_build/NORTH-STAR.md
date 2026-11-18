@@ -56,7 +56,7 @@ it", the room's word, 80. The game never waits more than 4 seconds; a late verdi
 
 **The estimated chart.** Until 5 real players have scores for the day, the chart shows a model of
 typical play (per prompt: about 30% miss, 33% top three, 21% ranks 4 to 10, 14% beyond the top ten,
-2% Gems). That gives an average of about 155. It is labelled as an estimate everywhere.
+2% Gems). That gives an average of about 154. It is labelled as an estimate everywhere.
 
 ## Challenge codes: the simple way to join
 

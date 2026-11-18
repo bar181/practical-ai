@@ -120,7 +120,7 @@ including their -ing, -ed and -s forms, never count as a slip. A slip inside a s
 different word. The reviewers keep trying to break it.
 
 **Is the chart real?** Until 5 people have played that day in a shared artifact, it shows an
-estimate: a model of typical play, averaging about 155 of 500. It says so on screen.
+estimate: a model of typical play, averaging about 154 of 500. It says so on screen.
 
 ## Status
 

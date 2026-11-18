@@ -565,7 +565,7 @@ const DISTS={};
 function dist(n=ROUNDS){ if(DISTS[n]) return DISTS[n]; let d=new Map([[0,1]]); for(let r=0;r<n;r++){ const x=new Map(); d.forEach((p,s)=>MODEL.forEach(([v,q])=>x.set(s+v,(x.get(s+v)||0)+p*q))); d=x; } return DISTS[n]=d; }
 function meanOf(n=ROUNDS){ return Math.round([...dist(n)].reduce((a,[s,p])=>a+s*p,0)); }
 const DIST=dist(ROUNDS), MEAN=meanOf(ROUNDS);
-function beatPct(score,n=ROUNDS){ let below=0,eq=0; dist(n).forEach((p,s)=>{ if(s<score) below+=p; else if(s===score) eq+=p; }); return Math.round(100*(below+eq/2)); }
+function beatPct(score,n=ROUNDS){ let below=0,eq=0; dist(n).forEach((p,s)=>{ if(s<score) below+=p; else if(s===score) eq+=p; }); return Math.max(1,Math.min(99,Math.round(100*(below+eq/2)))); } // an estimate never claims 0% or 100%
 const BIN=50;
 function bins(scores,perfect=PERFECT){ // scores: Map(score->weight) or array of scores; ten bars from 0 to a perfect game
   const bin=perfect/10, b=new Array(10).fill(0); const add=(s,w)=>{ b[Math.min(b.length-1,Math.floor(s/bin))]+=w; };
