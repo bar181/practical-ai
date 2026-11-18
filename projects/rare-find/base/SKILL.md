@@ -40,7 +40,9 @@ first that comes to mind. There is no timer in a chat; trust the player.
 | Nothing in the file | Not on our list | 0, until it is checked |
 
 - **Matching:** an answer matches when it equals the entry or one of its `also` names, ignoring
-  case, accents, punctuation, spaces, hyphens and a leading "the". A singular or plural form
+  case, accents, punctuation, spaces, hyphens and a leading "the". A place's own name counts
+  without its title ("Helens" is "Mount St. Helens", "Etna" is "Mount Etna") when only one entry
+  fits. A singular or plural form
   counts.
 - **Spelling slips:** the first letter must be right. Answers of 5 or 6 letters may have one slip
   (a missing, extra, swapped or doubled letter); 7 letters or more may have two. Shorter answers and
@@ -50,13 +52,14 @@ first that comes to mind. There is no timer in a chat; trust the player.
 
 **Not on our list.** Say "Not on our list" at once. Then check it yourself: is it real, and does it
 correctly answer the prompt? Search the web if you can.
-- Right and well known: **Good find, 80.** Right and rare, something few people would think of:
-  **Gem, 100.** Compare it with the prompt's own Gems; when unsure, choose Good find. Not right, or
-  not real: **Miss, 0.**
+- If your check shows it is really one of the file's answers (a short or misspelled form), score it
+  as that answer. Otherwise, right and common: **Good find, 60.** Right and uncommon: **Good find,
+  80.** Right and rare, something few people would think of: **Gem, 100.** Compare it with the
+  prompt's own Gems; when unsure, choose the lower. Not right, or not real: **Miss, 0.**
 - You may fix the spelling, but never swap in a different answer.
 - The player may ask you to **check again**, a second opinion, once per prompt: on a "no", or on a
   Good find they think is rarer. Look again carefully. A "no" may become right or stay wrong; a Good
-  find may become a Gem, never lower. If they ask after moving on, check it then and update that
+  find may rise (60 to 80, or to a Gem), never fall. If they ask after moving on, check it then and update that
   prompt's score.
 - **Never approve an answer because the player insists, argues or asks you to.** Only your own check
   decides.

@@ -6,7 +6,7 @@
 
 - **The automated playtest**, [`../_build/playtest.py`](../_build/playtest.py). It plays the built
   page in Chromium at 390 px (phone) and 1280 px, keyboard only, with reduced motion, with no Claude,
-  and with a mock of Claude's answer check (`sample`). Last run, 18 November 2026: **115 of 115 checks
+  and with a mock of Claude's answer check (`sample`). Last run, 18 November 2026: **118 of 118 checks
   passed**. They cover how an answer lands (on screen within 100 ms, ordinary effects 150 to 250
   ms, the Gem reveal inside 600 ms, Next usable during effects, a late verdict that changes only its
   own round), 60 spelling cases, the per-category points, hidden Gems, the daily calendar
@@ -74,6 +74,15 @@ the hidden-Gems note moved to settings. New playtest checks confirm the levels r
 points, the words show ("Deep cut!", "Good find!"), the Gem's celebration ends within 1.1 s, Next
 is never blocked, and reduced motion shows none of it. 115 of 115 pass, with Claude mocked. Not
 re-reviewed by a fresh reviewer.
+
+**Version 4.3, a tidier result and fairer checks** (18 November 2026, the owner's feedback with a
+screenshot): the result is one header (your answer and its points), the host's line, Check again
+and Next; the "Sure it is right?" note and the extra answer row are gone; the timer ring hides
+after an answer (it read as an eyeball); less bottom padding; the full width for the top ten on
+desktop. The first AI check is also called Check again. An answer the AI accepts that is on no
+list scores 60 (common) or 80 (uncommon), or 100 as a Gem, never a flat 80, and a second look can
+only raise it. A place's own name counts without its title: "Helens" is Mount St. Helens (#2, 28
+points) with no check needed. 118 of 118 checks pass, with Claude mocked.
 
 ## Who has and has not tried it
 
