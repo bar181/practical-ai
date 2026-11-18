@@ -98,7 +98,7 @@ example: Unit 7: "Verifying. Progress 41%."
 
 After the last prompt:
 1. The total out of N × 100 (700 for 7 prompts), one square per prompt, and a one-line verdict.
-2. The typical score is about 206 of 700. Say it is an estimate,
+2. The typical score is about 275 of 700, and about 1 game in 100 reaches 600. Say it is an estimate,
    not real players.
 3. **A challenge link** a friend can open in any browser, to play the same prompts:
    `https://bar181.github.io/practical-ai/rare-find/#c-KEY-SCORE-TIERS-NAME`

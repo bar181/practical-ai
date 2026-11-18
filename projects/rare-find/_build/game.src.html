@@ -645,10 +645,18 @@ function dealt(k){
 }
 
 /* ---------- the estimated spread of scores ---------- */
-// A model of a typical player, not real data: per prompt, how often they land each result.
-const MODEL=[[25,.18],[rankPts(2),.08],[rankPts(3),.07],...[4,5,6,7,8,9,10].map(r=>[rankPts(r),.03]),[70,.14],[100,.02],[0,.30]];
+// A model of typical play, not real data. Players differ, so it mixes four kinds of player, each with
+// how often they land each result per prompt: miss, crowd pick, popular (2nd or 3rd), the rest of the
+// top ten, a Good find (60 to 90) and a Gem. Fitted (owner's estimate, 18 November 2026) so a 7-prompt
+// game averages about 275 of 700 and about 1 game in 100 reaches 600.
+const PLAYERS=[[.37,[.35,.30,.12,.13,.08,.02]],[.40,[.19,.22,.10,.20,.23,.06]],[.17,[.07,.12,.08,.20,.38,.15]],[.06,[.02,.03,.04,.11,.42,.38]]];
+function perPrompt([miss,crowd,pop,solid,good,gem]){ return [[0,miss],[25,crowd],[rankPts(2),pop/2],[rankPts(3),pop/2],...[4,5,6,7,8,9,10].map(r=>[rankPts(r),solid/7]),...[60,70,80,90].map(v=>[v,good/4]),[100,gem]]; }
 const DISTS={};
-function dist(n=ROUNDS){ if(DISTS[n]) return DISTS[n]; let d=new Map([[0,1]]); for(let r=0;r<n;r++){ const x=new Map(); d.forEach((p,s)=>MODEL.forEach(([v,q])=>x.set(s+v,(x.get(s+v)||0)+p*q))); d=x; } return DISTS[n]=d; }
+function dist(n=ROUNDS){ if(DISTS[n]) return DISTS[n]; const all=new Map();
+  PLAYERS.forEach(([w,ps])=>{ const M=perPrompt(ps); let d=new Map([[0,1]]);
+    for(let r=0;r<n;r++){ const x=new Map(); d.forEach((p,s)=>M.forEach(([v,q])=>x.set(s+v,(x.get(s+v)||0)+p*q))); d=x; }
+    d.forEach((p,s)=>all.set(s,(all.get(s)||0)+w*p)); });
+  return DISTS[n]=all; }
 function meanOf(n=ROUNDS){ return Math.round([...dist(n)].reduce((a,[s,p])=>a+s*p,0)); }
 const DIST=dist(ROUNDS), MEAN=meanOf(ROUNDS);
 function beatPct(score,n=ROUNDS){ let below=0,eq=0; dist(n).forEach((p,s)=>{ if(s<score) below+=p; else if(s===score) eq+=p; }); return Math.max(1,Math.min(99,Math.round(100*(below+eq/2)))); } // an estimate never claims 0% or 100%

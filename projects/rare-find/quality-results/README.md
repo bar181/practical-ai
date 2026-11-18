@@ -6,7 +6,7 @@
 
 - **The automated playtest**, [`../_build/playtest.py`](../_build/playtest.py). It plays the built
   page in Chromium at 390 px (phone) and 1280 px, keyboard only, with reduced motion, with no Claude,
-  and with a mock of Claude's answer check (`sample`). Last run, 18 November 2026, version 4.4: **122 of 122 checks
+  and with a mock of Claude's answer check (`sample`). Last run, 18 November 2026, version 4.4: **123 of 123 checks
   passed**. They cover how an answer lands (on screen within 100 ms, ordinary effects 150 to 250
   ms, the Gem reveal inside 600 ms, Next usable during effects, a late verdict that changes only its
   own round), 60 spelling cases, the per-category points, hidden Gems, the daily calendar
@@ -103,7 +103,9 @@ again, Next question) that celebrates in proportion to the points; the AI's reas
 repeat in it, so the host's bubble is the only comment. The daily game is 7 prompts, today
 included. Then, at the owner's word that celebrations are the game play, they were made far bigger,
 varied (eight styles drawn at random by level) and longer: 1.5 s at 25 points, 2.5 s at 80, 3 s over
-80 and for a Gem, measured in the playtest. 122 of 122 checks pass, with Claude mocked. **Not yet
+80 and for a Gem, measured in the playtest. The estimated chart now mixes four kinds of player,
+fitted to the owner's estimate: an average of about 275 of 700, about 1% of games at 600 or more.
+123 of 123 checks pass, with Claude mocked. **Not yet
 tried by a person.**
 
 ## Who has and has not tried it

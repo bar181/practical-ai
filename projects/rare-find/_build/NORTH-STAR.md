@@ -24,7 +24,7 @@ Then a comment from an AI host with a sense of humour, the top ten, and your pla
 | Gems shown on the reveal | Gems hidden; only their count shows | "Remove the rare finds from the list, in case people want to play again" |
 | New category, fresh last prompt | Removed | "I do not understand the last round or topic section" |
 | Settings card on home | A gear icon with an accordion, closed | "Move settings as an icon with accordion, default closed" |
-| A final score | A Scorecard tab and a chart of your place, 0 to 500 | "An end of day score that compares to others ... a bar chart with an estimated distribution" |
+| A final score | A Scorecard tab and a chart of your place, 0 to 700 | "An end of day score that compares to others ... a bar chart with an estimated distribution" |
 | Co-workers' trash talk | Four AI commentator personas | "Unique personas and some humour in the comments" |
 | Claude judges unlisted answers on its own | "Check with Claude", then "Check again" | "Have 'We allow it' be the LLM check ... allow a check again" |
 
@@ -63,9 +63,13 @@ Nothing is ever approved without the AI's yes; "We allow it" was removed on 18 N
 owner's request. The game never waits for the AI; a late verdict still counts. While it checks, the
 other hosts fill the wait with a line each.
 
-**The estimated chart.** Until 5 real players have scores for the day, the chart shows a model of
-typical play (per prompt: about 30% miss, 33% top three, 21% ranks 4 to 10, 14% beyond the top ten,
-2% Gems). That gives an average of about 154. It is labelled as an estimate everywhere.
+**The estimated chart.** The chart shows a model of typical play, labelled as an estimate
+everywhere. Players differ, so it mixes four kinds of player (casual 37%, typical 40%, strong 17%,
+expert 6%), each with its own chance per prompt of a miss, the crowd pick, a popular answer, the rest
+of the top ten, a Good find and a Gem. It was fitted to the owner's estimate (18 November 2026): a
+7-prompt game averages about 275 of 700, and about 1 game in 100 reaches 600. The middle game is
+about 257; one in ten scores 456 or more. With one kind of player only, no setting gives both
+numbers: the spread comes out too narrow.
 
 ## Challenge codes: the simple way to join
 
@@ -87,7 +91,7 @@ friend has not played yet, it counts as their daily game.
 ## Prompts per game
 
 7 (default), 10, or party mode: all 25 prompts, grouped by topic, with "Topic 2 of 8" on each
-prompt. Today's game is always 5, so daily scores compare. The chart and the perfect score scale with
+prompt. Today's game is always 7, so daily scores compare. The chart and the perfect score scale with
 the count (100 per prompt).
 
 ## The commentators

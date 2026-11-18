@@ -214,6 +214,8 @@ with sync_playwright() as pw:
     pg.wait_for_timeout(800)
     st = pg.evaluate("window.__rf.state()")
     check("end: the total matches every answer's points", st["screen"] == "end" and pg.inner_text("#final").strip() == str(total), (pg.inner_text("#final"), total))
+    model = pg.evaluate("[window.__rf.meanOf(7), 100-window.__rf.beatPct(600,7)]")
+    check("the estimated spread: a 7-prompt game averages about 275 of 700, and about 1 in 100 reach 600", 270 <= model[0] <= 280 and model[1] == 1, model)
     check("end: a chart of the estimated spread, with your place", pg.evaluate("!!document.querySelector('#end-chart svg')") and "beat about" in pg.inner_text("#end-chart") and "You" in pg.inner_text("#end-chart"), pg.inner_text("#end-chart"))
     check("end: today's score is saved", st["days"].get("2026-11-17", {}).get("score") == total, st["days"])
     check("'Back to start' shows on the end screen", pg.is_visible("#b-end-back"))
