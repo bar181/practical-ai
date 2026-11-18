@@ -1,0 +1,5 @@
+# Note on friction
+
+Written on 18 November 2026 by a fresh Claude session playing a chatbot with SKILL.md installed as a skill, stepping out of role after its reply. One run, by an AI; no person has tried this. The reply beside this note is unedited.
+
+The boss rule (three-line In short) overrides "two sentences at most" without saying so; I followed the boss rule. The letter asks nothing mandatory, yet the brief is built around obligations; I labelled O1 as optional with "if". "Came with our delivery" tempted me to treat receipt as today; the no-starting-date rule stopped me, but the skill could say explicitly that an event named without a date is not a date. Placement of a Cost not tied to an action (Key facts) and numbering of Penalty rows (O2?) were guesses. "What changes" asks for an objection deadline; the letter offers only a discuss window, so I said so. The "[number] numbered clauses or paragraphs" template fits poorly when there are none. Q2 to Q4 overlap with the Warning and Dates; the skill invites that duplication. The two readings in Q5 felt somewhat forced.

@@ -1,0 +1,5 @@
+# Note on friction
+
+Written on 18 November 2026 by a fresh Claude session playing a Claude Project with SKILL.md as a skill and a filled-in house rules file in its knowledge, stepping out of role after its reply. One run, by an AI; no person has tried this. The reply beside this note is unedited.
+
+I used the house rules a lot. They told me we are the customer and that the brief is for Priya, so the "In short" became three lines she could forward. They gave me the bold flag for the $35 fee at the top. They also gave me the bookkeeper rule, which I stated at the top as their own rule and not as advice. I filled "Who could answer" from their table, and the follow-up offer names Café dates and Café to-do. Where I guessed: I treated the notice as a change of terms, not a contract to sign, even though it has a signature form. I added today's date to show the deadline is two days away, although the skill says to use only the document. I did not flag the 1.5% card surcharge, which can go over $30, because it is a cost and not a penalty. For payment questions the house rules point to Sam, but only the supplier can say what its own wording means, so I named both.

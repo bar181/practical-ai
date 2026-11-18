@@ -64,7 +64,7 @@ words to check.
 | **You bring** | Your notes, and who will read them | A job you repeat, and who uses the result | One document, and who you are in it |
 | **You get** | A report, deck, post or page | Instructions for the job, a guide and a tested example | The actions, dates and open questions, each with its exact words |
 | **Works with** | The chatbot you already use | The chatbot you already use. A coding agent can run the whole build | The chatbot you already use |
-| **Proof** | [22 fresh-session runs](artifact-studio/quality-results/README.md) | [The blind pilot](agentic-process/quality-results/README.md) | [3 fresh-session runs](document-to-action-brief/quality-results/README.md) |
+| **Proof** | [22 fresh-session runs](artifact-studio/quality-results/README.md) | [The blind pilot](agentic-process/quality-results/README.md) | [9 fresh-session runs](document-to-action-brief/quality-results/README.md) |
 
 ## Status
 

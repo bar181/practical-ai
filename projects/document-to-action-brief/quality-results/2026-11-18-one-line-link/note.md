@@ -1,0 +1,5 @@
+# Note on friction
+
+Written on 18 November 2026 by a fresh Claude session playing a chatbot with web access, given only the one-line prompt, stepping out of role after its reply. One run, by an AI; no person has tried this. The reply beside this note is unedited.
+
+The link did not open. WebFetch refused it as not on the session allowlist, so I got none of the SKILL.md instructions. Everything about the format was a guess: the headings, the table layout, the "one thing to know" line, the warnings section, the questions list and the disclaimer. I also guessed how strict to be about made-up facts. I left some things as "not stated" and flagged open questions instead of filling them in. I worked out the order cut-off days myself (Friday for Tuesday, Wednesday for Friday). I treated "today" as 18 November to get the "2 days away" figure. A real user would not know that the brief ignored the linked method. I said so in the first line and asked them to paste the text. A one-line link is a weak entry point if the chatbot cannot fetch raw GitHub URLs.
