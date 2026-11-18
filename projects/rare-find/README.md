@@ -46,18 +46,20 @@ Want more? A **practice round** gives you 5, 10 or 25 more prompts, up to 100 a 
 | --- | --- |
 | The most popular answer | 25 |
 | 2nd to 10th most popular | Between 25 and 60. Lower on the list scores more |
-| Right, but not in the top ten | 80 |
+| Right, but not in the top ten | 80 for answers on our list; 60 to 80 when the AI checks one that is not, more the less common it is |
 | A rare right answer: a **Gem** | 100 |
 | Wrong, or out of time | 0 |
 
 The rankings are an AI's estimate, not a survey, and the game says so. The Gems stay hidden in the
 game, so you can play again. "Name a bird" is the demo on this page, so two of its Gems show here.
 
-**Not on the list?** In a chatbot, the AI checks it: is it real, and is it right? It forgives small
-slips: "big hero 5" for an animated film counts as Big Hero 6, worth 80. Think it got it wrong? Ask
-for **a second opinion**, once. It can still say no, and nothing is ever approved just because you
-ask. While it checks, the hosts keep you company. In a browser with no AI, an answer that is not on
-the list scores 0.
+**Not on the list?** Press **Check again**: the AI checks the answer is real and right, and forgives
+small slips ("big hero 5" for an animated film counts as Big Hero 6). A right answer that matches one
+on our list gets that answer's points; any other scores 60 to 80, more the less common it is, or 100
+if it is rare. Not convinced? **Check again** once more for a second opinion. Nothing is ever
+approved without the AI's yes, and the hosts keep you company while it checks. A place's own name
+counts without its title, so "Helens" is Mount St. Helens. In a browser with no AI, an answer that
+is not on the list scores 0.
 
 ## Play in ChatGPT, or any chatbot
 
@@ -125,6 +127,19 @@ one in settings, or turn them off.
 
 ## What's new
 
+**Version 4.2, 18 November 2026: celebrations**
+
+- Every right answer gets a celebration, and it grows with the points: a few sparks for the crowd
+  pick, "Nice!" and more sparks for a popular one, stars and "Deep cut!" low in the top ten, a
+  firework and "Good find!" for 80, and a shower over the Gem reveal for 100. A strong final
+  score gets its own burst.
+- The top ten sits in two columns, so the result fits on a phone screen.
+- The note about hidden Gems moved to settings.
+- A tidier result: your answer, its points, Check again and Next, with no extra notes; the timer
+  ring hides once you answer, and less empty space at the bottom.
+- Fairer checks: an answer the AI accepts that is on no list scores 60 to 80 by how common it is,
+  not a flat 80; "Helens" now counts as Mount St. Helens without a check.
+
 **Version 4, 18 November 2026: answer moments**
 
 <p align="center"><img src="_build/img/gem-reveal.webp" width="260" alt="Animation of the Gem reveal on a phone: the answer Sepak takraw goes in, a faceted gold gem drops onto the card with a burst of light and flying fragments, the words GEM! +100 appear, and +100 flies up into the score"></p>
@@ -148,7 +163,7 @@ one in settings, or turn them off.
 ## Status
 
 **In user testing.** As of 18 November 2026, users are playing it; their results are not in yet.
-110 of 110 automated checks pass at phone and desktop
+118 of 118 automated checks pass at phone and desktop
 width, with Claude replaced by a mock. In two blind reviews, fresh AI reviewers scored version 4
 91 and 86, against 84 and 82 for version 3, and both would replay version 4. Nobody has played
 version 4 in the real Claude artifact yet. The chat version passed two test games, played by a

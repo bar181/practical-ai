@@ -49,9 +49,9 @@ Then a comment from an AI host with a sense of humour, the top ten, and your pla
 
 A perfect game is 500. The home screen shows three labels only: Popular 25+, Rarer up to 80, Gem 100.
 
-**Ask the AI.** An answer that scored 0 and has text can be checked. The AI is told the prompt, the
+**Check again** (named "Ask the AI" until 18 November 2026). An answer that scored 0 and has text can be checked. The AI is told the prompt, the
 top ten and the answer, as data, and asked whether it is real and right, forgiving small slips ("big
-hero 5" is Big Hero 6), and whether it is common (80) or rare (100). A listed answer gets its listed
+hero 5" is Big Hero 6), and whether it is common (60), uncommon (80) or rare (a Gem, 100). A listed answer gets its listed
 points. The AI may fix spelling but not swap in a different answer. Text that reads like
 instructions is never sent. A second opinion is allowed once, and it can still say no. Unreachable:
 "Try again", and the answer stays at 0. No AI at all (the browser copy): it scores 0 and says why.
@@ -111,6 +111,11 @@ and the focus on the moment an answer lands.
 | Gem | A faceted gem drops in under the score, catches the light, sheds fragments, and +100 flies into the score. No confetti |
 | Not on our list | Says so at once. "Ask the AI" sits beside Next, then "Second opinion" once. A changed verdict plays its reward once |
 | Wrong, or out of time | A short shake, and Next pulses once |
+
+Version 4.2 adds celebrations that grow with the points (owner's feedback): level 1 a few sparks
+(crowd pick), 2 more sparks and "Nice!", 3 stars and "Deep cut!" (40 points or more), 4 a firework
+and "Good find!", 5 a shower over the Gem reveal; and a burst for a strong final score. The top ten
+is in two columns. The Gem rules live in settings, not under every answer.
 
 Budgets: on screen within 100 ms, ordinary effects 150 to 250 ms, the Gem reveal inside 600 ms.
 Next works after a 120 ms guard, during effects, host lines and Claude's checks. The host's
