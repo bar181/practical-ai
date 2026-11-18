@@ -157,12 +157,13 @@ comment on every score, and one link challenges a friend to the same prompts.
   <img src="projects/rare-find/_build/img/how-it-plays.svg" width="620" alt="Animation: the prompt Name a bird, then four answers in turn with their points: Eagle, the crowd pick, 25; Flamingo, 9th most popular, 38; Hummingbird, right but beyond the top ten, 80; Shoebill, rare and right, a Gem, 100. The rarer the right answer, the more it scores.">
 </p>
 <p align="center">
-  <img src="projects/rare-find/_build/img/result-phone.webp" width="200" alt="A Rare Find result on a phone: Eagle is the crowd pick for 25 points, Madame Zara comments, and the top ten shows the points for each place">
-  <img src="projects/rare-find/_build/img/scorecard-phone.webp" width="200" alt="The Rare Find Scorecard on a phone: today's score on a bar chart of the estimated spread, the week and a friends group">
+  <img src="projects/rare-find/_build/img/store-1-today.webp" width="180" alt="Rare Find, five prompts a day: the home screen with today's game and a practice round">
+  <img src="projects/rare-find/_build/img/store-2-result.webp" width="180" alt="Rare Find, the rare answer wins: Hoatzin for Name a bird is a Gem worth 100">
+  <img src="projects/rare-find/_build/img/store-3-scorecard.webp" width="180" alt="Rare Find, see where you stand: the Scorecard with today's score on an estimated chart and the week">
 </p>
-<p align="center"><sub>Built phone first, tested by 82 automated checks and six review loops; not yet played by people.</sub></p>
+<p align="center"><sub>Built phone first. 82 automated checks pass; six review loops scored earlier versions. Not yet played by people.</sub></p>
 
-<p align="center"><a href="https://claude.ai/artifact/HyfbDjPjofvRttRYKgMCis"><b>Play today's game</b></a> &nbsp;·&nbsp; <a href="projects/rare-find/"><b>The project</b></a> &nbsp;·&nbsp; <a href="docs/reports/rare-find.html"><b>How it was made</b></a></p>
+<p align="center"><a href="https://claude.ai/artifact/HyfbDjPjofvRttRYKgMCis"><b>Play in Claude</b></a> &nbsp;·&nbsp; <a href="https://bar181.github.io/practical-ai/rare-find/"><b>Play in any browser</b></a> &nbsp;·&nbsp; <a href="projects/rare-find/"><b>The project</b></a> &nbsp;·&nbsp; <a href="https://bar181.github.io/practical-ai/rare-find/how-it-was-made.html"><b>How it was made</b></a></p>
 
 ### What is ready, and what is next
 

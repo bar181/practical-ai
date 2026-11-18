@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="252" height="48" viewBox="0 0 252 48" role="img" aria-label="Play in any browser">
+<rect x="1.5" y="1.5" width="249" height="45" rx="22.5" fill="#262046" stroke="#ffc93c" stroke-width="3"/>
+<circle cx="34" cy="24" r="10" fill="none" stroke="#ffc93c" stroke-width="2.5"/><path d="M24 24 H44 M34 14 C28 20 28 28 34 34 M34 14 C40 20 40 28 34 34" stroke="#ffc93c" stroke-width="2" fill="none"/>
+<text x="144" y="31" text-anchor="middle" font-family="ui-rounded,'SF Pro Rounded',Nunito,'Segoe UI',system-ui,sans-serif" font-size="18" font-weight="800" fill="#f5f2ff">Play in any browser</text>
+</svg>

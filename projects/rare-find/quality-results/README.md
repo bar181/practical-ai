@@ -1,17 +1,15 @@
 # Quality results: Rare Find
 
-**Built and machine-tested; not yet played by people or in the real Claude artifact runtime.** The
-status at a glance is in [`status-report.html`](status-report.html), a one-page report.
+**Built and machine-tested; not yet played by people or in the real Claude artifact runtime.**
 
 ## How it was tested
 
 - **The automated playtest**, [`../_build/playtest.py`](../_build/playtest.py). It plays the built
   page in Chromium at 390 px (phone) and 1280 px, keyboard only, with reduced motion, with no Claude,
-  and with a mock of Claude's artifact runtime (`sample`, `db`, `user`, `room`). Last run, 17
-  November 2026: **82 of 82 checks passed**. They cover 60 spelling cases, the per-category points,
-  hidden Gems, today's prompts over 120 days, Check with Claude and Check again, an unreachable
-  Claude, the hosts, settings, the scorecard, the shared scoreboard, friends groups, live play,
-  Back to start, the timer and phone width.
+  and with a mock of Claude's answer check (`sample`). Last run, 18 November 2026: **82 of 82 checks
+  passed**. They cover 60 spelling cases, the per-category points, hidden Gems, the daily calendar
+  over 240 days, practice limits, Check with Claude and Check again, an unreachable Claude, the
+  hosts, settings, the scorecard, challenge links, Back to start, the timer and phone width.
 - **The review skill**, [`../level-2-files/game-review/SKILL.md`](../level-2-files/game-review/SKILL.md).
   At the end of each loop a fresh reviewer agent that had not seen the game played it and scored it
   out of 100.
@@ -46,8 +44,8 @@ passed `check_packs.py`. Claude spot-checked a sample of them; no person has rea
 | The author, with Claude, building it | Yes |
 | The automated playtest, with a mock of Claude | Yes |
 | Fresh reviewer agents, with a mock of Claude | Yes, six loops |
-| The real Claude artifact runtime | **No.** The artifact is published with its capabilities declared; nobody has played it there |
-| Real players, friends on other accounts, a multi-device live game, a screen reader, ChatGPT | **No** |
+| The real Claude artifact runtime | **No.** The artifact is published and public; nobody has played it there |
+| Real players, a friend opening a challenge link, a screen reader, ChatGPT | **No** |
 
 The answer lists are Claude's estimates, not a survey. The research behind the rules is in
 [`../_build/PLAN.md`](../_build/PLAN.md).

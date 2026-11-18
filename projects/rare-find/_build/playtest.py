@@ -1,5 +1,5 @@
-"""playtest.py: plays base/game.html in a real browser and checks it. The AI, saving and live-room
-features are replaced by fakes (mocks), so this checks the game's own logic and its fallbacks,
+"""playtest.py: plays base/game.html in a real browser and checks it. Claude's answer check is
+replaced by a fake (a mock), so this checks the game's own logic and its fallbacks,
 not Claude's answers.
 
 Run: python3 projects/rare-find/_build/playtest.py OUT_DIR   (needs: playwright)

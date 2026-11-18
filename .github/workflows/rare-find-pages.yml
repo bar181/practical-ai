@@ -9,9 +9,9 @@ name: Rare Find on GitHub Pages
 on:
   push:
     branches: [main]
-    paths: ["projects/rare-find/**", ".github/workflows/rare-find-pages.yml"]
+    paths: ["projects/rare-find/**", "docs/reports/rare-find.html", ".github/workflows/rare-find-pages.yml"]
   pull_request:
-    paths: ["projects/rare-find/**", ".github/workflows/rare-find-pages.yml"]
+    paths: ["projects/rare-find/**", "docs/reports/rare-find.html", ".github/workflows/rare-find-pages.yml"]
   workflow_dispatch:
 
 permissions:
@@ -50,7 +50,7 @@ jobs:
         run: |
           mkdir -p _site/rare-find
           cp projects/rare-find/base/game.html _site/rare-find/index.html
-          cp projects/rare-find/quality-results/status-report.html _site/rare-find/status.html
+          cp docs/reports/rare-find.html _site/rare-find/how-it-was-made.html
           cat > _site/index.html <<'HTML'
           <!DOCTYPE html>
           <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
@@ -58,7 +58,7 @@ jobs:
           <body style="font-family:system-ui,sans-serif;max-width:560px;margin:60px auto;padding:0 20px;line-height:1.5">
           <h1>Practical AI</h1>
           <p>Free tools that make the AI you already use do professional work on the jobs you repeat.</p>
-          <p><a href="rare-find/">Play Rare Find</a>, the daily quiz where the rarest right answer scores the most.</p>
+          <p><a href="rare-find/">Play Rare Find</a>, the daily quiz where the rarest right answer scores the most. <a href="rare-find/how-it-was-made.html">How it was made</a>.</p>
           <p><a href="https://github.com/bar181/practical-ai">The tools on GitHub</a> · made by Bradley Ross,
           <a href="https://www.linkedin.com/in/bradaross/">LinkedIn</a></p>
           </body></html>
