@@ -89,6 +89,12 @@ with sync_playwright() as pw:
         return page.evaluate("p=>window.__rf.packs.find(x=>x.id===p)", pid)
     def answer(page, text, wait=650):
         page.fill("#answer", text); page.press("#answer", "Enter"); page.wait_for_timeout(wait)
+    def answer_now(page, text):
+        # answer, then read what is on screen and which animations run, before any effect ends
+        page.fill("#answer", text); page.press("#answer", "Enter")
+        return page.evaluate("""()=>({paint:(window.__rfPaintAt||0)-(window.__rfSubmitAt||0),
+          anims:document.getAnimations().map(a=>{const t=a.effect.getTiming(),el=a.effect.target;return {name:a.animationName||(a.transitionProperty?'transition':(el&&el.classList&&el.classList.contains('fly')?'fly':'script')),d:Number(t.duration)||0,delay:t.delay||0,
+            cls:el?(el.id||String(el.className&&el.className.baseVal!==undefined?el.className.baseVal:el.className)):''};})})""")
     def nxt(page):
         page.wait_for_function("!document.querySelector('#b-next').disabled", timeout=20000); page.click("#b-next"); page.wait_for_timeout(200)
     def no_sideways(page, w, name):
@@ -126,9 +132,26 @@ with sync_playwright() as pw:
     for k in range(5):
         pid = pid_of(pg); pk = pack(pg, pid)
         text = [pk["ranked"][0]["a"], pk["ranked"][5]["a"], "my own answer", pk["ranked"][9]["a"], pk["gems"][0]["a"]][k]
-        answer(pg, text)
+        if k == 0: pg.evaluate("()=>{window.__ptsLog=[];const f=()=>{window.__ptsLog.push(document.querySelector('#pts').textContent,document.querySelector('#total').textContent);if(window.__ptsLog.length<60)requestAnimationFrame(f)};requestAnimationFrame(f)}")
+        landed = answer_now(pg, text)
+        if k == 0:
+            check("landing: the result is on screen within 100 ms of the answer", 0 < landed["paint"] < 100, round(landed["paint"], 1))
+            ords = [a for a in landed["anims"] if a["name"] in ("pop", "rowhit", "tick", "dotpop")]
+            check("landing: a popular answer's effects run 150 to 250 ms (badge, its row, the score tick, its dot)", {a["name"] for a in ords} >= {"pop", "rowhit", "tick", "dotpop"} and all(150 <= a["d"] + a["delay"] <= 250 for a in ords), ords)
+        if k == 4:
+            gemanims = [a for a in landed["anims"] if a["name"] in ("gemin", "burst", "glint", "shard", "goldflash", "fly", "pop", "dotgem")]
+            check("landing: the Gem reveal (gem, light burst, glint, fragments, gold flash, +100 to the score) all ends within 600 ms", {"gemin", "burst", "glint", "shard", "goldflash", "fly"} <= {a["name"] for a in gemanims} and max(a["d"] + a["delay"] for a in gemanims) <= 600, gemanims)
+            pg.wait_for_timeout(150)
+            check("landing: Next works while the Gem reveal still plays", pg.is_enabled("#b-next") and pg.evaluate("document.getAnimations().length") > 0)
+        pg.wait_for_timeout(650)
         s = pg.evaluate("window.__rf.state()")
-        if k == 0: check("rank 1 scores 25", s["cur"]["pts"] == 25, s["cur"])
+        if k == 0:
+            check("rank 1 scores 25", s["cur"]["pts"] == 25, s["cur"])
+            check("popular: its row in the top ten is highlighted and says Yours", pg.evaluate("(()=>{const r=document.querySelector('#reveal li.mine');return !!r&&r.textContent.includes('Yours')})()"))
+            check("the points count up without ever showing a number below zero", min(int(x) for x in pg.evaluate("window.__ptsLog||['0']")) >= 0, pg.evaluate("window.__ptsLog"))
+            check("popular: the running score ticks", pg.evaluate("document.querySelector('.score').classList.contains('tick')") and pg.inner_text("#total") == "25", pg.inner_text("#total"))
+            check("dots: the first dot shows the outcome, and says it in words", "d-crowd" in pg.get_attribute("#dots i:nth-child(1)", "class") and "Crowd pick" in pg.get_attribute("#dots", "aria-label"), pg.get_attribute("#dots", "aria-label"))
+            check("keyboard: after an answer, focus is on Next", pg.evaluate("document.activeElement.id") == "b-next")
         if k == 1: check("rank 6 scores between 25 and the pack's 10th place", 25 < s["cur"]["pts"] < pk["top"], (s["cur"], pk["top"]))
         if k == 3: check("rank 10 scores the pack's top-ten value, 40 to 60", s["cur"]["pts"] == pk["top"] and 40 <= pk["top"] <= 60, (s["cur"], pk["top"]))
         if k < 4:
@@ -139,12 +162,20 @@ with sync_playwright() as pw:
             pg.screenshot(path=f"{out}/3-result-phone.png", full_page=True); no_sideways(pg, 390, "a result")
         if k == 2:
             check("offline, an unlisted answer offers 'We allow it'", s["cur"]["tier"] == "unlisted" and pg.is_visible("#b-check") and pg.inner_text("#b-check") == "We allow it", pg.inner_text("#check-row"))
+            check("unlisted: 'Not on our list' shows at once, and the check sits beside Next", pg.inner_text("#tier") == "Not on our list" and pg.evaluate("document.querySelector('#b-check').parentElement===document.querySelector('#b-next').parentElement") and pg.is_visible("#b-next"))
             pg.click("#b-check"); pg.wait_for_timeout(250); s = pg.evaluate("window.__rf.state()")
             check("offline, 'We allow it' is the room's word: a Good find worth 80", s["cur"]["tier"] == "good" and s["cur"]["pts"] == 80 and "allowed by the room" in pg.inner_text("#counted"), (s["cur"], pg.inner_text("#counted")))
+            check("good find: it lands above the top ten, named in words, with a stronger entrance", pg.evaluate("(()=>{const y=document.querySelector('#reveal .yours');const h=document.querySelector('#reveal h3');return !!y&&y.classList.contains('good-in')&&y.textContent.includes('Good find')&&!!(y.compareDocumentPosition(h)&Node.DOCUMENT_POSITION_FOLLOWING)})()"))
         if k == 4:
             check("a Gem scores 100 and says the other Gems stay hidden", s["cur"]["pts"] == 100 and "stay hidden" in pg.inner_text("#gems-note"), pg.inner_text("#gems-note"))
+            check("gem: a faceted gem with ten fragments and its words, right under the score, and no confetti", pg.evaluate("document.querySelectorAll('.gemreveal.play svg.gemsvg').length===1&&document.querySelectorAll('.gemreveal .shard').length===10&&!document.querySelector('.confetti')&&!!document.querySelector('#moment .gemreveal')") and "GEM" in pg.inner_text(".gemreveal"))
+            check("dots: five outcomes, each named in words", pg.evaluate("document.querySelectorAll('#dots i[class^=\"d-\"]').length") == 5 and all(w in pg.get_attribute("#dots", "aria-label") for w in ["Crowd pick", "Good find", "Gem"]), pg.get_attribute("#dots", "aria-label"))
         total += s["cur"]["pts"]
-        nxt(pg)
+        if k == 0:
+            pg.keyboard.press("Enter"); pg.wait_for_timeout(200)
+            check("keyboard: Enter on Next moves to the next prompt", pg.evaluate("window.__rf.state().i") == 1)
+        else:
+            nxt(pg)
     check("the reveal never lists the hidden Gems", not gem_leak, gem_leak)
     pg.wait_for_timeout(800)
     st = pg.evaluate("window.__rf.state()")
@@ -155,6 +186,7 @@ with sync_playwright() as pw:
     pg.screenshot(path=f"{out}/4-end-phone.png", full_page=True); no_sideways(pg, 390, "the end screen")
     pg.click("#b-tocard"); pg.wait_for_timeout(300)
     check("scorecard tab: today, the chart and the week", pg.evaluate("window.__rf.state().screen") == "scorecard" and str(total) in pg.inner_text("#sc-today") and pg.inner_text("#st-played") == "1" and pg.evaluate("!!document.querySelector('#sc-week svg')"), pg.inner_text("#sc-today"))
+    check("scorecard: today's five outcome dots, with their names in words", pg.is_visible("#sc-dots") and pg.evaluate("document.querySelectorAll('#sc-dots i').length") == 5 and "Gem" in pg.inner_text("#sc-dots"), pg.inner_text("#sc-dots"))
     check("scorecard: no shared scoreboard or friends league, just your own record and challenges", pg.query_selector("#sc-friends") is None and pg.query_selector("#sc-everyone") is None and pg.is_visible("#sc-challenges"))
     pg.screenshot(path=f"{out}/5-scorecard-phone.png", full_page=True); no_sideways(pg, 390, "the scorecard")
     pg.click("#tab-play"); pg.wait_for_timeout(150)
@@ -177,6 +209,8 @@ with sync_playwright() as pw:
     pg.fill("#share-name", "Sam"); pg.wait_for_timeout(100)
     msg = pg.input_value("#share-link")
     links = [w for w in msg.split() if "#c-" in w]; code = links[0].split("#c-", 1)[1] if links else ""
+    typed = [pack(pg, x)["ranked"][k]["a"] for k, x in enumerate(ch_prompts)]
+    check("challenge: the message shows each round's outcome as a symbol and gives no answer away", "no spoilers" in msg and sum(msg.count(c) for c in "⬜🟦🟩🟪💎🟥⬛") == 5 and not any(t in msg for t in typed), msg)
     check("challenge: one link to the public web copy, carrying the prompts, the score and the name", len(links) == 1 and links[0].startswith("https://bar181.github.io/practical-ai/rare-find/#c-") and code.startswith("RF") and f"-{host_total}-" in code and code.endswith("-Sam"), msg)
     pg.click("#b-share"); pg.wait_for_timeout(300)
     shared = (pg.evaluate("document.querySelector('#share-text').value") or "") + pg.inner_text("#toast")
@@ -255,6 +289,7 @@ with sync_playwright() as pw:
     check("with Claude, the commentator's line comes from Claude", "Mock trash talk" in p3.inner_text("#talkline"), p3.inner_text("#talkline"))
     p3.click("#b-check"); p3.wait_for_timeout(500); s3 = p3.evaluate("window.__rf.state()")
     check("Claude says the answer is real and rare: a Gem worth 100", s3["cur"]["tier"] == "gem" and s3["cur"]["pts"] == 100 and "Claude checked" in p3.inner_text("#counted"), (s3["cur"], p3.inner_text("#counted")))
+    check("a verdict on the prompt in view plays the confirmed reward once: the Gem reveal", p3.evaluate("document.querySelectorAll('.gemreveal.play').length") == 1 and p3.inner_text("#tier") == "Gem")
     p3.screenshot(path=f"{out}/6-checked-desktop.png", full_page=True)
     nxt(p3)
     answer(p3, "nonsense thing"); p3.click("#b-check"); p3.wait_for_timeout(500); s3 = p3.evaluate("window.__rf.state()")
@@ -263,18 +298,19 @@ with sync_playwright() as pw:
     p3.click("#b-check"); p3.wait_for_timeout(500); s3 = p3.evaluate("window.__rf.state()")
     check("a second no ends the checks: two looks at most", s3["cur"]["checks"] == 2 and p3.is_hidden("#check-row"), s3["cur"])
     nxt(p3)
-    p3.evaluate("window.__judgeDelay=6000"); answer(p3, "slow one"); p3.click("#b-check"); p3.wait_for_timeout(4500)
-    check("a slow check frees Next after 4 s and offers no second check while it runs", p3.is_enabled("#b-next") and p3.is_hidden("#check-row"), (p3.is_enabled("#b-next"), p3.is_visible("#check-row")))
-    p3.wait_for_timeout(2200); s3 = p3.evaluate("window.__rf.state()")
-    check("the slow verdict lands and the total stays the sum of the answers", s3["cur"]["pts"] == 100 and s3["total"] == p3.evaluate("window.__rf.sum()"), (s3["total"], p3.evaluate("window.__rf.sum()")))
+    p3.evaluate("window.__judgeDelay=1800"); answer(p3, "slow one"); slow_round = p3.evaluate("window.__rf.state().i")
+    p3.click("#b-check"); p3.wait_for_timeout(150)
+    check("a check in progress never blocks Next, and offers no second check while it runs", p3.is_enabled("#b-next") and p3.is_hidden("#b-check"), (p3.is_enabled("#b-next"), p3.is_visible("#b-check")))
+    nxt(p3); answer(p3, pack(p3, pid_of(p3))["ranked"][1]["a"]); p3.wait_for_timeout(1500); s3 = p3.evaluate("window.__rf.state()")
+    check("a late verdict counts on its own prompt: that round becomes a Gem worth 100, and the total is the sum", s3["res"][slow_round] == {"tier": "gem", "pts": 100} and s3["total"] == p3.evaluate("window.__rf.sum()"), (s3["res"], s3["total"]))
+    check("a late verdict does not replay its effects on the prompt now showing", s3["cur"]["tier"] == "popular" and p3.evaluate("document.querySelectorAll('.gemreveal').length") == 0 and p3.inner_text("#tier") == "Popular", (s3["cur"], p3.inner_text("#tier")))
+    check("a late verdict updates that round's dot, quietly", "d-gem" in p3.get_attribute(f"#dots i:nth-child({slow_round + 1})", "class") and "land" not in p3.get_attribute(f"#dots i:nth-child({slow_round + 1})", "class"), p3.get_attribute(f"#dots i:nth-child({slow_round + 1})", "class"))
     p3.evaluate("window.__judgeDelay=0"); nxt(p3)
     p3.evaluate("window.__judgeFail=true"); answer(p3, "another one"); p3.click("#b-check"); p3.wait_for_timeout(500)
     check("Claude unreachable: it says so and offers the room's word", "could not be reached" in p3.inner_text("#counted") and p3.inner_text("#b-check") == "We allow it", (p3.inner_text("#counted"), p3.inner_text("#check-row")))
     p3.click("#b-check"); p3.wait_for_timeout(250)
     check("the room's word after a failed check scores 80", p3.evaluate("window.__rf.state().cur.pts") == 80)
     p3.evaluate("window.__judgeFail=false"); nxt(p3)
-    for k in range(1):
-        answer(p3, pack(p3, pid_of(p3))["ranked"][1]["a"]); nxt(p3)
     p3.wait_for_timeout(900)
     check("end: today's score is saved in this browser", "Saved in this browser" in p3.inner_text("#end-note"), p3.inner_text("#end-note"))
     # the user's example: "big hero 5" for an animated film
@@ -313,7 +349,8 @@ with sync_playwright() as pw:
     ctx3 = b.new_context(viewport={"width": 390, "height": 844}, reduced_motion="reduce")
     p5 = ctx3.new_page(); p5.goto(GAME); p5.wait_for_timeout(300); p5.click("#b-practice"); p5.wait_for_timeout(200)
     answer(p5, pack(p5, pid_of(p5))["gems"][0]["a"], 400)
-    check("reduced motion: no confetti", p5.evaluate("document.querySelectorAll('.confetti').length") == 0)
+    check("reduced motion: the Gem shows still and in words, with no fragments or flying +100", p5.evaluate("!!document.querySelector('.gemreveal')&&!document.querySelector('.gemreveal.play')&&!document.querySelector('.fly')&&!document.querySelector('.confetti')") and p5.inner_text("#tier") == "Gem" and "GEM" in p5.inner_text(".gemreveal"))
+    check("reduced motion: the score and the dots still update", p5.inner_text("#total") == "100" and "d-gem" in p5.get_attribute("#dots i:nth-child(1)", "class"), p5.inner_text("#total"))
     b.close()
 
 passed = sum(c["pass"] for c in checks)

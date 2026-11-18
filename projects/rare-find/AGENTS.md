@@ -35,3 +35,6 @@ check count are still true. For a bigger change, review with
    spelling but not swap the answer, and never sees text that reads like an instruction.
 6. Gems stay hidden in the game. Only `base/examples/sample-pack.md` lists them.
 7. GitHub runs no AI and no database. Keep it free to host.
+8. An answer lands fast: on screen within 100 ms, ordinary effects 150 to 250 ms, the Gem reveal
+   inside 600 ms. Next always works. Each reward plays once, on its own prompt. Tiers show in words,
+   not colour alone, and reduced motion keeps every result.

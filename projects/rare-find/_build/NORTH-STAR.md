@@ -97,9 +97,25 @@ the answer, never the player. The written line shows at once; with Claude, a fre
 
 ## Feel
 
-Under 100 ms for direct feedback, 100 to 300 ms for transitions. Buttons press down; the timer ring
-turns amber at 10 s and pulses red at 5 s; points count up; a miss shakes once; a Gem gets a banner,
-a shimmer and confetti; reveal rows arrive top to bottom. Reduced motion turns all of it off.
+Version 4 (18 November 2026), on the owner's brief: a quick game people want to replay, with the
+rhythm of a match-three game. Small rewards for ordinary answers, one memorable payoff for a Gem,
+and the focus on the moment an answer lands.
+
+| Answer | What happens |
+| --- | --- |
+| Popular, in the top ten | Its row lights up and says "Yours"; the score ticks with "+N" |
+| Good find | It lands above the top ten with a purple entrance; a bigger score tick |
+| Gem | A faceted gem drops in under the score, catches the light, sheds fragments, and +100 flies into the score. No confetti |
+| Not on our list | Says so at once. "Check with Claude" (or "We allow it") sits beside Next. A changed verdict plays its reward once |
+| Wrong, or out of time | A short shake, and Next pulses once |
+
+Budgets: on screen within 100 ms, ordinary effects 150 to 250 ms, the Gem reveal inside 600 ms.
+Next works after a 120 ms guard, during effects, host lines and Claude's checks. The host's
+ready-made line shows at once; Claude's fresh line replaces it only while that prompt is on screen.
+A late verdict changes its own round's points and dot, quietly, never the screen. The five dots show
+each outcome by colour and shape, with the names in words for screen readers, and carry into the
+scorecard and the spoiler-free challenge message. Reduced motion keeps every result and drops the
+movement. Sound is for a second pass, if testers want it.
 
 ## Phone first
 

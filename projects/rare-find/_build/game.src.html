@@ -79,12 +79,33 @@ details p{font-size:14px;color:var(--muted);margin:6px 0 0}
 
 /* play */
 .top{display:flex;justify-content:space-between;align-items:center;gap:8px;font-weight:700}
-.top .score{font-size:20px;font-variant-numeric:tabular-nums}
+.top .score{font-size:20px;font-variant-numeric:tabular-nums;position:relative}
+.top .score #total{display:inline-block}
+.score.tick #total{animation:tick 220ms ease-out}
+.score.tick.big #total{animation:tickbig 320ms cubic-bezier(.3,1.6,.5,1)}
+@keyframes tick{40%{transform:scale(1.22);color:var(--accent)}}
+@keyframes tickbig{40%{transform:scale(1.45);color:var(--accent)}}
+.plus{position:absolute;right:0;top:-4px;font-weight:900;font-size:15px;color:var(--accent);pointer-events:none;animation:plusup 520ms ease-out forwards;white-space:nowrap}
+@keyframes plusup{0%{opacity:0;transform:translateY(6px)}25%{opacity:1}100%{opacity:0;transform:translateY(-18px)}}
+.fly{position:fixed;z-index:70;font-weight:900;font-size:26px;color:var(--ink);background:var(--gem);border-radius:12px;padding:2px 8px;pointer-events:none}
 .quit{background:none;border:0;color:var(--muted);font-weight:700;cursor:pointer;min-height:44px;padding:0 4px}
 .quit:hover{color:var(--text)}
-.dots5{display:flex;gap:5px}
-.dots5 i{width:9px;height:9px;border-radius:50%;background:var(--panel2)}
-.dots5 i.on{background:var(--accent)}
+.dots5{display:flex;gap:6px;align-items:center}
+.dots5 i{width:12px;height:12px;border-radius:50%;background:var(--panel2);flex:none}
+.dots5 i.now{background:transparent;box-shadow:inset 0 0 0 2px var(--accent)}
+/* outcome dots: colour plus shape, so a tier never rests on colour alone */
+.dots5 i.d-crowd{background:var(--crowd)}.dots5 i.d-popular{background:var(--popular)}.dots5 i.d-solid{background:var(--solid)}
+.dots5 i.d-good{background:var(--good);box-shadow:0 0 0 2px #e7dbff}
+.dots5 i.d-gem{background:var(--gem);border-radius:2px;transform:rotate(45deg) scale(.92)}
+.dots5 i.d-miss{background:var(--miss);border-radius:3px;width:10px;height:10px}
+.dots5 i.d-unlisted{background:transparent;border:2px dashed var(--muted)}
+.dots5 i.land{animation:dotpop 220ms cubic-bezier(.3,1.6,.5,1)}
+.dots5 i.d-gem.land{animation:dotgem 260ms cubic-bezier(.3,1.6,.5,1)}
+@keyframes dotpop{0%{transform:scale(.3)}100%{transform:scale(1)}}
+@keyframes dotgem{0%{transform:rotate(45deg) scale(.3)}100%{transform:rotate(45deg) scale(.92)}}
+.dots5.big i{width:18px;height:18px}.dots5.big i.d-miss{width:15px;height:15px}
+.dotrow{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:0 0 8px}
+.dotrow .small{margin:0}
 .leave{display:grid;gap:10px;background:var(--panel2);border-radius:14px;padding:12px 14px;margin-top:10px}
 .prompt{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center}
 .prompt h2{font-size:clamp(22px,6.4vw,32px);line-height:1.15;margin:2px 0 0}
@@ -108,35 +129,66 @@ details p{font-size:14px;color:var(--muted);margin:6px 0 0}
 
 .result{display:grid;gap:12px}
 .you{display:flex;align-items:center;gap:12px}
-.badge{border-radius:14px;padding:9px 12px;font-weight:900;color:var(--ink);font-size:16px;flex:none;animation:pop 260ms cubic-bezier(.3,1.6,.5,1)}
+.badge{border-radius:14px;padding:9px 12px;font-weight:900;color:var(--ink);font-size:16px;flex:none;animation:pop 200ms cubic-bezier(.3,1.6,.5,1)}
 .pts{font-size:34px;font-weight:900;font-variant-numeric:tabular-nums;line-height:1}
 .counted{color:var(--muted);font-size:14px;overflow-wrap:anywhere}
 @keyframes pop{0%{transform:scale(.6);opacity:0}100%{transform:scale(1);opacity:1}}
 .t-crowd{background:var(--crowd)}.t-popular{background:var(--popular)}.t-solid{background:var(--solid)}
 .t-good{background:var(--good)}.t-gem{background:var(--gem)}.t-miss{background:var(--miss)}
 .t-unlisted{background:transparent;color:var(--text);border:2px dashed var(--muted)}
-.gemflash{animation:shimmer 1.2s ease-out}
+.gemflash{animation:shimmer 600ms ease-out}
 @keyframes shimmer{0%{box-shadow:0 0 0 0 rgba(255,201,60,.9)}100%{box-shadow:0 0 0 22px rgba(255,201,60,0)}}
+/* the Gem reveal: a faceted gem lands, catches the light, sheds fragments, and +100 flies to the score. All inside 600 ms. */
+.gemreveal{position:relative;display:flex;align-items:center;justify-content:center;gap:12px;padding:14px 12px;border-radius:18px;
+  background:radial-gradient(120% 140% at 30% 20%,#4a3a78,#2b2350 70%);border:3px solid var(--gem);overflow:visible;isolation:isolate}
+.gemreveal .gemsvg{width:112px;height:94px;flex:none;overflow:visible;filter:drop-shadow(0 6px 14px rgba(255,201,60,.45))}
+.gemreveal .gemword{font-size:40px;font-weight:900;letter-spacing:.02em;color:var(--gem);line-height:1}
+.gemreveal .gemword small{display:block;font-size:15px;color:var(--text);font-weight:800;letter-spacing:0;margin-top:4px}
+.gemreveal .burst{position:absolute;left:50px;top:50%;width:150px;height:150px;margin:-75px 0 0 -40px;border-radius:50%;z-index:-1;pointer-events:none;
+  background:radial-gradient(circle,rgba(255,236,170,.95) 0%,rgba(255,201,60,.55) 35%,rgba(255,201,60,0) 70%);opacity:0}
+.gemreveal.play .burst{animation:burst 420ms 60ms ease-out both}
+.gemreveal.play .gemsvg{animation:gemin 260ms cubic-bezier(.3,1.7,.5,1) both}
+.gemreveal.play .gemword{animation:pop 220ms 100ms cubic-bezier(.3,1.6,.5,1) both}
+.gemreveal .glint{transform:translateX(-70px);opacity:0}
+.gemreveal.play .glint{animation:glint 300ms 150ms ease-out forwards}
+.gemreveal .shard{position:absolute;left:58px;top:50%;width:13px;height:13px;background:var(--fc,var(--gem));clip-path:polygon(50% 0,100% 60%,40% 100%,0 40%);opacity:0;pointer-events:none}
+.gemreveal.play .shard{animation:shard 360ms 180ms cubic-bezier(.2,.7,.4,1) forwards}
+.goldflash{position:fixed;inset:0;pointer-events:none;z-index:65;background:radial-gradient(circle at var(--gx,50%) var(--gy,50%),rgba(255,214,102,.5),rgba(255,201,60,0) 60%);animation:goldflash 380ms ease-out forwards}
+@keyframes goldflash{0%{opacity:0}30%{opacity:1}100%{opacity:0}}
+@keyframes burst{0%{opacity:0;transform:scale(.2)}35%{opacity:1}100%{opacity:0;transform:scale(1.7)}}
+@keyframes gemin{0%{transform:translateY(-34px) scale(.3) rotate(-16deg);opacity:0}70%{transform:translateY(3px) scale(1.08)}100%{transform:none;opacity:1}}
+@keyframes glint{0%{transform:translateX(-70px);opacity:0}20%{opacity:.95}100%{transform:translateX(90px);opacity:0}}
+@keyframes shard{0%{opacity:1;transform:translate(0,0) rotate(0) scale(1.2)}100%{opacity:0;transform:translate(var(--dx),var(--dy)) rotate(var(--r)) scale(.6)}}
+/* a Good find lands above the top ten with a stronger entrance */
+.yours.good-in{animation:goodin 240ms cubic-bezier(.3,1.5,.5,1)}
+@keyframes goodin{0%{transform:scale(.85);box-shadow:0 0 0 0 rgba(180,138,255,.9)}60%{transform:scale(1.03)}100%{transform:none;box-shadow:0 0 0 14px rgba(180,138,255,0)}}
+.yours .tag{font-weight:900;color:var(--good)}
+.yours.y-good{outline-color:var(--good)}.yours.y-gem{outline-color:var(--gem)}.yours.y-miss,.yours.y-unlisted{outline:2px dashed var(--muted);background:var(--panel2)}
 .check{display:grid;gap:6px}
 .check .btn{width:100%}
 .host{display:flex;gap:10px;align-items:flex-start}
 .host .face{font-size:30px;line-height:1;flex:none;width:40px;text-align:center}
 .bubble{background:#fff;color:var(--ink);border-radius:16px 16px 16px 4px;padding:9px 13px;font-weight:600;animation:pop 220ms ease-out;overflow-wrap:anywhere}
 .bubble small{display:block;color:#5b5480;font-weight:800;font-size:12px}
-.gembanner{text-align:center;font-size:40px;font-weight:900;letter-spacing:.06em;color:var(--ink);background:linear-gradient(90deg,#ffc93c,#ffe28a,#ffc93c);border-radius:16px;padding:4px;animation:pop 320ms cubic-bezier(.3,1.6,.5,1)}
 .reveal h3{font-size:13px;color:var(--muted);letter-spacing:.05em;margin:0 0 6px}
 .reveal ol{margin:0;padding:0;list-style:none;display:grid;gap:4px}
 .reveal li{display:flex;justify-content:space-between;gap:8px;padding:6px 10px;border-radius:10px;background:var(--panel2);font-size:15px;
   opacity:0;animation:rowin 220ms ease-out forwards}
 .reveal li .p{font-weight:800;font-variant-numeric:tabular-nums}
 .reveal li span{overflow-wrap:anywhere}
-.reveal li.mine{outline:3px solid var(--accent);background:#3f3570}
+.reveal li.mine{outline:3px solid var(--accent);background:#3f3570;opacity:1;animation:rowhit 240ms ease-out}
+.reveal li.mine .you-tag{font-weight:900;color:var(--accent)}
+.reveal.still li{animation:none;opacity:1}
+@keyframes rowhit{0%{background:var(--accent);color:var(--ink)}100%{background:#3f3570}}
 @keyframes rowin{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
 .yours{margin:0 0 8px;padding:7px 10px;border-radius:10px;outline:3px solid var(--accent);background:#3f3570;display:flex;justify-content:space-between;gap:8px;overflow-wrap:anywhere}
 .hidden-gems{background:#3a3020;color:#ffe7a6;border-radius:12px;padding:10px 12px;font-size:14px;font-weight:600}
 .est{font-size:13px;color:var(--muted);margin:0}
-.nextbar{position:sticky;bottom:10px;z-index:5}
-.nextbar .btn{width:100%;box-shadow:0 6px 18px rgba(0,0,0,.45)}
+.nextbar{position:sticky;bottom:10px;z-index:5;display:flex;gap:8px}
+.nextbar .btn{flex:1;box-shadow:0 6px 18px rgba(0,0,0,.45)}
+.nextbar #b-check{background:var(--panel2);border:2px solid var(--good)}
+.nextbar .btn.nudge{animation:nudge 320ms ease-out}
+@keyframes nudge{0%{box-shadow:0 0 0 0 rgba(255,201,60,.9)}100%{box-shadow:0 0 0 12px rgba(255,201,60,0)}}
 
 /* end and scorecard */
 .final{text-align:center}
@@ -174,10 +226,7 @@ details p{font-size:14px;color:var(--muted);margin:6px 0 0}
 .chl{border-top:1px solid var(--line);padding-top:8px;margin-top:8px}
 .chl h3{font-size:14px;color:var(--muted)}
 
-/* confetti and toast */
-.confetti{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:50}
-.confetti i{position:absolute;top:-12px;width:10px;height:14px;border-radius:2px;animation:fall var(--d) cubic-bezier(.2,.6,.4,1) forwards}
-@keyframes fall{to{transform:translate(var(--x),105vh) rotate(var(--r));opacity:.9}}
+/* toast */
 .toast{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);background:var(--panel2);padding:10px 16px;border-radius:12px;z-index:60;max-width:90vw}
 
 /* wider screens: a desktop works, a phone comes first */
@@ -190,12 +239,13 @@ details p{font-size:14px;color:var(--muted);margin:6px 0 0}
   .timer{width:84px;height:84px}.timer .num{font-size:26px}
   .pts{font-size:40px}
   .nextbar{position:static}
-  .check{grid-template-columns:auto 1fr;align-items:center}.check .btn{width:auto}
   .tabs{max-width:360px}
 }
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:1ms!important;animation-iteration-count:1!important;transition-duration:1ms!important}
   .timer.danger{animation:none}
+  .gemreveal .shard,.gemreveal .burst,.plus,.fly,.goldflash{display:none}
+  .gemreveal .glint{opacity:0}
 }
 </style>
 </head>
@@ -270,6 +320,7 @@ details p{font-size:14px;color:var(--muted);margin:6px 0 0}
 <section id="scorecard" role="tabpanel" aria-labelledby="tab-card" hidden>
   <div class="card">
     <h2>Today</h2>
+    <div class="dotrow" id="sc-dots" hidden></div>
     <p class="small" id="sc-today" style="margin:0 0 8px"></p>
     <div class="chart" id="sc-chart"></div>
   </div>
@@ -290,7 +341,7 @@ details p{font-size:14px;color:var(--muted);margin:6px 0 0}
 
 <!-- PLAY -->
 <section id="play" hidden aria-labelledby="prompt-text">
-  <div class="top"><button class="quit" id="b-quit">✕ Back to start</button><span class="dots5" id="dots" aria-hidden="true"></span><span class="pill" id="round"></span><span class="score" aria-label="Your score"><span id="total">0</span> pts</span></div>
+  <div class="top"><button class="quit" id="b-quit">✕ Back to start</button><span class="dots5" id="dots" role="img" aria-label="Round results"></span><span class="pill" id="round"></span><span class="score" aria-label="Your score"><span id="total">0</span> pts</span></div>
   <div class="leave" id="leave" hidden><span>Go back to the start? This game is cancelled and its score is not saved.</span><div class="row"><button class="btn" id="b-leave-yes">Back to start</button><button class="btn primary" id="b-leave-no">Keep playing</button></div></div>
   <div class="card">
     <div class="prompt">
@@ -314,7 +365,8 @@ details p{font-size:14px;color:var(--muted);margin:6px 0 0}
       <div class="badge" id="tier">Gem</div>
       <div><div class="pts" id="pts">0</div><div class="counted" id="counted"></div></div>
     </div>
-    <div class="check" id="check-row" hidden><button class="btn" id="b-check">Check with Claude</button><span class="small" id="check-note"></span></div>
+    <div id="moment"></div>
+    <div class="check" id="check-row" hidden><span class="small" id="check-note"></span></div>
     <p class="rival" id="rival-row" hidden></p>
     <div class="host" id="talk-row" hidden><span class="face" id="talk-face" aria-hidden="true"></span><div class="bubble" id="talkline"></div></div>
     <div class="reveal-cols">
@@ -322,7 +374,7 @@ details p{font-size:14px;color:var(--muted);margin:6px 0 0}
       <div class="hidden-gems" id="gems-note"></div>
     </div>
     <p class="est" id="est">Popularity is the AI's estimate, not a survey.</p>
-    <div class="nextbar"><button class="btn primary" id="b-next">Next ▸</button></div>
+    <div class="nextbar"><button class="btn" id="b-check" hidden>Check with Claude</button><button class="btn primary" id="b-next">Next ▸</button></div>
   </div>
 </section>
 
@@ -578,7 +630,7 @@ document.querySelectorAll("#seg-timer button").forEach(b=>b.addEventListener("cl
 $("#talk").addEventListener("change",e=>{ S.talk=e.target.checked; saveLocal(); renderSettings(); });
 document.querySelectorAll("#seg-count button").forEach(b=>b.addEventListener("click",()=>{ S.count=+b.dataset.n; saveLocal(); renderSettings(); }));
 $("#nick").addEventListener("change",e=>{ S.nick=e.target.value.replace(/[^A-Za-z0-9]/g,"").slice(0,12); e.target.value=S.nick; saveLocal(); });
-function setTab(t){ S.tab=t; $("#tab-play").setAttribute("aria-selected",String(t==="play")); $("#tab-card").setAttribute("aria-selected",String(t==="card"));
+function setTab(t){ S.tab=t; $("#toast").hidden=true; $("#tab-play").setAttribute("aria-selected",String(t==="play")); $("#tab-card").setAttribute("aria-selected",String(t==="card"));
   if(S.screen==="home"||S.screen==="scorecard") show(t==="play"?"home":"scorecard"); if(t==="card") renderCard(); }
 $("#tab-play").addEventListener("click",()=>setTab("play"));
 $("#tab-card").addEventListener("click",()=>setTab("card"));
@@ -602,6 +654,9 @@ function renderCard(){
   const k=dayKey(), mine=S.days[k], real=[], useReal=false;
   $("#sc-today").textContent = mine ? `You scored ${mine.score} of 500. ` + (useReal ? `${real.filter(r=>r.score<mine.score).length} of ${real.length} players today scored less.` : `That beats about ${beatPct(mine.score)}% of typical scores, by our estimate.`)
     : "Not played yet today. " + (useReal?`${real.length} people have.`:`The typical score is about ${MEAN}.`);
+  const sd=$("#sc-dots"); sd.hidden=!(mine&&mine.sq); sd.textContent="";
+  if(mine&&mine.sq){ const d=document.createElement("span"); d.className="dots5 big"; d.setAttribute("role","img"); renderDots(d,mine.sq,-1,-1);
+    const l=document.createElement("span"); l.className="small"; l.textContent=mine.sq.map(t=>TIERS[t].name).join(" · "); sd.append(d,l); }
   $("#sc-chart").innerHTML = chartSVG(useReal?bins(real.map(r=>r.score)):bins(DIST), mine?mine.score:null, useReal?"Today's real scores":"Estimated spread of scores")
     + `<p class="cap">${useReal?`Today's real scores, ${real.length} players.`:`Estimated spread, not real players: a model of typical play, average about ${MEAN} of 500.`}</p>`;
   // the week
@@ -713,13 +768,13 @@ function newGame(mode,opts={}){
     else packs=practicePacks(S.count);
   }
   G={packs,i:0,total:0,res:[],rival:opts.rival||null,token:0,id:Date.now(),pending:[],hostOffset:Math.floor(rnd()*HOSTS.length),day:dayKey()};
-  const dt=$("#dots"); dt.textContent=""; if(packs.length<=10) packs.forEach(()=>dt.append(document.createElement("i")));
+  $("#dots").hidden=packs.length>10;
   G.perfect=100*packs.length; G.topics=[...new Set(packs.map(p=>p.cat))]; G.byTopic=packs.length>10;
   show("play"); startPrompt(opts.endsAt);
 }
 function startPrompt(endsAt){
   const p=G.packs[G.i]; G.locked=false; G.cur=null; G.token++; G.ready=false;
-  $("#round").textContent=`${G.i+1} / ${G.packs.length}`; $("#round").setAttribute("aria-label",`Prompt ${G.i+1} of ${G.packs.length}`); [...$("#dots").children].forEach((d,i)=>d.classList.toggle("on",i<=G.i));
+  $("#round").textContent=`${G.i+1} / ${G.packs.length}`; $("#round").setAttribute("aria-label",`Prompt ${G.i+1} of ${G.packs.length}`); updateDots(-1);
   const t=G.topics.indexOf(p.cat)+1;
   $("#cat").textContent=(p.cat||"").toUpperCase()+(G.byTopic?` · TOPIC ${t} OF ${G.topics.length}`:S.mode==="daily"?" · TODAY":S.mode==="challenge"?" · CHALLENGE":" · PRACTICE");
   if(G.byTopic&&(G.i===0||G.packs[G.i-1].cat!==p.cat)) toast(`Topic ${t} of ${G.topics.length}: ${p.cat}`);
@@ -742,7 +797,7 @@ function resumeAt(endsAt){
 $("#answer-form").addEventListener("submit",e=>{ e.preventDefault(); if(!G||G.locked) return; if($("#answer").value.trim()) submit(false); else $("#answer").focus(); });
 
 function submit(timeout){
-  if(!G||G.locked) return;
+  if(!G||G.locked) return; window.__rfSubmitAt=performance.now();
   G.locked=true; clearInterval(tick); $("#timer").className="timer done";
   const raw=$("#answer").value.trim(); $("#answer").disabled=true; $("#b-go").disabled=true; $("#answer").blur();
   const p=G.packs[G.i]; const m = raw ? match(p,raw) : {tier:"miss",how:"time"};
@@ -753,12 +808,48 @@ function submit(timeout){
 }
 function countUp(el,to,ms=300){
   if(reduce||to===0){ el.textContent=to; return; } const t0=performance.now(), from=Number(el.textContent)||0;
-  const f=t=>{ const k=Math.min(1,(t-t0)/ms); el.textContent=Math.round(from+(to-from)*k); if(k<1) requestAnimationFrame(f); }; requestAnimationFrame(f);
+  const f=t=>{ const k=Math.max(0,Math.min(1,(t-t0)/ms)); /* a frame time can sit just before t0 */ el.textContent=Math.round(from+(to-from)*k); if(k<1) requestAnimationFrame(f); }; requestAnimationFrame(f);
 }
 function setBadge(m){
   const t=TIERS[m.tier]; const badge=$("#tier"); badge.className="badge "+t.css; badge.textContent=t.name; void badge.offsetWidth;
-  if(m.tier==="gem"){ badge.classList.add("gemflash"); confetti(70); }
-  countUp($("#pts"),pts(m));
+  countUp($("#pts"),pts(m),200);
+}
+/* ---------- the moment an answer lands ----------
+   Visible within 100 ms, ordinary effects in 150 to 250 ms, the Gem reveal inside 600 ms.
+   Each reward plays once per answer: a late verdict on another prompt changes the score and its dot, never the screen. */
+function renderDots(el,tiers,now,landAt){
+  el.textContent="";
+  tiers.forEach((t,i)=>{ const d=document.createElement("i"); if(t) d.className="d-"+t; else if(i===now) d.className="now"; if(i===landAt&&!reduce) d.classList.add("land"); el.append(d); });
+  el.setAttribute("aria-label","Round results: "+tiers.map((t,i)=>`${i+1}, ${t?TIERS[t].name:i===now?"now playing":"to play"}`).join("; "));
+}
+function updateDots(landAt){ if(!G||G.packs.length>10) return; renderDots($("#dots"),G.packs.map((_,i)=>G.res[i]&&G.res[i].tier),G.locked?-1:G.i,landAt); }
+function scoreTick(n,big){
+  if(!n||reduce) return; const sc=$("#total").parentElement; sc.classList.remove("tick","big"); void sc.offsetWidth; sc.classList.add("tick"); if(big) sc.classList.add("big");
+  const p=document.createElement("span"); p.className="plus"; p.textContent="+"+n; p.setAttribute("aria-hidden","true"); sc.append(p); setTimeout(()=>p.remove(),600);
+}
+function goldFlash(){
+  if(reduce) return; const gem=$("#moment .gemsvg"); const f=document.createElement("div"); f.className="goldflash"; f.setAttribute("aria-hidden","true");
+  if(gem){ const r=gem.getBoundingClientRect(); f.style.setProperty("--gx",(r.left+r.width/2)+"px"); f.style.setProperty("--gy",(r.top+r.height/2)+"px"); }
+  document.body.append(f); setTimeout(()=>f.remove(),500);
+}
+function flyToScore(n){
+  const gem=$("#moment .gemsvg"), sc=$("#total");
+  if(reduce||!gem||!sc||!document.body.animate){ scoreTick(n,true); return; }
+  const a=gem.getBoundingClientRect(), b=sc.getBoundingClientRect(); const f=document.createElement("span"); f.className="fly"; f.textContent="+"+n; f.setAttribute("aria-hidden","true"); document.body.append(f);
+  const w=f.offsetWidth,h=f.offsetHeight, x0=a.left+a.width/2-w/2, y0=a.top+a.height/2-h/2, x1=b.left+b.width/2-w/2, y1=b.top+b.height/2-h/2;
+  f.style.left=x0+"px"; f.style.top=y0+"px";
+  const an=f.animate([{transform:"translate(0,0) scale(.6)",opacity:0},{transform:"translate(0,-14px) scale(1.15)",opacity:1,offset:.3},{transform:`translate(${x1-x0}px,${y1-y0}px) scale(.7)`,opacity:.9}],
+    {duration:330,delay:240,easing:"cubic-bezier(.5,0,.7,1)",fill:"both"});
+  an.onfinish=()=>{ f.remove(); scoreTick(n,true); }; setTimeout(()=>f.remove(),1200);
+}
+function land(cur){
+  const m=cur.m, t=m.tier, played=cur.played||(cur.played={}), first=!played[t]; played[t]=true;
+  setBadge(m); renderReveal(cur.pack,m,first); updateDots(first?cur.round:-1);
+  if(!first) return;
+  const p=pts(m);
+  if(t==="gem"){ $("#tier").classList.add("gemflash"); goldFlash(); flyToScore(p); }
+  else if(p>0) scoreTick(p,t==="good");
+  else if(t==="miss"&&!reduce){ const f=$("#answer-form"); f.classList.remove("shake"); void f.offsetWidth; f.classList.add("shake"); }
 }
 function countedText(raw,m){
   if(m.how==="wrong") return `"${raw}" is not a right answer here`;
@@ -778,20 +869,20 @@ function looksLikeInstructions(t){ t=String(t||"");
 function checkable(cur){ const m=cur.m; return !!cur.raw && (m.tier==="unlisted"||(m.tier==="miss"&&m.how!=="time"&&m.how!=="empty")) && (cur.checks<2||cur.failed); }
 function canAsk(cur){ return !!caps.sample && !cur.failed && !looksLikeInstructions(cur.raw); }
 function renderCheck(){
-  const cur=G.cur, row=$("#check-row"); if(!cur||!checkable(cur)||cur.judging){ row.hidden=true; return; }
-  row.hidden=false; const ask=canAsk(cur);
+  const cur=G.cur, row=$("#check-row"), btn=$("#b-check"); if(!cur||!checkable(cur)||cur.judging){ row.hidden=true; btn.hidden=true; return; }
+  row.hidden=false; btn.hidden=false; const ask=canAsk(cur);
   $("#b-check").textContent = ask ? (cur.checks===0?"Check with Claude":"Check again") : "We allow it";
   $("#check-note").textContent = ask ? (cur.checks===0?"Sure it is right? Claude checks it is real. Right scores 80, rare 100.":"Think Claude got it wrong? One more look.")
-    : cur.failed ? "Claude could not be reached. If the room agrees it is right, it counts as a Good find, 80."
+    : cur.failed ? "If the room agrees it is right, it counts as a Good find, 80."
     : caps.sample&&looksLikeInstructions(cur.raw) ? "Claude cannot check this one: it reads like an instruction. If the room agrees it is right, it counts as 80."
     : "If the room agrees it is right, it counts as a Good find, 80.";
 }
 function showResult(){
   const cur=G.cur, {raw,m,pack}=cur;
-  $("#result").hidden=false; setBadge(m);
-  if(m.tier==="miss"&&!reduce){ const f=$("#answer-form"); f.classList.remove("shake"); void f.offsetWidth; f.classList.add("shake"); }
+  $("#result").hidden=false;
   $("#counted").textContent=countedText(raw,m);
-  G.res[G.i]={prompt:pack.prompt,answer:raw,tier:m.tier,pts:pts(m)}; retotal();
+  G.res[G.i]={prompt:pack.prompt,answer:raw,tier:m.tier,pts:pts(m)}; retotal(G,m.tier==="gem"&&!reduce?570:0);
+  land(cur);
   renderCheck();
   const next=$("#b-next");
   next.textContent = G.i+1<G.packs.length ? "Next ▸" : "See my score ▸";
@@ -800,25 +891,42 @@ function showResult(){
   const rv=$("#rival-row"), rt=G.rival&&G.rival.tiers&&G.rival.tiers[G.i];
   rv.hidden=!rt; if(rt){ const T={c:"crowd",p:"popular",t:"solid",g:"good",d:"gem",m:"miss",u:"unlisted"}[rt]; rv.textContent="";
     const b=document.createElement("b"); b.textContent=`${G.rival.name}: `; rv.append(b,`${TIERS[T].sq} ${TIERS[T].name}`); }
-  const talkP = S.talk ? comment(cur) : ($("#talk-row").hidden=true, null);
+  // The host's ready-made line shows at once; Claude's fresh line swaps in only while this prompt is on screen.
+  if(S.talk) comment(cur); else $("#talk-row").hidden=true;
   announce();
-  // A short pause before Next, and up to 2 s for a fresh line from the host, so it is seen before moving on.
-  next.disabled=true; const wait=[new Promise(r=>setTimeout(r,reduce?120:450))]; if(talkP) wait.push(Promise.race([talkP,new Promise(r=>setTimeout(r,2000))]));
-  Promise.all(wait).then(()=>{ if(G&&G.cur===cur){ G.ready=true; if(!cur.judging){ next.disabled=false; next.focus(); } } });
+  // Players can move on during the effects and the host's line. A short guard stops the Enter that sent the answer from also skipping it.
+  next.disabled=true; const g=G;
+  setTimeout(()=>{ if(G!==g||G.cur!==cur) return; G.ready=true; next.disabled=false;
+    const a=document.activeElement; if(!a||a===document.body||a===$("#answer")) next.focus();
+    if(m.tier==="miss"&&!reduce){ next.classList.remove("nudge"); void next.offsetWidth; next.classList.add("nudge"); } }, reduce?60:120);
+  requestAnimationFrame(()=>{ window.__rfPaintAt=performance.now(); });
 }
 // The total is always the sum of the answers' points, so a late or changed verdict can never leave it out of step.
-function retotal(g=G){ if(!g) return; g.total=g.res.reduce((a,r)=>a+(r&&r.pts||0),0); if(g===G&&S.screen==="play") countUp($("#total"),g.total); }
+function retotal(g=G,showAt=0){ if(!g) return; g.total=g.res.reduce((a,r)=>a+(r&&r.pts||0),0);
+  const show=()=>{ if(g===G&&S.screen==="play") countUp($("#total"),g.total,220); }; if(showAt) setTimeout(show,showAt); else show(); }
 function announce(){ const c=G.cur, t=TIERS[c.m.tier]; let s=`${t.name}, ${pts(c.m)} points.`; if(c.m.answer) s+=` Counted as ${c.m.answer}.`; $("#live-sum").textContent=s; }
-function renderReveal(pack,m){
-  const R=$("#reveal"); R.textContent="";
-  if(m.tier==="gem"){ const g=document.createElement("div"); g.className="gembanner"; g.textContent="GEM!"; R.append(g); }
+const GEM_SVG=`<svg class="gemsvg" viewBox="0 0 120 100" aria-hidden="true"><defs><clipPath id="gemclip"><path d="M34 12H86L110 38L60 94L10 38Z"/></clipPath></defs>
+<path d="M34 12H86L110 38L60 94L10 38Z" fill="#c98a0c"/><path d="M34 12L46 38H74L86 12Z" fill="#ffe9a8"/><path d="M10 38L34 12L46 38Z" fill="#ffd25e"/><path d="M110 38L86 12L74 38Z" fill="#ffc93c"/>
+<path d="M10 38H46L60 94Z" fill="#e9a91a"/><path d="M46 38H74L60 94Z" fill="#ffd25e"/><path d="M74 38H110L60 94Z" fill="#d99a12"/>
+<g clip-path="url(#gemclip)"><rect class="glint" x="20" y="-10" width="16" height="120" fill="#fff" transform="skewX(-20)"/></g></svg>`;
+function gemReveal(animate){
+  const g=document.createElement("div"); g.className="gemreveal"+(animate&&!reduce?" play":""); g.setAttribute("role","img"); g.setAttribute("aria-label","Gem: a rare right answer, 100 points");
+  const bu=document.createElement("span"); bu.className="burst"; g.append(bu);
+  g.insertAdjacentHTML("beforeend",GEM_SVG); const w=document.createElement("div"); w.className="gemword"; w.setAttribute("aria-hidden","true"); w.innerHTML="GEM! +100<small>A rare right answer</small>"; g.append(w);
+  const fc=["#ffe9a8","#ffd25e","#ffc93c","#e9a91a","#fff3c4"];
+  [[-70,-56,-120],[78,-62,140],[-96,4,220],[104,10,-180],[-60,62,100],[66,66,-80],[-16,-80,60],[20,84,-140],[-110,-30,160],[120,-34,-200]].forEach(([dx,dy,r],k)=>{ const i=document.createElement("i"); i.className="shard"; i.style.setProperty("--dx",dx+"px"); i.style.setProperty("--dy",dy+"px"); i.style.setProperty("--r",r+"deg"); i.style.setProperty("--fc",fc[k%fc.length]); g.append(i); });
+  return g;
+}
+function renderReveal(pack,m,animate=true){
+  const R=$("#reveal"); R.textContent=""; R.classList.toggle("still",!animate);
+  const mo=$("#moment"); mo.textContent=""; if(m.tier==="gem") mo.append(gemReveal(animate));
   if(m.tier==="good"||m.tier==="gem"||m.tier==="unlisted"||(m.tier==="miss"&&m.how!=="time")){
-    const d=document.createElement("div"); d.className="yours"; const a=document.createElement("span"); a.textContent=`Your answer: ${m.answer||G.cur.raw}`;
-    const pt=document.createElement("b"); pt.textContent=pts(m); d.append(a,pt); R.append(d); }
+    const d=document.createElement("div"); d.className="yours y-"+m.tier+(m.tier==="good"&&animate&&!reduce?" good-in":""); const a=document.createElement("span"); a.textContent=`Your answer: ${m.answer||G.cur.raw}`;
+    const pt=document.createElement("b"); pt.textContent=(m.tier==="good"?"Good find · ":m.tier==="gem"?"Gem · ":"")+pts(m); if(m.tier==="good") pt.className="tag"; d.append(a,pt); R.append(d); }
   const h=document.createElement("h3"); h.textContent="THE TOP TEN"; const ol=document.createElement("ol");
-  pack.ranked.forEach((e,i)=>{ const li=document.createElement("li"); li.style.animationDelay=(reduce?0:i*35)+"ms";
+  pack.ranked.forEach((e,i)=>{ const li=document.createElement("li"); const mine=m.answer===e.a; li.style.animationDelay=(reduce||mine||!animate?0:i*12)+"ms";
     const a=document.createElement("span"); a.textContent=`${i+1}. ${e.a}`; const p=document.createElement("span"); p.className="p"; p.textContent=rankPts(i+1,pack.top);
-    if(m.answer===e.a) li.classList.add("mine"); li.append(a,p); ol.append(li); });
+    if(mine){ li.classList.add("mine"); const y=document.createElement("b"); y.className="you-tag"; y.textContent="Yours "; p.prepend(y); } li.append(a,p); ol.append(li); });
   R.append(h,ol);
   const found=m.tier==="gem";
   $("#gems-note").textContent = found ? `You found one of ${pack.gems.length} Gems. The others stay hidden for next time.`
@@ -865,29 +973,29 @@ Return JSON only: {"correct":true|false,"canonical":"the answer, correctly spell
     const again2=match(pack, close?canon:raw); const listed=!(again2.tier==="miss"||again2.tier==="unlisted");
     const tier= listed ? again2.tier : (v.rarity==="rare" ? "gem" : "good");
     const m={tier,answer:(again2.answer||(close?canon:raw).slice(0,60)),how:"judged",rank:listed?again2.rank:undefined,top:pack.top};
-    const p=pts(m); G.res[round]={...G.res[round],tier,pts:p,judged:true}; cur.m=m; retotal();
-    if(here){ setBadge(m); $("#counted").textContent=`Claude checked: "${m.answer}" is right${tier==="gem"?", and rare":""}. ${String(v.why||"").slice(0,90)}`; renderReveal(pack,m); announce(); if(S.talk) comment(cur); }
-    else toast(`Claude allowed "${raw}" on prompt ${round+1}: +${p}`);
+    const p=pts(m); G.res[round]={...G.res[round],tier,pts:p,judged:true}; cur.m=m; retotal(G,here&&tier==="gem"&&!reduce?570:0);
+    if(here){ land(cur); $("#counted").textContent=`Claude checked: "${m.answer}" is right${tier==="gem"?", and rare":""}. ${String(v.why||"").slice(0,90)}`; announce(); if(S.talk) comment(cur); }
+    else { updateDots(-1); toast(`Claude allowed "${raw}" on prompt ${round+1}: +${p}`); }
     } else {
     cur.m={...cur.m,tier:"miss",how:"judged-no"}; G.res[round]={...G.res[round],tier:"miss",pts:0}; retotal();
-    if(here){ setBadge(cur.m); $("#counted").textContent=`Claude checked "${raw}": not a right answer. ${v&&v.why?String(v.why).slice(0,90):""}`; announce(); if(S.talk) comment(cur); }
+    if(here){ land(cur); $("#counted").textContent=`Claude checked "${raw}": not a right answer. ${v&&v.why?String(v.why).slice(0,90):""}`; announce(); if(S.talk) comment(cur); }
+    else updateDots(-1);
   }
 }
 // Without Claude, "We allow it" is the honour system: the room decides.
 function honourAllow(cur,why){
   const p=80; cur.m={tier:"good",answer:cur.raw,how:"allowed",points:p}; cur.checks=2; cur.failed=false;
   G.res[cur.round]={...G.res[cur.round],tier:"good",pts:p,allowed:true}; retotal();
-  setBadge(cur.m); $("#counted").textContent=(why?why+" ":"")+countedText(cur.raw,cur.m); renderReveal(cur.pack,cur.m); announce(); if(S.talk) comment(cur);
+  land(cur); $("#counted").textContent=(why?why+" ":"")+countedText(cur.raw,cur.m); announce(); if(S.talk) comment(cur);
   if(G.ready) $("#b-next").focus();
 }
 $("#b-check").addEventListener("click",async()=>{
   const cur=G&&G.cur; if(!cur||!checkable(cur)||cur.judging) return;
-  if(!canAsk(cur)){ $("#check-row").hidden=true; honourAllow(cur); return; }
-  const next=$("#b-next"); next.disabled=true; cur.judging=true; $("#check-row").hidden=true;
-  // Never hold the game for long: after 4 s Next works again, and a late verdict still counts.
-  setTimeout(()=>{ if(G&&G.cur===cur&&G.ready&&cur.judging) next.disabled=false; },4000);
+  if(!canAsk(cur)){ $("#check-row").hidden=true; $("#b-check").hidden=true; honourAllow(cur); return; }
+  // The game never waits for Claude: Next stays usable, and a late verdict still counts on its own prompt.
+  cur.judging=true; $("#check-row").hidden=true; $("#b-check").hidden=true; if(G.ready) $("#b-next").focus();
   const jp=judge(cur); G.pending.push(jp); await jp; cur.judging=false;
-  if(G&&G.cur===cur){ renderCheck(); if(G.ready){ next.disabled=false; if(!$("#check-row").hidden) $("#b-check").focus(); else next.focus(); } }
+  if(G&&G.cur===cur){ renderCheck(); const a=document.activeElement; if(!$("#b-check").hidden&&(a===$("#b-next")||a===document.body)) $("#b-check").focus(); }
 });
 $("#b-next").addEventListener("click",()=>{
   if(!G||!G.ready) return;
@@ -921,7 +1029,8 @@ async function endGame(){
 // Challenges link to the public web copy, which opens for anyone, with no account.
 const WEB_LINK="https://bar181.github.io/practical-ai/rare-find/";
 function challengeLink(g){ return `${WEB_LINK}#c-${makeCode(g)}`; }
-function challengeText(g){ return `I scored ${g.total} of ${g.perfect} on Rare Find${S.mode==="daily"?" today":""}. Same ${g.packs.length} prompts: can you beat me?\n${challengeLink(g)}`; }
+function resultRow(g){ return g.res.map(r=>TIERS[(r&&r.tier)||"miss"].sq).join(""); }
+function challengeText(g){ return `Rare Find${S.mode==="daily"?" today":""}: ${g.total} of ${g.perfect} ${resultRow(g)}\nSame ${g.packs.length} prompts, no spoilers: can you beat me?\n${challengeLink(g)}`; }
 function renderShare(){ const g=G; if(!g) return; $("#share-name").value=S.nick; $("#share-link").value=challengeText(g); }
 $("#share-name").addEventListener("input",e=>{ S.nick=e.target.value.replace(/[^A-Za-z0-9]/g,"").slice(0,12); saveLocal(); if(G) $("#share-link").value=challengeText(G); });
 $("#share-name").addEventListener("change",e=>{ e.target.value=S.nick; $("#nick").value=S.nick; });
@@ -941,18 +1050,9 @@ function goStart(){ clearInterval(tick); $("#leave").hidden=true; if(G) G.cur=nu
 $("#b-leave-yes").addEventListener("click",goStart);
 $("#b-end-back").addEventListener("click",goStart);
 
-/* ---------- confetti ---------- */
-function confetti(n){
-  if(reduce) return; const c=document.createElement("div"); c.className="confetti"; c.setAttribute("aria-hidden","true");
-  const cols=["#ffc93c","#b48aff","#5aa9ff","#3ccb7f","#ff6577"];
-  for(let i=0;i<n;i++){ const p=document.createElement("i"); p.style.left=(rnd()*100)+"vw"; p.style.background=cols[i%cols.length];
-    p.style.setProperty("--x",(rnd()*160-80)+"px"); p.style.setProperty("--r",(rnd()*720-360)+"deg"); p.style.setProperty("--d",(900+rnd()*900)+"ms"); c.append(p); }
-  document.body.append(c); setTimeout(()=>c.remove(),2000);
-}
-
 /* ---------- test hook ---------- */
 window.__rf={CAL,practiceLeft,sum:()=>G?G.res.reduce((a,r)=>a+(r&&r.pts||0),0):0,parseCode,gameKey,makeCode,meanOf,match,pts,rankPts,norm,osa,STOP,packs:DATA.packs,dailyPacks,beatPct,MEAN,HOSTS,looks:looksLikeInstructions,
-  state:()=>({screen:S.screen,tab:S.tab,mode:S.mode,i:G&&G.i,total:G&&G.total,cur:G&&G.cur&&{raw:G.cur.raw,...G.cur.m,pts:pts(G.cur.m),checks:G.cur.checks},days:S.days,caps:Object.fromEntries(Object.entries(caps).map(([k,v])=>[k,!!v]))}),
+  state:()=>({screen:S.screen,tab:S.tab,mode:S.mode,i:G&&G.i,total:G&&G.total,res:G?G.res.map(r=>r&&{tier:r.tier,pts:r.pts}):[],cur:G&&G.cur&&{raw:G.cur.raw,...G.cur.m,pts:pts(G.cur.m),checks:G.cur.checks},days:S.days,caps:Object.fromEntries(Object.entries(caps).map(([k,v])=>[k,!!v]))}),
   setSeed:v=>{seed=v;}};
 
 renderSettings(); renderHome(); show("home"); hashChallenge(); initCaps().then(renderSettings);

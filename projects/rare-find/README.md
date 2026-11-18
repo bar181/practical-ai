@@ -103,6 +103,16 @@ one in settings, or turn them off.
 
 ## What's new
 
+**Version 4, 18 November 2026: answer moments**
+
+<p align="center"><img src="_build/img/gem-reveal.webp" width="260" alt="Animation of the Gem reveal on a phone: the answer Sepak takraw goes in, a faceted gold gem drops onto the card with a burst of light and flying fragments, the words GEM! +100 appear, and +100 flies up into the score"></p>
+
+- Every answer lands its own way: a popular answer lights up its row in the top ten, a Good find
+  jumps in above it, and a Gem gets its own reveal.
+- You can press Next straight away, even while the effects play or Claude is checking.
+- The five dots at the top show how each round went, and so does your challenge message, with no
+  answers given away.
+
 **Version 3, 18 November 2026**
 
 - A new game every day, set in advance on a calendar.
@@ -113,9 +123,10 @@ one in settings, or turn them off.
 ## Status
 
 **In user testing.** As of 18 November 2026, users are playing it; their results are not in yet.
-82 of 82 automated checks pass at phone and desktop
-width, with Claude replaced by a mock. Fresh AI reviewers scored earlier versions over six loops;
-nobody has re-scored this version. Not yet tried: a screen reader and ChatGPT. The 100 newest prompts were spot-checked by Claude, not read in full by a
+102 of 102 automated checks pass at phone and desktop
+width, with Claude replaced by a mock. In two blind reviews, fresh AI reviewers scored version 4
+91 and 86, against 84 and 82 for version 3, and both would replay version 4. Nobody has played
+version 4 in the real Claude artifact yet. Not yet tried: a screen reader and ChatGPT. The 100 newest prompts were spot-checked by Claude, not read in full by a
 person. [The evidence](quality-results/README.md).
 
 ## For builders
