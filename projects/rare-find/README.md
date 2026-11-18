@@ -57,12 +57,13 @@ film counts as Big Hero 6, worth 80. Think Claude got it wrong? **Check again**,
 commenting on each answer and its points. They tease the answer, never you. Pick one, or turn them
 off, in settings.
 
-**Challenge a friend.** At the end, press **Challenge a friend**. It copies a short message with a
-code such as `RF1a3k0p-245-cptgd-Sam`, which holds the exact prompts and your score. Your friend
-enters the code, or taps your link if you saved the game's link in settings. They play the same
-prompts in their own Claude, or in any browser with the game file. Then they send their code back.
-Paste it on the Scorecard and you both appear on that game's scoreboard. No server and no account
-are needed, so it works across chatbots.
+**Challenge a friend.** At the end, add your name and press **Copy challenge link**. The link opens
+Rare Find with the same prompts and shows your score to beat, for example
+`https://claude.ai/artifact/...#c-RF1a3k0p-245-cptgd-Sam`. Your friend plays, and their own end
+screen gives them a link back. Paste their link or code on your Scorecard and you both appear on
+that game's scoreboard. The link opens the published Claude artifact, so the owner must share it by
+link and friends need a Claude account. Without Claude, the code part (`RF1...`) still works in the
+game file in any browser.
 
 **Settings** sit behind the gear icon, closed until you open them. **✕ Back to start** is on every
 screen.
@@ -108,7 +109,7 @@ including their -ing, -ed and -s forms, never count as a slip. A slip inside a s
 different word. The reviewers keep trying to break it.
 
 **Is the chart real?** Until 5 people have played that day in a shared artifact, it shows an
-estimate: a model of typical play, averaging about 170 of 500. It says so on screen.
+estimate: a model of typical play, averaging about 155 of 500. It says so on screen.
 
 ## Status
 

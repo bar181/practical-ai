@@ -220,8 +220,8 @@ details p{font-size:14px;color:var(--muted);margin:6px 0 0}
   <div id="set-board"><label class="switch"><input type="checkbox" id="post" checked> Put my daily score on the scoreboard</label>
     <p class="small" id="board-note" style="margin:6px 0 0"></p></div>
   <div><label class="lbl" for="glink">Link to this game, for challenges</label>
-    <input class="input" id="glink" maxlength="200" placeholder="Paste the link after you share this game" style="width:100%">
-    <p class="small" style="margin:6px 0 0">Optional. With it, a challenge you send is one tap: it opens this game with the same prompts.</p></div>
+    <input class="input" id="glink" maxlength="200" placeholder="Blank: the main Rare Find game" style="width:100%">
+    <p class="small" style="margin:6px 0 0">Challenge links open the main Rare Find game. Made your own copy? Paste its share link here.</p></div>
 </div></div></div>
 
 <div class="tabs" role="tablist" id="tabs">
@@ -280,7 +280,7 @@ details p{font-size:14px;color:var(--muted);margin:6px 0 0}
     <p class="small" id="chl-none" style="margin:0">Finish a game and press "Challenge a friend". They play the same prompts in their own Claude, or any browser, and send their code back. Paste it here to add their score.</p>
     <div id="chl-list"></div>
     <form class="row" id="code-form2" style="margin-top:10px"><label for="code-in2" class="sr">A friend's code</label>
-      <input class="input" id="code-in2" maxlength="80" placeholder="Paste a friend's code" style="flex:1" autocapitalize="off" spellcheck="false"><button class="btn">Add</button></form>
+      <input class="input" id="code-in2" maxlength="80" placeholder="Paste a friend's link or code" style="flex:1" autocapitalize="off" spellcheck="false"><button class="btn">Add</button></form>
   </div>
   <div class="card" id="sc-friends">
     <h2>Friends</h2>
@@ -370,8 +370,16 @@ details p{font-size:14px;color:var(--muted);margin:6px 0 0}
     <div class="chart" id="end-chart"></div>
     <div class="stack">
       <div class="chart" id="vs-board" hidden></div>
-      <button class="btn primary wide" id="b-share">Challenge a friend</button>
-      <textarea class="input copybox" id="share-text" readonly hidden aria-label="Your score to copy"></textarea>
+      <div class="card challenge" style="margin:4px 0;text-align:left">
+        <h3 style="font-size:17px">Challenge a friend</h3>
+        <p class="small" style="margin:0 0 8px">One link: it opens Rare Find with these same prompts and shows your score to beat.</p>
+        <div id="share-name-row"><label class="lbl" for="share-name">Your name on the challenge</label>
+          <input class="input" id="share-name" maxlength="12" placeholder="e.g. Sam" style="width:100%;margin-bottom:8px" autocapitalize="off"></div>
+        <label class="sr" for="share-link">Your challenge link</label>
+        <input class="input" id="share-link" readonly style="width:100%;font-size:14px;margin-bottom:8px">
+        <button class="btn primary wide" id="b-share">Copy challenge link</button>
+      </div>
+      <textarea class="input copybox" id="share-text" readonly hidden aria-label="Your challenge to copy"></textarea>
       <div class="row" style="justify-content:center"><button class="btn" id="b-again">Practice round</button><button class="btn" id="b-tocard">Scorecard</button></div>
     </div>
     <ol class="recap" id="recap"></ol>
@@ -708,6 +716,7 @@ function gameKey(packs){ const idx=packs.map(p=>DATA.packs.indexOf(p)); const w=
 function myName(){ return String(S.nick||"").replace(/[^A-Za-z0-9]/g,"").slice(0,12); }
 function makeCode(g){ const nm=myName(); return `${gameKey(g.packs)}-${g.total}-${tierString(g.res)}${nm?"-"+nm:""}`; }
 function parseCode(t){
+  t=String(t||"").trim(); const at=t.indexOf("#c-"); if(at>=0) t=t.slice(at+3); // a whole challenge link works too
   const m=/^(?:#?c-)?RF([12])([0-9a-z]+)-(\d{1,4})(?:-([cptgdmu]+))?(?:-([A-Za-z0-9]{1,12}))?$/i.exec(String(t||"").trim().replace(/\s+/g,""));
   if(!m) return null; const w=+m[1], body=m[2].toLowerCase(); if(body.length%w) return null;
   const idx=[]; for(let i=0;i<body.length;i+=w) idx.push(parseInt(body.slice(i,i+w),36));
@@ -977,7 +986,7 @@ async function endGame(){
   $("#end-chart").innerHTML = chartSVG(bins(dist(n),g.perfect),g.total,"Your score against the estimated spread",g.perfect) + `<p class="cap">You beat about ${pct}% of players, by our estimate. Typical score about ${mean}. Not real players: a model of typical play.</p>`;
   // remember this exact game, so friends' challenge codes for it line up with your score
   const key=gameKey(g.packs); const rec=S.games[key]||(S.games[key]={others:{},n}); if(!rec.mine) rec.mine={score:g.total,tiers:tierString(g.res)}; rec.t=Date.now(); rec.day=g.day; saveLocal();
-  renderVs($("#vs-board"),key);
+  renderVs($("#vs-board"),key); renderShare();
   let note = daily ? (already?"You already played today, so this score is not saved again.":"") : S.mode==="challenge" ? "Challenge games are not saved to your daily score. Send your code back so your friend sees it." : "Practice rounds are not saved to your daily score.";
   if(g.live&&P){ liveStandings(); note=$("#end-note").textContent; }
   else if(daily&&!already){ const where=await saveMine(); if(G!==g) return; note = where==="board" ? "Saved to your account and the scoreboard." : where==="off" ? "Saved. Scoreboard posting is off in settings." : where==="refused" ? "Saved in this browser. The scoreboard did not accept it: to post scores, ask whoever shared this game for edit access." : where==="none" ? "Not saved: this browser blocks storage." : "Saved in this browser.";
@@ -986,10 +995,15 @@ async function endGame(){
   $("#b-again").textContent = g.live ? "Back to the room" : "Practice round";
   $("#b-share").focus();
 }
-$("#b-share").addEventListener("click",()=>{ const g=G; if(!g) return; const [y,m,d]=g.day.split("-").map(Number);
-  const when=new Date(y,m-1,d).toLocaleDateString(undefined,{month:"short",day:"numeric"}); const code=makeCode(g);
-  const how = S.link ? `Play the same ${g.packs.length} prompts and beat me: ${S.link}#c-${code}` : `Play the same ${g.packs.length} prompts and beat me: open Rare Find and enter the code ${code}`;
-  copyText(`Rare Find ${S.mode==="daily"?when:""}: ${g.total}/${g.perfect}\n${g.res.map(r=>TIERS[r.tier].sq).join("")}\n${how}`.replace("Rare Find :","Rare Find:"),"Challenge copied. Send it to a friend."); });
+// The main published game. A copy published elsewhere sets its own link in settings.
+const HOME_LINK="https://claude.ai/artifact/HyfbDjPjofvRttRYKgMCis";
+function challengeLink(g){ return `${S.link||HOME_LINK}#c-${makeCode(g)}`; }
+function renderShare(){ const g=G; if(!g) return; $("#share-name").value=S.nick; $("#share-link").value=challengeLink(g); }
+$("#share-name").addEventListener("input",e=>{ S.nick=e.target.value.replace(/[^A-Za-z0-9]/g,"").slice(0,12); saveLocal(); if(G) $("#share-link").value=challengeLink(G); });
+$("#share-name").addEventListener("change",e=>{ e.target.value=S.nick; $("#nick").value=S.nick; });
+$("#share-link").addEventListener("focus",e=>e.target.select());
+$("#b-share").addEventListener("click",()=>{ const g=G; if(!g) return;
+  copyText(`I scored ${g.total} of ${g.perfect} on Rare Find${S.mode==="daily"?" today":""}. Same ${g.packs.length} prompts: can you beat me?\n${challengeLink(g)}`,"Challenge link copied. Paste it to a friend."); });
 $("#b-again").addEventListener("click",()=>{ if(S.mode==="live"&&P){ $("#live-start").hidden=true; $("#live-room").hidden=false; show("live"); return; } newGame("practice"); });
 $("#b-tocard").addEventListener("click",()=>{ goStart(); setTab("card"); });
 function askLeave(){ if(S.screen!=="play"||!G) return; $("#leave").hidden=false; $("#answer").disabled=true; if(!G.locked&&!G.live){ G.pausedLeft=G.endsAt-Date.now(); clearInterval(tick); } $("#b-leave-no").focus(); }

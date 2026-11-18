@@ -170,15 +170,18 @@ with sync_playwright() as pw:
     for k in range(5):
         ch_prompts.append(pid_of(pg)); answer(pg, pack(pg, pid_of(pg))["ranked"][k]["a"], 500); nxt(pg)
     pg.wait_for_timeout(800); host_total = int(pg.inner_text("#final"))
+    pg.fill("#share-name", "Sam"); pg.wait_for_timeout(100)
+    link = pg.input_value("#share-link")
+    code = link.split("#c-", 1)[1] if "#c-" in link else ""
+    check("challenge: the end screen shows one link to the same prompts, with the score and name", link.startswith("https://claude.ai/artifact/") and code.startswith("RF1") and f"-{host_total}-" in code and code.endswith("-Sam"), link)
     pg.click("#b-share"); pg.wait_for_timeout(300)
-    shared = pg.evaluate("document.querySelector('#share-text').value") or ""
-    code = next((w for w in shared.replace("\n", " ").split() if w.startswith("RF")), "")
-    check("challenge: 'Challenge a friend' gives a code with the prompts and the score", code.startswith("RF1") and f"-{host_total}-" in code, shared)
+    shared = (pg.evaluate("document.querySelector('#share-text').value") or "") + pg.inner_text("#toast")
+    check("challenge: copying gives a one-line invite and the link", ("can you beat me" in shared and link in shared) or "link copied" in shared, shared)
     friend = b.new_context(viewport={"width": 390, "height": 844}); fp = friend.new_page(); fe = []; fp.on("pageerror", lambda e: fe.append(str(e)))
     fp.goto(GAME); fp.wait_for_timeout(200)
     fp.click("#b-settings"); fp.click("#seg-count button[data-n='10']"); fp.click("#b-settings")
     fp.goto(GAME + "#c-" + code); fp.wait_for_timeout(300)
-    check("challenge: a link with #c- and the code shows who challenged you and their score", fp.is_visible("#ch-banner") and str(host_total) in fp.inner_text("#ch-title"), fp.inner_text("#ch-banner"))
+    check("challenge: a link with #c- and the code shows who challenged you and their score", fp.is_visible("#ch-banner") and str(host_total) in fp.inner_text("#ch-title") and "Sam" in fp.inner_text("#ch-title"), fp.inner_text("#ch-banner"))
     fp.click("#b-ch-play"); fp.wait_for_timeout(200)
     got = []
     for k in range(5):
@@ -187,10 +190,9 @@ with sync_playwright() as pw:
     fp.wait_for_timeout(800)
     check("challenge: the friend's end screen shows both scores", fp.is_visible("#vs-board") and str(host_total) in fp.inner_text("#vs-board") and "You" in fp.inner_text("#vs-board"), fp.inner_text("#vs-board"))
     fp.click("#b-share"); fp.wait_for_timeout(300)
-    back = fp.evaluate("document.querySelector('#share-text').value") or ""
-    code2 = next((w for w in back.replace("\n", " ").split() if w.startswith("RF")), "")
+    code2 = fp.input_value("#share-link")  # the whole link, as a friend would paste it
     pg.click("#b-tocard"); pg.wait_for_timeout(200); pg.fill("#code-in2", code2); pg.press("#code-in2", "Enter"); pg.wait_for_timeout(300)
-    check("challenge: the friend's code back puts both on that game's scoreboard", "500" in pg.inner_text("#chl-list") and "You" in pg.inner_text("#chl-list"), pg.inner_text("#chl-list"))
+    check("challenge: the friend's link pasted back puts both on that game's scoreboard", "500" in pg.inner_text("#chl-list") and "You" in pg.inner_text("#chl-list"), pg.inner_text("#chl-list"))
     fake = pg.evaluate("(c)=>!!window.__rf.parseCode(c)", code.split("-")[0] + "-500-mmmmm")
     check("challenge: a code whose score its answers cannot add up to is refused", not fake, code)
     pg.click("#tab-play"); pg.click("#code-form >> xpath=../summary"); pg.fill("#code-in", "RF1zz-9999"); pg.press("#code-in", "Enter"); pg.wait_for_timeout(200)

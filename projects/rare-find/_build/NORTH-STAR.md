@@ -56,7 +56,7 @@ it", the room's word, 80. The game never waits more than 4 seconds; a late verdi
 
 **The estimated chart.** Until 5 real players have scores for the day, the chart shows a model of
 typical play (per prompt: about 30% miss, 33% top three, 21% ranks 4 to 10, 14% beyond the top ten,
-2% Gems). That gives an average of about 170. It is labelled as an estimate everywhere.
+2% Gems). That gives an average of about 155. It is labelled as an estimate everywhere.
 
 ## Challenge codes: the simple way to join
 
@@ -65,9 +65,11 @@ same game in their own chatbot, and the scoreboard for that day includes them."
 
 A code carries everything: `RF1` (format), one base-36 character per prompt (its place in the pack
 list, which only ever grows at the end), the score, one letter per answer's result, and a name. For
-example, `RF1a3k0p-245-cptgd-Sam`. "Challenge a friend" copies a message with the code. If the player
-saved the game's link in settings, the message holds `link#c-<code>`, which opens the challenge in
-one tap (a Claude artifact passes a plain `#name` to the page). The friend plays exactly those
+example, `RF1a3k0p-245-cptgd-Sam`. The end screen shows one challenge link, the published artifact's
+link plus `#c-<code>`, and "Copy challenge link" copies it with one line of invitation. A Claude
+artifact passes a plain `#name` to the page, so the link opens straight into the challenge. The page
+cannot learn its own claude.ai link, so the main game's link is built in; a copy published elsewhere
+sets its own in settings. The friend plays exactly those
 prompts and sends their own code back. Pasting it on the Scorecard adds them to that game's
 scoreboard. Both players keep the board locally. No server, no account, and no AI are needed, so it
 works in Claude, in a browser, or wherever the file opens. If the code is today's game and the
