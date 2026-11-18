@@ -2,7 +2,7 @@
 
 # The built-in packs
 
-The 25 prompts inside [`../game.html`](../game.html). **Popularity rankings are Claude's estimate, written 17 November 2026, not survey data.** Other names and spellings are in brackets; the game also forgives typos.
+The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are Claude's estimate, written 17 November 2026, not survey data.** Other names and spellings are in brackets; the game also forgives typos.
 
 ## Name a fictional weapon
 
@@ -503,3 +503,2003 @@ The 25 prompts inside [`../game.html`](../game.html). **Popularity rankings are 
 | Gem | 100 | Mandoline; Spurtle; Mezzaluna; Chinois; Bain-marie |
 | Good find | 80 | Pan (frying pan); Pot (saucepan); Plate; Bowl; Cup; Mug; Glass; Dishwasher; Blender; Whisk; Spatula; Ladle; Colander; Cutting board (chopping board); Rolling pin; Grater; Peeler; Tongs; Can opener (tin opener); Corkscrew; Oven mitt (oven glove); Tea towel (dish towel); Apron; Cupboard (cabinet); Counter (worktop, countertop); Table; Chair; Bin (trash can); Sponge; Dish soap (washing-up liquid); Timer; Scales; Measuring cup; Sieve; Funnel; Baking tray; Muffin tin; Food processor; Mixer (stand mixer); Coffee maker; Teapot; Spice rack; Napkin; Tablecloth; Tap (faucet); Freezer; Grill; Wok; Casserole dish; Salt; Pepper; Bread bin; Chopsticks; Pressure cooker; Slow cooker; Air fryer; Garlic press; Pestle and mortar (mortar and pestle) |
 | Not accepted (examples) | 0 | Bed; Bath; Sofa |
+
+## Name a cheese
+
+*Food*
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Cheddar |
+| #2 | 27 | Mozzarella |
+| #3 | 28 | Parmesan (Parmigiano-Reggiano, Parmigiano) |
+| #4 | 30 | Brie |
+| #5 | 32 | Swiss (Swiss cheese, Emmental, Emmentaler) |
+| #6 | 33 | Gouda |
+| #7 | 35 | Feta |
+| #8 | 37 | Blue cheese (Blue) |
+| #9 | 38 | Camembert |
+| #10 | 40 | Stilton |
+| Gem | 100 | Taleggio; Wensleydale; Comté (Comte); Limburger; Paneer |
+| Good find | 80 | Monterey Jack (Jack); Colby; Pepper Jack; Ricotta; Cottage cheese; Cream cheese; Provolone; Gorgonzola; Roquefort; Halloumi (Haloumi); Manchego; Gruyère (Gruyere); Edam; Havarti; Pecorino (Pecorino Romano, Romano); Mascarpone; Asiago; Fontina; Munster (Muenster); Burrata; Goat cheese (Goats cheese, Chèvre, Chevre); Queso fresco; Double Gloucester; Red Leicester; Lancashire; Cheshire; Reblochon; Grana Padano; Cotija; Oaxaca cheese (Oaxaca); String cheese; American cheese (American); Caerphilly; Bocconcini; Raclette; Pecorino Sardo |
+| Not accepted (examples) | 0 | Butter; Yogurt; Tofu |
+
+## Name a soup
+
+*Food*
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Tomato soup (Tomato) |
+| #2 | 27 | Chicken noodle soup (Chicken noodle) |
+| #3 | 29 | Minestrone |
+| #4 | 32 | French onion soup (French onion, Onion soup) |
+| #5 | 34 | Mushroom soup (Cream of mushroom, Mushroom) |
+| #6 | 36 | Clam chowder (Chowder) |
+| #7 | 38 | Vegetable soup (Vegetable) |
+| #8 | 41 | Leek and potato (Potato and leek) |
+| #9 | 43 | Lentil soup (Lentil) |
+| #10 | 45 | Butternut squash soup (Butternut squash, Squash soup) |
+| Gem | 100 | Vichyssoise; Bouillabaisse; Mulligatawny; Avgolemono; Ribollita |
+| Good find | 80 | Gazpacho; Borscht (Borsch, Borshch); Pho; Miso soup (Miso); Wonton soup (Wonton); Hot and sour soup (Hot and sour); Egg drop soup (Egg drop); Split pea soup (Split pea, Pea soup, Pea and ham); Chicken soup; Beef barley soup (Beef and barley); Corn chowder; Lobster bisque (Bisque); Broccoli cheddar soup (Broccoli and cheddar); Cream of chicken; Cream of celery; Carrot and coriander (Carrot soup); Pumpkin soup (Pumpkin); Scotch broth; Oxtail soup (Oxtail); Gumbo; Tom yum (Tom yam); Tom kha (Tom kha gai); Laksa; Matzo ball soup (Matzah ball soup); Pozole (Posole); Tortilla soup; Black bean soup; Cock-a-leekie; Italian wedding soup (Wedding soup); Potato soup; Watercress soup; Consommé (Consomme); Caldo verde; Harira; Menudo |
+| Not accepted (examples) | 0 | Casserole; Gravy; Risotto |
+
+## Name a herb or spice
+
+*Food*
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Basil |
+| #2 | 27 | Black pepper (Pepper) |
+| #3 | 29 | Oregano |
+| #4 | 32 | Cinnamon |
+| #5 | 34 | Parsley |
+| #6 | 36 | Rosemary |
+| #7 | 38 | Thyme |
+| #8 | 41 | Paprika |
+| #9 | 43 | Mint |
+| #10 | 45 | Cumin |
+| Gem | 100 | Sumac; Fenugreek; Lovage; Mace; Asafoetida (Asafetida, Hing) |
+| Good find | 80 | Sage; Dill; Coriander (Cilantro); Chives; Ginger; Turmeric; Nutmeg; Cloves (Clove); Cardamom (Cardamon); Chilli powder (Chili powder, Chilli, Chili); Cayenne (Cayenne pepper); Saffron; Tarragon; Bay leaf (Bay leaves, Bay); Fennel seed (Fennel); Star anise; Aniseed (Anise); Allspice; Caraway; Marjoram; Mustard seed (Mustard seeds); Celery seed; Lemongrass (Lemon grass); Vanilla; Curry leaf (Curry leaves); Juniper (Juniper berries); Chervil; Savory; Lemon balm; Poppy seed (Poppy seeds); Nigella (Nigella seeds, Kalonji); Galangal; Sorrel; Borage; White pepper |
+| Not accepted (examples) | 0 | Salt; Sugar; Vinegar |
+
+## Name a type of bread
+
+*Food*
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | White bread (White) |
+| #2 | 27 | Sourdough |
+| #3 | 29 | Whole wheat (Wholemeal, Brown bread, Wholewheat) |
+| #4 | 32 | Rye (Rye bread) |
+| #5 | 34 | Baguette (French stick) |
+| #6 | 36 | Ciabatta |
+| #7 | 38 | Pita (Pitta) |
+| #8 | 41 | Naan (Nan) |
+| #9 | 43 | Bagel |
+| #10 | 45 | Cornbread (Corn bread) |
+| Gem | 100 | Injera; Lavash; Fougasse; Pumpernickel; Matzo (Matzah, Matza) |
+| Good find | 80 | Focaccia; Brioche; Challah (Hallah); Multigrain; Soda bread (Irish soda bread); Flatbread; Tortilla; Roti; Chapati (Chapatti); Paratha; Garlic bread; English muffin; Milk bread (Shokupan); Potato bread; Spelt bread (Spelt); Granary; Seeded bread (Seeded); Bloomer; Tiger bread (Dutch crunch); Pain de mie; Bao (Steamed bun); Fry bread (Frybread); Puri (Poori); Kulcha; Bread roll (Roll); Monkey bread; Cob loaf (Cob); French bread; Sandwich loaf; Pane pugliese; Khobz |
+| Not accepted (examples) | 0 | Pancake; Cracker; Doughnut |
+
+## Name a nut
+
+*Food*. Culinary nuts count, so peanut is in.
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Peanut (Groundnut, Monkey nut) |
+| #2 | 29 | Almond |
+| #3 | 33 | Cashew |
+| #4 | 37 | Walnut (English walnut, Persian walnut) |
+| #5 | 41 | Pecan |
+| #6 | 44 | Pistachio |
+| #7 | 48 | Hazelnut (Filbert, Cobnut) |
+| #8 | 52 | Macadamia (Queensland nut) |
+| #9 | 56 | Brazil nut (Brazil) |
+| #10 | 60 | Chestnut (Sweet chestnut) |
+| Gem | 100 | Pili nut (Pili); Candlenut (Kukui nut); Kola nut (Cola nut); Hickory nut (Hickory, Shagbark hickory); Beechnut (Beech nut) |
+| Good find | 80 | Pine nut (Pinon, Pignoli); Acorn; Black walnut; Ginkgo nut (Ginkgo); Shea nut; Bunya nut; Baru nut; Butternut (White walnut); Heartnut; Chinquapin (Chinkapin); Mongongo nut (Mongongo); Paradise nut (Sapucaia nut); Marcona almond; Marula nut; Ogbono nut; Chilean hazelnut (Gevuina); Red bopple nut; Kenari nut (Canarium nut); Tropical almond (Sea almond); Yeheb nut |
+| Not accepted (examples) | 0 | Chickpea; Water chestnut; Nutmeg |
+
+## Name a hot drink
+
+*Food*
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Coffee |
+| #2 | 28 | Tea |
+| #3 | 31 | Hot chocolate (Hot cocoa, Cocoa) |
+| #4 | 33 | Latte (Caffe latte) |
+| #5 | 36 | Cappuccino |
+| #6 | 39 | Green tea |
+| #7 | 42 | Espresso |
+| #8 | 44 | Chai (Chai latte, Masala chai) |
+| #9 | 47 | Mocha (Mochaccino) |
+| #10 | 50 | Herbal tea (Tisane) |
+| Gem | 100 | Salep (Sahlep, Sahlab); Yerba mate (Mate); Cortado; Golden milk (Turmeric latte); Malted milk |
+| Good find | 80 | Americano; Flat white; Macchiato; Black tea; Earl Grey; English breakfast tea (English breakfast); Peppermint tea (Mint tea); Chamomile tea (Camomile tea, Chamomile, Camomile); Matcha (Matcha latte); Rooibos (Redbush); Oolong; Jasmine tea; Ginger tea; Hot apple cider (Hot cider); Turkish coffee; Hot milk (Warm milk); Café au lait (Cafe au lait); London fog; Lungo; Ristretto; Pu-erh (Pu'er); Sencha; White tea; Hibiscus tea; Atole; Champurrado; Teh tarik; Butter tea; Babyccino (Babycino); Instant coffee; Filter coffee (Drip coffee); Decaf (Decaf coffee); Fruit tea; Barley tea (Mugicha); Hot water with lemon (Hot lemon) |
+| Not accepted (examples) | 0 | Lemonade; Milkshake; Smoothie |
+
+## Name a type of pasta
+
+*Food*
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Spaghetti |
+| #2 | 28 | Penne |
+| #3 | 31 | Macaroni (Elbow macaroni, Elbows) |
+| #4 | 33 | Lasagne (Lasagna) |
+| #5 | 36 | Fettuccine (Fettucine, Fettuccini) |
+| #6 | 39 | Linguine (Linguini) |
+| #7 | 42 | Ravioli |
+| #8 | 44 | Fusilli |
+| #9 | 47 | Farfalle (Bow tie, Bowtie, Bow ties) |
+| #10 | 50 | Tortellini |
+| Gem | 100 | Orecchiette; Bucatini; Radiatori; Ditalini; Gemelli |
+| Good find | 80 | Rigatoni; Tagliatelle; Pappardelle; Cannelloni; Manicotti; Ziti; Rotini; Conchiglie (Shells, Pasta shells); Orzo (Risoni); Angel hair (Capellini); Vermicelli; Cavatappi; Campanelle; Agnolotti; Cappelletti; Tortelloni; Mafaldine (Mafalde); Paccheri; Stelline; Anelli; Alphabet pasta; Fregola; Trofie; Casarecce; Strozzapreti; Cavatelli; Tagliolini; Spaghettini; Bigoli; Pici; Lumache; Rotelle (Wagon wheels); Garganelli; Mezze maniche; Tortiglioni; Fideo (Fideos) |
+| Not accepted (examples) | 0 | Risotto; Polenta; Pesto |
+
+## Name a type of sweet or candy
+
+*Food*
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Chocolate |
+| #2 | 27 | Lollipop (Lolly pop, Sucker) |
+| #3 | 29 | Gummy bears (Gummy bear, Gummi bears) |
+| #4 | 32 | Jelly beans (Jellybean, Jellybeans) |
+| #5 | 34 | Toffee |
+| #6 | 36 | Fudge |
+| #7 | 38 | Candy cane |
+| #8 | 41 | Licorice (Liquorice) |
+| #9 | 43 | Cotton candy (Candy floss, Fairy floss) |
+| #10 | 45 | Caramel (Caramels) |
+| Gem | 100 | Turkish delight (Lokum); Nougat; Marzipan; Halva (Halwa, Halvah); Peanut brittle (Brittle) |
+| Good find | 80 | Marshmallow; Gumdrop (Gumdrops); Mints (Mint, Peppermint); Butterscotch; Truffle (Chocolate truffle); Bonbon (Bon bon); Gobstopper (Jawbreaker); Rock candy; Taffy (Salt water taffy, Saltwater taffy); Bubble gum (Bubblegum, Chewing gum, Gum); Humbug; Hard candy (Boiled sweets); Pear drops; Aniseed balls; Candy corn; Gummy worms (Gummi worms); Wine gums; Jelly babies; Praline (Pralines); Brigadeiro; Fondant; Dragée (Dragee); Sugared almonds (Jordan almonds); Candy apple (Toffee apple, Caramel apple); Barley sugar; Licorice allsorts (Liquorice allsorts, Allsorts); Popping candy; Rocky road; Peppermint bark; Coconut ice; Tablet; Chocolate coins; Lemon drops (Lemon drop); Sherbet lemons; Seaside rock (Rock) |
+| Not accepted (examples) | 0 | Cake; Pretzel; Potato chips |
+
+## Name a berry
+
+*Food*
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Strawberry |
+| #2 | 28 | Blueberry |
+| #3 | 32 | Raspberry |
+| #4 | 35 | Blackberry (Bramble) |
+| #5 | 38 | Cranberry |
+| #6 | 42 | Gooseberry |
+| #7 | 45 | Mulberry |
+| #8 | 48 | Elderberry |
+| #9 | 52 | Boysenberry |
+| #10 | 55 | Goji berry (Goji, Wolfberry) |
+| Gem | 100 | Lingonberry (Cowberry); Cloudberry; Huckleberry; Loganberry; Bilberry (Whortleberry) |
+| Good find | 80 | Acai (Açaí, Acai berry); Blackcurrant (Black currant); Redcurrant (Red currant); Whitecurrant (White currant); Tayberry; Marionberry; Dewberry; Salmonberry; Chokeberry (Aronia); Sea buckthorn; Serviceberry (Saskatoon berry, Juneberry); Barberry; Thimbleberry; Wineberry; Goldenberry (Golden berry, Cape gooseberry, Physalis); Jostaberry; Bearberry; Crowberry; Honeyberry (Haskap); Youngberry; Olallieberry; Black raspberry; Miracle berry (Miracle fruit); Maqui berry (Maqui); Snowberry |
+| Not accepted (examples) | 0 | Cherry; Plum; Apricot |
+
+## Name a grain
+
+*Food*. Quinoa and buckwheat count as grains here.
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Rice (White rice) |
+| #2 | 29 | Wheat (Wheat berries) |
+| #3 | 33 | Oats (Oat, Oat groats) |
+| #4 | 37 | Barley (Pearl barley) |
+| #5 | 41 | Corn (Maize) |
+| #6 | 44 | Rye |
+| #7 | 48 | Quinoa |
+| #8 | 52 | Millet |
+| #9 | 56 | Spelt |
+| #10 | 60 | Buckwheat |
+| Gem | 100 | Teff; Fonio; Triticale; Einkorn; Khorasan wheat |
+| Good find | 80 | Sorghum; Amaranth; Farro (Emmer); Freekeh; Wild rice; Durum wheat (Durum); Finger millet (Ragi); Foxtail millet; Proso millet; Pearl millet (Bajra); Barnyard millet; Kodo millet; Little millet; Kaniwa (Canihua); Adlay (Coix); Black rice (Forbidden rice); Red rice; Brown rice; Basmati rice (Basmati); Jasmine rice |
+| Not accepted (examples) | 0 | Lentil; Chickpea; Potato |
+
+## Name a type of cake
+
+*Food*
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Chocolate cake (Chocolate) |
+| #2 | 27 | Cheesecake |
+| #3 | 29 | Carrot cake (Carrot) |
+| #4 | 32 | Vanilla cake (Vanilla) |
+| #5 | 34 | Red velvet (Red velvet cake) |
+| #6 | 36 | Sponge cake (Sponge) |
+| #7 | 38 | Birthday cake |
+| #8 | 41 | Black Forest (Black Forest gateau, Black Forest cake) |
+| #9 | 43 | Angel food cake (Angel food) |
+| #10 | 45 | Fruit cake (Fruitcake) |
+| Gem | 100 | Battenberg (Battenburg); Tres leches (Tres leches cake); Hummingbird cake; Opera cake; Sachertorte (Sacher torte) |
+| Good find | 80 | Pound cake; Coffee cake; Lemon drizzle (Lemon drizzle cake, Lemon cake); Victoria sponge (Victoria sandwich); Upside-down cake (Pineapple upside-down cake); Marble cake; Coconut cake; Swiss roll (Jelly roll, Roulade); Madeira cake; Genoise (Génoise); Chiffon cake; Lava cake (Molten chocolate cake); Ice cream cake; Coffee and walnut cake; Strawberry shortcake; Layer cake; Sheet cake; Wedding cake; Mud cake (Mississippi mud cake); Lamington; Dundee cake; Parkin; Castella; Orange cake; Almond cake; Polenta cake; Olive oil cake; Butter cake; Spice cake; Princess cake; Banana cake |
+| Not accepted (examples) | 0 | Pie; Crumble; Trifle |
+
+## Name a type of salad
+
+*Food*
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Caesar salad (Caesar) |
+| #2 | 28 | Greek salad (Greek) |
+| #3 | 31 | Potato salad |
+| #4 | 33 | Garden salad (Green salad, Side salad) |
+| #5 | 36 | Pasta salad |
+| #6 | 39 | Coleslaw (Slaw) |
+| #7 | 42 | Fruit salad |
+| #8 | 44 | Cobb salad (Cobb) |
+| #9 | 47 | Chef salad (Chef's salad) |
+| #10 | 50 | Waldorf salad (Waldorf) |
+| Gem | 100 | Panzanella; Tabbouleh (Tabouli, Tabbouli); Fattoush; Niçoise (Nicoise, Salade nicoise); Som tam (Green papaya salad, Papaya salad) |
+| Good find | 80 | Caprese (Caprese salad, Insalata caprese); Egg salad; Tuna salad; Chicken salad; Macaroni salad; Spinach salad; Taco salad; Kale salad; Quinoa salad; Bean salad (Three bean salad); Cucumber salad; Tomato salad; Wedge salad; Rocket salad (Arugula salad); Couscous salad; Rice salad; Lentil salad; Beetroot salad (Beet salad); Seaweed salad; Ambrosia salad (Ambrosia); Olivier salad (Russian salad); Shirazi salad; Larb (Laab); Gado-gado; Kachumber; Carrot salad; Broccoli salad; Mixed salad (Mixed leaf salad); Watermelon salad; Orzo salad |
+| Not accepted (examples) | 0 | Lettuce; Sandwich; Guacamole |
+
+## Name a sauce or condiment
+
+*Food*
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Ketchup (Catsup) |
+| #2 | 27 | Mustard |
+| #3 | 28 | Mayonnaise (Mayo) |
+| #4 | 30 | Barbecue sauce (BBQ sauce, Barbecue, BBQ) |
+| #5 | 32 | Hot sauce (Chilli sauce, Chili sauce) |
+| #6 | 33 | Soy sauce (Soya sauce, Soy) |
+| #7 | 35 | Ranch (Ranch dressing) |
+| #8 | 37 | Salsa |
+| #9 | 38 | Relish |
+| #10 | 40 | Gravy |
+| Gem | 100 | Romesco; Chimichurri; Remoulade (Rémoulade); Mole; Piccalilli |
+| Good find | 80 | Pesto; Tomato sauce; Marinara; Alfredo; Hollandaise; Béchamel (Bechamel, White sauce); Tartar sauce (Tartare sauce); Worcestershire sauce (Worcester sauce); Teriyaki; Sweet chilli sauce (Sweet chili sauce); Sriracha; Horseradish (Horseradish sauce); Mint sauce; Apple sauce (Applesauce); Cranberry sauce; Brown sauce; Hoisin; Oyster sauce; Fish sauce; Tzatziki; Aioli (Aïoli); Thousand Island (Thousand Island dressing); Vinaigrette; Honey mustard; Bolognese (Ragu); Gochujang; Harissa; Tahini; Chutney (Mango chutney); Peri peri (Piri piri); Satay sauce (Peanut sauce); Béarnaise (Bearnaise); Cheese sauce; Peppercorn sauce (Pepper sauce); Ponzu; Enchilada sauce; Buffalo sauce; Salad cream; Sweet and sour sauce; Plum sauce (Duck sauce) |
+| Not accepted (examples) | 0 | Croutons; Flour; Yeast |
+
+## Name a type of sausage
+
+*Food*
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Bratwurst (Brat) |
+| #2 | 28 | Frankfurter (Hot dog, Frank, Wiener) |
+| #3 | 31 | Pepperoni |
+| #4 | 33 | Chorizo |
+| #5 | 36 | Salami |
+| #6 | 39 | Italian sausage |
+| #7 | 42 | Kielbasa (Polish sausage, Kielbasy) |
+| #8 | 44 | Pork sausage |
+| #9 | 47 | Bologna (Baloney) |
+| #10 | 50 | Cumberland sausage (Cumberland) |
+| Gem | 100 | Boudin; Merguez; Lap cheong (Chinese sausage, Lap chong); Morcilla; Nduja ('Nduja) |
+| Good find | 80 | Chipolata; Lincolnshire sausage (Lincolnshire); Black pudding (Blood sausage); Andouille; Knackwurst (Knockwurst); Weisswurst (Weißwurst); Bockwurst; Liverwurst (Leberwurst, Liver sausage); Mortadella; Breakfast sausage (Breakfast links); Summer sausage; Saveloy; Cervelat; Toulouse sausage (Toulouse); Kabanos (Kabanosy); Sucuk (Sujuk); Linguica (Linguiça); Bangers (Banger); Boerewors; Cotechino; Landjaeger (Landjäger); Thuringer (Thüringer); Currywurst; Soppressata; Chistorra; Vienna sausage (Vienna); White pudding; Longaniza; Venison sausage; Chicken sausage; Polony |
+| Not accepted (examples) | 0 | Bacon; Ham; Meatball |
+
+## Name a type of noodle
+
+*Food*
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Ramen |
+| #2 | 28 | Udon |
+| #3 | 32 | Egg noodles (Egg noodle) |
+| #4 | 35 | Rice noodles (Rice noodle, Rice sticks) |
+| #5 | 38 | Soba (Buckwheat noodles) |
+| #6 | 42 | Lo mein |
+| #7 | 45 | Chow mein |
+| #8 | 48 | Instant noodles |
+| #9 | 52 | Glass noodles (Cellophane noodles, Bean thread noodles, Mung bean noodles) |
+| #10 | 55 | Rice vermicelli (Vermicelli, Mei fun, Bee hoon) |
+| Gem | 100 | Shirataki (Konjac noodles); Somen (Sōmen); Biang biang (Biangbiang); Hokkien noodles (Hokkien mee); Hand-pulled noodles (Lamian, La mian) |
+| Good find | 80 | Ho fun (Hor fun, Chow fun, Flat rice noodles); Sweet potato noodles (Dangmyeon); Naengmyeon; Kalguksu; Zucchini noodles (Zoodles, Courgetti); Kelp noodles; Hiyamugi; Kishimen; Shanghai noodles; Wonton noodles; Mee pok; Yi mein (Yee mein, E-fu noodles); Misua (Mee sua); Silver needle noodles; Idiyappam (String hoppers); Ramyeon; Wheat noodles; Yakisoba noodles (Yakisoba); Kluski; Reshteh; Pancit; Ban mian; Knife-cut noodles (Dao xiao mian) |
+| Not accepted (examples) | 0 | Dumpling; Rice; Spring roll |
+
+## Name a seafood you eat
+
+*Food*
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Shrimp (Prawn, Prawns) |
+| #2 | 27 | Salmon |
+| #3 | 29 | Tuna |
+| #4 | 32 | Crab |
+| #5 | 34 | Lobster |
+| #6 | 36 | Cod |
+| #7 | 38 | Oysters (Oyster) |
+| #8 | 41 | Clams (Clam) |
+| #9 | 43 | Mussels (Mussel) |
+| #10 | 45 | Scallops (Scallop) |
+| Gem | 100 | Sea urchin (Uni); Abalone; Cockles (Cockle); Whelks (Whelk); Langoustine (Scampi, Dublin Bay prawn, Norway lobster) |
+| Good find | 80 | Squid (Calamari); Octopus; Haddock; Halibut; Tilapia; Sardines (Sardine, Pilchard); Anchovies (Anchovy); Mackerel; Trout; Sea bass (Seabass, Branzino); Snapper (Red snapper); Swordfish; Mahi-mahi (Dorado, Dolphinfish); Catfish; Crayfish (Crawfish, Crawdad); Caviar; Sole; Plaice; Herring (Kipper); Pollock (Pollack, Coley); Hake; Eel; Cuttlefish; Sea cucumber; Periwinkles (Winkles); Razor clams (Razor clam); Turbot; Flounder; Barramundi; Monkfish; Grouper; Whitebait; Sea bream (Bream); Roe |
+| Not accepted (examples) | 0 | Chicken; Duck; Frog legs |
+
+## Name a type of cookie or biscuit
+
+*Food*
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Chocolate chip (Choc chip) |
+| #2 | 27 | Oatmeal raisin (Oat and raisin) |
+| #3 | 29 | Peanut butter cookie (Peanut butter) |
+| #4 | 32 | Sugar cookie |
+| #5 | 34 | Shortbread |
+| #6 | 36 | Snickerdoodle |
+| #7 | 38 | Gingerbread (Gingerbread man) |
+| #8 | 41 | Ginger snap (Gingersnap, Ginger nut, Gingernut) |
+| #9 | 43 | Macaroon (Coconut macaroon) |
+| #10 | 45 | Fortune cookie |
+| Gem | 100 | Speculoos (Speculaas); Florentine; Alfajores (Alfajor); Pizzelle; Linzer cookie (Linzer) |
+| Good find | 80 | Macaron (French macaron); Digestive (Digestive biscuit); Biscotti (Cantucci); Butter cookie (Danish butter cookie); Custard cream; Bourbon biscuit (Bourbon); Thumbprint cookie (Thumbprint); Rich tea; Wafer (Wafers); Ladyfingers (Ladyfinger, Savoiardi, Sponge fingers); Black and white cookie; Molasses cookie; Amaretti; Snowball cookie; Crinkle cookie (Chocolate crinkle); Double chocolate cookie (Double chocolate); White chocolate macadamia; Lebkuchen; Stroopwafel (Stroopwafels); Pfeffernusse (Pfeffernüsse); Spritz cookie (Spritz); Fig roll; Melting moments; Nice biscuit; Polvorón (Polvoron); Monster cookie; Pinwheel cookie; Oat biscuit (Oatmeal cookie); Chocolate digestive; Jam sandwich biscuit |
+| Not accepted (examples) | 0 | Muffin; Doughnut; Cupcake |
+
+## Name a pie
+
+*Food*
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Apple pie (Apple) |
+| #2 | 28 | Pumpkin pie (Pumpkin) |
+| #3 | 31 | Cherry pie (Cherry) |
+| #4 | 33 | Pecan pie (Pecan) |
+| #5 | 36 | Key lime pie (Key lime) |
+| #6 | 39 | Blueberry pie (Blueberry) |
+| #7 | 42 | Lemon meringue pie (Lemon meringue) |
+| #8 | 44 | Chicken pot pie (Pot pie, Chicken pie) |
+| #9 | 47 | Shepherd's pie (Shepherds pie) |
+| #10 | 50 | Banoffee pie (Banoffee, Banoffi) |
+| Gem | 100 | Shoofly pie (Shoo-fly pie); Chess pie; Stargazy pie; Tourtière (Tourtiere); Spanakopita (Spinach pie) |
+| Good find | 80 | Steak and kidney pie; Steak pie; Cottage pie; Pork pie; Fish pie; Mince pie; Meat pie; Peach pie; Strawberry rhubarb pie; Rhubarb pie; Sweet potato pie; Coconut cream pie; Banana cream pie; Chocolate cream pie (Chocolate pie); Mud pie (Mississippi mud pie); Blackberry pie; Cheese and onion pie; Chicken and mushroom pie; Game pie; Pear pie; Plum pie; Gooseberry pie; Custard pie; Buttermilk pie; Sugar cream pie; Scotch pie; Bacon and egg pie; Rabbit pie; Vegetable pie; Mixed berry pie (Berry pie); Raspberry pie; Mushroom pie |
+| Not accepted (examples) | 0 | Crumble; Trifle; Pancake |
+
+## Name a picnic food
+
+*Food*
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Sandwiches (Sandwich) |
+| #2 | 27 | Potato chips (Crisps, Chips) |
+| #3 | 28 | Fruit |
+| #4 | 30 | Potato salad |
+| #5 | 32 | Watermelon |
+| #6 | 33 | Fried chicken |
+| #7 | 35 | Cheese |
+| #8 | 37 | Grapes |
+| #9 | 38 | Hot dogs (Hot dog) |
+| #10 | 40 | Pasta salad |
+| Gem | 100 | Scotch egg (Scotch eggs); Pork pie; Quiche; Onigiri (Rice ball, Rice balls); Pinwheel sandwiches (Pinwheels) |
+| Good find | 80 | Coleslaw (Slaw); Deviled eggs (Devilled eggs); Burgers (Hamburgers, Burger, Hamburger); Cookies (Cookie); Brownies (Brownie); Crackers (Cheese and crackers); Strawberries; Apples (Apple); Cupcakes (Cupcake); Cake; Sausage rolls (Sausage roll); Pickles (Pickle); Carrot sticks (Carrots); Celery sticks (Celery); Hummus; Chips and dip (Dip); Baguette; Ham; Salami; Olives; Corn on the cob (Corn); Cherry tomatoes; Wraps (Wrap); Pretzels (Pretzel); Popcorn; Trail mix; Granola bars (Cereal bars); Muffins (Muffin); Pie; Cold cuts; Samosas (Samosa); Spring rolls (Spring roll); Sushi; Cucumber sandwiches; Fruit salad; Berries; Pizza (Cold pizza); Bagels (Bagel); Croissants (Croissant); Boiled eggs (Hard-boiled eggs) |
+| Not accepted (examples) | 0 | Lemonade; Blanket; Ants |
+
+## Name an ice cream flavour
+
+*Food*
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Vanilla |
+| #2 | 27 | Chocolate |
+| #3 | 28 | Strawberry |
+| #4 | 30 | Mint chocolate chip (Mint choc chip, Mint chip, Mint) |
+| #5 | 32 | Cookies and cream (Cookies 'n' cream, Cookies n cream) |
+| #6 | 33 | Cookie dough (Chocolate chip cookie dough) |
+| #7 | 35 | Rocky road |
+| #8 | 37 | Butter pecan |
+| #9 | 38 | Neapolitan |
+| #10 | 40 | Salted caramel |
+| Gem | 100 | Black sesame; Lavender; Ube (Purple yam); Stracciatella; Tutti frutti (Tutti-frutti) |
+| Good find | 80 | Pistachio; Coffee; Caramel; Mango; Coconut; Banana; Raspberry; Raspberry ripple; Lemon; Cherry; Peach; Butterscotch; Toffee; Bubblegum (Bubble gum); Cotton candy (Candy floss); Matcha (Green tea); Birthday cake; Chocolate chip; Fudge (Chocolate fudge); Hazelnut; Honeycomb (Hokey pokey); Maple walnut; Peanut butter; Dulce de leche; Pumpkin; Cinnamon; Ginger; Blueberry; Passion fruit; Brownie; Cheesecake; Mocha; Spumoni; Tiramisu; Apple pie |
+| Not accepted (examples) | 0 | Sorbet; Sprinkles; Waffle cone |
+
+## Name a type of bean
+
+*Food*
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Kidney bean (Red kidney bean) |
+| #2 | 28 | Black bean (Black turtle bean) |
+| #3 | 32 | Green bean (String bean, French bean, Snap bean) |
+| #4 | 35 | Pinto bean (Pinto) |
+| #5 | 38 | Lima bean (Butter bean) |
+| #6 | 42 | Navy bean (Haricot bean, Haricot, Pea bean) |
+| #7 | 45 | Soybean (Soy bean, Soya bean) |
+| #8 | 48 | Broad bean (Fava bean, Fava) |
+| #9 | 52 | Chickpea (Garbanzo bean, Garbanzo) |
+| #10 | 55 | Cannellini bean (Cannellini, White kidney bean) |
+| Gem | 100 | Adzuki bean (Adzuki, Azuki, Aduki); Borlotti bean (Borlotti, Cranberry bean); Flageolet bean (Flageolet); Runner bean (Scarlet runner); Lupini bean (Lupini, Lupin bean) |
+| Good find | 80 | Mung bean (Mung, Moong); Edamame; Black-eyed bean (Black-eyed pea, Cowpea); Great Northern bean; Wax bean (Yellow bean); Anasazi bean; Yardlong bean (Long bean, Snake bean); Winged bean; Moth bean; Urad bean (Urad, Black gram); Tepary bean; Hyacinth bean (Lablab); Rice bean; Pink bean; Calypso bean; Mayocoba bean (Peruvian bean, Canary bean); Romano bean (Italian flat bean); Appaloosa bean; Gigante bean (Gigantes); Marrow bean |
+| Not accepted (examples) | 0 | Jelly bean; Pea; Lentil |
+
+## Name a Mexican dish
+
+*Food*
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Tacos (Taco) |
+| #2 | 28 | Burrito |
+| #3 | 31 | Enchiladas (Enchilada) |
+| #4 | 33 | Quesadilla |
+| #5 | 36 | Nachos |
+| #6 | 39 | Guacamole |
+| #7 | 42 | Tamales (Tamale, Tamal) |
+| #8 | 44 | Churros (Churro) |
+| #9 | 47 | Tostadas (Tostada) |
+| #10 | 50 | Mole |
+| Gem | 100 | Chiles en nogada; Cochinita pibil; Tlayuda; Aguachile; Molletes (Mollete) |
+| Good find | 80 | Pozole (Posole); Sopes (Sope); Chilaquiles; Huevos rancheros; Carnitas; Barbacoa; Tacos al pastor (Al pastor); Birria; Elote (Mexican street corn); Esquites; Menudo; Flautas (Flauta); Taquitos (Taquito); Gorditas (Gordita); Tortas (Torta); Chiles rellenos (Chile relleno); Mole poblano; Pico de gallo; Ceviche; Sopa de lima; Tortilla soup (Sopa de tortilla); Carne asada; Refried beans (Frijoles refritos); Panuchos; Salbutes; Tlacoyos; Huaraches (Huarache); Pambazo; Cemita; Queso fundido; Machaca; Caldo de res; Tinga (Chicken tinga); Mixiote; Enfrijoladas; Entomatadas; Conchas (Concha) |
+| Not accepted (examples) | 0 | Paella; Gazpacho; Feijoada |
+
+## Name an Italian dish
+
+*Food*
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Pizza |
+| #2 | 27 | Lasagne (Lasagna) |
+| #3 | 29 | Risotto |
+| #4 | 32 | Spaghetti carbonara (Carbonara) |
+| #5 | 34 | Tiramisu (Tiramisù) |
+| #6 | 36 | Ravioli |
+| #7 | 38 | Fettuccine Alfredo (Alfredo) |
+| #8 | 41 | Minestrone |
+| #9 | 43 | Bruschetta |
+| #10 | 45 | Gnocchi |
+| Gem | 100 | Ossobuco (Osso buco); Vitello tonnato; Saltimbocca; Supplì (Suppli); Cacio e pepe |
+| Good find | 80 | Arancini (Arancine); Panna cotta; Calzone; Gelato; Cannoli (Cannolo); Focaccia; Carpaccio; Caprese salad (Insalata caprese, Caprese); Polenta; Parmigiana (Eggplant parmesan, Aubergine parmigiana, Melanzane alla parmigiana); Penne all'arrabbiata (Arrabbiata); Spaghetti alle vongole (Vongole); Pasta e fagioli; Ribollita; Chicken cacciatore (Cacciatore); Amatriciana (Bucatini all'amatriciana); Pasta alla Norma; Cannelloni; Tortellini; Affogato; Zabaglione; Panettone; Biscotti; Antipasto; Porchetta; Bistecca alla fiorentina (Florentine steak); Pesto alla genovese (Pesto); Frittata; Piadina; Crostini; Ragu (Ragù); Aglio e olio (Spaghetti aglio e olio); Semifreddo; Fritto misto; Risi e bisi; Bagna cauda |
+| Not accepted (examples) | 0 | Paella; Moussaka; Goulash |
+
+## Name a Japanese food
+
+*Food*
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Sushi |
+| #2 | 27 | Ramen |
+| #3 | 29 | Sashimi |
+| #4 | 32 | Tempura |
+| #5 | 34 | Teriyaki |
+| #6 | 36 | Miso soup (Miso) |
+| #7 | 38 | Udon |
+| #8 | 41 | Edamame |
+| #9 | 43 | Gyoza |
+| #10 | 45 | Mochi |
+| Gem | 100 | Okonomiyaki; Takoyaki; Natto (Nattō); Chawanmushi; Oden |
+| Good find | 80 | Soba; Tonkatsu (Katsu); Japanese curry (Curry rice, Kare raisu); Yakitori; Bento (Bento box); Onigiri (Rice ball); Wagyu (Kobe beef); Matcha; Dorayaki; Taiyaki; Yakisoba; Sukiyaki; Shabu-shabu (Shabu shabu); Donburi; Katsudon; Oyakodon; Gyudon; Unagi (Grilled eel); Karaage; Wasabi; Nori; Tamagoyaki; Dango; Wagashi; Ponzu; Nigiri; Maki (Maki roll); Temaki (Hand roll); Teppanyaki; Agedashi tofu; Kushikatsu; Omurice; Nikujaga; Tsukemono (Japanese pickles); Umeboshi; Chirashi (Chirashizushi); Inari (Inarizushi); Furikake |
+| Not accepted (examples) | 0 | Kimchi; Dim sum; Pho |
+
+## Name something you drink with breakfast
+
+*Food*
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Coffee |
+| #2 | 28 | Orange juice (OJ) |
+| #3 | 32 | Tea |
+| #4 | 35 | Milk |
+| #5 | 38 | Water |
+| #6 | 42 | Apple juice |
+| #7 | 45 | Smoothie |
+| #8 | 48 | Hot chocolate (Hot cocoa, Cocoa) |
+| #9 | 52 | Grapefruit juice |
+| #10 | 55 | Latte |
+| Gem | 100 | Lassi; Kefir; Yerba mate (Mate); Prune juice; Ayran |
+| Good find | 80 | Cappuccino; Espresso; Americano; Flat white; Mocha; Green tea; Herbal tea; Chai (Chai latte); Pineapple juice; Cranberry juice; Tomato juice; Carrot juice; Grape juice; Mango juice; Lemonade; Protein shake; Chocolate milk; Soy milk (Soya milk); Oat milk; Almond milk; Iced coffee; Cold brew; Sparkling water (Fizzy water, Soda water); Lemon water (Hot water with lemon); Coconut water; Kombucha; Matcha; Earl Grey; English breakfast tea (Breakfast tea); Buttermilk; Rooibos; Drinking yogurt (Yogurt drink); Green juice; Mixed fruit juice (Fruit juice) |
+| Not accepted (examples) | 0 | Cereal; Porridge; Toast |
+
+## Name an insect
+
+*Animals*
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Ant |
+| #2 | 27 | Bee (Honeybee) |
+| #3 | 28 | Butterfly |
+| #4 | 30 | Fly (Housefly) |
+| #5 | 32 | Mosquito (Mozzie, Mossie) |
+| #6 | 33 | Ladybug (Ladybird, Lady beetle) |
+| #7 | 35 | Grasshopper |
+| #8 | 37 | Beetle |
+| #9 | 38 | Dragonfly |
+| #10 | 40 | Cockroach (Roach) |
+| Gem | 100 | Silverfish; Lacewing; Mayfly; Weevil; Water strider (Pond skater) |
+| Good find | 80 | Wasp; Hornet; Moth; Cricket; Praying mantis (Mantis); Termite; Flea; Louse (Lice, Head louse); Firefly (Lightning bug); Stick insect (Walking stick, Stick bug); Caterpillar; Cicada; Aphid (Greenfly); Earwig; Bumblebee (Bumble bee); Locust; Stink bug (Shield bug); Gnat; Midge; Horsefly; Fruit fly; Damselfly; Katydid; Dung beetle; Stag beetle; Scarab beetle (Scarab); Bed bug (Bedbug); Yellowjacket (Yellow jacket); Tsetse fly; Leafhopper; Water boatman; Monarch butterfly; June bug (June beetle); Cockchafer (Maybug) |
+| Not accepted (examples) | 0 | Spider; Scorpion; Centipede; Tick |
+
+## Name a farm animal
+
+*Animals*
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Cow (Cattle) |
+| #2 | 28 | Pig (Hog, Swine) |
+| #3 | 32 | Chicken (Hen) |
+| #4 | 35 | Sheep |
+| #5 | 38 | Horse |
+| #6 | 42 | Goat |
+| #7 | 45 | Duck |
+| #8 | 48 | Donkey (Burro) |
+| #9 | 52 | Turkey |
+| #10 | 55 | Rooster (Cockerel) |
+| Gem | 100 | Guinea fowl; Water buffalo; Yak; Quail; Ox (Oxen) |
+| Good find | 80 | Llama; Alpaca; Goose (Geese); Rabbit; Mule; Bull; Pony; Dog (Farm dog, Sheepdog); Lamb; Piglet; Calf (Calves); Chick; Foal; Ram; Ewe; Heifer; Steer; Sow; Boar; Mare; Stallion; Billy goat; Nanny goat; Duckling; Gosling; Bullock; Drake; Bantam |
+| Not accepted (examples) | 0 | Fox; Wolf; Raccoon; Zebra |
+
+## Name a dinosaur
+
+*Animals*. Flying and swimming reptiles of that time were not dinosaurs.
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Tyrannosaurus rex (T. rex, T-rex, Tyrannosaurus) |
+| #2 | 28 | Triceratops |
+| #3 | 31 | Stegosaurus |
+| #4 | 33 | Velociraptor (Raptor) |
+| #5 | 36 | Brachiosaurus |
+| #6 | 39 | Brontosaurus |
+| #7 | 42 | Spinosaurus |
+| #8 | 44 | Ankylosaurus |
+| #9 | 47 | Diplodocus |
+| #10 | 50 | Allosaurus |
+| Gem | 100 | Therizinosaurus; Microraptor; Carnotaurus; Maiasaura; Amargasaurus |
+| Good find | 80 | Iguanodon; Parasaurolophus; Pachycephalosaurus; Apatosaurus; Giganotosaurus; Gallimimus; Dilophosaurus; Compsognathus; Argentinosaurus; Oviraptor; Deinonychus; Utahraptor; Baryonyx; Edmontosaurus; Corythosaurus; Protoceratops; Styracosaurus; Megalosaurus; Ceratosaurus; Camarasaurus; Troodon; Hadrosaurus; Albertosaurus; Kentrosaurus; Coelophysis; Herrerasaurus; Euoplocephalus; Lambeosaurus; Mamenchisaurus; Plateosaurus; Psittacosaurus; Suchomimus; Saltasaurus; Nodosaurus |
+| Not accepted (examples) | 0 | Pterodactyl; Plesiosaurus; Mosasaurus; Dimetrodon |
+
+## Name a reptile
+
+*Animals*
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Snake |
+| #2 | 27 | Lizard |
+| #3 | 29 | Turtle |
+| #4 | 32 | Crocodile (Croc) |
+| #5 | 34 | Alligator (Gator) |
+| #6 | 36 | Tortoise |
+| #7 | 38 | Gecko |
+| #8 | 41 | Iguana |
+| #9 | 43 | Chameleon |
+| #10 | 45 | Komodo dragon |
+| Gem | 100 | Tuatara; Gharial (Gavial); Slow worm (Slowworm); Gila monster; Thorny devil |
+| Good find | 80 | Python; Cobra; King cobra; Rattlesnake; Boa constrictor (Boa); Anaconda; Viper; Adder; Black mamba (Mamba); Garter snake; Corn snake; Bearded dragon; Monitor lizard; Skink; Caiman (Cayman); Sea turtle; Snapping turtle; Box turtle; Terrapin; Anole; Frilled lizard (Frill-necked lizard); Horned lizard (Horned toad); Basilisk lizard (Basilisk); Water dragon; Sea snake; Copperhead; Cottonmouth (Water moccasin); Coral snake; Grass snake; Milk snake; King snake (Kingsnake); Leopard gecko; Taipan; Sidewinder; Marine iguana; Leatherback turtle |
+| Not accepted (examples) | 0 | Frog; Salamander; Newt; Toad |
+
+## Name a fish
+
+*Animals*
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Salmon |
+| #2 | 27 | Goldfish |
+| #3 | 28 | Tuna |
+| #4 | 30 | Shark |
+| #5 | 32 | Cod |
+| #6 | 33 | Trout |
+| #7 | 35 | Clownfish (Clown fish) |
+| #8 | 37 | Catfish |
+| #9 | 38 | Bass |
+| #10 | 40 | Swordfish |
+| Gem | 100 | Coelacanth; Mudskipper; Oarfish; Ocean sunfish (Sunfish, Mola); Archerfish |
+| Good find | 80 | Carp; Koi; Guppy; Piranha; Pike; Haddock; Mackerel; Sardine (Pilchard); Anchovy; Herring; Halibut; Flounder; Sole; Plaice; Perch; Tilapia; Snapper (Red snapper); Grouper; Barracuda; Marlin; Eel; Moray eel (Moray); Stingray; Manta ray; Seahorse (Sea horse); Pufferfish (Blowfish, Puffer fish); Angelfish; Betta (Siamese fighting fish); Neon tetra (Tetra); Minnow; Mahi-mahi (Dorado, Dolphinfish); Walleye; Bream; Sturgeon; Blue tang (Tang); Pollock (Pollack); Monkfish; Hake; Barramundi; Flying fish |
+| Not accepted (examples) | 0 | Whale; Dolphin; Jellyfish; Starfish |
+
+## Name a flower
+
+*Nature*
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Rose |
+| #2 | 27 | Tulip |
+| #3 | 28 | Daisy |
+| #4 | 30 | Sunflower |
+| #5 | 32 | Lily |
+| #6 | 33 | Daffodil |
+| #7 | 35 | Orchid |
+| #8 | 37 | Lavender |
+| #9 | 38 | Carnation |
+| #10 | 40 | Poppy |
+| Gem | 100 | Protea; Hellebore; Strelitzia (Bird of paradise); Columbine (Aquilegia); Ranunculus |
+| Good find | 80 | Dandelion; Marigold; Hydrangea; Peony; Iris; Chrysanthemum (Mum); Hibiscus; Violet; Pansy; Petunia; Geranium; Begonia; Lilac; Jasmine; Gardenia; Zinnia; Dahlia; Aster; Buttercup; Bluebell; Snowdrop; Crocus; Hyacinth; Gladiolus (Gladioli); Freesia; Forget-me-not; Lotus; Cornflower; Morning glory; Camellia; Azalea; Rhododendron; Honeysuckle; Sweet pea; Snapdragon; Primrose; Clematis; Wisteria; Lupin (Lupine); Calla lily |
+| Not accepted (examples) | 0 | Fern; Moss; Mushroom |
+
+## Name a tree
+
+*Nature*
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Oak |
+| #2 | 27 | Pine |
+| #3 | 29 | Maple |
+| #4 | 32 | Palm (Palm tree) |
+| #5 | 34 | Birch |
+| #6 | 36 | Willow (Weeping willow) |
+| #7 | 38 | Apple (Apple tree) |
+| #8 | 41 | Cherry (Cherry tree, Cherry blossom) |
+| #9 | 43 | Elm |
+| #10 | 45 | Redwood |
+| Gem | 100 | Baobab; Ginkgo (Maidenhair tree); Monkey puzzle; Jacaranda; Hornbeam |
+| Good find | 80 | Spruce; Fir; Cedar; Ash; Beech; Sycamore; Poplar; Aspen; Chestnut; Horse chestnut; Walnut; Hickory; Cypress; Sequoia (Giant sequoia); Eucalyptus (Gum tree); Magnolia; Dogwood; Cottonwood; Hemlock; Larch; Yew; Holly; Juniper; Linden (Lime tree, Basswood); Mahogany; Teak; Banyan; Olive (Olive tree); Orange tree; Lemon tree; Pear tree; Peach tree; Plum tree; Fig tree; Alder; Hazel; Rowan (Mountain ash); Acacia; Mango tree; Joshua tree |
+| Not accepted (examples) | 0 | Bamboo; Fern; Ivy |
+
+## Name a cat breed
+
+*Animals*. Coat colours and patterns are not breeds.
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Persian |
+| #2 | 28 | Siamese |
+| #3 | 32 | Maine Coon |
+| #4 | 35 | Ragdoll |
+| #5 | 38 | Bengal |
+| #6 | 42 | Sphynx (Sphinx) |
+| #7 | 45 | British Shorthair |
+| #8 | 48 | Scottish Fold |
+| #9 | 52 | Russian Blue |
+| #10 | 55 | Abyssinian |
+| Gem | 100 | Korat; Turkish Van; LaPerm; Singapura; Chartreux |
+| Good find | 80 | Burmese; Birman; Himalayan; Exotic Shorthair; Norwegian Forest Cat (Wegie); Siberian; Devon Rex; Cornish Rex; Savannah; American Shorthair; Manx; Bombay; Tonkinese; Balinese; Oriental Shorthair (Oriental); Egyptian Mau; Ocicat; Ragamuffin; Somali; Turkish Angora (Angora); Japanese Bobtail; American Curl; Selkirk Rex; Havana Brown; Snowshoe; Munchkin; Toyger; Burmilla; Nebelung; Pixie-bob; Cymric; Peterbald |
+| Not accepted (examples) | 0 | Tabby; Calico; Tortoiseshell; Tuxedo |
+
+## Name a horse breed
+
+*Animals*
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Arabian (Arab) |
+| #2 | 28 | Thoroughbred |
+| #3 | 32 | Clydesdale |
+| #4 | 35 | Mustang |
+| #5 | 38 | Shetland pony (Shetland) |
+| #6 | 42 | Appaloosa |
+| #7 | 45 | Quarter Horse (American Quarter Horse) |
+| #8 | 48 | Shire |
+| #9 | 52 | Friesian |
+| #10 | 55 | Andalusian |
+| Gem | 100 | Akhal-Teke; Norwegian Fjord (Fjord); Haflinger; Marwari; Falabella |
+| Good find | 80 | Morgan; Paint Horse (American Paint Horse); Percheron; Belgian (Belgian Draft); Tennessee Walking Horse (Tennessee Walker); Lipizzaner (Lipizzan); Welsh pony; Connemara; Icelandic horse (Icelandic); Exmoor pony; Dartmoor pony; New Forest pony; Hanoverian; Trakehner; Lusitano; Standardbred; Missouri Fox Trotter; Paso Fino; Peruvian Paso; Suffolk Punch; Gypsy Vanner (Gypsy Cob, Irish Cob); Holsteiner; Oldenburg; Cleveland Bay; Highland pony; Fell pony; Brumby; Criollo; Knabstrupper; American Saddlebred (Saddlebred); Selle Francais; Camargue; Dutch Warmblood |
+| Not accepted (examples) | 0 | Zebra; Donkey; Mule; Pony |
+
+## Name a baby animal's name, like kitten
+
+*Animals*
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Puppy (Pup) |
+| #2 | 28 | Calf (Calves) |
+| #3 | 32 | Cub |
+| #4 | 35 | Lamb |
+| #5 | 38 | Chick |
+| #6 | 42 | Foal |
+| #7 | 45 | Piglet |
+| #8 | 48 | Duckling |
+| #9 | 52 | Joey |
+| #10 | 55 | Kid |
+| Gem | 100 | Cygnet; Leveret; Owlet; Eaglet; Squab |
+| Good find | 80 | Kitten; Gosling; Tadpole (Polliwog); Fawn; Colt; Filly; Kit; Fry; Hatchling; Nestling; Fledgling; Cria; Poult; Pullet; Hoglet; Elver; Froglet; Nymph; Larva (Larvae); Whelp; Yearling; Peachick; Fingerling; Spiderling |
+| Not accepted (examples) | 0 | Egg; Doe; Hen; Mare |
+
+## Name an animal that lives in the desert
+
+*Animals*
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Camel (Dromedary, Bactrian camel) |
+| #2 | 28 | Scorpion |
+| #3 | 31 | Rattlesnake |
+| #4 | 33 | Snake |
+| #5 | 36 | Lizard |
+| #6 | 39 | Meerkat |
+| #7 | 42 | Fennec fox |
+| #8 | 44 | Roadrunner |
+| #9 | 47 | Coyote |
+| #10 | 50 | Tarantula |
+| Gem | 100 | Addax; Sand cat; Jerboa; Thorny devil; Kangaroo rat |
+| Good find | 80 | Gila monster; Oryx (Arabian oryx); Gerbil; Jackrabbit; Desert tortoise; Horned lizard (Horned toad); Sidewinder; Vulture; Javelina (Peccary); Dingo; Chuckwalla; Desert iguana; Bearded dragon; Elf owl; Kit fox; Bighorn sheep (Desert bighorn); Camel spider; Desert locust; Sandgrouse; Uromastyx (Spiny-tailed lizard); Desert hedgehog; Desert monitor; Cactus wren; Gambel's quail; Horned viper (Sand viper); Dorcas gazelle |
+| Not accepted (examples) | 0 | Polar bear; Penguin; Walrus |
+
+## Name an animal with a shell
+
+*Animals*
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Turtle |
+| #2 | 28 | Snail |
+| #3 | 31 | Tortoise |
+| #4 | 33 | Crab |
+| #5 | 36 | Clam |
+| #6 | 39 | Oyster |
+| #7 | 42 | Lobster |
+| #8 | 44 | Hermit crab |
+| #9 | 47 | Mussel |
+| #10 | 50 | Armadillo |
+| Gem | 100 | Nautilus; Abalone; Limpet; Cowrie; Whelk |
+| Good find | 80 | Shrimp; Prawn; Scallop; Conch; Barnacle; Cockle; Periwinkle (Winkle); Crayfish (Crawfish, Crawdad); Terrapin; Sea turtle; Snapping turtle; Box turtle; Horseshoe crab; King crab; Fiddler crab; Coconut crab; Blue crab; Spider crab; Geoduck; Razor clam; Quahog; Sea snail; Langoustine; Giant clam; Garden snail; Cone snail |
+| Not accepted (examples) | 0 | Slug; Porcupine; Hedgehog; Octopus |
+
+## Name a pet
+
+*Animals*
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Dog (Puppy, Doggy) |
+| #2 | 28 | Cat (Kitten, Kitty) |
+| #3 | 31 | Fish |
+| #4 | 33 | Hamster |
+| #5 | 36 | Rabbit (Bunny) |
+| #6 | 39 | Goldfish |
+| #7 | 42 | Guinea pig |
+| #8 | 44 | Bird |
+| #9 | 47 | Turtle |
+| #10 | 50 | Parrot |
+| Gem | 100 | Axolotl; Stick insect; Sugar glider; Hissing cockroach (Madagascar hissing cockroach); Degu |
+| Good find | 80 | Snake; Lizard; Gecko (Leopard gecko); Bearded dragon; Budgie (Budgerigar, Parakeet); Canary; Cockatiel; Ferret; Mouse (Mice); Rat; Gerbil; Chinchilla; Hedgehog; Hermit crab; Tortoise; Frog; Tarantula; Iguana; Corn snake; Pony; Horse; Chicken; Pygmy goat; Pot-bellied pig; Lovebird; Finch; Cockatoo; Betta (Siamese fighting fish); Guppy; Duck; Giant African snail (Snail); Chameleon; Ball python (Royal python) |
+| Not accepted (examples) | 0 | Lion; Elephant; Shark |
+
+## Name a monkey or ape
+
+*Animals*
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Gorilla (Silverback) |
+| #2 | 28 | Chimpanzee (Chimp) |
+| #3 | 31 | Orangutan (Orang-utan, Orangutang) |
+| #4 | 33 | Baboon |
+| #5 | 36 | Spider monkey |
+| #6 | 39 | Capuchin (Capuchin monkey) |
+| #7 | 42 | Gibbon |
+| #8 | 44 | Bonobo |
+| #9 | 47 | Howler monkey |
+| #10 | 50 | Mandrill |
+| Gem | 100 | Proboscis monkey; Golden snub-nosed monkey; Gelada; Uakari; Siamang |
+| Good find | 80 | Macaque; Rhesus monkey (Rhesus macaque); Japanese macaque (Snow monkey); Marmoset; Tamarin; Golden lion tamarin; Squirrel monkey; Colobus (Colobus monkey); Langur; Vervet monkey (Vervet); Mangabey; Drill; Titi monkey; Saki monkey (Saki); Night monkey (Owl monkey); Woolly monkey; Barbary macaque (Barbary ape); Pygmy marmoset; Emperor tamarin; Cotton-top tamarin; Patas monkey; Guenon; Douc (Red-shanked douc); De Brazza's monkey; Diana monkey |
+| Not accepted (examples) | 0 | Lemur; Sloth; Tarsier; Loris |
+
+## Name an Australian animal
+
+*Animals*
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Kangaroo (Roo) |
+| #2 | 28 | Koala (Koala bear) |
+| #3 | 31 | Emu |
+| #4 | 33 | Wombat |
+| #5 | 36 | Platypus (Duck-billed platypus) |
+| #6 | 39 | Wallaby |
+| #7 | 42 | Dingo |
+| #8 | 44 | Kookaburra |
+| #9 | 47 | Tasmanian devil |
+| #10 | 50 | Echidna (Spiny anteater) |
+| Gem | 100 | Numbat; Bilby; Quoll; Thorny devil; Potoroo |
+| Good find | 80 | Quokka; Cassowary; Sugar glider; Possum (Brushtail possum); Saltwater crocodile (Saltie); Frilled lizard (Frill-necked lizard); Galah; Cockatoo (Sulphur-crested cockatoo); Lyrebird; Budgerigar (Budgie); Taipan; Funnel-web spider; Redback spider; Box jellyfish; Tree kangaroo; Bandicoot; Blue-tongued lizard (Blue-tongue skink, Bluey); Rainbow lorikeet; Black swan; Goanna; Bearded dragon; Pademelon; Bettong; Eastern brown snake (Brown snake); Tiger snake; Little penguin (Fairy penguin); Wedge-tailed eagle; Australian magpie; Wallaroo |
+| Not accepted (examples) | 0 | Kiwi; Panda; Lemur |
+
+## Name a rodent
+
+*Animals*. Rabbits are not rodents.
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Mouse (Mice) |
+| #2 | 28 | Rat |
+| #3 | 32 | Squirrel |
+| #4 | 35 | Hamster |
+| #5 | 38 | Beaver |
+| #6 | 42 | Guinea pig (Cavy) |
+| #7 | 45 | Chipmunk |
+| #8 | 48 | Gerbil |
+| #9 | 52 | Porcupine |
+| #10 | 55 | Chinchilla |
+| Gem | 100 | Agouti; Jerboa; Degu; Mara (Patagonian mara); Paca |
+| Good find | 80 | Capybara; Groundhog (Woodchuck); Prairie dog; Gopher (Pocket gopher); Marmot; Vole; Lemming; Dormouse (Dormice); Muskrat; Nutria (Coypu); Naked mole rat (Naked mole-rat); Kangaroo rat; Flying squirrel; Red squirrel; Grey squirrel (Gray squirrel); Ground squirrel; Fox squirrel; Field mouse (Wood mouse); Harvest mouse; Deer mouse; Pack rat (Woodrat); Brown rat; Black rat; Spiny mouse; Water vole |
+| Not accepted (examples) | 0 | Rabbit; Hedgehog; Mole; Shrew |
+
+## Name a gemstone
+
+*Nature*
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Diamond |
+| #2 | 28 | Ruby |
+| #3 | 31 | Emerald |
+| #4 | 33 | Sapphire |
+| #5 | 36 | Amethyst |
+| #6 | 39 | Opal |
+| #7 | 42 | Topaz |
+| #8 | 44 | Pearl |
+| #9 | 47 | Jade |
+| #10 | 50 | Garnet |
+| Gem | 100 | Tanzanite; Alexandrite; Spinel; Iolite; Morganite |
+| Good find | 80 | Aquamarine; Turquoise; Onyx; Peridot; Citrine; Tourmaline; Lapis lazuli (Lapis); Moonstone; Amber; Quartz; Rose quartz; Smoky quartz; Jasper; Agate; Zircon; Beryl; Malachite; Bloodstone; Carnelian; Tiger's eye (Tigers eye, Tiger eye); Sunstone; Labradorite; Kunzite; Chalcedony; Chrysoprase; Aventurine; Amazonite; Rhodonite; Fluorite |
+| Not accepted (examples) | 0 | Gold; Silver; Platinum |
+
+## Name something in space
+
+*Nature*
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Moon |
+| #2 | 27 | Sun |
+| #3 | 29 | Star |
+| #4 | 32 | Planet |
+| #5 | 34 | Mars |
+| #6 | 36 | Black hole |
+| #7 | 38 | Comet |
+| #8 | 41 | Asteroid |
+| #9 | 43 | Saturn |
+| #10 | 45 | Jupiter |
+| Gem | 100 | Quasar; Pulsar; Oort cloud; Magnetar; Kuiper belt |
+| Good find | 80 | Earth; Venus; Mercury; Uranus; Neptune; Pluto; Galaxy; Milky Way; Nebula; Meteor (Shooting star); Meteoroid; Satellite; Space station (International Space Station, ISS); Astronaut; Supernova; Constellation; Asteroid belt; Dwarf planet; Ceres; Andromeda Galaxy (Andromeda); Red giant; White dwarf; Neutron star; Solar system; Space junk (Space debris); Solar flare; Exoplanet; Titan; Europa; Ganymede; Space probe; Halley's Comet; Gas giant; Star cluster |
+| Not accepted (examples) | 0 | Alien; UFO; Cloud |
+
+## Name a houseplant
+
+*Nature*
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Spider plant |
+| #2 | 28 | Snake plant (Mother-in-law's tongue, Sansevieria) |
+| #3 | 31 | Cactus (Cacti) |
+| #4 | 33 | Aloe vera (Aloe) |
+| #5 | 36 | Peace lily |
+| #6 | 39 | Monstera (Swiss cheese plant) |
+| #7 | 42 | Pothos (Devil's ivy) |
+| #8 | 44 | Fern |
+| #9 | 47 | Orchid |
+| #10 | 50 | Succulent |
+| Gem | 100 | String of pearls; Calathea; Hoya (Wax plant); Peperomia; Polka dot plant |
+| Good find | 80 | Rubber plant (Rubber tree); Fiddle leaf fig (Fiddle-leaf fig); ZZ plant (Zamioculcas); Jade plant; Philodendron; Boston fern; African violet; Prayer plant (Maranta); Dracaena; Yucca; Chinese money plant (Pilea, Pancake plant); Money tree (Pachira); Parlor palm (Parlour palm); Areca palm; Kentia palm; English ivy (Ivy); Christmas cactus; Croton; Dieffenbachia (Dumb cane); Venus flytrap; Air plant (Tillandsia); Bromeliad; Anthurium; Lucky bamboo; Poinsettia; Cyclamen; Asparagus fern; Ponytail palm; Cast iron plant (Aspidistra); Chinese evergreen (Aglaonema); Arrowhead plant (Syngonium); Tradescantia (Inch plant); Echeveria; Haworthia; Weeping fig (Ficus) |
+| Not accepted (examples) | 0 | Oak tree; Sunflower; Grass |
+
+## Name a rock or mineral
+
+*Nature*
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Granite |
+| #2 | 27 | Quartz |
+| #3 | 29 | Diamond |
+| #4 | 32 | Marble |
+| #5 | 34 | Limestone |
+| #6 | 36 | Sandstone |
+| #7 | 38 | Obsidian |
+| #8 | 41 | Basalt |
+| #9 | 43 | Slate |
+| #10 | 45 | Pumice |
+| Gem | 100 | Feldspar; Gneiss; Schist; Galena; Magnetite (Lodestone) |
+| Good find | 80 | Coal; Shale; Chalk; Flint; Gold; Silver; Copper; Pyrite (Fool's gold); Mica; Talc; Gypsum; Halite (Rock salt); Calcite; Fluorite; Graphite; Hematite (Haematite); Amethyst; Jasper; Agate; Conglomerate; Soapstone; Dolomite; Sulfur (Sulphur); Topaz; Garnet; Corundum; Bauxite; Chert; Mudstone; Andesite; Olivine; Platinum; Jade; Tuff; Emerald; Ruby |
+| Not accepted (examples) | 0 | Brick; Concrete; Pearl; Amber |
+
+## Name a nocturnal animal
+
+*Animals*
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Owl |
+| #2 | 28 | Bat |
+| #3 | 31 | Raccoon |
+| #4 | 33 | Hedgehog |
+| #5 | 36 | Fox |
+| #6 | 39 | Moth |
+| #7 | 42 | Opossum (Possum) |
+| #8 | 44 | Skunk |
+| #9 | 47 | Firefly (Lightning bug) |
+| #10 | 50 | Badger |
+| Gem | 100 | Aye-aye; Kinkajou; Tarsier; Kiwi; Nightjar |
+| Good find | 80 | Slow loris (Loris); Bush baby (Galago); Sugar glider; Wombat; Koala; Aardvark; Armadillo; Porcupine; Cockroach; Cricket; Scorpion; Flying squirrel; Bilby; Kangaroo rat; Jerboa; Fennec fox; Night heron; Frogmouth (Tawny frogmouth); Kakapo; Ocelot; Civet; Genet; Owl monkey (Night monkey); Hamster; Glow-worm; Tasmanian devil; Quoll; Bandicoot; Dormouse (Dormice) |
+| Not accepted (examples) | 0 | Butterfly; Squirrel; Eagle; Rooster |
+
+## Name an animal sound, like moo
+
+*Animals*
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Woof (Bow wow, Ruff) |
+| #2 | 28 | Meow (Miaow, Mew) |
+| #3 | 31 | Oink |
+| #4 | 33 | Quack |
+| #5 | 36 | Baa |
+| #6 | 39 | Neigh |
+| #7 | 42 | Roar |
+| #8 | 44 | Bark |
+| #9 | 47 | Hiss |
+| #10 | 50 | Cock-a-doodle-doo |
+| Gem | 100 | Bray; Bugle; Nicker; Bellow; Trumpet |
+| Good find | 80 | Moo; Cluck; Tweet; Chirp; Ribbit; Croak; Howl; Growl; Purr; Buzz; Hoot (Twit twoo, Tu-whit tu-whoo); Gobble; Squeak; Squawk; Caw; Honk; Bleat; Whinny; Snort; Grunt; Coo; Chatter; Hee-haw; Trill; Yelp; Whimper; Yip; Screech; Warble; Cheep; Arf; Squeal; Click |
+| Not accepted (examples) | 0 | Beep; Ding dong; Tick tock; Vroom |
+
+## Name a constellation
+
+*Nature*. The Big Dipper is part of Ursa Major, not a constellation.
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Orion |
+| #2 | 29 | Ursa Major (Great Bear) |
+| #3 | 33 | Cassiopeia |
+| #4 | 37 | Ursa Minor (Little Bear) |
+| #5 | 41 | Leo |
+| #6 | 44 | Scorpius (Scorpio) |
+| #7 | 48 | Gemini |
+| #8 | 52 | Taurus |
+| #9 | 56 | Sagittarius |
+| #10 | 60 | Aquarius |
+| Gem | 100 | Monoceros; Camelopardalis; Vulpecula; Delphinus; Musca |
+| Good find | 80 | Aries; Cancer; Virgo; Libra; Capricornus (Capricorn); Pisces; Draco; Pegasus; Andromeda; Perseus; Hercules; Cygnus; Lyra; Aquila; Canis Major (Great Dog); Canis Minor; Lepus; Auriga; Bootes; Corona Borealis; Crux (Southern Cross); Centaurus; Cepheus; Lupus; Hydra; Phoenix; Columba; Carina; Corvus; Eridanus; Ophiuchus; Cetus; Lynx; Sagitta |
+| Not accepted (examples) | 0 | Big Dipper; Little Dipper; Milky Way; North Star |
+
+## Name an animal that can fly, not a bird
+
+*Animals*. Gliders such as flying squirrels do not count.
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Bat |
+| #2 | 28 | Butterfly |
+| #3 | 32 | Bee (Honeybee) |
+| #4 | 35 | Fly (Housefly) |
+| #5 | 38 | Dragonfly |
+| #6 | 42 | Mosquito |
+| #7 | 45 | Moth |
+| #8 | 48 | Ladybug (Ladybird) |
+| #9 | 52 | Wasp |
+| #10 | 55 | Hornet |
+| Gem | 100 | Lacewing; Mayfly; Damselfly; Flying fox; Hoverfly |
+| Good find | 80 | Beetle; Firefly (Lightning bug); Bumblebee (Bumble bee); Horsefly; Gnat; Midge; Cicada; Locust; Grasshopper; Fruit fly; Crane fly; Stag beetle; June bug (June beetle); Vampire bat; Fruit bat; Pipistrelle; Yellowjacket (Yellow jacket); Bluebottle; Hawk moth; Luna moth; Monarch butterfly; Swallowtail; Painted lady; Stink bug (Shield bug); Dung beetle; Tsetse fly; Cockchafer (Maybug) |
+| Not accepted (examples) | 0 | Eagle; Owl; Hummingbird |
+
+## Name a type of shark
+
+*Animals*
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Great white (Great white shark, White shark) |
+| #2 | 29 | Hammerhead (Hammerhead shark) |
+| #3 | 33 | Tiger shark |
+| #4 | 37 | Whale shark |
+| #5 | 41 | Bull shark |
+| #6 | 44 | Mako (Mako shark, Shortfin mako) |
+| #7 | 48 | Nurse shark |
+| #8 | 52 | Basking shark |
+| #9 | 56 | Blue shark |
+| #10 | 60 | Lemon shark |
+| Gem | 100 | Goblin shark; Frilled shark; Wobbegong; Cookiecutter shark (Cookie cutter shark); Greenland shark |
+| Good find | 80 | Megalodon; Blacktip shark (Blacktip); Oceanic whitetip; Whitetip reef shark; Thresher shark (Thresher); Angel shark; Sand tiger shark (Sand tiger, Grey nurse shark); Leopard shark; Zebra shark; Dogfish (Spiny dogfish); Bamboo shark; Epaulette shark; Horn shark; Bonnethead; Port Jackson shark; Sixgill shark; Sevengill shark; Silky shark; Dusky shark; Sandbar shark; Lantern shark; Megamouth shark (Megamouth); Porbeagle; Salmon shark; School shark (Tope); Swell shark; Sleeper shark; Sawshark (Saw shark); Caribbean reef shark; Galapagos shark |
+| Not accepted (examples) | 0 | Killer whale; Dolphin; Sawfish; Stingray |
+
+## Name a country in Asia
+
+*Geography*. Countries partly in Asia, like Russia, count.
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | China |
+| #2 | 28 | Japan |
+| #3 | 32 | India |
+| #4 | 35 | Thailand |
+| #5 | 38 | South Korea (Republic of Korea) |
+| #6 | 42 | Vietnam (Viet Nam) |
+| #7 | 45 | Philippines (The Philippines) |
+| #8 | 48 | Indonesia |
+| #9 | 52 | Singapore |
+| #10 | 55 | Malaysia |
+| Gem | 100 | Bhutan; Brunei; Kyrgyzstan; Timor-Leste (East Timor); Turkmenistan |
+| Good find | 80 | Mongolia; Nepal; Pakistan; Bangladesh; Sri Lanka; Myanmar (Burma); Cambodia; Laos; North Korea; Afghanistan; Iran; Iraq; Saudi Arabia; Kuwait; Qatar; Bahrain; United Arab Emirates (UAE); Oman; Yemen; Jordan; Syria; Lebanon; Kazakhstan; Uzbekistan; Tajikistan; Maldives; Turkey (Turkiye); Russia |
+| Not accepted (examples) | 0 | Australia; Morocco; Ethiopia |
+
+## Name a country in Europe
+
+*Geography*
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | France |
+| #2 | 28 | Germany |
+| #3 | 32 | Italy |
+| #4 | 35 | Spain |
+| #5 | 38 | United Kingdom (UK, Britain, Great Britain) |
+| #6 | 42 | Portugal |
+| #7 | 45 | Greece |
+| #8 | 48 | Ireland (Republic of Ireland) |
+| #9 | 52 | Netherlands (Holland, The Netherlands) |
+| #10 | 55 | Switzerland |
+| Gem | 100 | Liechtenstein; Andorra; San Marino; Moldova; Montenegro |
+| Good find | 80 | England; Scotland; Wales; Belgium; Austria; Sweden; Norway; Denmark; Finland; Iceland; Poland; Czechia (Czech Republic); Slovakia; Hungary; Romania; Bulgaria; Croatia; Serbia; Slovenia; Bosnia and Herzegovina (Bosnia); Albania; Ukraine; Belarus; Lithuania; Latvia; Estonia; Luxembourg; Monaco; Malta; Russia |
+| Not accepted (examples) | 0 | Morocco; Tunisia; Lebanon |
+
+## Name a capital city
+
+*Geography*. National capitals only.
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | London |
+| #2 | 27 | Paris |
+| #3 | 29 | Washington DC (Washington, Washington D.C.) |
+| #4 | 32 | Tokyo |
+| #5 | 34 | Rome |
+| #6 | 36 | Berlin |
+| #7 | 38 | Madrid |
+| #8 | 41 | Ottawa |
+| #9 | 43 | Beijing |
+| #10 | 45 | Canberra |
+| Gem | 100 | Ulaanbaatar (Ulan Bator); Thimphu; Windhoek; Montevideo; Tbilisi |
+| Good find | 80 | Moscow; Dublin; Lisbon; Athens; Vienna; Cairo; Mexico City; Buenos Aires; Brasilia (Brasília); Lima; Santiago; Bogota (Bogotá); Nairobi; New Delhi; Seoul; Bangkok; Hanoi; Manila; Jakarta; Oslo; Stockholm; Copenhagen; Helsinki; Warsaw; Prague; Budapest; Brussels; Amsterdam; Wellington; Reykjavik (Reykjavík); Havana; Kingston; Caracas; Accra; Kampala; Kuala Lumpur; Ankara; Abuja |
+| Not accepted (examples) | 0 | Sydney; Toronto; New York; Istanbul |
+
+## Name a river
+
+*Geography*
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Nile |
+| #2 | 27 | Amazon |
+| #3 | 28 | Mississippi |
+| #4 | 30 | Thames |
+| #5 | 32 | Danube |
+| #6 | 33 | Yangtze (Chang Jiang) |
+| #7 | 35 | Rhine |
+| #8 | 37 | Seine |
+| #9 | 38 | Colorado |
+| #10 | 40 | Ganges (Ganga) |
+| Gem | 100 | Orinoco; Limpopo; Irrawaddy (Ayeyarwady); Shannon; Fraser |
+| Good find | 80 | Mekong; Volga; Zambezi; Congo; Niger; Yellow River (Huang He); Tigris; Euphrates; Hudson; Ohio; Rio Grande; Missouri; Columbia; Potomac; Tiber; Po; Loire; Rhone (Rhône); Elbe; Indus; Brahmaputra; Murray; Darling; Mackenzie; Yukon; St. Lawrence (Saint Lawrence); Severn; Tyne; Mersey; Liffey; Delaware; Snake; Arkansas; Tennessee; Ottawa River; Red River |
+| Not accepted (examples) | 0 | Lake Superior; Panama Canal; Loch Ness |
+
+## Name an island
+
+*Geography*
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Hawaii (Big Island, Hawai'i) |
+| #2 | 27 | Greenland |
+| #3 | 28 | Jamaica |
+| #4 | 30 | Cuba |
+| #5 | 32 | Iceland |
+| #6 | 33 | Madagascar |
+| #7 | 35 | Ireland |
+| #8 | 37 | Bali |
+| #9 | 38 | Manhattan |
+| #10 | 40 | Great Britain (Britain) |
+| Gem | 100 | Baffin Island; Socotra; Tristan da Cunha; Gotland; Lampedusa |
+| Good find | 80 | Sicily; Sardinia; Corsica; Crete; Tasmania; Borneo; Sumatra; Java; New Guinea; Newfoundland; Vancouver Island; Prince Edward Island (PEI); Long Island; Martha's Vineyard; Nantucket; Maui; Oahu (O'ahu); Kauai (Kaua'i); Easter Island (Rapa Nui); Mallorca (Majorca); Ibiza; Tenerife; Malta; Barbados; Trinidad; Tobago; Aruba; Isle of Wight; Isle of Man; Skye (Isle of Skye); Santorini; Mykonos; Capri; Zanzibar; Phuket; Sri Lanka; Honshu; Hokkaido; Puerto Rico; Mauritius |
+| Not accepted (examples) | 0 | Antarctica; Atlantis; Florida |
+
+## Name a famous landmark
+
+*Places*
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Eiffel Tower |
+| #2 | 27 | Statue of Liberty |
+| #3 | 29 | Great Wall of China (Great Wall) |
+| #4 | 32 | Pyramids of Giza (Great Pyramid, Pyramids, Great Pyramid of Giza) |
+| #5 | 34 | Big Ben (Elizabeth Tower) |
+| #6 | 36 | Colosseum (Coliseum) |
+| #7 | 38 | Taj Mahal |
+| #8 | 41 | Golden Gate Bridge (Golden Gate) |
+| #9 | 43 | Sydney Opera House (Opera House) |
+| #10 | 45 | CN Tower |
+| Gem | 100 | Atomium; Alhambra; Neuschwanstein Castle (Neuschwanstein); Terracotta Army (Terracotta Warriors); Moai (Easter Island heads) |
+| Good find | 80 | Burj Khalifa; Tower of London; Buckingham Palace; Tower Bridge; London Eye; Arc de Triomphe; Louvre; Brandenburg Gate; Trevi Fountain; Machu Picchu; Petra; Stonehenge; Grand Canyon; Niagara Falls; Empire State Building; Space Needle; Gateway Arch; Times Square; Central Park; Forbidden City; Mount Fuji; Petronas Towers; Tokyo Tower; Uluru (Ayers Rock); Victoria Falls; Edinburgh Castle; Matterhorn; Mount Everest (Everest); Great Sphinx (Sphinx); Rialto Bridge; Alcatraz; Brooklyn Bridge; Golden Gate Park |
+| Not accepted (examples) | 0 | Atlantis; El Dorado; Camelot |
+
+## Name a city in Asia
+
+*Geography*
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Tokyo |
+| #2 | 27 | Beijing (Peking) |
+| #3 | 28 | Shanghai |
+| #4 | 30 | Hong Kong |
+| #5 | 32 | Seoul |
+| #6 | 33 | Bangkok |
+| #7 | 35 | Mumbai (Bombay) |
+| #8 | 37 | Singapore |
+| #9 | 38 | Delhi (New Delhi) |
+| #10 | 40 | Dubai |
+| Gem | 100 | Ulaanbaatar (Ulan Bator); Chiang Mai; Almaty; Luang Prabang; Samarkand |
+| Good find | 80 | Osaka; Kyoto; Hiroshima; Manila; Jakarta; Kuala Lumpur (KL); Hanoi; Ho Chi Minh City (Saigon); Kolkata (Calcutta); Chennai (Madras); Bangalore (Bengaluru); Karachi; Lahore; Dhaka; Kathmandu; Colombo; Busan; Guangzhou; Shenzhen; Chengdu; Xi'an (Xian); Wuhan; Macau (Macao); Phuket; Doha; Abu Dhabi; Riyadh; Tehran; Baghdad; Tashkent; Yokohama; Sapporo; Nagoya; Phnom Penh; Hyderabad |
+| Not accepted (examples) | 0 | Cairo; Moscow; Sydney |
+
+## Name a city in the USA
+
+*Geography*
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | New York City (NYC, New York) |
+| #2 | 27 | Los Angeles (LA, L.A.) |
+| #3 | 28 | Chicago |
+| #4 | 30 | Miami |
+| #5 | 32 | Las Vegas (Vegas) |
+| #6 | 33 | San Francisco (SF) |
+| #7 | 35 | Boston |
+| #8 | 37 | Houston |
+| #9 | 38 | Seattle |
+| #10 | 40 | Orlando |
+| Gem | 100 | Boise; Duluth; Cheyenne; Spokane; Savannah |
+| Good find | 80 | Dallas; Atlanta; Philadelphia (Philly); Phoenix; Denver; Detroit; New Orleans; Nashville; Austin; San Diego; Portland; Washington DC (Washington, DC, Washington D.C.); Baltimore; Minneapolis; St. Louis (Saint Louis); Kansas City; Memphis; Cleveland; Pittsburgh; Honolulu; Anchorage; Salt Lake City; Sacramento; San Antonio; Charlotte; Tampa; Indianapolis; Milwaukee; Cincinnati; Albuquerque; Tucson; Buffalo; Omaha; Raleigh |
+| Not accepted (examples) | 0 | Toronto; Vancouver; Mexico City |
+
+## Name a city in Canada
+
+*Geography*
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Toronto |
+| #2 | 28 | Vancouver |
+| #3 | 31 | Montreal (Montréal) |
+| #4 | 33 | Ottawa |
+| #5 | 36 | Calgary |
+| #6 | 39 | Edmonton |
+| #7 | 42 | Quebec City (Quebec, Québec) |
+| #8 | 44 | Winnipeg |
+| #9 | 47 | Halifax |
+| #10 | 50 | Victoria |
+| Gem | 100 | Yellowknife; Whitehorse; Iqaluit; Thunder Bay; Moose Jaw |
+| Good find | 80 | Regina; Saskatoon; Hamilton; London; Kitchener; Waterloo; Mississauga; Brampton; Markham; Oakville; Burlington; Barrie; Kingston; Windsor; Niagara Falls; St. Catharines (Saint Catharines); Guelph; Sudbury (Greater Sudbury); Kelowna; Kamloops; Nanaimo; Surrey; Burnaby; Richmond; Red Deer; Lethbridge; Fredericton; Moncton; Saint John; St. John's (Saint John's); Charlottetown; Sherbrooke; Gatineau; Laval; Trois-Rivieres (Trois-Rivières) |
+| Not accepted (examples) | 0 | Seattle; Detroit; Anchorage |
+
+## Name an ocean or sea
+
+*Geography*
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Pacific Ocean (Pacific) |
+| #2 | 29 | Atlantic Ocean (Atlantic) |
+| #3 | 33 | Indian Ocean (Indian) |
+| #4 | 37 | Arctic Ocean (Arctic) |
+| #5 | 41 | Mediterranean Sea (Mediterranean) |
+| #6 | 44 | Caribbean Sea (Caribbean) |
+| #7 | 48 | Red Sea |
+| #8 | 52 | Black Sea |
+| #9 | 56 | North Sea |
+| #10 | 60 | Southern Ocean (Antarctic Ocean) |
+| Gem | 100 | Sargasso Sea (Sargasso); Tasman Sea; Weddell Sea; Sea of Okhotsk (Okhotsk); Andaman Sea |
+| Good find | 80 | Baltic Sea (Baltic); Aegean Sea (Aegean); Adriatic Sea (Adriatic); Arabian Sea; Bering Sea; Coral Sea; Irish Sea; Ionian Sea; Tyrrhenian Sea; Ligurian Sea; Norwegian Sea; Barents Sea; Kara Sea; Laptev Sea; Labrador Sea; Beaufort Sea; Yellow Sea; East China Sea; South China Sea; Philippine Sea; Java Sea; Celtic Sea; Ross Sea; Bismarck Sea; Solomon Sea; Timor Sea; Arafura Sea; Sea of Marmara (Marmara Sea); Alboran Sea; Greenland Sea; Sulu Sea; Banda Sea |
+| Not accepted (examples) | 0 | Lake Superior; Lake Victoria; Amazon River |
+
+## Name a desert
+
+*Geography*. Antarctica is a desert: very little falls there.
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Sahara |
+| #2 | 28 | Gobi |
+| #3 | 32 | Mojave (Mohave) |
+| #4 | 35 | Kalahari |
+| #5 | 38 | Atacama |
+| #6 | 42 | Arabian Desert (Arabian) |
+| #7 | 45 | Sonoran |
+| #8 | 48 | Antarctic Desert (Antarctica, Antarctic) |
+| #9 | 52 | Namib |
+| #10 | 55 | Chihuahuan |
+| Gem | 100 | Taklamakan (Taklimakan); Thar (Great Indian Desert); Karakum (Kara Kum); Simpson; Danakil |
+| Good find | 80 | Great Victoria Desert (Great Victoria); Great Sandy Desert (Great Sandy); Gibson; Tanami; Great Basin; Painted Desert; Black Rock Desert (Black Rock); Syrian Desert; Arctic Desert (Arctic); Patagonian Desert (Patagonian); Kyzylkum (Kyzyl Kum); Libyan Desert (Libyan); Nubian Desert (Nubian); Ordos; Lut (Dasht-e Lut); Dasht-e Kavir (Kavir); Colorado Desert; Red Desert; Wadi Rum; White Desert; Rub' al Khali (Empty Quarter); Strzelecki; Little Sandy Desert; Tabernas; Great Salt Lake Desert; Owyhee |
+| Not accepted (examples) | 0 | Serengeti; Everglades; Grand Canyon |
+
+## Name a language
+
+*Geography*
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | English |
+| #2 | 27 | Spanish |
+| #3 | 29 | French |
+| #4 | 32 | Mandarin (Chinese, Mandarin Chinese) |
+| #5 | 34 | German |
+| #6 | 36 | Italian |
+| #7 | 38 | Japanese |
+| #8 | 41 | Russian |
+| #9 | 43 | Arabic |
+| #10 | 45 | Portuguese |
+| Gem | 100 | Basque; Quechua; Maori (Māori); Amharic; Inuktitut |
+| Good find | 80 | Korean; Hindi; Dutch; Greek; Turkish; Polish; Swedish; Norwegian; Danish; Finnish; Hebrew; Latin; Cantonese; Vietnamese; Thai; Bengali (Bangla); Punjabi; Urdu; Tagalog (Filipino); Swahili (Kiswahili); Irish (Irish Gaelic); Scottish Gaelic; Welsh; Icelandic; Hungarian; Czech; Ukrainian; Persian (Farsi); Indonesian; Malay; Tamil; Zulu; Afrikaans; Cree; Esperanto; American Sign Language (ASL); Hawaiian |
+| Not accepted (examples) | 0 | Mexican; Brazilian; Canadian; Austrian |
+
+## Name a currency
+
+*Geography*
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | US dollar (Dollar, American dollar, USD) |
+| #2 | 28 | Euro |
+| #3 | 31 | British pound (Pound, Pound sterling, Sterling, GBP) |
+| #4 | 33 | Yen (Japanese yen) |
+| #5 | 36 | Canadian dollar (Loonie, CAD) |
+| #6 | 39 | Peso |
+| #7 | 42 | Rupee |
+| #8 | 44 | Swiss franc (Franc) |
+| #9 | 47 | Yuan (Renminbi, RMB) |
+| #10 | 50 | Ruble (Rouble) |
+| Gem | 100 | Kwacha; Quetzal; Tugrik (Togrog); Lempira; Pula |
+| Good find | 80 | Won; Baht; Real (Brazilian real); Krona; Krone; Rand; Lira; Dirham; Riyal; Rupiah; Ringgit; Dong; Shekel; Zloty; Forint; Koruna; Australian dollar; New Zealand dollar; Dinar; Shilling; Naira; Cedi; Sol; Bolivar (Bolívar); Colon (Colón); Guarani (Guaraní); Leu; Lev; Hryvnia; Taka; Kyat; Rial; Birr |
+| Not accepted (examples) | 0 | Gold; Silver; Cheque |
+
+## Name something you pack for a holiday
+
+*Places*
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Clothes |
+| #2 | 27 | Toothbrush |
+| #3 | 29 | Sunscreen (Sun cream, Suncream, Sunblock) |
+| #4 | 32 | Passport |
+| #5 | 34 | Swimsuit (Bathing suit, Swimming costume, Swimwear, Swimming trunks) |
+| #6 | 36 | Sunglasses |
+| #7 | 38 | Phone charger (Charger) |
+| #8 | 41 | Shoes |
+| #9 | 43 | Toothpaste |
+| #10 | 45 | Underwear |
+| Gem | 100 | Plug adapter (Travel adapter); Earplugs; Laundry bag; Travel pillow (Neck pillow); Eye mask (Sleep mask) |
+| Good find | 80 | Hat (Sun hat); Book; Camera; Pyjamas (Pajamas, PJs); Towel; Socks; Jacket; Flip-flops; Sandals; Shampoo; Deodorant; Hairbrush; Comb; Razor; Medicine; First aid kit; Snacks; Headphones; Wallet; Money (Cash); Tickets; Map; Umbrella; Raincoat; Goggles; Insect repellent (Bug spray); Lip balm; Water bottle; Tablet; Laptop; Shorts; T-shirts (T-shirt); Dress; Phone |
+| Not accepted (examples) | 0 | Hotel; Airplane; Beach |
+
+## Name a type of boat
+
+*Places*
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Sailboat (Sailing boat) |
+| #2 | 28 | Canoe |
+| #3 | 31 | Kayak |
+| #4 | 33 | Yacht |
+| #5 | 36 | Rowboat (Rowing boat) |
+| #6 | 39 | Speedboat |
+| #7 | 42 | Cruise ship |
+| #8 | 44 | Ferry |
+| #9 | 47 | Raft |
+| #10 | 50 | Tugboat (Tug) |
+| Gem | 100 | Junk; Dhow; Coracle; Sampan; Felucca |
+| Good find | 80 | Gondola; Catamaran; Trimaran; Dinghy; Barge; Houseboat; Fishing boat; Lifeboat; Pontoon boat (Pontoon); Paddle steamer (Sternwheeler); Narrowboat (Canal boat); Punt; Trawler; Galleon; Longship (Viking ship); Schooner; Steamboat; Dragon boat; Outrigger canoe (Outrigger); Airboat; Container ship; Pedal boat (Pedalo, Paddle boat); Sloop; Motorboat; Water taxi; Icebreaker; Tall ship; Clipper; Inflatable boat (Rubber dinghy); Riverboat; Ketch |
+| Not accepted (examples) | 0 | Surfboard; Paddleboard; Seaplane |
+
+## Name a building in a town
+
+*Places*
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | School |
+| #2 | 27 | Hospital |
+| #3 | 29 | Library |
+| #4 | 32 | Post office |
+| #5 | 34 | Fire station (Fire hall) |
+| #6 | 36 | Police station |
+| #7 | 38 | Town hall (City hall) |
+| #8 | 41 | Bank |
+| #9 | 43 | Supermarket (Grocery store) |
+| #10 | 45 | Restaurant |
+| Gem | 100 | Bandstand; Water tower; Grain elevator; Market hall; Pumping station |
+| Good find | 80 | Courthouse; Museum; Cinema (Movie theatre, Movie theater); Theatre (Theater); Hotel; Cafe (Café); Pub; Bakery; Pharmacy; Gym; Petrol station (Gas station); Train station (Railway station); Bus station; Community centre (Community center); Swimming pool; Arena; Ice rink; Bowling alley; Factory; Warehouse; Apartment building (Apartment block); House; Garage; Dentist; Doctor's office (Clinic); Vet clinic (Vet); Daycare (Nursery); Art gallery (Gallery); Stadium; Shopping mall (Mall); Parking garage (Car park); Lighthouse; Hair salon (Hairdresser); University; College |
+| Not accepted (examples) | 0 | Park; Bridge; Statue |
+
+## Name a type of shop
+
+*Places*
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Grocery store (Supermarket, Grocer) |
+| #2 | 27 | Bakery |
+| #3 | 29 | Butcher |
+| #4 | 32 | Bookshop (Bookstore) |
+| #5 | 34 | Clothes shop (Clothing store) |
+| #6 | 36 | Shoe shop (Shoe store) |
+| #7 | 38 | Toy shop (Toy store) |
+| #8 | 41 | Pharmacy (Chemist, Drugstore) |
+| #9 | 43 | Hardware store (Hardware shop, Ironmonger) |
+| #10 | 45 | Florist (Flower shop) |
+| Gem | 100 | Haberdashery; Milliner (Hat shop); Chandlery (Ship chandler); Cobbler (Shoe repair); Saddlery |
+| Good find | 80 | Fishmonger (Fish shop); Greengrocer; Deli (Delicatessen); Jeweller (Jeweler, Jewellery shop, Jewelry store); Pet shop (Pet store); Sweet shop (Candy store); Newsagent; Barber; Hair salon (Hairdresser); Optician; Gift shop; Antique shop; Charity shop (Thrift store, Thrift shop); Furniture store; Electronics store; Music shop; Sports shop (Sporting goods store); Garden centre (Garden center); Bike shop; Craft shop; Stationery shop; Ice cream shop; Coffee shop; Department store; Convenience store (Corner shop); Pawn shop; Cheese shop; Bridal shop; Tailor; Dry cleaner; Phone shop; Video game store; Comic shop (Comic book store); Record shop (Record store) |
+| Not accepted (examples) | 0 | Restaurant; Bank; Library |
+
+## Name something at the beach
+
+*Places*
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Sand |
+| #2 | 27 | Sea (Ocean, Water) |
+| #3 | 29 | Shells (Seashells) |
+| #4 | 32 | Waves |
+| #5 | 34 | Beach umbrella (Umbrella, Parasol) |
+| #6 | 36 | Towel (Beach towel) |
+| #7 | 38 | Lifeguard |
+| #8 | 41 | Sandcastle (Sandcastles) |
+| #9 | 43 | Sunscreen |
+| #10 | 45 | Seagulls (Gulls) |
+| Gem | 100 | Driftwood; Tide pool (Rock pool); Sand dollar; Groyne (Groin); Lifebuoy (Life ring) |
+| Good find | 80 | Crabs; Starfish (Sea star); Seaweed; Rocks; Pebbles; Bucket; Spade (Shovel); Beach ball; Surfboard; Surfers; Swimmers; Deck chair (Beach chair); Ice cream; Boardwalk; Pier; Lighthouse; Jellyfish; Sand dunes (Dunes); Palm trees; Volleyball net; Kite; Lifeguard tower; Boats; Sunbathers; Flip-flops; Sunglasses; Beach hut; Fish; Sun; Snack bar |
+| Not accepted (examples) | 0 | Ski lift; Igloo |
+
+## Name something at a campsite
+
+*Places*
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Tent |
+| #2 | 27 | Campfire (Fire, Bonfire) |
+| #3 | 29 | Sleeping bag |
+| #4 | 32 | Marshmallows |
+| #5 | 34 | Flashlight (Torch) |
+| #6 | 36 | RV (Motorhome, Camper, Campervan) |
+| #7 | 38 | Picnic table |
+| #8 | 41 | Firewood (Logs) |
+| #9 | 43 | Cooler (Cool box) |
+| #10 | 45 | Lantern |
+| Gem | 100 | Tent pegs (Tent stakes); Guy ropes; Mallet; Bear locker (Bear box); Water pump |
+| Good find | 80 | Trees; Mosquitoes; Bugs; Hammock; Camp stove; Hot dogs; S'mores; Sausages; Fire pit; Caravan (Trailer); Camping chair; Backpack; Map; Compass; Axe; Bug spray; Raccoons; Shower block (Showers); Outhouse; Canoe; Lake; Stars; Air mattress; Sleeping mat; Pillow; Guitar; Kettle; Tarp; Matches; Fishing rod; Pots and pans |
+| Not accepted (examples) | 0 | Hotel room; Elevator; Room service |
+
+## Name something at an airport
+
+*Places*
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Plane (Airplane, Aeroplane, Aircraft, Jet) |
+| #2 | 27 | Runway |
+| #3 | 29 | Luggage (Bags, Suitcases, Baggage) |
+| #4 | 32 | Security (Security check) |
+| #5 | 34 | Pilots (Pilot) |
+| #6 | 36 | Gate (Gates) |
+| #7 | 38 | Check-in desk (Check-in) |
+| #8 | 41 | Control tower |
+| #9 | 43 | Passengers |
+| #10 | 45 | Flight attendants (Cabin crew) |
+| Gem | 100 | Windsock; Jet bridge (Air bridge); Baggage tug (Baggage tractor); De-icing truck; Marshaller |
+| Good find | 80 | Baggage carousel (Baggage claim); Departure board (Departures board); Duty free; Customs; Passport control; Metal detector; X-ray machine (X-ray); Lounge; Food court; Shops; Restaurants; Cafe (Café); Moving walkway (Travelator); Escalator; Luggage trolley (Trolley, Luggage cart); Taxi rank (Taxis); Parking lot (Car park); Shuttle bus; Hangar; Helicopter; Boarding pass; Waiting area; Toilets (Washrooms); Lost and found; Sniffer dogs; Air traffic controllers; Information desk; Currency exchange; Car rental desk; Fuel truck; Cargo |
+| Not accepted (examples) | 0 | Lifeguard; Anchor; Harbour |
+
+## Name a type of home
+
+*Places*
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | House |
+| #2 | 28 | Apartment (Flat) |
+| #3 | 32 | Bungalow |
+| #4 | 35 | Condo (Condominium) |
+| #5 | 38 | Townhouse (Townhome) |
+| #6 | 42 | Mansion |
+| #7 | 45 | Cottage |
+| #8 | 48 | Cabin (Log cabin) |
+| #9 | 52 | Igloo |
+| #10 | 55 | Mobile home (Trailer) |
+| Gem | 100 | Yurt (Ger); Longhouse; Hacienda; Stilt house; Cave house |
+| Good find | 80 | Semi-detached (Semi); Detached house; Terraced house (Row house); Duplex; Triplex; Penthouse; Studio; Loft; Chalet; Villa; Castle; Palace; Farmhouse; Ranch; Tent; Caravan; RV (Motorhome); Houseboat; Treehouse; Tiny house; Hut; Shack; Teepee (Tipi, Tepee); Dorm (Dormitory); Basement apartment; Bedsit; Manor (Manor house); Split-level; Co-op |
+| Not accepted (examples) | 0 | Hotel; Office; Garden |
+
+## Name a theme park ride
+
+*Places*
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Roller coaster (Rollercoaster, Coaster) |
+| #2 | 28 | Ferris wheel (Big wheel, Observation wheel) |
+| #3 | 32 | Carousel (Merry-go-round) |
+| #4 | 35 | Bumper cars (Dodgems) |
+| #5 | 38 | Log flume |
+| #6 | 42 | Teacups (Spinning teacups) |
+| #7 | 45 | Drop tower (Free fall) |
+| #8 | 48 | Haunted house |
+| #9 | 52 | Pirate ship (Swinging ship) |
+| #10 | 55 | Water slide |
+| Gem | 100 | Scrambler; Monorail; Mine train; Topple tower; Octopus |
+| Good find | 80 | River rapids (Rapids); Go-karts; Zipline (Zip line); Wild mouse; Dark ride; Motion simulator (Simulator); Miniature railway (Train ride); Bobsled coaster; Water coaster; Pendulum ride; Reverse bungee (Slingshot); Sky coaster; Swing ride (Chair swing, Flying chairs); Sky ride (Cable car); Helter skelter; Giant slide; Pony ride; Tunnel of love; Observation tower; Rotor; Bumper boats; Ghost train; Wooden coaster; Inverted coaster; Gyro swing; Spinning coaster |
+| Not accepted (examples) | 0 | Arcade; Hot dog stand; Petting zoo |
+
+## Name a US state
+
+*Geography*. All 50 states are right answers.
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | California (CA, Cali) |
+| #2 | 29 | Texas (TX) |
+| #3 | 33 | Florida (FL) |
+| #4 | 37 | New York (NY, New York State) |
+| #5 | 41 | Hawaii (HI, Hawai'i) |
+| #6 | 44 | Alaska (AK) |
+| #7 | 48 | Washington (WA, Washington State) |
+| #8 | 52 | Arizona (AZ) |
+| #9 | 56 | Colorado (CO) |
+| #10 | 60 | Ohio (OH) |
+| Gem | 100 | Delaware (DE); Wyoming (WY); North Dakota (ND); Vermont (VT); Rhode Island (RI) |
+| Good find | 80 | Alabama (AL); Arkansas (AR); Connecticut (CT); Georgia (GA); Illinois (IL); Indiana (IN); Iowa (IA); Kansas (KS); Kentucky (KY); Louisiana (LA); Maine (ME); Maryland (MD); Massachusetts (MA); Michigan (MI); Minnesota (MN); Mississippi (MS); Missouri (MO); Montana (MT); Nebraska (NE); Nevada (NV); New Hampshire (NH); New Jersey (NJ); New Mexico (NM); North Carolina (NC); Oklahoma (OK); Oregon (OR); Pennsylvania (PA); South Carolina (SC); South Dakota (SD); Tennessee (TN); Utah (UT); Virginia (VA); West Virginia (WV); Wisconsin (WI); Idaho (ID) |
+| Not accepted (examples) | 0 | Puerto Rico; Washington DC; Guam |
+
+## Name a volcano
+
+*Geography*
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Mount Vesuvius (Vesuvius) |
+| #2 | 28 | Mount St. Helens (Mount Saint Helens, St. Helens, Mt St Helens) |
+| #3 | 31 | Mount Fuji (Fuji, Fujiyama) |
+| #4 | 33 | Mount Etna (Etna) |
+| #5 | 36 | Kilauea (Kīlauea) |
+| #6 | 39 | Krakatoa (Krakatau) |
+| #7 | 42 | Mauna Loa |
+| #8 | 44 | Yellowstone (Yellowstone Caldera) |
+| #9 | 47 | Mount Kilimanjaro (Kilimanjaro) |
+| #10 | 50 | Eyjafjallajokull (Eyjafjallajökull) |
+| Gem | 100 | Paricutin (Parícutin); Mount Erebus (Erebus); Surtsey; Tambora (Mount Tambora); Nyiragongo (Mount Nyiragongo) |
+| Good find | 80 | Mauna Kea; Mount Pinatubo (Pinatubo); Stromboli; Popocatepetl (Popocatépetl); Mount Rainier (Rainier); Mount Hood; Mount Shasta; Mount Pelee (Mount Pelée, Pelee); Cotopaxi; Chimborazo; Hekla; Katla; Mount Ruapehu (Ruapehu); Mount Taranaki (Taranaki, Mount Egmont); Mount Tongariro (Tongariro); Mayon (Mount Mayon); Merapi (Mount Merapi); Mount Teide (Teide); Mount Aso (Aso); Sakurajima; Santorini (Thera); Mount Elbrus (Elbrus); Mount Kenya; Mount Cameroon; Ojos del Salado; Lassen Peak (Mount Lassen); Mount Baker; Arenal; Villarrica; Soufriere Hills; Ol Doinyo Lengai; Fagradalsfjall; Mount Unzen (Unzen) |
+| Not accepted (examples) | 0 | Mount Everest; Uluru; Matterhorn |
+
+## Name a famous bridge
+
+*Places*
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Golden Gate Bridge (Golden Gate) |
+| #2 | 27 | Brooklyn Bridge |
+| #3 | 29 | Tower Bridge |
+| #4 | 32 | London Bridge |
+| #5 | 34 | Sydney Harbour Bridge (Sydney Harbor Bridge) |
+| #6 | 36 | Ponte Vecchio |
+| #7 | 38 | Rialto Bridge (Rialto) |
+| #8 | 41 | Confederation Bridge |
+| #9 | 43 | Bridge of Sighs |
+| #10 | 45 | Forth Bridge (Forth Rail Bridge) |
+| Gem | 100 | Stari Most (Mostar Bridge); Millau Viaduct; Akashi Kaikyo Bridge (Akashi Kaikyo); Bixby Creek Bridge (Bixby Bridge); Iron Bridge (Ironbridge) |
+| Good find | 80 | Lions Gate Bridge (Lions Gate); Ambassador Bridge; Peace Bridge; Rainbow Bridge; Mackinac Bridge; Chesapeake Bay Bridge; Seven Mile Bridge; Sunshine Skyway Bridge (Sunshine Skyway); Tacoma Narrows Bridge; Manhattan Bridge; Williamsburg Bridge; Queensboro Bridge (59th Street Bridge); Bay Bridge (San Francisco-Oakland Bay Bridge); Royal Gorge Bridge; Capilano Suspension Bridge (Capilano); Quebec Bridge; Clifton Suspension Bridge; Humber Bridge; Severn Bridge; Millennium Bridge; Gateshead Millennium Bridge; Pont Neuf; Oresund Bridge (Øresund Bridge); Chain Bridge; Tsing Ma Bridge; Helix Bridge; Kintai Bridge; Hell Gate Bridge; Carrick-a-Rede Rope Bridge (Carrick-a-Rede); High Level Bridge |
+| Not accepted (examples) | 0 | Channel Tunnel; Panama Canal; Arc de Triomphe |
+
+## Name an Olympic sport
+
+*Sport*. Summer and Winter Games both count.
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Swimming |
+| #2 | 28 | Gymnastics |
+| #3 | 31 | Athletics (Track and field, Track) |
+| #4 | 33 | Basketball |
+| #5 | 36 | Diving |
+| #6 | 39 | Soccer (Football) |
+| #7 | 42 | Boxing |
+| #8 | 44 | Tennis |
+| #9 | 47 | Cycling |
+| #10 | 50 | Volleyball |
+| Gem | 100 | Modern pentathlon (Pentathlon); Skeleton; Artistic swimming (Synchronized swimming, Synchronised swimming, Synchro); Sport climbing (Climbing, Rock climbing); Biathlon |
+| Good find | 80 | Rowing; Sailing; Fencing; Archery; Judo; Wrestling; Weightlifting; Taekwondo (Tae kwon do); Table tennis (Ping pong); Badminton; Handball; Water polo; Field hockey; Ice hockey (Hockey); Golf; Rugby sevens (Rugby); Triathlon; Equestrian (Horse riding, Show jumping, Dressage, Eventing); Shooting; Canoeing (Kayaking, Canoe sprint); Canoe slalom; Skateboarding; Surfing; Softball; Baseball; Beach volleyball; Trampoline (Trampolining); Figure skating; Speed skating; Alpine skiing (Skiing, Downhill skiing); Snowboarding; Bobsleigh (Bobsled, Bobsledding); Luge; Ski jumping; Cross-country skiing (Cross country skiing); Curling; Freestyle skiing; BMX; Mountain biking; Nordic combined |
+| Not accepted (examples) | 0 | Darts; Bowling; Snooker |
+
+## Name a winter sport
+
+*Sport*
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Skiing (Alpine skiing, Downhill skiing) |
+| #2 | 29 | Ice hockey (Hockey) |
+| #3 | 33 | Snowboarding |
+| #4 | 37 | Ice skating (Skating) |
+| #5 | 41 | Figure skating |
+| #6 | 44 | Curling |
+| #7 | 48 | Bobsleigh (Bobsled, Bobsledding) |
+| #8 | 52 | Luge |
+| #9 | 56 | Ski jumping |
+| #10 | 60 | Speed skating |
+| Gem | 100 | Bandy; Skijoring; Ice climbing; Snowkiting (Snow kiting); Nordic combined |
+| Good find | 80 | Cross-country skiing (Cross country skiing, Nordic skiing); Biathlon; Skeleton; Freestyle skiing; Moguls; Sledding (Sledging, Tobogganing, Toboggan); Snowshoeing; Dog sledding (Mushing, Sled dog racing); Ice fishing; Snowmobiling (Snowmobile racing); Short track speed skating (Short track); Ski mountaineering (Skimo); Ice dancing (Ice dance); Slalom; Aerials (Aerial skiing); Snowboard cross (Boardercross); Ski cross; Ringette; Broomball; Ice stock sport (Bavarian curling); Ski touring (Backcountry skiing); Telemark skiing (Telemark); Sled hockey (Para ice hockey); Big air; Slopestyle; Ice yachting (Ice sailing, Iceboating); Snow tubing; Halfpipe (Half-pipe); Ice speedway; Snow volleyball |
+| Not accepted (examples) | 0 | Surfing; Water skiing; Roller skating |
+
+## Name a card game
+
+*Games*
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Poker |
+| #2 | 27 | Solitaire (Patience, Klondike) |
+| #3 | 29 | Go Fish |
+| #4 | 32 | Uno |
+| #5 | 34 | Blackjack (Twenty-one, 21, Pontoon) |
+| #6 | 36 | Rummy |
+| #7 | 38 | War |
+| #8 | 41 | Snap |
+| #9 | 43 | Old Maid |
+| #10 | 45 | Crazy Eights (Crazy 8s) |
+| Gem | 100 | Skat; Bezique; Piquet; Pinochle; Durak |
+| Good find | 80 | Bridge; Hearts; Spades; Gin rummy (Gin); Canasta; Cribbage (Crib); Euchre; Whist; Baccarat; Slapjack; Spit (Speed); Spoons; Cheat (I Doubt It); Beggar My Neighbour (Beggar My Neighbor); Happy Families; Pairs (Memory, Concentration); Texas hold'em (Texas holdem, Hold em); Nertz (Nerts); Spider solitaire; FreeCell (Free Cell); Pyramid solitaire; President; Newmarket; Sevens (Fan tan); Sheepshead; Kings in the Corner (Kings Corner); Mau Mau; Rook; Pig; Twenty-nine; Racing Demon; Phase 10 |
+| Not accepted (examples) | 0 | Chess; Checkers; Bingo |
+
+## Name a video game
+
+*Games*
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Minecraft |
+| #2 | 27 | Super Mario Bros. (Super Mario, Mario) |
+| #3 | 28 | Fortnite |
+| #4 | 30 | Pac-Man (Pacman) |
+| #5 | 32 | Tetris |
+| #6 | 33 | Call of Duty |
+| #7 | 35 | Roblox |
+| #8 | 37 | The Legend of Zelda (Zelda) |
+| #9 | 38 | Pokemon |
+| #10 | 40 | Mario Kart |
+| Gem | 100 | Katamari Damacy (Katamari); Myst; Lemmings; Okami; Q*bert (Qbert) |
+| Good find | 80 | Sonic the Hedgehog (Sonic); Donkey Kong; Space Invaders; Animal Crossing; Among Us; Halo; The Sims (Sims); Grand Theft Auto (GTA); Street Fighter; Super Smash Bros. (Smash Bros, Smash); Angry Birds; Candy Crush (Candy Crush Saga); Overwatch; Rocket League; Stardew Valley; Asteroids; Pong; Frogger; Galaga; Portal; Kirby; Metroid; Splatoon; Final Fantasy; Crash Bandicoot; Spyro; Rayman; Plants vs. Zombies (Plants vs Zombies, Plants versus Zombies); FIFA (EA Sports FC); Wii Sports; Just Dance; Guitar Hero; Pikmin; Celeste; Hollow Knight; Terraria; Fall Guys; Mega Man; Tomb Raider; World of Warcraft (WoW) |
+| Not accepted (examples) | 0 | Monopoly; Hide and seek; Dungeons and Dragons |
+
+## Name a hobby
+
+*Hobbies*
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Reading |
+| #2 | 27 | Gardening |
+| #3 | 28 | Painting |
+| #4 | 30 | Fishing |
+| #5 | 32 | Knitting |
+| #6 | 33 | Cooking |
+| #7 | 35 | Photography |
+| #8 | 37 | Stamp collecting (Philately) |
+| #9 | 38 | Drawing (Sketching) |
+| #10 | 40 | Hiking |
+| Gem | 100 | Geocaching; Calligraphy; Bonsai; Whittling; Metal detecting |
+| Good find | 80 | Baking; Sewing; Crochet (Crocheting); Birdwatching (Birding, Bird watching); Origami; Woodworking; Pottery (Ceramics); Scrapbooking; Quilting; Jigsaw puzzles (Jigsaws); Model building (Model making); Coin collecting (Numismatics); Camping; Cycling (Biking); Dancing; Singing; Playing an instrument (Playing music); Writing; Journaling; Embroidery; Cross-stitch (Cross stitch); Video games (Gaming); Chess; Yoga; Running (Jogging); Swimming; Rock climbing (Climbing); Astronomy (Stargazing); Candle making; Soap making; Kite flying; Beekeeping; Model trains (Model railways, Model railroading); Card making; Board games; Juggling; Magic tricks (Magic) |
+| Not accepted (examples) | 0 | Homework; Commuting; Paying bills |
+
+## Name a job
+
+*General*
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Teacher |
+| #2 | 27 | Doctor |
+| #3 | 28 | Nurse |
+| #4 | 30 | Police officer (Policeman, Policewoman, Cop) |
+| #5 | 32 | Firefighter (Fireman) |
+| #6 | 33 | Lawyer (Attorney) |
+| #7 | 35 | Chef (Cook) |
+| #8 | 37 | Engineer |
+| #9 | 38 | Accountant |
+| #10 | 40 | Dentist |
+| Gem | 100 | Lighthouse keeper; Farrier; Cartographer (Mapmaker); Sommelier; Chimney sweep |
+| Good find | 80 | Vet (Veterinarian); Pilot; Farmer; Plumber; Electrician; Carpenter; Mechanic; Pharmacist; Architect; Scientist; Builder (Construction worker); Hairdresser (Hairstylist); Barber; Baker; Butcher; Cashier; Waiter (Waitress, Server); Mail carrier (Postman, Postal worker, Mailman, Postie); Bus driver; Taxi driver (Cab driver); Truck driver (Lorry driver); Receptionist; Librarian; Journalist (Reporter); Artist; Musician; Actor (Actress); Soldier; Programmer (Software developer, Coder); Banker; Janitor (Cleaner, Custodian); Gardener (Landscaper); Zookeeper; Lifeguard; Paramedic; Surgeon; Judge; Astronaut; Photographer; Tailor |
+| Not accepted (examples) | 0 | Student; Retired; Customer |
+
+## Name a school subject
+
+*General*
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Math (Maths, Mathematics) |
+| #2 | 28 | English |
+| #3 | 32 | Science |
+| #4 | 35 | History |
+| #5 | 38 | Geography |
+| #6 | 42 | Art |
+| #7 | 45 | Physical education (PE, P.E., Gym) |
+| #8 | 48 | Music |
+| #9 | 52 | French |
+| #10 | 55 | Biology |
+| Gem | 100 | Latin; Civics; Classics; Philosophy; Economics |
+| Good find | 80 | Chemistry; Physics; Spanish; German; Computer science (Computing, ICT, IT, Information technology); Drama (Theatre, Theater); Social studies; Health (Health education); Home economics (Food technology, Family and consumer sciences); Design and technology; Woodworking (Woodwork, Woodshop, Shop, Shop class); Psychology; Sociology; Business studies (Business); Algebra; Geometry; Calculus; Statistics; Literature (English literature); Reading; Spelling; Creative writing; Japanese; Mandarin (Chinese); Italian; Law; Accounting; Typing (Keyboarding); Band; Choir; Dance; Environmental science; Earth science; Anatomy; Media studies; Ancient Greek |
+| Not accepted (examples) | 0 | Recess; Lunch; Homework |
+
+## Name a piece of furniture
+
+*Home*
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Chair |
+| #2 | 28 | Table |
+| #3 | 31 | Sofa (Couch, Settee) |
+| #4 | 33 | Bed |
+| #5 | 36 | Desk |
+| #6 | 39 | Bookcase (Bookshelf, Bookshelves) |
+| #7 | 42 | Dresser |
+| #8 | 44 | Wardrobe (Armoire) |
+| #9 | 47 | Coffee table |
+| #10 | 50 | Stool |
+| Gem | 100 | Credenza; Chaise longue (Chaise lounge, Chaise); Hope chest (Blanket chest); Etagere; Daybed (Day bed) |
+| Good find | 80 | Armchair; Recliner; Bench; Chest of drawers; Nightstand (Bedside table, Night table); Cabinet; Cupboard; Ottoman (Footstool, Pouffe, Pouf); Bunk bed (Bunk beds); Crib (Cot); Rocking chair; Sideboard (Buffet); Hutch; Futon; Bean bag (Beanbag chair, Bean bag chair); Loveseat (Love seat); TV stand (Entertainment center, Entertainment unit); Dining table; End table (Side table); Vanity (Dressing table); Filing cabinet (File cabinet); Shelf (Shelves, Shelving); Bar stool (Barstool); Highchair (High chair); Sectional (Sectional sofa); Coat rack (Coat stand, Hat stand); Console table; Chest (Trunk); Changing table; Display cabinet (China cabinet); Sofa bed |
+| Not accepted (examples) | 0 | Rug; Curtains; Television |
+
+## Name a tool in a toolbox
+
+*Home*
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Hammer |
+| #2 | 28 | Screwdriver |
+| #3 | 31 | Wrench (Spanner) |
+| #4 | 33 | Pliers |
+| #5 | 36 | Tape measure (Measuring tape) |
+| #6 | 39 | Saw (Handsaw, Hand saw) |
+| #7 | 42 | Level (Spirit level) |
+| #8 | 44 | Drill (Power drill) |
+| #9 | 47 | Utility knife (Box cutter, Craft knife) |
+| #10 | 50 | Allen key (Allen wrench, Hex key) |
+| Gem | 100 | Awl (Bradawl); Coping saw; Nail punch (Nail set); Feeler gauge; Center punch (Centre punch) |
+| Good find | 80 | Mallet (Rubber mallet); Chisel; File; Socket wrench (Ratchet, Socket set); Adjustable wrench (Adjustable spanner); Wire cutters; Wire strippers; Needle-nose pliers (Needle nose pliers); Locking pliers; Clamp (C-clamp, G-clamp); Hacksaw; Square (Try square, Speed square); Stud finder; Pry bar (Crowbar, Wrecking bar); Putty knife; Flashlight (Torch); Caulking gun (Caulk gun); Staple gun; Soldering iron; Torque wrench; Pipe wrench; Multimeter; Voltage tester; Plane (Hand plane, Block plane); Paint scraper (Scraper); Tin snips; Bolt cutters; Claw hammer; Sledgehammer; Glue gun (Hot glue gun); Phillips screwdriver; Flathead screwdriver; Combination square |
+| Not accepted (examples) | 0 | Nails; Screws; Duct tape |
+
+## Name an item of clothing
+
+*Home*
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Shirt |
+| #2 | 27 | Pants (Trousers) |
+| #3 | 29 | T-shirt (Tee, Tee shirt) |
+| #4 | 32 | Dress |
+| #5 | 34 | Socks (Sock) |
+| #6 | 36 | Jeans |
+| #7 | 38 | Jacket |
+| #8 | 41 | Skirt |
+| #9 | 43 | Sweater (Jumper, Pullover) |
+| #10 | 45 | Coat |
+| Gem | 100 | Cravat; Sarong; Cummerbund; Bolero (Bolero jacket); Tabard |
+| Good find | 80 | Shorts; Hoodie (Hooded sweatshirt); Sweatshirt; Blouse; Underwear (Undies, Briefs); Pajamas (Pyjamas, PJs); Scarf; Gloves (Glove); Hat (Cap); Mittens; Tie (Necktie); Vest (Waistcoat); Suit; Blazer; Cardigan; Leggings; Tights (Pantyhose); Overalls (Dungarees); Kilt; Poncho; Raincoat (Mac); Bathrobe (Robe, Dressing gown); Swimsuit (Bathing suit, Swimming costume); Bikini; Tank top (Vest top, Singlet); Polo shirt; Jumpsuit; Romper (Playsuit); Onesie; Tracksuit (Sweatsuit); Sweatpants (Joggers, Tracksuit bottoms); Bow tie; Cape; Apron; Turtleneck (Polo neck); Parka; Anorak; Bra; Nightgown (Nightie) |
+| Not accepted (examples) | 0 | Necklace; Umbrella; Backpack |
+
+## Name a type of shoe
+
+*Home*
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Sneakers (Trainers, Running shoes, Tennis shoes, Sneaker, Trainer) |
+| #2 | 28 | Boots (Boot) |
+| #3 | 32 | Sandals (Sandal) |
+| #4 | 35 | High heels (Heels) |
+| #5 | 38 | Flip-flops (Flip flops, Thongs, Jandals) |
+| #6 | 42 | Slippers (Slipper) |
+| #7 | 45 | Loafers (Loafer) |
+| #8 | 48 | Ballet flats (Flats) |
+| #9 | 52 | Clogs (Clog) |
+| #10 | 55 | Cowboy boots |
+| Gem | 100 | Espadrilles; Mary Janes; Huaraches; Geta; Monk strap shoes (Monk straps) |
+| Good find | 80 | Oxfords (Oxford shoes); Brogues (Wingtips); Moccasins; Wellington boots (Wellies, Wellingtons, Rain boots, Rubber boots, Gumboots); Platform shoes (Platforms); Wedges (Wedge heels); Stilettos; Pumps (Court shoes); Mules; Slingbacks; Ankle boots; Hiking boots; Cleats (Football boots, Soccer cleats); Ballet shoes (Ballet slippers); Tap shoes; Dress shoes; Boat shoes (Deck shoes); Chelsea boots; Combat boots; Snow boots; Slides (Sliders); Jelly shoes (Jellies); Kitten heels; Steel-toe boots (Safety boots, Work boots); Galoshes (Overshoes); Derby shoes (Derbies); Plimsolls; Bowling shoes; Golf shoes; Knee-high boots; Thigh-high boots; Desert boots; Spikes (Running spikes); Climbing shoes; Water shoes |
+| Not accepted (examples) | 0 | Socks; Insoles; Shoelaces |
+
+## Name a type of hat
+
+*Home*
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Baseball cap (Cap, Ball cap) |
+| #2 | 28 | Cowboy hat |
+| #3 | 32 | Beanie (Toque, Tuque, Woolly hat, Knit cap) |
+| #4 | 35 | Top hat |
+| #5 | 38 | Sun hat |
+| #6 | 42 | Bowler hat (Bowler, Derby) |
+| #7 | 45 | Fedora |
+| #8 | 48 | Beret |
+| #9 | 52 | Sombrero |
+| #10 | 55 | Bucket hat |
+| Gem | 100 | Fez; Deerstalker; Pith helmet; Tam o' shanter (Tam); Busby |
+| Good find | 80 | Party hat; Witch's hat (Witch hat); Hard hat; Panama hat (Panama); Trilby; Chef's hat (Toque blanche); Visor (Sun visor); Bonnet; Boater (Straw boater); Straw hat; Flat cap; Newsboy cap; Cloche; Pillbox hat; Ushanka (Trapper hat); Mortarboard (Graduation cap); Sailor hat (Sailor cap); Pirate hat; Tricorn (Tricorne, Three-cornered hat); Bicorne (Bicorn); Jester hat (Jester's cap); Wizard hat; Santa hat; Bobble hat (Pom-pom hat, Pompom hat); Conical hat (Rice hat); Porkpie hat (Pork pie hat); Sou'wester (Souwester); Rain hat; Bush hat (Safari hat); Snapback; Trucker hat; Stocking cap; Ten-gallon hat |
+| Not accepted (examples) | 0 | Wig; Earmuffs; Headband |
+
+## Name something in a bathroom
+
+*Home*
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Toilet (Loo, Lavatory) |
+| #2 | 27 | Sink (Basin, Washbasin) |
+| #3 | 29 | Shower |
+| #4 | 32 | Bathtub (Bath, Tub) |
+| #5 | 34 | Toothbrush |
+| #6 | 36 | Toothpaste |
+| #7 | 38 | Towel (Towels) |
+| #8 | 41 | Mirror |
+| #9 | 43 | Soap |
+| #10 | 45 | Toilet paper (Toilet roll, Loo roll, Bathroom tissue) |
+| Gem | 100 | Grout; Extractor fan (Exhaust fan, Vent fan); Bidet; Pumice stone (Pumice); Loofah (Luffa, Loofa) |
+| Good find | 80 | Shampoo; Conditioner; Bath mat (Bathmat); Shower curtain; Toilet brush; Plunger; Hairbrush; Comb; Razor; Shaving cream (Shaving foam); Hair dryer (Hairdryer, Blow dryer); Deodorant; Medicine cabinet; Dental floss (Floss); Mouthwash; Rubber duck (Rubber ducky); Scales (Bathroom scales, Scale); Laundry basket (Hamper, Laundry hamper); Towel rail (Towel rack, Towel bar); Tissues; Cotton buds (Cotton swabs); Bubble bath; Bath bomb; Sponge; Washcloth (Flannel, Face cloth, Facecloth); Body wash (Shower gel); Lotion (Moisturiser, Moisturizer); Tiles (Tile); Faucet (Tap, Taps); Bin (Trash can, Wastebasket, Waste bin); Nail clippers; Tweezers; Air freshener; Bath toys; Toothbrush holder; Soap dish |
+| Not accepted (examples) | 0 | Refrigerator; Oven; Bed |
+
+## Name something in a garden
+
+*Home*
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Flowers (Flower) |
+| #2 | 27 | Grass (Lawn) |
+| #3 | 29 | Tree (Trees) |
+| #4 | 32 | Vegetables |
+| #5 | 34 | Shed (Garden shed) |
+| #6 | 36 | Hose (Garden hose, Hosepipe) |
+| #7 | 38 | Watering can |
+| #8 | 41 | Garden gnome (Gnome) |
+| #9 | 43 | Weeds (Weed) |
+| #10 | 45 | Plants (Plant) |
+| Gem | 100 | Trellis; Cold frame; Water butt (Rain barrel); Sundial; Topiary |
+| Good find | 80 | Fence; Bench (Garden bench); Bird bath (Birdbath); Bird feeder; Wheelbarrow; Rake; Spade (Shovel); Trowel; Lawn mower (Lawnmower, Mower); Compost (Compost heap, Compost bin); Pond; Fountain; Greenhouse; Hedge; Bushes (Shrubs, Bush, Shrub); Worms (Earthworms, Worm); Butterflies (Butterfly); Bees (Bee); Snails (Snail); Slugs (Slug); Ladybugs (Ladybirds, Ladybug, Ladybird); Soil (Dirt, Earth); Seeds; Flower pots (Plant pots, Pots); Sprinkler; Scarecrow; Path (Garden path); Patio; Swing; Hammock; Birdhouse (Bird box, Nest box); Roses (Rose bush); Sunflowers (Sunflower); Herbs; Fruit tree; Gate; Gardening gloves; Raised bed; Hanging basket |
+| Not accepted (examples) | 0 | Carpet; Sofa; Television |
+
+## Name a household chore
+
+*Home*
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Washing the dishes (Doing the dishes, Dishes, Washing up) |
+| #2 | 27 | Laundry (Doing the laundry, Washing clothes) |
+| #3 | 29 | Vacuuming |
+| #4 | 32 | Sweeping |
+| #5 | 34 | Mopping |
+| #6 | 36 | Dusting |
+| #7 | 38 | Taking out the trash (Taking out the rubbish, Taking out the garbage, Emptying the bins) |
+| #8 | 41 | Making the bed |
+| #9 | 43 | Cooking |
+| #10 | 45 | Ironing |
+| Gem | 100 | Defrosting the freezer; Descaling the kettle; Cleaning the gutters (Clearing the gutters); Polishing the silver (Polishing silver); Turning the mattress (Flipping the mattress) |
+| Good find | 80 | Cleaning the bathroom; Cleaning the toilet; Mowing the lawn (Cutting the grass, Mowing); Weeding; Raking leaves; Shoveling snow (Shovelling snow); Washing the car; Folding laundry (Folding clothes); Tidying up (Tidying, Cleaning up); Cleaning windows (Washing windows); Grocery shopping (Food shopping); Feeding the pets (Feeding the dog, Feeding the cat); Walking the dog; Watering the plants (Watering plants); Loading the dishwasher; Emptying the dishwasher (Unloading the dishwasher); Changing the sheets (Changing the bed); Setting the table (Laying the table); Clearing the table; Cleaning the oven; Cleaning the fridge; Scrubbing the floor; Wiping the counters (Wiping counters); Hanging out the washing (Hanging laundry); Cleaning the litter box (Cleaning the litter tray); Decluttering; Polishing furniture; Recycling; Cleaning your room (Tidying your room); Putting away groceries (Putting the shopping away); Putting toys away |
+| Not accepted (examples) | 0 | Watching TV; Napping; Eating dinner |
+
+## Name a dance
+
+*Hobbies*
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Ballet |
+| #2 | 28 | Hip hop (Hip-hop) |
+| #3 | 31 | Tap (Tap dance, Tap dancing) |
+| #4 | 33 | Salsa |
+| #5 | 36 | Waltz |
+| #6 | 39 | Tango |
+| #7 | 42 | Breakdancing (Breakdance, Breaking) |
+| #8 | 44 | Macarena |
+| #9 | 47 | Cha-cha (Cha cha, Cha-cha-cha) |
+| #10 | 50 | Line dancing (Line dance) |
+| Gem | 100 | Paso doble; Bhangra; Hornpipe (Sailor's hornpipe); Morris dancing (Morris dance); Lindy hop |
+| Good find | 80 | Jazz (Jazz dance); Contemporary; Foxtrot; Rumba (Rhumba); Samba; Swing; Jive; Charleston; Square dancing (Square dance); Irish dancing (Irish dance); Flamenco; Belly dancing (Belly dance); Disco; Conga; Hokey cokey (Hokey pokey); Chicken dance; The Twist (Twist); Polka; Mambo; Bachata; Merengue; Lambada; Ballroom dancing (Ballroom); Modern dance (Modern); Cancan (Can-can); Hula; Highland fling; Clogging; Krumping (Krump); Voguing (Vogue); Limbo; The Robot (Robot); Electric slide; Maypole dance; Quickstep; Viennese waltz; Bolero |
+| Not accepted (examples) | 0 | Karaoke; Gymnastics; Yoga |
+
+## Name a fairy tale
+
+*Pop culture*
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Cinderella |
+| #2 | 28 | Snow White (Snow White and the Seven Dwarfs) |
+| #3 | 32 | Little Red Riding Hood (Red Riding Hood, Little Red Cap) |
+| #4 | 35 | Sleeping Beauty (Briar Rose) |
+| #5 | 38 | Hansel and Gretel |
+| #6 | 42 | Goldilocks and the Three Bears (Goldilocks, The Three Bears) |
+| #7 | 45 | Jack and the Beanstalk |
+| #8 | 48 | The Three Little Pigs |
+| #9 | 52 | Rapunzel |
+| #10 | 55 | Beauty and the Beast |
+| Gem | 100 | The Twelve Dancing Princesses (The Worn-Out Dancing Shoes); The Elves and the Shoemaker; The Snow Queen; The Fisherman and His Wife; The Steadfast Tin Soldier (The Brave Tin Soldier, The Tin Soldier) |
+| Good find | 80 | The Little Mermaid; The Frog Prince (The Frog King); Rumpelstiltskin; The Princess and the Pea; The Ugly Duckling; The Gingerbread Man; Puss in Boots; Thumbelina; The Emperor's New Clothes; The Three Billy Goats Gruff (Billy Goats Gruff); The Little Match Girl; Tom Thumb; The Pied Piper of Hamelin (The Pied Piper); Aladdin; The Golden Goose; Snow White and Rose Red; The Town Musicians of Bremen (The Musicians of Bremen, The Bremen Town Musicians); The Wild Swans; Mother Holle; The Goose Girl; The Six Swans; The Little Red Hen; Henny Penny (Chicken Little, Chicken Licken); The Nightingale; The Tinderbox; East of the Sun and West of the Moon; Jack the Giant Killer; The Snow Maiden; The Magic Porridge Pot (Sweet Porridge); Ali Baba and the Forty Thieves (Ali Baba) |
+| Not accepted (examples) | 0 | Harry Potter; Winnie the Pooh; Peter Rabbit |
+
+## Name a mythical creature
+
+*Pop culture*
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Dragon |
+| #2 | 28 | Unicorn |
+| #3 | 31 | Mermaid (Merman, Mermaids) |
+| #4 | 33 | Phoenix |
+| #5 | 36 | Fairy (Fairies, Faerie) |
+| #6 | 39 | Centaur |
+| #7 | 42 | Pegasus |
+| #8 | 44 | Griffin (Gryphon, Griffon) |
+| #9 | 47 | Werewolf |
+| #10 | 50 | Minotaur |
+| Gem | 100 | Selkie; Manticore; Kitsune; Bunyip; Kelpie |
+| Good find | 80 | Vampire; Yeti (Abominable Snowman); Bigfoot (Sasquatch); Loch Ness Monster (Nessie); Troll; Goblin; Elf (Elves); Dwarf; Gnome; Leprechaun; Ogre; Giant; Cyclops; Hydra; Gorgon (Medusa); Kraken; Sphinx; Basilisk; Chimera (Chimaera); Banshee; Hippogriff; Harpy (Harpies); Siren; Satyr; Faun; Pixie; Sprite; Thunderbird; Wyvern; Cockatrice; Golem; Genie (Djinn, Jinn); Sea serpent; Cerberus; Chupacabra; Jackalope; Nymph; Kappa; Roc; Hobgoblin |
+| Not accepted (examples) | 0 | Dinosaur; Narwhal; Komodo dragon |
+
+## Name a circus act
+
+*Hobbies*
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Clowns (Clown, Clowning) |
+| #2 | 29 | Juggling (Juggler) |
+| #3 | 33 | Trapeze (Trapeze artist) |
+| #4 | 37 | Tightrope walking (Tightrope, Tightrope walker, High wire) |
+| #5 | 41 | Acrobats (Acrobatics, Acrobat) |
+| #6 | 44 | Lion tamer (Lion taming) |
+| #7 | 48 | Fire breathing (Fire breather) |
+| #8 | 52 | Human cannonball |
+| #9 | 56 | Unicycling (Unicycle, Unicyclist) |
+| #10 | 60 | Knife throwing (Knife thrower) |
+| Gem | 100 | Teeterboard (Teeter board); Cyr wheel; Wheel of death; Diabolo; Rola bola (Rola-bola) |
+| Good find | 80 | Fire eating (Fire eater); Stilt walking (Stilts, Stilt walker); Sword swallowing (Sword swallower); Contortionist (Contortion); Strongman (Strong man); Magician (Magic act); Plate spinning; Aerial silks (Silks, Aerial tissue); Hula hoop (Hula hooping); Trampoline; Trick riding (Bareback riding); Aerial hoop (Lyra); Hand balancing (Handstands); Human pyramid; Clown car; Tumbling; Performing dogs (Dog act, Trained dogs); Globe of death; Chinese pole; German wheel; Spanish web; Russian swing; Balancing act; Escape artist (Escapology); Bed of nails; Trick cycling (Bicycle act); Flying trapeze; Cloud swing; Russian bar; Hand to hand (Hand-to-hand); Slack rope (Slackrope); Fire juggling |
+| Not accepted (examples) | 0 | Ferris wheel; Cotton candy; Bumper cars |
+
+## Name a music genre
+
+*Pop culture*
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Rock (Rock music) |
+| #2 | 27 | Pop (Pop music) |
+| #3 | 29 | Hip hop (Hip-hop) |
+| #4 | 32 | Country (Country music, Country and western) |
+| #5 | 34 | Jazz |
+| #6 | 36 | Classical (Classical music) |
+| #7 | 38 | Rap |
+| #8 | 41 | Blues |
+| #9 | 43 | Heavy metal (Metal) |
+| #10 | 45 | R&B (Rhythm and blues, RnB) |
+| Gem | 100 | Zydeco; Klezmer; Calypso; Bossa nova; Highlife |
+| Good find | 80 | Reggae; Punk (Punk rock); Disco; Folk (Folk music); Electronic (EDM, Electronic dance music); Techno; House (House music); Soul; Funk; Grunge; Indie (Indie rock); Alternative (Alternative rock); K-pop (Kpop); Latin; Salsa; Reggaeton; Ska; Bluegrass; Opera; Dubstep; Trance; Drum and bass (DnB); Grime; Emo; Swing; Rock and roll (Rock n roll, Rock 'n' roll); Lo-fi (Lofi); Afrobeats; Ambient; Big band; Trap; Doo-wop (Doo wop); Samba; Polka; New wave; Synth-pop (Synthpop); Psychedelic rock; Bebop |
+| Not accepted (examples) | 0 | Saxophone; Karaoke; Orchestra |
+
+## Name something in a toy box
+
+*Games*
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Teddy bear (Teddy) |
+| #2 | 27 | Doll (Dolls) |
+| #3 | 29 | Ball (Balls) |
+| #4 | 32 | Building blocks (Blocks, Bricks) |
+| #5 | 34 | Toy cars (Toy car, Cars) |
+| #6 | 36 | Action figures (Action figure) |
+| #7 | 38 | Stuffed animal (Soft toy, Plush, Plushie, Cuddly toy) |
+| #8 | 41 | Jigsaw puzzle (Puzzle) |
+| #9 | 43 | Yo-yo (Yoyo) |
+| #10 | 45 | Toy train (Train set, Trains) |
+| Gem | 100 | Kaleidoscope; Jacks (Knucklebones); Jack-in-the-box; Cup and ball (Ball in a cup, Bilboquet); Spinning top (Top) |
+| Good find | 80 | Marbles; Jump rope (Skipping rope); Flying disc; Modelling clay (Modeling clay, Play dough, Playdough); Crayons; Toy dinosaur (Dinosaurs); Dollhouse (Doll's house, Dolls house); Rubber duck; Kite; Bouncy ball (Super ball); Toy soldiers (Army men); Water pistol (Squirt gun, Water gun); Toy drum (Drum); Xylophone; Rattle; Bubbles (Bubble wand); Puppet (Puppets, Hand puppet); Toy robot (Robot); Board games (Board game); Playing cards (Cards); Toy truck (Truck); Dress-up clothes (Dressing-up clothes, Costumes); Tea set (Toy tea set); Stacking cups; Shape sorter; Toy phone; Toy sword; Fidget spinner; Toy animals (Farm animals); Hula hoop; Magnetic tiles; Puzzle cube; Toy plane (Toy aeroplane, Toy airplane); Doll clothes |
+| Not accepted (examples) | 0 | Toothbrush; Homework; Laptop |
+
+## Name a martial art
+
+*Sport*
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Karate |
+| #2 | 29 | Kung fu (Kung-fu, Gung fu) |
+| #3 | 33 | Judo |
+| #4 | 37 | Taekwondo (Tae kwon do, Taekwon-do) |
+| #5 | 41 | Jiu-jitsu (Jujitsu, Ju-jitsu, Jujutsu) |
+| #6 | 44 | Kickboxing |
+| #7 | 48 | Aikido |
+| #8 | 52 | Muay Thai (Thai boxing) |
+| #9 | 56 | Brazilian jiu-jitsu (BJJ) |
+| #10 | 60 | Tai chi (Tai chi chuan, Taiji) |
+| Gem | 100 | Hapkido; Savate; Silat (Pencak silat); Kalaripayattu (Kalari); Sambo |
+| Good find | 80 | Capoeira; Krav Maga; Wing Chun; Kendo; Sumo; Boxing; Mixed martial arts (MMA); Escrima (Eskrima, Arnis, Kali); Jeet Kune Do; Ninjutsu; Kyudo; Iaido; Kenjutsu; Systema; Hung Gar; Bartitsu; Vovinam; Lethwei; Wushu; Baguazhang (Bagua); Xingyiquan; Kenpo (Kempo); Sanda (Sanshou); Bokator; Taekkyon; Shorinji Kempo; Kyokushin; Shotokan; Glima; Naginatajutsu |
+| Not accepted (examples) | 0 | Yoga; Pilates; Parkour |
+
+## Name a type of puzzle or word game
+
+*Games*
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Crossword (Crossword puzzle, Crosswords) |
+| #2 | 28 | Jigsaw (Jigsaw puzzle) |
+| #3 | 32 | Sudoku |
+| #4 | 35 | Word search (Wordsearch, Word find) |
+| #5 | 38 | Hangman |
+| #6 | 42 | Scrabble |
+| #7 | 45 | Wordle |
+| #8 | 48 | Anagram (Anagrams) |
+| #9 | 52 | Riddle (Riddles) |
+| #10 | 55 | Maze (Mazes, Labyrinth) |
+| Gem | 100 | Tangram; Nonogram (Picross, Griddlers, Hanjie); Kakuro; Rebus; Cryptogram |
+| Good find | 80 | Cryptic crossword; Logic puzzle (Logic grid); Spot the difference; Dot to dot (Connect the dots); Boggle; Word ladder; Brain teaser (Brainteaser); Tower of Hanoi; Sliding puzzle (15 puzzle, Slide puzzle); Peg solitaire; Codeword; Acrostic; Spelling bee; Twenty questions (20 questions); I spy; Bananagrams; Mastermind; Word wheel; Ghost; Scattergories; Hidden pictures (Hidden object); Matchstick puzzle; Lateral thinking puzzle; Fill-in (Fill-ins, Kriss kross, Criss-cross); Minesweeper; Puzzle cube (Speed cube); Hashi (Bridges); Killer sudoku; Word chain; Number crossword |
+| Not accepted (examples) | 0 | Monopoly; Bingo; Snakes and ladders |
+
+## Name something at a birthday party
+
+*General*
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Cake (Birthday cake) |
+| #2 | 27 | Balloons (Balloon) |
+| #3 | 29 | Presents (Gifts, Present, Gift) |
+| #4 | 32 | Candles (Candle, Birthday candles) |
+| #5 | 34 | Party hats (Party hat) |
+| #6 | 36 | Ice cream |
+| #7 | 38 | Birthday cards (Birthday card, Cards, Card) |
+| #8 | 41 | Party games (Games) |
+| #9 | 43 | Streamers |
+| #10 | 45 | Guests (Friends) |
+| Gem | 100 | Bunting; Party blowers (Blowouts, Party horns, Noisemakers); Fairy bread; Thank-you cards (Thank you cards); Musical statues |
+| Good find | 80 | Pinata; Pass the parcel; Musical chairs; Party bags (Goody bags, Loot bags, Party favors, Party favours); Confetti; Banner (Happy birthday banner); Party poppers; Sweets (Candy, Lollies); Chips (Crisps); Pizza; Cupcakes; Sandwiches; Juice; Clown; Magician; Face painting; Bouncy castle (Bounce house); Music; Singing (Happy Birthday song); Paper plates (Plates); Napkins; Jelly; Sausage rolls; Wrapping paper; Tablecloth; Pin the tail on the donkey; Photos (Camera); Dancing; Decorations; Lemonade; Cake knife; Birthday badge (Birthday sash) |
+| Not accepted (examples) | 0 | Alarm clock; Homework; Snow shovel |
+
+## Name a type of exercise
+
+*Sport*
+
+| Rank or tier | Points | Answers |
+| --- | --- | --- |
+| #1 | 25 | Running (Jogging) |
+| #2 | 27 | Push-ups (Pushups, Press-ups) |
+| #3 | 29 | Sit-ups (Situps) |
+| #4 | 32 | Swimming |
+| #5 | 34 | Jumping jacks (Star jumps) |
+| #6 | 36 | Squats (Squat) |
+| #7 | 38 | Walking |
+| #8 | 41 | Cycling (Biking) |
+| #9 | 43 | Yoga |
+| #10 | 45 | Weightlifting (Lifting weights, Weight training) |
+| Gem | 100 | Farmer's walk (Farmer's carry); Turkish get-up; Bear crawl; Wall sit; Inchworm |
+| Good find | 80 | Plank (Planks); Pull-ups (Pullups); Chin-ups (Chinups); Lunges (Lunge); Burpees (Burpee); Crunches (Crunch); Pilates; Aerobics; Skipping (Jump rope, Jumping rope); Rowing; Deadlifts (Deadlift); Bench press; Bicep curls (Biceps curls, Curls); Mountain climbers; Stretching; Hiking; Dancing; Tai chi; Boxing; Spinning (Indoor cycling); Stair climbing (Stairs); Elliptical (Cross trainer); High knees; Calf raises; Dips (Tricep dips); Leg raises; Russian twists; Kettlebell swings; Step-ups; HIIT (Interval training); Circuit training; Side plank; Glute bridge (Bridge) |
+| Not accepted (examples) | 0 | Napping; Watching sport; Video games |

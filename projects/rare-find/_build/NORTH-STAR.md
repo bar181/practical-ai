@@ -1,5 +1,7 @@
 # Rare Find: North Star and implementation plan
 
+Version 3, 17 November 2026: the simple version. A solo daily game, a JSON question bank and calendar, and one share link. Version 2 below added a shared scoreboard, friends groups and live rooms; the owner cut them for simplicity, and the sections on them are marked as removed.
+
 Version 2, 17 November 2026. It replaces version 1 (the office ladder), after the owner played it
 and asked for a solo daily game with a scorecard. The research, sources and copyright care in
 [`PLAN.md`](PLAN.md) still stand.
@@ -31,8 +33,8 @@ Then a comment from an AI host with a sense of humour, the top ten, and your pla
 | Level | What the player gets | Needs | Without it |
 | --- | --- | --- | --- |
 | **1. Play** | Today's game (same five prompts for everyone on a date), practice rounds, the timer, forgiving spelling, the top-ten reveal, the persona commentators' written lines, the estimated chart, a week of scores in this browser | A browser | Always works |
-| **2. Your account** | Scores saved to your Claude account; the AI checks unlisted answers; the personas write fresh lines | A Claude artifact: `sample`, `db`, `user` | "We allow it" is the room's word; written lines |
-| **3. With friends, and on the web** | A shared scoreboard for today; a friends group with a code and an invite; the chart switches to real scores at 5 players; live play with a room code (beta); the web copy on GitHub Pages, rebuilt, playtested and published by GitHub Actions on every change, so challenge links open for anyone | A shared Claude artifact: `db` rules, `room`; GitHub Pages | The friends card explains it needs a shared artifact |
+| **2. Claude joins in** | Claude checks answers that scored 0; the hosts write fresh lines; on the player's own Claude plan | The Claude artifact: `sample` only | "We allow it" is the room's word; written lines |
+| **3. On the web** | A public copy published by GitHub Actions on every change; challenge links that open it with your prompts and score | GitHub Pages | The file still works anywhere |
 
 ## Scoring
 
@@ -121,12 +123,20 @@ add_packs.py:  the second set of nine packs
 **Today's prompts.** Each cycle shuffles all 25 packs with a seed and deals five a day, so everyone
 gets the same set on the same date and no day repeats the day before.
 
-**Data.** `board/<id>`: name the player chose, friends group code, and the last 30 days of daily
+**Data (removed in version 3).** `board/<id>`: name the player chose, friends group code, and the last 30 days of daily
 scores. Everyone with access reads it; each player writes only their own row. Settings and history
 also stay in this browser.
 
-**Live play.** The host joins room `rf-<code>` and emits the full state (packs, prompt, deadline) on
+**Live play (removed in version 3).** The host joins room `rf-<code>` and emits the full state (packs, prompt, deadline) on
 each prompt; players emit their total. Messages can drop, so every message carries the full state.
+
+## Questions: a JSON bank and a JSON calendar (version 3)
+
+`_build/packs.json` holds 125 prompts. `_build/calendar.json` fixes each date's five prompts from
+17 November to 11 December 2026; `make_calendar.py` appends days for new prompts and never changes a
+day already in the calendar. After the calendar the game deals from the whole bank. Practice is up to
+100 prompts a day with no repeats, never today's five. GitHub Actions runs no AI: it builds, tests
+and publishes.
 
 ## Risks
 
@@ -134,6 +144,5 @@ each prompt; players emit their total. Messages can drop, so every message carri
 | --- | --- |
 | Answer lists are estimates and some will be argued | Labelled as estimates; Check with Claude |
 | A player tries to talk the judge into points | Answers that read like instructions are not sent; the answer is sent as data; Claude may only fix spelling |
-| Friends with view access cannot write to the scoreboard (Claude allows shared writes from editors only; confirmed when declaring the rules) | The game checks `user.can("data.write")` and tells them to ask for edit access; live rooms are open to everyone with the link |
 | 25 packs repeat after 5 days | Practice rounds help; more packs are the next content job |
 | The estimated chart is wrong for real players | Labelled; replaced by real scores at 5 players |

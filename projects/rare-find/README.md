@@ -6,7 +6,7 @@
 
 **Are you an AI agent?** Go to [AGENTS.md](AGENTS.md) for instructions you can follow now.
 
-> **Status: built and machine-tested, not yet played by people.** 85 of 85 automated checks pass at
+> **Status: built and machine-tested, not yet played by people.** 82 of 82 automated checks pass at
 > phone and desktop width. Nobody has played it in the real Claude artifact runtime yet. See
 > [Status](#status).
 
@@ -29,11 +29,11 @@ The person who says "Shoebill" takes the round.
 ## Get started
 
 **Play now in Claude:** [the Rare Find artifact](https://claude.ai/artifact/HyfbDjPjofvRttRYKgMCis).
-**In any browser, no account:** `https://bar181.github.io/practical-ai/rare-find/`. That site goes
-live once this branch is merged and GitHub Pages is switched on; until then it does not open.
+**In any browser, no account:** [bar181.github.io/practical-ai/rare-find](https://bar181.github.io/practical-ai/rare-find/),
+published by GitHub Actions whenever the game changes.
 
 1. Download [`base/game.html`](base/game.html) and open it in any browser, on a phone or a computer.
-   It plays in full with 25 built-in categories. Nothing to install, no account.
+   It plays in full with 125 built-in prompts. Nothing to install, no account.
 2. For the Claude features, run it as a Claude artifact: upload the file to Claude and ask Claude to
    publish it as an artifact and declare its capabilities (`sample`, `db`, `user`, `room`). The game
    finds what is there and turns on what it can. Only the author has tried this route so far.
@@ -41,8 +41,10 @@ live once this branch is merged and GitHub Pages is switched on; until then it d
 ## How it plays
 
 1. **Today's game:** five prompts, the same for everyone on the same date, such as **"Name a bird"**.
-   Or a **practice round** of 5, 10, or **party mode**: all 25 prompts, grouped by topic. The timer is
-   30 seconds, or 15 or 45 if you change it in settings.
+   A new set every day: a calendar fixes each date's five prompts in advance, and the game reads the
+   date, so nothing has to be uploaded each day. Or a **practice round** of 5, 10, or **party mode**
+   (25 prompts, grouped by topic), up to 100 practice prompts a day with no repeats. The timer is 30
+   seconds, or 15 or 45 if you change it in settings.
 2. Type one answer. Spelling slips are forgiven, and the game shows what it counted.
 3. See your points, a comment from an AI host, and the top ten. The rare **Gems** stay hidden so you
    can play again.
@@ -68,12 +70,14 @@ film counts as Big Hero 6, worth 80. Think Claude got it wrong? **Check again**,
 commenting on each answer and its points. They tease the answer, never you. Pick one, or turn them
 off, in settings.
 
-**Challenge a friend.** At the end, add your name and press **Copy challenge**. It copies your score,
-two links and the code: a link for any browser (the GitHub Pages copy), a link for Claude, and the
-bare code, for example `RF1a3k0p-245-cptgd-Sam`. Each opens the same prompts with your score to beat,
-and shows your result after each of their answers. The code also works typed into **Play with
-friends**. Their own end screen gives them a challenge back; paste it on your Scorecard and you both
-appear on that game's scoreboard.
+## Share and challenge a friend
+
+Rare Find is a solo game. Sharing is one link. At the end, add your name and press **Copy
+challenge**. It copies one line and a link to the public web copy, for example
+`https://bar181.github.io/practical-ai/rare-find/#c-RF1d48b5-201-gtguu-Bradley`. The link carries
+your exact prompts and your score: your friend plays the same game in any browser, with no account,
+sees your result after each answer, and gets a link of their own to send back. Paste it on your
+**Scorecard** and you both appear on that game's scoreboard. No server, no sign-in, no cost.
 
 **Settings** sit behind the gear icon, closed until you open them. They also say who made the game. **✕ Back to start** is on every
 screen.
@@ -83,16 +87,18 @@ screen.
 | Level | What you get | Needs |
 | --- | --- | --- |
 | **Level 1:** play | Today's game, practice rounds, the hosts' written lines, an estimated chart of how you compare, a week of scores in this browser | Any browser |
-| **Level 2:** your account | Scores saved to your Claude account; Claude checks unlisted answers; the hosts write fresh lines | A Claude artifact |
-| **Level 3:** with friends, and on the web | A shared scoreboard for the day, a friends group with a code and an invite, and the chart switches to real scores once 5 people have played. **Play live** (beta): a room code, so everyone answers the same prompt at once. **On the web:** a GitHub Actions workflow rebuilds the game, runs the playtest and publishes it on GitHub Pages whenever it changes, so a challenge link opens for anyone | A shared Claude artifact; GitHub Pages for the web copy |
+| **Level 2:** Claude joins in | Claude checks answers that are not on the list, and the hosts write fresh lines, on the player's own Claude plan | The Claude artifact |
+| **Level 3:** on the web | A public copy anyone can open, published by GitHub Actions on every change, and challenge links that open it with your prompts and score | GitHub Pages |
 
-**Can friends play on their own AI?** Yes, by challenge code, wherever the game opens: a shared
-Claude artifact, or the game file in any browser. For a shared live scoreboard, use Claude. Share the artifact, and each friend plays the
-same prompts on their own Claude account and plan. They need a Claude account, and sharing by link
-needs a paid plan. To post scores to the shared board, a friend needs edit access: Claude lets
-people with view access read shared data but not write it. With view access they can still play,
-see the board and join a live room. In ChatGPT, not as a group: its group chats do not support canvas, so the game cannot run there for
-a group. The file still opens in any browser.
+**Where do the questions come from?** A JSON bank, [`_build/packs.json`](_build/packs.json): 125
+prompts, each with a ranked top ten, five Gems and 20 or more other right answers, drafted by Claude
+and checked by a script. A JSON calendar, [`_build/calendar.json`](_build/calendar.json), fixes each
+date's five prompts (17 November to 11 December 2026 so far). After it ends, the game deals from the
+whole bank, so a day is never empty. Both are built into the page: nothing is downloaded each day.
+
+**Does GitHub run any AI?** No. GitHub Actions only builds, tests and publishes the page; the web
+copy has no AI and no database. The AI check and fresh host lines run only inside the Claude
+artifact, on each player's own Claude plan.
 
 ## What is in this folder
 
@@ -119,13 +125,13 @@ in a different answer. Text that reads like instructions is never sent to it.
 including their -ing, -ed and -s forms, never count as a slip. A slip inside a short word makes a
 different word. The reviewers keep trying to break it.
 
-**Is the chart real?** Until 5 people have played that day in a shared artifact, it shows an
-estimate: a model of typical play, averaging about 154 of 500. It says so on screen.
+**Is the chart real?** No: it is an estimate, a model of typical play averaging about 154 of 500,
+and it says so on screen. There is no shared scoreboard; friends compare by challenge link.
 
 ## Status
 
 **17 November 2026.** Built by its author with Claude. It has been tested by an automated playtest
-(85 of 85 checks) and by fresh reviewer agents. Loops 0 to 3 scored 37, 68, 80 and 84 out of 100 on
+(82 of 82 checks) and by fresh reviewer agents. Loops 0 to 3 scored 37, 68, 80 and 84 out of 100 on
 the earlier office-ladder version, loop 4 scored an interim build 80, and loop 5 scored this version
 71. All five of loop 5's top problems are fixed and checked by the playtest, but not yet re-scored.
 Every Claude feature was tested against a mock, not the real artifact runtime. Not yet tried: real players, a real

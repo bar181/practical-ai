@@ -12,6 +12,7 @@ stop = json.load(open(stop_path)) if os.path.exists(stop_path) else []
 assert "/*__STOP__*/" in src
 html = (src.replace("/*__PACKS__*/", json.dumps(data, ensure_ascii=False, separators=(",", ":")))
            .replace("/*__STOP__*/", json.dumps(stop, separators=(",", ":")))
+           .replace("/*__CALENDAR__*/", open(os.path.join(here, "calendar.json")).read().replace("\n", "").replace(" ", "") if os.path.exists(os.path.join(here, "calendar.json")) else "null")
            .replace("__CREATOR_IMG__", "data:image/webp;base64," + base64.b64encode(open(os.path.join(here, "img", "creator.webp"), "rb").read()).decode()))
 open(os.path.join(root, "base", "game.html"), "w", encoding="utf-8").write(html)
 

@@ -8,7 +8,7 @@ status at a glance is in [`status-report.html`](status-report.html), a one-page 
 - **The automated playtest**, [`../_build/playtest.py`](../_build/playtest.py). It plays the built
   page in Chromium at 390 px (phone) and 1280 px, keyboard only, with reduced motion, with no Claude,
   and with a mock of Claude's artifact runtime (`sample`, `db`, `user`, `room`). Last run, 17
-  November 2026: **80 of 80 checks passed**. They cover 60 spelling cases, the per-category points,
+  November 2026: **82 of 82 checks passed**. They cover 60 spelling cases, the per-category points,
   hidden Gems, today's prompts over 120 days, Check with Claude and Check again, an unreachable
   Claude, the hosts, settings, the scorecard, the shared scoreboard, friends groups, live play,
   Back to start, the timer and phone width.
@@ -32,6 +32,12 @@ mode) and an edit-access note. Then all five top problems from the loop 5 review
 that could disagree, a "Check again" that skipped Claude, real words that scored, codes trusted
 blindly, and "saved" messages that were not true. The automated playtest checks every fix (80 of
 80). No reviewer has re-scored the fixed build yet.
+
+**Version 3, the simple version** (17 November 2026, after loop 5): a JSON bank of 125 prompts and a
+JSON calendar, up to 100 practice prompts a day, one share link to the public web copy, and the
+shared scoreboard, friends groups and live rooms removed at the owner's request. Checked by the
+playtest (82 of 82); not re-scored by a reviewer. The 100 new prompts were drafted by Claude and
+passed `check_packs.py`. Claude spot-checked a sample of them; no person has read every list yet.
 
 ## Who has and has not tried it
 

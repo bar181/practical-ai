@@ -160,7 +160,7 @@ comment on every score, and one link challenges a friend to the same prompts.
   <img src="projects/rare-find/_build/img/result-phone.webp" width="200" alt="A Rare Find result on a phone: Eagle is the crowd pick for 25 points, Madame Zara comments, and the top ten shows the points for each place">
   <img src="projects/rare-find/_build/img/scorecard-phone.webp" width="200" alt="The Rare Find Scorecard on a phone: today's score on a bar chart of the estimated spread, the week and a friends group">
 </p>
-<p align="center"><sub>Built phone first, tested by 85 automated checks and six review loops; not yet played by people.</sub></p>
+<p align="center"><sub>Built phone first, tested by 82 automated checks and six review loops; not yet played by people.</sub></p>
 
 <p align="center"><a href="https://claude.ai/artifact/HyfbDjPjofvRttRYKgMCis"><b>Play today's game</b></a> &nbsp;·&nbsp; <a href="projects/rare-find/"><b>The project</b></a> &nbsp;·&nbsp; <a href="docs/reports/rare-find.html"><b>How it was made</b></a></p>
 

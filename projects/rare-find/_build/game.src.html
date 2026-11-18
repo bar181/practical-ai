@@ -165,6 +165,7 @@ details p{font-size:14px;color:var(--muted);margin:6px 0 0}
 .code{font-size:34px;font-weight:900;letter-spacing:.2em;text-align:center;margin:6px 0}
 .copybox{width:100%;min-height:80px;margin-top:8px}
 .challenge{border:2px solid var(--accent)}
+.how{margin:6px 0 0;padding-left:20px;font-size:15px;color:var(--muted)}.how li{margin:3px 0}.how b{color:var(--text)}
 .about{display:flex;gap:12px;align-items:flex-start}.about img{border-radius:50%;flex:none;object-fit:cover}
 .about a,.credit a{color:var(--accent)}
 .credit{text-align:center;color:var(--muted);font-size:13px;padding:0 14px 28px;max-width:760px;margin:0 auto}
@@ -214,22 +215,17 @@ details p{font-size:14px;color:var(--muted);margin:6px 0 0}
     <div class="seg" role="group" aria-labelledby="l-timer" id="seg-timer"><button data-t="15" aria-pressed="false">15 s</button><button data-t="30" aria-pressed="true">30 s</button><button data-t="45" aria-pressed="false">45 s</button></div></div>
   <div><span class="lbl" id="l-count">Prompts per game</span>
     <div class="seg" role="group" aria-labelledby="l-count" id="seg-count"><button data-n="5" aria-pressed="true">5</button><button data-n="10" aria-pressed="false">10</button><button data-n="25" aria-pressed="false">Party: 25, by topic</button></div>
-    <p class="small" style="margin:6px 0 0">Today's game is always 5, so everyone's scores compare. This sets practice rounds and live play.</p></div>
+    <p class="small" style="margin:6px 0 0">Today's game is always 5, so everyone's scores compare. This sets practice rounds: up to 100 prompts a day.</p></div>
   <div><label class="switch"><input type="checkbox" id="talk" checked> Commentary and trash talk</label>
     <span class="lbl" id="l-host" style="margin-top:6px">Your commentator</span>
     <div class="seg" role="group" aria-labelledby="l-host" id="seg-host"></div></div>
-  <div><label class="lbl" for="nick">Your name, for challenges and scoreboards</label>
+  <div><label class="lbl" for="nick">Your name, for challenges</label>
     <input class="input" id="nick" maxlength="12" placeholder="e.g. QuizOwl" style="width:100%" autocapitalize="off">
     <p class="small" style="margin:6px 0 0">Letters and numbers, up to 12. Others see it next to your score.</p></div>
-  <div id="set-board"><label class="switch"><input type="checkbox" id="post" checked> Put my daily score on the scoreboard</label>
-    <p class="small" id="board-note" style="margin:6px 0 0"></p></div>
   <div class="about"><img src="__CREATOR_IMG__" width="72" height="72" alt="Bradley Ross">
     <div><span class="lbl" style="margin:0">Made by Bradley Ross</span>
       <p class="small" style="margin:4px 0 0">An agentic AI architect and developer for businesses of every size, from start-up to enterprise. Specialty: deterministic AI, and research into AI that transfers what it learns. 10 terms as a Harvard CS50 Teaching Fellow; Director at the Agentics Foundation; 12 practical AI courses taught to more than 900 students.</p>
       <p class="small" style="margin:6px 0 0">Rare Find is a side quest in <a href="https://github.com/bar181/practical-ai">Practical AI</a>: free tools that make the AI you already use do professional work on the jobs you repeat. More information, training or feedback: <a href="https://www.linkedin.com/in/bradaross/">LinkedIn</a>.</p></div></div>
-  <div><label class="lbl" for="glink">Link to this game, for challenges</label>
-    <input class="input" id="glink" maxlength="200" placeholder="Blank: the main Rare Find game" style="width:100%">
-    <p class="small" style="margin:6px 0 0">Challenge links open the main Rare Find game. Made your own copy? Paste its share link here.</p></div>
 </div></div></div>
 
 <div class="tabs" role="tablist" id="tabs">
@@ -254,7 +250,7 @@ details p{font-size:14px;color:var(--muted);margin:6px 0 0}
       <div class="stack">
         <button class="btn primary wide" id="b-daily">Play today's game</button>
         <button class="btn wide" id="b-practice">Practice round</button>
-        <button class="btn wide" id="b-live">Play with friends</button>
+        <span class="small" id="practice-count" style="text-align:center"></span>
       </div>
       <details style="margin-top:10px"><summary>Got a challenge code from a friend?</summary>
       <form class="row" id="code-form" style="margin-top:8px"><label for="code-in" class="sr">Challenge code</label>
@@ -289,50 +285,6 @@ details p{font-size:14px;color:var(--muted);margin:6px 0 0}
     <div id="chl-list"></div>
     <form class="row" id="code-form2" style="margin-top:10px"><label for="code-in2" class="sr">A friend's code</label>
       <input class="input" id="code-in2" maxlength="80" placeholder="Paste a friend's link or code" style="flex:1" autocapitalize="off" spellcheck="false"><button class="btn">Add</button></form>
-  </div>
-  <div class="card" id="sc-friends">
-    <h2>Friends</h2>
-    <div id="fr-none">
-      <p class="small" style="margin:0 0 10px">Start a group, then invite friends. Everyone plays today's five prompts on their own Claude, and your scores line up here.</p>
-      <button class="btn primary wide" id="b-group">Start a friends group</button>
-      <form class="row" id="join-group" style="margin-top:10px"><label for="groupcode" class="sr">Group code</label>
-        <input class="input" id="groupcode" maxlength="4" placeholder="CODE" style="flex:1;text-transform:uppercase"><button class="btn">Join</button></form>
-    </div>
-    <div id="fr-some" hidden>
-      <p class="small" style="margin:0">Your group code</p><div class="code" id="fr-code"></div>
-      <ol class="board" id="fr-board"></ol>
-      <div class="stack"><button class="btn primary wide" id="b-invite">Invite friends</button><button class="btn ghost wide" id="b-leavegroup">Leave this group</button></div>
-    </div>
-    <p class="small" id="fr-note" style="margin:10px 0 0"></p>
-  </div>
-  <div class="card" id="sc-everyone" hidden>
-    <h2>Everyone today</h2>
-    <ol class="board" id="ev-board"></ol>
-  </div>
-</section>
-
-<!-- LIVE LOBBY -->
-<section id="live" hidden aria-labelledby="t-live">
-  <div class="top"><button class="quit" id="b-live-back">✕ Back to start</button></div>
-  <h2 id="t-live">Play with friends</h2>
-  <div class="card challenge">
-    <h3 style="font-size:17px">Got a challenge from a friend?</h3>
-    <p class="small" style="margin:0 0 8px">Paste their link or code. You play the same prompts, with their result shown after each one.</p>
-    <form class="row" id="code-form3"><label for="code-in3" class="sr">Challenge link or code</label>
-      <input class="input" id="code-in3" maxlength="300" placeholder="RF1... or the whole link" style="flex:1" autocapitalize="off" spellcheck="false"><button class="btn primary">Play it</button></form>
-  </div>
-  <p class="small" id="live-none" hidden>Live rooms, where everyone answers at the same moment, work when this game runs as a Claude artifact. Challenges work everywhere.</p>
-  <div class="card" id="live-start"><h3 style="font-size:17px">Play live <span class="small">beta</span></h3>
-    <p class="small" style="margin:0 0 10px">Everyone opens this game, one person starts a room, and the rest join with its code. You all answer the same prompt at the same time.</p>
-    <button class="btn primary wide" id="b-host">Start a room</button>
-    <form class="row" id="join-form" style="margin-top:10px"><label for="joincode" class="sr">Room code</label>
-      <input class="input" id="joincode" maxlength="4" placeholder="CODE" style="flex:1;text-transform:uppercase"><button class="btn">Join</button></form>
-  </div>
-  <div class="card" id="live-room" hidden>
-    <p class="small" style="margin:0">Room code: share it with the people who have this game open.</p>
-    <div class="code" id="room-code"></div>
-    <ul class="board" id="peers"></ul>
-    <div class="stack"><button class="btn primary wide" id="b-pstart" hidden>Start the game</button><span class="small" id="live-wait">Waiting for the host to start...</span></div>
   </div>
 </section>
 
@@ -370,7 +322,6 @@ details p{font-size:14px;color:var(--muted);margin:6px 0 0}
       <div class="hidden-gems" id="gems-note"></div>
     </div>
     <p class="est" id="est">Popularity is the AI's estimate, not a survey.</p>
-    <p class="small" id="live-note" hidden></p>
     <div class="nextbar"><button class="btn primary" id="b-next">Next ▸</button></div>
   </div>
 </section>
@@ -388,11 +339,11 @@ details p{font-size:14px;color:var(--muted);margin:6px 0 0}
       <div class="chart" id="vs-board" hidden></div>
       <div class="card challenge" style="margin:4px 0;text-align:left">
         <h3 style="font-size:17px">Challenge a friend</h3>
-        <p class="small" style="margin:0 0 8px">The links open Rare Find with these same prompts and your score to beat. The code works in any copy of the game.</p>
+        <p class="small" style="margin:0 0 8px">One link: it opens Rare Find with these same prompts and your score to beat, in any browser, no account.</p>
         <div id="share-name-row"><label class="lbl" for="share-name">Your name on the challenge</label>
           <input class="input" id="share-name" maxlength="12" placeholder="e.g. Sam" style="width:100%;margin-bottom:8px" autocapitalize="off"></div>
         <label class="sr" for="share-link">Your challenge link</label>
-        <textarea class="input copybox" id="share-link" readonly style="font-size:13px;margin:0 0 8px;min-height:120px"></textarea>
+        <textarea class="input copybox" id="share-link" readonly style="font-size:13px;margin:0 0 8px;min-height:84px"></textarea>
         <button class="btn primary wide" id="b-share">Copy challenge</button>
       </div>
       <textarea class="input copybox" id="share-text" readonly hidden aria-label="Your challenge to copy"></textarea>
@@ -418,7 +369,7 @@ const TIERS = {
 // Any other right answer 80. A Gem 100. Perfect game 500.
 function rankPts(r,top=50){ return Math.round(25+(top-25)*(r-1)/9); }
 function pts(m){ if(!m) return 0; if(m.points!=null) return m.points; if(m.rank) return rankPts(m.rank,m.top); return TIERS[m.tier].pts||0; }
-const ROUNDS=5, PERFECT=500;
+const ROUNDS=5, PERFECT=500, PRACTICE_MAX=100;
 
 // Commentators: AI personas with a sense of humour. They talk about the answer and the points, never the player.
 const HOSTS = [
@@ -550,10 +501,20 @@ function dayNum(k){ const [y,m,d]=k.split("-").map(Number); return Math.round(Da
 function dayLabel(k){ const [y,m,d]=k.split("-").map(Number); return new Date(y,m-1,d).toLocaleDateString(undefined,{weekday:"long",month:"long",day:"numeric"}); }
 // Everyone gets the same five prompts on the same date. Days come in cycles: each cycle shuffles every
 // pack once and deals it out five at a time, and the first day of a cycle never repeats the day before.
+// The calendar fixes each date's five prompts in advance, so no day repeats while it lasts.
+// After its last day the game falls back to dealing from the whole bank, so a day is never empty.
+const CAL=/*__CALENDAR__*/;
 function dailyPacks(k=dayKey()){
-  const n=dayNum(k), all=DATA.packs.map(p=>p.id).sort(), N=all.length, per=Math.max(1,Math.floor(N/ROUNDS));
-  const c=Math.floor(n/per), j=n%per, base=x=>shuffle(all,seeded(7919+x*104729)), order=base(c);
-  if(per>=3){ const prev=new Set(base(c-1).slice((per-1)*ROUNDS,per*ROUNDS));
+  const ci=CAL&&CAL.start?dayNum(k)-dayNum(CAL.start):-1;
+  if(ci>=0&&ci<CAL.days.length){ const ps=CAL.days[ci].map(id=>DATA.packs.find(p=>p.id===id)).filter(Boolean); if(ps.length===ROUNDS) return ps; }
+  return dealt(k);
+}
+function dealt(k){
+  // Days after the calendar count from its end, so the first dealt day follows on from the last calendar day.
+  const off=CAL&&CAL.start?dayNum(CAL.start)+CAL.days.length:0;
+  const n=dayNum(k)-off, all=DATA.packs.map(p=>p.id).sort(), N=all.length, per=Math.max(1,Math.floor(N/ROUNDS));
+  const c=Math.floor(n/per), j=((n%per)+per)%per, base=x=>shuffle(all,seeded(7919+x*104729)), order=base(c);
+  if(per>=3){ const prev=new Set(c===0&&CAL&&CAL.days.length ? CAL.days[CAL.days.length-1] : base(c-1).slice((per-1)*ROUNDS,per*ROUNDS));
     for(let i=0;i<ROUNDS;i++) if(prev.has(order[i])) for(let x=ROUNDS;x<2*ROUNDS;x++) if(!prev.has(order[x])){ [order[i],order[x]]=[order[x],order[i]]; break; } }
   return order.slice(j*ROUNDS,(j+1)*ROUNDS).map(id=>DATA.packs.find(p=>p.id===id));
 }
@@ -582,73 +543,41 @@ function chartSVG(b,mine,title,perfect=PERFECT){
   return s;
 }
 
-/* ---------- saving (this browser, and the shared scoreboard when there is one) ---------- */
+/* ---------- saving: this browser only ---------- */
 const LKEY="rarefind.v2";
 function localGet(){ try{ return JSON.parse(localStorage.getItem(LKEY)||"null")||{}; }catch(e){ return {}; } }
 function localSet(v){ try{ localStorage.setItem(LKEY,JSON.stringify(v)); return true; }catch(e){ return false; } }
-const S={screen:"home",tab:"play",timer:30,count:5,talk:true,host:"turns",post:true,nick:"",group:"",link:"",days:{},games:{},mode:"daily"};
-{ const l=localGet(); ["timer","count","talk","host","post","nick","group","link"].forEach(k=>{ if(l[k]!=null) S[k]=l[k]; });
+const S={screen:"home",tab:"play",timer:30,count:5,talk:true,host:"turns",nick:"",days:{},games:{},mode:"daily"};
+{ const l=localGet(); ["timer","count","talk","host","nick","practice"].forEach(k=>{ if(l[k]!=null) S[k]=l[k]; });
   if(l.days&&typeof l.days==="object") S.days=l.days; if(l.games&&typeof l.games==="object") S.games=l.games; if(![5,10,25].includes(S.count)) S.count=5; }
 function saveLocal(){ const keys=Object.keys(S.games).sort((a,b)=>(S.games[b].t||0)-(S.games[a].t||0)).slice(0,20); const games={}; keys.forEach(k=>games[k]=S.games[k]);
-  S.games=games; return localSet({timer:S.timer,count:S.count,talk:S.talk,host:S.host,post:S.post,nick:S.nick,group:S.group,link:S.link,days:S.days,games}); }
+  S.games=games; return localSet({timer:S.timer,count:S.count,talk:S.talk,host:S.host,nick:S.nick,practice:S.practice,days:S.days,games}); }
 
-const caps={sample:null,db:null,user:null,room:null};
-let ME=null, BOARD=[], CANWRITE=null;
+const caps={sample:null};
+// Only one capability: asking the player's own Claude, inside a Claude artifact. Anywhere else, the game plays without it.
 async function initCaps(){
   if(!window.claude||typeof window.claude.use!=="function") return;
-  const get=n=>withTimeout(Promise.resolve().then(()=>window.claude.use(n)),10000).catch(()=>null);
-  const [sample,db,user,room]=await Promise.all(["sample","db","user","room"].map(get));
-  Object.assign(caps,{sample,db,user,room});
-  renderLive();
-  if(db&&user){ try{ ME=await user.id(); }catch(e){ ME=null; }
-    // People with view access can read the scoreboard but not write to it: Claude only lets editors write shared data.
-    try{ CANWRITE = typeof user.can==="function" ? await user.can("data.write") : null; }catch(e){ CANWRITE=null; }
-    await loadMine(); await loadBoard(); }
+  caps.sample=await withTimeout(Promise.resolve().then(()=>window.claude.use("sample")),10000).catch(()=>null);
   renderHome(); renderCard();
 }
-async function loadMine(){
-  if(!caps.db||!ME) return;
-  try{ const snap=await withTimeout(caps.db.doc("board/"+ME).get(),8000); const v=snap&&(typeof snap.data==="function"?snap.data():snap);
-    if(v&&v.days&&typeof v.days==="object"){ Object.entries(v.days).forEach(([k,sc])=>{ if(typeof sc==="number"&&!S.days[k]) S.days[k]={score:sc}; }); }
-    if(v&&typeof v.nick==="string"&&!S.nick) S.nick=v.nick; if(v&&typeof v.group==="string"&&!S.group) S.group=v.group; }catch(e){}
-}
-async function saveMine(){
-  const local=saveLocal();
-  if(!caps.db||!ME||!S.post){ S.lastSave = caps.db&&ME ? "off" : local ? "browser" : "none"; return S.lastSave; }
-  const keep=Object.keys(S.days).sort().slice(-30); const days={}; keep.forEach(k=>days[k]=S.days[k].score);
-  try{ await withTimeout(caps.db.doc("board/"+ME).set({nick:String(S.nick||"").slice(0,20),group:S.group||"",days}),8000); await loadBoard(); S.lastSave="board"; return "board"; }
-  catch(e){ S.lastSave = "refused"; return "refused"; }
-}
-async function loadBoard(){
-  if(!caps.db) return;
-  try{ const res=await withTimeout(caps.db.collection("board").limit(500).get(),8000);
-    const docs=(res&&(res.docs||res))||[]; BOARD=docs.map(d=>({id:d.id,...(typeof d.data==="function"?d.data():d)})).filter(r=>r&&r.days&&typeof r.days==="object"); }catch(e){}
-}
+// Scores stay in this browser. There is no shared scoreboard: friends compare by challenge link.
+function saveMine(){ S.lastSave = saveLocal() ? "browser" : "none"; return S.lastSave; }
 function dispName(n){ n=String(n||"").slice(0,20); return !n||/^\s*you\s*$/i.test(n) ? "Player" : n; }
-function todayScores(){ const k=dayKey(); return BOARD.map(r=>({id:r.id,nick:r.nick,group:r.group,score:r.days[k]})).filter(r=>typeof r.score==="number"&&r.score>=0&&r.score<=PERFECT); }
-
 /* ---------- header: settings and tabs ---------- */
 $("#b-settings").addEventListener("click",()=>{ const b=$("#b-settings"), open=b.getAttribute("aria-expanded")!=="true"; b.setAttribute("aria-expanded",String(open)); $("#settings").classList.toggle("open",open); $("#settings").inert=!open; });
 $("#settings").inert=true;
 function renderSettings(){
   document.querySelectorAll("#seg-timer button").forEach(x=>x.setAttribute("aria-pressed",String(+x.dataset.t===S.timer)));
-  $("#talk").checked=S.talk; $("#post").checked=S.post; $("#nick").value=S.nick; $("#glink").value=S.link;
+  $("#talk").checked=S.talk; $("#nick").value=S.nick;
   document.querySelectorAll("#seg-count button").forEach(x=>x.setAttribute("aria-pressed",String(+x.dataset.n===S.count)));
   const sh=$("#seg-host"); sh.textContent="";
   [{id:"turns",name:"Take turns",face:"🔁"},...HOSTS].forEach(h=>{ const b=document.createElement("button"); b.textContent=`${h.face} ${h.name}`; b.setAttribute("aria-pressed",String(S.host===h.id)); b.disabled=!S.talk;
     b.addEventListener("click",()=>{ S.host=h.id; saveLocal(); renderSettings(); }); sh.append(b); });
-  $("#set-board").hidden=!(caps.db&&ME);
-  $("#board-note").textContent= "Others who open this game can see the name and daily scores. Leave the name blank to show as Player.";
 }
 document.querySelectorAll("#seg-timer button").forEach(b=>b.addEventListener("click",()=>{ S.timer=+b.dataset.t; saveLocal(); renderSettings(); }));
 $("#talk").addEventListener("change",e=>{ S.talk=e.target.checked; saveLocal(); renderSettings(); });
 document.querySelectorAll("#seg-count button").forEach(b=>b.addEventListener("click",()=>{ S.count=+b.dataset.n; saveLocal(); renderSettings(); }));
-$("#glink").addEventListener("change",e=>{ const v=e.target.value.trim(); S.link= /^https:\/\/\S+$/.test(v) ? v.replace(/#.*$/,"").slice(0,200) : ""; e.target.value=S.link; saveLocal(); if(v&&!S.link) toast("That does not look like a link. It should start with https://"); });
-$("#post").addEventListener("change",async e=>{ S.post=e.target.checked; saveLocal();
-  // Turning posting off takes your scores off the shared board; your own history stays here.
-  if(!S.post&&caps.db&&ME){ try{ await withTimeout(caps.db.doc("board/"+ME).set({nick:"",group:S.group||"",days:{}}),8000); await loadBoard(); toast("Your scores are off the scoreboard."); }catch(e){ toast("The scoreboard did not let me remove your scores."); } renderCard(); }
-  else if(S.post) saveMine(); });
-$("#nick").addEventListener("change",e=>{ S.nick=e.target.value.replace(/[^A-Za-z0-9]/g,"").slice(0,12); e.target.value=S.nick; saveLocal(); if(caps.db&&ME&&S.post) saveMine(); });
+$("#nick").addEventListener("change",e=>{ S.nick=e.target.value.replace(/[^A-Za-z0-9]/g,"").slice(0,12); e.target.value=S.nick; saveLocal(); });
 function setTab(t){ S.tab=t; $("#tab-play").setAttribute("aria-selected",String(t==="play")); $("#tab-card").setAttribute("aria-selected",String(t==="card"));
   if(S.screen==="home"||S.screen==="scorecard") show(t==="play"?"home":"scorecard"); if(t==="card") renderCard(); }
 $("#tab-play").addEventListener("click",()=>setTab("play"));
@@ -662,14 +591,15 @@ function renderHome(){
   const k=dayKey(); $("#daily-date").textContent=dayLabel(k);
   const today=S.days[k]; $("#daily-done").hidden=!today; if(today) $("#daily-score").textContent=today.score;
   $("#b-daily").textContent= today ? "See how you compare" : "Play today's game";
+  const left=practiceLeft(), done=PRACTICE_MAX-left; $("#b-practice").disabled=!left;
+  $("#practice-count").textContent = left ? `Practice today: ${done} of ${PRACTICE_MAX}` : `${PRACTICE_MAX} of ${PRACTICE_MAX} practice prompts today. More tomorrow.`;
 }
 $("#b-daily").addEventListener("click",()=>{ if(S.days[dayKey()]){ setTab("card"); return; } newGame("daily"); });
-$("#b-practice").addEventListener("click",()=>newGame("practice"));
+$("#b-practice").addEventListener("click",()=>{ if(!practiceLeft()){ toast(`That's ${PRACTICE_MAX} practice prompts today. More tomorrow.`); return; } newGame("practice"); });
 
 /* ---------- scorecard ---------- */
 function renderCard(){
-  const k=dayKey(), mine=S.days[k], real=todayScores();
-  const useReal=real.length>=5;
+  const k=dayKey(), mine=S.days[k], real=[], useReal=false;
   $("#sc-today").textContent = mine ? `You scored ${mine.score} of 500. ` + (useReal ? `${real.filter(r=>r.score<mine.score).length} of ${real.length} players today scored less.` : `That beats about ${beatPct(mine.score)}% of players, by our estimate.`)
     : "Not played yet today. " + (useReal?`${real.length} people have.`:`The typical score is about ${MEAN}.`);
   $("#sc-chart").innerHTML = chartSVG(useReal?bins(real.map(r=>r.score)):bins(DIST), mine?mine.score:null, useReal?"Today's real scores":"Estimated spread of scores")
@@ -687,8 +617,7 @@ function renderCard(){
     const [y,m,dd]=key.split("-").map(Number); s+=`<text x="${(x+w/2).toFixed(1)}" y="${H+15}" fill="#bdb6dc" font-size="11" text-anchor="middle">${new Date(y,m-1,dd).toLocaleDateString(undefined,{weekday:"short"})}</text>`; });
   $("#sc-week").innerHTML=s+"</svg>";
   $("#sc-saved").textContent = S.lastSave==="none" ? "Not saved: this browser blocks storage, so scores last until you close the page."
-    : S.lastSave==="refused" ? "Saved in this browser. The shared scoreboard refused it: to post scores, ask whoever shared this game for edit access."
-    : caps.db&&ME ? (S.post?"Saved to your Claude account and the shared scoreboard.":"Saved in this browser. Scoreboard posting is off in settings.") : "Saved in this browser only. In a shared Claude artifact, scores are saved to your account.";
+    : "Saved in this browser.";
   // challenges sent back by friends, newest first
   const cl=$("#chl-list"); cl.textContent=""; const ckeys=Object.keys(S.games).filter(x=>vsRows(x).length>=1&&Object.keys(S.games[x].others||{}).length).sort((a,b)=>(S.games[b].t||0)-(S.games[a].t||0)).slice(0,5);
   $("#chl-none").hidden=ckeys.length>0;
@@ -696,34 +625,11 @@ function renderCard(){
     h.textContent=`${rec.n||"?"} prompts${rec.mine?"":" · not played yet"}${x===gameKey(dailyPacks())?" · today's game":""}`; d.append(h); const b=document.createElement("div"); renderVs(b,x); if(b.hidden){ const pp=document.createElement("p"); pp.className="small"; pp.style.margin="0"; pp.textContent=Object.entries(rec.others).map(([n,v])=>`${v.name||n} ${v.score}`).join(" · "); b.hidden=false; b.append(pp); } d.append(b); cl.append(d); });
   const todays=S.games[gameKey(dailyPacks())]; const fr=todays?Object.entries(todays.others||{}):[];
   if(fr.length) $("#sc-today").textContent+=` Friends by code: ${fr.map(([n,v])=>`${v.name||n} ${v.score}`).join(", ")}.`;
-  // friends
-  const can=!!(caps.db&&ME);
-  $("#b-group").disabled=!can; $("#join-group").querySelector("button").disabled=!can;
-  $("#fr-none").hidden=!!S.group; $("#fr-some").hidden=!S.group;
-  if(S.group){ $("#fr-code").textContent=S.group; const fb=$("#fr-board"); fb.textContent="";
-    const rows=BOARD.filter(r=>r.group===S.group).map(r=>({id:r.id,nick:r.nick,score:r.days[k]})).sort((a,b)=>(b.score??-1)-(a.score??-1));
-    if(!rows.some(r=>r.id===ME)) rows.push({id:ME,nick:S.nick,score:mine?mine.score:undefined});
-    rows.forEach(r=>{ const li=document.createElement("li"); if(r.id===ME) li.className="me"; const n=document.createElement("span"); n.textContent=(r.id===ME?"You":dispName(r.nick)); const b=document.createElement("b"); b.textContent= typeof r.score==="number" ? r.score : "not yet"; li.append(n,b); fb.append(li); }); }
-  $("#fr-note").textContent = !can ? "Friends groups work when this game runs as a shared Claude artifact. Here, your scores stay in this browser."
-    : CANWRITE===false ? "You can play and see the scoreboard. To post your own score, ask whoever shared this game for edit access."
-    : "Friends need this game's link and a Claude account, and edit access to post scores. Each plays on their own Claude plan.";
-  // everyone
-  $("#sc-everyone").hidden=!(can&&real.length);
-  const ev=$("#ev-board"); ev.textContent="";
-  real.sort((a,b)=>b.score-a.score).slice(0,10).forEach((r,i)=>{ const li=document.createElement("li"); if(r.id===ME) li.className="me"; const n=document.createElement("span"); n.textContent=`${i+1}. ${r.id===ME?"You":dispName(r.nick)}`; const b=document.createElement("b"); b.textContent=r.score; li.append(n,b); ev.append(li); });
 }
-function newCode(){ return Array.from({length:4},()=>"ABCDEFGHJKLMNPQRSTUVWXYZ"[Math.floor(rnd()*24)]).join(""); }
-$("#b-group").addEventListener("click",async()=>{ S.group=newCode(); await saveMine(); renderCard(); toast(`Group ${S.group} started. Invite your friends.`); });
-$("#join-group").addEventListener("submit",async e=>{ e.preventDefault(); const c=$("#groupcode").value.trim().toUpperCase(); if(!/^[A-Z]{4}$/.test(c)){ toast("A group code is four letters."); return; } S.group=c; await saveMine(); renderCard(); toast(`You joined group ${c}.`); });
-$("#b-leavegroup").addEventListener("click",async()=>{ S.group=""; await saveMine(); renderCard(); });
-$("#b-invite").addEventListener("click",()=>copyText(`Play today's Rare Find with me. Open the Rare Find link I share with you, then go to Scorecard and join my friends group: ${S.group}. Five prompts, and the rarer your right answer, the more it scores.`,"Invite copied. Send it with this game's link."));
 async function copyText(text,ok){
   try{ await navigator.clipboard.writeText(text); toast(ok); }
   catch(e){ const t=$("#share-text"); t.value=text; t.hidden=false; if(S.screen!=="end"){ toast("Copy this text: "+text.slice(0,60)+"..."); } else { t.focus(); t.select(); toast("Select and copy the text below."); } }
 }
-// A link ending in #group-ABCD joins that group.
-function hashGroup(){ const m=/^#group-([A-Z]{4})$/i.exec(location.hash||""); if(m){ S.group=m[1].toUpperCase(); saveLocal(); } }
-
 /* ---------- challenge codes: the same prompts, played anywhere, scores compared ---------- */
 // A code names the exact prompts (their places in the pack list), the score, each answer's tier and a name:
 // RF1 + one base-36 character per prompt, e.g. RF1a3k0p-245-cptgd-Sam. No server: friends send codes back.
@@ -766,7 +672,6 @@ function renderChallenge(){
 function startChallenge(){ const c=PENDING; if(!c) return; PENDING=null; renderChallenge();
   const daily=dailyPacks(); const isToday=!S.days[dayKey()]&&c.packs.length===daily.length&&c.packs.every((p,i)=>p===daily[i]);
   newGame(isToday?"daily":"challenge",{packs:c.packs,rival:{name:c.name,score:c.score,tiers:c.tiers}}); }
-$("#code-form3").addEventListener("submit",e=>{ e.preventDefault(); if(takeCode($("#code-in3").value,"typed")) $("#code-in3").value=""; });
 $("#b-ch-play").addEventListener("click",startChallenge);
 $("#b-ch-no").addEventListener("click",()=>{ PENDING=null; renderChallenge(); });
 $("#code-form").addEventListener("submit",e=>{ e.preventDefault(); if(takeCode($("#code-in").value,"typed")) $("#code-in").value=""; });
@@ -783,17 +688,21 @@ function hashChallenge(){ const m=/^#c-(.+)$/i.exec(location.hash||""); if(m) ta
 
 /* ---------- game flow ---------- */
 let G=null, tick=null;
-function show(id){ ["home","scorecard","live","play","end"].forEach(s=>$("#"+s).hidden=s!==id); S.screen=id;
-  const inGame=id==="play"; $("#tabs").hidden=inGame||id==="end"||id==="live"; $("#head").hidden=inGame; if(inGame){ $("#settings").classList.remove("open"); $("#b-settings").setAttribute("aria-expanded","false"); $("#settings").inert=true; }
+function show(id){ ["home","scorecard","play","end"].forEach(s=>$("#"+s).hidden=s!==id); S.screen=id;
+  const inGame=id==="play"; $("#tabs").hidden=inGame||id==="end"; $("#head").hidden=inGame; if(inGame){ $("#settings").classList.remove("open"); $("#b-settings").setAttribute("aria-expanded","false"); $("#settings").inert=true; }
   window.scrollTo(0,0); }
 // Practice: other prompts than today's where it can. Party mode plays every pack, grouped by topic.
+function practiceToday(){ const k=dayKey(); if(!S.practice||S.practice.day!==k) S.practice={day:k,n:0,seen:[]}; return S.practice; }
+function practiceLeft(){ return Math.max(0,PRACTICE_MAX-practiceToday().n); }
 function practicePacks(n){
-  if(n>=DATA.packs.length){ const today=new Set(S.days[dayKey()]?[]:dailyPacks().map(p=>p.id)); const pool=DATA.packs.filter(p=>!today.has(p.id));
-    if(today.size) toast(`Party mode: ${pool.length} prompts. Today's five wait for your daily game.`);
-    const cats=shuffle([...new Set(pool.map(p=>p.cat))]); return cats.flatMap(c=>shuffle(pool.filter(p=>p.cat===c))); }
-  const today=new Set(dailyPacks().map(p=>p.id)); let pool=DATA.packs.filter(p=>!today.has(p.id)&&!(S.last||[]).includes(p.id));
-  if(pool.length<n) pool=DATA.packs.filter(p=>!today.has(p.id)); if(pool.length<n) pool=DATA.packs.slice();
-  const packs=shuffle(pool).slice(0,n); S.last=packs.map(p=>p.id); return packs;
+  const pt=practiceToday(); n=Math.min(n,practiceLeft());
+  const today=new Set(dailyPacks().map(p=>p.id)), seen=new Set(pt.seen);
+  // prompts not yet played today come first, then the rest; today's five belong to the daily game
+  let pool=DATA.packs.filter(p=>!today.has(p.id)&&!seen.has(p.id));
+  if(pool.length<n) pool=pool.concat(shuffle(DATA.packs.filter(p=>!today.has(p.id)&&seen.has(p.id))));
+  let packs=pool.slice(0,0).concat(shuffle(pool.filter(p=>!seen.has(p.id))), pool.filter(p=>seen.has(p.id))).slice(0,n);
+  if(n>=25){ const cats=[...new Set(packs.map(p=>p.cat))]; packs=shuffle(cats).flatMap(c=>packs.filter(p=>p.cat===c)); }
+  S.last=packs.map(p=>p.id); return packs;
 }
 function pickHost(i){ if(S.host==="turns") return HOSTS[(i+(G?G.hostOffset:0))%HOSTS.length]; return HOSTS.find(h=>h.id===S.host)||HOSTS[0]; }
 function newGame(mode,opts={}){
@@ -803,7 +712,7 @@ function newGame(mode,opts={}){
     if(mode==="daily") packs=dailyPacks();
     else packs=practicePacks(S.count);
   }
-  G={packs,i:0,total:0,res:[],rival:opts.rival||null,live:opts.live||null,token:0,id:Date.now(),pending:[],hostOffset:Math.floor(rnd()*HOSTS.length),day:dayKey()};
+  G={packs,i:0,total:0,res:[],rival:opts.rival||null,token:0,id:Date.now(),pending:[],hostOffset:Math.floor(rnd()*HOSTS.length),day:dayKey()};
   const dt=$("#dots"); dt.textContent=""; if(packs.length<=10) packs.forEach(()=>dt.append(document.createElement("i")));
   G.perfect=100*packs.length; G.topics=[...new Set(packs.map(p=>p.cat))]; G.byTopic=packs.length>10;
   show("play"); startPrompt(opts.endsAt);
@@ -812,7 +721,7 @@ function startPrompt(endsAt){
   const p=G.packs[G.i]; G.locked=false; G.cur=null; G.token++; G.ready=false;
   $("#round").textContent=`${G.i+1} / ${G.packs.length}`; $("#round").setAttribute("aria-label",`Prompt ${G.i+1} of ${G.packs.length}`); [...$("#dots").children].forEach((d,i)=>d.classList.toggle("on",i<=G.i));
   const t=G.topics.indexOf(p.cat)+1;
-  $("#cat").textContent=(p.cat||"").toUpperCase()+(G.byTopic?` · TOPIC ${t} OF ${G.topics.length}`:S.mode==="daily"?" · TODAY":S.mode==="live"?" · LIVE":S.mode==="challenge"?" · CHALLENGE":" · PRACTICE");
+  $("#cat").textContent=(p.cat||"").toUpperCase()+(G.byTopic?` · TOPIC ${t} OF ${G.topics.length}`:S.mode==="daily"?" · TODAY":S.mode==="challenge"?" · CHALLENGE":" · PRACTICE");
   if(G.byTopic&&(G.i===0||G.packs[G.i-1].cat!==p.cat)) toast(`Topic ${t} of ${G.topics.length}: ${p.cat}`);
   $("#prompt-text").textContent=p.prompt;
   $("#result").hidden=true; $("#live-sum").textContent=""; $("#talk-row").hidden=true;
@@ -839,6 +748,7 @@ function submit(timeout){
   const p=G.packs[G.i]; const m = raw ? match(p,raw) : {tier:"miss",how:"time"};
   if(m.tier==="miss"&&m.how==="unlisted") m.tier="unlisted";
   G.cur={raw,m,pack:p,token:G.token,round:G.i,checks:0};
+  if(S.mode==="practice"){ const pt=practiceToday(); pt.n++; if(!pt.seen.includes(p.id)) pt.seen.push(p.id); saveLocal(); }
   showResult();
 }
 function countUp(el,to,ms=300){
@@ -885,16 +795,13 @@ function showResult(){
   renderCheck();
   const next=$("#b-next");
   next.textContent = G.i+1<G.packs.length ? "Next ▸" : "See my score ▸";
-  next.hidden = !!(G.live && !G.live.host && !G.live.orphan && G.i+1<G.packs.length);
+  next.hidden = false;
   renderReveal(pack,m);
   const rv=$("#rival-row"), rt=G.rival&&G.rival.tiers&&G.rival.tiers[G.i];
   rv.hidden=!rt; if(rt){ const T={c:"crowd",p:"popular",t:"solid",g:"good",d:"gem",m:"miss",u:"unlisted"}[rt]; rv.textContent="";
     const b=document.createElement("b"); b.textContent=`${G.rival.name}: `; rv.append(b,`${TIERS[T].sq} ${TIERS[T].name}`); }
-  const ln=$("#live-note"); ln.hidden=!G.live;
-  if(G.live) ln.textContent = G.live.host ? liveAnswered() : "Waiting for the host to start the next prompt...";
   const talkP = S.talk ? comment(cur) : ($("#talk-row").hidden=true, null);
   announce();
-  if(G.live) liveSend();
   // A short pause before Next, and up to 2 s for a fresh line from the host, so it is seen before moving on.
   next.disabled=true; const wait=[new Promise(r=>setTimeout(r,reduce?120:450))]; if(talkP) wait.push(Promise.race([talkP,new Promise(r=>setTimeout(r,2000))]));
   Promise.all(wait).then(()=>{ if(G&&G.cur===cur){ G.ready=true; if(!cur.judging){ next.disabled=false; next.focus(); } } });
@@ -961,8 +868,7 @@ Return JSON only: {"correct":true|false,"canonical":"the answer, correctly spell
     const p=pts(m); G.res[round]={...G.res[round],tier,pts:p,judged:true}; cur.m=m; retotal();
     if(here){ setBadge(m); $("#counted").textContent=`Claude checked: "${m.answer}" is right${tier==="gem"?", and rare":""}. ${String(v.why||"").slice(0,90)}`; renderReveal(pack,m); announce(); if(S.talk) comment(cur); }
     else toast(`Claude allowed "${raw}" on prompt ${round+1}: +${p}`);
-    if(G.live) liveSend();
-  } else {
+    } else {
     cur.m={...cur.m,tier:"miss",how:"judged-no"}; G.res[round]={...G.res[round],tier:"miss",pts:0}; retotal();
     if(here){ setBadge(cur.m); $("#counted").textContent=`Claude checked "${raw}": not a right answer. ${v&&v.why?String(v.why).slice(0,90):""}`; announce(); if(S.talk) comment(cur); }
   }
@@ -973,7 +879,6 @@ function honourAllow(cur,why){
   G.res[cur.round]={...G.res[cur.round],tier:"good",pts:p,allowed:true}; retotal();
   setBadge(cur.m); $("#counted").textContent=(why?why+" ":"")+countedText(cur.raw,cur.m); renderReveal(cur.pack,cur.m); announce(); if(S.talk) comment(cur);
   if(G.ready) $("#b-next").focus();
-  if(G.live) liveSend();
 }
 $("#b-check").addEventListener("click",async()=>{
   const cur=G&&G.cur; if(!cur||!checkable(cur)||cur.judging) return;
@@ -986,7 +891,6 @@ $("#b-check").addEventListener("click",async()=>{
 });
 $("#b-next").addEventListener("click",()=>{
   if(!G||!G.ready) return;
-  if(G.live&&G.live.host&&!G.live.orphan&&G.i+1<G.packs.length){ G.i++; const ends=Date.now()+S.timer*1000; G.live.endsAt=ends; startPrompt(ends); liveBroadcast(); return; }
   if(G.i+1<G.packs.length){ G.i++; startPrompt(); } else endGame();
 });
 async function endGame(){
@@ -1009,41 +913,33 @@ async function endGame(){
   const key=gameKey(g.packs); const rec=S.games[key]||(S.games[key]={others:{},n}); if(!rec.mine) rec.mine={score:g.total,tiers:tierString(g.res)}; rec.t=Date.now(); rec.day=g.day; saveLocal();
   renderVs($("#vs-board"),key); renderShare();
   let note = daily ? (already?"You already played today, so this score is not saved again.":"") : S.mode==="challenge" ? "Challenge games are not saved to your daily score. Send your code back so your friend sees it." : "Practice rounds are not saved to your daily score.";
-  if(g.live&&P){ liveStandings(); note=$("#end-note").textContent; }
-  else if(daily&&!already){ const where=await saveMine(); if(G!==g) return; note = where==="board" ? "Saved to your account and the scoreboard." : where==="off" ? "Saved. Scoreboard posting is off in settings." : where==="refused" ? "Saved in this browser. The scoreboard did not accept it: to post scores, ask whoever shared this game for edit access." : where==="none" ? "Not saved: this browser blocks storage." : "Saved in this browser.";
-    if(where==="board"){ const real=todayScores(); if(real.length>=5){ const below=real.filter(r=>r.score<g.total).length; note+=` Today so far: you beat ${below} of ${real.length} real players.`; } } }
+  if(daily&&!already){ const where=saveMine(); note = where==="none" ? "Not saved: this browser blocks storage." : "Saved in this browser."; }
   $("#end-note").textContent=note;
-  $("#b-again").textContent = g.live ? "Back to the room" : "Practice round";
+  $("#b-again").textContent = "Practice round";
   $("#b-share").focus();
 }
-// The main published game. A copy published elsewhere sets its own link in settings.
-const HOME_LINK="https://claude.ai/artifact/HyfbDjPjofvRttRYKgMCis";
+// Challenges link to the public web copy, which opens for anyone, with no account.
 const WEB_LINK="https://bar181.github.io/practical-ai/rare-find/";
-function challengeLink(g){ return `${S.link||HOME_LINK}#c-${makeCode(g)}`; }
-function challengeText(g){ const code=makeCode(g);
-  return `I scored ${g.total} of ${g.perfect} on Rare Find${S.mode==="daily"?" today":""}. Same ${g.packs.length} prompts: can you beat me?
-Play in any browser: ${WEB_LINK}#c-${code}
-Play in Claude: ${challengeLink(g)}
-Or open Rare Find, tap Play with friends, and enter: ${code}`; }
+function challengeLink(g){ return `${WEB_LINK}#c-${makeCode(g)}`; }
+function challengeText(g){ return `I scored ${g.total} of ${g.perfect} on Rare Find${S.mode==="daily"?" today":""}. Same ${g.packs.length} prompts: can you beat me?\n${challengeLink(g)}`; }
 function renderShare(){ const g=G; if(!g) return; $("#share-name").value=S.nick; $("#share-link").value=challengeText(g); }
 $("#share-name").addEventListener("input",e=>{ S.nick=e.target.value.replace(/[^A-Za-z0-9]/g,"").slice(0,12); saveLocal(); if(G) $("#share-link").value=challengeText(G); });
 $("#share-name").addEventListener("change",e=>{ e.target.value=S.nick; $("#nick").value=S.nick; });
 $("#share-link").addEventListener("focus",e=>e.target.select());
 $("#b-share").addEventListener("click",()=>{ const g=G; if(!g) return;
   copyText(challengeText(g),"Challenge copied. Paste it to a friend."); });
-$("#b-again").addEventListener("click",()=>{ if(S.mode==="live"&&P){ $("#live-start").hidden=true; $("#live-room").hidden=false; show("live"); return; } newGame("practice"); });
+$("#b-again").addEventListener("click",()=>{ if(!practiceLeft()){ toast(`That's ${PRACTICE_MAX} practice prompts today. More tomorrow.`); return; } newGame("practice"); });
 $("#b-tocard").addEventListener("click",()=>{ goStart(); setTab("card"); });
-function askLeave(){ if(S.screen!=="play"||!G) return; $("#leave").hidden=false; $("#answer").disabled=true; if(!G.locked&&!G.live){ G.pausedLeft=G.endsAt-Date.now(); clearInterval(tick); } $("#b-leave-no").focus(); }
+function askLeave(){ if(S.screen!=="play"||!G) return; $("#leave").hidden=false; $("#answer").disabled=true; if(!G.locked){ G.pausedLeft=G.endsAt-Date.now(); clearInterval(tick); } $("#b-leave-no").focus(); }
 function resumeTimer(){ if(G&&G.pausedLeft!=null){ const left=G.pausedLeft; G.pausedLeft=null; resumeAt(Date.now()+left); } }
 $("#b-quit").addEventListener("click",askLeave);
 document.addEventListener("keydown",e=>{ if(e.key==="Escape"){ if(!$("#leave").hidden){ $("#leave").hidden=true; resumeTimer(); if(G&&!G.locked){ $("#answer").disabled=false; $("#answer").focus(); } return; } if(S.screen==="play") askLeave(); else if(S.screen!=="home"&&S.screen!=="scorecard") goStart(); } });
 $("#b-leave-no").addEventListener("click",()=>{ $("#leave").hidden=true; resumeTimer(); if(G&&!G.locked){ $("#answer").disabled=false; $("#answer").focus(); } else if(G&&G.ready) $("#b-next").focus(); });
 // One way back to the start from any screen: cancels the game and leaves any room.
 function goStart(){ clearInterval(tick); $("#leave").hidden=true; if(G) G.cur=null; G=null;
-  if(P&&P.r&&P.r.leave) try{P.r.leave();}catch(e){} P=null; renderHome(); setTab("play"); show("home"); $("#b-daily").focus(); }
+  renderHome(); setTab("play"); show("home"); $("#b-daily").focus(); }
 $("#b-leave-yes").addEventListener("click",goStart);
 $("#b-end-back").addEventListener("click",goStart);
-$("#b-live-back").addEventListener("click",goStart);
 
 /* ---------- confetti ---------- */
 function confetti(n){
@@ -1054,53 +950,13 @@ function confetti(n){
   document.body.append(c); setTimeout(()=>c.remove(),2000);
 }
 
-/* ---------- live with friends (beta): everyone with the game open answers the same prompt at once ---------- */
-let P=null;
-function renderLive(){ $("#live-start").hidden=!caps.room; $("#live-none").hidden=!!caps.room; }
-$("#b-live").addEventListener("click",()=>{ renderLive(); $("#live-room").hidden=true; show("live"); });
-async function enterRoom(code,host){
-  const me = ME || (caps.user ? await caps.user.id().catch(()=>null) : null);
-  const r=caps.room.join("rf-"+code); P={r,code,host,me:me||("p"+Math.floor(rnd()*1e6)),peers:[],scores:{},answered:{},names:{}};
-  $("#room-code").textContent=code; $("#live-start").hidden=true; $("#live-room").hidden=false;
-  $("#b-pstart").hidden=!host; $("#live-wait").hidden=host;
-  r.presence({pid:P.me,host,total:0,nick:S.nick||""});
-  r.onPeers(list=>{ P.peers=list||[]; renderPeers();
-    const hostHere=P.host||(P.peers||[]).some(x=>{ const st=x&&(x.state||x); return st&&st.host; }); if(hostHere) P.sawHost=true;
-    if(!P.host&&P.sawHost&&!hostHere){ const msg="The host left the room. Finish by yourself, or go back to the start.";
-      if(G&&G.live){ G.live.orphan=true; $("#live-note").hidden=false; $("#live-note").textContent=msg; if(G.locked) $("#b-next").hidden=false; } else $("#live-wait").textContent=msg; } });
-  r.on("rf",msg=>{ const d=msg&&(msg.data||msg); if(!d||typeof d!=="object") return;
-    if(d.type==="state"&&!host&&Array.isArray(d.packIds)){ const packs=d.packIds.map(id=>DATA.packs.find(p=>p.id===id)).filter(Boolean); if(packs.length!==d.packIds.length) return;
-      if(!G||!G.live||G.live.round!==d.round){ newGame("live",{packs,live:{host:false,round:d.round,endsAt:d.endsAt},endsAt:d.endsAt}); }
-      if(G.i!==d.idx){ if(!G.locked) submit(!$("#answer").value.trim()); G.i=d.idx; G.live.endsAt=d.endsAt; startPrompt(d.endsAt); } }
-    if(d.type==="score"&&d.pid){ P.scores[d.pid]=Number(d.total)||0; P.answered[d.pid]=d.idx; renderPeers(); if(S.screen==="end"&&S.mode==="live") liveStandings(); if(G&&G.live&&G.live.host&&G.locked) $("#live-note").textContent=liveAnswered(); } });
-}
-function renderPeers(){
-  const ul=$("#peers"); const ids=new Map(); (P.peers||[]).forEach(x=>{ const s=x.state||x; if(s&&s.pid) ids.set(s.pid,s.nick||""); }); ids.set(P.me,"");
-  P.names={}; let i=1; ul.textContent="";
-  ids.forEach((nick,id)=>{ P.names[id]= id===P.me?"You":(String(nick||"").slice(0,20)||`Player ${++i}`); const li=document.createElement("li"); if(id===P.me) li.className="me";
-    const n=document.createElement("span"); n.textContent=P.names[id]; const s=document.createElement("b"); s.textContent=(P.scores[id]||0)+" pts"; li.append(n,s); ul.append(li); });
-}
-$("#b-host").addEventListener("click",()=>enterRoom(newCode(),true));
-$("#join-form").addEventListener("submit",e=>{ e.preventDefault(); const c=$("#joincode").value.trim().toUpperCase(); if(/^[A-Z]{4}$/.test(c)) enterRoom(c,false); else toast("A room code is four letters."); });
-$("#b-pstart").addEventListener("click",()=>{ const packs=practicePacks(S.count); const round=Date.now();
-  newGame("live",{packs,live:{host:true,round,endsAt:Date.now()+S.timer*1000},endsAt:Date.now()+S.timer*1000}); liveBroadcast(); });
-function liveBroadcast(){ if(!P||!G) return; G.live.endsAt=G.endsAt||Date.now()+S.timer*1000;
-  try{ P.r.emit("rf",{type:"state",packIds:G.packs.map(p=>p.id),idx:G.i,endsAt:G.live.endsAt,round:G.live.round}); }catch(e){} }
-function liveStandings(){
-  const rows=Object.entries(P.scores).sort((a,b)=>b[1]-a[1]); const me=rows.findIndex(r=>r[0]===P.me)+1; const last=G?G.packs.length-1:4;
-  $("#end-banner").textContent = me===1?"You top the room, so far!":`You are ${me} of ${rows.length}, so far`;
-  $("#end-note").textContent="Room standings: "+rows.map(([id,v],i)=>`${i+1}. ${(P.names&&P.names[id])||"Player"} ${v}${P.answered[id]!=null&&P.answered[id]<last?" (still playing)":""}`).join(" · ");
-}
-function liveAnswered(){ if(!P) return ""; const ids=new Set([...(P.peers||[]).map(x=>(x.state||x).pid).filter(Boolean),P.me]); const done=[...ids].filter(id=>P.answered[id]===G.i||id===P.me).length; return `${done} of ${ids.size} answered. Press Next when you're ready.`; }
-function liveSend(){ if(!P) return; P.scores[P.me]=G.total; P.answered[P.me]=G.i; try{ P.r.emit("rf",{type:"score",pid:P.me,total:G.total,idx:G.i}); P.r.presence({pid:P.me,host:P.host,total:G.total,nick:S.nick||""}); }catch(e){} }
-
 /* ---------- test hook ---------- */
-window.__rf={sum:()=>G?G.res.reduce((a,r)=>a+(r&&r.pts||0),0):0,parseCode,gameKey,makeCode,meanOf,match,pts,rankPts,norm,osa,STOP,packs:DATA.packs,dailyPacks,beatPct,MEAN,HOSTS,looks:looksLikeInstructions,
-  state:()=>({screen:S.screen,tab:S.tab,mode:S.mode,i:G&&G.i,total:G&&G.total,cur:G&&G.cur&&{raw:G.cur.raw,...G.cur.m,pts:pts(G.cur.m),checks:G.cur.checks},days:S.days,group:S.group,caps:Object.fromEntries(Object.entries(caps).map(([k,v])=>[k,!!v]))}),
+window.__rf={CAL,practiceLeft,sum:()=>G?G.res.reduce((a,r)=>a+(r&&r.pts||0),0):0,parseCode,gameKey,makeCode,meanOf,match,pts,rankPts,norm,osa,STOP,packs:DATA.packs,dailyPacks,beatPct,MEAN,HOSTS,looks:looksLikeInstructions,
+  state:()=>({screen:S.screen,tab:S.tab,mode:S.mode,i:G&&G.i,total:G&&G.total,cur:G&&G.cur&&{raw:G.cur.raw,...G.cur.m,pts:pts(G.cur.m),checks:G.cur.checks},days:S.days,caps:Object.fromEntries(Object.entries(caps).map(([k,v])=>[k,!!v]))}),
   setSeed:v=>{seed=v;}};
 
-hashGroup(); renderSettings(); renderHome(); show("home"); hashChallenge(); initCaps().then(renderSettings);
-window.addEventListener("hashchange",()=>{ hashGroup(); hashChallenge(); });
+renderSettings(); renderHome(); show("home"); hashChallenge(); initCaps().then(renderSettings);
+window.addEventListener("hashchange",hashChallenge);
 </script>
 </body>
 </html>
