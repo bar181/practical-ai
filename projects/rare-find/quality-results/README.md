@@ -6,11 +6,12 @@
 
 - **The automated playtest**, [`../_build/playtest.py`](../_build/playtest.py). It plays the built
   page in Chromium at 390 px (phone) and 1280 px, keyboard only, with reduced motion, with no Claude,
-  and with a mock of Claude's answer check (`sample`). Last run, 18 November 2026: **119 of 119 checks
+  and with a mock of Claude's answer check (`sample`). Last run, 18 November 2026, version 4.4: **120 of 120 checks
   passed**. They cover how an answer lands (on screen within 100 ms, ordinary effects 150 to 250
   ms, the Gem reveal inside 600 ms, Next usable during effects, a late verdict that changes only its
   own round), 60 spelling cases, the per-category points, hidden Gems, the daily calendar
-  over 240 days, practice limits, Ask the AI and a second opinion (never an approval without the AI's yes), the
+  over 240 days, practice limits, Check again once per answer (never an approval without the AI's yes), Good finds
+  scored by rarity, 7 prompts a day, the one result card, the
   hosts talking while the AI checks, an unreachable AI with Try again, the
   hosts, settings, the scorecard, challenge links, Back to start, the timer and phone width.
 - **The review skill**, [`../level-2-files/game-review/SKILL.md`](../level-2-files/game-review/SKILL.md).
@@ -89,8 +90,19 @@ real artifact and the AI check did not run. The likely cause: the check used `sa
 Claude's own guide says some Claude apps do not have, while the host lines, which did work, use the
 plain text call. The check now uses the plain text call and reads the JSON from the reply itself;
 the button stays on screen as "Checking..." while it runs; a failure names its reason. The mock now
-has no `sample.json` at all, like those apps. 119 of 119 checks pass. **Not yet confirmed in the
-real Claude app**: the private preview has it for the owner to try.
+has no `sample.json` at all, like those apps. 119 of 119 checks pass. **Confirmed by the owner in
+the real Claude app** (private preview, 18 November 2026): Check again ran and accepted a Good find.
+
+**Version 4.4, Good finds by rarity, one result card, seven prompts** (18 November 2026, the
+owner's feedback). A Good find was a flat 80. Now every one of the 4,607 Good finds on the lists
+carries a rarity from 1 to 9 (an AI's estimate, rated by five agents in batches and checked: every
+answer present, whole numbers only), and scores from 10 above the prompt's 10th place up to 90. An
+answer the AI checks gets a rarity from 1 to 10 on the same scale; 10 is a Gem. Check again is a
+small button beside the 0 and runs once. The result is one card (tier, points, what counted, Check
+again, Next question) that celebrates in proportion to the points; the AI's reasons no longer
+repeat in it, so the host's bubble is the only comment. The daily game is 7 prompts from 19 November;
+the two days already played keep their 5. 120 of 120 checks pass, with Claude mocked. **Not yet
+tried by a person.**
 
 ## Who has and has not tried it
 
@@ -99,7 +111,7 @@ real Claude app**: the private preview has it for the owner to try.
 | The author, with Claude, building it | Yes |
 | The automated playtest, with a mock of Claude | Yes |
 | Fresh reviewer agents, with a mock of Claude | Yes, eight loops, the last two blind against the version before |
-| Version 4 in the real Claude artifact runtime | **No.** A private preview artifact is published for the owner to try |
+| Version 4 in the real Claude artifact runtime | **Yes, by the owner**, in a private preview, up to the Check again fix. Version 4.4 **not yet** |
 | The chat version (`base/SKILL.md`), with a session playing the chatbot | Yes, two games on 18 November 2026: every score and both challenge links were right. [Game 1](2026-11-18-chat-play-1/transcript.md) · [game 2](2026-11-18-chat-play-2/transcript.md) |
 | The chat version in ChatGPT itself | **No.** The test sessions could not open web links, so they were given the day's file directly |
 | Users, in the Claude artifact or the web copy | **In progress** since 18 November 2026. No results yet |

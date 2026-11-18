@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" role="img" aria-labelledby="t d" font-family="ui-rounded,'SF Pro Rounded',Nunito,'Segoe UI',system-ui,sans-serif">
 <title id="t">How Rare Find plays: the rarer the right answer, the more it scores</title>
-<desc id="d">The prompt Name a bird with a timer ring. Answers appear in turn with their points: Eagle, the crowd pick, 25. Flamingo, 9th most popular, 38. Hummingbird, right but not in the top ten, a Good find, 80. Shoebill, a rare right answer, a Gem, 100. A bar grows with the points each time. Underneath: the rarer the right answer, the more it scores.</desc>
+<desc id="d">The prompt Name a bird with a timer ring. Answers appear in turn with their points: Eagle, the crowd pick, 25. Flamingo, 9th most popular, 38. Cassowary, right but not in the top ten, a Good find, 85. Shoebill, a rare right answer, a Gem, 100. A bar grows with the points each time. Underneath: the rarer the right answer, the more it scores.</desc>
 <style>
 .s{opacity:0;animation:show 12s infinite}
 .s2{animation-delay:3s}.s3{animation-delay:6s}.s4{animation-delay:9s}
@@ -31,9 +31,9 @@
   <g class="s s2"><text x="72" y="206" fill="#f5f2ff" font-size="30">Flamingo</text>
     <rect x="72" y="226" width="140" height="40" rx="12" fill="#3ccb7f"/><text x="142" y="253" text-anchor="middle" fill="#1a1530" font-size="18">Top ten</text>
     <text x="236" y="257" fill="#f5f2ff" font-size="34">38</text><text x="318" y="256" fill="#bdb6dc" font-size="16" font-weight="600">#9: rarer, so more</text></g>
-  <g class="s s3"><text x="72" y="206" fill="#f5f2ff" font-size="30">Hummingbird</text>
+  <g class="s s3"><text x="72" y="206" fill="#f5f2ff" font-size="30">Cassowary</text>
     <rect x="72" y="226" width="140" height="40" rx="12" fill="#b48aff"/><text x="142" y="253" text-anchor="middle" fill="#1a1530" font-size="18">Good find</text>
-    <text x="236" y="257" fill="#f5f2ff" font-size="34">80</text><text x="318" y="256" fill="#bdb6dc" font-size="16" font-weight="600">right, beyond the top ten</text></g>
+    <text x="236" y="257" fill="#f5f2ff" font-size="34">85</text><text x="318" y="256" fill="#bdb6dc" font-size="16" font-weight="600">right, beyond the top ten</text></g>
   <g class="s s4"><text x="72" y="206" fill="#f5f2ff" font-size="30">Shoebill</text>
     <rect x="72" y="226" width="140" height="40" rx="12" fill="#ffc93c"/><text x="142" y="253" text-anchor="middle" fill="#1a1530" font-size="18">Gem</text>
     <text x="236" y="257" fill="#f5f2ff" font-size="34">100</text><text x="318" y="256" fill="#bdb6dc" font-size="16" font-weight="600">rare and right</text></g>
@@ -42,7 +42,7 @@
 <rect x="520" y="200" width="200" height="22" rx="11" fill="#322a5c"/>
 <rect class="bar b1" x="520" y="200" width="50" height="22" rx="11" fill="#a3a9bf"/>
 <rect class="bar b2" x="520" y="200" width="76" height="22" rx="11" fill="#3ccb7f"/>
-<rect class="bar b3" x="520" y="200" width="160" height="22" rx="11" fill="#b48aff"/>
+<rect class="bar b3" x="520" y="200" width="170" height="22" rx="11" fill="#b48aff"/>
 <rect class="bar b4" x="520" y="200" width="200" height="22" rx="11" fill="#ffc93c"/>
 <text x="520" y="250" fill="#bdb6dc" font-size="18" font-weight="700">0</text><text x="720" y="250" fill="#bdb6dc" font-size="18" font-weight="700" text-anchor="end">100</text>
 <text x="620" y="288" fill="#bdb6dc" font-size="20" font-weight="700" text-anchor="middle">points for this answer</text>

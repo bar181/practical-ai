@@ -20,8 +20,9 @@ Edit `_build/`, never `base/game.html` (generated).
 | The game's look | `python3 make_store_images.py` (README screens) and `python3 explainer/build_explainer.py` |
 | Packs, calendar or dealing | `python3 make_chat_days.py` regenerates the chat answer files (120 days from the calendar's start) |
 
-Each pack: 10 ranked answers, 5 Gems, 20 or more other right answers, a few tempting wrong ones,
-and `top`, the 10th-place points (40 to 60, higher when few answers exist).
+Each pack: 10 ranked answers, 5 Gems, 20 or more other right answers (each with `r`, its rarity
+1 to 9, which sets its points from `top` + 10 up to 90), a few tempting wrong ones, and `top`, the
+10th-place points (40 to 60, higher when few answers exist). The daily game is 7 prompts.
 
 Before you finish: `python3 playtest.py /tmp/rf` passes every check, and the README status and
 check count are still true. For a bigger change, review with
@@ -34,8 +35,8 @@ check count are still true. For a bigger change, review with
 3. No quotes, lyrics, characters, logos, politics or religion.
 4. Hosts tease the answer, never the player.
 5. Listed answers never depend on the AI. The AI rules only on a 0, only when asked, may fix
-   spelling but not swap the answer, and never sees text that reads like an instruction. A second
-   opinion is allowed once. Nothing is approved without the AI saying yes: no "We allow it".
+   spelling but not swap the answer, and never sees text that reads like an instruction. Each answer
+   is checked once. Nothing is approved without the AI saying yes: no "We allow it".
 6. Gems stay hidden in the game. Only `base/examples/sample-pack.md` and the chat answer files list
    them, and a chatbot hosting the game never shows those files.
 7. GitHub runs no AI and no database. Keep it free to host.

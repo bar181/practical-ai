@@ -2,7 +2,7 @@
 
 # The built-in packs
 
-The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are Claude's estimate, written 17 November 2026, not survey data.** Other names and spellings are in brackets; the game also forgives typos.
+The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are Claude's estimate, written 17 November 2026, not survey data. The rarity of each Good find (r, 1 to 9) is Claude's estimate too, written 18 November 2026.** Other names and spellings are in brackets; the game also forgives typos.
 
 ## Name a fictional weapon
 
@@ -21,7 +21,15 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 38 | Batarang |
 | #10 | 40 | Captain America's shield (Cap's shield) |
 | Gem | 100 | The Kragle (Kragle); Noisy Cricket; Glamdring; Vorpal sword (vorpal blade); Gravity Gun |
-| Good find | 80 | Sting; Anduril (Flame of the West); Infinity Gauntlet; Portal gun; Buster Sword; Keyblade; Narsil; Proton pack; Lasso of Truth; Gram (Balmung); Stormbreaker; Sword of Gryffindor (Gryffindor's sword); BFG 9000 (BFG); Bat'leth (batleth); Hookshot; Needle; Longclaw; Hidden blade; Leviathan Axe; Energy sword; Shrink ray; Freeze ray; Wand (magic wand); Sword of Omens; Phaser rifle; Wolverine's claws (adamantium claws); Hammer of Grabthar; Plasma rifle; Death ray; Laser sword; Disintegrator ray (disintegrator); Web shooters; Spear of Destiny; Trident of Poseidon (Poseidon's trident); Diamond sword; Golden Gun; Trident; Neuralyzer; Valyrian steel sword (Valyrian steel) |
+| Good find | 90 | Hammer of Grabthar |
+| Good find | 85 | Gram (Balmung); Sword of Omens |
+| Good find | 80 | Bat'leth (batleth); Hookshot; Disintegrator ray (disintegrator); Spear of Destiny |
+| Good find | 75 | BFG 9000 (BFG); Leviathan Axe; Energy sword; Phaser rifle; Plasma rifle |
+| Good find | 70 | Narsil; Needle; Longclaw; Hidden blade; Trident; Valyrian steel sword (Valyrian steel) |
+| Good find | 65 | Sting; Buster Sword; Trident of Poseidon (Poseidon's trident); Diamond sword; Golden Gun; Neuralyzer |
+| Good find | 60 | Anduril (Flame of the West); Keyblade; Proton pack; Lasso of Truth; Wolverine's claws (adamantium claws); Web shooters |
+| Good find | 55 | Portal gun; Sword of Gryffindor (Gryffindor's sword); Shrink ray; Freeze ray; Death ray |
+| Good find | 50 | Infinity Gauntlet; Stormbreaker; Wand (magic wand); Laser sword |
 | Not accepted (examples) | 0 | Sonic screwdriver; Spoon; Magic carpet |
 
 ## Name a vegetable
@@ -41,7 +49,15 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 43 | Tomato |
 | #10 | 45 | Pepper (bell pepper, capsicum) |
 | Gem | 100 | Kohlrabi; Salsify; Romanesco; Celeriac (celery root); Fiddlehead (fiddlehead fern) |
-| Good find | 80 | Kale; Leek; Parsnip; Turnip; Okra; Artichoke; Asparagus; Bok choy (pak choi, bok choi); Swiss chard (chard); Radish; Cauliflower; Cabbage; Celery; Corn (sweetcorn, maize); Zucchini (courgette); Eggplant (aubergine); Beetroot (beet); Brussels sprout; Green bean (string bean); Garlic; Squash; Pumpkin; Rutabaga (swede); Jicama; Watercress; Arugula (rocket); Endive; Daikon; Sweet potato (yam); Mushroom; Bean (beans, broad bean); Lentil (lentils); Shallot; Spring onion (scallion, green onion); Butternut squash; Cassava (yuca); Taro; Lotus root; Bamboo shoot; Bean sprouts; Snow peas (mangetout); Sugar snap peas; Edamame; Chickpea (chickpeas); Collard greens (collards); Mustard greens; Fennel; Horseradish; Ginger; Chili (chilli, chili pepper); Jalapeno; Plantain; Napa cabbage (Chinese cabbage); Red cabbage; Water chestnut; Samphire; Sea kale; Nettle; Purslane |
+| Good find | 90 | Samphire; Sea kale; Purslane |
+| Good find | 86 | Taro; Lotus root; Bamboo shoot; Water chestnut; Nettle |
+| Good find | 81 | Jicama; Watercress; Endive; Daikon; Cassava (yuca); Mustard greens; Horseradish; Plantain; Napa cabbage (Chinese cabbage) |
+| Good find | 77 | Rutabaga (swede); Lentil (lentils); Bean sprouts; Sugar snap peas; Edamame; Chickpea (chickpeas); Collard greens (collards); Fennel; Ginger; Red cabbage |
+| Good find | 72 | Okra; Bok choy (pak choi, bok choi); Swiss chard (chard); Arugula (rocket); Shallot; Snow peas (mangetout); Chili (chilli, chili pepper); Jalapeno |
+| Good find | 68 | Leek; Parsnip; Turnip; Artichoke; Spring onion (scallion, green onion); Butternut squash |
+| Good find | 64 | Radish; Eggplant (aubergine); Beetroot (beet); Squash; Pumpkin; Bean (beans, broad bean) |
+| Good find | 59 | Kale; Asparagus; Zucchini (courgette); Brussels sprout; Garlic; Mushroom |
+| Good find | 55 | Cauliflower; Cabbage; Celery; Corn (sweetcorn, maize); Green bean (string bean); Sweet potato (yam) |
 | Not accepted (examples) | 0 | Apple; Banana; Rice; Apples; Orange; Grape; Strawberry |
 
 ## Name something you find in an office
@@ -61,7 +77,15 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 38 | Coffee machine (coffee maker) |
 | #10 | 40 | Whiteboard |
 | Gem | 100 | Label maker; Paper guillotine (guillotine, paper cutter); Franking machine (postage meter); Rolodex; Letter opener |
-| Good find | 80 | Hole punch (hole puncher); Filing cabinet (file cabinet); Sticky notes (sticky note, post-it, post-it notes); Paper clip (paperclip); Shredder (paper shredder); Water cooler; Projector; Scanner; Calendar; Notice board (bulletin board, corkboard); Monitor; Keyboard; Mouse; Pencil; Highlighter; Tape dispenser (sticky tape, tape); Rubber band (elastic band); Clipboard; Calculator; Envelope; Office plant (plant); Coat rack; Microwave; Fridge (refrigerator); Kettle; Fax machine (fax); Photocopier (copier, copy machine); Binder (ring binder); Desk lamp (lamp); Bin (trash can, wastebasket, garbage can); Staple remover; Headphones (headset); Toilet (bathroom, restroom); Cubicle; Mug (coffee mug); Water fountain; Printer paper (copy paper); Stapler refill (staples); Lanyard; Badge (ID badge); Notepad (notebook); Folder (file folder); Sofa (couch); Meeting room; Laptop stand; Mouse mat (mouse pad); Webcam; Charger; Cable; Coffee; Tea; Desk drawer (drawer); Scissors; Clock; Ruler; Marker (marker pen, sharpie); Boss (manager); Coworker (colleague, co-worker); Conference room (boardroom); Vending machine; Fire extinguisher; Elevator (lift); Window; Stationery cupboard (supply closet); Eraser (rubber); Pencil sharpener; Laminator |
+| Good find | 90 | Stapler refill (staples) |
+| Good find | 85 | Laptop stand; Laminator |
+| Good find | 80 | Lanyard; Badge (ID badge); Sofa (couch); Mouse mat (mouse pad); Webcam; Charger; Cable; Fire extinguisher; Elevator (lift); Stationery cupboard (supply closet); Pencil sharpener |
+| Good find | 75 | Coat rack; Staple remover; Headphones (headset); Toilet (bathroom, restroom); Water fountain; Printer paper (copy paper); Tea; Desk drawer (drawer); Ruler; Vending machine; Window; Eraser (rubber) |
+| Good find | 70 | Rubber band (elastic band); Clipboard; Envelope; Office plant (plant); Microwave; Fridge (refrigerator); Kettle; Desk lamp (lamp); Bin (trash can, wastebasket, garbage can); Cubicle; Meeting room; Marker (marker pen, sharpie); Coworker (colleague, co-worker); Conference room (boardroom) |
+| Good find | 65 | Notice board (bulletin board, corkboard); Highlighter; Tape dispenser (sticky tape, tape); Fax machine (fax); Binder (ring binder); Mug (coffee mug); Notepad (notebook); Coffee; Boss (manager) |
+| Good find | 60 | Hole punch (hole puncher); Shredder (paper shredder); Projector; Calculator; Folder (file folder); Scissors; Clock |
+| Good find | 55 | Water cooler; Scanner; Calendar; Mouse; Pencil; Photocopier (copier, copy machine) |
+| Good find | 50 | Filing cabinet (file cabinet); Sticky notes (sticky note, post-it, post-it notes); Paper clip (paperclip); Monitor; Keyboard |
 | Not accepted (examples) | 0 | Bathtub; Bed; Lawnmower; Spanner; Painter; Pointer; Protector; Tractor |
 
 ## Name a country in Africa
@@ -81,7 +105,15 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 56 | Tanzania |
 | #10 | 60 | Algeria |
 | Gem | 100 | Comoros; Sao Tome and Principe (São Tomé and Príncipe, Sao Tome); Eswatini (Swaziland); Djibouti; Equatorial Guinea |
-| Good find | 80 | Uganda; Rwanda; Libya; Tunisia; Sudan; South Sudan; Somalia; Zimbabwe; Zambia; Angola; Namibia; Botswana; Mozambique; Malawi; Senegal; Mali; Niger; Chad; Cameroon; Ivory Coast (Côte d'Ivoire, Cote d'Ivoire); Democratic Republic of the Congo (DRC, DR Congo, Congo-Kinshasa); Republic of the Congo (Congo, Congo-Brazzaville); Gabon; Liberia; Sierra Leone; Guinea; Guinea-Bissau; Burkina Faso; Benin; Togo; Gambia (The Gambia); Mauritania; Eritrea; Burundi; Lesotho; Cape Verde (Cabo Verde); Mauritius; Seychelles; Central African Republic |
+| Good find | 90 | Guinea-Bissau |
+| Good find | 88 | Cape Verde (Cabo Verde) |
+| Good find | 85 | Guinea; Benin; Mauritania; Burundi; Central African Republic |
+| Good find | 82 | Republic of the Congo (Congo, Congo-Brazzaville); Gabon; Burkina Faso; Togo; Lesotho |
+| Good find | 80 | South Sudan; Malawi; Gambia (The Gambia); Eritrea; Mauritius; Seychelles |
+| Good find | 78 | Mali; Niger; Chad; Democratic Republic of the Congo (DRC, DR Congo, Congo-Kinshasa); Liberia; Sierra Leone |
+| Good find | 75 | Zambia; Angola; Botswana; Mozambique; Cameroon; Ivory Coast (Côte d'Ivoire, Cote d'Ivoire) |
+| Good find | 72 | Rwanda; Tunisia; Namibia; Senegal |
+| Good find | 70 | Uganda; Libya; Sudan; Somalia; Zimbabwe |
 | Not accepted (examples) | 0 | Jamaica; Brazil; Dubai; Siberia; Sedan; Liberty; Nigel |
 
 ## Name a breakfast food
@@ -101,7 +133,15 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 43 | Yogurt (yoghurt) |
 | #10 | 45 | Sausage (sausages) |
 | Gem | 100 | Shakshuka; Congee (jook, rice porridge); Kedgeree; Chilaquiles; Kippers (kipper) |
-| Good find | 80 | Bagel; Croissant; Muffin; Granola; Hash browns (hash brown); Omelette (omelet); Eggs Benedict; Smoothie; Fruit; Grits; Biscuits and gravy; Muesli; Avocado toast; Breakfast burrito; Crepes (crepe); Doughnut (donut); Danish pastry (danish); English muffin; Black pudding; Baked beans (beans); Huevos rancheros; Dosa; Idli; Natto; Pain au chocolat; Orange juice (juice, OJ); Fruit salad; Bread; Hash (corned beef hash); Cinnamon roll (cinnamon bun); Frittata; Quiche; Avocado on toast; Waffle fries; Pop-Tarts (pop tart); Toad in the hole; Bubble and squeak; Full English (full English breakfast, fry-up); Beans on toast; Eggs and soldiers (soldiers); Kippers on toast; Porridge oats; Overnight oats; Acai bowl (açaí bowl); Breakfast sandwich (bacon sandwich, bacon butty); Croque madame; Churros; Miso soup; Rice; Tamagoyaki; Arepas (arepa); Pastry; Cheerios; Corn flakes (cornflakes); Scones (scone); Ham; Poached egg (poached eggs); Boiled egg (boiled eggs); Peameal bacon (back bacon); Cream of wheat; Frosted Flakes; Rice Krispies; Shredded wheat; Bran flakes |
+| Good find | 90 | Natto |
+| Good find | 86 | Idli; Tamagoyaki |
+| Good find | 81 | Dosa; Waffle fries; Toad in the hole; Bubble and squeak; Kippers on toast; Arepas (arepa) |
+| Good find | 77 | Hash (corned beef hash); Eggs and soldiers (soldiers); Croque madame; Churros; Miso soup; Rice; Peameal bacon (back bacon) |
+| Good find | 72 | Danish pastry (danish); Black pudding; Huevos rancheros; Pain au chocolat; Frittata; Quiche; Avocado on toast; Overnight oats; Acai bowl (açaí bowl); Pastry; Scones (scone); Cream of wheat; Shredded wheat; Bran flakes |
+| Good find | 68 | Muesli; Crepes (crepe); Baked beans (beans); Fruit salad; Bread; Cinnamon roll (cinnamon bun); Pop-Tarts (pop tart); Beans on toast; Ham; Poached egg (poached eggs); Boiled egg (boiled eggs); Frosted Flakes; Rice Krispies |
+| Good find | 64 | Grits; Biscuits and gravy; Avocado toast; Breakfast burrito; English muffin; Full English (full English breakfast, fry-up); Porridge oats; Breakfast sandwich (bacon sandwich, bacon butty); Cheerios; Corn flakes (cornflakes) |
+| Good find | 59 | Granola; Eggs Benedict; Smoothie; Fruit; Doughnut (donut); Orange juice (juice, OJ) |
+| Good find | 55 | Bagel; Croissant; Muffin; Hash browns (hash brown); Omelette (omelet) |
 | Not accepted (examples) | 0 | Lasagne; Sushi; Steak pie; Pizza; Spaghetti |
 
 ## Name an animated film
@@ -121,7 +161,15 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 38 | Aladdin |
 | #10 | 40 | The Incredibles (Incredibles) |
 | Gem | 100 | The Triplets of Belleville (Triplets of Belleville); Song of the Sea; Persepolis; Mary and Max; The Secret of Kells (Secret of Kells) |
-| Good find | 80 | Spirited Away; My Neighbor Totoro (Totoro, My Neighbour Totoro); Zootopia (Zootropolis); Inside Out; Ratatouille; WALL-E (Wall E); Monsters, Inc. (Monsters Inc); Despicable Me; Kung Fu Panda; Tangled; Beauty and the Beast; The Little Mermaid (Little Mermaid); Snow White and the Seven Dwarfs (Snow White); Bambi; Cinderella; The Iron Giant (Iron Giant); Spider-Man: Into the Spider-Verse (Into the Spider-Verse, Spider-Verse); How to Train Your Dragon; Ice Age; Cars; Encanto; Coraline; Fantastic Mr. Fox (Fantastic Mr Fox); Chicken Run; The Lego Movie (Lego Movie); Akira; Princess Mononoke; Howl's Moving Castle; Kiki's Delivery Service; The Nightmare Before Christmas (Nightmare Before Christmas); Pinocchio; Dumbo; Mulan; Hercules; Tarzan; Brave; Soul; Luca; Megamind; Madagascar; Lilo and Stitch (Lilo & Stitch); Sleeping Beauty; Peter Pan; The Jungle Book (Jungle Book); Big Hero 6; Wreck-It Ralph (Wreck it Ralph); Minions; The Little Prince; Bolt; Turning Red; Elemental; Wish; Lightyear; Sing; The Secret Life of Pets (Secret Life of Pets); The Croods (Croods); Trolls; Rio; Happy Feet; Shark Tale; Over the Hedge; Ponyo; Grave of the Fireflies; Wallace and Gromit (Wallace & Gromit); Robots; Flushed Away; Bee Movie; The Emperor's New Groove (Emperor's New Groove); Lady and the Tramp; 101 Dalmatians (One Hundred and One Dalmatians); The Princess and the Frog (Princess and the Frog); Treasure Planet; Atlantis: The Lost Empire (Atlantis); Anastasia; The Prince of Egypt (Prince of Egypt); Spirit: Stallion of the Cimarron (Spirit); The Land Before Time (Land Before Time); An American Tail (American Tail); All Dogs Go to Heaven; The Bad Guys; Puss in Boots; Kubo and the Two Strings; ParaNorman; Klaus; The Wild Robot (Wild Robot); Inside Out 2; A Bug's Life (A Bugs Life); Pocahontas; Fantasia; Finding Dory; Monsters University; The Polar Express (Polar Express); The Super Mario Bros. Movie (Super Mario Bros Movie, Mario movie); Shrek the Third; Shrek 2; Toy Story 2; Toy Story 3; Toy Story 4; Frozen II (Frozen 2); Moana 2; Cars 2; Incredibles 2; Despicable Me 2; Kung Fu Panda 2; How to Train Your Dragon 2; Zootopia 2 |
+| Good find | 90 | The Little Prince |
+| Good find | 85 | Akira; Grave of the Fireflies; Kubo and the Two Strings; ParaNorman; Klaus |
+| Good find | 80 | Kiki's Delivery Service; Treasure Planet; Atlantis: The Lost Empire (Atlantis); Spirit: Stallion of the Cimarron (Spirit); An American Tail (American Tail); All Dogs Go to Heaven; The Bad Guys; The Wild Robot (Wild Robot) |
+| Good find | 75 | The Iron Giant (Iron Giant); Fantastic Mr. Fox (Fantastic Mr Fox); Princess Mononoke; Howl's Moving Castle; Elemental; Wish; Lightyear; Over the Hedge; Ponyo; Robots; Flushed Away; Cars 2; Kung Fu Panda 2; How to Train Your Dragon 2; Zootopia 2 |
+| Good find | 70 | Megamind; Bolt; The Secret Life of Pets (Secret Life of Pets); The Croods (Croods); Trolls; Rio; Happy Feet; Shark Tale; Wallace and Gromit (Wallace & Gromit); Bee Movie; The Emperor's New Groove (Emperor's New Groove); The Princess and the Frog (Princess and the Frog); Anastasia; The Prince of Egypt (Prince of Egypt); The Land Before Time (Land Before Time); Puss in Boots; Shrek the Third; Incredibles 2; Despicable Me 2 |
+| Good find | 65 | My Neighbor Totoro (Totoro, My Neighbour Totoro); Spider-Man: Into the Spider-Verse (Into the Spider-Verse, Spider-Verse); Coraline; Chicken Run; The Lego Movie (Lego Movie); Soul; Luca; Wreck-It Ralph (Wreck it Ralph); Turning Red; Sing; Inside Out 2; A Bug's Life (A Bugs Life); Fantasia; Monsters University; The Polar Express (Polar Express); The Super Mario Bros. Movie (Super Mario Bros Movie, Mario movie); Toy Story 3; Toy Story 4; Frozen II (Frozen 2); Moana 2 |
+| Good find | 60 | Spirited Away; How to Train Your Dragon; The Nightmare Before Christmas (Nightmare Before Christmas); Pinocchio; Dumbo; Hercules; Tarzan; Brave; Sleeping Beauty; Peter Pan; Big Hero 6; Lady and the Tramp; 101 Dalmatians (One Hundred and One Dalmatians); Pocahontas; Finding Dory; Shrek 2; Toy Story 2 |
+| Good find | 55 | Zootopia (Zootropolis); WALL-E (Wall E); Kung Fu Panda; Tangled; Bambi; Ice Age; Encanto; Mulan; Madagascar; Lilo and Stitch (Lilo & Stitch); The Jungle Book (Jungle Book); Minions |
+| Good find | 50 | Inside Out; Ratatouille; Monsters, Inc. (Monsters Inc); Despicable Me; Beauty and the Beast; The Little Mermaid (Little Mermaid); Snow White and the Seven Dwarfs (Snow White); Cinderella; Cars |
 | Not accepted (examples) | 0 | Jurassic Park; Titanic; Star Wars; The Matrix; Avatar; Barbie |
 
 ## Name a musical instrument
@@ -141,7 +189,15 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 43 | Clarinet |
 | #10 | 45 | Harp |
 | Gem | 100 | Theremin; Hurdy-gurdy; Didgeridoo (didjeridu); Ocarina; Nyckelharpa |
-| Good find | 80 | Bass guitar (bass); Ukulele (uke); Trombone; Tuba; Oboe; Bassoon; French horn (horn); Banjo; Mandolin; Harmonica; Accordion; Xylophone; Bagpipes (bagpipe); Viola; Double bass (upright bass, contrabass); Organ; Keyboard; Tambourine; Triangle; Cymbals (cymbal); Sitar; Harpsichord; Recorder; Glockenspiel; Marimba; Kazoo; Steel drum (steelpan, steel pan); Bongos (bongo); Tabla; Koto; Erhu; Lute; Piccolo; Euphonium; Cowbell; Synthesizer (synth); Maracas (maraca); Castanets; Timpani (kettle drum); Bugle; Gong; Bell (bells); Chimes (wind chimes); Pan flute (pan pipes, panpipes); Balalaika; Bouzouki; Djembe; Cajon; Melodica; Zither; Dulcimer; Autoharp; Hang drum (handpan); Vibraphone; Celesta; Washboard; Spoons; Lyre; Snare drum; Tin whistle (penny whistle); Pipe organ; Congas (conga); Bass drum; Hammond organ; Clavichord; Sousaphone; Flugelhorn; Cornet |
+| Good find | 90 | Hang drum (handpan) |
+| Good find | 86 | Autoharp; Celesta |
+| Good find | 81 | Koto; Erhu; Cajon; Zither; Dulcimer; Hammond organ; Clavichord |
+| Good find | 77 | Chimes (wind chimes); Balalaika; Bouzouki; Djembe; Melodica; Vibraphone; Washboard; Spoons; Sousaphone; Flugelhorn; Cornet |
+| Good find | 72 | Tabla; Lute; Euphonium; Cowbell; Castanets; Gong; Bell (bells); Pan flute (pan pipes, panpipes); Lyre; Tin whistle (penny whistle); Pipe organ; Congas (conga); Bass drum |
+| Good find | 68 | Sitar; Glockenspiel; Marimba; Steel drum (steelpan, steel pan); Bongos (bongo); Maracas (maraca); Timpani (kettle drum); Bugle; Snare drum |
+| Good find | 64 | Bassoon; French horn (horn); Mandolin; Triangle; Cymbals (cymbal); Harpsichord; Kazoo; Piccolo; Synthesizer (synth) |
+| Good find | 59 | Oboe; Banjo; Accordion; Xylophone; Bagpipes (bagpipe); Viola; Double bass (upright bass, contrabass); Tambourine; Recorder |
+| Good find | 55 | Bass guitar (bass); Ukulele (uke); Trombone; Tuba; Harmonica; Organ; Keyboard |
 | Not accepted (examples) | 0 | Microphone; Speaker; Metronome |
 
 ## Name a board game
@@ -161,7 +217,15 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 38 | Battleship |
 | #10 | 40 | Snakes and Ladders (Chutes and Ladders) |
 | Gem | 100 | Hive; Tigris and Euphrates (Tigris & Euphrates); Agricola; Azul; Twilight Struggle |
-| Good find | 80 | Go; Backgammon; Ticket to Ride; Pandemic; Carcassonne; Mancala; Connect Four (Connect 4); Sorry! (Sorry); Candy Land (Candyland); Operation; The Game of Life (Game of Life, Life); Guess Who? (Guess Who); Stratego; Othello (Reversi); Mahjong (mah-jong, mahjongg); Ludo (Parcheesi, Pachisi); Chinese checkers; Codenames; Pictionary; Mouse Trap; Wingspan; Splendor; Terraforming Mars; Gloomhaven; Sequence; Scotland Yard; Diplomacy; Shogi; Xiangqi (Chinese chess); Kingdomino; Boggle; Mastermind; Trouble; Kerplunk; Hungry Hungry Hippos; Ticket to Ride Europe; Cranium; Blokus; Qwirkle; Patchwork; Root; Everdell; Cascadia; Concordia; Puerto Rico; Power Grid; Small World; King of Tokyo; Dixit; Labyrinth; Hare and Tortoise; Nine Men's Morris; Fox and Geese; Halma; Senet; Ur (Royal Game of Ur) |
+| Good find | 90 | Ur (Royal Game of Ur) |
+| Good find | 85 | Hare and Tortoise; Fox and Geese |
+| Good find | 80 | Xiangqi (Chinese chess); Concordia; Puerto Rico; Halma; Senet |
+| Good find | 75 | Shogi; Kingdomino; Patchwork; Root; Everdell; Cascadia; Power Grid; Small World; Nine Men's Morris |
+| Good find | 70 | Terraforming Mars; Gloomhaven; Diplomacy; Ticket to Ride Europe; Blokus; Qwirkle; King of Tokyo; Dixit |
+| Good find | 65 | Wingspan; Splendor; Sequence; Scotland Yard; Cranium; Labyrinth |
+| Good find | 60 | Pandemic; Carcassonne; Stratego; Othello (Reversi); Mahjong (mah-jong, mahjongg); Codenames; Mastermind; Trouble; Kerplunk; Hungry Hungry Hippos |
+| Good find | 55 | Go; Ticket to Ride; Mancala; Ludo (Parcheesi, Pachisi); Chinese checkers; Pictionary; Mouse Trap; Boggle |
+| Good find | 50 | Backgammon; Connect Four (Connect 4); Sorry! (Sorry); Candy Land (Candyland); Operation; The Game of Life (Game of Life, Life); Guess Who? (Guess Who) |
 | Not accepted (examples) | 0 | Poker; Twister; Tetris; Solitaire; Charades; Hide and seek |
 
 ## Name a superhero
@@ -181,7 +245,15 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 38 | Black Panther |
 | #10 | 40 | Wolverine |
 | Gem | 100 | Squirrel Girl; Booster Gold; Ambush Bug; Arm-Fall-Off-Boy; The Tick (Tick) |
-| Good find | 80 | The Flash (Flash); Aquaman; Green Lantern; Black Widow; Hawkeye; Captain Marvel; Ms. Marvel (Ms Marvel, Kamala Khan); Doctor Strange (Dr Strange, Dr. Strange); Ant-Man (Antman); Deadpool; Storm; Cyclops; Daredevil; Green Arrow; Supergirl; Batgirl; Robin; Nightwing; Cyborg; Shazam; Silver Surfer; Vision; Scarlet Witch; Falcon; Moon Knight; Luke Cage; She-Hulk; Hellboy; Mr. Incredible (Mr Incredible); Static (Static Shock); Blue Beetle; Martian Manhunter; Gambit; Rogue; Jean Grey; Mister Fantastic (Mr. Fantastic, Mr Fantastic); Human Torch; Invisible Woman; The Thing (Thing); Groot; Rocket Raccoon (Rocket); Star-Lord (Starlord); Miles Morales; Batwoman; Iron Fist; Jessica Jones; Wasp (the wasp); Nova; Captain Britain; Valkyrie; Mighty Mouse; Underdog; Plastic Man; Power Girl; Zatanna; Raven; Beast Boy; Starfire; Kid Flash; Hawkman; Hawkgirl; Black Canary; Huntress; Firestorm; The Atom (Atom); Captain Atom; Elastigirl (Mrs. Incredible); Frozone; Dash; Violet; Bucky (Winter Soldier); War Machine; Spider-Gwen (Ghost-Spider); Venom; Professor X (Charles Xavier); Colossus; Nightcrawler; Kitty Pryde (Shadowcat); Psylocke; Iceman; Angel; Havok; Dazzler; Black Bolt; Medusa; Quicksilver; Blade; Ghost Rider; The Punisher (Punisher); Spider-Woman (Spider Woman); Gamora; Drax; Mantis; Nebula; Okoye; Shuri |
+| Good find | 90 | Captain Atom |
+| Good find | 85 | Havok |
+| Good find | 80 | Nova; Captain Britain; Huntress; Firestorm; The Atom (Atom); Psylocke; Dazzler; Black Bolt; Medusa |
+| Good find | 75 | Static (Static Shock); Blue Beetle; Valkyrie; Plastic Man; Power Girl; Zatanna; Kid Flash; Hawkman; Hawkgirl; Black Canary; Dash; Violet; Kitty Pryde (Shadowcat); Angel; Mantis; Nebula |
+| Good find | 70 | Martian Manhunter; Batwoman; Iron Fist; Jessica Jones; Mighty Mouse; Underdog; Raven; Beast Boy; Starfire; Frozone; Bucky (Winter Soldier); Spider-Gwen (Ghost-Spider); Colossus; Nightcrawler; Iceman; Spider-Woman (Spider Woman); Drax; Okoye |
+| Good find | 65 | Ms. Marvel (Ms Marvel, Kamala Khan); Nightwing; Cyborg; Moon Knight; Luke Cage; She-Hulk; Gambit; Rocket Raccoon (Rocket); Wasp (the wasp); Elastigirl (Mrs. Incredible); War Machine; Professor X (Charles Xavier); Quicksilver; Blade; Ghost Rider; The Punisher (Punisher); Gamora; Shuri |
+| Good find | 60 | Green Arrow; Shazam; Silver Surfer; Vision; Falcon; Hellboy; Mr. Incredible (Mr Incredible); Rogue; Jean Grey; Mister Fantastic (Mr. Fantastic, Mr Fantastic); Human Torch; Invisible Woman; The Thing (Thing); Groot; Star-Lord (Starlord); Miles Morales; Venom |
+| Good find | 55 | Hawkeye; Captain Marvel; Ant-Man (Antman); Storm; Cyclops; Daredevil; Supergirl; Batgirl; Scarlet Witch |
+| Good find | 50 | The Flash (Flash); Aquaman; Green Lantern; Black Widow; Doctor Strange (Dr Strange, Dr. Strange); Deadpool; Robin |
 | Not accepted (examples) | 0 | Joker; Darth Vader; Sherlock Holmes; Catwoman; Lex Luthor; Thanos; Magneto |
 
 ## Name a dog breed
@@ -201,7 +273,15 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 38 | Dachshund (sausage dog, wiener dog) |
 | #10 | 40 | Rottweiler (rottie) |
 | Gem | 100 | Xoloitzcuintli (Xolo, Mexican hairless); Lagotto Romagnolo (Lagotto); Bergamasco; Mudi; Otterhound |
-| Good find | 80 | Boxer; Pug; Shih Tzu; Border Collie; Great Dane; Dalmatian; Corgi (Welsh Corgi, Pembroke Welsh Corgi); Doberman (Dobermann, Doberman Pinscher); Yorkshire Terrier (Yorkie); French Bulldog (Frenchie); Cocker Spaniel; Pomeranian; Saint Bernard (St Bernard, St. Bernard); Greyhound; Whippet; Schnauzer; Bernese Mountain Dog; Australian Shepherd (Aussie); Shiba Inu (Shiba); Akita; Basset Hound; Bloodhound; Maltese; Newfoundland (newfie); Samoyed; Weimaraner; Vizsla; Jack Russell Terrier (Jack Russell); Cavalier King Charles Spaniel (Cavalier); Bichon Frise (bichon); Afghan Hound; Collie (Rough Collie); Chow Chow; Basenji; Pit bull (pitbull, American Pit Bull Terrier); Staffordshire Bull Terrier (Staffy); Labradoodle; Cockapoo; Mastiff; Boston Terrier; Old English Sheepdog (sheepdog); Goldendoodle; Cavapoo; Cavachon; Puggle; Bull Terrier; Irish Setter (red setter); English Setter; Springer Spaniel; Pointer; Great Pyrenees; Malamute (Alaskan Malamute); Shar Pei; Lhasa Apso; Pekingese; Papillon; Havanese; Bearded Collie; Scottish Terrier (Scottie); West Highland Terrier (Westie); Airedale Terrier (Airedale); Irish Wolfhound; Saluki; Rhodesian Ridgeback; Leonberger; Keeshond; Norwegian Elkhound; Dogue de Bordeaux; Cane Corso; Italian Greyhound |
+| Good find | 90 | Keeshond |
+| Good find | 85 | Norwegian Elkhound |
+| Good find | 80 | Cavachon; Saluki; Leonberger; Dogue de Bordeaux |
+| Good find | 75 | Vizsla; Basenji; Puggle; English Setter; Papillon; Havanese; Bearded Collie; Airedale Terrier (Airedale); Rhodesian Ridgeback; Italian Greyhound |
+| Good find | 70 | Weimaraner; Afghan Hound; Chow Chow; Old English Sheepdog (sheepdog); Cavapoo; Irish Setter (red setter); Pointer; Great Pyrenees; Shar Pei; Lhasa Apso; Pekingese; Scottish Terrier (Scottie); West Highland Terrier (Westie); Irish Wolfhound; Cane Corso |
+| Good find | 65 | Whippet; Shiba Inu (Shiba); Akita; Newfoundland (newfie); Samoyed; Cavalier King Charles Spaniel (Cavalier); Bichon Frise (bichon); Staffordshire Bull Terrier (Staffy); Mastiff; Boston Terrier; Bull Terrier; Springer Spaniel; Malamute (Alaskan Malamute) |
+| Good find | 60 | Greyhound; Schnauzer; Bernese Mountain Dog; Australian Shepherd (Aussie); Basset Hound; Bloodhound; Maltese; Jack Russell Terrier (Jack Russell); Collie (Rough Collie); Cockapoo; Goldendoodle |
+| Good find | 55 | Corgi (Welsh Corgi, Pembroke Welsh Corgi); Doberman (Dobermann, Doberman Pinscher); Yorkshire Terrier (Yorkie); Cocker Spaniel; Pomeranian; Saint Bernard (St Bernard, St. Bernard); Pit bull (pitbull, American Pit Bull Terrier); Labradoodle |
+| Good find | 50 | Boxer; Pug; Shih Tzu; Border Collie; Great Dane; Dalmatian; French Bulldog (Frenchie) |
 | Not accepted (examples) | 0 | Persian; Siamese; Pony; Maine Coon; Wolf; Fox |
 
 ## Name a fruit
@@ -221,7 +301,15 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 43 | Peach |
 | #10 | 45 | Pear |
 | Gem | 100 | Durian; Rambutan; Mangosteen; Salak (snake fruit); Cherimoya (custard apple) |
-| Good find | 80 | Cherry; Blueberry; Raspberry; Blackberry; Kiwi (kiwifruit); Lemon; Lime; Grapefruit; Plum; Apricot; Nectarine; Pomegranate; Papaya; Passion fruit; Coconut; Fig; Date; Lychee (litchi); Guava; Cantaloupe (melon); Honeydew; Cranberry; Gooseberry; Clementine (mandarin, tangerine); Avocado; Persimmon; Quince; Dragon fruit (pitaya); Star fruit (carambola); Jackfruit; Kumquat; Blackcurrant; Elderberry; Mulberry; Tomato |
+| Good find | 90 | Elderberry |
+| Good find | 86 | Quince |
+| Good find | 81 | Persimmon; Jackfruit; Kumquat; Blackcurrant; Mulberry |
+| Good find | 77 | Date; Lychee (litchi); Guava; Gooseberry; Star fruit (carambola) |
+| Good find | 72 | Passion fruit; Fig; Honeydew; Cranberry; Clementine (mandarin, tangerine); Dragon fruit (pitaya) |
+| Good find | 68 | Nectarine; Papaya; Avocado; Tomato |
+| Good find | 64 | Apricot; Pomegranate; Coconut; Cantaloupe (melon) |
+| Good find | 59 | Blackberry; Lime; Grapefruit; Plum |
+| Good find | 55 | Cherry; Blueberry; Raspberry; Kiwi (kiwifruit); Lemon |
 | Not accepted (examples) | 0 | Potato; Carrot; Peanut |
 
 ## Name a sport played with a ball
@@ -241,7 +329,15 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 43 | Rugby |
 | #10 | 45 | Table tennis (ping pong) |
 | Gem | 100 | Sepak takraw; Jai alai; Pelota; Roundnet (spikeball); Hurling |
-| Good find | 80 | Hockey (field hockey); Handball; Water polo; Netball; Squash; Badminton; Bowling (ten-pin bowling); Softball; Lacrosse; Polo; Dodgeball; Kickball; Pickleball; Racquetball; Snooker; Pool (billiards); Croquet; Bocce (boules, petanque); Gaelic football; Australian rules football (AFL, Aussie rules); Futsal; Beach volleyball; Wiffle ball; Rounders; Paddle tennis (padel); Korfball; Goalball; Footvolley; Teqball; Sitting volleyball |
+| Good find | 90 | Teqball |
+| Good find | 86 | Sitting volleyball |
+| Good find | 81 | Korfball; Goalball; Footvolley |
+| Good find | 77 | Wiffle ball; Rounders; Paddle tennis (padel) |
+| Good find | 72 | Croquet; Bocce (boules, petanque); Gaelic football; Australian rules football (AFL, Aussie rules); Futsal |
+| Good find | 68 | Polo; Racquetball; Snooker; Beach volleyball |
+| Good find | 64 | Water polo; Netball; Kickball; Pickleball; Pool (billiards) |
+| Good find | 59 | Handball; Squash; Lacrosse; Dodgeball |
+| Good find | 55 | Hockey (field hockey); Badminton; Bowling (ten-pin bowling); Softball |
 | Not accepted (examples) | 0 | Swimming; Boxing; Ice hockey |
 
 ## Name a dessert
@@ -261,7 +357,14 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 38 | Cupcake (cupcakes) |
 | #10 | 40 | Donut (doughnut) |
 | Gem | 100 | Pavlova; Baklava; Kulfi; Mochi; Clafoutis |
-| Good find | 80 | Creme brulee (crème brûlée); Panna cotta; Trifle; Sundae; Milkshake; Mousse (chocolate mousse); Pecan pie; Pumpkin pie; Key lime pie; Lemon tart; Eclair (eclairs); Macarons (macaron); Gelato; Sorbet; Fudge; Banana split; Sticky toffee pudding; Bread pudding; Rice pudding; Crumble (apple crumble); Cobbler; Profiteroles; Churros; Flan; Carrot cake; Red velvet cake; Black Forest cake (black forest gateau); Victoria sponge; Jelly (jello); Strudel (apple strudel); Cannoli; Gulab jamun; Tres leches; Eton mess; Banoffee pie; Frozen yogurt (froyo); Popsicle (ice lolly) |
+| Good find | 90 | Gulab jamun |
+| Good find | 85 | Eton mess |
+| Good find | 75 | Victoria sponge; Strudel (apple strudel); Banoffee pie |
+| Good find | 70 | Lemon tart; Sticky toffee pudding; Profiteroles; Black Forest cake (black forest gateau); Cannoli; Tres leches |
+| Good find | 65 | Panna cotta; Trifle; Bread pudding; Crumble (apple crumble); Cobbler; Churros; Flan; Jelly (jello); Popsicle (ice lolly) |
+| Good find | 60 | Eclair (eclairs); Macarons (macaron); Gelato; Sorbet; Rice pudding; Carrot cake; Red velvet cake; Frozen yogurt (froyo) |
+| Good find | 55 | Milkshake; Pecan pie; Key lime pie; Fudge; Banana split |
+| Good find | 50 | Creme brulee (crème brûlée); Sundae; Mousse (chocolate mousse); Pumpkin pie |
 | Not accepted (examples) | 0 | Lasagne; Pizza; Salad |
 
 ## Name a bird
@@ -281,7 +384,14 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 38 | Flamingo |
 | #10 | 40 | Hawk |
 | Gem | 100 | Hoatzin; Shoebill; Kakapo; Potoo; Lyrebird |
-| Good find | 80 | Blue jay (jay); Cardinal; Hummingbird; Swan; Duck; Goose; Ostrich; Emu; Peacock (peafowl); Seagull (gull); Pelican; Stork; Heron; Woodpecker; Kingfisher; Toucan; Falcon; Vulture; Raven; Magpie; Starling; Swallow; Finch; Canary; Budgie (budgerigar); Cockatoo; Macaw; Albatross; Puffin; Kiwi; Turkey; Chicken (hen, rooster); Quail; Pheasant; Wren; Blackbird; Nightingale; Osprey; Condor; Roadrunner; Cuckoo; Kookaburra; Loon; Crane; Ibis; Cassowary; Bald eagle |
+| Good find | 90 | Ibis |
+| Good find | 85 | Cassowary |
+| Good find | 75 | Nightingale; Osprey; Condor; Cuckoo; Kookaburra; Loon |
+| Good find | 70 | Kingfisher; Starling; Swallow; Budgie (budgerigar); Albatross; Quail; Pheasant; Wren; Roadrunner; Crane |
+| Good find | 65 | Stork; Heron; Magpie; Finch; Canary; Cockatoo; Macaw; Puffin; Kiwi |
+| Good find | 60 | Emu; Pelican; Woodpecker; Toucan; Falcon; Vulture; Blackbird |
+| Good find | 55 | Goose; Ostrich; Peacock (peafowl); Seagull (gull); Raven; Turkey; Chicken (hen, rooster) |
+| Good find | 50 | Blue jay (jay); Cardinal; Hummingbird; Swan; Duck; Bald eagle |
 | Not accepted (examples) | 0 | Bat; Butterfly; Penguin suit |
 
 ## Name a pizza topping
@@ -301,7 +411,15 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 52 | Green pepper (peppers, bell pepper) |
 | #10 | 55 | Bacon |
 | Gem | 100 | Anchovy (anchovies); Truffle; Fig (figs); Potato; Clams |
-| Good find | 80 | Spinach; Chicken; Jalapeno (jalapenos); Tomato (tomatoes); Basil; Garlic; Artichoke; Feta; Salami; Egg; Sweetcorn (corn); Tuna; Ground beef (beef); Meatballs; Prosciutto; Arugula (rocket); Sun-dried tomatoes; Goat cheese (goats cheese); Ricotta; Parmesan; Pesto; Chorizo; Shrimp (prawns); Barbecue chicken (bbq chicken); Red onion; Capers; Broccoli; Eggplant (aubergine); Zucchini (courgette); Hot honey (honey); Chili flakes (red pepper flakes); Gorgonzola; Nduja; Pulled pork; Smoked salmon; Kale |
+| Good find | 90 | Smoked salmon |
+| Good find | 87 | Kale |
+| Good find | 84 | Gorgonzola; Nduja |
+| Good find | 81 | Capers; Eggplant (aubergine); Hot honey (honey); Pulled pork |
+| Good find | 78 | Egg; Arugula (rocket); Sun-dried tomatoes; Goat cheese (goats cheese); Ricotta; Zucchini (courgette); Chili flakes (red pepper flakes) |
+| Good find | 74 | Prosciutto; Parmesan; Pesto; Chorizo; Shrimp (prawns); Broccoli |
+| Good find | 71 | Artichoke; Feta; Sweetcorn (corn); Tuna; Meatballs; Red onion |
+| Good find | 68 | Basil; Garlic; Salami; Ground beef (beef); Barbecue chicken (bbq chicken) |
+| Good find | 65 | Spinach; Chicken; Jalapeno (jalapenos); Tomato (tomatoes) |
 | Not accepted (examples) | 0 | Chocolate; Ice cream; Gravy |
 
 ## Name a city in Europe
@@ -321,7 +439,14 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 43 | Prague |
 | #10 | 45 | Athens |
 | Gem | 100 | Tallinn; Ljubljana; Valletta; Bratislava; Tbilisi |
-| Good find | 80 | Lisbon; Dublin; Brussels; Copenhagen; Stockholm; Oslo; Helsinki; Budapest; Warsaw; Krakow (Kraków); Munich; Milan; Venice; Florence; Naples; Seville; Valencia; Porto; Edinburgh; Manchester; Liverpool; Glasgow; Zurich; Geneva; Hamburg; Frankfurt; Lyon; Marseille; Nice; Bucharest; Sofia; Belgrade; Zagreb; Dubrovnik; Riga; Vilnius; Reykjavik; Istanbul; Kyiv (Kiev); Salzburg; Bruges; Rotterdam; Antwerp; Cologne; Birmingham; Bordeaux; Bologna; Turin; Granada; Malaga (Málaga); Gothenburg; Bergen |
+| Good find | 86 | Gothenburg; Bergen |
+| Good find | 81 | Riga; Vilnius |
+| Good find | 77 | Antwerp; Bordeaux; Bologna; Turin; Granada; Malaga (Málaga) |
+| Good find | 72 | Valencia; Lyon; Bucharest; Sofia; Belgrade; Zagreb; Dubrovnik; Salzburg; Bruges; Rotterdam; Cologne |
+| Good find | 68 | Krakow (Kraków); Seville; Porto; Glasgow; Hamburg; Frankfurt; Marseille; Nice; Reykjavik; Birmingham |
+| Good find | 64 | Oslo; Helsinki; Warsaw; Naples; Liverpool; Zurich; Geneva; Istanbul; Kyiv (Kiev) |
+| Good find | 59 | Copenhagen; Stockholm; Budapest; Florence; Edinburgh; Manchester |
+| Good find | 55 | Lisbon; Dublin; Brussels; Munich; Milan; Venice |
 | Not accepted (examples) | 0 | New York; Tokyo; Cairo |
 
 ## Name a colour
@@ -341,7 +466,15 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 38 | White |
 | #10 | 40 | Brown |
 | Gem | 100 | Puce; Vermilion; Chartreuse; Cerulean; Gamboge |
-| Good find | 80 | Grey (gray); Teal; Turquoise; Magenta; Indigo; Violet; Maroon; Navy (navy blue); Beige; Gold; Silver; Crimson; Scarlet; Lavender; Lilac; Cyan; Olive; Lime; Tan; Cream; Ivory; Peach; Coral; Salmon; Burgundy; Aqua; Amber; Bronze; Khaki; Ochre; Sienna; Taupe; Fuchsia; Mauve; Mint; Emerald; Sapphire; Ruby; Charcoal; Plum; Rust; Sky blue; Mustard; Jade; Azure; Periwinkle; Copper; Cobalt; Ultramarine |
+| Good find | 90 | Sienna |
+| Good find | 85 | Ultramarine |
+| Good find | 80 | Ochre; Taupe; Periwinkle |
+| Good find | 75 | Amber; Sapphire; Rust; Jade; Azure; Cobalt |
+| Good find | 70 | Salmon; Khaki; Fuchsia; Mauve; Ruby; Charcoal; Plum; Mustard; Copper |
+| Good find | 65 | Olive; Lime; Tan; Ivory; Peach; Coral; Aqua; Bronze; Mint; Emerald |
+| Good find | 60 | Crimson; Scarlet; Lavender; Lilac; Cyan; Cream; Burgundy; Sky blue |
+| Good find | 55 | Teal; Magenta; Indigo; Maroon; Navy (navy blue); Beige |
+| Good find | 50 | Grey (gray); Turquoise; Violet; Gold; Silver |
 | Not accepted (examples) | 0 | Rainbow; Glitter; Shiny |
 
 ## Name a zoo animal
@@ -361,7 +494,15 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 43 | Gorilla |
 | #10 | 45 | Hippo (hippopotamus) |
 | Gem | 100 | Okapi; Tapir; Binturong; Aye-aye; Fossa |
-| Good find | 80 | Rhino (rhinoceros); Kangaroo; Koala; Panda (giant panda); Polar bear; Cheetah; Leopard; Jaguar; Flamingo; Ostrich; Crocodile; Alligator; Snake; Chimpanzee (chimp); Orangutan; Camel; Meerkat; Lemur; Sloth; Hyena; Wolf; Seal; Sea lion; Otter; Red panda; Komodo dragon; Tortoise; Peacock; Parrot; Baboon; Antelope; Bison; Wildebeest; Warthog; Llama; Alpaca; Armadillo; Anteater; Porcupine; Gazelle; Emu; Bat; Iguana; Python; Capybara; Gibbon; Hornbill; Pelican; Cassowary; Snow leopard |
+| Good find | 90 | Hornbill |
+| Good find | 86 | Cassowary |
+| Good find | 81 | Armadillo; Porcupine; Bat; Gibbon; Pelican |
+| Good find | 77 | Wildebeest; Anteater; Gazelle; Emu; Iguana; Python; Capybara |
+| Good find | 72 | Hyena; Komodo dragon; Tortoise; Antelope; Bison; Warthog; Alpaca; Snow leopard |
+| Good find | 68 | Jaguar; Lemur; Sloth; Otter; Red panda; Peacock; Baboon; Llama |
+| Good find | 64 | Ostrich; Alligator; Orangutan; Camel; Wolf; Seal; Sea lion; Parrot |
+| Good find | 59 | Koala; Leopard; Flamingo; Crocodile; Chimpanzee (chimp); Meerkat |
+| Good find | 55 | Rhino (rhinoceros); Kangaroo; Panda (giant panda); Polar bear; Cheetah; Snake |
 | Not accepted (examples) | 0 | Unicorn; Dragon; Dinosaur |
 
 ## Name a type of weather
@@ -381,7 +522,15 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 52 | Lightning |
 | #10 | 55 | Cloud (cloudy, clouds) |
 | Gem | 100 | Graupel; Virga; Haboob; Diamond dust; Petrichor |
-| Good find | 80 | Sleet; Drizzle; Hurricane; Tornado; Blizzard; Heatwave (heat wave); Frost; Mist; Drought; Monsoon; Typhoon; Cyclone; Thunderstorm; Rainbow; Hailstorm; Sandstorm (dust storm); Gale; Breeze; Humidity; Smog; Ice storm; Freezing rain; Downpour; Shower (showers); Flood; Dew; Overcast; Squall; Whiteout; Waterspout; Black ice; Snowstorm; Cold snap; Heat; Haze; Clear sky (clear); Sun shower; Fog bank |
+| Good find | 90 | Fog bank |
+| Good find | 87 | Waterspout |
+| Good find | 84 | Sun shower |
+| Good find | 81 | Squall; Whiteout; Black ice; Cold snap |
+| Good find | 78 | Smog; Ice storm; Freezing rain; Downpour; Dew; Haze; Clear sky (clear) |
+| Good find | 74 | Hailstorm; Sandstorm (dust storm); Gale; Breeze; Shower (showers); Flood; Overcast |
+| Good find | 71 | Drought; Monsoon; Typhoon; Cyclone; Humidity; Snowstorm; Heat |
+| Good find | 68 | Drizzle; Heatwave (heat wave); Frost; Mist; Rainbow |
+| Good find | 65 | Sleet; Hurricane; Tornado; Blizzard; Thunderstorm |
 | Not accepted (examples) | 0 | Earthquake; Volcano; Tsunami |
 
 ## Name a sandwich
@@ -401,7 +550,14 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 43 | Reuben |
 | #10 | 45 | Sub (submarine, hoagie) |
 | Gem | 100 | Francesinha; Bauru; Chivito; Mitraillette; Chip butty |
-| Good find | 80 | Cuban (cubano); Philly cheesesteak (cheesesteak); Banh mi; Panini; Croque monsieur; Po' boy (po boy); Monte Cristo; Sloppy joe; French dip; Meatball sub; Chicken salad; Egg and cress; Cheese and pickle; Fluffernutter; Muffuletta; Patty melt; Tuna melt; Bacon butty (bacon sandwich, bacon sarnie); Fish finger sandwich; Cucumber sandwich; Pastrami (pastrami on rye); Lobster roll; Torta; Katsu sando; Open sandwich (smorrebrod); Jam sandwich; Breakfast sandwich; Caprese; Toastie; Chicken parm; Roast beef; Prawn mayo; Coronation chicken; Egg and bacon; Ploughman's; Cheese sandwich; Ham sandwich; Chicken sandwich; Falafel wrap |
+| Good find | 90 | Katsu sando |
+| Good find | 81 | Torta; Ploughman's |
+| Good find | 77 | Muffuletta; Fish finger sandwich; Open sandwich (smorrebrod); Prawn mayo; Coronation chicken |
+| Good find | 72 | Egg and cress; Cheese and pickle; Fluffernutter; Bacon butty (bacon sandwich, bacon sarnie); Cucumber sandwich; Caprese; Falafel wrap |
+| Good find | 68 | Croque monsieur; Po' boy (po boy); Monte Cristo; Lobster roll; Jam sandwich; Chicken parm; Egg and bacon |
+| Good find | 64 | Banh mi; French dip; Patty melt; Pastrami (pastrami on rye); Breakfast sandwich; Toastie |
+| Good find | 59 | Cuban (cubano); Sloppy joe; Meatball sub; Tuna melt; Roast beef |
+| Good find | 55 | Philly cheesesteak (cheesesteak); Panini; Chicken salad; Cheese sandwich; Ham sandwich; Chicken sandwich |
 | Not accepted (examples) | 0 | Pizza; Taco; Burrito |
 
 ## Name a sea creature
@@ -421,7 +577,15 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 38 | Sea turtle (turtle) |
 | #10 | 40 | Lobster |
 | Gem | 100 | Nudibranch; Sea pig; Vampire squid; Ocean sunfish (mola mola, sunfish); Sea butterfly |
-| Good find | 80 | Squid; Seal; Sea lion; Walrus; Manatee; Dugong; Stingray (ray); Manta ray; Eel; Clownfish; Swordfish; Tuna; Shrimp (prawn); Clam; Oyster; Mussel; Sea urchin; Coral; Sea anemone (anemone); Barracuda; Pufferfish; Orca (killer whale); Narwhal; Beluga; Hammerhead; Krill; Plankton; Sea cucumber; Lionfish; Anglerfish; Cod; Salmon; Hermit crab; Sea otter; Barnacle; Cuttlefish; Nautilus; Marlin; Sardine; Mackerel; Halibut; Flounder; Sea snake; Blue whale; Humpback whale; Great white (great white shark); Moray eel; Scallop; Conch; Sea slug |
+| Good find | 90 | Nautilus |
+| Good find | 85 | Dugong |
+| Good find | 80 | Sea slug |
+| Good find | 75 | Mackerel; Halibut; Flounder; Sea snake; Conch |
+| Good find | 70 | Sea cucumber; Lionfish; Anglerfish; Barnacle; Cuttlefish; Marlin; Sardine |
+| Good find | 65 | Mussel; Sea anemone (anemone); Barracuda; Krill; Plankton; Cod; Sea otter; Moray eel; Scallop |
+| Good find | 60 | Manta ray; Tuna; Clam; Oyster; Sea urchin; Coral; Pufferfish; Beluga; Hammerhead; Salmon; Hermit crab; Humpback whale |
+| Good find | 55 | Sea lion; Walrus; Manatee; Swordfish; Shrimp (prawn); Narwhal; Blue whale; Great white (great white shark) |
+| Good find | 50 | Squid; Seal; Stingray (ray); Eel; Clownfish; Orca (killer whale) |
 | Not accepted (examples) | 0 | Frog; Hippo; Duck |
 
 ## Name a part of the body
@@ -441,7 +605,14 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 47 | Finger |
 | #10 | 50 | Ear (ears) |
 | Gem | 100 | Philtrum; Lunula; Glabella; Hallux; Tragus |
-| Good find | 80 | Mouth; Knee; Elbow; Shoulder; Toe; Brain; Lung (lungs); Liver; Kidney; Stomach; Neck; Chest; Back; Hip; Ankle; Wrist; Thumb; Lip (lips); Tongue; Tooth (teeth); Hair; Skin; Chin; Cheek; Forehead; Eyebrow; Eyelash; Nail (fingernail, toenail); Knuckle; Heel; Spine; Rib; Skull; Bone; Muscle; Thigh; Calf; Shin; Belly button (navel); Jaw; Throat; Bladder; Pancreas; Appendix; Spleen; Gallbladder; Intestine (gut); Uvula; Earlobe; Armpit; Palm; Waist; Tendon; Collarbone; Kneecap; Eyelid; Nostril; Temple; Pinky (little finger) |
+| Good find | 90 | Uvula |
+| Good find | 82 | Tendon; Temple; Pinky (little finger) |
+| Good find | 79 | Pancreas; Spleen; Gallbladder; Earlobe; Collarbone; Kneecap; Eyelid; Nostril |
+| Good find | 75 | Knuckle; Heel; Calf; Shin; Bladder; Appendix; Intestine (gut); Armpit; Palm; Waist |
+| Good find | 71 | Forehead; Eyebrow; Eyelash; Nail (fingernail, toenail); Rib; Skull; Muscle; Thigh; Belly button (navel); Jaw; Throat |
+| Good find | 68 | Hip; Ankle; Wrist; Thumb; Skin; Chin; Cheek; Spine; Bone |
+| Good find | 64 | Lung (lungs); Liver; Kidney; Stomach; Chest; Back; Lip (lips); Tongue; Tooth (teeth); Hair |
+| Good find | 60 | Mouth; Knee; Elbow; Shoulder; Toe; Brain; Neck |
 | Not accepted (examples) | 0 | Wing; Fin; Antenna |
 
 ## Name a way to travel
@@ -461,7 +632,15 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 52 | Taxi (cab) |
 | #10 | 55 | Ship |
 | Gem | 100 | Funicular; Penny-farthing; Zeppelin (airship); Hovercraft; Velomobile |
-| Good find | 80 | Helicopter; Tram (streetcar); Subway (metro, underground, tube); Scooter; Skateboard; Van; Ferry; Submarine; Rocket; Hot air balloon (balloon); Canoe; Kayak; Sailboat (yacht); Tractor; Ambulance; Fire engine (fire truck); Limousine (limo); Jet ski; Snowmobile; Cable car; Rickshaw; Tuk-tuk; Monorail; Gondola; Unicycle; Tricycle; Glider; Blimp; Segway; Horse; Sled (sledge, sleigh); Raft; Golf cart; Spaceship (spacecraft, space shuttle); Roller skates (rollerblades); Quad bike (ATV); Electric scooter (e-scooter); Walking (on foot, walk); Coach; Minibus; Moped; Paddleboard; Rowing boat (rowboat); Hang glider; Parachute |
+| Good find | 90 | Hang glider |
+| Good find | 87 | Paddleboard |
+| Good find | 84 | Unicycle; Golf cart |
+| Good find | 81 | Tricycle; Blimp; Segway; Quad bike (ATV) |
+| Good find | 78 | Fire engine (fire truck); Snowmobile; Tuk-tuk; Glider; Sled (sledge, sleigh); Minibus; Rowing boat (rowboat); Parachute |
+| Good find | 74 | Tractor; Ambulance; Jet ski; Rickshaw; Monorail; Gondola; Raft; Roller skates (rollerblades) |
+| Good find | 71 | Submarine; Kayak; Sailboat (yacht); Limousine (limo); Cable car; Spaceship (spacecraft, space shuttle); Electric scooter (e-scooter); Moped |
+| Good find | 68 | Tram (streetcar); Skateboard; Rocket; Hot air balloon (balloon); Canoe; Coach |
+| Good find | 65 | Helicopter; Subway (metro, underground, tube); Scooter; Van; Ferry; Horse; Walking (on foot, walk) |
 | Not accepted (examples) | 0 | Road; Engine; Wheel |
 
 ## Name a playground game
@@ -481,7 +660,14 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 52 | Marbles |
 | #10 | 55 | Four square |
 | Gem | 100 | Kick the can; Red rover; British bulldog (bulldog); Conkers; Elastics |
-| Good find | 80 | Freeze tag; Musical chairs; Sardines; Capture the flag; Dodgeball; Kickball; Leapfrog; Marco Polo; Hot potato; What's the time Mr Wolf; Statues; Follow the leader; Sack race; Egg and spoon race; Three-legged race; Rock paper scissors; Jacks; Hula hoop; Frisbee; Catch; Piggy in the middle (monkey in the middle); Tetherball; Handball; Wall ball; Stuck in the mud; Cops and robbers; Mother may I; Ring around the rosie (ring a ring o' roses); Blind man's buff; Musical statues; Grandma's footsteps; Chase; Clapping games; Slides (slide); Swings; Seesaw; Monkey bars; Football; Tag rugby; Hide the thimble; Sharks and minnows; Mannequin; Kiss chase |
+| Good find | 90 | Mannequin |
+| Good find | 87 | Hide the thimble |
+| Good find | 81 | Blind man's buff; Grandma's footsteps; Tag rugby |
+| Good find | 78 | Piggy in the middle (monkey in the middle); Handball; Wall ball; Stuck in the mud; Musical statues; Clapping games; Sharks and minnows; Kiss chase |
+| Good find | 74 | Statues; Sack race; Egg and spoon race; Three-legged race; Frisbee; Tetherball; Mother may I; Ring around the rosie (ring a ring o' roses); Chase; Football |
+| Good find | 71 | Sardines; What's the time Mr Wolf; Follow the leader; Jacks; Hula hoop; Catch; Cops and robbers; Seesaw |
+| Good find | 68 | Kickball; Marco Polo; Hot potato; Rock paper scissors; Slides (slide); Swings; Monkey bars |
+| Good find | 65 | Freeze tag; Musical chairs; Capture the flag; Dodgeball; Leapfrog |
 | Not accepted (examples) | 0 | Chess; Video games; Monopoly |
 
 ## Name something in a kitchen
@@ -501,7 +687,14 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 43 | Spoon |
 | #10 | 45 | Fork |
 | Gem | 100 | Mandoline; Spurtle; Mezzaluna; Chinois; Bain-marie |
-| Good find | 80 | Pan (frying pan); Pot (saucepan); Plate; Bowl; Cup; Mug; Glass; Dishwasher; Blender; Whisk; Spatula; Ladle; Colander; Cutting board (chopping board); Rolling pin; Grater; Peeler; Tongs; Can opener (tin opener); Corkscrew; Oven mitt (oven glove); Tea towel (dish towel); Apron; Cupboard (cabinet); Counter (worktop, countertop); Table; Chair; Bin (trash can); Sponge; Dish soap (washing-up liquid); Timer; Scales; Measuring cup; Sieve; Funnel; Baking tray; Muffin tin; Food processor; Mixer (stand mixer); Coffee maker; Teapot; Spice rack; Napkin; Tablecloth; Tap (faucet); Freezer; Grill; Wok; Casserole dish; Salt; Pepper; Bread bin; Chopsticks; Pressure cooker; Slow cooker; Air fryer; Garlic press; Pestle and mortar (mortar and pestle) |
+| Good find | 86 | Pestle and mortar (mortar and pestle) |
+| Good find | 81 | Funnel; Bread bin; Garlic press |
+| Good find | 77 | Tablecloth; Casserole dish; Pressure cooker |
+| Good find | 72 | Corkscrew; Muffin tin; Spice rack; Napkin; Grill; Wok; Chopsticks; Slow cooker |
+| Good find | 68 | Oven mitt (oven glove); Tea towel (dish towel); Apron; Dish soap (washing-up liquid); Timer; Scales; Measuring cup; Sieve; Baking tray; Food processor; Teapot; Salt; Pepper; Air fryer |
+| Good find | 64 | Ladle; Colander; Rolling pin; Grater; Peeler; Tongs; Can opener (tin opener); Chair; Bin (trash can); Sponge; Mixer (stand mixer); Coffee maker; Tap (faucet) |
+| Good find | 59 | Mug; Glass; Whisk; Spatula; Cutting board (chopping board); Cupboard (cabinet); Counter (worktop, countertop); Table; Freezer |
+| Good find | 55 | Pan (frying pan); Pot (saucepan); Plate; Bowl; Cup; Dishwasher; Blender |
 | Not accepted (examples) | 0 | Bed; Bath; Sofa |
 
 ## Name a cheese
@@ -521,7 +714,15 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 38 | Camembert |
 | #10 | 40 | Stilton |
 | Gem | 100 | Taleggio; Wensleydale; Comté (Comte); Limburger; Paneer |
-| Good find | 80 | Monterey Jack (Jack); Colby; Pepper Jack; Ricotta; Cottage cheese; Cream cheese; Provolone; Gorgonzola; Roquefort; Halloumi (Haloumi); Manchego; Gruyère (Gruyere); Edam; Havarti; Pecorino (Pecorino Romano, Romano); Mascarpone; Asiago; Fontina; Munster (Muenster); Burrata; Goat cheese (Goats cheese, Chèvre, Chevre); Queso fresco; Double Gloucester; Red Leicester; Lancashire; Cheshire; Reblochon; Grana Padano; Cotija; Oaxaca cheese (Oaxaca); String cheese; American cheese (American); Caerphilly; Bocconcini; Raclette; Pecorino Sardo |
+| Good find | 90 | Pecorino Sardo |
+| Good find | 85 | Reblochon; Oaxaca cheese (Oaxaca); Caerphilly |
+| Good find | 80 | Lancashire; Cheshire; Grana Padano; Cotija; Bocconcini |
+| Good find | 75 | Fontina; Queso fresco; Double Gloucester; Raclette |
+| Good find | 70 | Roquefort; Manchego; Havarti; Pecorino (Pecorino Romano, Romano); Asiago; Munster (Muenster); Burrata; Red Leicester |
+| Good find | 65 | Colby; Gorgonzola; Gruyère (Gruyere); Edam; Mascarpone; String cheese |
+| Good find | 60 | Monterey Jack (Jack); Pepper Jack; Provolone; Halloumi (Haloumi) |
+| Good find | 55 | Ricotta; Cottage cheese; Cream cheese; Goat cheese (Goats cheese, Chèvre, Chevre) |
+| Good find | 50 | American cheese (American) |
 | Not accepted (examples) | 0 | Butter; Yogurt; Tofu |
 
 ## Name a soup
@@ -541,7 +742,15 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 43 | Lentil soup (Lentil) |
 | #10 | 45 | Butternut squash soup (Butternut squash, Squash soup) |
 | Gem | 100 | Vichyssoise; Bouillabaisse; Mulligatawny; Avgolemono; Ribollita |
-| Good find | 80 | Gazpacho; Borscht (Borsch, Borshch); Pho; Miso soup (Miso); Wonton soup (Wonton); Hot and sour soup (Hot and sour); Egg drop soup (Egg drop); Split pea soup (Split pea, Pea soup, Pea and ham); Chicken soup; Beef barley soup (Beef and barley); Corn chowder; Lobster bisque (Bisque); Broccoli cheddar soup (Broccoli and cheddar); Cream of chicken; Cream of celery; Carrot and coriander (Carrot soup); Pumpkin soup (Pumpkin); Scotch broth; Oxtail soup (Oxtail); Gumbo; Tom yum (Tom yam); Tom kha (Tom kha gai); Laksa; Matzo ball soup (Matzah ball soup); Pozole (Posole); Tortilla soup; Black bean soup; Cock-a-leekie; Italian wedding soup (Wedding soup); Potato soup; Watercress soup; Consommé (Consomme); Caldo verde; Harira; Menudo |
+| Good find | 90 | Caldo verde; Harira; Menudo |
+| Good find | 86 | Pozole (Posole); Cock-a-leekie |
+| Good find | 81 | Cream of celery; Scotch broth; Tom kha (Tom kha gai); Laksa; Watercress soup; Consommé (Consomme) |
+| Good find | 77 | Oxtail soup (Oxtail); Matzo ball soup (Matzah ball soup); Tortilla soup; Black bean soup; Italian wedding soup (Wedding soup) |
+| Good find | 72 | Borscht (Borsch, Borshch); Egg drop soup (Egg drop); Beef barley soup (Beef and barley); Corn chowder; Cream of chicken; Carrot and coriander (Carrot soup); Gumbo; Tom yum (Tom yam) |
+| Good find | 68 | Gazpacho; Hot and sour soup (Hot and sour); Split pea soup (Split pea, Pea soup, Pea and ham); Lobster bisque (Bisque); Broccoli cheddar soup (Broccoli and cheddar) |
+| Good find | 64 | Pho; Miso soup (Miso); Wonton soup (Wonton); Pumpkin soup (Pumpkin) |
+| Good find | 59 | Potato soup |
+| Good find | 55 | Chicken soup |
 | Not accepted (examples) | 0 | Casserole; Gravy; Risotto |
 
 ## Name a herb or spice
@@ -561,7 +770,15 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 43 | Mint |
 | #10 | 45 | Cumin |
 | Gem | 100 | Sumac; Fenugreek; Lovage; Mace; Asafoetida (Asafetida, Hing) |
-| Good find | 80 | Sage; Dill; Coriander (Cilantro); Chives; Ginger; Turmeric; Nutmeg; Cloves (Clove); Cardamom (Cardamon); Chilli powder (Chili powder, Chilli, Chili); Cayenne (Cayenne pepper); Saffron; Tarragon; Bay leaf (Bay leaves, Bay); Fennel seed (Fennel); Star anise; Aniseed (Anise); Allspice; Caraway; Marjoram; Mustard seed (Mustard seeds); Celery seed; Lemongrass (Lemon grass); Vanilla; Curry leaf (Curry leaves); Juniper (Juniper berries); Chervil; Savory; Lemon balm; Poppy seed (Poppy seeds); Nigella (Nigella seeds, Kalonji); Galangal; Sorrel; Borage; White pepper |
+| Good find | 90 | Savory; Nigella (Nigella seeds, Kalonji); Galangal; Sorrel; Borage |
+| Good find | 86 | Celery seed; Curry leaf (Curry leaves); Juniper (Juniper berries); Chervil; Lemon balm |
+| Good find | 81 | Aniseed (Anise); Caraway; Mustard seed (Mustard seeds); Poppy seed (Poppy seeds) |
+| Good find | 77 | Fennel seed (Fennel); Star anise; Allspice; Marjoram; Lemongrass (Lemon grass) |
+| Good find | 72 | Cardamom (Cardamon); Tarragon; Vanilla; White pepper |
+| Good find | 68 | Cloves (Clove); Chilli powder (Chili powder, Chilli, Chili); Cayenne (Cayenne pepper); Saffron; Bay leaf (Bay leaves, Bay) |
+| Good find | 64 | Dill; Chives; Turmeric; Nutmeg |
+| Good find | 59 | Sage; Coriander (Cilantro) |
+| Good find | 55 | Ginger |
 | Not accepted (examples) | 0 | Salt; Sugar; Vinegar |
 
 ## Name a type of bread
@@ -581,7 +798,15 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 43 | Bagel |
 | #10 | 45 | Cornbread (Corn bread) |
 | Gem | 100 | Injera; Lavash; Fougasse; Pumpernickel; Matzo (Matzah, Matza) |
-| Good find | 80 | Focaccia; Brioche; Challah (Hallah); Multigrain; Soda bread (Irish soda bread); Flatbread; Tortilla; Roti; Chapati (Chapatti); Paratha; Garlic bread; English muffin; Milk bread (Shokupan); Potato bread; Spelt bread (Spelt); Granary; Seeded bread (Seeded); Bloomer; Tiger bread (Dutch crunch); Pain de mie; Bao (Steamed bun); Fry bread (Frybread); Puri (Poori); Kulcha; Bread roll (Roll); Monkey bread; Cob loaf (Cob); French bread; Sandwich loaf; Pane pugliese; Khobz |
+| Good find | 90 | Kulcha; Pane pugliese; Khobz |
+| Good find | 86 | Pain de mie; Fry bread (Frybread); Puri (Poori); Cob loaf (Cob) |
+| Good find | 81 | Spelt bread (Spelt); Bloomer; Tiger bread (Dutch crunch) |
+| Good find | 77 | Paratha; Milk bread (Shokupan); Granary; Bao (Steamed bun); Monkey bread; Sandwich loaf |
+| Good find | 72 | Roti; Chapati (Chapatti); Potato bread; Seeded bread (Seeded) |
+| Good find | 68 | Challah (Hallah); Soda bread (Irish soda bread); Tortilla; English muffin; Bread roll (Roll) |
+| Good find | 64 | Brioche; Multigrain; Flatbread |
+| Good find | 59 | Focaccia; Garlic bread |
+| Good find | 55 | French bread |
 | Not accepted (examples) | 0 | Pancake; Cracker; Doughnut |
 
 ## Name a nut
@@ -601,7 +826,13 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 56 | Brazil nut (Brazil) |
 | #10 | 60 | Chestnut (Sweet chestnut) |
 | Gem | 100 | Pili nut (Pili); Candlenut (Kukui nut); Kola nut (Cola nut); Hickory nut (Hickory, Shagbark hickory); Beechnut (Beech nut) |
-| Good find | 80 | Pine nut (Pinon, Pignoli); Acorn; Black walnut; Ginkgo nut (Ginkgo); Shea nut; Bunya nut; Baru nut; Butternut (White walnut); Heartnut; Chinquapin (Chinkapin); Mongongo nut (Mongongo); Paradise nut (Sapucaia nut); Marcona almond; Marula nut; Ogbono nut; Chilean hazelnut (Gevuina); Red bopple nut; Kenari nut (Canarium nut); Tropical almond (Sea almond); Yeheb nut |
+| Good find | 90 | Bunya nut; Baru nut; Mongongo nut (Mongongo); Paradise nut (Sapucaia nut); Ogbono nut; Red bopple nut; Kenari nut (Canarium nut); Yeheb nut |
+| Good find | 88 | Heartnut; Chinquapin (Chinkapin); Marula nut; Chilean hazelnut (Gevuina) |
+| Good find | 85 | Ginkgo nut (Ginkgo); Shea nut; Tropical almond (Sea almond) |
+| Good find | 82 | Butternut (White walnut) |
+| Good find | 80 | Black walnut; Marcona almond |
+| Good find | 75 | Acorn |
+| Good find | 72 | Pine nut (Pinon, Pignoli) |
 | Not accepted (examples) | 0 | Chickpea; Water chestnut; Nutmeg |
 
 ## Name a hot drink
@@ -621,7 +852,14 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 47 | Mocha (Mochaccino) |
 | #10 | 50 | Herbal tea (Tisane) |
 | Gem | 100 | Salep (Sahlep, Sahlab); Yerba mate (Mate); Cortado; Golden milk (Turmeric latte); Malted milk |
-| Good find | 80 | Americano; Flat white; Macchiato; Black tea; Earl Grey; English breakfast tea (English breakfast); Peppermint tea (Mint tea); Chamomile tea (Camomile tea, Chamomile, Camomile); Matcha (Matcha latte); Rooibos (Redbush); Oolong; Jasmine tea; Ginger tea; Hot apple cider (Hot cider); Turkish coffee; Hot milk (Warm milk); Café au lait (Cafe au lait); London fog; Lungo; Ristretto; Pu-erh (Pu'er); Sencha; White tea; Hibiscus tea; Atole; Champurrado; Teh tarik; Butter tea; Babyccino (Babycino); Instant coffee; Filter coffee (Drip coffee); Decaf (Decaf coffee); Fruit tea; Barley tea (Mugicha); Hot water with lemon (Hot lemon) |
+| Good find | 90 | Atole; Champurrado; Teh tarik; Butter tea |
+| Good find | 86 | Lungo; Ristretto; Pu-erh (Pu'er); Sencha; Barley tea (Mugicha) |
+| Good find | 82 | London fog; Hibiscus tea; Babyccino (Babycino) |
+| Good find | 79 | Oolong; Turkish coffee; Café au lait (Cafe au lait); White tea; Hot water with lemon (Hot lemon) |
+| Good find | 75 | Rooibos (Redbush); Jasmine tea; Ginger tea; Filter coffee (Drip coffee); Fruit tea |
+| Good find | 71 | English breakfast tea (English breakfast); Matcha (Matcha latte); Hot milk (Warm milk); Instant coffee; Decaf (Decaf coffee) |
+| Good find | 68 | Flat white; Macchiato; Black tea; Peppermint tea (Mint tea); Chamomile tea (Camomile tea, Chamomile, Camomile); Hot apple cider (Hot cider) |
+| Good find | 64 | Americano; Earl Grey |
 | Not accepted (examples) | 0 | Lemonade; Milkshake; Smoothie |
 
 ## Name a type of pasta
@@ -641,7 +879,14 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 47 | Farfalle (Bow tie, Bowtie, Bow ties) |
 | #10 | 50 | Tortellini |
 | Gem | 100 | Orecchiette; Bucatini; Radiatori; Ditalini; Gemelli |
-| Good find | 80 | Rigatoni; Tagliatelle; Pappardelle; Cannelloni; Manicotti; Ziti; Rotini; Conchiglie (Shells, Pasta shells); Orzo (Risoni); Angel hair (Capellini); Vermicelli; Cavatappi; Campanelle; Agnolotti; Cappelletti; Tortelloni; Mafaldine (Mafalde); Paccheri; Stelline; Anelli; Alphabet pasta; Fregola; Trofie; Casarecce; Strozzapreti; Cavatelli; Tagliolini; Spaghettini; Bigoli; Pici; Lumache; Rotelle (Wagon wheels); Garganelli; Mezze maniche; Tortiglioni; Fideo (Fideos) |
+| Good find | 90 | Fregola; Bigoli; Pici; Garganelli; Mezze maniche |
+| Good find | 86 | Mafaldine (Mafalde); Anelli; Trofie; Casarecce; Strozzapreti; Lumache; Fideo (Fideos) |
+| Good find | 82 | Campanelle; Agnolotti; Cappelletti; Paccheri; Stelline; Cavatelli; Tagliolini; Rotelle (Wagon wheels); Tortiglioni |
+| Good find | 79 | Spaghettini |
+| Good find | 75 | Conchiglie (Shells, Pasta shells); Cavatappi; Tortelloni; Alphabet pasta |
+| Good find | 71 | Pappardelle; Manicotti; Vermicelli |
+| Good find | 68 | Tagliatelle; Cannelloni; Ziti; Rotini; Orzo (Risoni) |
+| Good find | 64 | Rigatoni; Angel hair (Capellini) |
 | Not accepted (examples) | 0 | Risotto; Polenta; Pesto |
 
 ## Name a type of sweet or candy
@@ -661,7 +906,14 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 43 | Cotton candy (Candy floss, Fairy floss) |
 | #10 | 45 | Caramel (Caramels) |
 | Gem | 100 | Turkish delight (Lokum); Nougat; Marzipan; Halva (Halwa, Halvah); Peanut brittle (Brittle) |
-| Good find | 80 | Marshmallow; Gumdrop (Gumdrops); Mints (Mint, Peppermint); Butterscotch; Truffle (Chocolate truffle); Bonbon (Bon bon); Gobstopper (Jawbreaker); Rock candy; Taffy (Salt water taffy, Saltwater taffy); Bubble gum (Bubblegum, Chewing gum, Gum); Humbug; Hard candy (Boiled sweets); Pear drops; Aniseed balls; Candy corn; Gummy worms (Gummi worms); Wine gums; Jelly babies; Praline (Pralines); Brigadeiro; Fondant; Dragée (Dragee); Sugared almonds (Jordan almonds); Candy apple (Toffee apple, Caramel apple); Barley sugar; Licorice allsorts (Liquorice allsorts, Allsorts); Popping candy; Rocky road; Peppermint bark; Coconut ice; Tablet; Chocolate coins; Lemon drops (Lemon drop); Sherbet lemons; Seaside rock (Rock) |
+| Good find | 90 | Brigadeiro; Dragée (Dragee); Tablet |
+| Good find | 86 | Coconut ice; Seaside rock (Rock) |
+| Good find | 81 | Aniseed balls; Fondant; Sugared almonds (Jordan almonds); Barley sugar; Peppermint bark |
+| Good find | 77 | Humbug; Pear drops; Praline (Pralines); Popping candy; Rocky road; Chocolate coins; Sherbet lemons |
+| Good find | 72 | Wine gums; Jelly babies; Candy apple (Toffee apple, Caramel apple); Licorice allsorts (Liquorice allsorts, Allsorts); Lemon drops (Lemon drop) |
+| Good find | 68 | Truffle (Chocolate truffle); Bonbon (Bon bon); Gobstopper (Jawbreaker); Rock candy; Candy corn |
+| Good find | 64 | Gumdrop (Gumdrops); Butterscotch; Taffy (Salt water taffy, Saltwater taffy); Hard candy (Boiled sweets); Gummy worms (Gummi worms) |
+| Good find | 59 | Marshmallow; Mints (Mint, Peppermint); Bubble gum (Bubblegum, Chewing gum, Gum) |
 | Not accepted (examples) | 0 | Cake; Pretzel; Potato chips |
 
 ## Name a berry
@@ -681,7 +933,13 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 52 | Boysenberry |
 | #10 | 55 | Goji berry (Goji, Wolfberry) |
 | Gem | 100 | Lingonberry (Cowberry); Cloudberry; Huckleberry; Loganberry; Bilberry (Whortleberry) |
-| Good find | 80 | Acai (Açaí, Acai berry); Blackcurrant (Black currant); Redcurrant (Red currant); Whitecurrant (White currant); Tayberry; Marionberry; Dewberry; Salmonberry; Chokeberry (Aronia); Sea buckthorn; Serviceberry (Saskatoon berry, Juneberry); Barberry; Thimbleberry; Wineberry; Goldenberry (Golden berry, Cape gooseberry, Physalis); Jostaberry; Bearberry; Crowberry; Honeyberry (Haskap); Youngberry; Olallieberry; Black raspberry; Miracle berry (Miracle fruit); Maqui berry (Maqui); Snowberry |
+| Good find | 90 | Jostaberry; Olallieberry; Maqui berry (Maqui) |
+| Good find | 87 | Sea buckthorn; Thimbleberry; Wineberry; Bearberry; Crowberry; Honeyberry (Haskap); Youngberry; Snowberry |
+| Good find | 84 | Tayberry; Salmonberry; Chokeberry (Aronia); Serviceberry (Saskatoon berry, Juneberry); Barberry; Goldenberry (Golden berry, Cape gooseberry, Physalis); Miracle berry (Miracle fruit) |
+| Good find | 81 | Whitecurrant (White currant); Marionberry; Dewberry |
+| Good find | 74 | Black raspberry |
+| Good find | 71 | Acai (Açaí, Acai berry); Redcurrant (Red currant) |
+| Good find | 68 | Blackcurrant (Black currant) |
 | Not accepted (examples) | 0 | Cherry; Plum; Apricot |
 
 ## Name a grain
@@ -701,7 +959,15 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 56 | Spelt |
 | #10 | 60 | Buckwheat |
 | Gem | 100 | Teff; Fonio; Triticale; Einkorn; Khorasan wheat |
-| Good find | 80 | Sorghum; Amaranth; Farro (Emmer); Freekeh; Wild rice; Durum wheat (Durum); Finger millet (Ragi); Foxtail millet; Proso millet; Pearl millet (Bajra); Barnyard millet; Kodo millet; Little millet; Kaniwa (Canihua); Adlay (Coix); Black rice (Forbidden rice); Red rice; Brown rice; Basmati rice (Basmati); Jasmine rice |
+| Good find | 90 | Kodo millet; Kaniwa (Canihua); Adlay (Coix) |
+| Good find | 88 | Foxtail millet; Proso millet; Barnyard millet; Little millet |
+| Good find | 85 | Finger millet (Ragi) |
+| Good find | 82 | Freekeh; Pearl millet (Bajra); Red rice |
+| Good find | 80 | Black rice (Forbidden rice) |
+| Good find | 78 | Amaranth; Farro (Emmer); Durum wheat (Durum) |
+| Good find | 75 | Sorghum; Basmati rice (Basmati); Jasmine rice |
+| Good find | 72 | Wild rice |
+| Good find | 70 | Brown rice |
 | Not accepted (examples) | 0 | Lentil; Chickpea; Potato |
 
 ## Name a type of cake
@@ -721,7 +987,14 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 43 | Angel food cake (Angel food) |
 | #10 | 45 | Fruit cake (Fruitcake) |
 | Gem | 100 | Battenberg (Battenburg); Tres leches (Tres leches cake); Hummingbird cake; Opera cake; Sachertorte (Sacher torte) |
-| Good find | 80 | Pound cake; Coffee cake; Lemon drizzle (Lemon drizzle cake, Lemon cake); Victoria sponge (Victoria sandwich); Upside-down cake (Pineapple upside-down cake); Marble cake; Coconut cake; Swiss roll (Jelly roll, Roulade); Madeira cake; Genoise (Génoise); Chiffon cake; Lava cake (Molten chocolate cake); Ice cream cake; Coffee and walnut cake; Strawberry shortcake; Layer cake; Sheet cake; Wedding cake; Mud cake (Mississippi mud cake); Lamington; Dundee cake; Parkin; Castella; Orange cake; Almond cake; Polenta cake; Olive oil cake; Butter cake; Spice cake; Princess cake; Banana cake |
+| Good find | 90 | Parkin; Castella |
+| Good find | 86 | Genoise (Génoise); Dundee cake; Polenta cake; Princess cake |
+| Good find | 81 | Lamington; Olive oil cake |
+| Good find | 77 | Madeira cake; Chiffon cake; Sheet cake; Mud cake (Mississippi mud cake); Orange cake; Almond cake; Butter cake |
+| Good find | 72 | Coffee and walnut cake; Layer cake; Spice cake |
+| Good find | 68 | Coconut cake; Swiss roll (Jelly roll, Roulade); Lava cake (Molten chocolate cake); Banana cake |
+| Good find | 64 | Coffee cake; Lemon drizzle (Lemon drizzle cake, Lemon cake); Victoria sponge (Victoria sandwich); Upside-down cake (Pineapple upside-down cake); Marble cake; Ice cream cake; Strawberry shortcake |
+| Good find | 59 | Pound cake; Wedding cake |
 | Not accepted (examples) | 0 | Pie; Crumble; Trifle |
 
 ## Name a type of salad
@@ -741,7 +1014,15 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 47 | Chef salad (Chef's salad) |
 | #10 | 50 | Waldorf salad (Waldorf) |
 | Gem | 100 | Panzanella; Tabbouleh (Tabouli, Tabbouli); Fattoush; Niçoise (Nicoise, Salade nicoise); Som tam (Green papaya salad, Papaya salad) |
-| Good find | 80 | Caprese (Caprese salad, Insalata caprese); Egg salad; Tuna salad; Chicken salad; Macaroni salad; Spinach salad; Taco salad; Kale salad; Quinoa salad; Bean salad (Three bean salad); Cucumber salad; Tomato salad; Wedge salad; Rocket salad (Arugula salad); Couscous salad; Rice salad; Lentil salad; Beetroot salad (Beet salad); Seaweed salad; Ambrosia salad (Ambrosia); Olivier salad (Russian salad); Shirazi salad; Larb (Laab); Gado-gado; Kachumber; Carrot salad; Broccoli salad; Mixed salad (Mixed leaf salad); Watermelon salad; Orzo salad |
+| Good find | 90 | Shirazi salad; Larb (Laab); Kachumber |
+| Good find | 86 | Olivier salad (Russian salad); Gado-gado |
+| Good find | 82 | Lentil salad; Orzo salad |
+| Good find | 79 | Couscous salad; Rice salad; Beetroot salad (Beet salad); Seaweed salad; Ambrosia salad (Ambrosia); Carrot salad; Broccoli salad; Watermelon salad |
+| Good find | 75 | Quinoa salad; Wedge salad; Rocket salad (Arugula salad) |
+| Good find | 71 | Kale salad; Bean salad (Three bean salad); Cucumber salad; Tomato salad |
+| Good find | 68 | Caprese (Caprese salad, Insalata caprese); Macaroni salad; Spinach salad; Taco salad; Mixed salad (Mixed leaf salad) |
+| Good find | 64 | Egg salad; Tuna salad |
+| Good find | 60 | Chicken salad |
 | Not accepted (examples) | 0 | Lettuce; Sandwich; Guacamole |
 
 ## Name a sauce or condiment
@@ -761,7 +1042,15 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 38 | Relish |
 | #10 | 40 | Gravy |
 | Gem | 100 | Romesco; Chimichurri; Remoulade (Rémoulade); Mole; Piccalilli |
-| Good find | 80 | Pesto; Tomato sauce; Marinara; Alfredo; Hollandaise; Béchamel (Bechamel, White sauce); Tartar sauce (Tartare sauce); Worcestershire sauce (Worcester sauce); Teriyaki; Sweet chilli sauce (Sweet chili sauce); Sriracha; Horseradish (Horseradish sauce); Mint sauce; Apple sauce (Applesauce); Cranberry sauce; Brown sauce; Hoisin; Oyster sauce; Fish sauce; Tzatziki; Aioli (Aïoli); Thousand Island (Thousand Island dressing); Vinaigrette; Honey mustard; Bolognese (Ragu); Gochujang; Harissa; Tahini; Chutney (Mango chutney); Peri peri (Piri piri); Satay sauce (Peanut sauce); Béarnaise (Bearnaise); Cheese sauce; Peppercorn sauce (Pepper sauce); Ponzu; Enchilada sauce; Buffalo sauce; Salad cream; Sweet and sour sauce; Plum sauce (Duck sauce) |
+| Good find | 90 | Ponzu |
+| Good find | 85 | Enchilada sauce; Plum sauce (Duck sauce) |
+| Good find | 80 | Gochujang; Harissa; Tahini; Peri peri (Piri piri); Satay sauce (Peanut sauce); Béarnaise (Bearnaise); Peppercorn sauce (Pepper sauce); Salad cream |
+| Good find | 75 | Oyster sauce; Fish sauce; Chutney (Mango chutney); Buffalo sauce |
+| Good find | 70 | Béchamel (Bechamel, White sauce); Mint sauce; Brown sauce; Hoisin; Tzatziki; Aioli (Aïoli); Vinaigrette; Bolognese (Ragu); Cheese sauce; Sweet and sour sauce |
+| Good find | 65 | Hollandaise; Sweet chilli sauce (Sweet chili sauce); Horseradish (Horseradish sauce); Apple sauce (Applesauce); Cranberry sauce; Thousand Island (Thousand Island dressing); Honey mustard |
+| Good find | 60 | Alfredo; Tartar sauce (Tartare sauce); Worcestershire sauce (Worcester sauce); Teriyaki; Sriracha |
+| Good find | 55 | Pesto; Marinara |
+| Good find | 50 | Tomato sauce |
 | Not accepted (examples) | 0 | Croutons; Flour; Yeast |
 
 ## Name a type of sausage
@@ -781,7 +1070,14 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 47 | Bologna (Baloney) |
 | #10 | 50 | Cumberland sausage (Cumberland) |
 | Gem | 100 | Boudin; Merguez; Lap cheong (Chinese sausage, Lap chong); Morcilla; Nduja ('Nduja) |
-| Good find | 80 | Chipolata; Lincolnshire sausage (Lincolnshire); Black pudding (Blood sausage); Andouille; Knackwurst (Knockwurst); Weisswurst (Weißwurst); Bockwurst; Liverwurst (Leberwurst, Liver sausage); Mortadella; Breakfast sausage (Breakfast links); Summer sausage; Saveloy; Cervelat; Toulouse sausage (Toulouse); Kabanos (Kabanosy); Sucuk (Sujuk); Linguica (Linguiça); Bangers (Banger); Boerewors; Cotechino; Landjaeger (Landjäger); Thuringer (Thüringer); Currywurst; Soppressata; Chistorra; Vienna sausage (Vienna); White pudding; Longaniza; Venison sausage; Chicken sausage; Polony |
+| Good find | 90 | Cotechino; Landjaeger (Landjäger); Chistorra; Longaniza |
+| Good find | 86 | Cervelat; Sucuk (Sujuk); Linguica (Linguiça); Boerewors; Thuringer (Thüringer); Polony |
+| Good find | 82 | Saveloy; Toulouse sausage (Toulouse); Kabanos (Kabanosy); Soppressata; White pudding |
+| Good find | 79 | Weisswurst (Weißwurst); Bockwurst; Currywurst; Venison sausage |
+| Good find | 75 | Lincolnshire sausage (Lincolnshire); Knackwurst (Knockwurst); Mortadella; Summer sausage |
+| Good find | 71 | Chipolata; Black pudding (Blood sausage); Andouille; Liverwurst (Leberwurst, Liver sausage); Vienna sausage (Vienna) |
+| Good find | 68 | Bangers (Banger); Chicken sausage |
+| Good find | 64 | Breakfast sausage (Breakfast links) |
 | Not accepted (examples) | 0 | Bacon; Ham; Meatball |
 
 ## Name a type of noodle
@@ -801,7 +1097,14 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 52 | Glass noodles (Cellophane noodles, Bean thread noodles, Mung bean noodles) |
 | #10 | 55 | Rice vermicelli (Vermicelli, Mei fun, Bee hoon) |
 | Gem | 100 | Shirataki (Konjac noodles); Somen (Sōmen); Biang biang (Biangbiang); Hokkien noodles (Hokkien mee); Hand-pulled noodles (Lamian, La mian) |
-| Good find | 80 | Ho fun (Hor fun, Chow fun, Flat rice noodles); Sweet potato noodles (Dangmyeon); Naengmyeon; Kalguksu; Zucchini noodles (Zoodles, Courgetti); Kelp noodles; Hiyamugi; Kishimen; Shanghai noodles; Wonton noodles; Mee pok; Yi mein (Yee mein, E-fu noodles); Misua (Mee sua); Silver needle noodles; Idiyappam (String hoppers); Ramyeon; Wheat noodles; Yakisoba noodles (Yakisoba); Kluski; Reshteh; Pancit; Ban mian; Knife-cut noodles (Dao xiao mian) |
+| Good find | 90 | Hiyamugi; Kishimen; Idiyappam (String hoppers); Reshteh |
+| Good find | 87 | Naengmyeon; Kalguksu; Mee pok; Misua (Mee sua); Silver needle noodles; Kluski; Ban mian |
+| Good find | 84 | Yi mein (Yee mein, E-fu noodles); Knife-cut noodles (Dao xiao mian) |
+| Good find | 81 | Kelp noodles; Ramyeon; Pancit |
+| Good find | 78 | Ho fun (Hor fun, Chow fun, Flat rice noodles); Sweet potato noodles (Dangmyeon); Shanghai noodles |
+| Good find | 74 | Wonton noodles |
+| Good find | 71 | Wheat noodles; Yakisoba noodles (Yakisoba) |
+| Good find | 68 | Zucchini noodles (Zoodles, Courgetti) |
 | Not accepted (examples) | 0 | Dumpling; Rice; Spring roll |
 
 ## Name a seafood you eat
@@ -821,7 +1124,13 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 43 | Mussels (Mussel) |
 | #10 | 45 | Scallops (Scallop) |
 | Gem | 100 | Sea urchin (Uni); Abalone; Cockles (Cockle); Whelks (Whelk); Langoustine (Scampi, Dublin Bay prawn, Norway lobster) |
-| Good find | 80 | Squid (Calamari); Octopus; Haddock; Halibut; Tilapia; Sardines (Sardine, Pilchard); Anchovies (Anchovy); Mackerel; Trout; Sea bass (Seabass, Branzino); Snapper (Red snapper); Swordfish; Mahi-mahi (Dorado, Dolphinfish); Catfish; Crayfish (Crawfish, Crawdad); Caviar; Sole; Plaice; Herring (Kipper); Pollock (Pollack, Coley); Hake; Eel; Cuttlefish; Sea cucumber; Periwinkles (Winkles); Razor clams (Razor clam); Turbot; Flounder; Barramundi; Monkfish; Grouper; Whitebait; Sea bream (Bream); Roe |
+| Good find | 86 | Sea cucumber; Periwinkles (Winkles); Whitebait; Roe |
+| Good find | 81 | Cuttlefish; Razor clams (Razor clam); Turbot; Barramundi; Monkfish; Sea bream (Bream) |
+| Good find | 77 | Plaice; Pollock (Pollack, Coley); Hake; Eel; Flounder; Grouper |
+| Good find | 72 | Snapper (Red snapper); Swordfish; Mahi-mahi (Dorado, Dolphinfish); Caviar; Sole; Herring (Kipper) |
+| Good find | 68 | Anchovies (Anchovy); Mackerel; Sea bass (Seabass, Branzino); Catfish; Crayfish (Crawfish, Crawdad) |
+| Good find | 64 | Octopus; Haddock; Halibut; Tilapia; Sardines (Sardine, Pilchard); Trout |
+| Good find | 59 | Squid (Calamari) |
 | Not accepted (examples) | 0 | Chicken; Duck; Frog legs |
 
 ## Name a type of cookie or biscuit
@@ -841,7 +1150,14 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 43 | Macaroon (Coconut macaroon) |
 | #10 | 45 | Fortune cookie |
 | Gem | 100 | Speculoos (Speculaas); Florentine; Alfajores (Alfajor); Pizzelle; Linzer cookie (Linzer) |
-| Good find | 80 | Macaron (French macaron); Digestive (Digestive biscuit); Biscotti (Cantucci); Butter cookie (Danish butter cookie); Custard cream; Bourbon biscuit (Bourbon); Thumbprint cookie (Thumbprint); Rich tea; Wafer (Wafers); Ladyfingers (Ladyfinger, Savoiardi, Sponge fingers); Black and white cookie; Molasses cookie; Amaretti; Snowball cookie; Crinkle cookie (Chocolate crinkle); Double chocolate cookie (Double chocolate); White chocolate macadamia; Lebkuchen; Stroopwafel (Stroopwafels); Pfeffernusse (Pfeffernüsse); Spritz cookie (Spritz); Fig roll; Melting moments; Nice biscuit; Polvorón (Polvoron); Monster cookie; Pinwheel cookie; Oat biscuit (Oatmeal cookie); Chocolate digestive; Jam sandwich biscuit |
+| Good find | 90 | Polvorón (Polvoron) |
+| Good find | 86 | Lebkuchen; Pfeffernusse (Pfeffernüsse); Melting moments; Nice biscuit |
+| Good find | 81 | Amaretti; Snowball cookie; Crinkle cookie (Chocolate crinkle); Spritz cookie (Spritz); Monster cookie; Pinwheel cookie; Jam sandwich biscuit |
+| Good find | 77 | Thumbprint cookie (Thumbprint); Ladyfingers (Ladyfinger, Savoiardi, Sponge fingers); Black and white cookie; Molasses cookie; Stroopwafel (Stroopwafels); Fig roll; Oat biscuit (Oatmeal cookie) |
+| Good find | 72 | Bourbon biscuit (Bourbon); Rich tea; Chocolate digestive |
+| Good find | 68 | Custard cream; Wafer (Wafers); White chocolate macadamia |
+| Good find | 64 | Macaron (French macaron); Digestive (Digestive biscuit); Biscotti (Cantucci); Butter cookie (Danish butter cookie) |
+| Good find | 59 | Double chocolate cookie (Double chocolate) |
 | Not accepted (examples) | 0 | Muffin; Doughnut; Cupcake |
 
 ## Name a pie
@@ -861,7 +1177,14 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 47 | Shepherd's pie (Shepherds pie) |
 | #10 | 50 | Banoffee pie (Banoffee, Banoffi) |
 | Gem | 100 | Shoofly pie (Shoo-fly pie); Chess pie; Stargazy pie; Tourtière (Tourtiere); Spanakopita (Spinach pie) |
-| Good find | 80 | Steak and kidney pie; Steak pie; Cottage pie; Pork pie; Fish pie; Mince pie; Meat pie; Peach pie; Strawberry rhubarb pie; Rhubarb pie; Sweet potato pie; Coconut cream pie; Banana cream pie; Chocolate cream pie (Chocolate pie); Mud pie (Mississippi mud pie); Blackberry pie; Cheese and onion pie; Chicken and mushroom pie; Game pie; Pear pie; Plum pie; Gooseberry pie; Custard pie; Buttermilk pie; Sugar cream pie; Scotch pie; Bacon and egg pie; Rabbit pie; Vegetable pie; Mixed berry pie (Berry pie); Raspberry pie; Mushroom pie |
+| Good find | 90 | Sugar cream pie |
+| Good find | 86 | Game pie; Buttermilk pie; Scotch pie; Bacon and egg pie; Rabbit pie |
+| Good find | 82 | Pear pie; Plum pie; Gooseberry pie; Mushroom pie |
+| Good find | 79 | Cheese and onion pie; Custard pie; Vegetable pie; Raspberry pie |
+| Good find | 75 | Coconut cream pie; Chocolate cream pie (Chocolate pie); Mud pie (Mississippi mud pie); Blackberry pie; Chicken and mushroom pie; Mixed berry pie (Berry pie) |
+| Good find | 71 | Fish pie; Strawberry rhubarb pie; Rhubarb pie; Banana cream pie |
+| Good find | 68 | Steak and kidney pie; Steak pie; Cottage pie; Pork pie; Peach pie; Sweet potato pie |
+| Good find | 64 | Mince pie; Meat pie |
 | Not accepted (examples) | 0 | Crumble; Trifle; Pancake |
 
 ## Name a picnic food
@@ -881,7 +1204,14 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 38 | Hot dogs (Hot dog) |
 | #10 | 40 | Pasta salad |
 | Gem | 100 | Scotch egg (Scotch eggs); Pork pie; Quiche; Onigiri (Rice ball, Rice balls); Pinwheel sandwiches (Pinwheels) |
-| Good find | 80 | Coleslaw (Slaw); Deviled eggs (Devilled eggs); Burgers (Hamburgers, Burger, Hamburger); Cookies (Cookie); Brownies (Brownie); Crackers (Cheese and crackers); Strawberries; Apples (Apple); Cupcakes (Cupcake); Cake; Sausage rolls (Sausage roll); Pickles (Pickle); Carrot sticks (Carrots); Celery sticks (Celery); Hummus; Chips and dip (Dip); Baguette; Ham; Salami; Olives; Corn on the cob (Corn); Cherry tomatoes; Wraps (Wrap); Pretzels (Pretzel); Popcorn; Trail mix; Granola bars (Cereal bars); Muffins (Muffin); Pie; Cold cuts; Samosas (Samosa); Spring rolls (Spring roll); Sushi; Cucumber sandwiches; Fruit salad; Berries; Pizza (Cold pizza); Bagels (Bagel); Croissants (Croissant); Boiled eggs (Hard-boiled eggs) |
+| Good find | 90 | Sushi |
+| Good find | 85 | Samosas (Samosa); Spring rolls (Spring roll) |
+| Good find | 80 | Bagels (Bagel); Croissants (Croissant) |
+| Good find | 75 | Celery sticks (Celery); Baguette; Salami; Olives; Cherry tomatoes; Popcorn; Trail mix; Granola bars (Cereal bars); Muffins (Muffin); Cucumber sandwiches |
+| Good find | 70 | Cupcakes (Cupcake); Pickles (Pickle); Carrot sticks (Carrots); Hummus; Corn on the cob (Corn); Wraps (Wrap); Pretzels (Pretzel); Pie; Cold cuts; Pizza (Cold pizza) |
+| Good find | 65 | Brownies (Brownie); Cake; Sausage rolls (Sausage roll); Chips and dip (Dip); Ham; Berries; Boiled eggs (Hard-boiled eggs) |
+| Good find | 60 | Coleslaw (Slaw); Deviled eggs (Devilled eggs); Burgers (Hamburgers, Burger, Hamburger); Crackers (Cheese and crackers); Strawberries; Fruit salad |
+| Good find | 55 | Cookies (Cookie); Apples (Apple) |
 | Not accepted (examples) | 0 | Lemonade; Blanket; Ants |
 
 ## Name an ice cream flavour
@@ -901,7 +1231,14 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 38 | Neapolitan |
 | #10 | 40 | Salted caramel |
 | Gem | 100 | Black sesame; Lavender; Ube (Purple yam); Stracciatella; Tutti frutti (Tutti-frutti) |
-| Good find | 80 | Pistachio; Coffee; Caramel; Mango; Coconut; Banana; Raspberry; Raspberry ripple; Lemon; Cherry; Peach; Butterscotch; Toffee; Bubblegum (Bubble gum); Cotton candy (Candy floss); Matcha (Green tea); Birthday cake; Chocolate chip; Fudge (Chocolate fudge); Hazelnut; Honeycomb (Hokey pokey); Maple walnut; Peanut butter; Dulce de leche; Pumpkin; Cinnamon; Ginger; Blueberry; Passion fruit; Brownie; Cheesecake; Mocha; Spumoni; Tiramisu; Apple pie |
+| Good find | 90 | Apple pie |
+| Good find | 85 | Ginger; Spumoni |
+| Good find | 80 | Dulce de leche; Pumpkin; Cinnamon; Passion fruit; Brownie; Tiramisu |
+| Good find | 75 | Cotton candy (Candy floss); Matcha (Green tea); Birthday cake; Fudge (Chocolate fudge); Honeycomb (Hokey pokey); Maple walnut; Blueberry; Cheesecake |
+| Good find | 70 | Raspberry ripple; Lemon; Peach; Butterscotch; Toffee; Bubblegum (Bubble gum); Hazelnut; Mocha |
+| Good find | 65 | Coconut; Banana; Raspberry; Cherry; Peanut butter |
+| Good find | 60 | Caramel; Mango |
+| Good find | 55 | Pistachio; Coffee; Chocolate chip |
 | Not accepted (examples) | 0 | Sorbet; Sprinkles; Waffle cone |
 
 ## Name a type of bean
@@ -921,7 +1258,13 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 52 | Chickpea (Garbanzo bean, Garbanzo) |
 | #10 | 55 | Cannellini bean (Cannellini, White kidney bean) |
 | Gem | 100 | Adzuki bean (Adzuki, Azuki, Aduki); Borlotti bean (Borlotti, Cranberry bean); Flageolet bean (Flageolet); Runner bean (Scarlet runner); Lupini bean (Lupini, Lupin bean) |
-| Good find | 80 | Mung bean (Mung, Moong); Edamame; Black-eyed bean (Black-eyed pea, Cowpea); Great Northern bean; Wax bean (Yellow bean); Anasazi bean; Yardlong bean (Long bean, Snake bean); Winged bean; Moth bean; Urad bean (Urad, Black gram); Tepary bean; Hyacinth bean (Lablab); Rice bean; Pink bean; Calypso bean; Mayocoba bean (Peruvian bean, Canary bean); Romano bean (Italian flat bean); Appaloosa bean; Gigante bean (Gigantes); Marrow bean |
+| Good find | 90 | Moth bean; Tepary bean; Rice bean; Calypso bean; Appaloosa bean |
+| Good find | 87 | Anasazi bean; Winged bean; Hyacinth bean (Lablab); Mayocoba bean (Peruvian bean, Canary bean) |
+| Good find | 84 | Yardlong bean (Long bean, Snake bean); Gigante bean (Gigantes); Marrow bean |
+| Good find | 81 | Urad bean (Urad, Black gram); Pink bean; Romano bean (Italian flat bean) |
+| Good find | 74 | Mung bean (Mung, Moong); Great Northern bean; Wax bean (Yellow bean) |
+| Good find | 71 | Black-eyed bean (Black-eyed pea, Cowpea) |
+| Good find | 68 | Edamame |
 | Not accepted (examples) | 0 | Jelly bean; Pea; Lentil |
 
 ## Name a Mexican dish
@@ -941,7 +1284,14 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 47 | Tostadas (Tostada) |
 | #10 | 50 | Mole |
 | Gem | 100 | Chiles en nogada; Cochinita pibil; Tlayuda; Aguachile; Molletes (Mollete) |
-| Good find | 80 | Pozole (Posole); Sopes (Sope); Chilaquiles; Huevos rancheros; Carnitas; Barbacoa; Tacos al pastor (Al pastor); Birria; Elote (Mexican street corn); Esquites; Menudo; Flautas (Flauta); Taquitos (Taquito); Gorditas (Gordita); Tortas (Torta); Chiles rellenos (Chile relleno); Mole poblano; Pico de gallo; Ceviche; Sopa de lima; Tortilla soup (Sopa de tortilla); Carne asada; Refried beans (Frijoles refritos); Panuchos; Salbutes; Tlacoyos; Huaraches (Huarache); Pambazo; Cemita; Queso fundido; Machaca; Caldo de res; Tinga (Chicken tinga); Mixiote; Enfrijoladas; Entomatadas; Conchas (Concha) |
+| Good find | 90 | Sopa de lima; Panuchos; Salbutes; Tlacoyos; Mixiote; Enfrijoladas; Entomatadas |
+| Good find | 86 | Huaraches (Huarache); Pambazo; Cemita; Machaca; Caldo de res |
+| Good find | 82 | Esquites; Tinga (Chicken tinga); Conchas (Concha) |
+| Good find | 79 | Sopes (Sope); Menudo; Ceviche; Queso fundido |
+| Good find | 75 | Pozole (Posole); Chilaquiles; Gorditas (Gordita); Tortas (Torta); Mole poblano; Tortilla soup (Sopa de tortilla) |
+| Good find | 71 | Barbacoa; Birria; Elote (Mexican street corn); Flautas (Flauta); Chiles rellenos (Chile relleno) |
+| Good find | 68 | Huevos rancheros; Carnitas; Tacos al pastor (Al pastor); Taquitos (Taquito); Pico de gallo; Carne asada |
+| Good find | 64 | Refried beans (Frijoles refritos) |
 | Not accepted (examples) | 0 | Paella; Gazpacho; Feijoada |
 
 ## Name an Italian dish
@@ -961,7 +1311,14 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 43 | Bruschetta |
 | #10 | 45 | Gnocchi |
 | Gem | 100 | Ossobuco (Osso buco); Vitello tonnato; Saltimbocca; Supplì (Suppli); Cacio e pepe |
-| Good find | 80 | Arancini (Arancine); Panna cotta; Calzone; Gelato; Cannoli (Cannolo); Focaccia; Carpaccio; Caprese salad (Insalata caprese, Caprese); Polenta; Parmigiana (Eggplant parmesan, Aubergine parmigiana, Melanzane alla parmigiana); Penne all'arrabbiata (Arrabbiata); Spaghetti alle vongole (Vongole); Pasta e fagioli; Ribollita; Chicken cacciatore (Cacciatore); Amatriciana (Bucatini all'amatriciana); Pasta alla Norma; Cannelloni; Tortellini; Affogato; Zabaglione; Panettone; Biscotti; Antipasto; Porchetta; Bistecca alla fiorentina (Florentine steak); Pesto alla genovese (Pesto); Frittata; Piadina; Crostini; Ragu (Ragù); Aglio e olio (Spaghetti aglio e olio); Semifreddo; Fritto misto; Risi e bisi; Bagna cauda |
+| Good find | 90 | Risi e bisi; Bagna cauda |
+| Good find | 86 | Ribollita; Pasta alla Norma; Bistecca alla fiorentina (Florentine steak); Piadina; Fritto misto |
+| Good find | 81 | Zabaglione; Porchetta; Aglio e olio (Spaghetti aglio e olio); Semifreddo |
+| Good find | 77 | Spaghetti alle vongole (Vongole); Pasta e fagioli; Amatriciana (Bucatini all'amatriciana); Affogato; Crostini |
+| Good find | 72 | Carpaccio; Penne all'arrabbiata (Arrabbiata); Chicken cacciatore (Cacciatore); Panettone; Pesto alla genovese (Pesto); Frittata; Ragu (Ragù) |
+| Good find | 68 | Arancini (Arancine); Caprese salad (Insalata caprese, Caprese); Polenta; Parmigiana (Eggplant parmesan, Aubergine parmigiana, Melanzane alla parmigiana); Biscotti; Antipasto |
+| Good find | 64 | Panna cotta; Cannoli (Cannolo); Focaccia; Cannelloni |
+| Good find | 59 | Calzone; Gelato; Tortellini |
 | Not accepted (examples) | 0 | Paella; Moussaka; Goulash |
 
 ## Name a Japanese food
@@ -981,7 +1338,14 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 43 | Gyoza |
 | #10 | 45 | Mochi |
 | Gem | 100 | Okonomiyaki; Takoyaki; Natto (Nattō); Chawanmushi; Oden |
-| Good find | 80 | Soba; Tonkatsu (Katsu); Japanese curry (Curry rice, Kare raisu); Yakitori; Bento (Bento box); Onigiri (Rice ball); Wagyu (Kobe beef); Matcha; Dorayaki; Taiyaki; Yakisoba; Sukiyaki; Shabu-shabu (Shabu shabu); Donburi; Katsudon; Oyakodon; Gyudon; Unagi (Grilled eel); Karaage; Wasabi; Nori; Tamagoyaki; Dango; Wagashi; Ponzu; Nigiri; Maki (Maki roll); Temaki (Hand roll); Teppanyaki; Agedashi tofu; Kushikatsu; Omurice; Nikujaga; Tsukemono (Japanese pickles); Umeboshi; Chirashi (Chirashizushi); Inari (Inarizushi); Furikake |
+| Good find | 90 | Nikujaga; Tsukemono (Japanese pickles) |
+| Good find | 86 | Wagashi; Ponzu; Agedashi tofu; Kushikatsu; Umeboshi; Chirashi (Chirashizushi); Furikake |
+| Good find | 81 | Dorayaki; Taiyaki; Oyakodon; Gyudon; Tamagoyaki; Dango; Omurice; Inari (Inarizushi) |
+| Good find | 77 | Donburi; Katsudon; Temaki (Hand roll) |
+| Good find | 72 | Sukiyaki; Shabu-shabu (Shabu shabu); Unagi (Grilled eel); Karaage |
+| Good find | 68 | Tonkatsu (Katsu); Japanese curry (Curry rice, Kare raisu); Onigiri (Rice ball); Wagyu (Kobe beef); Matcha; Nori; Nigiri; Maki (Maki roll); Teppanyaki |
+| Good find | 64 | Yakitori; Bento (Bento box); Yakisoba; Wasabi |
+| Good find | 59 | Soba |
 | Not accepted (examples) | 0 | Kimchi; Dim sum; Pho |
 
 ## Name something you drink with breakfast
@@ -1001,7 +1365,14 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 52 | Grapefruit juice |
 | #10 | 55 | Latte |
 | Gem | 100 | Lassi; Kefir; Yerba mate (Mate); Prune juice; Ayran |
-| Good find | 80 | Cappuccino; Espresso; Americano; Flat white; Mocha; Green tea; Herbal tea; Chai (Chai latte); Pineapple juice; Cranberry juice; Tomato juice; Carrot juice; Grape juice; Mango juice; Lemonade; Protein shake; Chocolate milk; Soy milk (Soya milk); Oat milk; Almond milk; Iced coffee; Cold brew; Sparkling water (Fizzy water, Soda water); Lemon water (Hot water with lemon); Coconut water; Kombucha; Matcha; Earl Grey; English breakfast tea (Breakfast tea); Buttermilk; Rooibos; Drinking yogurt (Yogurt drink); Green juice; Mixed fruit juice (Fruit juice) |
+| Good find | 90 | Buttermilk |
+| Good find | 87 | Rooibos; Drinking yogurt (Yogurt drink) |
+| Good find | 84 | Coconut water; Kombucha; Green juice |
+| Good find | 81 | Carrot juice; Mango juice; Lemonade; Soy milk (Soya milk); Sparkling water (Fizzy water, Soda water); Mixed fruit juice (Fruit juice) |
+| Good find | 78 | Cranberry juice; Tomato juice; Oat milk; Almond milk; Cold brew; Lemon water (Hot water with lemon); Matcha; Earl Grey |
+| Good find | 74 | Flat white; Mocha; Herbal tea; Chai (Chai latte); Pineapple juice; Grape juice; Protein shake |
+| Good find | 71 | Americano; Chocolate milk; Iced coffee; English breakfast tea (Breakfast tea) |
+| Good find | 68 | Cappuccino; Espresso; Green tea |
 | Not accepted (examples) | 0 | Cereal; Porridge; Toast |
 
 ## Name an insect
@@ -1021,7 +1392,15 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 38 | Dragonfly |
 | #10 | 40 | Cockroach (Roach) |
 | Gem | 100 | Silverfish; Lacewing; Mayfly; Weevil; Water strider (Pond skater) |
-| Good find | 80 | Wasp; Hornet; Moth; Cricket; Praying mantis (Mantis); Termite; Flea; Louse (Lice, Head louse); Firefly (Lightning bug); Stick insect (Walking stick, Stick bug); Caterpillar; Cicada; Aphid (Greenfly); Earwig; Bumblebee (Bumble bee); Locust; Stink bug (Shield bug); Gnat; Midge; Horsefly; Fruit fly; Damselfly; Katydid; Dung beetle; Stag beetle; Scarab beetle (Scarab); Bed bug (Bedbug); Yellowjacket (Yellow jacket); Tsetse fly; Leafhopper; Water boatman; Monarch butterfly; June bug (June beetle); Cockchafer (Maybug) |
+| Good find | 90 | Leafhopper; Water boatman; Cockchafer (Maybug) |
+| Good find | 85 | Katydid; Tsetse fly |
+| Good find | 80 | Midge; Damselfly; Stag beetle; Scarab beetle (Scarab); June bug (June beetle) |
+| Good find | 75 | Louse (Lice, Head louse); Aphid (Greenfly); Stink bug (Shield bug); Horsefly; Fruit fly; Dung beetle; Bed bug (Bedbug); Yellowjacket (Yellow jacket) |
+| Good find | 70 | Stick insect (Walking stick, Stick bug); Cicada; Earwig; Locust; Gnat; Monarch butterfly |
+| Good find | 65 | Termite |
+| Good find | 60 | Hornet; Flea; Firefly (Lightning bug); Caterpillar; Bumblebee (Bumble bee) |
+| Good find | 55 | Moth; Cricket; Praying mantis (Mantis) |
+| Good find | 50 | Wasp |
 | Not accepted (examples) | 0 | Spider; Scorpion; Centipede; Tick |
 
 ## Name a farm animal
@@ -1041,7 +1420,15 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 52 | Turkey |
 | #10 | 55 | Rooster (Cockerel) |
 | Gem | 100 | Guinea fowl; Water buffalo; Yak; Quail; Ox (Oxen) |
-| Good find | 80 | Llama; Alpaca; Goose (Geese); Rabbit; Mule; Bull; Pony; Dog (Farm dog, Sheepdog); Lamb; Piglet; Calf (Calves); Chick; Foal; Ram; Ewe; Heifer; Steer; Sow; Boar; Mare; Stallion; Billy goat; Nanny goat; Duckling; Gosling; Bullock; Drake; Bantam |
+| Good find | 90 | Bantam |
+| Good find | 87 | Gosling; Bullock; Drake |
+| Good find | 84 | Heifer; Steer; Mare; Stallion; Nanny goat; Duckling |
+| Good find | 81 | Foal; Ewe; Sow; Boar; Billy goat |
+| Good find | 78 | Piglet; Chick; Ram |
+| Good find | 74 | Mule; Pony; Calf (Calves) |
+| Good find | 71 | Llama; Alpaca; Rabbit; Dog (Farm dog, Sheepdog) |
+| Good find | 68 | Bull; Lamb |
+| Good find | 65 | Goose (Geese) |
 | Not accepted (examples) | 0 | Fox; Wolf; Raccoon; Zebra |
 
 ## Name a dinosaur
@@ -1061,7 +1448,14 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 47 | Diplodocus |
 | #10 | 50 | Allosaurus |
 | Gem | 100 | Therizinosaurus; Microraptor; Carnotaurus; Maiasaura; Amargasaurus |
-| Good find | 80 | Iguanodon; Parasaurolophus; Pachycephalosaurus; Apatosaurus; Giganotosaurus; Gallimimus; Dilophosaurus; Compsognathus; Argentinosaurus; Oviraptor; Deinonychus; Utahraptor; Baryonyx; Edmontosaurus; Corythosaurus; Protoceratops; Styracosaurus; Megalosaurus; Ceratosaurus; Camarasaurus; Troodon; Hadrosaurus; Albertosaurus; Kentrosaurus; Coelophysis; Herrerasaurus; Euoplocephalus; Lambeosaurus; Mamenchisaurus; Plateosaurus; Psittacosaurus; Suchomimus; Saltasaurus; Nodosaurus |
+| Good find | 90 | Euoplocephalus; Saltasaurus |
+| Good find | 86 | Camarasaurus; Kentrosaurus; Coelophysis; Herrerasaurus; Lambeosaurus; Mamenchisaurus; Plateosaurus; Psittacosaurus; Suchomimus; Nodosaurus |
+| Good find | 82 | Edmontosaurus; Corythosaurus; Albertosaurus |
+| Good find | 79 | Utahraptor; Protoceratops; Styracosaurus; Megalosaurus; Ceratosaurus; Troodon; Hadrosaurus |
+| Good find | 75 | Gallimimus; Compsognathus; Argentinosaurus; Oviraptor; Deinonychus; Baryonyx |
+| Good find | 71 | Iguanodon; Pachycephalosaurus; Giganotosaurus |
+| Good find | 68 | Parasaurolophus; Dilophosaurus |
+| Good find | 64 | Apatosaurus |
 | Not accepted (examples) | 0 | Pterodactyl; Plesiosaurus; Mosasaurus; Dimetrodon |
 
 ## Name a reptile
@@ -1081,7 +1475,14 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 43 | Chameleon |
 | #10 | 45 | Komodo dragon |
 | Gem | 100 | Tuatara; Gharial (Gavial); Slow worm (Slowworm); Gila monster; Thorny devil |
-| Good find | 80 | Python; Cobra; King cobra; Rattlesnake; Boa constrictor (Boa); Anaconda; Viper; Adder; Black mamba (Mamba); Garter snake; Corn snake; Bearded dragon; Monitor lizard; Skink; Caiman (Cayman); Sea turtle; Snapping turtle; Box turtle; Terrapin; Anole; Frilled lizard (Frill-necked lizard); Horned lizard (Horned toad); Basilisk lizard (Basilisk); Water dragon; Sea snake; Copperhead; Cottonmouth (Water moccasin); Coral snake; Grass snake; Milk snake; King snake (Kingsnake); Leopard gecko; Taipan; Sidewinder; Marine iguana; Leatherback turtle |
+| Good find | 86 | Basilisk lizard (Basilisk); Water dragon; Milk snake; Taipan; Sidewinder; Marine iguana; Leatherback turtle |
+| Good find | 81 | Anole; Horned lizard (Horned toad); Sea snake; Cottonmouth (Water moccasin); Coral snake; Grass snake; King snake (Kingsnake) |
+| Good find | 77 | Corn snake; Skink; Caiman (Cayman); Box turtle; Terrapin; Frilled lizard (Frill-necked lizard); Copperhead; Leopard gecko |
+| Good find | 72 | Adder; Black mamba (Mamba); Garter snake; Monitor lizard; Snapping turtle |
+| Good find | 68 | King cobra; Viper; Sea turtle |
+| Good find | 64 | Boa constrictor (Boa); Anaconda; Bearded dragon |
+| Good find | 59 | Cobra; Rattlesnake |
+| Good find | 55 | Python |
 | Not accepted (examples) | 0 | Frog; Salamander; Newt; Toad |
 
 ## Name a fish
@@ -1101,7 +1502,13 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 38 | Bass |
 | #10 | 40 | Swordfish |
 | Gem | 100 | Coelacanth; Mudskipper; Oarfish; Ocean sunfish (Sunfish, Mola); Archerfish |
-| Good find | 80 | Carp; Koi; Guppy; Piranha; Pike; Haddock; Mackerel; Sardine (Pilchard); Anchovy; Herring; Halibut; Flounder; Sole; Plaice; Perch; Tilapia; Snapper (Red snapper); Grouper; Barracuda; Marlin; Eel; Moray eel (Moray); Stingray; Manta ray; Seahorse (Sea horse); Pufferfish (Blowfish, Puffer fish); Angelfish; Betta (Siamese fighting fish); Neon tetra (Tetra); Minnow; Mahi-mahi (Dorado, Dolphinfish); Walleye; Bream; Sturgeon; Blue tang (Tang); Pollock (Pollack); Monkfish; Hake; Barramundi; Flying fish |
+| Good find | 85 | Barramundi; Flying fish |
+| Good find | 80 | Moray eel (Moray); Neon tetra (Tetra); Mahi-mahi (Dorado, Dolphinfish); Walleye; Bream; Sturgeon; Monkfish; Hake |
+| Good find | 75 | Plaice; Grouper; Manta ray; Blue tang (Tang); Pollock (Pollack) |
+| Good find | 70 | Sole; Perch; Snapper (Red snapper); Barracuda; Marlin; Angelfish; Betta (Siamese fighting fish); Minnow |
+| Good find | 65 | Koi; Pike; Anchovy; Herring; Halibut; Flounder; Tilapia; Stingray; Seahorse (Sea horse); Pufferfish (Blowfish, Puffer fish) |
+| Good find | 60 | Guppy; Haddock; Mackerel; Sardine (Pilchard); Eel |
+| Good find | 55 | Carp; Piranha |
 | Not accepted (examples) | 0 | Whale; Dolphin; Jellyfish; Starfish |
 
 ## Name a flower
@@ -1121,7 +1528,14 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 38 | Carnation |
 | #10 | 40 | Poppy |
 | Gem | 100 | Protea; Hellebore; Strelitzia (Bird of paradise); Columbine (Aquilegia); Ranunculus |
-| Good find | 80 | Dandelion; Marigold; Hydrangea; Peony; Iris; Chrysanthemum (Mum); Hibiscus; Violet; Pansy; Petunia; Geranium; Begonia; Lilac; Jasmine; Gardenia; Zinnia; Dahlia; Aster; Buttercup; Bluebell; Snowdrop; Crocus; Hyacinth; Gladiolus (Gladioli); Freesia; Forget-me-not; Lotus; Cornflower; Morning glory; Camellia; Azalea; Rhododendron; Honeysuckle; Sweet pea; Snapdragon; Primrose; Clematis; Wisteria; Lupin (Lupine); Calla lily |
+| Good find | 90 | Lupin (Lupine) |
+| Good find | 85 | Clematis |
+| Good find | 80 | Freesia; Cornflower; Camellia; Rhododendron; Wisteria; Calla lily |
+| Good find | 75 | Gardenia; Zinnia; Aster; Gladiolus (Gladioli); Morning glory; Azalea; Honeysuckle; Sweet pea; Snapdragon; Primrose |
+| Good find | 70 | Begonia; Dahlia; Snowdrop; Crocus; Hyacinth; Forget-me-not; Lotus |
+| Good find | 65 | Chrysanthemum (Mum); Hibiscus; Pansy; Petunia; Geranium; Bluebell |
+| Good find | 60 | Marigold; Hydrangea; Peony; Violet; Lilac; Jasmine; Buttercup |
+| Good find | 55 | Dandelion; Iris |
 | Not accepted (examples) | 0 | Fern; Moss; Mushroom |
 
 ## Name a tree
@@ -1141,7 +1555,14 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 43 | Elm |
 | #10 | 45 | Redwood |
 | Gem | 100 | Baobab; Ginkgo (Maidenhair tree); Monkey puzzle; Jacaranda; Hornbeam |
-| Good find | 80 | Spruce; Fir; Cedar; Ash; Beech; Sycamore; Poplar; Aspen; Chestnut; Horse chestnut; Walnut; Hickory; Cypress; Sequoia (Giant sequoia); Eucalyptus (Gum tree); Magnolia; Dogwood; Cottonwood; Hemlock; Larch; Yew; Holly; Juniper; Linden (Lime tree, Basswood); Mahogany; Teak; Banyan; Olive (Olive tree); Orange tree; Lemon tree; Pear tree; Peach tree; Plum tree; Fig tree; Alder; Hazel; Rowan (Mountain ash); Acacia; Mango tree; Joshua tree |
+| Good find | 90 | Rowan (Mountain ash) |
+| Good find | 86 | Banyan; Alder; Joshua tree |
+| Good find | 81 | Horse chestnut; Larch; Juniper; Linden (Lime tree, Basswood); Teak; Hazel; Acacia; Mango tree |
+| Good find | 77 | Dogwood; Cottonwood; Hemlock; Yew; Holly; Mahogany; Lemon tree; Peach tree; Plum tree; Fig tree |
+| Good find | 72 | Walnut; Hickory; Cypress; Magnolia; Olive (Olive tree); Orange tree; Pear tree |
+| Good find | 68 | Poplar; Aspen; Chestnut; Sequoia (Giant sequoia); Eucalyptus (Gum tree) |
+| Good find | 64 | Ash; Beech; Sycamore |
+| Good find | 59 | Spruce; Fir; Cedar |
 | Not accepted (examples) | 0 | Bamboo; Fern; Ivy |
 
 ## Name a cat breed
@@ -1161,7 +1582,14 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 52 | Russian Blue |
 | #10 | 55 | Abyssinian |
 | Gem | 100 | Korat; Turkish Van; LaPerm; Singapura; Chartreux |
-| Good find | 80 | Burmese; Birman; Himalayan; Exotic Shorthair; Norwegian Forest Cat (Wegie); Siberian; Devon Rex; Cornish Rex; Savannah; American Shorthair; Manx; Bombay; Tonkinese; Balinese; Oriental Shorthair (Oriental); Egyptian Mau; Ocicat; Ragamuffin; Somali; Turkish Angora (Angora); Japanese Bobtail; American Curl; Selkirk Rex; Havana Brown; Snowshoe; Munchkin; Toyger; Burmilla; Nebelung; Pixie-bob; Cymric; Peterbald |
+| Good find | 90 | Burmilla; Nebelung; Cymric; Peterbald |
+| Good find | 87 | Selkirk Rex; Havana Brown; Toyger; Pixie-bob |
+| Good find | 84 | Ocicat; Somali; Japanese Bobtail; American Curl; Snowshoe |
+| Good find | 81 | Tonkinese; Balinese; Oriental Shorthair (Oriental); Ragamuffin; Turkish Angora (Angora) |
+| Good find | 78 | Birman; Cornish Rex; Bombay; Egyptian Mau |
+| Good find | 74 | Exotic Shorthair; Siberian; Devon Rex; Savannah; Manx; Munchkin |
+| Good find | 71 | Norwegian Forest Cat (Wegie) |
+| Good find | 68 | Burmese; Himalayan; American Shorthair |
 | Not accepted (examples) | 0 | Tabby; Calico; Tortoiseshell; Tuxedo |
 
 ## Name a horse breed
@@ -1181,7 +1609,14 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 52 | Friesian |
 | #10 | 55 | Andalusian |
 | Gem | 100 | Akhal-Teke; Norwegian Fjord (Fjord); Haflinger; Marwari; Falabella |
-| Good find | 80 | Morgan; Paint Horse (American Paint Horse); Percheron; Belgian (Belgian Draft); Tennessee Walking Horse (Tennessee Walker); Lipizzaner (Lipizzan); Welsh pony; Connemara; Icelandic horse (Icelandic); Exmoor pony; Dartmoor pony; New Forest pony; Hanoverian; Trakehner; Lusitano; Standardbred; Missouri Fox Trotter; Paso Fino; Peruvian Paso; Suffolk Punch; Gypsy Vanner (Gypsy Cob, Irish Cob); Holsteiner; Oldenburg; Cleveland Bay; Highland pony; Fell pony; Brumby; Criollo; Knabstrupper; American Saddlebred (Saddlebred); Selle Francais; Camargue; Dutch Warmblood |
+| Good find | 90 | Knabstrupper; Selle Francais |
+| Good find | 87 | Oldenburg; Cleveland Bay; Fell pony; Criollo; Camargue; Dutch Warmblood |
+| Good find | 84 | Trakehner; Missouri Fox Trotter; Peruvian Paso; Suffolk Punch; Holsteiner; Highland pony; Brumby; American Saddlebred (Saddlebred) |
+| Good find | 81 | Connemara; Exmoor pony; Dartmoor pony; New Forest pony; Hanoverian; Lusitano; Standardbred; Paso Fino; Gypsy Vanner (Gypsy Cob, Irish Cob) |
+| Good find | 78 | Icelandic horse (Icelandic) |
+| Good find | 74 | Percheron; Belgian (Belgian Draft); Tennessee Walking Horse (Tennessee Walker); Welsh pony |
+| Good find | 71 | Morgan |
+| Good find | 68 | Paint Horse (American Paint Horse); Lipizzaner (Lipizzan) |
 | Not accepted (examples) | 0 | Zebra; Donkey; Mule; Pony |
 
 ## Name a baby animal's name, like kitten
@@ -1201,7 +1636,15 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 52 | Joey |
 | #10 | 55 | Kid |
 | Gem | 100 | Cygnet; Leveret; Owlet; Eaglet; Squab |
-| Good find | 80 | Kitten; Gosling; Tadpole (Polliwog); Fawn; Colt; Filly; Kit; Fry; Hatchling; Nestling; Fledgling; Cria; Poult; Pullet; Hoglet; Elver; Froglet; Nymph; Larva (Larvae); Whelp; Yearling; Peachick; Fingerling; Spiderling |
+| Good find | 90 | Elver |
+| Good find | 87 | Cria; Poult; Pullet; Peachick; Fingerling |
+| Good find | 84 | Hoglet; Nymph; Larva (Larvae); Spiderling |
+| Good find | 81 | Fry; Nestling; Froglet; Whelp; Yearling |
+| Good find | 78 | Kit; Hatchling; Fledgling |
+| Good find | 74 | Gosling; Filly |
+| Good find | 71 | Colt |
+| Good find | 68 | Tadpole (Polliwog); Fawn |
+| Good find | 65 | Kitten |
 | Not accepted (examples) | 0 | Egg; Doe; Hen; Mare |
 
 ## Name an animal that lives in the desert
@@ -1221,7 +1664,14 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 47 | Coyote |
 | #10 | 50 | Tarantula |
 | Gem | 100 | Addax; Sand cat; Jerboa; Thorny devil; Kangaroo rat |
-| Good find | 80 | Gila monster; Oryx (Arabian oryx); Gerbil; Jackrabbit; Desert tortoise; Horned lizard (Horned toad); Sidewinder; Vulture; Javelina (Peccary); Dingo; Chuckwalla; Desert iguana; Bearded dragon; Elf owl; Kit fox; Bighorn sheep (Desert bighorn); Camel spider; Desert locust; Sandgrouse; Uromastyx (Spiny-tailed lizard); Desert hedgehog; Desert monitor; Cactus wren; Gambel's quail; Horned viper (Sand viper); Dorcas gazelle |
+| Good find | 90 | Sandgrouse; Uromastyx (Spiny-tailed lizard); Dorcas gazelle |
+| Good find | 86 | Desert hedgehog; Desert monitor; Cactus wren; Gambel's quail |
+| Good find | 82 | Chuckwalla; Elf owl; Kit fox; Desert locust; Horned viper (Sand viper) |
+| Good find | 79 | Oryx (Arabian oryx); Gerbil; Javelina (Peccary); Desert iguana; Bighorn sheep (Desert bighorn) |
+| Good find | 75 | Horned lizard (Horned toad); Dingo; Bearded dragon; Camel spider |
+| Good find | 71 | Jackrabbit; Desert tortoise |
+| Good find | 68 | Gila monster; Sidewinder |
+| Good find | 64 | Vulture |
 | Not accepted (examples) | 0 | Polar bear; Penguin; Walrus |
 
 ## Name an animal with a shell
@@ -1241,7 +1691,15 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 47 | Mussel |
 | #10 | 50 | Armadillo |
 | Gem | 100 | Nautilus; Abalone; Limpet; Cowrie; Whelk |
-| Good find | 80 | Shrimp; Prawn; Scallop; Conch; Barnacle; Cockle; Periwinkle (Winkle); Crayfish (Crawfish, Crawdad); Terrapin; Sea turtle; Snapping turtle; Box turtle; Horseshoe crab; King crab; Fiddler crab; Coconut crab; Blue crab; Spider crab; Geoduck; Razor clam; Quahog; Sea snail; Langoustine; Giant clam; Garden snail; Cone snail |
+| Good find | 90 | Geoduck |
+| Good find | 86 | Quahog; Langoustine; Cone snail |
+| Good find | 82 | Coconut crab; Blue crab; Spider crab; Razor clam |
+| Good find | 79 | Periwinkle (Winkle); Box turtle; King crab; Fiddler crab; Giant clam |
+| Good find | 75 | Cockle; Terrapin; Snapping turtle; Horseshoe crab; Garden snail |
+| Good find | 71 | Prawn; Conch; Barnacle; Crayfish (Crawfish, Crawdad); Sea snail |
+| Good find | 68 | Shrimp |
+| Good find | 64 | Scallop |
+| Good find | 60 | Sea turtle |
 | Not accepted (examples) | 0 | Slug; Porcupine; Hedgehog; Octopus |
 
 ## Name a pet
@@ -1261,7 +1719,15 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 47 | Turtle |
 | #10 | 50 | Parrot |
 | Gem | 100 | Axolotl; Stick insect; Sugar glider; Hissing cockroach (Madagascar hissing cockroach); Degu |
-| Good find | 80 | Snake; Lizard; Gecko (Leopard gecko); Bearded dragon; Budgie (Budgerigar, Parakeet); Canary; Cockatiel; Ferret; Mouse (Mice); Rat; Gerbil; Chinchilla; Hedgehog; Hermit crab; Tortoise; Frog; Tarantula; Iguana; Corn snake; Pony; Horse; Chicken; Pygmy goat; Pot-bellied pig; Lovebird; Finch; Cockatoo; Betta (Siamese fighting fish); Guppy; Duck; Giant African snail (Snail); Chameleon; Ball python (Royal python) |
+| Good find | 90 | Giant African snail (Snail) |
+| Good find | 86 | Pygmy goat; Pot-bellied pig |
+| Good find | 82 | Corn snake; Lovebird; Finch; Betta (Siamese fighting fish); Guppy; Duck; Ball python (Royal python) |
+| Good find | 79 | Tarantula; Pony; Chicken; Cockatoo; Chameleon |
+| Good find | 75 | Cockatiel; Hedgehog; Hermit crab; Frog; Iguana |
+| Good find | 71 | Gecko (Leopard gecko); Canary; Rat; Chinchilla; Tortoise |
+| Good find | 68 | Bearded dragon; Budgie (Budgerigar, Parakeet); Ferret; Gerbil; Horse |
+| Good find | 64 | Lizard; Mouse (Mice) |
+| Good find | 60 | Snake |
 | Not accepted (examples) | 0 | Lion; Elephant; Shark |
 
 ## Name a monkey or ape
@@ -1281,7 +1747,14 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 47 | Howler monkey |
 | #10 | 50 | Mandrill |
 | Gem | 100 | Proboscis monkey; Golden snub-nosed monkey; Gelada; Uakari; Siamang |
-| Good find | 80 | Macaque; Rhesus monkey (Rhesus macaque); Japanese macaque (Snow monkey); Marmoset; Tamarin; Golden lion tamarin; Squirrel monkey; Colobus (Colobus monkey); Langur; Vervet monkey (Vervet); Mangabey; Drill; Titi monkey; Saki monkey (Saki); Night monkey (Owl monkey); Woolly monkey; Barbary macaque (Barbary ape); Pygmy marmoset; Emperor tamarin; Cotton-top tamarin; Patas monkey; Guenon; Douc (Red-shanked douc); De Brazza's monkey; Diana monkey |
+| Good find | 90 | Patas monkey; Guenon; Douc (Red-shanked douc); De Brazza's monkey; Diana monkey |
+| Good find | 86 | Mangabey; Saki monkey (Saki); Night monkey (Owl monkey); Cotton-top tamarin |
+| Good find | 82 | Drill; Titi monkey; Woolly monkey; Barbary macaque (Barbary ape); Emperor tamarin |
+| Good find | 79 | Langur; Vervet monkey (Vervet); Pygmy marmoset |
+| Good find | 75 | Japanese macaque (Snow monkey); Colobus (Colobus monkey) |
+| Good find | 71 | Rhesus monkey (Rhesus macaque); Tamarin; Golden lion tamarin |
+| Good find | 68 | Marmoset |
+| Good find | 64 | Macaque; Squirrel monkey |
 | Not accepted (examples) | 0 | Lemur; Sloth; Tarsier; Loris |
 
 ## Name an Australian animal
@@ -1301,7 +1774,14 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 47 | Tasmanian devil |
 | #10 | 50 | Echidna (Spiny anteater) |
 | Gem | 100 | Numbat; Bilby; Quoll; Thorny devil; Potoroo |
-| Good find | 80 | Quokka; Cassowary; Sugar glider; Possum (Brushtail possum); Saltwater crocodile (Saltie); Frilled lizard (Frill-necked lizard); Galah; Cockatoo (Sulphur-crested cockatoo); Lyrebird; Budgerigar (Budgie); Taipan; Funnel-web spider; Redback spider; Box jellyfish; Tree kangaroo; Bandicoot; Blue-tongued lizard (Blue-tongue skink, Bluey); Rainbow lorikeet; Black swan; Goanna; Bearded dragon; Pademelon; Bettong; Eastern brown snake (Brown snake); Tiger snake; Little penguin (Fairy penguin); Wedge-tailed eagle; Australian magpie; Wallaroo |
+| Good find | 90 | Pademelon; Bettong |
+| Good find | 86 | Little penguin (Fairy penguin); Wedge-tailed eagle; Australian magpie |
+| Good find | 82 | Black swan; Eastern brown snake (Brown snake); Tiger snake; Wallaroo |
+| Good find | 79 | Galah; Budgerigar (Budgie); Taipan; Box jellyfish; Tree kangaroo; Blue-tongued lizard (Blue-tongue skink, Bluey); Rainbow lorikeet; Goanna; Bearded dragon |
+| Good find | 75 | Frilled lizard (Frill-necked lizard); Lyrebird; Funnel-web spider; Redback spider; Bandicoot |
+| Good find | 71 | Sugar glider; Cockatoo (Sulphur-crested cockatoo) |
+| Good find | 68 | Cassowary; Possum (Brushtail possum); Saltwater crocodile (Saltie) |
+| Good find | 64 | Quokka |
 | Not accepted (examples) | 0 | Kiwi; Panda; Lemur |
 
 ## Name a rodent
@@ -1321,7 +1801,14 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 52 | Porcupine |
 | #10 | 55 | Chinchilla |
 | Gem | 100 | Agouti; Jerboa; Degu; Mara (Patagonian mara); Paca |
-| Good find | 80 | Capybara; Groundhog (Woodchuck); Prairie dog; Gopher (Pocket gopher); Marmot; Vole; Lemming; Dormouse (Dormice); Muskrat; Nutria (Coypu); Naked mole rat (Naked mole-rat); Kangaroo rat; Flying squirrel; Red squirrel; Grey squirrel (Gray squirrel); Ground squirrel; Fox squirrel; Field mouse (Wood mouse); Harvest mouse; Deer mouse; Pack rat (Woodrat); Brown rat; Black rat; Spiny mouse; Water vole |
+| Good find | 90 | Spiny mouse |
+| Good find | 87 | Fox squirrel; Harvest mouse; Brown rat; Black rat; Water vole |
+| Good find | 84 | Nutria (Coypu); Deer mouse; Pack rat (Woodrat) |
+| Good find | 81 | Kangaroo rat; Red squirrel; Grey squirrel (Gray squirrel); Ground squirrel; Field mouse (Wood mouse) |
+| Good find | 78 | Dormouse (Dormice); Muskrat; Naked mole rat (Naked mole-rat); Flying squirrel |
+| Good find | 74 | Marmot; Vole; Lemming |
+| Good find | 71 | Groundhog (Woodchuck); Prairie dog; Gopher (Pocket gopher) |
+| Good find | 68 | Capybara |
 | Not accepted (examples) | 0 | Rabbit; Hedgehog; Mole; Shrew |
 
 ## Name a gemstone
@@ -1341,7 +1828,15 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 47 | Jade |
 | #10 | 50 | Garnet |
 | Gem | 100 | Tanzanite; Alexandrite; Spinel; Iolite; Morganite |
-| Good find | 80 | Aquamarine; Turquoise; Onyx; Peridot; Citrine; Tourmaline; Lapis lazuli (Lapis); Moonstone; Amber; Quartz; Rose quartz; Smoky quartz; Jasper; Agate; Zircon; Beryl; Malachite; Bloodstone; Carnelian; Tiger's eye (Tigers eye, Tiger eye); Sunstone; Labradorite; Kunzite; Chalcedony; Chrysoprase; Aventurine; Amazonite; Rhodonite; Fluorite |
+| Good find | 90 | Kunzite; Chrysoprase; Rhodonite |
+| Good find | 86 | Sunstone; Chalcedony; Aventurine; Amazonite; Fluorite |
+| Good find | 82 | Smoky quartz; Beryl; Bloodstone; Carnelian; Labradorite |
+| Good find | 79 | Jasper; Zircon; Malachite |
+| Good find | 75 | Lapis lazuli (Lapis); Agate; Tiger's eye (Tigers eye, Tiger eye) |
+| Good find | 71 | Citrine; Tourmaline; Moonstone; Rose quartz |
+| Good find | 68 | Onyx; Peridot; Amber; Quartz |
+| Good find | 64 | Turquoise |
+| Good find | 60 | Aquamarine |
 | Not accepted (examples) | 0 | Gold; Silver; Platinum |
 
 ## Name something in space
@@ -1361,7 +1856,15 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 43 | Saturn |
 | #10 | 45 | Jupiter |
 | Gem | 100 | Quasar; Pulsar; Oort cloud; Magnetar; Kuiper belt |
-| Good find | 80 | Earth; Venus; Mercury; Uranus; Neptune; Pluto; Galaxy; Milky Way; Nebula; Meteor (Shooting star); Meteoroid; Satellite; Space station (International Space Station, ISS); Astronaut; Supernova; Constellation; Asteroid belt; Dwarf planet; Ceres; Andromeda Galaxy (Andromeda); Red giant; White dwarf; Neutron star; Solar system; Space junk (Space debris); Solar flare; Exoplanet; Titan; Europa; Ganymede; Space probe; Halley's Comet; Gas giant; Star cluster |
+| Good find | 90 | Star cluster |
+| Good find | 86 | Ceres; Titan; Europa; Ganymede; Gas giant |
+| Good find | 81 | Red giant; White dwarf; Neutron star; Exoplanet; Space probe |
+| Good find | 77 | Meteoroid; Asteroid belt; Dwarf planet; Andromeda Galaxy (Andromeda); Space junk (Space debris); Solar flare; Halley's Comet |
+| Good find | 72 | Supernova; Solar system |
+| Good find | 68 | Nebula; Space station (International Space Station, ISS); Astronaut; Constellation |
+| Good find | 64 | Mercury; Uranus; Neptune; Satellite |
+| Good find | 59 | Venus; Pluto; Galaxy; Milky Way; Meteor (Shooting star) |
+| Good find | 55 | Earth |
 | Not accepted (examples) | 0 | Alien; UFO; Cloud |
 
 ## Name a houseplant
@@ -1381,7 +1884,14 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 47 | Orchid |
 | #10 | 50 | Succulent |
 | Gem | 100 | String of pearls; Calathea; Hoya (Wax plant); Peperomia; Polka dot plant |
-| Good find | 80 | Rubber plant (Rubber tree); Fiddle leaf fig (Fiddle-leaf fig); ZZ plant (Zamioculcas); Jade plant; Philodendron; Boston fern; African violet; Prayer plant (Maranta); Dracaena; Yucca; Chinese money plant (Pilea, Pancake plant); Money tree (Pachira); Parlor palm (Parlour palm); Areca palm; Kentia palm; English ivy (Ivy); Christmas cactus; Croton; Dieffenbachia (Dumb cane); Venus flytrap; Air plant (Tillandsia); Bromeliad; Anthurium; Lucky bamboo; Poinsettia; Cyclamen; Asparagus fern; Ponytail palm; Cast iron plant (Aspidistra); Chinese evergreen (Aglaonema); Arrowhead plant (Syngonium); Tradescantia (Inch plant); Echeveria; Haworthia; Weeping fig (Ficus) |
+| Good find | 90 | Haworthia |
+| Good find | 86 | Kentia palm; Cast iron plant (Aspidistra); Chinese evergreen (Aglaonema); Arrowhead plant (Syngonium); Tradescantia (Inch plant); Echeveria |
+| Good find | 82 | Parlor palm (Parlour palm); Areca palm; Croton; Dieffenbachia (Dumb cane); Cyclamen; Asparagus fern; Ponytail palm; Weeping fig (Ficus) |
+| Good find | 79 | Bromeliad; Anthurium |
+| Good find | 75 | Prayer plant (Maranta); Dracaena; Yucca; Chinese money plant (Pilea, Pancake plant); Air plant (Tillandsia) |
+| Good find | 71 | ZZ plant (Zamioculcas); Boston fern; African violet; Money tree (Pachira); English ivy (Ivy); Christmas cactus; Lucky bamboo; Poinsettia |
+| Good find | 68 | Fiddle leaf fig (Fiddle-leaf fig); Philodendron |
+| Good find | 64 | Rubber plant (Rubber tree); Jade plant; Venus flytrap |
 | Not accepted (examples) | 0 | Oak tree; Sunflower; Grass |
 
 ## Name a rock or mineral
@@ -1401,7 +1911,15 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 43 | Slate |
 | #10 | 45 | Pumice |
 | Gem | 100 | Feldspar; Gneiss; Schist; Galena; Magnetite (Lodestone) |
-| Good find | 80 | Coal; Shale; Chalk; Flint; Gold; Silver; Copper; Pyrite (Fool's gold); Mica; Talc; Gypsum; Halite (Rock salt); Calcite; Fluorite; Graphite; Hematite (Haematite); Amethyst; Jasper; Agate; Conglomerate; Soapstone; Dolomite; Sulfur (Sulphur); Topaz; Garnet; Corundum; Bauxite; Chert; Mudstone; Andesite; Olivine; Platinum; Jade; Tuff; Emerald; Ruby |
+| Good find | 90 | Tuff |
+| Good find | 86 | Corundum; Bauxite; Chert; Andesite; Olivine |
+| Good find | 81 | Fluorite; Conglomerate; Dolomite; Mudstone |
+| Good find | 77 | Halite (Rock salt); Calcite; Hematite (Haematite); Jasper; Soapstone; Sulfur (Sulphur); Garnet; Platinum |
+| Good find | 72 | Mica; Talc; Gypsum; Graphite; Agate; Topaz; Jade |
+| Good find | 68 | Copper; Pyrite (Fool's gold); Amethyst; Emerald; Ruby |
+| Good find | 64 | Shale; Chalk; Flint; Silver |
+| Good find | 59 | Coal |
+| Good find | 55 | Gold |
 | Not accepted (examples) | 0 | Brick; Concrete; Pearl; Amber |
 
 ## Name a nocturnal animal
@@ -1421,7 +1939,14 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 47 | Firefly (Lightning bug) |
 | #10 | 50 | Badger |
 | Gem | 100 | Aye-aye; Kinkajou; Tarsier; Kiwi; Nightjar |
-| Good find | 80 | Slow loris (Loris); Bush baby (Galago); Sugar glider; Wombat; Koala; Aardvark; Armadillo; Porcupine; Cockroach; Cricket; Scorpion; Flying squirrel; Bilby; Kangaroo rat; Jerboa; Fennec fox; Night heron; Frogmouth (Tawny frogmouth); Kakapo; Ocelot; Civet; Genet; Owl monkey (Night monkey); Hamster; Glow-worm; Tasmanian devil; Quoll; Bandicoot; Dormouse (Dormice) |
+| Good find | 90 | Kakapo; Genet; Quoll |
+| Good find | 86 | Bilby; Jerboa; Frogmouth (Tawny frogmouth); Ocelot; Civet; Bandicoot |
+| Good find | 82 | Kangaroo rat; Night heron; Owl monkey (Night monkey) |
+| Good find | 79 | Bush baby (Galago); Wombat; Koala; Aardvark; Fennec fox; Glow-worm; Tasmanian devil; Dormouse (Dormice) |
+| Good find | 75 | Slow loris (Loris); Sugar glider; Armadillo; Scorpion; Flying squirrel |
+| Good find | 71 | Porcupine |
+| Good find | 68 | Cockroach; Cricket |
+| Good find | 60 | Hamster |
 | Not accepted (examples) | 0 | Butterfly; Squirrel; Eagle; Rooster |
 
 ## Name an animal sound, like moo
@@ -1441,7 +1966,15 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 47 | Hiss |
 | #10 | 50 | Cock-a-doodle-doo |
 | Gem | 100 | Bray; Bugle; Nicker; Bellow; Trumpet |
-| Good find | 80 | Moo; Cluck; Tweet; Chirp; Ribbit; Croak; Howl; Growl; Purr; Buzz; Hoot (Twit twoo, Tu-whit tu-whoo); Gobble; Squeak; Squawk; Caw; Honk; Bleat; Whinny; Snort; Grunt; Coo; Chatter; Hee-haw; Trill; Yelp; Whimper; Yip; Screech; Warble; Cheep; Arf; Squeal; Click |
+| Good find | 90 | Click |
+| Good find | 86 | Trill; Warble |
+| Good find | 82 | Chatter; Yelp; Whimper; Yip; Cheep |
+| Good find | 79 | Bleat; Snort; Grunt; Coo; Screech; Arf; Squeal |
+| Good find | 75 | Caw; Whinny |
+| Good find | 71 | Croak; Gobble; Squawk; Honk; Hee-haw |
+| Good find | 68 | Cluck; Chirp; Howl; Growl; Buzz; Hoot (Twit twoo, Tu-whit tu-whoo); Squeak |
+| Good find | 64 | Tweet; Ribbit; Purr |
+| Good find | 60 | Moo |
 | Not accepted (examples) | 0 | Beep; Ding dong; Tick tock; Vroom |
 
 ## Name a constellation
@@ -1461,7 +1994,14 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 56 | Sagittarius |
 | #10 | 60 | Aquarius |
 | Gem | 100 | Monoceros; Camelopardalis; Vulpecula; Delphinus; Musca |
-| Good find | 80 | Aries; Cancer; Virgo; Libra; Capricornus (Capricorn); Pisces; Draco; Pegasus; Andromeda; Perseus; Hercules; Cygnus; Lyra; Aquila; Canis Major (Great Dog); Canis Minor; Lepus; Auriga; Bootes; Corona Borealis; Crux (Southern Cross); Centaurus; Cepheus; Lupus; Hydra; Phoenix; Columba; Carina; Corvus; Eridanus; Ophiuchus; Cetus; Lynx; Sagitta |
+| Good find | 90 | Columba; Eridanus; Sagitta |
+| Good find | 88 | Lepus; Auriga; Bootes; Lupus; Carina; Corvus; Cetus; Lynx |
+| Good find | 85 | Aquila; Corona Borealis; Cepheus; Ophiuchus |
+| Good find | 82 | Cygnus; Lyra; Canis Minor; Crux (Southern Cross); Centaurus; Hydra; Phoenix |
+| Good find | 80 | Perseus; Hercules; Canis Major (Great Dog) |
+| Good find | 78 | Capricornus (Capricorn); Draco; Pegasus; Andromeda |
+| Good find | 75 | Cancer; Libra; Pisces |
+| Good find | 72 | Aries; Virgo |
 | Not accepted (examples) | 0 | Big Dipper; Little Dipper; Milky Way; North Star |
 
 ## Name an animal that can fly, not a bird
@@ -1481,7 +2021,14 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 52 | Wasp |
 | #10 | 55 | Hornet |
 | Gem | 100 | Lacewing; Mayfly; Damselfly; Flying fox; Hoverfly |
-| Good find | 80 | Beetle; Firefly (Lightning bug); Bumblebee (Bumble bee); Horsefly; Gnat; Midge; Cicada; Locust; Grasshopper; Fruit fly; Crane fly; Stag beetle; June bug (June beetle); Vampire bat; Fruit bat; Pipistrelle; Yellowjacket (Yellow jacket); Bluebottle; Hawk moth; Luna moth; Monarch butterfly; Swallowtail; Painted lady; Stink bug (Shield bug); Dung beetle; Tsetse fly; Cockchafer (Maybug) |
+| Good find | 90 | Cockchafer (Maybug) |
+| Good find | 87 | Pipistrelle; Hawk moth; Painted lady; Dung beetle; Tsetse fly |
+| Good find | 84 | Stag beetle; Bluebottle; Luna moth; Swallowtail |
+| Good find | 81 | Midge; Crane fly; June bug (June beetle); Yellowjacket (Yellow jacket); Stink bug (Shield bug) |
+| Good find | 78 | Cicada; Fruit fly; Monarch butterfly |
+| Good find | 74 | Horsefly; Gnat; Locust; Grasshopper |
+| Good find | 71 | Bumblebee (Bumble bee); Vampire bat; Fruit bat |
+| Good find | 68 | Beetle; Firefly (Lightning bug) |
 | Not accepted (examples) | 0 | Eagle; Owl; Hummingbird |
 
 ## Name a type of shark
@@ -1501,7 +2048,14 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 56 | Blue shark |
 | #10 | 60 | Lemon shark |
 | Gem | 100 | Goblin shark; Frilled shark; Wobbegong; Cookiecutter shark (Cookie cutter shark); Greenland shark |
-| Good find | 80 | Megalodon; Blacktip shark (Blacktip); Oceanic whitetip; Whitetip reef shark; Thresher shark (Thresher); Angel shark; Sand tiger shark (Sand tiger, Grey nurse shark); Leopard shark; Zebra shark; Dogfish (Spiny dogfish); Bamboo shark; Epaulette shark; Horn shark; Bonnethead; Port Jackson shark; Sixgill shark; Sevengill shark; Silky shark; Dusky shark; Sandbar shark; Lantern shark; Megamouth shark (Megamouth); Porbeagle; Salmon shark; School shark (Tope); Swell shark; Sleeper shark; Sawshark (Saw shark); Caribbean reef shark; Galapagos shark |
+| Good find | 90 | School shark (Tope) |
+| Good find | 88 | Epaulette shark; Port Jackson shark; Sevengill shark; Lantern shark; Porbeagle; Salmon shark; Swell shark; Sleeper shark |
+| Good find | 85 | Bamboo shark; Horn shark; Bonnethead; Sixgill shark; Silky shark; Dusky shark; Sandbar shark |
+| Good find | 82 | Zebra shark; Megamouth shark (Megamouth); Sawshark (Saw shark); Caribbean reef shark; Galapagos shark |
+| Good find | 80 | Whitetip reef shark; Angel shark; Sand tiger shark (Sand tiger, Grey nurse shark) |
+| Good find | 78 | Oceanic whitetip; Leopard shark; Dogfish (Spiny dogfish) |
+| Good find | 75 | Blacktip shark (Blacktip); Thresher shark (Thresher) |
+| Good find | 70 | Megalodon |
 | Not accepted (examples) | 0 | Killer whale; Dolphin; Sawfish; Stingray |
 
 ## Name a country in Asia
@@ -1521,7 +2075,15 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 52 | Singapore |
 | #10 | 55 | Malaysia |
 | Gem | 100 | Bhutan; Brunei; Kyrgyzstan; Timor-Leste (East Timor); Turkmenistan |
-| Good find | 80 | Mongolia; Nepal; Pakistan; Bangladesh; Sri Lanka; Myanmar (Burma); Cambodia; Laos; North Korea; Afghanistan; Iran; Iraq; Saudi Arabia; Kuwait; Qatar; Bahrain; United Arab Emirates (UAE); Oman; Yemen; Jordan; Syria; Lebanon; Kazakhstan; Uzbekistan; Tajikistan; Maldives; Turkey (Turkiye); Russia |
+| Good find | 90 | Tajikistan |
+| Good find | 87 | Bahrain |
+| Good find | 84 | Oman; Yemen; Jordan; Lebanon; Uzbekistan |
+| Good find | 81 | Kuwait; Syria; Kazakhstan; Maldives; Turkey (Turkiye) |
+| Good find | 78 | Myanmar (Burma); Laos; Qatar; Russia |
+| Good find | 74 | Mongolia; Nepal; Bangladesh; Cambodia; Iraq; United Arab Emirates (UAE) |
+| Good find | 71 | Sri Lanka; Afghanistan; Iran; Saudi Arabia |
+| Good find | 68 | Pakistan |
+| Good find | 65 | North Korea |
 | Not accepted (examples) | 0 | Australia; Morocco; Ethiopia |
 
 ## Name a country in Europe
@@ -1541,7 +2103,15 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 52 | Netherlands (Holland, The Netherlands) |
 | #10 | 55 | Switzerland |
 | Gem | 100 | Liechtenstein; Andorra; San Marino; Moldova; Montenegro |
-| Good find | 80 | England; Scotland; Wales; Belgium; Austria; Sweden; Norway; Denmark; Finland; Iceland; Poland; Czechia (Czech Republic); Slovakia; Hungary; Romania; Bulgaria; Croatia; Serbia; Slovenia; Bosnia and Herzegovina (Bosnia); Albania; Ukraine; Belarus; Lithuania; Latvia; Estonia; Luxembourg; Monaco; Malta; Russia |
+| Good find | 90 | Latvia |
+| Good find | 87 | Slovenia; Bosnia and Herzegovina (Bosnia); Belarus; Lithuania; Estonia |
+| Good find | 84 | Slovakia; Albania; Malta |
+| Good find | 81 | Czechia (Czech Republic); Bulgaria; Serbia; Luxembourg; Monaco |
+| Good find | 78 | Hungary; Romania; Croatia |
+| Good find | 74 | Wales; Finland; Iceland; Ukraine; Russia |
+| Good find | 71 | Austria; Norway; Denmark; Poland |
+| Good find | 68 | Scotland; Belgium; Sweden |
+| Good find | 65 | England |
 | Not accepted (examples) | 0 | Morocco; Tunisia; Lebanon |
 
 ## Name a capital city
@@ -1561,7 +2131,15 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 43 | Beijing |
 | #10 | 45 | Canberra |
 | Gem | 100 | Ulaanbaatar (Ulan Bator); Thimphu; Windhoek; Montevideo; Tbilisi |
-| Good find | 80 | Moscow; Dublin; Lisbon; Athens; Vienna; Cairo; Mexico City; Buenos Aires; Brasilia (Brasília); Lima; Santiago; Bogota (Bogotá); Nairobi; New Delhi; Seoul; Bangkok; Hanoi; Manila; Jakarta; Oslo; Stockholm; Copenhagen; Helsinki; Warsaw; Prague; Budapest; Brussels; Amsterdam; Wellington; Reykjavik (Reykjavík); Havana; Kingston; Caracas; Accra; Kampala; Kuala Lumpur; Ankara; Abuja |
+| Good find | 90 | Kampala; Abuja |
+| Good find | 86 | Accra; Ankara |
+| Good find | 81 | Kingston; Caracas |
+| Good find | 77 | Brasilia (Brasília); Lima; Santiago; Bogota (Bogotá); Nairobi; Hanoi; Jakarta; Wellington; Reykjavik (Reykjavík); Kuala Lumpur |
+| Good find | 72 | Manila; Helsinki; Warsaw; Budapest; Havana |
+| Good find | 68 | Lisbon; Buenos Aires; Oslo; Stockholm; Copenhagen; Prague; Brussels |
+| Good find | 64 | Vienna; Cairo; New Delhi; Seoul; Bangkok; Amsterdam |
+| Good find | 59 | Dublin; Athens; Mexico City |
+| Good find | 55 | Moscow |
 | Not accepted (examples) | 0 | Sydney; Toronto; New York; Istanbul |
 
 ## Name a river
@@ -1581,7 +2159,15 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 38 | Colorado |
 | #10 | 40 | Ganges (Ganga) |
 | Gem | 100 | Orinoco; Limpopo; Irrawaddy (Ayeyarwady); Shannon; Fraser |
-| Good find | 80 | Mekong; Volga; Zambezi; Congo; Niger; Yellow River (Huang He); Tigris; Euphrates; Hudson; Ohio; Rio Grande; Missouri; Columbia; Potomac; Tiber; Po; Loire; Rhone (Rhône); Elbe; Indus; Brahmaputra; Murray; Darling; Mackenzie; Yukon; St. Lawrence (Saint Lawrence); Severn; Tyne; Mersey; Liffey; Delaware; Snake; Arkansas; Tennessee; Ottawa River; Red River |
+| Good find | 90 | Darling |
+| Good find | 85 | Brahmaputra; Ottawa River |
+| Good find | 80 | Elbe; Murray; Mackenzie; Tyne; Mersey; Liffey; Snake; Arkansas |
+| Good find | 75 | Zambezi; Niger; Po; Loire; Rhone (Rhône); Indus; Severn; Delaware; Tennessee; Red River |
+| Good find | 70 | Volga; Tiber; Yukon |
+| Good find | 65 | Mekong; Congo; Yellow River (Huang He); Tigris; Euphrates; Columbia; Potomac |
+| Good find | 60 | Ohio; St. Lawrence (Saint Lawrence) |
+| Good find | 55 | Hudson; Missouri |
+| Good find | 50 | Rio Grande |
 | Not accepted (examples) | 0 | Lake Superior; Panama Canal; Loch Ness |
 
 ## Name an island
@@ -1601,7 +2187,14 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 38 | Manhattan |
 | #10 | 40 | Great Britain (Britain) |
 | Gem | 100 | Baffin Island; Socotra; Tristan da Cunha; Gotland; Lampedusa |
-| Good find | 80 | Sicily; Sardinia; Corsica; Crete; Tasmania; Borneo; Sumatra; Java; New Guinea; Newfoundland; Vancouver Island; Prince Edward Island (PEI); Long Island; Martha's Vineyard; Nantucket; Maui; Oahu (O'ahu); Kauai (Kaua'i); Easter Island (Rapa Nui); Mallorca (Majorca); Ibiza; Tenerife; Malta; Barbados; Trinidad; Tobago; Aruba; Isle of Wight; Isle of Man; Skye (Isle of Skye); Santorini; Mykonos; Capri; Zanzibar; Phuket; Sri Lanka; Honshu; Hokkaido; Puerto Rico; Mauritius |
+| Good find | 90 | Honshu |
+| Good find | 80 | Tobago; Skye (Isle of Skye); Zanzibar; Hokkaido |
+| Good find | 75 | Sumatra; Java; New Guinea; Phuket; Sri Lanka; Mauritius |
+| Good find | 70 | Corsica; Newfoundland; Vancouver Island; Martha's Vineyard; Nantucket; Kauai (Kaua'i); Malta; Trinidad; Isle of Wight; Isle of Man; Mykonos; Capri |
+| Good find | 65 | Sardinia; Crete; Tasmania; Borneo; Prince Edward Island (PEI); Easter Island (Rapa Nui); Mallorca (Majorca); Tenerife; Aruba; Santorini |
+| Good find | 60 | Oahu (O'ahu); Ibiza; Barbados; Puerto Rico |
+| Good find | 55 | Long Island; Maui |
+| Good find | 50 | Sicily |
 | Not accepted (examples) | 0 | Antarctica; Atlantis; Florida |
 
 ## Name a famous landmark
@@ -1621,7 +2214,15 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 43 | Sydney Opera House (Opera House) |
 | #10 | 45 | CN Tower |
 | Gem | 100 | Atomium; Alhambra; Neuschwanstein Castle (Neuschwanstein); Terracotta Army (Terracotta Warriors); Moai (Easter Island heads) |
-| Good find | 80 | Burj Khalifa; Tower of London; Buckingham Palace; Tower Bridge; London Eye; Arc de Triomphe; Louvre; Brandenburg Gate; Trevi Fountain; Machu Picchu; Petra; Stonehenge; Grand Canyon; Niagara Falls; Empire State Building; Space Needle; Gateway Arch; Times Square; Central Park; Forbidden City; Mount Fuji; Petronas Towers; Tokyo Tower; Uluru (Ayers Rock); Victoria Falls; Edinburgh Castle; Matterhorn; Mount Everest (Everest); Great Sphinx (Sphinx); Rialto Bridge; Alcatraz; Brooklyn Bridge; Golden Gate Park |
+| Good find | 90 | Golden Gate Park |
+| Good find | 86 | Tokyo Tower; Matterhorn; Rialto Bridge |
+| Good find | 81 | Petra; Petronas Towers; Victoria Falls |
+| Good find | 77 | Brandenburg Gate; Gateway Arch; Forbidden City; Uluru (Ayers Rock); Edinburgh Castle |
+| Good find | 72 | Trevi Fountain; Central Park; Mount Fuji; Alcatraz |
+| Good find | 68 | Tower of London; Space Needle; Times Square; Mount Everest (Everest); Great Sphinx (Sphinx); Brooklyn Bridge |
+| Good find | 64 | Tower Bridge; London Eye; Arc de Triomphe; Louvre; Machu Picchu |
+| Good find | 59 | Burj Khalifa; Buckingham Palace; Stonehenge; Grand Canyon; Niagara Falls |
+| Good find | 55 | Empire State Building |
 | Not accepted (examples) | 0 | Atlantis; El Dorado; Camelot |
 
 ## Name a city in Asia
@@ -1641,7 +2242,15 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 38 | Delhi (New Delhi) |
 | #10 | 40 | Dubai |
 | Gem | 100 | Ulaanbaatar (Ulan Bator); Chiang Mai; Almaty; Luang Prabang; Samarkand |
-| Good find | 80 | Osaka; Kyoto; Hiroshima; Manila; Jakarta; Kuala Lumpur (KL); Hanoi; Ho Chi Minh City (Saigon); Kolkata (Calcutta); Chennai (Madras); Bangalore (Bengaluru); Karachi; Lahore; Dhaka; Kathmandu; Colombo; Busan; Guangzhou; Shenzhen; Chengdu; Xi'an (Xian); Wuhan; Macau (Macao); Phuket; Doha; Abu Dhabi; Riyadh; Tehran; Baghdad; Tashkent; Yokohama; Sapporo; Nagoya; Phnom Penh; Hyderabad |
+| Good find | 90 | Tashkent |
+| Good find | 85 | Nagoya; Phnom Penh |
+| Good find | 80 | Lahore; Dhaka; Colombo; Chengdu; Xi'an (Xian); Sapporo; Hyderabad |
+| Good find | 75 | Chennai (Madras); Karachi; Busan; Guangzhou; Shenzhen; Wuhan; Macau (Macao); Doha; Riyadh; Tehran; Baghdad; Yokohama |
+| Good find | 70 | Kolkata (Calcutta); Bangalore (Bengaluru); Kathmandu; Phuket |
+| Good find | 65 | Hiroshima; Jakarta; Hanoi; Ho Chi Minh City (Saigon); Abu Dhabi |
+| Good find | 60 | Kyoto; Kuala Lumpur (KL) |
+| Good find | 55 | Manila |
+| Good find | 50 | Osaka |
 | Not accepted (examples) | 0 | Cairo; Moscow; Sydney |
 
 ## Name a city in the USA
@@ -1661,7 +2270,15 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 38 | Seattle |
 | #10 | 40 | Orlando |
 | Gem | 100 | Boise; Duluth; Cheyenne; Spokane; Savannah |
-| Good find | 80 | Dallas; Atlanta; Philadelphia (Philly); Phoenix; Denver; Detroit; New Orleans; Nashville; Austin; San Diego; Portland; Washington DC (Washington, DC, Washington D.C.); Baltimore; Minneapolis; St. Louis (Saint Louis); Kansas City; Memphis; Cleveland; Pittsburgh; Honolulu; Anchorage; Salt Lake City; Sacramento; San Antonio; Charlotte; Tampa; Indianapolis; Milwaukee; Cincinnati; Albuquerque; Tucson; Buffalo; Omaha; Raleigh |
+| Good find | 90 | Omaha |
+| Good find | 85 | Tucson; Raleigh |
+| Good find | 80 | Cincinnati; Albuquerque; Buffalo |
+| Good find | 75 | Anchorage; Sacramento; Charlotte; Indianapolis; Milwaukee |
+| Good find | 70 | Minneapolis; St. Louis (Saint Louis); Kansas City; Memphis; Cleveland; Pittsburgh; Honolulu; Salt Lake City; San Antonio; Tampa |
+| Good find | 65 | Portland; Baltimore |
+| Good find | 60 | Phoenix; Nashville; Austin |
+| Good find | 55 | Philadelphia (Philly); Denver; Detroit; New Orleans; San Diego |
+| Good find | 50 | Dallas; Atlanta; Washington DC (Washington, DC, Washington D.C.) |
 | Not accepted (examples) | 0 | Toronto; Vancouver; Mexico City |
 
 ## Name a city in Canada
@@ -1681,7 +2298,14 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 47 | Halifax |
 | #10 | 50 | Victoria |
 | Gem | 100 | Yellowknife; Whitehorse; Iqaluit; Thunder Bay; Moose Jaw |
-| Good find | 80 | Regina; Saskatoon; Hamilton; London; Kitchener; Waterloo; Mississauga; Brampton; Markham; Oakville; Burlington; Barrie; Kingston; Windsor; Niagara Falls; St. Catharines (Saint Catharines); Guelph; Sudbury (Greater Sudbury); Kelowna; Kamloops; Nanaimo; Surrey; Burnaby; Richmond; Red Deer; Lethbridge; Fredericton; Moncton; Saint John; St. John's (Saint John's); Charlottetown; Sherbrooke; Gatineau; Laval; Trois-Rivieres (Trois-Rivières) |
+| Good find | 90 | Trois-Rivieres (Trois-Rivières) |
+| Good find | 86 | Lethbridge; Sherbrooke; Gatineau |
+| Good find | 82 | Oakville; Burlington; St. Catharines (Saint Catharines); Guelph; Kamloops; Nanaimo; Burnaby; Richmond; Red Deer; Saint John; Laval |
+| Good find | 79 | Kitchener; Markham; Barrie; Sudbury (Greater Sudbury); Surrey; Fredericton; Moncton |
+| Good find | 75 | London; Waterloo; Kelowna; Charlottetown |
+| Good find | 71 | Saskatoon; Brampton; Kingston; Windsor; St. John's (Saint John's) |
+| Good find | 68 | Regina; Mississauga; Niagara Falls |
+| Good find | 64 | Hamilton |
 | Not accepted (examples) | 0 | Seattle; Detroit; Anchorage |
 
 ## Name an ocean or sea
@@ -1701,7 +2325,15 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 56 | North Sea |
 | #10 | 60 | Southern Ocean (Antarctic Ocean) |
 | Gem | 100 | Sargasso Sea (Sargasso); Tasman Sea; Weddell Sea; Sea of Okhotsk (Okhotsk); Andaman Sea |
-| Good find | 80 | Baltic Sea (Baltic); Aegean Sea (Aegean); Adriatic Sea (Adriatic); Arabian Sea; Bering Sea; Coral Sea; Irish Sea; Ionian Sea; Tyrrhenian Sea; Ligurian Sea; Norwegian Sea; Barents Sea; Kara Sea; Laptev Sea; Labrador Sea; Beaufort Sea; Yellow Sea; East China Sea; South China Sea; Philippine Sea; Java Sea; Celtic Sea; Ross Sea; Bismarck Sea; Solomon Sea; Timor Sea; Arafura Sea; Sea of Marmara (Marmara Sea); Alboran Sea; Greenland Sea; Sulu Sea; Banda Sea |
+| Good find | 90 | Kara Sea; Laptev Sea; Arafura Sea; Alboran Sea; Banda Sea |
+| Good find | 88 | Ross Sea; Bismarck Sea; Sea of Marmara (Marmara Sea); Sulu Sea |
+| Good find | 85 | Tyrrhenian Sea; Ligurian Sea; Barents Sea; Celtic Sea; Solomon Sea; Timor Sea |
+| Good find | 82 | Norwegian Sea; Labrador Sea; Beaufort Sea; East China Sea; Philippine Sea; Java Sea; Greenland Sea |
+| Good find | 80 | Ionian Sea; Yellow Sea |
+| Good find | 78 | Coral Sea; Irish Sea |
+| Good find | 75 | Adriatic Sea (Adriatic); Arabian Sea; Bering Sea |
+| Good find | 72 | Aegean Sea (Aegean); South China Sea |
+| Good find | 70 | Baltic Sea (Baltic) |
 | Not accepted (examples) | 0 | Lake Superior; Lake Victoria; Amazon River |
 
 ## Name a desert
@@ -1721,7 +2353,15 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 52 | Namib |
 | #10 | 55 | Chihuahuan |
 | Gem | 100 | Taklamakan (Taklimakan); Thar (Great Indian Desert); Karakum (Kara Kum); Simpson; Danakil |
-| Good find | 80 | Great Victoria Desert (Great Victoria); Great Sandy Desert (Great Sandy); Gibson; Tanami; Great Basin; Painted Desert; Black Rock Desert (Black Rock); Syrian Desert; Arctic Desert (Arctic); Patagonian Desert (Patagonian); Kyzylkum (Kyzyl Kum); Libyan Desert (Libyan); Nubian Desert (Nubian); Ordos; Lut (Dasht-e Lut); Dasht-e Kavir (Kavir); Colorado Desert; Red Desert; Wadi Rum; White Desert; Rub' al Khali (Empty Quarter); Strzelecki; Little Sandy Desert; Tabernas; Great Salt Lake Desert; Owyhee |
+| Good find | 90 | Strzelecki; Tabernas; Owyhee |
+| Good find | 87 | Kyzylkum (Kyzyl Kum); Ordos; Lut (Dasht-e Lut); Dasht-e Kavir (Kavir) |
+| Good find | 84 | Little Sandy Desert |
+| Good find | 81 | Gibson; Tanami; Syrian Desert; Red Desert; White Desert; Rub' al Khali (Empty Quarter) |
+| Good find | 78 | Libyan Desert (Libyan); Nubian Desert (Nubian); Wadi Rum; Great Salt Lake Desert |
+| Good find | 74 | Great Victoria Desert (Great Victoria); Great Sandy Desert (Great Sandy); Black Rock Desert (Black Rock); Colorado Desert |
+| Good find | 71 | Painted Desert; Patagonian Desert (Patagonian) |
+| Good find | 68 | Great Basin |
+| Good find | 65 | Arctic Desert (Arctic) |
 | Not accepted (examples) | 0 | Serengeti; Everglades; Grand Canyon |
 
 ## Name a language
@@ -1741,7 +2381,15 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 43 | Arabic |
 | #10 | 45 | Portuguese |
 | Gem | 100 | Basque; Quechua; Maori (Māori); Amharic; Inuktitut |
-| Good find | 80 | Korean; Hindi; Dutch; Greek; Turkish; Polish; Swedish; Norwegian; Danish; Finnish; Hebrew; Latin; Cantonese; Vietnamese; Thai; Bengali (Bangla); Punjabi; Urdu; Tagalog (Filipino); Swahili (Kiswahili); Irish (Irish Gaelic); Scottish Gaelic; Welsh; Icelandic; Hungarian; Czech; Ukrainian; Persian (Farsi); Indonesian; Malay; Tamil; Zulu; Afrikaans; Cree; Esperanto; American Sign Language (ASL); Hawaiian |
+| Good find | 90 | Cree |
+| Good find | 86 | Esperanto; Hawaiian |
+| Good find | 81 | Scottish Gaelic; Icelandic; Indonesian; Malay; Zulu; Afrikaans |
+| Good find | 77 | Bengali (Bangla); Hungarian; Czech; Persian (Farsi); Tamil; American Sign Language (ASL) |
+| Good find | 72 | Finnish; Thai; Punjabi; Urdu; Swahili (Kiswahili); Irish (Irish Gaelic); Welsh; Ukrainian |
+| Good find | 68 | Norwegian; Danish; Vietnamese; Tagalog (Filipino) |
+| Good find | 64 | Turkish; Polish; Swedish; Hebrew; Cantonese |
+| Good find | 59 | Dutch; Greek; Latin |
+| Good find | 55 | Korean; Hindi |
 | Not accepted (examples) | 0 | Mexican; Brazilian; Canadian; Austrian |
 
 ## Name a currency
@@ -1761,7 +2409,15 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 47 | Yuan (Renminbi, RMB) |
 | #10 | 50 | Ruble (Rouble) |
 | Gem | 100 | Kwacha; Quetzal; Tugrik (Togrog); Lempira; Pula |
-| Good find | 80 | Won; Baht; Real (Brazilian real); Krona; Krone; Rand; Lira; Dirham; Riyal; Rupiah; Ringgit; Dong; Shekel; Zloty; Forint; Koruna; Australian dollar; New Zealand dollar; Dinar; Shilling; Naira; Cedi; Sol; Bolivar (Bolívar); Colon (Colón); Guarani (Guaraní); Leu; Lev; Hryvnia; Taka; Kyat; Rial; Birr |
+| Good find | 90 | Cedi; Guarani (Guaraní); Lev; Taka; Kyat; Birr |
+| Good find | 86 | Naira; Sol; Colon (Colón); Leu; Hryvnia |
+| Good find | 82 | Rupiah; Ringgit; Forint; Koruna; Bolivar (Bolívar); Rial |
+| Good find | 79 | Riyal; Dong; Zloty |
+| Good find | 75 | Krone; Dirham; Dinar; Shilling |
+| Good find | 71 | Baht; Real (Brazilian real); Krona; Rand; Shekel |
+| Good find | 68 | Won; Lira |
+| Good find | 64 | New Zealand dollar |
+| Good find | 60 | Australian dollar |
 | Not accepted (examples) | 0 | Gold; Silver; Cheque |
 
 ## Name something you pack for a holiday
@@ -1781,7 +2437,15 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 43 | Toothpaste |
 | #10 | 45 | Underwear |
 | Gem | 100 | Plug adapter (Travel adapter); Earplugs; Laundry bag; Travel pillow (Neck pillow); Eye mask (Sleep mask) |
-| Good find | 80 | Hat (Sun hat); Book; Camera; Pyjamas (Pajamas, PJs); Towel; Socks; Jacket; Flip-flops; Sandals; Shampoo; Deodorant; Hairbrush; Comb; Razor; Medicine; First aid kit; Snacks; Headphones; Wallet; Money (Cash); Tickets; Map; Umbrella; Raincoat; Goggles; Insect repellent (Bug spray); Lip balm; Water bottle; Tablet; Laptop; Shorts; T-shirts (T-shirt); Dress; Phone |
+| Good find | 90 | Goggles |
+| Good find | 86 | Lip balm |
+| Good find | 81 | Comb; First aid kit; Map; Insect repellent (Bug spray); Water bottle; Tablet |
+| Good find | 77 | Razor; Umbrella; Raincoat; Laptop; Dress |
+| Good find | 72 | Medicine; Snacks; Headphones; Wallet; Tickets |
+| Good find | 68 | Jacket; Shampoo; Deodorant; Hairbrush; Shorts; T-shirts (T-shirt) |
+| Good find | 64 | Camera; Towel; Flip-flops; Sandals; Money (Cash) |
+| Good find | 59 | Hat (Sun hat); Book; Pyjamas (Pajamas, PJs); Socks |
+| Good find | 55 | Phone |
 | Not accepted (examples) | 0 | Hotel; Airplane; Beach |
 
 ## Name a type of boat
@@ -1801,7 +2465,15 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 47 | Raft |
 | #10 | 50 | Tugboat (Tug) |
 | Gem | 100 | Junk; Dhow; Coracle; Sampan; Felucca |
-| Good find | 80 | Gondola; Catamaran; Trimaran; Dinghy; Barge; Houseboat; Fishing boat; Lifeboat; Pontoon boat (Pontoon); Paddle steamer (Sternwheeler); Narrowboat (Canal boat); Punt; Trawler; Galleon; Longship (Viking ship); Schooner; Steamboat; Dragon boat; Outrigger canoe (Outrigger); Airboat; Container ship; Pedal boat (Pedalo, Paddle boat); Sloop; Motorboat; Water taxi; Icebreaker; Tall ship; Clipper; Inflatable boat (Rubber dinghy); Riverboat; Ketch |
+| Good find | 90 | Ketch |
+| Good find | 86 | Trimaran; Outrigger canoe (Outrigger); Airboat; Sloop; Clipper |
+| Good find | 82 | Paddle steamer (Sternwheeler); Narrowboat (Canal boat); Punt; Galleon; Longship (Viking ship); Water taxi; Icebreaker; Tall ship |
+| Good find | 79 | Trawler; Schooner; Dragon boat; Riverboat |
+| Good find | 75 | Container ship; Pedal boat (Pedalo, Paddle boat); Inflatable boat (Rubber dinghy) |
+| Good find | 71 | Gondola; Dinghy; Houseboat; Lifeboat; Pontoon boat (Pontoon); Steamboat |
+| Good find | 68 | Catamaran; Barge |
+| Good find | 64 | Motorboat |
+| Good find | 60 | Fishing boat |
 | Not accepted (examples) | 0 | Surfboard; Paddleboard; Seaplane |
 
 ## Name a building in a town
@@ -1821,7 +2493,15 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 43 | Supermarket (Grocery store) |
 | #10 | 45 | Restaurant |
 | Gem | 100 | Bandstand; Water tower; Grain elevator; Market hall; Pumping station |
-| Good find | 80 | Courthouse; Museum; Cinema (Movie theatre, Movie theater); Theatre (Theater); Hotel; Cafe (Café); Pub; Bakery; Pharmacy; Gym; Petrol station (Gas station); Train station (Railway station); Bus station; Community centre (Community center); Swimming pool; Arena; Ice rink; Bowling alley; Factory; Warehouse; Apartment building (Apartment block); House; Garage; Dentist; Doctor's office (Clinic); Vet clinic (Vet); Daycare (Nursery); Art gallery (Gallery); Stadium; Shopping mall (Mall); Parking garage (Car park); Lighthouse; Hair salon (Hairdresser); University; College |
+| Good find | 90 | Lighthouse |
+| Good find | 86 | Parking garage (Car park) |
+| Good find | 81 | Arena; Ice rink; Warehouse; Garage; Vet clinic (Vet); Daycare (Nursery); College |
+| Good find | 77 | Bowling alley; Factory; Apartment building (Apartment block); Dentist; Art gallery (Gallery); Stadium; Hair salon (Hairdresser); University |
+| Good find | 72 | Bus station; Community centre (Community center); Swimming pool; Doctor's office (Clinic) |
+| Good find | 68 | Courthouse; Theatre (Theater); Gym; Petrol station (Gas station); Shopping mall (Mall) |
+| Good find | 64 | Cafe (Café); Pub; Bakery; Pharmacy; Train station (Railway station); House |
+| Good find | 59 | Museum; Hotel |
+| Good find | 55 | Cinema (Movie theatre, Movie theater) |
 | Not accepted (examples) | 0 | Park; Bridge; Statue |
 
 ## Name a type of shop
@@ -1841,7 +2521,15 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 43 | Hardware store (Hardware shop, Ironmonger) |
 | #10 | 45 | Florist (Flower shop) |
 | Gem | 100 | Haberdashery; Milliner (Hat shop); Chandlery (Ship chandler); Cobbler (Shoe repair); Saddlery |
-| Good find | 80 | Fishmonger (Fish shop); Greengrocer; Deli (Delicatessen); Jeweller (Jeweler, Jewellery shop, Jewelry store); Pet shop (Pet store); Sweet shop (Candy store); Newsagent; Barber; Hair salon (Hairdresser); Optician; Gift shop; Antique shop; Charity shop (Thrift store, Thrift shop); Furniture store; Electronics store; Music shop; Sports shop (Sporting goods store); Garden centre (Garden center); Bike shop; Craft shop; Stationery shop; Ice cream shop; Coffee shop; Department store; Convenience store (Corner shop); Pawn shop; Cheese shop; Bridal shop; Tailor; Dry cleaner; Phone shop; Video game store; Comic shop (Comic book store); Record shop (Record store) |
+| Good find | 90 | Bridal shop |
+| Good find | 86 | Cheese shop; Comic shop (Comic book store) |
+| Good find | 81 | Craft shop; Stationery shop; Pawn shop; Tailor; Dry cleaner; Video game store; Record shop (Record store) |
+| Good find | 77 | Garden centre (Garden center); Bike shop; Ice cream shop; Phone shop |
+| Good find | 72 | Optician; Gift shop; Antique shop; Charity shop (Thrift store, Thrift shop); Music shop; Coffee shop |
+| Good find | 68 | Deli (Delicatessen); Newsagent; Barber; Hair salon (Hairdresser); Furniture store; Sports shop (Sporting goods store) |
+| Good find | 64 | Fishmonger (Fish shop); Greengrocer; Electronics store; Department store; Convenience store (Corner shop) |
+| Good find | 59 | Jeweller (Jeweler, Jewellery shop, Jewelry store); Sweet shop (Candy store) |
+| Good find | 55 | Pet shop (Pet store) |
 | Not accepted (examples) | 0 | Restaurant; Bank; Library |
 
 ## Name something at the beach
@@ -1861,7 +2549,15 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 43 | Sunscreen |
 | #10 | 45 | Seagulls (Gulls) |
 | Gem | 100 | Driftwood; Tide pool (Rock pool); Sand dollar; Groyne (Groin); Lifebuoy (Life ring) |
-| Good find | 80 | Crabs; Starfish (Sea star); Seaweed; Rocks; Pebbles; Bucket; Spade (Shovel); Beach ball; Surfboard; Surfers; Swimmers; Deck chair (Beach chair); Ice cream; Boardwalk; Pier; Lighthouse; Jellyfish; Sand dunes (Dunes); Palm trees; Volleyball net; Kite; Lifeguard tower; Boats; Sunbathers; Flip-flops; Sunglasses; Beach hut; Fish; Sun; Snack bar |
+| Good find | 90 | Snack bar |
+| Good find | 86 | Beach hut |
+| Good find | 81 | Lighthouse; Volleyball net; Kite |
+| Good find | 77 | Boardwalk; Pier; Sand dunes (Dunes); Lifeguard tower; Boats; Sunbathers; Fish |
+| Good find | 72 | Swimmers; Jellyfish; Flip-flops |
+| Good find | 68 | Pebbles; Surfers; Deck chair (Beach chair); Ice cream; Palm trees; Sunglasses |
+| Good find | 64 | Starfish (Sea star); Rocks; Spade (Shovel); Beach ball; Surfboard |
+| Good find | 59 | Crabs; Seaweed; Bucket |
+| Good find | 55 | Sun |
 | Not accepted (examples) | 0 | Ski lift; Igloo |
 
 ## Name something at a campsite
@@ -1881,7 +2577,14 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 43 | Cooler (Cool box) |
 | #10 | 45 | Lantern |
 | Gem | 100 | Tent pegs (Tent stakes); Guy ropes; Mallet; Bear locker (Bear box); Water pump |
-| Good find | 80 | Trees; Mosquitoes; Bugs; Hammock; Camp stove; Hot dogs; S'mores; Sausages; Fire pit; Caravan (Trailer); Camping chair; Backpack; Map; Compass; Axe; Bug spray; Raccoons; Shower block (Showers); Outhouse; Canoe; Lake; Stars; Air mattress; Sleeping mat; Pillow; Guitar; Kettle; Tarp; Matches; Fishing rod; Pots and pans |
+| Good find | 90 | Kettle |
+| Good find | 86 | Shower block (Showers); Tarp |
+| Good find | 81 | Map; Compass; Raccoons; Canoe; Sleeping mat; Pillow; Guitar; Fishing rod |
+| Good find | 77 | Axe; Outhouse; Stars; Matches; Pots and pans |
+| Good find | 72 | Hammock; Sausages; Backpack; Lake; Air mattress |
+| Good find | 68 | Camp stove; Caravan (Trailer); Camping chair; Bug spray |
+| Good find | 64 | Trees; Mosquitoes; Bugs; Hot dogs; Fire pit |
+| Good find | 55 | S'mores |
 | Not accepted (examples) | 0 | Hotel room; Elevator; Room service |
 
 ## Name something at an airport
@@ -1901,7 +2604,15 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 43 | Passengers |
 | #10 | 45 | Flight attendants (Cabin crew) |
 | Gem | 100 | Windsock; Jet bridge (Air bridge); Baggage tug (Baggage tractor); De-icing truck; Marshaller |
-| Good find | 80 | Baggage carousel (Baggage claim); Departure board (Departures board); Duty free; Customs; Passport control; Metal detector; X-ray machine (X-ray); Lounge; Food court; Shops; Restaurants; Cafe (Café); Moving walkway (Travelator); Escalator; Luggage trolley (Trolley, Luggage cart); Taxi rank (Taxis); Parking lot (Car park); Shuttle bus; Hangar; Helicopter; Boarding pass; Waiting area; Toilets (Washrooms); Lost and found; Sniffer dogs; Air traffic controllers; Information desk; Currency exchange; Car rental desk; Fuel truck; Cargo |
+| Good find | 90 | Fuel truck |
+| Good find | 86 | Information desk; Currency exchange; Car rental desk |
+| Good find | 81 | Escalator; Taxi rank (Taxis); Shuttle bus; Helicopter; Lost and found; Sniffer dogs; Cargo |
+| Good find | 77 | Cafe (Café); Moving walkway (Travelator); Luggage trolley (Trolley, Luggage cart); Parking lot (Car park); Hangar; Toilets (Washrooms) |
+| Good find | 72 | X-ray machine (X-ray); Lounge; Food court; Waiting area |
+| Good find | 68 | Departure board (Departures board); Shops; Restaurants; Air traffic controllers |
+| Good find | 64 | Baggage carousel (Baggage claim); Duty free; Passport control; Metal detector |
+| Good find | 59 | Boarding pass |
+| Good find | 55 | Customs |
 | Not accepted (examples) | 0 | Lifeguard; Anchor; Harbour |
 
 ## Name a type of home
@@ -1921,7 +2632,15 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 52 | Igloo |
 | #10 | 55 | Mobile home (Trailer) |
 | Gem | 100 | Yurt (Ger); Longhouse; Hacienda; Stilt house; Cave house |
-| Good find | 80 | Semi-detached (Semi); Detached house; Terraced house (Row house); Duplex; Triplex; Penthouse; Studio; Loft; Chalet; Villa; Castle; Palace; Farmhouse; Ranch; Tent; Caravan; RV (Motorhome); Houseboat; Treehouse; Tiny house; Hut; Shack; Teepee (Tipi, Tepee); Dorm (Dormitory); Basement apartment; Bedsit; Manor (Manor house); Split-level; Co-op |
+| Good find | 90 | Co-op |
+| Good find | 87 | Basement apartment; Split-level |
+| Good find | 84 | Triplex; Dorm (Dormitory); Bedsit |
+| Good find | 81 | Shack; Manor (Manor house) |
+| Good find | 78 | Tiny house; Hut |
+| Good find | 74 | Semi-detached (Semi); Terraced house (Row house); Loft; Chalet; Palace; Ranch; RV (Motorhome); Houseboat; Treehouse; Teepee (Tipi, Tepee) |
+| Good find | 71 | Detached house; Penthouse; Studio; Tent; Caravan |
+| Good find | 68 | Villa; Castle; Farmhouse |
+| Good find | 65 | Duplex |
 | Not accepted (examples) | 0 | Hotel; Office; Garden |
 
 ## Name a theme park ride
@@ -1941,7 +2660,15 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 52 | Pirate ship (Swinging ship) |
 | #10 | 55 | Water slide |
 | Gem | 100 | Scrambler; Monorail; Mine train; Topple tower; Octopus |
-| Good find | 80 | River rapids (Rapids); Go-karts; Zipline (Zip line); Wild mouse; Dark ride; Motion simulator (Simulator); Miniature railway (Train ride); Bobsled coaster; Water coaster; Pendulum ride; Reverse bungee (Slingshot); Sky coaster; Swing ride (Chair swing, Flying chairs); Sky ride (Cable car); Helter skelter; Giant slide; Pony ride; Tunnel of love; Observation tower; Rotor; Bumper boats; Ghost train; Wooden coaster; Inverted coaster; Gyro swing; Spinning coaster |
+| Good find | 90 | Rotor; Gyro swing |
+| Good find | 87 | Reverse bungee (Slingshot); Sky coaster |
+| Good find | 84 | Dark ride; Bobsled coaster; Water coaster; Pendulum ride; Observation tower |
+| Good find | 81 | Wild mouse; Motion simulator (Simulator); Sky ride (Cable car); Pony ride; Inverted coaster; Spinning coaster |
+| Good find | 78 | Miniature railway (Train ride); Helter skelter; Tunnel of love; Wooden coaster |
+| Good find | 74 | Zipline (Zip line); Giant slide; Bumper boats |
+| Good find | 71 | River rapids (Rapids); Swing ride (Chair swing, Flying chairs) |
+| Good find | 68 | Ghost train |
+| Good find | 65 | Go-karts |
 | Not accepted (examples) | 0 | Arcade; Hot dog stand; Petting zoo |
 
 ## Name a US state
@@ -1961,7 +2688,15 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 56 | Colorado (CO) |
 | #10 | 60 | Ohio (OH) |
 | Gem | 100 | Delaware (DE); Wyoming (WY); North Dakota (ND); Vermont (VT); Rhode Island (RI) |
-| Good find | 80 | Alabama (AL); Arkansas (AR); Connecticut (CT); Georgia (GA); Illinois (IL); Indiana (IN); Iowa (IA); Kansas (KS); Kentucky (KY); Louisiana (LA); Maine (ME); Maryland (MD); Massachusetts (MA); Michigan (MI); Minnesota (MN); Mississippi (MS); Missouri (MO); Montana (MT); Nebraska (NE); Nevada (NV); New Hampshire (NH); New Jersey (NJ); New Mexico (NM); North Carolina (NC); Oklahoma (OK); Oregon (OR); Pennsylvania (PA); South Carolina (SC); South Dakota (SD); Tennessee (TN); Utah (UT); Virginia (VA); West Virginia (WV); Wisconsin (WI); Idaho (ID) |
+| Good find | 90 | South Dakota (SD) |
+| Good find | 88 | Idaho (ID) |
+| Good find | 85 | Arkansas (AR); New Hampshire (NH); West Virginia (WV) |
+| Good find | 82 | Connecticut (CT); Nebraska (NE); South Carolina (SC) |
+| Good find | 80 | Indiana (IN); Iowa (IA); Maryland (MD); Missouri (MO); New Mexico (NM); Oklahoma (OK); Wisconsin (WI) |
+| Good find | 78 | Kansas (KS); Kentucky (KY); Maine (ME); Minnesota (MN); Mississippi (MS); Montana (MT); Utah (UT) |
+| Good find | 75 | Alabama (AL); Illinois (IL); Louisiana (LA); North Carolina (NC); Oregon (OR); Tennessee (TN); Virginia (VA) |
+| Good find | 72 | Georgia (GA); Massachusetts (MA); Michigan (MI); Nevada (NV); Pennsylvania (PA) |
+| Good find | 70 | New Jersey (NJ) |
 | Not accepted (examples) | 0 | Puerto Rico; Washington DC; Guam |
 
 ## Name a volcano
@@ -1981,7 +2716,14 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 47 | Mount Kilimanjaro (Kilimanjaro) |
 | #10 | 50 | Eyjafjallajokull (Eyjafjallajökull) |
 | Gem | 100 | Paricutin (Parícutin); Mount Erebus (Erebus); Surtsey; Tambora (Mount Tambora); Nyiragongo (Mount Nyiragongo) |
-| Good find | 80 | Mauna Kea; Mount Pinatubo (Pinatubo); Stromboli; Popocatepetl (Popocatépetl); Mount Rainier (Rainier); Mount Hood; Mount Shasta; Mount Pelee (Mount Pelée, Pelee); Cotopaxi; Chimborazo; Hekla; Katla; Mount Ruapehu (Ruapehu); Mount Taranaki (Taranaki, Mount Egmont); Mount Tongariro (Tongariro); Mayon (Mount Mayon); Merapi (Mount Merapi); Mount Teide (Teide); Mount Aso (Aso); Sakurajima; Santorini (Thera); Mount Elbrus (Elbrus); Mount Kenya; Mount Cameroon; Ojos del Salado; Lassen Peak (Mount Lassen); Mount Baker; Arenal; Villarrica; Soufriere Hills; Ol Doinyo Lengai; Fagradalsfjall; Mount Unzen (Unzen) |
+| Good find | 90 | Ojos del Salado; Ol Doinyo Lengai; Mount Unzen (Unzen) |
+| Good find | 86 | Chimborazo; Mount Aso (Aso); Mount Elbrus (Elbrus); Mount Cameroon; Lassen Peak (Mount Lassen); Villarrica; Fagradalsfjall |
+| Good find | 82 | Katla; Mount Taranaki (Taranaki, Mount Egmont); Mayon (Mount Mayon); Merapi (Mount Merapi); Sakurajima; Mount Baker; Soufriere Hills |
+| Good find | 79 | Mount Pelee (Mount Pelée, Pelee); Cotopaxi; Hekla; Mount Ruapehu (Ruapehu); Mount Tongariro (Tongariro); Mount Kenya; Arenal |
+| Good find | 75 | Mount Hood; Mount Shasta; Mount Teide (Teide); Santorini (Thera) |
+| Good find | 71 | Stromboli; Popocatepetl (Popocatépetl) |
+| Good find | 68 | Mount Pinatubo (Pinatubo); Mount Rainier (Rainier) |
+| Good find | 60 | Mauna Kea |
 | Not accepted (examples) | 0 | Mount Everest; Uluru; Matterhorn |
 
 ## Name a famous bridge
@@ -2001,7 +2743,15 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 43 | Bridge of Sighs |
 | #10 | 45 | Forth Bridge (Forth Rail Bridge) |
 | Gem | 100 | Stari Most (Mostar Bridge); Millau Viaduct; Akashi Kaikyo Bridge (Akashi Kaikyo); Bixby Creek Bridge (Bixby Bridge); Iron Bridge (Ironbridge) |
-| Good find | 80 | Lions Gate Bridge (Lions Gate); Ambassador Bridge; Peace Bridge; Rainbow Bridge; Mackinac Bridge; Chesapeake Bay Bridge; Seven Mile Bridge; Sunshine Skyway Bridge (Sunshine Skyway); Tacoma Narrows Bridge; Manhattan Bridge; Williamsburg Bridge; Queensboro Bridge (59th Street Bridge); Bay Bridge (San Francisco-Oakland Bay Bridge); Royal Gorge Bridge; Capilano Suspension Bridge (Capilano); Quebec Bridge; Clifton Suspension Bridge; Humber Bridge; Severn Bridge; Millennium Bridge; Gateshead Millennium Bridge; Pont Neuf; Oresund Bridge (Øresund Bridge); Chain Bridge; Tsing Ma Bridge; Helix Bridge; Kintai Bridge; Hell Gate Bridge; Carrick-a-Rede Rope Bridge (Carrick-a-Rede); High Level Bridge |
+| Good find | 90 | Kintai Bridge; High Level Bridge |
+| Good find | 86 | Tsing Ma Bridge; Helix Bridge; Hell Gate Bridge; Carrick-a-Rede Rope Bridge (Carrick-a-Rede) |
+| Good find | 81 | Gateshead Millennium Bridge; Chain Bridge |
+| Good find | 77 | Sunshine Skyway Bridge (Sunshine Skyway); Royal Gorge Bridge; Quebec Bridge; Humber Bridge; Pont Neuf; Oresund Bridge (Øresund Bridge) |
+| Good find | 72 | Chesapeake Bay Bridge; Seven Mile Bridge; Queensboro Bridge (59th Street Bridge); Capilano Suspension Bridge (Capilano); Severn Bridge |
+| Good find | 68 | Peace Bridge; Rainbow Bridge; Mackinac Bridge; Tacoma Narrows Bridge; Williamsburg Bridge; Clifton Suspension Bridge |
+| Good find | 64 | Lions Gate Bridge (Lions Gate); Ambassador Bridge; Millennium Bridge |
+| Good find | 59 | Manhattan Bridge |
+| Good find | 55 | Bay Bridge (San Francisco-Oakland Bay Bridge) |
 | Not accepted (examples) | 0 | Channel Tunnel; Panama Canal; Arc de Triomphe |
 
 ## Name an Olympic sport
@@ -2021,7 +2771,14 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 47 | Cycling |
 | #10 | 50 | Volleyball |
 | Gem | 100 | Modern pentathlon (Pentathlon); Skeleton; Artistic swimming (Synchronized swimming, Synchronised swimming, Synchro); Sport climbing (Climbing, Rock climbing); Biathlon |
-| Good find | 80 | Rowing; Sailing; Fencing; Archery; Judo; Wrestling; Weightlifting; Taekwondo (Tae kwon do); Table tennis (Ping pong); Badminton; Handball; Water polo; Field hockey; Ice hockey (Hockey); Golf; Rugby sevens (Rugby); Triathlon; Equestrian (Horse riding, Show jumping, Dressage, Eventing); Shooting; Canoeing (Kayaking, Canoe sprint); Canoe slalom; Skateboarding; Surfing; Softball; Baseball; Beach volleyball; Trampoline (Trampolining); Figure skating; Speed skating; Alpine skiing (Skiing, Downhill skiing); Snowboarding; Bobsleigh (Bobsled, Bobsledding); Luge; Ski jumping; Cross-country skiing (Cross country skiing); Curling; Freestyle skiing; BMX; Mountain biking; Nordic combined |
+| Good find | 90 | Nordic combined |
+| Good find | 86 | Canoe slalom; Cross-country skiing (Cross country skiing); Freestyle skiing; Mountain biking |
+| Good find | 82 | Rugby sevens (Rugby); Softball; Trampoline (Trampolining); Alpine skiing (Skiing, Downhill skiing); Luge; BMX |
+| Good find | 79 | Golf; Shooting; Skateboarding; Surfing; Speed skating; Bobsleigh (Bobsled, Bobsledding); Ski jumping |
+| Good find | 75 | Taekwondo (Tae kwon do); Handball; Ice hockey (Hockey); Equestrian (Horse riding, Show jumping, Dressage, Eventing); Canoeing (Kayaking, Canoe sprint); Baseball; Snowboarding; Curling |
+| Good find | 71 | Sailing; Judo; Badminton; Water polo; Field hockey; Triathlon; Figure skating |
+| Good find | 68 | Rowing; Fencing; Archery; Table tennis (Ping pong); Beach volleyball |
+| Good find | 64 | Wrestling; Weightlifting |
 | Not accepted (examples) | 0 | Darts; Bowling; Snooker |
 
 ## Name a winter sport
@@ -2041,7 +2798,15 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 56 | Ski jumping |
 | #10 | 60 | Speed skating |
 | Gem | 100 | Bandy; Skijoring; Ice climbing; Snowkiting (Snow kiting); Nordic combined |
-| Good find | 80 | Cross-country skiing (Cross country skiing, Nordic skiing); Biathlon; Skeleton; Freestyle skiing; Moguls; Sledding (Sledging, Tobogganing, Toboggan); Snowshoeing; Dog sledding (Mushing, Sled dog racing); Ice fishing; Snowmobiling (Snowmobile racing); Short track speed skating (Short track); Ski mountaineering (Skimo); Ice dancing (Ice dance); Slalom; Aerials (Aerial skiing); Snowboard cross (Boardercross); Ski cross; Ringette; Broomball; Ice stock sport (Bavarian curling); Ski touring (Backcountry skiing); Telemark skiing (Telemark); Sled hockey (Para ice hockey); Big air; Slopestyle; Ice yachting (Ice sailing, Iceboating); Snow tubing; Halfpipe (Half-pipe); Ice speedway; Snow volleyball |
+| Good find | 90 | Ringette; Ice stock sport (Bavarian curling); Ice yachting (Ice sailing, Iceboating); Ice speedway; Snow volleyball |
+| Good find | 88 | Ski mountaineering (Skimo); Broomball; Ski touring (Backcountry skiing); Telemark skiing (Telemark) |
+| Good find | 85 | Aerials (Aerial skiing); Snowboard cross (Boardercross); Ski cross; Sled hockey (Para ice hockey); Big air; Slopestyle |
+| Good find | 82 | Moguls; Short track speed skating (Short track); Halfpipe (Half-pipe) |
+| Good find | 80 | Freestyle skiing; Ice fishing; Snow tubing |
+| Good find | 78 | Skeleton; Snowmobiling (Snowmobile racing); Ice dancing (Ice dance); Slalom |
+| Good find | 75 | Biathlon; Snowshoeing; Dog sledding (Mushing, Sled dog racing) |
+| Good find | 72 | Cross-country skiing (Cross country skiing, Nordic skiing) |
+| Good find | 70 | Sledding (Sledging, Tobogganing, Toboggan) |
 | Not accepted (examples) | 0 | Surfing; Water skiing; Roller skating |
 
 ## Name a card game
@@ -2061,7 +2826,15 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 43 | Old Maid |
 | #10 | 45 | Crazy Eights (Crazy 8s) |
 | Gem | 100 | Skat; Bezique; Piquet; Pinochle; Durak |
-| Good find | 80 | Bridge; Hearts; Spades; Gin rummy (Gin); Canasta; Cribbage (Crib); Euchre; Whist; Baccarat; Slapjack; Spit (Speed); Spoons; Cheat (I Doubt It); Beggar My Neighbour (Beggar My Neighbor); Happy Families; Pairs (Memory, Concentration); Texas hold'em (Texas holdem, Hold em); Nertz (Nerts); Spider solitaire; FreeCell (Free Cell); Pyramid solitaire; President; Newmarket; Sevens (Fan tan); Sheepshead; Kings in the Corner (Kings Corner); Mau Mau; Rook; Pig; Twenty-nine; Racing Demon; Phase 10 |
+| Good find | 90 | Sheepshead; Pig; Twenty-nine |
+| Good find | 86 | Nertz (Nerts); Pyramid solitaire; Newmarket; Kings in the Corner (Kings Corner); Mau Mau; Rook; Racing Demon |
+| Good find | 81 | Sevens (Fan tan) |
+| Good find | 77 | Spit (Speed); Beggar My Neighbour (Beggar My Neighbor); Spider solitaire; FreeCell (Free Cell); President; Phase 10 |
+| Good find | 72 | Euchre; Slapjack; Happy Families; Pairs (Memory, Concentration) |
+| Good find | 68 | Canasta; Cribbage (Crib); Whist; Baccarat; Spoons |
+| Good find | 64 | Spades; Cheat (I Doubt It); Texas hold'em (Texas holdem, Hold em) |
+| Good find | 59 | Hearts; Gin rummy (Gin) |
+| Good find | 55 | Bridge |
 | Not accepted (examples) | 0 | Chess; Checkers; Bingo |
 
 ## Name a video game
@@ -2081,7 +2854,15 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 38 | Pokemon |
 | #10 | 40 | Mario Kart |
 | Gem | 100 | Katamari Damacy (Katamari); Myst; Lemmings; Okami; Q*bert (Qbert) |
-| Good find | 80 | Sonic the Hedgehog (Sonic); Donkey Kong; Space Invaders; Animal Crossing; Among Us; Halo; The Sims (Sims); Grand Theft Auto (GTA); Street Fighter; Super Smash Bros. (Smash Bros, Smash); Angry Birds; Candy Crush (Candy Crush Saga); Overwatch; Rocket League; Stardew Valley; Asteroids; Pong; Frogger; Galaga; Portal; Kirby; Metroid; Splatoon; Final Fantasy; Crash Bandicoot; Spyro; Rayman; Plants vs. Zombies (Plants vs Zombies, Plants versus Zombies); FIFA (EA Sports FC); Wii Sports; Just Dance; Guitar Hero; Pikmin; Celeste; Hollow Knight; Terraria; Fall Guys; Mega Man; Tomb Raider; World of Warcraft (WoW) |
+| Good find | 90 | Celeste; Hollow Knight |
+| Good find | 85 | Rayman; Pikmin; Terraria |
+| Good find | 80 | Portal; Metroid; Splatoon; Fall Guys; Mega Man |
+| Good find | 75 | Overwatch; Rocket League; Stardew Valley; Galaga; Kirby; Spyro; Plants vs. Zombies (Plants vs Zombies, Plants versus Zombies); Just Dance |
+| Good find | 70 | Asteroids; Final Fantasy; Crash Bandicoot; Wii Sports; Guitar Hero; Tomb Raider; World of Warcraft (WoW) |
+| Good find | 65 | Street Fighter; Super Smash Bros. (Smash Bros, Smash); Pong; Frogger; FIFA (EA Sports FC) |
+| Good find | 60 | Animal Crossing; Among Us; Halo; The Sims (Sims); Angry Birds; Candy Crush (Candy Crush Saga) |
+| Good find | 55 | Donkey Kong; Space Invaders; Grand Theft Auto (GTA) |
+| Good find | 50 | Sonic the Hedgehog (Sonic) |
 | Not accepted (examples) | 0 | Monopoly; Hide and seek; Dungeons and Dragons |
 
 ## Name a hobby
@@ -2101,7 +2882,15 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 38 | Drawing (Sketching) |
 | #10 | 40 | Hiking |
 | Gem | 100 | Geocaching; Calligraphy; Bonsai; Whittling; Metal detecting |
-| Good find | 80 | Baking; Sewing; Crochet (Crocheting); Birdwatching (Birding, Bird watching); Origami; Woodworking; Pottery (Ceramics); Scrapbooking; Quilting; Jigsaw puzzles (Jigsaws); Model building (Model making); Coin collecting (Numismatics); Camping; Cycling (Biking); Dancing; Singing; Playing an instrument (Playing music); Writing; Journaling; Embroidery; Cross-stitch (Cross stitch); Video games (Gaming); Chess; Yoga; Running (Jogging); Swimming; Rock climbing (Climbing); Astronomy (Stargazing); Candle making; Soap making; Kite flying; Beekeeping; Model trains (Model railways, Model railroading); Card making; Board games; Juggling; Magic tricks (Magic) |
+| Good find | 90 | Soap making |
+| Good find | 85 | Candle making; Beekeeping; Card making; Juggling |
+| Good find | 80 | Astronomy (Stargazing); Kite flying; Magic tricks (Magic) |
+| Good find | 75 | Journaling; Embroidery; Cross-stitch (Cross stitch); Rock climbing (Climbing); Model trains (Model railways, Model railroading) |
+| Good find | 70 | Origami; Model building (Model making); Chess; Yoga; Board games |
+| Good find | 65 | Pottery (Ceramics); Scrapbooking; Quilting; Jigsaw puzzles (Jigsaws); Singing; Playing an instrument (Playing music); Running (Jogging) |
+| Good find | 60 | Crochet (Crocheting); Birdwatching (Birding, Bird watching); Woodworking; Coin collecting (Numismatics); Camping; Cycling (Biking); Dancing; Writing; Swimming |
+| Good find | 55 | Sewing; Video games (Gaming) |
+| Good find | 50 | Baking |
 | Not accepted (examples) | 0 | Homework; Commuting; Paying bills |
 
 ## Name a job
@@ -2121,7 +2910,14 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 38 | Accountant |
 | #10 | 40 | Dentist |
 | Gem | 100 | Lighthouse keeper; Farrier; Cartographer (Mapmaker); Sommelier; Chimney sweep |
-| Good find | 80 | Vet (Veterinarian); Pilot; Farmer; Plumber; Electrician; Carpenter; Mechanic; Pharmacist; Architect; Scientist; Builder (Construction worker); Hairdresser (Hairstylist); Barber; Baker; Butcher; Cashier; Waiter (Waitress, Server); Mail carrier (Postman, Postal worker, Mailman, Postie); Bus driver; Taxi driver (Cab driver); Truck driver (Lorry driver); Receptionist; Librarian; Journalist (Reporter); Artist; Musician; Actor (Actress); Soldier; Programmer (Software developer, Coder); Banker; Janitor (Cleaner, Custodian); Gardener (Landscaper); Zookeeper; Lifeguard; Paramedic; Surgeon; Judge; Astronaut; Photographer; Tailor |
+| Good find | 90 | Tailor |
+| Good find | 85 | Zookeeper; Lifeguard |
+| Good find | 80 | Janitor (Cleaner, Custodian); Gardener (Landscaper); Surgeon; Judge; Astronaut; Photographer |
+| Good find | 75 | Barber; Butcher; Taxi driver (Cab driver); Receptionist; Librarian; Journalist (Reporter); Musician; Programmer (Software developer, Coder); Banker; Paramedic |
+| Good find | 70 | Baker; Cashier; Mail carrier (Postman, Postal worker, Mailman, Postie); Truck driver (Lorry driver); Artist; Actor (Actress); Soldier |
+| Good find | 65 | Pharmacist; Architect; Builder (Construction worker); Hairdresser (Hairstylist); Waiter (Waitress, Server); Bus driver |
+| Good find | 60 | Electrician; Carpenter; Mechanic; Scientist |
+| Good find | 55 | Vet (Veterinarian); Pilot; Farmer; Plumber |
 | Not accepted (examples) | 0 | Student; Retired; Customer |
 
 ## Name a school subject
@@ -2141,7 +2937,15 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 52 | French |
 | #10 | 55 | Biology |
 | Gem | 100 | Latin; Civics; Classics; Philosophy; Economics |
-| Good find | 80 | Chemistry; Physics; Spanish; German; Computer science (Computing, ICT, IT, Information technology); Drama (Theatre, Theater); Social studies; Health (Health education); Home economics (Food technology, Family and consumer sciences); Design and technology; Woodworking (Woodwork, Woodshop, Shop, Shop class); Psychology; Sociology; Business studies (Business); Algebra; Geometry; Calculus; Statistics; Literature (English literature); Reading; Spelling; Creative writing; Japanese; Mandarin (Chinese); Italian; Law; Accounting; Typing (Keyboarding); Band; Choir; Dance; Environmental science; Earth science; Anatomy; Media studies; Ancient Greek |
+| Good find | 90 | Ancient Greek |
+| Good find | 87 | Law; Accounting; Environmental science; Earth science; Anatomy; Media studies |
+| Good find | 84 | Sociology; Statistics; Creative writing; Japanese; Mandarin (Chinese); Typing (Keyboarding); Choir; Dance |
+| Good find | 81 | Design and technology; Woodworking (Woodwork, Woodshop, Shop, Shop class); Business studies (Business); Calculus; Italian; Band |
+| Good find | 78 | Psychology; Geometry; Spelling |
+| Good find | 74 | Health (Health education); Home economics (Food technology, Family and consumer sciences); Algebra; Literature (English literature); Reading |
+| Good find | 71 | German; Computer science (Computing, ICT, IT, Information technology); Drama (Theatre, Theater); Social studies |
+| Good find | 68 | Physics; Spanish |
+| Good find | 65 | Chemistry |
 | Not accepted (examples) | 0 | Recess; Lunch; Homework |
 
 ## Name a piece of furniture
@@ -2161,7 +2965,15 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 47 | Coffee table |
 | #10 | 50 | Stool |
 | Gem | 100 | Credenza; Chaise longue (Chaise lounge, Chaise); Hope chest (Blanket chest); Etagere; Daybed (Day bed) |
-| Good find | 80 | Armchair; Recliner; Bench; Chest of drawers; Nightstand (Bedside table, Night table); Cabinet; Cupboard; Ottoman (Footstool, Pouffe, Pouf); Bunk bed (Bunk beds); Crib (Cot); Rocking chair; Sideboard (Buffet); Hutch; Futon; Bean bag (Beanbag chair, Bean bag chair); Loveseat (Love seat); TV stand (Entertainment center, Entertainment unit); Dining table; End table (Side table); Vanity (Dressing table); Filing cabinet (File cabinet); Shelf (Shelves, Shelving); Bar stool (Barstool); Highchair (High chair); Sectional (Sectional sofa); Coat rack (Coat stand, Hat stand); Console table; Chest (Trunk); Changing table; Display cabinet (China cabinet); Sofa bed |
+| Good find | 90 | Changing table |
+| Good find | 86 | Console table; Display cabinet (China cabinet) |
+| Good find | 82 | Hutch; Vanity (Dressing table); Filing cabinet (File cabinet); Highchair (High chair); Sectional (Sectional sofa); Coat rack (Coat stand, Hat stand) |
+| Good find | 79 | Sideboard (Buffet); TV stand (Entertainment center, Entertainment unit); End table (Side table); Bar stool (Barstool); Chest (Trunk); Sofa bed |
+| Good find | 75 | Bunk bed (Bunk beds); Crib (Cot); Futon; Bean bag (Beanbag chair, Bean bag chair) |
+| Good find | 71 | Ottoman (Footstool, Pouffe, Pouf); Rocking chair; Loveseat (Love seat); Dining table; Shelf (Shelves, Shelving) |
+| Good find | 68 | Bench; Nightstand (Bedside table, Night table); Cabinet; Cupboard |
+| Good find | 64 | Recliner; Chest of drawers |
+| Good find | 60 | Armchair |
 | Not accepted (examples) | 0 | Rug; Curtains; Television |
 
 ## Name a tool in a toolbox
@@ -2181,7 +2993,14 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 47 | Utility knife (Box cutter, Craft knife) |
 | #10 | 50 | Allen key (Allen wrench, Hex key) |
 | Gem | 100 | Awl (Bradawl); Coping saw; Nail punch (Nail set); Feeler gauge; Center punch (Centre punch) |
-| Good find | 80 | Mallet (Rubber mallet); Chisel; File; Socket wrench (Ratchet, Socket set); Adjustable wrench (Adjustable spanner); Wire cutters; Wire strippers; Needle-nose pliers (Needle nose pliers); Locking pliers; Clamp (C-clamp, G-clamp); Hacksaw; Square (Try square, Speed square); Stud finder; Pry bar (Crowbar, Wrecking bar); Putty knife; Flashlight (Torch); Caulking gun (Caulk gun); Staple gun; Soldering iron; Torque wrench; Pipe wrench; Multimeter; Voltage tester; Plane (Hand plane, Block plane); Paint scraper (Scraper); Tin snips; Bolt cutters; Claw hammer; Sledgehammer; Glue gun (Hot glue gun); Phillips screwdriver; Flathead screwdriver; Combination square |
+| Good find | 90 | Combination square |
+| Good find | 86 | Torque wrench; Multimeter; Voltage tester; Paint scraper (Scraper); Tin snips |
+| Good find | 82 | Locking pliers; Caulking gun (Caulk gun); Soldering iron; Plane (Hand plane, Block plane); Bolt cutters |
+| Good find | 79 | Wire strippers; Square (Try square, Speed square); Putty knife; Staple gun; Pipe wrench; Glue gun (Hot glue gun) |
+| Good find | 75 | File; Stud finder |
+| Good find | 71 | Socket wrench (Ratchet, Socket set); Needle-nose pliers (Needle nose pliers); Clamp (C-clamp, G-clamp); Pry bar (Crowbar, Wrecking bar); Flashlight (Torch); Sledgehammer |
+| Good find | 68 | Mallet (Rubber mallet); Chisel; Adjustable wrench (Adjustable spanner); Wire cutters; Hacksaw |
+| Good find | 64 | Claw hammer; Phillips screwdriver; Flathead screwdriver |
 | Not accepted (examples) | 0 | Nails; Screws; Duct tape |
 
 ## Name an item of clothing
@@ -2201,7 +3020,15 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 43 | Sweater (Jumper, Pullover) |
 | #10 | 45 | Coat |
 | Gem | 100 | Cravat; Sarong; Cummerbund; Bolero (Bolero jacket); Tabard |
-| Good find | 80 | Shorts; Hoodie (Hooded sweatshirt); Sweatshirt; Blouse; Underwear (Undies, Briefs); Pajamas (Pyjamas, PJs); Scarf; Gloves (Glove); Hat (Cap); Mittens; Tie (Necktie); Vest (Waistcoat); Suit; Blazer; Cardigan; Leggings; Tights (Pantyhose); Overalls (Dungarees); Kilt; Poncho; Raincoat (Mac); Bathrobe (Robe, Dressing gown); Swimsuit (Bathing suit, Swimming costume); Bikini; Tank top (Vest top, Singlet); Polo shirt; Jumpsuit; Romper (Playsuit); Onesie; Tracksuit (Sweatsuit); Sweatpants (Joggers, Tracksuit bottoms); Bow tie; Cape; Apron; Turtleneck (Polo neck); Parka; Anorak; Bra; Nightgown (Nightie) |
+| Good find | 90 | Anorak |
+| Good find | 86 | Romper (Playsuit); Cape; Apron; Parka; Nightgown (Nightie) |
+| Good find | 81 | Poncho; Bathrobe (Robe, Dressing gown); Jumpsuit; Onesie; Bow tie; Turtleneck (Polo neck) |
+| Good find | 77 | Overalls (Dungarees); Kilt; Bikini; Polo shirt; Tracksuit (Sweatsuit); Bra |
+| Good find | 72 | Mittens; Blazer; Tights (Pantyhose); Raincoat (Mac); Swimsuit (Bathing suit, Swimming costume); Tank top (Vest top, Singlet); Sweatpants (Joggers, Tracksuit bottoms) |
+| Good find | 68 | Gloves (Glove); Vest (Waistcoat); Cardigan; Leggings |
+| Good find | 64 | Sweatshirt; Pajamas (Pyjamas, PJs); Scarf; Tie (Necktie); Suit |
+| Good find | 59 | Hoodie (Hooded sweatshirt); Blouse; Underwear (Undies, Briefs); Hat (Cap) |
+| Good find | 55 | Shorts |
 | Not accepted (examples) | 0 | Necklace; Umbrella; Backpack |
 
 ## Name a type of shoe
@@ -2221,7 +3048,14 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 52 | Clogs (Clog) |
 | #10 | 55 | Cowboy boots |
 | Gem | 100 | Espadrilles; Mary Janes; Huaraches; Geta; Monk strap shoes (Monk straps) |
-| Good find | 80 | Oxfords (Oxford shoes); Brogues (Wingtips); Moccasins; Wellington boots (Wellies, Wellingtons, Rain boots, Rubber boots, Gumboots); Platform shoes (Platforms); Wedges (Wedge heels); Stilettos; Pumps (Court shoes); Mules; Slingbacks; Ankle boots; Hiking boots; Cleats (Football boots, Soccer cleats); Ballet shoes (Ballet slippers); Tap shoes; Dress shoes; Boat shoes (Deck shoes); Chelsea boots; Combat boots; Snow boots; Slides (Sliders); Jelly shoes (Jellies); Kitten heels; Steel-toe boots (Safety boots, Work boots); Galoshes (Overshoes); Derby shoes (Derbies); Plimsolls; Bowling shoes; Golf shoes; Knee-high boots; Thigh-high boots; Desert boots; Spikes (Running spikes); Climbing shoes; Water shoes |
+| Good find | 90 | Climbing shoes |
+| Good find | 87 | Derby shoes (Derbies); Thigh-high boots; Desert boots; Spikes (Running spikes); Water shoes |
+| Good find | 84 | Slingbacks; Jelly shoes (Jellies); Kitten heels; Galoshes (Overshoes); Plimsolls; Bowling shoes |
+| Good find | 81 | Mules; Boat shoes (Deck shoes); Steel-toe boots (Safety boots, Work boots); Golf shoes; Knee-high boots |
+| Good find | 78 | Brogues (Wingtips); Tap shoes; Chelsea boots; Combat boots; Slides (Sliders) |
+| Good find | 74 | Platform shoes (Platforms); Ankle boots; Ballet shoes (Ballet slippers); Snow boots |
+| Good find | 71 | Oxfords (Oxford shoes); Moccasins; Wedges (Wedge heels); Pumps (Court shoes); Cleats (Football boots, Soccer cleats); Dress shoes |
+| Good find | 68 | Wellington boots (Wellies, Wellingtons, Rain boots, Rubber boots, Gumboots); Stilettos; Hiking boots |
 | Not accepted (examples) | 0 | Socks; Insoles; Shoelaces |
 
 ## Name a type of hat
@@ -2241,7 +3075,15 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 52 | Sombrero |
 | #10 | 55 | Bucket hat |
 | Gem | 100 | Fez; Deerstalker; Pith helmet; Tam o' shanter (Tam); Busby |
-| Good find | 80 | Party hat; Witch's hat (Witch hat); Hard hat; Panama hat (Panama); Trilby; Chef's hat (Toque blanche); Visor (Sun visor); Bonnet; Boater (Straw boater); Straw hat; Flat cap; Newsboy cap; Cloche; Pillbox hat; Ushanka (Trapper hat); Mortarboard (Graduation cap); Sailor hat (Sailor cap); Pirate hat; Tricorn (Tricorne, Three-cornered hat); Bicorne (Bicorn); Jester hat (Jester's cap); Wizard hat; Santa hat; Bobble hat (Pom-pom hat, Pompom hat); Conical hat (Rice hat); Porkpie hat (Pork pie hat); Sou'wester (Souwester); Rain hat; Bush hat (Safari hat); Snapback; Trucker hat; Stocking cap; Ten-gallon hat |
+| Good find | 90 | Bicorne (Bicorn); Sou'wester (Souwester) |
+| Good find | 87 | Cloche; Ushanka (Trapper hat); Conical hat (Rice hat); Porkpie hat (Pork pie hat); Bush hat (Safari hat) |
+| Good find | 84 | Pillbox hat; Mortarboard (Graduation cap); Stocking cap |
+| Good find | 81 | Boater (Straw boater); Tricorn (Tricorne, Three-cornered hat); Jester hat (Jester's cap); Bobble hat (Pom-pom hat, Pompom hat); Rain hat; Snapback; Ten-gallon hat |
+| Good find | 78 | Trilby; Flat cap; Newsboy cap; Sailor hat (Sailor cap); Trucker hat |
+| Good find | 74 | Panama hat (Panama); Pirate hat; Wizard hat |
+| Good find | 71 | Chef's hat (Toque blanche); Visor (Sun visor); Bonnet; Straw hat; Santa hat |
+| Good find | 68 | Party hat; Witch's hat (Witch hat) |
+| Good find | 65 | Hard hat |
 | Not accepted (examples) | 0 | Wig; Earmuffs; Headband |
 
 ## Name something in a bathroom
@@ -2261,7 +3103,14 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 43 | Soap |
 | #10 | 45 | Toilet paper (Toilet roll, Loo roll, Bathroom tissue) |
 | Gem | 100 | Grout; Extractor fan (Exhaust fan, Vent fan); Bidet; Pumice stone (Pumice); Loofah (Luffa, Loofa) |
-| Good find | 80 | Shampoo; Conditioner; Bath mat (Bathmat); Shower curtain; Toilet brush; Plunger; Hairbrush; Comb; Razor; Shaving cream (Shaving foam); Hair dryer (Hairdryer, Blow dryer); Deodorant; Medicine cabinet; Dental floss (Floss); Mouthwash; Rubber duck (Rubber ducky); Scales (Bathroom scales, Scale); Laundry basket (Hamper, Laundry hamper); Towel rail (Towel rack, Towel bar); Tissues; Cotton buds (Cotton swabs); Bubble bath; Bath bomb; Sponge; Washcloth (Flannel, Face cloth, Facecloth); Body wash (Shower gel); Lotion (Moisturiser, Moisturizer); Tiles (Tile); Faucet (Tap, Taps); Bin (Trash can, Wastebasket, Waste bin); Nail clippers; Tweezers; Air freshener; Bath toys; Toothbrush holder; Soap dish |
+| Good find | 86 | Tiles (Tile); Nail clippers; Tweezers; Toothbrush holder; Soap dish |
+| Good find | 81 | Scales (Bathroom scales, Scale); Laundry basket (Hamper, Laundry hamper); Towel rail (Towel rack, Towel bar); Cotton buds (Cotton swabs); Bath bomb; Bin (Trash can, Wastebasket, Waste bin); Bath toys |
+| Good find | 77 | Tissues; Bubble bath; Body wash (Shower gel); Lotion (Moisturiser, Moisturizer); Air freshener |
+| Good find | 72 | Shaving cream (Shaving foam); Deodorant; Dental floss (Floss); Mouthwash; Sponge; Washcloth (Flannel, Face cloth, Facecloth); Faucet (Tap, Taps) |
+| Good find | 68 | Comb; Hair dryer (Hairdryer, Blow dryer); Medicine cabinet; Rubber duck (Rubber ducky) |
+| Good find | 64 | Conditioner; Toilet brush; Plunger; Hairbrush; Razor |
+| Good find | 59 | Bath mat (Bathmat); Shower curtain |
+| Good find | 55 | Shampoo |
 | Not accepted (examples) | 0 | Refrigerator; Oven; Bed |
 
 ## Name something in a garden
@@ -2281,7 +3130,13 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 43 | Weeds (Weed) |
 | #10 | 45 | Plants (Plant) |
 | Gem | 100 | Trellis; Cold frame; Water butt (Rain barrel); Sundial; Topiary |
-| Good find | 80 | Fence; Bench (Garden bench); Bird bath (Birdbath); Bird feeder; Wheelbarrow; Rake; Spade (Shovel); Trowel; Lawn mower (Lawnmower, Mower); Compost (Compost heap, Compost bin); Pond; Fountain; Greenhouse; Hedge; Bushes (Shrubs, Bush, Shrub); Worms (Earthworms, Worm); Butterflies (Butterfly); Bees (Bee); Snails (Snail); Slugs (Slug); Ladybugs (Ladybirds, Ladybug, Ladybird); Soil (Dirt, Earth); Seeds; Flower pots (Plant pots, Pots); Sprinkler; Scarecrow; Path (Garden path); Patio; Swing; Hammock; Birdhouse (Bird box, Nest box); Roses (Rose bush); Sunflowers (Sunflower); Herbs; Fruit tree; Gate; Gardening gloves; Raised bed; Hanging basket |
+| Good find | 86 | Gardening gloves; Raised bed; Hanging basket |
+| Good find | 81 | Swing; Hammock; Fruit tree; Gate |
+| Good find | 77 | Slugs (Slug); Ladybugs (Ladybirds, Ladybug, Ladybird); Scarecrow; Path (Garden path); Patio; Birdhouse (Bird box, Nest box); Sunflowers (Sunflower); Herbs |
+| Good find | 72 | Trowel; Compost (Compost heap, Compost bin); Fountain; Snails (Snail); Seeds; Sprinkler |
+| Good find | 68 | Bird feeder; Greenhouse; Hedge; Butterflies (Butterfly); Soil (Dirt, Earth); Flower pots (Plant pots, Pots) |
+| Good find | 64 | Bench (Garden bench); Bird bath (Birdbath); Wheelbarrow; Rake; Spade (Shovel); Pond; Worms (Earthworms, Worm); Bees (Bee) |
+| Good find | 59 | Fence; Lawn mower (Lawnmower, Mower); Bushes (Shrubs, Bush, Shrub); Roses (Rose bush) |
 | Not accepted (examples) | 0 | Carpet; Sofa; Television |
 
 ## Name a household chore
@@ -2301,7 +3156,15 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 43 | Cooking |
 | #10 | 45 | Ironing |
 | Gem | 100 | Defrosting the freezer; Descaling the kettle; Cleaning the gutters (Clearing the gutters); Polishing the silver (Polishing silver); Turning the mattress (Flipping the mattress) |
-| Good find | 80 | Cleaning the bathroom; Cleaning the toilet; Mowing the lawn (Cutting the grass, Mowing); Weeding; Raking leaves; Shoveling snow (Shovelling snow); Washing the car; Folding laundry (Folding clothes); Tidying up (Tidying, Cleaning up); Cleaning windows (Washing windows); Grocery shopping (Food shopping); Feeding the pets (Feeding the dog, Feeding the cat); Walking the dog; Watering the plants (Watering plants); Loading the dishwasher; Emptying the dishwasher (Unloading the dishwasher); Changing the sheets (Changing the bed); Setting the table (Laying the table); Clearing the table; Cleaning the oven; Cleaning the fridge; Scrubbing the floor; Wiping the counters (Wiping counters); Hanging out the washing (Hanging laundry); Cleaning the litter box (Cleaning the litter tray); Decluttering; Polishing furniture; Recycling; Cleaning your room (Tidying your room); Putting away groceries (Putting the shopping away); Putting toys away |
+| Good find | 90 | Putting toys away |
+| Good find | 86 | Cleaning the fridge; Decluttering; Polishing furniture; Putting away groceries (Putting the shopping away) |
+| Good find | 81 | Clearing the table; Cleaning the oven; Hanging out the washing (Hanging laundry); Cleaning the litter box (Cleaning the litter tray); Recycling |
+| Good find | 77 | Changing the sheets (Changing the bed); Setting the table (Laying the table); Scrubbing the floor; Wiping the counters (Wiping counters) |
+| Good find | 72 | Weeding; Shoveling snow (Shovelling snow); Feeding the pets (Feeding the dog, Feeding the cat); Watering the plants (Watering plants); Loading the dishwasher |
+| Good find | 68 | Raking leaves; Washing the car; Cleaning windows (Washing windows); Grocery shopping (Food shopping); Walking the dog; Emptying the dishwasher (Unloading the dishwasher) |
+| Good find | 64 | Folding laundry (Folding clothes); Tidying up (Tidying, Cleaning up); Cleaning your room (Tidying your room) |
+| Good find | 59 | Cleaning the toilet; Mowing the lawn (Cutting the grass, Mowing) |
+| Good find | 55 | Cleaning the bathroom |
 | Not accepted (examples) | 0 | Watching TV; Napping; Eating dinner |
 
 ## Name a dance
@@ -2321,7 +3184,14 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 47 | Cha-cha (Cha cha, Cha-cha-cha) |
 | #10 | 50 | Line dancing (Line dance) |
 | Gem | 100 | Paso doble; Bhangra; Hornpipe (Sailor's hornpipe); Morris dancing (Morris dance); Lindy hop |
-| Good find | 80 | Jazz (Jazz dance); Contemporary; Foxtrot; Rumba (Rhumba); Samba; Swing; Jive; Charleston; Square dancing (Square dance); Irish dancing (Irish dance); Flamenco; Belly dancing (Belly dance); Disco; Conga; Hokey cokey (Hokey pokey); Chicken dance; The Twist (Twist); Polka; Mambo; Bachata; Merengue; Lambada; Ballroom dancing (Ballroom); Modern dance (Modern); Cancan (Can-can); Hula; Highland fling; Clogging; Krumping (Krump); Voguing (Vogue); Limbo; The Robot (Robot); Electric slide; Maypole dance; Quickstep; Viennese waltz; Bolero |
+| Good find | 90 | Bolero |
+| Good find | 86 | Highland fling; Clogging; Krumping (Krump); Voguing (Vogue); Maypole dance; Viennese waltz |
+| Good find | 82 | Bachata; Merengue; Lambada; Electric slide; Quickstep |
+| Good find | 79 | Mambo; Cancan (Can-can); Limbo; The Robot (Robot) |
+| Good find | 75 | Conga; Hokey cokey (Hokey pokey); Chicken dance; The Twist (Twist); Modern dance (Modern); Hula |
+| Good find | 71 | Contemporary; Jive; Charleston; Irish dancing (Irish dance); Belly dancing (Belly dance); Disco; Polka |
+| Good find | 68 | Rumba (Rhumba); Samba; Swing; Square dancing (Square dance); Flamenco; Ballroom dancing (Ballroom) |
+| Good find | 64 | Jazz (Jazz dance); Foxtrot |
 | Not accepted (examples) | 0 | Karaoke; Gymnastics; Yoga |
 
 ## Name a fairy tale
@@ -2341,7 +3211,15 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 52 | Rapunzel |
 | #10 | 55 | Beauty and the Beast |
 | Gem | 100 | The Twelve Dancing Princesses (The Worn-Out Dancing Shoes); The Elves and the Shoemaker; The Snow Queen; The Fisherman and His Wife; The Steadfast Tin Soldier (The Brave Tin Soldier, The Tin Soldier) |
-| Good find | 80 | The Little Mermaid; The Frog Prince (The Frog King); Rumpelstiltskin; The Princess and the Pea; The Ugly Duckling; The Gingerbread Man; Puss in Boots; Thumbelina; The Emperor's New Clothes; The Three Billy Goats Gruff (Billy Goats Gruff); The Little Match Girl; Tom Thumb; The Pied Piper of Hamelin (The Pied Piper); Aladdin; The Golden Goose; Snow White and Rose Red; The Town Musicians of Bremen (The Musicians of Bremen, The Bremen Town Musicians); The Wild Swans; Mother Holle; The Goose Girl; The Six Swans; The Little Red Hen; Henny Penny (Chicken Little, Chicken Licken); The Nightingale; The Tinderbox; East of the Sun and West of the Moon; Jack the Giant Killer; The Snow Maiden; The Magic Porridge Pot (Sweet Porridge); Ali Baba and the Forty Thieves (Ali Baba) |
+| Good find | 90 | Mother Holle; The Goose Girl; The Six Swans; East of the Sun and West of the Moon |
+| Good find | 87 | Snow White and Rose Red; The Town Musicians of Bremen (The Musicians of Bremen, The Bremen Town Musicians); The Wild Swans; The Nightingale; The Tinderbox; The Snow Maiden |
+| Good find | 84 | The Golden Goose; Jack the Giant Killer; The Magic Porridge Pot (Sweet Porridge) |
+| Good find | 81 | Tom Thumb; The Little Red Hen; Henny Penny (Chicken Little, Chicken Licken); Ali Baba and the Forty Thieves (Ali Baba) |
+| Good find | 78 | The Little Match Girl; The Pied Piper of Hamelin (The Pied Piper); Aladdin |
+| Good find | 74 | Puss in Boots; Thumbelina; The Emperor's New Clothes; The Three Billy Goats Gruff (Billy Goats Gruff) |
+| Good find | 71 | The Ugly Duckling; The Gingerbread Man |
+| Good find | 68 | The Frog Prince (The Frog King); Rumpelstiltskin; The Princess and the Pea |
+| Good find | 65 | The Little Mermaid |
 | Not accepted (examples) | 0 | Harry Potter; Winnie the Pooh; Peter Rabbit |
 
 ## Name a mythical creature
@@ -2361,7 +3239,15 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 47 | Werewolf |
 | #10 | 50 | Minotaur |
 | Gem | 100 | Selkie; Manticore; Kitsune; Bunyip; Kelpie |
-| Good find | 80 | Vampire; Yeti (Abominable Snowman); Bigfoot (Sasquatch); Loch Ness Monster (Nessie); Troll; Goblin; Elf (Elves); Dwarf; Gnome; Leprechaun; Ogre; Giant; Cyclops; Hydra; Gorgon (Medusa); Kraken; Sphinx; Basilisk; Chimera (Chimaera); Banshee; Hippogriff; Harpy (Harpies); Siren; Satyr; Faun; Pixie; Sprite; Thunderbird; Wyvern; Cockatrice; Golem; Genie (Djinn, Jinn); Sea serpent; Cerberus; Chupacabra; Jackalope; Nymph; Kappa; Roc; Hobgoblin |
+| Good find | 90 | Kappa; Roc |
+| Good find | 86 | Cockatrice; Jackalope |
+| Good find | 82 | Sprite; Thunderbird; Wyvern; Hobgoblin |
+| Good find | 79 | Chimera (Chimaera); Hippogriff; Harpy (Harpies); Satyr; Faun; Golem; Sea serpent; Chupacabra; Nymph |
+| Good find | 75 | Dwarf; Gorgon (Medusa); Basilisk; Banshee; Siren; Pixie; Cerberus |
+| Good find | 71 | Gnome; Ogre; Giant; Hydra; Kraken; Sphinx; Genie (Djinn, Jinn) |
+| Good find | 68 | Goblin; Elf (Elves); Leprechaun; Cyclops |
+| Good find | 64 | Yeti (Abominable Snowman); Bigfoot (Sasquatch); Loch Ness Monster (Nessie); Troll |
+| Good find | 60 | Vampire |
 | Not accepted (examples) | 0 | Dinosaur; Narwhal; Komodo dragon |
 
 ## Name a circus act
@@ -2381,7 +3267,15 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 56 | Unicycling (Unicycle, Unicyclist) |
 | #10 | 60 | Knife throwing (Knife thrower) |
 | Gem | 100 | Teeterboard (Teeter board); Cyr wheel; Wheel of death; Diabolo; Rola bola (Rola-bola) |
-| Good find | 80 | Fire eating (Fire eater); Stilt walking (Stilts, Stilt walker); Sword swallowing (Sword swallower); Contortionist (Contortion); Strongman (Strong man); Magician (Magic act); Plate spinning; Aerial silks (Silks, Aerial tissue); Hula hoop (Hula hooping); Trampoline; Trick riding (Bareback riding); Aerial hoop (Lyra); Hand balancing (Handstands); Human pyramid; Clown car; Tumbling; Performing dogs (Dog act, Trained dogs); Globe of death; Chinese pole; German wheel; Spanish web; Russian swing; Balancing act; Escape artist (Escapology); Bed of nails; Trick cycling (Bicycle act); Flying trapeze; Cloud swing; Russian bar; Hand to hand (Hand-to-hand); Slack rope (Slackrope); Fire juggling |
+| Good find | 90 | Spanish web; Cloud swing; Russian bar; Hand to hand (Hand-to-hand) |
+| Good find | 88 | Chinese pole; German wheel; Russian swing |
+| Good find | 85 | Globe of death; Slack rope (Slackrope) |
+| Good find | 82 | Aerial hoop (Lyra); Hand balancing (Handstands); Tumbling; Escape artist (Escapology); Bed of nails; Trick cycling (Bicycle act) |
+| Good find | 80 | Hula hoop (Hula hooping); Trampoline; Trick riding (Bareback riding); Human pyramid; Balancing act |
+| Good find | 78 | Plate spinning; Aerial silks (Silks, Aerial tissue); Clown car; Performing dogs (Dog act, Trained dogs); Fire juggling |
+| Good find | 75 | Strongman (Strong man); Magician (Magic act); Flying trapeze |
+| Good find | 72 | Stilt walking (Stilts, Stilt walker); Sword swallowing (Sword swallower); Contortionist (Contortion) |
+| Good find | 70 | Fire eating (Fire eater) |
 | Not accepted (examples) | 0 | Ferris wheel; Cotton candy; Bumper cars |
 
 ## Name a music genre
@@ -2401,7 +3295,15 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 43 | Heavy metal (Metal) |
 | #10 | 45 | R&B (Rhythm and blues, RnB) |
 | Gem | 100 | Zydeco; Klezmer; Calypso; Bossa nova; Highlife |
-| Good find | 80 | Reggae; Punk (Punk rock); Disco; Folk (Folk music); Electronic (EDM, Electronic dance music); Techno; House (House music); Soul; Funk; Grunge; Indie (Indie rock); Alternative (Alternative rock); K-pop (Kpop); Latin; Salsa; Reggaeton; Ska; Bluegrass; Opera; Dubstep; Trance; Drum and bass (DnB); Grime; Emo; Swing; Rock and roll (Rock n roll, Rock 'n' roll); Lo-fi (Lofi); Afrobeats; Ambient; Big band; Trap; Doo-wop (Doo wop); Samba; Polka; New wave; Synth-pop (Synthpop); Psychedelic rock; Bebop |
+| Good find | 90 | Bebop |
+| Good find | 86 | Samba; Synth-pop (Synthpop); Psychedelic rock |
+| Good find | 81 | Grime; Lo-fi (Lofi); Afrobeats; Ambient; Big band; Doo-wop (Doo wop); Polka; New wave |
+| Good find | 77 | Salsa; Trance; Drum and bass (DnB); Emo; Swing; Trap |
+| Good find | 72 | Latin; Reggaeton; Ska; Bluegrass; Dubstep |
+| Good find | 68 | House (House music); Grunge; Indie (Indie rock); Alternative (Alternative rock); K-pop (Kpop) |
+| Good find | 64 | Electronic (EDM, Electronic dance music); Techno; Soul; Funk; Opera; Rock and roll (Rock n roll, Rock 'n' roll) |
+| Good find | 59 | Punk (Punk rock); Disco; Folk (Folk music) |
+| Good find | 55 | Reggae |
 | Not accepted (examples) | 0 | Saxophone; Karaoke; Orchestra |
 
 ## Name something in a toy box
@@ -2421,7 +3323,13 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 43 | Yo-yo (Yoyo) |
 | #10 | 45 | Toy train (Train set, Trains) |
 | Gem | 100 | Kaleidoscope; Jacks (Knucklebones); Jack-in-the-box; Cup and ball (Ball in a cup, Bilboquet); Spinning top (Top) |
-| Good find | 80 | Marbles; Jump rope (Skipping rope); Flying disc; Modelling clay (Modeling clay, Play dough, Playdough); Crayons; Toy dinosaur (Dinosaurs); Dollhouse (Doll's house, Dolls house); Rubber duck; Kite; Bouncy ball (Super ball); Toy soldiers (Army men); Water pistol (Squirt gun, Water gun); Toy drum (Drum); Xylophone; Rattle; Bubbles (Bubble wand); Puppet (Puppets, Hand puppet); Toy robot (Robot); Board games (Board game); Playing cards (Cards); Toy truck (Truck); Dress-up clothes (Dressing-up clothes, Costumes); Tea set (Toy tea set); Stacking cups; Shape sorter; Toy phone; Toy sword; Fidget spinner; Toy animals (Farm animals); Hula hoop; Magnetic tiles; Puzzle cube; Toy plane (Toy aeroplane, Toy airplane); Doll clothes |
+| Good find | 86 | Stacking cups; Shape sorter; Magnetic tiles |
+| Good find | 81 | Toy phone; Fidget spinner; Hula hoop; Puzzle cube; Doll clothes |
+| Good find | 77 | Toy drum (Drum); Xylophone; Bubbles (Bubble wand); Playing cards (Cards); Dress-up clothes (Dressing-up clothes, Costumes); Tea set (Toy tea set); Toy sword |
+| Good find | 72 | Flying disc; Kite; Water pistol (Squirt gun, Water gun); Rattle; Toy animals (Farm animals); Toy plane (Toy aeroplane, Toy airplane) |
+| Good find | 68 | Modelling clay (Modeling clay, Play dough, Playdough); Dollhouse (Doll's house, Dolls house); Rubber duck; Puppet (Puppets, Hand puppet); Toy robot (Robot); Board games (Board game) |
+| Good find | 64 | Jump rope (Skipping rope); Crayons; Toy dinosaur (Dinosaurs); Bouncy ball (Super ball); Toy soldiers (Army men); Toy truck (Truck) |
+| Good find | 55 | Marbles |
 | Not accepted (examples) | 0 | Toothbrush; Homework; Laptop |
 
 ## Name a martial art
@@ -2441,7 +3349,15 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 56 | Brazilian jiu-jitsu (BJJ) |
 | #10 | 60 | Tai chi (Tai chi chuan, Taiji) |
 | Gem | 100 | Hapkido; Savate; Silat (Pencak silat); Kalaripayattu (Kalari); Sambo |
-| Good find | 80 | Capoeira; Krav Maga; Wing Chun; Kendo; Sumo; Boxing; Mixed martial arts (MMA); Escrima (Eskrima, Arnis, Kali); Jeet Kune Do; Ninjutsu; Kyudo; Iaido; Kenjutsu; Systema; Hung Gar; Bartitsu; Vovinam; Lethwei; Wushu; Baguazhang (Bagua); Xingyiquan; Kenpo (Kempo); Sanda (Sanshou); Bokator; Taekkyon; Shorinji Kempo; Kyokushin; Shotokan; Glima; Naginatajutsu |
+| Good find | 90 | Hung Gar; Bartitsu; Vovinam; Lethwei; Xingyiquan; Bokator; Taekkyon; Glima; Naginatajutsu |
+| Good find | 88 | Kyudo; Iaido; Systema; Baguazhang (Bagua); Sanda (Sanshou); Shorinji Kempo |
+| Good find | 85 | Escrima (Eskrima, Arnis, Kali); Kenjutsu; Kyokushin |
+| Good find | 82 | Kenpo (Kempo); Shotokan |
+| Good find | 80 | Jeet Kune Do; Ninjutsu; Wushu |
+| Good find | 78 | Wing Chun; Kendo |
+| Good find | 75 | Capoeira |
+| Good find | 72 | Krav Maga; Sumo; Mixed martial arts (MMA) |
+| Good find | 70 | Boxing |
 | Not accepted (examples) | 0 | Yoga; Pilates; Parkour |
 
 ## Name a type of puzzle or word game
@@ -2461,7 +3377,14 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 52 | Riddle (Riddles) |
 | #10 | 55 | Maze (Mazes, Labyrinth) |
 | Gem | 100 | Tangram; Nonogram (Picross, Griddlers, Hanjie); Kakuro; Rebus; Cryptogram |
-| Good find | 80 | Cryptic crossword; Logic puzzle (Logic grid); Spot the difference; Dot to dot (Connect the dots); Boggle; Word ladder; Brain teaser (Brainteaser); Tower of Hanoi; Sliding puzzle (15 puzzle, Slide puzzle); Peg solitaire; Codeword; Acrostic; Spelling bee; Twenty questions (20 questions); I spy; Bananagrams; Mastermind; Word wheel; Ghost; Scattergories; Hidden pictures (Hidden object); Matchstick puzzle; Lateral thinking puzzle; Fill-in (Fill-ins, Kriss kross, Criss-cross); Minesweeper; Puzzle cube (Speed cube); Hashi (Bridges); Killer sudoku; Word chain; Number crossword |
+| Good find | 90 | Ghost; Hashi (Bridges) |
+| Good find | 87 | Fill-in (Fill-ins, Kriss kross, Criss-cross); Number crossword |
+| Good find | 84 | Tower of Hanoi; Peg solitaire; Codeword; Acrostic; Word wheel; Matchstick puzzle |
+| Good find | 81 | Sliding puzzle (15 puzzle, Slide puzzle); Hidden pictures (Hidden object); Lateral thinking puzzle; Minesweeper; Killer sudoku; Word chain |
+| Good find | 78 | Word ladder; Bananagrams; Mastermind; Scattergories |
+| Good find | 74 | Spelling bee; Twenty questions (20 questions); Puzzle cube (Speed cube) |
+| Good find | 71 | Cryptic crossword; Logic puzzle (Logic grid); Dot to dot (Connect the dots); Brain teaser (Brainteaser); I spy |
+| Good find | 68 | Spot the difference; Boggle |
 | Not accepted (examples) | 0 | Monopoly; Bingo; Snakes and ladders |
 
 ## Name something at a birthday party
@@ -2481,7 +3404,15 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 43 | Streamers |
 | #10 | 45 | Guests (Friends) |
 | Gem | 100 | Bunting; Party blowers (Blowouts, Party horns, Noisemakers); Fairy bread; Thank-you cards (Thank you cards); Musical statues |
-| Good find | 80 | Pinata; Pass the parcel; Musical chairs; Party bags (Goody bags, Loot bags, Party favors, Party favours); Confetti; Banner (Happy birthday banner); Party poppers; Sweets (Candy, Lollies); Chips (Crisps); Pizza; Cupcakes; Sandwiches; Juice; Clown; Magician; Face painting; Bouncy castle (Bounce house); Music; Singing (Happy Birthday song); Paper plates (Plates); Napkins; Jelly; Sausage rolls; Wrapping paper; Tablecloth; Pin the tail on the donkey; Photos (Camera); Dancing; Decorations; Lemonade; Cake knife; Birthday badge (Birthday sash) |
+| Good find | 90 | Cake knife |
+| Good find | 86 | Tablecloth; Birthday badge (Birthday sash) |
+| Good find | 81 | Napkins; Sausage rolls; Lemonade |
+| Good find | 77 | Juice; Paper plates (Plates); Jelly; Wrapping paper; Photos (Camera) |
+| Good find | 72 | Chips (Crisps); Sandwiches; Magician; Pin the tail on the donkey; Dancing |
+| Good find | 68 | Banner (Happy birthday banner); Party poppers; Clown; Face painting; Bouncy castle (Bounce house) |
+| Good find | 64 | Confetti; Sweets (Candy, Lollies); Pizza; Cupcakes; Music; Singing (Happy Birthday song); Decorations |
+| Good find | 59 | Pass the parcel; Musical chairs; Party bags (Goody bags, Loot bags, Party favors, Party favours) |
+| Good find | 55 | Pinata |
 | Not accepted (examples) | 0 | Alarm clock; Homework; Snow shovel |
 
 ## Name a type of exercise
@@ -2501,5 +3432,13 @@ The 125 prompts inside [`../game.html`](../game.html). **Popularity rankings are
 | #9 | 43 | Yoga |
 | #10 | 45 | Weightlifting (Lifting weights, Weight training) |
 | Gem | 100 | Farmer's walk (Farmer's carry); Turkish get-up; Bear crawl; Wall sit; Inchworm |
-| Good find | 80 | Plank (Planks); Pull-ups (Pullups); Chin-ups (Chinups); Lunges (Lunge); Burpees (Burpee); Crunches (Crunch); Pilates; Aerobics; Skipping (Jump rope, Jumping rope); Rowing; Deadlifts (Deadlift); Bench press; Bicep curls (Biceps curls, Curls); Mountain climbers; Stretching; Hiking; Dancing; Tai chi; Boxing; Spinning (Indoor cycling); Stair climbing (Stairs); Elliptical (Cross trainer); High knees; Calf raises; Dips (Tricep dips); Leg raises; Russian twists; Kettlebell swings; Step-ups; HIIT (Interval training); Circuit training; Side plank; Glute bridge (Bridge) |
+| Good find | 90 | Side plank; Glute bridge (Bridge) |
+| Good find | 86 | Leg raises; Russian twists; Kettlebell swings; Step-ups |
+| Good find | 81 | Tai chi; Stair climbing (Stairs); Elliptical (Cross trainer); High knees; Calf raises; Dips (Tricep dips) |
+| Good find | 77 | Mountain climbers; Boxing; Spinning (Indoor cycling); HIIT (Interval training); Circuit training |
+| Good find | 72 | Deadlifts (Deadlift); Bicep curls (Biceps curls, Curls); Hiking; Dancing |
+| Good find | 68 | Chin-ups (Chinups); Skipping (Jump rope, Jumping rope); Rowing; Bench press; Stretching |
+| Good find | 64 | Crunches (Crunch); Pilates; Aerobics |
+| Good find | 59 | Plank (Planks); Lunges (Lunge); Burpees (Burpee) |
+| Good find | 55 | Pull-ups (Pullups) |
 | Not accepted (examples) | 0 | Napping; Watching sport; Video games |
