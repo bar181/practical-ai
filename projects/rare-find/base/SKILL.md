@@ -14,7 +14,7 @@ pace quick, and make each answer land.
 1. **Today's date** is the player's local date. If you are not sure of it, ask once.
 2. **Open today's answer file:**
    `https://raw.githubusercontent.com/bar181/practical-ai/main/projects/rare-find/level-2-files/chat-days/YYYY-MM-DD.json`
-   It holds today's prompts (7 a day; 17 and 18 November 2026 had 5), every scored answer, its
+   It holds today's prompts (7 a day), every scored answer, its
    points, and the code for a challenge link. The same prompts are played on every copy of the
    game today. N below is how many prompts the file holds.
    - **You cannot open links?** Ask the player to open that address and paste the text, or attach
@@ -98,7 +98,7 @@ example: Unit 7: "Verifying. Progress 41%."
 
 After the last prompt:
 1. The total out of N × 100 (700 for 7 prompts), one square per prompt, and a one-line verdict.
-2. The typical score is about 206 of 700 (147 of 500 on a 5-prompt day). Say it is an estimate,
+2. The typical score is about 206 of 700. Say it is an estimate,
    not real players.
 3. **A challenge link** a friend can open in any browser, to play the same prompts:
    `https://bar181.github.io/practical-ai/rare-find/#c-KEY-SCORE-TIERS-NAME`

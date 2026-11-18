@@ -191,13 +191,18 @@ details p{font-size:14px;color:var(--muted);margin:6px 0 0}
 .gemreveal.play .shard{animation:shard 360ms 180ms cubic-bezier(.2,.7,.4,1) forwards}
 /* celebrations grow with the points: sparks, then stars, then a firework, then the Gem's shower */
 .celebrate{position:fixed;inset:0;pointer-events:none;z-index:60;overflow:hidden}
-.celebrate .spark{position:absolute;width:var(--s,8px);height:var(--s,8px);border-radius:50%;background:var(--c);opacity:0;animation:spark var(--d,480ms) cubic-bezier(.15,.7,.35,1) forwards}
-.celebrate .spark.star{border-radius:0;clip-path:polygon(50% 0,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%)}
-.celebrate .ring{position:absolute;width:40px;height:40px;margin:-20px 0 0 -20px;border-radius:50%;border:4px solid var(--c);opacity:0;animation:ringout 520ms ease-out forwards}
-.celebrate .drop{position:absolute;top:-24px;width:12px;height:12px;background:var(--c);clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%);opacity:0;animation:shower var(--d,900ms) var(--w,0ms) cubic-bezier(.3,.1,.6,1) forwards}
-@keyframes spark{0%{opacity:1;transform:translate(0,0) scale(.4)}20%{opacity:1}100%{opacity:0;transform:translate(var(--dx),var(--dy)) scale(1) rotate(var(--r,0deg))}}
-@keyframes ringout{0%{opacity:.9;transform:scale(.3)}100%{opacity:0;transform:scale(var(--k,4))}}
-@keyframes shower{0%{opacity:1;transform:translateY(0) rotate(0)}85%{opacity:1}100%{opacity:0;transform:translateY(var(--fall,110vh)) rotate(var(--r,360deg))}}
+/* particles start hidden; the Web Animations API moves and fades each one inside the celebration's length */
+.celebrate i{position:absolute;display:block;width:9px;height:9px;background:var(--c);opacity:0;will-change:transform,opacity}
+.celebrate .spark{border-radius:50%}
+.celebrate .star{border-radius:0;clip-path:polygon(50% 0,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%)}
+.celebrate .star.fall{width:16px;height:16px}
+.celebrate .conf{width:9px;height:15px;border-radius:2px}
+.celebrate .drop{width:14px;height:14px;clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%)}
+.celebrate .ring{width:44px;height:44px;background:none;border:4px solid var(--c);border-radius:50%}
+.celebrate .bubble{border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff 0 12%,var(--c) 40%,transparent 72%);border:2px solid var(--c)}
+.celebrate .rocket{width:6px;height:18px;border-radius:3px;box-shadow:0 10px 14px var(--c)}
+.celebrate .cheer{position:absolute;font-weight:900;color:var(--c);white-space:nowrap;letter-spacing:.01em;opacity:0;
+  text-shadow:0 2px 0 #1a1530,0 0 18px var(--c),0 0 2px #1a1530;-webkit-text-stroke:1px rgba(26,21,48,.6)}
 .goldflash{position:fixed;inset:0;pointer-events:none;z-index:65;background:radial-gradient(circle at var(--gx,50%) var(--gy,50%),rgba(255,214,102,.5),rgba(255,201,60,0) 60%);animation:goldflash 380ms ease-out forwards}
 @keyframes goldflash{0%{opacity:0}30%{opacity:1}100%{opacity:0}}
 @keyframes burst{0%{opacity:0;transform:scale(.2)}35%{opacity:1}100%{opacity:0;transform:scale(1.7)}}
@@ -618,12 +623,12 @@ function dayKey(d){ if(!d&&window.__rfDay) return window.__rfDay; d=d||new Date(
 function keyMinus(k,i){ const [y,m,d]=k.split("-").map(Number); return dayKey(new Date(y,m-1,d-i)); }
 function dayNum(k){ const [y,m,d]=k.split("-").map(Number); return Math.round(Date.UTC(y,m-1,d)/864e5); }
 function dayLabel(k){ const [y,m,d]=k.split("-").map(Number); return new Date(y,m-1,d).toLocaleDateString(undefined,{weekday:"long",month:"long",day:"numeric"}); }
-// Everyone gets the same prompts on the same date: 7 a day from 19 November 2026 (the first two days had 5).
+// Everyone gets the same 7 prompts on the same date. (17 and 18 November 2026 began with 5 and gained 2 each.)
 // Days come in cycles: each cycle shuffles every pack once and deals it out 7 at a time, and the first day
 // of a cycle never repeats the day before. The calendar fixes each date's prompts in advance, so no day
 // repeats while it lasts.
 // After its last day the game falls back to dealing from the whole bank, so a day is never empty.
-const CAL={"start":"2026-11-17","days":[["bird","breakfast","superhero","sport","animated-film"],["volcano","vegetable","fairy-tale","nut","card-game"],["island","pie","job","garden","animal-sound","olympic-sport","office"],["sauce","capital-city","mythical-creature","farm-animal","kitchen","campsite","furniture"],["bean","reptile","currency","colour","flower","beach","chore"],["seafood","horse-breed","birthday-party","ocean-sea","hobby","video-game","music-genre"],["salad","zoo-animal","country-asia","rock-mineral","instrument","shoe","martial-art"],["hot-drink","language","body-part","tree","airport","dinosaur","winter-sport"],["pasta","city-asia","constellation","bridge","cat-breed","school-subject","fictional-weapon"],["breakfast-drink","boat","river","monkey-ape","transport","dance","board-game"],["berry","australian-animal","africa","bathroom","toy-box","landmark","gemstone"],["cookie","insect","tool","desert","holiday-pack","houseplant","puzzle"],["italian-dish","pet","town-building","country-europe","weather","clothing","circus-act"],["picnic","shell-animal","home-type","us-state","hat","space-thing","exercise"],["noodle","baby-animal","city-canada","shop","playground-game","grain","pizza"],["bread","fish","city-usa","theme-park-ride","sausage","japanese-food","ice-cream"],["herb-spice","nocturnal-animal","city-europe","dessert","sandwich","soup","cheese"],["mexican-dish","dog-breed","sweet","sea-creature","flying-animal","desert-animal","rodent"]]};
+const CAL={"start":"2026-11-17","days":[["bird","breakfast","superhero","sport","animated-film","island","job"],["volcano","vegetable","fairy-tale","nut","card-game","garden","animal-sound"],["pie","olympic-sport","office","capital-city","mythical-creature","farm-animal","kitchen"],["sauce","reptile","currency","campsite","furniture","colour","flower"],["bean","horse-breed","birthday-party","beach","ocean-sea","chore","hobby"],["seafood","zoo-animal","video-game","music-genre","country-asia","rock-mineral","instrument"],["salad","language","body-part","shoe","martial-art","tree","airport"],["hot-drink","city-asia","constellation","bridge","dinosaur","winter-sport","school-subject"],["pasta","boat","river","cat-breed","fictional-weapon","transport","dance"],["breakfast-drink","monkey-ape","africa","board-game","bathroom","landmark","gemstone"],["berry","australian-animal","tool","toy-box","desert","holiday-pack","houseplant"],["cookie","insect","town-building","country-europe","puzzle","weather","clothing"],["italian-dish","pet","home-type","us-state","hat","circus-act","space-thing"],["picnic","shell-animal","city-canada","shop","exercise","playground-game","noodle"],["grain","baby-animal","city-usa","theme-park-ride","pizza","bread","sausage"],["japanese-food","fish","city-europe","ice-cream","herb-spice","dessert","sandwich"],["soup","nocturnal-animal","cheese","mexican-dish","sweet","dog-breed","sea-creature"]]};
 function dailyPacks(k=dayKey()){
   const ci=CAL&&CAL.start?dayNum(k)-dayNum(CAL.start):-1;
   if(ci>=0&&ci<CAL.days.length){ const ps=CAL.days[ci].map(id=>DATA.packs.find(p=>p.id===id)).filter(Boolean); if(ps.length&&ps.length===CAL.days[ci].length) return ps; }
@@ -812,7 +817,7 @@ function hashChallenge(){ const m=/^#c-(.+)$/i.exec(location.hash||""); if(m) ta
 
 /* ---------- game flow ---------- */
 let G=null, tick=null;
-function show(id){ ["home","scorecard","play","end"].forEach(s=>$("#"+s).hidden=s!==id); S.screen=id;
+function show(id){ endCelebrations(); ["home","scorecard","play","end"].forEach(s=>$("#"+s).hidden=s!==id); S.screen=id;
   const inGame=id==="play"; $("#tabs").hidden=inGame||id==="end"; $("#head").hidden=inGame; if(inGame){ $("#settings").classList.remove("open"); $("#b-settings").setAttribute("aria-expanded","false"); $("#settings").inert=true; }
   window.scrollTo(0,0); }
 // Practice: other prompts than today's where it can. Party mode plays every pack, grouped by topic.
@@ -842,7 +847,7 @@ function newGame(mode,opts={}){
   show("play"); startPrompt(opts.endsAt);
 }
 function startPrompt(endsAt){
-  const p=G.packs[G.i]; G.locked=false; G.cur=null; G.token++; G.ready=false;
+  endCelebrations(); const p=G.packs[G.i]; G.locked=false; G.cur=null; G.token++; G.ready=false;
   $("#round").textContent=`${G.i+1} / ${G.packs.length}`; $("#round").setAttribute("aria-label",`Prompt ${G.i+1} of ${G.packs.length}`); updateDots(-1);
   const t=G.topics.indexOf(p.cat)+1;
   $("#cat").textContent=(p.cat||"").toUpperCase()+(G.byTopic?` · TOPIC ${t} OF ${G.topics.length}`:S.mode==="daily"?" · TODAY":S.mode==="challenge"?" · CHALLENGE":" · PRACTICE");
@@ -912,22 +917,77 @@ function flyToScore(n){
     {duration:330,delay:240,easing:"cubic-bezier(.5,0,.7,1)",fill:"both"});
   an.onfinish=()=>{ f.remove(); scoreTick(n,true); }; setTimeout(()=>f.remove(),1200);
 }
-// The celebration grows with the points: 1 a few sparks (crowd pick), 2 more sparks and a glow,
-// 3 stars and a shine (40 or more), 4 a firework and a bigger card, 5 a Gem shower over the reveal.
-function celebLevel(p,tier){ return tier==="gem"?5 : tier==="good"?4 : p>=40?3 : p>25?2 : p>0?1 : 0; }
-function celebrate(lvl,at){
-  if(reduce||!lvl) return; const r=(at||$("#tier")).getBoundingClientRect(), x=r.left+r.width/2, y=r.top+r.height/2;
-  const box=document.createElement("div"); box.className="celebrate"; box.setAttribute("aria-hidden","true"); box.dataset.level=lvl;
-  const pal=[[],["#d8d2f2","#ffc93c"],["#7ab8ff","#ffc93c","#fff"],["#3ccb7f","#ffc93c","#7ab8ff","#fff"],["#b48aff","#e7dbff","#ffc93c","#fff"],["#ffc93c","#ffe9a8","#fff3c4","#e9a91a","#b48aff"]][lvl];
-  const n=[0,14,22,30,40,52][lvl], reach=[0,110,140,170,210,240][lvl];
-  for(let i=0;i<n;i++){ const a=Math.PI*2*i/n+Math.random()*.4, d=reach*(.55+Math.random()*.45), e=document.createElement("i");
-    e.className="spark"+(lvl>=3&&i%2?" star":""); e.style.left=x+"px"; e.style.top=y+"px";
-    e.style.setProperty("--dx",Math.cos(a)*d+"px"); e.style.setProperty("--dy",Math.sin(a)*d+"px"); e.style.setProperty("--r",(Math.random()*360|0)+"deg");
-    e.style.setProperty("--c",pal[i%pal.length]); e.style.setProperty("--s",(6+lvl*2+(i%3))+"px"); e.style.setProperty("--d",(420+lvl*50)+"ms"); box.append(e); }
-  if(lvl>=4){ [0,1].forEach(k=>{ const g=document.createElement("i"); g.className="ring"; g.style.left=x+"px"; g.style.top=y+"px"; g.style.setProperty("--c",pal[k]); g.style.setProperty("--k",lvl===5?7:5); g.style.animationDelay=(k*90)+"ms"; box.append(g); }); }
-  if(lvl===5){ for(let i=0;i<36;i++){ const d=document.createElement("i"); d.className="drop"; d.style.left=(Math.random()*100)+"vw"; d.style.setProperty("--c",pal[i%pal.length]);
-    d.style.setProperty("--d",(650+Math.random()*250|0)+"ms"); d.style.setProperty("--w",(Math.random()*120|0)+"ms"); d.style.setProperty("--r",(Math.random()*720-360|0)+"deg"); box.append(d); } }
-  document.body.append(box); setTimeout(()=>box.remove(),1300);
+// Celebrations are the game play: they grow bigger and last longer with the points (owner's feedback).
+// 25 points plays 1.5 s, rising to 2.5 s at 80; over 80, and any Gem, plays 3 s. Each level draws from
+// several styles at random, so the same score does not always look the same. Nothing blocks Next, and
+// moving on fades whatever is still playing. Reduced motion shows the result with no celebration.
+function celebLevel(p,tier){ return tier==="gem"||p>80?5 : tier==="good"?4 : p>=40?3 : p>25?2 : p>0?1 : 0; }
+function celebDur(p,tier){ if(tier==="gem"||p>80) return 3000; if(!(p>0)) return 0; return Math.round(Math.min(2500,1500+Math.max(0,p-25)*1000/55)); }
+const CHEERS=[[],["Nice!","Got it!","On the board!"],["Good one!","Nice pick!","Solid!"],["Deep cut!","Great pick!","Ooh, nice!"],
+  ["Brilliant!","Off the map!","Sharp!"],["Incredible!","Legendary!","Rare air!"]];
+const CELEB_STYLES=[[],["sparkle","bubbles"],["burst","bubbles","cannon"],["stars","cannon","rings"],["fireworks","rain","starfall"],["fireworks+rain","fireworks+starfall","cannon+fireworks"]];
+const PALS=[[],["#d8d2f2","#ffc93c","#fff"],["#7ab8ff","#ffc93c","#fff","#3ccb7f"],["#3ccb7f","#ffc93c","#7ab8ff","#fff","#ff8fab"],
+  ["#b48aff","#e7dbff","#ffc93c","#fff","#7ab8ff","#ff8fab"],["#ffc93c","#ffe9a8","#fff3c4","#e9a91a","#b48aff","#7ab8ff","#ff8fab"]];
+const fxr=(a,b)=>a+Math.random()*(b-a), fxpick=a=>a[Math.floor(Math.random()*a.length)];
+function endCelebrations(){ document.querySelectorAll(".celebrate").forEach(b=>{ if(b.dataset.ending) return; b.dataset.ending="1";
+  try{ b.animate([{opacity:1},{opacity:0}],{duration:200,fill:"forwards"}).onfinish=()=>b.remove(); }catch(e){ b.remove(); } setTimeout(()=>b.remove(),400); });
+  const c=$("#mcard"); if(c) c.getAnimations().forEach(a=>{ if(a.id==="pulse") a.cancel(); }); }
+function celebrate(lvl,at,o={}){
+  if(reduce||!lvl) return; const D=o.dur||[0,1500,1800,2200,2600,3000][lvl];
+  const r=(at||$("#tier")).getBoundingClientRect(), x=r.left+r.width/2, y=r.top+r.height/2, W=innerWidth, H=innerHeight;
+  const box=document.createElement("div"); box.className="celebrate"; box.setAttribute("aria-hidden","true");
+  const style=o.style||fxpick(CELEB_STYLES[lvl]); box.dataset.level=lvl; box.dataset.dur=D; box.dataset.style=style;
+  const pal=o.tier==="gem"?PALS[5]:PALS[lvl], big=1+lvl*.18;
+  // one particle, moved by the Web Animations API so every effect ends inside D
+  const put=(cls,px,py,c,sz)=>{ const e=document.createElement("i"); e.className=cls; e.style.left=px+"px"; e.style.top=py+"px"; e.style.setProperty("--c",c); if(sz){ e.style.width=sz+"px"; e.style.height=sz+"px"; } box.append(e); return e; };
+  const run=(e,kf,dur,delay,ease)=>{ dur=Math.min(dur,D-delay); if(dur<=60){ e.remove(); return; } e.animate(kf,{duration:dur,delay,easing:ease||"cubic-bezier(.15,.7,.35,1)",fill:"both"}); };
+  const burst=(bx,by,n,reach,delay,dur,shapes)=>{ for(let i=0;i<n;i++){ const a=Math.PI*2*i/n+fxr(-.2,.2), d=reach*fxr(.55,1), dx=Math.cos(a)*d, dy=Math.sin(a)*d;
+    const e=put("spark"+(shapes&&i%2?" star":""),bx,by,pal[i%pal.length],fxr(6,10)*big);
+    run(e,[{transform:"translate(-50%,-50%) scale(.4)",opacity:1},{transform:`translate(calc(-50% + ${dx*.85}px),calc(-50% + ${dy*.85}px)) scale(1)`,opacity:1,offset:.55},
+      {transform:`translate(calc(-50% + ${dx}px),calc(-50% + ${dy+60}px)) scale(.5) rotate(${fxr(-200,200)|0}deg)`,opacity:0}],dur,delay); } };
+  const ring=(bx,by,delay,k,c)=>{ const e=put("ring",bx,by,c); run(e,[{transform:"translate(-50%,-50%) scale(.3)",opacity:.95},{transform:`translate(-50%,-50%) scale(${k})`,opacity:0}],700,delay,"ease-out"); };
+  const rocket=(delay,n)=>{ const tx=fxr(W*.15,W*.85), ty=fxr(H*.15,H*.45), sx=tx+fxr(-60,60), c=fxpick(pal);
+    const e=put("rocket",sx,H+10,c); run(e,[{transform:"translate(-50%,0)",opacity:1},{transform:`translate(calc(-50% + ${tx-sx}px),${ty-H-10}px)`,opacity:1}],520,delay,"cubic-bezier(.2,.6,.4,1)");
+    setTimeout(()=>{ if(!box.isConnected) return; e.remove(); ring(tx,ty,0,6,c); burst(tx,ty,n,fxr(110,170)*big*.8,0,1100,true); },delay+520); };
+  const rain=(n,shape)=>{ for(let i=0;i<n;i++){ const fall=fxr(1300,2000), delay=fxr(0,Math.max(0,D-fall)), px=fxr(0,W), sway=fxr(-70,70), c=pal[i%pal.length];
+    const e=put(shape||"conf",px,-30,c); run(e,[{transform:"translate(0,0) rotate(0)",opacity:1},{transform:`translate(${sway}px,${H*.5}px) rotate(${fxr(180,540)|0}deg)`,offset:.5},
+      {transform:`translate(${-sway*.6}px,${H+60}px) rotate(${fxr(540,900)|0}deg)`,opacity:.9}],fall,delay,"linear"); } };
+  const cannon=(n)=>{ [[-1,0],[1,W]].forEach(([dir,sx])=>{ for(let i=0;i<n;i++){ const delay=fxr(0,260), vx=dir*-fxr(W*.25,W*.6), up=fxr(H*.35,H*.7), c=pal[i%pal.length];
+    const e=put(i%3?"conf":"spark",sx,H*.9,c); run(e,[{transform:"translate(0,0) rotate(0)",opacity:1},{transform:`translate(${vx*.7}px,${-up}px) rotate(${fxr(200,400)|0}deg)`,opacity:1,offset:.4,easing:"cubic-bezier(.3,1,.6,1)"},
+      {transform:`translate(${vx}px,${H*.25}px) rotate(${fxr(600,900)|0}deg)`,opacity:0}],Math.min(D,fxr(1500,2200)),delay,"cubic-bezier(.4,0,.6,1)"); } }); };
+  const bubbles=(n)=>{ for(let i=0;i<n;i++){ const delay=fxr(0,D*.55), bx=x+fxr(-r.width*.6,r.width*.6), rise=fxr(160,320)*big, c=pal[i%pal.length];
+    const e=put("bubble",bx,y+fxr(0,40),c,fxr(10,22)*big); run(e,[{transform:"translate(-50%,-50%) scale(.2)",opacity:0},{transform:`translate(calc(-50% + ${fxr(-30,30)}px),calc(-50% - ${rise*.5}px)) scale(1)`,opacity:.95,offset:.35},
+      {transform:`translate(calc(-50% + ${fxr(-40,40)}px),calc(-50% - ${rise}px)) scale(1.15)`,opacity:0}],fxr(900,1300),delay,"ease-out"); } };
+  const twinkle=(n,spread)=>{ for(let i=0;i<n;i++){ const delay=fxr(0,D-700), tx=x+fxr(-spread,spread), ty=y+fxr(-spread*.7,spread*.5);
+    const e=put("spark star",tx,ty,pal[i%pal.length],fxr(12,24)*big); run(e,[{transform:"translate(-50%,-50%) scale(0) rotate(0)",opacity:0},{transform:"translate(-50%,-50%) scale(1.3) rotate(90deg)",opacity:1,offset:.4},{transform:"translate(-50%,-50%) scale(0) rotate(180deg)",opacity:0}],fxr(500,750),delay,"ease-in-out"); } };
+  // the opening pop at the card, then the level's style for the rest of D
+  burst(x,y,[0,16,22,30,40,52][lvl],[0,120,150,180,220,260][lvl],0,Math.min(D,900+lvl*120),lvl>=3);
+  for(const part of style.split("+")){
+    if(part==="sparkle") twinkle(10,r.width*.5);
+    if(part==="burst"){ burst(x,y,18,170,450,900,true); burst(x,y,14,120,900,800,false); }
+    if(part==="bubbles") bubbles(10+lvl*5);
+    if(part==="cannon") cannon(14+lvl*5);
+    if(part==="stars"){ twinkle(22,r.width*.65); burst(x,y,20,200,600,1000,true); }
+    if(part==="rings"){ for(let k=0;k<4;k++) ring(x,y,k*330,5+k,pal[k%pal.length]); twinkle(14,r.width*.6); }
+    if(part==="fireworks"){ const n=lvl>=5?6:3; for(let k=0;k<n;k++) rocket(150+k*(D-1500)/Math.max(1,n-1),20+lvl*4); }
+    if(part==="rain") rain(40+lvl*12);
+    if(part==="starfall") rain(30+lvl*10,"spark star fall");
+  }
+  // a closing burst, so every celebration runs its full length
+  if(D>=1400) burst(x,y,[0,12,16,22,28,36][lvl],[0,100,130,160,200,240][lvl],D-850,850,lvl>=3);
+  if(o.tier==="gem"){ rain(46,"drop"); for(let k=0;k<3;k++) ring(x,y,k*420,7+k,pal[k]); }
+  // a cheer word, bigger with the points, from a few so it varies
+  if(lvl>=2&&o.word!==false){ const w=document.createElement("b"); w.className="cheer"; w.textContent=o.tier==="gem"?fxpick(["Gem found!","Legendary!","Rare air!"]):fxpick(CHEERS[lvl]);
+    const cd=$("#mcard"), cr=o.card!==false&&cd&&!cd.closest("[hidden]")?cd.getBoundingClientRect():r;
+    w.style.left=(cr.left+cr.width/2)+"px"; w.style.top=Math.max(70,cr.top-6)+"px"; w.style.fontSize=Math.min([0,0,26,32,40,50][lvl],W/8.5)+"px"; w.style.setProperty("--c",pal[0]); box.append(w);
+    const hold=Math.min(D,1100+lvl*250);
+    w.animate([{transform:"translate(-50%,-50%) scale(.3) rotate(-8deg)",opacity:0},{transform:"translate(-50%,-50%) scale(1.25) rotate(3deg)",opacity:1,offset:.18},
+      {transform:"translate(-50%,-50%) scale(1) rotate(0)",opacity:1,offset:.3},{transform:"translate(-50%,-60%) scale(1.04)",opacity:1,offset:.8},
+      {transform:"translate(-50%,-120%) scale(.9)",opacity:0}],{duration:hold,easing:"cubic-bezier(.3,1.2,.5,1)",fill:"both"}); }
+  // the card itself keeps pulsing in its colour while the celebration plays
+  const card=$("#mcard"); if(card&&!card.closest("[hidden]")&&lvl>=2&&o.card!==false){ const c=getComputedStyle(card).borderTopColor;
+    const a=card.animate([{boxShadow:`0 0 0 0 ${c}`},{boxShadow:`0 0 0 ${8+lvl*4}px rgba(0,0,0,0)`}],{duration:650,iterations:Math.max(1,Math.floor(D/650))}); a.id="pulse"; }
+  document.body.append(box); setTimeout(()=>box.remove(),D+150);
 }
 function land(cur){
   const m=cur.m, t=m.tier, played=cur.played||(cur.played={}), first=!played[t]; played[t]=true;
@@ -935,7 +995,7 @@ function land(cur){
   if(!first) return;
   const p=pts(m), lvl=celebLevel(p,t), c=$("#mcard"); c.classList.remove("play","l1","l2","l3","l4","l5");
   if(!reduce){ void c.offsetWidth; c.classList.add("play"); if(lvl) c.classList.add("l"+lvl); }
-  celebrate(lvl, t==="gem"?$("#moment .gemsvg"):c);
+  celebrate(lvl, t==="gem"?$("#moment .gemsvg"):c, {dur:celebDur(p,t), tier:t});
   if(t==="gem"){ $("#tier").classList.add("gemflash"); goldFlash(); flyToScore(p); }
   else if(p>0) scoreTick(p,t==="good");
   else if(t==="miss"&&!reduce){ const f=$("#answer-form"); f.classList.remove("shake"); void f.offsetWidth; f.classList.add("shake"); }
@@ -1109,7 +1169,7 @@ async function endGame(){
 function renderEnd(g,rescored){
   retotal(g);
   $("#final").textContent=rescored?String(g.total):"0"; if(!rescored) countUp($("#final"),g.total,600);
-  { const f=g.total/g.perfect, mean=meanOf(g.packs.length)/g.perfect; const lvl = f>=0.6?5 : f>=0.45?4 : f>=mean?3 : g.total>0?1 : 0; setTimeout(()=>{ if(S.screen==="end") celebrate(lvl,$("#final")); },rescored?0:620); }
+  { const f=g.total/g.perfect, mean=meanOf(g.packs.length)/g.perfect; const lvl = f>=0.6?5 : f>=0.45?4 : f>=mean?3 : g.total>0?1 : 0; setTimeout(()=>{ if(S.screen==="end") celebrate(lvl,$("#final"),{card:false}); },rescored?0:620); }
   const st=$("#strip"); st.textContent=""; const rc=$("#recap"); rc.textContent="";
   g.res.forEach((r,i)=>{ const s=document.createElement("span"); s.className=TIERS[r.tier].css; s.textContent=r.pts; s.setAttribute("aria-hidden","true"); st.append(s);
     const li=document.createElement("li"); const q=document.createElement("span"); q.className="q"; q.textContent=r.prompt; const a=document.createElement("span"); a.className="a"; a.textContent=r.answer||"(no answer)";
@@ -1160,7 +1220,7 @@ $("#b-leave-yes").addEventListener("click",goStart);
 $("#b-end-back").addEventListener("click",goStart);
 
 /* ---------- test hook ---------- */
-window.__rf={CAL,goodPts,aiRarity,practiceLeft,sum:()=>G?G.res.reduce((a,r)=>a+(r&&r.pts||0),0):0,parseCode,gameKey,makeCode,meanOf,match,pts,rankPts,norm,osa,STOP,packs:DATA.packs,dailyPacks,beatPct,MEAN,HOSTS,looks:looksLikeInstructions,
+window.__rf={CAL,goodPts,aiRarity,celebDur,CELEB_STYLES,practiceLeft,sum:()=>G?G.res.reduce((a,r)=>a+(r&&r.pts||0),0):0,parseCode,gameKey,makeCode,meanOf,match,pts,rankPts,norm,osa,STOP,packs:DATA.packs,dailyPacks,beatPct,MEAN,HOSTS,looks:looksLikeInstructions,
   state:()=>({screen:S.screen,tab:S.tab,mode:S.mode,i:G&&G.i,total:G&&G.total,res:G?G.res.map(r=>r&&{tier:r.tier,pts:r.pts}):[],cur:G&&G.cur&&{raw:G.cur.raw,...G.cur.m,pts:pts(G.cur.m),checks:G.cur.checks},days:S.days,caps:Object.fromEntries(Object.entries(caps).map(([k,v])=>[k,!!v]))}),
   setSeed:v=>{seed=v;}};
 

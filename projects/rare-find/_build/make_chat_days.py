@@ -1,7 +1,7 @@
 """make_chat_days.py: writes one small answer file per day, for playing Rare Find in a chat.
 
 A chatbot playing Rare Find (base/SKILL.md) opens the file for today's date. Each file holds that
-day's prompts (7; 5 on the first two days), exactly as the built game deals them, with every scored answer, its points, and
+day's seven prompts, exactly as the built game deals them, with every scored answer, its points, and
 the code a challenge link needs. Generated: run this after any change to the packs or the calendar.
 
 Run: python3 projects/rare-find/_build/make_chat_days.py [DAYS]   (needs: playwright)

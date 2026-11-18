@@ -4,7 +4,8 @@ Days already in the calendar never change, because people may have played them. 
 prompts the calendar has not used yet, PER (7) different topics a day where possible, until every
 prompt in packs.json has had a day. After the calendar ends the game deals from the whole bank.
 Run after adding packs: python3 _build/make_calendar.py && python3 _build/build.py
-The first two days (17 and 18 November 2026) were played with 5 prompts and stay that way.
+Days with fewer than PER prompts are topped up at the end, keeping the prompts they had: 17 and
+18 November 2026 were played with 5, and gained 2 each when the game moved to 7.
 """
 import json, os, random, datetime
 
@@ -24,6 +25,11 @@ rng = random.Random(len(cal["days"]) * 7919 + len(packs))
 todo = [p["id"] for p in packs if p["id"] not in used]
 rng.shuffle(todo)
 added = 0
+for day in cal["days"]:  # top up short days, keeping their order and their prompts
+    for i in list(todo):
+        if len(day) >= PER: break
+        if cat[i] not in {cat[x] for x in day}: day.append(i); todo.remove(i)
+    while len(day) < PER and todo: day.append(todo.pop(0))
 while len(todo) >= PER:
     day = []
     for i in list(todo):  # different topics where possible

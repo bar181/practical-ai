@@ -41,5 +41,5 @@ check count are still true. For a bigger change, review with
    them, and a chatbot hosting the game never shows those files.
 7. GitHub runs no AI and no database. Keep it free to host.
 8. An answer lands fast: on screen within 100 ms, ordinary effects 150 to 250 ms, the Gem reveal
-   inside 600 ms. Celebrations grow with the points and never block Next; the Gem's ends within 1.1 s. Next always works. Each reward plays once, on its own prompt. Tiers show in words,
+   inside 600 ms. Celebrations are the game play: they grow with the points and last 1.5 s at 25 points, up to 2.5 s at 80, and 3 s over 80 or for a Gem. They never block Next, and moving on fades them. Next always works. Each reward plays once, on its own prompt. Tiers show in words,
    not colour alone, and reduced motion keeps every result.

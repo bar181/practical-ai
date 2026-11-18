@@ -111,7 +111,8 @@ with sync_playwright() as pw:
         # wait for the frame that shows the result, so a slow machine does not read the timing too early
         page.wait_for_function("(window.__rfPaintAt||0) > (window.__rfSubmitAt||0)", timeout=3000)
         return page.evaluate("""()=>({paint:(window.__rfPaintAt||0)-(window.__rfSubmitAt||0),
-          celeb:(()=>{const c=[...document.querySelectorAll('.celebrate')].pop();return c?[Number(c.dataset.level),c.querySelectorAll('.spark').length,c.querySelectorAll('.ring').length,c.querySelectorAll('.drop').length,(c.querySelector('.cheer')||{}).textContent||'']:null})(),
+          celeb:(()=>{const c=[...document.querySelectorAll('.celebrate')].pop();if(!c)return null;const ends=document.getAnimations().filter(a=>c.contains(a.effect.target)).map(a=>{const t=a.effect.getTiming();return (t.delay||0)+(Number(t.duration)||0)});
+            return [Number(c.dataset.level),Number(c.dataset.dur),c.dataset.style,c.children.length,(c.querySelector('.cheer')||{}).textContent||'',ends.length?Math.max(...ends):0]})(),
           anims:document.getAnimations().map(a=>{const t=a.effect.getTiming(),el=a.effect.target;return {name:a.animationName||(a.transitionProperty?'transition':(el&&el.classList&&el.classList.contains('fly')?'fly':'script')),d:Number(t.duration)||0,delay:t.delay||0,
             cls:el?(el.id||String(el.className&&el.className.baseVal!==undefined?el.className.baseVal:el.className)):''};})})""")
     def nxt(page):
@@ -136,24 +137,24 @@ with sync_playwright() as pw:
     pg.click("#b-settings"); pg.wait_for_timeout(300)
     no_sideways(pg, 390, "home")
     d1 = pg.evaluate("window.__rf.dailyPacks('2026-11-17').map(p=>p.id)"); d1b = pg.evaluate("window.__rf.dailyPacks('2026-11-17').map(p=>p.id)"); d2 = pg.evaluate("window.__rf.dailyPacks('2026-11-18').map(p=>p.id)")
-    check("today's game: five different prompts, the same for everyone on a date, new the next day", len(set(d1)) == 5 and d1 == d1b and d1 != d2 and not (set(d1) & set(d2)), (d1, d2))
+    check("today's game: seven different prompts, the same for everyone on a date, new the next day", len(set(d1)) == 7 and d1 == d1b and d1 != d2 and not (set(d1) & set(d2)), (d1, d2))
     overlap = pg.evaluate("""()=>{const out=[];const z=n=>String(n).padStart(2,'0');let prev=null;for(let i=0;i<240;i++){const d=new Date(2026,10,17+i);const k=`${d.getFullYear()}-${z(d.getMonth()+1)}-${z(d.getDate())}`;const ids=window.__rf.dailyPacks(k).map(p=>p.id);if(new Set(ids).size!==ids.length||![5,7].includes(ids.length))out.push(k+' size');if(prev&&ids.some(x=>prev.includes(x)))out.push(k);prev=ids;}return out;}""")
     check("today's game: over 240 days, through the calendar and past its end, no day shares a prompt with the day before", not overlap, overlap)
     cal_ok = pg.evaluate("""()=>{const C=window.__rf.CAL; if(!C) return 'no calendar'; const z=n=>String(n).padStart(2,'0'); const [y,m,d]=C.start.split('-').map(Number);
       for(let i=0;i<C.days.length;i++){ const t=new Date(y,m-1,d+i); const k=`${t.getFullYear()}-${z(t.getMonth()+1)}-${z(t.getDate())}`; const ids=window.__rf.dailyPacks(k).map(p=>p.id); if(ids.join()!==C.days[i].join()) return k; } return C.days.length; }""")
     check("today's game follows the calendar day by day", isinstance(cal_ok, int) and cal_ok >= 16, cal_ok)
     sizes = pg.evaluate("['2026-11-17','2026-11-18','2026-11-19','2026-12-04','2026-12-05','2027-03-01'].map(k=>window.__rf.dailyPacks(k).length)")
-    check("7 prompts a day from 19 November; the two days already played keep their 5", sizes == [5, 5, 7, 7, 7, 7], sizes)
-    check("the first calendar day is the game already played on 17 November", pg.evaluate("window.__rf.dailyPacks('2026-11-17').map(p=>p.id).join()") == "bird,breakfast,superhero,sport,animated-film")
+    check("7 prompts every day, today included, through the calendar and past its end", sizes == [7, 7, 7, 7, 7, 7], sizes)
+    check("the first calendar day keeps the five prompts played on 17 November, then adds two", pg.evaluate("window.__rf.dailyPacks('2026-11-17').map(p=>p.id).join()").startswith("bird,breakfast,superhero,sport,animated-film,"))
     pg.click("#b-daily"); pg.wait_for_timeout(250)
     check("focus lands in the answer box", pg.evaluate("document.activeElement.id") == "answer")
     check("'Back to start' shows on the play screen", "Back to start" in pg.inner_text("#b-quit"))
-    check("the daily game plays today's five prompts", pid_of(pg) == d1[0], (pid_of(pg), d1[0]))
+    check("the daily game plays today's seven prompts", pid_of(pg) == d1[0], (pid_of(pg), d1[0]))
     total = 0; gem_leak = []; shots = 0
-    celebs = [None] * 5
-    for k in range(5):
+    celebs = [None] * 7
+    for k in range(7):
         pid = pid_of(pg); pk = pack(pg, pid)
-        text = [pk["ranked"][0]["a"], pk["ranked"][5]["a"], pk["good"][0]["a"], pk["ranked"][9]["a"], pk["gems"][0]["a"]][k]
+        text = [pk["ranked"][0]["a"], pk["ranked"][5]["a"], pk["good"][0]["a"], pk["ranked"][9]["a"], pk["gems"][0]["a"], pk["ranked"][2]["a"], pk["wrong"][0]][k]
         if k == 0: pg.evaluate("()=>{window.__ptsLog=[];const f=()=>{window.__ptsLog.push(document.querySelector('#pts').textContent,document.querySelector('#total').textContent);if(window.__ptsLog.length<60)requestAnimationFrame(f)};requestAnimationFrame(f)}")
         landed = answer_now(pg, text)
         celebs[k] = landed["celeb"]
@@ -163,13 +164,13 @@ with sync_playwright() as pw:
             check("landing: a popular answer's effects run 150 to 250 ms (badge, its row, the score tick, its dot)", {a["name"] for a in ords} >= {"pop", "rowhit", "tick", "dotpop"} and all(150 <= a["d"] + a["delay"] <= 250 for a in ords), ords)
         if k == 4:
             gemanims = [a for a in landed["anims"] if a["name"] in ("gemin", "burst", "glint", "shard", "goldflash", "fly", "pop", "dotgem")]
-            cel = [a for a in landed["anims"] if a["name"] in ("spark", "ringout", "shower", "cheer")]
-            check("celebration: the Gem's shower and firework end within 1.1 s, and Next is never blocked", cel and max(a["d"] + a["delay"] for a in cel) <= 1100, max((a["d"] + a["delay"] for a in cel), default=0))
+            check("celebration: a Gem plays for 3 s, every effect ends inside that, and Next is never blocked", celebs[4][1] == 3000 and 2000 <= celebs[4][5] <= 3020, celebs[4])
             check("landing: the Gem reveal (gem, light burst, glint, fragments, gold flash, +100 to the score) all ends within 600 ms", {"gemin", "burst", "glint", "shard", "goldflash", "fly"} <= {a["name"] for a in gemanims} and max(a["d"] + a["delay"] for a in gemanims) <= 600, gemanims)
             pg.wait_for_timeout(150)
             check("landing: Next works while the Gem reveal still plays", pg.is_enabled("#b-next") and pg.evaluate("document.getAnimations().length") > 0)
         pg.wait_for_timeout(650)
         s = pg.evaluate("window.__rf.state()")
+        if k == 3: s3pts = s["cur"]["pts"]
         if k == 0:
             check("rank 1 scores 25", s["cur"]["pts"] == 25, s["cur"])
             check("popular: its row in the top ten is highlighted and says Yours", pg.evaluate("(()=>{const r=document.querySelector('#reveal li.mine');return !!r&&r.textContent.includes('Yours')})()"))
@@ -194,8 +195,9 @@ with sync_playwright() as pw:
         if k == 4:
             check("a Gem scores 100; the Gem rules live in settings, not under every answer", s["cur"]["pts"] == 100 and "five Gems" in pg.inner_text("#settings") and not pg.evaluate("(()=>{const n=document.querySelector('#gems-note');return !n.hidden&&n.textContent.includes('hidden on this prompt')})()"))
             lv = [c[0] if c else 0 for c in celebs]
-            check("celebrations grow with the points: crowd pick < top-ten deep cut < Good find < Gem", lv[0] == 1 and lv[3] == 3 and lv[2] == 4 and lv[4] == 5 and celebs[0][1] < celebs[3][1] < celebs[2][1] < celebs[4][1], celebs)
-            check("celebrations: a Good find adds a firework, a Gem adds a shower, and no floating word repeats the card", celebs[2][2] >= 1 and celebs[4][3] >= 30 and not any(c[4] for c in celebs if c), celebs)
+            check("celebrations grow with the points: crowd pick < top-ten deep cut < Good find <= Gem", lv[0] == 1 and lv[3] == 3 and lv[2] in (4, 5) and lv[4] == 5 and celebs[0][3] < celebs[3][3] < celebs[4][3], celebs)
+            check("celebrations last longer with the points: 1.5 s for 25, longer as it rises, 3 s over 80 and for a Gem", celebs[0][1] == 1500 and celebs[0][1] < celebs[3][1] <= celebs[2][1] <= celebs[4][1] == 3000 and all(c[1] == pg.evaluate(f"window.__rf.celebDur({p},'{t}')") for c, (p, t) in [(celebs[3], (s3pts, "solid"))]), celebs)
+            check("celebrations vary: each level draws from two or more styles; bigger ones cheer in words", all(len(x) >= 2 for x in pg.evaluate("window.__rf.CELEB_STYLES").__getitem__(slice(1, None))) and celebs[0][4] == "" and celebs[4][4] != "", celebs)
             check("top ten in two columns: 1 to 5 on the left, 6 to 10 on the right", pg.evaluate("(()=>{const l=document.querySelectorAll('#reveal ol li');const a=l[0].getBoundingClientRect(),b=l[5].getBoundingClientRect();return Math.abs(a.top-b.top)<2&&b.left>a.right-2})()"))
             check("gem: a faceted gem with ten fragments inside the result card, which names it once, and no confetti", pg.evaluate("document.querySelectorAll('.gemreveal.play svg.gemsvg').length===1&&document.querySelectorAll('.gemreveal .shard').length===10&&!document.querySelector('.confetti')&&!!document.querySelector('#mcard #moment .gemreveal')") and pg.inner_text("#tier") == "Gem" and pg.inner_text(".gemreveal").strip() == "")
             check("dots: five outcomes, each named in words", pg.evaluate("document.querySelectorAll('#dots i[class^=\"d-\"]').length") == 5 and all(w in pg.get_attribute("#dots", "aria-label") for w in ["Crowd pick", "Good find", "Gem"]), pg.get_attribute("#dots", "aria-label"))
@@ -205,6 +207,9 @@ with sync_playwright() as pw:
             check("keyboard: Enter on Next moves to the next prompt", pg.evaluate("window.__rf.state().i") == 1)
         else:
             nxt(pg)
+            if k == 4:
+                pg.wait_for_timeout(300)
+                check("moving on fades a celebration that is still playing", pg.evaluate("document.querySelectorAll('.celebrate').length") == 0)
     check("the reveal never lists the hidden Gems", not gem_leak, gem_leak)
     pg.wait_for_timeout(800)
     st = pg.evaluate("window.__rf.state()")
@@ -215,7 +220,7 @@ with sync_playwright() as pw:
     pg.screenshot(path=f"{out}/4-end-phone.png", full_page=True); no_sideways(pg, 390, "the end screen")
     pg.click("#b-tocard"); pg.wait_for_timeout(300)
     check("scorecard tab: today, the chart and the week", pg.evaluate("window.__rf.state().screen") == "scorecard" and str(total) in pg.inner_text("#sc-today") and pg.inner_text("#st-played") == "1" and pg.evaluate("!!document.querySelector('#sc-week svg')"), pg.inner_text("#sc-today"))
-    check("scorecard: today's five outcome dots, with their names in words", pg.is_visible("#sc-dots") and pg.evaluate("document.querySelectorAll('#sc-dots i').length") == 5 and "Gem" in pg.inner_text("#sc-dots"), pg.inner_text("#sc-dots"))
+    check("scorecard: today's seven outcome dots, with their names in words", pg.is_visible("#sc-dots") and pg.evaluate("document.querySelectorAll('#sc-dots i').length") == 7 and "Gem" in pg.inner_text("#sc-dots"), pg.inner_text("#sc-dots"))
     check("scorecard: no shared scoreboard or friends league, just your own record and challenges", pg.query_selector("#sc-friends") is None and pg.query_selector("#sc-everyone") is None and pg.is_visible("#sc-challenges"))
     pg.screenshot(path=f"{out}/5-scorecard-phone.png", full_page=True); no_sideways(pg, 390, "the scorecard")
     pg.click("#tab-play"); pg.wait_for_timeout(150)
@@ -311,7 +316,7 @@ with sync_playwright() as pw:
     st = p3.evaluate("window.__rf.state()")
     hel = p3.evaluate("(()=>{const p=window.__rf.packs.find(x=>x.ranked.some(e=>e.a==='Mount St. Helens'));if(!p)return null;const m=window.__rf.match(p,'helens');return [m.answer,m.rank,window.__rf.pts(m)]})()")
     check("'helens' counts as Mount St. Helens, its listed rank and points, with no AI needed", hel is not None and (hel[0] == "Mount St. Helens" and hel[2] > 0), hel)
-    codes = p3.evaluate("(()=>{const k=window.__rf.gameKey(window.__rf.dailyPacks('2026-11-17'));const ps=window.__rf.dailyPacks('2026-11-17');return [!!window.__rf.parseCode('#c-'+k+'-'+(ps[0].top+10+ps[1].top+10)+'-ggmmm'),!!window.__rf.parseCode('#c-'+k+'-'+(ps[0].top+ps[1].top+18)+'-ggmmm')]})()")
+    codes = p3.evaluate("(()=>{const k=window.__rf.gameKey(window.__rf.dailyPacks('2026-11-17'));const ps=window.__rf.dailyPacks('2026-11-17');return [!!window.__rf.parseCode('#c-'+k+'-'+(ps[0].top+10+ps[1].top+10)+'-ggmmmmm'),!!window.__rf.parseCode('#c-'+k+'-'+(ps[0].top+ps[1].top+18)+'-ggmmmmm')]})()")
     check("challenge codes allow 10 above 10th place up to 90 per Good find, and reject a score outside that", codes == [True, False], codes)
     check("capabilities detected when present", all(st["caps"].values()), st["caps"])
     check("with Claude, only one capability is asked for: the answer check and host lines", list(st["caps"].keys()) == ["sample"], st["caps"])
@@ -348,6 +353,8 @@ with sync_playwright() as pw:
     p3.evaluate("window.__judgeFail=false"); p3.click("#b-check"); p3.wait_for_timeout(500)
     check("'Try again' asks the AI again, and only its yes scores", p3.evaluate("window.__rf.state().cur.pts") == 100 and "the AI checked" in p3.inner_text("#counted"), p3.inner_text("#counted"))
     nxt(p3)
+    while p3.evaluate("window.__rf.state().screen") == "play":  # the rest of today's seven
+        answer(p3, pack(p3, pid_of(p3))["ranked"][0]["a"]); nxt(p3)
     p3.wait_for_timeout(900)
     check("end: today's score is saved in this browser", "Saved in this browser" in p3.inner_text("#end-note"), p3.inner_text("#end-note"))
     # the user's example: "big hero 5" for an animated film

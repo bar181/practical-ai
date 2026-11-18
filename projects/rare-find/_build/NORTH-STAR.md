@@ -32,7 +32,7 @@ Then a comment from an AI host with a sense of humour, the top ten, and your pla
 
 | Level | What the player gets | Needs | Without it |
 | --- | --- | --- | --- |
-| **1. Play** | Today's game (the same seven prompts for everyone on a date; five on the first two days), practice rounds, the timer, forgiving spelling, the top-ten reveal, the persona commentators' written lines, the estimated chart, a week of scores in this browser | A browser | Always works |
+| **1. Play** | Today's game (the same seven prompts for everyone on a date), practice rounds, the timer, forgiving spelling, the top-ten reveal, the persona commentators' written lines, the estimated chart, a week of scores in this browser | A browser | Always works |
 | **2. Claude joins in** | Claude checks answers that scored 0; the hosts write fresh lines; on the player's own Claude plan | The Claude artifact: `sample` only | "We allow it" is the room's word; written lines |
 | **3. On the web** | A public copy published by GitHub Actions on every change; challenge links that open it with your prompts and score | GitHub Pages | The file still works anywhere |
 
@@ -120,11 +120,18 @@ reasons, and nothing else says the tier twice (owner's feedback, 18 November 202
 | Not on our list | Says so at once, with a small "Check again" beside the 0. One check; the button then goes. A changed verdict plays its reward once |
 | Wrong, or out of time | A short shake, and Next pulses once |
 
-Celebrations grow with the points: level 1 a few sparks (crowd pick), 2 more sparks and a glow, 3
-stars and a shine (40 points or more), 4 a firework and the bigger card, 5 the Gem's shower; and a
-burst for a strong final score. The top ten is in two columns. The Gem rules live in settings.
+**Celebrations are the game play** (owner's feedback, 18 November 2026): they get bigger and last
+longer with the points. 25 points plays 1.5 s, rising evenly to 2.5 s at 80; over 80, and any Gem,
+plays 3 s. Each level draws at random from several styles, so a score does not always look the same:
+1 sparkle or bubbles; 2 a burst, bubbles or a confetti cannon; 3 stars, a cannon or rings; 4
+fireworks, confetti rain or falling stars; 5 two of those together, and a Gem adds a diamond shower.
+From level 2 a cheer word ("Deep cut!", "Brilliant!", "Legendary!") pops above the card, and the
+card pulses in its colour for the whole celebration. A closing burst carries every celebration to
+its full length. Next is never blocked, and moving on fades whatever is still playing. A strong
+final score gets its own. The top ten is in two columns. The Gem rules live in settings.
 
-Budgets: on screen within 100 ms, ordinary effects 150 to 250 ms, the Gem reveal inside 600 ms.
+Budgets: on screen within 100 ms, ordinary effects 150 to 250 ms, the Gem reveal inside 600 ms;
+the celebration around them runs 1.5 to 3 s, as above.
 Next works after a 120 ms guard, during effects, host lines and Claude's checks. The host's
 ready-made line shows at once; Claude's fresh line replaces it only while that prompt is on screen.
 A late verdict changes its own round's points and dot, quietly, never the screen. The dots, one per prompt, show

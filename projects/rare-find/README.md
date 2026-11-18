@@ -99,7 +99,7 @@ fresh lines run on your own chatbot plan. The web copy runs no AI at all.
 <summary><b>Where do the questions come from?</b></summary>
 
 Claude drafted each prompt with a ranked top ten, five Gems and 20 or more other right answers. A
-script checks every one. A calendar fixes each day's seven prompts, up to 4 December 2026 so far.
+script checks every one. A calendar fixes each day's seven prompts, up to 3 December 2026 so far.
 After that the game picks them from the whole bank by date, so a day is never empty.
 </details>
 
@@ -127,7 +127,7 @@ one in settings, or turn them off.
 
 ## What's new
 
-**Version 4.4, 18 November 2026: Good finds scored by rarity, seven prompts a day**
+**Version 4.4, 18 November 2026: bigger celebrations, Good finds scored by rarity, seven prompts a day**
 
 - A Good find is no longer a flat 80. Each of the 4,607 Good finds on our lists has its own
   rarity, 1 to 9, so it scores from 10 more than the prompt's 10th place up to 90. In "Name a
@@ -135,10 +135,12 @@ one in settings, or turn them off.
   rankings.
 - An answer the AI checks gets the same scale: it rates the rarity and the points follow.
 - **Check again** is a small button beside your 0. It checks once, then goes away.
-- One result card: the tier, the points, what counted and **Next question** sit together, and
-  the card celebrates in proportion to the points (a pop, a glow, a shine, a bigger card, the
-  gem). Comments come only from the host's bubble, never repeated in the card.
-- **Seven prompts a day** from 19 November 2026, up from five. The first two days keep their five.
+- One result card: the tier, the points, what counted and **Next question** sit together.
+  Comments come only from the host's bubble, never repeated in the card.
+- **Bigger celebrations that last longer with the points**: 1.5 seconds for the crowd pick, up to
+  3 seconds for 80 or more and for a Gem, with fireworks, confetti, stars, bubbles and rings in
+  different mixes so they vary. Next question works the whole time.
+- **Seven prompts a day**, up from five.
 
 **Version 4.2, 18 November 2026: celebrations**
 
@@ -176,7 +178,7 @@ one in settings, or turn them off.
 ## Status
 
 **In user testing.** As of 18 November 2026, users are playing it; their results are not in yet.
-120 of 120 automated checks pass at phone and desktop
+122 of 122 automated checks pass at phone and desktop
 width, with Claude replaced by a mock. In two blind reviews, fresh AI reviewers scored version 4
 91 and 86, against 84 and 82 for version 3, and both would replay version 4. The owner has played
 version 4 in the real Claude app, up to the Check again fix; nobody has played version 4.4 there yet. The chat version passed two test games, played by a
