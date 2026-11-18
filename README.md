@@ -1,24 +1,34 @@
-# Practical AI
+<h1 align="center">Practical AI</h1>
 
-<h3 align="center">Everyone an agentic engineer: make the AI you already use do professional-quality work on the jobs you repeat.</h3>
+<p align="center"><b>Expert work from the AI you already use.</b><br>
+Free tools for the jobs you repeat, for business people and developers alike.</p>
 
-<p align="center">Free tools for business people and developers alike. A proven process, the same standard every time, and time back on every repeat.</p>
+<p align="center">
+  <a href="#start-here"><img src="assets/images/btn-start.svg" height="48" alt="Get the starter prompt"></a>
+  &nbsp;
+  <a href="#what-is-inside"><img src="assets/images/btn-projects.svg" height="48" alt="See the projects"></a>
+</p>
 
-**Are you an AI agent?** Go to [AGENTS.md](AGENTS.md) for instructions you can follow now.
+<p align="center"><b>Free</b> &nbsp;·&nbsp; <b>Open source</b> &nbsp;·&nbsp; <b>4 projects</b><br><b>Now in user testing</b></p>
 
-**The vision.** You should not need to be a developer to get expert, repeatable work from AI. Each
-Practical AI tool packs what an expert brings to one job (the method, the template, a worked
-example) so the chatbot you already use does that job properly, every time. The same tools work for
-an office manager in a chat window and a developer in a coding agent.
+<p align="center"><sub>For developers: each tool is a <code>SKILL.md</code> in the open Agent Skills format, a README and a
+worked example. Artifact Studio also ships a local MCP server.</sub></p>
 
-**The goals.**
-- **Professional quality** on everyday work: reports, document reviews, new tools.
-- **A repeatable process**: the same steps and the same standard on every repeat.
-- **Time back**: the AI drafts, you check and decide. Nothing is sent, posted or published without you.
+<p align="center">
+  <a href="projects/artifact-studio/"><img src="assets/images/tiles/artifact-studio.svg" width="150" alt="Artifact Studio: notes in, a designer page out"></a>
+  <a href="projects/agentic-process/"><img src="assets/images/tiles/agentic-process.svg" width="150" alt="Agentic Process: a job you repeat, set up properly once"></a>
+  <a href="projects/document-to-action-brief/"><img src="assets/images/tiles/document-to-action-brief.svg" width="150" alt="Document to action brief: a long document in, what to do and by when out"></a>
+  <a href="projects/rare-find/"><img src="assets/images/tiles/rare-find.svg" width="150" alt="Rare Find: a daily trivia game where rare answers win"></a>
+</p>
 
-**Start here: ask your own chatbot what this is.** Copy this into Claude, ChatGPT or Gemini. It
-reads this repository and makes you a page about how these tools could help in your work. The author
-suggests the practical instructor voice from Artifact Studio, as below.
+<p align="center">
+  <img src="assets/images/vision.svg" width="440" alt="Animation in three steps, top to bottom: a job you repeat, a Practical AI tool, and the job done to standard while you check and decide. It loops through three examples: an office manager's Monday sales report with Artifact Studio, a team lead's 40-page contract with Document to action brief, and a developer's new internal tool with Agentic Process. Underneath, a line from business people to developers: everyone an agentic engineer.">
+</p>
+
+## Start here
+
+Copy this into Claude, ChatGPT or Gemini. Your chatbot reads this repository and makes you a page
+on how these tools could help in your work.
 
 ```
 Please read this GitHub repository:
@@ -34,17 +44,33 @@ About me: [your job, and one task you
 repeat every week]
 ```
 
-<sub>Written 17 November 2026. Not yet run in any chatbot: if yours cannot open links, paste this
-README's text in place of the first link.</sub>
+<sub>Tested in Claude only. If your chatbot cannot open links, paste this README's text in place of
+the first link.</sub>
+
+## Why Practical AI
+
+- **Professional quality** on everyday work: reports, document reviews, new tools.
+- **A repeatable process:** the same steps and the same standard on every repeat.
+- **Time back:** the AI drafts, you check and decide. Nothing is sent, posted or published without you.
+
+## What is inside
+
+### Artifact Studio
+
+**Designer-quality reports, made by you.** Your notes in; a report, deck, post or page out, with
+photos, motion and a story that flows.
 
 <p align="center">
-  <img src="assets/images/vision.svg" width="760" alt="Animation in three steps: a job you repeat, a Practical AI tool, and the job done to standard while you check and decide. It cycles through an office manager's Monday sales report with Artifact Studio, a team lead's 40-page contract with Document to action brief, and a developer's new internal tool with Agentic Process. A line underneath runs from business people to developers: the same tools across the line, time back on every repeat.">
+  <img src="projects/artifact-studio/_build/img/before-plain.webp" width="31%" alt="Animated phone capture of the plain version: a white Markdown document titled AI as a Smart Intern, with headings, bullet lists and two small tables, scrolling top to bottom">
+  <img src="projects/artifact-studio/_build/img/scroll-lesson.webp" width="31%" alt="Animated phone capture of the teaching page, Treat AI like a smart intern: a robot clip, a vague brief against a full brief in tabs, frosted cards over painted scenes, the word Launch filled with a picture, and check-yourself questions">
+  <img src="projects/artifact-studio/_build/img/scroll-story.webp" width="31%" alt="Animated phone capture of the same lesson as a story: a dark candlelit page that opens on Monday, 8:40 a.m. Your desk, then story beats that arrive as you scroll, the robot clip, a glowing scroll, the word Launch and the guide card">
 </p>
+<p align="center"><sub>One lesson for a client's course. <b>Before:</b> the plain version &nbsp;·&nbsp; <b>After:</b> a lesson &nbsp;·&nbsp; <b>After:</b> the same lesson as a story</sub></p>
 
-## Try it now
+<details>
+<summary><b>Try it: the landscaping example</b></summary>
 
 Copy this into the chatbot you use. Keep the sample notes, or paste your own.
-Tested so far in Claude; not yet in ChatGPT or Gemini.
 
 ```
 Make my information look stunning. Use
@@ -73,58 +99,19 @@ on her phone.
 ```
 
 **You get** a scrolling keynote page your partner can read on her phone.
-[Open the one](projects/artifact-studio/_build/examples/runs/2026-11-17-try-it-keynote-photo/report.html)
-a fresh Claude session made from this prompt and one photo, in one try, unedited. GitHub shows the page as code: download it, then open it in your browser.
-Chatbot cannot open links? Paste the text of the
-[design guide](projects/artifact-studio/base/AI-INSTRUCTIONS.md) in place of the link.
-Before you share, check every number against your notes.
+[See the page this prompt made](projects/artifact-studio/_build/examples/runs/2026-11-17-try-it-keynote-photo/report.html):
+a fresh Claude session made it from this prompt and one photo, in one try, unedited. GitHub shows
+it as code, so download the file and open it in your browser. Before you share, check every number
+against your notes.
 
-<p align="center"><b><i>"Better than I could do, as good as my designer, and I made it myself."</i></b></p>
-
-<p align="center">
-  <img src="projects/artifact-studio/_build/img/before-plain.webp" width="31%" alt="Animated phone capture of the plain version: a white Markdown document titled AI as a Smart Intern, with headings, bullet lists and two small tables, scrolling top to bottom">
-  <img src="projects/artifact-studio/_build/img/scroll-lesson.webp" width="31%" alt="Animated phone capture of the teaching page, Treat AI like a smart intern: a robot clip, a vague brief against a full brief in tabs, frosted cards over painted scenes, the word Launch filled with a picture, and check-yourself questions">
-  <img src="projects/artifact-studio/_build/img/scroll-story.webp" width="31%" alt="Animated phone capture of the same lesson as a story: a dark candlelit page that opens on Monday, 8:40 a.m. Your desk, then story beats that arrive as you scroll, the robot clip, a glowing scroll, the word Launch and the guide card">
-</p>
-<p align="center"><sub><b>Before:</b> the plain version &nbsp;·&nbsp; <b>After:</b> a lesson &nbsp;·&nbsp; <b>After:</b> the same lesson as a story</sub></p>
-
-<p align="center">One lesson for a real client's course, made three ways in new sessions.<br>
-The same facts in all three; only the design and the voice change.</p>
-
-## Get started: pick a project, then your level
-
-1. **Level 1, any chatbot.** Open a project and paste its try-it prompt into the chatbot you use.
-   - [**Artifact Studio**](projects/artifact-studio/): make your first designer-quality report.
-   - [**Agentic Process**](projects/agentic-process/): set up a repeat job the proper way.
-   - [**Document to action brief**](projects/document-to-action-brief/): know what a document asks of you, by when.
-2. **Level 2, save it.** Paste the project's guide into a Claude or ChatGPT Project, or a Gemini
-   Gem, or add it as a skill. Every report or job then starts from the same standard.
-3. **Level 3, connect it.** Only where it removes recurring work: Artifact Studio has an MCP server
-   your agents can use on your own computer, and a coding agent can run a whole Agentic Process build.
-
-Each project page shows the exact steps for each level.
-
-## What is inside
-
-### Artifact Studio
-
-**Designer-quality reports, made by you.** Your notes in; a report, deck, post or page out, with
-photos, motion and a story that flows.
-
-<p align="center">
-  <img src="projects/artifact-studio/_build/img/example-tryit.webp" width="31%" alt="Animated phone capture of the page made from the try-it prompt: a garden picture in a slow pan and zoom under the words Two crews, then October revenue counting up to 84,200 dollars, a bar chart against September, 23 jobs, 46 percent of quotes won, and the van decision due 5 December">
-  <img src="projects/artifact-studio/_build/img/scroll-photo-effects.webp" width="31%" alt="Animated phone capture: one sunset photograph shown three ways as the page scrolls: a slow pan and zoom, the word SKY filled with the picture, then a postcard you can turn over">
-</p>
-<p align="center"><sub><b>Left:</b> the page the try-it prompt made &nbsp;·&nbsp; <b>Right:</b> photo effects from one picture and one sentence</sub></p>
+</details>
 
 <p align="center"><a href="projects/artifact-studio/"><b>Make your first designer-quality report</b></a></p>
 
 ### Agentic Process
 
-**An agentic engineer at your side, for everyday jobs.** A harness for everything: a job you repeat
-in; instructions you can reuse, an example and a test out.
-
-<p align="center"><b><i>"Like having an engineer sitting with me, so every new job is set up the proper way."</i></b></p>
+**An agentic engineer at your side, for everyday jobs.** A job you repeat in;
+instructions you can reuse, an example and a test out.
 
 <p align="center">
   <img src="projects/agentic-process/_build/img/pilot-score.svg" width="620" alt="Animated chart: in one blind pilot on the same brief, the tool built with Agentic Process scored 93 out of 100 with 0 corrections; the direct build scored 73 out of 100 with 2 corrections">
@@ -146,28 +133,35 @@ words to check.
 
 <p align="center"><a href="projects/document-to-action-brief/"><b>Brief your first document</b></a></p>
 
-
 ### Rare Find, a side quest
 
 **A five-minute daily quiz where the right answer nobody else thought of scores the most.** Five
-prompts a day, the same for everyone. Claude checks answers that are not on the list, four AI hosts
-comment on every score, and one link challenges a friend to the same prompts.
+prompts a day, the same for everyone, in Claude or any browser. In Claude, it checks answers that
+are not on the list and four hosts write fresh comments. One link challenges a friend.
 
 <p align="center">
-  <img src="projects/rare-find/_build/img/how-it-plays.svg" width="620" alt="Animation: the prompt Name a bird, then four answers in turn with their points: Eagle, the crowd pick, 25; Flamingo, 9th most popular, 38; Hummingbird, right but beyond the top ten, 80; Shoebill, rare and right, a Gem, 100. The rarer the right answer, the more it scores.">
+  <img src="projects/rare-find/_build/img/how-it-plays.svg" width="620" alt="Animation: the prompt Name a bird, then four answers in turn with their points: Eagle, the crowd pick, 25; Flamingo, 9th most popular, 38; Hummingbird, right but beyond the top ten, 80; Shoebill, rare and right, a Gem, 100. It loops. The rarer the right answer, the more it scores.">
 </p>
-<p align="center">
-  <img src="projects/rare-find/_build/img/result-phone.webp" width="200" alt="A Rare Find result on a phone: Eagle is the crowd pick for 25 points, Madame Zara comments, and the top ten shows the points for each place">
-  <img src="projects/rare-find/_build/img/scorecard-phone.webp" width="200" alt="The Rare Find Scorecard on a phone: today's score on a bar chart of the estimated spread, the week and a friends group">
-</p>
-<p align="center"><sub>Built phone first, tested by 85 automated checks and six review loops; not yet played by people.</sub></p>
 
-<p align="center"><a href="https://claude.ai/artifact/HyfbDjPjofvRttRYKgMCis"><b>Play today's game</b></a> &nbsp;·&nbsp; <a href="projects/rare-find/"><b>The project</b></a> &nbsp;·&nbsp; <a href="docs/reports/rare-find.html"><b>How it was made</b></a></p>
+<p align="center"><a href="https://claude.ai/artifact/HyfbDjPjofvRttRYKgMCis"><b>Play in Claude</b></a> &nbsp;·&nbsp; <a href="https://bar181.github.io/practical-ai/rare-find/"><b>Play in any browser</b></a> &nbsp;·&nbsp; <a href="projects/rare-find/"><b>About the game</b></a> &nbsp;·&nbsp; <a href="https://bar181.github.io/practical-ai/rare-find/how-it-was-made.html"><b>How it was made</b></a></p>
 
-### What is ready, and what is next
+## Go further: three levels
 
-Ready now: reports, decks and posts, document briefs, and tools built with Agentic Process.
-[The priority list](docs/README.md#what-comes-next) · [every idea](workshop/plans/README.md)
+<details>
+<summary><b>Level 1 try it, level 2 save it, level 3 connect it</b></summary>
+
+1. **Level 1, any chatbot.** Open a project and paste its try-it prompt into the chatbot you use.
+   - [**Artifact Studio**](projects/artifact-studio/): make your first designer-quality report.
+   - [**Agentic Process**](projects/agentic-process/): set up a repeat job the proper way.
+   - [**Document to action brief**](projects/document-to-action-brief/): know what a document asks of you, by when.
+2. **Level 2, save it.** Paste the project's guide into a Claude or ChatGPT Project, or a Gemini
+   Gem, or add it as a skill. Every report or job then starts from the same standard.
+3. **Level 3, connect it.** Only where it removes recurring work: Artifact Studio has an MCP server
+   your agents can use on your own computer, and a coding agent can run a whole Agentic Process build.
+
+Each project page shows the exact steps for each level.
+
+</details>
 
 ## Questions
 
@@ -215,29 +209,24 @@ is planned, not built yet.
 <details>
 <summary><b>Who has used it?</b></summary>
 
-Its author built and tested all three projects in Claude, and used Artifact Studio for real for a
-client's course (the before and after above). Nobody else has used them yet.
+Its author built and tested all four projects in Claude, and used Artifact Studio for real for a
+client's course (the before and after above). As of 18 November 2026, users are testing each
+project. Their results are not in yet.
 
 </details>
 
-## Quick start for your chatbot or agent
-
-```
-Use the Practical AI project at https://github.com/bar181/practical-ai/tree/main/projects/artifact-studio and turn my notes below into a designer-quality report.
-```
-
-This one line needs a chatbot or agent that can open links. It has not been tested on its own; the
-tested prompt is the one under [Try it now](#try-it-now).
-
 ## Status
 
-**17 November 2026.** All three projects built by their author and tested in Claude. Not yet tried in
-other chatbots, or by anyone else. The evidence: [Artifact Studio](projects/artifact-studio/quality-results/README.md)
-· [Agentic Process](projects/agentic-process/quality-results/README.md) · [Document to action brief](projects/document-to-action-brief/quality-results/README.md).
+**18 November 2026: in user testing.** All four projects were built by their author and tested in
+Claude. Users are now testing each one; their results are not in yet. Not yet tried in ChatGPT or
+Gemini. What comes next: [the priority list](docs/README.md#what-comes-next) · [every idea](workshop/plans/README.md).
+The evidence: [Artifact Studio](projects/artifact-studio/quality-results/README.md)
+· [Agentic Process](projects/agentic-process/quality-results/README.md) · [Document to action brief](projects/document-to-action-brief/quality-results/README.md)
+· [Rare Find](projects/rare-find/quality-results/README.md).
 
 ## About Bradley Ross
 
-<img src="assets/images/bradley-ross.jpg" width="150" alt="Bradley Ross, creator of Practical AI">
+<img src="assets/images/bradley-ross.jpg" width="120" alt="Bradley Ross, creator of Practical AI">
 
 **Bradley Ross** is an agentic AI architect and developer for businesses of every size, from
 start-up to enterprise.
@@ -253,12 +242,14 @@ room.
 
 **More information, training or feedback:** [linkedin.com/in/bradaross](https://www.linkedin.com/in/bradaross/)
 
+**Are you an AI agent?** Read [AGENTS.md](AGENTS.md).
+
 <details>
 <summary>How the repository is organised, and the ground rules</summary>
 
 | Folder | What it holds |
 | --- | --- |
-| [`projects/`](projects/) | The projects: Artifact Studio, Agentic Process and Document to action brief |
+| [`projects/`](projects/) | The projects: Artifact Studio, Agentic Process, Document to action brief and Rare Find |
 | [`docs/`](docs/) | A summary of the projects, the priority list, and an explainer page for each |
 | [`assets/images/`](assets/images/) | Images shared across the repository |
 | [`workshop/`](workshop/) | How tools get built: plans, earlier drafts, skills and checking scripts. You do not need it to use a tool |

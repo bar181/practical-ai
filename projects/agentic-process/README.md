@@ -195,8 +195,8 @@ This one-line version is not yet tested. The tested prompt is in [Try it now](#t
 
 ## Status
 
-**17 November 2026.** Built by its author with Claude. All testing so far was in Claude, including
-the blind reviews and the try-it prompt above. Not yet tried in other chatbots or coding agents, or by anyone else. [The evidence](quality-results/README.md).
+**18 November 2026.** Built by its author with Claude. All testing so far was in Claude, including
+the blind reviews and the try-it prompt above. As of 18 November 2026, users are testing it; their results are not in yet. Not yet tried in other chatbots or coding agents. [The evidence](quality-results/README.md).
 
 ## About Bradley Ross
 

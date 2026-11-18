@@ -236,7 +236,7 @@ not replace it.
 
 Tested so far in Claude; not yet in ChatGPT or Gemini. Fresh Claude sessions ran the design guide
 22 times and the try-it prompt twice, and every run finished its page. Its author has used it for
-real, for a client's course. Nobody else has used it yet.
+real, for a client's course. As of 18 November 2026, users are testing it; their results are not in yet.
 
 </details>
 
@@ -293,9 +293,9 @@ This one-line version is not yet tested. The tested prompt is in [Try it now](#t
 
 ## Status
 
-**17 November 2026.** Built by its author and tested by fresh Claude sessions: 22 runs of the design guide,
+**18 November 2026.** Built by its author and tested by fresh Claude sessions: 22 runs of the design guide,
 then two runs of the try-it prompt above. Every run finished its page. Used for real by its author, for a client's
-course (the before and after above). Not yet tried in other chatbots, or by anyone else. All example content is
+course (the before and after above). As of 18 November 2026, users are testing it; their results are not in yet. Not yet tried in other chatbots. All example content is
 invented. [The evidence](quality-results/README.md).
 
 ## About Bradley Ross

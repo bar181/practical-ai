@@ -1,10 +1,11 @@
 # Practical AI: what is ready, and what comes next
 
-A one-page summary for anyone deciding where to start. Updated 16 November 2026.
+A one-page summary for anyone deciding where to start. Updated 18 November 2026.
 
 ## What is ready
 
-Two projects are finished and ready to try. Each has an explainer page in
+Four projects are built and ready to try, and users are testing each one as of 18 November 2026.
+The two with the most evidence are below. Each has an explainer page in
 [`reports/`](reports/) (download the HTML file and open it in a browser).
 
 ### Artifact Studio: designer-quality reports you make yourself
@@ -86,9 +87,9 @@ Support tools that make every other tool better. Each starts with a version a pe
 
 ### Side quest
 
-| Project | What it will do for you | Where it stands |
+| Project | What it does for you | Where it stands |
 | --- | --- | --- |
-| **Rare Find** | A five-minute quiz game your chatbot builds in the chat, where the correct answer nobody else thought of scores the most | Plan: [project 4](../projects/rare-find/) |
+| **Rare Find** | A five-minute daily trivia game in Claude or any browser, where the right answer nobody else thought of scores the most | **In user testing:** [project](../projects/rare-find/) · [explainer](reports/rare-find.html) |
 
 The full list of ideas, sorted into everyday tasks, agent tools and hybrid projects, is in
 [the plans](../workshop/plans/README.md).

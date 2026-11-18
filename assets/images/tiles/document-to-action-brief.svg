@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 380" role="img" aria-label="Document to action brief: a long document in, what to do and by when out" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif">
+<rect x="2" y="2" width="336" height="376" rx="32" fill="#ffffff" stroke="#d0d7de" stroke-width="3"/>
+<rect x="110" y="34" width="120" height="120" rx="28" fill="#c2410c"/>
+<g transform="translate(170 94)"><path d="M-30 -44 H14 L32 -26 V44 H-30 Z" fill="#fff"/><path d="M14 -44 V-26 H32" fill="#fed7aa"/><rect x="-20" y="-24" width="28" height="6" rx="3" fill="#fdba74"/><rect x="-20" y="-10" width="38" height="6" rx="3" fill="#fdba74"/><path d="M-18 14 l7 7 13 -15" stroke="#c2410c" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M-18 32 h30" stroke="#fdba74" stroke-width="6" stroke-linecap="round"/></g>
+<text x="170" y="206" text-anchor="middle" fill="#0c2340" font-size="32" font-weight="800">Document to</text>
+<text x="170" y="242" text-anchor="middle" fill="#0c2340" font-size="32" font-weight="800">action brief</text>
+<text x="170" y="296" text-anchor="middle" fill="#3b4a5e" font-size="26" font-weight="600">What to do, by when.</text>
+<text x="170" y="350" text-anchor="middle" fill="#c2410c" font-size="24" font-weight="800">Open ›</text>
+</svg>

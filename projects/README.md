@@ -68,7 +68,9 @@ words to check.
 
 ## Status
 
-All three were built and checked by their author, in Claude. Nobody else has used them yet.
+All four were built and checked by their author, in Claude. As of 18 November 2026, users are
+testing each one; their results are not in yet. Rare Find, the side quest game, is in
+[`rare-find/`](rare-find/).
 
 <details>
 <summary>How every project is laid out</summary>

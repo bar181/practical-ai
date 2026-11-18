@@ -1,5 +1,5 @@
-"""playtest.py: plays base/game.html in a real browser and checks it. The AI, saving and live-room
-features are replaced by fakes (mocks), so this checks the game's own logic and its fallbacks,
+"""playtest.py: plays base/game.html in a real browser and checks it. Claude's answer check is
+replaced by a fake (a mock), so this checks the game's own logic and its fallbacks,
 not Claude's answers.
 
 Run: python3 projects/rare-find/_build/playtest.py OUT_DIR   (needs: playwright)
@@ -112,8 +112,12 @@ with sync_playwright() as pw:
     no_sideways(pg, 390, "home")
     d1 = pg.evaluate("window.__rf.dailyPacks('2026-11-17').map(p=>p.id)"); d1b = pg.evaluate("window.__rf.dailyPacks('2026-11-17').map(p=>p.id)"); d2 = pg.evaluate("window.__rf.dailyPacks('2026-11-18').map(p=>p.id)")
     check("today's game: five different prompts, the same for everyone on a date, new the next day", len(set(d1)) == 5 and d1 == d1b and d1 != d2 and not (set(d1) & set(d2)), (d1, d2))
-    overlap = pg.evaluate("""()=>{const out=[];const z=n=>String(n).padStart(2,'0');let prev=null;for(let i=0;i<120;i++){const d=new Date(2026,10,1+i);const k=`${d.getFullYear()}-${z(d.getMonth()+1)}-${z(d.getDate())}`;const ids=window.__rf.dailyPacks(k).map(p=>p.id);if(new Set(ids).size!==5)out.push(k+' size');if(prev&&ids.some(x=>prev.includes(x)))out.push(k);prev=ids;}return out;}""")
-    check("today's game: over 120 days, no day shares a prompt with the day before", not overlap, overlap)
+    overlap = pg.evaluate("""()=>{const out=[];const z=n=>String(n).padStart(2,'0');let prev=null;for(let i=0;i<240;i++){const d=new Date(2026,10,17+i);const k=`${d.getFullYear()}-${z(d.getMonth()+1)}-${z(d.getDate())}`;const ids=window.__rf.dailyPacks(k).map(p=>p.id);if(new Set(ids).size!==5)out.push(k+' size');if(prev&&ids.some(x=>prev.includes(x)))out.push(k);prev=ids;}return out;}""")
+    check("today's game: over 240 days, through the calendar and past its end, no day shares a prompt with the day before", not overlap, overlap)
+    cal_ok = pg.evaluate("""()=>{const C=window.__rf.CAL; if(!C) return 'no calendar'; const z=n=>String(n).padStart(2,'0'); const [y,m,d]=C.start.split('-').map(Number);
+      for(let i=0;i<C.days.length;i++){ const t=new Date(y,m-1,d+i); const k=`${t.getFullYear()}-${z(t.getMonth()+1)}-${z(t.getDate())}`; const ids=window.__rf.dailyPacks(k).map(p=>p.id); if(ids.join()!==C.days[i].join()) return k; } return C.days.length; }""")
+    check("today's game follows the calendar day by day", isinstance(cal_ok, int) and cal_ok >= 20, cal_ok)
+    check("the first calendar day is the game already played on 17 November", pg.evaluate("window.__rf.dailyPacks('2026-11-17').map(p=>p.id).join()") == "bird,breakfast,superhero,sport,animated-film")
     pg.click("#b-daily"); pg.wait_for_timeout(250)
     check("focus lands in the answer box", pg.evaluate("document.activeElement.id") == "answer")
     check("'Back to start' shows on the play screen", "Back to start" in pg.inner_text("#b-quit"))
@@ -151,7 +155,7 @@ with sync_playwright() as pw:
     pg.screenshot(path=f"{out}/4-end-phone.png", full_page=True); no_sideways(pg, 390, "the end screen")
     pg.click("#b-tocard"); pg.wait_for_timeout(300)
     check("scorecard tab: today, the chart and the week", pg.evaluate("window.__rf.state().screen") == "scorecard" and str(total) in pg.inner_text("#sc-today") and pg.inner_text("#st-played") == "1" and pg.evaluate("!!document.querySelector('#sc-week svg')"), pg.inner_text("#sc-today"))
-    check("scorecard offline: friends groups explain they need a shared Claude artifact", pg.is_disabled("#b-group") and "shared Claude artifact" in pg.inner_text("#fr-note"))
+    check("scorecard: no shared scoreboard or friends league, just your own record and challenges", pg.query_selector("#sc-friends") is None and pg.query_selector("#sc-everyone") is None and pg.is_visible("#sc-challenges"))
     pg.screenshot(path=f"{out}/5-scorecard-phone.png", full_page=True); no_sideways(pg, 390, "the scorecard")
     pg.click("#tab-play"); pg.wait_for_timeout(150)
     check("after playing, home shows today's score", pg.is_visible("#daily-done") and pg.inner_text("#daily-score") == str(total))
@@ -172,8 +176,8 @@ with sync_playwright() as pw:
     pg.wait_for_timeout(800); host_total = int(pg.inner_text("#final"))
     pg.fill("#share-name", "Sam"); pg.wait_for_timeout(100)
     msg = pg.input_value("#share-link")
-    links = [w for w in msg.split() if "#c-" in w]; code = msg.strip().split()[-1]
-    check("challenge: the end screen gives a browser link, a Claude link and the bare code, with score and name", len(links) == 2 and any("github.io" in l for l in links) and any("claude.ai/artifact/" in l for l in links) and code.startswith("RF1") and f"-{host_total}-" in code and code.endswith("-Sam") and all(l.endswith(code) for l in links), msg)
+    links = [w for w in msg.split() if "#c-" in w]; code = links[0].split("#c-", 1)[1] if links else ""
+    check("challenge: one link to the public web copy, carrying the prompts, the score and the name", len(links) == 1 and links[0].startswith("https://bar181.github.io/practical-ai/rare-find/#c-") and code.startswith("RF") and f"-{host_total}-" in code and code.endswith("-Sam"), msg)
     pg.click("#b-share"); pg.wait_for_timeout(300)
     shared = (pg.evaluate("document.querySelector('#share-text').value") or "") + pg.inner_text("#toast")
     check("challenge: copying gives the whole invitation", ("can you beat me" in shared and code in shared) or "copied" in shared, shared)
@@ -197,9 +201,7 @@ with sync_playwright() as pw:
     check("challenge: the friend's link pasted back puts both on that game's scoreboard", "500" in pg.inner_text("#chl-list") and "You" in pg.inner_text("#chl-list"), pg.inner_text("#chl-list"))
     fake = pg.evaluate("(c)=>!!window.__rf.parseCode(c)", code.split("-")[0] + "-500-mmmmm")
     check("challenge: a code whose score its answers cannot add up to is refused", not fake, code)
-    pg.click("#tab-play"); pg.click("#b-live"); pg.wait_for_timeout(150)
-    check("challenge: Play live with friends has a box for a friend's link or code", pg.is_visible("#code-in3"))
-    pg.click("#b-live-back"); pg.wait_for_timeout(100)
+    pg.click("#tab-play"); pg.wait_for_timeout(100)
     pg.click("#code-form >> xpath=../summary"); pg.fill("#code-in", "RF1zz-9999"); pg.press("#code-in", "Enter"); pg.wait_for_timeout(200)
     check("challenge: a broken code is refused with a plain message", "does not look right" in pg.inner_text("#toast") and pg.evaluate("window.__rf.state().screen") == "home", pg.inner_text("#toast"))
     check("challenge: no errors on the friend's page", not fe, fe)
@@ -209,7 +211,7 @@ with sync_playwright() as pw:
     fp.click("#b-quit"); fp.click("#b-leave-yes")
     fp.click("#b-settings"); fp.click("#seg-count button[data-n='25']"); fp.click("#b-settings"); fp.click("#b-practice"); fp.wait_for_timeout(200)
     cats = []; total_n = int(fp.inner_text("#round").split("/")[1])
-    check("party mode: every prompt but today's five (20 here, today not played yet), each labelled with its topic", total_n == 20 and "TOPIC 1 OF" in fp.inner_text("#cat"), (fp.inner_text("#round"), fp.inner_text("#cat")))
+    check("party mode: 25 prompts, none of them today's five, each labelled with its topic", total_n == 25 and "TOPIC 1 OF" in fp.inner_text("#cat"), (fp.inner_text("#round"), fp.inner_text("#cat")))
     today_ids = set(fp.evaluate("window.__rf.dailyPacks().map(p=>p.id)"))
     seen_ids = []
     for k in range(total_n):
@@ -217,8 +219,17 @@ with sync_playwright() as pw:
         seen_ids.append(pid_of(fp)); answer(fp, "x", 150); nxt(fp)
     runs = [c for i, c in enumerate(cats) if i == 0 or cats[i - 1] != c]
     check("party mode: prompts come grouped by topic, and today's five are kept back", len(runs) == len(set(cats)) and not (today_ids & set(seen_ids)), cats)
+    check("practice: no prompt repeats within a day", len(set(seen_ids)) == len(seen_ids), seen_ids)
     fp.wait_for_timeout(600)
     check("party mode: the end screen scores out of 100 per prompt", f"{100*total_n}" in fp.inner_text("#end-of"), fp.inner_text("#end-of"))
+    fp.click("#b-end-back"); fp.wait_for_timeout(150)
+    check("practice: home counts practice prompts played today out of 100", "of 100" in fp.inner_text("#practice-count"), fp.inner_text("#practice-count"))
+    fp.evaluate("()=>{const l=JSON.parse(localStorage.getItem('rarefind.v2'));l.practice.n=97;localStorage.setItem('rarefind.v2',JSON.stringify(l));}"); fp.goto(GAME + "?fresh=1"); fp.wait_for_timeout(300)
+    fp.click("#b-practice"); fp.wait_for_timeout(200)
+    check("practice: near the cap, a round is cut to what is left today", fp.inner_text("#round").endswith("/ 3"), fp.inner_text("#round"))
+    for k in range(3): answer(fp, "x", 150); nxt(fp)
+    fp.wait_for_timeout(500); fp.click("#b-end-back"); fp.wait_for_timeout(150)
+    check("practice: at 100 a day the button stops and says so", fp.is_disabled("#b-practice") and "100 of 100" in fp.inner_text("#practice-count"), fp.inner_text("#practice-count"))
     friend.close()
 
     # ---- 3. timer runs out ----
@@ -236,7 +247,7 @@ with sync_playwright() as pw:
     p3.goto(GAME); p3.wait_for_timeout(800)
     st = p3.evaluate("window.__rf.state()")
     check("capabilities detected when present", all(st["caps"].values()), st["caps"])
-    check("live play and scoreboard settings appear with Claude", p3.is_visible("#b-live") and p3.evaluate("!document.querySelector('#set-board').hidden"))
+    check("with Claude, only one capability is asked for: the answer check and host lines", list(st["caps"].keys()) == ["sample"], st["caps"])
     p3.click("#b-settings"); p3.fill("#nick", "Quiz Owl"); p3.press("#nick", "Tab"); p3.click("#b-settings")
     p3.click("#b-daily"); p3.wait_for_timeout(250)
     answer(p3, "spork")
@@ -265,32 +276,15 @@ with sync_playwright() as pw:
     for k in range(1):
         answer(p3, pack(p3, pid_of(p3))["ranked"][1]["a"]); nxt(p3)
     p3.wait_for_timeout(900)
-    check("end: saved to the account and the scoreboard", "scoreboard" in p3.inner_text("#end-note"), p3.inner_text("#end-note"))
-    row = p3.evaluate("JSON.parse(localStorage.getItem('mockdb')||'{}')['board/u1']")
-    check("scoreboard: one row per player with name and daily score", bool(row) and row.get("nick") == "QuizOwl" and "2026-11-17" in row.get("days", {}), row)
-    p3.click("#b-tocard"); p3.wait_for_timeout(400)
-    check("scorecard: everyone today lists you", p3.is_visible("#sc-everyone") and "You" in p3.inner_text("#ev-board"), p3.inner_text("#ev-board"))
-    p3.click("#b-group"); p3.wait_for_timeout(300)
-    code = p3.inner_text("#fr-code").strip()
-    check("friends: starting a group shows a four-letter code and you", len(code) == 4 and "You" in p3.inner_text("#fr-board"), (code, p3.inner_text("#fr-board")))
-    p3.click("#b-invite"); p3.wait_for_timeout(300)
-    check("friends: invite copies a message with the group code", code in (p3.evaluate("document.querySelector('#share-text').value") + p3.inner_text("#toast")) or "Invite copied" in p3.inner_text("#toast"), p3.inner_text("#toast"))
-    p3.screenshot(path=f"{out}/7-scorecard-desktop.png", full_page=True)
+    check("end: today's score is saved in this browser", "Saved in this browser" in p3.inner_text("#end-note"), p3.inner_text("#end-note"))
     # the user's example: "big hero 5" for an animated film
-    p3.click("#tab-play"); bh = None
-    # practice never uses today's prompts, so move to a day whose game leaves the animated films free
-    p3.evaluate("()=>{for(let i=1;i<40;i++){const d=new Date(2026,10,17+i);const z=n=>String(n).padStart(2,'0');const k=`${d.getFullYear()}-${z(d.getMonth()+1)}-${z(d.getDate())}`;if(!window.__rf.dailyPacks(k).some(p=>p.id==='animated-film')){window.__rfDay=k;return;}}}")
-    for g in range(10):
-        p3.click("#b-practice"); p3.wait_for_timeout(200)
-        for k in range(5):
-            if "animated" in p3.inner_text("#prompt-text").lower() and bh is None:
-                answer(p3, "big hero 5"); p3.click("#b-check"); p3.wait_for_timeout(500)
-                bh = (p3.evaluate("window.__rf.state().cur"), p3.inner_text("#counted"))
-            else:
-                answer(p3, "x", 200)
-            nxt(p3)
-        p3.wait_for_timeout(300); p3.click("#b-end-back"); p3.wait_for_timeout(150)
-        if bh: break
+    p3.click("#b-end-back"); p3.wait_for_timeout(150); bh = None
+    # play the animated-film prompt directly, through a one-prompt challenge code
+    one = p3.evaluate("window.__rf.gameKey([window.__rf.packs.find(p=>p.id==='animated-film')])") + "-0"
+    p3.click("#code-form >> xpath=../summary"); p3.fill("#code-in", one); p3.press("#code-in", "Enter"); p3.wait_for_timeout(300)
+    answer(p3, "big hero 5"); p3.click("#b-check"); p3.wait_for_timeout(500)
+    bh = (p3.evaluate("window.__rf.state().cur"), p3.inner_text("#counted"))
+    nxt(p3); p3.wait_for_timeout(400); p3.click("#b-end-back"); p3.wait_for_timeout(150)
     check("'big hero 5' for an animated film: Claude counts it as Big Hero 6, worth 80", bool(bh) and bh[0]["tier"] == "good" and bh[0]["pts"] == 80 and "Big Hero 6" in bh[1], bh)
     # a chosen commentator, then commentary off
     p3.click("#b-settings"); p3.click("#seg-host button:has-text('Unit 7')"); p3.click("#b-settings")
@@ -301,25 +295,16 @@ with sync_playwright() as pw:
     p3.click("#b-practice"); p3.wait_for_timeout(200); answer(p3, "x")
     check("settings: commentary off means no comment", p3.is_hidden("#talk-row"))
     p3.click("#b-quit"); p3.click("#b-leave-yes"); p3.wait_for_timeout(150)
-    # live with friends
-    p3.click("#b-live"); p3.wait_for_timeout(150)
-    check("'Back to start' shows on the live screen", p3.is_visible("#b-live-back"))
-    p3.click("#b-host"); p3.wait_for_timeout(300)
-    check("live: hosting shows a four-letter code", len(p3.inner_text("#room-code").strip()) == 4, p3.inner_text("#room-code"))
-    p3.click("#b-pstart"); p3.wait_for_timeout(300)
-    check("live: starting broadcasts the state and opens the first prompt", "emit:state" in p3.evaluate("window.__calls") and p3.evaluate("window.__rf.state().screen") == "play", p3.evaluate("window.__calls"))
-    answer(p3, "desk"); nxt(p3)
-    left = p3.evaluate("Number(document.querySelector('#secs').textContent)")
-    check("live: the host's next prompt gets a fresh deadline", left >= 14, left)
     check("no console errors with the mocks", not e3, e3)
 
     # ---- 5. capabilities absent: everything that needs Claude hides ----
     ctx2 = b.new_context(); ctx2.add_init_script(MOCK + "window.__nocaps=true;")
     p4 = ctx2.new_page(); e4 = []; p4.on("pageerror", lambda e: e4.append(str(e)))
     p4.goto(GAME); p4.wait_for_timeout(800)
-    p4.click("#b-live"); p4.wait_for_timeout(150)
-    check("with every capability null, live rooms and scoreboard settings hide, and challenges stay", p4.is_hidden("#live-start") and p4.is_visible("#live-none") and p4.is_visible("#code-in3") and p4.evaluate("document.querySelector('#set-board').hidden"))
-    p4.click("#b-live-back"); p4.click("#b-settings"); p4.wait_for_timeout(300)
+    p4.click("#b-practice"); p4.wait_for_timeout(200); answer(p4, "my own answer")
+    check("without Claude, an unlisted answer offers the room's word, 'We allow it'", p4.inner_text("#b-check") == "We allow it", p4.inner_text("#b-check"))
+    p4.click("#b-quit"); p4.click("#b-leave-yes"); p4.wait_for_timeout(150)
+    p4.click("#b-settings"); p4.wait_for_timeout(300)
     check("settings: about the creator, with a photo and links to the repo and LinkedIn", p4.is_visible(".about img") and p4.evaluate("document.querySelector('.about img').naturalWidth") > 0 and "github.com/bar181/practical-ai" in p4.inner_html(".about") and "linkedin.com/in/bradaross" in p4.inner_html(".about"))
     check("a credit line with both links sits at the bottom", "Bradley Ross" in p4.inner_text(".credit") and p4.evaluate("document.querySelectorAll('.credit a').length") == 2)
     check("no errors when capabilities are null", not e4, e4)

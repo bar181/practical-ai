@@ -188,8 +188,8 @@ footer p+p{margin-top:.6rem}
     <div class="analogy"><span class="label">THINK OF IT AS</span>
       <p>Running a pub quiz. You write the answer cards before anyone arrives: the packs. You pin the scoring to the wall: the North Star. A friend who has never seen your cards plays a round: the fresh reviewer. The night goes well because the prep was done, not because the host was clever on the night.</p></div>
     <div class="nums" role="list">
-      <div class="num" role="listitem"><strong data-to="25">25</strong><span>categories, each with a top ten, 5 Gems and 20+ more right answers</span></div>
-      <div class="num" role="listitem"><strong data-to="85">85</strong><span>automated checks, run on every change</span></div>
+      <div class="num" role="listitem"><strong data-to="125">125</strong><span>prompts, each with a top ten, 5 Gems and 20+ more right answers</span></div>
+      <div class="num" role="listitem"><strong data-to="82">82</strong><span>automated checks, run on every change</span></div>
       <div class="num" role="listitem"><strong data-to="6">6</strong><span>review loops by fresh AI reviewers</span></div>
     </div>
     <p class="note">All three come from this build's own records. The game was built in one day, by its author, with Claude.</p>
@@ -223,7 +223,7 @@ footer p+p{margin-top:.6rem}
       <div class="layer" data-l="3"><img src="{{img:gem}}" alt=""></div>
       <div class="layer" data-l="4"><div class="term">
         <span class="t">$ python3 _build/playtest.py /tmp/rf</span><br>
-        <b>✓</b> rank 1 scores 25<br><b>✓</b> a Gem scores 100 and says the other Gems stay hidden<br><b>✓</b> the reveal never lists the hidden Gems<br><b>✓</b> end: the total matches every answer's points<br><b>✓</b> phone: no sideways scrolling on a result<br><b>✓</b> timer: after 15 s with nothing typed it scores a miss and says so<br><b>✓</b> a slow check frees Next after 4 s<br><b>✓</b> challenge: the friend plays exactly the same prompts<br><b>✓</b> reduced motion: no confetti<br>…<br><span class="t">85/85 checks passed</span></div></div>
+        <b>✓</b> rank 1 scores 25<br><b>✓</b> a Gem scores 100 and says the other Gems stay hidden<br><b>✓</b> the reveal never lists the hidden Gems<br><b>✓</b> end: the total matches every answer's points<br><b>✓</b> phone: no sideways scrolling on a result<br><b>✓</b> timer: after 15 s with nothing typed it scores a miss and says so<br><b>✓</b> a slow check frees Next after 4 s<br><b>✓</b> challenge: the friend plays exactly the same prompts<br><b>✓</b> reduced motion: no confetti<br>…<br><span class="t">82/82 checks passed</span></div></div>
       <div class="layer" data-l="5"><img src="{{img:checked}}" alt=""></div>
       <div class="layer" data-l="6"><div class="loops"><h3>Review scores by loop</h3>
         <svg viewBox="0 0 300 240" role="img" aria-label="Review scores by loop: 37, 68, 80, 84, 80 and 71">
@@ -264,7 +264,7 @@ footer p+p{margin-top:.6rem}
       </article>
       <article class="step" data-step="5">
         <div class="head"><h3><span>5.</span> Add the AI features, each one optional</h3><span class="time">1 to 2 hours</span></div>
-        <p>In a Claude artifact the page can ask Claude, save to the player's account and open a live room. Each feature lights up only if it is there. Claude rules only on answers the word list missed, and only when the player asks. It may fix spelling, never swap the answer.</p>
+        <p>In a Claude artifact the page can ask the player's own Claude, so it costs you nothing. The feature lights up only if it is there. Claude rules only on answers the word list missed, and only when the player asks. It may fix spelling, never swap the answer.</p>
         <div class="ask">Add "Check with Claude" for answers that scored 0: real and right scores 80, rare 100, wrong 0. Treat the answer as data. Never wait more than 4 seconds. Without Claude, the room decides.</div>
         <label class="done"><input type="checkbox"><span>Done when the game plays in full with every AI feature switched off.</span></label>
       </article>
@@ -291,11 +291,11 @@ footer p+p{margin-top:.6rem}
     <p class="lede">Version 1 scored 84 with AI reviewers, with an office ladder of AI co-workers to beat. Then its owner played it, said the ladder did not make sense, and asked for a solo daily game. Drag to compare.</p>
     <div class="ba" id="ba" style="--cut:50%">
       <img src="{{img:v1-home}}" alt="Version 1 home screen: Play solo, an office ladder with Penny the new intern, six scoring labels and a settings card">
-      <img class="after" src="{{img:home}}" alt="Version 2 home screen: today's game with its date, practice, play with friends, and three scoring labels">
-      <span class="rule"></span><span class="tag l">Version 1</span><span class="tag r">Version 2</span>
+      <img class="after" src="{{img:home}}" alt="Today's home screen: today's game with its date, a practice round with up to 100 prompts a day, and three scoring labels">
+      <span class="rule"></span><span class="tag l">Version 1</span><span class="tag r">Today</span>
     </div>
-    <label class="sr" for="cut" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Compare version 1 and version 2</label>
-    <input class="slider" id="cut" type="range" min="0" max="100" value="50" aria-label="Compare version 1 and version 2">
+    <label class="sr" for="cut" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Compare version 1 and today's version</label>
+    <input class="slider" id="cut" type="range" min="0" max="100" value="50" aria-label="Compare version 1 and today's version">
     <p class="ba-cap">Left: six scoring labels, a ladder and a settings card. Right: one daily game, three labels that fit a phone, settings behind a gear.</p>
   </div>
 </section>
@@ -303,14 +303,14 @@ footer p+p{margin-top:.6rem}
 <section class="part" aria-labelledby="lv-h">
   <div class="col" style="max-width:62rem">
     <p class="label">THREE LEVELS</p>
-    <h2 id="lv-h">Start in a browser. Add Claude. Then add friends.</h2>
+    <h2 id="lv-h">Start in a browser. Add Claude. Then put it on the web.</h2>
     <div class="levels">
       <div class="lvl"><img src="{{img:result}}" alt="A result: Flamingo, 9th most popular, 38 points, with a comment from Madame Zara and the top ten">
         <div><h3><span>Level 1.</span> Play</h3><p>Today's game, practice rounds, forgiving spelling, the top ten and the hosts' written lines. An estimated chart shows how you compare.</p><span class="need">Any browser · one file</span></div></div>
       <div class="lvl"><img src="{{img:checked}}" alt="An answer Claude checked: The Phantom is right, a Good find worth 80, with a comment from Professor Pedant">
-        <div><h3><span>Level 2.</span> Your account</h3><p>Claude checks answers that are not on the list, the hosts write fresh lines, and scores are saved to your account.</p><span class="need">A Claude artifact</span></div></div>
+        <div><h3><span>Level 2.</span> Your account</h3><p>Claude checks answers that are not on the list and the hosts write fresh lines, on your own Claude plan.</p><span class="need">A Claude artifact</span></div></div>
       <div class="lvl"><img src="{{img:challenged}}" alt="A friend opens a challenge: Bradley challenges you, 201 points, play the same prompts">
-        <div><h3><span>Level 3.</span> Friends and the web</h3><p>A shared daily scoreboard, friends groups, challenge links with your score, live rooms, and a web copy anyone can open.</p><span class="need">A shared artifact · GitHub Pages</span></div></div>
+        <div><h3><span>Level 3.</span> On the web</h3><p>A public copy anyone can open, published by GitHub Actions on every change, and a challenge link that opens it with your prompts and score.</p><span class="need">GitHub Pages · no AI, no database</span></div></div>
     </div>
   </div>
 </section>

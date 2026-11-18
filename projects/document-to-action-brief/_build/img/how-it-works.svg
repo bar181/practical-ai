@@ -2,9 +2,9 @@
 <title id="t">How Document to action brief works</title>
 <desc id="d">Three steps. 1: paste the prompt and your document into the chatbot you use. 2: get a one-page brief: the answer first, then what you must do, dates, open questions and key facts, each with the exact words from the document. 3: check each quote against the page and tick it, then you decide what to do. At the bottom: the AI lists, you check and decide.</desc>
 <style>
-.s{opacity:0;animation:in 9s ease-out infinite}
+.s{animation:in 9s ease-out infinite backwards}
 .s2{animation-delay:1.2s}.s3{animation-delay:2.4s}.r1{animation-delay:2.9s}.r2{animation-delay:3.3s}.r3{animation-delay:3.7s}.r4{animation-delay:4.1s}
-.k{opacity:0;animation:in 9s ease-out infinite}.k1{animation-delay:5.2s}.k2{animation-delay:5.7s}.k3{animation-delay:6.2s}.k4{animation-delay:6.7s}.f{animation-delay:7.3s}
+.k{animation:in 9s ease-out infinite backwards}.k1{animation-delay:5.2s}.k2{animation-delay:5.7s}.k3{animation-delay:6.2s}.k4{animation-delay:6.7s}.f{animation-delay:7.3s}
 @keyframes in{0%{opacity:0;transform:translateY(6px)}6%{opacity:1;transform:none}92%{opacity:1}100%{opacity:0}}
 @media (prefers-reduced-motion:reduce){.s,.k{animation:none;opacity:1}}
 .h{font-size:20px;font-weight:700;fill:#0c2340}.p{font-size:15px;fill:#33415c}.n{font-size:15px;font-weight:700;fill:#0c2340}
