@@ -93,6 +93,8 @@ with sync_playwright() as pw:
     def answer_now(page, text):
         # answer, then read what is on screen and which animations run, before any effect ends
         page.fill("#answer", text); page.press("#answer", "Enter")
+        # wait for the frame that shows the result, so a slow machine does not read the timing too early
+        page.wait_for_function("(window.__rfPaintAt||0) > (window.__rfSubmitAt||0)", timeout=3000)
         return page.evaluate("""()=>({paint:(window.__rfPaintAt||0)-(window.__rfSubmitAt||0),
           celeb:(()=>{const c=[...document.querySelectorAll('.celebrate')].pop();return c?[Number(c.dataset.level),c.querySelectorAll('.spark').length,c.querySelectorAll('.ring').length,c.querySelectorAll('.drop').length,(c.querySelector('.cheer')||{}).textContent||'']:null})(),
           anims:document.getAnimations().map(a=>{const t=a.effect.getTiming(),el=a.effect.target;return {name:a.animationName||(a.transitionProperty?'transition':(el&&el.classList&&el.classList.contains('fly')?'fly':'script')),d:Number(t.duration)||0,delay:t.delay||0,
