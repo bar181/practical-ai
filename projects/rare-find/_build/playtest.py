@@ -31,16 +31,24 @@ MOCK = r"""
       get: async () => ({ docs: Object.keys(store).filter(k => k.startsWith(c + '/')).map(k => ({ id: k.split('/').pop(), data: () => store[k] })) }) }; return q; } };
   const user = { id: async () => 'u1', profiles: async ids => Object.fromEntries(ids.map(i => [i, { name: 'Tester ' + i }])) };
   window.__calls = [];
-  const sample = async (input, opts) => { window.__calls.push('sample'); return { text: 'Mock trash talk about that answer.' }; };
-  sample.json = async (input) => { window.__calls.push('json');
+  // Like the real runtime in an app with no sample.json: one text call; failures are plain {code, message} objects.
+  // The judge's verdict comes back as text, sometimes wrapped in a sentence and a code fence.
+  const verdict = a => {
+    if (/big hero 5/i.test(a)) return { correct: true, canonical: 'Big Hero 6', rarity: 'common', why: 'Mock judge: the film is Big Hero 6.' };
+    if (/nonsense/i.test(a)) return window.__judgeYes ? { correct: true, canonical: a, rarity: 'common', why: 'Mock judge: on reflection, yes.' } : { correct: false, canonical: a, rarity: 'common', why: 'Mock judge: no such thing.' };
+    if (/plainish/i.test(a)) return { correct: true, canonical: a, rarity: window.__judgeRare ? 'rare' : 'common', why: 'Mock judge: real.' };
+    return { correct: true, canonical: 'Spork', rarity: 'rare', why: 'Mock judge.' };
+  };
+  const sample = async (input, opts) => { window.__calls.push('sample');
     const q = String(input);
-    if (q.includes('You judge a family trivia game')) { if (window.__judgeFail) throw new Error('down'); if (window.__judgeDelay) await new Promise(r => setTimeout(r, window.__judgeDelay)); const a = (q.match(/A player answered: "([^"]*)"/) || [])[1] || '';
-      if (/big hero 5/i.test(a)) return { correct: true, canonical: 'Big Hero 6', rarity: 'common', why: 'Mock judge: the film is Big Hero 6.' };
-      if (/nonsense/i.test(a)) return window.__judgeYes ? { correct: true, canonical: a, rarity: 'common', why: 'Mock judge: on reflection, yes.' } : { correct: false, canonical: a, rarity: 'common', why: 'Mock judge: no such thing.' };
-      if (/plainish/i.test(a)) return { correct: true, canonical: a, rarity: window.__judgeRare ? 'rare' : 'common', why: 'Mock judge: real.' };
-      return { correct: true, canonical: 'Spork', rarity: 'rare', why: 'Mock judge.' }; }
-    return { prompt: 'Name a type of cheese', cat: 'Food', ranked: ['Cheddar','Mozzarella','Brie','Parmesan','Swiss','Gouda','Feta','Camembert','Blue cheese','Cream cheese'],
-      gems: ['Stinking Bishop','Casu marzu','Mimolette','Epoisses','Halloumi'], good: ['Stilton','Gruyere','Edam','Ricotta','Manchego','Roquefort','Gorgonzola','Emmental','Havarti','Colby','Provolone','Pecorino'], aliases: { Parmesan: ['parmigiano'] }, wrong: ['Tofu'] }; };
+    if (q.includes('You judge a family trivia game')) {
+      if (window.__judgeFail) throw { code: 'upstream_error', message: 'down' };
+      if (window.__judgeDelay) await new Promise(r => setTimeout(r, window.__judgeDelay));
+      const a = (q.match(/A player answered: "([^"]*)"/) || [])[1] || '';
+      const v = JSON.stringify(verdict(a));
+      return { text: window.__calls.length % 2 ? v : 'Here is my verdict:\n```json\n' + v + '\n```', truncated: false };
+    }
+    return { text: 'Mock trash talk about that answer.', truncated: false }; };
   const listeners = {}; let peers = [];
   const roomObj = { emit: (t, d) => { window.__calls.push('emit:' + (d && d.type)); }, on: (t, f) => { listeners[t] = f; },
     presence: s => { peers = [{ state: s }]; roomObj._p && roomObj._p(peers); }, onPeers: f => { roomObj._p = f; f(peers); }, leave: () => {} };
@@ -295,6 +303,7 @@ with sync_playwright() as pw:
     check("challenge codes allow 60 to 80 per Good find, and reject a score outside that", codes == [True, False], codes)
     check("capabilities detected when present", all(st["caps"].values()), st["caps"])
     check("with Claude, only one capability is asked for: the answer check and host lines", list(st["caps"].keys()) == ["sample"], st["caps"])
+    check("the answer check needs only the plain text call: this mock app has no sample.json, like some Claude apps", p3.evaluate("window.claude.use('sample').then(s=>typeof s.json)") == "undefined")
     p3.click("#b-settings"); p3.fill("#nick", "Quiz Owl"); p3.press("#nick", "Tab"); p3.click("#b-settings")
     p3.click("#b-daily"); p3.wait_for_timeout(250)
     answer(p3, "spork")
@@ -318,14 +327,14 @@ with sync_playwright() as pw:
     check("while the AI checks, the hosts fill the wait with a comment", waitline, p3.inner_text("#talkline"))
     p3.wait_for_timeout(1500)
     check("the hosts take turns during a long check", p3.evaluate("document.querySelector('#talkline small').textContent") != "" and waitline, p3.inner_text("#talkline"))
-    check("a check in progress never blocks Next, and offers no second check while it runs", p3.is_enabled("#b-next") and p3.is_hidden("#b-check"), (p3.is_enabled("#b-next"), p3.is_visible("#b-check")))
+    check("a check in progress shows 'Checking...' on its button, never blocks Next, and offers no second check while it runs", p3.is_enabled("#b-next") and p3.is_visible("#b-check") and p3.is_disabled("#b-check") and p3.inner_text("#b-check") == "Checking...", (p3.is_enabled("#b-next"), p3.inner_text("#b-check")))
     nxt(p3); answer(p3, pack(p3, pid_of(p3))["ranked"][1]["a"]); p3.wait_for_timeout(1500); s3 = p3.evaluate("window.__rf.state()")
     check("a late verdict counts on its own prompt: that round becomes a Gem worth 100, and the total is the sum", s3["res"][slow_round] == {"tier": "gem", "pts": 100} and s3["total"] == p3.evaluate("window.__rf.sum()"), (s3["res"], s3["total"]))
     check("a late verdict does not replay its effects on the prompt now showing", s3["cur"]["tier"] == "popular" and p3.evaluate("document.querySelectorAll('.gemreveal').length") == 0 and p3.inner_text("#tier") == "Popular", (s3["cur"], p3.inner_text("#tier")))
     check("a late verdict updates that round's dot, quietly", "d-gem" in p3.get_attribute(f"#dots i:nth-child({slow_round + 1})", "class") and "land" not in p3.get_attribute(f"#dots i:nth-child({slow_round + 1})", "class"), p3.get_attribute(f"#dots i:nth-child({slow_round + 1})", "class"))
     p3.evaluate("window.__judgeDelay=0"); nxt(p3)
     p3.evaluate("window.__judgeFail=true"); answer(p3, "another one"); p3.click("#b-check"); p3.wait_for_timeout(500)
-    check("AI unreachable: it says so, the answer stays at 0, and it offers 'Try again'", "could not be reached" in p3.inner_text("#counted") and p3.inner_text("#b-check") == "Try again" and p3.evaluate("window.__rf.state().cur.pts") == 0, (p3.inner_text("#counted"), p3.inner_text("#check-row")))
+    check("AI unreachable: it says so with the reason, the answer stays at 0, and it offers 'Try again'", "could not check" in p3.inner_text("#counted") and "upstream_error" in p3.inner_text("#counted") and p3.inner_text("#b-check") == "Try again" and p3.evaluate("window.__rf.state().cur.pts") == 0, (p3.inner_text("#counted"), p3.inner_text("#check-row")))
     p3.evaluate("window.__judgeFail=false"); p3.click("#b-check"); p3.wait_for_timeout(500)
     check("'Try again' asks the AI again, and only its yes scores", p3.evaluate("window.__rf.state().cur.pts") == 100 and "The AI checked" in p3.inner_text("#counted"), p3.inner_text("#counted"))
     nxt(p3)

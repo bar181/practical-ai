@@ -6,7 +6,7 @@
 
 - **The automated playtest**, [`../_build/playtest.py`](../_build/playtest.py). It plays the built
   page in Chromium at 390 px (phone) and 1280 px, keyboard only, with reduced motion, with no Claude,
-  and with a mock of Claude's answer check (`sample`). Last run, 18 November 2026: **118 of 118 checks
+  and with a mock of Claude's answer check (`sample`). Last run, 18 November 2026: **119 of 119 checks
   passed**. They cover how an answer lands (on screen within 100 ms, ordinary effects 150 to 250
   ms, the Gem reveal inside 600 ms, Next usable during effects, a late verdict that changes only its
   own round), 60 spelling cases, the per-category points, hidden Gems, the daily calendar
@@ -83,6 +83,14 @@ desktop. The first AI check is also called Check again. An answer the AI accepts
 list scores 60 (common) or 80 (uncommon), or 100 as a Gem, never a flat 80, and a second look can
 only raise it. A place's own name counts without its title: "Helens" is Mount St. Helens (#2, 28
 points) with no check needed. 118 of 118 checks pass, with Claude mocked.
+
+**Check again, fixed for real Claude apps** (18 November 2026): the owner pressed Check again in the
+real artifact and the AI check did not run. The likely cause: the check used `sample.json`, which
+Claude's own guide says some Claude apps do not have, while the host lines, which did work, use the
+plain text call. The check now uses the plain text call and reads the JSON from the reply itself;
+the button stays on screen as "Checking..." while it runs; a failure names its reason. The mock now
+has no `sample.json` at all, like those apps. 119 of 119 checks pass. **Not yet confirmed in the
+real Claude app**: the private preview has it for the owner to try.
 
 ## Who has and has not tried it
 
