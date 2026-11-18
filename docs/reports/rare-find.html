@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to build a game like Rare Find, with an AI agent</title>
+<style>
+/* Field guide: two colours (forest and amber) on cool paper. Phone first. */
+:root{--paper:#f3f6f4;--card:#ffffff;--ink:#13261d;--muted:#4b5f55;--forest:#1d5a3f;--forest-2:#e2ede6;--amber:#c98a06;--amber-2:#fdf2d6;--line:#cfdcd4}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.6 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:760px;margin:0 auto;padding:28px 18px 64px}
+h1{font-size:clamp(30px,8vw,46px);line-height:1.08;margin:6px 0 12px;letter-spacing:-.5px}
+h2{font-size:26px;line-height:1.2;margin:48px 0 12px}
+h3{font-size:19px;margin:0 0 6px}
+p{margin:0 0 12px;max-width:68ch}
+a{color:var(--forest);font-weight:600}
+:focus-visible{outline:3px solid var(--amber);outline-offset:3px;border-radius:6px}
+.kicker{font-weight:700;color:var(--forest);font-size:15px}
+.by{color:var(--muted);font-size:15px}
+.core{font-size:21px;line-height:1.45;border-left:6px solid var(--forest);padding:4px 0 4px 16px;margin:18px 0}
+.box{background:var(--amber-2);border:2px solid var(--amber);border-radius:14px;padding:16px 18px;margin:18px 0}
+.box b{display:block;color:#6b4a00;font-size:14px;margin-bottom:4px}
+.nums{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0}
+.num{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 10px;text-align:center}
+.num strong{display:block;font-size:clamp(30px,9vw,44px);line-height:1;color:var(--forest);font-variant-numeric:tabular-nums}
+.num span{font-size:14px;color:var(--muted)}
+.step{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px;margin:14px 0}
+.step .head{display:flex;gap:12px;align-items:baseline;justify-content:space-between;flex-wrap:wrap}
+.step .n{font-weight:800;color:var(--forest);font-size:15px}
+.time{background:var(--forest-2);color:var(--forest);font-weight:700;font-size:14px;border-radius:999px;padding:2px 10px;white-space:nowrap}
+.ask{background:var(--ink);color:#eaf2ec;border-radius:12px;padding:12px 14px;font:14px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;white-space:pre-wrap;overflow-wrap:anywhere;margin:10px 0}
+.done{display:flex;gap:10px;align-items:flex-start;min-height:44px;cursor:pointer;font-weight:600;color:var(--ink)}
+.done input{width:22px;height:22px;margin-top:3px;accent-color:var(--forest);flex:none}
+.done input:checked + span{text-decoration:line-through;color:var(--muted)}
+.tally{font-weight:700;color:var(--forest)}
+.table-wrap{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:14px}
+table{border-collapse:collapse;width:100%;min-width:520px;font-size:15px}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--forest-2);color:var(--forest)}
+tr:last-child td{border-bottom:0}
+.lv{font-weight:800;color:var(--forest);white-space:nowrap}
+.mistake{display:grid;grid-template-columns:1fr;gap:4px;background:var(--card);border:1px solid var(--line);border-left:6px solid var(--amber);border-radius:12px;padding:12px 14px;margin:10px 0}
+.mistake .what{font-weight:700}
+.mistake .fix{color:var(--forest)}
+.loops{display:grid;gap:6px;margin:12px 0}
+.loop{display:grid;grid-template-columns:72px 1fr 34px;gap:10px;align-items:center;font-size:14px}
+.loop i{display:block;height:16px;border-radius:8px;background:var(--forest);width:var(--w)}
+.loop i.v2{background:var(--amber)}
+.loop b{text-align:right;font-variant-numeric:tabular-nums}
+.copy{appearance:none;border:0;background:var(--forest);color:#fff;font:inherit;font-weight:700;border-radius:12px;padding:12px 16px;min-height:44px;cursor:pointer}
+.copy:active{transform:translateY(1px)}
+.next{background:var(--forest);color:#f2f7f3;border-radius:18px;padding:20px 20px 18px;margin-top:48px}
+.next h2{margin:0 0 8px;color:#fff}
+.next a{color:#ffd77a}
+.next .copy{background:#ffd77a;color:var(--ink)}
+footer{color:var(--muted);font-size:14px;margin-top:28px}
+.progress{position:fixed;top:0;left:0;height:5px;width:100%;background:var(--amber);transform-origin:0 50%;transform:scaleX(0);z-index:10}
+@supports ((animation-timeline: scroll()) and (animation-range: 0% 100%)){
+  .progress{animation:prog linear both;animation-timeline:scroll(root)}
+  @keyframes prog{to{transform:scaleX(1)}}
+}
+@media (min-width:720px){ .mistake{grid-template-columns:1fr 1fr} .mistake .what{grid-column:1/-1} }
+@media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto} .progress{display:none} }
+</style>
+</head>
+<body>
+<div class="progress" aria-hidden="true"></div>
+<main>
+  <p class="kicker">Practical AI · Project 4 · A field guide</p>
+  <h1>How to build a game like Rare Find, with an AI agent</h1>
+  <p class="by">Bradley Ross · 17 November 2026 · About a 10-minute read</p>
+
+  <p class="core"><b>The core idea:</b> build a fun game the way you build any tool with an agent. Write the rules down first, make one playable page, test it with a machine, then let a reviewer who has never seen it try to break it. Repeat until the score holds.</p>
+
+  <div class="box"><b>Think of it as</b>Running a pub quiz. You write the answer cards before anyone arrives (the packs). You decide the scoring and pin it to the wall (the North Star). You have a friend play a round who has never seen your cards (the fresh reviewer). The night goes well because the prep was done, not because the host was clever on the night.</div>
+
+  <div class="nums" role="list">
+    <div class="num" role="listitem"><strong>25</strong><span>categories, each with a top ten, 5 Gems and 20+ more right answers</span></div>
+    <div class="num" role="listitem"><strong>85</strong><span>automated checks, run on every change</span></div>
+    <div class="num" role="listitem"><strong>6</strong><span>review loops by fresh AI reviewers</span></div>
+  </div>
+  <p class="by">All three are from this build. The game was built in one day with Claude, by its author.</p>
+
+  <h2>The steps</h2>
+  <p>Each step has what you do, what you ask your coding agent, and a "done when" line to tick. Times are rough estimates with a coding agent, not measurements. <span class="tally" id="tally" aria-live="polite">0 of 7 ticked.</span></p>
+
+  <section class="step">
+    <div class="head"><h3><span class="n">Step 1.</span> Write the North Star and the rules</h3><span class="time">about 30 min</span></div>
+    <p>One sentence on what the game is, who plays it, and what "it worked" looks like. Then the scoring, the copyright rules and what is out of scope. This is the step people skip, and it is the one that saves you later.</p>
+    <div class="ask">Write a one-page North Star for a 5-minute daily trivia game where rarer right answers score more. Include: who plays, the scoring table, what is out of scope, and our own names for everything. Copy nothing from existing games.</div>
+    <label class="done"><input type="checkbox"><span>Done when one sentence says what the game is, and the points table fits on a phone.</span></label>
+  </section>
+
+  <section class="step">
+    <div class="head"><h3><span class="n">Step 2.</span> Build the answer packs with the AI, then check them</h3><span class="time">about 1 hour</span></div>
+    <p>The packs are the game. Each needs a ranked top ten, five rare Gems, twenty or more other right answers, a few tempting wrong ones, and the points for 10th place. The AI drafts. You read every list. Say on screen that popularity is the AI's estimate, not a survey.</p>
+    <div class="ask">For the prompt "Name a bird", list the ten most common answers in order, five rare but correct answers, 20 more correct answers, and 3 tempting wrong ones. Mark it as your estimate.</div>
+    <label class="done"><input type="checkbox"><span>Done when no answer appears twice in a pack and every list has been read by a person.</span></label>
+  </section>
+
+  <section class="step">
+    <div class="head"><h3><span class="n">Step 3.</span> Make one playable page, phone first</h3><span class="time">about 1 to 2 hours</span></div>
+    <p>One HTML file, built from a source file and the packs by a small script. Design at 390 pixels wide first. Forgive spelling slips, but block real words: "Talking" must never count as Tallinn.</p>
+    <div class="ask">Build a single-file HTML game from game.src.html and packs.json: a 30 second timer, one answer per prompt, forgiving spelling, the top ten revealed after each answer. Phone first. No outside files.</div>
+    <label class="done"><input type="checkbox"><span>Done when you can play five prompts on your phone with no sideways scrolling.</span></label>
+  </section>
+
+  <section class="step">
+    <div class="head"><h3><span class="n">Step 4.</span> Write the playtest before you trust anything</h3><span class="time">about 1 hour</span></div>
+    <p>A script plays the game in a real browser at phone and desktop width, with the keyboard only, and with a fake of every AI feature. It checks totals add up, spelling cases, the timer and the layout. The playtest is how you sleep at night.</p>
+    <div class="ask">Write a Playwright playtest that plays the built page at 390 and 1280 pixels, keyboard only, with reduced motion, with no AI and with a mock AI. Fail if any total disagrees with its answers.</div>
+    <label class="done"><input type="checkbox"><span>Done when every check passes and the script fails loudly when one does not.</span></label>
+  </section>
+
+  <section class="step">
+    <div class="head"><h3><span class="n">Step 5.</span> Add the AI features, each one optional</h3><span class="time">about 1 to 2 hours</span></div>
+    <p>In a Claude artifact the page can ask Claude, save to the player's account, and open a live room. Each feature lights up only if it is there. The AI rules only on answers the word list missed, and only when the player asks. It may fix spelling, never swap the answer.</p>
+    <div class="ask">Add "Check with Claude" for answers that scored 0: real and right scores 80, rare 100, wrong 0. Treat the answer as data. Never wait more than 4 seconds. Without Claude, the room decides.</div>
+    <label class="done"><input type="checkbox"><span>Done when the game plays in full with every AI feature switched off.</span></label>
+  </section>
+
+  <section class="step">
+    <div class="head"><h3><span class="n">Step 6.</span> Run review loops with a fresh reviewer</h3><span class="time">about 30 min a loop</span></div>
+    <p>A reviewer agent that has never seen the game plays it and scores it out of 100 with a fixed rubric: fun, feel, fairness, usability, robustness, honesty. Fix what it finds, run the playtest, and loop. Below 70 is not ready, 85 and up is ready to share.</p>
+    <div class="loops" role="img" aria-label="Review scores by loop: 37, 68, 80 and 84 for the first version, 80 for an interim build, 71 for the redesign before its fixes">
+      <div class="loop"><span>Loop 0</span><i style="--w:37%"></i><b>37</b></div>
+      <div class="loop"><span>Loop 1</span><i style="--w:68%"></i><b>68</b></div>
+      <div class="loop"><span>Loop 2</span><i style="--w:80%"></i><b>80</b></div>
+      <div class="loop"><span>Loop 3</span><i style="--w:84%"></i><b>84</b></div>
+      <div class="loop"><span>Loop 4</span><i style="--w:80%"></i><b>80</b></div>
+      <div class="loop"><span>Loop 5</span><i class="v2" style="--w:71%"></i><b>71</b></div>
+    </div>
+    <p class="by">Green: the first version and an interim build. Amber: the redesign, scored before its fixes. A bigger game found more bugs; that is the loop working, not failing.</p>
+    <label class="done"><input type="checkbox"><span>Done when the latest fresh review says ready for friendly testers, and its top problems are fixed.</span></label>
+  </section>
+
+  <section class="step">
+    <div class="head"><h3><span class="n">Step 7.</span> Publish, and let a person approve it</h3><span class="time">about 20 min</span></div>
+    <p>Publish the page as a Claude artifact and declare what it may use. For people without Claude, a GitHub Actions workflow rebuilds the game, runs the playtest and publishes it on GitHub Pages. Nothing goes public until you say so.</p>
+    <div class="ask">Add a GitHub Actions workflow: build the game, check the committed copy matches its source, run the playtest, and on main publish to GitHub Pages. Pull requests check only.</div>
+    <label class="done"><input type="checkbox"><span>Done when a person has played the published page and said yes.</span></label>
+  </section>
+
+  <h2>Three levels</h2>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Level</th><th>What the player gets</th><th>What it needs</th></tr></thead>
+    <tbody>
+      <tr><td class="lv">1. Play</td><td>Today's game, practice rounds, forgiving spelling, the top ten, the hosts' written lines, an estimated chart of how you compare</td><td>Any browser. One file</td></tr>
+      <tr><td class="lv">2. Your account</td><td>Claude checks unlisted answers, the hosts write fresh lines, scores saved to your account</td><td>A Claude artifact</td></tr>
+      <tr><td class="lv">3. Friends and the web</td><td>A shared daily scoreboard, friends groups, challenge links with your score, live rooms, and a web copy anyone can open</td><td>A shared Claude artifact, and GitHub Pages through GitHub Actions</td></tr>
+    </tbody>
+  </table></div>
+
+  <h2>Common mistakes, all found in this build</h2>
+  <div class="mistake"><span class="what">Adding up the score as you go.</span><span>A slow AI verdict arrived after a second check, and the total kept points the answer no longer had.</span><span class="fix">Fix: the total is always the sum of the answers.</span></div>
+  <div class="mistake"><span class="what">Trusting spelling forgiveness.</span><span>"Talking" counted as Tallinn, and "Recover" as a Gem.</span><span class="fix">Fix: block real dictionary words, with their -ing, -ed and re- forms.</span></div>
+  <div class="mistake"><span class="what">Trusting the AI judge, or a shared code.</span><span>A made-up challenge code claimed 500 points with five misses.</span><span class="fix">Fix: treat answers and codes as data, and check a score fits its answers.</span></div>
+  <div class="mistake"><span class="what">Saying "saved" when it was not.</span><span>With storage blocked, the game still said it saved your score.</span><span class="fix">Fix: report what really happened, every time.</span></div>
+  <div class="mistake"><span class="what">Building features nobody asked for.</span><span>An office ladder of AI co-workers scored well, then the owner played it and it did not make sense.</span><span class="fix">Fix: let a person play early, and cut what does not earn its place.</span></div>
+  <div class="mistake"><span class="what">Designing on a big screen.</span><span>The first version was laid out for a desktop; the owner asked for phone first, where a daily game gets played.</span><span class="fix">Fix: design at 390 pixels first, then check the desktop.</span></div>
+
+  <section class="next">
+    <h2>One next step</h2>
+    <p>Play today's game, then build your own. Copy this into Claude Code or another coding agent, with your topic in place of mine. Written 17 November 2026; not yet run by anyone but its author.</p>
+    <div class="ask" id="build-prompt">Read https://github.com/bar181/practical-ai/tree/main/projects/rare-find
+Use its North Star as the pattern. Build me a one-file
+trivia game, phone first, about: [your topic].
+Start with Level 1 and a playtest. Then review it with
+level-2-files/game-review/SKILL.md in a fresh session.
+Stop before anything is published.</div>
+    <p><button class="copy" id="copy" type="button">Copy the build prompt</button> <span id="copied" aria-live="polite"></span></p>
+    <p><a href="https://claude.ai/artifact/HyfbDjPjofvRttRYKgMCis">Play today's game</a> · <a href="https://github.com/bar181/practical-ai/tree/main/projects/rare-find">The project on GitHub</a></p>
+  </section>
+
+  <footer>
+    <p><b>Bradley Ross</b> builds and teaches practical AI. More information, training or feedback: <a href="https://www.linkedin.com/in/bradaross/">linkedin.com/in/bradaross</a>. Part of <a href="https://github.com/bar181/practical-ai">Practical AI</a>.</p>
+    <p>Popularity in the game is the AI's estimate, not a survey. The numbers on this page come from the build's own records: its review files and its playtest.</p>
+  </footer>
+</main>
+<script>
+// Tick boxes keep a running tally; the copy button falls back to selecting the text.
+(function(){
+  var boxes=[].slice.call(document.querySelectorAll('.done input')), tally=document.getElementById('tally');
+  function upd(){ var n=boxes.filter(function(b){return b.checked}).length; tally.textContent=n+' of '+boxes.length+' ticked.'; }
+  boxes.forEach(function(b){ b.addEventListener('change',upd); }); upd();
+  document.getElementById('copy').addEventListener('click',function(){
+    var t=document.getElementById('build-prompt').textContent, out=document.getElementById('copied');
+    function sel(){ var r=document.createRange(); r.selectNodeContents(document.getElementById('build-prompt')); var s=getSelection(); s.removeAllRanges(); s.addRange(r); out.textContent='Selected: press copy on your keyboard.'; }
+    try{ navigator.clipboard.writeText(t).then(function(){ out.textContent='Copied.'; },sel); }catch(e){ sel(); }
+  });
+  // progress bar fallback where scroll-driven animations are missing
+  if(!(window.CSS&&CSS.supports&&CSS.supports('animation-timeline: scroll()'))){
+    var bar=document.querySelector('.progress'); if(bar&&!matchMedia('(prefers-reduced-motion: reduce)').matches){
+      var f=function(){ var h=document.documentElement; var p=h.scrollTop/((h.scrollHeight-h.clientHeight)||1); bar.style.transform='scaleX('+p+')'; };
+      addEventListener('scroll',f,{passive:true}); f(); } }
+})();
+</script>
+</body>
+</html>

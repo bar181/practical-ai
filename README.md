@@ -149,11 +149,20 @@ words to check.
 
 ### Rare Find, a side quest
 
-**A five-minute daily quiz where the right answer nobody else thought of scores the most.** Play it
-on your phone in a Claude artifact or any browser, then challenge a friend with a code. Reviewed in
-loops by fresh AI reviewers and machine-tested; not yet played by people.
+**A five-minute daily quiz where the right answer nobody else thought of scores the most.** Five
+prompts a day, the same for everyone. Claude checks answers that are not on the list, four AI hosts
+comment on every score, and one link challenges a friend to the same prompts.
 
-<p align="center"><a href="projects/rare-find/"><b>Play today's game</b></a></p>
+<p align="center">
+  <img src="projects/rare-find/_build/img/how-it-plays.svg" width="620" alt="Animation: the prompt Name a bird, then four answers in turn with their points: Eagle, the crowd pick, 25; Flamingo, 9th most popular, 38; Hummingbird, right but beyond the top ten, 80; Shoebill, rare and right, a Gem, 100. The rarer the right answer, the more it scores.">
+</p>
+<p align="center">
+  <img src="projects/rare-find/_build/img/result-phone.webp" width="200" alt="A Rare Find result on a phone: Eagle is the crowd pick for 25 points, Madame Zara comments, and the top ten shows the points for each place">
+  <img src="projects/rare-find/_build/img/scorecard-phone.webp" width="200" alt="The Rare Find Scorecard on a phone: today's score on a bar chart of the estimated spread, the week and a friends group">
+</p>
+<p align="center"><sub>Built phone first, tested by 85 automated checks and six review loops; not yet played by people.</sub></p>
+
+<p align="center"><a href="https://claude.ai/artifact/HyfbDjPjofvRttRYKgMCis"><b>Play today's game</b></a> &nbsp;·&nbsp; <a href="projects/rare-find/"><b>The project</b></a> &nbsp;·&nbsp; <a href="docs/reports/rare-find.html"><b>How it was made</b></a></p>
 
 ### What is ready, and what is next
 

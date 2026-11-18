@@ -6,18 +6,25 @@
 
 **Are you an AI agent?** Go to [AGENTS.md](AGENTS.md) for instructions you can follow now.
 
-> **Status: built and machine-tested, not yet played by people.** 80 of 80 automated checks pass at
+> **Status: built and machine-tested, not yet played by people.** 85 of 85 automated checks pass at
 > phone and desktop width. Nobody has played it in the real Claude artifact runtime yet. See
 > [Status](#status).
 
 **Think of it as** a pub quiz where the obvious answer is worth the least. Anyone can say "Eagle".
 The person who says "Shoebill" takes the round.
 
+<p align="center"><a href="https://claude.ai/artifact/HyfbDjPjofvRttRYKgMCis"><b>Play today's game</b></a> &nbsp;·&nbsp; <a href="../../docs/reports/rare-find.html"><b>How this game was made</b></a></p>
+
+<p align="center">
+  <img src="_build/img/how-it-plays.svg" width="720" alt="Animation: the prompt Name a bird with a timer ring, then four answers in turn with their points: Eagle, the crowd pick, 25; Flamingo, 9th most popular, 38; Hummingbird, right but beyond the top ten, a Good find, 80; Shoebill, rare and right, a Gem, 100. A bar grows with the points. The rarer the right answer, the more it scores.">
+</p>
+
 <p align="center">
 <img src="_build/img/home-phone.webp" width="230" alt="Rare Find home screen on a phone: today's game with its date, a practice round button and three scoring labels">
 <img src="_build/img/result-phone.webp" width="230" alt="A result on a phone: Eagle is the crowd pick for 25 points, Madame Zara comments, and the top ten shows points rising from 25 to 40">
 <img src="_build/img/scorecard-phone.webp" width="230" alt="The Scorecard tab on a phone: today's score on a bar chart of the estimated spread, the week, the streak and a friends group">
 </p>
+<p align="center"><sub><b>Home:</b> today's game, practice, friends &nbsp;·&nbsp; <b>A result:</b> points, a host's comment, the top ten &nbsp;·&nbsp; <b>Scorecard:</b> your place on the chart</sub></p>
 
 ## Get started
 
@@ -96,6 +103,7 @@ a group. The file still opens in any browser.
 | [`base/examples/sample-pack.md`](base/examples/sample-pack.md) | Every prompt with its estimated answers and points. It lists the hidden Gems, so it is a spoiler |
 | [`level-2-files/game-review/`](level-2-files/game-review/) | The review skill: a 100-point rubric for fun, usability and fairness, used at the end of every build loop |
 | [`quality-results/`](quality-results/README.md) | The evidence: the review loops, the automated checks and what is not tested |
+| [How this game was made](../../docs/reports/rare-find.html) | An explainer page in the practical instructor voice: the steps, the levels and the mistakes to avoid |
 | [`_build/`](_build/NORTH-STAR.md) | The source, the packs, the build and test scripts, the North Star and the research plan |
 
 ## Questions
@@ -117,7 +125,7 @@ estimate: a model of typical play, averaging about 155 of 500. It says so on scr
 ## Status
 
 **17 November 2026.** Built by its author with Claude. It has been tested by an automated playtest
-(80 of 80 checks) and by fresh reviewer agents. Loops 0 to 3 scored 37, 68, 80 and 84 out of 100 on
+(85 of 85 checks) and by fresh reviewer agents. Loops 0 to 3 scored 37, 68, 80 and 84 out of 100 on
 the earlier office-ladder version, loop 4 scored an interim build 80, and loop 5 scored this version
 71. All five of loop 5's top problems are fixed and checked by the playtest, but not yet re-scored.
 Every Claude feature was tested against a mock, not the real artifact runtime. Not yet tried: real players, a real
