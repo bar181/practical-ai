@@ -190,7 +190,7 @@ where it goes today. Paste real documents only into a chatbot your workplace all
 
 <details><summary><b>Who has used it?</b></summary>
 
-Its author, in three fresh Claude sessions. Nobody else has used it yet.
+Its author, in three fresh Claude sessions. As of 18 November 2026, users are testing it; their results are not in yet.
 </details>
 
 ## Quick start in one line
@@ -203,10 +203,10 @@ This one-line version is not yet tested. The tested prompt is in [Try it now](#t
 
 ## Status
 
-**17 November 2026.** Built by its author with [Agentic Process](../agentic-process/), where an
+**18 November 2026.** Built by its author with [Agentic Process](../agentic-process/), where an
 earlier version scored 93/100 in a blind pilot against 73/100 for a direct build. Tested in three
 fresh Claude sessions: the try-it prompt above, a notice that leaves out its date and its price
-list, and a tender. Not yet tried in other chatbots, or by anyone else. Level 3 is not built. All
+list, and a tender. As of 18 November 2026, users are testing it; their results are not in yet. Not yet tried in other chatbots. Level 3 is not built. All
 example documents and businesses are invented. [The evidence](quality-results/README.md).
 
 ## About Bradley Ross

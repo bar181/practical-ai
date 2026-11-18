@@ -1,85 +1,62 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 430" role="img" aria-labelledby="t d" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif">
-<title id="t">Everyone an agentic engineer: three steps</title>
-<desc id="d">Three steps from left to right: a job you repeat, a Practical AI tool, and the job done to standard while you check and decide. The example changes in turn: an office manager's Monday report becomes a designer-quality page with Artifact Studio; a team lead's 40-page contract becomes a list of what it asks and by when with Document to action brief; a developer's new internal tool is built to a tested standard with Agentic Process. Underneath: from business people to developers, everyone an agentic engineer.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 660" role="img" aria-labelledby="t d" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif">
+<title id="t">A job you repeat, done to standard: three steps</title>
+<desc id="d">Three steps from top to bottom: a job you repeat, a Practical AI tool, and the job done to standard while you check and decide. The example changes in turn and loops: an office manager's Monday sales report becomes a professional page with Artifact Studio; a team lead's 40-page contract becomes what it asks of you and by when with Document to action brief; a developer's new internal tool is built to a tested standard with Agentic Process. Underneath, a line from business people to developers: everyone an agentic engineer.</desc>
 <style>
-.cy{opacity:0;animation:show 12s infinite}
+.cy{opacity:0;animation:show 12s infinite backwards}
+.a{opacity:1}
 .b{animation-delay:4s}.c{animation-delay:8s}
-.flow{stroke-dasharray:6 10;animation:flow 1.2s linear infinite}
+.flow{stroke-dasharray:6 8;animation:flow 1.2s linear infinite}
 .tick{stroke-dasharray:40;stroke-dashoffset:40;animation:tick 4s infinite}
 @keyframes show{0%{opacity:0}4%,29%{opacity:1}33.3%,100%{opacity:0}}
-@keyframes flow{to{stroke-dashoffset:-16}}
+@keyframes flow{to{stroke-dashoffset:-14}}
 @keyframes tick{0%,40%{stroke-dashoffset:40}55%,100%{stroke-dashoffset:0}}
 @media (prefers-reduced-motion:reduce){.cy,.flow,.tick{animation:none}.cy{opacity:0}.a{opacity:1}.tick{stroke-dashoffset:0}}
 </style>
-<rect width="800" height="430" rx="20" fill="#0c2340"/>
-<text x="400" y="50" text-anchor="middle" fill="#ffffff" font-size="26" font-weight="700">Everyone an agentic engineer</text>
-
-<!-- step labels -->
-<g fill="#ffd23f" font-size="20" font-weight="700" text-anchor="middle">
-  <text x="140" y="100">1. A job you repeat</text>
-  <text x="400" y="100">2. A Practical AI tool</text>
-  <text x="660" y="100">3. Done to standard</text>
+<rect width="440" height="660" rx="22" fill="#0c2340"/>
+<text x="220" y="50" text-anchor="middle" fill="#ffffff" font-size="23" font-weight="700">A job you repeat, done to standard</text>
+<g fill="#ffd23f" font-size="19" font-weight="700">
+  <text x="30" y="98">1. A job you repeat</text>
+  <text x="30" y="258">2. A Practical AI tool</text>
+  <text x="30" y="420">3. Done to standard</text>
 </g>
-
-<!-- cards -->
 <g fill="#17365f" stroke="#8fb3e8" stroke-width="2">
-  <rect x="40" y="120" width="200" height="150" rx="18"/>
-  <rect x="300" y="120" width="200" height="150" rx="18"/>
-  <rect x="560" y="120" width="200" height="150" rx="18"/>
+  <rect x="30" y="110" width="380" height="88" rx="18"/>
+  <rect x="30" y="270" width="380" height="94" rx="18"/>
+  <rect x="30" y="432" width="380" height="94" rx="18"/>
 </g>
-<path class="flow" d="M246 195h48" stroke="#8fb3e8" stroke-width="4" stroke-linecap="round"/>
-<path class="flow" d="M506 195h48" stroke="#8fb3e8" stroke-width="4" stroke-linecap="round"/>
-
-<!-- example a: office manager -->
+<path class="flow" d="M220 206v24" stroke="#8fb3e8" stroke-width="4" stroke-linecap="round"/>
+<path class="flow" d="M220 372v24" stroke="#8fb3e8" stroke-width="4" stroke-linecap="round"/>
 <g class="cy a" fill="#fff" text-anchor="middle">
-  <text x="140" y="165" font-size="16" fill="#8fb3e8">An office manager</text>
-  <text x="140" y="200" font-size="21" font-weight="700">The Monday</text>
-  <text x="140" y="228" font-size="21" font-weight="700">sales report</text>
-  <text x="400" y="185" font-size="22" font-weight="700">Artifact Studio</text>
-  <text x="400" y="218" font-size="16" fill="#cfe0f7">A designer's method,</text>
-  <text x="400" y="240" font-size="16" fill="#cfe0f7">in your own chatbot</text>
-  <text x="660" y="185" font-size="20" font-weight="700">A page that looks</text>
-  <text x="660" y="212" font-size="20" font-weight="700">professionally made</text>
-  <text x="660" y="240" font-size="16" fill="#cfe0f7">in minutes</text>
+  <text x="220" y="140" font-size="17" fill="#8fb3e8">An office manager</text>
+  <text x="220" y="174" font-size="23" font-weight="700">The Monday sales report</text>
+  <text x="220" y="308" font-size="23" font-weight="700">Artifact Studio</text>
+  <text x="220" y="340" font-size="17" fill="#cfe0f7">A designer's method, in your chatbot</text>
+  <text x="220" y="470" font-size="22" font-weight="700">A page that looks professional</text>
+  <text x="220" y="502" font-size="17" fill="#cfe0f7">in minutes</text>
 </g>
-<!-- example b: team lead -->
 <g class="cy b" fill="#fff" text-anchor="middle">
-  <text x="140" y="165" font-size="16" fill="#8fb3e8">A team lead</text>
-  <text x="140" y="200" font-size="21" font-weight="700">A 40-page</text>
-  <text x="140" y="228" font-size="21" font-weight="700">contract</text>
-  <text x="400" y="185" font-size="20" font-weight="700">Document to</text>
-  <text x="400" y="210" font-size="20" font-weight="700">action brief</text>
-  <text x="400" y="240" font-size="16" fill="#cfe0f7">Exact words on every line</text>
-  <text x="660" y="185" font-size="20" font-weight="700">What it asks of you,</text>
-  <text x="660" y="212" font-size="20" font-weight="700">and by when</text>
-  <text x="660" y="240" font-size="16" fill="#cfe0f7">ready to check</text>
+  <text x="220" y="140" font-size="17" fill="#8fb3e8">A team lead</text>
+  <text x="220" y="174" font-size="23" font-weight="700">A 40-page contract</text>
+  <text x="220" y="308" font-size="23" font-weight="700">Document to action brief</text>
+  <text x="220" y="340" font-size="17" fill="#cfe0f7">Exact words on every line</text>
+  <text x="220" y="470" font-size="22" font-weight="700">What it asks of you, by when</text>
+  <text x="220" y="502" font-size="17" fill="#cfe0f7">ready to check</text>
 </g>
-<!-- example c: developer -->
 <g class="cy c" fill="#fff" text-anchor="middle">
-  <text x="140" y="165" font-size="16" fill="#8fb3e8">A developer</text>
-  <text x="140" y="200" font-size="21" font-weight="700">A new</text>
-  <text x="140" y="228" font-size="21" font-weight="700">internal tool</text>
-  <text x="400" y="185" font-size="22" font-weight="700">Agentic Process</text>
-  <text x="400" y="218" font-size="16" fill="#cfe0f7">A harness: method,</text>
-  <text x="400" y="240" font-size="16" fill="#cfe0f7">example and a test</text>
-  <text x="660" y="185" font-size="20" font-weight="700">Built to a</text>
-  <text x="660" y="212" font-size="20" font-weight="700">tested standard</text>
-  <text x="660" y="240" font-size="16" fill="#cfe0f7">and reusable</text>
+  <text x="220" y="140" font-size="17" fill="#8fb3e8">A developer</text>
+  <text x="220" y="174" font-size="23" font-weight="700">A new internal tool</text>
+  <text x="220" y="308" font-size="23" font-weight="700">Agentic Process</text>
+  <text x="220" y="340" font-size="17" fill="#cfe0f7">A method, an example and a test</text>
+  <text x="220" y="470" font-size="22" font-weight="700">Built to a tested standard</text>
+  <text x="220" y="502" font-size="17" fill="#cfe0f7">and reusable</text>
 </g>
-
-<!-- you decide -->
-<g transform="translate(660 300)">
-  <circle r="17" fill="#ffd23f"/>
-  <path class="tick" d="M-8 0l6 6 11-12" fill="none" stroke="#0c2340" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<g transform="translate(140 556)">
+  <circle r="15" fill="#ffd23f"/>
+  <path class="tick" d="M-7 0l5 5 10-11" fill="none" stroke="#0c2340" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
 </g>
-<text x="660" y="343" text-anchor="middle" fill="#fff" font-size="16">You check and decide</text>
-
-<!-- the people line -->
-<line x1="60" y1="385" x2="740" y2="385" stroke="#8fb3e8" stroke-width="2" opacity=".5"/>
-<g fill="#ffd23f"><circle class="cy a" cx="170" cy="385" r="8"/><circle class="cy b" cx="400" cy="385" r="8"/><circle class="cy c" cx="630" cy="385" r="8"/></g>
-<g fill="#8fb3e8" font-size="15" text-anchor="middle">
-  <text x="100" y="375">Business people</text>
-  <text x="700" y="375">Developers</text>
-</g>
-<text x="400" y="412" text-anchor="middle" fill="#ffd23f" font-size="18" font-weight="700">The same tools across the line: time back on every repeat</text>
+<text x="164" y="562" fill="#fff" font-size="18" font-weight="600">You check and decide</text>
+<line x1="30" y1="600" x2="410" y2="600" stroke="#8fb3e8" stroke-width="2" opacity=".5"/>
+<g fill="#ffd23f"><circle class="cy a" cx="90" cy="600" r="7"/><circle class="cy b" cx="220" cy="600" r="7"/><circle class="cy c" cx="350" cy="600" r="7"/></g>
+<g fill="#8fb3e8" font-size="15"><text x="30" y="590">Business people</text><text x="410" y="590" text-anchor="end">Developers</text></g>
+<text x="220" y="638" text-anchor="middle" fill="#ffd23f" font-size="20" font-weight="700">Everyone an agentic engineer</text>
 </svg>

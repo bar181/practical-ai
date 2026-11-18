@@ -4,9 +4,9 @@
 <style>
 .bar{transform-box:fill-box;transform-origin:left;animation:grow 1.6s ease-out both}
 .b2{animation-delay:.4s}
-.lab{opacity:0;animation:show .5s ease-out 1.6s forwards}
+.lab{animation:show .5s ease-out 1.6s both}
 @keyframes grow{from{transform:scaleX(0)}to{transform:none}}
-@keyframes show{to{opacity:1}}
+@keyframes show{from{opacity:0}to{opacity:1}}
 @media (prefers-reduced-motion:reduce){.bar,.lab{animation:none;opacity:1}}
 </style>
 <rect width="800" height="400" rx="22" fill="#0c2340"/>

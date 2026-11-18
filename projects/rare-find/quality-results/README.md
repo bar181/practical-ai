@@ -1,6 +1,6 @@
 # Quality results: Rare Find
 
-**Built and machine-tested; not yet played by people or in the real Claude artifact runtime.**
+**Built and machine-tested. As of 18 November 2026, users are testing it; their results are not in yet.**
 
 ## How it was tested
 
@@ -44,8 +44,8 @@ passed `check_packs.py`. Claude spot-checked a sample of them; no person has rea
 | The author, with Claude, building it | Yes |
 | The automated playtest, with a mock of Claude | Yes |
 | Fresh reviewer agents, with a mock of Claude | Yes, six loops |
-| The real Claude artifact runtime | **No.** The artifact is published and public; nobody has played it there |
-| Real players, a friend opening a challenge link, a screen reader, ChatGPT | **No** |
+| Users, in the Claude artifact or the web copy | **In progress** since 18 November 2026. No results yet |
+| A screen reader, ChatGPT | **No** |
 
 The answer lists are Claude's estimates, not a survey. The research behind the rules is in
 [`../_build/PLAN.md`](../_build/PLAN.md).

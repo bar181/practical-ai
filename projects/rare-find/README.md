@@ -112,10 +112,10 @@ one in settings, or turn them off.
 
 ## Status
 
-**Machine-tested, not yet played by people.** 82 of 82 automated checks pass at phone and desktop
+**In user testing.** As of 18 November 2026, users are playing it; their results are not in yet.
+82 of 82 automated checks pass at phone and desktop
 width, with Claude replaced by a mock. Fresh AI reviewers scored earlier versions over six loops;
-nobody has re-scored this version. Not yet tried: real players, the real Claude artifact runtime, a
-screen reader and ChatGPT. The 100 newest prompts were spot-checked by Claude, not read in full by a
+nobody has re-scored this version. Not yet tried: a screen reader and ChatGPT. The 100 newest prompts were spot-checked by Claude, not read in full by a
 person. [The evidence](quality-results/README.md).
 
 ## For builders
