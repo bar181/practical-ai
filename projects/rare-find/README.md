@@ -13,10 +13,10 @@ Asked to name a bird, anyone can say "Eagle". Say "Shoebill" and you take the ro
   <a href="https://bar181.github.io/practical-ai/rare-find/"><img src="_build/img/btn-play-web.svg" height="48" alt="Play in any browser"></a>
 </p>
 
-<p align="center"><b>Free</b> &nbsp;·&nbsp; <b>5 prompts a day</b> &nbsp;·&nbsp; <b>125 in the bank</b><br><b>Phone or computer</b> &nbsp;·&nbsp; <b>No account</b></p>
+<p align="center"><b>Free</b> &nbsp;·&nbsp; <b>7 prompts a day</b> &nbsp;·&nbsp; <b>125 in the bank</b><br><b>Phone or computer</b> &nbsp;·&nbsp; <b>No account</b></p>
 
 <p align="center">
-  <img src="_build/img/store-1-today.webp" width="170" alt="Five prompts a day: the home screen, with today's game, a practice round and the scoring labels">
+  <img src="_build/img/store-1-today.webp" width="170" alt="Seven prompts a day: the home screen, with today's game, a practice round and the scoring labels">
   <img src="_build/img/store-2-result.webp" width="170" alt="The rare answer wins: Hoatzin for Name a bird is a Gem worth 100, with a comment from Madame Zara and the top ten">
   <img src="_build/img/store-3-scorecard.webp" width="170" alt="See where you stand: the Scorecard, with today's score on an estimated chart, the week and the streak">
   <img src="_build/img/store-4-settings.webp" width="170" alt="Play it your way: settings for the timer, prompts per game, the hosts and your name">
@@ -24,13 +24,13 @@ Asked to name a bird, anyone can say "Eagle". Say "Shoebill" and you take the ro
 
 ## About this game
 
-Each day brings five prompts: short questions such as **"Name a bird"**. You get 30 seconds to
+Each day brings seven prompts: short questions such as **"Name a bird"**. You get 30 seconds to
 type one answer. A popular answer scores 25. A right answer that few people think of scores up to
 100. Four hosts tease each answer, never you. A new set arrives every day, and it is the same for
 everyone, wherever you play: in Claude, in ChatGPT or another chatbot, or in any browser.
 
 <p align="center">
-  <img src="_build/img/how-it-plays.svg" width="680" alt="Animation: the prompt Name a bird with a timer ring, then four answers in turn with their points: Eagle, the crowd pick, 25; Flamingo, 9th most popular, 38; Hummingbird, right but beyond the top ten, a Good find, 80; Shoebill, rare and right, a Gem, 100. A bar grows with the points. The rarer the right answer, the more it scores.">
+  <img src="_build/img/how-it-plays.svg" width="680" alt="Animation: the prompt Name a bird with a timer ring, then four answers in turn with their points: Eagle, the crowd pick, 25; Flamingo, 9th most popular, 38; Cassowary, right but beyond the top ten, a Good find, 85; Shoebill, rare and right, a Gem, 100. A bar grows with the points. The rarer the right answer, the more it scores.">
 </p>
 
 ## Get started
@@ -38,7 +38,7 @@ everyone, wherever you play: in Claude, in ChatGPT or another chatbot, or in any
 1. Press **Play in Claude**, **Play in ChatGPT** or **Play in any browser**. Nothing to install.
 2. Press **Play today's game**, read the prompt and type your answer. Small spelling slips count.
 3. See your points, the top ten and a host's comment. Then the next prompt.
-4. After five prompts, see your place on the chart and **challenge a friend**.
+4. After seven prompts, see your place on the chart and **challenge a friend**.
 
 Want more? A **practice round** gives you 5, 10 or 25 more prompts, up to 100 a day.
 
@@ -46,7 +46,7 @@ Want more? A **practice round** gives you 5, 10 or 25 more prompts, up to 100 a 
 | --- | --- |
 | The most popular answer | 25 |
 | 2nd to 10th most popular | Between 25 and 60. Lower on the list scores more |
-| Right, but not in the top ten | 80 for answers on our list; 60 to 80 when the AI checks one that is not, more the less common it is |
+| Right, but not in the top ten: a **Good find** | Up to 90. The less common the answer, the more it scores |
 | A rare right answer: a **Gem** | 100 |
 | Wrong, or out of time | 0 |
 
@@ -55,9 +55,9 @@ game, so you can play again. "Name a bird" is the demo on this page, so two of i
 
 **Not on the list?** Press **Check again**: the AI checks the answer is real and right, and forgives
 small slips ("big hero 5" for an animated film counts as Big Hero 6). A right answer that matches one
-on our list gets that answer's points; any other scores 60 to 80, more the less common it is, or 100
-if it is rare. Not convinced? **Check again** once more for a second opinion. Nothing is ever
-approved without the AI's yes, and the hosts keep you company while it checks. A place's own name
+on our list gets that answer's points; any other is a Good find, scored by how rare the AI rates
+it, or a Gem if it is a real rarity. Each answer is checked once. Nothing is ever approved without
+the AI's yes, and the hosts keep you company while it checks. A place's own name
 counts without its title, so "Helens" is Mount St. Helens. In a browser with no AI, an answer that
 is not on the list scores 0.
 
@@ -82,9 +82,13 @@ game screen, with the timer, the effects and the scorecard.
 
 ## Challenge a friend
 
-At the end of a game, add your name and press **Copy challenge**. You get one link. Your friend
-opens it in any browser, plays your exact prompts and sees your score after each answer. No sign-in
-and no cost.
+At the end of a game, add your name and press **Copy challenge**. The message leads with a link to
+the game in Claude, where unusual answers can be checked, then a link for any browser, and the bare
+code in case a link opens on the home screen. Your friend plays your exact prompts and sees your
+score after each answer. No sign-in and no cost.
+
+If your friend pastes the message into a chatbot, a last line tells it to open the game rather than
+answer the prompts itself. A tester's chatbot did answer them before that line was added.
 
 ## Questions
 
@@ -99,7 +103,7 @@ fresh lines run on your own chatbot plan. The web copy runs no AI at all.
 <summary><b>Where do the questions come from?</b></summary>
 
 Claude drafted each prompt with a ranked top ten, five Gems and 20 or more other right answers. A
-script checks every one. A calendar fixes each day's five prompts, up to 11 December 2026 so far.
+script checks every one. A calendar fixes each day's seven prompts, up to 3 December 2026 so far.
 After that the game picks them from the whole bank by date, so a day is never empty.
 </details>
 
@@ -114,7 +118,7 @@ like an instruction is never sent to it.
 <details>
 <summary><b>Is the chart real?</b></summary>
 
-No. It is an estimate of typical play, averaging about 154 of 500, and it says so on screen. There
+No. It is an estimate of typical play, averaging about 275 of 700, with about 1 game in 100 reaching 600, and it says so on screen. There
 is no shared scoreboard. Friends compare by challenge link.
 </details>
 
@@ -127,11 +131,28 @@ one in settings, or turn them off.
 
 ## What's new
 
+**Version 4.4, 18 November 2026: bigger celebrations, Good finds scored by rarity, seven prompts a day**
+
+- A Good find is no longer a flat 80. Each of the 4,607 Good finds on our lists has its own
+  rarity, 1 to 9, so it scores from 10 more than the prompt's 10th place up to 90. In "Name a
+  volcano", Mauna Kea scores 60 and Mount Pelee 79. The rarity is an AI's estimate, like the
+  rankings.
+- An answer the AI checks gets the same scale: it rates the rarity and the points follow.
+- **Check again** is a small button beside your 0. It checks once, then goes away.
+- One result card: the tier, the points, what counted and **Next question** sit together.
+  Comments come only from the host's bubble, never repeated in the card.
+- **Bigger celebrations that last longer with the points**: 1.5 seconds for the crowd pick, up to
+  3 seconds for 80 or more and for a Gem, with fireworks, confetti, stars, bubbles and rings in
+  different mixes so they vary. Next question works the whole time.
+- **Seven prompts a day**, up from five.
+- **A clearer challenge message**: the Claude link first, named, then the browser link, the bare
+  code, and a line telling a chatbot to open the game instead of playing it.
+
 **Version 4.2, 18 November 2026: celebrations**
 
 - Every right answer gets a celebration, and it grows with the points: a few sparks for the crowd
   pick, "Nice!" and more sparks for a popular one, stars and "Deep cut!" low in the top ten, a
-  firework and "Good find!" for 80, and a shower over the Gem reveal for 100. A strong final
+  firework and "Good find!" for a Good find, and a shower over the Gem reveal for 100. A strong final
   score gets its own burst.
 - The top ten sits in two columns, so the result fits on a phone screen.
 - The note about hidden Gems moved to settings.
@@ -163,10 +184,10 @@ one in settings, or turn them off.
 ## Status
 
 **In user testing.** As of 18 November 2026, users are playing it; their results are not in yet.
-118 of 118 automated checks pass at phone and desktop
+124 of 124 automated checks pass at phone and desktop
 width, with Claude replaced by a mock. In two blind reviews, fresh AI reviewers scored version 4
-91 and 86, against 84 and 82 for version 3, and both would replay version 4. Nobody has played
-version 4 in the real Claude artifact yet. The chat version passed two test games, played by a
+91 and 86, against 84 and 82 for version 3, and both would replay version 4. The owner has played
+version 4 in the real Claude app, up to the Check again fix; nobody has played version 4.4 there yet. The chat version passed two test games, played by a
 fresh AI session given the rules and the day's file; it has not been tried in ChatGPT itself. Not
 yet tried: a screen reader. The 100 newest prompts were spot-checked by Claude, not read in full by
 a person. [The evidence](quality-results/README.md).
@@ -178,7 +199,7 @@ a person. [The evidence](quality-results/README.md).
 | Level | What you get | Needs |
 | --- | --- | --- |
 | **1:** play | The daily game, practice, the hosts' written lines, the estimated chart | Any browser |
-| **2:** a chatbot joins in | The AI checks answers not on the list, with a second opinion; the hosts write fresh lines | The Claude artifact, or [the skill](base/SKILL.md) in ChatGPT or any chatbot |
+| **2:** a chatbot joins in | The AI checks answers not on the list, once each; the hosts write fresh lines | The Claude artifact, or [the skill](base/SKILL.md) in ChatGPT or any chatbot |
 | **3:** on the web | A public copy, rebuilt and tested by GitHub Actions on every change | GitHub Pages |
 
 | File | What it is |

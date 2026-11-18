@@ -141,7 +141,7 @@ checks answers that are not on the list and four hosts tease every answer. One l
 friend.
 
 <p align="center">
-  <img src="projects/rare-find/_build/img/how-it-plays.svg" width="620" alt="Animation: the prompt Name a bird, then four answers in turn with their points: Eagle, the crowd pick, 25; Flamingo, 9th most popular, 38; Hummingbird, right but beyond the top ten, 80; Shoebill, rare and right, a Gem, 100. It loops. The rarer the right answer, the more it scores.">
+  <img src="projects/rare-find/_build/img/how-it-plays.svg" width="620" alt="Animation: the prompt Name a bird, then four answers in turn with their points: Eagle, the crowd pick, 25; Flamingo, 9th most popular, 38; Cassowary, right but beyond the top ten, 85; Shoebill, rare and right, a Gem, 100. It loops. The rarer the right answer, the more it scores.">
 </p>
 
 <p align="center"><a href="https://claude.ai/artifact/HyfbDjPjofvRttRYKgMCis"><b>Play in Claude</b></a> &nbsp;·&nbsp; <a href="projects/rare-find/#play-in-chatgpt-or-any-chatbot"><b>Play in ChatGPT</b></a> &nbsp;·&nbsp; <a href="https://bar181.github.io/practical-ai/rare-find/"><b>Play in any browser</b></a> &nbsp;·&nbsp; <a href="projects/rare-find/"><b>About the game</b></a> &nbsp;·&nbsp; <a href="https://bar181.github.io/practical-ai/rare-find/how-it-was-made.html"><b>How it was made</b></a></p>

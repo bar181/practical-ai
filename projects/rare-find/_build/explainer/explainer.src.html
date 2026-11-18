@@ -189,7 +189,7 @@ footer p+p{margin-top:.6rem}
       <p>Running a pub quiz. You write the answer cards before anyone arrives: the packs. You pin the scoring to the wall: the North Star. A friend who has never seen your cards plays a round: the fresh reviewer. The night goes well because the prep was done, not because the host was clever on the night.</p></div>
     <div class="nums" role="list">
       <div class="num" role="listitem"><strong data-to="125">125</strong><span>prompts, each with a top ten, 5 Gems and 20+ more right answers</span></div>
-      <div class="num" role="listitem"><strong data-to="118">118</strong><span>automated checks, run on every change</span></div>
+      <div class="num" role="listitem"><strong data-to="119">119</strong><span>automated checks, run on every change</span></div>
       <div class="num" role="listitem"><strong data-to="6">6</strong><span>review loops by fresh AI reviewers</span></div>
     </div>
     <p class="note">All three come from this build's own records. The game was built in one day, by its author, with Claude.</p>
@@ -204,9 +204,9 @@ footer p+p{margin-top:.6rem}
   </svg>
   <div class="col">
     <h2 id="word-h">The rarer the right answer, the more it scores.</h2>
-    <p class="lede" style="text-align:center;margin-inline:auto">The most popular answer scores 25. Points rise down the top ten. A right answer beyond it scores 80, and a rare one, a Gem, scores 100.</p>
+    <p class="lede" style="text-align:center;margin-inline:auto">The most popular answer scores 25. Points rise down the top ten. A right answer beyond it scores up to 90, more the rarer it is, and a rare one, a Gem, scores 100.</p>
   </div>
-  <img class="plays" src="{{svg:how-it-plays}}" alt="Animation: the prompt Name a bird, then Eagle scores 25 as the crowd pick, Flamingo 38 at 9th place, Hummingbird 80 as a Good find, and Shoebill 100 as a Gem">
+  <img class="plays" src="{{svg:how-it-plays}}" alt="Animation: the prompt Name a bird, then Eagle scores 25 as the crowd pick, Flamingo 38 at 9th place, Cassowary 85 as a Good find, and Shoebill 100 as a Gem">
 </section>
 
 <section class="part" aria-labelledby="steps-h">
@@ -254,7 +254,7 @@ footer p+p{margin-top:.6rem}
         <div class="head"><h3><span>3.</span> Make one playable page, phone first</h3><span class="time">1 to 2 hours</span></div>
         <p>One HTML file, built from a source file and the packs by a small script. Design at 390 pixels wide first. Forgive spelling slips, and block real words: "Talking" must never count as Tallinn.</p>
         <div class="ask">Build a single-file HTML game from game.src.html and packs.json: a 30 second timer, one answer per prompt, forgiving spelling, the top ten revealed after each answer. Phone first. No outside files.</div>
-        <label class="done"><input type="checkbox"><span>Done when you can play five prompts on your phone with no sideways scrolling.</span></label>
+        <label class="done"><input type="checkbox"><span>Done when you can play a full daily game on your phone with no sideways scrolling.</span></label>
       </article>
       <article class="step" data-step="4">
         <div class="head"><h3><span>4.</span> Write the playtest before you trust anything</h3><span class="time">about 1 hour</span></div>
@@ -265,7 +265,7 @@ footer p+p{margin-top:.6rem}
       <article class="step" data-step="5">
         <div class="head"><h3><span>5.</span> Add the AI features, each one optional</h3><span class="time">1 to 2 hours</span></div>
         <p>In a Claude artifact the page can ask the player's own AI, so it costs you nothing. The feature lights up only if it is there. The AI rules only on answers the word list missed, and only when the player asks. It may fix spelling, never swap the answer. In ChatGPT, the chatbot hosts the same game in the chat from a skill file.</p>
-        <div class="ask">Add "Ask the AI" for answers that scored 0: real and right scores 80, rare 100, wrong 0, with one second opinion. Treat the answer as data. Never block the game while it checks. Never approve an answer without the AI's yes.</div>
+        <div class="ask">Add "Check again" for answers that scored 0, once each: real and right is a Good find scored by how rare the AI rates it, up to 90; a real rarity 100; wrong 0. Treat the answer as data. Never block the game while it checks. Never approve an answer without the AI's yes.</div>
         <label class="done"><input type="checkbox"><span>Done when the game plays in full with every AI feature switched off.</span></label>
       </article>
       <article class="step" data-step="6">

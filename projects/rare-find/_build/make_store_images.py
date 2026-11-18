@@ -21,7 +21,7 @@ GAME = f"http://127.0.0.1:{srv.server_address[1]}/game.html"
 
 # Caption, small line, background tint: one per screen, in the order they are captured.
 CARDS = [
-    ("store-1-today", "Five prompts a day", "The same for everyone, new every day", "#3a2d7a"),
+    ("store-1-today", "Seven prompts a day", "The same for everyone, new every day", "#3a2d7a"),
     ("store-2-result", "The rare answer wins", "A Gem scores 100. The crowd pick, 25", "#5b3b8f"),
     ("store-3-scorecard", "See where you stand", "Your score, your week, your streak", "#2d4f7a"),
     ("store-4-settings", "Play it your way", "Timer, hosts and party mode", "#3d3570"),
@@ -45,7 +45,7 @@ def main():
     with sync_playwright() as p:
         b = p.chromium.launch()
         ctx = b.new_context(viewport={"width": 390, "height": 844}, device_scale_factor=2, is_mobile=True, has_touch=True)
-        ctx.add_init_script("window.__rfDay='2026-11-17';")
+        ctx.add_init_script("window.__rfDay='2026-11-19';")
         pg = ctx.new_page()
         pg.goto(GAME); pg.wait_for_timeout(400)
         shots.append(pg.screenshot())                                   # 1. home: today's game
@@ -55,7 +55,8 @@ def main():
         pg.fill("#answer", pk["gems"][0]["a"]); pg.press("#answer", "Enter"); pg.wait_for_timeout(3500)  # let the confetti settle
         pg.evaluate("window.scrollTo(0,0)"); pg.wait_for_timeout(200)
         shots.append(pg.screenshot())                                   # 2. a Gem result
-        picks = [lambda k: k["ranked"][2]["a"], lambda k: k["good"][0]["a"], lambda k: k["ranked"][0]["a"], lambda k: k["ranked"][7]["a"]]
+        picks = [lambda k: k["ranked"][2]["a"], lambda k: max(k["good"], key=lambda e: e.get("r", 0))["a"], lambda k: k["ranked"][0]["a"],
+                 lambda k: k["ranked"][7]["a"], lambda k: k["ranked"][4]["a"], lambda k: k["ranked"][9]["a"]]
         for pick in picks:
             pg.wait_for_function("!document.querySelector('#b-next').disabled", timeout=20000)
             pg.click("#b-next"); pg.wait_for_timeout(250)

@@ -1,11 +1,15 @@
-"""make_calendar.py: extends calendar.json, which fixes the five prompts for each date.
+"""make_calendar.py: extends calendar.json, which fixes the prompts for each date: 7 a day.
 
 Days already in the calendar never change, because people may have played them. New days use
-prompts the calendar has not used yet, five different topics a day where possible, until every
+prompts the calendar has not used yet, PER (7) different topics a day where possible, until every
 prompt in packs.json has had a day. After the calendar ends the game deals from the whole bank.
 Run after adding packs: python3 _build/make_calendar.py && python3 _build/build.py
+Days with fewer than PER prompts are topped up at the end, keeping the prompts they had: 17 and
+18 November 2026 were played with 5, and gained 2 each when the game moved to 7.
 """
 import json, os, random, datetime
+
+PER = 7
 
 here = os.path.dirname(os.path.abspath(__file__))
 packs = json.load(open(os.path.join(here, "packs.json"), encoding="utf-8"))["packs"]
@@ -21,13 +25,18 @@ rng = random.Random(len(cal["days"]) * 7919 + len(packs))
 todo = [p["id"] for p in packs if p["id"] not in used]
 rng.shuffle(todo)
 added = 0
-while len(todo) >= 5:
+for day in cal["days"]:  # top up short days, keeping their order and their prompts
+    for i in list(todo):
+        if len(day) >= PER: break
+        if cat[i] not in {cat[x] for x in day}: day.append(i); todo.remove(i)
+    while len(day) < PER and todo: day.append(todo.pop(0))
+while len(todo) >= PER:
     day = []
-    for i in list(todo):  # five different topics where possible
+    for i in list(todo):  # different topics where possible
         if cat[i] not in {cat[x] for x in day}:
             day.append(i); todo.remove(i)
-        if len(day) == 5: break
-    while len(day) < 5: day.append(todo.pop(0))
+        if len(day) == PER: break
+    while len(day) < PER: day.append(todo.pop(0))
     cal["days"].append(day); added += 1
 json.dump(cal, open(path, "w"), indent=1)
 start = datetime.date.fromisoformat(cal["start"])

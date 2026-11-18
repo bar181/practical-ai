@@ -47,6 +47,9 @@ for path in sys.argv[1:]:
                     if not n: bad(f"empty answer in {group}"); continue
                     if n in forms and forms[n] != e["a"]: bad(f"'{f}' appears under '{forms[n]}' and '{e['a']}'")
                     forms[n] = e["a"]
+        for e in p.get("good", []):
+            if isinstance(e, dict) and "r" in e and not (isinstance(e["r"], int) and 1 <= e["r"] <= 9):
+                bad(f"good answer '{e.get('a')}' needs r, its rarity, as a whole number 1 to 9")
         for w in p.get("wrong", []):
             if norm(w) in forms: bad(f"wrong answer '{w}' is also a right answer")
 print("all packs pass" if not errors else f"{errors} problems")
