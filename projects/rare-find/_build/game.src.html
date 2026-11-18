@@ -165,6 +165,10 @@ details p{font-size:14px;color:var(--muted);margin:6px 0 0}
 .code{font-size:34px;font-weight:900;letter-spacing:.2em;text-align:center;margin:6px 0}
 .copybox{width:100%;min-height:80px;margin-top:8px}
 .challenge{border:2px solid var(--accent)}
+.about{display:flex;gap:12px;align-items:flex-start}.about img{border-radius:50%;flex:none;object-fit:cover}
+.about a,.credit a{color:var(--accent)}
+.credit{text-align:center;color:var(--muted);font-size:13px;padding:0 14px 28px;max-width:760px;margin:0 auto}
+.rival{margin:0;font-weight:700;color:var(--muted)}.rival b{color:var(--text)}
 .pill{background:var(--panel2);border-radius:999px;padding:3px 10px;font-size:13px}
 .chl{border-top:1px solid var(--line);padding-top:8px;margin-top:8px}
 .chl h3{font-size:14px;color:var(--muted)}
@@ -219,6 +223,10 @@ details p{font-size:14px;color:var(--muted);margin:6px 0 0}
     <p class="small" style="margin:6px 0 0">Letters and numbers, up to 12. Others see it next to your score.</p></div>
   <div id="set-board"><label class="switch"><input type="checkbox" id="post" checked> Put my daily score on the scoreboard</label>
     <p class="small" id="board-note" style="margin:6px 0 0"></p></div>
+  <div class="about"><img src="__CREATOR_IMG__" width="72" height="72" alt="Bradley Ross">
+    <div><span class="lbl" style="margin:0">Made by Bradley Ross</span>
+      <p class="small" style="margin:4px 0 0">An agentic AI architect and developer for businesses of every size, from start-up to enterprise. Specialty: deterministic AI, and research into AI that transfers what it learns. 10 terms as a Harvard CS50 Teaching Fellow; Director at the Agentics Foundation; 12 practical AI courses taught to more than 900 students.</p>
+      <p class="small" style="margin:6px 0 0">Rare Find is a side quest in <a href="https://github.com/bar181/practical-ai">Practical AI</a>: free tools that make the AI you already use do professional work on the jobs you repeat. More information, training or feedback: <a href="https://www.linkedin.com/in/bradaross/">LinkedIn</a>.</p></div></div>
   <div><label class="lbl" for="glink">Link to this game, for challenges</label>
     <input class="input" id="glink" maxlength="200" placeholder="Blank: the main Rare Find game" style="width:100%">
     <p class="small" style="margin:6px 0 0">Challenge links open the main Rare Find game. Made your own copy? Paste its share link here.</p></div>
@@ -246,7 +254,7 @@ details p{font-size:14px;color:var(--muted);margin:6px 0 0}
       <div class="stack">
         <button class="btn primary wide" id="b-daily">Play today's game</button>
         <button class="btn wide" id="b-practice">Practice round</button>
-        <button class="btn wide" id="b-live" hidden>Play live with friends</button>
+        <button class="btn wide" id="b-live">Play with friends</button>
       </div>
       <details style="margin-top:10px"><summary>Got a challenge code from a friend?</summary>
       <form class="row" id="code-form" style="margin-top:8px"><label for="code-in" class="sr">Challenge code</label>
@@ -306,8 +314,15 @@ details p{font-size:14px;color:var(--muted);margin:6px 0 0}
 <!-- LIVE LOBBY -->
 <section id="live" hidden aria-labelledby="t-live">
   <div class="top"><button class="quit" id="b-live-back">✕ Back to start</button></div>
-  <h2 id="t-live">Play live with friends <span class="small">beta</span></h2>
-  <div class="card" id="live-start">
+  <h2 id="t-live">Play with friends</h2>
+  <div class="card challenge">
+    <h3 style="font-size:17px">Got a challenge from a friend?</h3>
+    <p class="small" style="margin:0 0 8px">Paste their link or code. You play the same prompts, with their result shown after each one.</p>
+    <form class="row" id="code-form3"><label for="code-in3" class="sr">Challenge link or code</label>
+      <input class="input" id="code-in3" maxlength="300" placeholder="RF1... or the whole link" style="flex:1" autocapitalize="off" spellcheck="false"><button class="btn primary">Play it</button></form>
+  </div>
+  <p class="small" id="live-none" hidden>Live rooms, where everyone answers at the same moment, work when this game runs as a Claude artifact. Challenges work everywhere.</p>
+  <div class="card" id="live-start"><h3 style="font-size:17px">Play live <span class="small">beta</span></h3>
     <p class="small" style="margin:0 0 10px">Everyone opens this game, one person starts a room, and the rest join with its code. You all answer the same prompt at the same time.</p>
     <button class="btn primary wide" id="b-host">Start a room</button>
     <form class="row" id="join-form" style="margin-top:10px"><label for="joincode" class="sr">Room code</label>
@@ -348,6 +363,7 @@ details p{font-size:14px;color:var(--muted);margin:6px 0 0}
       <div><div class="pts" id="pts">0</div><div class="counted" id="counted"></div></div>
     </div>
     <div class="check" id="check-row" hidden><button class="btn" id="b-check">Check with Claude</button><span class="small" id="check-note"></span></div>
+    <p class="rival" id="rival-row" hidden></p>
     <div class="host" id="talk-row" hidden><span class="face" id="talk-face" aria-hidden="true"></span><div class="bubble" id="talkline"></div></div>
     <div class="reveal-cols">
       <div class="reveal" id="reveal"></div>
@@ -372,12 +388,12 @@ details p{font-size:14px;color:var(--muted);margin:6px 0 0}
       <div class="chart" id="vs-board" hidden></div>
       <div class="card challenge" style="margin:4px 0;text-align:left">
         <h3 style="font-size:17px">Challenge a friend</h3>
-        <p class="small" style="margin:0 0 8px">One link: it opens Rare Find with these same prompts and shows your score to beat.</p>
+        <p class="small" style="margin:0 0 8px">The links open Rare Find with these same prompts and your score to beat. The code works in any copy of the game.</p>
         <div id="share-name-row"><label class="lbl" for="share-name">Your name on the challenge</label>
           <input class="input" id="share-name" maxlength="12" placeholder="e.g. Sam" style="width:100%;margin-bottom:8px" autocapitalize="off"></div>
         <label class="sr" for="share-link">Your challenge link</label>
-        <input class="input" id="share-link" readonly style="width:100%;font-size:14px;margin-bottom:8px">
-        <button class="btn primary wide" id="b-share">Copy challenge link</button>
+        <textarea class="input copybox" id="share-link" readonly style="font-size:13px;margin:0 0 8px;min-height:120px"></textarea>
+        <button class="btn primary wide" id="b-share">Copy challenge</button>
       </div>
       <textarea class="input copybox" id="share-text" readonly hidden aria-label="Your challenge to copy"></textarea>
       <div class="row" style="justify-content:center"><button class="btn" id="b-again">Practice round</button><button class="btn" id="b-tocard">Scorecard</button></div>
@@ -387,6 +403,7 @@ details p{font-size:14px;color:var(--muted);margin:6px 0 0}
   </div>
 </section>
 </div>
+<footer class="credit">Made by Bradley Ross · <a href="https://github.com/bar181/practical-ai">Practical AI on GitHub</a> · <a href="https://www.linkedin.com/in/bradaross/">LinkedIn</a></footer>
 <div class="toast" id="toast" hidden role="status"></div>
 
 <script>
@@ -582,7 +599,7 @@ async function initCaps(){
   const get=n=>withTimeout(Promise.resolve().then(()=>window.claude.use(n)),10000).catch(()=>null);
   const [sample,db,user,room]=await Promise.all(["sample","db","user","room"].map(get));
   Object.assign(caps,{sample,db,user,room});
-  if(room) $("#b-live").hidden=false;
+  renderLive();
   if(db&&user){ try{ ME=await user.id(); }catch(e){ ME=null; }
     // People with view access can read the scoreboard but not write to it: Claude only lets editors write shared data.
     try{ CANWRITE = typeof user.can==="function" ? await user.can("data.write") : null; }catch(e){ CANWRITE=null; }
@@ -748,7 +765,8 @@ function renderChallenge(){
 }
 function startChallenge(){ const c=PENDING; if(!c) return; PENDING=null; renderChallenge();
   const daily=dailyPacks(); const isToday=!S.days[dayKey()]&&c.packs.length===daily.length&&c.packs.every((p,i)=>p===daily[i]);
-  newGame(isToday?"daily":"challenge",{packs:c.packs}); }
+  newGame(isToday?"daily":"challenge",{packs:c.packs,rival:{name:c.name,score:c.score,tiers:c.tiers}}); }
+$("#code-form3").addEventListener("submit",e=>{ e.preventDefault(); if(takeCode($("#code-in3").value,"typed")) $("#code-in3").value=""; });
 $("#b-ch-play").addEventListener("click",startChallenge);
 $("#b-ch-no").addEventListener("click",()=>{ PENDING=null; renderChallenge(); });
 $("#code-form").addEventListener("submit",e=>{ e.preventDefault(); if(takeCode($("#code-in").value,"typed")) $("#code-in").value=""; });
@@ -785,7 +803,7 @@ function newGame(mode,opts={}){
     if(mode==="daily") packs=dailyPacks();
     else packs=practicePacks(S.count);
   }
-  G={packs,i:0,total:0,res:[],live:opts.live||null,token:0,id:Date.now(),pending:[],hostOffset:Math.floor(rnd()*HOSTS.length),day:dayKey()};
+  G={packs,i:0,total:0,res:[],rival:opts.rival||null,live:opts.live||null,token:0,id:Date.now(),pending:[],hostOffset:Math.floor(rnd()*HOSTS.length),day:dayKey()};
   const dt=$("#dots"); dt.textContent=""; if(packs.length<=10) packs.forEach(()=>dt.append(document.createElement("i")));
   G.perfect=100*packs.length; G.topics=[...new Set(packs.map(p=>p.cat))]; G.byTopic=packs.length>10;
   show("play"); startPrompt(opts.endsAt);
@@ -869,6 +887,9 @@ function showResult(){
   next.textContent = G.i+1<G.packs.length ? "Next ▸" : "See my score ▸";
   next.hidden = !!(G.live && !G.live.host && !G.live.orphan && G.i+1<G.packs.length);
   renderReveal(pack,m);
+  const rv=$("#rival-row"), rt=G.rival&&G.rival.tiers&&G.rival.tiers[G.i];
+  rv.hidden=!rt; if(rt){ const T={c:"crowd",p:"popular",t:"solid",g:"good",d:"gem",m:"miss",u:"unlisted"}[rt]; rv.textContent="";
+    const b=document.createElement("b"); b.textContent=`${G.rival.name}: `; rv.append(b,`${TIERS[T].sq} ${TIERS[T].name}`); }
   const ln=$("#live-note"); ln.hidden=!G.live;
   if(G.live) ln.textContent = G.live.host ? liveAnswered() : "Waiting for the host to start the next prompt...";
   const talkP = S.talk ? comment(cur) : ($("#talk-row").hidden=true, null);
@@ -997,13 +1018,19 @@ async function endGame(){
 }
 // The main published game. A copy published elsewhere sets its own link in settings.
 const HOME_LINK="https://claude.ai/artifact/HyfbDjPjofvRttRYKgMCis";
+const WEB_LINK="https://bar181.github.io/practical-ai/rare-find/";
 function challengeLink(g){ return `${S.link||HOME_LINK}#c-${makeCode(g)}`; }
-function renderShare(){ const g=G; if(!g) return; $("#share-name").value=S.nick; $("#share-link").value=challengeLink(g); }
-$("#share-name").addEventListener("input",e=>{ S.nick=e.target.value.replace(/[^A-Za-z0-9]/g,"").slice(0,12); saveLocal(); if(G) $("#share-link").value=challengeLink(G); });
+function challengeText(g){ const code=makeCode(g);
+  return `I scored ${g.total} of ${g.perfect} on Rare Find${S.mode==="daily"?" today":""}. Same ${g.packs.length} prompts: can you beat me?
+Play in any browser: ${WEB_LINK}#c-${code}
+Play in Claude: ${challengeLink(g)}
+Or open Rare Find, tap Play with friends, and enter: ${code}`; }
+function renderShare(){ const g=G; if(!g) return; $("#share-name").value=S.nick; $("#share-link").value=challengeText(g); }
+$("#share-name").addEventListener("input",e=>{ S.nick=e.target.value.replace(/[^A-Za-z0-9]/g,"").slice(0,12); saveLocal(); if(G) $("#share-link").value=challengeText(G); });
 $("#share-name").addEventListener("change",e=>{ e.target.value=S.nick; $("#nick").value=S.nick; });
 $("#share-link").addEventListener("focus",e=>e.target.select());
 $("#b-share").addEventListener("click",()=>{ const g=G; if(!g) return;
-  copyText(`I scored ${g.total} of ${g.perfect} on Rare Find${S.mode==="daily"?" today":""}. Same ${g.packs.length} prompts: can you beat me?\n${challengeLink(g)}`,"Challenge link copied. Paste it to a friend."); });
+  copyText(challengeText(g),"Challenge copied. Paste it to a friend."); });
 $("#b-again").addEventListener("click",()=>{ if(S.mode==="live"&&P){ $("#live-start").hidden=true; $("#live-room").hidden=false; show("live"); return; } newGame("practice"); });
 $("#b-tocard").addEventListener("click",()=>{ goStart(); setTab("card"); });
 function askLeave(){ if(S.screen!=="play"||!G) return; $("#leave").hidden=false; $("#answer").disabled=true; if(!G.locked&&!G.live){ G.pausedLeft=G.endsAt-Date.now(); clearInterval(tick); } $("#b-leave-no").focus(); }
@@ -1029,7 +1056,8 @@ function confetti(n){
 
 /* ---------- live with friends (beta): everyone with the game open answers the same prompt at once ---------- */
 let P=null;
-$("#b-live").addEventListener("click",()=>{ $("#live-start").hidden=false; $("#live-room").hidden=true; show("live"); });
+function renderLive(){ $("#live-start").hidden=!caps.room; $("#live-none").hidden=!!caps.room; }
+$("#b-live").addEventListener("click",()=>{ renderLive(); $("#live-room").hidden=true; show("live"); });
 async function enterRoom(code,host){
   const me = ME || (caps.user ? await caps.user.id().catch(()=>null) : null);
   const r=caps.room.join("rf-"+code); P={r,code,host,me:me||("p"+Math.floor(rnd()*1e6)),peers:[],scores:{},answered:{},names:{}};

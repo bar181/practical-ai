@@ -171,12 +171,12 @@ with sync_playwright() as pw:
         ch_prompts.append(pid_of(pg)); answer(pg, pack(pg, pid_of(pg))["ranked"][k]["a"], 500); nxt(pg)
     pg.wait_for_timeout(800); host_total = int(pg.inner_text("#final"))
     pg.fill("#share-name", "Sam"); pg.wait_for_timeout(100)
-    link = pg.input_value("#share-link")
-    code = link.split("#c-", 1)[1] if "#c-" in link else ""
-    check("challenge: the end screen shows one link to the same prompts, with the score and name", link.startswith("https://claude.ai/artifact/") and code.startswith("RF1") and f"-{host_total}-" in code and code.endswith("-Sam"), link)
+    msg = pg.input_value("#share-link")
+    links = [w for w in msg.split() if "#c-" in w]; code = msg.strip().split()[-1]
+    check("challenge: the end screen gives a browser link, a Claude link and the bare code, with score and name", len(links) == 2 and any("github.io" in l for l in links) and any("claude.ai/artifact/" in l for l in links) and code.startswith("RF1") and f"-{host_total}-" in code and code.endswith("-Sam") and all(l.endswith(code) for l in links), msg)
     pg.click("#b-share"); pg.wait_for_timeout(300)
     shared = (pg.evaluate("document.querySelector('#share-text').value") or "") + pg.inner_text("#toast")
-    check("challenge: copying gives a one-line invite and the link", ("can you beat me" in shared and link in shared) or "link copied" in shared, shared)
+    check("challenge: copying gives the whole invitation", ("can you beat me" in shared and code in shared) or "copied" in shared, shared)
     friend = b.new_context(viewport={"width": 390, "height": 844}); fp = friend.new_page(); fe = []; fp.on("pageerror", lambda e: fe.append(str(e)))
     fp.goto(GAME); fp.wait_for_timeout(200)
     fp.click("#b-settings"); fp.click("#seg-count button[data-n='10']"); fp.click("#b-settings")
@@ -185,17 +185,22 @@ with sync_playwright() as pw:
     fp.click("#b-ch-play"); fp.wait_for_timeout(200)
     got = []
     for k in range(5):
-        got.append(pid_of(fp)); answer(fp, pack(fp, pid_of(fp))["gems"][0]["a"], 500); nxt(fp)
+        got.append(pid_of(fp)); answer(fp, pack(fp, pid_of(fp))["gems"][0]["a"], 500)
+        if k == 0: check("challenge: after each answer you see the challenger's result for that prompt", fp.is_visible("#rival-row") and "Sam:" in fp.inner_text("#rival-row") and "Crowd pick" in fp.inner_text("#rival-row"), fp.inner_text("#rival-row"))
+        nxt(fp)
     check("challenge: the friend plays exactly the same prompts, whatever their own settings", got == ch_prompts, (got, ch_prompts))
     fp.wait_for_timeout(800)
     check("challenge: the friend's end screen shows both scores", fp.is_visible("#vs-board") and str(host_total) in fp.inner_text("#vs-board") and "You" in fp.inner_text("#vs-board"), fp.inner_text("#vs-board"))
     fp.click("#b-share"); fp.wait_for_timeout(300)
-    code2 = fp.input_value("#share-link")  # the whole link, as a friend would paste it
+    code2 = [w for w in fp.input_value("#share-link").split() if "#c-" in w][0]  # the whole link, as a friend would paste it
     pg.click("#b-tocard"); pg.wait_for_timeout(200); pg.fill("#code-in2", code2); pg.press("#code-in2", "Enter"); pg.wait_for_timeout(300)
     check("challenge: the friend's link pasted back puts both on that game's scoreboard", "500" in pg.inner_text("#chl-list") and "You" in pg.inner_text("#chl-list"), pg.inner_text("#chl-list"))
     fake = pg.evaluate("(c)=>!!window.__rf.parseCode(c)", code.split("-")[0] + "-500-mmmmm")
     check("challenge: a code whose score its answers cannot add up to is refused", not fake, code)
-    pg.click("#tab-play"); pg.click("#code-form >> xpath=../summary"); pg.fill("#code-in", "RF1zz-9999"); pg.press("#code-in", "Enter"); pg.wait_for_timeout(200)
+    pg.click("#tab-play"); pg.click("#b-live"); pg.wait_for_timeout(150)
+    check("challenge: Play live with friends has a box for a friend's link or code", pg.is_visible("#code-in3"))
+    pg.click("#b-live-back"); pg.wait_for_timeout(100)
+    pg.click("#code-form >> xpath=../summary"); pg.fill("#code-in", "RF1zz-9999"); pg.press("#code-in", "Enter"); pg.wait_for_timeout(200)
     check("challenge: a broken code is refused with a plain message", "does not look right" in pg.inner_text("#toast") and pg.evaluate("window.__rf.state().screen") == "home", pg.inner_text("#toast"))
     check("challenge: no errors on the friend's page", not fe, fe)
     # prompts per game: 10, and party mode with 25 by topic
@@ -312,7 +317,11 @@ with sync_playwright() as pw:
     ctx2 = b.new_context(); ctx2.add_init_script(MOCK + "window.__nocaps=true;")
     p4 = ctx2.new_page(); e4 = []; p4.on("pageerror", lambda e: e4.append(str(e)))
     p4.goto(GAME); p4.wait_for_timeout(800)
-    check("with every capability null, live play and scoreboard settings hide", p4.is_hidden("#b-live") and p4.evaluate("document.querySelector('#set-board').hidden"))
+    p4.click("#b-live"); p4.wait_for_timeout(150)
+    check("with every capability null, live rooms and scoreboard settings hide, and challenges stay", p4.is_hidden("#live-start") and p4.is_visible("#live-none") and p4.is_visible("#code-in3") and p4.evaluate("document.querySelector('#set-board').hidden"))
+    p4.click("#b-live-back"); p4.click("#b-settings"); p4.wait_for_timeout(300)
+    check("settings: about the creator, with a photo and links to the repo and LinkedIn", p4.is_visible(".about img") and p4.evaluate("document.querySelector('.about img').naturalWidth") > 0 and "github.com/bar181/practical-ai" in p4.inner_html(".about") and "linkedin.com/in/bradaross" in p4.inner_html(".about"))
+    check("a credit line with both links sits at the bottom", "Bradley Ross" in p4.inner_text(".credit") and p4.evaluate("document.querySelectorAll('.credit a').length") == 2)
     check("no errors when capabilities are null", not e4, e4)
 
     # ---- 6. reduced motion ----
@@ -327,3 +336,4 @@ json.dump({"passed": passed, "total": len(checks), "checks": checks}, open(f"{ou
 print(f"{passed}/{len(checks)} checks passed")
 for c in checks:
     if not c["pass"]: print("FAIL", c["check"], "::", c["detail"])
+sys.exit(0 if passed == len(checks) else 1)

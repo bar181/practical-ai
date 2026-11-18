@@ -8,7 +8,8 @@ You are here because a person wants to play Rare Find, or to change it. People s
 | Where they are | Do this |
 | --- | --- |
 | Claude, with a shared Rare Find artifact link | Give them the link. The game runs in the artifact and uses their own Claude session for the answer check, the fresh last prompt and trash talk |
-| Claude, no link | Point them to [`base/game.html`](base/game.html): download it and open it in a browser. It plays in full on the built-in packs; the Claude features hide |
+| Claude, no link | Give them https://claude.ai/artifact/HyfbDjPjofvRttRYKgMCis, or point them to [`base/game.html`](base/game.html) to open in a browser |
+| Any browser, no account | https://bar181.github.io/practical-ai/rare-find/ (published by `.github/workflows/rare-find-pages.yml` once Pages is on). The Claude features hide; challenges work |
 | ChatGPT or another chatbot | The same file, opened in a browser. Or build a simpler version with [`base/try-it-prompt.txt`](base/try-it-prompt.txt), which is a draft and not yet tested |
 
 ## If the person wants to change it

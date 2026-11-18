@@ -32,7 +32,7 @@ Then a comment from an AI host with a sense of humour, the top ten, and your pla
 | --- | --- | --- | --- |
 | **1. Play** | Today's game (same five prompts for everyone on a date), practice rounds, the timer, forgiving spelling, the top-ten reveal, the persona commentators' written lines, the estimated chart, a week of scores in this browser | A browser | Always works |
 | **2. Your account** | Scores saved to your Claude account; the AI checks unlisted answers; the personas write fresh lines | A Claude artifact: `sample`, `db`, `user` | "We allow it" is the room's word; written lines |
-| **3. With friends** | A shared scoreboard for today; a friends group with a code and an invite; the chart switches to real scores at 5 players; live play with a room code (beta) | A shared Claude artifact: `db` rules, `room` | The friends card explains it needs a shared artifact |
+| **3. With friends, and on the web** | A shared scoreboard for today; a friends group with a code and an invite; the chart switches to real scores at 5 players; live play with a room code (beta); the web copy on GitHub Pages, rebuilt, playtested and published by GitHub Actions on every change, so challenge links open for anyone | A shared Claude artifact: `db` rules, `room`; GitHub Pages | The friends card explains it needs a shared artifact |
 
 ## Scoring
 
@@ -115,6 +115,7 @@ _build/game.src.html ┴─> build.py ─> base/game.html and base/examples/samp
 falsematch.py: real English words, with their suffixes, that must never count as a spelling slip
 playtest.py:   plays the built game at 390 and 1280 px, offline and with a mock of Claude
 add_packs.py:  the second set of nine packs
+.github/workflows/rare-find-pages.yml: build, check the committed copy matches, playtest, publish to Pages (main only)
 ```
 
 **Today's prompts.** Each cycle shuffles all 25 packs with a seed and deals five a day, so everyone

@@ -21,6 +21,10 @@ The person who says "Shoebill" takes the round.
 
 ## Get started
 
+**Play now in Claude:** [the Rare Find artifact](https://claude.ai/artifact/HyfbDjPjofvRttRYKgMCis).
+**In any browser, no account:** `https://bar181.github.io/practical-ai/rare-find/`. That site goes
+live once this branch is merged and GitHub Pages is switched on; until then it does not open.
+
 1. Download [`base/game.html`](base/game.html) and open it in any browser, on a phone or a computer.
    It plays in full with 25 built-in categories. Nothing to install, no account.
 2. For the Claude features, run it as a Claude artifact: upload the file to Claude and ask Claude to
@@ -57,15 +61,14 @@ film counts as Big Hero 6, worth 80. Think Claude got it wrong? **Check again**,
 commenting on each answer and its points. They tease the answer, never you. Pick one, or turn them
 off, in settings.
 
-**Challenge a friend.** At the end, add your name and press **Copy challenge link**. The link opens
-Rare Find with the same prompts and shows your score to beat, for example
-`https://claude.ai/artifact/...#c-RF1a3k0p-245-cptgd-Sam`. Your friend plays, and their own end
-screen gives them a link back. Paste their link or code on your Scorecard and you both appear on
-that game's scoreboard. The link opens the published Claude artifact, so the owner must share it by
-link and friends need a Claude account. Without Claude, the code part (`RF1...`) still works in the
-game file in any browser.
+**Challenge a friend.** At the end, add your name and press **Copy challenge**. It copies your score,
+two links and the code: a link for any browser (the GitHub Pages copy), a link for Claude, and the
+bare code, for example `RF1a3k0p-245-cptgd-Sam`. Each opens the same prompts with your score to beat,
+and shows your result after each of their answers. The code also works typed into **Play with
+friends**. Their own end screen gives them a challenge back; paste it on your Scorecard and you both
+appear on that game's scoreboard.
 
-**Settings** sit behind the gear icon, closed until you open them. **✕ Back to start** is on every
+**Settings** sit behind the gear icon, closed until you open them. They also say who made the game. **✕ Back to start** is on every
 screen.
 
 ## The three levels
@@ -74,7 +77,7 @@ screen.
 | --- | --- | --- |
 | **Level 1:** play | Today's game, practice rounds, the hosts' written lines, an estimated chart of how you compare, a week of scores in this browser | Any browser |
 | **Level 2:** your account | Scores saved to your Claude account; Claude checks unlisted answers; the hosts write fresh lines | A Claude artifact |
-| **Level 3:** with friends | A shared scoreboard for the day, a friends group with a code and an invite, and the chart switches to real scores once 5 people have played. **Play live with friends** (beta): a room code, so everyone answers the same prompt at once | A shared Claude artifact |
+| **Level 3:** with friends, and on the web | A shared scoreboard for the day, a friends group with a code and an invite, and the chart switches to real scores once 5 people have played. **Play live** (beta): a room code, so everyone answers the same prompt at once. **On the web:** a GitHub Actions workflow rebuilds the game, runs the playtest and publishes it on GitHub Pages whenever it changes, so a challenge link opens for anyone | A shared Claude artifact; GitHub Pages for the web copy |
 
 **Can friends play on their own AI?** Yes, by challenge code, wherever the game opens: a shared
 Claude artifact, or the game file in any browser. For a shared live scoreboard, use Claude. Share the artifact, and each friend plays the
