@@ -125,6 +125,15 @@ one in settings, or turn them off.
 
 ## What's new
 
+**Version 4.2, 18 November 2026: celebrations**
+
+- Every right answer gets a celebration, and it grows with the points: a few sparks for the crowd
+  pick, "Nice!" and more sparks for a popular one, stars and "Deep cut!" low in the top ten, a
+  firework and "Good find!" for 80, and a shower over the Gem reveal for 100. A strong final
+  score gets its own burst.
+- The top ten sits in two columns, so the result fits on a phone screen.
+- The note about hidden Gems moved to settings.
+
 **Version 4, 18 November 2026: answer moments**
 
 <p align="center"><img src="_build/img/gem-reveal.webp" width="260" alt="Animation of the Gem reveal on a phone: the answer Sepak takraw goes in, a faceted gold gem drops onto the card with a burst of light and flying fragments, the words GEM! +100 appear, and +100 flies up into the score"></p>
@@ -148,7 +157,7 @@ one in settings, or turn them off.
 ## Status
 
 **In user testing.** As of 18 November 2026, users are playing it; their results are not in yet.
-110 of 110 automated checks pass at phone and desktop
+115 of 115 automated checks pass at phone and desktop
 width, with Claude replaced by a mock. In two blind reviews, fresh AI reviewers scored version 4
 91 and 86, against 84 and 82 for version 3, and both would replay version 4. Nobody has played
 version 4 in the real Claude artifact yet. The chat version passed two test games, played by a

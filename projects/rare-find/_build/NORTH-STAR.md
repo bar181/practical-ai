@@ -112,6 +112,11 @@ and the focus on the moment an answer lands.
 | Not on our list | Says so at once. "Ask the AI" sits beside Next, then "Second opinion" once. A changed verdict plays its reward once |
 | Wrong, or out of time | A short shake, and Next pulses once |
 
+Version 4.2 adds celebrations that grow with the points (owner's feedback): level 1 a few sparks
+(crowd pick), 2 more sparks and "Nice!", 3 stars and "Deep cut!" (40 points or more), 4 a firework
+and "Good find!", 5 a shower over the Gem reveal; and a burst for a strong final score. The top ten
+is in two columns. The Gem rules live in settings, not under every answer.
+
 Budgets: on screen within 100 ms, ordinary effects 150 to 250 ms, the Gem reveal inside 600 ms.
 Next works after a 120 ms guard, during effects, host lines and Claude's checks. The host's
 ready-made line shows at once; Claude's fresh line replaces it only while that prompt is on screen.

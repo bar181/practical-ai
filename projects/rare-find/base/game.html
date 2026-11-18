@@ -153,6 +153,17 @@ details p{font-size:14px;color:var(--muted);margin:6px 0 0}
 .gemreveal.play .glint{animation:glint 300ms 150ms ease-out forwards}
 .gemreveal .shard{position:absolute;left:58px;top:50%;width:13px;height:13px;background:var(--fc,var(--gem));clip-path:polygon(50% 0,100% 60%,40% 100%,0 40%);opacity:0;pointer-events:none}
 .gemreveal.play .shard{animation:shard 360ms 180ms cubic-bezier(.2,.7,.4,1) forwards}
+/* celebrations grow with the points: sparks, then stars, then a firework, then the Gem's shower */
+.celebrate{position:fixed;inset:0;pointer-events:none;z-index:60;overflow:hidden}
+.celebrate .spark{position:absolute;width:var(--s,8px);height:var(--s,8px);border-radius:50%;background:var(--c);opacity:0;animation:spark var(--d,480ms) cubic-bezier(.15,.7,.35,1) forwards}
+.celebrate .spark.star{border-radius:0;clip-path:polygon(50% 0,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%)}
+.celebrate .ring{position:absolute;width:40px;height:40px;margin:-20px 0 0 -20px;border-radius:50%;border:4px solid var(--c);opacity:0;animation:ringout 520ms ease-out forwards}
+.celebrate .drop{position:absolute;top:-24px;width:12px;height:12px;background:var(--c);clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%);opacity:0;animation:shower var(--d,900ms) var(--w,0ms) cubic-bezier(.3,.1,.6,1) forwards}
+.celebrate .cheer{position:absolute;transform:translate(-50%,-50%);font-weight:900;color:var(--c);background:rgba(20,16,40,.88);border:2px solid var(--c);border-radius:999px;padding:2px 16px;white-space:nowrap;opacity:0;animation:cheer 640ms cubic-bezier(.3,1.6,.5,1) forwards}
+@keyframes spark{0%{opacity:1;transform:translate(0,0) scale(.4)}20%{opacity:1}100%{opacity:0;transform:translate(var(--dx),var(--dy)) scale(1) rotate(var(--r,0deg))}}
+@keyframes ringout{0%{opacity:.9;transform:scale(.3)}100%{opacity:0;transform:scale(var(--k,4))}}
+@keyframes shower{0%{opacity:1;transform:translateY(0) rotate(0)}85%{opacity:1}100%{opacity:0;transform:translateY(var(--fall,110vh)) rotate(var(--r,360deg))}}
+@keyframes cheer{0%{opacity:0;transform:translate(-50%,-30%) scale(.4)}35%{opacity:1;transform:translate(-50%,-60%) scale(1.15)}75%{opacity:1;transform:translate(-50%,-80%) scale(1)}100%{opacity:0;transform:translate(-50%,-110%) scale(.95)}}
 .goldflash{position:fixed;inset:0;pointer-events:none;z-index:65;background:radial-gradient(circle at var(--gx,50%) var(--gy,50%),rgba(255,214,102,.5),rgba(255,201,60,0) 60%);animation:goldflash 380ms ease-out forwards}
 @keyframes goldflash{0%{opacity:0}30%{opacity:1}100%{opacity:0}}
 @keyframes burst{0%{opacity:0;transform:scale(.2)}35%{opacity:1}100%{opacity:0;transform:scale(1.7)}}
@@ -171,7 +182,9 @@ details p{font-size:14px;color:var(--muted);margin:6px 0 0}
 .bubble{background:#fff;color:var(--ink);border-radius:16px 16px 16px 4px;padding:9px 13px;font-weight:600;animation:pop 220ms ease-out;overflow-wrap:anywhere}
 .bubble small{display:block;color:#5b5480;font-weight:800;font-size:12px}
 .reveal h3{font-size:13px;color:var(--muted);letter-spacing:.05em;margin:0 0 6px}
-.reveal ol{margin:0;padding:0;list-style:none;display:grid;gap:4px}
+.reveal ol{margin:0;padding:0;list-style:none;display:grid;gap:4px 6px;grid-template-columns:1fr 1fr;grid-auto-flow:column;grid-template-rows:repeat(5,auto)}
+.reveal ol li{font-size:14px;padding:5px 8px;gap:6px;align-items:baseline}
+.reveal ol li .p{white-space:nowrap;flex:none}
 .reveal li{display:flex;justify-content:space-between;gap:8px;padding:6px 10px;border-radius:10px;background:var(--panel2);font-size:15px;
   opacity:0;animation:rowin 220ms ease-out forwards}
 .reveal li .p{font-weight:800;font-variant-numeric:tabular-nums}
@@ -245,7 +258,7 @@ details p{font-size:14px;color:var(--muted);margin:6px 0 0}
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:1ms!important;animation-iteration-count:1!important;transition-duration:1ms!important}
   .timer.danger{animation:none}
-  .gemreveal .shard,.gemreveal .burst,.plus,.fly,.goldflash{display:none}
+  .gemreveal .shard,.gemreveal .burst,.plus,.fly,.goldflash,.celebrate{display:none}
   .gemreveal .glint{opacity:0}
 }
 </style>
@@ -270,6 +283,8 @@ details p{font-size:14px;color:var(--muted);margin:6px 0 0}
   <div><label class="switch"><input type="checkbox" id="talk" checked> Commentary and trash talk</label>
     <span class="lbl" id="l-host" style="margin-top:6px">Your commentator</span>
     <div class="seg" role="group" aria-labelledby="l-host" id="seg-host"></div></div>
+  <div><span class="lbl">Gems</span>
+    <p class="small" style="margin:0">Every prompt hides five Gems: rare right answers worth 100 each. They stay secret, so you can play again tomorrow and still find them.</p></div>
   <div><label class="lbl" for="nick">Your name, for challenges</label>
     <input class="input" id="nick" maxlength="12" placeholder="e.g. QuizOwl" style="width:100%" autocapitalize="off">
     <p class="small" style="margin:6px 0 0">Letters and numbers, up to 12. Others see it next to your score.</p></div>
@@ -372,7 +387,7 @@ details p{font-size:14px;color:var(--muted);margin:6px 0 0}
     <div class="host" id="talk-row" hidden><span class="face" id="talk-face" aria-hidden="true"></span><div class="bubble" id="talkline"></div></div>
     <div class="reveal-cols">
       <div class="reveal" id="reveal"></div>
-      <div class="hidden-gems" id="gems-note"></div>
+      <div class="hidden-gems" id="gems-note" hidden></div>
     </div>
     <p class="est" id="est">Popularity is the AI's estimate, not a survey.</p>
     <div class="nextbar"><button class="btn" id="b-check" hidden>Ask the AI</button><button class="btn primary" id="b-next">Next ▸</button></div>
@@ -847,11 +862,32 @@ function flyToScore(n){
     {duration:330,delay:240,easing:"cubic-bezier(.5,0,.7,1)",fill:"both"});
   an.onfinish=()=>{ f.remove(); scoreTick(n,true); }; setTimeout(()=>f.remove(),1200);
 }
+// The celebration grows with the points: 1 a few sparks (crowd pick), 2 more sparks and "Nice!",
+// 3 stars and "Deep cut!" (40 or more), 4 a firework and "Good find!", 5 a Gem shower over the reveal.
+function celebLevel(p,tier){ return tier==="gem"?5 : tier==="good"?4 : p>=40?3 : p>25?2 : p>0?1 : 0; }
+function celebrate(lvl,at){
+  if(reduce||!lvl) return; const r=(at||$("#tier")).getBoundingClientRect(), x=r.left+r.width/2, y=r.top+r.height/2;
+  const box=document.createElement("div"); box.className="celebrate"; box.setAttribute("aria-hidden","true"); box.dataset.level=lvl;
+  const pal=[[],["#d8d2f2","#ffc93c"],["#7ab8ff","#ffc93c","#fff"],["#3ccb7f","#ffc93c","#7ab8ff","#fff"],["#b48aff","#e7dbff","#ffc93c","#fff"],["#ffc93c","#ffe9a8","#fff3c4","#e9a91a","#b48aff"]][lvl];
+  const n=[0,10,16,22,30,40][lvl], reach=[0,60,80,110,150,190][lvl];
+  for(let i=0;i<n;i++){ const a=Math.PI*2*i/n+Math.random()*.4, d=reach*(.55+Math.random()*.45), e=document.createElement("i");
+    e.className="spark"+(lvl>=3&&i%2?" star":""); e.style.left=x+"px"; e.style.top=y+"px";
+    e.style.setProperty("--dx",Math.cos(a)*d+"px"); e.style.setProperty("--dy",Math.sin(a)*d+"px"); e.style.setProperty("--r",(Math.random()*360|0)+"deg");
+    e.style.setProperty("--c",pal[i%pal.length]); e.style.setProperty("--s",(6+lvl*2+(i%3))+"px"); e.style.setProperty("--d",(420+lvl*50)+"ms"); box.append(e); }
+  if(lvl>=4){ [0,1].forEach(k=>{ const g=document.createElement("i"); g.className="ring"; g.style.left=x+"px"; g.style.top=y+"px"; g.style.setProperty("--c",pal[k]); g.style.setProperty("--k",lvl===5?7:5); g.style.animationDelay=(k*90)+"ms"; box.append(g); }); }
+  if(lvl===5){ for(let i=0;i<36;i++){ const d=document.createElement("i"); d.className="drop"; d.style.left=(Math.random()*100)+"vw"; d.style.setProperty("--c",pal[i%pal.length]);
+    d.style.setProperty("--d",(650+Math.random()*250|0)+"ms"); d.style.setProperty("--w",(Math.random()*120|0)+"ms"); d.style.setProperty("--r",(Math.random()*720-360|0)+"deg"); box.append(d); } }
+  const word=["","","Nice!","Deep cut!","Good find!",""][lvl]; if(word){ const w=document.createElement("b"); w.className="cheer"; w.textContent=word;
+    // the word floats above the result card, centred, so it never covers the badge or the points
+    const card=$("#result"), cr=card&&!card.hidden?card.getBoundingClientRect():r; w.style.left=(cr.left+cr.width/2)+"px"; w.style.top=Math.max(40,cr.top-6)+"px";
+    w.style.fontSize=[0,0,22,28,34][lvl]+"px"; w.style.setProperty("--c",pal[0]); box.append(w); }
+  document.body.append(box); setTimeout(()=>box.remove(),1300);
+}
 function land(cur){
   const m=cur.m, t=m.tier, played=cur.played||(cur.played={}), first=!played[t]; played[t]=true;
   setBadge(m); renderReveal(cur.pack,m,first); updateDots(first?cur.round:-1);
   if(!first) return;
-  const p=pts(m);
+  const p=pts(m); celebrate(celebLevel(p,t), t==="gem"?$("#moment .gemsvg"):null);
   if(t==="gem"){ $("#tier").classList.add("gemflash"); goldFlash(); flyToScore(p); }
   else if(p>0) scoreTick(p,t==="good");
   else if(t==="miss"&&!reduce){ const f=$("#answer-form"); f.classList.remove("shake"); void f.offsetWidth; f.classList.add("shake"); }
@@ -937,8 +973,7 @@ function renderReveal(pack,m,animate=true){
     if(mine){ li.classList.add("mine"); const y=document.createElement("b"); y.className="you-tag"; y.textContent="Yours "; p.prepend(y); } li.append(a,p); ol.append(li); });
   R.append(h,ol);
   const found=m.tier==="gem";
-  $("#gems-note").textContent = found ? `You found one of ${pack.gems.length} Gems. The others stay hidden for next time.`
-    : `${pack.gems.length} Gems are hidden on this prompt: rare right answers worth 100 each. We keep them secret so you can play again.`;
+  $("#gems-note").textContent = found ? `You found one of ${pack.gems.length} Gems.` : "";
   $("#est").textContent = (pack.note?pack.note+" ":"") + "Popularity is the AI's estimate, not a survey.";
 }
 function putTalk(host,t){ const el=$("#talkline"); el.textContent=""; const s=document.createElement("small"); s.textContent=host.name; el.append(s,t); $("#talk-face").textContent=host.face; $("#talk-row").hidden=false; }
@@ -1024,6 +1059,7 @@ async function endGame(){
 function renderEnd(g,rescored){
   retotal(g);
   $("#final").textContent=rescored?String(g.total):"0"; if(!rescored) countUp($("#final"),g.total,600);
+  { const f=g.total/g.perfect, mean=meanOf(g.packs.length)/g.perfect; const lvl = f>=0.6?5 : f>=0.45?4 : f>=mean?3 : g.total>0?1 : 0; setTimeout(()=>{ if(S.screen==="end") celebrate(lvl,$("#final")); },rescored?0:620); }
   const st=$("#strip"); st.textContent=""; const rc=$("#recap"); rc.textContent="";
   g.res.forEach((r,i)=>{ const s=document.createElement("span"); s.className=TIERS[r.tier].css; s.textContent=r.pts; s.setAttribute("aria-hidden","true"); st.append(s);
     const li=document.createElement("li"); const q=document.createElement("span"); q.className="q"; q.textContent=r.prompt; const a=document.createElement("span"); a.className="a"; a.textContent=r.answer||"(no answer)";

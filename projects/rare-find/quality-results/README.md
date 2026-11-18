@@ -6,7 +6,7 @@
 
 - **The automated playtest**, [`../_build/playtest.py`](../_build/playtest.py). It plays the built
   page in Chromium at 390 px (phone) and 1280 px, keyboard only, with reduced motion, with no Claude,
-  and with a mock of Claude's answer check (`sample`). Last run, 18 November 2026: **110 of 110 checks
+  and with a mock of Claude's answer check (`sample`). Last run, 18 November 2026: **115 of 115 checks
   passed**. They cover how an answer lands (on screen within 100 ms, ordinary effects 150 to 250
   ms, the Gem reveal inside 600 ms, Next usable during effects, a late verdict that changes only its
   own round), 60 spelling cases, the per-category points, hidden Gems, the daily calendar
@@ -61,6 +61,19 @@ accepts. Its friction notes led to four rule fixes: the next prompt comes straig
 result, a skip scores 0, the top ten fits on two lines, and the link is given once. One line added
 after game 2 (when unsure between Gem and Good find, choose Good find) is not re-tested. The playtest
 still passes 110 of 110.
+
+**Later the same day: Check again, always reachable**, from tester feedback that the button was
+missing. It is named **Check again**, it is offered after a Good find too (it can only go up), and a
+"no" that lands after the player moved on can be checked again from the end screen, which updates
+the saved score and the challenge link.
+
+**Version 4.2, celebrations** (18 November 2026, the owner's feedback that celebrations were not
+visible): every right answer now gets a celebration that grows with its points (five levels, from a
+few sparks to the Gem shower), plus one for a strong final score; the top ten is in two columns;
+the hidden-Gems note moved to settings. New playtest checks confirm the levels rise with the
+points, the words show ("Deep cut!", "Good find!"), the Gem's celebration ends within 1.1 s, Next
+is never blocked, and reduced motion shows none of it. 115 of 115 pass, with Claude mocked. Not
+re-reviewed by a fresh reviewer.
 
 ## Who has and has not tried it
 
