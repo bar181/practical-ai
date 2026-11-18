@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rare Find: build status, 17 November 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#1b1733;--card:#262046;--line:#3a3266;--text:#f3f0ff;--muted:#b9b0de;--gold:#ffc93c;--violet:#a78bfa;--green:#4ade80;--blue:#7cb3ff;--red:#ff7b7b;--grey:#c9c4dd}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:17px/1.6 "Atkinson Hyperlegible",system-ui,sans-serif}
+main{max-width:860px;margin:0 auto;padding:48px 22px 80px}
+h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;line-height:1.1;margin:0}
+h1{font-size:clamp(2.2rem,6vw,3.6rem);font-weight:800;letter-spacing:-.02em}
+h2{font-size:1.6rem;font-weight:800;margin:56px 0 14px}
+h3{font-size:1.1rem;font-weight:800;margin-bottom:6px}
+p{margin:0 0 14px;max-width:68ch}
+.lede{font-size:1.2rem;color:var(--muted);margin-top:14px}
+.verdict{display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:center;background:var(--card);border:2px solid var(--line);border-radius:22px;padding:22px 26px;margin-top:30px}
+.score{font-family:"Bricolage Grotesque";font-weight:800;font-size:4.4rem;color:var(--gold);line-height:1}
+.score small{font-size:1.4rem;color:var(--muted)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 20px}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+table{width:100%;border-collapse:collapse;font-size:.95rem}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--muted);font-weight:700}
+.tag{display:inline-block;padding:1px 9px;border-radius:999px;font-weight:700;font-size:.85rem;color:#1b1733}
+.ok{background:var(--green)}.no{background:var(--red)}.part{background:var(--gold)}
+svg text{font-family:"Atkinson Hyperlegible",sans-serif}
+.flow{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));counter-reset:s}
+.flow div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;font-size:.95rem}
+.flow b{display:block;color:var(--gold);font-family:"Bricolage Grotesque";font-size:1.05rem;margin-bottom:4px}
+a{color:var(--gold)}
+ul{padding-left:20px;margin:0}li{margin:4px 0}
+.muted{color:var(--muted)}
+footer{margin-top:60px;color:var(--muted);font-size:.9rem}
+@media(max-width:560px){.verdict{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<main>
+<h1>Rare Find: where the build stands</h1>
+<p class="lede">Project 4, the side quest. A five-minute daily quiz on your phone, inside a Claude artifact, where the right answer nobody else thought of scores the most. Status at the end of 17 November 2026.</p>
+
+<div class="verdict">
+  <div class="score">71<small>/100</small></div>
+  <div><h3>Ready for friendly testers, only just. Not ready to share.</h3><p style="margin:0">A fresh reviewer scored the redesigned game 71 out of 100. The phone-first design, the hosts and the 4-second cap on Claude checks landed well. Fairness was the weak spot. I fixed all five of its top problems afterwards, and the automated playtest now passes 80 of 80 checks. Nobody has re-scored the fixes yet, and nobody has played the game in the real Claude runtime.</p></div>
+</div>
+
+<h2>Scores by loop</h2>
+<p>Each loop ended with a fresh reviewer agent that had not seen the game, scoring it with the project's game-review rubric. Below 70 is not ready; 70 to 84 is ready for friendly testers; 85 and up is ready to share. Loops 0 to 3 scored version 1 (the office ladder). Loop 4 scored an interim build. Loop 5 scored version 2, the redesign you asked for today.</p>
+<div class="card">
+<svg viewBox="0 0 640 250" role="img" aria-labelledby="sc-t" width="100%">
+  <title id="sc-t">Review scores by loop: Loop 0 37, Loop 1 68, Loop 2 80, Loop 3 84, Loop 4 80, Loop 5 71</title>
+  <line x1="40" x2="630" y1="200" y2="200" stroke="#3a3266"/>
+  <line x1="40" x2="630" y1="74" y2="74" stroke="#b9b0de" stroke-dasharray="4 5" opacity=".6"/><text x="630" y="69" fill="#b9b0de" font-size="12" text-anchor="end">70 friendly testers</text>
+  <line x1="40" x2="630" y1="47" y2="47" stroke="#ffc93c" stroke-dasharray="4 5" opacity=".7"/><text x="630" y="42" fill="#ffc93c" font-size="12" text-anchor="end">85 ready to share</text>
+  <rect x="60" y="133" width="58" height="67" rx="6" fill="#7a6fb0"/><text x="89" y="125" fill="#f3f0ff" font-size="16" font-weight="700" text-anchor="middle">37</text><text x="89" y="222" fill="#b9b0de" font-size="13" text-anchor="middle">Loop 0</text><rect x="155" y="78" width="58" height="122" rx="6" fill="#7a6fb0"/><text x="184" y="70" fill="#f3f0ff" font-size="16" font-weight="700" text-anchor="middle">68</text><text x="184" y="222" fill="#b9b0de" font-size="13" text-anchor="middle">Loop 1</text><rect x="250" y="56" width="58" height="144" rx="6" fill="#a78bfa"/><text x="279" y="48" fill="#f3f0ff" font-size="16" font-weight="700" text-anchor="middle">80</text><text x="279" y="222" fill="#b9b0de" font-size="13" text-anchor="middle">Loop 2</text><rect x="345" y="49" width="58" height="151" rx="6" fill="#a78bfa"/><text x="374" y="41" fill="#f3f0ff" font-size="16" font-weight="700" text-anchor="middle">84</text><text x="374" y="222" fill="#b9b0de" font-size="13" text-anchor="middle">Loop 3</text><rect x="440" y="56" width="58" height="144" rx="6" fill="#a78bfa"/><text x="469" y="48" fill="#f3f0ff" font-size="16" font-weight="700" text-anchor="middle">80</text><text x="469" y="222" fill="#b9b0de" font-size="13" text-anchor="middle">Loop 4</text><rect x="535" y="72" width="58" height="128" rx="6" fill="#a78bfa"/><text x="564" y="64" fill="#f3f0ff" font-size="16" font-weight="700" text-anchor="middle">71</text><text x="564" y="222" fill="#b9b0de" font-size="13" text-anchor="middle">Loop 5</text>
+</svg>
+</div>
+
+<h2>What you asked for today, and what the game does now</h2>
+<table>
+<tr><th>Your request</th><th>Now</th></tr>
+<tr><td>Points that vary by rank, by category</td><td>#1 always scores 25. Points rise down the top ten to between 40 and 60 for 10th place: 60 for the countries of Africa (few possible answers), 40 for dog breeds (hundreds)</td></tr>
+<tr><td>Answers beyond the top ten still score</td><td>Every right answer beyond the top ten scores 80; a Gem 100; a perfect game 500</td></tr>
+<tr><td>Only 2 or 3 scoring labels, to fit a phone</td><td>Popular 25+ · Rarer up to 80 · Gem 100, with the detail one tap away</td></tr>
+<tr><td>Remove the rare finds from the list, for replays</td><td>The reveal shows the top ten only. It says how many Gems are hidden, never which</td></tr>
+<tr><td>Keep it a solo game; remove the office ladder and the last-round and topic options</td><td>Removed. Today's game (same five prompts for everyone on a date) and practice rounds</td></tr>
+<tr><td>An LLM check on the answer, and a check again</td><td>"Check with Claude" on any answer that scored 0, then "Check again" once. "big hero 5" counts as Big Hero 6, 80. Without Claude: "We allow it", the room's word, 80</td></tr>
+<tr><td>Personas with humour, commenting on each score</td><td>Professor Pedant 🎓, Mo Mainstream 🍿, Madame Zara 🔮 and Unit 7 🤖 comment on each answer and its points, taking turns or the one you pick</td></tr>
+<tr><td>Settings as an icon with an accordion, closed</td><td>A gear icon: time, commentary and commentator, scoreboard posting and name</td></tr>
+<tr><td>A scorecard tab, and an end score that compares to others on a bar chart</td><td>A Scorecard tab and an end-of-game chart from 0 to 500 with your place. An estimated spread (about 154 typical) until 5 real players have played that day, then real scores</td></tr>
+<tr><td>A central scoreboard, play against friends, invite friends</td><td>A shared daily scoreboard; a friends group with a 4-letter code and an Invite message; live play with a room code (beta)</td></tr>
+<tr><td>A simple join: a link, a game id and my score; others play the same game in their own chatbot</td><td>"Challenge a friend" copies a code holding the exact prompts and your score (for example RF1a3k0p-245-cptgd-Sam). With the game's link saved in settings, it is one tap: link#c-code. The friend plays the same prompts and sends a code back; both appear on that game's scoreboard. No server or account needed</td></tr>
+<tr><td>Prompts per game: 5, 10, party mode (25 with topics)</td><td>In settings. Party mode plays all 25, grouped by topic, with "Topic 2 of 8" on each prompt. Today's game stays at 5 so daily scores compare</td></tr>
+<tr><td>Back to start on every page; phone first, desktop works</td><td>On every screen, plus Escape. Designed at 390 px and checked at 1280 px</td></tr>
+</table>
+
+<h2>The points, one picture</h2>
+<div class="card">
+<svg viewBox="0 0 640 240" role="img" aria-labelledby="pt-t" width="100%">
+  <title id="pt-t">Points by answer for two categories: dog breeds rise from 25 to 40 across the top ten, the countries of Africa from 25 to 60; both score 80 beyond the top ten and 100 for a Gem</title>
+  <rect x="22" y="150" width="17" height="40" rx="3" fill="#a78bfa" stroke="none" stroke-width="2"/><rect x="41" y="150" width="17" height="40" rx="3" fill="none" stroke="#ffc93c" stroke-width="2"/><text x="40" y="142" fill="#f3f0ff" font-size="11" font-weight="700" text-anchor="middle">25</text><text x="40" y="210" fill="#b9b0de" font-size="12" text-anchor="middle">#1</text><rect x="73" y="147" width="17" height="43" rx="3" fill="#a78bfa" stroke="none" stroke-width="2"/><rect x="92" y="144" width="17" height="46" rx="3" fill="none" stroke="#ffc93c" stroke-width="2"/><text x="91" y="136" fill="#f3f0ff" font-size="11" font-weight="700" text-anchor="middle">27/29</text><text x="91" y="210" fill="#b9b0de" font-size="12" text-anchor="middle">#2</text><rect x="124" y="145" width="17" height="45" rx="3" fill="#a78bfa" stroke="none" stroke-width="2"/><rect x="143" y="137" width="17" height="53" rx="3" fill="none" stroke="#ffc93c" stroke-width="2"/><text x="142" y="129" fill="#f3f0ff" font-size="11" font-weight="700" text-anchor="middle">28/33</text><text x="142" y="210" fill="#b9b0de" font-size="12" text-anchor="middle">#3</text><rect x="175" y="142" width="17" height="48" rx="3" fill="#a78bfa" stroke="none" stroke-width="2"/><rect x="194" y="131" width="17" height="59" rx="3" fill="none" stroke="#ffc93c" stroke-width="2"/><text x="193" y="123" fill="#f3f0ff" font-size="11" font-weight="700" text-anchor="middle">30/37</text><text x="193" y="210" fill="#b9b0de" font-size="12" text-anchor="middle">#4</text><rect x="226" y="139" width="17" height="51" rx="3" fill="#a78bfa" stroke="none" stroke-width="2"/><rect x="245" y="124" width="17" height="66" rx="3" fill="none" stroke="#ffc93c" stroke-width="2"/><text x="244" y="116" fill="#f3f0ff" font-size="11" font-weight="700" text-anchor="middle">32/41</text><text x="244" y="210" fill="#b9b0de" font-size="12" text-anchor="middle">#5</text><rect x="277" y="137" width="17" height="53" rx="3" fill="#a78bfa" stroke="none" stroke-width="2"/><rect x="296" y="120" width="17" height="70" rx="3" fill="none" stroke="#ffc93c" stroke-width="2"/><text x="295" y="112" fill="#f3f0ff" font-size="11" font-weight="700" text-anchor="middle">33/44</text><text x="295" y="210" fill="#b9b0de" font-size="12" text-anchor="middle">#6</text><rect x="328" y="134" width="17" height="56" rx="3" fill="#a78bfa" stroke="none" stroke-width="2"/><rect x="347" y="113" width="17" height="77" rx="3" fill="none" stroke="#ffc93c" stroke-width="2"/><text x="346" y="105" fill="#f3f0ff" font-size="11" font-weight="700" text-anchor="middle">35/48</text><text x="346" y="210" fill="#b9b0de" font-size="12" text-anchor="middle">#7</text><rect x="379" y="131" width="17" height="59" rx="3" fill="#a78bfa" stroke="none" stroke-width="2"/><rect x="398" y="107" width="17" height="83" rx="3" fill="none" stroke="#ffc93c" stroke-width="2"/><text x="397" y="99" fill="#f3f0ff" font-size="11" font-weight="700" text-anchor="middle">37/52</text><text x="397" y="210" fill="#b9b0de" font-size="12" text-anchor="middle">#8</text><rect x="430" y="129" width="17" height="61" rx="3" fill="#a78bfa" stroke="none" stroke-width="2"/><rect x="449" y="100" width="17" height="90" rx="3" fill="none" stroke="#ffc93c" stroke-width="2"/><text x="448" y="92" fill="#f3f0ff" font-size="11" font-weight="700" text-anchor="middle">38/56</text><text x="448" y="210" fill="#b9b0de" font-size="12" text-anchor="middle">#9</text><rect x="481" y="126" width="17" height="64" rx="3" fill="#a78bfa" stroke="none" stroke-width="2"/><rect x="500" y="94" width="17" height="96" rx="3" fill="none" stroke="#ffc93c" stroke-width="2"/><text x="499" y="86" fill="#f3f0ff" font-size="11" font-weight="700" text-anchor="middle">40/60</text><text x="499" y="210" fill="#b9b0de" font-size="12" text-anchor="middle">#10</text><rect x="532" y="62" width="17" height="128" rx="3" fill="#a78bfa" stroke="none" stroke-width="2"/><rect x="551" y="62" width="17" height="128" rx="3" fill="none" stroke="#ffc93c" stroke-width="2"/><text x="550" y="54" fill="#f3f0ff" font-size="11" font-weight="700" text-anchor="middle">80</text><text x="550" y="210" fill="#b9b0de" font-size="12" text-anchor="middle">Beyond</text><rect x="583" y="30" width="17" height="160" rx="3" fill="#a78bfa" stroke="none" stroke-width="2"/><rect x="602" y="30" width="17" height="160" rx="3" fill="none" stroke="#ffc93c" stroke-width="2"/><text x="601" y="22" fill="#f3f0ff" font-size="11" font-weight="700" text-anchor="middle">100</text><text x="601" y="210" fill="#b9b0de" font-size="12" text-anchor="middle">Gem</text>
+</svg>
+<p class="muted" style="margin:8px 0 0;font-size:.9rem">Lilac: dog breeds (hundreds of possible answers). Gold outline: countries of Africa (54 possible answers). Each of the 25 categories has its own 10th-place value.</p>
+</div>
+
+<h2>Can friends join and play on their own AI?</h2>
+<div class="grid">
+  <div class="card"><h3>Claude: yes</h3><p>Share the artifact and each friend plays the same prompts on their own Claude account; Claude calls count against each viewer's own plan. Sharing by link needs a paid plan, and everyone who opens it needs a Claude account. One rule I confirmed today: people with view access can read the shared scoreboard but cannot write to it, so friends need edit access to post scores. With view access they can still play and join a live room, which is open to everyone with the link.</p></div>
+  <div class="card"><h3>ChatGPT and others: by challenge code</h3><p>ChatGPT has group chats for up to 20 people, but canvas is not supported in them, so a live group game cannot run there. Challenge codes still work: the game file opens in any browser, the code carries the prompts, and scores come back as codes. The Claude features (the check, fresh host lines, the shared board) hide.</p></div>
+</div>
+
+<h2>How Claude is used, and where it is not</h2>
+<div class="flow">
+  <div><b>Your answer</b>Matched against the word list first: spelling, plurals, other names, sequels.</div>
+  <div><b>On the list</b>Scored by the list alone. No AI involved. Instant.</div>
+  <div><b>Scored 0</b>"Check with Claude" appears. Text that reads like instructions is never sent.</div>
+  <div><b>The check</b>Is it real, is it right, common or rare? Claude may fix spelling, not swap the answer.</div>
+  <div><b>The verdict</b>Right and common 80, rare 100, wrong 0. One "Check again". The game waits 4 s at most.</div>
+</div>
+
+<h2>What is not tested, plainly</h2>
+<table>
+<tr><th>Item</th><th>State</th></tr>
+<tr><td>The real Claude artifact runtime (answer check, host lines, scoreboard, rooms)</td><td><span class="tag no">Not tested</span> Every Claude feature ran against a mock. The artifact is published with its capabilities declared</td></tr>
+<tr><td>How good Claude's verdicts and host lines really are</td><td><span class="tag no">Not tested</span> The mock wrote the words</td></tr>
+<tr><td>Friends on other accounts, a real multi-device live game</td><td><span class="tag no">Not tested</span></td></tr>
+<tr><td>A real screen reader</td><td><span class="tag part">Partly</span> Keyboard only and live announcements checked</td></tr>
+<tr><td>ChatGPT</td><td><span class="tag part">Partly</span> The file plays in any browser; the Claude features hide</td></tr>
+<tr><td>Real players, and whether the estimated chart is close</td><td><span class="tag no">Not tested</span> The chart says it is an estimate</td></tr>
+</table>
+
+<h2>What the last review found, and what I fixed after it</h2>
+<table><tr><th>Problem found in loop 5</th><th>Fix, checked by the playtest</th></tr><tr><td>The total could disagree with the answers after a yes then a no from Claude, and the wrong total was saved</td><td><span class="tag ok">Fixed</span> The total is now always the sum of the answers; a verdict from an older or late check is ignored</td></tr><tr><td>"Check again" could award 80 without asking Claude</td><td><span class="tag ok">Fixed</span> No second check while one runs; after a failure the button says "We allow it" and explains why</td></tr><tr><td>Real words still scored ("Recover" as Red rover, a Gem)</td><td><span class="tag ok">Fixed</span> The blocked-word list now includes prefix forms: 1,700 words</td></tr><tr><td>Challenge codes trusted blindly; unnamed friends replaced each other</td><td><span class="tag ok">Fixed</span> A code's score must fit its answers; friends kept apart by code; a name field for everyone</td></tr><tr><td>"Saved" shown when it was not; "The Return of Jafar" blocked as an instruction</td><td><span class="tag ok">Fixed</span> Honest save messages; posting off removes your scores; the filter now catches instructions, not titles</td></tr><tr><td>Top-ten points close together where 10th place is 40 (25, 27, 28...)</td><td><span class="tag part">As designed</span> This follows your rule of 40 to 60 for 10th place; tell me if you want wider steps</td></tr></table>
+
+<h2>Next steps</h2>
+<ul>
+  <li><b>You:</b> open the artifact, play today's game on your phone, and press "Check with Claude" on one answer that is not on the list. That is the first real test of Claude in the game.</li>
+  <li><b>You:</b> share the artifact with one friend with edit access, start a friends group, and send the invite.</li>
+  <li><b>Content:</b> 25 categories give 5 days before the daily deal reshuffles. More categories are the next job.</li>
+  <li>No pull request, as you asked. The work is committed and pushed to the branch.</li>
+</ul>
+
+<h2>Sources</h2>
+<ul>
+  <li><a href="https://support.claude.com/en/articles/9547008-share-artifacts">Claude Help Center: Share artifacts</a></li>
+  <li><a href="https://fast.io/resources/claude-artifacts-guide/">Claude artifacts guide: usage counts against each viewer's plan</a></li>
+  <li><a href="https://www.technobezz.com/news/openai-launches-group-chats">ChatGPT group chats: up to 20 people; canvas not supported</a></li>
+</ul>
+
+<footer>Rare Find, Practical AI, by Bradley Ross. Popularity in the game is Claude's estimate, not a survey. Prompts, tier names, hosts and answer lists are the project's own. Evidence: <code>projects/rare-find/quality-results/</code>.</footer>
+</main>
+</body>
+</html>

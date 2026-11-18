@@ -1,0 +1,37 @@
+DRAFT, NOT YET TESTED. For a chatbot that cannot open base/game.html: it asks the
+chatbot to build a simpler version of Rare Find from scratch.
+
+Let's play Rare Find: a quiz where the correct answer nobody
+else thinks of scores the most.
+
+Category: Name a fictional weapon
+(Replace it with your own, or write "surprise us" for five
+family-friendly prompts on general knowledge and pop culture.)
+
+1. Research each prompt, with web search if you can. List:
+   - the 10 most popular correct answers, ranked
+   - 5 rare but clearly correct answers
+   - about 30 more correct answers
+   - other names and spellings for each answer
+   Popularity is your best estimate. Say so on the page.
+
+2. Build ONE self-contained HTML page I can play here:
+   - a 30-second ring timer per prompt (15, 30 or 45 to
+     choose at the start)
+   - one answer per prompt; Enter submits
+   - scoring: most popular 25, then 5 more for each place
+     down the top ten (10th is 70); any other correct answer
+     80; a rare one 100; wrong or out of time 0
+   - forgive spelling: ignore case, accents, punctuation,
+     spaces, hyphens and a leading "the"; allow 1 typo for
+     5 to 8 letters and 2 for 9 or more; short answers and
+     numbers must match exactly. Always show "counted as ..."
+   - an answer not on the list scores 0, with a button that
+     copies it so I can ask you to check it
+   - after each answer, a reveal board: the top 10, the rare
+     ones, and where mine sat
+   - a final score and Play again
+   - no outside images, fonts or links
+
+3. No quotes or lyrics, no pictures of characters or logos,
+   nothing on politics or religion.

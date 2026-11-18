@@ -1,0 +1,85 @@
+name: Rare Find on GitHub Pages
+
+# Level 3 for Rare Find. On every change to the game on main: rebuild it from its source, check the
+# committed copy matches, run the full playtest, and publish it at
+# https://bar181.github.io/practical-ai/rare-find/ so anyone can open a challenge link, with no
+# account. Pull requests run the same checks but publish nothing.
+# One-time setup by the repository owner: Settings, Pages, Build and deployment, Source: GitHub Actions.
+
+on:
+  push:
+    branches: [main]
+    paths: ["projects/rare-find/**", ".github/workflows/rare-find-pages.yml"]
+  pull_request:
+    paths: ["projects/rare-find/**", ".github/workflows/rare-find-pages.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: rare-find-pages-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Build the game from its source
+        run: python3 projects/rare-find/_build/build.py
+      - name: The committed game matches its source
+        run: git diff --exit-code -- projects/rare-find/base/
+      - name: Install the test browser
+        run: |
+          pip install playwright
+          python -m playwright install --with-deps chromium
+      - name: Playtest at phone and desktop width
+        run: python3 projects/rare-find/_build/playtest.py "$RUNNER_TEMP/playtest"
+      - name: Keep the playtest screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rare-find-playtest
+          path: ${{ runner.temp }}/playtest
+      - name: Assemble the site
+        run: |
+          mkdir -p _site/rare-find
+          cp projects/rare-find/base/game.html _site/rare-find/index.html
+          cp projects/rare-find/quality-results/status-report.html _site/rare-find/status.html
+          cat > _site/index.html <<'HTML'
+          <!DOCTYPE html>
+          <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+          <title>Practical AI</title></head>
+          <body style="font-family:system-ui,sans-serif;max-width:560px;margin:60px auto;padding:0 20px;line-height:1.5">
+          <h1>Practical AI</h1>
+          <p>Free tools that make the AI you already use do professional work on the jobs you repeat.</p>
+          <p><a href="rare-find/">Play Rare Find</a>, the daily quiz where the rarest right answer scores the most.</p>
+          <p><a href="https://github.com/bar181/practical-ai">The tools on GitHub</a> · made by Bradley Ross,
+          <a href="https://www.linkedin.com/in/bradaross/">LinkedIn</a></p>
+          </body></html>
+          HTML
+      - name: Package the site for Pages
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+
+  deploy:
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}rare-find/
+    steps:
+      - name: Publish to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

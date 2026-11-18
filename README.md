@@ -1,16 +1,45 @@
 # Practical AI
 
-<h3 align="center">Make the AI you already use do professional-quality work on the jobs you repeat.</h3>
+<h3 align="center">Everyone an agentic engineer: make the AI you already use do professional-quality work on the jobs you repeat.</h3>
 
-<p align="center">A repeatable process with your AI, and time back on every repeat.</p>
+<p align="center">Free tools for business people and developers alike. A proven process, the same standard every time, and time back on every repeat.</p>
 
 **Are you an AI agent?** Go to [AGENTS.md](AGENTS.md) for instructions you can follow now.
 
-- **Professional quality.** Each project packs what an expert brings to one job: the method, the
-  templates and worked examples.
-- **A repeatable process.** You ask your AI as you do today. The project makes it do the job the
-  same way, to the same standard, every time.
-- **Time back.** The AI drafts. You check and decide. Nothing is sent, posted or published without you.
+**The vision.** You should not need to be a developer to get expert, repeatable work from AI. Each
+Practical AI tool packs what an expert brings to one job (the method, the template, a worked
+example) so the chatbot you already use does that job properly, every time. The same tools work for
+an office manager in a chat window and a developer in a coding agent.
+
+**The goals.**
+- **Professional quality** on everyday work: reports, document reviews, new tools.
+- **A repeatable process**: the same steps and the same standard on every repeat.
+- **Time back**: the AI drafts, you check and decide. Nothing is sent, posted or published without you.
+
+**Start here: ask your own chatbot what this is.** Copy this into Claude, ChatGPT or Gemini. It
+reads this repository and makes you a page about how these tools could help in your work. The author
+suggests the practical instructor voice from Artifact Studio, as below.
+
+```
+Please read this GitHub repository:
+https://github.com/bar181/practical-ai
+Then make me an artifact (an interactive
+page) that shows what its projects do
+and how they could help me in my work.
+Use the practical instructor voice from
+its design guide:
+https://raw.githubusercontent.com/bar181/practical-ai/main/projects/artifact-studio/base/AI-INSTRUCTIONS.md
+
+About me: [your job, and one task you
+repeat every week]
+```
+
+<sub>Written 17 November 2026. Not yet run in any chatbot: if yours cannot open links, paste this
+README's text in place of the first link.</sub>
+
+<p align="center">
+  <img src="assets/images/vision.svg" width="760" alt="Animation in three steps: a job you repeat, a Practical AI tool, and the job done to standard while you check and decide. It cycles through an office manager's Monday sales report with Artifact Studio, a team lead's 40-page contract with Document to action brief, and a developer's new internal tool with Agentic Process. A line underneath runs from business people to developers: the same tools across the line, time back on every repeat.">
+</p>
 
 ## Try it now
 
@@ -117,6 +146,23 @@ words to check.
 
 <p align="center"><a href="projects/document-to-action-brief/"><b>Brief your first document</b></a></p>
 
+
+### Rare Find, a side quest
+
+**A five-minute daily quiz where the right answer nobody else thought of scores the most.** Five
+prompts a day, the same for everyone. Claude checks answers that are not on the list, four AI hosts
+comment on every score, and one link challenges a friend to the same prompts.
+
+<p align="center">
+  <img src="projects/rare-find/_build/img/how-it-plays.svg" width="620" alt="Animation: the prompt Name a bird, then four answers in turn with their points: Eagle, the crowd pick, 25; Flamingo, 9th most popular, 38; Hummingbird, right but beyond the top ten, 80; Shoebill, rare and right, a Gem, 100. The rarer the right answer, the more it scores.">
+</p>
+<p align="center">
+  <img src="projects/rare-find/_build/img/result-phone.webp" width="200" alt="A Rare Find result on a phone: Eagle is the crowd pick for 25 points, Madame Zara comments, and the top ten shows the points for each place">
+  <img src="projects/rare-find/_build/img/scorecard-phone.webp" width="200" alt="The Rare Find Scorecard on a phone: today's score on a bar chart of the estimated spread, the week and a friends group">
+</p>
+<p align="center"><sub>Built phone first, tested by 85 automated checks and six review loops; not yet played by people.</sub></p>
+
+<p align="center"><a href="https://claude.ai/artifact/HyfbDjPjofvRttRYKgMCis"><b>Play today's game</b></a> &nbsp;·&nbsp; <a href="projects/rare-find/"><b>The project</b></a> &nbsp;·&nbsp; <a href="docs/reports/rare-find.html"><b>How it was made</b></a></p>
 
 ### What is ready, and what is next
 
