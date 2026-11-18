@@ -49,12 +49,15 @@ Then a comment from an AI host with a sense of humour, the top ten, and your pla
 
 A perfect game is 500. The home screen shows three labels only: Popular 25+, Rarer up to 80, Gem 100.
 
-**Check with Claude.** An answer that scored 0 and has text can be checked. Claude is told the
-prompt, the top ten and the answer, as data, and asked whether it is real and right, forgiving small
-slips ("big hero 5" is Big Hero 6), and whether it is common (80) or rare (100). A listed answer gets
-its listed points. Claude may fix spelling but not swap in a different answer. Text that reads like
-instructions is never sent. A second look is allowed once. Claude unreachable or absent: "We allow
-it", the room's word, 80. The game never waits more than 4 seconds; a late verdict still counts.
+**Ask the AI.** An answer that scored 0 and has text can be checked. The AI is told the prompt, the
+top ten and the answer, as data, and asked whether it is real and right, forgiving small slips ("big
+hero 5" is Big Hero 6), and whether it is common (80) or rare (100). A listed answer gets its listed
+points. The AI may fix spelling but not swap in a different answer. Text that reads like
+instructions is never sent. A second opinion is allowed once, and it can still say no. Unreachable:
+"Try again", and the answer stays at 0. No AI at all (the browser copy): it scores 0 and says why.
+Nothing is ever approved without the AI's yes; "We allow it" was removed on 18 November 2026 at the
+owner's request. The game never waits for the AI; a late verdict still counts. While it checks, the
+other hosts fill the wait with a line each.
 
 **The estimated chart.** Until 5 real players have scores for the day, the chart shows a model of
 typical play (per prompt: about 30% miss, 33% top three, 21% ranks 4 to 10, 14% beyond the top ten,
@@ -97,9 +100,25 @@ the answer, never the player. The written line shows at once; with Claude, a fre
 
 ## Feel
 
-Under 100 ms for direct feedback, 100 to 300 ms for transitions. Buttons press down; the timer ring
-turns amber at 10 s and pulses red at 5 s; points count up; a miss shakes once; a Gem gets a banner,
-a shimmer and confetti; reveal rows arrive top to bottom. Reduced motion turns all of it off.
+Version 4 (18 November 2026), on the owner's brief: a quick game people want to replay, with the
+rhythm of a match-three game. Small rewards for ordinary answers, one memorable payoff for a Gem,
+and the focus on the moment an answer lands.
+
+| Answer | What happens |
+| --- | --- |
+| Popular, in the top ten | Its row lights up and says "Yours"; the score ticks with "+N" |
+| Good find | It lands above the top ten with a purple entrance; a bigger score tick |
+| Gem | A faceted gem drops in under the score, catches the light, sheds fragments, and +100 flies into the score. No confetti |
+| Not on our list | Says so at once. "Ask the AI" sits beside Next, then "Second opinion" once. A changed verdict plays its reward once |
+| Wrong, or out of time | A short shake, and Next pulses once |
+
+Budgets: on screen within 100 ms, ordinary effects 150 to 250 ms, the Gem reveal inside 600 ms.
+Next works after a 120 ms guard, during effects, host lines and Claude's checks. The host's
+ready-made line shows at once; Claude's fresh line replaces it only while that prompt is on screen.
+A late verdict changes its own round's points and dot, quietly, never the screen. The five dots show
+each outcome by colour and shape, with the names in words for screen readers, and carry into the
+scorecard and the spoiler-free challenge message. Reduced motion keeps every result and drops the
+movement. Sound is for a second pass, if testers want it.
 
 ## Phone first
 
@@ -130,6 +149,16 @@ also stay in this browser.
 **Live play (removed in version 3).** The host joins room `rf-<code>` and emits the full state (packs, prompt, deadline) on
 each prompt; players emit their total. Messages can drop, so every message carries the full state.
 
+## In ChatGPT or any chatbot (version 4)
+
+A ChatGPT chat cannot run this page with the AI: canvas was removed from ChatGPT's main models on
+28 May 2026, a code block's preview cannot call the model, and a ChatGPT app needs a server. So the
+chatbot hosts the game in the chat instead. [`../base/SKILL.md`](../base/SKILL.md), in the open
+Agent Skills format, tells it how: open today's file in `level-2-files/chat-days/`, score each answer, check
+the unlisted ones itself, never show the Gems, and end with the same challenge link the web copy
+uses. `make_chat_days.py` writes the files from the built game, so every copy deals the same
+prompts on the same day. The Claude artifact stays the full game screen.
+
 ## Questions: a JSON bank and a JSON calendar (version 3)
 
 `_build/packs.json` holds 125 prompts. `_build/calendar.json` fixes each date's five prompts from
@@ -142,7 +171,7 @@ and publishes.
 
 | Risk | Handling |
 | --- | --- |
-| Answer lists are estimates and some will be argued | Labelled as estimates; Check with Claude |
+| Answer lists are estimates and some will be argued | Labelled as estimates; the AI check and a second opinion |
 | A player tries to talk the judge into points | Answers that read like instructions are not sent; the answer is sent as data; Claude may only fix spelling |
 | 25 packs repeat after 5 days | Practice rounds help; more packs are the next content job |
 | The estimated chart is wrong for real players | Labelled; replaced by real scores at 5 players |
