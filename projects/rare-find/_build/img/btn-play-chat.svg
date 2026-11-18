@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="212" height="48" viewBox="0 0 212 48" role="img" aria-label="Play in ChatGPT">
+<rect x="1.5" y="1.5" width="209" height="45" rx="22.5" fill="#262046" stroke="#b48aff" stroke-width="3"/>
+<path d="M22 15h18a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5h-9l-6 5v-5h-3a5 5 0 0 1-5-5v-8a5 5 0 0 1 5-5z" fill="none" stroke="#b48aff" stroke-width="2.5" stroke-linejoin="round"/>
+<text x="126" y="31" text-anchor="middle" font-family="ui-rounded,'SF Pro Rounded',Nunito,'Segoe UI',system-ui,sans-serif" font-size="18" font-weight="800" fill="#f5f2ff">Play in ChatGPT</text>
+</svg>

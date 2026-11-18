@@ -10,7 +10,8 @@
   passed**. They cover how an answer lands (on screen within 100 ms, ordinary effects 150 to 250
   ms, the Gem reveal inside 600 ms, Next usable during effects, a late verdict that changes only its
   own round), 60 spelling cases, the per-category points, hidden Gems, the daily calendar
-  over 240 days, practice limits, Check with Claude and Check again, an unreachable Claude, the
+  over 240 days, practice limits, Ask the AI and a second opinion (never an approval without the AI's yes), the
+  hosts talking while the AI checks, an unreachable AI with Try again, the
   hosts, settings, the scorecard, challenge links, Back to start, the timer and phone width.
 - **The review skill**, [`../level-2-files/game-review/SKILL.md`](../level-2-files/game-review/SKILL.md).
   At the end of each loop a fresh reviewer agent that had not seen the game played it and scored it
@@ -49,6 +50,18 @@ prompts, scored it higher both times (loops 6 and 7). Two small fixes after loop
 the playtest, not re-scored. Every test used a mock of Claude: **nobody has played version 4 in the
 real Claude artifact runtime yet.**
 
+**Version 4.1, no automatic approval, and play in any chatbot** (18 November 2026, the owner's
+request): "We allow it" is removed. An answer not on the list scores only when the AI says it is
+right; a second opinion is allowed once, and it can still say no. The hosts comment while the AI
+checks. For ChatGPT and other chatbots, [`../base/SKILL.md`](../base/SKILL.md) has the chatbot
+host the game in the chat from a daily answer file. In two test games, a session playing the
+chatbot scored every answer correctly. It refused an answer written as an instruction, refused to
+approve on demand, kept its verdict on a second opinion, and produced challenge links that the game
+accepts. Its friction notes led to four rule fixes: the next prompt comes straight after each
+result, a skip scores 0, the top ten fits on two lines, and the link is given once. One line added
+after game 2 (when unsure between Gem and Good find, choose Good find) is not re-tested. The playtest
+still passes 102 of 102.
+
 ## Who has and has not tried it
 
 | Who or what | Tried? |
@@ -57,6 +70,8 @@ real Claude artifact runtime yet.**
 | The automated playtest, with a mock of Claude | Yes |
 | Fresh reviewer agents, with a mock of Claude | Yes, eight loops, the last two blind against the version before |
 | Version 4 in the real Claude artifact runtime | **No.** A private preview artifact is published for the owner to try |
+| The chat version (`base/SKILL.md`), with a session playing the chatbot | Yes, two games on 18 November 2026: every score and both challenge links were right. [Game 1](2026-11-18-chat-play-1/transcript.md) · [game 2](2026-11-18-chat-play-2/transcript.md) |
+| The chat version in ChatGPT itself | **No.** The test sessions could not open web links, so they were given the day's file directly |
 | Users, in the Claude artifact or the web copy | **In progress** since 18 November 2026. No results yet |
 | A screen reader, ChatGPT | **No** |
 
