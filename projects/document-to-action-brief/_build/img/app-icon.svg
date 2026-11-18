@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Document to action brief icon: a document with a tick">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ea580c"/><stop offset="1" stop-color="#9a3412"/></linearGradient></defs>
+<rect width="256" height="256" rx="56" fill="url(#bg)"/>
+<path d="M78 46 H152 L186 80 V210 H78 Z" fill="#fff"/>
+<path d="M152 46 V80 H186" fill="#fed7aa"/>
+<rect x="96" y="84" width="48" height="10" rx="5" fill="#fdba74"/>
+<rect x="96" y="106" width="68" height="10" rx="5" fill="#fdba74"/>
+<path d="M98 150 l14 14 26 -30" stroke="#c2410c" stroke-width="12" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="96" y="182" width="56" height="10" rx="5" fill="#fdba74"/>
+</svg>

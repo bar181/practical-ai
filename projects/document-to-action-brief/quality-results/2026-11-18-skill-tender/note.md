@@ -1,0 +1,5 @@
+# Note on friction
+
+Written on 18 November 2026 by a fresh Claude session playing a chatbot with SKILL.md installed as a skill, stepping out of role after its reply. One run, by an AI; no person has tried this. The reply beside this note is unedited.
+
+Reader: "my business partner" matched the default row ("a partner who decides with me"), but whether the partner decides jointly was a guess. Penalty placement: the 50% cancellation cost is not tied to a reader action, so I put it in Key facts, yet "every penalty goes in the summary" fought the two-sentence cap. The weekday rule cites the "Saturday 14 March" pattern; this document says "three Saturdays:" then lists dates, so I applied it by analogy (all three are Sundays). Counting 14 days backwards from event dates is not clearly covered by the "worked out" rule, which speaks of periods counted from a date. Eligibility conditions belong in Can we bid, but "must hold" is also an obligation, so they appear twice. The 25-word quote limit forced me to cut the section 4 list mid-sentence in O3. Several open questions (final numbers, "correct invoice") are judgement calls about what counts as unclear.

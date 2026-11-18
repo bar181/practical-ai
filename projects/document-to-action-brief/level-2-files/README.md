@@ -35,6 +35,8 @@ Nothing is sent or added for you. You copy what you want.
 
 ## Status
 
-Level 2 is the same instructions as Level 1, saved. Saving it as a skill was tested in Claude,
-where the skill ran on two documents (see [the evidence](../quality-results/README.md)). Not yet
-tried in ChatGPT or Gemini. The house rules file has not been tested.
+Level 2 is the same instructions as Level 1, saved. Saved as a skill in Claude, it has run in fresh
+sessions on two documents and with no document (17 and 18 November 2026). A filled-in house rules
+file was tested once, on 18 November 2026, in a session set up like a Claude Project: the brief
+applied both of the file's own rules. Not yet tried in ChatGPT or Gemini. As of 18 November 2026, users are
+testing it. [The evidence](../quality-results/README.md).
