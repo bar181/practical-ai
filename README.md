@@ -150,16 +150,16 @@ words to check.
 ### Rare Find, a side quest
 
 **A five-minute daily quiz where the right answer nobody else thought of scores the most.** Five
-prompts a day, the same for everyone. Claude checks answers that are not on the list, four AI hosts
-comment on every score, and one link challenges a friend to the same prompts.
+prompts a day, the same for everyone, in Claude or any browser. In Claude, it checks answers that
+are not on the list and four hosts write fresh comments. One link challenges a friend.
 
 <p align="center">
-  <img src="projects/rare-find/_build/img/how-it-plays.svg" width="620" alt="Animation: the prompt Name a bird, then four answers in turn with their points: Eagle, the crowd pick, 25; Flamingo, 9th most popular, 38; Hummingbird, right but beyond the top ten, 80; Shoebill, rare and right, a Gem, 100. The rarer the right answer, the more it scores.">
+  <img src="projects/rare-find/_build/img/how-it-plays.svg" width="620" alt="Animation: the prompt Name a bird, then four answers in turn with their points: Eagle, the crowd pick, 25; Flamingo, 9th most popular, 38; Hummingbird, right but beyond the top ten, 80; Shoebill, rare and right, a Gem, 100. It loops. The rarer the right answer, the more it scores.">
 </p>
 <p align="center">
-  <img src="projects/rare-find/_build/img/store-1-today.webp" width="180" alt="Rare Find, five prompts a day: the home screen with today's game and a practice round">
-  <img src="projects/rare-find/_build/img/store-2-result.webp" width="180" alt="Rare Find, the rare answer wins: Hoatzin for Name a bird is a Gem worth 100">
-  <img src="projects/rare-find/_build/img/store-3-scorecard.webp" width="180" alt="Rare Find, see where you stand: the Scorecard with today's score on an estimated chart and the week">
+  <img src="projects/rare-find/_build/img/store-1-today.webp" width="170" alt="Rare Find, five prompts a day: the home screen with today's game and a practice round">
+  <img src="projects/rare-find/_build/img/store-2-result.webp" width="170" alt="Rare Find, the rare answer wins: Hoatzin for Name a bird is a Gem worth 100">
+  <img src="projects/rare-find/_build/img/store-3-scorecard.webp" width="170" alt="Rare Find, see where you stand: the Scorecard with today's score on an estimated chart and the week">
 </p>
 <p align="center"><sub>Built phone first. 82 automated checks pass; six review loops scored earlier versions. Not yet played by people.</sub></p>
 

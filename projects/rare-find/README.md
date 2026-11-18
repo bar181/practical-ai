@@ -11,7 +11,7 @@ Asked to name a bird, anyone can say "Eagle". Say "Shoebill" and you take the ro
   <a href="https://bar181.github.io/practical-ai/rare-find/"><img src="_build/img/btn-play-web.svg" height="48" alt="Play in any browser"></a>
 </p>
 
-<p align="center"><b>Free</b> &nbsp;·&nbsp; <b>5 prompts a day</b> &nbsp;·&nbsp; <b>125 in the bank</b> &nbsp;·&nbsp; <b>Phone or computer</b> &nbsp;·&nbsp; <b>No account</b></p>
+<p align="center"><b>Free</b> &nbsp;·&nbsp; <b>5 prompts a day</b> &nbsp;·&nbsp; <b>125 in the bank</b><br><b>Phone or computer</b> &nbsp;·&nbsp; <b>No account</b></p>
 
 <p align="center">
   <img src="_build/img/store-1-today.webp" width="170" alt="Five prompts a day: the home screen, with today's game, a practice round and the scoring labels">

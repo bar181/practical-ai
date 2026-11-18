@@ -600,7 +600,7 @@ $("#b-practice").addEventListener("click",()=>{ if(!practiceLeft()){ toast(`That
 /* ---------- scorecard ---------- */
 function renderCard(){
   const k=dayKey(), mine=S.days[k], real=[], useReal=false;
-  $("#sc-today").textContent = mine ? `You scored ${mine.score} of 500. ` + (useReal ? `${real.filter(r=>r.score<mine.score).length} of ${real.length} players today scored less.` : `That beats about ${beatPct(mine.score)}% of players, by our estimate.`)
+  $("#sc-today").textContent = mine ? `You scored ${mine.score} of 500. ` + (useReal ? `${real.filter(r=>r.score<mine.score).length} of ${real.length} players today scored less.` : `That beats about ${beatPct(mine.score)}% of typical scores, by our estimate.`)
     : "Not played yet today. " + (useReal?`${real.length} people have.`:`The typical score is about ${MEAN}.`);
   $("#sc-chart").innerHTML = chartSVG(useReal?bins(real.map(r=>r.score)):bins(DIST), mine?mine.score:null, useReal?"Today's real scores":"Estimated spread of scores")
     + `<p class="cap">${useReal?`Today's real scores, ${real.length} players.`:`Estimated spread, not real players: a model of typical play, average about ${MEAN} of 500.`}</p>`;
@@ -908,7 +908,7 @@ async function endGame(){
   const n=g.packs.length, mean=meanOf(n), pct=beatPct(g.total,n);
   $("#end-of").textContent=`/ ${g.perfect}`;
   $("#end-banner").textContent = g.total>=0.8*g.perfect?"Spectacular!":g.total>=mean+0.12*g.perfect?"Rare form today.":g.total>=mean?"Above the typical score.":"Warm-up complete.";
-  $("#end-chart").innerHTML = chartSVG(bins(dist(n),g.perfect),g.total,"Your score against the estimated spread",g.perfect) + `<p class="cap">You beat about ${pct}% of players, by our estimate. Typical score about ${mean}. Not real players: a model of typical play.</p>`;
+  $("#end-chart").innerHTML = chartSVG(bins(dist(n),g.perfect),g.total,"Your score against the estimated spread",g.perfect) + `<p class="cap">You beat about ${pct}% of typical scores, by our estimate. Typical score about ${mean}. Not real players: a model of typical play.</p>`;
   // remember this exact game, so friends' challenge codes for it line up with your score
   const key=gameKey(g.packs); const rec=S.games[key]||(S.games[key]={others:{},n}); if(!rec.mine) rec.mine={score:g.total,tiers:tierString(g.res)}; rec.t=Date.now(); rec.day=g.day; saveLocal();
   renderVs($("#vs-board"),key); renderShare();
