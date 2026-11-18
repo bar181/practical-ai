@@ -148,7 +148,7 @@ one in settings, or turn them off.
 ## Status
 
 **In user testing.** As of 18 November 2026, users are playing it; their results are not in yet.
-102 of 102 automated checks pass at phone and desktop
+110 of 110 automated checks pass at phone and desktop
 width, with Claude replaced by a mock. In two blind reviews, fresh AI reviewers scored version 4
 91 and 86, against 84 and 82 for version 3, and both would replay version 4. Nobody has played
 version 4 in the real Claude artifact yet. The chat version passed two test games, played by a

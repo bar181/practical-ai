@@ -6,7 +6,7 @@
 
 - **The automated playtest**, [`../_build/playtest.py`](../_build/playtest.py). It plays the built
   page in Chromium at 390 px (phone) and 1280 px, keyboard only, with reduced motion, with no Claude,
-  and with a mock of Claude's answer check (`sample`). Last run, 18 November 2026: **102 of 102 checks
+  and with a mock of Claude's answer check (`sample`). Last run, 18 November 2026: **110 of 110 checks
   passed**. They cover how an answer lands (on screen within 100 ms, ordinary effects 150 to 250
   ms, the Gem reveal inside 600 ms, Next usable during effects, a late verdict that changes only its
   own round), 60 spelling cases, the per-category points, hidden Gems, the daily calendar
@@ -60,7 +60,7 @@ approve on demand, kept its verdict on a second opinion, and produced challenge 
 accepts. Its friction notes led to four rule fixes: the next prompt comes straight after each
 result, a skip scores 0, the top ten fits on two lines, and the link is given once. One line added
 after game 2 (when unsure between Gem and Good find, choose Good find) is not re-tested. The playtest
-still passes 102 of 102.
+still passes 110 of 110.
 
 ## Who has and has not tried it
 
