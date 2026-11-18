@@ -1035,8 +1035,10 @@ function renderCheck(){
   if(ask) btn.textContent = cur.failed ? "Try again" : "Check again";
   const note = ask ? (cur.failed ? `The AI could not check it (${cur.failCode||"no answer"}). Try again, or move on.` : "")
     : caps.sample ? "This reads like an instruction, so the AI will not check it."
-    : "No AI here to check it. In a chatbot such as Claude, the AI can.";
-  $("#check-note").textContent=note; row.hidden=!note;
+    : "No AI here to check it. ";
+  const cn=$("#check-note"); cn.textContent=note; row.hidden=!note;
+  // the browser copy points to the Claude copy, where the AI can check the answer
+  if(!caps.sample&&note){ const l=document.createElement("a"); l.href=CLAUDE_LINK; l.target="_blank"; l.rel="noopener"; l.textContent="Play in Claude"; cn.append(l," to have the AI check answers like this."); }
 }
 function showResult(){
   const cur=G.cur, {raw,m,pack}=cur;
