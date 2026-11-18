@@ -3,9 +3,6 @@
 <p align="center"><b>Expert work from the AI you already use.</b><br>
 Free tools for the jobs you repeat, for business people and developers alike.</p>
 
-<p align="center"><sub>For developers: each tool is a <code>SKILL.md</code> in the open Agent Skills format, a README and a
-worked example. Artifact Studio also ships a local MCP server.</sub></p>
-
 <p align="center">
   <a href="#start-here"><img src="assets/images/btn-start.svg" height="48" alt="Get the starter prompt"></a>
   &nbsp;
@@ -13,6 +10,9 @@ worked example. Artifact Studio also ships a local MCP server.</sub></p>
 </p>
 
 <p align="center"><b>Free</b> &nbsp;·&nbsp; <b>Open source</b> &nbsp;·&nbsp; <b>4 projects</b><br><b>Now in user testing</b></p>
+
+<p align="center"><sub>For developers: each tool is a <code>SKILL.md</code> in the open Agent Skills format, a README and a
+worked example. Artifact Studio also ships a local MCP server.</sub></p>
 
 <p align="center">
   <a href="projects/artifact-studio/"><img src="assets/images/tiles/artifact-studio.svg" width="150" alt="Artifact Studio: notes in, a designer page out"></a>
@@ -24,7 +24,6 @@ worked example. Artifact Studio also ships a local MCP server.</sub></p>
 <p align="center">
   <img src="assets/images/vision.svg" width="440" alt="Animation in three steps, top to bottom: a job you repeat, a Practical AI tool, and the job done to standard while you check and decide. It loops through three examples: an office manager's Monday sales report with Artifact Studio, a team lead's 40-page contract with Document to action brief, and a developer's new internal tool with Agentic Process. Underneath, a line from business people to developers: everyone an agentic engineer.">
 </p>
-
 
 ## Start here
 
@@ -111,8 +110,8 @@ against your notes.
 
 ### Agentic Process
 
-**An agentic engineer at your side, for everyday jobs.** A harness for everything: a job you repeat
-in; instructions you can reuse, an example and a test out.
+**An agentic engineer at your side, for everyday jobs.** A job you repeat in;
+instructions you can reuse, an example and a test out.
 
 <p align="center">
   <img src="projects/agentic-process/_build/img/pilot-score.svg" width="620" alt="Animated chart: in one blind pilot on the same brief, the tool built with Agentic Process scored 93 out of 100 with 0 corrections; the direct build scored 73 out of 100 with 2 corrections">
