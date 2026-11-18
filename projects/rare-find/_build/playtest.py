@@ -413,7 +413,7 @@ with sync_playwright() as pw:
     p4 = ctx2.new_page(); e4 = []; p4.on("pageerror", lambda e: e4.append(str(e)))
     p4.goto(GAME); p4.wait_for_timeout(800)
     p4.click("#b-practice"); p4.wait_for_timeout(200); answer(p4, "my own answer")
-    check("without an AI, an unlisted answer scores 0, offers no approval button, and says why", p4.is_hidden("#b-check") and p4.evaluate("window.__rf.state().cur.pts") == 0 and "No AI here to check it" in p4.inner_text("#check-note") and "We allow it" not in p4.inner_text("body"), p4.inner_text("#check-note"))
+    check("without an AI, an unlisted answer scores 0, offers no approval button, says why, and links to the game in Claude", p4.is_hidden("#b-check") and p4.evaluate("window.__rf.state().cur.pts") == 0 and "No AI here to check it" in p4.inner_text("#check-note") and p4.get_attribute("#check-note a", "href") == "https://claude.ai/artifact/HyfbDjPjofvRttRYKgMCis" and "We allow it" not in p4.inner_text("body"), p4.inner_text("#check-note"))
     p4.click("#b-quit"); p4.click("#b-leave-yes"); p4.wait_for_timeout(150)
     p4.click("#b-settings"); p4.wait_for_timeout(300)
     check("settings: about the creator, with a photo and links to the repo and LinkedIn", p4.is_visible(".about img") and p4.evaluate("document.querySelector('.about img').naturalWidth") > 0 and "github.com/bar181/practical-ai" in p4.inner_html(".about") and "linkedin.com/in/bradaross" in p4.inner_html(".about"))

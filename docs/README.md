@@ -89,7 +89,7 @@ Support tools that make every other tool better. Each starts with a version a pe
 
 | Project | What it does for you | Where it stands |
 | --- | --- | --- |
-| **Rare Find** | A five-minute daily trivia game in Claude or any browser, where the right answer nobody else thought of scores the most | **In user testing:** [project](../projects/rare-find/) · [explainer](reports/rare-find.html) |
+| **Rare Find** | A five-minute daily trivia game in Claude or any browser, where the right answer nobody else thought of scores the most | **In user testing:** [play in Claude](https://claude.ai/artifact/HyfbDjPjofvRttRYKgMCis) · [play in a browser](https://bar181.github.io/practical-ai/rare-find/) · [project](../projects/rare-find/) · [explainer](reports/rare-find.html) |
 
 The full list of ideas, sorted into everyday tasks, agent tools and hybrid projects, is in
 [the plans](../workshop/plans/README.md).
