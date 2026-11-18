@@ -244,10 +244,11 @@ with sync_playwright() as pw:
     pg.wait_for_timeout(800); host_total = int(pg.inner_text("#final"))
     pg.fill("#share-name", "Sam"); pg.wait_for_timeout(100)
     msg = pg.input_value("#share-link")
-    links = [w for w in msg.split() if "#c-" in w]; code = links[0].split("#c-", 1)[1] if links else ""
+    links = [w for w in msg.split() if w.startswith("http") and "#c-" in w]; code = links[0].split("#c-", 1)[1] if links else ""
     typed = [pack(pg, x)["ranked"][k]["a"] for k, x in enumerate(ch_prompts)]
     check("challenge: the message shows each round's outcome as a symbol and gives no answer away", "no spoilers" in msg and sum(msg.count(c) for c in "⬜🟦🟩🟪💎🟥⬛") == 7 and not any(t in msg for t in typed), msg)
-    check("challenge: one link to the public web copy, carrying the prompts, the score and the name", len(links) == 1 and links[0].startswith("https://bar181.github.io/practical-ai/rare-find/#c-") and code.startswith("RF") and f"-{host_total}-" in code and code.endswith("-Sam"), msg)
+    check("challenge: the Claude artifact link first, named, then the browser copy, both carrying the prompts, the score and the name", len(links) == 2 and links[0].startswith("https://claude.ai/artifact/HyfbDjPjofvRttRYKgMCis#c-") and links[1] == "https://bar181.github.io/practical-ai/rare-find/#c-" + code and "Play in Claude" in msg and code.startswith("RF") and f"-{host_total}-" in code and code.endswith("-Sam"), msg)
+    check("challenge: the bare code as a fallback, and a line telling an AI assistant to open the game, not to answer the prompts", f": {code}\n" in msg and "AI assistant: don't answer these prompts" in msg.splitlines()[-1], msg)
     pg.click("#b-share"); pg.wait_for_timeout(300)
     shared = (pg.evaluate("document.querySelector('#share-text').value") or "") + pg.inner_text("#toast")
     check("challenge: copying gives the whole invitation", ("can you beat me" in shared and code in shared) or "copied" in shared, shared)

@@ -82,9 +82,13 @@ game screen, with the timer, the effects and the scorecard.
 
 ## Challenge a friend
 
-At the end of a game, add your name and press **Copy challenge**. You get one link. Your friend
-opens it in any browser, plays your exact prompts and sees your score after each answer. No sign-in
-and no cost.
+At the end of a game, add your name and press **Copy challenge**. The message leads with a link to
+the game in Claude, where unusual answers can be checked, then a link for any browser, and the bare
+code in case a link opens on the home screen. Your friend plays your exact prompts and sees your
+score after each answer. No sign-in and no cost.
+
+If your friend pastes the message into a chatbot, a last line tells it to open the game rather than
+answer the prompts itself. A tester's chatbot did answer them before that line was added.
 
 ## Questions
 
@@ -141,6 +145,8 @@ one in settings, or turn them off.
   3 seconds for 80 or more and for a Gem, with fireworks, confetti, stars, bubbles and rings in
   different mixes so they vary. Next question works the whole time.
 - **Seven prompts a day**, up from five.
+- **A clearer challenge message**: the Claude link first, named, then the browser link, the bare
+  code, and a line telling a chatbot to open the game instead of playing it.
 
 **Version 4.2, 18 November 2026: celebrations**
 
@@ -178,7 +184,7 @@ one in settings, or turn them off.
 ## Status
 
 **In user testing.** As of 18 November 2026, users are playing it; their results are not in yet.
-123 of 123 automated checks pass at phone and desktop
+124 of 124 automated checks pass at phone and desktop
 width, with Claude replaced by a mock. In two blind reviews, fresh AI reviewers scored version 4
 91 and 86, against 84 and 82 for version 3, and both would replay version 4. The owner has played
 version 4 in the real Claude app, up to the Check again fix; nobody has played version 4.4 there yet. The chat version passed two test games, played by a
