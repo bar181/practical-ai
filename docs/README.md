@@ -31,7 +31,7 @@ only in Claude so far. [Open the project](../projects/artifact-studio/) ·
 [the explainer page](reports/artifact-studio.html) ·
 [the evidence](../projects/artifact-studio/quality-results/README.md).
 
-### Agentic Process: an agentic engineer at your side
+### Agentic Process: teach your AI a job once
 
 **What it does:** gives a job you repeat with AI the structure developers give coding agents: a
 clear result, written steps, the one mistake to catch, and a test in a fresh session before you
@@ -92,7 +92,7 @@ Support tools that make every other tool better. Each starts with a version a pe
 
 | # | Tool | What it will do for you | Where it stands |
 | --- | --- | --- | --- |
-| 1 | **Learnings database** | Record each lesson once, filed by type and topic, and bring it back before similar work starts | **Built by its author and tested in Claude, 19 Nov 2026:** [project](../projects/learnings-database/) · [explainer](reports/learnings-database.html) · [idea file](../projects/learnings-database/level-2-files/gist/learnings-log.md) |
+| 1 | **Learnings database** | Record each lesson once, filed by area and project, and bring it back before similar work starts | **Built and tested in Claude by its author, 19 Nov 2026. No one else has used it yet:** [project](../projects/learnings-database/) · [explainer](reports/learnings-database.html) · [idea file](../projects/learnings-database/level-2-files/gist/learnings-log.md) |
 | 2 | **Task and dependency graph** | Turn a goal into tasks, and show what is ready and what is blocked | Plan |
 | 3 | **Decision support** | Take a decision from options to a recommendation with the working shown | Example built |
 | 4 | **Estimate to proposal** | Combine a request, notes and past jobs into a draft estimate and proposal | Early draft |

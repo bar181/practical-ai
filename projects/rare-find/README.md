@@ -203,7 +203,7 @@ one in settings, or turn them off.
 **In user testing.** As of 18 November 2026, users are playing earlier versions; their results are not in yet.
 125 of 125 automated checks pass at phone and desktop
 width, with Claude replaced by a mock. In two blind reviews, fresh AI reviewers scored version 4
-91 and 86, against 84 and 82 for version 3, and both would replay version 4. The owner has played
+91 and 86, against 84 and 82 for version 3, and both would replay version 4. Its author has played
 version 4 in the real Claude app, up to the Check again fix; nobody has played version 4.4 there yet. The chat version passed two test games, played by a
 fresh AI session given the rules and the day's file; it has not been tried in ChatGPT itself. Not
 yet tried: a screen reader. The 100 newest prompts were spot-checked by Claude, not read in full by

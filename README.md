@@ -9,7 +9,7 @@ Free tools for the jobs you repeat, for business people and developers alike.</p
   <a href="#what-is-inside"><img src="assets/images/btn-projects.svg" height="48" alt="See the projects"></a>
 </p>
 
-<p align="center"><b>Free</b> &nbsp;·&nbsp; <b>Open source</b> &nbsp;·&nbsp; <b>5 projects</b><br><b>Now in user testing</b></p>
+<p align="center"><b>Free</b> &nbsp;·&nbsp; <b>Open source</b> &nbsp;·&nbsp; <b>5 projects</b><br><b>Four in user testing, one brand new</b></p>
 
 <p align="center"><sub>Each tool is a prompt you paste into your chatbot. Developers: the file formats, skills and connectors are at the bottom of this page.</sub></p>
 
@@ -167,9 +167,9 @@ every week. Connect it only where that removes work you repeat.
 | Project | 1. Try it: paste one prompt | 2. Save it | 3. Connect it |
 | --- | --- | --- | --- |
 | [**Artifact Studio**](projects/artifact-studio/) | [The try-it prompt](projects/artifact-studio/#try-it-now): your notes in, a designed page out | A skill, or the design guide in a Claude or ChatGPT Project or a Gemini Gem, plus your brand preferences. [Steps](projects/artifact-studio/level-2-files/README.md) | An MCP server on your own computer that lets an agent browse the template library. [Steps](projects/artifact-studio/level-3-files/README.md) |
-| [**Agentic Process**](projects/agentic-process/) | [The try-it prompt](projects/agentic-process/#try-it-now): a job you repeat in, a reusable tool and a test out | The builder as a skill in your coding agent. [Steps](projects/agentic-process/level-2-files/README.md) | A coding agent runs a whole build and hands back a reviewable change |
+| [**Agentic Process**](projects/agentic-process/) | [The try-it prompt](projects/agentic-process/#try-it-now): a job you repeat in, a reusable tool and a test out | The method in a Claude or ChatGPT Project or a Gemini Gem, or the builder as a skill in your coding agent. [Steps](projects/agentic-process/#get-started-make-it-your-standard) | A coding agent runs a whole build and hands back a reviewable change |
 | [**Document to action brief**](projects/document-to-action-brief/) | [The try-it prompt](projects/document-to-action-brief/#try-it-now), with your own document | A skill, or a Claude or ChatGPT Project or Gemini Gem, plus your house rules. [Steps](projects/document-to-action-brief/level-2-files/README.md) | Planned, not built. [The design](projects/document-to-action-brief/level-3-files/README.md) |
-| [**Learnings database**](projects/learnings-database/) | [The try-it prompt](projects/learnings-database/#try-it-now): "log that" and a lesson | The Claude plugin (`/log`, `/before-i-start`, `/weekly-review`), a Claude or ChatGPT Project, or the idea file for an agent with a folder. [Steps](projects/learnings-database/level-2-files/README.md) | A team log in Supabase, reached through Supabase's own connector. [Steps](projects/learnings-database/level-3-files/README.md) |
+| [**Learnings database**](projects/learnings-database/) | [The try-it prompt](projects/learnings-database/#try-it-now): "log that" and a lesson | A Claude or ChatGPT Project, a skill, or the Claude plugin (its `/log`, `/before-i-start` and `/weekly-review` commands work in Claude Code), or the idea file for a coding agent. [Steps](projects/learnings-database/level-2-files/README.md) | A team log in Supabase, reached through Supabase's own connector. [Steps](projects/learnings-database/level-3-files/README.md) |
 | [**Rare Find**](projects/rare-find/) | [Play in Claude](https://claude.ai/artifact/HyfbDjPjofvRttRYKgMCis), [in ChatGPT](projects/rare-find/#play-in-chatgpt-or-any-chatbot) or [in any browser](https://bar181.github.io/practical-ai/rare-find/) | The game's skill in any chatbot, so the AI checks answers and hosts. [Files](projects/rare-find/level-2-files/README.md) | The public web copy, with challenge links for friends |
 
 ## Questions

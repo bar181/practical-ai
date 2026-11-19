@@ -16,7 +16,7 @@ What they lack is a repeatable way to get good work from it on the jobs they rep
 **The pitch:** Practical AI takes specific, practical jobs and gives you a better way to do them
 with the AI you already have. Artifact Studio is professional design for the reports your AI
 already makes: scrollytelling, photo effects, animated diagrams, keynotes and lessons, on a menu you
-can ask from. Agentic Process is a mini harness for work that is not code: a clear result, written
+can ask from. Agentic Process sets up a job you repeat the way developers set up coding agents: a clear result, written
 steps and a test before you rely on it. Document to action brief turns a long document into what
 you must do and by when. The Learnings database keeps each lesson once and brings it back before
 similar work. Rare Find, a side quest, is a daily trivia game built with the same method. None

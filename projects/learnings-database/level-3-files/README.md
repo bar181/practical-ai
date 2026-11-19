@@ -12,7 +12,7 @@ logbook keeps the rules.
 fresh Claude session used it correctly through SQL alone ([results](../quality-results/README.md)).
 **Not yet tried on a real Supabase project or with the real connector.**
 
-## Set up (about fifteen minutes)
+## Set up (about fifteen minutes, an estimate)
 
 1. **Make a Supabase project for the log only.** Sign in at [supabase.com](https://supabase.com)
    (the free plan should be enough) and create a new Supabase project named `learnings`. Keeping

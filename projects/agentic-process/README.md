@@ -119,7 +119,7 @@ person could act on its first screen as it is.
 | --- | --- |
 | [**Document to action brief**](../document-to-action-brief/) | A supplier notice or report becomes what you must do, by when, and what is missing, each with the exact words.<br>*93/100 in the blind pilot, zero corrections ([the pilot version](quality-results/2026-11-16-builder-pilot/agentic-process/document-to-action-brief/)). Now a project of its own, in user testing.* |
 | [**Decision brief**](base/examples/decision-support/) | A business question becomes options weighed against your goals and limits, with dated sources and a recommendation.<br>*86 to 89 in blind grading, against 61 to 67 for a plain chatbot answer: one question, three blind graders. Every grader also said a busy owner would rather receive the plain answer.* |
-| [**Learning log**](base/examples/learning-log/) | Each lesson recorded once, and brought back before similar work starts.<br>*Passed three fresh-session checks.* |
+| [**Learning log**](base/examples/learning-log/) | Each lesson recorded once, and brought back before similar work starts.<br>*Passed three fresh-session checks. The full tool it led to: the [Learnings database](../learnings-database/).* |
 
 <p align="center">
   <img src="_build/img/builder-flow.svg" width="420" alt="Animation of the builder. A job you repeat goes in at the top. Four steps light up in turn: name the usable result, pick the simplest build, build one SKILL.md, and test it in a fresh session, with a loop back to fix. At the bottom, the package you get: README.md, SKILL.md and example.md, checked before you get it.">

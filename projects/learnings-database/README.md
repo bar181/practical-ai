@@ -11,7 +11,7 @@ A lessons-learned log your AI keeps for you, in the chatbot you already use.</p>
   <a href="#use-it-every-week"><img src="_build/img/btn-save.svg" height="48" alt="Use it every week"></a>
 </p>
 
-<p align="center"><b>Free</b> &nbsp;·&nbsp; <b>No setup</b> &nbsp;·&nbsp; <b>Your log stays in your own file</b><br><b>Tested in Claude</b> &nbsp;·&nbsp; <b>New: not yet used by a person</b></p>
+<p align="center"><b>Free</b> &nbsp;·&nbsp; <b>No setup</b> &nbsp;·&nbsp; <b>Your log stays in your own file</b><br><b>Tested in Claude</b> &nbsp;·&nbsp; <b>New: no one else has used it yet</b></p>
 
 <p align="center">
   <img src="_build/img/how-it-works.svg" width="620" alt="How it works in three steps: say log that with what happened and what you expected; get one filed row with the lesson as an instruction, saved after your yes, or a repeat counted; before similar work, the rules you accepted come back. The AI files and finds. You accept the rules.">
@@ -23,7 +23,7 @@ each lesson once, as a rule you can follow, and puts it back in front of you bef
 similar work.
 
 - **One sentence in, one filed lesson out.** Say what happened and what you expected. You get one
-  row, filed by type (marketing, sales, finance and seven more), with the lesson written as an
+  row, filed by area (marketing, sales, finance and seven more), with the lesson written as an
   instruction: "When ..., do ...".
 - **Repeats are counted, not copied.** It checks your log first. A lesson already there gets its
   count raised, so you can see what keeps going wrong and fix the cause.
@@ -39,8 +39,8 @@ read by the next crew before they sail.
 ## Get started: try it now
 
 Paste this into Claude, ChatGPT or the AI tool you use (tested so far in Claude only). Change the
-last line to something that went wrong for you this week. The link goes live when this project is
-published; until then, use the Raw steps under the box.
+last line to something that went wrong for you this week. If your AI cannot open the link, use the
+Raw steps under the box.
 
 ```
 Read the instructions at this link and follow them for the rest of this chat:
@@ -131,7 +131,7 @@ Claude only. ChatGPT, Gemini and others have not been tried yet.
 **19 November 2026. Built by its author and tested with fresh Claude sessions on invented data. No
 one else has used it yet.** It filed 40 of 40 test lessons in the right area and passed 11 of 11
 behaviour checks, including repeats, private details and a row that tries to give the AI orders.
-**Not yet tried:** the link prompt (it works once this folder is published on the main branch),
+**Not yet tried:** the link prompt with the live link,
 ChatGPT, a real Supabase project, and use by a real person. [The evidence](quality-results/README.md).
 
 **Using an AI agent?** An agent that works in a folder can set the whole log up from the
