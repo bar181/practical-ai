@@ -34,7 +34,9 @@ similar work.
 **Think of it as** a ship's log: one line each time the crew hits a rock or finds a faster channel,
 read by the next crew before they sail.
 
-## Try it now
+<a name="try-it-now"></a>
+
+## Get started: try it now
 
 Paste this into ChatGPT, Claude or the AI tool you use. Change the last line to something that went
 wrong for you this week.
