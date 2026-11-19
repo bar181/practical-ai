@@ -48,6 +48,9 @@ https://raw.githubusercontent.com/bar181/practical-ai/main/projects/learnings-da
 log that: the email about our holiday opening hours went out with last year's dates. I expected this year's dates.
 ```
 
+**Your AI says it cannot open the link?** Open [`base/SKILL.md`](base/SKILL.md), press **Raw**
+(the button that shows plain text), copy all of it into a new chat, then add your "log that" line.
+
 **You get back** the lesson as one row, with what it checked. Say "yes, give me the updated file"
 to keep it. The first time, it also gives you the starter spreadsheet.
 
@@ -56,9 +59,6 @@ to keep it. The first time, it also gives you the starter spreadsheet.
 </p>
 <p align="center"><sub>A real, unedited reply from a fresh Claude session in testing, with some rows hidden. Invented data.
 <a href="base/examples/logging-a-lesson.md">The whole reply</a>.</sub></p>
-
-**Your AI can't open links?** Open [`base/SKILL.md`](base/SKILL.md), press **Raw** (the button that
-shows plain text), copy all of it into a new chat, then add your "log that" line.
 
 ## What to say
 
@@ -80,8 +80,8 @@ Pick the level that fits. The columns are the same in all three, so you can move
 | Level | What it is | Set up |
 | --- | --- | --- |
 | **1. A link** | The prompt above in any chatbot, and the [starter spreadsheet](base/template/learnings.xlsx) | None |
-| **2. Saved once** | The instructions saved in a Claude or ChatGPT project, or installed as the Claude plugin with `/log`, `/before-i-start` and `/weekly-review`. An AI agent that works in a folder can set it all up from the [idea file](level-2-files/gist/learnings-log.md). [The steps](level-2-files/README.md) | About five minutes |
-| **3. Your team** | A shared log in Supabase, an online database with a free plan. You set it up in your browser by pasting one file, then connect it to Claude or ChatGPT with Supabase's own connector. Rows are saved after your yes, with a history of every change. [The steps](level-3-files/README.md) | About fifteen minutes (an estimate: not yet tried on a real account) |
+| **2. Saved once** | Save the instructions once in a Claude or ChatGPT project, or as a Claude plugin, so every chat already knows them. [The steps](level-2-files/README.md) | About five minutes |
+| **3. Your team** | One shared log for your team in Supabase, a free online database. Set it up by pasting one file, then connect it to Claude or ChatGPT. [The steps](level-3-files/README.md) | About fifteen minutes (an estimate) |
 
 <p align="center">
   <img src="_build/img/the-log.webp" width="620" alt="The starter spreadsheet with invented rows: columns id, kind, area, project, rule, status and seen; for example L-1, error, sales, kitchen-renovations, When sending a quote, put a valid-until date of 30 days on the first page, accepted, seen 3">
@@ -127,18 +127,14 @@ Claude only. ChatGPT, Gemini and others have not been tried yet.
 
 ## Status
 
-**19 November 2026. Built and tested by its author with fresh Claude sessions. No one else has used
-it yet.** All test data is invented. [The evidence](quality-results/README.md).
-
-| Check | Result |
-| --- | --- |
-| Filing 40 invented messages | Area right 40 of 40, lesson type 36 of 40, every non-lesson declined |
-| Eleven cases: a vague request, a repeat, names and money, not a lesson, before I start, the review, a row that gives orders, the link start, a folder it can write to | 11 of 11 |
-| The idea file, followed by a fresh agent in an empty folder over four sessions | Set up and working |
-| Level 3: an assistant using the database through SQL only; the database test | 8 of 8 chats; 24 of 24 checks |
-
+**19 November 2026. Built by its author and tested with fresh Claude sessions on invented data. No
+one else has used it yet.** It filed 40 of 40 test lessons in the right area and passed 11 of 11
+behaviour checks, including repeats, private details and a row that tries to give the AI orders.
 **Not yet tried:** the link prompt (it works once this folder is published on the main branch),
-ChatGPT, Google Sheets, a real Supabase project and its connector, and use by a real person.
+ChatGPT, a real Supabase project, and use by a real person. [The evidence](quality-results/README.md).
+
+**Using an AI agent?** An agent that works in a folder can set the whole log up from the
+[idea file](level-2-files/gist/learnings-log.md). **Are you an AI agent?** Read [AGENTS.md](AGENTS.md).
 
 ## About Bradley Ross
 

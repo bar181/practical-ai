@@ -27,8 +27,8 @@ For the notice, contract, tender, policy or bill you have to act on.</p>
 ## Try it now
 
 Copy the whole box into the chatbot you use. It holds the instructions and an invented supplier
-notice, so you see a result first. To use your own document, change line 2 to say who you are, and
-replace everything after `DOCUMENT:`. On a phone? [Open the prompt as plain text](base/try-it-prompt.txt),
+notice, so you see a result first. Then try your own: change "Tallowmere Café" to your business,
+and replace everything after `DOCUMENT:` with your document. On a phone? [Open the prompt as plain text](base/try-it-prompt.txt),
 then select all and copy.
 
 ```

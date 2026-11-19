@@ -1,7 +1,7 @@
 # Explainers: the finished projects
 
 <p align="center">
-  <img src="../../assets/images/practical-ai-pitch.svg" width="720" alt="Animation: Practical AI, better work from the AI you already use, with a proven process for the jobs you repeat, and faster. Artifact Studio, design for your reports, and Agentic Process, structure for repeat jobs, light up in turn. The AI drafts; you check and decide.">
+  <img src="../../assets/images/practical-ai-pitch.svg" width="720" alt="Animation: Practical AI, better work from the AI you already use, with a repeatable process for the jobs you repeat, and faster. Artifact Studio, design for your reports, and Agentic Process, structure for repeat jobs, light up in turn. The AI drafts; you check and decide.">
 </p>
 
 **The picture, in words:** Practical AI gets better work from the AI you already use. Artifact
@@ -11,14 +11,16 @@ repeat. In both, the AI drafts and you check and decide.
 ## Why this repository exists
 
 Most people already have an AI chatbot. Left alone, it makes plain pages and misses what matters.
-What they lack is a proven way to get good work from it on the jobs they repeat, every time.
+What they lack is a repeatable way to get good work from it on the jobs they repeat, every time.
 
 **The pitch:** Practical AI takes specific, practical jobs and gives you a better way to do them
 with the AI you already have. Artifact Studio is professional design for the reports your AI
 already makes: scrollytelling, photo effects, animated diagrams, keynotes and lessons, on a menu you
 can ask from. Agentic Process is a mini harness for work that is not code: a clear result, written
-steps and a test before you rely on it. Neither replaces your AI's own features; each adds what
-they are missing.
+steps and a test before you rely on it. Document to action brief turns a long document into what
+you must do and by when. The Learnings database keeps each lesson once and brings it back before
+similar work. Rare Find, a side quest, is a daily trivia game built with the same method. None
+replaces your AI's own features; each adds what they are missing.
 
 ## The explainer pages
 

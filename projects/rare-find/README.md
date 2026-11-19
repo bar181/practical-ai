@@ -93,10 +93,8 @@ message gives them three ways in:
   in the chat, with your score to beat.
 - **In any browser:** a plain link, with no AI checks.
 
-Each part asks the friend's chatbot to set the game up, not to play it. On 19 November 2026 a
-challenge link to the main Claude copy opened the game in a chat but could not be played, and an
-earlier message was answered by the chatbot itself, so the message works this way now. Pasted into
-**Got a challenge code from a friend?**, the whole message works too.
+Each way in sets the game up for your friend, so they play it rather than their chatbot answering
+for them. Pasted into **Got a challenge code from a friend?**, the whole message works too.
 
 ## Questions
 
@@ -157,6 +155,9 @@ one in settings, or turn them off.
   makes the friend their own copy of the game, a request to paste into ChatGPT or another chatbot
   that hosts the same prompts in the chat, and a browser link.
 
+<details>
+<summary><b>Earlier versions</b></summary>
+
 **Version 4.2, 18 November 2026: celebrations**
 
 - Every right answer gets a celebration, and it grows with the points: a few sparks for the crowd
@@ -168,7 +169,7 @@ one in settings, or turn them off.
 - A tidier result: your answer, its points, Check again and Next, with no extra notes; the timer
   ring hides once you answer, and less empty space at the bottom.
 - Fairer checks: an answer the AI accepts that is on no list scores 60 to 80 by how common it is,
-  not a flat 80; "Helens" now counts as Mount St. Helens without a check.
+  not a flat 80 (version 4.4 replaced this with the 1 to 9 rarity scale); "Helens" now counts as Mount St. Helens without a check.
 
 **Version 4, 18 November 2026: answer moments**
 
@@ -190,9 +191,11 @@ one in settings, or turn them off.
 - Practice rounds, up to 100 prompts a day, with no repeats.
 - One link to challenge a friend, with nothing to sign in to.
 
+</details>
+
 ## Status
 
-**In user testing.** As of 18 November 2026, users are playing it; their results are not in yet.
+**In user testing.** As of 18 November 2026, users are playing earlier versions; their results are not in yet.
 125 of 125 automated checks pass at phone and desktop
 width, with Claude replaced by a mock. In two blind reviews, fresh AI reviewers scored version 4
 91 and 86, against 84 and 82 for version 3, and both would replay version 4. The owner has played

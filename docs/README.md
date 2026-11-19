@@ -4,8 +4,9 @@ A one-page summary for anyone deciding where to start. Updated 19 November 2026.
 
 ## What is ready
 
-Five projects are built and ready to try. Users are testing the first four as of 18 November
-2026; the Learnings database was finished on 19 November. The two with the most evidence are
+Five projects are built and ready to try. Other people are testing Artifact Studio, Agentic
+Process, Document to action brief and Rare Find as of 18 November 2026. Nobody else has used the
+Learnings database yet; it was finished on 19 November. The two with the most evidence are
 below; Document to action brief, the Learnings database and the Rare Find game follow in the lists.
 Artifact Studio, Agentic Process, the Learnings database and Rare Find each have an explainer page
 in [`reports/`](reports/) (download the HTML file and open it in a browser).
@@ -35,7 +36,7 @@ only in Claude so far. [Open the project](../projects/artifact-studio/) ·
 clear result, written steps, the one mistake to catch, and a test in a fresh session before you
 rely on it. It uses the AI tools you already have and adds only what they are missing.
 
-**How you use it:** paste one build request into a coding agent such as Claude Code, with the job,
+**How you use it:** paste one prompt into the chatbot you use, or a coding agent such as Claude Code, with the job,
 who will use the result and the one thing that usually goes wrong. Read the hand-back, run any
 tests it left for you, and check it against the "Is it ready?" list.
 
@@ -50,8 +51,8 @@ and one blind reviewer. [Open the project](../projects/agentic-process/) ·
 
 ## What comes next
 
-The next tools, in the order they are planned. "Example built" means a working version exists
-inside Agentic Process; it becomes its own project once someone other than its author has used it.
+Every tool, in the order it was planned. Finished projects are marked and linked. "Example built"
+means a working version exists inside Agentic Process.
 
 ### For everyday work
 
@@ -76,7 +77,7 @@ Support tools that make every other tool better. Each starts with a version a pe
 
 | # | Tool | What it will do for you | Where it stands |
 | --- | --- | --- | --- |
-| 1 | **Learnings database** | Record each lesson once, filed by type and topic, and bring it back before similar work starts | **Built, tested by Claude, 19 Nov 2026:** [project](../projects/learnings-database/) · [explainer](reports/learnings-database.html) · [idea file](../projects/learnings-database/level-2-files/gist/learnings-log.md) |
+| 1 | **Learnings database** | Record each lesson once, filed by type and topic, and bring it back before similar work starts | **Built by its author and tested in Claude, 19 Nov 2026:** [project](../projects/learnings-database/) · [explainer](reports/learnings-database.html) · [idea file](../projects/learnings-database/level-2-files/gist/learnings-log.md) |
 | 2 | **Task and dependency graph** | Turn a goal into tasks, and show what is ready and what is blocked | Plan |
 | 3 | **Decision support** | Take a decision from options to a recommendation with the working shown | Example built |
 | 4 | **Estimate to proposal** | Combine a request, notes and past jobs into a draft estimate and proposal | Early draft |
@@ -91,7 +92,7 @@ Support tools that make every other tool better. Each starts with a version a pe
 
 | Project | What it does for you | Where it stands |
 | --- | --- | --- |
-| **Rare Find** | A five-minute daily trivia game in Claude or any browser, where the right answer nobody else thought of scores the most | **In user testing:** [play in Claude](https://claude.ai/artifact/HyfbDjPjofvRttRYKgMCis) · [play in a browser](https://bar181.github.io/practical-ai/rare-find/) · [project](../projects/rare-find/) · [explainer](reports/rare-find.html) |
+| **Rare Find** | A five-minute daily trivia game in Claude, ChatGPT or any browser, where the right answer nobody else thought of scores the most | **In user testing:** [play in Claude](https://claude.ai/artifact/HyfbDjPjofvRttRYKgMCis) · [play in a browser](https://bar181.github.io/practical-ai/rare-find/) · [project](../projects/rare-find/) · [explainer](reports/rare-find.html) |
 
 The full list of ideas, sorted into everyday tasks, agent tools and hybrid projects, is in
 [the plans](../workshop/plans/README.md).

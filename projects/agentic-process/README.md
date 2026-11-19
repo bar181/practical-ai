@@ -1,16 +1,17 @@
 # Agentic Process
 
-<h3 align="center">An agentic engineer at your side, for everyday jobs.</h3>
+<h3 align="center">Teach your AI a job once, and it does it the same way every week.</h3>
 
-<p align="center">A harness for everything.</p>
+<p align="center">For the jobs you keep re-explaining: meeting notes, supplier notices, quotes.</p>
 
-**Are you an AI agent?** Go to [AGENTS.md](AGENTS.md) for instructions you can follow now.
+<p align="center"><b>Free</b> &nbsp;·&nbsp; <b>No setup</b> &nbsp;·&nbsp; <b>Your own chatbot</b><br><b>Tested in Claude</b> &nbsp;·&nbsp; <b>Now in user testing</b></p>
 
 Most everyday AI work is a prompt and a hope. Agentic Process turns a job you repeat into a small
 tool: one instruction file you paste into a new chat, a worked example, and a short test, so the AI
 does the job the same way every time.
 
-- **Work you can rely on.** A fresh AI session tests the tool before you use it.
+- **Work you can check.** You get a short test to run in a new chat (a coding agent runs it for
+  you) before you rely on it.
 - **The same way every time.** Written steps you save once, not a lucky prompt.
 - **Time back.** Next week starts from the saved instructions, not a blank chat.
 
@@ -71,7 +72,7 @@ you ran, and what you assumed.
 
 </details>
 
-<p align="center"><b><i>"Like having an engineer sitting with me, so every new job is set up the proper way."</i></b></p>
+<p align="center"><b>The aim: like having an engineer beside you, so every new job is set up the proper way.</b></p>
 
 ## See the difference
 
@@ -197,6 +198,8 @@ This one-line version is not yet tested. The tested prompt is in [Try it now](#t
 
 **18 November 2026.** Built by its author with Claude. All testing so far was in Claude, including
 the blind reviews and the try-it prompt above. As of 18 November 2026, users are testing it; their results are not in yet. Not yet tried in other chatbots or coding agents. [The evidence](quality-results/README.md).
+
+**Are you an AI agent?** Go to [AGENTS.md](AGENTS.md) for instructions you can follow now.
 
 ## About Bradley Ross
 

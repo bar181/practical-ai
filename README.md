@@ -11,8 +11,7 @@ Free tools for the jobs you repeat, for business people and developers alike.</p
 
 <p align="center"><b>Free</b> &nbsp;·&nbsp; <b>Open source</b> &nbsp;·&nbsp; <b>5 projects</b><br><b>Now in user testing</b></p>
 
-<p align="center"><sub>For developers: each tool is a <code>SKILL.md</code> in the open Agent Skills format, a README and a
-worked example. Artifact Studio also ships a local MCP server, and the Learnings database connects to Supabase through its MCP connector.</sub></p>
+<p align="center"><sub>Each tool is a prompt you paste into your chatbot. Developers: the file formats, skills and connectors are at the bottom of this page.</sub></p>
 
 <p align="center">
   <a href="projects/artifact-studio/"><img src="assets/images/tiles/artifact-studio.svg" width="150" alt="Artifact Studio: notes in, a designer page out"></a>
@@ -45,8 +44,8 @@ About me: [your job, and one task you
 repeat every week]
 ```
 
-<sub>Tested in Claude only. If your chatbot cannot open links, paste this README's text in place of
-the first link.</sub>
+<sub>Tested in Claude only. If your chatbot cannot open links, select all the text on this page,
+copy it, and paste it where the first link is.</sub>
 
 ## Why Practical AI
 
@@ -111,7 +110,7 @@ against your notes.
 
 ### Agentic Process
 
-**An agentic engineer at your side, for everyday jobs.** A job you repeat in;
+**Teach your AI a job once, and it does it the same way every week.** A job you repeat in;
 instructions you can reuse, an example and a test out.
 
 <p align="center">
@@ -168,7 +167,7 @@ every week. Connect it only where that removes work you repeat.
 | Project | 1. Try it: paste one prompt | 2. Save it | 3. Connect it |
 | --- | --- | --- | --- |
 | [**Artifact Studio**](projects/artifact-studio/) | [The try-it prompt](projects/artifact-studio/#try-it-now): your notes in, a designed page out | A skill, or the design guide in a Claude or ChatGPT Project or a Gemini Gem, plus your brand preferences. [Steps](projects/artifact-studio/level-2-files/README.md) | An MCP server on your own computer that lets an agent browse the template library. [Steps](projects/artifact-studio/level-3-files/README.md) |
-| [**Agentic Process**](projects/agentic-process/) | [The build request](projects/agentic-process/#try-it-now), pasted into a coding agent such as Claude Code | The builder as a skill in your coding agent. [Steps](projects/agentic-process/level-2-files/README.md) | A coding agent runs a whole build and hands back a reviewable change |
+| [**Agentic Process**](projects/agentic-process/) | [The try-it prompt](projects/agentic-process/#try-it-now): a job you repeat in, a reusable tool and a test out | The builder as a skill in your coding agent. [Steps](projects/agentic-process/level-2-files/README.md) | A coding agent runs a whole build and hands back a reviewable change |
 | [**Document to action brief**](projects/document-to-action-brief/) | [The try-it prompt](projects/document-to-action-brief/#try-it-now), with your own document | A skill, or a Claude or ChatGPT Project or Gemini Gem, plus your house rules. [Steps](projects/document-to-action-brief/level-2-files/README.md) | Planned, not built. [The design](projects/document-to-action-brief/level-3-files/README.md) |
 | [**Learnings database**](projects/learnings-database/) | [The try-it prompt](projects/learnings-database/#try-it-now): "log that" and a lesson | The Claude plugin (`/log`, `/before-i-start`, `/weekly-review`), a Claude or ChatGPT Project, or the idea file for an agent with a folder. [Steps](projects/learnings-database/level-2-files/README.md) | A team log in Supabase, reached through Supabase's own connector. [Steps](projects/learnings-database/level-3-files/README.md) |
 | [**Rare Find**](projects/rare-find/) | [Play in Claude](https://claude.ai/artifact/HyfbDjPjofvRttRYKgMCis), [in ChatGPT](projects/rare-find/#play-in-chatgpt-or-any-chatbot) or [in any browser](https://bar181.github.io/practical-ai/rare-find/) | The game's skill in any chatbot, so the AI checks answers and hosts. [Files](projects/rare-find/level-2-files/README.md) | The public web copy, with challenge links for friends |
@@ -222,17 +221,18 @@ is planned, not built yet.
 <summary><b>Who has used it?</b></summary>
 
 Its author built and tested all five projects in Claude, and used Artifact Studio for real for a
-client's course (the before and after above). As of 18 November 2026, users are testing the first
-four. The Learnings database was finished on 19 November 2026 and has not yet been used by anyone
-else. Results are not in yet.
+client's course (the before and after above). As of 18 November 2026, other people are testing
+Artifact Studio, Agentic Process, Document to action brief and Rare Find. Nobody else has used the
+Learnings database yet; it was finished on 19 November 2026. Results are not in yet.
 
 </details>
 
 ## Status
 
-**19 November 2026: in user testing.** All five projects were built by their author and tested in
-Claude. Users are testing the first four; the Learnings database, finished on 19 November, is next.
-Their results are not in yet. Not yet tried in ChatGPT or
+**19 November 2026: in user testing.** The author built all five projects and tested them in
+Claude. Other people are now testing Artifact Studio, Agentic Process, Document to action brief and
+Rare Find. Nobody else has used the Learnings database yet; it was finished on 19 November. Results
+are not in yet. Not yet tried in ChatGPT or
 Gemini. What comes next: [the priority list](docs/README.md#what-comes-next) · [every idea](workshop/plans/README.md).
 The evidence: [Artifact Studio](projects/artifact-studio/quality-results/README.md)
 · [Agentic Process](projects/agentic-process/quality-results/README.md) · [Document to action brief](projects/document-to-action-brief/quality-results/README.md)
@@ -267,6 +267,10 @@ room.
 | [`docs/`](docs/) | A summary of the projects, the priority list, and an explainer page for each |
 | [`assets/images/`](assets/images/) | Images shared across the repository |
 | [`workshop/`](workshop/) | How tools get built: plans, earlier drafts, skills and checking scripts. You do not need it to use a tool |
+
+**For developers:** each tool is a `SKILL.md` in the open Agent Skills format, a README and a worked
+example. Artifact Studio also ships a local MCP server, and the Learnings database connects to
+Supabase through Supabase's own MCP connector.
 
 Inside every project, `base/` is enough to try the tool. Beside it, `level-2-files/` and
 `level-3-files/` hold the saved and the connected versions. Each project keeps its own images, so
