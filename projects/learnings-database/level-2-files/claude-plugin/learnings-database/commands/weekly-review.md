@@ -1,7 +1,7 @@
 ---
-description: Review the lessons waiting in your learnings log: accept, merge or retire
+description: Review the lessons waiting in your learnings log
 ---
 
-Use the learnings-database skill to run the weekly review of my log. Suggest; change nothing without my yes.
+Use the learnings-database skill to run the weekly review. Suggest; change nothing without my yes.
 
 $ARGUMENTS

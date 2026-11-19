@@ -3,132 +3,99 @@
 <h1 align="center">Learnings database</h1>
 
 <p align="center"><b>Stop making the same mistake twice.</b><br>
-Say "log that" when something goes wrong, has to be redone, or works better than usual. Get the
-rules back before similar work starts.</p>
+Tell your chatbot "log that" when something goes wrong. Get the rules back before you start
+similar work.</p>
 
 <p align="center"><b>Free</b> &nbsp;·&nbsp; <b>For Claude, ChatGPT and other chatbots</b> &nbsp;·&nbsp; <b>Your log stays in your own file</b><br><b>Tested in Claude</b> &nbsp;·&nbsp; <b>Not yet used by a person</b></p>
 
 **Think of it as** a ship's log: one line each time the crew hits a rock or finds a faster channel,
 read by the next crew before they sail.
 
-- **One line to log.** Tell your chatbot what happened and what you expected. You get one row,
-  filed by the type of learning (marketing, sales, finance, coding and six more) and the kind of
-  lesson, with the lesson written as an instruction: "When ..., do ...".
-- **Fewer duplicates.** When your log is attached, it searches it first. If the lesson is already
-  there, it counts it again instead of adding a row, so you can see what keeps happening.
-- **The rules come back when you ask.** Say "before I start the price update" and get the
-  rules that apply, as a block to paste into the next chat or an agent's instructions.
-- **You stay in charge.** It asks before saving anything, and nothing is used as a rule until you
-  accept it at a five-minute weekly review. It is told to remove names and contact details and to
-  mark anything about a client, a person or money as sensitive: check each row before you keep it.
+- **One sentence in, one filed row out.** Say what happened and what you expected. You get one row,
+  filed by the kind of learning (marketing, sales, finance and seven more), with the lesson written
+  as an instruction: "When ..., do ...".
+- **Repeats are counted, not copied.** When your log is attached, it checks it first. A lesson
+  already there gets its count raised, so you can see what keeps happening.
+- **The rules come back when you ask.** Say "before I start the price update" and get the rules
+  that apply.
+- **You stay in charge.** It asks before saving anything, and a lesson becomes a rule only when you
+  accept it at a five-minute weekly review.
 
-## Get started: try it now
+## Get started (two minutes)
 
-Copy this into Claude, ChatGPT or another chatbot that can open links. It loads the instructions
-from this folder, so you always get the latest version. Attach your log if you have one (the
-paperclip or **+** button beside the message box); if not, you get a starter file. **Can't open
-links?** Paste the instructions instead: see below the box.
+1. Copy this, change the last line to your own lesson, and paste it into Claude, ChatGPT or another
+   chatbot that can open links. (If it says it cannot open the link, use the paste route below.)
 
-```
-Read the instructions at this link and follow them for the rest of this chat:
-https://raw.githubusercontent.com/bar181/practical-ai/main/projects/learnings-database/base/SKILL.md
+   ```
+   Read the instructions at this link and follow them for the rest of this chat:
+   https://raw.githubusercontent.com/bar181/practical-ai/main/projects/learnings-database/base/SKILL.md
 
-My log is attached. If I have not attached one, give me the starter file first.
+   log that: the email about our holiday opening hours went out with last year's dates. I expected this year's dates.
+   ```
 
-log that: the email to all our customers about holiday opening hours went out with last year's dates. I expected this year's dates. We copied last year's email and only changed the subject. It belongs to the newsletter.
-```
+2. **First time?** It gives you the starter spreadsheet, [`learnings.xlsx`](base/template/learnings.xlsx).
+   Save it somewhere private and delete its twelve invented example rows. **Next time,** attach it
+   to the chat (the paperclip or **+** beside the message box), so it can spot repeats.
+3. **Keep the row.** The easiest way: say "yes, give me the updated file" and save it over your old
+   one. Or copy the line it gives you into the first empty row and use **Data > Split text to
+   columns** (Google Sheets) or **Data > Text to Columns** (Excel).
 
-**If your chatbot cannot open links, or the link does not load:** open
-[`base/SKILL.md`](base/SKILL.md), press **Raw** (the button above the text that shows the plain
-file), copy all of it, paste it into a new chat, then add your "log that" message. The same prompt as a file:
-[`base/try-it-prompt.txt`](base/try-it-prompt.txt).
-
-**What you get back** is one line to paste under your log, the same row as a table, and a few lines
-on what it checked. A real, unedited reply: [`base/examples/logging-a-lesson.md`](base/examples/logging-a-lesson.md).
-
-**Then keep the row.**
-
-1. The first time, download the starter file, [`learnings.xlsx`](base/template/learnings.xlsx), and
-   keep it somewhere private: your computer, or your own Google Drive. Delete its twelve invented
-   example rows.
-2. Copy the line it gives you. In Excel, paste it in column A of the first empty row and use
-   **Data > Text to Columns** with comma as the separator. In Google Sheets, paste it in column A
-   and use **Data > Split text to columns**. Each value lands in its own column.
-3. Next time, attach the file again, so it can spot a repeat and use your projects.
-
-The first time takes about ten minutes; after that, about a minute a lesson. Each row gets an id
-such as `L-9`, so you can refer to it later. If a lesson lands across two columns when you split
-it, ask the chatbot for "the row as tab-separated" and paste that instead.
+**Chatbot can't open the link?** Open [`base/SKILL.md`](base/SKILL.md), press **Raw** (the button
+that shows the plain text), copy all of it into a new chat, then add your "log that" line. A real, unedited first reply:
+[`base/examples/logging-a-lesson.md`](base/examples/logging-a-lesson.md).
 
 ## What to say
 
 | You say | You get |
 | --- | --- |
 | `log that: [what happened]. I expected [what you expected].` | One row, or "this is a repeat of L-9" with its count raised |
-| `before I start [the work]` | At most five accepted rules that apply, and a block to paste |
-| `weekly review` | The rows waiting for you, each with a suggestion: accept, merge with another row, or retire (stop using it) |
-| `what keeps going wrong?` | Errors seen more than twice |
-| `what have we learned about [an area or project]?` | The accepted rules for it |
+| `before I start [the work]` | At most five accepted rules that apply, ready to paste into the next chat |
+| `weekly review` | The rows waiting for you, each with a suggestion: accept, merge or retire (stop using it) |
 
-When you correct its work in a chat that has these instructions, it does what you asked, then
-offers once: "That sounds like a lesson for your log. Log it?"
+## When you use it every week
 
-## For a technical helper: where your log lives
-
-Pick the first that fits. You can move up later without retyping: the columns are the same
-everywhere, and [`csv_sync.py`](level-3-files/csv_sync.py) moves rows between a sheet and a database.
-
-| Level | Your log is | Set up | Saving a row |
-| --- | --- | --- | --- |
-| 1 | A spreadsheet you attach or paste: [`learnings.xlsx`](base/template/learnings.xlsx) (with the lists on their own tab) or [`learnings.csv`](base/template/learnings.csv) | None | You paste the line it gives you |
-| 2 | The same file, saved with the instructions: a [Claude skill or plugin](level-2-files/README.md), a [ChatGPT project](level-2-files/chatgpt-project/instructions.md), a [Google Sheet](level-2-files/google-drive.md) or a file in a folder your assistant can write to | About five minutes, once | Where it can write (a folder, an editable Google Sheet), it adds the row after your yes |
-| 3 | A database, through a small [MCP server](level-3-files/README.md): one file in your folder (recommended), or a shared Postgres or Supabase database for a team | About fifteen minutes; needs Python | Saved as `proposed` after your yes; you accept it at the review |
-
-**Searching by meaning** is optional at level 3, with any embedding service. Without it, finding is
-by filters and words, which is exact and enough for a log of hundreds or thousands of rows.
+| Level | What it is | Set up |
+| --- | --- | --- |
+| 1. A link | The steps above: any chatbot, your spreadsheet | None |
+| 2. Saved once | The instructions saved in a Claude or ChatGPT project, or installed as a [Claude plugin](level-2-files/README.md). Some assistants that work in a folder on your computer can also keep the log there for you | About five minutes |
+| 3. A shared database | Your team's log in [Supabase](level-3-files/README.md), an online database service with a free plan. You set it up in your browser by pasting one file (no programming), then connect it to Claude or ChatGPT. The assistant saves rows itself, after your yes, and keeps a history of every change | About fifteen minutes (an estimate: not yet tried on a real account) |
 
 ## What it is not
 
-The learning side only. It is not a wiki or knowledge base, not memory of your preferences, not a
-note-taking app and not a coding tool. It keeps one thing: what to do differently next time,
-approved by you. Chatbot memory and these tools can sit beside it.
+It keeps one thing: what to do differently next time, approved by you. It is not a wiki or a
+knowledge base, not memory of your preferences, and not a coding tool.
 
 ## Status
 
-**19 November 2026. Built and tested by Claude only. No person has used it yet.**
+**19 November 2026. Built and tested by Claude only. No person has used it yet.** Each check ran
+in a fresh Claude session given only the instructions ([details](quality-results/README.md)):
 
-| Tried | Result |
+| Check | Result |
 | --- | --- |
-| Filing 40 invented messages, each in a fresh Claude session with only the instructions | Final run: area right 40 of 40, lesson type 37 of 40, every non-lesson declined |
-| Eleven behaviour cases in fresh Claude sessions: a vague request, a repeat, a name and an amount, not a lesson, before I start, the review, noticing a lesson, a row that gives orders, the link start, a folder it can write to | 11 of 11 |
-| Level 3 on a real file database and a real Postgres with pgvector, including an MCP client | 29 of 29 and 35 of 35 checks |
-| The Claude plugin | Passes `claude plugin validate`. Not yet installed by a person |
+| Filing 40 invented messages | Area right 40 of 40, lesson type 36 of 40, every non-lesson declined |
+| Eleven cases: a vague request, a repeat, names and money, not a lesson, before I start, the review, a row that gives orders, the link start, a folder it can write to | 11 of 11 |
+| The idea file, followed by a fresh agent in an empty folder over four sessions | Set up and working |
+| Level 3: an assistant using the database through SQL only, 8 chats; the database test | 8 of 8; 24 of 24 |
 
-**Not yet tried:** loading the instructions by the link (it works only once this folder is on the
-main branch), ChatGPT, Google Sheets (including how a pasted row splits into columns), a hosted
-Supabase project, searching by meaning with a real embedding model, and use by a real person on a
-real log. The details and the known weak spots: [quality results](quality-results/README.md).
+**Not yet tried:** loading the instructions by the link (it works once this folder is on the main
+branch), ChatGPT, Google Sheets, a real Supabase project and its connector, and use by a real
+person on a real log.
 
 ## Questions
 
-**Where is my data?** Wherever you keep the log: your file, your sheet, your folder or your
-database. Nothing is stored in this repository. When you attach the log to a chat, the chatbot's
-company handles it like anything else you send there, so keep client details out of it or mark
-them sensitive.
+**Where is my data?** In your own file or database. Nothing is stored in this repository. When you
+attach the log to a chat, the chatbot's company handles it like anything else you send there, so
+keep client details out, or let it mark them sensitive.
 
-**Why a link and not an app?** The instructions are the tool. A link means every chat gets the
-latest version, reviewed by a person before it reaches the main branch. You can always paste a copy
-instead and keep it as it is.
+**What does it cost?** Nothing beyond your chatbot. For level 3, Supabase's free plan should be
+enough for a team's log of a few thousand rows (an estimate, not yet tried).
 
-**What does it cost?** Nothing beyond the chatbot you already use. Level 3 runs on your computer, or
-on a database you already pay for.
-
-**How is it different from my chatbot's memory?** Memory keeps facts about you, automatically.
-This keeps rules for the work, filed so you can filter them, counted so you can see what repeats,
-and used only after you accept them.
+**How is it different from my chatbot's memory?** Memory keeps facts about you, automatically. This
+keeps rules for the work, counted so you can see what repeats, and used only after you accept them.
 
 ---
 
-Built with [Agentic Process](../agentic-process/). The plan and the research behind it:
-[`workshop/plans/learning-system/`](../../workshop/plans/learning-system/README.md).
-Examples use invented data. Licence: [Apache 2.0](LICENSE).
+Created by [Bradley Ross](https://www.linkedin.com/in/bradaross/). Built with
+[Agentic Process](../agentic-process/); the plan and research are in
+[`workshop/plans/learning-system/`](../../workshop/plans/learning-system/README.md). Examples use
+invented data. Licence: [Apache 2.0](LICENSE).

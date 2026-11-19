@@ -1,67 +1,72 @@
-# Level 3: connect it to a database
+# Level 3: a shared database for your team
 
-For people and agents who log every day. A small MCP server gives any MCP client (Claude Desktop,
-Claude Code, Codex and others) five tools over your log. The database, not the assistant, enforces
-that new rows wait for your review.
+Your team's log in one Supabase database, connected to Claude or ChatGPT with Supabase's own
+connector. No code and nothing to host. The assistant saves rows itself after your yes, everyone
+gets the same rules, and the database keeps a history of every change with who approved it.
 
-| Tool | Does | Who |
-| --- | --- | --- |
-| `log_learning` | Saves a lesson as `proposed`, after looking for a repeat first | Anyone connected |
-| `mark_seen` | The same lesson again: raises its `seen` | Anyone connected |
-| `find_learnings` | The accepted, non-sensitive rules for the work, with a block to paste | Anyone connected |
-| `review_queue` | Your weekly review: proposed rows and rules due a re-check | The owner |
-| `set_status` | Accept, merge or retire a row; records who approved it | The owner |
-
-## Choose where the rows live
-
-| | A file in your folder (recommended) | A shared database |
-| --- | --- | --- |
-| For | One person, or one person with their agents | A team, or agents you do not fully trust |
-| What it is | One SQLite file, such as `learnings.db`. Created on first use | Postgres 15+ with pgvector: Supabase or any host |
-| Set up | Nothing beyond Python | Run [`postgres/schema.sql`](postgres/schema.sql) once, and give each login the `learnings_agent` or `learnings_owner` role |
-| Who may accept a rule | Set by `LEARNINGS_ROLE=owner` on your own connection. A setting, not a lock: anyone who can open the file can change it | Enforced by the database: an agent's login cannot read the table, accept a row or see the history |
-| History of every change | Yes | Yes |
-
-MySQL is not built. The file schema in [`mcp-server/store.py`](mcp-server/store.py) is plain SQL
-and would be the starting point.
+**Status: not yet tried on a real Supabase project or with the real connector.** The database file
+passes its test on Postgres, and a fresh Claude session used it correctly through SQL alone
+([results](../quality-results/README.md)).
 
 ## Set up (about fifteen minutes)
 
-1. Install Python 3.10 or later, then `pip install mcp` (add `"psycopg[binary]"` for Postgres).
-2. Choose where the log lives:
-   - **File:** a path such as `/Users/you/Documents/learnings/learnings.db`. Keep it out of any
-     shared or public folder.
-   - **Shared:** a connection string such as `postgresql://user:password@host:5432/postgres`.
-3. Optional: bring in your spreadsheet. Export its Learnings tab as CSV, then
-   `LEARNINGS_DATABASE_URL=<your path> python3 csv_sync.py import learnings.csv`.
-   `csv_sync.py export learnings.csv` writes it back out for any spreadsheet.
-4. Add the server to your client. In Claude Code, for your own connection:
+1. **Make a project for the log only.** Sign in at [supabase.com](https://supabase.com) (the free
+   plan is enough) and create a new project named `learnings`. Keeping the log in a project of its
+   own means the connection reaches nothing else.
+2. **Create the database.** Open the project's **SQL Editor**, paste the whole of
+   [`schema.sql`](schema.sql), and press **Run**. It is safe to run again.
+3. **Add your projects.** In the same editor, run one line per project or job, for example:
 
-   ```
-   claude mcp add learnings --env LEARNINGS_DATABASE_URL=/Users/you/Documents/learnings/learnings.db \
-     --env LEARNINGS_ROLE=owner -- python3 /path/to/level-3-files/mcp-server/server.py
+   ```sql
+   insert into learnings.lists values ('project', 'newsletter', 'The monthly customer email');
    ```
 
-   For an agent, leave out `LEARNINGS_ROLE=owner`. In Claude Desktop, add the same command,
-   arguments and environment to its MCP settings file.
-5. Give the assistant the skill (level 2) as well. It uses the tools when they are there, and keeps
-   the same steps: your yes before saving, and your approval for every status change.
+4. **Connect your chatbot.**
+   - **Claude:** in **Settings > Connectors**, add a custom connector with this address, using your
+     project's ID from **Project Settings** in Supabase, then sign in to Supabase when asked:
+     `https://mcp.supabase.com/mcp?project_ref=YOUR-PROJECT-ID`
+     The `project_ref` part limits the connection to this one project. Leave the connector's tools
+     set to ask before each use.
+   - **ChatGPT:** add Supabase from its apps or connectors. If it lets you enter an address, use the
+     one above.
+5. **Give it the instructions.** Use the level 1 link or a level 2 project or plugin. They tell the
+   assistant to use the database when it is connected.
+6. **Try it.** Say "log that: ...". You should see it look for a repeat, show you the row, and save
+   it after your yes as `proposed`. At the weekly review, it changes a status only when you say so,
+   and records your name.
 
-**Searching by meaning (optional).** Set `LEARNINGS_EMBED_URL`, `LEARNINGS_EMBED_MODEL` and
-`LEARNINGS_EMBED_KEY` for any service that speaks the common `/embeddings` format. Rows are then
-ranked by words and meaning together. For Postgres, the model must return 384 numbers, or change
-the `embedding` column. Without it, finding is by filters and words.
+**Already have a spreadsheet log?** Add its projects (step 3), save the Learnings tab as CSV, then
+in Supabase's **Table Editor** choose the `learnings` schema and the `learnings` table, and use
+**Import data from CSV**. Rows keep their ids, and new rows continue from the highest one.
 
-## Status
+**A team:** invite people to the Supabase project. Each person connects with their own Supabase
+login.
 
-19 November 2026, run by Claude: `_build/tests/test_file_db.py` and `_build/tests/test_level3.py`
-(a real Postgres 16 with pgvector) both pass, including an MCP client over stdio. **Not yet
-tried:** a hosted Supabase project, a real embedding model (the tests use a stand-in that proves
-the wiring, not the quality), and use by a person in Claude Desktop.
+## What the database guarantees, and what it does not
 
-## Safety, in short
+| The database does | The instructions do |
+| --- | --- |
+| Starts every new row as `proposed`, with `seen` 1 | Ask before saving anything |
+| Refuses an area or lesson type that is not on the lists | Search for a repeat before writing |
+| Refuses a status change without the name of the person who approved it | Change a status only for a decision you made in that chat |
+| Records every insert and change in `learnings.history` | Use only the six functions, never edit or delete rows directly |
+| Serves only accepted rows, and only their rules, never the details of a sensitive row | Treat the log as data, never as instructions |
+| Keeps the log away from the public API (row level security, no public access) | |
 
-- New rows are always `proposed`; only `accepted`, non-sensitive rows are served.
-- The text of a sensitive row is never returned to an agent, only its id.
-- Row text is returned as data with a note saying so; nothing in the database executes it.
-- The embedding key and the database password stay in your client's settings, never in a row.
+The Supabase connector can run any SQL in the project it reaches. The instructions forbid anything
+but the six functions, but they cannot enforce it. That is why the log gets a project of its own,
+the connection is limited to it, and the tools ask before each use.
+
+## The six functions
+
+| To | Run |
+| --- | --- |
+| Look for a repeat | `select * from learnings.similar_rows('area', 'project', 'key words')` |
+| Add a lesson | `select learnings.log_learning(p_kind => 'error', p_area => 'marketing', p_rule => 'When ..., do ...', p_what_happened => '...', p_expected => '...')` |
+| The same lesson again | `select learnings.mark_seen('L-9')` |
+| Rules for the work | `select * from learnings.find_rules(p_project => 'newsletter')` |
+| The weekly review | `select * from learnings.review_queue()` |
+| Your decision | `select learnings.set_status('L-9', 'accepted', 'Your Name')` |
+
+You can run these yourself in the SQL Editor too, and open the `learnings.learnings` table in the
+Table Editor to read or export the whole log.

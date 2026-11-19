@@ -23,15 +23,18 @@ any large or complex vector search.
 
 ## Implementation choice
 
-From the table in the process, rows 2 and 4 combined:
+From the table in the process, rows 2 and 4, kept as simple as possible (revised 19 November 2026
+at the owner's request: KISS, no unneeded files):
 
-- **A thin `SKILL.md`** for levels 1 and 2: the job is instructions and local rules. It loads by
-  link from this public repo, by paste, as a Claude skill or plugin, or as ChatGPT project files.
-- **Exact behaviour as code** only where it must be exact: `build.py` keeps the lists and template
-  in step, `csv_sync.py` moves rows between a sheet and the database.
-- **Level 3, a connection** for people and agents who log every day: an MCP server over one file in
-  a folder (SQLite, the recommended start) or a shared Postgres or Supabase database. A person
-  approves every status change.
+- **A thin `SKILL.md`** for levels 1 and 2: the job is instructions. It loads by link from this
+  public repo, by paste, as a Claude plugin, or in a Claude or ChatGPT project. The idea file
+  (`level-2-files/gist/`) sets up the same log for an agent with a folder.
+- **Level 3 reuses an existing connector.** One `schema.sql` pasted into Supabase; the assistant
+  reaches it through Supabase's own MCP connector. The rules that must be exact (lists, `proposed`
+  first, a name on every status change, history, no public access) live in the database. A custom
+  MCP server, a file database and a sync script were built, tested and then removed: they added
+  setup a business user cannot do, for little gain.
+- **Exact behaviour as code** only in `build.py` (the spreadsheet and plugin from one source).
 
 ## What exists, and why build this
 
