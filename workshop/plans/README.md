@@ -59,7 +59,7 @@ supplies judgement and approves.
 | Client onboarding kit | A welcome pack and checklist for each new client | [Plan](client-onboarding-kit/) |
 | Client project tracking site | A page each client opens to see where their project stands | [Plan](client-project-portal/) |
 | Website chatbot | A site assistant that answers from your notes and captures enquiries | [Plan](website-chatbot/) |
-| Publishing a website | A page taken from a chat artifact to a hosted site | [Draft](../drafts/website-publishing/) · [plan](website-publishing/) |
+| Website builder | A real site made in your chatbot, designed with Artifact Studio and published at your own address. Its worked example is the Practical AI site. Replaces Publishing a website | [Plan](website-builder/), waiting for approval |
 | Short video guide | The right route for a short video, finished in under 30 minutes | [Draft](../drafts/short-video/) · [plan](short-video/) |
 | Training explainer with avatar | A topic becomes a taught video in a chosen teaching style | [Draft](../drafts/training-explainer/) · [plan](training-explainer/) |
 | Training website | A course site with lessons, a schedule and an assistant | [Plan](training-website/) |
