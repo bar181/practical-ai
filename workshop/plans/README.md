@@ -71,7 +71,7 @@ Not everything with AI is work. Light projects that show the fun side of having 
 
 | Project | What it does | Where it stands |
 | --- | --- | --- |
-| Rare Find | A quick quiz game the chatbot builds in the chat: rarer correct answers score more | Plan: [project folder](../../projects/rare-find/) · [plan](../../projects/rare-find/_build/PLAN.md) |
+| Rare Find | A daily trivia game, 7 prompts a day, in Claude, any chatbot or any browser: the rarer the right answer, the more it scores | **In user testing:** [project](../../projects/rare-find/) · [play in Claude](https://claude.ai/artifact/HyfbDjPjofvRttRYKgMCis) · [plan](../../projects/rare-find/_build/PLAN.md) |
 
 ## Writing a plan
 

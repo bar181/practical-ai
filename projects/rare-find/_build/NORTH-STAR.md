@@ -78,11 +78,16 @@ same game in their own chatbot, and the scoreboard for that day includes them."
 
 A code carries everything: `RF1` (format), one base-36 character per prompt (its place in the pack
 list, which only ever grows at the end), the score, one letter per answer's result, and a name. For
-example, `RF1a3k0p-245-cptgd-Sam`. The end screen shows one challenge link, the published artifact's
-link plus `#c-<code>`, and "Copy challenge link" copies it with one line of invitation. A Claude
-artifact passes a plain `#name` to the page, so the link opens straight into the challenge. The page
-cannot learn its own claude.ai link, so the main game's link is built in; a copy published elsewhere
-sets its own in settings. The friend plays exactly those
+example, `RF1a3k0p-245-cptgd-Sam`.
+
+**The challenge message** (owner's tests, 18 and 19 November 2026). A bare link failed twice: pasted
+into a chatbot, the chatbot answered the prompts itself; and the main Claude copy, opened from a
+chat, showed the game but could not be played. So the message has the friend's own chatbot set the
+game up: for Claude, a request to publish `base/game.html` unchanged as an artifact in their own
+account, with the `sample` capability, replying with the link plus `#c-<code>` (the owner's tested
+wording); for ChatGPT or any chatbot, a request to host the game from `base/SKILL.md` and play the
+code; and a plain browser link with no AI checks. The code box on the home screen and the Scorecard
+finds the code anywhere in pasted text, so the whole message works there too. The friend plays exactly those
 prompts and sends their own code back. Pasting it on the Scorecard adds them to that game's
 scoreboard. Both players keep the board locally. No server, no account, and no AI are needed, so it
 works in Claude, in a browser, or wherever the file opens. If the code is today's game and the
@@ -178,15 +183,17 @@ A ChatGPT chat cannot run this page with the AI: canvas was removed from ChatGPT
 28 May 2026, a code block's preview cannot call the model, and a ChatGPT app needs a server. So the
 chatbot hosts the game in the chat instead. [`../base/SKILL.md`](../base/SKILL.md), in the open
 Agent Skills format, tells it how: open today's file in `level-2-files/chat-days/`, score each answer, check
-the unlisted ones itself, never show the Gems, and end with the same challenge link the web copy
-uses. `make_chat_days.py` writes the files from the built game, so every copy deals the same
-prompts on the same day. The Claude artifact stays the full game screen.
+the unlisted ones itself, never show the Gems, and end with the same challenge message the game
+gives. Given a friend's code, it opens one file per prompt in `level-2-files/chat-packs/`, named by
+the code's two-character places, so it needs no decoding beyond splitting the code. `make_chat_days.py`
+writes both sets of files from the built game, so every copy deals the same prompts on the same day. The Claude artifact stays the full game screen.
 
 ## Questions: a JSON bank and a JSON calendar (version 3)
 
-`_build/packs.json` holds 125 prompts. `_build/calendar.json` fixes each date's five prompts from
-17 November to 11 December 2026; `make_calendar.py` appends days for new prompts and never changes a
-day already in the calendar. After the calendar the game deals from the whole bank. Practice is up to
+`_build/packs.json` holds 125 prompts. `_build/calendar.json` fixes each date's 7 prompts from
+17 November to 3 December 2026; `make_calendar.py` appends days for new prompts and never changes a
+prompt already dealt to a day (17 and 18 November began with 5 and gained 2 each when the game moved
+to 7). After the calendar the game deals from the whole bank. Practice is up to
 100 prompts a day with no repeats, never today's prompts. GitHub Actions runs no AI: it builds, tests
 and publishes.
 

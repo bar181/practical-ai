@@ -135,10 +135,10 @@ words to check.
 
 ### Rare Find, a side quest
 
-**A five-minute daily quiz where the right answer nobody else thought of scores the most.** Five
+**A five-minute daily quiz where the right answer nobody else thought of scores the most.** Seven
 prompts a day, the same for everyone, in Claude, ChatGPT or any browser. In a chatbot, the AI
-checks answers that are not on the list and four hosts tease every answer. One link challenges a
-friend.
+checks answers that are not on the list and four hosts tease every answer. Celebrations grow with
+your score, and one message challenges a friend.
 
 <p align="center">
   <img src="projects/rare-find/_build/img/how-it-plays.svg" width="620" alt="Animation: the prompt Name a bird, then four answers in turn with their points: Eagle, the crowd pick, 25; Flamingo, 9th most popular, 38; Cassowary, right but beyond the top ten, 85; Shoebill, rare and right, a Gem, 100. It loops. The rarer the right answer, the more it scores.">

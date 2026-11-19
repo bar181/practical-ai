@@ -1,11 +1,12 @@
 # Practical AI: what is ready, and what comes next
 
-A one-page summary for anyone deciding where to start. Updated 18 November 2026.
+A one-page summary for anyone deciding where to start. Updated 19 November 2026.
 
 ## What is ready
 
 Four projects are built and ready to try, and users are testing each one as of 18 November 2026.
-The two with the most evidence are below. Each has an explainer page in
+The two with the most evidence are below; Document to action brief and the Rare Find game follow in
+the lists. Artifact Studio, Agentic Process and Rare Find each have an explainer page in
 [`reports/`](reports/) (download the HTML file and open it in a browser).
 
 ### Artifact Studio: designer-quality reports you make yourself
@@ -57,7 +58,7 @@ Jobs you already do, done faster with the chatbot you have. Each is one file and
 
 | # | Tool | What it will do for you | Where it stands |
 | --- | --- | --- | --- |
-| 1 | **Document to action brief** | Turn a notice, contract, tender or bill into what you must do, the dates and the open questions, each with the line it came from | **Ready:** [project](../projects/document-to-action-brief/) |
+| 1 | **Document to action brief** | Turn a notice, contract, tender or bill into what you must do, the dates and the open questions, each with the line it came from | **In user testing:** [project](../projects/document-to-action-brief/) |
 | 2 | **Write and edit in my voice** | Learn your style from three samples, then revise an email or post without changing a fact or a promise | Plan |
 | 3 | **Meeting notes to actions** | Turn a transcript into decisions, tasks and a follow-up, and flag any owner or date nobody agreed | Plan |
 | 4 | **Research brief with checked sources** | Compare options on one page, with every claim linked to a source you can open | Early draft |

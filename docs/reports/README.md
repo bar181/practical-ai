@@ -22,8 +22,8 @@ they are missing.
 
 ## The explainer pages
 
-Each page explains what the project does, how you use it, and where it helps. Both were made with
-Artifact Studio from the project's own README. GitHub shows HTML as code, so download the file and
+Each page explains what the project does, how you use it, and where it helps. Each was made with
+Artifact Studio from the project's own README. Document to action brief has no explainer page yet. GitHub shows HTML as code, so download the file and
 open it in a browser.
 
 | Page | For | What it covers |
@@ -38,10 +38,14 @@ open it in a browser.
 The originals sit with the project's evidence.
 
 **Evidence for each project:** [Artifact Studio](../../projects/artifact-studio/quality-results/README.md) ·
-[Agentic Process](../../projects/agentic-process/quality-results/README.md).
+[Agentic Process](../../projects/agentic-process/quality-results/README.md) ·
+[Document to action brief](../../projects/document-to-action-brief/quality-results/README.md) ·
+[Rare Find](../../projects/rare-find/quality-results/README.md).
 
 The projects themselves: [Artifact Studio](../../projects/artifact-studio/) ·
-[Agentic Process](../../projects/agentic-process/). What comes next: [the priority list](../README.md#what-comes-next).
+[Agentic Process](../../projects/agentic-process/) ·
+[Document to action brief](../../projects/document-to-action-brief/) ·
+[Rare Find](../../projects/rare-find/). What comes next: [the priority list](../README.md#what-comes-next).
 
 <img src="../../assets/images/bradley-ross-avatar.webp" width="110" alt="Cartoon avatar of Bradley Ross with a small friendly robot">
 

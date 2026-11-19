@@ -1,19 +1,21 @@
 # Quality results: Rare Find
 
-**Built and machine-tested. As of 18 November 2026, users are testing it; their results are not in yet.**
+**Built and machine-tested. As of 19 November 2026, users are testing it; their results are not in yet.**
 
 ## How it was tested
 
 - **The automated playtest**, [`../_build/playtest.py`](../_build/playtest.py). It plays the built
   page in Chromium at 390 px (phone) and 1280 px, keyboard only, with reduced motion, with no Claude,
-  and with a mock of Claude's answer check (`sample`). Last run, 18 November 2026, version 4.4: **124 of 124 checks
+  and with a mock of Claude's answer check (`sample`). Last run, 19 November 2026, version 4.4: **125 of 125 checks
   passed**. They cover how an answer lands (on screen within 100 ms, ordinary effects 150 to 250
   ms, the Gem reveal inside 600 ms, Next usable during effects, a late verdict that changes only its
-  own round), 60 spelling cases, the per-category points, hidden Gems, the daily calendar
+  own round, celebrations that last 1.5 to 3 s with the points and fade on Next), 60 spelling cases, the per-category points, hidden Gems, the daily calendar
   over 240 days, practice limits, Check again once per answer (never an approval without the AI's yes), Good finds
   scored by rarity, 7 prompts a day, the one result card, the
   hosts talking while the AI checks, an unreachable AI with Try again, the
-  hosts, settings, the scorecard, challenge links, Back to start, the timer and phone width.
+  hosts, settings, the scorecard, challenge links and the challenge message (Claude link first, a line
+  telling a chatbot to open the game), the estimated score spread, Back to start, the timer and phone
+  width.
 - **The review skill**, [`../level-2-files/game-review/SKILL.md`](../level-2-files/game-review/SKILL.md).
   At the end of each loop a fresh reviewer agent that had not seen the game played it and scored it
   out of 100.
@@ -108,7 +110,18 @@ fitted to the owner's estimate: an average of about 275 of 700, about 1% of game
 The owner's test of a challenge link found that a chatbot answered the prompts instead of opening
 the game, so the message now leads with the Claude link, names the app, keeps the browser link and
 the bare code, and ends with a line telling an AI assistant to open the game. The code boxes also
-held only 80 characters, too few for a pasted Claude link; now 200. 124 of 124 checks pass, with Claude mocked. **Not yet
+held only 80 characters, too few for a pasted Claude link; now 200.
+
+**The challenge message, second try** (19 November 2026, the owner's test). The main Claude copy,
+opened from a challenge in a chat, showed the game but could not be played. A request the owner
+wrote, pasted into Claude, worked better: Claude published the game in the friend's own account
+with the AI check on and replied with the challenge link. The message now carries that request, a
+matching one for ChatGPT or any chatbot (which hosts the code's prompts in the chat from new
+per-prompt files in `level-2-files/chat-packs/`), and a browser link. The playtest checks both
+requests, that the chat files named by a code hold the same prompts the game deals, and that the
+whole message pasted into the code box works (it did not at first: the box took only 200
+characters and read the first "#c-"; fixed). **Tried by the owner in Claude only; the ChatGPT
+request has not been tried in ChatGPT.** 124 of 124 checks pass, with Claude mocked. **Not yet
 tried by a person.**
 
 ## Who has and has not tried it

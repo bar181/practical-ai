@@ -5,7 +5,12 @@ nobody else thought of scores the most.
 
 | Complexity | Research | Level 1 | Draft |
 | --- | --- | --- | --- |
-| Beginner to intermediate | Done, 17 November 2026 | Drafted (the prompt in [`try-it-prompt.txt`](../base/try-it-prompt.txt), not yet run) | This folder |
+| Beginner to intermediate | Done, 17 November 2026 | Built, and in user testing since 18 November 2026 | This folder |
+
+**This is the first plan, from 17 November 2026, kept as it was written.** The game has moved on
+since: 7 prompts a day, a JSON bank of 125 prompts, Good finds scored by rarity, and a game screen
+in Claude, any chatbot and any browser. The current design is [`NORTH-STAR.md`](NORTH-STAR.md); what
+changed and when is in the [README](../README.md#whats-new).
 
 **Think of it as:** a pub quiz where the obvious answer is worth the least. Anyone can say
 "lightsaber". The person who says "the Kragle" gets the round.
