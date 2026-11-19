@@ -184,9 +184,10 @@ prompts on the same day. The Claude artifact stays the full game screen.
 
 ## Questions: a JSON bank and a JSON calendar (version 3)
 
-`_build/packs.json` holds 125 prompts. `_build/calendar.json` fixes each date's five prompts from
-17 November to 11 December 2026; `make_calendar.py` appends days for new prompts and never changes a
-day already in the calendar. After the calendar the game deals from the whole bank. Practice is up to
+`_build/packs.json` holds 125 prompts. `_build/calendar.json` fixes each date's 7 prompts from
+17 November to 3 December 2026; `make_calendar.py` appends days for new prompts and never changes a
+prompt already dealt to a day (17 and 18 November began with 5 and gained 2 each when the game moved
+to 7). After the calendar the game deals from the whole bank. Practice is up to
 100 prompts a day with no repeats, never today's prompts. GitHub Actions runs no AI: it builds, tests
 and publishes.
 

@@ -17,7 +17,7 @@ Edit `_build/`, never `base/game.html` (generated).
 | --- | --- |
 | The game (`game.src.html`) | `python3 build.py` |
 | Add prompts | Append to the end of `packs.json` (challenge codes use positions). `python3 check_packs.py packs.json`, `python3 make_calendar.py`, then `python3 build.py && python3 falsematch.py && python3 build.py` |
-| The game's look | `python3 make_store_images.py` (README screens) and `python3 explainer/build_explainer.py` |
+| The game's look | `python3 make_store_images.py` (README screens), `python3 explainer/make_explainer_images.py` (explainer screens), then `python3 explainer/build_explainer.py` |
 | Packs, calendar or dealing | `python3 make_chat_days.py` regenerates the chat answer files (120 days from the calendar's start) |
 
 Each pack: 10 ranked answers, 5 Gems, 20 or more other right answers (each with `r`, its rarity

@@ -236,8 +236,9 @@ details p{font-size:14px;color:var(--muted);margin:6px 0 0}
 .final{text-align:center}
 .final .big{font-size:60px;font-weight:900;font-variant-numeric:tabular-nums;line-height:1}
 .final .of{color:var(--muted);font-weight:800}
-.strip{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin:12px 0}
-.strip span{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;font-weight:900;color:var(--ink);font-size:14px}
+.strip{display:flex;gap:5px;justify-content:center;flex-wrap:wrap;margin:12px 0}
+/* 36 px so a 7-prompt day fits one row on a phone */
+.strip span{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;font-weight:900;color:var(--ink);font-size:13px}
 .strip span.t-unlisted{color:var(--text)}
 .banner{font-size:20px;font-weight:900;margin:6px 0}
 .chart svg{width:100%;height:auto;display:block}
@@ -430,7 +431,7 @@ details p{font-size:14px;color:var(--muted);margin:6px 0 0}
   <div class="top"><button class="quit" id="b-end-back">✕ Back to start</button></div>
   <div class="card final" aria-live="polite">
     <h2 id="t-end">Your score</h2>
-    <div><span class="big" id="final">0</span> <span class="of" id="end-of">/ 500</span></div>
+    <div><span class="big" id="final">0</span> <span class="of" id="end-of">/ 700</span></div>
     <div class="strip" id="strip"></div>
     <div class="banner" id="end-banner"></div>
     <div class="chart" id="end-chart"></div>
@@ -438,7 +439,7 @@ details p{font-size:14px;color:var(--muted);margin:6px 0 0}
       <div class="chart" id="vs-board" hidden></div>
       <div class="card challenge" style="margin:4px 0;text-align:left">
         <h3 style="font-size:17px">Challenge a friend</h3>
-        <p class="small" style="margin:0 0 8px">One link: it opens Rare Find with these same prompts and your score to beat, in any browser, no account.</p>
+        <p class="small" style="margin:0 0 8px">Your friend gets these same prompts and your score to beat: a link to play in Claude, where the AI checks unusual answers, a link for any browser with no account, and the code.</p>
         <div id="share-name-row"><label class="lbl" for="share-name">Your name on the challenge</label>
           <input class="input" id="share-name" maxlength="12" placeholder="e.g. Sam" style="width:100%;margin-bottom:8px" autocapitalize="off"></div>
         <label class="sr" for="share-link">Your challenge link</label>

@@ -1,19 +1,21 @@
 # Quality results: Rare Find
 
-**Built and machine-tested. As of 18 November 2026, users are testing it; their results are not in yet.**
+**Built and machine-tested. As of 19 November 2026, users are testing it; their results are not in yet.**
 
 ## How it was tested
 
 - **The automated playtest**, [`../_build/playtest.py`](../_build/playtest.py). It plays the built
   page in Chromium at 390 px (phone) and 1280 px, keyboard only, with reduced motion, with no Claude,
-  and with a mock of Claude's answer check (`sample`). Last run, 18 November 2026, version 4.4: **124 of 124 checks
+  and with a mock of Claude's answer check (`sample`). Last run, 19 November 2026, version 4.4: **124 of 124 checks
   passed**. They cover how an answer lands (on screen within 100 ms, ordinary effects 150 to 250
   ms, the Gem reveal inside 600 ms, Next usable during effects, a late verdict that changes only its
-  own round), 60 spelling cases, the per-category points, hidden Gems, the daily calendar
+  own round, celebrations that last 1.5 to 3 s with the points and fade on Next), 60 spelling cases, the per-category points, hidden Gems, the daily calendar
   over 240 days, practice limits, Check again once per answer (never an approval without the AI's yes), Good finds
   scored by rarity, 7 prompts a day, the one result card, the
   hosts talking while the AI checks, an unreachable AI with Try again, the
-  hosts, settings, the scorecard, challenge links, Back to start, the timer and phone width.
+  hosts, settings, the scorecard, challenge links and the challenge message (Claude link first, a line
+  telling a chatbot to open the game), the estimated score spread, Back to start, the timer and phone
+  width.
 - **The review skill**, [`../level-2-files/game-review/SKILL.md`](../level-2-files/game-review/SKILL.md).
   At the end of each loop a fresh reviewer agent that had not seen the game played it and scored it
   out of 100.
