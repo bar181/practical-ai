@@ -21,7 +21,7 @@ written in your own words. You do not come home with their plate.
    server connected, the assistant can file it for you with the `add_inspiration` tool.
 2. **Say what works, in your own words.** Structure, order, rhythm, proportion, how a number is
    shown, where the eye goes first. Three to six lines.
-3. **Compare it with the library.** Open the studio page, `base/studio.html`, and
+3. **Compare it with the library.** Open the two master pages, `showcase.html` and `components.html`, and
    name the closest template or part. Most new finds are a variation on something already here.
 4. **Decide the outcome** from the table above and write it on the card.
 5. **If it becomes a part or a template,** follow "Adding to the library" below.

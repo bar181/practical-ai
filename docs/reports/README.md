@@ -25,8 +25,9 @@ replaces your AI's own features; each adds what they are missing.
 ## The explainer pages
 
 Each page explains what the project does, how you use it, and where it helps. Each was made with
-Artifact Studio from the project's own README. Document to action brief has no explainer page yet. GitHub shows HTML as code, so download the file and
-open it in a browser.
+Artifact Studio from the project's own README. Document to action brief has no explainer page yet. Every page here is also live, nothing to download, at
+[bar181.github.io/practical-ai](https://bar181.github.io/practical-ai/), for example
+[the Artifact Studio explainer](https://bar181.github.io/practical-ai/reports/artifact-studio.html).
 
 | Page | For | What it covers |
 | --- | --- | --- |

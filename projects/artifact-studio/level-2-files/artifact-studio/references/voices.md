@@ -2,7 +2,7 @@
 
 A voice decides what is said, in what order, and how the page behaves. It is more than tone. The
 same facts told in two voices produce two different pages. Each voice has a full example in the
-studio: one tab for each voice in `base/studio.html`.
+studio: one tab for each voice in `showcase.html`.
 
 These are the canonical voice cards for this repository. Other tools that need a teaching or
 writing style should point here instead of keeping their own copy.

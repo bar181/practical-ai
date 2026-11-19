@@ -18,7 +18,7 @@ the right-hand column are there to show the kind of answer, and should be delete
 
 ## Brand
 
-Paste the table from the Design spec tab of `base/studio.html` here, or fill in the short version.
+Paste the table from the Design spec tab of `components.html` here, or fill in the short version.
 
 | Setting | My value | Example |
 | --- | --- | --- |

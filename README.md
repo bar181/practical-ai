@@ -99,14 +99,13 @@ on her phone.
 ```
 
 **You get** a scrolling keynote page your partner can read on her phone.
-[See the page this prompt made](projects/artifact-studio/_build/examples/runs/2026-11-17-try-it-keynote-photo/report.html):
-a fresh Claude session made it from this prompt and one photo, in one try, unedited. GitHub shows
-it as code: press the download button above the code, then open the file in your browser. Before you share, check every number
-against your notes.
+[See the page this prompt made](https://bar181.github.io/practical-ai/artifact-studio/try-it-keynote.html):
+a fresh Claude session made it from this prompt and one photo, in one try, unedited. Before you
+share, check every number against your notes.
 
 </details>
 
-<p align="center"><a href="projects/artifact-studio/"><b>Make your first designer-quality report</b></a></p>
+<p align="center"><a href="projects/artifact-studio/"><b>Make your first designer-quality report</b></a> &nbsp;·&nbsp; <a href="https://bar181.github.io/practical-ai/artifact-studio/showcase.html"><b>See every effect and voice</b></a> &nbsp;·&nbsp; <a href="https://bar181.github.io/practical-ai/artifact-studio/components.html"><b>Browse the components</b></a></p>
 
 ### Agentic Process
 

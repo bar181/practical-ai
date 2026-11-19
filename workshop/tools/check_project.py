@@ -10,6 +10,7 @@ The showcase layout, used by everything in projects/. base/ is enough to try the
   level-3-files/   optional. Connections for agents, with a README.md
   _build/          optional. What the project is built from
   quality-results/ the evidence: README.md says what was checked, by whom, with links to the raw results
+  *.html           optional. Generated master pages to open first, at most two, each saying so at the top
 Nothing else sits beside them.
 
 The earlier layout, still used by drafts/project-method and its scaffold: README.md, AGENTS.md, gates.json,
@@ -56,7 +57,9 @@ else:                                                                # the showc
         if exists(lv) and not exists(lv, "README.md"): problems.append(f"{lv}/ has no README.md")
     if exists("level-3-files") and not exists("level-2-files"): problems.append("level-3-files/ without level-2-files/")
     allowed = {"README.md", "AGENTS.md", "CLAUDE.md", "LICENSE", "base", "level-2-files", "level-3-files", "_build", "quality-results"}
-    extra = sorted(d for d in os.listdir(root) if d not in allowed and not d.startswith("."))
+    pages = sorted(d for d in os.listdir(root) if d.endswith(".html") and os.path.isfile(os.path.join(root, d)))
+    if len(pages) > 2: problems.append(f"{len(pages)} pages at the root. Two at most: the master pages to open first")
+    extra = sorted(d for d in os.listdir(root) if d not in allowed and d not in pages and not d.startswith("."))
     if extra: problems.append("found beside base/, and not part of the layout: " + ", ".join(extra))
 if problems:
     print(f"{name}: {len(problems)} problem(s)"); [print("  " + p) for p in problems]; sys.exit(1)

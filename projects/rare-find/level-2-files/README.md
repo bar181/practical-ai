@@ -8,4 +8,4 @@
 
 The game's own Level 2 (the AI checks answers and the hosts write fresh lines, on the player's own
 chatbot plan, in the Claude artifact or in any chatbot with the skill) and Level 3 (the public web copy, published by GitHub Actions, and challenge links)
-are inside [`../base/game.html`](../base/game.html) and `.github/workflows/rare-find-pages.yml`.
+are inside [`../base/game.html`](../base/game.html) and `.github/workflows/pages.yml`.

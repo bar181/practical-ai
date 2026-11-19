@@ -13,7 +13,7 @@ their own.
 
 | Do this | Time |
 | --- | --- |
-| Download [`studio.html`](studio.html) and open it in a browser on the screen you will present from | 1 minute |
+| Open [the showcase page](https://bar181.github.io/practical-ai/artifact-studio/showcase.html) in a browser on the screen you will present from. Offline? Download [`showcase.html`](../showcase.html) | 1 minute |
 | Download [`examples/voice-explainer.html`](examples/voice-explainer.html) too. It is a lesson on this tool, made by an AI from a prompt | 1 minute |
 | Have the "Try it" prompt from the [README](../README.md#try-it-in-five-minutes) ready to share | 1 minute |
 | Ask each learner to bring notes they do not mind showing: nothing private | The day before |
@@ -22,7 +22,7 @@ their own.
 
 | Minutes | You do | You say | Learners do |
 | --- | --- | --- | --- |
-| 0 to 3 | Open `studio.html` on the Photo effects tab. Scroll slowly | "This is one picture and one sentence each time. Your AI can make this. It needs to be told how." | Watch |
+| 0 to 3 | Open the showcase page on the Photo effects tab. Scroll slowly | "This is one picture and one sentence each time. Your AI can make this. It needs to be told how." | Watch |
 | 3 to 7 | Open the Visionary tab. Scroll the first three screens | "AI has read every book in the world. It has never met you. Think of it as a smart intern: it needs a brief." | Tell the person beside them one thing a new intern would get wrong on day one |
 | 7 to 10 | Open the Explainer tab, at "Build a good ask". Press Step six times | "The job, the reader, the shape. Those three change the page more than anything else." | Write their own ask: job, reader, shape |
 | 10 to 20 | Share the prompt. Walk the room | "Paste it in, then your notes, then your ask. If it shows code and not a page, say: show this as an artifact, or ask for a preview." | Make their first page from their own notes |

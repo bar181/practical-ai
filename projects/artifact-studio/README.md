@@ -16,6 +16,13 @@ bring, not a wall of text or a slide deck that took hours.
 - **Minutes, not hours.** About five minutes for a page that takes an hour or more by hand. An
   estimate, not a measurement.
 
+<a name="see-every-example"></a>
+
+<p align="center"><b>See every example, live in your browser:</b><br>
+<a href="https://bar181.github.io/practical-ai/artifact-studio/showcase.html"><b>1. The showcase</b></a>: photo effects, scroll effects, layouts, post previews and seven voices
+<br><a href="https://bar181.github.io/practical-ai/artifact-studio/components.html"><b>2. The components</b></a>: four pages, four decks, every part, the design ideas and the picker
+<br><sub>Two pages, nothing to install. The same files are in this folder: <a href="showcase.html"><code>showcase.html</code></a> and <a href="components.html"><code>components.html</code></a>.</sub></p>
+
 <a name="get-started-try-it-now"></a>
 <a name="try-it-in-five-minutes"></a>
 
@@ -49,9 +56,8 @@ Who reads it: my business partner,
 on her phone.
 ```
 
-**You get a scrolling keynote page** like [this one](_build/examples/runs/2026-11-17-try-it-keynote-photo/report.html),
+**You get a scrolling keynote page** like [this one](https://bar181.github.io/practical-ai/artifact-studio/try-it-keynote.html),
 made by a fresh Claude session from this prompt and one photo, in one try, unedited ([see it below](#keynotes-and-decks)).
-GitHub shows it as code: press the download button above the code, then open the file in your browser.
 Tested so far in Claude; not yet in ChatGPT or Gemini.
 
 <p align="center"><b>The aim: better than you could do by hand, as good as a designer, and made by you.</b></p>
@@ -217,7 +223,7 @@ computer.
 </p>
 <p align="center"><sub>Three drafts of one post, shown the way the feed shows them, in your voice. LinkedIn, Instagram, TikTok, Facebook, email and blog. Nothing is posted for you.</sub></p>
 
-Every template and effect in one file: [`base/studio.html`](base/studio.html). [Ten worked examples](base/examples/),
+Every template and effect, live: [the showcase](https://bar181.github.io/practical-ai/artifact-studio/showcase.html) and [the components](https://bar181.github.io/practical-ai/artifact-studio/components.html). [Ten worked examples](base/examples/),
 each with its prompt and sample notes.
 
 ## Questions

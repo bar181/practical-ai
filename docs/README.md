@@ -29,6 +29,7 @@ from one piece, a page that opens with your own photo.
 checked by its author, with 22 runs by fresh AI sessions. Tried
 only in Claude so far. [Open the project](../projects/artifact-studio/) ·
 [the explainer page](reports/artifact-studio.html) ·
+[the showcase](https://bar181.github.io/practical-ai/artifact-studio/showcase.html) and [the components](https://bar181.github.io/practical-ai/artifact-studio/components.html), live ·
 [the evidence](../projects/artifact-studio/quality-results/README.md).
 
 ### Agentic Process: teach your AI a job once

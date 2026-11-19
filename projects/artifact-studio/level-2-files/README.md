@@ -21,9 +21,9 @@ chats, such as a Project. The skill needs an assistant or agent that loads skill
 1. Download [`preferences.md`](preferences.md).
 2. Fill in the parts you care about. Leave the rest blank. A blank line means "the assistant
    chooses".
-3. For colours and fonts, download [`base/studio.html`](../base/studio.html) (press **Download raw
-   file** on GitHub), open it in your browser, choose the **Design spec** tab, copy the form, fill
-   it in and paste it under "Brand" in your preferences file.
+3. For colours and fonts, open [the components page](https://bar181.github.io/practical-ai/artifact-studio/components.html#c-spec) on the **Design
+   spec** tab (or download [`components.html`](../components.html) and open it), copy the form, fill it
+   in and paste it under "Brand" in your preferences file.
 4. Put `preferences.md` where your assistant keeps files for you: the files of the same Project
    that holds the level 1 instructions.
 5. If your assistant loads skills, install the skill.

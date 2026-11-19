@@ -2,7 +2,7 @@
 """The studio's catalogue: every template, what it is for, and the rules that pick between them.
 
 One source for three readers: build.py (which writes templates/index.json and templates/README.md),
-the Pick tab of base/studio.html, and the MCP server in level-3-files/mcp. No dependencies.
+the Pick tab of components.html, and the MCP server in level-3-files/mcp. No dependencies.
 """
 FACETS={
  'goal':[('report','Say how something went'),('decide','Get a decision'),('sell','Win a customer'),('teach','Explain how something works'),('inspire','Make people feel a change'),('announce','Tell people something new')],
