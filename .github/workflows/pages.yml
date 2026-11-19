@@ -35,10 +35,12 @@ jobs:
           python-version: "3.12"
       - name: Build the game and the Artifact Studio pages from their source
         run: |
+          pip install markdown==3.11
           python3 projects/rare-find/_build/build.py
           python3 projects/artifact-studio/_build/build.py
       - name: The committed pages match their source
-        run: git diff --exit-code -- projects/rare-find/base/ projects/artifact-studio/
+        # Artifact Studio's index.json carries the build date, so only the published pages are compared.
+        run: git diff --exit-code -- projects/rare-find/base/ projects/artifact-studio/showcase.html projects/artifact-studio/components.html projects/artifact-studio/base/
       - name: Install the test browser
         run: |
           pip install playwright
