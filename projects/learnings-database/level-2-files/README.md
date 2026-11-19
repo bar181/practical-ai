@@ -18,6 +18,12 @@ commands: `/log`, `/before-i-start` and `/weekly-review`.
   folder you find there, and upload the zip in the skills section of Claude's settings. The app
   gets the skill; the three commands are for Claude Code.
 
+## ChatGPT: the skill
+
+ChatGPT skills use the same open format. Zip the same `learnings-database` folder, then in ChatGPT
+open **Skills**, choose **Create**, then **Upload from your computer**. Skills are on some ChatGPT
+plans only. Not yet tried.
+
 In a folder it can write to, it adds rows to `learnings.csv` after your yes. Otherwise it gives you
 the line to paste.
 

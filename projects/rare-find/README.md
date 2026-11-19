@@ -138,7 +138,9 @@ one in settings, or turn them off.
 
 ## What's new
 
-**Version 4.4, 18 November 2026: bigger celebrations, Good finds scored by rarity, seven prompts a day**
+<details>
+<summary><b>Version 4.4, 18 November 2026: bigger celebrations, Good finds scored by rarity, seven prompts a day</b></summary>
+
 
 - A Good find is no longer a flat 80. Each of the 4,607 Good finds on our lists has its own
   rarity, 1 to 9, so it scores from 10 more than the prompt's 10th place up to 90. In "Name a
@@ -155,6 +157,8 @@ one in settings, or turn them off.
 - **A challenge message that works in Claude and ChatGPT**: a request to paste into Claude that
   makes the friend their own copy of the game, a request to paste into ChatGPT or another chatbot
   that hosts the same prompts in the chat, and a browser link.
+
+</details>
 
 <details>
 <summary><b>Earlier versions</b></summary>
