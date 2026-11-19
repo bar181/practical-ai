@@ -1,4 +1,4 @@
-# Level 2 files
+# Level 2: the files a chatbot uses to host the game
 
 | Folder | What it is |
 | --- | --- |

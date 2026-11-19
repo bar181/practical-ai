@@ -1,4 +1,4 @@
-# Level 2, Advanced: it knows your brand
+# Level 2: it knows your brand
 
 [Level 1](../README.md#try-it-in-five-minutes), plus one file that holds how you like your work, and the skill installed if your
 assistant can load one. After that a short ask comes back in your style.
@@ -21,8 +21,9 @@ chats, such as a Project. The skill needs an assistant or agent that loads skill
 1. Download [`preferences.md`](preferences.md).
 2. Fill in the parts you care about. Leave the rest blank. A blank line means "the assistant
    chooses".
-3. For colours and fonts, open the Design spec tab of [`base/studio.html`](../base/studio.html),
-   copy the form, fill it in and paste it under "Brand" in your preferences file.
+3. For colours and fonts, download [`base/studio.html`](../base/studio.html) (press **Download raw
+   file** on GitHub), open it in your browser, choose the **Design spec** tab, copy the form, fill
+   it in and paste it under "Brand" in your preferences file.
 4. Put `preferences.md` where your assistant keeps files for you: the files of the same Project
    that holds the level 1 instructions.
 5. If your assistant loads skills, install the skill.
@@ -71,5 +72,6 @@ request and ask again.
 
 ## Status
 
-The preferences file is new and has not been used on a real page yet. The skill has not yet been
-run end to end by a second agent.
+A second agent ran the skill end to end on 16 November 2026 and reported friction
+([logs](../_build/examples/runs/)). No person has yet used the preferences file on a real page, and
+no user has installed the skill in the Claude app.

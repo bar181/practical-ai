@@ -38,7 +38,7 @@ Three parts:
 3. **The instructions:** a short section in your agent's instructions file (`AGENTS.md` or
    `CLAUDE.md`) that says how to log, find and review. Step 2 below gives the text.
 
-Three operations, like the wiki's ingest, query and lint:
+Three things you say, like the wiki's three operations (add a source, ask a question, tidy up):
 
 | You say | The agent |
 | --- | --- |
@@ -103,8 +103,8 @@ Do these in order. Ask the person once, before step 1, whether you may create th
    them, lowercase with hyphens, on the `Projects` line at the end of the section you added.
 
 4. **Log the first lesson together.** Ask the person for one thing that went wrong recently. Run
-   "log that" on it, show the row, and save it after their yes. Then accept it with them, so the
-   log holds one rule.
+   "log that" on it, show the row, and save it after their yes. Then ask whether they accept it;
+   on their yes, set it to `accepted`, so the log holds one rule.
 
 5. **Show the habit.** Run "before I start" on their next real task and name the rule you follow.
 
