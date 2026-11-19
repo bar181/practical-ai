@@ -21,7 +21,7 @@ by label on Friday, without anyone having filed it by hand.
 
 **What it is not.** It is not a store. It keeps nothing itself: records go to the
 [core memory system](../core-memory/README.md) or the
-[learnings database](../learning-system/NORTH-STAR.md). It is not a wiki builder, and it does not
+[learnings database](../learning-system/README.md). It is not a wiki builder, and it does not
 copy whole transcripts or mailboxes anywhere.
 
 ## Research: what already exists
@@ -76,7 +76,7 @@ Level 1 is the Beginner level: a student can run it in any chat assistant with n
 
 ## Depends on, and feeds
 
-- **Needs** the [learnings database](../learning-system/NORTH-STAR.md) and the
+- **Needs** the [learnings database](../learning-system/README.md) and the
   [core memory system](../core-memory/README.md) to exist first. Without a shelf, the mail room has
   nowhere to send anything.
 - **Works beside** the [meeting notes to actions](../meeting-notes-to-actions/) plan. This page first proposed absorbing it. Research on 15 November 2026 found meeting notes to actions is one of the most wanted simple tools, so it stays a tool of its own and the hub files what it produces.

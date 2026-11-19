@@ -75,7 +75,7 @@ Support tools that make every other tool better. Each starts with a version a pe
 
 | # | Tool | What it will do for you | Where it stands |
 | --- | --- | --- | --- |
-| 1 | **Learnings database** | Record each lesson once, and bring it back before similar work starts | Example built |
+| 1 | **Learnings database** | Record each lesson once, filed by type and topic, and bring it back before similar work starts | Example built; [full plan](../workshop/plans/learning-system/) awaiting approval |
 | 2 | **Task and dependency graph** | Turn a goal into tasks, and show what is ready and what is blocked | Plan |
 | 3 | **Decision support** | Take a decision from options to a recommendation with the working shown | Example built |
 | 4 | **Estimate to proposal** | Combine a request, notes and past jobs into a draft estimate and proposal | Early draft |

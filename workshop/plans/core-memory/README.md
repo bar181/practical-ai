@@ -24,7 +24,7 @@ a repository pointer. Each is one record.
 **What it is not.** It is **not a wiki**. Records are not rewritten into linked pages, and nothing
 is summarised into articles. It is not a document store either: a long document stays where it
 lives, and the record holds a pointer and a short description. It is separate from the
-[learnings database](../learning-system/NORTH-STAR.md), which holds only mistakes, redos and things
+[learnings database](../learning-system/README.md), which holds only mistakes, redos and things
 that worked.
 
 ## Research: what already exists
@@ -97,7 +97,7 @@ Level 1 is the Beginner level: a student can run it in any chat assistant with n
 
 ## Depends on, and feeds
 
-- **Built after** the [learnings database](../learning-system/NORTH-STAR.md), on the same row
+- **Built after** the [learnings database](../learning-system/README.md), on the same row
   shape and viewer.
 - **Fed by** the [connections hub](../connections-hub/README.md).
 - **Read by** the [decision support assistant](../decision-support/README.md), the weekly brief and
