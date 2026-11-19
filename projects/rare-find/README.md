@@ -64,7 +64,8 @@ is not on the list scores 0.
 ## Play in ChatGPT, or any chatbot
 
 The chatbot hosts the game in the chat: it reads today's prompts and answers from this repository,
-scores each answer, checks the ones not on the list, and gives you a challenge link at the end.
+scores each answer, checks the ones not on the list, and gives you a challenge message at the end.
+Give it a friend's challenge code and it plays their prompts, with their score to beat.
 Paste this into ChatGPT, Claude, Gemini or any chatbot that can open a link:
 
 ```
@@ -82,13 +83,20 @@ game screen, with the timer, the effects and the scorecard.
 
 ## Challenge a friend
 
-At the end of a game, add your name and press **Copy challenge**. The message leads with a link to
-the game in Claude, where unusual answers can be checked, then a link for any browser, and the bare
-code in case a link opens on the home screen. Your friend plays your exact prompts and sees your
-score after each answer. No sign-in and no cost.
+At the end of a game, add your name and press **Copy challenge**, and send the message. Your
+friend plays your exact prompts and sees your score after each answer. No sign-in and no cost. The
+message gives them three ways in:
 
-If your friend pastes the message into a chatbot, a last line tells it to open the game rather than
-answer the prompts itself. A tester's chatbot did answer them before that line was added.
+- **In Claude:** a short request to paste. Claude makes the friend their own copy of the game in
+  their own account, with AI answer checks on, and replies with the link to the challenge.
+- **In ChatGPT or another chatbot:** a request to paste that has the chatbot host the same prompts
+  in the chat, with your score to beat.
+- **In any browser:** a plain link, with no AI checks.
+
+Each part asks the friend's chatbot to set the game up, not to play it. On 19 November 2026 a
+challenge link to the main Claude copy opened the game in a chat but could not be played, and an
+earlier message was answered by the chatbot itself, so the message works this way now. Pasted into
+**Got a challenge code from a friend?**, the whole message works too.
 
 ## Questions
 
@@ -145,8 +153,9 @@ one in settings, or turn them off.
   3 seconds for 80 or more and for a Gem, with fireworks, confetti, stars, bubbles and rings in
   different mixes so they vary. Next question works the whole time.
 - **Seven prompts a day**, up from five.
-- **A clearer challenge message**: the Claude link first, named, then the browser link, the bare
-  code, and a line telling a chatbot to open the game instead of playing it.
+- **A challenge message that works in Claude and ChatGPT**: a request to paste into Claude that
+  makes the friend their own copy of the game, a request to paste into ChatGPT or another chatbot
+  that hosts the same prompts in the chat, and a browser link.
 
 **Version 4.2, 18 November 2026: celebrations**
 
@@ -184,7 +193,7 @@ one in settings, or turn them off.
 ## Status
 
 **In user testing.** As of 18 November 2026, users are playing it; their results are not in yet.
-124 of 124 automated checks pass at phone and desktop
+125 of 125 automated checks pass at phone and desktop
 width, with Claude replaced by a mock. In two blind reviews, fresh AI reviewers scored version 4
 91 and 86, against 84 and 82 for version 3, and both would replay version 4. The owner has played
 version 4 in the real Claude app, up to the Check again fix; nobody has played version 4.4 there yet. The chat version passed two test games, played by a

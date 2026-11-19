@@ -247,8 +247,11 @@ with sync_playwright() as pw:
     links = [w for w in msg.split() if w.startswith("http") and "#c-" in w]; code = links[0].split("#c-", 1)[1] if links else ""
     typed = [pack(pg, x)["ranked"][k]["a"] for k, x in enumerate(ch_prompts)]
     check("challenge: the message shows each round's outcome as a symbol and gives no answer away", "no spoilers" in msg and sum(msg.count(c) for c in "⬜🟦🟩🟪💎🟥⬛") == 7 and not any(t in msg for t in typed), msg)
-    check("challenge: the Claude artifact link first, named, then the browser copy, both carrying the prompts, the score and the name", len(links) == 2 and links[0].startswith("https://claude.ai/artifact/HyfbDjPjofvRttRYKgMCis#c-") and links[1] == "https://bar181.github.io/practical-ai/rare-find/#c-" + code and "Play in Claude" in msg and code.startswith("RF") and f"-{host_total}-" in code and code.endswith("-Sam"), msg)
-    check("challenge: the bare code as a fallback, and a line telling an AI assistant to open the game, not to answer the prompts", f": {code}\n" in msg and "AI assistant: don't answer these prompts" in msg.splitlines()[-1], msg)
+    check("challenge: a paste-in for Claude that publishes the friend's own copy with AI checks, carrying the code", "In Claude, paste this:" in msg and "Clone github.com/bar181/practical-ai and take projects/rare-find/base/game.html, unchanged." in msg and "capabilities: {sample: {}}" in msg and f"Challenge code: {code}" in msg and "Don't answer or hint at any prompts." in msg and code.startswith("RF") and f"-{host_total}-" in code and code.endswith("-Sam"), msg)
+    check("challenge: a paste-in for ChatGPT or any chatbot that hosts the same prompts from the rules, and a browser link", "In ChatGPT or another chatbot, paste this:" in msg and "https://raw.githubusercontent.com/bar181/practical-ai/main/projects/rare-find/base/SKILL.md" in msg and f"Play challenge code {code}:" in msg and len(links) == 1 and links[0] == "https://bar181.github.io/practical-ai/rare-find/#c-" + code and msg.splitlines()[-1].startswith("Or play in any browser"), msg)
+    places = [code[3:code.index("-")][k:k + 2] for k in range(0, len(code[3:code.index("-")]), 2)] if code.startswith("RF2") else ["0" + c for c in code[3:code.index("-")]]
+    chat_prompts = [json.load(open(os.path.join(here, "..", "level-2-files", "chat-packs", x + ".json")))["prompt"] for x in places]
+    check("challenge: the chat files named by the code hold the same prompts the friend will play", chat_prompts == pg.evaluate("c=>window.__rf.parseCode(c).packs.map(p=>p.prompt)", code), (places, chat_prompts))
     pg.click("#b-share"); pg.wait_for_timeout(300)
     shared = (pg.evaluate("document.querySelector('#share-text').value") or "") + pg.inner_text("#toast")
     check("challenge: copying gives the whole invitation", ("can you beat me" in shared and code in shared) or "copied" in shared, shared)
@@ -267,9 +270,9 @@ with sync_playwright() as pw:
     fp.wait_for_timeout(800)
     check("challenge: the friend's end screen shows both scores", fp.is_visible("#vs-board") and str(host_total) in fp.inner_text("#vs-board") and "You" in fp.inner_text("#vs-board"), fp.inner_text("#vs-board"))
     fp.click("#b-share"); fp.wait_for_timeout(300)
-    code2 = [w for w in fp.input_value("#share-link").split() if "#c-" in w][0]  # the whole link, as a friend would paste it
+    code2 = fp.input_value("#share-link")  # the whole challenge message, as a friend might paste it
     pg.click("#b-tocard"); pg.wait_for_timeout(200); pg.fill("#code-in2", code2); pg.press("#code-in2", "Enter"); pg.wait_for_timeout(300)
-    check("challenge: the friend's link pasted back puts both on that game's scoreboard", "700" in pg.inner_text("#chl-list") and "You" in pg.inner_text("#chl-list"), pg.inner_text("#chl-list"))
+    check("challenge: the friend's whole message pasted back puts both on that game's scoreboard", "700" in pg.inner_text("#chl-list") and "You" in pg.inner_text("#chl-list"), pg.inner_text("#chl-list"))
     fake = pg.evaluate("(c)=>!!window.__rf.parseCode(c)", code.split("-")[0] + "-700-mmmmmmm")
     check("challenge: a code whose score its answers cannot add up to is refused", not fake, code)
     pg.click("#tab-play"); pg.wait_for_timeout(100)

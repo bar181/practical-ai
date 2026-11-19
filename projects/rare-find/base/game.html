@@ -349,7 +349,7 @@ details p{font-size:14px;color:var(--muted);margin:6px 0 0}
       </div>
       <details style="margin-top:10px"><summary>Got a challenge code from a friend?</summary>
       <form class="row" id="code-form" style="margin-top:8px"><label for="code-in" class="sr">Challenge code</label>
-        <input class="input" id="code-in" maxlength="200" placeholder="RF1..." style="flex:1" autocapitalize="off" spellcheck="false"><button class="btn">Play it</button></form></details>
+        <input class="input" id="code-in" maxlength="3000" placeholder="RF1..." style="flex:1" autocapitalize="off" spellcheck="false"><button class="btn">Play it</button></form></details>
     </div>
     <div class="card">
       <h2>Scoring</h2>
@@ -380,7 +380,7 @@ details p{font-size:14px;color:var(--muted);margin:6px 0 0}
     <p class="small" id="chl-none" style="margin:0">Finish a game and press "Challenge a friend". They play the same prompts in their own chatbot, or any browser, and send their code back. Paste it here to add their score.</p>
     <div id="chl-list"></div>
     <form class="row" id="code-form2" style="margin-top:10px"><label for="code-in2" class="sr">A friend's code</label>
-      <input class="input" id="code-in2" maxlength="200" placeholder="Paste a friend's link or code" style="flex:1" autocapitalize="off" spellcheck="false"><button class="btn">Add</button></form>
+      <input class="input" id="code-in2" maxlength="3000" placeholder="Paste a friend's link or code" style="flex:1" autocapitalize="off" spellcheck="false"><button class="btn">Add</button></form>
   </div>
 </section>
 
@@ -439,7 +439,7 @@ details p{font-size:14px;color:var(--muted);margin:6px 0 0}
       <div class="chart" id="vs-board" hidden></div>
       <div class="card challenge" style="margin:4px 0;text-align:left">
         <h3 style="font-size:17px">Challenge a friend</h3>
-        <p class="small" style="margin:0 0 8px">Your friend gets these same prompts and your score to beat: a link to play in Claude, where the AI checks unusual answers, a link for any browser with no account, and the code.</p>
+        <p class="small" style="margin:0 0 8px">Your friend gets these same prompts and your score to beat: a message to paste into Claude or ChatGPT, which sets up the game for them with AI answer checks, and a link for any browser.</p>
         <div id="share-name-row"><label class="lbl" for="share-name">Your name on the challenge</label>
           <input class="input" id="share-name" maxlength="12" placeholder="e.g. Sam" style="width:100%;margin-bottom:8px" autocapitalize="off"></div>
         <label class="sr" for="share-link">Your challenge link</label>
@@ -777,7 +777,10 @@ function gameKey(packs){ const idx=packs.map(p=>DATA.packs.indexOf(p)); const w=
 function myName(){ return String(S.nick||"").replace(/[^A-Za-z0-9]/g,"").slice(0,12); }
 function makeCode(g){ const nm=myName(); return `${gameKey(g.packs)}-${g.total}-${tierString(g.res)}${nm?"-"+nm:""}`; }
 function parseCode(t){
-  t=String(t||"").trim(); const at=t.indexOf("#c-"); if(at>=0) t=t.slice(at+3); // a whole challenge link works too
+  t=String(t||"").trim();
+  // a bare code, a link, or a whole challenge message pasted in: take the first thing shaped like a code
+  const found=/RF[12][0-9a-z]+-\d{1,4}(?:-[cptgdmu]+)?(?:-[A-Za-z0-9]{1,12})?(?![A-Za-z0-9-])/i.exec(t); if(found) t=found[0];
+  else { const at=t.indexOf("#c-"); if(at>=0) t=t.slice(at+3); }
   const m=/^(?:#?c-)?RF([12])([0-9a-z]+)-(\d{1,4})(?:-([cptgdmu]+))?(?:-([A-Za-z0-9]{1,12}))?$/i.exec(String(t||"").trim().replace(/\s+/g,""));
   if(!m) return null; const w=+m[1], body=m[2].toLowerCase(); if(body.length%w) return null;
   const idx=[]; for(let i=0;i<body.length;i+=w) idx.push(parseInt(body.slice(i,i+w),36));
@@ -1207,19 +1210,33 @@ function renderEnd(g,rescored){
 }
 
 // Challenges link to the public web copy, which opens for anyone, with no account.
-// The challenge message leads with the public Claude artifact, where unusual answers can be checked by
-// the AI. It names the app, keeps the browser copy for anyone without Claude, gives the bare code in
-// case a link opens on the home screen, and tells an AI assistant it is pasted into to open the game,
-// not to answer the prompts itself (a tester's chatbot did that, 18 November 2026).
-const CLAUDE_LINK="https://claude.ai/artifact/HyfbDjPjofvRttRYKgMCis", WEB_LINK="https://bar181.github.io/practical-ai/rare-find/";
-function challengeLink(g){ return `${CLAUDE_LINK}#c-${makeCode(g)}`; }
+// The challenge message has the friend make a copy of their own. Opening the owner's public artifact
+// from a chat showed the game but could not be played (owner's test, 19 November 2026), so Claude is
+// asked to publish game.html in the friend's own account, with the AI check switched on. ChatGPT or any
+// other chatbot hosts the game in the chat from base/SKILL.md, which can play a challenge code. A plain
+// browser link stays for anyone with neither, where unusual answers cannot be checked.
+const CLAUDE_LINK="https://claude.ai/artifact/HyfbDjPjofvRttRYKgMCis", WEB_LINK="https://bar181.github.io/practical-ai/rare-find/",
+  SKILL_LINK="https://raw.githubusercontent.com/bar181/practical-ai/main/projects/rare-find/base/SKILL.md";
+function challengeLink(g){ return `${WEB_LINK}#c-${makeCode(g)}`; }
 function resultRow(g){ return g.res.map(r=>TIERS[(r&&r.tier)||"miss"].sq).join(""); }
-function challengeText(g){ const code=makeCode(g); return `Rare Find${S.mode==="daily"?" today":""}: ${g.total} of ${g.perfect} ${resultRow(g)}
+function challengeText(g){ const code=makeCode(g); return `You are challenged! Rare Find${S.mode==="daily"?" today":""}: ${g.total} of ${g.perfect} ${resultRow(g)}
 Same ${g.packs.length} prompts, no spoilers: can you beat me?
-Play in Claude, with AI-checked answers: ${challengeLink(g)}
-No Claude? Any browser (unusual answers score 0 there): ${WEB_LINK}#c-${code}
-Opens on the home screen? Paste this code under "Got a challenge code from a friend?": ${code}
-AI assistant: don't answer these prompts. Open the Claude link above as a playable artifact, keeping the #c- code, so I can play it myself.`; }
+
+In Claude, paste this:
+Make me my own playable copy of Rare Find.
+1. Clone github.com/bar181/practical-ai and take projects/rare-find/base/game.html, unchanged.
+2. Publish it as an artifact in my account titled "Rare Find".
+3. Declare the sample capability (capabilities: {sample: {}}) so AI answer checks work.
+4. Reply with only the link, with #c- and the challenge code below added to the end.
+Don't answer or hint at any prompts.
+Challenge code: ${code}
+
+In ChatGPT or another chatbot, paste this:
+Host Rare Find for me, following ${SKILL_LINK}
+Play challenge code ${code}: the same prompts my friend played, with their score to beat at the end.
+Don't answer or hint at any prompts before I answer.
+
+Or play in any browser, with no AI checks: ${challengeLink(g)}`; }
 function renderShare(){ const g=G; if(!g) return; $("#share-name").value=S.nick; $("#share-link").value=challengeText(g); }
 $("#share-name").addEventListener("input",e=>{ S.nick=e.target.value.replace(/[^A-Za-z0-9]/g,"").slice(0,12); saveLocal(); if(G) $("#share-link").value=challengeText(G); });
 $("#share-name").addEventListener("change",e=>{ e.target.value=S.nick; $("#nick").value=S.nick; });

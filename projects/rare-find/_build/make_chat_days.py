@@ -4,8 +4,13 @@ A chatbot playing Rare Find (base/SKILL.md) opens the file for today's date. Eac
 day's seven prompts, exactly as the built game deals them, with every scored answer, its points, and
 the code a challenge link needs. Generated: run this after any change to the packs or the calendar.
 
+It also writes one file per prompt, for playing a friend's challenge code in a chat: the code names
+each prompt by its place in the bank in base 36, and level-2-files/chat-packs/XX.json is the prompt at
+place XX (two characters, so place 1 is 01 and place 45 is 19).
+
 Run: python3 projects/rare-find/_build/make_chat_days.py [DAYS]   (needs: playwright)
-Writes level-2-files/chat-days/YYYY-MM-DD.json from the calendar's first day, DAYS days ahead (default 120).
+Writes level-2-files/chat-days/YYYY-MM-DD.json from the calendar's first day, DAYS days ahead (default 120),
+and level-2-files/chat-packs/XX.json for every prompt.
 """
 import functools, http.server, json, os, shutil, socketserver, sys, threading
 from playwright.sync_api import sync_playwright
@@ -13,6 +18,7 @@ from playwright.sync_api import sync_playwright
 here = os.path.dirname(os.path.abspath(__file__))
 base = os.path.join(os.path.dirname(here), "base")
 out = os.path.join(os.path.dirname(here), "level-2-files", "chat-days")
+packs_out = os.path.join(os.path.dirname(here), "level-2-files", "chat-packs")
 DAYS = int(sys.argv[1]) if len(sys.argv) > 1 else 120
 
 
@@ -28,15 +34,17 @@ def main():
         b = p.chromium.launch()
         pg = b.new_page()
         pg.goto(f"http://127.0.0.1:{srv.server_address[1]}/game.html")
-        days = pg.evaluate("""(n)=>{
+        days, packs = pg.evaluate("""(n)=>{
           const R=window.__rf, z=x=>String(x).padStart(2,'0'), [y,m,d]=R.CAL.start.split('-').map(Number), out=[];
-          for(let i=0;i<n;i++){ const t=new Date(y,m-1,d+i), k=`${t.getFullYear()}-${z(t.getMonth()+1)}-${z(t.getDate())}`;
-            const packs=R.dailyPacks(k);
-            out.push({date:k, key:R.gameKey(packs), prompts:packs.map((p,j)=>({n:j+1, prompt:p.prompt, topic:p.cat, top:p.top,
+          const one=(p,j)=>({n:j+1, prompt:p.prompt, topic:p.cat, top:p.top,
               ranked:p.ranked.map((e,r)=>({answer:e.a, also:e.aka||[], rank:r+1, points:R.rankPts(r+1,p.top)})),
               good:p.good.map(e=>({answer:e.a, also:e.aka||[], points:R.goodPts(p,e.r)})), gems:p.gems.map(e=>({answer:e.a, also:e.aka||[]})),
-              wrong:(p.wrong||[]).map(e=>typeof e==='string'?e:e.a), note:p.note||''}))}); }
-          return out; }""", DAYS)
+              wrong:(p.wrong||[]).map(e=>typeof e==='string'?e:e.a), note:p.note||''});
+          for(let i=0;i<n;i++){ const t=new Date(y,m-1,d+i), k=`${t.getFullYear()}-${z(t.getMonth()+1)}-${z(t.getDate())}`;
+            const packs=R.dailyPacks(k);
+            out.push({date:k, key:R.gameKey(packs), prompts:packs.map(one)}); }
+          const all=R.packs.map((p,i)=>({place:i.toString(36).padStart(2,'0'), ...one(p,0)})).map(({n,...rest})=>rest);
+          return [out, all]; }""", DAYS)
         b.close()
     srv.shutdown()
     shutil.rmtree(out, ignore_errors=True)
@@ -47,7 +55,13 @@ def main():
     for d in days:
         with open(os.path.join(out, d["date"] + ".json"), "w", encoding="utf-8") as f:
             json.dump({**head, **d}, f, ensure_ascii=False, separators=(",", ":"))
-    print(f"wrote {len(days)} day files, {days[0]['date']} to {days[-1]['date']}")
+    shutil.rmtree(packs_out, ignore_errors=True)
+    os.makedirs(packs_out)
+    phead = {**head, "generated": head["generated"], "about": "One prompt of the bank. A challenge code names prompts by this place, in base 36."}
+    for pk in packs:
+        with open(os.path.join(packs_out, pk["place"] + ".json"), "w", encoding="utf-8") as f:
+            json.dump({**phead, **pk}, f, ensure_ascii=False, separators=(",", ":"))
+    print(f"wrote {len(days)} day files, {days[0]['date']} to {days[-1]['date']}, and {len(packs)} prompt files")
 
 
 if __name__ == "__main__":

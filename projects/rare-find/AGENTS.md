@@ -5,7 +5,7 @@ People start at the [README](README.md). The design is in [`_build/NORTH-STAR.md
 ## To play
 
 - In Claude: https://claude.ai/artifact/HyfbDjPjofvRttRYKgMCis, the full game screen. Answer checks run on the player's own plan.
-- In ChatGPT or any chatbot: follow [`base/SKILL.md`](base/SKILL.md). You host the game in the chat from today's file in `level-2-files/chat-days/`.
+- In ChatGPT or any chatbot: follow [`base/SKILL.md`](base/SKILL.md). You host the game in the chat from today's file in `level-2-files/chat-days/`, or a friend's challenge code from `level-2-files/chat-packs/`.
 - In any browser, no account: https://bar181.github.io/practical-ai/rare-find/. No AI; challenge links work.
 - Offline: open [`base/game.html`](base/game.html).
 
@@ -18,7 +18,7 @@ Edit `_build/`, never `base/game.html` (generated).
 | The game (`game.src.html`) | `python3 build.py` |
 | Add prompts | Append to the end of `packs.json` (challenge codes use positions). `python3 check_packs.py packs.json`, `python3 make_calendar.py`, then `python3 build.py && python3 falsematch.py && python3 build.py` |
 | The game's look | `python3 make_store_images.py` (README screens), `python3 explainer/make_explainer_images.py` (explainer screens), then `python3 explainer/build_explainer.py` |
-| Packs, calendar or dealing | `python3 make_chat_days.py` regenerates the chat answer files (120 days from the calendar's start) |
+| Packs, calendar or dealing | `python3 make_chat_days.py` regenerates the chat answer files: 120 days from the calendar's start, and one file per prompt for challenge codes |
 
 Each pack: 10 ranked answers, 5 Gems, 20 or more other right answers (each with `r`, its rarity
 1 to 9, which sets its points from `top` + 10 up to 90), a few tempting wrong ones, and `top`, the

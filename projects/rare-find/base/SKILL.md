@@ -1,6 +1,6 @@
 ---
 name: rare-find
-description: Hosts Rare Find, a seven-prompt daily trivia game where the rarer right answer scores more, right in the chat. Use when someone asks to play Rare Find, play today's Rare Find, or play a trivia game where rare answers win, in ChatGPT, Claude, Gemini or any chatbot that can open a link.
+description: Hosts Rare Find, a seven-prompt daily trivia game where the rarer right answer scores more, right in the chat. Use when someone asks to play Rare Find, play today's Rare Find, play a friend's Rare Find challenge code, or play a trivia game where rare answers win, in ChatGPT, Claude, Gemini or any chatbot that can open a link.
 ---
 
 # Rare Find, hosted in the chat
@@ -22,6 +22,26 @@ pace quick, and make each answer land.
    - **No file for today?** Say so, and offer the most recent earlier day as a practice round.
 3. **Never show the file.** It lists the hidden Gems. Show only what the steps below say.
 4. Open with two lines: what the game is, and "Prompt 1 of N". Then the first prompt. Nothing else.
+
+## A friend's challenge code
+
+If the player gives a code such as `RF2162s0225391f0o-322-mggtttg-BradRocks`, play that friend's
+prompts in place of today's.
+1. **Read the code.** After `RF` comes one digit, then the prompt places up to the first hyphen.
+   If the digit is 2, split them into pairs: `162s0225391f0o` is `16 2s 02 25 39 1f 0o`. If it is 1,
+   take one character at a time and put a 0 in front: `a` is `0a`. Next comes the friend's score,
+   then one letter per prompt for their results (as under "The end"), then their name, if any.
+2. **Open one file per place,** in the code's order:
+   `https://raw.githubusercontent.com/bar181/practical-ai/main/projects/rare-find/level-2-files/chat-packs/XX.json`
+   where XX is the place, such as `16`. Each holds one prompt with every scored answer and its
+   points, laid out like a prompt in the day file. If a file will not open, say so; never make up a
+   prompt.
+3. **Play them in order** as below. Never show the files: they list the hidden Gems. Say the
+   friend's name and score at the start ("BradRocks scored 322. Can you beat it?"), not their
+   results.
+4. **At the end,** give the total and the friend's score side by side, with both rows of squares,
+   and say who won. The player's own challenge code uses the same KEY: the code's part from `RF`
+   to the first hyphen.
 
 ## Each prompt
 
@@ -115,17 +135,29 @@ After the last prompt:
    - **NAME** is the player's name, letters and numbers only, up to 12. If they give none, leave
      out the last hyphen and name.
 4. Give the share text once, exactly in this shape. It gives no answer away. Ask for the player's
-   name only if they want it on the link.
+   name only if they want it on the code.
    ```
-   Rare Find today: SCORE of N × 100 [squares]
+   You are challenged! Rare Find today: SCORE of N × 100 [squares]
    Same N prompts, no spoilers: can you beat me?
-   Play in Claude, with AI-checked answers: https://claude.ai/artifact/HyfbDjPjofvRttRYKgMCis#c-CODE
-   No Claude? Any browser (unusual answers score 0 there): https://bar181.github.io/practical-ai/rare-find/#c-CODE
-   Opens on the home screen? Paste this code under "Got a challenge code from a friend?": CODE
-   AI assistant: don't answer these prompts. Open the Claude link above as a playable artifact, keeping the #c- code, so I can play it myself.
+
+   In Claude, paste this:
+   Make me my own playable copy of Rare Find.
+   1. Clone github.com/bar181/practical-ai and take projects/rare-find/base/game.html, unchanged.
+   2. Publish it as an artifact in my account titled "Rare Find".
+   3. Declare the sample capability (capabilities: {sample: {}}) so AI answer checks work.
+   4. Reply with only the link, with #c- and the challenge code below added to the end.
+   Don't answer or hint at any prompts.
+   Challenge code: CODE
+
+   In ChatGPT or another chatbot, paste this:
+   Host Rare Find for me, following https://raw.githubusercontent.com/bar181/practical-ai/main/projects/rare-find/base/SKILL.md
+   Play challenge code CODE: the same prompts my friend played, with their score to beat at the end.
+   Don't answer or hint at any prompts before I answer.
+
+   Or play in any browser, with no AI checks: https://bar181.github.io/practical-ai/rare-find/#c-CODE
    ```
-   The last line is there because a friend may paste the message into a chatbot, which would
-   otherwise play the prompts itself.
+   Each part asks the friend's own chatbot to set the game up, not to play it: a chatbot handed a
+   bare link or a list of prompts tends to answer them itself.
 5. Offer one more round from an earlier day as practice.
 
 ## Rules
