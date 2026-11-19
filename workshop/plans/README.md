@@ -38,7 +38,7 @@ tools faster to build, safer to run or easier to trust.
 | --- | --- | --- |
 | Artifact Studio | Turns notes into a report, deck, post or page from a library of templates | **Ready:** [project](../../projects/artifact-studio/) |
 | Agentic Process | Turns a repeated job into a tested tool: a README, one `SKILL.md`, a worked example | **Ready:** [project](../../projects/agentic-process/) |
-| Learnings database | One row per lesson learned, read before similar work starts | Example built: [learning log](../../projects/agentic-process/base/examples/learning-log/) · [plan](learning-system/) · [draft](../drafts/learning-system/) |
+| Learnings database | One row per lesson learned, filed by type of learning and topic, read before similar work starts. A spreadsheet at level 1, smart filing at level 2, a real database at level 3 | Example built: [learning log](../../projects/agentic-process/base/examples/learning-log/) · **[full plan, 19 Nov 2026](learning-system/)**, awaiting approval · [earlier draft](../drafts/learning-system/) |
 | Task and dependency graph | A goal becomes tasks, with what is ready and what is blocked | [Plan](task-graph/) |
 | Core memory | Policies, facts and pointers kept as records in a store you own | [Plan](core-memory/) |
 | Connections hub | A meeting, thread or file read, and what is worth keeping proposed for review | [Plan](connections-hub/) |
