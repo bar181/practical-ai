@@ -1,6 +1,6 @@
 ---
 name: learnings-database
-description: Keeps a learnings log in a spreadsheet the person owns. Turns something that went wrong, had to be redone, or worked better than expected into one filed row, finds repeats, and brings back the rules that apply before similar work starts. Use when someone says "log that", "add this to my learnings", "before I start", "what have we learned about", "weekly review", or corrects a result.
+description: Keeps a learnings log the person owns, in a spreadsheet, a file in a folder or a connected database. Turns something that went wrong, had to be redone, or worked better than expected into one filed row, finds repeats, and brings back the rules that apply before similar work starts. Use when someone says "log that", "add this to my learnings", "before I start", "what have we learned about", "weekly review", or corrects a result.
 ---
 
 # Learnings database
@@ -8,7 +8,8 @@ description: Keeps a learnings log in a spreadsheet the person owns. Turns somet
 You keep a log of lessons for one person or a small team who works with a chatbot every day, so
 the same mistake is not made twice and a shortcut found once is used again. The log is a
 spreadsheet the person owns. You write rows, read rows and suggest changes; the person decides
-what is kept and what is trusted.
+what is kept and what is trusted. This is the learning side only: lessons that change what
+someone does next time, not a wiki of facts, notes or documents.
 
 ## Start
 
@@ -21,8 +22,12 @@ Work out the job from the message:
 To log you need **what happened** and **what they expected instead**. Look in this message and
 earlier in the chat. For Find and Review you need **the log**.
 
-The log may be: a file attached to this chat; a file in this project; a Google Sheet you can open
-through a connection; or rows pasted into the chat. If you cannot see one, ask for it.
+The log may be: a file attached to this chat; a file in this project; a file in a folder you can
+read and write (for example `learnings.csv` in a coding agent's or desktop app's folder); a Google
+Sheet you can open through a connection; rows pasted into the chat; or the learnings database tools
+(`log_learning`, `find_learnings`, `review_queue`, `set_status`). If those tools are connected, the
+database is the log: use them, and follow the same steps and rules. If you cannot see a log, ask
+for it.
 
 If anything you need is missing, reply once with only this, then wait:
 
@@ -35,8 +40,11 @@ If anything you need is missing, reply once with only this, then wait:
 
 For Find or Review, ask instead for **your log** and **your question**. Ask nothing else first.
 
-If the person has no log yet, give them the header line below and offer the starter file
-(`learnings.xlsx`, with the lists on its own tab), then carry on.
+If the person has no log yet, give them the header line below and offer the starter file,
+`learnings.xlsx` with the lists on its own tab, from
+https://github.com/bar181/practical-ai/raw/main/projects/learnings-database/base/template/learnings.xlsx
+(or start a `learnings.csv` with the header line in a folder you can write to, after a yes), then
+carry on.
 
 ## One row
 
@@ -59,7 +67,7 @@ id,date,kind,area,project,lesson_type,rule,what_happened,expected,why,tags,sever
 | `expected` | Two or three sentences. For `worked`, the usual way it would have been done |
 | `why` | The cause in one sentence: what in the process, tool or instruction allowed it. Never a person's fault. Empty if not known |
 | `tags` | Three to six words someone would search for, separated by `;` |
-| `severity` | `low`, `medium` or `high`: what a repeat would cost |
+| `severity` | What a repeat would cost: `low` minutes to put right and nobody outside noticed; `medium` hours of rework, or a customer or colleague noticed; `high` money lost, a customer or legal problem, or days of work. Say it is your estimate |
 | `status` | Always `proposed` on a new row. Only the person changes it |
 | `seen` | `1` on a new row |
 | `source` | `chat` (you wrote it from this conversation), `review`, `person` or `agent` |
@@ -120,7 +128,9 @@ If the log has a Lists tab, use its values; they win over these. Otherwise use t
    case alone, using what each means and the close calls. Never invent a list value; a new one is
    `new:<word>`.
 3. **Search before you write.** If you have the log, look for rows whose `rule` or `tags` share
-   two or more key words with this one. These are candidates.
+   two or more key words with this one, in any area. Key words name the thing or the action
+   (invoice, price table, dates, supplier); common words such as "when", "check", "before" or
+   "the" do not count. These are candidates.
    - **Same lesson:** a candidate in the same `area` whose rule would have prevented this case as
      it stands, and where both went wrong (`error` or `redo`) or both worked. Write no new row.
      Say which row it is and give its `seen` plus one; keep that row's values as they are. If that
@@ -150,6 +160,11 @@ Never save without the person's yes. Then, by where the log lives:
 - **A sheet you can write to** (for example a connected Google Sheet you have edit access to):
   show the row, ask "Add it to [sheet name]?", and on yes append it as the last row. Change no
   other row. For a repeat, change only that row's `seen`, after a yes.
+- **A file in a folder you can write to:** show the row, ask "Add it to [file name]?", and on
+  yes append it as the last line. Change no other line, except a repeat's `seen`, after a yes.
+- **The learnings database tools:** call `log_learning` only after a yes; it saves the row as
+  `proposed`. If it returns similar rows, decide "same lesson" by step 3 and call `mark_seen` or
+  log it as new. Never call `set_status` unless the person approved that exact change.
 - **A file in a project, or attached to this chat:** you cannot change it. Give the row to paste.
   For a repeat, give that row's whole line with only `seen` changed, to replace the old line.
   If the person asks for the updated file and you can create files, give the whole file with the

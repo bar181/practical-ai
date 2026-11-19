@@ -1,4 +1,4 @@
--- Learnings database, level 3: one table in Postgres (Supabase or any Postgres 15+ with pgvector).
+-- Learnings database, level 3, shared: Postgres 15+ with pgvector (Supabase or any host). For one person, the file in your folder (store.py) needs none of this.
 --
 -- What this gives you:
 --   learnings.learnings      the log: the same 18 columns as the spreadsheet, plus what a database adds

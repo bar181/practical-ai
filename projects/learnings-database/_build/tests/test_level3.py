@@ -1,4 +1,5 @@
-"""test_level3.py: checks the level 3 database and MCP server against a real Postgres with pgvector.
+"""test_level3.py: checks the level 3 shared database (Postgres) and the MCP server against a real Postgres
+with pgvector. The file database (SQLite) has its own test, test_file_db.py.
 
 Needs a local Postgres 15+ with the vector extension, and a superuser login to create a scratch
 database (LT_ADMIN_URL, default postgresql://lt_admin:lt_admin_pw@127.0.0.1:5432/postgres).
@@ -42,7 +43,7 @@ def err(url, sql, args=()):
 with psycopg.connect(ADMIN, autocommit=True) as c:
     c.execute("drop database if exists lt_test with (force)"); c.execute("create database lt_test")
 for i in (1, 2):
-    r = subprocess.run(["psql", TEST, "-v", "ON_ERROR_STOP=1", "-q", "-f", os.path.join(L3, "supabase", "schema.sql")],
+    r = subprocess.run(["psql", TEST, "-v", "ON_ERROR_STOP=1", "-q", "-f", os.path.join(L3, "postgres", "schema.sql")],
                        capture_output=True, text=True)
     check(f"schema.sql applies cleanly (run {i})", r.returncode == 0, r.stderr)
 q(TEST, """do $$ begin
@@ -54,13 +55,20 @@ end $$; grant learnings_agent to lt_agent; grant learnings_owner to lt_owner; gr
 csv_path = os.path.join(root, "base", "template", "learnings.csv")
 rows = list(csv.DictReader(open(csv_path)))
 env = dict(os.environ, LEARNINGS_DATABASE_URL=OWNER)
-r = subprocess.run([sys.executable, os.path.join(L3, "import_csv.py"), csv_path], capture_output=True, text=True, env=env)
+r = subprocess.run([sys.executable, os.path.join(L3, "csv_sync.py"), "import", csv_path], capture_output=True, text=True, env=env)
 check("import: the 12 template rows load unchanged", "loaded 12, skipped 0, not loaded 0" in r.stdout, r.stdout + r.stderr)
-r = subprocess.run([sys.executable, os.path.join(L3, "import_csv.py"), csv_path], capture_output=True, text=True, env=env)
+r = subprocess.run([sys.executable, os.path.join(L3, "csv_sync.py"), "import", csv_path], capture_output=True, text=True, env=env)
 check("import: running it again changes nothing", "loaded 0, skipped 12" in r.stdout, r.stdout)
 same = q(OWNER, "select id, area, status, seen, sensitive from learnings.learnings order by id")
 want = sorted((x["id"], x["area"], x["status"], int(x["seen"]), x["sensitive"] == "yes") for x in rows)
 check("import: ids, areas, statuses, counts and sensitive flags match the sheet", sorted(same) == want, same)
+
+out = os.path.join(os.environ.get("TMPDIR", "/tmp"), "lt-export.csv")
+r = subprocess.run([sys.executable, os.path.join(L3, "csv_sync.py"), "export", out], capture_output=True, text=True, env=env)
+back = list(csv.DictReader(open(out))) if r.returncode == 0 else []
+check("export: the rows come back out with the sheet's 18 columns, values unchanged",
+      [x["id"] for x in back] == [x["id"] for x in rows] and list(back[0].keys()) == list(rows[0].keys())
+      and all(a["rule"] == b["rule"] and a["sensitive"] == b["sensitive"] for a, b in zip(back, rows)), r.stdout + r.stderr)
 
 # 3. what an agent can and cannot do
 check("agent: cannot read the table itself", "permission denied" in err(AGENT, "select * from learnings.learnings"))

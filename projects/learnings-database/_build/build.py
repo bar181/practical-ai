@@ -6,6 +6,8 @@ Sources: _build/lists.json (the fixed lists and the columns) and base/template/l
   base/template/lists.csv         the lists as a table
   base/template/learnings.xlsx    the template: Learnings, Lists and How to use tabs
   level-2-files/claude-skill/learnings-database/   the skill folder to upload to Claude
+  level-2-files/claude-plugin/learnings-database/  the Claude plugin: the skill and three commands
+  level-3-files/mcp-server/lists.json             the lists a new file database starts with
 Then checks: the CSV header is the column list; every row uses only listed values; the
 SKILL.md names every area and lesson type; the rows are invented and say so.
 Run: python3 projects/learnings-database/_build/build.py   (needs: openpyxl)
@@ -123,6 +125,41 @@ if os.path.exists(skill):
     shutil.copy(skill, dest); shutil.copy(os.path.join(root, "base", "flags.md"), os.path.join(dest, "references"))
 else:
     problems.append("base/SKILL.md is missing")
+
+# 6. the Claude plugin (level 2): the skill plus three commands, for Claude Code and Claude's plugin settings
+plug = os.path.join(root, "level-2-files", "claude-plugin", "learnings-database")
+shutil.rmtree(plug, ignore_errors=True)
+os.makedirs(os.path.join(plug, ".claude-plugin")); os.makedirs(os.path.join(plug, "commands"))
+shutil.copytree(os.path.join(root, "level-2-files", "claude-skill", "learnings-database"),
+                os.path.join(plug, "skills", "learnings-database"))
+shutil.copy(os.path.join(root, "_build", "img", "icon.png"), os.path.join(plug, ".claude-plugin", "icon.png"))
+json.dump({"name": "learnings-database", "version": "0.1.0",
+           "description": "Keep a learnings log you own: log a lesson in one line, bring back the rules before similar work, "
+                          "and review what is waiting each week. Nothing is saved or trusted without your yes.",
+           "author": {"name": "Practical AI"}, "license": "Apache-2.0",
+           "homepage": "https://github.com/bar181/practical-ai/tree/main/projects/learnings-database",
+           "keywords": ["learnings", "lessons learned", "after-action review", "memory"]},
+          open(os.path.join(plug, ".claude-plugin", "plugin.json"), "w"), indent=2)
+COMMANDS = {
+    "log": ("Log a lesson to your learnings log: what happened and what you expected",
+            "what happened, what you expected, and the project if any",
+            "Use the learnings-database skill to log this lesson. Show me the row and ask before saving anything.\n\n$ARGUMENTS"),
+    "before-i-start": ("Bring back the rules from your learnings log that apply to the work you are about to start",
+                       "the work you are about to start, and its project",
+                       "Use the learnings-database skill: before I start this work, find the accepted rules that apply and give me the block to paste.\n\n$ARGUMENTS"),
+    "weekly-review": ("Review the lessons waiting in your learnings log: accept, merge or retire",
+                      "",
+                      "Use the learnings-database skill to run the weekly review of my log. Suggest; change nothing without my yes.\n\n$ARGUMENTS"),
+}
+for name, (desc, hint, body) in COMMANDS.items():
+    head = f"---\ndescription: {desc}\n" + (f"argument-hint: {hint}\n" if hint else "") + "---\n\n"
+    open(os.path.join(plug, "commands", name + ".md"), "w").write(head + body + "\n")
+
+# 7. the lists the level 3 file database starts with (level-3-files/mcp-server/lists.json)
+json.dump({"_generated": "by _build/build.py from _build/lists.json; edit that file, not this one",
+           "kinds": L["kinds"], "areas": [{"value": a["value"], "means": a["means"]} for a in L["areas"]],
+           "lesson_types": L["lesson_types"]},
+          open(os.path.join(root, "level-3-files", "mcp-server", "lists.json"), "w"), indent=1)
 
 print(f"built flags.md, lists.csv, learnings.xlsx ({len(rows)} rows)")
 if problems:
