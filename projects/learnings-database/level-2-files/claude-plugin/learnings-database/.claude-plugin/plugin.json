@@ -1,0 +1,16 @@
+{
+  "name": "learnings-database",
+  "version": "0.2.0",
+  "description": "Keep a learnings log you own: log a lesson in one line, get the rules back before similar work, and review what is waiting each week. Nothing is saved or trusted without your yes.",
+  "author": {
+    "name": "Bradley Ross",
+    "url": "https://www.linkedin.com/in/bradaross/"
+  },
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/bar181/practical-ai/tree/main/projects/learnings-database",
+  "keywords": [
+    "learnings",
+    "lessons learned",
+    "after-action review"
+  ]
+}

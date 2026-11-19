@@ -16,7 +16,7 @@ decides. It is the same brief, run on a schedule with your apps connected.
 | **3. Register** | Writes each action and date as a row in a sheet: what, by when, who owns it, the exact words, the document, status | Contract tools keep an obligations register: AI drafts the obligations, and every obligation has an owner |
 | **4. Review lane** | Clear rows go in as drafts. Anything unclear, any penalty, any date that cannot be worked out, and any unreadable file goes to a person first. Nothing is marked done by the AI | Document-processing practice: route uncertain or high-stakes items to a person, automate the clear ones |
 | **5. Remind** | Before each deadline, drafts a reminder email or a calendar hold for a person to send or accept | Connectors can draft in Gmail and create calendar events; sending stays with you |
-| **6. Learn** | Each correction a person makes is recorded once and read before the next brief, so the same mistake is not repeated | Practical AI's planned learnings database |
+| **6. Learn** | Each correction a person makes is recorded once and read before the next brief, so the same mistake is not repeated | Practical AI's [Learnings database](../../learnings-database/) |
 
 **Handed off, not rebuilt:** a contract that needs a risk review goes to a lawyer or a legal
 review tool, such as Anthropic's open-source Legal plugin. This tool stays the business person's

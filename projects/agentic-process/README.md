@@ -1,16 +1,17 @@
 # Agentic Process
 
-<h3 align="center">An agentic engineer at your side, for everyday jobs.</h3>
+<h3 align="center">Teach your AI a job once, and it does it the same way every week.</h3>
 
-<p align="center">A harness for everything.</p>
+<p align="center">For the jobs you keep re-explaining: meeting notes, supplier notices, quotes.</p>
 
-**Are you an AI agent?** Go to [AGENTS.md](AGENTS.md) for instructions you can follow now.
+<p align="center"><b>Free</b> &nbsp;·&nbsp; <b>No setup</b> &nbsp;·&nbsp; <b>Your own chatbot</b><br><b>Tested in Claude</b> &nbsp;·&nbsp; <b>Now in user testing</b></p>
 
 Most everyday AI work is a prompt and a hope. Agentic Process turns a job you repeat into a small
 tool: one instruction file you paste into a new chat, a worked example, and a short test, so the AI
 does the job the same way every time.
 
-- **Work you can rely on.** A fresh AI session tests the tool before you use it.
+- **Work you can check.** You get a short test to run in a new chat (a coding agent runs it for
+  you) before you rely on it.
 - **The same way every time.** Written steps you save once, not a lucky prompt.
 - **Time back.** Next week starts from the saved instructions, not a blank chat.
 
@@ -71,7 +72,7 @@ you ran, and what you assumed.
 
 </details>
 
-<p align="center"><b><i>"Like having an engineer sitting with me, so every new job is set up the proper way."</i></b></p>
+<p align="center"><b>The aim: like having an engineer beside you, so every new job is set up the proper way.</b></p>
 
 ## See the difference
 
@@ -116,9 +117,9 @@ person could act on its first screen as it is.
 
 | Tool | What it does, and how it scored |
 | --- | --- |
-| [**Document to action brief**](quality-results/2026-11-16-builder-pilot/agentic-process/document-to-action-brief/) | A supplier notice or report becomes what you must do, by when, and what is missing, each with the exact words.<br>*93/100 in the blind pilot, zero corrections.* |
+| [**Document to action brief**](../document-to-action-brief/) | A supplier notice or report becomes what you must do, by when, and what is missing, each with the exact words.<br>*93/100 in the blind pilot, zero corrections ([the pilot version](quality-results/2026-11-16-builder-pilot/agentic-process/document-to-action-brief/)). Now a project of its own, in user testing.* |
 | [**Decision brief**](base/examples/decision-support/) | A business question becomes options weighed against your goals and limits, with dated sources and a recommendation.<br>*86 to 89 in blind grading, against 61 to 67 for a plain chatbot answer: one question, three blind graders. Every grader also said a busy owner would rather receive the plain answer.* |
-| [**Learning log**](base/examples/learning-log/) | Each lesson recorded once, and brought back before similar work starts.<br>*Passed three fresh-session checks.* |
+| [**Learning log**](base/examples/learning-log/) | Each lesson recorded once, and brought back before similar work starts.<br>*Passed three fresh-session checks. The full tool it led to: the [Learnings database](../learnings-database/).* |
 
 <p align="center">
   <img src="_build/img/builder-flow.svg" width="420" alt="Animation of the builder. A job you repeat goes in at the top. Four steps light up in turn: name the usable result, pick the simplest build, build one SKILL.md, and test it in a fresh session, with a loop back to fix. At the bottom, the package you get: README.md, SKILL.md and example.md, checked before you get it.">
@@ -180,15 +181,15 @@ chatbot you already use. Nothing is sent, posted or published without you.
 <summary><b>What does it not do, and who has used it?</b></summary>
 
 It does not replace your chatbot's own features, plugins or skills; it adds the missing piece. In
-a plain chat it cannot start a fresh session to test itself, so it gives you the test to run. So
-far only its author has used it.
+a plain chat it cannot start a fresh session to test itself, so it gives you the test to run. As
+of 18 November 2026, other people are testing it; their results are not in yet.
 
 </details>
 
-## Quick start in one line
+## A one-line version (not yet tested)
 
 ```
-Hey chatbot, act as my agentic engineer using https://github.com/bar181/practical-ai/blob/main/projects/agentic-process/base/PROCESS.md and set up a tool for a job I repeat: <describe the job, who uses the result, and the mistake it must catch>.
+Hey chatbot, act as my agentic engineer using https://raw.githubusercontent.com/bar181/practical-ai/main/projects/agentic-process/base/PROCESS.md and set up a tool for a job I repeat: <describe the job, who uses the result, and the mistake it must catch>.
 ```
 
 This one-line version is not yet tested. The tested prompt is in [Try it now](#try-it-now).
@@ -197,6 +198,8 @@ This one-line version is not yet tested. The tested prompt is in [Try it now](#t
 
 **18 November 2026.** Built by its author with Claude. All testing so far was in Claude, including
 the blind reviews and the try-it prompt above. As of 18 November 2026, users are testing it; their results are not in yet. Not yet tried in other chatbots or coding agents. [The evidence](quality-results/README.md).
+
+**Are you an AI agent?** Go to [AGENTS.md](AGENTS.md) for instructions you can follow now.
 
 ## About Bradley Ross
 

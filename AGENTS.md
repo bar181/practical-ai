@@ -10,6 +10,7 @@ work. Reuse first: use an existing capability, wrap it, or build only the missin
 | --- | --- |
 | Make a page, a slide deck or a social post | [`projects/artifact-studio/AGENTS.md`](projects/artifact-studio/AGENTS.md) |
 | Turn a policy, contract or bill into an action list | [`projects/document-to-action-brief/AGENTS.md`](projects/document-to-action-brief/AGENTS.md) |
+| Log a lesson, find the rules before work, or keep a learnings log | [`projects/learnings-database/AGENTS.md`](projects/learnings-database/AGENTS.md) |
 | Play or change the Rare Find game | [`projects/rare-find/AGENTS.md`](projects/rare-find/AGENTS.md) |
 | Build a new tool, or improve one | [`projects/agentic-process/AGENTS.md`](projects/agentic-process/AGENTS.md): the builder skill, the one-page process and the template |
 | Understand what the repository holds | [`README.md`](README.md) |

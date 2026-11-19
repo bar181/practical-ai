@@ -1,4 +1,4 @@
-# Level 3, Expert: your agents get the studio as tools
+# Level 3: your agents get the studio as tools
 
 [Level 2](../level-2-files/), plus a connection. An MCP server lets an assistant or an agent
 browse the library, get a scored recommendation and pull starter code by itself, so nobody has to
@@ -7,8 +7,10 @@ pick a template or attach a file.
 **Think of it as** the studio's front desk. The assistant asks "what do you have for a customer
 proposal?" and gets an answer, where before it had to be handed the files.
 
-**Where it stands.** Tested with a client on the machine that built it, over stdio and local HTTP.
-Not yet tried inside a desktop assistant or over the internet. Nothing is hosted, so there is no
+**Where it stands.** Its author ran the check program, `mcp/test_client.py`, against the server on
+the computer that built it, both directly and over a local web address, and an agent built a page
+using only these tools on 16 November 2026 ([logs](../_build/examples/runs/)). Not yet tried inside
+a desktop assistant or over the internet. Nothing is hosted, so there is no
 one-click connector yet.
 
 ## What the assistant can do
@@ -24,17 +26,18 @@ one-click connector yet.
 | `get_rules` | The build rules, the checklist, or the recipe, voice and look cards | No |
 | `make_palette` | Seven colours from one brand colour, with the contrast of every text and background pair | No |
 | `list_inspiration` | The person's saved finds, in their own words, so their taste shapes the choice | No |
-| `add_inspiration` | Files a short note about a design you like in `base/inspiration/inbox/` | One small text file |
+| `add_inspiration` | Files a short note about a design you like in `mcp/inspiration/inbox/` | One small text file |
 
 Start the server with `--read-only` to leave the last tool out.
 
 ## Set it up on your own computer
 
-You need Python 3.10 or later.
+You need Python 3.10 or later. Open a terminal (Terminal on a Mac, PowerShell on Windows) in the
+`level-3-files` folder, then type:
 
 ```
-pip install "mcp>=2"
-python mcp/server.py
+python3 -m pip install "mcp>=2"
+python3 mcp/server.py
 ```
 
 The second line should sit and wait. That means it is working. Stop it with Ctrl+C.
@@ -46,7 +49,7 @@ settings, with the real path:
 {
   "mcpServers": {
     "artifact-studio": {
-      "command": "python",
+      "command": "python3",
       "args": ["/full/path/to/artifact-studio/level-3-files/mcp/server.py"]
     }
   }
@@ -62,7 +65,7 @@ An assistant that runs on someone else's computers cannot reach a file on yours.
 address.
 
 ```
-python mcp/server.py --http --read-only
+python3 mcp/server.py --http --read-only
 ```
 
 This serves the same tools at `http://127.0.0.1:8000/mcp`. To use it from the web you must put it
@@ -75,7 +78,7 @@ it is reachable from outside your computer, and take the address down when you a
 ## Check it works
 
 ```
-python mcp/test_client.py
+python3 mcp/test_client.py
 ```
 
 This starts the server, calls every tool through a real client and prints what came back.

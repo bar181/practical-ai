@@ -4,13 +4,13 @@
 
 <p align="center">Your notes, turned into a page with the impact of a professional website, in the chatbot you already use.</p>
 
-**Are you an AI agent?** Go to [AGENTS.md](AGENTS.md) for instructions you can follow now.
+<p align="center"><b>Free</b> &nbsp;·&nbsp; <b>No setup</b> &nbsp;·&nbsp; <b>Your own chatbot</b><br><b>Tested in Claude</b> &nbsp;·&nbsp; <b>Now in user testing</b></p>
 
 You already ask your AI for reports. Ask through Artifact Studio and you get what a designer would
 bring, not a wall of text or a slide deck that took hours.
 
-- **It looks professionally designed.** Photos, motion and a story that flows: scrollytelling,
-  charts that build as you scroll, a photo that pans and zooms.
+- **It looks professionally designed.** Photos, motion and a story that unfolds as you scroll:
+  charts that build, a photo that pans and zooms.
 - **The same standard every time.** Seven voices and nine looks fitted to your content and reader.
   The answer first, nothing invented, gaps marked, not guessed.
 - **Minutes, not hours.** About five minutes for a page that takes an hour or more by hand. An
@@ -51,9 +51,10 @@ on her phone.
 
 **You get a scrolling keynote page** like [this one](_build/examples/runs/2026-11-17-try-it-keynote-photo/report.html),
 made by a fresh Claude session from this prompt and one photo, in one try, unedited ([see it below](#keynotes-and-decks)).
+GitHub shows it as code: press the download button above the code, then open the file in your browser.
 Tested so far in Claude; not yet in ChatGPT or Gemini.
 
-<p align="center"><b><i>"Better than I could do, as good as my designer, and I made it myself."</i></b></p>
+<p align="center"><b>The aim: better than you could do by hand, as good as a designer, and made by you.</b></p>
 
 ## Before and after: one lesson, three ways
 
@@ -283,7 +284,7 @@ Each voice describes a style. Nothing is written by, or endorsed by, the people 
 
 </details>
 
-## Quick start in one line
+## A one-line version (not yet tested)
 
 ```
 Hey chatbot, use this project https://github.com/bar181/practical-ai/tree/main/projects/artifact-studio and make my notes into a designed page: <paste your notes, and say who reads it>.
@@ -297,6 +298,8 @@ This one-line version is not yet tested. The tested prompt is in [Try it now](#t
 then two runs of the try-it prompt above. Every run finished its page. Used for real by its author, for a client's
 course (the before and after above). As of 18 November 2026, users are testing it; their results are not in yet. Not yet tried in other chatbots. All example content is
 invented. [The evidence](quality-results/README.md).
+
+**Are you an AI agent?** Go to [AGENTS.md](AGENTS.md) for instructions you can follow now.
 
 ## About Bradley Ross
 

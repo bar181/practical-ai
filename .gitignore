@@ -151,3 +151,7 @@ vite.config.ts.timestamp-*
 # Python
 __pycache__/
 *.pyc
+
+# Learnings logs are private: they stay out of the repository
+learnings.db
+learnings.db-journal

@@ -4,10 +4,12 @@ A one-page summary for anyone deciding where to start. Updated 19 November 2026.
 
 ## What is ready
 
-Four projects are built and ready to try, and users are testing each one as of 18 November 2026.
-The two with the most evidence are below; Document to action brief and the Rare Find game follow in
-the lists. Artifact Studio, Agentic Process and Rare Find each have an explainer page in
-[`reports/`](reports/) (download the HTML file and open it in a browser).
+Five projects are built and ready to try. Other people are testing Artifact Studio, Agentic
+Process, Document to action brief and Rare Find as of 18 November 2026. Nobody else has used the
+Learnings database yet; it was finished on 19 November. Three are described below; the Learnings
+database and the Rare Find game follow in the lists. Artifact Studio, Agentic Process, the
+Learnings database and Rare Find each have an explainer page in [`reports/`](reports/) (download
+the HTML file and open it in a browser).
 
 ### Artifact Studio: designer-quality reports you make yourself
 
@@ -23,34 +25,49 @@ sentence.
 **Use cases:** a monthly report for a business partner, a deck for a team meeting, a week of posts
 from one piece, a page that opens with your own photo.
 
-**Where it stands:** built and checked by its author, with 22 runs by fresh AI sessions. Tried
+**Where it stands:** in user testing since 18 November 2026; results are not in yet. Built and
+checked by its author, with 22 runs by fresh AI sessions. Tried
 only in Claude so far. [Open the project](../projects/artifact-studio/) ·
 [the explainer page](reports/artifact-studio.html) ·
 [the evidence](../projects/artifact-studio/quality-results/README.md).
 
-### Agentic Process: an agentic engineer at your side
+### Agentic Process: teach your AI a job once
 
 **What it does:** gives a job you repeat with AI the structure developers give coding agents: a
 clear result, written steps, the one mistake to catch, and a test in a fresh session before you
 rely on it. It uses the AI tools you already have and adds only what they are missing.
 
-**How you use it:** paste one build request into a coding agent such as Claude Code, with the job,
+**How you use it:** paste one prompt into the chatbot you use, or a coding agent such as Claude Code, with the job,
 who will use the result and the one thing that usually goes wrong. Read the hand-back, run any
 tests it left for you, and check it against the "Is it ready?" list.
 
 **Use cases:** supplier notices into actions and dates, a business decision brief with sources, a
 log of lessons learned, meeting notes into actions.
 
-**Where it stands:** in one blind pilot, a tool built with Agentic Process scored 93/100. The
+**Where it stands:** in user testing since 18 November 2026; results are not in yet. In one blind
+pilot, a tool built with Agentic Process scored 93/100. The
 direct-build version scored 73/100 on the same brief. That was one build task, one unseen notice
 and one blind reviewer. [Open the project](../projects/agentic-process/) ·
 [the explainer page](reports/agentic-process.html) ·
 [the evidence](../projects/agentic-process/quality-results/README.md).
 
+### Document to action brief: know what a document asks of you
+
+**What it does:** turns a notice, contract, tender, policy or bill into what you must do, the dates
+and the open questions, each with the exact words it came from and where they are.
+
+**How you use it:** paste one prompt with your document, read the answer first, then search for
+each quote and tick it before you act. The brief lists; you decide.
+
+**Where it stands:** in user testing since 18 November 2026; results are not in yet. Every run with the instructions
+passed in nine fresh Claude sessions on 17 and 18 November. Tried only in Claude so far.
+[Open the project](../projects/document-to-action-brief/) ·
+[the evidence](../projects/document-to-action-brief/quality-results/README.md).
+
 ## What comes next
 
-The next tools, in the order they are planned. "Example built" means a working version exists
-inside Agentic Process; it becomes its own project once someone other than its author has used it.
+Every tool, in the order it was planned. Finished projects are marked and linked. "Example built"
+means a working version exists inside Agentic Process.
 
 ### For everyday work
 
@@ -75,7 +92,7 @@ Support tools that make every other tool better. Each starts with a version a pe
 
 | # | Tool | What it will do for you | Where it stands |
 | --- | --- | --- | --- |
-| 1 | **Learnings database** | Record each lesson once, filed by type and topic, and bring it back before similar work starts | Example built; [full plan](../workshop/plans/learning-system/) awaiting approval |
+| 1 | **Learnings database** | Record each lesson once, filed by area and project, and bring it back before similar work starts | **Built and tested in Claude by its author, 19 Nov 2026. No one else has used it yet:** [project](../projects/learnings-database/) · [explainer](reports/learnings-database.html) · [idea file](../projects/learnings-database/level-2-files/gist/learnings-log.md) |
 | 2 | **Task and dependency graph** | Turn a goal into tasks, and show what is ready and what is blocked | Plan |
 | 3 | **Decision support** | Take a decision from options to a recommendation with the working shown | Example built |
 | 4 | **Estimate to proposal** | Combine a request, notes and past jobs into a draft estimate and proposal | Early draft |
@@ -90,7 +107,7 @@ Support tools that make every other tool better. Each starts with a version a pe
 
 | Project | What it does for you | Where it stands |
 | --- | --- | --- |
-| **Rare Find** | A five-minute daily trivia game in Claude or any browser, where the right answer nobody else thought of scores the most | **In user testing:** [play in Claude](https://claude.ai/artifact/HyfbDjPjofvRttRYKgMCis) · [play in a browser](https://bar181.github.io/practical-ai/rare-find/) · [project](../projects/rare-find/) · [explainer](reports/rare-find.html) |
+| **Rare Find** | A five-minute daily trivia game in Claude, ChatGPT or any browser, where the right answer nobody else thought of scores the most | **In user testing:** [play in Claude](https://claude.ai/artifact/HyfbDjPjofvRttRYKgMCis) · [play in a browser](https://bar181.github.io/practical-ai/rare-find/) · [project](../projects/rare-find/) · [explainer](reports/rare-find.html) |
 
 The full list of ideas, sorted into everyday tasks, agent tools and hybrid projects, is in
 [the plans](../workshop/plans/README.md).
