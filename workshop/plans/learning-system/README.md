@@ -6,7 +6,7 @@ similar work.
 
 | Complexity | Research | Level 1 | Status |
 | --- | --- | --- | --- |
-| Beginner (level 1) to advanced (level 3) | Done, 19 November 2026 (sources below) | Being built in [`projects/learnings-database/`](../../../projects/learnings-database/) | **Approved** by the owner, 19 November 2026 (pull request #14). Step 0 answers below |
+| Beginner (level 1) to advanced (level 3) | Done, 19 November 2026 (sources below) | Built and tested by Claude, 19 November 2026: [`projects/learnings-database/`](../../../projects/learnings-database/) | **Approved** by the owner, 19 November 2026 (pull request #14). Step 0 answers below |
 
 **Think of it as** a ship's log with a good first mate. Every time the crew hits a rock, finds a
 faster channel or has to turn back, one line goes in the log. At level 2 the first mate notices
@@ -234,14 +234,19 @@ that make memory tools hard to trust; this tool leaves them with the person.
 
 ### Level 3: a real database
 
-One table with the same columns, plus what a database adds, and four tools.
+**Changed 19 November 2026, at the owner's request:** the project stays on the learning side (no
+wiki, no knowledge base, no complex vector search). The recommended start is a database file in
+the person's folder; a shared Postgres or Supabase database is for teams. Simple similarity search
+is optional. A Claude plugin and a gist draft were added at level 2.
+
+One table with the same columns, plus what a database adds, and five tools.
 
 | Part | Design |
 | --- | --- |
 | **Table** | `learnings`: the 18 columns, plus `created_at`, `updated_at`, `last_seen`, `owner`, a full-text column over `rule`, `what_happened`, `expected`, `tags`, and an embedding column for similarity |
 | **What agents may read** | A view, `served_rules`: `status = accepted` and `sensitive = no` only |
-| **Tools (MCP)** | `log_learning` (inserts, always as `proposed`), `find_learnings` (the filters above, plus "anything like this?" by hybrid search), `review_queue`, and `set_status` (only after the person approves in the chat) |
-| **Targets, in order** | 1. **Supabase**, for the owner's own use: Postgres with full-text and vector search, its official MCP server in read-only mode for reading, and writes only through two database functions (`log_learning`, `set_status`) so an agent never runs free SQL that writes. 2. **Google Sheets** for teams who stay in Workspace: a Sheets MCP server, or a small Apps Script endpoint, with the same four tools over the same tab. 3. **A company database**: the same table and tools through the MCP server the company already runs |
+| **Tools (MCP)** | `log_learning` (inserts, always as `proposed`), `mark_seen`, `find_learnings` (the filters above, plus "anything like this?" by hybrid search), `review_queue`, and `set_status` (only after the person approves in the chat) |
+| **Targets, in order** | 0. **A file in the person's folder** (SQLite), the recommended start: nothing to host. 1. **Supabase or Postgres**, shared: Postgres with full-text and vector search, its official MCP server in read-only mode for reading, and writes only through two database functions (`log_learning`, `set_status`) so an agent never runs free SQL that writes. 2. **Google Sheets** for teams who stay in Workspace: a Sheets MCP server, or a small Apps Script endpoint, with the same four tools over the same tab. 3. **A company database**: the same table and tools through the MCP server the company already runs |
 | **Agents** | Coding agents read the rules before work: one line in the project's `AGENTS.md` ("Before you start, call `find_learnings` for this project and follow the accepted rules"), or a session-start hook where the agent supports one |
 | **Import** | The level 1 sheet, exported as CSV, loads unchanged |
 
@@ -372,7 +377,7 @@ ASI06, memory and context poisoning).
 
 | | |
 | --- | --- |
-| **Do** | Write `level-3-files/supabase/schema.sql`: the table, full-text and vector columns, indexes, the `served_rules` view, row-level security, and two functions, `log_learning` (forces `status = proposed`) and `set_status` |
+| **Do** | Write `level-3-files/postgres/schema.sql` (and the file database in `mcp-server/store.py`): the table, full-text and vector columns, indexes, the `served_rules` view, row-level security, and two functions, `log_learning` (forces `status = proposed`) and `set_status` |
 | **Definition of done** | It runs cleanly on an empty project. A read-only role can read `served_rules` and nothing that is `sensitive`. An insert that tries `status = accepted` is stored as `proposed`. Tested with SQL in `_build/tests/` |
 
 **Step 3.3: the tools**
@@ -386,7 +391,7 @@ ASI06, memory and context poisoning).
 
 | | |
 | --- | --- |
-| **Do** | Write `_build/import_csv.py` (level 1 CSV in, rows out, embeddings made) and the hybrid search query |
+| **Do** | Write `level-3-files/csv_sync.py` (level 1 CSV in and out) and the hybrid search query, with embeddings optional |
 | **Definition of done** | The 30-row test sheet imports unchanged. Ten paraphrased questions each find their intended row in the first three results, with filters applied exactly |
 
 **Step 3.5: the Google Sheets and company options**

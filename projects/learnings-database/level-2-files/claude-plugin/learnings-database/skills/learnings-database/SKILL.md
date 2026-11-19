@@ -26,8 +26,9 @@ The log may be: a file attached to this chat; a file in this project; a file in 
 read and write (for example `learnings.csv` in a coding agent's or desktop app's folder); a Google
 Sheet you can open through a connection; rows pasted into the chat; or the learnings database tools
 (`log_learning`, `find_learnings`, `review_queue`, `set_status`). If those tools are connected, the
-database is the log: use them, and follow the same steps and rules. If you cannot see a log, ask
-for it.
+database is the log: use them, and follow the same steps and rules. For Find and Review, if you
+cannot see a log, ask for it. For Log, a log is optional: without one, carry on and say the repeat
+check was not done.
 
 If anything you need is missing, reply once with only this, then wait:
 
@@ -109,13 +110,14 @@ If the log has a Lists tab, use its values; they win over these. Otherwise use t
 | `insight` | Something learned about customers, the market or the work that changes what we do |
 
 **Close calls.** These are where filings go wrong; settle them by the lesson's rule, not by the topic.
-- `decisions` only when the rule is about *how* to choose (what to compare, what to weigh). A
-  lesson about suppliers or customers that happens to involve a choice goes in that area.
+- `decisions` when the rule is about *how* to choose (what to compare, what to weigh), whatever
+  was chosen: a supplier, a tool, a hire. A lesson about working with a supplier or customer after
+  the choice goes in that area.
 - `coding` for building software, scripts or formulas, even with an agent; `working-with-ai` for
   prompting or checking a chatbot on any other work.
 - `check` when the rule is to verify something before it goes out or is relied on (a review, a
   comparison, a site visit, a confirmation in writing). `process` when the rule changes how or
-  when the work itself is done. `tool` only when the rule is about how one named tool behaves.
+  when the work itself is done, or who does it (naming one owner for a task is `process`). `tool` only when the rule is about how one named tool behaves.
 - `instruction` is how a task or prompt was worded or what it included; `communication` is who
   was told, when, and through which channel.
 - `insight` is what customers or the market respond to; `judgement` is a rule of thumb for a choice.
@@ -133,14 +135,15 @@ If the log has a Lists tab, use its values; they win over these. Otherwise use t
    "the" do not count. These are candidates.
    - **Same lesson:** a candidate in the same `area` whose rule would have prevented this case as
      it stands, and where both went wrong (`error` or `redo`) or both worked. Write no new row.
-     Say which row it is and give its `seen` plus one; keep that row's values as they are. If that
+     Say which row it is and give its `seen` plus one; keep that row's values as they are. If the
+     new case was on another project, say so, so the person can widen the row at the review. If that
      row is `retired`, say the lesson has come back and suggest the person reopens it.
    - **Close but different:** any other candidate. Write the new row with your own filing and name
      the close row, so the person can merge it at the review.
    - **Not a repeat:** you searched and nothing is close. Say so.
    - **Not checked** (no log): say so.
 4. **Say how sure you are.** `confidence` is `high` when one area and one lesson type clearly fit,
-   `medium` when a close call settled it, `low` when two areas still fit equally after the close
+   `medium` when you needed a close call, or judgement, to choose either, `low` when two areas still fit equally after the close
    calls. Only for `low`, ask one short question after the row, naming both ("Sales or
    customers?"). Do not ask about lesson type or project.
 5. **Write the rule.** It names the situation and the action ("When ..., do ..."), would have
@@ -160,6 +163,8 @@ Never save without the person's yes. Then, by where the log lives:
 - **A sheet you can write to** (for example a connected Google Sheet you have edit access to):
   show the row, ask "Add it to [sheet name]?", and on yes append it as the last row. Change no
   other row. For a repeat, change only that row's `seen`, after a yes.
+Ask the save question after the row and its notes, before the list of things to check.
+
 - **A file in a folder you can write to:** show the row, ask "Add it to [file name]?", and on
   yes append it as the last line. Change no other line, except a repeat's `seen`, after a yes.
 - **The learnings database tools:** call `log_learning` only after a yes; it saves the row as

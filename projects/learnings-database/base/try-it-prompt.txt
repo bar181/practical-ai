@@ -1,0 +1,6 @@
+Read the instructions at this link and follow them for the rest of this chat:
+https://raw.githubusercontent.com/bar181/practical-ai/main/projects/learnings-database/base/SKILL.md
+
+My log is attached. If I have not attached one, give me the starter file first.
+
+log that: the email to all our customers about holiday opening hours went out with last year's dates. I expected this year's dates. We copied last year's email and only changed the subject. It belongs to the newsletter.

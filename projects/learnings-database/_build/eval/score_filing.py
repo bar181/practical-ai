@@ -1,7 +1,7 @@
 """score_filing.py: scores a run of the filing test against filing-cases.csv.
 
 Input: a predictions CSV with columns case,logged,kind,area,lesson_type,project,confidence,asked
-(logged and asked are yes or no). An area or lesson type counts as right if it is the expected
+(logged is yes, no or repeat:L-n; asked is yes or no). An area or lesson type counts as right if it is the expected
 one or the case's also_ok value. A close call also counts as handled if the assistant asked.
 Run: python3 score_filing.py predictions.csv
 The definition of done (step 2.4): area right on at least 36 of 40, lesson type on at least 32,
@@ -15,11 +15,13 @@ preds = {r["case"].strip(): {k: (v or "").strip().lower() for k, v in r.items()}
 area = lt = area_strict = lt_strict = declined = kind = 0
 nonl = sum(1 for c in cases.values() if c["is_learning"] == "no")
 close_ok = closes = 0
-misses = []
+misses = []; repeats = []
 for cid, c in cases.items():
     p = preds.get(cid)
     if not p:
         misses.append(f"{cid}: no prediction"); continue
+    if p["logged"].startswith("repeat"):  # a repeat is a filing too: it is judged by the row it names
+        repeats.append(f"{cid} as {p['logged'][7:]}"); p["logged"] = "yes"
     if c["is_learning"] == "no":
         if p["logged"] == "no":
             declined += 1; area += 1; lt += 1; area_strict += 1; lt_strict += 1
@@ -37,6 +39,7 @@ for cid, c in cases.items():
     if c["close_call"] == "yes":
         closes += 1; close_ok += (p["asked"] == "yes" or (a_ok and p["area"] == c["area"]))
 n = len(cases); learnings = n - nonl
+if repeats: print("filed as repeats:", ", ".join(repeats))
 print(f"area right: {area}/{n} (strict, first choice only: {area_strict}/{n})   target 36")
 print(f"lesson type right: {lt}/{n} (strict: {lt_strict}/{n})   target 32")
 print(f"kind right: {kind}/{learnings}")
