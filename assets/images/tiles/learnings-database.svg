@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 380" role="img" aria-label="Learnings database: stop making the same mistake twice" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif">
+<rect x="2" y="2" width="336" height="376" rx="32" fill="#ffffff" stroke="#d0d7de" stroke-width="3"/>
+<rect x="110" y="34" width="120" height="120" rx="28" fill="#1f4a5c"/>
+<g transform="translate(170 94)"><rect x="-32" y="-44" width="64" height="88" rx="8" fill="#f6f3ec"/><rect x="-22" y="-28" width="44" height="6" rx="3" fill="#b4c0c4"/><rect x="-22" y="-14" width="44" height="6" rx="3" fill="#b4c0c4"/><rect x="-22" y="0" width="30" height="6" rx="3" fill="#b4c0c4"/><path d="M-6 22 l10 11 22 -26" stroke="#e8a33d" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g>
+<text x="170" y="206" text-anchor="middle" fill="#0c2340" font-size="32" font-weight="800">Learnings</text>
+<text x="170" y="242" text-anchor="middle" fill="#0c2340" font-size="32" font-weight="800">database</text>
+<text x="170" y="296" text-anchor="middle" fill="#3b4a5e" font-size="26" font-weight="600">Never the same mistake.</text>
+<text x="170" y="350" text-anchor="middle" fill="#1f4a5c" font-size="24" font-weight="800">Open ›</text>
+</svg>

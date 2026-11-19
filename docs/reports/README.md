@@ -30,6 +30,7 @@ open it in a browser.
 | --- | --- | --- |
 | [`artifact-studio.html`](artifact-studio.html) | Anyone with rough notes and something to share | The first report in five minutes, your own notes, the check before sharing, and the deck, post and photo versions |
 | [`agentic-process.html`](agentic-process.html) | Anyone who builds tools with a coding agent | The four builder steps, the build request, what you get back, the 93 vs 73 pilot, and how to tell it is ready |
+| [`learnings-database.html`](learnings-database.html) | Anyone who keeps fixing the same problem | A field guide: the idea in one sentence, the first lesson in two minutes, the three things to say, three levels, common mistakes and one next step. Practical instructor voice |
 | [`rare-find.html`](rare-find.html) | Anyone who wants to build a game, or any tool, with an AI agent | How Rare Find was built: real screens in a slow pan and zoom, a phone that follows seven steps, a before and after slider, three levels and the mistakes found. Practical instructor voice. Generated from `projects/rare-find/_build/explainer/` |
 
 **Also here:** the Artifact Studio library report from 15 November 2026,
@@ -40,11 +41,13 @@ The originals sit with the project's evidence.
 **Evidence for each project:** [Artifact Studio](../../projects/artifact-studio/quality-results/README.md) ·
 [Agentic Process](../../projects/agentic-process/quality-results/README.md) ·
 [Document to action brief](../../projects/document-to-action-brief/quality-results/README.md) ·
+[Learnings database](../../projects/learnings-database/quality-results/README.md) ·
 [Rare Find](../../projects/rare-find/quality-results/README.md).
 
 The projects themselves: [Artifact Studio](../../projects/artifact-studio/) ·
 [Agentic Process](../../projects/agentic-process/) ·
 [Document to action brief](../../projects/document-to-action-brief/) ·
+[Learnings database](../../projects/learnings-database/) ·
 [Rare Find](../../projects/rare-find/). What comes next: [the priority list](../README.md#what-comes-next).
 
 <img src="../../assets/images/bradley-ross-avatar.webp" width="110" alt="Cartoon avatar of Bradley Ross with a small friendly robot">

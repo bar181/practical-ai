@@ -8,6 +8,8 @@ similar work.</p>
 
 <p align="center"><b>Free</b> &nbsp;·&nbsp; <b>For Claude, ChatGPT and other chatbots</b> &nbsp;·&nbsp; <b>Your log stays in your own file</b><br><b>Tested in Claude</b> &nbsp;·&nbsp; <b>Not yet used by a person</b></p>
 
+<p align="center"><img src="_build/img/how-it-works.svg" width="620" alt="How it works in three steps: say log that with what happened and what you expected; get one filed row with the lesson as an instruction, saved after your yes, or a repeat counted; before similar work, the rules you accepted come back. The AI files and finds. You accept the rules."></p>
+
 **Think of it as** a ship's log: one line each time the crew hits a rock or finds a faster channel,
 read by the next crew before they sail.
 

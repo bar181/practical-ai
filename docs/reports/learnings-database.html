@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Learnings database: stop making the same mistake twice</title>
+<meta name="description" content="A field guide to the learnings database: log a lesson in one line, get the rules back before similar work, and keep it for a team.">
+<style>
+  /* Recipe: scrolling explainer. Voice: practical instructor. Look: field guide, two colours. */
+  :root {
+    --bg: #f6f3ec;      /* page: field-guide paper */
+    --panel: #ffffff;   /* cards */
+    --line: #c9c2b2;    /* rules, borders */
+    --ink-2: #4a4f55;   /* secondary text */
+    --ink: #14212b;     /* main text */
+    --accent: #1f4a5c;  /* buttons, links, the one colour to act on */
+    --mark: #e8a33d;    /* ticks and the progress bar */
+    color-scheme: light;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink);
+    font: 1.0625rem/1.55 system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    overflow-wrap: break-word; overflow-x: clip; }
+  main { max-width: 40rem; margin: 0 auto; padding: 0 1.25rem 3rem; }
+  h1, h2, h3, p, ol, ul, figure { margin: 0; }
+  h1 { font-size: clamp(2.1rem, 9vw, 3.3rem); line-height: 1.05; font-weight: 800; letter-spacing: -0.02em; text-wrap: balance; }
+  h2 { font-size: 1.55rem; line-height: 1.15; font-weight: 800; text-wrap: balance; }
+  h3 { font-size: 1.15rem; font-weight: 800; }
+  a { color: var(--accent); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+  :focus-visible { outline: 3px solid var(--mark); outline-offset: 3px; }
+  code, pre { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.9em; }
+  section { padding: 2.6rem 0; border-top: 2px solid var(--ink); }
+  section > * + * { margin-top: 1rem; }
+  .muted { color: var(--ink-2); }
+  .progress { position: sticky; top: 0; height: 5px; background: var(--line); z-index: 2; }
+  .progress span { display: block; height: 100%; width: 0; background: var(--mark); }
+  @supports ((animation-timeline: scroll()) and (animation-range: 0 100%)) {
+    .progress span { width: 100%; transform-origin: 0 50%; animation: grow linear both; animation-timeline: scroll(root); }
+    @keyframes grow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+  }
+  .open { padding: 2.4rem 0 2.6rem; }
+  .open > * + * { margin-top: 1rem; }
+  .lede { font-size: 1.15rem; }
+  .btn { display: inline-flex; align-items: center; min-height: 48px; padding: 0 1.2rem; background: var(--accent); color: #fff; font-weight: 700; text-decoration: none; border-radius: 6px; }
+  .box { background: var(--panel); border: 2px solid var(--ink); border-radius: 8px; padding: 1.2rem 1.25rem; }
+  .box b { display: block; margin-bottom: 0.3rem; }
+  .nums { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6rem; }
+  .nums div { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 0.9rem 0.7rem; }
+  .nums strong { display: block; font-size: 1.9rem; line-height: 1; color: var(--accent); }
+  .nums span { display: block; margin-top: 0.4rem; font-size: 0.88rem; color: var(--ink-2); }
+  ol.steps { list-style: none; padding: 0; counter-reset: s; }
+  ol.steps li { counter-increment: s; position: relative; padding: 0.9rem 0 0.9rem 3rem; border-bottom: 1px solid var(--line); }
+  ol.steps li::before { content: counter(s); position: absolute; left: 0; top: 0.85rem; width: 2rem; height: 2rem; border-radius: 50%; background: var(--mark); color: var(--ink); font-weight: 800; display: grid; place-items: center; }
+  .time { display: inline-block; margin-left: 0.4rem; font-size: 0.85rem; color: var(--ink-2); }
+  pre { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 0.9rem; white-space: pre-wrap; overflow-wrap: anywhere; }
+  .table-wrap { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; font-size: 0.95rem; }
+  th, td { text-align: left; vertical-align: top; padding: 0.55rem 0.5rem; border-bottom: 1px solid var(--line); }
+  th { font-size: 0.85rem; color: var(--ink-2); }
+  .tabs { border: 2px solid var(--ink); border-radius: 8px; background: var(--panel); }
+  .tabs > input { position: absolute; opacity: 0; pointer-events: none; }
+  .tabs .labels { display: flex; border-bottom: 2px solid var(--ink); }
+  .tabs label { flex: 1; min-height: 48px; display: grid; place-items: center; font-weight: 700; cursor: pointer; padding: 0 0.4rem; text-align: center; }
+  .tabs .pane { display: none; padding: 1.1rem 1.2rem; }
+  .tabs .pane > * + * { margin-top: 0.7rem; }
+  #t1:checked ~ .labels label[for=t1], #t2:checked ~ .labels label[for=t2], #t3:checked ~ .labels label[for=t3] { background: var(--accent); color: #fff; }
+  #t1:checked ~ .p1, #t2:checked ~ .p2, #t3:checked ~ .p3 { display: block; }
+  #t1:focus-visible ~ .labels label[for=t1], #t2:focus-visible ~ .labels label[for=t2], #t3:focus-visible ~ .labels label[for=t3] { outline: 3px solid var(--mark); outline-offset: -3px; }
+  ul.ticks { list-style: none; padding: 0; }
+  ul.ticks li { padding: 0.45rem 0 0.45rem 1.9rem; position: relative; }
+  ul.ticks li::before { content: "\2714"; position: absolute; left: 0.2rem; color: var(--accent); font-weight: 800; }
+  ul.cross li::before { content: "\2716"; color: #8a3b12; }
+  details { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 0.2rem 1rem; }
+  details + details { margin-top: 0.6rem; }
+  summary { min-height: 44px; display: flex; align-items: center; font-weight: 700; cursor: pointer; }
+  details p { padding: 0 0 0.9rem; }
+  footer { border-top: 2px solid var(--ink); padding-top: 1.4rem; font-size: 0.95rem; }
+  @media (prefers-reduced-motion: reduce) { .progress span { animation: none !important; width: 0; } }
+</style>
+</head>
+<body>
+<div class="progress" aria-hidden="true"><span></span></div>
+<main>
+<header class="open">
+  <p class="muted">Practical AI field guide · Learnings database</p>
+  <h1>Stop making the same mistake twice.</h1>
+  <p class="lede">Tell your chatbot "log that" when something goes wrong. It files the lesson as one row you own. Before similar work, the rules you accepted come back.</p>
+  <p><a class="btn" href="#start">Start in two minutes</a></p>
+</header>
+
+<section aria-labelledby="idea">
+  <h2 id="idea">The idea in one sentence</h2>
+  <p>A lesson is only useful if it comes back before the next time, so this keeps every lesson as one instruction, counts the repeats, and hands the rules back when you start similar work.</p>
+  <div class="box"><b>Think of it as a ship's log.</b>One line each time the crew hits a rock or finds a faster channel, read by the next crew before they sail. The AI writes the line. You decide which lines become the rules.</div>
+  <ol class="steps" aria-label="How it works">
+    <li><b>Say "log that"</b><br>"The holiday email went out with last year's dates. I expected this year's."</li>
+    <li><b>Get one filed row</b><br>error · marketing · check. <i>When reusing a past email, check every date first.</i> Saved after your yes. A repeat? Its count goes up.</li>
+    <li><b>The rules come back</b><br>"Before I start the December newsletter": the rules you accepted, ready to follow.</li>
+  </ol>
+</section>
+
+<section aria-labelledby="nums">
+  <h2 id="nums">Three numbers from the tests</h2>
+  <div class="nums">
+    <div><strong>40/40</strong><span>lessons filed in the right area, in fresh sessions</span></div>
+    <div><strong>11/11</strong><span>behaviour checks: repeats, privacy, a row that gives orders</span></div>
+    <div><strong>8/8</strong><span>chats right with the team database, through SQL alone</span></div>
+  </div>
+  <p class="small muted">Run by Claude on invented data, 19 November 2026. No person has used it yet. Not yet tried in ChatGPT, or on a real Supabase project.</p>
+</section>
+
+<section id="start" aria-labelledby="steps">
+  <h2 id="steps">Get started</h2>
+  <ol class="steps">
+    <li><b>Copy the prompt</b><span class="time">30 seconds</span><br>Change the last line to your own lesson.
+<pre>Read the instructions at this link and follow them for the rest of this chat:
+https://raw.githubusercontent.com/bar181/practical-ai/main/projects/learnings-database/base/SKILL.md
+
+log that: [what happened]. I expected [what you expected].</pre></li>
+    <li><b>Paste it into your chatbot</b><span class="time">10 seconds</span><br>Claude, ChatGPT, or another chatbot that can open links. Attach your log if you have one, so it can spot repeats.</li>
+    <li><b>Check the row</b><span class="time">1 minute</span><br>You get the lesson as "When ..., do ...", filed by kind and area. Check it says what happened, in your words.</li>
+    <li><b>Keep it</b><span class="time">30 seconds</span><br>Say "yes, give me the updated file" and save it over your old one. First time? It gives you the starter spreadsheet.</li>
+  </ol>
+  <p class="small muted">Chatbot cannot open the link? Copy the instructions file into the chat instead: the project page shows how.</p>
+</section>
+
+<section aria-labelledby="say">
+  <h2 id="say">Three things to say</h2>
+  <div class="table-wrap"><table>
+    <thead><tr><th scope="col">You say</th><th scope="col">You get</th></tr></thead>
+    <tbody>
+      <tr><td><code>log that: ...</code></td><td>One filed row, or "a repeat of L-9" with its count raised</td></tr>
+      <tr><td><code>before I start ...</code></td><td>At most five rules you accepted, ready to paste into the next chat</td></tr>
+      <tr><td><code>weekly review</code></td><td>The new rows, each with a suggestion: accept, merge or retire. You decide</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section aria-labelledby="levels">
+  <h2 id="levels">Three levels</h2>
+  <div class="tabs">
+    <input type="radio" name="lv" id="t1" checked><input type="radio" name="lv" id="t2"><input type="radio" name="lv" id="t3">
+    <div class="labels"><label for="t1">1. A link</label><label for="t2">2. Saved once</label><label for="t3">3. Your team</label></div>
+    <div class="pane p1"><p><b>Any chatbot, your spreadsheet.</b> The prompt above. Nothing to set up.</p><p class="muted">Best for: trying it this week.</p></div>
+    <div class="pane p2"><p><b>The instructions saved where you work.</b> A Claude or ChatGPT project, or the Claude plugin with <code>/log</code>, <code>/before-i-start</code> and <code>/weekly-review</code>. An agent with a folder can set it up from one idea file.</p><p class="muted">About five minutes. Best for: logging every week.</p></div>
+    <div class="pane p3"><p><b>A shared database.</b> Your team's log in Supabase, set up in the browser by pasting one file, then connected to Claude or ChatGPT. The assistant saves rows after your yes, and every change is kept with who approved it.</p><p class="muted">About fifteen minutes, an estimate: not yet tried on a real account.</p></div>
+  </div>
+</section>
+
+<section aria-labelledby="mistakes">
+  <h2 id="mistakes">Common mistakes</h2>
+  <ul class="ticks cross">
+    <li><b>Logging opinions.</b> "We should post more" is a plan, not a lesson. It declines those in one line.</li>
+    <li><b>Forgetting the log.</b> Without your file attached it cannot spot a repeat, and says so.</li>
+    <li><b>Accepting everything.</b> The five-minute review is the point: accept the rules you will follow, retire the rest.</li>
+    <li><b>Putting names in rules.</b> Rules name no one, so they can be shared. Names in the details become [removed], and those rows stay private.</li>
+  </ul>
+</section>
+
+<section aria-labelledby="faq">
+  <h2 id="faq">Questions</h2>
+  <details><summary>Where is my data?</summary><p>In your own spreadsheet, folder or Supabase project. Nothing is stored by Practical AI. When you attach the log to a chat, the chatbot's company handles it like anything else you send there.</p></details>
+  <details><summary>How is it different from my chatbot's memory?</summary><p>Memory keeps facts about you, automatically. This keeps rules for the work, counted so you can see what repeats, and used only after you accept them.</p></details>
+  <details><summary>What does it cost?</summary><p>Nothing beyond the chatbot you already use. Supabase has a free plan for level 3.</p></details>
+</section>
+
+<section aria-labelledby="next">
+  <h2 id="next">One next step</h2>
+  <p>Think of one thing that went wrong this week, and log it now.</p>
+  <p><a class="btn" href="https://github.com/bar181/practical-ai/tree/main/projects/learnings-database">Open the project</a></p>
+</section>
+
+<footer>
+  <p>Created by <a href="https://www.linkedin.com/in/bradaross/">Bradley Ross</a>. Part of <a href="https://github.com/bar181/practical-ai">Practical AI</a>. Examples use invented data.</p>
+</footer>
+</main>
+</body>
+</html>

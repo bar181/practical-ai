@@ -17,7 +17,6 @@ writing it down once saves doing it from memory each time.
 | [`voice-drafter`](voice-drafter/) | Drafts a post in one person's voice from their voice file, and turns feedback into a rule | [Voice post drafter](../drafts/voice-post-drafter/) |
 | [`quote-drafter`](quote-drafter/) | Builds a first-draft estimate from a price list and written rules, showing its arithmetic | [Estimator](../drafts/estimator/) |
 | [`script-and-beat-sheet`](script-and-beat-sheet/) | Turns a brief into a beat sheet and a timed script, and recommends the production route | [Short video guide](../drafts/short-video/), [training explainer](../drafts/training-explainer/) |
-| [`learning-log`](learning-log/) | Looks in a log of solved problems before answering, says how often a stored answer worked, and drafts a new entry after a fix | [Learning system](../drafts/learning-system/) |
 | [`publish-check`](publish-check/) | Checks a page for private material, unverified facts and layout problems before it is shared, and recommends a publishing route. Never publishes | [Publishing a website](../drafts/website-publishing/) |
 | [`morning-summary`](morning-summary/) | Prepares one morning page from email, calendar and social feedback, with drafted replies. Reads only | [Inbox triage and daily summary](../drafts/inbox-daily-summary/) |
 | [`weekly-brief`](weekly-brief/) | Writes a one-page weekly brief that keeps outside research and inside material apart, with a source on every claim | [Weekly brief](../drafts/weekly-brief/) |

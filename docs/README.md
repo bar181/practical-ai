@@ -4,10 +4,11 @@ A one-page summary for anyone deciding where to start. Updated 19 November 2026.
 
 ## What is ready
 
-Four projects are built and ready to try, and users are testing each one as of 18 November 2026.
-The two with the most evidence are below; Document to action brief and the Rare Find game follow in
-the lists. Artifact Studio, Agentic Process and Rare Find each have an explainer page in
-[`reports/`](reports/) (download the HTML file and open it in a browser).
+Five projects are built and ready to try. Users are testing the first four as of 18 November
+2026; the Learnings database was finished on 19 November. The two with the most evidence are
+below; Document to action brief, the Learnings database and the Rare Find game follow in the lists.
+Artifact Studio, Agentic Process, the Learnings database and Rare Find each have an explainer page
+in [`reports/`](reports/) (download the HTML file and open it in a browser).
 
 ### Artifact Studio: designer-quality reports you make yourself
 
@@ -75,7 +76,7 @@ Support tools that make every other tool better. Each starts with a version a pe
 
 | # | Tool | What it will do for you | Where it stands |
 | --- | --- | --- | --- |
-| 1 | **Learnings database** | Record each lesson once, filed by type and topic, and bring it back before similar work starts | Example built; [full plan](../workshop/plans/learning-system/) awaiting approval |
+| 1 | **Learnings database** | Record each lesson once, filed by type and topic, and bring it back before similar work starts | **Built, tested by Claude, 19 Nov 2026:** [project](../projects/learnings-database/) · [explainer](reports/learnings-database.html) · [idea file](../projects/learnings-database/level-2-files/gist/learnings-log.md) |
 | 2 | **Task and dependency graph** | Turn a goal into tasks, and show what is ready and what is blocked | Plan |
 | 3 | **Decision support** | Take a decision from options to a recommendation with the working shown | Example built |
 | 4 | **Estimate to proposal** | Combine a request, notes and past jobs into a draft estimate and proposal | Early draft |

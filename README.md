@@ -9,15 +9,16 @@ Free tools for the jobs you repeat, for business people and developers alike.</p
   <a href="#what-is-inside"><img src="assets/images/btn-projects.svg" height="48" alt="See the projects"></a>
 </p>
 
-<p align="center"><b>Free</b> &nbsp;·&nbsp; <b>Open source</b> &nbsp;·&nbsp; <b>4 projects</b><br><b>Now in user testing</b></p>
+<p align="center"><b>Free</b> &nbsp;·&nbsp; <b>Open source</b> &nbsp;·&nbsp; <b>5 projects</b><br><b>Now in user testing</b></p>
 
 <p align="center"><sub>For developers: each tool is a <code>SKILL.md</code> in the open Agent Skills format, a README and a
-worked example. Artifact Studio also ships a local MCP server.</sub></p>
+worked example. Artifact Studio also ships a local MCP server, and the Learnings database connects to Supabase through its MCP connector.</sub></p>
 
 <p align="center">
   <a href="projects/artifact-studio/"><img src="assets/images/tiles/artifact-studio.svg" width="150" alt="Artifact Studio: notes in, a designer page out"></a>
   <a href="projects/agentic-process/"><img src="assets/images/tiles/agentic-process.svg" width="150" alt="Agentic Process: a job you repeat, set up properly once"></a>
   <a href="projects/document-to-action-brief/"><img src="assets/images/tiles/document-to-action-brief.svg" width="150" alt="Document to action brief: a long document in, what to do and by when out"></a>
+  <a href="projects/learnings-database/"><img src="assets/images/tiles/learnings-database.svg" width="150" alt="Learnings database: stop making the same mistake twice"></a>
   <a href="projects/rare-find/"><img src="assets/images/tiles/rare-find.svg" width="150" alt="Rare Find: a daily trivia game where rare answers win"></a>
 </p>
 
@@ -133,6 +134,19 @@ words to check.
 
 <p align="center"><a href="projects/document-to-action-brief/"><b>Brief your first document</b></a></p>
 
+### Learnings database
+
+**Stop making the same mistake twice.** Tell your chatbot "log that" when something goes wrong; get
+one filed row, with the lesson written as an instruction. Before similar work, the rules you
+accepted come back. One link to start, a Claude plugin to save it, and a shared Supabase database
+for a team.
+
+<p align="center">
+  <img src="projects/learnings-database/_build/img/how-it-works.svg" width="620" alt="How the learnings database works in three steps: say log that with what happened and what you expected; get one filed row with the lesson as an instruction, saved after your yes; before similar work, the rules you accepted come back. The AI files and finds. You accept the rules.">
+</p>
+
+<p align="center"><a href="projects/learnings-database/"><b>Log your first lesson</b></a> &nbsp;·&nbsp; <a href="projects/learnings-database/level-2-files/gist/learnings-log.md"><b>The idea file for agents</b></a></p>
+
 ### Rare Find, a side quest
 
 **A five-minute daily quiz where the right answer nobody else thought of scores the most.** Seven
@@ -155,10 +169,13 @@ your score, and one message challenges a friend.
    - [**Artifact Studio**](projects/artifact-studio/): make your first designer-quality report.
    - [**Agentic Process**](projects/agentic-process/): set up a repeat job the proper way.
    - [**Document to action brief**](projects/document-to-action-brief/): know what a document asks of you, by when.
+   - [**Learnings database**](projects/learnings-database/): log a lesson in one line, and get the rules back.
 2. **Level 2, save it.** Paste the project's guide into a Claude or ChatGPT Project, or a Gemini
    Gem, or add it as a skill. Every report or job then starts from the same standard.
 3. **Level 3, connect it.** Only where it removes recurring work: Artifact Studio has an MCP server
-   your agents can use on your own computer, and a coding agent can run a whole Agentic Process build.
+   your agents can use on your own computer, a coding agent can run a whole Agentic Process build,
+   and the Learnings database becomes a team database in Supabase, reached through Supabase's own
+   connector.
 
 Each project page shows the exact steps for each level.
 
@@ -185,8 +202,10 @@ chatbot you already have.
 <details>
 <summary><b>Where does my information go?</b></summary>
 
-Nothing is hosted. A project is a set of instructions and examples you give your own chatbot, so
-your notes go only where they go today. Artifact Studio's optional MCP server runs on your own computer.
+Nothing is hosted by this project. A project is a set of instructions and examples you give your
+own chatbot, so your notes go only where they go today. Artifact Studio's optional MCP server runs
+on your own computer. The Learnings database's optional level 3 keeps your log in your own Supabase
+project.
 
 </details>
 
@@ -210,20 +229,22 @@ is planned, not built yet.
 <details>
 <summary><b>Who has used it?</b></summary>
 
-Its author built and tested all four projects in Claude, and used Artifact Studio for real for a
-client's course (the before and after above). As of 18 November 2026, users are testing each
-project. Their results are not in yet.
+Its author built and tested all five projects in Claude, and used Artifact Studio for real for a
+client's course (the before and after above). As of 18 November 2026, users are testing the first
+four. The Learnings database was finished on 19 November 2026 and has not yet been used by anyone
+else. Results are not in yet.
 
 </details>
 
 ## Status
 
-**18 November 2026: in user testing.** All four projects were built by their author and tested in
-Claude. Users are now testing each one; their results are not in yet. Not yet tried in ChatGPT or
+**19 November 2026: in user testing.** All five projects were built by their author and tested in
+Claude. Users are testing the first four; the Learnings database, finished on 19 November, is next.
+Their results are not in yet. Not yet tried in ChatGPT or
 Gemini. What comes next: [the priority list](docs/README.md#what-comes-next) · [every idea](workshop/plans/README.md).
 The evidence: [Artifact Studio](projects/artifact-studio/quality-results/README.md)
 · [Agentic Process](projects/agentic-process/quality-results/README.md) · [Document to action brief](projects/document-to-action-brief/quality-results/README.md)
-· [Rare Find](projects/rare-find/quality-results/README.md).
+· [Learnings database](projects/learnings-database/quality-results/README.md) · [Rare Find](projects/rare-find/quality-results/README.md).
 
 ## About Bradley Ross
 
@@ -250,7 +271,7 @@ room.
 
 | Folder | What it holds |
 | --- | --- |
-| [`projects/`](projects/) | The projects: Artifact Studio, Agentic Process, Document to action brief and Rare Find |
+| [`projects/`](projects/) | The projects: Artifact Studio, Agentic Process, Document to action brief, Learnings database and Rare Find |
 | [`docs/`](docs/) | A summary of the projects, the priority list, and an explainer page for each |
 | [`assets/images/`](assets/images/) | Images shared across the repository |
 | [`workshop/`](workshop/) | How tools get built: plans, earlier drafts, skills and checking scripts. You do not need it to use a tool |

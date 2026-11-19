@@ -6,7 +6,7 @@ similar work.
 
 | Complexity | Research | Level 1 | Status |
 | --- | --- | --- | --- |
-| Beginner (level 1) to advanced (level 3) | Done, 19 November 2026 (sources below) | Built and tested by Claude, 19 November 2026: [`projects/learnings-database/`](../../../projects/learnings-database/) | **Approved** by the owner, 19 November 2026 (pull request #14). Step 0 answers below |
+| Beginner (level 1) to advanced (level 3) | Done, 19 November 2026 (sources below) | Built and tested by Claude, 19 November 2026, levels 1 to 3: [`projects/learnings-database/`](../../../projects/learnings-database/) | **Approved** by the owner, 19 November 2026 (pull request #14). Step 0 answers below |
 
 **Think of it as** a ship's log with a good first mate. Every time the crew hits a rock, finds a
 faster channel or has to turn back, one line goes in the log. At level 2 the first mate notices
@@ -16,8 +16,7 @@ Before the next voyage, the mate reads out the lines that apply.
 **North Star:** the same mistake is never made twice, and a shortcut found once is found by
 everyone after.
 
-This page replaces the North Star of 15 November 2026 and the plan before it. The
-[earlier draft](../../drafts/learning-system/) and the
+This page replaces the North Star of 15 November 2026 and the plan before it. An earlier draft (removed when the project was built; it is in the git history) and the
 [learning-log example](../../../projects/agentic-process/base/examples/learning-log/) are inputs to
 it, not competitors: the example is where level 1 starts.
 
@@ -74,7 +73,7 @@ is one sentence someone can follow.
 | Practice | What we take | Source |
 | --- | --- | --- |
 | Lessons learned registers | Record what worked as well as what failed, and use the register when the next piece of work starts. Many organizations file lessons by phase or by knowledge area, such as risk, cost, scope or communications | [projectmanagementdocs.com](https://www.projectmanagementdocs.com/?p=347), [Rework](https://resources.rework.com/libraries/project-management/lessons-learned) |
-| Known error databases | A draft is approved by a named owner before it counts; entries are reviewed on a schedule | [earlier landscape review](../../drafts/learning-system/landscape-review.md), 15 Nov 2026 |
+| Known error databases | A draft is approved by a named owner before it counts; entries are reviewed on a schedule | earlier landscape review, 15 Nov 2026 (in the git history) |
 | Classifying with a model against a fixed list | Give each label a description, keep labels specific and not overlapping, add an "other" choice so the model is not forced into the least-wrong label, and send low-confidence results for review ([Braindrip course](https://braindrip-web.vercel.app/courses/prompt-engineering/structured-output-and-format-control/classification-and-labeling-output), [Inference.net docs](https://docs.inference.net/use-cases/classification/zero-shot)) | 19 Nov 2026 |
 
 ### Databases and connections for level 3
@@ -234,12 +233,15 @@ that make memory tools hard to trust; this tool leaves them with the person.
 
 ### Level 3: a real database
 
-**Changed 19 November 2026, at the owner's request:** the project stays on the learning side (no
-wiki, no knowledge base, no complex vector search). The recommended start is a database file in
-the person's folder; a shared Postgres or Supabase database is for teams. Simple similarity search
-is optional. A Claude plugin and a gist draft were added at level 2.
+**As built, 19 November 2026, at the owner's request (KISS):** the project stays on the learning
+side (no wiki, no knowledge base, no vector search). Level 3 is one `schema.sql` pasted into
+Supabase and reached through Supabase's own MCP connector, scoped to one project: six database
+functions, no custom server. A file database and a custom MCP server were built, tested and
+removed as more than a business user can set up. A Claude plugin and an idea file (a draft gist)
+were added at level 2. The table below is the original design, kept for the record; the project's
+[`level-3-files/README.md`](../../../projects/learnings-database/level-3-files/README.md) is current.
 
-One table with the same columns, plus what a database adds, and five tools.
+The original design: one table with the same columns, plus what a database adds, and five tools.
 
 | Part | Design |
 | --- | --- |
