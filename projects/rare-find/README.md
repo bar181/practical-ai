@@ -13,7 +13,7 @@ Asked to name a bird, anyone can say "Eagle". Say "Shoebill" and you take the ro
   <a href="https://bar181.github.io/practical-ai/rare-find/"><img src="_build/img/btn-play-web.svg" height="48" alt="Play in any browser"></a>
 </p>
 
-<p align="center"><b>Free</b> &nbsp;·&nbsp; <b>7 prompts a day</b> &nbsp;·&nbsp; <b>125 in the bank</b><br><b>Phone or computer</b> &nbsp;·&nbsp; <b>No account</b></p>
+<p align="center"><b>Free</b> &nbsp;·&nbsp; <b>7 prompts a day</b> &nbsp;·&nbsp; <b>125 in the bank</b><br><b>Phone or computer</b> &nbsp;·&nbsp; <b>No account</b> &nbsp;·&nbsp; <b>Now in user testing</b></p>
 
 <p align="center">
   <img src="_build/img/store-1-today.webp" width="170" alt="Seven prompts a day: the home screen, with today's game, a practice round and the scoring labels">
@@ -66,7 +66,8 @@ is not on the list scores 0.
 The chatbot hosts the game in the chat: it reads today's prompts and answers from this repository,
 scores each answer, checks the ones not on the list, and gives you a challenge message at the end.
 Give it a friend's challenge code and it plays their prompts, with their score to beat.
-Paste this into ChatGPT, Claude, Gemini or any chatbot that can open a link:
+Paste this into ChatGPT, Claude, Gemini or any chatbot that can open a link. It passed two test games
+with a fresh Claude session; it has not yet been tried in ChatGPT itself:
 
 ```
 Let's play Rare Find. Follow the rules at
@@ -230,6 +231,6 @@ a person. [The evidence](quality-results/README.md).
 
 <img src="../agentic-process/_build/img/bradley-ross-avatar.webp" width="96" alt="Cartoon avatar of Bradley Ross with a small friendly robot">
 
-**Bradley Ross** builds and teaches practical AI. Rare Find is Project 4 of
+**Bradley Ross** builds and teaches practical AI. Rare Find is part of
 [Practical AI](../../README.md), a side quest: not everything you do with AI has to be work.
 [linkedin.com/in/bradaross](https://www.linkedin.com/in/bradaross/)

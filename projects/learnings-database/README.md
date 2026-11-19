@@ -3,7 +3,7 @@
 <h1 align="center">Learnings database</h1>
 
 <p align="center"><b>Stop making the same mistake twice.</b><br>
-A lessons-learned log your AI keeps for you, in ChatGPT, Claude or any chatbot.</p>
+A lessons-learned log your AI keeps for you, in the chatbot you already use.</p>
 
 <p align="center">
   <a href="#try-it-now"><img src="_build/img/btn-try.svg" height="48" alt="Try it with one prompt"></a>
@@ -38,8 +38,9 @@ read by the next crew before they sail.
 
 ## Get started: try it now
 
-Paste this into ChatGPT, Claude or the AI tool you use. Change the last line to something that went
-wrong for you this week.
+Paste this into Claude, ChatGPT or the AI tool you use (tested so far in Claude only). Change the
+last line to something that went wrong for you this week. The link goes live when this project is
+published; until then, use the Raw steps under the box.
 
 ```
 Read the instructions at this link and follow them for the rest of this chat:

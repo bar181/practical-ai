@@ -101,7 +101,7 @@ on her phone.
 **You get** a scrolling keynote page your partner can read on her phone.
 [See the page this prompt made](projects/artifact-studio/_build/examples/runs/2026-11-17-try-it-keynote-photo/report.html):
 a fresh Claude session made it from this prompt and one photo, in one try, unedited. GitHub shows
-it as code, so download the file and open it in your browser. Before you share, check every number
+it as code: press the download button above the code, then open the file in your browser. Before you share, check every number
 against your notes.
 
 </details>
@@ -149,7 +149,7 @@ for a team.
 ### Rare Find, a side quest
 
 **A five-minute daily quiz where the right answer nobody else thought of scores the most.** Seven
-prompts a day, the same for everyone, in Claude, ChatGPT or any browser. In a chatbot, the AI
+questions a day, the same for everyone, in Claude, ChatGPT or any browser. In a chatbot, the AI
 checks answers that are not on the list and four hosts tease every answer. Celebrations grow with
 your score, and one message challenges a friend.
 
@@ -247,8 +247,8 @@ start-up to enterprise.
 
 - **Specialty:** deterministic AI, and advanced AI research into AI with learning transfer abilities.
 - **Harvard CS50:** 10 terms as a Teaching Fellow.
-- **Agentics Foundation:** Director, working with and sharing teaching with the top agentic
-  engineers in the world.
+- **Agentics Foundation:** Founding Director and Education Director, teaching alongside leading
+  agentic engineers.
 - **Practical AI training:** 12 courses, over 40 cohorts and more than 900 students.
 
 These tools come out of that teaching: what people ask for most, in the form that worked in the

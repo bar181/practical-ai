@@ -206,7 +206,7 @@ If yours says it cannot open the link, use the prompt in [Try it now](#try-it-no
 
 <details><summary><b>Who has used it?</b></summary>
 
-No person yet, beyond its author. The author ran nine tests in which a fresh Claude session played
+Only its author has results so far. The author ran nine tests in which a fresh Claude session played
 the chatbot. As of 18 November 2026, users are testing it; their results are not in yet.
 </details>
 

@@ -117,7 +117,7 @@ person could act on its first screen as it is.
 
 | Tool | What it does, and how it scored |
 | --- | --- |
-| [**Document to action brief**](quality-results/2026-11-16-builder-pilot/agentic-process/document-to-action-brief/) | A supplier notice or report becomes what you must do, by when, and what is missing, each with the exact words.<br>*93/100 in the blind pilot, zero corrections.* |
+| [**Document to action brief**](../document-to-action-brief/) | A supplier notice or report becomes what you must do, by when, and what is missing, each with the exact words.<br>*93/100 in the blind pilot, zero corrections ([the pilot version](quality-results/2026-11-16-builder-pilot/agentic-process/document-to-action-brief/)). Now a project of its own, in user testing.* |
 | [**Decision brief**](base/examples/decision-support/) | A business question becomes options weighed against your goals and limits, with dated sources and a recommendation.<br>*86 to 89 in blind grading, against 61 to 67 for a plain chatbot answer: one question, three blind graders. Every grader also said a busy owner would rather receive the plain answer.* |
 | [**Learning log**](base/examples/learning-log/) | Each lesson recorded once, and brought back before similar work starts.<br>*Passed three fresh-session checks.* |
 
@@ -181,15 +181,15 @@ chatbot you already use. Nothing is sent, posted or published without you.
 <summary><b>What does it not do, and who has used it?</b></summary>
 
 It does not replace your chatbot's own features, plugins or skills; it adds the missing piece. In
-a plain chat it cannot start a fresh session to test itself, so it gives you the test to run. So
-far only its author has used it.
+a plain chat it cannot start a fresh session to test itself, so it gives you the test to run. As
+of 18 November 2026, other people are testing it; their results are not in yet.
 
 </details>
 
-## Quick start in one line
+## A one-line version (not yet tested)
 
 ```
-Hey chatbot, act as my agentic engineer using https://github.com/bar181/practical-ai/blob/main/projects/agentic-process/base/PROCESS.md and set up a tool for a job I repeat: <describe the job, who uses the result, and the mistake it must catch>.
+Hey chatbot, act as my agentic engineer using https://raw.githubusercontent.com/bar181/practical-ai/main/projects/agentic-process/base/PROCESS.md and set up a tool for a job I repeat: <describe the job, who uses the result, and the mistake it must catch>.
 ```
 
 This one-line version is not yet tested. The tested prompt is in [Try it now](#try-it-now).

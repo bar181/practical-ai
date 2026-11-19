@@ -51,6 +51,7 @@ on her phone.
 
 **You get a scrolling keynote page** like [this one](_build/examples/runs/2026-11-17-try-it-keynote-photo/report.html),
 made by a fresh Claude session from this prompt and one photo, in one try, unedited ([see it below](#keynotes-and-decks)).
+GitHub shows it as code: press the download button above the code, then open the file in your browser.
 Tested so far in Claude; not yet in ChatGPT or Gemini.
 
 <p align="center"><b>The aim: better than you could do by hand, as good as a designer, and made by you.</b></p>
@@ -283,7 +284,7 @@ Each voice describes a style. Nothing is written by, or endorsed by, the people 
 
 </details>
 
-## Quick start in one line
+## A one-line version (not yet tested)
 
 ```
 Hey chatbot, use this project https://github.com/bar181/practical-ai/tree/main/projects/artifact-studio and make my notes into a designed page: <paste your notes, and say who reads it>.
