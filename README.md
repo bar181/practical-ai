@@ -160,26 +160,18 @@ your score, and one message challenges a friend.
 
 <p align="center"><a href="https://claude.ai/artifact/HyfbDjPjofvRttRYKgMCis"><b>Play in Claude</b></a> &nbsp;·&nbsp; <a href="projects/rare-find/#play-in-chatgpt-or-any-chatbot"><b>Play in ChatGPT</b></a> &nbsp;·&nbsp; <a href="https://bar181.github.io/practical-ai/rare-find/"><b>Play in any browser</b></a> &nbsp;·&nbsp; <a href="projects/rare-find/"><b>About the game</b></a> &nbsp;·&nbsp; <a href="https://bar181.github.io/practical-ai/rare-find/how-it-was-made.html"><b>How it was made</b></a></p>
 
-## Go further: three levels
+## Get started with any project
 
-<details>
-<summary><b>Level 1 try it, level 2 save it, level 3 connect it</b></summary>
+Every project starts with one prompt in the chatbot you already use. Save it once when you use it
+every week. Connect it only where that removes work you repeat.
 
-1. **Level 1, any chatbot.** Open a project and paste its try-it prompt into the chatbot you use.
-   - [**Artifact Studio**](projects/artifact-studio/): make your first designer-quality report.
-   - [**Agentic Process**](projects/agentic-process/): set up a repeat job the proper way.
-   - [**Document to action brief**](projects/document-to-action-brief/): know what a document asks of you, by when.
-   - [**Learnings database**](projects/learnings-database/): log a lesson in one line, and get the rules back.
-2. **Level 2, save it.** Paste the project's guide into a Claude or ChatGPT Project, or a Gemini
-   Gem, or add it as a skill. Every report or job then starts from the same standard.
-3. **Level 3, connect it.** Only where it removes recurring work: Artifact Studio has an MCP server
-   your agents can use on your own computer, a coding agent can run a whole Agentic Process build,
-   and the Learnings database becomes a team database in Supabase, reached through Supabase's own
-   connector.
-
-Each project page shows the exact steps for each level.
-
-</details>
+| Project | 1. Try it: paste one prompt | 2. Save it | 3. Connect it |
+| --- | --- | --- | --- |
+| [**Artifact Studio**](projects/artifact-studio/) | [The try-it prompt](projects/artifact-studio/#try-it-now): your notes in, a designed page out | A skill, or the design guide in a Claude or ChatGPT Project or a Gemini Gem, plus your brand preferences. [Steps](projects/artifact-studio/level-2-files/README.md) | An MCP server on your own computer that lets an agent browse the template library. [Steps](projects/artifact-studio/level-3-files/README.md) |
+| [**Agentic Process**](projects/agentic-process/) | [The build request](projects/agentic-process/#try-it-now), pasted into a coding agent such as Claude Code | The builder as a skill in your coding agent. [Steps](projects/agentic-process/level-2-files/README.md) | A coding agent runs a whole build and hands back a reviewable change |
+| [**Document to action brief**](projects/document-to-action-brief/) | [The try-it prompt](projects/document-to-action-brief/#try-it-now), with your own document | A skill, or a Claude or ChatGPT Project or Gemini Gem, plus your house rules. [Steps](projects/document-to-action-brief/level-2-files/README.md) | Planned, not built. [The design](projects/document-to-action-brief/level-3-files/README.md) |
+| [**Learnings database**](projects/learnings-database/) | [The try-it prompt](projects/learnings-database/#try-it-now): "log that" and a lesson | The Claude plugin (`/log`, `/before-i-start`, `/weekly-review`), a Claude or ChatGPT Project, or the idea file for an agent with a folder. [Steps](projects/learnings-database/level-2-files/README.md) | A team log in Supabase, reached through Supabase's own connector. [Steps](projects/learnings-database/level-3-files/README.md) |
+| [**Rare Find**](projects/rare-find/) | [Play in Claude](https://claude.ai/artifact/HyfbDjPjofvRttRYKgMCis), [in ChatGPT](projects/rare-find/#play-in-chatgpt-or-any-chatbot) or [in any browser](https://bar181.github.io/practical-ai/rare-find/) | The game's skill in any chatbot, so the AI checks answers and hosts. [Files](projects/rare-find/level-2-files/README.md) | The public web copy, with challenge links for friends |
 
 ## Questions
 

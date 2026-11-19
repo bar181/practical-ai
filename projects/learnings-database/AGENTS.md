@@ -35,5 +35,6 @@ use only the six functions in [`level-3-files/schema.sql`](level-3-files/schema.
 | --- | --- |
 | `_build/lists.json`, `base/template/learnings.csv` or `base/SKILL.md` | `python3 _build/build.py`: rebuilds the spreadsheet and the plugin, and checks them |
 | `base/SKILL.md` | Rerun the filing and behaviour tests in fresh sessions and score with `_build/eval/score_filing.py` ([how](quality-results/README.md)) |
+| A test reply or the template rows the pictures show | `python3 _build/screens.py`, then `python3 _build/explainer.py` (the explainer page in `docs/reports/`) |
 | `level-3-files/schema.sql` | `python3 _build/tests/test_schema.py` with a local Postgres |
 | Anything tested | Update `quality-results/README.md` and the README status, with the date and who ran it |
