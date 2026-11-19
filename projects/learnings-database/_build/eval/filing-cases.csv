@@ -1,0 +1,41 @@
+case,said,is_learning,kind,area,also_ok_area,lesson_type,also_ok_lesson_type,project,close_call
+F01,"log that: our Instagram post about the spring sale got almost no likes because we posted it at 11pm. I expected the usual 40 or so likes.",yes,error,marketing,,process,,,no
+F02,"log that: the newsletter subject line that asked a question got twice the opens of our usual 'Monthly update' line. I expected the same open rate as always.",yes,worked,marketing,,insight,,newsletter,no
+F03,"log that: we had to redo the website banner because the brand colours on it were from the old logo. I expected the designer to have the new brand file.",yes,redo,marketing,,communication,instruction,company-website,no
+F04,"log that: a lead went cold because nobody followed up for nine days after the first call. I expected a follow-up within two days.",yes,error,sales,,process,,,no
+F05,"log that: sending the quote as a one-page summary with the detail attached got a yes the same day. I expected the usual back and forth over a long PDF.",yes,worked,sales,,insight,,kitchen-renovations,no
+F06,"log that: I quoted a kitchen job without checking the site and had to re-quote when we found the wall was load-bearing. I expected the photos to be enough.",yes,redo,sales,operations,check,,kitchen-renovations,no
+F07,"log that: a customer complained that nobody told them the installer would be a day late. I expected the office to call them.",yes,error,customers,,communication,,kitchen-renovations,no
+F08,"log that: sending new customers a short welcome video cut the 'how do I log in' emails to almost nothing. I expected the written guide to be enough.",yes,worked,customers,,insight,,,no
+F09,"log that: we had to redo the onboarding checklist for new clients because it skipped the contract signature step. I expected the old checklist to cover it.",yes,redo,customers,operations,process,,,no
+F10,"log that: we picked the new accounting software on a demo alone and found out a month later it can't do multi-currency. I expected the demo to show what we needed.",yes,error,decisions,,judgement,check,,no
+F11,"log that: writing down three options with costs before the team meeting meant the decision took ten minutes instead of an hour. I expected the usual long debate.",yes,worked,decisions,,process,,,no
+F12,"log that: we chose to open a second location because one month was busy, and that month turned out to be a one-off. I expected the trend to hold.",yes,error,decisions,,judgement,,,no
+F13,"log that: the crew showed up before the materials because the delivery was booked for the wrong day. I expected the supplier's confirmation to match the schedule.",yes,error,operations,,check,,supplier-onboarding,no
+F14,"log that: we redid the weekly schedule because two jobs needed the same van. I expected the shared calendar to catch it.",yes,redo,operations,,tool,check,,no
+F15,"log that: batching all the small repair jobs on Tuesdays saved us about a day of driving each week. I expected it to make no difference.",yes,worked,operations,,process,,,no
+F16,"log that: an invoice went out with last year's tax rate and we had to reissue it. I expected the template to have the new rate.",yes,redo,finance,,check,,,no
+F17,"log that: we paid a supplier twice because the invoice came by email and by post. I expected the system to flag the duplicate.",yes,error,finance,,tool,check,,no
+F18,"log that: reconciling the bank every Monday morning meant month-end took one day instead of three. I expected it to feel like extra work.",yes,worked,finance,,process,,month-end,no
+F19,"log that: the new hire spent her first two days with no laptop because nobody ordered it. I expected IT to know she was starting.",yes,error,people,,communication,process,,no
+F20,"log that: giving the contractor a recorded walkthrough instead of a written brief got the job right first time. I expected a few rounds of questions.",yes,worked,people,,instruction,,,no
+F21,"log that: I had to redo a task I delegated because I never said when it was due. I expected it back by Friday.",yes,redo,people,,instruction,communication,,no
+F22,"log that: the spreadsheet total was wrong because the SUM formula stopped two rows short after we added rows. I expected the total to update.",yes,error,coding,,tool,check,month-end,no
+F23,"log that: the agent deleted the test file I asked it to fix. I expected it to change one function.",yes,error,coding,,instruction,,company-website,no
+F24,"log that: asking the agent to write the tests first meant the new booking form worked first time. I expected the usual two rounds of bug fixes.",yes,worked,coding,,process,,company-website,no
+F25,"log that: the chatbot summary of the supplier contract missed the auto-renewal clause. I expected it to list every date and deadline.",yes,error,working-with-ai,,check,,supplier-onboarding,no
+F26,"log that: giving the chatbot two of my old emails as examples made its drafts sound like me. I expected generic drafts.",yes,worked,working-with-ai,,instruction,,,no
+F27,"log that: I had to redo the AI's blog draft because it invented a customer quote. I expected it to use only the notes I gave it.",yes,redo,working-with-ai,marketing,check,instruction,,no
+F28,"log that: the office move went faster once every box had a number that matched the floor plan. I expected the usual mix-ups.",yes,worked,other,operations,process,,,no
+F29,"log that: the charity event raffle ran out of tickets in the first hour because we printed 100. I expected about 100 people.",yes,error,other,,judgement,,,no
+F30,"log that: we had to repaint the shop sign because the council needed a permit we didn't know about. I expected a sign repaint to need no permit.",yes,redo,other,operations,check,,,no
+F31,"log that: the price on our website and the price in the quote didn't match, and the customer noticed before we did. I expected them to be the same.",yes,error,sales,marketing,check,process,company-website,yes
+F32,"log that: a customer who had already paid was sent our sales follow-up sequence asking if they were ready to buy. I expected paid customers to be removed from it.",yes,error,customers,sales,process,tool,,yes
+F33,"log that: we chose the delivery company with the lowest price and two parcels arrived broken. I expected the same care as before.",yes,error,operations,decisions,judgement,,supplier-onboarding,yes
+F34,"log that: the chatbot wrote a formula for the commission sheet that rounded every amount down. I expected exact amounts.",yes,error,coding,working-with-ai,check,tool,,yes
+F35,"log that: I asked the team in the group chat to update the price list and nobody did it because nobody knew it was theirs. I expected someone to pick it up.",yes,error,people,operations,communication,instruction,december-price-list,yes
+F36,"I think our logo should be blue instead of green.",no,,,,,,,no
+F37,"remember that our VAT number is on the back of the bank statement.",no,,,,,,,no
+F38,"next week I plan to call the five biggest customers.",no,,,,,,,no
+F39,"meetings on Fridays are a waste of time.",no,,,,,,,no
+F40,"the new supplier's office is on the high street.",no,,,,,,,no

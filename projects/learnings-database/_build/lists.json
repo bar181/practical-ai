@@ -1,0 +1,31 @@
+{
+  "about": "The one source for the fixed lists. build.py writes base/flags.md, the Lists tab of the template and lists.csv from this file. Edit here, then run python3 build.py.",
+  "areas": [
+    {"value": "marketing", "means": "Messages, posts, campaigns, the website, brand and audience", "example": "The launch post got no replies because it opened with the product, not the customer's problem"},
+    {"value": "sales", "means": "Leads, quotes, proposals, follow-up and pricing to a customer", "example": "A quote sent without a valid-until date was accepted three months later at the old price"},
+    {"value": "customers", "means": "Service, complaints, onboarding and what customers actually want", "example": "Customers stopped asking where their order was once the dispatch email gave a tracking link"},
+    {"value": "decisions", "means": "How a choice was made: the options, the evidence, and what we would weigh differently", "example": "We chose the cheapest supplier on price alone and paid for it in late deliveries"},
+    {"value": "operations", "means": "Suppliers, scheduling, delivery and the steps of the work itself", "example": "The crew arrived before the materials because the delivery was booked by phone, not in writing"},
+    {"value": "finance", "means": "Invoices, payments, costs, budgets and the numbers behind them", "example": "Month-end took two extra days because receipts were collected at the end, not weekly"},
+    {"value": "people", "means": "Hiring, delegating, training and working with a team or contractor", "example": "A task handed over with no example came back wrong twice"},
+    {"value": "coding", "means": "Software, scripts, spreadsheets with formulas, and building with agents", "example": "The agent rewrote the whole page when asked for one fix"},
+    {"value": "working-with-ai", "means": "Prompts, instructions, checking AI output and what a chatbot gets wrong", "example": "The summary invented a date because the transcript did not have one"},
+    {"value": "other", "means": "Anything that fits none of the above. Three rows on the same theme suggest a new area", "example": "The office move went faster once each desk had a numbered box list"}
+  ],
+  "lesson_types": [
+    {"value": "process", "means": "A step was missing, in the wrong order or done twice"},
+    {"value": "tool", "means": "A tool, app or platform behaved in a way we did not expect"},
+    {"value": "instruction", "means": "How something was asked, of a person or an AI, decided the result"},
+    {"value": "check", "means": "A check would have caught it, or did"},
+    {"value": "judgement", "means": "A rule of thumb for a decision"},
+    {"value": "communication", "means": "Who was told what, when, and how"},
+    {"value": "insight", "means": "Something learned about customers, the market or the work that changes what we do"}
+  ],
+  "kinds": [
+    {"value": "error", "means": "Something failed or was wrong"},
+    {"value": "redo", "means": "Work had to be rebuilt or rewritten"},
+    {"value": "worked", "means": "A departure from the usual way that worked better than expected"}
+  ],
+  "projects": ["company-website", "december-price-list", "month-end", "newsletter", "kitchen-renovations", "supplier-onboarding"],
+  "columns": ["id", "date", "kind", "area", "project", "lesson_type", "rule", "what_happened", "expected", "why", "tags", "severity", "status", "seen", "source", "sensitive", "confidence", "review_by"]
+}

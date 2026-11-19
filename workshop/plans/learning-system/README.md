@@ -6,7 +6,7 @@ similar work.
 
 | Complexity | Research | Level 1 | Status |
 | --- | --- | --- | --- |
-| Beginner (level 1) to advanced (level 3) | Done, 19 November 2026 (sources below) | A working example exists inside Agentic Process; the full level 1 is not built | **Plan, not yet approved.** The owner's gates are in [step 0](#step-0-the-owners-gates) |
+| Beginner (level 1) to advanced (level 3) | Done, 19 November 2026 (sources below) | Being built in [`projects/learnings-database/`](../../../projects/learnings-database/) | **Approved** by the owner, 19 November 2026 (pull request #14). Step 0 answers below |
 
 **Think of it as** a ship's log with a good first mate. Every time the crew hits a rock, finds a
 faster channel or has to turn back, one line goes in the log. At level 2 the first mate notices
@@ -96,7 +96,9 @@ existing MCP server or a thin one of our own** (level 3). Buy nothing for levels
 ## One row, the same at every level
 
 The same columns at every level, so a level 1 sheet imports into level 3 unchanged. Level 1 fills
-the first fifteen; level 2 adds `confidence` and `review_by`; level 3 adds what the database needs.
+the first sixteen; level 2 adds `confidence` and `review_by`; level 3 adds what the database needs.
+`why` was added on 19 November 2026 from the research: an after-action review asks what was
+supposed to happen, what happened, **why**, and what to do next time.
 
 | # | Column | Holds | Who fills it |
 | --- | --- | --- | --- |
@@ -109,14 +111,15 @@ the first fifteen; level 2 adds `confidence` and `review_by`; level 3 adds what 
 | 7 | `rule` | The lesson as one instruction: "When ..., do ..." | The assistant; the person may edit |
 | 8 | `what_happened` | Two or three sentences | The assistant, from the person's words |
 | 9 | `expected` | Two or three sentences; for `worked`, the usual way | The assistant, from the person's words |
-| 10 | `tags` | Three to six search words, separated by `;` | The assistant |
-| 11 | `severity` | `low`, `medium`, `high`: what a repeat would cost | The assistant; the person confirms |
-| 12 | `status` | `proposed`, `accepted`, `merged`, `retired` | Always `proposed` on a new row. Only the person changes it |
-| 13 | `seen` | How many times it has happened. Should stop rising | The assistant raises it on a repeat |
-| 14 | `source` | `chat`, `review`, `person`, `agent` | The assistant |
-| 15 | `sensitive` | `yes` if it names a client, a person, money or anything private | The assistant; empty counts as `yes` |
-| 16 | `confidence` | Level 2: `high`, `medium`, `low` for the filing in columns 4 to 6 | The assistant |
-| 17 | `review_by` | Level 2: a date to check the rule still holds, for rules tied to a tool's version or a price | The assistant proposes; the person sets |
+| 10 | `why` | Why it happened, in a sentence: the cause, not the person | The assistant, from the person's words; empty if unknown |
+| 11 | `tags` | Three to six search words, separated by `;` | The assistant |
+| 12 | `severity` | `low`, `medium`, `high`: what a repeat would cost | The assistant; the person confirms |
+| 13 | `status` | `proposed`, `accepted`, `merged`, `retired` | Always `proposed` on a new row. Only the person changes it |
+| 14 | `seen` | How many times it has happened. Should stop rising | The assistant raises it on a repeat |
+| 15 | `source` | `chat`, `review`, `person`, `agent` | The assistant |
+| 16 | `sensitive` | `yes` if it names a client, a person, money or anything private | The assistant; empty counts as `yes` |
+| 17 | `confidence` | Level 2: `high`, `medium`, `low` for the filing in columns 4 to 6 | The assistant |
+| 18 | `review_by` | Level 2: a date to check the rule still holds, for rules tied to a tool's version or a price | The assistant proposes; the person sets |
 
 ### The flags: type of learning and topic
 
@@ -203,7 +206,7 @@ step 2.6 before the README claims it.
 
 ### Level 2: smart learning
 
-Five behaviours, added to the same `SKILL.md` (with the lists in `references/flags.md`) and saved as
+Five behaviours, added to the same `SKILL.md` (with the lists in `flags.md`) and saved as
 a Claude skill or a ChatGPT project, so nothing is pasted again.
 
 1. **Notice.** When the conversation shows a learning moment (the person corrects the assistant,
@@ -235,7 +238,7 @@ One table with the same columns, plus what a database adds, and four tools.
 
 | Part | Design |
 | --- | --- |
-| **Table** | `learnings`: the 17 columns, plus `created_at`, `updated_at`, `last_seen`, `owner`, a full-text column over `rule`, `what_happened`, `expected`, `tags`, and an embedding column for similarity |
+| **Table** | `learnings`: the 18 columns, plus `created_at`, `updated_at`, `last_seen`, `owner`, a full-text column over `rule`, `what_happened`, `expected`, `tags`, and an embedding column for similarity |
 | **What agents may read** | A view, `served_rules`: `status = accepted` and `sensitive = no` only |
 | **Tools (MCP)** | `log_learning` (inserts, always as `proposed`), `find_learnings` (the filters above, plus "anything like this?" by hybrid search), `review_queue`, and `set_status` (only after the person approves in the chat) |
 | **Targets, in order** | 1. **Supabase**, for the owner's own use: Postgres with full-text and vector search, its official MCP server in read-only mode for reading, and writes only through two database functions (`log_learning`, `set_status`) so an agent never runs free SQL that writes. 2. **Google Sheets** for teams who stay in Workspace: a Sheets MCP server, or a small Apps Script endpoint, with the same four tools over the same tab. 3. **A company database**: the same table and tools through the MCP server the company already runs |
@@ -258,11 +261,22 @@ approves anything sent, posted, published or merged.
 | **Do** | The owner answers the [open questions](#open-questions-for-the-owner) and approves this plan |
 | **Definition of done** | Every gate below is ticked or changed in this file. The "Status" line at the top reads "Approved" with the date |
 
-- [ ] The ten areas and seven lesson types are right, or are changed here
-- [ ] The product name is "Learnings database"; the project folder is `projects/learnings-database/`
-- [ ] Level 3's first target is Supabase
-- [ ] The weekly review is the owner's, on a fixed day
-- [ ] The [learning-log example](../../../projects/agentic-process/base/examples/learning-log/) stays as Agentic Process's worked example, and the new project links to it as where it began
+The owner approved the plan by merging it and asked for the build to start, without answering the
+open questions one by one. The defaults below were chosen by Claude on 19 November 2026 and stand
+until the owner changes them.
+
+- [x] The ten areas and seven lesson types, as listed
+- [x] The product name is "Learnings database"; the project folder is `projects/learnings-database/`
+- [x] Level 3's first target is Supabase (Postgres with pgvector); tested on a local Postgres 16 with pgvector
+- [x] The weekly review is the owner's; the day is the owner's choice
+- [x] The [learning-log example](../../../projects/agentic-process/base/examples/learning-log/) stays as Agentic Process's worked example
+- [x] Open questions, defaults: `owner` only at level 3; "before I start" returns five rules in a chat and up to ten for agents; a rule expires only when it has a `review_by` date; the first repository to read the log is this one
+
+**Added from the research of 19 November 2026** (sources in [the build's evidence](../../../projects/learnings-database/quality-results/README.md)):
+search before writing and capture in the person's own words (Knowledge-Centered Service); a `why`
+column (the after-action review); a history of every change, where each row came from, and a
+person's review before a row is trusted, because memory an agent reads is an attack surface (OWASP
+ASI06, memory and context poisoning).
 
 ### Level 1, base and spreadsheet
 
@@ -270,8 +284,8 @@ approves anything sent, posted, published or merged.
 
 | | |
 | --- | --- |
-| **Do** | Create `projects/learnings-database/base/`: `template/learnings.xlsx` with three tabs (`Learnings`, `Lists`, `How to use`), the same as `learnings.csv`, twelve invented rows covering all three kinds and at least six areas, and `references/flags.md` with the lists and their descriptions |
-| **Definition of done** | The `.xlsx` opens in Excel and imports into Google Sheets with its tabs. The header matches the 15 level 1 columns exactly. Every row is invented and says so on the `How to use` tab. The `Lists` tab and `flags.md` agree, checked by a script in `_build/` |
+| **Do** | Create `projects/learnings-database/base/`: `template/learnings.xlsx` with three tabs (`Learnings`, `Lists`, `How to use`), the same as `learnings.csv`, twelve invented rows covering all three kinds and at least six areas, and `flags.md` with the lists and their descriptions |
+| **Definition of done** | The `.xlsx` opens in Excel and imports into Google Sheets with its tabs. The header matches the 16 level 1 columns exactly. Every row is invented and says so on the `How to use` tab. The `Lists` tab and `flags.md` agree, checked by a script in `_build/` |
 
 **Step 1.2: the `SKILL.md`**
 
@@ -291,7 +305,7 @@ approves anything sent, posted, published or merged.
 
 | | |
 | --- | --- |
-| **Do** | Run the normal case in a fresh chat with only the README and `SKILL.md`; save the unedited result as `base/example.md` |
+| **Do** | Run the normal case in a fresh chat with only the README and `SKILL.md`; save the unedited result in `base/examples/` |
 | **Definition of done** | The example is unedited, uses invented data, and shows a row, its table, and a repeat found |
 
 **Step 1.5: verify level 1**
@@ -307,7 +321,7 @@ approves anything sent, posted, published or merged.
 
 | | |
 | --- | --- |
-| **Do** | Add to `SKILL.md` and `references/flags.md`: label descriptions, `confidence`, the one-line question for a close call, and `new:` proposals |
+| **Do** | Add to `SKILL.md` and `flags.md`: label descriptions, `confidence`, the one-line question for a close call, and `new:` proposals |
 | **Definition of done** | Every area and lesson type has a description of one line, written so no two overlap. The skill asks rather than guesses when confidence is low |
 
 **Step 2.2: a test set for filing**
