@@ -111,7 +111,10 @@ the repository in Claude Code is offered the same set.
 
 - [x] **Name:** Site Studio, the partner to Artifact Studio. The first site is branded Bradley Academy; source code under bar181. (19 November 2026)
 - [x] **Where the site lives:** `projects/site-studio/base/examples/bradley-academy/`, published at the root of the repository's Pages site.
-- [x] **Stack:** React Router 7, pre-rendered, plain CSS with design tokens, fonts installed with the site rather than loaded from a font service.
+- [x] **Stack:** React Router 8, pre-rendered, plain CSS with design tokens, fonts installed with the site rather than loaded from a font service.
+- [x] **Look and motion (20 November 2026):** extreme cinematic, a night at the cinema. Velvet dark, ivory, Harvard crimson and brass; Bodoni Moda titles. Motion by GSAP ScrollTrigger and Lenis, loaded after the page reads, off with reduced motion. Inspired by cinematic scroll storytelling: letterbox opening, word-mask titles, a stack of full-screen scenes, a sticky statement, a drawn timeline, page view transitions.
+- [x] **Pictures:** every large picture is a slot in `app/content/images.ts`. Placeholders are pictures the owner already made; the Image brief page lists what each final picture should show.
+- [x] **Review benchmark:** an art director agent and a UX and accessibility agent score each round against what a client paying an agency at least US$50,000 would accept.
 - [x] **Hosting:** GitHub Pages through GitHub Actions. Custom domain left open.
 - [ ] **Owner review of voice and look** (step 4).
 - [ ] **Custom domain:** later, owner's choice.

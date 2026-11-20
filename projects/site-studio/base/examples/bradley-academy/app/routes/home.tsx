@@ -5,6 +5,9 @@ import { about, home, site } from "../content/site";
 import { tools } from "../content/tools";
 import { CopyButton } from "../components/CopyButton";
 import { PromptCard } from "../components/PromptCard";
+import { SceneImage } from "../components/Scene";
+import { SplitText } from "../components/SplitText";
+import { Glyph } from "../components/Glyph";
 import { media } from "../lib/paths";
 import { pageMeta } from "../lib/meta";
 
@@ -14,83 +17,149 @@ export const meta: Route.MetaFunction = () =>
 export default function Home() {
   return (
     <>
-      <section className="band hero">
-        <div className="wrap band-inner">
-          <h1>{home.title}</h1>
-          <p className="lead">{home.lead}</p>
-          <div className="actions">
-            <a className="btn btn-primary" href="#tools">See the five tools</a>
-            <CopyButton text={prompts.starter} label="Copy the starter prompt" className="btn btn-quiet" />
+      {/* Opening scene */}
+      <section className="hero" aria-labelledby="hero-h">
+        <SceneImage id="home-hero" cine="kenburns" eager className="hero-img" />
+        <div className="hero-shade" aria-hidden="true" />
+        <div className="letterbox top" data-letterbox aria-hidden="true" />
+        <div className="letterbox bottom" data-letterbox aria-hidden="true" />
+        <div className="wrap hero-inner">
+          <p className="hero-kicker" data-cine-after="0">Bradley Academy presents</p>
+          <SplitText as="h1" id="hero-h" className="hero-title" cine="title" text={home.title} />
+          <p className="hero-lead" data-cine-after="1">{home.lead}</p>
+          <div className="actions" data-cine-after="2">
+            <a className="btn btn-light" href="#tools">See the five tools</a>
+            <CopyButton text={prompts.starter} label="Copy the starter prompt" className="btn btn-ghost" />
+          </div>
+        </div>
+        <a className="scroll-cue" href="#intern" aria-label="Scroll to the story"><span /></a>
+      </section>
+
+      {/* The five tools, one tap away */}
+      <nav className="tool-strip" aria-label="The five tools">
+        <ul className="wrap">
+          {tools.map((t) => (
+            <li key={t.slug}>
+              <Link to={`/tools/${t.slug}`} viewTransition>
+                <Glyph slug={t.slug} className="glyph glyph-sm" />
+                <span><strong>{t.name}</strong><span>{t.cardLine}</span></span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
+
+      {/* The idea, word by word */}
+      <section className="statement" id="intern" data-cine="words" aria-labelledby="intern-h">
+        <div className="wrap statement-inner">
+          <h2 id="intern-h" className="sr-only">The idea behind every tool</h2>
+          <SplitText className="statement-text" text={home.idea.analogy} />
+        </div>
+      </section>
+
+      {/* The answer: each tool is the brief */}
+      <section className="split" aria-labelledby="brief-h">
+        <div className="wrap split-inner">
+          <div className="split-media">
+            <SceneImage id="home-intern" cine="clip" className="clip-img" />
+          </div>
+          <div className="split-copy" data-cine="reveal">
+            <h2 id="brief-h" data-cine-item>{home.idea.heading}</h2>
+            <ul className="ticks">
+              {home.idea.points.map((p) => (
+                <li key={p.title} data-cine-item><strong>{p.title}</strong><span>{p.text}</span></li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>
 
-      <section className="section" id="tools" aria-labelledby="tools-h">
-        <div className="wrap">
-          <h2 id="tools-h">Five tools, one job each</h2>
-          <ul className="tool-grid">
-            {tools.map((t) => (
-              <li key={t.slug}>
-                <Link to={`/tools/${t.slug}`} className="tool-card">
-                  <img src={media(t.icon)} alt="" width={64} height={64} />
-                  <span className="tool-card-text">
-                    <span className="tool-card-name">{t.name}</span>
-                    <span className="tool-card-promise">{t.promise}</span>
-                    <span className="tool-card-line">{t.cardLine}</span>
-                    <span className="status-word">{t.status.label}</span>
+      {/* Five scenes, one per tool */}
+      <section className="reel" id="tools" aria-labelledby="tools-h">
+        <div className="wrap reel-head" data-cine="reveal">
+          <h2 id="tools-h" data-cine-item>Five tools. One job each.</h2>
+          <p className="reel-lead" data-cine-item>Each is a prompt you paste into the chatbot you already use. Open one to see what it does, who it is for, and real examples.</p>
+        </div>
+        <ol className="stack" data-cine="stack" aria-label="The five tools">
+          {tools.map((t, i) => (
+            <li key={t.slug} className="stack-scene" data-cine-scene>
+              <Link to={`/tools/${t.slug}`} viewTransition className="stack-inner" data-cine-scene-inner>
+                <SceneImage id={`tool-${t.slug}`} className="stack-img" name={`tool-${t.slug}`} />
+                <span className="stack-shade" aria-hidden="true" />
+                <span className="stack-copy">
+                  <span className="stack-top">
+                    <Glyph slug={t.slug} />
+                    <span className="stack-count" aria-hidden="true">{i + 1} of {tools.length}</span>
                   </span>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
+                  <span className="stack-name">{t.name}</span>
+                  <span className="stack-promise">{t.promise}</span>
+                  <span className="stack-line">{t.cardLine}</span>
+                  <span className="stack-foot">
+                    <span className="status-word">{t.status.label}</span>
+                    <span className="stack-open">Open {t.name}</span>
+                  </span>
+                </span>
+              </Link>
+            </li>
+          ))}
+        </ol>
       </section>
 
-      <section className="section section-alt" aria-labelledby="idea-h">
-        <div className="wrap two-col">
-          <div>
-            <h2 id="idea-h">{home.idea.heading}</h2>
-            <p className="analogy">{home.idea.analogy}</p>
+      {/* The standard */}
+      <section className="standard" aria-labelledby="levels-h">
+        <SceneImage id="home-standard" cine="parallax" className="standard-img" />
+        <div className="standard-shade" aria-hidden="true" />
+        <div className="wrap standard-inner" data-cine="draw">
+          <div data-cine="reveal">
+            <h2 id="levels-h" data-cine-item>{home.levels.heading}</h2>
+            <p className="reel-lead" data-cine-item>{home.levels.intro}</p>
           </div>
-          <ul className="points">
-            {home.idea.points.map((p) => (
-              <li key={p.title}><strong>{p.title}</strong><span>{p.text}</span></li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      <section className="section" aria-labelledby="levels-h">
-        <div className="wrap">
-          <h2 id="levels-h">{home.levels.heading}</h2>
-          <p className="section-lead">{home.levels.intro}</p>
-          <ol className="level-steps">
+          <div className="timeline-wrap">
+          <span className="timeline-line" data-cine-line aria-hidden="true" />
+          <ol className="timeline">
             {home.levels.steps.map((s, i) => (
-              <li key={s.title}>
-                <span className="level-num" aria-hidden="true">{i + 1}</span>
-                <h3>Level {i + 1}: {s.title}</h3>
-                <p>{s.text}</p>
+              <li key={s.title} data-cine="reveal">
+                <span className="timeline-num" aria-hidden="true">{i + 1}</span>
+                <h3 data-cine-item>Level {i + 1}: {s.title}</h3>
+                <p data-cine-item>{s.text}</p>
               </li>
             ))}
           </ol>
+          </div>
         </div>
       </section>
 
-      <section className="section section-alt" aria-labelledby="starter-h">
-        <div className="wrap narrow">
-          <h2 id="starter-h">{home.starter.heading}</h2>
-          <p className="section-lead">{home.starter.text}</p>
-          <PromptCard prompt={prompts.starter} label="Copy the starter prompt" />
+      {/* By the numbers */}
+      <section className="numbers" aria-labelledby="numbers-h">
+        <div className="wrap">
+          <h2 id="numbers-h" className="sr-only">By the numbers</h2>
+          <p className="facts-line" data-cine="reveal">
+            {home.factsLine.split(/(\{\d+\})/).map((part, k) => {
+              const n = part.match(/^\{(\d+)\}$/);
+              return n ? <b key={k}>{n[1]}</b> : part;
+            })}
+          </p>
         </div>
       </section>
 
-      <section className="section" aria-labelledby="maker-h">
-        <div className="wrap maker">
-          <img src={media("shared/bradley-ross.jpg")} alt="Bradley Ross" width={120} height={120} className="portrait" />
+      {/* First take */}
+      <section className="take" id="start" aria-labelledby="starter-h">
+        <div className="wrap narrow" data-cine="reveal">
+          <h2 id="starter-h" data-cine-item>{home.starter.heading}</h2>
+          <p className="reel-lead" data-cine-item>{home.starter.text}</p>
+          <div data-cine-item><PromptCard prompt={prompts.starter} label="Copy the starter prompt" /></div>
+        </div>
+      </section>
+
+      {/* Credits */}
+      <section className="credits" aria-labelledby="maker-h">
+        <div className="wrap credits-inner" data-cine="reveal">
+          <img src={media("shared/bradley-ross.jpg")} alt="Bradley Ross" width={180} height={180} className="portrait" data-cine-item />
           <div>
-            <h2 id="maker-h">Made by Bradley Ross</h2>
-            <p>{about.lead} These tools come out of his teaching: what people ask for most, in the form that worked in the room.</p>
-            <p><Link to="/about">About Bradley</Link></p>
+            <p className="credits-small" data-cine-item>Meet the author</p>
+            <h2 id="maker-h" data-cine-item>Bradley Ross</h2>
+            <p data-cine-item>{about.role} {about.specialty}</p>
+            <p data-cine-item><Link to="/about" viewTransition className="btn btn-ghost">About Bradley</Link></p>
           </div>
         </div>
       </section>

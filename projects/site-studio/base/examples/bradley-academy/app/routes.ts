@@ -4,5 +4,6 @@ export default [
   index("routes/home.tsx"),
   route("tools/:slug", "routes/tool.tsx"),
   route("about", "routes/about.tsx"),
+  route("image-brief", "routes/image-brief.tsx"),
   route("*", "routes/not-found.tsx"),
 ] satisfies RouteConfig;

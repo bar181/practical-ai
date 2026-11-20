@@ -14,6 +14,8 @@ const media = join(site, "public", "media");
 rmSync(media, { recursive: true, force: true });
 for (const p of projects) cpSync(join(repo, "projects", p, "_build", "img"), join(media, p), { recursive: true });
 cpSync(join(repo, "assets", "images"), join(media, "shared"), { recursive: true });
+// Placeholder photographs, made by the repository owner, until the final images in app/content/images.ts arrive.
+cpSync(join(repo, "projects", "artifact-studio", "_build", "photos"), join(media, "photos"), { recursive: true });
 // Each tool's square icon is the top of its tile (the same square in every tile), with the words cropped away.
 mkdirSync(join(media, "icons"), { recursive: true });
 for (const p of projects) {

@@ -35,6 +35,8 @@ export const home = {
       { title: "Connect it", text: "For teams and builders: a shared database, an agent connection or a coding agent that runs the whole job." },
     ],
   },
+  // The facts, as one line. Each number is from a README; numbers in {braces} are set in brass.
+  factsLine: "Five free tools. The one built with Agentic Process scored {93} out of 100 in a blind pilot with one reviewer. All of them grew out of courses taught to more than {900} students.",
   starter: {
     heading: "Not sure where to start?",
     text: "Paste this into Claude, ChatGPT or Gemini. Your chatbot reads the tools and makes you a page on how they could help in your work.",
@@ -42,13 +44,35 @@ export const home = {
 };
 
 export const about = {
-  title: "About Bradley Ross",
+  title: "Bradley Ross",
+  role: "Agentic AI architect and developer, for businesses of every size, from start-up to enterprise.",
   lead: "Bradley Ross is an agentic AI architect and developer for businesses of every size, from start-up to enterprise.",
-  facts: [
-    { title: "Specialty", text: "Deterministic AI, and advanced AI research into AI with learning transfer abilities." },
-    { title: "Harvard CS50", text: "Ten terms as a Teaching Fellow." },
-    { title: "Agentics Foundation", text: "Founding Director and Education Director, teaching alongside leading agentic engineers." },
-    { title: "Practical AI training", text: "12 courses, over 40 cohorts and more than 900 students." },
+  specialty: "His specialty is deterministic AI, and advanced research into AI with learning transfer abilities.",
+  // One line of work, from open code to the classroom.
+  pipeline: [
+    {
+      step: "Open core",
+      title: "AISP, a math-first language for instructions",
+      text: "AISP is a specification protocol written in mathematics, so an AI agent reads an instruction the same way every time. Its open core is free under the MIT licence: the specification, a validator and converter, and a Rust crate.",
+      link: { href: "https://github.com/bar181/aisp-open-core", label: "AISP open core on GitHub" },
+    },
+    {
+      step: "Research",
+      title: "Deterministic AI, and AI that transfers what it learns",
+      text: "In his tests, instructions written in plain prose left 40 to 65 percent of their meaning open to interpretation. Written in AISP, under 2 percent. He leads advanced agentic research on deterministic AI and speaks on it as a keynote speaker.",
+    },
+    {
+      step: "Instruction",
+      title: "Teaching both ends of the field",
+      text: "Practical AI for business people: the tools on this site, and 12 courses delivered to more than 900 students across over 40 cohorts. Advanced agentic engineering for leading engineers, through the Agentics Foundation and Agentic Learning Labs.",
+    },
+  ],
+  credentials: [
+    { title: "Harvard", text: "ALM in Digital Media Design, with a 4.0 in every class and a capstone nominated for capstone of the graduating class. A Graduate Programming Certificate. Ten terms as a CS50 Teaching Fellow." },
+    { title: "Anthropic", text: "Claude Certified Architect, Professional." },
+    { title: "Agentics Foundation", text: "Founding Director and Education Director of a global foundation, now in 60 locations, that helps people build the skills for better jobs." },
+    { title: "WiseGeo", text: "Founder, since 2016. WiseGeo helps companies find, build and adopt practical AI." },
+    { title: "Twenty-five years", text: "Across finance, software architecture, data science and agentic engineering. A former CMA." },
   ],
   why:
     "These tools come out of that teaching: what people ask for most, in the form that worked in the room. Bradley Academy is where they live for people who will never open GitHub. The source code stays open at bar181/practical-ai, for builders who want to look inside or make their own.",

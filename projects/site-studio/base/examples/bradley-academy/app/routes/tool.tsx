@@ -10,6 +10,9 @@ import { PromptCard } from "../components/PromptCard";
 import { SmartLink } from "../components/SmartLink";
 import { Tabs } from "../components/Tabs";
 import { media } from "../lib/paths";
+import { SceneImage } from "../components/Scene";
+import { SplitText } from "../components/SplitText";
+import { Glyph } from "../components/Glyph";
 import { pageMeta } from "../lib/meta";
 
 export const meta: Route.MetaFunction = ({ params }) => {
@@ -23,41 +26,46 @@ function About({ t }: { t: Tool }) {
   return (
     <div className="wrap about-grid">
       <div className="about-main">
-        <section aria-labelledby="idea">
-          <h2 id="idea">The core idea</h2>
-          <p className="lead-dark">{t.coreIdea}</p>
-          <p className="analogy">{t.analogy}</p>
+        <section aria-labelledby="idea" data-cine="reveal">
+          <h2 id="idea" data-cine-item>The core idea</h2>
+          <p className="lead-dark" data-cine-item>{t.coreIdea}</p>
+          <p className="analogy" data-cine-item>{t.analogy}</p>
         </section>
 
-        <section aria-labelledby="what">
-          <h2 id="what">What it is</h2>
-          {t.whatItIs.map((p, i) => <p key={i}>{p}</p>)}
+        <section aria-labelledby="what" data-cine="reveal">
+          <h2 id="what" data-cine-item>What it is</h2>
+          {t.whatItIs.map((p, i) => <p key={i} data-cine-item>{p}</p>)}
         </section>
 
-        <section aria-labelledby="why">
-          <h2 id="why">Why it helps</h2>
-          <ul className="points">
-            {t.benefits.map((b) => <li key={b.title}><strong>{b.title}</strong><span>{b.text}</span></li>)}
+        <section aria-labelledby="why" data-cine="reveal">
+          <h2 id="why" data-cine-item>Why it helps</h2>
+          <ul className="ticks">
+            {t.benefits.map((b) => <li key={b.title} data-cine-item><strong>{b.title}</strong><span>{b.text}</span></li>)}
           </ul>
         </section>
 
-        <section aria-labelledby="design">
-          <h2 id="design">How it is designed to help</h2>
+        <section aria-labelledby="design" data-cine="reveal">
+          <h2 id="design" data-cine-item>How it is designed to help</h2>
           <ul className="design-list">
-            {t.design.map((d) => <li key={d.title}><h3>{d.title}</h3><p>{d.text}</p></li>)}
+            {t.design.map((d) => <li key={d.title} data-cine-item><h3>{d.title}</h3><p>{d.text}</p></li>)}
           </ul>
         </section>
 
-        <section aria-labelledby="who">
-          <h2 id="who">Who it is for</h2>
-          <p>{t.coreUser}</p>
+        <section aria-labelledby="who" className="tool-scene" data-cine="clip">
+          <SceneImage id={`tool-${t.slug}`} className="clip-scene" />
+          <div className="tool-scene-copy">
+            <h2 id="who">Who it is for</h2>
+            <p>{t.coreUser}</p>
+          </div>
         </section>
 
-        <section aria-labelledby="levels">
+        <section aria-labelledby="levels" data-cine="draw" className="levels-section">
           <h2 id="levels">Three levels: start simple, grow when you are ready</h2>
+          <div className="timeline-wrap">
+          <span className="timeline-line" data-cine-line aria-hidden="true" />
           <ol className="levels">
             {t.levels.map((l) => (
-              <li key={l.level} className={l.built ? "" : "level-planned"}>
+              <li key={l.level} className={l.built ? "" : "level-planned"} data-cine="reveal">
                 <p className="level-head">
                   <span className="level-num" aria-hidden="true">{l.level}</span>
                   <span>
@@ -70,6 +78,7 @@ function About({ t }: { t: Tool }) {
               </li>
             ))}
           </ol>
+          </div>
         </section>
 
         <section aria-labelledby="try" id="try-it">
@@ -129,21 +138,23 @@ export default function ToolPage({ params }: Route.ComponentProps) {
   ];
   return (
     <>
-      <section className="band tool-band">
-        <div className="wrap band-inner">
-          <p className="crumb"><Link to="/">All tools</Link></p>
-          <div className="tool-title">
-            <img src={media(t.icon)} alt="" width={72} height={72} />
-            <h1>{t.name}</h1>
+      <section className="hero hero-tool" aria-labelledby="tool-h">
+        <SceneImage id={`tool-${t.slug}`} cine="kenburns" eager className="hero-img" name={`tool-${t.slug}`} />
+        <div className="hero-shade" aria-hidden="true" />
+        <div className="wrap hero-inner">
+          <p className="crumb" data-cine-after="0"><Link to="/" viewTransition>All tools</Link></p>
+          <div className="tool-title" data-cine-after="0">
+            <Glyph slug={t.slug} />
+            <h1 id="tool-h">{t.name}</h1>
           </div>
-          <p className="promise">{t.promise}</p>
-          <p className="lead">{t.sub}</p>
-          <div className="actions">
-            {t.tryIt.play ? <SmartLink href={t.tryIt.play[0].href} className="btn btn-primary">{t.tryIt.play[0].label}</SmartLink> : null}
-            <CopyButton text={prompt} label={t.tryIt.primaryLabel} className={t.tryIt.play ? "btn btn-quiet" : "btn btn-primary"} />
-            <a className="btn btn-quiet" href="#try-it">See the prompt first</a>
+          <SplitText className="hero-title hero-title-tool" cine="title" text={t.promise} />
+          <p className="hero-lead" data-cine-after="1">{t.sub}</p>
+          <div className="actions" data-cine-after="2">
+            {t.tryIt.play ? <SmartLink href={t.tryIt.play[0].href} className="btn btn-light">{t.tryIt.play[0].label}</SmartLink> : null}
+            <CopyButton text={prompt} label={t.tryIt.primaryLabel} className={t.tryIt.play ? "btn btn-ghost" : "btn btn-light"} />
           </div>
-          <p className="status-line"><span className="status-word">{t.status.label}</span> Free. Works in the chatbot you already use.</p>
+          <p className="hero-link" data-cine-after="2"><a href="#try-it">Read the prompt before you copy it</a></p>
+          <p className="status-line" data-cine-after="3"><span className="status-word">{t.status.label}</span> Free. Works in the chatbot you already use.</p>
         </div>
       </section>
       <Tabs items={items} label={`${t.name}: about and examples`} />

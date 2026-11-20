@@ -1,7 +1,13 @@
 import { useState } from "react";
 
-/** Copies text, then says so in words. Works without script as a plain disabled-looking button. */
-export function CopyButton({ text, label, className = "btn btn-primary" }: { text: string; label: string; className?: string }) {
+const chatbots = [
+  { href: "https://claude.ai/new", label: "Claude" },
+  { href: "https://chatgpt.com/", label: "ChatGPT" },
+  { href: "https://gemini.google.com/app", label: "Gemini" },
+];
+
+/** Copies text, says so in a live region, then offers the next step: open a chatbot to paste it into. */
+export function CopyButton({ text, label, className = "btn btn-light", next = true }: { text: string; label: string; className?: string; next?: boolean }) {
   const [state, setState] = useState<"idle" | "done" | "failed">("idle");
   async function copy() {
     try {
@@ -10,11 +16,25 @@ export function CopyButton({ text, label, className = "btn btn-primary" }: { tex
     } catch {
       setState("failed");
     }
-    window.setTimeout(() => setState("idle"), 2400);
   }
   return (
-    <button type="button" className={className} onClick={copy}>
-      <span aria-live="polite">{state === "done" ? "Copied. Paste it into your chatbot" : state === "failed" ? "Select the text and copy it" : label}</span>
-    </button>
+    <span className="copy js-only">
+      <button type="button" className={className} onClick={copy}>
+        {state === "done" ? "Copied" : label}
+      </button>
+      <span className="copy-status" role="status">
+        {state === "done" && next ? (
+          <>
+            Copied. Now paste it into{" "}
+            {chatbots.map((c, i) => (
+              <span key={c.href}>
+                <a href={c.href} target="_blank" rel="noopener">{c.label}</a>
+                {i < chatbots.length - 2 ? ", " : i === chatbots.length - 2 ? " or " : "."}
+              </span>
+            ))}
+          </>
+        ) : state === "done" ? "Copied." : state === "failed" ? "Your browser blocked copying. Select the prompt text and copy it." : ""}
+      </span>
+    </span>
   );
 }

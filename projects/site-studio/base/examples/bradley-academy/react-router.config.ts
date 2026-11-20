@@ -6,5 +6,5 @@ import { toolSlugs } from "./app/content/slugs";
 export default {
   ssr: false,
   basename: process.env.SITE_BASE ?? "/practical-ai/",
-  prerender: ["/", "/about", ...toolSlugs.map((slug) => `/tools/${slug}`)],
+  prerender: ["/", "/about", "/image-brief", ...toolSlugs.map((slug) => `/tools/${slug}`)],
 } satisfies Config;

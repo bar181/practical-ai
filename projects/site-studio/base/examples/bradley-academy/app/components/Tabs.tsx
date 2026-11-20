@@ -13,15 +13,46 @@ export function Tabs({ items, label }: { items: TabItem[]; label: string }) {
   const buttons = useRef<(HTMLButtonElement | null)[]>([]);
 
   useEffect(() => {
-    const fromHash = () => {
-      const id = window.location.hash.slice(1);
-      if (items.some((t) => t.id === id)) setActive(id);
+    // An address like #try-it may point inside a panel: open that panel, then scroll to the place.
+    const goTo = (id: string) => {
+      if (!id) return false;
+      if (items.some((t) => t.id === id)) { setActive(id); return true; }
+      const target = document.getElementById(id);
+      const panel = target?.closest<HTMLElement>("[role=tabpanel]");
+      if (!target || !panel) return false;
+      setActive(panel.id.replace(/^panel-/, ""));
+      requestAnimationFrame(() => requestAnimationFrame(() => target.scrollIntoView({ block: "start" })));
+      return true;
+    };
+    const fromHash = () => goTo(decodeURIComponent(window.location.hash.slice(1)));
+    const onClick = (e: MouseEvent) => {
+      const a = (e.target as HTMLElement).closest?.("a[href^='#']");
+      if (!a) return;
+      const id = a.getAttribute("href")!.slice(1);
+      if (goTo(id)) { e.preventDefault(); window.history.replaceState(null, "", `#${id}`); }
     };
     fromHash();
     setReady(true);
     window.addEventListener("hashchange", fromHash);
-    return () => window.removeEventListener("hashchange", fromHash);
+    document.addEventListener("click", onClick);
+    return () => { window.removeEventListener("hashchange", fromHash); document.removeEventListener("click", onClick); };
   }, [items]);
+
+  // Tell the tab row whether more tabs sit off either edge, so it can fade that edge.
+  const list = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const el = list.current;
+    if (!el) return;
+    const mark = () => {
+      const start = el.scrollLeft > 4;
+      const end = el.scrollLeft + el.clientWidth < el.scrollWidth - 4;
+      el.dataset.more = start && end ? "both" : start ? "start" : end ? "end" : "";
+    };
+    mark();
+    el.addEventListener("scroll", mark, { passive: true });
+    window.addEventListener("resize", mark);
+    return () => { el.removeEventListener("scroll", mark); window.removeEventListener("resize", mark); };
+  }, []);
 
   // Selection by activation: arrow keys move focus, Enter, Space or a tap selects. Selecting changes
   // the address and the panel height, so it should not happen just by moving focus.
@@ -29,6 +60,16 @@ export function Tabs({ items, label }: { items: TabItem[]; label: string }) {
     setActive(id);
     const url = id === items[0].id ? window.location.pathname : `#${id}`;
     window.history.replaceState(null, "", url);
+    requestAnimationFrame(() => {
+      // Scroll effects measured the page with this panel hidden; ask them to measure again.
+      window.dispatchEvent(new Event("resize"));
+      // If the reader was deep in the last panel, start the new one at its top, just under the tab row.
+      const strip = document.querySelector<HTMLElement>(".tab-strip");
+      const panel = document.getElementById(`panel-${id}`);
+      if (!strip || !panel) return;
+      const below = strip.getBoundingClientRect().bottom;
+      if (panel.getBoundingClientRect().top < below) window.scrollTo({ top: window.scrollY + panel.getBoundingClientRect().top - below });
+    });
   }
 
   useEffect(() => {
@@ -48,9 +89,9 @@ export function Tabs({ items, label }: { items: TabItem[]; label: string }) {
 
   return (
     <div className="tabs" data-ready={ready || undefined}>
-      <div className="tab-strip">
+      <div className="tab-strip js-only">
         <div className="wrap">
-          <div role="tablist" aria-label={label} className="tablist" onKeyDown={onKey}>
+          <div role="tablist" aria-label={label} className="tablist" onKeyDown={onKey} ref={list}>
             {items.map((t, i) => (
               <button
                 key={t.id}
