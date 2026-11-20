@@ -29,6 +29,7 @@ from one piece, a page that opens with your own photo.
 checked by its author, with 22 runs by fresh AI sessions. Tried
 only in Claude so far. [Open the project](../projects/artifact-studio/) ·
 [the explainer page](reports/artifact-studio.html) ·
+[the showcase](https://bar181.github.io/practical-ai/artifact-studio/showcase.html) and [the components](https://bar181.github.io/practical-ai/artifact-studio/components.html), live ·
 [the evidence](../projects/artifact-studio/quality-results/README.md).
 
 ### Agentic Process: teach your AI a job once
@@ -108,6 +109,12 @@ Support tools that make every other tool better. Each starts with a version a pe
 | Project | What it does for you | Where it stands |
 | --- | --- | --- |
 | **Rare Find** | A five-minute daily trivia game in Claude, ChatGPT or any browser, where the right answer nobody else thought of scores the most | **In user testing:** [play in Claude](https://claude.ai/artifact/HyfbDjPjofvRttRYKgMCis) · [play in a browser](https://bar181.github.io/practical-ai/rare-find/) · [project](../projects/rare-find/) · [explainer](reports/rare-find.html) |
+
+### Building now
+
+| Project | What it does for you | Where it stands |
+| --- | --- | --- |
+| **Site Studio** | A real website for your work, made with your AI and hosted free on GitHub Pages. Its first site is Bradley Academy, with every tool on this list | **Building:** cinematic version built by Claude, 20 Nov 2026. Six review rounds against a US$50,000 agency bar: UX 86, art direction 73. Not yet live or reviewed by the owner. [Project](../projects/site-studio/) · [plan](../workshop/plans/site-studio/README.md) |
 
 The full list of ideas, sorted into everyday tasks, agent tools and hybrid projects, is in
 [the plans](../workshop/plans/README.md).

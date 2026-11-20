@@ -1,0 +1,92 @@
+name: Practical AI site on GitHub Pages
+
+# Publishes https://bar181.github.io/practical-ai/:
+#   /                  the Bradley Academy site (React, every page pre-rendered): projects/site-studio/
+#   /artifact-studio/  the two master pages (showcase, components) and the worked examples
+#   /rare-find/        the game, after a full playtest
+#   /reports/          one explainer per project
+# workshop/tools/build_site.py assembles the site; read it for the full map.
+# A repository has one Pages site, so this is the only workflow that publishes to it.
+# Pull requests run the same checks but publish nothing.
+# One-time setup by the repository owner: Settings, Pages, Build and deployment, Source: GitHub Actions.
+
+on:
+  push:
+    branches: [main]
+    paths: ["projects/**", "assets/images/**", "README.md", "docs/reports/**", "workshop/tools/build_site.py", ".github/workflows/pages.yml"]
+  pull_request:
+    paths: ["projects/**", "assets/images/**", "README.md", "docs/reports/**", "workshop/tools/build_site.py", ".github/workflows/pages.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Build the game and the Artifact Studio pages from their source
+        run: |
+          pip install markdown==3.11
+          python3 projects/rare-find/_build/build.py
+          python3 projects/artifact-studio/_build/build.py
+      - name: The committed pages match their source
+        # Artifact Studio's index.json carries the build date, so only the published pages are compared.
+        run: git diff --exit-code -- projects/rare-find/base/ projects/artifact-studio/showcase.html projects/artifact-studio/components.html projects/artifact-studio/base/
+      - name: Install the test browser
+        run: |
+          pip install playwright
+          python -m playwright install --with-deps chromium
+      - name: Playtest at phone and desktop width
+        run: python3 projects/rare-find/_build/playtest.py "$RUNNER_TEMP/playtest"
+      - name: Keep the playtest screenshots
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: rare-find-playtest
+          path: ${{ runner.temp }}/playtest
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: projects/site-studio/base/examples/bradley-academy/package-lock.json
+      - name: Build the Bradley Academy site
+        working-directory: projects/site-studio/base/examples/bradley-academy
+        run: |
+          npm ci
+          npm run typecheck
+          npm run build
+      - name: Assemble the site
+        # The published pages first, then the React site on top: it owns the home page.
+        run: |
+          python3 workshop/tools/build_site.py _site
+          cp -r projects/site-studio/base/examples/bradley-academy/build/client/. _site/
+      - name: Package the site for Pages
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: _site
+
+  deploy:
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Publish to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5

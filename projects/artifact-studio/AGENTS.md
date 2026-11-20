@@ -26,6 +26,7 @@ person's content only; check it; return it with the delivery note below.
 | The skeleton every page is built on | [`page-skeleton.html`](level-2-files/artifact-studio/assets/page-skeleton.html) |
 | The rules, and the cards for each recipe, voice and look | [`level-2-files/artifact-studio/references/`](level-2-files/artifact-studio/references/) |
 | Every template with its fit scores, and reference code for each | [`level-3-files/mcp/library/`](level-3-files/mcp/library/): `index.json`, `sources/` and `svg/` |
+| Every template, voice and effect, open in a browser | [`showcase.html`](showcase.html) (effects, layouts, post previews, voices) and [`components.html`](components.html) (pages, decks, parts, design ideas, the picker, the skill). Live at https://bar181.github.io/practical-ai/artifact-studio/showcase.html and https://bar181.github.io/practical-ai/artifact-studio/components.html |
 | What a good result looks like | [`base/examples/`](base/examples/): one worked example for each voice, for post previews, for photo effects and for a report. Each shows the prompt, the sample input and the finished page. [`before-after/`](base/examples/before-after/) is one lesson the author made for a client three ways (plain, teacher, story) from one source, with that source |
 | The person's standing preferences | A file named `preferences.md`, if they have one. The template is [`level-2-files/preferences.md`](level-2-files/preferences.md) |
 | Designs the person liked, in their own words | [`level-3-files/mcp/inspiration/`](level-3-files/mcp/inspiration/), or call `list_inspiration` |
@@ -68,7 +69,7 @@ Check before sharing: <the numbers, names and claims a person must verify>
 ## To change the library
 
 Edit the files in [`_build/`](_build/), run `python3 _build/build.py`, and check that
-`base/studio.html` and the files in `base/examples/` open. Never edit a generated file. Each one says so at the top.
+the two master pages, `showcase.html` and `components.html`, and the files in `base/examples/` open. Never edit a generated file. Each one says so at the top.
 
 ## Known limits
 
@@ -76,4 +77,5 @@ Edit the files in [`_build/`](_build/), run `python3 _build/build.py`, and check
   MCP tools alone. Both worked and both reported friction; the logs are in
   [`_build/examples/runs/`](_build/examples/runs/). Read `friction.md` there before you trust a rule
   that looks odd.
-- The MCP server has not been tried inside a desktop assistant. Nothing is hosted.
+- The MCP server has not been tried inside a desktop assistant, and it is not hosted. The two master
+  pages and the worked examples are published to GitHub Pages by `.github/workflows/pages.yml`.

@@ -13,6 +13,8 @@ Free tools for the jobs you repeat, for business people and developers alike.</p
 
 <p align="center"><sub>Each tool is a prompt you paste into your chatbot. Developers: the file formats, skills and connectors are at the bottom of this page.</sub></p>
 
+<p align="center"><b>Prefer a website?</b> <a href="https://bar181.github.io/practical-ai/">Bradley Academy</a> explains every tool in plain words, with examples.</p>
+
 <p align="center">
   <a href="projects/artifact-studio/"><img src="assets/images/tiles/artifact-studio.svg" width="150" alt="Artifact Studio: notes in, a designer page out"></a>
   <a href="projects/agentic-process/"><img src="assets/images/tiles/agentic-process.svg" width="150" alt="Agentic Process: a job you repeat, set up properly once"></a>
@@ -99,14 +101,13 @@ on her phone.
 ```
 
 **You get** a scrolling keynote page your partner can read on her phone.
-[See the page this prompt made](projects/artifact-studio/_build/examples/runs/2026-11-17-try-it-keynote-photo/report.html):
-a fresh Claude session made it from this prompt and one photo, in one try, unedited. GitHub shows
-it as code: press the download button above the code, then open the file in your browser. Before you share, check every number
-against your notes.
+[See the page this prompt made](https://bar181.github.io/practical-ai/artifact-studio/try-it-keynote.html):
+a fresh Claude session made it from this prompt and one photo, in one try, unedited. Before you
+share, check every number against your notes.
 
 </details>
 
-<p align="center"><a href="projects/artifact-studio/"><b>Make your first designer-quality report</b></a></p>
+<p align="center"><a href="projects/artifact-studio/"><b>Make your first designer-quality report</b></a> &nbsp;·&nbsp; <a href="https://bar181.github.io/practical-ai/artifact-studio/showcase.html"><b>See every effect and voice</b></a> &nbsp;·&nbsp; <a href="https://bar181.github.io/practical-ai/artifact-studio/components.html"><b>Browse the components</b></a></p>
 
 ### Agentic Process
 
@@ -226,6 +227,13 @@ Artifact Studio, Agentic Process, Document to action brief and Rare Find. Nobody
 Learnings database yet; it was finished on 19 November 2026. Results are not in yet.
 
 </details>
+
+### Site Studio, the website (building)
+
+**A real website for your work, made with your AI and hosted free.** Its first site is
+[Bradley Academy](https://bar181.github.io/practical-ai/): a home page and one page per tool, for
+people who never open GitHub. React, every page pre-rendered, published by GitHub Pages. A guide to
+build your own comes next. [The project](projects/site-studio/) · [the plan](workshop/plans/site-studio/README.md).
 
 ## Status
 

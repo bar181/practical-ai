@@ -43,7 +43,7 @@ _Research not started. This is the first step for this plan._
 
 ## What it reuses
 
-Publishing a website, the student AI assistant, an existing learning platform where one is already in use.
+Site Studio, the student AI assistant, an existing learning platform where one is already in use.
 
 ## Decisions to record during research
 

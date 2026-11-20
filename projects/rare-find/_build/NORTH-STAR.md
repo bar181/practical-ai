@@ -164,7 +164,7 @@ _build/game.src.html ┴─> build.py ─> base/game.html and base/examples/samp
 falsematch.py: real English words, with their suffixes, that must never count as a spelling slip
 playtest.py:   plays the built game at 390 and 1280 px, offline and with a mock of Claude
 add_packs.py:  the second set of nine packs
-.github/workflows/rare-find-pages.yml: build, check the committed copy matches, playtest, publish to Pages (main only)
+.github/workflows/pages.yml: build, check the committed copy matches, playtest, publish the whole site to Pages (main only)
 ```
 
 **Today's prompts.** Each cycle shuffles all 25 packs with a seed and deals seven a day, so everyone

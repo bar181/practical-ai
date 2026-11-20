@@ -1,7 +1,7 @@
 # Recipe cards
 
 A recipe is a page type: what goes on the page and in what order. Each recipe below has a finished
-example in the studio page (`base/studio.html` in the project, Pages tab).
+example on the components page (`components.html` in the project, Pages tab).
 
 ## Choosing
 
