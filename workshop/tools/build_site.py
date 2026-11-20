@@ -3,7 +3,7 @@
 Copies the finished pages out of the repository and writes two small index pages. Nothing is
 generated from scratch: every page on the site is a file already checked in.
 
-  /                                   index: what is on the site, with links
+  /                                   the Bradley Academy site, added on top by the workflow (projects/site-studio/)
   /artifact-studio/                   index for the two master pages and the worked examples
   /artifact-studio/showcase.html      master 1: photo effects, scroll effects, layouts, post previews, voices
   /artifact-studio/components.html    master 2: pages, decks, parts, design ideas, the picker, the skill
@@ -12,7 +12,8 @@ generated from scratch: every page on the site is a file already checked in.
   /rare-find/                         the game, and how-it-was-made.html
   /reports/                           one explainer page per project
 
-The website builder project will replace the two index pages with a proper site.
+The home page and the tool pages are the React site in projects/site-studio/, which the workflow
+builds and copies over this folder.
 Run: python3 workshop/tools/build_site.py _site
 """
 import html, os, shutil, sys
@@ -89,11 +90,9 @@ copy("projects/rare-find/base/game.html", "rare-find/index.html")
 copy("docs/reports/rare-find.html", "rare-find/how-it-was-made.html")
 
 # One explainer page per project
-reports = []
 for f in sorted(os.listdir(os.path.join(ROOT, "docs", "reports"))):
     if f.endswith(".html"):
         copy(os.path.join("docs", "reports", f), os.path.join("reports", f))
-        reports.append((f"reports/{f}", title(os.path.join("docs", "reports", f)), ""))
 
 page("artifact-studio/index.html", "Artifact Studio: every example",
      "Designer-quality pages, decks and posts, made in the chatbot you already use. Open any page below in your browser.",
@@ -103,14 +102,6 @@ page("artifact-studio/index.html", "Artifact Studio: every example",
       ("Made by an AI from one prompt, unedited", [("try-it-keynote.html", "The page the try-it prompt made", "a scrolling keynote")] + sorted(examples)),
       ("One client lesson, made by the author from one source", lesson),
       ("Make your own", [(f"{REPO}/tree/main/projects/artifact-studio#try-it-now", "Copy the try-it prompt into your chatbot", "")])])
-
-page("index.html", "Practical AI",
-     "Free tools that make the AI you already use do professional work on the jobs you repeat.",
-     [("Open in your browser", [
-         ("artifact-studio/", "Artifact Studio examples", "the showcase, the components and ten worked examples"),
-         ("rare-find/", "Rare Find", "the daily quiz where the rarest right answer scores the most")]),
-      ("How each tool works, step by step", reports),
-      ("Get the tools", [(f"{REPO}#readme", "Every project on GitHub, with a prompt to try each one", "")])])
 
 count = sum(len(fs) for _, _, fs in os.walk(OUT))
 print(f"site: {count} files -> {OUT}")

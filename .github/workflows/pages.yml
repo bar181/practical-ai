@@ -1,6 +1,7 @@
 name: Practical AI site on GitHub Pages
 
-# Publishes https://bar181.github.io/practical-ai/ from pages already in the repository:
+# Publishes https://bar181.github.io/practical-ai/:
+#   /                  the Bradley Academy site (React, every page pre-rendered): projects/site-studio/
 #   /artifact-studio/  the two master pages (showcase, components) and the worked examples
 #   /rare-find/        the game, after a full playtest
 #   /reports/          one explainer per project
@@ -12,9 +13,9 @@ name: Practical AI site on GitHub Pages
 on:
   push:
     branches: [main]
-    paths: ["projects/rare-find/**", "projects/artifact-studio/**", "docs/reports/**", "workshop/tools/build_site.py", ".github/workflows/pages.yml"]
+    paths: ["projects/**", "assets/images/**", "README.md", "docs/reports/**", "workshop/tools/build_site.py", ".github/workflows/pages.yml"]
   pull_request:
-    paths: ["projects/rare-find/**", "projects/artifact-studio/**", "docs/reports/**", "workshop/tools/build_site.py", ".github/workflows/pages.yml"]
+    paths: ["projects/**", "assets/images/**", "README.md", "docs/reports/**", "workshop/tools/build_site.py", ".github/workflows/pages.yml"]
   workflow_dispatch:
 
 permissions:
@@ -53,8 +54,22 @@ jobs:
         with:
           name: rare-find-playtest
           path: ${{ runner.temp }}/playtest
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: projects/site-studio/base/examples/bradley-academy/package-lock.json
+      - name: Build the Bradley Academy site
+        working-directory: projects/site-studio/base/examples/bradley-academy
+        run: |
+          npm ci
+          npm run typecheck
+          npm run build
       - name: Assemble the site
-        run: python3 workshop/tools/build_site.py _site
+        # The published pages first, then the React site on top: it owns the home page.
+        run: |
+          python3 workshop/tools/build_site.py _site
+          cp -r projects/site-studio/base/examples/bradley-academy/build/client/. _site/
       - name: Package the site for Pages
         if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
         uses: actions/upload-pages-artifact@v5

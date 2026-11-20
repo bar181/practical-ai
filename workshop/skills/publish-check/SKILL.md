@@ -47,7 +47,7 @@ you the truth.
 | A page that will keep changing, or several editors | A repository connected to a host, with the main branch protected |
 | One private client | Share to named people. If that is not possible, a host with sign-in. Never a public address |
 
-Dated notes on hosts are in `workshop/plans/website-builder/README.md`.
+Dated notes on hosts are in `workshop/plans/site-studio/README.md`.
 
 ## Rules that never bend
 

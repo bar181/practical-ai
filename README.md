@@ -13,6 +13,8 @@ Free tools for the jobs you repeat, for business people and developers alike.</p
 
 <p align="center"><sub>Each tool is a prompt you paste into your chatbot. Developers: the file formats, skills and connectors are at the bottom of this page.</sub></p>
 
+<p align="center"><b>Prefer a website?</b> <a href="https://bar181.github.io/practical-ai/">Bradley Academy</a> explains every tool in plain words, with examples.</p>
+
 <p align="center">
   <a href="projects/artifact-studio/"><img src="assets/images/tiles/artifact-studio.svg" width="150" alt="Artifact Studio: notes in, a designer page out"></a>
   <a href="projects/agentic-process/"><img src="assets/images/tiles/agentic-process.svg" width="150" alt="Agentic Process: a job you repeat, set up properly once"></a>
@@ -225,6 +227,13 @@ Artifact Studio, Agentic Process, Document to action brief and Rare Find. Nobody
 Learnings database yet; it was finished on 19 November 2026. Results are not in yet.
 
 </details>
+
+### Site Studio, the website (building)
+
+**A real website for your work, made with your AI and hosted free.** Its first site is
+[Bradley Academy](https://bar181.github.io/practical-ai/): a home page and one page per tool, for
+people who never open GitHub. React, every page pre-rendered, published by GitHub Pages. A guide to
+build your own comes next. [The project](projects/site-studio/) · [the plan](workshop/plans/site-studio/README.md).
 
 ## Status
 

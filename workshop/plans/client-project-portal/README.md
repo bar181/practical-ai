@@ -43,7 +43,7 @@ _Research not started. This is the first step for this plan._
 
 ## What it reuses
 
-Artifact pages for the Beginner level, a hosted database with sign-in for the Advanced level, the website builder for hosting.
+Artifact pages for the Beginner level, a hosted database with sign-in for the Advanced level, Site Studio for hosting.
 
 ## Decisions to record during research
 

@@ -43,7 +43,7 @@ _Research not started. This is the first step for this plan._
 
 ## What it reuses
 
-Existing chatbot platforms. The website builder for where it lives.
+Existing chatbot platforms. Site Studio for where it lives.
 
 ## Decisions to record during research
 
