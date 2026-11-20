@@ -99,12 +99,20 @@ export async function startCinema(root: HTMLElement): Promise<Cleanup> {
     for (const stack of all("stack")) {
       const scenes = Array.from(stack.querySelectorAll<HTMLElement>("[data-cine-scene]"));
       scenes.forEach((scene, i) => {
+        // As each scene settles, its title rises out of a mask, then the rest follows.
+        const name = scene.querySelectorAll<HTMLElement>(".stack-name .w > span");
+        const rest = scene.querySelectorAll<HTMLElement>(".stack-promise, .stack-line, .stack-foot");
+        const tl = gsap.timeline({ scrollTrigger: { trigger: scene, start: "top 85%", once: true } });
+        tl.from(name, { yPercent: 110, duration: 1, ease: "power4.out", stagger: 0.05 })
+          .from(rest, { opacity: 0, y: 18, duration: 0.8, ease: "power3.out", stagger: 0.08 }, "-=0.55");
+        // As the next scene slides over it, this one recedes and dims (an overlay, never a filter on the card).
         const next = scenes[i + 1];
         if (!next) return;
-        gsap.to(scene.querySelector("[data-cine-scene-inner]") ?? scene, {
-          scale: 0.92, filter: "brightness(0.45)", ease: "none",
-          scrollTrigger: { trigger: next, start: "top bottom", end: "top top", scrub: true },
-        });
+        const inner = scene.querySelector<HTMLElement>("[data-cine-scene-inner]") ?? scene;
+        const dim = scene.querySelector<HTMLElement>(".stack-dim");
+        const st = { trigger: next, start: "top 60%", end: "top top", scrub: true };
+        gsap.fromTo(inner, { scale: 1 }, { scale: 0.92, ease: "none", scrollTrigger: st });
+        if (dim) gsap.fromTo(dim, { opacity: 0 }, { opacity: 0.6, ease: "none", scrollTrigger: { ...st } });
       });
     }
     for (const el of all("count")) {

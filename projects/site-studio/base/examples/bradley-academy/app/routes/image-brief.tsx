@@ -5,7 +5,7 @@ import { media } from "../lib/paths";
 
 export const meta: Route.MetaFunction = () => [
   { title: `Image brief | ${site.brand}` },
-  { name: "description", content: "Every picture on the Bradley Academy site that is still a placeholder, with what the final picture should show." },
+  { name: "description", content: `Every picture on the ${site.brand} site that is still a placeholder, with what the final picture should show.` },
   { name: "robots", content: "noindex" },
 ];
 

@@ -28,7 +28,7 @@ export function CopyButton({ text, label, className = "btn btn-light", next = tr
             Copied. Now paste it into{" "}
             {chatbots.map((c, i) => (
               <span key={c.href}>
-                <a href={c.href} target="_blank" rel="noopener">{c.label}</a>
+                <a href={c.href} target="_blank" rel="noopener">{c.label}<span className="sr-only"> (opens a new tab)</span></a>
                 {i < chatbots.length - 2 ? ", " : i === chatbots.length - 2 ? " or " : "."}
               </span>
             ))}

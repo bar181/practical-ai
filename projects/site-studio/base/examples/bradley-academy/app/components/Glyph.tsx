@@ -1,7 +1,7 @@
 import type { ToolSlug } from "../content/slugs";
 
 // One brass line drawing per tool, in the style of a film's title-card ornament.
-const paths: Record<ToolSlug, string> = {
+const paths: Record<string, string> = {
   // A page with a spark: notes become a designed page
   "artifact-studio": "M13 8h16l8 8v24H13zM29 8v8h8M18 22h14M18 28h10M18 34h12M38 6l1.6 3.4L43 11l-3.4 1.6L38 16l-1.6-3.4L33 11l3.4-1.6z",
   // A document with a tick: what it asks of you
@@ -14,10 +14,11 @@ const paths: Record<ToolSlug, string> = {
   "rare-find": "M14 10h20l8 10-18 20L6 20zM6 20h36M18 10l-4 10 10 20 10-20-4-10M14 20h20",
 };
 
-export function Glyph({ slug, className = "glyph" }: { slug: ToolSlug; className?: string }) {
+export function Glyph({ slug, className = "glyph" }: { slug: ToolSlug | string; className?: string }) {
   return (
     <svg className={className} viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <path d={paths[slug]} />
+      {/* A tool without its own drawing gets a simple framed star */}
+      <path d={paths[slug] ?? "M8 8h32v32H8zM24 14l2.6 6.4L33 21l-5 4.4 1.6 6.6L24 28.6 18.4 32l1.6-6.6-5-4.4 6.4-.6z"} />
     </svg>
   );
 }

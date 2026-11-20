@@ -31,9 +31,9 @@ npm install
 npm run dev
 ```
 
-**Coming next: build your own.** A step by step for making a site like this for your own work,
-from a new GitHub repository to a live address. It follows the plan, after the owner reviews the
-first site.
+**Build your own:** [the step by step](base/BUILD-YOUR-OWN-SITE.md), from a new GitHub repository to a
+live address on GitHub Pages, with a prompt that hands the whole job to a coding agent. Written
+from how this site is built; not yet tried end to end by anyone.
 
 | Level | For | What it will do |
 | --- | --- | --- |

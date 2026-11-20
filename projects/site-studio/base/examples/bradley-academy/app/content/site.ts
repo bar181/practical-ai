@@ -8,6 +8,19 @@ export const site = {
   source: "https://github.com/bar181/practical-ai",
   sourceLabel: "bar181/practical-ai",
   linkedin: "https://www.linkedin.com/in/bradaross/",
+  previewImage: "/media/shared/bradley-ross-avatar.webp",
+  // Words used across pages, so a new site changes them here and nowhere else.
+  labels: {
+    presents: "Bradley Academy presents",
+    toolsHeading: "Five tools. One job each.",
+    toolsLead: "Each is a prompt you paste into the chatbot you already use. Open one to see what it does, who it is for, and real examples.",
+    author: "Bradley Ross",
+    authorKicker: "Meet the author",
+    authorPhoto: "shared/bradley-ross.jpg",
+    footerTagline: "Practical AI tools for the jobs you repeat",
+    licence: "Free to use, change and share under the Apache 2.0 licence. All examples use invented businesses and data.",
+    worksIn: "Free. Works in the chatbot you already use.",
+  },
   description:
     "Free Practical AI tools from Bradley Academy: expert work from the AI you already use, on the jobs you repeat. Paste one prompt into Claude, ChatGPT or Gemini to start.",
 };
@@ -43,13 +56,15 @@ export const home = {
   },
 };
 
+type Step = { step: string; title: string; text: string; link?: { href: string; label: string } };
+
 export const about = {
   title: "Bradley Ross",
   role: "Agentic AI architect and developer, for businesses of every size, from start-up to enterprise.",
   lead: "Bradley Ross is an agentic AI architect and developer for businesses of every size, from start-up to enterprise.",
   specialty: "His specialty is deterministic AI, and advanced research into AI with learning transfer abilities.",
   // One line of work, from open code to the classroom.
-  pipeline: [
+  pipeline: <Step[]>[
     {
       step: "Open core",
       title: "AISP, a math-first language for instructions",

@@ -3,7 +3,7 @@ import { site } from "../content/site";
 /** Title, description and link-preview tags for one page. */
 export function pageMeta(title: string, description: string, path: string) {
   const url = `${site.url}${path}`;
-  const image = `${site.url}/media/shared/bradley-ross-avatar.webp`;
+  const image = `${site.url}${site.previewImage}`;
   return [
     { title },
     { name: "description", content: description },

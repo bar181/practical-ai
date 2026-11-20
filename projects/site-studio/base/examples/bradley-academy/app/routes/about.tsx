@@ -5,7 +5,7 @@ import { SplitText } from "../components/SplitText";
 import { pageMeta } from "../lib/meta";
 
 export const meta: Route.MetaFunction = () =>
-  pageMeta(`About Bradley Ross | ${site.brand}`, `${about.lead} ${about.specialty} Creator of the Practical AI tools and AISP.`, "/about/");
+  pageMeta(`About ${about.title} | ${site.brand}`, `${about.lead} ${about.specialty} Creator of the Practical AI tools and AISP.`, "/about/");
 
 export default function About() {
   return (

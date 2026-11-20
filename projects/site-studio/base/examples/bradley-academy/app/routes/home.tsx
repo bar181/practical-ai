@@ -24,7 +24,7 @@ export default function Home() {
         <div className="letterbox top" data-letterbox aria-hidden="true" />
         <div className="letterbox bottom" data-letterbox aria-hidden="true" />
         <div className="wrap hero-inner">
-          <p className="hero-kicker" data-cine-after="0">Bradley Academy presents</p>
+          <p className="hero-kicker" data-cine-after="0">{site.labels.presents}</p>
           <SplitText as="h1" id="hero-h" className="hero-title" cine="title" text={home.title} />
           <p className="hero-lead" data-cine-after="1">{home.lead}</p>
           <div className="actions" data-cine-after="2">
@@ -36,7 +36,7 @@ export default function Home() {
       </section>
 
       {/* The five tools, one tap away */}
-      <nav className="tool-strip" aria-label="The five tools">
+      <nav className="tool-strip" id="all-tools" aria-label="The five tools">
         <ul className="wrap">
           {tools.map((t) => (
             <li key={t.slug}>
@@ -77,22 +77,23 @@ export default function Home() {
       {/* Five scenes, one per tool */}
       <section className="reel" id="tools" aria-labelledby="tools-h">
         <div className="wrap reel-head" data-cine="reveal">
-          <h2 id="tools-h" data-cine-item>Five tools. One job each.</h2>
-          <p className="reel-lead" data-cine-item>Each is a prompt you paste into the chatbot you already use. Open one to see what it does, who it is for, and real examples.</p>
+          <h2 id="tools-h" data-cine-item>{site.labels.toolsHeading}</h2>
+          <p className="reel-lead" data-cine-item>{site.labels.toolsLead}</p>
         </div>
         <ol className="stack" data-cine="stack" aria-label="The five tools">
           {tools.map((t, i) => (
             <li key={t.slug} className="stack-scene" data-cine-scene>
-              <Link to={`/tools/${t.slug}`} viewTransition className="stack-inner" data-cine-scene-inner>
+              <Link to={`/tools/${t.slug}`} viewTransition className="stack-inner" data-cine-scene-inner aria-labelledby={`stack-${t.slug}-name stack-${t.slug}-promise`}>
                 <SceneImage id={`tool-${t.slug}`} className="stack-img" name={`tool-${t.slug}`} />
                 <span className="stack-shade" aria-hidden="true" />
+                <span className="stack-dim" aria-hidden="true" />
                 <span className="stack-copy">
                   <span className="stack-top">
                     <Glyph slug={t.slug} />
                     <span className="stack-count" aria-hidden="true">{i + 1} of {tools.length}</span>
                   </span>
-                  <span className="stack-name">{t.name}</span>
-                  <span className="stack-promise">{t.promise}</span>
+                  <SplitText as="span" className="stack-name" text={t.name} id={`stack-${t.slug}-name`} />
+                  <span className="stack-promise" id={`stack-${t.slug}-promise`}>{t.promise}</span>
                   <span className="stack-line">{t.cardLine}</span>
                   <span className="stack-foot">
                     <span className="status-word">{t.status.label}</span>
@@ -154,12 +155,12 @@ export default function Home() {
       {/* Credits */}
       <section className="credits" aria-labelledby="maker-h">
         <div className="wrap credits-inner" data-cine="reveal">
-          <img src={media("shared/bradley-ross.jpg")} alt="Bradley Ross" width={180} height={180} className="portrait" data-cine-item />
+          <img src={media(site.labels.authorPhoto)} alt={site.labels.author} width={180} height={180} className="portrait" data-cine-item />
           <div>
-            <p className="credits-small" data-cine-item>Meet the author</p>
-            <h2 id="maker-h" data-cine-item>Bradley Ross</h2>
+            <p className="credits-small" data-cine-item>{site.labels.authorKicker}</p>
+            <h2 id="maker-h" data-cine-item>{site.labels.author}</h2>
             <p data-cine-item>{about.role} {about.specialty}</p>
-            <p data-cine-item><Link to="/about" viewTransition className="btn btn-ghost">About Bradley</Link></p>
+            <p data-cine-item><Link to="/about" viewTransition className="btn btn-ghost">About {site.labels.author.split(" ")[0]}</Link></p>
           </div>
         </div>
       </section>

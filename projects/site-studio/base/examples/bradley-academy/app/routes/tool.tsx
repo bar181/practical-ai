@@ -24,6 +24,7 @@ export const meta: Route.MetaFunction = ({ params }) => {
 function About({ t }: { t: Tool }) {
   const prompt = prompts[t.tryIt.promptKey];
   return (
+    <>
     <div className="wrap about-grid">
       <div className="about-main">
         <section aria-labelledby="idea" data-cine="reveal">
@@ -51,14 +52,19 @@ function About({ t }: { t: Tool }) {
           </ul>
         </section>
 
-        <section aria-labelledby="who" className="tool-scene" data-cine="clip">
-          <SceneImage id={`tool-${t.slug}`} className="clip-scene" />
-          <div className="tool-scene-copy">
-            <h2 id="who">Who it is for</h2>
-            <p>{t.coreUser}</p>
-          </div>
-        </section>
+      </div>
+    </div>
 
+    <section aria-labelledby="who" className="who-scene">
+      <SceneImage id={`who-${t.slug}`} cine="clip" className="clip-scene" />
+      <div className="wrap who-copy" data-cine="reveal">
+        <h2 id="who" data-cine-item>Who it is for</h2>
+        <p data-cine-item>{t.coreUser}</p>
+      </div>
+    </section>
+
+    <div className="wrap about-grid about-grid-2">
+      <div className="about-main">
         <section aria-labelledby="levels" data-cine="draw" className="levels-section">
           <h2 id="levels">Three levels: start simple, grow when you are ready</h2>
           <div className="timeline-wrap">
@@ -98,8 +104,15 @@ function About({ t }: { t: Tool }) {
           <ul className="plain-list">{t.notDo.map((n) => <li key={n}>{n}</li>)}</ul>
         </section>
       </div>
+      <Side t={t} />
+    </div>
+    </>
+  );
+}
 
-      <aside className="about-side" aria-label="Status and links">
+function Side({ t }: { t: Tool }) {
+  return (
+    <aside className="about-side" aria-label="Status and links">
         <div className="side-card">
           <h2 className="side-h">Status</h2>
           <p className="status-word">{t.status.label}, {t.status.date}</p>
@@ -110,11 +123,10 @@ function About({ t }: { t: Tool }) {
           <ul className="plain-list">
             {t.explainer ? <li><SmartLink href={t.explainer}>The step-by-step explainer</SmartLink></li> : null}
             <li><a href={t.readme} rel="noopener">The project on GitHub</a></li>
-            <li><Link to="/">All five tools</Link></li>
+            <li><Link to="/#all-tools">All the tools</Link></li>
           </ul>
         </div>
-      </aside>
-    </div>
+    </aside>
   );
 }
 
@@ -141,6 +153,8 @@ export default function ToolPage({ params }: Route.ComponentProps) {
       <section className="hero hero-tool" aria-labelledby="tool-h">
         <SceneImage id={`tool-${t.slug}`} cine="kenburns" eager className="hero-img" name={`tool-${t.slug}`} />
         <div className="hero-shade" aria-hidden="true" />
+        <div className="letterbox top" data-letterbox aria-hidden="true" />
+        <div className="letterbox bottom" data-letterbox aria-hidden="true" />
         <div className="wrap hero-inner">
           <p className="crumb" data-cine-after="0"><Link to="/" viewTransition>All tools</Link></p>
           <div className="tool-title" data-cine-after="0">
@@ -154,7 +168,7 @@ export default function ToolPage({ params }: Route.ComponentProps) {
             <CopyButton text={prompt} label={t.tryIt.primaryLabel} className={t.tryIt.play ? "btn btn-ghost" : "btn btn-light"} />
           </div>
           <p className="hero-link" data-cine-after="2"><a href="#try-it">Read the prompt before you copy it</a></p>
-          <p className="status-line" data-cine-after="3"><span className="status-word">{t.status.label}</span> Free. Works in the chatbot you already use.</p>
+          <p className="status-line" data-cine-after="3"><span className="status-word">{t.status.label}</span> {site.labels.worksIn}</p>
         </div>
       </section>
       <Tabs items={items} label={`${t.name}: about and examples`} />
