@@ -9,7 +9,7 @@
     "sync": "node scripts/sync.mjs",
     "dev": "npm run sync && react-router dev",
     "build": "npm run sync && react-router build && node scripts/after-build.mjs",
-    "typecheck": "react-router typegen && tsc"
+    "typecheck": "npm run sync && react-router typegen && tsc"
   },
   "engines": { "node": ">=22.22" },
   "dependencies": {
