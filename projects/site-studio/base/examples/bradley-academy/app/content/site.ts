@@ -20,6 +20,16 @@ export const site = {
     footerTagline: "Practical AI tools for the jobs you repeat",
     licence: "Free to use, change and share under the Apache 2.0 licence. All examples use invented businesses and data.",
     worksIn: "Free. Works in the chatbot you already use.",
+    homeTitle: "Bradley Academy: Practical AI tools for the jobs you repeat",
+    seeTools: "See the five tools",
+    toolsListName: "The five tools",
+    sourceLink: "The tools on GitHub",
+    builtWith: "Built with Site Studio, in React, published by GitHub Pages.",
+    levelsHeading: "Three levels: start simple, grow when you are ready",
+    projectLink: "The project on GitHub",
+    readPrompt: "Read the prompt before you copy it",
+    tryCardHeading: "Try it in a minute",
+    tryCardText: "Copy the prompt, paste it into the chatbot you already use, and see the result.",
   },
   description:
     "Free Practical AI tools from Bradley Academy: expert work from the AI you already use, on the jobs you repeat. Paste one prompt into Claude, ChatGPT or Gemini to start.",
@@ -64,6 +74,14 @@ export const about = {
   lead: "Bradley Ross is an agentic AI architect and developer for businesses of every size, from start-up to enterprise.",
   specialty: "His specialty is deterministic AI, and advanced research into AI with learning transfer abilities.",
   // One line of work, from open code to the classroom.
+  kicker: "About the author",
+  pathHeading: "From open code, to research, to the classroom",
+  pathLead: "One line of work. What he builds in the open becomes what he researches, and what he researches becomes what he teaches.",
+  pathButton: "From research to the classroom",
+  credentialsHeading: "Credentials",
+  whyHeading: "Why these tools",
+  contactButton: "Connect on LinkedIn",
+  metaDescription: "Bradley Ross is an agentic AI architect and developer for businesses of every size. His specialty is deterministic AI. Creator of the Practical AI tools and AISP.",
   pipeline: <Step[]>[
     {
       step: "Open core",

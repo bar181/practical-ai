@@ -16,7 +16,7 @@ export default function ImageBrief() {
       <section className="plain-hero">
         <div className="wrap">
           <h1>Image brief</h1>
-          <p className="lead">{waiting} of {imageSlots.length} pictures on this site are placeholders. Each is a picture the owner already made, standing in until the final one is ready. This page lists what each final picture should show.</p>
+          <p className="lead">{waiting} of {imageSlots.length} pictures on this site are placeholders. Each stands in until the final picture is ready. This page lists what each final picture should show.</p>
           <p className="muted-light">To replace one, add the file to <code>public/media/final/</code>, set <code>final</code> for its slot in <code>app/content/images.ts</code>, and rebuild. The slot drops off this list.</p>
         </div>
       </section>

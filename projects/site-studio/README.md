@@ -56,10 +56,20 @@ Vercel's open-source React skills. The list is in [AGENTS.md](AGENTS.md).
 
 ## Status
 
-**19 November 2026: building.** The first version of the Bradley Academy site was built and checked
-by Claude: it builds, every page is pre-rendered, and it was checked at phone and desktop width.
-**No person has used it, and it is not live until the owner merges it.** Levels 1 to 3 for building
-your own site are planned, not built. [The evidence](quality-results/README.md).
+**20 November 2026: building.** The Bradley Academy site is cinematic, with:
+
+- an About page that covers the research to instruction line;
+- an Image brief page for the 15 placeholder pictures;
+- a guide to build your own.
+
+Two reviewer agents scored six rounds against what a client paying an agency US$50,000 would accept:
+
+- UX, content and accessibility rose from 63 to 86, which the reviewer says passes once the photos are replaced.
+- Art direction rose from 50 to 73.
+
+**No person has used it, and it is not live until the owner merges it.** The guide was followed twice by
+a fresh agent for an invented bakery; the publish step itself has not been tried.
+[The evidence](quality-results/README.md).
 
 ## About Bradley Ross
 

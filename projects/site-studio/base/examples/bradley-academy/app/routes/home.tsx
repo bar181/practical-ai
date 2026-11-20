@@ -12,7 +12,7 @@ import { media } from "../lib/paths";
 import { pageMeta } from "../lib/meta";
 
 export const meta: Route.MetaFunction = () =>
-  pageMeta(`${site.brand}: Practical AI tools for the jobs you repeat`, site.description, "/");
+  pageMeta(site.labels.homeTitle, site.description, "/");
 
 export default function Home() {
   return (
@@ -28,7 +28,7 @@ export default function Home() {
           <SplitText as="h1" id="hero-h" className="hero-title" cine="title" text={home.title} />
           <p className="hero-lead" data-cine-after="1">{home.lead}</p>
           <div className="actions" data-cine-after="2">
-            <a className="btn btn-light" href="#tools">See the five tools</a>
+            <a className="btn btn-light" href="#tools">{site.labels.seeTools}</a>
             <CopyButton text={prompts.starter} label="Copy the starter prompt" className="btn btn-ghost" />
           </div>
         </div>
@@ -36,7 +36,7 @@ export default function Home() {
       </section>
 
       {/* The five tools, one tap away */}
-      <nav className="tool-strip" id="all-tools" aria-label="The five tools">
+      <nav className="tool-strip" id="all-tools" aria-label={site.labels.toolsListName}>
         <ul className="wrap">
           {tools.map((t) => (
             <li key={t.slug}>
@@ -80,7 +80,7 @@ export default function Home() {
           <h2 id="tools-h" data-cine-item>{site.labels.toolsHeading}</h2>
           <p className="reel-lead" data-cine-item>{site.labels.toolsLead}</p>
         </div>
-        <ol className="stack" data-cine="stack" aria-label="The five tools">
+        <ol className="stack" data-cine="stack" aria-label={site.labels.toolsListName}>
           {tools.map((t, i) => (
             <li key={t.slug} className="stack-scene" data-cine-scene>
               <Link to={`/tools/${t.slug}`} viewTransition className="stack-inner" data-cine-scene-inner aria-labelledby={`stack-${t.slug}-name stack-${t.slug}-promise`}>
@@ -144,7 +144,8 @@ export default function Home() {
       </section>
 
       {/* First take */}
-      <section className="take" id="start" aria-labelledby="starter-h">
+      <section className="take take-scene" id="start" aria-labelledby="starter-h">
+        <SceneImage id="home-start" cine="parallax" className="take-img" />
         <div className="wrap narrow" data-cine="reveal">
           <h2 id="starter-h" data-cine-item>{home.starter.heading}</h2>
           <p className="reel-lead" data-cine-item>{home.starter.text}</p>

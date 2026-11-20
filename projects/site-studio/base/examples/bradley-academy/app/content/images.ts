@@ -26,18 +26,7 @@ export type ImageSlot = {
 };
 
 export const imageSlots: ImageSlot[] = [
-  {
-    id: "home-hero",
-    page: "Home",
-    where: "Full-screen opening scene, behind the headline",
-    placeholder: "photos/toronto.jpg",
-    brief: "A night city skyline at dusk with a warm, glowing light trail tracing a loop above it: the feeling of steady, expert work done overnight.",
-    size: "16:9, at least 2400 by 1350 pixels, plus a 4:5 crop for phones. Keep the lower third dark for the headline",
-    prompt: "Cinematic dusk skyline, warm glowing light trail looping overhead, deep crimson and amber tones, reflective water, dark lower third, film grain",
-    alt: "A city skyline at dusk under a glowing loop of light",
-    placeholderAlt: "The Toronto skyline at night under a fiery infinity loop, reflected in still water",
-    focus: "72% 55%",
-  },
+  // First on the list: the only drawing among photographs, so replacing it gains the most.
   {
     id: "home-intern",
     page: "Home",
@@ -51,6 +40,18 @@ export const imageSlots: ImageSlot[] = [
     focus: "40% 50%",
   },
   {
+    id: "home-hero",
+    page: "Home",
+    where: "Full-screen opening scene, behind the headline",
+    placeholder: "photos/toronto.jpg",
+    brief: "A night city skyline at dusk with a warm, glowing light trail tracing a loop above it: the feeling of steady, expert work done overnight.",
+    size: "16:9, at least 2400 by 1350 pixels, plus a 4:5 crop for phones. Keep the lower third dark for the headline",
+    prompt: "Cinematic dusk skyline, warm glowing light trail looping overhead, deep crimson and amber tones, reflective water, dark lower third, film grain",
+    alt: "A city skyline at dusk under a glowing loop of light",
+    placeholderAlt: "The Toronto skyline at night under a fiery infinity loop, reflected in still water",
+    focus: "72% 55%",
+  },
+  {
     id: "home-standard",
     page: "Home",
     where: "Background of the quality section",
@@ -61,6 +62,17 @@ export const imageSlots: ImageSlot[] = [
     alt: "A person walking a clear path through fog toward a lit building",
     placeholderAlt: "A lone figure walking along a flooded path toward a stilt house in the fog",
     focus: "60% 50%",
+  },
+  {
+    id: "home-start",
+    page: "Home",
+    where: "Behind the starter prompt, near the end of the home page",
+    placeholder: "photos/cheetah.jpg",
+    brief: "A projector beam cutting through a dark room onto a blank screen, the moment before the film starts: your first try.",
+    size: "16:9, at least 2400 by 1350 pixels. Keep the centre dark for the prompt card",
+    prompt: "Projector beam through a dark cinema onto a blank screen, dust in the light, velvet seats, crimson and brass tones, cinematic",
+    alt: "A projector beam crossing a dark cinema toward a blank screen",
+    placeholderAlt: "A cheetah",
   },
   {
     id: "tool-artifact-studio",
@@ -141,7 +153,7 @@ export const imageSlots: ImageSlot[] = [
     prompt: "Café owner at the counter before opening, reading a supplier letter on her phone, warm morning light, cinematic, crimson and amber",
     alt: "A café owner reading a supplier letter on her phone before opening",
     placeholderAlt: "A painted house and garden with a family on the path",
-    focus: "50% 40%",
+    focus: "50% 12%",
   },
   {
     id: "who-learnings-database",

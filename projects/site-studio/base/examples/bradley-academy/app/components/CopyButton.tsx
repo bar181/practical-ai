@@ -23,18 +23,16 @@ export function CopyButton({ text, label, className = "btn btn-light", next = tr
         {state === "done" ? "Copied" : label}
       </button>
       <span className="copy-status" role="status">
-        {state === "done" && next ? (
-          <>
-            Copied. Now paste it into{" "}
-            {chatbots.map((c, i) => (
-              <span key={c.href}>
-                <a href={c.href} target="_blank" rel="noopener">{c.label}<span className="sr-only"> (opens a new tab)</span></a>
-                {i < chatbots.length - 2 ? ", " : i === chatbots.length - 2 ? " or " : "."}
-              </span>
-            ))}
-          </>
-        ) : state === "done" ? "Copied." : state === "failed" ? "Your browser blocked copying. Select the prompt text and copy it." : ""}
+        {state === "done" ? "Copied. Paste it into your chatbot." : state === "failed" ? "Your browser blocked copying. Select the prompt text and copy it." : ""}
       </span>
+      {state === "done" && next ? (
+        <span className="copy-next">
+          {chatbots.map((c) => (
+            <a key={c.href} href={c.href} target="_blank" rel="noopener">{c.label}</a>
+          ))}
+          <span className="copy-note">Links open a new tab.</span>
+        </span>
+      ) : null}
     </span>
   );
 }

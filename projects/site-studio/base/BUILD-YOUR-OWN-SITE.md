@@ -8,7 +8,7 @@ in. You bring your own things, hang your own pictures and put your name on the d
 pay rent: GitHub Pages hosts it free for a public repository.
 
 **Status, 20 November 2026:** a fresh AI agent followed an earlier version of this guide for an
-invented bakery, built the site and served it at `/my-site/`. It found six gaps, which are fixed
+invented bakery, built the site and served it at `/my-site/`. It found six gaps; a second run of the revised guide found five smaller ones. All are fixed
 here. The publish to GitHub Pages itself has not been tried with this guide, and no person has
 followed it yet.
 
@@ -39,7 +39,8 @@ each build. Your copy does not have that repository around it, so do this before
    scripts, and delete the `sync` script. Delete `scripts/sync.mjs`.
 2. In `.gitignore`, delete the lines `public/media/` and `app/content/generated/`, so your pictures
    and prompts are saved with the site.
-3. Put your pictures in `public/media/`, for example `public/media/photos/hero.jpg`.
+3. Empty `public/media/` completely (it holds Bradley's pictures, which would otherwise be published
+   with your site), then put your own pictures in it, for example `public/media/photos/hero.jpg`.
 4. Create `app/content/generated/prompts.json` with one prompt called `starter` (the home page copy
    button) and one per product, named after the product's slug from step 5, for example
    `{ "starter": "...", "bread-box": "...", "cake-orders": "..." }`.
@@ -61,8 +62,8 @@ npm install
 npm run dev
 ```
 
-Open the address it prints. You see the Bradley Academy words on your new frame: that is the
-furniture you are about to replace.
+Open the address it prints. The home page shows the old words, and the old product pages show an
+error until step 5, because your prompts file has no prompts for them. That is expected.
 
 ### 5. Put in your own words and pictures (30 minutes)
 
@@ -81,6 +82,9 @@ for your slug in `app/components/Glyph.tsx`.
 **Write it the way you would explain it to a customer across a table:** the core idea in one
 sentence, an everyday comparison, then the detail. Invent nothing: every number and claim should be
 one you can stand behind.
+
+Finally, rename the leftovers: the `name` and `description` in `package.json`, and the `README.md`
+in your folder.
 
 Run `npm run typecheck`. It names any field you missed.
 

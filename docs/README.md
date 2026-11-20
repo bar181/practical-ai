@@ -114,7 +114,7 @@ Support tools that make every other tool better. Each starts with a version a pe
 
 | Project | What it does for you | Where it stands |
 | --- | --- | --- |
-| **Site Studio** | A real website for your work, made with your AI and hosted free on GitHub Pages. Its first site is Bradley Academy, with every tool on this list | **Building:** first version built by Claude, 19 Nov 2026, not yet live or reviewed by the owner. [Project](../projects/site-studio/) · [plan](../workshop/plans/site-studio/README.md) |
+| **Site Studio** | A real website for your work, made with your AI and hosted free on GitHub Pages. Its first site is Bradley Academy, with every tool on this list | **Building:** cinematic version built by Claude, 20 Nov 2026. Six review rounds against a US$50,000 agency bar: UX 86, art direction 73. Not yet live or reviewed by the owner. [Project](../projects/site-studio/) · [plan](../workshop/plans/site-studio/README.md) |
 
 The full list of ideas, sorted into everyday tasks, agent tools and hybrid projects, is in
 [the plans](../workshop/plans/README.md).

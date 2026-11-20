@@ -47,10 +47,10 @@ export function Footer() {
           <ul className="footer-links">
             <li><Link to="/about" viewTransition>About {site.labels.author}</Link></li>
             <li><a href={site.linkedin} rel="noopener">LinkedIn</a></li>
-            <li><a href={site.source} rel="noopener">The tools on GitHub</a></li>
+            <li><a href={site.source} rel="noopener">{site.labels.sourceLink}</a></li>
           </ul>
         </div>
-        <p className="footer-small">Built with Site Studio, in React, published by GitHub Pages. For the site owner: <Link to="/image-brief">the image brief</Link>.</p>
+        <p className="footer-small">{site.labels.builtWith} For the site owner: <Link to="/image-brief">the image brief</Link>.</p>
       </div>
     </footer>
   );

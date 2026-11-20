@@ -53,6 +53,14 @@ function About({ t }: { t: Tool }) {
         </section>
 
       </div>
+      <aside className="about-side" aria-label="Try it">
+        <div className="try-card">
+          <h2>{site.labels.tryCardHeading}</h2>
+          <p>{site.labels.tryCardText}</p>
+          <CopyButton text={prompt} label={t.tryIt.primaryLabel} />
+          <p className="hero-link"><a href="#try-it">{site.labels.readPrompt}</a></p>
+        </div>
+      </aside>
     </div>
 
     <section aria-labelledby="who" className="who-scene">
@@ -66,7 +74,7 @@ function About({ t }: { t: Tool }) {
     <div className="wrap about-grid about-grid-2">
       <div className="about-main">
         <section aria-labelledby="levels" data-cine="draw" className="levels-section">
-          <h2 id="levels">Three levels: start simple, grow when you are ready</h2>
+          <h2 id="levels">{site.labels.levelsHeading}</h2>
           <div className="timeline-wrap">
           <span className="timeline-line" data-cine-line aria-hidden="true" />
           <ol className="levels">
@@ -122,7 +130,7 @@ function Side({ t }: { t: Tool }) {
           <h2 className="side-h">Go deeper</h2>
           <ul className="plain-list">
             {t.explainer ? <li><SmartLink href={t.explainer}>The step-by-step explainer</SmartLink></li> : null}
-            <li><a href={t.readme} rel="noopener">The project on GitHub</a></li>
+            <li><a href={t.readme} rel="noopener">{site.labels.projectLink}</a></li>
             <li><Link to="/#all-tools">All the tools</Link></li>
           </ul>
         </div>
@@ -167,7 +175,7 @@ export default function ToolPage({ params }: Route.ComponentProps) {
             {t.tryIt.play ? <SmartLink href={t.tryIt.play[0].href} className="btn btn-light">{t.tryIt.play[0].label}</SmartLink> : null}
             <CopyButton text={prompt} label={t.tryIt.primaryLabel} className={t.tryIt.play ? "btn btn-ghost" : "btn btn-light"} />
           </div>
-          <p className="hero-link" data-cine-after="2"><a href="#try-it">Read the prompt before you copy it</a></p>
+          <p className="hero-link" data-cine-after="2"><a href="#try-it">{site.labels.readPrompt}</a></p>
           <p className="status-line" data-cine-after="3"><span className="status-word">{t.status.label}</span> {site.labels.worksIn}</p>
         </div>
       </section>
