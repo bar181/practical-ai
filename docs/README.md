@@ -78,7 +78,7 @@ Jobs you already do, done faster with the chatbot you have. Each is one file and
 | --- | --- | --- | --- |
 | 1 | **Document to action brief** | Turn a notice, contract, tender or bill into what you must do, the dates and the open questions, each with the line it came from | **In user testing:** [project](../projects/document-to-action-brief/) |
 | 2 | **Write and edit in my voice** | Learn your style from three samples, then revise an email or post without changing a fact or a promise | Plan |
-| 3 | **Meeting notes to actions** | Turn a transcript into decisions, tasks and a follow-up, and flag any owner or date nobody agreed | Plan |
+| 3 | **Meeting notes to actions** | Turn a transcript into decisions, tasks and a follow-up, and flag any owner or date nobody agreed | **New, tested by its author only:** [project](../projects/meeting-notes-to-actions/) |
 | 4 | **Research brief with checked sources** | Compare options on one page, with every claim linked to a source you can open | Early draft |
 | 5 | **Inbox triage and replies** | Sort the inbox into reply today, delegate and wait, and draft the two replies that matter most | Early draft |
 | 6 | **Customer issue helper** | Handle a late order or a refund from your one-page policy, and say when a manager should step in | Idea |

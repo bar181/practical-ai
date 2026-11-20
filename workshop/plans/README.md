@@ -17,7 +17,7 @@ chatbot they already use.
 | --- | --- | --- |
 | Document to action brief | A notice, contract, tender, policy, report or bill becomes what you must do, the dates and the open questions, each with the words it came from | **Ready:** [project](../../projects/document-to-action-brief/) |
 | Write and edit in my voice | Three samples become a voice guide; a draft is revised with every fact and promise kept | [Plan](write-in-my-voice/) |
-| Meeting notes to actions | A transcript becomes decisions, owners and dates, with anything nobody agreed flagged | [Plan](meeting-notes-to-actions/) |
+| Meeting notes to actions | A transcript becomes decisions, owners and dates, with anything nobody agreed flagged | **Ready:** [project](../../projects/meeting-notes-to-actions/) · [plan](meeting-notes-to-actions/) |
 | Research brief with checked sources | One page comparing options, every claim linked to a source | [Draft](../drafts/weekly-brief/) · [plan](weekly-brief/) |
 | Inbox triage and daily summary | One morning summary across mail and calendar, with replies drafted for approval | [Draft](../drafts/inbox-daily-summary/) · [plan](inbox-daily-summary/) |
 | Posts for the week in my voice | One piece becomes a week of posts that sound like you, for you to edit and publish | [Draft](../drafts/voice-post-drafter/) · [plan](voice-post-drafter/) |

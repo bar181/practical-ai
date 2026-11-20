@@ -26,8 +26,8 @@ date because the meeting never set one, in one sitting, with the chatbot they al
 | The steps | 1. Paste the prompt. 2. Paste the transcript or notes. 3. Read the flags first. 4. Check two actions against their quoted lines. 5. Fix the flagged items with the people involved, then send the follow-up yourself |
 | The front door | "Leave every meeting knowing who is doing what, and who never agreed to." and one prompt to try on the invented transcript in five minutes |
 | The test | An invented 15-minute team meeting with two clear decisions, three actions with owners and dates, two "someone should" actions and one "let's revisit soon". A good result lists all five actions, flags the two with no owner and the one with no date, and does not invent any |
-| Who reviewed it | Nobody yet. Step 7 is open |
-| Gates | 1 pass. 2 pass on the author's reading, open for the owner. 3 pass. 4 pass. 5 pass. 6 pass. 7 open. 8 not started. 9 not started |
+| Who reviewed it | Nobody yet. Step 7 is open. Built and tested on 20 November 2026: [the project](../../../projects/meeting-notes-to-actions/) |
+| Gates | 1 pass. 2 pass on the author's reading, open for the owner. 3 pass. 4 pass. 5 pass. 6 pass. 7 open. 8 built and passed 3 of 3 invented meetings in fresh Claude sessions on 20 November 2026. 9 not started |
 | Next three additions | 1. The follow-up as an email draft the learner copies. 2. Advanced: read the notes from Meet or Zoom where a connector exists. 3. Advanced: actions to a sheet, after a person approves |
 
 ## Step 2: what already exists, checked 16 November 2026
@@ -57,3 +57,24 @@ behind each action, is the lesson, and the prompt works on any tool's notes or a
 2. **Gate 7:** read this page, or give it to a new chat with the review prompt from step 7.
 3. **The fictional company:** the same one as the first two lessons, so the meeting is about the
    supplier notice from lesson one.
+
+## Built: 20 November 2026
+
+- **What was built:** [`projects/meeting-notes-to-actions/`](../../../projects/meeting-notes-to-actions/):
+  one `SKILL.md`, three invented test meetings with answer keys, a worked example and Level 2
+  house rules.
+- **Decisions made in the build:**
+  - The output puts **Flags** first, above decisions, because the flags are the reason to use it.
+  - Every decision and action carries its exact words in a table column, so it can be checked.
+  - Relative dates become calendar dates only when the meeting date is known; otherwise they stay
+    as said and the Assumed line says so.
+  - A tentative offer ("I can probably look at it") is flagged as not agreed.
+  - Private matters (a pay rise) stay out of the follow-up.
+  - Level 2 house rules spell names and roles, and may suggest an owner, but never assign one.
+- **Tests:** three invented meetings, each run once by a fresh Claude agent: 3 of 3 passed.
+  [The evidence](../../../projects/meeting-notes-to-actions/quality-results/README.md).
+- **Not yet tried:** ChatGPT, Gemini, house rules, a real transcript, and anyone but the author.
+- **Level 3 (planned, not built):** the author's own meetings as the dogfood. Transcripts arrive
+  from his meeting tool through the [Connections hub](../connections-hub/); actions go to a task
+  list only after he approves; lessons are offered to the
+  [Learnings database](../../../projects/learnings-database/).
