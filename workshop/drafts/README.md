@@ -15,7 +15,6 @@ A draft that passes review moves to [`projects/`](../../projects/).
 | [`short-video/`](short-video/) | Short video guide |
 | [`training-explainer/`](training-explainer/) | Training explainer with avatar |
 | [`voice-post-drafter/`](voice-post-drafter/) | Voice post drafter |
-| [`website-publishing/`](website-publishing/) | Publishing a website |
 | [`weekly-brief/`](weekly-brief/) | Weekly brief with research |
 
 ## Layouts
