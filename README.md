@@ -271,7 +271,7 @@ room.
 
 | Folder | What it holds |
 | --- | --- |
-| [`projects/`](projects/) | The projects: Artifact Studio, Agentic Process, Document to action brief, Learnings database, Meeting notes to actions and Rare Find |
+| [`projects/`](projects/) | The projects: Artifact Studio, Agentic Process, Document to action brief, Learnings database, Meeting notes to actions, Rare Find, Site Studio and Write and edit in my voice |
 | [`docs/`](docs/) | A summary of the projects, the priority list, and an explainer page for each |
 | [`assets/images/`](assets/images/) | Images shared across the repository |
 | [`workshop/`](workshop/) | How tools get built: plans, earlier drafts, skills and checking scripts. You do not need it to use a tool |

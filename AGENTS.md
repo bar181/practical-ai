@@ -11,6 +11,7 @@ work. Reuse first: use an existing capability, wrap it, or build only the missin
 | Make a page, a slide deck or a social post | [`projects/artifact-studio/AGENTS.md`](projects/artifact-studio/AGENTS.md) |
 | Change the Bradley Academy website, or help someone build a site like it | [`projects/site-studio/AGENTS.md`](projects/site-studio/AGENTS.md) |
 | Turn a policy, contract or bill into an action list | [`projects/document-to-action-brief/AGENTS.md`](projects/document-to-action-brief/AGENTS.md) |
+| Revise an email or post in someone's own voice, keeping every fact | [`projects/write-in-my-voice/AGENTS.md`](projects/write-in-my-voice/AGENTS.md) |
 | Turn a meeting transcript or notes into decisions, actions and a follow-up | [`projects/meeting-notes-to-actions/AGENTS.md`](projects/meeting-notes-to-actions/AGENTS.md) |
 | Log a lesson, find the rules before work, or keep a learnings log | [`projects/learnings-database/AGENTS.md`](projects/learnings-database/AGENTS.md) |
 | Play or change the Rare Find game | [`projects/rare-find/AGENTS.md`](projects/rare-find/AGENTS.md) |
