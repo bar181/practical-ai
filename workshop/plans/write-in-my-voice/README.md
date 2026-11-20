@@ -27,8 +27,8 @@ promise stayed true, in one sitting, with the chatbot they already use.
 | The steps | 1. Paste three samples and the first prompt. 2. Read the voice guide and fix one line. 3. Paste the draft and the second prompt. 4. Compare the facts list, line by line. 5. Edit, then send it yourself |
 | The front door | "Make it sound like you, without changing what you promised." and one prompt to try with the invented samples in five minutes |
 | The test | Three invented samples by a café owner (short sentences, no exclamation marks, signs off with a first name) and a stiff draft announcing new opening hours with two dates and one price. A good result keeps both dates and the price exactly, drops the stiff phrases, and keeps the sign-off |
-| Who reviewed it | Nobody yet. Step 7 is open |
-| Gates | 1 pass. 2 open: does a built-in style feature already do this for the learner? 3 pass. 4 pass. 5 pass. 6 pass. 7 open. 8 not started. 9 not started |
+| Who reviewed it | Nobody yet. Step 7 is open. Built and tested on 20 November 2026: [the project](../../../projects/write-in-my-voice/) |
+| Gates | 1 pass. 2 open: does a built-in style feature already do this for the learner? 3 pass. 4 pass. 5 pass. 6 pass. 7 open. 8 built; 3 of 3 invented cases passed in fresh Claude sessions on 20 November 2026 after one fix. 9 not started |
 | Next three additions | 1. The voice guide saved as a file the learner reuses. 2. Artifact Studio's post previews, to see the revised post as readers will. 3. Advanced: the existing voice drafter skill, which keeps the guide and applies saved feedback |
 
 ## Step 2: what already exists
@@ -61,3 +61,19 @@ to any AI writing.
 2. **Gate 7:** read this page, or give it to a new chat with the review prompt from step 7.
 3. **The fictional company:** the same one as Document to action brief, so the café owner's
    samples and the supplier notice belong to one story.
+
+## Built: 20 November 2026
+
+- **What was built:** [`projects/write-in-my-voice/`](../../../projects/write-in-my-voice/): one
+  `SKILL.md` doing both halves (voice guide, then revision with a facts check), three invented test
+  cases with answer keys, a worked example and a Level 2 voice guide template.
+- **Decisions made in the build:**
+  - One skill, not two prompts. The guide and the revision come back in one reply; the person fixes
+    the guide and asks again. Simpler to paste, and the facts check sits next to the revision.
+  - On-voice examples are quoted word for word from the samples; off-voice examples are written.
+  - Samples teach voice only: no fact, offer or apology moves from a sample into the revision.
+  - Greeting and sign-off count as voice, not facts, after round 1 showed the conflict.
+- **Tests:** [the evidence](../../../projects/write-in-my-voice/quality-results/README.md).
+- **Not yet tried:** ChatGPT, Gemini, a saved guide, real samples, and anyone but the author.
+- **Gate 2 is still open for the owner:** whether the lesson should start with the learner's
+  built-in style feature.
