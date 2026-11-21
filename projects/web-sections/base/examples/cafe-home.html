@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- Worked example, invented: the café and its details are made up. Built by a fresh Claude session from base/SKILL.md on 21 November 2026 (quality-results/2026-11-21-t1-page.html). Its stand-in photos are labelled on the page; the skill now uses a dashed placeholder box instead. -->
+<!-- Worked example, invented: the café and its details are made up. Built by a fresh Claude session from base/SKILL.md on 21 November 2026 (quality-results/2026-11-21-t1-page.html). Updated the same day: its stand-in photos were replaced with the dashed placeholder box the skill now uses. -->
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -24,6 +24,8 @@ html{scroll-behavior:smooth}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
 body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.6 var(--text);overflow-x:clip}
 img,video{display:block;max-width:100%;height:auto}
+.ph-box{display:grid;place-items:center;aspect-ratio:4/3;border:2px dashed var(--line);border-radius:var(--radius);background:var(--panel);color:var(--muted);text-align:center;padding:16px;font-size:.95rem}
+
 h1,h2,h3{font-family:var(--display);line-height:1.1;margin:0 0 .4em;text-wrap:balance;font-weight:700}
 h1{font-size:clamp(2.3rem,1.4rem + 4.4vw,4.6rem)}
 h2{font-size:clamp(1.8rem,1.2rem + 2.6vw,3rem)}
@@ -113,8 +115,7 @@ section[id]{scroll-margin-top:72px}
       <div class="btns"><a class="btn" href="#contact">See opening hours</a><a class="btn ghost" href="tel:5550143">Call 555 0143</a></div>
     </div>
     <div>
-      <img src="../template/img/home.jpg" width="716" height="716" alt="[The counter at Tallowmere Café]" fetchpriority="high">
-      <p><span class="ph-note">Stand-in photo: replace with your counter photo</span></p>
+      <div class="ph-box" style="aspect-ratio:4/3" role="img" aria-label="Placeholder for a photo: The counter at Tallowmere Café">[Your photo: the counter at Tallowmere Café]</div>
     </div>
   </div>
 </section>
@@ -122,8 +123,7 @@ section[id]{scroll-margin-top:72px}
 <section class="sec alt" id="about">
   <div class="wrap about">
     <div>
-      <img src="../template/img/portrait.jpg" width="716" height="716" alt="[Who is in the photo, for example the owner behind the counter]" loading="lazy">
-      <p><span class="ph-note">Stand-in photo: replace with a photo of you or your team</span></p>
+      <div class="ph-box" style="aspect-ratio:4/5" role="img" aria-label="Placeholder for a photo: The owner behind the counter">[Your photo: the owner behind the counter]</div>
     </div>
     <div>
       <h2>About Tallowmere Café</h2>
@@ -141,9 +141,9 @@ section[id]{scroll-margin-top:72px}
   <div class="wrap">
     <h2>Photos</h2>
     <ul class="gallery">
-      <li><figure><img src="../template/img/flower.jpg" width="716" height="716" alt="[A bowl of today's soup]" loading="lazy"><figcaption>Soups at lunch <span class="ph-note">Stand-in photo</span></figcaption></figure></li>
-      <li><figure><img src="../template/img/fog.jpg" width="716" height="716" alt="[Pastries on the counter]" loading="lazy"><figcaption>Pastries <span class="ph-note">[photo of your pastries]</span></figcaption></figure></li>
-      <li><figure><img src="../template/img/toronto.jpg" width="1024" height="1024" alt="[A cup of coffee]" loading="lazy"><figcaption>Coffee <span class="ph-note">[photo of your coffee]</span></figcaption></figure></li>
+      <li><figure><div class="ph-box" style="aspect-ratio:1" role="img" aria-label="Placeholder for a photo: A bowl of today's soup">[Your photo: a bowl of today's soup]</div><figcaption>Soups at lunch</figcaption></figure></li>
+      <li><figure><div class="ph-box" style="aspect-ratio:1" role="img" aria-label="Placeholder for a photo: Pastries on the counter">[Your photo: pastries on the counter]</div><figcaption>Pastries</figcaption></figure></li>
+      <li><figure><div class="ph-box" style="aspect-ratio:1" role="img" aria-label="Placeholder for a photo: A cup of coffee">[Your photo: a cup of coffee]</div><figcaption>Coffee</figcaption></figure></li>
     </ul>
   </div>
 </section>

@@ -386,32 +386,9 @@ footer p{border-top:1px solid rgba(232,237,243,.2);padding-top:22px;max-width:40
 #t-layouts:checked~.tabs .tabs-s label[for="t-layouts"]{background:var(--reed);color:var(--pine)}
 :is(#t-lookvoice,#t-looks,#t-layouts):checked~.tabs .g3{background:var(--fog);color:var(--pine);border-color:var(--fog)}
 :is(#t-lookvoice,#t-looks,#t-layouts):checked~.tabs .s3{display:flex}
-#t-socials:checked~#v-socials{display:block}
-#t-socials:focus-visible~.tabs label[for="t-socials"]{outline:3px solid var(--reed);outline-offset:2px}
-#t-socials:checked~.tabs .tabs-s label[for="t-socials"]{background:var(--reed);color:var(--pine)}
-#t-post-linkedin:checked~#v-post-linkedin{display:block}
-#t-post-linkedin:focus-visible~.tabs label[for="t-post-linkedin"]{outline:3px solid var(--reed);outline-offset:2px}
-#t-post-linkedin:checked~.tabs .tabs-s label[for="t-post-linkedin"]{background:var(--reed);color:var(--pine)}
-#t-post-instagram:checked~#v-post-instagram{display:block}
-#t-post-instagram:focus-visible~.tabs label[for="t-post-instagram"]{outline:3px solid var(--reed);outline-offset:2px}
-#t-post-instagram:checked~.tabs .tabs-s label[for="t-post-instagram"]{background:var(--reed);color:var(--pine)}
-#t-post-tiktok:checked~#v-post-tiktok{display:block}
-#t-post-tiktok:focus-visible~.tabs label[for="t-post-tiktok"]{outline:3px solid var(--reed);outline-offset:2px}
-#t-post-tiktok:checked~.tabs .tabs-s label[for="t-post-tiktok"]{background:var(--reed);color:var(--pine)}
-#t-post-facebook:checked~#v-post-facebook{display:block}
-#t-post-facebook:focus-visible~.tabs label[for="t-post-facebook"]{outline:3px solid var(--reed);outline-offset:2px}
-#t-post-facebook:checked~.tabs .tabs-s label[for="t-post-facebook"]{background:var(--reed);color:var(--pine)}
-#t-post-email:checked~#v-post-email{display:block}
-#t-post-email:focus-visible~.tabs label[for="t-post-email"]{outline:3px solid var(--reed);outline-offset:2px}
-#t-post-email:checked~.tabs .tabs-s label[for="t-post-email"]{background:var(--reed);color:var(--pine)}
-#t-post-blog:checked~#v-post-blog{display:block}
-#t-post-blog:focus-visible~.tabs label[for="t-post-blog"]{outline:3px solid var(--reed);outline-offset:2px}
-#t-post-blog:checked~.tabs .tabs-s label[for="t-post-blog"]{background:var(--reed);color:var(--pine)}
 #t-social:checked~#v-social{display:block}
 #t-social:focus-visible~.tabs label[for="t-social"]{outline:3px solid var(--reed);outline-offset:2px}
-#t-social:checked~.tabs .tabs-s label[for="t-social"]{background:var(--reed);color:var(--pine)}
-:is(#t-socials,#t-post-linkedin,#t-post-instagram,#t-post-tiktok,#t-post-facebook,#t-post-email,#t-post-blog,#t-social):checked~.tabs .g4{background:var(--fog);color:var(--pine);border-color:var(--fog)}
-:is(#t-socials,#t-post-linkedin,#t-post-instagram,#t-post-tiktok,#t-post-facebook,#t-post-email,#t-post-blog,#t-social):checked~.tabs .s4{display:flex}
+:is(#t-social):checked~.tabs .g4{background:var(--fog);color:var(--pine);border-color:var(--fog)}
 #t-voice-keynote:checked~#v-voice-keynote{display:block}
 #t-voice-keynote:focus-visible~.tabs label[for="t-voice-keynote"]{outline:3px solid var(--reed);outline-offset:2px}
 :is(#t-voice-keynote):checked~.tabs .g5{background:var(--fog);color:var(--pine);border-color:var(--fog)}
@@ -481,103 +458,6 @@ footer p{border-top:1px solid rgba(232,237,243,.2);padding-top:22px;max-width:40
   html[data-view^="deck-"] :is(.dk-hold,.dk){background:none;padding:0;max-width:none;display:block}
   html[data-view^="deck-"] .dk.on .dk-stage{aspect-ratio:auto;overflow:visible;background:none;border-radius:0}
   html[data-view^="deck-"] .dk-s{page:slide;position:relative!important;inset:auto!important;opacity:1!important;visibility:visible!important;border-radius:0;width:100%;aspect-ratio:16/9;break-after:page;break-inside:avoid;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
-/* post previews. A frame in the shape of a feed, an inbox or a blog, so a draft is judged the way its audience will see it.
-   The frames are plain on purpose: no platform's logo, colours or exact interface. The label above each frame names the platform. */
-.sp-view{background:#eef1f5;color:#1b2228;font-family:var(--work);padding-bottom:64px}
-.sp-top{background:#0c2340;color:#fff;padding:56px 0 48px}
-.sp-top h1{font:700 clamp(2.2rem,8.6vw,4.4rem)/1 var(--display);letter-spacing:-.02em;max-width:12em;text-wrap:balance}
-.sp-top p,.sp-top .sp-lede-top{margin-top:16px;max-width:30em;font:400 clamp(1.06rem,3.6vw,1.3rem)/1.4 var(--work);color:#dfe6ef}
-.sp-top p b{color:#ffd23f}
-.sp-sec{padding-top:52px}
-.sp-sec h2{font:700 clamp(1.6rem,5.6vw,2.5rem)/1.06 var(--display);letter-spacing:-.015em;max-width:16em;text-wrap:balance}
-.sp-lede{margin-top:10px;max-width:34em;font:400 1.1rem/1.45 var(--work);color:#3d4856}
-.sp-calls{list-style:none;margin:28px 0 0;padding:0;display:grid;gap:12px}
-.sp-calls li{background:#fff;border-left:5px solid #ffd23f;border-radius:10px;padding:16px 18px}
-.sp-calls b{display:block;font:700 1.22rem/1.15 var(--display)}
-.sp-calls span{display:block;margin-top:6px;color:#3d4856;font-size:1rem;line-height:1.4}
-@media(min-width:780px){.sp-calls{grid-template-columns:repeat(3,1fr)}}
-/* frames in a row: swipe on a phone, side by side on a wide screen */
-.sp-row{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;margin-top:24px;padding:2px 2px 16px;overscroll-behavior-x:contain}
-.sp-col{flex:0 0 min(86%,372px);scroll-snap-align:start;display:flex;flex-direction:column;gap:10px}
-@media(min-width:1000px){.sp-row{overflow:visible}.sp-col{flex:1 1 0;max-width:400px}}
-.sp-tag{font:700 .92rem/1.2 var(--display);color:#0c2340}
-.sp-tag small{display:block;font:400 .86rem/1.3 var(--work);color:#3d4856;margin-top:2px}
-.sp-pick{align-self:flex-start;min-height:44px;padding:0 18px;border-radius:999px;border:2px solid #0c2340;background:#fff;color:#0c2340;font:700 .92rem/1 var(--display);cursor:pointer}
-.sp-pick[aria-pressed=true]{background:#0c2340;color:#ffd23f}
-.sp-chosen{margin-top:6px;min-height:1.5em;font:700 1.02rem/1.4 var(--display);color:#0c2340}
-.sp-one{max-width:400px;margin-top:22px;display:grid;gap:10px}
-.sp-duo{display:grid;gap:30px;margin-top:8px}
-@media(min-width:900px){.sp-duo{grid-template-columns:repeat(3,1fr);align-items:start}.sp-duo.two{grid-template-columns:repeat(2,minmax(0,400px))}}
-.sp-note{margin-top:26px;background:#0c2340;color:#fff;border-radius:14px;padding:22px 20px;max-width:760px}
-.sp-note b{display:block;font:700 1.3rem/1.15 var(--display);color:#ffd23f}
-.sp-note p{margin-top:8px;color:#dfe6ef;line-height:1.45}
-.sp-note small{display:block;margin-top:10px;color:#b9c5d3;font-size:.9rem;line-height:1.4}
-.sp-view .ask{margin-top:20px;max-width:760px;background:#fff}
-.sp-check{margin:18px 0 0;padding:0 0 0 1.2em;max-width:34em;display:grid;gap:6px;color:#3d4856}
-/* the feed frame */
-.sp{background:#fff;border:1px solid #cfd6df;border-radius:12px;overflow:hidden;font:400 .95rem/1.42 var(--sans);color:#1c1e21;box-shadow:0 8px 22px rgba(12,35,64,.08)}
-.sp-h{display:flex;gap:10px;align-items:center;padding:12px 14px 8px}
-.sp-av{flex:none;width:44px;height:44px;border-radius:50%;background:#0c2340;color:#ffd23f;display:grid;place-items:center;font:700 .95rem/1 var(--display)}
-.sp-who b{display:block;font-weight:700;line-height:1.2}
-.sp-who span{display:block;font-size:.8rem;line-height:1.3;color:#56606b}
-.sp-t{padding:0 14px 6px}
-.sp-t p{margin:0}
-.sp-js .sp-t.cut p{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden}
-.sp-js .sp-t.cut br+br{display:none}   /* while cut, a blank line between paragraphs would waste one of the three lines */
-.sp-more{display:none;margin:0 14px 10px;padding:6px 0;border:0;background:none;color:#56606b;font:700 .9rem/1 var(--sans);cursor:pointer;text-decoration:underline}
-.sp-js .sp-more{display:inline-block}
-.sp-m{position:relative;aspect-ratio:1.91/1;background:#0c2340 center/cover no-repeat;display:flex;align-items:flex-end}
-.sp-m.r11{aspect-ratio:1/1}.sp-m.r45{aspect-ratio:4/5}
-.sp-m::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 35%,rgba(0,0,0,.82))}
-.sp-m b{position:relative;z-index:1;padding:16px;color:#fff;font:700 clamp(1.3rem,5.6vw,1.9rem)/1.05 var(--display);letter-spacing:-.015em;text-wrap:balance}
-.sp-m.flat{background:#0c2340;align-items:center}.sp-m.flat::after{display:none}.sp-m.flat b{color:#ffd23f;font-size:clamp(1.5rem,6.4vw,2.2rem)}
-.sp-m.flat b small{display:block;margin-top:10px;color:#fff;font:400 1rem/1.35 var(--work);letter-spacing:0}
-.sp-a{display:flex;justify-content:space-around;border-top:1px solid #e3e7ec;padding:11px 6px;font:700 .82rem/1 var(--sans);color:#56606b}
-.sp-link{background:#f0f2f5;padding:10px 14px 12px;border-top:1px solid #e3e7ec}
-.sp-link span{font-size:.78rem;color:#56606b}.sp-link b{display:block;font-size:1rem;line-height:1.25}.sp-link p{margin:2px 0 0;font-size:.86rem;color:#56606b;line-height:1.3}
-/* picture-first frame */
-.sp.pic .sp-h{padding:10px 12px}.sp.pic .sp-av{width:32px;height:32px;font-size:.72rem}
-.sp-i{display:flex;gap:14px;padding:10px 12px 4px;color:#1c1e21}.sp-i svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}.sp-i svg:last-child{margin-left:auto}
-.sp-cap{padding:4px 12px 14px}.sp-cap p{margin:0}.sp-cap .tags{color:#3a4a8c;margin-top:4px}
-.sp-dots{display:flex;gap:5px;justify-content:center;padding-top:8px}.sp-dots i{width:6px;height:6px;border-radius:50%;background:#c3cad3}.sp-dots i:first-child{background:#0c2340}
-.sp-car{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;overscroll-behavior-x:contain}.sp-car>*{flex:0 0 100%;scroll-snap-align:start}
-/* upright video frame */
-.sp-v{position:relative;aspect-ratio:9/16;max-width:300px;width:100%;border-radius:18px;overflow:hidden;background:#000;color:#fff;font-family:var(--sans);box-shadow:0 10px 26px rgba(12,35,64,.2)}
-.sp-v .bg{position:absolute;inset:0;background:center/cover no-repeat;animation:sp-zoom 9s ease-in-out infinite alternate}
-.sp-v .bg.b2{animation:sp-zoom 9s ease-in-out infinite alternate,sp-in2 9s linear infinite}
-.sp-v::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.35),rgba(0,0,0,0) 30%,rgba(0,0,0,0) 55%,rgba(0,0,0,.8))}
-.sp-v .beats{position:absolute;z-index:2;left:14px;right:60px;top:20%}
-.sp-v .beats p{position:absolute;left:0;top:0;margin:0;display:inline;font:700 clamp(1.2rem,5.6vw,1.5rem)/1.3 var(--display);opacity:0;animation:sp-beat 9s linear infinite}
-.sp-v .beats p span{background:#fff;color:#000;padding:.12em .36em;border-radius:6px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
-.sp-v .beats p:nth-child(2){animation-delay:3s}.sp-v .beats p:nth-child(3){animation-delay:6s}
-.sp-v .side{position:absolute;z-index:2;right:10px;bottom:22%;display:grid;gap:18px}.sp-v .side svg{width:30px;height:30px;fill:none;stroke:#fff;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
-.sp-v .foot{position:absolute;z-index:2;left:14px;right:60px;bottom:16px;font-size:.88rem;line-height:1.35}.sp-v .foot b{display:block;margin-bottom:3px}
-.sp-v.still .bg{animation:none}.sp-v.still .beats p{position:static;display:block;opacity:1;animation:none}
-.sp-v .when{position:absolute;z-index:2;left:12px;top:12px;background:rgba(0,0,0,.6);padding:4px 9px;border-radius:999px;font:700 .78rem/1 var(--sans)}
-@keyframes sp-zoom{from{transform:scale(1)}to{transform:scale(1.14)}}
-@keyframes sp-beat{0%,2%{opacity:0}5%,30%{opacity:1}33.3%,100%{opacity:0}}
-@keyframes sp-in2{0%,62%{opacity:0}68%,97%{opacity:1}100%{opacity:0}}
-/* inbox line and email body */
-.sp-mail{background:#fff;border:1px solid #cfd6df;border-radius:12px;overflow:hidden;font-family:var(--sans);color:#1c1e21;max-width:600px;box-shadow:0 8px 22px rgba(12,35,64,.08)}
-.sp-inbox{display:grid;gap:2px;padding:12px 16px;border-bottom:1px solid #e3e7ec;background:#f7f9fb;font-size:.92rem;line-height:1.35}
-.sp-inbox b{font-weight:700}.sp-inbox span{color:#56606b}
-.sp-body .banner{aspect-ratio:3/1;background:center/cover no-repeat #0c2340}
-.sp-body .in{padding:22px 22px 8px}
-.sp-body h3{font:700 clamp(1.5rem,5.6vw,2rem)/1.1 var(--display);letter-spacing:-.015em}
-.sp-body p{margin:12px 0 0;font-size:1rem;line-height:1.5}
-.sp-body ol{margin:12px 0 0;padding-left:1.3em;display:grid;gap:5px;line-height:1.45}
-.sp-btn{display:inline-block;margin-top:18px;background:#0c2340;color:#fff;font:700 1rem/1 var(--display);padding:14px 22px;border-radius:8px;text-decoration:none}
-.sp-body .fine{margin:22px 0 0;padding:14px 22px 18px;border-top:1px solid #e3e7ec;font-size:.8rem;line-height:1.4;color:#56606b}
-/* short blog */
-.sp-blog{background:#fff;border:1px solid #cfd6df;border-radius:12px;overflow:hidden;max-width:680px;box-shadow:0 8px 22px rgba(12,35,64,.08)}
-.sp-blog .banner{aspect-ratio:2/1;background:center/cover no-repeat #0c2340}
-.sp-blog .in{padding:24px 22px 28px;font:400 1.12rem/1.6 var(--text)}
-.sp-blog h3{font:700 clamp(1.7rem,6.4vw,2.6rem)/1.05 var(--display);letter-spacing:-.02em;text-wrap:balance}
-.sp-blog .deck{margin-top:10px;font:400 1.14rem/1.4 var(--work);color:#3d4856}
-.sp-blog .by{margin-top:12px;font:400 .88rem/1.3 var(--work);color:#56606b}
-.sp-blog .in>p:not(.deck):not(.by){margin-top:16px}
-.sp-blog blockquote{margin:22px 0 0;padding-left:16px;border-left:5px solid #ffd23f;font:700 1.4rem/1.2 var(--display)}
-@media (prefers-reduced-motion:reduce){.sp-v .bg,.sp-v .bg.b2{animation:none}.sp-v .beats p{position:static;display:block;opacity:1;animation:none;margin-bottom:8px}}
 /* the standard scrollyteller: a pinned frame of pictures and a column of steps */
 .sy-stage{position:sticky;top:0;z-index:3;background:var(--fog);padding:3px 0 0}
 .sy-frame{aspect-ratio:4/3;overflow:hidden;position:relative;background:var(--pine)}
@@ -1383,21 +1263,14 @@ html[data-view=voice-keynote]{scroll-snap-type:y proximity}
 </head>
 <body>
 <div class="progress" aria-hidden="true"><i></i></div>
-<header class="mast"><div class="wrap"><p class="mast-t"><span>Artifact studio</span> showcase</p><p class="mast-l">Master 1 of 2: what your AI can make. Photo effects, scroll effects, cinematic effects, layouts, post previews and a tab for each of seven voices. Tap a tab.</p><p class="mast-x"><a href="components.html">Master 2: the components, the picker and the reference sheets</a></p></div></header>
+<header class="mast"><div class="wrap"><p class="mast-t"><span>Artifact studio</span> showcase</p><p class="mast-l">Master 1 of 2: what your AI can make. Photo effects, scroll effects, cinematic effects, layouts, social picture sizes and a tab for each of seven voices. Tap a tab.</p><p class="mast-x"><a href="components.html">Master 2: the components, the picker and the reference sheets</a></p></div></header>
 <input class="tabr" type="radio" name="tab" id="t-photo" aria-label="Photo effects" checked>
 <input class="tabr" type="radio" name="tab" id="t-scroll" aria-label="Scroll effects">
 <input class="tabr" type="radio" name="tab" id="t-cinema" aria-label="Cinematic effects">
 <input class="tabr" type="radio" name="tab" id="t-lookvoice" aria-label="Layouts: Looks and voices">
 <input class="tabr" type="radio" name="tab" id="t-looks" aria-label="Layouts: Nine looks">
 <input class="tabr" type="radio" name="tab" id="t-layouts" aria-label="Layouts: Six layouts">
-<input class="tabr" type="radio" name="tab" id="t-socials" aria-label="Socials: Three drafts">
-<input class="tabr" type="radio" name="tab" id="t-post-linkedin" aria-label="Socials: LinkedIn">
-<input class="tabr" type="radio" name="tab" id="t-post-instagram" aria-label="Socials: Instagram">
-<input class="tabr" type="radio" name="tab" id="t-post-tiktok" aria-label="Socials: TikTok">
-<input class="tabr" type="radio" name="tab" id="t-post-facebook" aria-label="Socials: Facebook">
-<input class="tabr" type="radio" name="tab" id="t-post-email" aria-label="Socials: Email">
-<input class="tabr" type="radio" name="tab" id="t-post-blog" aria-label="Socials: Short blog">
-<input class="tabr" type="radio" name="tab" id="t-social" aria-label="Socials: Picture formats">
+<input class="tabr" type="radio" name="tab" id="t-social" aria-label="Social pictures">
 <input class="tabr" type="radio" name="tab" id="t-voice-keynote" aria-label="Visionary">
 <input class="tabr" type="radio" name="tab" id="t-voice-story" aria-label="Storyteller">
 <input class="tabr" type="radio" name="tab" id="t-voice-emotional" aria-label="Emotional">
@@ -1405,7 +1278,7 @@ html[data-view=voice-keynote]{scroll-snap-type:y proximity}
 <input class="tabr" type="radio" name="tab" id="t-voice-practical" aria-label="Practical">
 <input class="tabr" type="radio" name="tab" id="t-voice-analyst" aria-label="Analyst">
 <input class="tabr" type="radio" name="tab" id="t-voice-brief" aria-label="Brief">
-<nav class="tabs" aria-label="Sections"><div class="tabs-g"><label class="g0" for="t-photo">Photo effects</label><label class="g1" for="t-scroll">Scroll effects</label><label class="g2" for="t-cinema">Cinematic effects</label><label class="g3" for="t-lookvoice">Layouts</label><label class="g4" for="t-socials">Socials</label><label class="g5" for="t-voice-keynote">Visionary</label><label class="g6" for="t-voice-story">Storyteller</label><label class="g7" for="t-voice-emotional">Emotional</label><label class="g8" for="t-voice-teacher">Explainer</label><label class="g9" for="t-voice-practical">Practical</label><label class="g10" for="t-voice-analyst">Analyst</label><label class="g11" for="t-voice-brief">Brief</label></div><div class="tabs-s s3"><span>Looks set the mood and layouts set the order:</span><label for="t-lookvoice">Looks and voices</label><label for="t-looks">Nine looks</label><label for="t-layouts">Six layouts</label></div><div class="tabs-s s4"><span>See each draft the way your audience will. The use case first, then a tab for each platform:</span><label for="t-socials">Three drafts</label><label for="t-post-linkedin">LinkedIn</label><label for="t-post-instagram">Instagram</label><label for="t-post-tiktok">TikTok</label><label for="t-post-facebook">Facebook</label><label for="t-post-email">Email</label><label for="t-post-blog">Short blog</label><label for="t-social">Picture formats</label></div></nav>
+<nav class="tabs" aria-label="Sections"><div class="tabs-g"><label class="g0" for="t-photo">Photo effects</label><label class="g1" for="t-scroll">Scroll effects</label><label class="g2" for="t-cinema">Cinematic effects</label><label class="g3" for="t-lookvoice">Layouts</label><label class="g4" for="t-social">Social pictures</label><label class="g5" for="t-voice-keynote">Visionary</label><label class="g6" for="t-voice-story">Storyteller</label><label class="g7" for="t-voice-emotional">Emotional</label><label class="g8" for="t-voice-teacher">Explainer</label><label class="g9" for="t-voice-practical">Practical</label><label class="g10" for="t-voice-analyst">Analyst</label><label class="g11" for="t-voice-brief">Brief</label></div><div class="tabs-s s3"><span>Looks set the mood and layouts set the order:</span><label for="t-lookvoice">Looks and voices</label><label for="t-looks">Nine looks</label><label for="t-layouts">Six layouts</label></div></nav>
 <div class="view" id="v-photo" data-tab="photo" data-title="Photo effects">
 <header class="hero">
   <div class="ph" style="background-image:var(--ph-flower);background-position:42% 46%;transform-origin:40% 45%" role="img" aria-label="A purple flower covered in drops of water, close up, against a dark background."></div>
@@ -1544,7 +1417,7 @@ html[data-view=voice-keynote]{scroll-snap-type:y proximity}
       <div class="tile sky"><span class="n">0</span><span class="ui">libraries loaded</span></div>
       <div class="tile wide"><div class="chips" id="chips" aria-hidden="true"></div><span class="ui">The photo's six main colours, largest first</span></div>
       <div class="tile"><svg id="spark" viewBox="0 0 100 40" preserveAspectRatio="none" role="img" aria-label="Small line showing brightness from the top of the photo to the bottom."></svg><span class="ui">Brightness, top to bottom</span></div>
-      <div class="tile"><span class="n">2,731<small>KB</small></span><span class="ui">the whole studio: one file, photos and fonts included</span></div>
+      <div class="tile"><span class="n">2,681<small>KB</small></span><span class="ui">the whole studio: one file, photos and fonts included</span></div>
       <div class="tile say dark">Every tile here is a true fact about this page.</div>
     </div>
   </div>
@@ -2351,128 +2224,7 @@ recipe and the voice. Each card has six fields. To add a look, fill in the blank
       <ul class="ly-notes"><li><b>Use it for</b> a summary of several different things: a result, a quote, a number, a picture.</li><li><b>The rule</b> one dominant tile. Keep the same padding and the same corner in every tile, or it looks like a jumble.</li><li><b>Avoid it when</b> the items are of one kind. Then it is a card grid pretending.</li></ul></div>
 <div class="recipe wrap"><div class="ask"><h3>Ask for it like this</h3><blockquote>Summarise this as a bento grid: one large tile for the main result, and four or five smaller tiles for a number, a quote, a photo and the next step. Same padding and corners on every tile. Stack to one column on a phone.</blockquote><button class="copy" type="button">Copy</button></div><dl class="facts"><div><dt>Effort</dt><dd>Medium. Decide the main tile first.</dd></div><div><dt>Made here with</dt><dd>CSS grid with tiles spanning rows and columns</dd></div><div><dt>Grow into</dt><dd>The bento grid in the photo parts, with one photograph cut across the tiles</dd></div><div><dt>Use it for</dt><dd>Summaries, launch pages, a year in review</dd></div></dl></div>
   </section>
-<nav class="pager" aria-label="Previous and next tab"><div><label for="t-looks">← Nine looks</label><label for="t-socials">Three drafts →</label></div></nav></div>
-<div class="view sp-view" id="v-socials" data-tab="socials" data-title="Socials">
-<section class="sp-top"><div class="wrap">
-  <h1>See your post the way your audience will.</h1>
-  <p>A list of drafts is extra reading for you and for everyone you ask. <b>The preview is the deliverable.</b> Ask for every draft in the shape of the feed, in your own voice, and judge it before you press post.</p>
-</div></section>
-<section class="sp-sec"><div class="wrap">
-  <ul class="sp-calls">
-    <li><b>Your voice, not the AI's.</b><span>Paste three posts you are proud of and say "write in this voice". The drafts sound like you on a good day.</span></li>
-    <li><b>Review the post, not a document.</b><span>Nobody meets your post as a paragraph in a chat window. They meet it in a feed, between two other posts.</span></li>
-    <li><b>Nothing posts itself.</b><span>The studio stops at the preview. You choose, you edit and you press post.</span></li>
-  </ul>
-</div></section>
-<section class="sp-sec"><div class="wrap">
-  <h2>Compare three drafts the way they will be seen</h2>
-  <p class="sp-lede">One topic, three ways in. Swipe across, open each one with "more", and choose. The text is cut after three lines, about where a feed cuts it, so you judge the opening and not the essay.</p>
-  <div class="sp-row" tabindex="0" role="region" aria-label="Three drafts of one LinkedIn post. Swipe or scroll sideways.">
-    <div class="sp-col"><p class="sp-tag">Draft A: start with the problem<small>LinkedIn</small></p><article class="sp" aria-label="LinkedIn preview"><div class="sp-h"><span class="sp-av" aria-hidden="true">BR</span><div class="sp-who"><b>Bradley Ross</b><span>Agentic AI architect and developer. I teach practical AI.</span></div></div><div class="sp-t cut"><p>Your AI gives brilliant answers. Then it shows them on a grey page.<br> <br> The thinking is not the problem. The page is. Nobody gave the AI a design brief.<br> <br> So I wrote one. It is free: a library of templates, voices and photo effects that any chatbot can read. Paste one link, add your notes, ask in one sentence.<br> <br> Link in the comments.</p></div><button class="sp-more" type="button" aria-expanded="false">more</button><div class="sp-m r11" style="background-image:var(--ph-class)" role="img" aria-label="A cartoon of a worried person at a desk, looking at a screen full of unimpressed faces. Over it, the words: Good answer. Grey page."><b aria-hidden="true">Good answer. Grey page.</b></div><div class="sp-a" aria-hidden="true"><span>Like</span><span>Comment</span><span>Repost</span><span>Send</span></div></article><button class="sp-pick" type="button" aria-pressed="false" data-d="A">Choose draft A</button></div>
-    <div class="sp-col"><p class="sp-tag">Draft B: start with the analogy<small>LinkedIn</small></p><article class="sp" aria-label="LinkedIn preview"><div class="sp-h"><span class="sp-av" aria-hidden="true">BR</span><div class="sp-who"><b>Bradley Ross</b><span>Agentic AI architect and developer. I teach practical AI.</span></div></div><div class="sp-t cut"><p>AI is a smart intern.<br> <br> It has read every book in the world. It has never met you.<br> <br> It does not know your reader, your tone or what good looks like in your business. So it guesses.<br> <br> Hand it a brief on day one and the work changes. Mine is free and open: Artifact Studio, part of Practical AI.<br> <br> What is the first thing you would tell a new intern?</p></div><button class="sp-more" type="button" aria-expanded="false">more</button><div class="sp-m r11" style="background-image:var(--ph-dog)" role="img" aria-label="A small dog with its paws on a desk, looking closely at a laptop. Over it, the words: Keen. Fast. New here."><b aria-hidden="true">Keen. Fast. New here.</b></div><div class="sp-a" aria-hidden="true"><span>Like</span><span>Comment</span><span>Repost</span><span>Send</span></div></article><button class="sp-pick" type="button" aria-pressed="false" data-d="B">Choose draft B</button></div>
-    <div class="sp-col"><p class="sp-tag">Draft C: start with the objection<small>LinkedIn</small></p><article class="sp" aria-label="LinkedIn preview"><div class="sp-h"><span class="sp-av" aria-hidden="true">BR</span><div class="sp-who"><b>Bradley Ross</b><span>Agentic AI architect and developer. I teach practical AI.</span></div></div><div class="sp-t cut"><p>"Make this look better" is not a prompt. It is a wish.<br> <br> Name three things instead:<br> 1. The job: a report, a deck, a post.<br> 2. The reader: who is this for?<br> 3. The shape: answer first, or story first?<br> <br> One sentence with those three beats ten rounds of "try again".<br> <br> I put the rest of the brief in a free library. Link in the comments.</p></div><button class="sp-more" type="button" aria-expanded="false">more</button><div class="sp-m r11" style="background-image:var(--ph-bulb)" role="img" aria-label="A lightbulb bursting with coloured paint. Over it, the words: Stop saying "make it look better"."><b aria-hidden="true">Stop saying "make it look better".</b></div><div class="sp-a" aria-hidden="true"><span>Like</span><span>Comment</span><span>Repost</span><span>Send</span></div></article><button class="sp-pick" type="button" aria-pressed="false" data-d="C">Choose draft C</button></div>
-  </div>
-  <p class="sp-chosen" aria-live="polite"></p>
-  <div class="ask"><h3>Ask for it like this</h3><blockquote>Write three drafts of a LinkedIn post about my notes, in my voice. Take a different way in for each. Show each one as it will look in the feed, side by side, with the text cut where the feed would cut it. Do not post anything.</blockquote><button class="copy" type="button">Copy</button></div>
-  <div class="sp-note"><b>Advanced: have them waiting when you wake up</b><p>Run the same request on a schedule. Each morning your assistant drafts from your notes and saves the previews as one page. You review over coffee and post the one you choose.</p><small>This needs an assistant that can run tasks on a schedule. It is a recommendation, not something this library sets up for you.</small></div>
-</div></section>
-<section class="sp-sec"><div class="wrap">
-  <h2>One message, two platforms</h2>
-  <p class="sp-lede">The same idea needs a different picture and a different way to tell it. LinkedIn gets the lesson and the steps. Instagram gets the feeling, with the picture first.</p>
-  <div class="sp-duo two">
-    <div class="sp-one"><p class="sp-tag">LinkedIn<small>The lesson, with steps</small></p><article class="sp" aria-label="LinkedIn preview"><div class="sp-h"><span class="sp-av" aria-hidden="true">BR</span><div class="sp-who"><b>Bradley Ross</b><span>Agentic AI architect and developer. I teach practical AI.</span></div></div><div class="sp-t cut"><p>Stop presenting slides. Present a small website.<br> <br> A deck is a stack of pictures. A page can move: a photo that pans like film, a chart that draws itself, steps that light up as you scroll.<br> <br> Your chatbot can already build that page. It needs a brief.<br> <br> 1. Paste one link to the free library.<br> 2. Add your notes.<br> 3. Say: "Show this as a visionary deck."<br> <br> It gets you most of the way to a solid draft. You check the numbers and you sign it.</p></div><button class="sp-more" type="button" aria-expanded="false">more</button><div class="sp-m " style="background-image:var(--ph-toronto)" role="img" aria-label="A city skyline at sunset under a cloud shaped like an infinity sign. Over it, the words: Present a website, not a slide show."><b aria-hidden="true">Present a website, not a slide show.</b></div><div class="sp-a" aria-hidden="true"><span>Like</span><span>Comment</span><span>Repost</span><span>Send</span></div></article></div>
-    <div class="sp-one"><p class="sp-tag">Instagram<small>The feeling, picture first</small></p><article class="sp pic" aria-label="Instagram preview"><div class="sp-h"><span class="sp-av" aria-hidden="true">BR</span><div class="sp-who"><b>Bradley Ross</b><span>Practical AI</span></div></div><div class="sp-m r45" style="background-image:var(--ph-fog)" role="img" aria-label="A house on stilts in fog with one lit window. Over it, the words: Your best thinking deserves a better page."><b aria-hidden="true">Your best thinking deserves a better page.</b></div><div class="sp-i" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l16-7-6 15-3-6z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4h12v16l-6-4-6 4z"/></svg></div><div class="sp-cap"><p><b>Bradley Ross</b> Great answer. Grey page. You know the feeling. Give your AI a design brief and the same notes come back as something you are proud to send. The brief is free. Link in bio.</p><p class="tags">#PracticalAI #AItools #Presentations</p></div></article></div>
-  </div>
-  <div class="ask"><h3>Ask for it like this</h3><blockquote>Tell this as a LinkedIn post and as an Instagram post, in my voice. Use a different picture and a different way into the story for each. Show both as previews, side by side.</blockquote><button class="copy" type="button">Copy</button></div>
-</div></section>
-<section class="sp-sec"><div class="wrap">
-  <h2>One of each: Facebook, TikTok and email</h2>
-  <p class="sp-lede">A link post for the people who know you, a three-beat video for the people who do not, and an email for the people who asked.</p>
-  <div class="sp-duo">
-    <div class="sp-one"><p class="sp-tag">Facebook<small>A link post, friendly</small></p><article class="sp" aria-label="Facebook preview"><div class="sp-h"><span class="sp-av" aria-hidden="true">BR</span><div class="sp-who"><b>Bradley Ross</b><span>Agentic AI architect and developer. I teach practical AI.</span></div></div><div class="sp-t"><p>For everyone who has asked an AI for a report and got a wall of grey text back: I put together a free design brief for your chatbot.<br> <br> Paste one link, add your notes, ask in one sentence. It covers reports, slide decks and posts like this one.<br> <br> Tell me what you make with it.</p></div><div class="sp-m " style="background-image:var(--ph-bulb)" role="img" aria-label="A lightbulb bursting with coloured paint."></div><div class="sp-link"><span>github.com</span><b>Practical AI: put your smart intern to work</b><p>Free tools for the jobs you repeat. Start in five minutes.</p></div><div class="sp-a" aria-hidden="true"><span>Like</span><span>Comment</span><span>Share</span></div></article></div>
-    <div class="sp-one"><p class="sp-tag">TikTok<small>Three beats in nine seconds</small></p><article class="sp-v" aria-label="TikTok preview"><div class="bg" style="background-image:var(--ph-class)" role="img" aria-label="A cartoon of a worried person at a desk, looking at a screen full of unimpressed faces."></div><div class="bg b2" style="background-image:var(--ph-cat)" role="img" aria-label="A wide-eyed cat with its mouth open in delight."></div><div class="beats"><p><span>You asked AI for a report.</span></p><p><span>It came back grey.</span></p><p><span>Then you gave it a brief.</span></p></div><div class="side" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l16-7-6 15-3-6z"/></svg></div><div class="foot"><b>@your-handle</b>Same notes. Same AI. Different page. The brief is free. #PracticalAI</div></article></div>
-    <div class="sp-one"><p class="sp-tag">Email<small>The inbox line, then the message</small></p><article class="sp-mail" aria-label="Email preview"><div class="sp-inbox"><b>Bradley Ross</b><b>A design brief for your AI. Free.</b><span>Paste one link, add your notes, ask in one sentence.</span></div><div class="sp-body"><div class="banner" style="background-image:var(--ph-toronto);background-position:50% 74%" role="img" aria-label="A city skyline at sunset under a cloud shaped like an infinity sign."></div><div class="in"><h3>Stop saying "make it look better"</h3><p>Your AI writes well and designs badly, because nobody told it who the page is for. So I wrote the brief once and made it free.</p><ol><li>Paste one link.</li><li>Add your notes.</li><li>Ask in one sentence.</li></ol><a class="sp-btn" href="https://github.com/bar181/practical-ai">Try it in five minutes</a><p>Bradley</p></div><p class="fine">A sample email. The footer of a real one names why the reader is on your list and how to leave it.</p></div></article></div>
-  </div>
-  <p class="sp-lede" style="margin-top:28px">More examples for each platform, and a short blog post, are in the tabs beside this one, starting with <a href="#post-linkedin" data-go="post-linkedin">LinkedIn</a>.</p>
-</div></section>
-<section class="anat"><div class="wrap">
-  <h2>Behind this page</h2>
-  <p class="measure">Every draft here is an example about this repository, written from Bradley Ross's own teaching phrases. None has been posted. The frames are plain on purpose: they copy the shape of a feed, not any platform's logo or interface, and they show no likes or follower counts, because those would be invented.</p>
-  <div class="anat-grid">
-    <div><h3>How it is built</h3><ol><li>The use case in one line, then three short reasons</li><li>Three drafts of one post, side by side, with a way to choose</li><li>The same message on two platforms, to show what changes</li><li>One example of each remaining format</li><li>The sentence that asks for each</li></ol></div>
-    <div><h3>Design rules</h3><ul><li>Show the draft at the width and shape its audience will see</li><li>Cut long text where a feed would, and let the reviewer open it</li><li>Put the words on the picture only when they read at thumbnail size</li><li>Never show invented likes, comments or followers</li><li>Name the platform above the frame. Do not draw its logo</li><li>Stop at the preview. A person presses post</li></ul></div>
-  </div>
-</div></section>
-<nav class="pager" aria-label="Previous and next tab"><div><label for="t-layouts">← Six layouts</label><label for="t-post-linkedin">LinkedIn →</label></div></nav></div>
-<div class="view sp-view" id="v-post-linkedin" data-tab="post-linkedin" data-title="LinkedIn">
-<section class="sp-top"><div class="wrap"><h1>LinkedIn: the opening is the post</h1><p class="sp-lede-top">Most readers see the first lines and the picture. The preview cuts your text there, so that is what you judge.</p></div></section>
-<section class="sp-sec"><div class="wrap">
-  <h2>A text post in your own voice</h2><p class="sp-lede">No picture. The first two lines have to earn the tap on "more".</p><div class="sp-one"><article class="sp" aria-label="LinkedIn preview"><div class="sp-h"><span class="sp-av" aria-hidden="true">BR</span><div class="sp-who"><b>Bradley Ross</b><span>Agentic AI architect and developer. I teach practical AI.</span></div></div><div class="sp-t cut"><p>After 12 courses, more than 40 cohorts and 900 students, one thing still surprises people in week one.<br> <br> AI does not need a cleverer prompt. It needs a brief.<br> <br> Think of it as a smart intern: it has read every book in the world and it has never met you. Tell it the job, the reader and the shape, and the same notes come back as work you can use.<br> <br> I wrote my brief down and made it free. It is called Artifact Studio. Link in the comments.</p></div><button class="sp-more" type="button" aria-expanded="false">more</button><div class="sp-a" aria-hidden="true"><span>Like</span><span>Comment</span><span>Repost</span><span>Send</span></div></article></div>
-  <h2 style="margin-top:48px">A three-slide document post</h2><p class="sp-lede">The hook, the steps, the ask. Swipe the slides as a reader would.</p><div class="sp-one"><article class="sp" aria-label="LinkedIn preview"><div class="sp-h"><span class="sp-av" aria-hidden="true">BR</span><div class="sp-who"><b>Bradley Ross</b><span>Agentic AI architect and developer. I teach practical AI.</span></div></div><div class="sp-t"><p>Three slides on why your AI pages look grey, and the one-sentence fix. Swipe.</p></div><div class="sp-car" tabindex="0" role="region" aria-label="Three slides. Swipe or scroll sideways."><div class="sp-m r45 flat" role="img" aria-label="Slide 1 of 3: Your AI is a smart intern.. It has read every book in the world. It has never met you."><b aria-hidden="true">Your AI is a smart intern.<small>It has read every book in the world. It has never met you.</small></b></div><div class="sp-m r45 flat" role="img" aria-label="Slide 2 of 3: Give it three things.. The job. The reader. The shape. One sentence is enough."><b aria-hidden="true">Give it three things.<small>The job. The reader. The shape. One sentence is enough.</small></b></div><div class="sp-m r45 flat" role="img" aria-label="Slide 3 of 3: The brief is free.. Artifact Studio, part of Practical AI. Link in the comments."><b aria-hidden="true">The brief is free.<small>Artifact Studio, part of Practical AI. Link in the comments.</small></b></div></div><div class="sp-dots" aria-hidden="true"><i></i><i></i><i></i></div><div class="sp-a" aria-hidden="true"><span>Like</span><span>Comment</span><span>Repost</span><span>Send</span></div></article></div>
-  <h2 style="margin-top:44px;font-size:1.5rem">What to check in this preview</h2>
-  <ul class="sp-check"><li>Do the lines above "more" make sense alone?</li><li>Does the picture read at the size of a thumb?</li><li>Is there one ask, at the end?</li><li>Does it sound like you, or like a brochure?</li></ul>
-  <div class="ask"><h3>Ask for it like this</h3><blockquote>Write a LinkedIn post from my notes in my voice. Here are three posts I am proud of, to match. Show it as it will look in the feed, cut where the feed would cut it. Then give me a second version as a three-slide document post.</blockquote><button class="copy" type="button">Copy</button></div>
-  <p class="sp-lede" style="margin-top:24px">These are example drafts about this repository. None has been posted. The frame copies the shape of the platform, not its logo or interface, and shows no invented likes or followers. The use case, with three drafts side by side, is on the <a href="#socials" data-go="socials">Three drafts tab</a>.</p>
-</div></section>
-<nav class="pager" aria-label="Previous and next tab"><div><label for="t-socials">← Three drafts</label><label for="t-post-instagram">Instagram →</label></div></nav></div>
-<div class="view sp-view" id="v-post-instagram" data-tab="post-instagram" data-title="Instagram">
-<section class="sp-top"><div class="wrap"><h1>Instagram: the picture is the post</h1><p class="sp-lede-top">The caption is the second thing anyone reads. Judge the picture first, at phone width, then the first line of the caption.</p></div></section>
-<section class="sp-sec"><div class="wrap">
-  <h2>A three-picture carousel</h2><p class="sp-lede">One idea per picture, a few words on each. Swipe it.</p><div class="sp-one"><article class="sp pic" aria-label="Instagram preview"><div class="sp-h"><span class="sp-av" aria-hidden="true">BR</span><div class="sp-who"><b>Bradley Ross</b><span>Practical AI</span></div></div><div class="sp-car" tabindex="0" role="region" aria-label="Three pictures. Swipe or scroll sideways."><div class="sp-m r11" style="background-image:var(--ph-cat)" role="img" aria-label="A wide-eyed cat with its mouth open in delight. Over it, the words: This is the face you want."><b aria-hidden="true">This is the face you want.</b></div><div class="sp-m r11" style="background-image:var(--ph-dog)" role="img" aria-label="A small dog with its paws on a desk, looking closely at a laptop. Over it, the words: Your AI is keen, fast and new here."><b aria-hidden="true">Your AI is keen, fast and new here.</b></div><div class="sp-m r11" style="background-image:var(--ph-puzzle)" role="img" aria-label="Coloured puzzle pieces on a dark table. Over it, the words: Give it the job, the reader and the shape."><b aria-hidden="true">Give it the job, the reader and the shape.</b></div></div><div class="sp-dots" aria-hidden="true"><i></i><i></i><i></i></div><div class="sp-i" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l16-7-6 15-3-6z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4h12v16l-6-4-6 4z"/></svg></div><div class="sp-cap"><p><b>Bradley Ross</b> Three pictures, one idea: your AI is a smart intern, and it needs a brief. Swipe. The brief is free. Link in bio.</p><p class="tags">#PracticalAI #SmartIntern #AItools</p></div></article></div>
-  <h2 style="margin-top:48px">A quote square</h2><p class="sp-lede">No photograph at all. One sentence, large.</p><div class="sp-one"><article class="sp pic" aria-label="Instagram preview"><div class="sp-h"><span class="sp-av" aria-hidden="true">BR</span><div class="sp-who"><b>Bradley Ross</b><span>Practical AI</span></div></div><div class="sp-m r11 flat" role="img" aria-label="A dark square with the words: Make this look better is not a prompt. It is a wish."><b aria-hidden="true">"Make this look better" is not a prompt.<small>It is a wish.</small></b></div><div class="sp-i" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l16-7-6 15-3-6z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4h12v16l-6-4-6 4z"/></svg></div><div class="sp-cap"><p><b>Bradley Ross</b> Say the job, the reader and the shape. One sentence does more than ten rounds of "try again".</p><p class="tags">#PracticalAI #Prompting</p></div></article></div>
-  <h2 style="margin-top:44px;font-size:1.5rem">What to check in this preview</h2>
-  <ul class="sp-check"><li>Can you read the words on the picture at arm's length?</li><li>Does the first picture work without the others?</li><li>Is the first line of the caption the one you would say out loud?</li><li>Three tags or fewer, each one a word your reader uses?</li></ul>
-  <div class="ask"><h3>Ask for it like this</h3><blockquote>Make an Instagram carousel of three square pictures from my notes and my photos, with a few words on each and a caption in my voice. Show it as it will look in the feed so I can swipe it.</blockquote><button class="copy" type="button">Copy</button></div>
-  <p class="sp-lede" style="margin-top:24px">These are example drafts about this repository. None has been posted. The frame copies the shape of the platform, not its logo or interface, and shows no invented likes or followers. The use case, with three drafts side by side, is on the <a href="#socials" data-go="socials">Three drafts tab</a>.</p>
-</div></section>
-<nav class="pager" aria-label="Previous and next tab"><div><label for="t-post-linkedin">← LinkedIn</label><label for="t-post-tiktok">TikTok →</label></div></nav></div>
-<div class="view sp-view" id="v-post-tiktok" data-tab="post-tiktok" data-title="TikTok">
-<section class="sp-top"><div class="wrap"><h1>TikTok: three beats, nine seconds</h1><p class="sp-lede-top">A short video is a storyboard before it is a video. See the three frames side by side and you can fix the hook before you film anything.</p></div></section>
-<section class="sp-sec"><div class="wrap">
-  <h2>The storyboard</h2><p class="sp-lede">One frame per beat, with the words that will be on screen. The moving version is on the Three drafts tab.</p>
-  <div class="sp-row" tabindex="0" role="region" aria-label="Three storyboard frames. Swipe or scroll sideways.">
-    <div class="sp-col"><p class="sp-tag">Beat 1: the hook<small>Say what happened</small></p><article class="sp-v still" aria-label="TikTok storyboard frame, 0 to 3 seconds"><div class="bg" style="background-image:var(--ph-class)" role="img" aria-label="A cartoon of a worried person at a desk, looking at a screen full of unimpressed faces."></div><span class="when">0 to 3 seconds</span><div class="beats"><p><span>You asked AI for a report.</span></p></div><div class="side" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l16-7-6 15-3-6z"/></svg></div></article></div>
-    <div class="sp-col"><p class="sp-tag">Beat 2: the turn<small>Name the problem</small></p><article class="sp-v still" aria-label="TikTok storyboard frame, 3 to 6 seconds"><div class="bg" style="background-image:var(--ph-fog)" role="img" aria-label="A house on stilts in fog with one lit window."></div><span class="when">3 to 6 seconds</span><div class="beats"><p><span>It came back grey.</span></p></div><div class="side" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l16-7-6 15-3-6z"/></svg></div></article></div>
-    <div class="sp-col"><p class="sp-tag">Beat 3: the payoff<small>Show the result</small></p><article class="sp-v still" aria-label="TikTok storyboard frame, 6 to 9 seconds"><div class="bg" style="background-image:var(--ph-cat)" role="img" aria-label="A wide-eyed cat with its mouth open in delight."></div><span class="when">6 to 9 seconds</span><div class="beats"><p><span>Then you gave it a brief.</span></p></div><div class="side" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l16-7-6 15-3-6z"/></svg></div></article></div>
-  </div>
-  <h2 style="margin-top:44px;font-size:1.5rem">What you say</h2>
-  <p class="sp-lede">"You asked an AI for a report and it came back as a grey wall of text. The thinking was fine. Nobody told it who the page was for. Give it a brief and the same notes come back like this. The brief is free. Link in my profile."</p>
-  <h2 style="margin-top:44px;font-size:1.5rem">What to check in this preview</h2>
-  <ul class="sp-check"><li>Does the first frame make sense with the sound off?</li><li>Are the words on screen seven or fewer per beat?</li><li>Is the payoff a picture, not a sentence?</li><li>Is the ask in the last two seconds?</li></ul>
-  <div class="ask"><h3>Ask for it like this</h3><blockquote>Storyboard a nine-second TikTok from my notes: three beats, the words on screen for each, and what I say. Show the three frames side by side at phone shape, using my photos.</blockquote><button class="copy" type="button">Copy</button></div>
-  <p class="sp-lede" style="margin-top:24px">These are example drafts about this repository. None has been posted. The frame copies the shape of the platform, not its logo or interface, and shows no invented likes or followers. The use case, with three drafts side by side, is on the <a href="#socials" data-go="socials">Three drafts tab</a>.</p>
-</div></section>
-<nav class="pager" aria-label="Previous and next tab"><div><label for="t-post-instagram">← Instagram</label><label for="t-post-facebook">Facebook →</label></div></nav></div>
-<div class="view sp-view" id="v-post-facebook" data-tab="post-facebook" data-title="Facebook">
-<section class="sp-top"><div class="wrap"><h1>Facebook: write to people who know you</h1><p class="sp-lede-top">This is the feed where a question does better than an announcement. The preview shows the whole post, the picture and the row where the replies start.</p></div></section>
-<section class="sp-sec"><div class="wrap">
-  <h2>A question post with a picture</h2><p class="sp-lede">Warm, short, and it asks for an answer.</p><div class="sp-one"><article class="sp" aria-label="Facebook preview"><div class="sp-h"><span class="sp-av" aria-hidden="true">BR</span><div class="sp-who"><b>Bradley Ross</b><span>Agentic AI architect and developer. I teach practical AI.</span></div></div><div class="sp-t"><p>A question for the small business owners here.<br> <br> What is one job you do every week that starts with a blank page? A quote, a report, a newsletter, a post?<br> <br> I am building free tools that get an AI most of the way to a solid draft of jobs like that. You keep the judgement. Tell me yours and I will try it.</p></div><div class="sp-m " style="background-image:var(--ph-home)" role="img" aria-label="A watercolour of a house and garden in summer. Over it, the words: What do you write every week?"><b aria-hidden="true">What do you write every week?</b></div><div class="sp-a" aria-hidden="true"><span>Like</span><span>Comment</span><span>Share</span></div></article></div>
-  <h2 style="margin-top:44px;font-size:1.5rem">What to check in this preview</h2>
-  <ul class="sp-check"><li>Would you say this to a neighbour?</li><li>Is there one question, and is it easy to answer?</li><li>Does the picture carry the question by itself?</li><li>If there is a link, do its title and line read well in the grey strip?</li></ul>
-  <div class="ask"><h3>Ask for it like this</h3><blockquote>Write a Facebook post from my notes in my voice, as a question my customers can answer in one line. Show it as it will look in the feed, with my photo and a few words over it.</blockquote><button class="copy" type="button">Copy</button></div>
-  <p class="sp-lede" style="margin-top:24px">These are example drafts about this repository. None has been posted. The frame copies the shape of the platform, not its logo or interface, and shows no invented likes or followers. The use case, with three drafts side by side, is on the <a href="#socials" data-go="socials">Three drafts tab</a>.</p>
-</div></section>
-<nav class="pager" aria-label="Previous and next tab"><div><label for="t-post-tiktok">← TikTok</label><label for="t-post-email">Email →</label></div></nav></div>
-<div class="view sp-view" id="v-post-email" data-tab="post-email" data-title="Email">
-<section class="sp-top"><div class="wrap"><h1>Email: two previews, not one</h1><p class="sp-lede-top">The inbox line decides whether the message is opened. The body decides what happens next. See both, at the width of a phone.</p></div></section>
-<section class="sp-sec"><div class="wrap">
-  <h2>A newsletter in HTML</h2><p class="sp-lede">The sender, the subject and the preview line sit above the message, as they do in an inbox.</p><div class="sp-one" style="max-width:600px"><article class="sp-mail" aria-label="Email preview"><div class="sp-inbox"><b>Bradley Ross</b><b>Your AI is a smart intern. Here is its brief.</b><span>Three steps, five minutes, free.</span></div><div class="sp-body"><div class="banner" style="background-image:var(--ph-dog);background-position:60% 38%" role="img" aria-label="A small dog with its paws on a desk, looking closely at a laptop."></div><div class="in"><h3>Meet your smart intern</h3><p>It has read every book in the world. It has never met you. That is why a good answer so often arrives on a page you would not send.</p><p>Practical AI is not about breakthroughs. It is about the jobs you repeat every day, week and month: what the AI can do, and what stays yours.</p><h3 style="font-size:1.3rem;margin-top:22px">Start with the page</h3><ol><li>Paste one link to the free library.</li><li>Add your notes.</li><li>Ask in one sentence: "Show this as a report for my partner."</li></ol><a class="sp-btn" href="https://github.com/bar181/practical-ai">Try it in five minutes</a><p>It gets you most of the way to a solid draft. You check it and you sign it.</p><p>Bradley</p></div><p class="fine">A sample email. The footer of a real one names why the reader is on your list and how to leave it.</p></div></article></div>
-  <h2 style="margin-top:44px;font-size:1.5rem">What to check in this preview</h2>
-  <ul class="sp-check"><li>Would you open this from the subject and the preview line alone?</li><li>Is there one button, and does it say what happens?</li><li>Does the message still make sense with pictures turned off?</li><li>Is your name at the bottom, and a way to leave the list?</li></ul>
-  <div class="ask"><h3>Ask for it like this</h3><blockquote>Write a short email newsletter from my notes in my voice. Show the inbox line first: sender, subject and preview text. Then the message as an HTML email at phone width, with one picture and one button.</blockquote><button class="copy" type="button">Copy</button></div>
-  <p class="sp-lede" style="margin-top:24px">These are example drafts about this repository. None has been posted. The frame copies the shape of the platform, not its logo or interface, and shows no invented likes or followers. The use case, with three drafts side by side, is on the <a href="#socials" data-go="socials">Three drafts tab</a>.</p>
-</div></section>
-<nav class="pager" aria-label="Previous and next tab"><div><label for="t-post-facebook">← Facebook</label><label for="t-post-blog">Short blog →</label></div></nav></div>
-<div class="view sp-view" id="v-post-blog" data-tab="post-blog" data-title="Short blog">
-<section class="sp-top"><div class="wrap"><h1>A short blog: see it as a page</h1><p class="sp-lede-top">Read the draft as your visitor will: the picture, the title, the first paragraph. If those three do not hold, the rest is not read.</p></div></section>
-<section class="sp-sec"><div class="wrap">
-  <h2>A two-minute post</h2><p class="sp-lede">A title that argues, one quotable line, and an ending that says what to do.</p><div class="sp-one" style="max-width:680px"><article class="sp-blog" aria-label="Short blog preview"><div class="banner" style="background-image:var(--ph-bulb);background-position:50% 40%" role="img" aria-label="A lightbulb bursting with coloured paint."></div><div class="in"><h3>"Make this look better" is not a prompt</h3><p class="deck">Your AI is not short of talent. It is short of a brief.</p><p class="by">Bradley Ross. A two-minute read.</p><p>Ask an AI for a report and the thinking is often excellent. Then it arrives on a grey page, and you type the sentence everyone types: make this look better.</p><p>That sentence is a wish. The AI does not know what better means to you. It has read every book in the world and it has never met you.</p><blockquote>Treat it as a smart intern, and hand it a brief on day one.</blockquote><p>A brief names three things: the job, the reader and the shape. "A one-page report for my business partner, who reads on her phone and wants the answer first." Now the AI has something to design for.</p><p>I wrote the rest of my brief down, with templates, voices and photo effects, and made it free. It is called Artifact Studio. It gets you most of the way to a solid draft. The judgement stays with you.</p></div></article></div>
-  <h2 style="margin-top:44px;font-size:1.5rem">What to check in this preview</h2>
-  <ul class="sp-check"><li>Does the title make a claim someone could disagree with?</li><li>Does the first paragraph start with the reader, not with you?</li><li>Is there one line worth quoting?</li><li>Does the last paragraph say what to do next?</li></ul>
-  <div class="ask"><h3>Ask for it like this</h3><blockquote>Write a short blog post from my notes in my voice: a title that makes a claim, about two hundred words, one line worth quoting. Show it as a finished page with my photo at the top.</blockquote><button class="copy" type="button">Copy</button></div>
-  <p class="sp-lede" style="margin-top:24px">These are example drafts about this repository. None has been posted. The frame copies the shape of the platform, not its logo or interface, and shows no invented likes or followers. The use case, with three drafts side by side, is on the <a href="#socials" data-go="socials">Three drafts tab</a>.</p>
-</div></section>
-<nav class="pager" aria-label="Previous and next tab"><div><label for="t-post-email">← Email</label><label for="t-social">Picture formats →</label></div></nav></div>
+<nav class="pager" aria-label="Previous and next tab"><div><label for="t-looks">← Nine looks</label><label for="t-social">Picture formats →</label></div></nav></div>
 <div class="view" id="v-social" data-title="Social formats">
   <section class="so"><div class="wrap">
     <h1>Seven social formats</h1>
@@ -2504,7 +2256,7 @@ recipe and the voice. Each card has six fields. To add a look, fill in the blank
     </div>
 <div class="levels"><div class="ask"><h3><b>Short ask:</b> one sentence</h3><blockquote>Make a square social post from this one sentence, in my colours.</blockquote><button class="copy" type="button">Copy</button></div><div class="ask"><h3><b>Full ask:</b> you name the voice, look and parts</h3><blockquote>Make three social pictures from my notes: a square post with my main claim in seven words or fewer, a portrait post with my best number and a before-and-after bar, and a link preview with the page title. Use the colours in my attached spec, very large type, and my company name small at the bottom. Give me each as a PNG at full size.</blockquote><button class="copy" type="button">Copy</button></div><div class="ask"><h3><b>With the skill:</b> it does the whole job</h3><blockquote>Use the artifact-studio skill. Templates: social square, portrait stat and link preview. Content: the attached notes. Invent no facts.</blockquote><button class="copy" type="button">Copy</button></div></div>
   </div></section>
-<nav class="pager" aria-label="Previous and next tab"><div><label for="t-post-blog">← Short blog</label><label for="t-voice-keynote">Visionary →</label></div></nav></div>
+<nav class="pager" aria-label="Previous and next tab"><div><label for="t-layouts">← Six layouts</label><label for="t-voice-keynote">Visionary →</label></div></nav></div>
 <div class="view" id="v-voice-keynote" data-tab="voices" data-title="The keynote"><aside class="about" aria-label="About this example"><div class="wrap"><p><b>The keynote voice.</b> Inspired by the product launches of visionary tech CEOs. Use it when the reader should feel that something new is possible.</p><p class="about-n">A full example follows. <a href="#anat-voice-keynote" data-jump="anat-voice-keynote">How it is built, and the sentence that asks for it</a></p></div></aside>
   <section class="kn-s"><h1 class="see">AI has read every book in the world.</h1><p class="kn-note">Scroll. One idea per screen.</p></section>
   <section class="kn-s kn-dim"><h2 class="see">It has never met you.</h2></section>
@@ -2847,15 +2599,6 @@ STUDIO.deck=root=>{$$('.dk',root).forEach(dk=>{const slides=$$('.dk-s',dk);if(!s
 </script>
 <script>
 try{(()=>{
-/* post previews: cut long text where a feed would, with a control to read the rest; and let one of several drafts be chosen */
-STUDIO.posts=root=>{root.classList.add('sp-js');
-  for(const b of $$('.sp-more',root)){const t=b.previousElementSibling;b.addEventListener('click',()=>{const open=t.classList.toggle('cut')===false;b.setAttribute('aria-expanded',open);b.textContent=open?'less':'more'})}
-  const out=$('.sp-chosen',root),picks=$$('.sp-pick',root);
-  for(const b of picks)b.addEventListener('click',()=>{picks.forEach(x=>x.setAttribute('aria-pressed',x===b));out.textContent=`You chose draft ${b.dataset.d}. Tell your assistant: "Go with draft ${b.dataset.d}. Tighten the last line."`})};
-})()}catch(err){console.error(err)}
-</script>
-<script>
-try{(()=>{
 onView("photo",root=>{
 const DATA=STUDIO.data;
 /* chart */
@@ -2980,41 +2723,6 @@ onView("lookvoice",root=>{
    b.addEventListener('click',()=>{if(document.startViewTransition&&!reduce)document.startViewTransition(()=>set(L.id));else set(L.id)});bar.append(b);}
  set('fog');}
 });
-})()}catch(err){console.error(err)}
-</script>
-<script>
-try{(()=>{
-onView("socials",root=>STUDIO.posts(root));
-})()}catch(err){console.error(err)}
-</script>
-<script>
-try{(()=>{
-onView("post-linkedin",root=>STUDIO.posts(root));
-})()}catch(err){console.error(err)}
-</script>
-<script>
-try{(()=>{
-onView("post-instagram",root=>STUDIO.posts(root));
-})()}catch(err){console.error(err)}
-</script>
-<script>
-try{(()=>{
-onView("post-tiktok",root=>STUDIO.posts(root));
-})()}catch(err){console.error(err)}
-</script>
-<script>
-try{(()=>{
-onView("post-facebook",root=>STUDIO.posts(root));
-})()}catch(err){console.error(err)}
-</script>
-<script>
-try{(()=>{
-onView("post-email",root=>STUDIO.posts(root));
-})()}catch(err){console.error(err)}
-</script>
-<script>
-try{(()=>{
-onView("post-blog",root=>STUDIO.posts(root));
 })()}catch(err){console.error(err)}
 </script>
 <script>

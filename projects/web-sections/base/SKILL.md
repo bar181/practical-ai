@@ -1,6 +1,6 @@
 ---
 name: web-sections
-description: Chooses the sections a website or page needs from what it has to do, then builds a responsive, accessible, single-file page from a ready library of sections (six heroes, gallery, swipe gallery, about, features, steps, quote, pricing, questions, contact, call to action, article, header and footer) and seven social post sizes, filled with the person's own content and placeholders where content is missing. Use when someone says "build me a website", "make a landing page", "I need a home page for my business", "what sections should my site have", "give me a page structure", "start a site", or asks for a social post size. It sets the structure; Tone Studio writes the words and Artifact Studio makes it beautiful.
+description: Chooses the sections a website or page needs, or the format and preview frame for a social post, from what it has to do, then builds a responsive, accessible, single-file page from a ready library of sections (six heroes, gallery, swipe gallery, about, features, steps, quote, pricing, questions, contact, call to action, article, header and footer) and seven social post sizes, filled with the person's own content and placeholders where content is missing. Use when someone says "build me a website", "make a landing page", "I need a home page for my business", "what sections should my site have", "give me a page structure", "start a site", or asks for a social post size. It sets the structure; Tone Studio writes the words and Artifact Studio makes it beautiful.
 license: Apache-2.0
 metadata:
   author: Bradley Ross (https://www.linkedin.com/in/bradaross/)
@@ -72,9 +72,14 @@ If there is enough to start, start. Do not ask for photos or colours: use placeh
 
 The sections are in `template/sections.html` beside this file, each between
 `<!-- SECTION: name -->` and `<!-- /SECTION -->` with a "use when" line. Its shared style block has
-six colour tokens and two font tokens. Photos are in `template/img/`. Social post sizes are in
-`template/social/`: square 1080 by 1080, portrait 1080 by 1350, story 1080 by 1920, link preview
-1200 by 630, and a three-slide carousel.
+six colour tokens and two font tokens. Photos are in `template/img/`. Social post pictures are in
+`template/social/`: five shapes (square 1080 by 1080, portrait 1080 by 1350, story 1080 by 1920,
+link preview 1200 by 630, and a three-slide carousel), seven files in all.
+
+**Post previews.** When the person wants to see a social post, an email or a blog post the way its
+audience will (several drafts, in the frame of LinkedIn, Instagram, TikTok, Facebook, an inbox or a
+blog), read `template/post-previews.md` and use the frames in `template/post-previews.html`. Never
+hand back a bare list of drafts. Nothing is posted: the person chooses and posts.
 
 If you cannot open the file (for example, this skill was pasted into a chat), build the sections
 from these rules: a sticky header whose menu folds into an HTML `details` button on phones; a hero
@@ -94,7 +99,7 @@ questions as `details` elements; a contact form with visible labels; a dark foot
 ## The output
 
 1. **The page**: one self-contained HTML file.
-2. **A note** with four headings:
+2. **A note** with five headings:
 
 ```
 Page type: <type>, because <one line>

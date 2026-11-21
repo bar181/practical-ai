@@ -28,8 +28,8 @@ assistant other than Claude has been tried, and nobody but its author has used i
 had checked yet, as a full page and as a short slide deck. Both are single HTML files; download one
 and open it in a browser.
 
-- [`2026-11-15-artifact-studio-library.html`](2026-11-15-artifact-studio-library.html): the report.
-- [`2026-11-15-artifact-studio-library-deck.html`](2026-11-15-artifact-studio-library-deck.html): the deck.
+- [`2026-11-15-artifact-studio-library.html`](../../../docs/reports/2026-11-15-artifact-studio-library.html): the report.
+- [`2026-11-15-artifact-studio-library-deck.html`](../../../docs/reports/2026-11-15-artifact-studio-library-deck.html): the deck.
 
 A copy of each is in [`docs/reports/`](../../../docs/reports/).
 
@@ -48,7 +48,7 @@ The author added eight effects from the Bradley Academy website as a new showcas
 
 ## Not yet checked
 
-- Any assistant other than Claude: ChatGPT, Gemini, Copilot and the others named on the README.
+- Any assistant other than Claude: ChatGPT, Gemini, Copilot and the others.
 - A real phone, Firefox, or a screen reader. Pages were checked in Chrome and in the WebKit engine
   that Safari is built on.
 - Use by anyone other than its author.

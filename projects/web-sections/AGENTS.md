@@ -1,7 +1,7 @@
 # Web Sections: instructions for agents
 
-You are here because a person wants a website or page started: the sections, their order and a
-first responsive build. People start at the [README](README.md).
+You are here because a person wants a website or page started (the sections, their order and a
+first responsive build), a social post size, or drafts of a post shown the way a feed shows them. People start at the [README](README.md).
 
 ## The path
 
@@ -33,6 +33,7 @@ layout is in the skill.
 | The section library | [`base/template/sections.html`](base/template/sections.html) |
 | Photos for the library | [`base/template/img/`](base/template/img/) |
 | Social post sizes | [`base/template/social/`](base/template/social/) |
+| Post previews: drafts shown as each platform shows them | [`base/template/post-previews.md`](base/template/post-previews.md), with working frames in [`post-previews.html`](base/template/post-previews.html) and their source in [`_build/post-previews/`](_build/post-previews/README.md) |
 | A worked example | [`base/examples/cafe-home.html`](base/examples/cafe-home.html) |
 | A saved section set (Level 2) | [`level-2-files/`](level-2-files/) |
 | The tests and evidence | [`_build/eval/`](_build/eval/), [`quality-results/`](quality-results/README.md) |

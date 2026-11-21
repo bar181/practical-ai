@@ -4,8 +4,10 @@ A voice decides what is said, in what order, and how the page behaves. It is mor
 same facts told in two voices produce two different pages. Each voice has a full example in the
 studio: one tab for each voice in `showcase.html`.
 
-These are the canonical voice cards for this repository. Other tools that need a teaching or
-writing style should point here instead of keeping their own copy.
+These cards say how each voice looks and behaves on a page. How to write in each voice, with the
+story orders and formats such as an investor deck or an executive one-pager, is in Tone Studio:
+https://github.com/bar181/practical-ai/tree/main/projects/tone-studio. When the two disagree on
+the words, Tone Studio wins; on the page, these cards win.
 
 Each voice is inspired by a well-known way of communicating. That is a description of a style.
 Never write as if a person said it, and never put a person's name on a page.

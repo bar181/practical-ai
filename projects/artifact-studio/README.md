@@ -11,7 +11,8 @@ bring, not a wall of text or a slide deck that took hours.
 
 - **It looks professionally designed.** Photos, motion and a story that unfolds as you scroll:
   charts that build, a photo that pans and zooms.
-- **The same standard every time.** Seven voices and nine looks fitted to your content and reader.
+- **The same standard every time.** Nine looks and more than forty effects fitted to your content
+  and reader, with words in one of seven voices (the full cards live in [Tone Studio](../tone-studio/)).
   The answer first, nothing invented, gaps marked, not guessed.
 - **Minutes, not hours.** About five minutes for a page that takes an hour or more by hand. An
   estimate, not a measurement.
@@ -20,10 +21,12 @@ bring, not a wall of text or a slide deck that took hours.
 [Web Sections](../web-sections/) sets the structure and [Tone Studio](../tone-studio/) writes the
 words. Each works alone, and Artifact Studio still makes a whole page from one paste.
 
+<p align="center"><img src="_build/img/design-set.svg" width="640" alt="The design set: Web Sections sets the structure, Tone Studio writes the words, Artifact Studio adds the look, colour, effects and motion. Use all three for one page, or any one alone."></p>
+
 <a name="see-every-example"></a>
 
 <p align="center"><b>See every example, live in your browser:</b><br>
-<a href="https://bar181.github.io/practical-ai/artifact-studio/showcase.html"><b>1. The showcase</b></a>: photo effects, scroll effects, cinematic effects, layouts, post previews and seven voices
+<a href="https://bar181.github.io/practical-ai/artifact-studio/showcase.html"><b>1. The showcase</b></a>: photo effects, scroll effects, cinematic effects, layouts, social picture sizes and seven voices
 <br><a href="https://bar181.github.io/practical-ai/artifact-studio/components.html"><b>2. The components</b></a>: four pages, four decks, every part, the design ideas and the picker
 <br><sub>Two pages, nothing to install. The same files are in this folder: <a href="showcase.html"><code>showcase.html</code></a> and <a href="components.html"><code>components.html</code></a>.</sub></p>
 
@@ -63,6 +66,9 @@ on her phone.
 **You get a scrolling keynote page** like [this one](https://bar181.github.io/practical-ai/artifact-studio/try-it-keynote.html),
 made by a fresh Claude session from this prompt and one photo, in one try, unedited ([see it below](#keynotes-and-decks)).
 Tested so far in Claude; not yet in ChatGPT or Gemini.
+
+**See code instead of a page?** Reply "show this as an artifact" in Claude, or "show it as a preview"
+in ChatGPT. Or save the code as a file ending in `.html` and double-click it.
 
 <p align="center"><b>The aim: better than you could do by hand, as good as a designer, and made by you.</b></p>
 
@@ -227,13 +233,6 @@ computer.
 </p>
 <p align="center"><sub>Eight effects from the Bradley Academy website, rebuilt for a single file: the opening, the grade, the statement, the clip, the stack, a timeline that draws itself, the page change and end credits. Pick by job in the <a href="level-2-files/artifact-studio/references/effects-index.md">effects index</a>.</sub></p>
 
-### Post previews
-
-<p align="center">
-  <img src="_build/img/social-three-drafts.webp" width="80%" alt="Screen capture of three drafts of one LinkedIn post shown side by side as they would look in a feed. Each starts a different way, has its own picture with a few words over it, and has a button to choose it">
-</p>
-<p align="center"><sub>Three drafts of one post, shown the way the feed shows them, in your voice. LinkedIn, Instagram, TikTok, Facebook, email and blog. Nothing is posted for you. The post sizes are also in <a href="../web-sections/">Web Sections</a>, where the previews move next.</sub></p>
-
 Every template and effect, live: [the showcase](https://bar181.github.io/practical-ai/artifact-studio/showcase.html) and [the components](https://bar181.github.io/practical-ai/artifact-studio/components.html). [Ten worked examples](base/examples/),
 each with its prompt and sample notes.
 
@@ -254,7 +253,7 @@ not replace it.
 
 Tested so far in Claude; not yet in ChatGPT or Gemini. Fresh Claude sessions ran the design guide
 22 times and the try-it prompt twice, and every run finished its page. Its author has used it for
-real, for a client's course. As of 18 November 2026, users are testing it; their results are not in yet.
+real, for a client's course. Users have been testing it since 18 November 2026; their results are not in yet.
 
 </details>
 
@@ -287,17 +286,10 @@ a screen reader.
 <details>
 <summary><b>Which voice should I ask for?</b></summary>
 
-| Voice | Best when |
-| --- | --- |
-| **Keynote** | The reader should feel something new is possible |
-| **Storyteller** | Your customer is the hero and you are the guide |
-| **Personal story** | The reader should feel something first, and remember it |
-| **Teacher** | Someone has to understand how a thing works |
-| **Practical instructor** | People need the core idea and steps for today |
-| **Analyst** | The evidence has to carry the argument |
-| **Executive brief** | A busy person has to decide |
-
-Each voice describes a style. Nothing is written by, or endorsed by, the people who inspired it.
+Name the reader and let the studio choose, or pick one of seven: keynote, storyteller, personal
+story, teacher, practical instructor, analyst or executive brief. Each one changes the order of
+what is said, not only the words. [Tone Studio](../tone-studio/#seven-tones-one-rule) explains each
+voice and can write the words before you design them.
 
 </details>
 
@@ -311,12 +303,13 @@ This one-line version is not yet tested. The tested prompt is in [Try it now](#t
 
 ## Status
 
-**18 November 2026.** Built by its author and tested by fresh Claude sessions: 22 runs of the design guide,
-then two runs of the try-it prompt above. Every run finished its page. Used for real by its author, for a client's
-course (the before and after above). As of 18 November 2026, users are testing it; their results are not in yet. Not yet tried in other chatbots. All example content is
+**21 November 2026.** Built by its author and tested by fresh Claude sessions: 22 runs of the
+design guide, then two runs of the try-it prompt above. Every run finished its page. Used for real
+by its author, for a client's course (the before and after above). Users have been testing it since
+18 November 2026; their results are not in yet. On 21 November it became the design step of three:
+eight cinematic effects were added, checked by the author only, and post previews moved to
+[Web Sections](../web-sections/). Not yet tried in other chatbots. All example content is
 invented. [The evidence](quality-results/README.md).
-
-**21 November 2026:** eight cinematic effects added as a showcase tab and checked by the author in headless Chrome at phone and desktop width, with motion on and reduced. Not yet seen by the testers.
 
 **Are you an AI agent?** Go to [AGENTS.md](AGENTS.md) for instructions you can follow now.
 

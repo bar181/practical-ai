@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 380" role="img" aria-label="Write and edit in my voice: your draft in your own voice, every fact kept" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif">
+<rect x="2" y="2" width="336" height="376" rx="32" fill="#ffffff" stroke="#d0d7de" stroke-width="3"/>
+<rect x="110" y="34" width="120" height="120" rx="28" fill="#b45309"/>
+<g transform="translate(110 34) scale(0.46875)"><rect x="50" y="48" width="124" height="160" rx="12" fill="#fff"/><rect x="68" y="78" width="88" height="12" rx="6" fill="#fcd34d"/><rect x="68" y="106" width="72" height="12" rx="6" fill="#fcd34d"/><rect x="68" y="134" width="80" height="12" rx="6" fill="#fcd34d"/><rect x="68" y="162" width="40" height="12" rx="6" fill="#fcd34d"/><g transform="translate(176 116) rotate(45)"><rect x="-14" y="-72" width="28" height="100" rx="6" fill="#fff" stroke="#78350f" stroke-width="6"/><path d="M-14 28L0 56L14 28Z" fill="#78350f"/><path d="M-14 -50h28" stroke="#78350f" stroke-width="6"/></g></g>
+<text x="170" y="206" text-anchor="middle" fill="#0c2340" font-size="32" font-weight="800">Write and edit</text>
+<text x="170" y="242" text-anchor="middle" fill="#0c2340" font-size="32" font-weight="800">in my voice</text>
+<text x="170" y="296" text-anchor="middle" fill="#3b4a5e" font-size="26" font-weight="600">Sounds like you.</text>
+<text x="170" y="350" text-anchor="middle" fill="#b45309" font-size="24" font-weight="800">Open ›</text>
+</svg>

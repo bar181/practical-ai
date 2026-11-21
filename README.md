@@ -16,6 +16,8 @@ Free tools for the jobs you repeat, for business people and developers alike.</p
 <p align="center"><b>Prefer a website?</b> <a href="https://bar181.github.io/practical-ai/">Bradley Academy</a> explains every tool in plain words, with examples.</p>
 
 <p align="center">
+  <a href="projects/web-sections/"><img src="assets/images/tiles/web-sections.svg" width="150" alt="Web Sections: the right sections for a website, in order"></a>
+  <a href="projects/tone-studio/"><img src="assets/images/tiles/tone-studio.svg" width="150" alt="Tone Studio: your facts, in the tone your reader needs"></a>
   <a href="projects/artifact-studio/"><img src="assets/images/tiles/artifact-studio.svg" width="150" alt="Artifact Studio: notes in, a designer page out"></a>
   <a href="projects/agentic-process/"><img src="assets/images/tiles/agentic-process.svg" width="150" alt="Agentic Process: a job you repeat, set up properly once"></a>
   <a href="projects/document-to-action-brief/"><img src="assets/images/tiles/document-to-action-brief.svg" width="150" alt="Document to action brief: a long document in, what to do and by when out"></a>
@@ -60,7 +62,7 @@ copy it, and paste it where the first link is.</sub>
 ### Artifact Studio
 
 **Designer-quality reports, made by you.** Your notes in; a report, deck, post or page out, with
-photos, motion and a story that flows.
+photos, motion and a story that flows. New: eight cinematic effects from the Bradley Academy website.
 
 <p align="center">
   <img src="projects/artifact-studio/_build/img/before-plain.webp" width="31%" alt="Animated phone capture of the plain version: a white Markdown document titled AI as a Smart Intern, with headings, bullet lists and two small tables, scrolling top to bottom">
@@ -108,6 +110,17 @@ share, check every number against your notes.
 </details>
 
 <p align="center"><a href="projects/artifact-studio/"><b>Make your first designer-quality report</b></a> &nbsp;·&nbsp; <a href="https://bar181.github.io/practical-ai/artifact-studio/showcase.html"><b>See every effect and voice</b></a> &nbsp;·&nbsp; <a href="https://bar181.github.io/practical-ai/artifact-studio/components.html"><b>Browse the components</b></a></p>
+
+### The design set: Web Sections and Tone Studio
+
+Artifact Studio is the design step of three. **[Web Sections](projects/web-sections/)** sets the
+structure: the right sections for a site or page, in order, from a responsive library, plus post
+sizes and post previews. **[Tone Studio](projects/tone-studio/)** writes the words: your facts in
+the tone and story order your reader needs, from an investor deck to a goodbye email, with every
+fact checked. Use all three for one page, or any one alone. Both are new and tested by their
+author only.
+
+<p align="center"><img src="projects/web-sections/_build/img/design-set.svg" width="640" alt="The design set: Web Sections sets the structure, Tone Studio writes the words, Artifact Studio adds the look, colour, effects and motion. Use all three for one page, or any one alone."></p>
 
 ### Agentic Process
 

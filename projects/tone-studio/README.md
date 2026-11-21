@@ -1,9 +1,20 @@
+<p align="center"><img src="_build/img/app-icon.svg" width="104" alt="Tone Studio icon: a speech bubble with lines of different lengths"></p>
+
 <h1 align="center">Tone Studio</h1>
 
-<p align="center"><b>The same true facts, said the way your reader needs to hear them.</b><br>
+<p align="center"><b>Your notes, in the order your reader needs, with every fact kept.</b><br>
 For anyone writing a pitch, a deck, a one-pager or an announcement.</p>
 
+<p align="center">
+  <a href="#try-it-now"><img src="_build/img/btn-try.svg" height="48" alt="Try it with one prompt"></a>
+  &nbsp;
+  <a href="level-2-files/README.md"><img src="_build/img/btn-save.svg" height="48" alt="Save your own tone"></a>
+</p>
+
 <p align="center"><b>Free</b> &nbsp;·&nbsp; <b>No setup</b> &nbsp;·&nbsp; <b>Your own chatbot</b><br><b>Tested in Claude</b> &nbsp;·&nbsp; <b>New: no one else has used it yet</b></p>
+
+<p align="center"><img src="_build/img/how-it-works.svg" width="760" alt="How Tone Studio works: four facts from an invented bakery notice become a visionary slide, a board one-pager and a goodbye email. No fact is changed. Same facts, different order, nothing invented."></p>
+<p align="center"><sub>An illustration. The goodbye email is from a real test run; the slide and the one-pager are drawn to show the idea.</sub></p>
 
 Most writing fails on order, not on words. An investor wants the problem and the proof; a board
 wants the decision first; a regular customer wants to feel something before the details. Tone
@@ -18,11 +29,27 @@ you that every fact survived.
   market size or a customer's words are marked `[needs: ...]`, never made up. Sums that do not add up
   are flagged, not fixed.
 
+## Seven tones, one rule
+
+| Your reader should | Tone | It opens with |
+| --- | --- | --- |
+| Feel that something new is possible | **Visionary** | One painful number, then the idea in a few words |
+| See themselves in the problem | **Storyteller** | A moment with a time and a place |
+| Feel something and remember it | **Emotional** | A true memory, in the first person |
+| Understand how it works | **Explainer** | A question, then an everyday analogy |
+| Do it today | **Practical instructor** | The idea in one sentence, then timed steps |
+| Be convinced by evidence | **Analyst** | The conclusion as the title |
+| Decide in three minutes | **Executive brief** | To, from and date, then the decision |
+
+The rule for all seven: the tone changes the order and the rhythm, never the facts.
+
 **Think of it as** a speechwriter. The facts are yours. The speechwriter chooses the order, the
 first line and the rhythm, and never invents a statistic.
 
 **Part of a set.** [Web Sections](../web-sections/) sets the structure, Tone Studio writes the
 words, [Artifact Studio](../artifact-studio/) makes it beautiful. Each works alone.
+
+<p align="center"><img src="_build/img/design-set.svg" width="640" alt="The design set: Web Sections sets the structure, Tone Studio writes the words, Artifact Studio adds the look, colour, effects and motion. Use all three for one page, or any one alone."></p>
 
 ## Try it now
 
@@ -39,15 +66,33 @@ Ferndale Bakery is closing its Mill Street shop on Saturday 13 December 2026, af
 Signed, Jo and the Ferndale team
 ```
 
-**Your chatbot cannot open links?** Open [`base/SKILL.md`](base/SKILL.md), press **Raw**, copy all of
-it into a new chat, then paste your content.
+**Your chatbot cannot open links?** Open [`base/SKILL.md`](base/SKILL.md), click the **Raw** button at
+the top right of the file, select all, copy it into a new chat, then paste your content.
 
 **You get back:** the tone and why, the finished words in order, a facts check and a list of gaps.
+Expect a few `[needs: ...]` lines: it asks for a true memory or a real number rather than inventing
+one. Add yours and ask again.
 Worked examples: [an investor deck](base/examples/investor-deck.md),
 [a board one-pager](base/examples/board-one-pager.md) and
 [an emotional goodbye email](base/examples/farewell-email.md).
 To see tones designed as pages, open the voice examples in
 [Artifact Studio's showcase](https://bar181.github.io/practical-ai/artifact-studio/showcase.html).
+
+## Then make it look designed
+
+Tone Studio writes the words. To design them, paste them into [Artifact Studio](../artifact-studio/),
+which has a designed example of each tone. (Handing words from one to the other has not been tested
+yet.) Its examples:
+
+<p align="center">
+  <img src="_build/img/style-visionary.webp" width="48%" alt="Animated capture of a visionary deck from Artifact Studio: black slides with one idea each in huge white type, then full-screen photos with a few words over them">
+  <img src="_build/img/style-explainer.webp" width="48%" alt="Animated capture of an explainer page from Artifact Studio: an everyday analogy, a worked example and steps that build as you scroll">
+</p>
+<p align="center">
+  <img src="_build/img/style-analyst.webp" width="48%" alt="Capture of an analyst page from Artifact Studio: the conclusion as the title, three numbers and a chart with a full-sentence heading">
+  <img src="_build/img/style-emotional.webp" width="26%" alt="Animated phone capture of a personal story page from Artifact Studio: faded warm photos with a paper border and short first-person lines">
+</p>
+<p align="center"><sub>Designed by Artifact Studio from invented content. Copies of its images, kept here so this folder works on its own.</sub></p>
 
 ## Get started
 

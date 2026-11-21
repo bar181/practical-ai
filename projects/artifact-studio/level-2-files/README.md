@@ -1,6 +1,6 @@
 # Level 2: it knows your brand
 
-[Level 1](../README.md#try-it-in-five-minutes), plus one file that holds how you like your work, and the skill installed if your
+[Level 1](../README.md#try-it-now), plus one file that holds how you like your work, and the skill installed if your
 assistant can load one. After that a short ask comes back in your style.
 
 **Think of it as** being a regular. The kitchen knows your usual, so you only say what is

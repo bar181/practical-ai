@@ -66,7 +66,19 @@ Create the two new projects with working Level 1 skills, examples and tests. Add
 cinematic effects to Artifact Studio with an effects index. Point each project at the others.
 Nothing that Artifact Studio's testers use moves. The checklist below marks what is in Phase 1.
 
-## Phase 2 (next session): move and slim
+## Phase 2: move and slim
+
+**Done on 21 November 2026:** post previews moved to Web Sections (views, reference, run, page);
+Artifact Studio's skill, agent file and README now describe the design step only; its voice cards
+defer to Tone Studio for the words; 18 unused images, six unread files and two duplicate reports
+deleted; a build bug fixed (`sys` was never imported); the four new tools added to the website;
+Web Sections published on the Pages site; a shared design-set diagram and full visual headers on
+all three READMEs. **Decided against for now:** splitting Artifact Studio's skill into one skill per
+effect family. A newcomer would have more to load and choose; the effects index routes by job
+instead. **Still open:** items 3 to 5 below, and the social picture sizes, which stay in Artifact
+Studio as well because its catalogue, picker and MCP server depend on them.
+
+
 
 1. Remove social formats and post previews from Artifact Studio: views 02, 85 to 92, the social
    starters, the catalogue's social entries, the MCP library copies, `post-previews.md`, and the

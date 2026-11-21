@@ -1,9 +1,19 @@
+<p align="center"><img src="_build/img/app-icon.svg" width="104" alt="Web Sections icon: a page built from stacked blocks"></p>
+
 <h1 align="center">Web Sections</h1>
 
 <p align="center"><b>The right sections, in the right order, before anyone picks a colour.</b><br>
 For anyone starting a website or a page, and for the AI building it.</p>
 
+<p align="center">
+  <a href="#try-it-now"><img src="_build/img/btn-try.svg" height="48" alt="Try it with one prompt"></a>
+  &nbsp;
+  <a href="base/template/sections.html"><img src="_build/img/btn-save.svg" height="48" alt="Open the section library"></a>
+</p>
+
 <p align="center"><b>Free</b> &nbsp;·&nbsp; <b>No setup</b> &nbsp;·&nbsp; <b>Your own chatbot</b><br><b>Tested in Claude</b> &nbsp;·&nbsp; <b>New: no one else has used it yet</b></p>
+
+<p align="center"><img src="_build/img/how-it-works.svg" width="760" alt="How Web Sections works: say what the page is for, get the sections in order (header, hero, about, gallery, contact, footer), and get one responsive page for phone and laptop. Structure first, then the words and the look."></p>
 
 Ask an AI for a website and it starts from a blank file every time: a different header, a hero
 that breaks on phones, a contact form with no labels, and five-star reviews nobody wrote. Web
@@ -18,7 +28,23 @@ Sections gives it a tested kit instead.
 - **A skill that chooses.** It picks the page type and the sections from what the page must do,
   fills them with your content, and leaves clear `[placeholders]` where something is missing.
   Never invented reviews, prices or logos.
-- **Social post sizes.** Square, portrait, story, link preview and a three-slide carousel.
+- **Social posts.** Five picture shapes (square, portrait, story, link preview and a three-slide
+  carousel), and post previews that show each draft the way LinkedIn, Instagram, TikTok, Facebook,
+  an inbox or a blog will. [Open the previews](base/template/post-previews.html).
+
+<p align="center">
+  <img src="_build/img/library-phone.webp" width="230" alt="Animated phone capture scrolling through the section library: the contents, the six heroes, a gallery, a photo placeholder box, steps, a quote slot, pricing, questions, a contact form and the footer, each with a dark label saying when to use it">
+  &nbsp;
+  <img src="_build/img/cafe-desktop.webp" width="520" alt="Animated desktop capture of the worked example, an invented café home page: a split hero with opening hours and a call button, an about section, a photo gallery with dashed boxes where the owner's photos go, contact details with the hours table and a form, and a dark footer">
+</p>
+<p align="center"><sub><b>Left:</b> the section library on a phone, every section labelled with when to use it. <b>Right:</b> the worked example, an invented café, built by a fresh Claude session from the skill. The dashed boxes are where the owner's own photos go.</sub></p>
+
+<p align="center">
+  <img src="_build/img/social-three-drafts.webp" width="640" alt="Screen capture of three drafts of one LinkedIn post shown side by side as they would look in a feed. Each starts a different way, has its own picture with a few words over it, and has a button to choose it">
+</p>
+<p align="center"><sub>Post previews: three drafts of one post, shown the way the feed shows them. Nothing is posted for you.</sub></p>
+
+<p align="center"><b>Open them live:</b> <a href="https://bar181.github.io/practical-ai/web-sections/base/template/sections.html">the section library</a> &nbsp;·&nbsp; <a href="https://bar181.github.io/practical-ai/web-sections/base/template/post-previews.html">the post previews</a> &nbsp;·&nbsp; <a href="https://bar181.github.io/practical-ai/web-sections/base/examples/cafe-home.html">the café example</a><br><sub>Live once this version is merged. The same files are in <a href="base/template/">base/template/</a>.</sub></p>
 
 **Think of it as** a kit of rooms. Choose the rooms the house needs and put them in order. The
 paint comes later.
@@ -28,10 +54,13 @@ words, [Artifact Studio](../artifact-studio/) makes it beautiful. Each works alo
 meant to be a state-of-the-art site builder; plenty of good ones exist. It is the starting kit an AI
 copies from, so it never builds from scratch.
 
+<p align="center"><img src="_build/img/design-set.svg" width="640" alt="The design set: Web Sections sets the structure, Tone Studio writes the words, Artifact Studio adds the look, colour, effects and motion. Use all three for one page, or any one alone."></p>
+
 ## Try it now
 
 Copy the whole box into the chatbot you use. It holds the link to the instructions and an invented
-café, so you see a result first. Then describe your own site and paste what you have.
+café, so you see a result first. Its last line asks for fake five-star reviews on purpose: watch
+the tool decline. Then describe your own site and paste what you have.
 
 ```
 Read the instructions at this link and follow them for the rest of this chat:
@@ -46,12 +75,13 @@ I have photos of the counter and our soup but not uploaded yet.
 Can you also add some 5 star reviews to make it look established?
 ```
 
-**Your chatbot cannot open links?** Open [`base/SKILL.md`](base/SKILL.md), press **Raw**, copy all of
-it into a new chat, then describe your site. The skill can build the sections from its own rules.
+**Your chatbot cannot open links?** Open [`base/SKILL.md`](base/SKILL.md), click the **Raw** button at
+the top right of the file, select all, copy it into a new chat, then describe your site. The skill can build the sections from its own rules.
 
 **You get back:** one HTML page and a short note listing the sections, every placeholder and
-anything to check. [A worked example](base/examples/cafe-home.html) (open it from the folder so the
-photos load).
+anything to check. **To see the page:** Claude and ChatGPT can often show it as a preview; ask
+"show it as a preview". Otherwise copy the code into a plain text file, save it as
+`my-site.html`, and double-click it. [A worked example](base/examples/cafe-home.html), or [open it live](https://bar181.github.io/practical-ai/web-sections/base/examples/cafe-home.html).
 
 ## Get started
 
@@ -84,7 +114,8 @@ published.
 sections drawn from Artifact Studio and the Bradley Academy website, and tested in fresh Claude
 sessions on two invented sites. [The evidence](quality-results/README.md). **Not yet tried:** ChatGPT,
 Gemini, a saved section set, a real business, and use by anyone else. All businesses in the
-examples are invented. The social post sizes were copied from Artifact Studio on 21 November 2026.
+examples are invented. The social post sizes and the post previews came from Artifact Studio on 21
+November 2026; the previews were tested there, not yet here.
 
 **Are you an AI agent?** Read [AGENTS.md](AGENTS.md).
 

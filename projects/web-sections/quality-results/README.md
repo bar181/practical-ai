@@ -51,8 +51,17 @@ These changes were checked in the library render; the two sites were **not** rer
 - Design quality beyond the basics: that is by intent, and is Artifact Studio's job.
 - The grader was the author, who also wrote the skill, the library and the keys.
 
+## Post previews moved in, 21 November 2026
+
+The post previews (three drafts side by side, then LinkedIn, Instagram, TikTok, Facebook, email
+and a short blog) moved here from Artifact Studio, where fresh agents had tested them. The page
+[`../base/template/post-previews.html`](../base/template/post-previews.html) is a snapshot made by
+Artifact Studio's build. The author opened it in headless Chrome at 390 pixels wide and clicked
+all seven tabs: no script errors, no sideways scrolling. The skill was not rerun with them here.
+
 ## Still to test
 
 1. Rerun t1 and t2 with the placeholder box and the new ids.
 2. ChatGPT and Gemini, including the paste-only path without the library file.
 3. The chain: Web Sections, then Tone Studio, then Artifact Studio on one invented site.
+4. A post preview request through this skill, now that the previews live here.
