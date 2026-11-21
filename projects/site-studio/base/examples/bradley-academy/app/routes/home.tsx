@@ -18,7 +18,7 @@ export default function Home() {
   return (
     <>
       {/* Opening scene */}
-      <section className="hero" aria-labelledby="hero-h">
+      <section className="hero hero-home" aria-labelledby="hero-h">
         <SceneImage id="home-hero" cine="kenburns" eager className="hero-img" />
         <div className="hero-shade" aria-hidden="true" />
         <div className="letterbox top" data-letterbox aria-hidden="true" />
