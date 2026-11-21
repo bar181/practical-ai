@@ -300,7 +300,7 @@ start-up to enterprise.
 - **Harvard CS50:** 10 terms as a Teaching Fellow.
 - **Agentics Foundation:** Founding Director and Education Director, teaching alongside leading
   agentic engineers.
-- **Practical AI training:** 12 courses, over 40 cohorts and more than 900 students.
+- **Practical AI training:** 14 courses, over 40 cohorts and more than 900 students.
 
 These tools come out of that teaching: what people ask for most, in the form that worked in the
 room.

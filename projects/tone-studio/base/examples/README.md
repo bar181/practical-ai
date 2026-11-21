@@ -19,6 +19,12 @@ said, not only the words. Each folder also has a facts check (`notes.md`).
 | **Analyst** | [`analyst/landing.html`](analyst/landing.html) · [open live](https://bar181.github.io/practical-ai/tone-studio/base/examples/analyst/landing.html) | about 399 | [LinkedIn post](analyst/post.md) | 177 |
 | **Executive brief** | [`executive-brief/landing.html`](executive-brief/landing.html) · [open live](https://bar181.github.io/practical-ai/tone-studio/base/examples/executive-brief/landing.html) | about 341 | [Board blog post](executive-brief/post.md) | 252 |
 
+**Colour:** every page follows the 60-30-10 rule: one dominant colour, one secondary, one bold accent
+used only for the action and one emphasis per screen. Each page names its three colours `--c60`,
+`--c30` and `--c10`, and `workshop/tools/check_colour_balance.py` measures them with photos hidden.
+Five of the seven sit on a clean light background; the visionary page stays dark, and the
+storyteller opens on a dark photo hero before the light story.
+
 Page word counts include headings, buttons and the footer line. Each page was made by a fresh
 Claude agent from the skill and the source on 21 November 2026, checked in Chrome at phone and
 desktop width with scripts on and off and with reduced motion, and its numbers were checked against

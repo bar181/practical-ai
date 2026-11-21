@@ -39,7 +39,9 @@ If there is enough to start, start. Do not ask for photos or colours: use placeh
    visible placeholder in square brackets, such as `[opening hours]`. Never invent prices, reviews,
    numbers, names, awards or logos. A quote section appears only with a real quote.
 4. **Build one file.** Copy the shared style block and the chosen sections from the library (below),
-   in order. Change the colour and font tokens at the top for the brand, if the person gave one.
+   in order. Change the colour and font tokens at the top for the brand, if the person gave one,
+   keeping the 60-30-10 balance: one calm background, one secondary colour for text and structure,
+   one bold accent for actions only.
    Delete the library labels. Keep each section's `id` so the header links work; with five or more
    menu links, raise the menu's fold point from 720 to 860 pixels.
    - **Photos:** use the person's own. Where one is missing, use the dashed `ph-box` placeholder that

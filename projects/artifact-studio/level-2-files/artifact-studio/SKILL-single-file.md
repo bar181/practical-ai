@@ -192,8 +192,10 @@ recommended one marked) and action (status in words, task, due date, one button)
 | Browse many things of one kind | A grid of matching cards |
 | Take in several different things at a glance | Tiles of different sizes, one clearly the largest |
 
-**Colour.** About 60 parts calm background, 30 parts text and structure, 10 parts accent, judged by
-eye. One accent, used for what to act on. A chart's data colour is its own token. It may be the brand
+**Colour.** The 60-30-10 rule: about 60 parts one calm dominant colour (usually the background), 30
+parts one secondary colour (text, structure, a dark panel), 10 parts one bold accent. One accent
+only, used for what to act on and at most one emphasis per screen. Keep backgrounds clean: a
+cinematic page gets its drama from photos, type and motion, not from coloured backgrounds. A chart's data colour is its own token. It may be the brand
 colour: then make buttons and links a darker step of it, and give links an underline. The
 comparison grey in a chart is the border colour. Greys carry a trace of the brand colour. Ordinary
 text needs a contrast of 4.5 to 1 against its background, large text 3 to 1. Never use colour alone

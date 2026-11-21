@@ -31,7 +31,7 @@ and open it in a browser.
 - [`2026-11-15-artifact-studio-library.html`](../../../docs/reports/2026-11-15-artifact-studio-library.html): the report.
 - [`2026-11-15-artifact-studio-library-deck.html`](../../../docs/reports/2026-11-15-artifact-studio-library-deck.html): the deck.
 
-A copy of each is in [`docs/reports/`](../../../docs/reports/).
+Both live only in [`docs/reports/`](../../../docs/reports/).
 
 ## Cinematic effects tab, 21 November 2026
 

@@ -6,46 +6,51 @@
 <title>A shoebox of receipts</title>
 <meta name="description" content="Invented example for Tone Studio, written in the emotional tone.">
 <style>
+  /* Colour roles, 60-30-10: warm paper, deep sepia, one rose red */
   :root {
-    --room: #1b1511;
-    --room-2: #241c16;
-    --paper: #efe4d0;
-    --ink: #2a1f17;
-    --text: #f3e9da;
-    --soft: #cdbca4;
-    --glow: #e8b46a;
+    --c60: #f4ecdf;
+    --c30: #3a2618;
+    --c10: #a8213a;
+    --paper: var(--c60);
+    --paper-2: #fbf7ef;
+    --ink: var(--c30);
+    --muted: #6b5442;
+    --line: rgba(58,38,24,0.16);
+    --on-dark: #f4ecdf;
+    --on-dark-soft: #e3d3b9;
+    --accent: var(--c10);
     --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, "Times New Roman", serif;
   }
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body {
     margin: 0;
-    background: var(--room);
-    color: var(--text);
+    background: var(--paper);
+    color: var(--ink);
     font-family: var(--serif);
     font-size: 1.15rem;
     line-height: 1.6;
     overflow-x: hidden;
   }
   a:focus-visible, button:focus-visible {
-    outline: 3px solid var(--glow);
+    outline: 3px solid var(--ink);
     outline-offset: 4px;
     border-radius: 4px;
   }
 
   /* The grade: one warm, faded film look on every photo */
   .graded {
-    filter: sepia(0.45) saturate(0.75) contrast(0.9) brightness(0.92);
+    filter: sepia(0.5) saturate(0.7) contrast(0.88) brightness(0.98);
   }
   .grade-edge::after {
     content: "";
     position: absolute;
     inset: 0;
     pointer-events: none;
-    background: radial-gradient(ellipse at center, rgba(0,0,0,0) 45%, rgba(40,20,5,0.55) 100%);
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0) 50%, rgba(58,38,24,0.45) 100%);
   }
 
-  /* Opening screen: the memory */
+  /* Opening screen: the memory, on a deep sepia band */
   .hero {
     position: relative;
     min-height: 100vh;
@@ -53,6 +58,8 @@
     display: flex;
     align-items: flex-end;
     overflow: hidden;
+    background: var(--ink);
+    color: var(--on-dark);
   }
   .hero-photo {
     position: absolute;
@@ -71,7 +78,7 @@
     position: absolute;
     inset: 0;
     z-index: 1;
-    background: linear-gradient(180deg, rgba(27,21,17,0.35) 0%, rgba(27,21,17,0.7) 45%, rgba(27,21,17,0.96) 78%);
+    background: linear-gradient(180deg, rgba(58,38,24,0.3) 0%, rgba(58,38,24,0.68) 45%, rgba(58,38,24,0.96) 78%);
   }
   .hero-text {
     position: relative;
@@ -85,7 +92,7 @@
     font-size: 0.85rem;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--soft);
+    color: var(--on-dark-soft);
     margin: 0 0 1rem;
     font-weight: normal;
   }
@@ -100,7 +107,7 @@
     font-style: italic;
     margin: 0 0 1rem;
   }
-  .who { color: var(--soft); margin: 0; }
+  .who { color: var(--on-dark-soft); margin: 0; }
 
   /* Pan and zoom: a slow push-in, only when motion is welcome */
   @media (prefers-reduced-motion: no-preference) {
@@ -118,7 +125,7 @@
     font-size: 0.85rem;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--soft);
+    color: var(--muted);
     font-weight: normal;
     margin: 0 0 1.5rem;
   }
@@ -129,6 +136,13 @@
   }
   .lines p { font-size: 1.35rem; margin: 0 0 0.6rem; }
 
+  /* The turn: the one emphasis on the page, a single rose band */
+  .turn {
+    background: var(--accent);
+    color: var(--on-dark);
+  }
+  .turn .screen h2 { color: var(--on-dark-soft); }
+
   /* Keepsakes: three paper cards, a little crooked */
   .keepsakes {
     list-style: none;
@@ -138,23 +152,24 @@
     gap: 1.25rem;
   }
   .keepsakes li {
-    background: var(--paper);
+    background: var(--paper-2);
     color: var(--ink);
+    border: 1px solid var(--line);
     padding: 1.1rem 1.25rem;
     font-size: 1.35rem;
-    box-shadow: 0 10px 24px rgba(0,0,0,0.45);
+    box-shadow: 0 8px 18px rgba(58,38,24,0.12);
   }
   .keepsakes li:nth-child(1) { transform: rotate(-2deg); }
   .keepsakes li:nth-child(2) { transform: rotate(1.5deg); margin-left: 1.5rem; }
   .keepsakes li:nth-child(3) { transform: rotate(-1deg); margin-left: 0.5rem; }
 
-  /* Photographs as prints with a paper border */
+  /* Photographs as prints with a deep sepia border */
   .print {
     position: relative;
     margin: 0 0 2rem;
     padding: 0.7rem 0.7rem 2.6rem;
-    background: var(--paper);
-    box-shadow: 0 14px 30px rgba(0,0,0,0.5);
+    background: var(--ink);
+    box-shadow: 0 12px 26px rgba(58,38,24,0.25);
   }
   .print.tilt-l { transform: rotate(-1.6deg); }
   .print.tilt-r { transform: rotate(1.4deg); }
@@ -173,7 +188,7 @@
     position: absolute;
     left: 0.9rem;
     bottom: 0.6rem;
-    color: var(--ink);
+    color: var(--on-dark);
     font-style: italic;
     font-size: 1rem;
   }
@@ -185,18 +200,18 @@
 
   blockquote { margin: 0; }
   blockquote p { font-size: 1.45rem; font-style: italic; margin: 0 0 0.6rem; }
-  blockquote footer { color: var(--soft); font-size: 1rem; }
+  blockquote footer { color: var(--muted); font-size: 1rem; }
 
   /* The offer, named once, at the end */
   .offer {
-    background: var(--room-2);
-    border-top: 1px solid rgba(232,180,106,0.25);
+    background: var(--paper);
+    border-top: 1px solid var(--line);
   }
   .offer h2.name {
     font-size: clamp(1.9rem, 7vw, 2.6rem);
     letter-spacing: 0;
     text-transform: none;
-    color: var(--text);
+    color: var(--ink);
     margin: 0 0 1.5rem;
     line-height: 1.15;
   }
@@ -208,26 +223,29 @@
     min-height: 48px;
     padding: 0.75rem 1.5rem;
     margin-top: 0.75rem;
-    background: var(--glow);
-    color: var(--room);
+    background: var(--accent);
+    color: var(--paper);
     font-family: var(--serif);
     font-size: 1.15rem;
     text-decoration: none;
     border-radius: 3px;
   }
-  .cta:hover { background: #f2c684; }
+  .cta:hover { background: #8c1a30; }
   .gap {
     display: block;
     margin-top: 0.75rem;
-    color: var(--soft);
+    color: var(--muted);
     font-size: 0.95rem;
   }
   .foot {
+    background: var(--ink);
+    color: var(--on-dark-soft);
+    font-size: 0.9rem;
+  }
+  .foot p {
     max-width: 40rem;
     margin: 0 auto;
     padding: 2rem 1.5rem 3rem;
-    color: var(--soft);
-    font-size: 0.9rem;
   }
 </style>
 <script>
@@ -272,9 +290,11 @@
     </div>
   </section>
 
-  <section class="screen" aria-labelledby="feeling">
-    <h2 id="feeling">The feeling</h2>
-    <p class="big">That is what it feels like to be afraid of your own numbers.</p>
+  <section class="turn" aria-labelledby="feeling">
+    <div class="screen">
+      <h2 id="feeling">The feeling</h2>
+      <p class="big">That is what it feels like to be afraid of your own numbers.</p>
+    </div>
   </section>
 
   <section class="screen" aria-labelledby="same">

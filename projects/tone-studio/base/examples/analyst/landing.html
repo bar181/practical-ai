@@ -6,12 +6,16 @@
 <title>Spreadsheets Without Fear: what past students reported</title>
 <style>
   :root {
-    --ink: #1c1e21;
+    /* 60-30-10: white page, near-black and grey structure, one data blue */
+    --c60: #ffffff;
+    --c30: #1c1e21;
+    --c10: #1f5f8b;
+    --ink: var(--c30);
     --muted: #555a61;
-    --paper: #fafaf8;
-    --rule: #d9dbde;
-    --grey: #c4c7cc;
-    --data: #1f5f8b;
+    --paper: var(--c60);
+    --rule: #e3e5e8;
+    --grey: #e3e5e8;
+    --data: var(--c10);
   }
   * { box-sizing: border-box; }
   html { -webkit-text-size-adjust: 100%; }
@@ -23,6 +27,14 @@
   }
   main, .wrap { max-width: 44rem; margin: 0 auto; padding: 0 1.25rem; }
   figure { margin: 0; }
+  /* Hero band: the 30 colour, full bleed without changing the page structure */
+  .hero {
+    background: var(--c30); color: var(--c60);
+    box-shadow: 0 0 0 100vmax var(--c30); clip-path: inset(0 -100vmax);
+    padding: 0.25rem 0 2rem; margin-bottom: 1rem;
+  }
+  .hero .kicker { color: #b9bdc3; }
+  .hero .answer { margin-bottom: 0; }
   .hero-img {
     display: block; width: 100%; height: auto; aspect-ratio: 1088 / 588;
     object-fit: cover; border-radius: 4px; margin-top: 1.25rem;
@@ -42,13 +54,13 @@
   }
   .numbers { display: grid; grid-template-columns: 1fr; gap: 1.25rem; margin: 0; padding: 0; list-style: none; }
   @media (min-width: 640px) { .numbers { grid-template-columns: repeat(3, 1fr); } }
-  .num { font-size: 2.4rem; font-weight: 700; color: var(--data); line-height: 1.1; font-variant-numeric: tabular-nums; }
+  .num { font-size: 3rem; font-weight: 700; color: var(--data); line-height: 1.1; font-variant-numeric: tabular-nums; }
   .num small { font-size: 1rem; color: var(--muted); font-weight: 400; }
   .num-text { margin: 0.25rem 0 0; }
   .source { font-size: 0.85rem; color: var(--muted); margin: 0.35rem 0 0; }
   .bar { margin: 0.75rem 0 0.25rem; }
   .bar-track {
-    position: relative; height: 1.75rem; background: var(--grey); border-radius: 2px; overflow: hidden;
+    position: relative; height: 3.5rem; background: var(--grey); border-radius: 2px; overflow: hidden;
   }
   .bar-fill {
     position: absolute; inset: 0 auto 0 0; background: var(--data);
@@ -65,21 +77,22 @@
   th, td { text-align: left; padding: 0.55rem 0.5rem 0.55rem 0; border-bottom: 1px solid var(--rule); vertical-align: top; }
   th { font-size: 0.8rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
   .cta {
-    display: inline-flex; align-items: center; justify-content: center;
-    min-height: 48px; padding: 0.75rem 1.4rem; margin-top: 1.25rem;
+    display: flex; align-items: center; justify-content: center; width: 100%;
+    min-height: 56px; padding: 0.75rem 1.4rem; margin-top: 1.25rem;
     background: var(--data); color: #fff; text-decoration: none; font-weight: 600; border-radius: 4px;
   }
   .cta:hover { background: #174a6d; }
   a:focus-visible { outline: 3px solid #e0a100; outline-offset: 3px; }
-  .gap { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.9rem; color: #8a3b00; }
-  footer { padding: 0 0 2.5rem; font-size: 0.85rem; color: var(--muted); }
-  footer p { margin: 0; padding-top: 1.25rem; border-top: 1px solid var(--rule); }
+  .gap { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.9rem; color: var(--c30); background: #f1f2f4; padding: 0 0.25rem; }
+  footer { background: var(--c30); color: #b9bdc3; padding: 2rem 0 2.5rem; font-size: 0.85rem; margin-top: 1.5rem; }
+  footer p { margin: 0; }
   .js .bar-fill.pending { width: 0 !important; }
   @media (prefers-reduced-motion: reduce) { .bar-fill { transition: none; } }
 </style>
 </head>
 <body>
 <main>
+  <div class="hero">
   <figure>
     <img class="hero-img" src="../img/class.jpg" width="1088" height="588"
       alt="Cartoon of a person in glasses at a desk under a lamp, facing a screen that shows four people on a video call.">
@@ -88,6 +101,7 @@
   <p class="kicker">Past results</p>
   <h1>44 of 52 past students who answered said they now update their own numbers every week</h1>
   <p class="answer">Spreadsheets Without Fear is a six-week live online course for small business owners who avoid spreadsheets. In a survey after the course, 44 of the 52 students who answered said they now update their own numbers every week.</p>
+  </div>
 
   <section aria-labelledby="n-h">
     <h2 id="n-h" class="label">Three numbers</h2>

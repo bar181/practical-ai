@@ -58,6 +58,9 @@ craft. Where it and this skill disagree, this skill wins. This
    only when the person asks for its colours or it is the page's main picture (the method is in
    `references/looks.md`); a palette built from their one brand
    colour (the method is in `references/design-ideas.md`); the default look for the chosen voice.
+   Whatever the look, balance it 60-30-10: one dominant colour, one secondary, one bold accent used
+   only for the action and one emphasis per screen (`references/build-rules.md`). Keep backgrounds
+   clean; the cinematic part is the photos, the type and the motion.
 5. **Outline.** For a page, the voice gives the order (a deck follows its starter).  The recipe is a checklist of what a page of that kind
    usually holds. Build in the voice's order, then go down the recipe's list: put in each section
    the content can fill, where it fits that order, and leave out any it cannot fill. Never pad a

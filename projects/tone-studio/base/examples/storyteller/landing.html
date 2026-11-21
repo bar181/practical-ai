@@ -6,15 +6,22 @@
 <title>Spreadsheets Without Fear: a storyteller landing page (invented example)</title>
 <meta name="description" content="Invented example for Tone Studio, written in the storyteller tone.">
 <style>
-  /* Colours taken from the photographs: the fog's slate and mist, the lit window's amber, the sunset's orange. */
+  /* 60-30-10. 60: a clean warm off-white page. 30: deep ink, for the graded photo hero band, text
+     and the footer. 10: one vermilion, taken from the sunset, for the button and one emphasis per
+     screen. Everything else is a tint of the 60 or the 30. */
   :root {
-    --night: #1c2326;
-    --slate: #2a3337;
-    --mist: #d2dfe3;
-    --ink: #eef2f3;
-    --soft: #b9c5c9;
-    --amber: #f2a654;
-    --ember: #e8834a;
+    --c60: #faf6ef;
+    --c30: #1c2326;
+    --c10: #c8361b;
+    --paper: var(--c60);
+    --ink: var(--c30);
+    --accent: var(--c10);
+    --accent-deep: #a82d14;
+    --muted: #4f5558;      /* a tint of the ink, for small labels on the page */
+    --quiet: #efe8dc;      /* a tint of the paper, for one quiet panel */
+    --rule: rgba(28, 35, 38, .14);
+    --on-ink: var(--c60);  /* type on the ink band */
+    --on-ink-soft: #b9c2c4;
     --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
     --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   }
@@ -22,7 +29,7 @@
   html { -webkit-text-size-adjust: 100%; }
   body {
     margin: 0;
-    background: var(--night);
+    background: var(--paper);
     color: var(--ink);
     font-family: var(--serif);
     font-size: 1.2rem;
@@ -30,15 +37,15 @@
     overflow-x: hidden;
   }
   img { display: block; max-width: 100%; }
-  a { color: var(--amber); }
+  a { color: var(--ink); }
   a:focus-visible, .cta:focus-visible {
-    outline: 3px solid var(--mist);
+    outline: 3px solid var(--ink);
     outline-offset: 4px;
     border-radius: 4px;
   }
   .skip {
     position: absolute; left: 1rem; top: -4rem; z-index: 10;
-    background: var(--mist); color: var(--night); padding: .75rem 1rem;
+    background: var(--ink); color: var(--paper); padding: .75rem 1rem;
     font-family: var(--sans); font-size: 1rem;
   }
   .skip:focus { top: 1rem; }
@@ -62,13 +69,16 @@
     font-size: .8rem;
     letter-spacing: .14em;
     text-transform: uppercase;
-    color: var(--amber);
+    color: var(--muted);
     margin: 0 0 .75rem;
   }
 
   /* The hook: one moment, a time and a place. */
   .hero {
     position: relative;
+    background: var(--ink);
+    color: var(--on-ink);
+    overflow: hidden; /* keeps the dark band behind the words inside the hero, off the light page */
     min-height: 100vh;
     min-height: 100svh;
     display: flex;
@@ -80,6 +90,7 @@
     position: absolute; inset: 0;
     background: linear-gradient(to bottom, rgba(28,35,38,.1) 0%, rgba(28,35,38,.45) 22%, rgba(28,35,38,.86) 38%, rgba(28,35,38,.97) 70%);
   }
+  .hero .beat { color: var(--on-ink-soft); }
   .hero .words {
     position: relative;
     width: 100%;
@@ -105,11 +116,11 @@
     margin: 0;
     font-size: 1.25rem;
     font-style: italic;
-    color: var(--ink);
+    color: var(--on-ink);
   }
   .memory cite {
     display: block; margin-top: .6rem;
-    font-style: normal; font-family: var(--sans); font-size: .9rem; color: var(--soft);
+    font-style: normal; font-family: var(--sans); font-size: .9rem; color: var(--on-ink-soft);
   }
 
   /* One reading column. */
@@ -117,7 +128,7 @@
     max-width: 40rem;
     margin: 0 auto;
     padding: 4.5rem 1.25rem;
-    border-top: 1px solid rgba(210, 223, 227, .12);
+    border-top: 1px solid var(--rule);
   }
   h2 {
     font-weight: 400;
@@ -127,12 +138,13 @@
   }
   p { margin: 0 0 1rem; }
   .depths { list-style: none; margin: 0; padding: 0; }
-  .depths li { margin: 0 0 1.25rem; padding-left: 1rem; border-left: 2px solid var(--slate); }
+  .depths li { margin: 0 0 1.25rem; padding-left: 1rem; border-left: 2px solid var(--rule); }
   .depths b {
     display: block; font-family: var(--sans); font-weight: 600; font-size: .85rem;
-    color: var(--soft); letter-spacing: .04em;
+    color: var(--muted); letter-spacing: .04em;
   }
-  .depths li:last-child { border-left-color: var(--amber); }
+  /* The one emphasis on this screen: the line the story turns on. */
+  .depths li:last-child { border-left: 4px solid var(--accent); }
   .pull {
     margin: 0;
     font-size: clamp(1.5rem, 5.5vw, 2rem);
@@ -149,33 +161,46 @@
     content: counter(step);
     position: absolute; left: 0; top: .05rem;
     width: 2.25rem; height: 2.25rem; border-radius: 50%;
-    border: 1px solid var(--amber); color: var(--amber);
+    border: 1px solid var(--ink); color: var(--ink);
     display: grid; place-items: center;
     font-family: var(--sans); font-size: 1rem;
   }
   .cta {
     display: inline-flex; align-items: center; justify-content: center;
     min-height: 52px; padding: .85rem 1.6rem;
-    background: var(--amber); color: #1c1408;
+    background: var(--accent); color: var(--paper);
     font-family: var(--sans); font-weight: 600; font-size: 1.05rem;
     text-decoration: none; border-radius: 999px;
   }
-  .cta:hover { background: #f7bb78; }
+  .cta:hover { background: var(--accent-deep); }
+  /* The call to action is the accent's main place: the step sits on a vermilion panel, and the
+     button turns paper so its label stays the strongest contrast on the panel. */
+  main > section[aria-labelledby="ask"] {
+    background: var(--accent); color: var(--paper);
+    border-top: 0; border-radius: 6px;
+    padding: 3.5rem 1.75rem;
+  }
+  [aria-labelledby="ask"] .beat, [aria-labelledby="ask"] .gap { color: var(--paper); }
+  [aria-labelledby="ask"] .cta { background: var(--paper); color: var(--ink); }
+  [aria-labelledby="ask"] .cta:hover { background: var(--quiet); }
+  [aria-labelledby="ask"] .cta:focus-visible { outline-color: var(--paper); }
+  [aria-labelledby="ask"] + section { border-top: 0; }
   .gap {
     display: block; margin-top: .9rem;
-    font-family: var(--sans); font-size: .9rem; color: var(--soft);
+    font-family: var(--sans); font-size: .9rem; color: var(--muted);
   }
   .stakes { display: grid; gap: 1.25rem; }
-  .side { padding: 1.25rem; border-radius: 6px; background: var(--slate); }
-  .side.lit { background: #3a2a1c; }
+  .side { padding: 1.25rem; border-radius: 6px; background: var(--quiet); }
+  .side.lit { background: var(--ink); color: var(--on-ink); }
   .side h3 {
     margin: 0 0 .5rem; font-family: var(--sans); font-size: .85rem; font-weight: 600;
-    letter-spacing: .08em; text-transform: uppercase; color: var(--soft);
+    letter-spacing: .08em; text-transform: uppercase; color: var(--muted);
   }
-  .side.lit h3 { color: var(--amber); }
+  .side.lit h3 { color: var(--on-ink-soft); }
   .side p { margin: 0; }
   .side blockquote { margin: 0; font-style: italic; }
-  .side cite { display: block; margin-top: .5rem; font-style: normal; font-family: var(--sans); font-size: .9rem; color: var(--soft); }
+  .side cite { display: block; margin-top: .5rem; font-style: normal; font-family: var(--sans); font-size: .9rem; color: var(--muted); }
+  .side.lit cite { color: var(--on-ink-soft); }
 
   /* The ending returns to the opening, over the second photograph. */
   .ending { padding-bottom: 2rem; }
@@ -183,10 +208,13 @@
   .ending .photo img { object-position: 50% 30%; }
   .last { font-size: clamp(1.5rem, 6vw, 2.1rem); line-height: 1.25; margin: 0; }
 
+  /* The footer is an ink band that closes the page, as the hero opens it. */
   footer {
-    max-width: 40rem; margin: 0 auto; padding: 2rem 1.25rem 3rem;
-    font-family: var(--sans); font-size: .85rem; color: var(--soft);
+    background: var(--ink); color: var(--on-ink-soft);
+    padding: 2.5rem max(1.25rem, calc((100% - 37.5rem) / 2)) 3rem;
+    font-family: var(--sans); font-size: .85rem;
   }
+  footer p { margin: 0; }
 
   /* Wide screens: the photograph sits to the right, the words in a dark column on the left. */
   @media (min-width: 900px) {

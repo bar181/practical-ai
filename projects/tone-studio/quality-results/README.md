@@ -71,6 +71,25 @@ landing page and a social post. [The results](../base/examples/README.md).
   the first person.
 - **Not checked:** whether a real reader finds each tone right, and these pages in other browsers.
 
+## 21 November 2026: colour rebalanced to 60-30-10
+
+At the owner's request every page was rebalanced to one dominant colour, one secondary and one bold
+accent, with clean backgrounds on most. A new script, `workshop/tools/check_colour_balance.py`,
+measures each role's share of the page with photos hidden. All seven pass at 1280 and 390 pixels:
+
+| Tone | 60 / 30 / 10 at 1280 px | Accent |
+| --- | --- | --- |
+| Visionary | 67 / 26 / 2 | electric yellow on black |
+| Storyteller | 67 / 23 / 3 | vermilion on warm off-white |
+| Emotional | 62 / 30 / 6 | rose on warm paper |
+| Explainer | 71 / 24 / 2 | marker yellow on white |
+| Practical instructor | 66 / 26 / 2 | orange on off-white |
+| Analyst | 64 / 27 / 3 | data blue on white |
+| Executive brief | 69 / 23 / 3 | oxblood on paper |
+
+The rest is lighter tints, borders and greys. Body text contrast is 8.7 to 1 or better on every
+page; button labels are 5.7 to 1 or better.
+
 ## Still to test
 
 1. ChatGPT and Gemini on the same three cases.

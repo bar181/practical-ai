@@ -8,10 +8,14 @@
 <style>
   /* Visionary look: black, one typeface, white and grey, enormous type, one idea per screen. */
   :root {
-    --ink: #ffffff;
+    /* 60-30-10: near black dominant, white type secondary, one electric yellow accent. */
+    --c60: #0a0a0a;
+    --c30: #ffffff;
+    --c10: #ffe600;
+    --ink: var(--c30);
     --grey: #a3a3a3;
     --dim: #7a7a7a;
-    --bg: #000000;
+    --bg: var(--c60);
     --font: "Helvetica Neue", Helvetica, Arial, sans-serif;
     --pad: clamp(1.25rem, 6vw, 4rem);
   }
@@ -84,11 +88,19 @@
   .facts p { color: var(--ink); }
   .facts p span { color: var(--grey); }
   .price { margin-top: 3.5rem; }
-  .cta { display: inline-flex; align-items: center; min-height: 56px; padding: 0.9rem 1.75rem; margin-top: 2.5rem; background: var(--ink); color: var(--bg); font-size: 1.15rem; font-weight: 700; text-decoration: none; border-radius: 999px; }
-  .cta:hover { background: #dcdcdc; }
+  .cta { display: inline-flex; align-items: center; justify-content: center; min-height: 64px; padding: 1rem 2.25rem; margin-top: 2.5rem; background: var(--c10); color: var(--c60); font-size: 1.25rem; font-weight: 700; text-decoration: none; border-radius: 999px; }
+  .cta:hover { background: var(--c30); }
+  @media (max-width: 40rem) { .cta { display: flex; width: 100%; } }
   .gap { display: block; margin-top: 0.9rem; font-size: 1rem; color: var(--grey); }
 
   .closer { font-size: clamp(3rem, 12.5vw, 10rem); }
+
+  /* 60-30-10: two screens flip to the 30 colour, like a keynote's white slide. */
+  .invert { background: var(--c30); color: var(--c60); --grey: #555555; }
+  .invert :focus-visible { outline-color: var(--c60); }
+  /* The 10: one number and the button, nothing else. */
+  .accent { color: var(--c10); }
+  .slab { background: var(--c10); color: var(--c60); padding: 0.12em 0.12em 0.08em; }
   footer { padding: 2rem var(--pad) 3rem; color: var(--grey); font-size: 0.9rem; border-top: 1px solid #262626; }
   footer p { max-width: 70rem; margin: 0 auto; }
 </style>
@@ -103,7 +115,7 @@
     <div class="bar top" aria-hidden="true"></div>
     <div class="bar bottom" aria-hidden="true"></div>
     <div class="inner">
-      <h1 id="t-hero"><span class="mask"><span class="rise">Two days.</span></span></h1>
+      <h1 id="t-hero"><span class="mask"><span class="rise slab">Two days.</span></span></h1>
       <blockquote>
         <p class="lede white">"...a florist brought me a shoebox of receipts on 29 April, two days before her tax deadline. She cried at my desk."</p>
         <p class="who">Priya Shah, on her first year as a bookkeeper</p>
@@ -159,7 +171,7 @@
     </div>
   </section>
 
-  <section class="screen" aria-label="A past student's words">
+  <section class="screen invert" aria-label="A past student's words">
     <div class="inner">
       <blockquote>
         <p class="lede first">"I used to dread the end of the month.</p>
@@ -190,7 +202,7 @@
   </section>
 
   <!-- 6. A closing line short enough to repeat -->
-  <section class="screen close" aria-labelledby="t-close">
+  <section class="screen close invert" aria-labelledby="t-close">
     <div class="inner">
       <h2 id="t-close" class="big closer"><span style="display:block">Spreadsheets.</span> <span style="display:block">Without fear.</span></h2>
     </div>

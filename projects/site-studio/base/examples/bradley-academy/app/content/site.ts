@@ -97,7 +97,7 @@ export const about = {
     {
       step: "Instruction",
       title: "Teaching both ends of the field",
-      text: "Practical AI for business people: the tools on this site, and 12 courses delivered to more than 900 students across over 40 cohorts. Advanced agentic engineering for leading engineers, through the Agentics Foundation and Agentic Learning Labs.",
+      text: "Practical AI for business people: the tools on this site, and 14 courses delivered to more than 900 students across over 40 cohorts. Advanced agentic engineering for leading engineers, through the Agentics Foundation and Agentic Learning Labs.",
     },
   ],
   credentials: [

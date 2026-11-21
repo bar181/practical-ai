@@ -90,7 +90,7 @@ for dirpath, _, files in os.walk(os.path.join(STUDIO, "base", "examples")):
 # Web Sections: the section library, its photos, the post previews and the worked example, at the same relative paths
 for dirpath, _, files in os.walk(os.path.join(ROOT, "projects", "web-sections", "base")):
     for f in files:
-        if f.endswith((".html", ".jpg", ".svg")):
+        if f.endswith((".html", ".jpg", ".svg", ".webp")):
             rel = os.path.relpath(os.path.join(dirpath, f), os.path.join(ROOT, "projects", "web-sections"))
             copy(os.path.join("projects", "web-sections", rel), os.path.join("web-sections", rel))
 
@@ -113,7 +113,7 @@ for f in sorted(os.listdir(os.path.join(ROOT, "docs", "reports"))):
 page("artifact-studio/index.html", "Artifact Studio: every example",
      "Designer-quality pages, decks and posts, made in the chatbot you already use. Open any page below in your browser.",
      [("The two master pages", [
-         ("showcase.html", "1. The showcase", "photo effects, scroll effects, layouts, post previews and seven voices"),
+         ("showcase.html", "1. The showcase", "photo, scroll and cinematic effects, layouts, social picture sizes and seven voices"),
          ("components.html", "2. The components", "four pages, four decks, every part, the design ideas, the picker and the skill")]),
       ("Made by an AI from one prompt, unedited", [("try-it-keynote.html", "The page the try-it prompt made", "a scrolling keynote")] + sorted(examples)),
       ("One client lesson, made by the author from one source", lesson),
