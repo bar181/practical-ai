@@ -1,7 +1,11 @@
+<p align="center"><img src="_build/img/app-icon.svg" width="104" alt="Meeting notes to actions icon: a checklist with one red flag"></p>
+
 <h1 align="center">Meeting notes to actions</h1>
 
 <p align="center"><b>Leave every meeting knowing who is doing what, and who never agreed to.</b><br>
 For whoever leaves the meeting and has to send the notes.</p>
+
+<p align="center"><a href="#try-it-now"><img src="_build/img/btn-try.svg" height="48" alt="Try it with one prompt"></a></p>
 
 <p align="center"><b>Free</b> &nbsp;·&nbsp; <b>No setup</b> &nbsp;·&nbsp; <b>Your own chatbot</b><br><b>Tested in Claude</b> &nbsp;·&nbsp; <b>New: no one else has used it yet</b></p>
 

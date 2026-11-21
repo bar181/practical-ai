@@ -1,6 +1,6 @@
 ---
 name: artifact-studio
-description: Turns any content (notes, documents, data, images, video) into one polished, self-contained HTML page by choosing a recipe (page type), a voice and a look, then building and checking it. Use when asked to "make a page", "build an artifact", "turn this into a report", "make a proposal page", "make a landing page", "explain this as a scrolling page", "make this look good", "use the keynote voice" (or storyteller, teacher, practical instructor, analyst, executive brief), or "use the artifact studio".
+description: The design step. Turns content (notes, documents, data, images, finished words) into one polished, self-contained HTML page by choosing a recipe (page type), a voice and a look, then building and checking it. Use when asked to "make a page", "build an artifact", "turn this into a report", "make a proposal page", "make this look good", "make it cinematic", or "use the artifact studio".
 ---
 
 # Artifact studio (single-file edition)
@@ -67,7 +67,7 @@ craft. Where it and this guide disagree, this guide wins.
 | A page, with a voice named and no recipe | The recipe that lists that voice. If none does, the voice's order is the whole page |
 | A decision brief or a memo | No recipe. The executive brief voice is the whole page |
 | A slide deck | The deck section below. Visionary deck with the keynote voice, story deck with the storyteller, briefing deck with the analyst or the executive brief, workshop deck with the teacher or the practical instructor |
-| A social post, an email or a blog post | The post preview in the deck section below. No recipe |
+| A social post, an email or a blog post shown as its audience will see it | Web Sections' post previews. Say so, and offer a social picture here |
 | A page led by pictures or photo effects | No recipe and no voice. Use the parts the person names, in the order they name them |
 | A picture for a post | The social post picture in the deck section below |
 
@@ -121,6 +121,15 @@ chart you can touch. Progress ring. Callouts with icon and label. Old way and ne
 With a photo: slow pan and zoom, parallax window, photo-filled type, pinned photo tour that zooms
 per paragraph, self-drawing line art, before and after slider, frosted glass card, bento grid,
 swipe gallery, flip card.
+
+Cinematic: an opening with letterbox bars, a masked title rise and brief film grain; one film grade
+on every photo; a statement whose words light up as you scroll; a photo that opens from the centre;
+a stack of full-screen scenes; a timeline that draws itself; a card that grows into the next view;
+end credits. Use one or two effects a page. The full list by job is the effects index:
+https://github.com/bar181/practical-ai/blob/main/projects/artifact-studio/level-2-files/artifact-studio/references/effects-index.md
+
+If a Tone Studio or Web Sections skill is loaded, take the words or the sections from it and do the
+design here.
 
 ## Build rules
 
@@ -183,8 +192,10 @@ recommended one marked) and action (status in words, task, due date, one button)
 | Browse many things of one kind | A grid of matching cards |
 | Take in several different things at a glance | Tiles of different sizes, one clearly the largest |
 
-**Colour.** About 60 parts calm background, 30 parts text and structure, 10 parts accent, judged by
-eye. One accent, used for what to act on. A chart's data colour is its own token. It may be the brand
+**Colour.** The 60-30-10 rule: about 60 parts one calm dominant colour (usually the background), 30
+parts one secondary colour (text, structure, a dark panel), 10 parts one bold accent. One accent
+only, used for what to act on and at most one emphasis per screen. Keep backgrounds clean: a
+cinematic page gets its drama from photos, type and motion, not from coloured backgrounds. A chart's data colour is its own token. It may be the brand
 colour: then make buttons and links a darker step of it, and give links an underline. The
 comparison grey in a chart is the border colour. Greys carry a trace of the brand colour. Ordinary
 text needs a contrast of 4.5 to 1 against its background, large text 3 to 1. Never use colour alone
@@ -221,18 +232,9 @@ The same steps make three other things.
   1080 by 1350 for a portrait, 1080 by 1920 for a story, 1200 by 630 for a link preview. One idea,
   seven words or fewer in the headline, the company name small at the bottom. A carousel is three
   portraits: the hook, the steps, the ask.
-- **A post preview.** When the person asks for social posts, an email or a blog post, never hand
-  back a list of text. Show each draft in a plain frame in the shape its audience will see: a feed
-  post (a frame at most 360 pixels wide with 15 pixel text on every screen, the name, the text cut
-  after three lines as they render in the frame, a blank line counting as a line, with a control to read the rest, one picture for each draft when there are several, given
-  out in the order the person attached them unless one plainly fits a draft's way in, pictures in one row cropped to one shape, four by three, with the subject in view, and the
-  actions as plain text, not buttons: Like, Comment, Share), an upright video frame for each beat with its on-screen words, an inbox
-  line above an HTML email, or a finished blog page. Write in the person's own voice: match two or three posts they are proud of. With none to hand,
-  go by how they describe their voice and say so in the note. When there is a choice to make, show three
-  drafts side by side, each with a different way in, and name the way in above each. The name line shows the person's name if they gave it, and the words "Your name" if they did
-  not. Frames are plain: a white frame on a pale grey page with dark text, whatever the voice. Name
-  the platform in words above the frame. Never draw a platform's logo or copy its interface, and never
-  show invented likes, comments or follower counts. Stop at the preview: nothing is posted or sent.
+- **A post preview.** Drafts of a post shown the way a feed, an inbox or a blog shows them are now
+  Web Sections' job: https://github.com/bar181/practical-ai/tree/main/projects/web-sections. Say
+  so, and offer the social picture here.
 
 When the person says what they need and not which kind, choose for them: a page to be read, a deck
 to be presented, a post to be scrolled past. Say what you chose and why in one line.

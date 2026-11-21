@@ -5,10 +5,12 @@ generated from scratch: every page on the site is a file already checked in.
 
   /                                   the Bradley Academy site, added on top by the workflow (projects/site-studio/)
   /artifact-studio/                   index for the two master pages and the worked examples
-  /artifact-studio/showcase.html      master 1: photo effects, scroll effects, layouts, post previews, voices
+  /artifact-studio/showcase.html      master 1: photo, scroll and cinematic effects, layouts, social picture sizes, voices
   /artifact-studio/components.html    master 2: pages, decks, parts, design ideas, the picker, the skill
   /artifact-studio/base/examples/     the worked examples (same path as the repository, so their links work)
   /artifact-studio/try-it-keynote.html  the page the README's try-it prompt made
+  /tone-studio/                       the seven tone landing pages
+  /web-sections/                      the section library, the post previews and the café example (same paths as the repository's base/)
   /rare-find/                         the game, and how-it-was-made.html
   /reports/                           one explainer page per project
 
@@ -81,9 +83,23 @@ for dirpath, _, files in os.walk(os.path.join(STUDIO, "base", "examples")):
         if f.endswith(".html"):
             stem = f[:-5]
             note = ("the " + stem[6:] + " voice" if stem.startswith("voice-") else
-                    {"photo-effects": "photo effects", "report": "a one-page report", "social-posts": "post previews",
+                    {"photo-effects": "photo effects", "report": "a one-page report",
                      "2-teacher": "the teacher version", "3-story": "the story version"}.get(stem, ""))
             (lesson if "before-after" in rel else examples).append((rel, title(os.path.join("projects", "artifact-studio", rel)), note))
+
+# Web Sections: the section library, its photos, the post previews and the worked example, at the same relative paths
+for dirpath, _, files in os.walk(os.path.join(ROOT, "projects", "web-sections", "base")):
+    for f in files:
+        if f.endswith((".html", ".jpg", ".svg", ".webp")):
+            rel = os.path.relpath(os.path.join(dirpath, f), os.path.join(ROOT, "projects", "web-sections"))
+            copy(os.path.join("projects", "web-sections", rel), os.path.join("web-sections", rel))
+
+# Tone Studio: the seven tone landing pages and their photos, at the same relative paths
+for dirpath, _, files in os.walk(os.path.join(ROOT, "projects", "tone-studio", "base", "examples")):
+    for f in files:
+        if f.endswith((".html", ".jpg")):
+            rel = os.path.relpath(os.path.join(dirpath, f), os.path.join(ROOT, "projects", "tone-studio"))
+            copy(os.path.join("projects", "tone-studio", rel), os.path.join("tone-studio", rel))
 
 # Rare Find: the game and how it was made
 copy("projects/rare-find/base/game.html", "rare-find/index.html")
@@ -97,7 +113,7 @@ for f in sorted(os.listdir(os.path.join(ROOT, "docs", "reports"))):
 page("artifact-studio/index.html", "Artifact Studio: every example",
      "Designer-quality pages, decks and posts, made in the chatbot you already use. Open any page below in your browser.",
      [("The two master pages", [
-         ("showcase.html", "1. The showcase", "photo effects, scroll effects, layouts, post previews and seven voices"),
+         ("showcase.html", "1. The showcase", "photo, scroll and cinematic effects, layouts, social picture sizes and seven voices"),
          ("components.html", "2. The components", "four pages, four decks, every part, the design ideas, the picker and the skill")]),
       ("Made by an AI from one prompt, unedited", [("try-it-keynote.html", "The page the try-it prompt made", "a scrolling keynote")] + sorted(examples)),
       ("One client lesson, made by the author from one source", lesson),

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 230" role="img" aria-labelledby="t d" font-family="system-ui,-apple-system,Segoe UI,Helvetica,Arial,sans-serif">
+<title id="t">The design set: three projects, one page</title>
+<desc id="d">Three steps from left to right. Web Sections: the structure, which sections in which order. Tone Studio: the words, in the tone the reader needs. Artifact Studio: the look, colour, effects and motion. Arrows join them. Each project also works alone.</desc>
+<style>
+.s{animation:in 1s ease-out both}.a1{animation-delay:.2s}.a2{animation-delay:1.4s}.a3{animation-delay:2.6s}.a4{animation-delay:3.8s}
+@keyframes in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.s{animation:none;opacity:1}}
+.h{font-size:20px;font-weight:800;fill:#0c2340}.p{font-size:14px;fill:#3b4a5e}
+</style>
+<rect width="800" height="230" rx="18" fill="#f6f7fb"/>
+<defs><marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#8a96a8"/></marker></defs>
+<g class="s a1"><g transform="translate(92 26) scale(0.3125)"><rect width="256" height="256" rx="56" fill="#0f766e"/><rect x="58" y="46" width="140" height="164" rx="12" fill="#fff"/><rect x="72" y="60" width="112" height="14" rx="4" fill="#99f6e4"/><rect x="72" y="84" width="112" height="44" rx="6" fill="#0f766e"/><rect x="72" y="138" width="34" height="30" rx="5" fill="#99f6e4"/><rect x="111" y="138" width="34" height="30" rx="5" fill="#99f6e4"/><rect x="150" y="138" width="34" height="30" rx="5" fill="#99f6e4"/><rect x="72" y="178" width="112" height="18" rx="4" fill="#134e4a"/></g>
+<text x="132" y="140" text-anchor="middle" class="h">Web Sections</text><text x="132" y="164" text-anchor="middle" class="p">The structure:</text><text x="132" y="184" text-anchor="middle" class="p">which sections, in order</text></g>
+<g class="s a2"><path d="M232 66 H300" stroke="#8a96a8" stroke-width="3" marker-end="url(#ar)"/><g transform="translate(360 26) scale(0.3125)"><rect width="256" height="256" rx="56" fill="#be185d"/><path d="M60 70 H196 Q212 70 212 86 V156 Q212 172 196 172 H122 L88 202 V172 H60 Q44 172 44 156 V86 Q44 70 60 70 Z" fill="#fff"/><rect x="68" y="96" width="98" height="12" rx="6" fill="#be185d"/><rect x="68" y="120" width="120" height="12" rx="6" fill="#f9a8d4"/><rect x="68" y="144" width="60" height="12" rx="6" fill="#f9a8d4"/></g>
+<text x="400" y="140" text-anchor="middle" class="h">Tone Studio</text><text x="400" y="164" text-anchor="middle" class="p">The words: the tone</text><text x="400" y="184" text-anchor="middle" class="p">your reader needs</text></g>
+<g class="s a3"><path d="M500 66 H568" stroke="#8a96a8" stroke-width="3" marker-end="url(#ar)"/><g transform="translate(628 26)"><rect width="80" height="80" rx="18" fill="#2563eb"/><g transform="translate(-73.333 -22.667) scale(0.6667)"><g transform="translate(170 94)"><rect x="-34" y="-42" width="68" height="84" rx="10" fill="#fff"/><rect x="-22" y="-28" width="44" height="22" rx="4" fill="#93c5fd"/><rect x="-22" y="2" width="30" height="6" rx="3" fill="#2563eb"/><rect x="-22" y="14" width="40" height="6" rx="3" fill="#bfdbfe"/><rect x="-22" y="26" width="24" height="6" rx="3" fill="#bfdbfe"/><path d="M30 -46 l5 11 11 5 -11 5 -5 11 -5 -11 -11 -5 11 -5z" fill="#fde047"/></g></g></g>
+<text x="668" y="140" text-anchor="middle" class="h">Artifact Studio</text><text x="668" y="164" text-anchor="middle" class="p">The look: colour,</text><text x="668" y="184" text-anchor="middle" class="p">effects and motion</text></g>
+<g class="s a4"><text x="400" y="216" text-anchor="middle" style="font-size:14px;font-weight:700;fill:#0c2340">Use all three for one page, or any one alone.</text></g>
+</svg>

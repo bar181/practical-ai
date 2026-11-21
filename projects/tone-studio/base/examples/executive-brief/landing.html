@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spreadsheets Without Fear: decision paper</title>
+<meta name="description" content="A one-page decision paper on joining the January 2027 group of Spreadsheets Without Fear. Invented example for Tone Studio.">
+<style>
+  :root {
+    /* 60-30-10: paper white dominates, ink carries text and structure, oxblood is the only accent */
+    --c60: #fdfbf6;
+    --c30: #1f1d1a;
+    --c10: #7a1f24;
+    --desk: #f1ede5;
+    --paper: var(--c60);
+    --ink: var(--c30);
+    --muted: #4f4a43;
+    --on-ink: #d9d3c7;
+    --accent: var(--c10);
+    --rule: #d8d2c6;
+    --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, "Times New Roman", serif;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--desk);
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: 1.0625rem;
+    line-height: 1.55;
+  }
+  .paper {
+    max-width: 46rem;
+    margin: 0 auto;
+    background: var(--paper);
+    padding: 1.75rem 1.25rem 2rem;
+  }
+  @media (min-width: 48rem) {
+    body { padding: 0 1rem; }
+    .paper { padding: 3.25rem 4rem 3rem; border: 1px solid var(--rule); border-top: 0; }
+  }
+  .masthead {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 2rem 1.25rem 1.75rem;
+  }
+  @media (min-width: 48rem) {
+    .masthead { margin: 0 -1rem; padding: 3.5rem 1rem 3rem; }
+  }
+  .masthead-inner { max-width: 46rem; margin: 0 auto; }
+  @media (min-width: 48rem) { .masthead-inner { padding: 0 4rem; } }
+  .kind {
+    margin: 0 0 .5rem;
+    font-size: .8125rem;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--on-ink);
+  }
+  h1 {
+    margin: 0 0 1.25rem;
+    font-size: 1.75rem;
+    line-height: 1.2;
+    font-weight: 600;
+  }
+  @media (min-width: 48rem) { h1 { font-size: 2.125rem; } }
+  .header {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: .25rem 1rem;
+    margin: 0;
+    padding: .875rem 0 0;
+    border-top: 1px solid #5a554d;
+  }
+  .header dt { font-weight: 600; }
+  .header dd { margin: 0; }
+  .masthead .gap { color: var(--on-ink); }
+  h2 {
+    margin: 2rem 0 .625rem;
+    padding-bottom: .25rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--ink);
+    border-bottom: 1px solid var(--rule);
+  }
+  .paper > h2:first-child { margin-top: 0; }
+  .decision {
+    margin: .25rem 0 .75rem;
+    padding: 1.125rem 1.25rem;
+    background: var(--accent);
+    color: var(--paper);
+  }
+  .decision strong { display: block; margin-bottom: .25rem; letter-spacing: .02em; }
+  p { margin: 0 0 .75rem; }
+  ol { margin: 0; padding-left: 1.5rem; }
+  ol li { margin-bottom: .625rem; padding-left: .25rem; }
+  blockquote {
+    margin: .5rem 0 0;
+    padding-left: .875rem;
+    border-left: 2px solid var(--rule);
+    color: var(--muted);
+    font-style: italic;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1rem;
+    line-height: 1.45;
+  }
+  th, td {
+    text-align: left;
+    vertical-align: top;
+    padding: .5rem .5rem .5rem 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  thead th {
+    font-weight: 600;
+    border-bottom: 1px solid var(--ink);
+  }
+  .note { font-size: .9375rem; color: var(--muted); }
+  .action {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: .5rem 1rem;
+    margin-top: 1rem;
+  }
+  .button {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: .625rem 1.25rem;
+    background: var(--accent);
+    color: #fff;
+    font-family: var(--serif);
+    font-size: 1.0625rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 2px;
+  }
+  .button:hover { background: #5e171b; }
+  a:focus-visible, .button:focus-visible {
+    outline: 3px solid var(--ink);
+    outline-offset: 3px;
+  }
+  .gap { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: .875rem; color: var(--muted); }
+  footer {
+    background: var(--ink);
+    color: var(--on-ink);
+    font-size: .875rem;
+    padding: 2rem 1.25rem 2.5rem;
+  }
+  @media (min-width: 48rem) {
+    footer { margin: 0 -1rem; padding: 2.5rem 1rem 3rem; }
+  }
+  .footer-inner { max-width: 46rem; margin: 0 auto; }
+  @media (min-width: 48rem) { .footer-inner { padding: 0 4rem; } }
+  @media print {
+    body { background: #fff; padding: 0; }
+    .paper { max-width: none; padding: 0; border: 0; }
+    footer { background: none; color: var(--muted); margin: 1.5rem 0 0; padding: .75rem 0 0; border-top: 1px solid var(--rule); }
+    .footer-inner { padding: 0; }
+    .masthead { background: none; color: var(--ink); margin: 0; padding: 0 0 1rem; }
+    .masthead-inner { padding: 0; }
+    .kind, .masthead .gap { color: var(--muted); }
+    .decision { background: none; color: var(--ink); padding: 0; border-left: 3px solid var(--accent); padding-left: .75rem; }
+    .button { background: none; color: var(--accent); padding: 0; min-height: 0; }
+  }
+</style>
+</head>
+<body>
+<header class="masthead">
+  <div class="masthead-inner">
+  <p class="kind">Decision paper</p>
+  <h1>Spreadsheets Without Fear: joining the January group</h1>
+
+  <dl class="header">
+    <dt>To</dt><dd>Small business owners who avoid spreadsheets</dd>
+    <dt>From</dt><dd>Spreadsheets Without Fear</dd>
+    <dt>Date</dt><dd><span class="gap">[needs: date of this paper]</span></dd>
+    <dt>Decide by</dt><dd>Before 31 December 2026, for the $199 price</dd>
+  </dl>
+  </div>
+</header>
+<main class="paper">
+  <h2>1. Decision needed</h2>
+  <p>Whether to join Spreadsheets Without Fear, an online course that starts on Thursday 14 January 2027.</p>
+
+  <h2>2. Background</h2>
+  <ol>
+    <li>Six weekly lessons, live on Zoom, Thursdays at 7pm Eastern, 90 minutes each. At most 20 people per group.</li>
+    <li>You build a cash-flow sheet, an invoice tracker and a price calculator with your own numbers. Excel or Google Sheets both work.</li>
+    <li>The teacher, Priya Shah, has been a bookkeeper for 12 years. Her reason, in her words:
+      <blockquote>“In my first year as a bookkeeper, a florist brought me a shoebox of receipts on 29 April, two days before her tax deadline. … She was not bad with money. Nobody had ever shown her a spreadsheet slowly.”</blockquote>
+    </li>
+    <li>Four groups, 71 people in total, have taken the course since March 2025. In a survey afterwards, 52 answered. Of those 52, 44 said they now update their own numbers every week, and 39 said they had stopped sending their receipts to someone else to sort.</li>
+  </ol>
+
+  <h2>3. Options</h2>
+  <table>
+    <thead><tr><th scope="col">Option</th><th scope="col">Price</th><th scope="col">Result</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">Do nothing</th><td>None</td><td>The three sheets are not built</td></tr>
+      <tr><th scope="row">A. Register before 31 December 2026</th><td>$199</td><td>Six lessons, three sheets</td></tr>
+      <tr><th scope="row">B. Register later</th><td>$249</td><td>Six lessons, three sheets</td></tr>
+    </tbody>
+  </table>
+
+  <h2>4. Recommendation</h2>
+  <p class="decision"><strong>Draft recommendation: confirm it is yours.</strong> Choose Option A and register before 31 December 2026. It gives the same six lessons and three sheets as Option B at the lower price of $199.</p>
+
+  <h2>5. Risks and controls</h2>
+  <table>
+    <thead><tr><th scope="col">Risk</th><th scope="col">Control</th></tr></thead>
+    <tbody>
+      <tr><td>You miss a lesson.</td><td>Each recording stays available for 30 days.</td></tr>
+      <tr><td>You do not use Excel.</td><td>Google Sheets works too.</td></tr>
+      <tr><td>Money saved by past students was not measured.</td><td>Judge the course on the survey answers only.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>6. Next step</h2>
+  <p>Register on the course page before 31 December 2026.</p>
+  <div class="action">
+    <a class="button" href="#" title="[needs: registration link]">Register on the course page</a>
+    <span class="gap">[needs: registration link]</span>
+  </div>
+</main>
+<footer><div class="footer-inner">Invented example for Tone Studio. The course, people and numbers are made up.</div></footer>
+</body>
+</html>

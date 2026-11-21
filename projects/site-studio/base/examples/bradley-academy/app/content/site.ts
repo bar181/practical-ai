@@ -12,7 +12,7 @@ export const site = {
   // Words used across pages, so a new site changes them here and nowhere else.
   labels: {
     presents: "Bradley Academy presents",
-    toolsHeading: "Five tools. One job each.",
+    toolsHeading: "Nine tools. One job each.",
     toolsLead: "Each is a prompt you paste into the chatbot you already use. Open one to see what it does, who it is for, and real examples.",
     author: "Bradley Ross",
     authorKicker: "Meet the author",
@@ -21,8 +21,8 @@ export const site = {
     licence: "Free to use, change and share under the Apache 2.0 licence. All examples use invented businesses and data.",
     worksIn: "Free. Works in the chatbot you already use.",
     homeTitle: "Bradley Academy: Practical AI tools for the jobs you repeat",
-    seeTools: "See the five tools",
-    toolsListName: "The five tools",
+    seeTools: "See the nine tools",
+    toolsListName: "The nine tools",
     sourceLink: "The tools on GitHub",
     builtWith: "Built with Site Studio, in React, published by GitHub Pages.",
     levelsHeading: "Three levels: start simple, grow when you are ready",
@@ -59,7 +59,7 @@ export const home = {
     ],
   },
   // The facts, as one line. Each number is from a README; numbers in {braces} are set in brass.
-  factsLine: "Five free tools. The one built with Agentic Process scored {93} out of 100 in a blind pilot with one reviewer. All of them grew out of courses taught to more than {900} students.",
+  factsLine: "Nine free tools. Document to action brief, built with Agentic Process, scored {93} out of 100 in a blind pilot with one reviewer. They come out of courses taught to more than {900} students.",
   starter: {
     heading: "Not sure where to start?",
     text: "Paste this into Claude, ChatGPT or Gemini. Your chatbot reads the tools and makes you a page on how they could help in your work.",
@@ -97,7 +97,7 @@ export const about = {
     {
       step: "Instruction",
       title: "Teaching both ends of the field",
-      text: "Practical AI for business people: the tools on this site, and 12 courses delivered to more than 900 students across over 40 cohorts. Advanced agentic engineering for leading engineers, through the Agentics Foundation and Agentic Learning Labs.",
+      text: "Practical AI for business people: the tools on this site, and 14 courses delivered to more than 900 students across over 40 cohorts. Advanced agentic engineering for leading engineers, through the Agentics Foundation and Agentic Learning Labs.",
     },
   ],
   credentials: [

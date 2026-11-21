@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 380" role="img" aria-label="Web Sections: the right sections for a website, in order" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif">
+<rect x="2" y="2" width="336" height="376" rx="32" fill="#ffffff" stroke="#d0d7de" stroke-width="3"/>
+<rect x="110" y="34" width="120" height="120" rx="28" fill="#0f766e"/>
+<g transform="translate(110 34) scale(0.46875)"><rect x="58" y="46" width="140" height="164" rx="12" fill="#fff"/><rect x="72" y="60" width="112" height="14" rx="4" fill="#99f6e4"/><rect x="72" y="84" width="112" height="44" rx="6" fill="#0f766e"/><rect x="72" y="138" width="34" height="30" rx="5" fill="#99f6e4"/><rect x="111" y="138" width="34" height="30" rx="5" fill="#99f6e4"/><rect x="150" y="138" width="34" height="30" rx="5" fill="#99f6e4"/><rect x="72" y="178" width="112" height="18" rx="4" fill="#134e4a"/></g>
+<text x="170" y="222" text-anchor="middle" fill="#0c2340" font-size="32" font-weight="800">Web Sections</text>
+<text x="170" y="296" text-anchor="middle" fill="#3b4a5e" font-size="26" font-weight="600">Every page, in order.</text>
+<text x="170" y="350" text-anchor="middle" fill="#0f766e" font-size="24" font-weight="800">Open ›</text>
+</svg>

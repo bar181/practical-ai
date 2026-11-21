@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 360" role="img" aria-labelledby="t d" font-family="system-ui,-apple-system,Segoe UI,Helvetica,Arial,sans-serif">
+<title id="t">How Web Sections works</title>
+<desc id="d">Three steps. 1: say what the page is for, for example a home page for a café. 2: the right sections appear in order: header, hero, about, gallery, contact with hours, footer. 3: one responsive page, shown on a phone and a laptop. At the bottom: structure first; words and design come next.</desc>
+<style>
+.s{animation:in 1s ease-out both}
+.d1{animation-delay:.2s}.d2{animation-delay:1.2s}.d3{animation-delay:2.2s}.d4{animation-delay:3.2s}.d5{animation-delay:4.2s}.d6{animation-delay:5.2s}.d7{animation-delay:6.2s}.d8{animation-delay:7s}
+@keyframes in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.s{animation:none;opacity:1}}
+.h{font-size:20px;font-weight:700;fill:#0c2340}.p{font-size:14px;fill:#33415c}.n{font-size:15px;font-weight:700;fill:#0c2340}
+.lab{font-size:12.5px;font-weight:700;fill:#0c2340}.q{font-size:12px;fill:#5a6478}.w{font-size:13px;font-weight:700;fill:#fff}
+</style>
+<rect width="800" height="360" rx="18" fill="#f0fdfa"/>
+<defs><marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#0f766e"/></marker></defs>
+<g class="s d1"><circle cx="54" cy="52" r="16" fill="#0f766e"/><text x="54" y="57.5" text-anchor="middle" class="w">1</text><text x="80" y="58" class="h">Say what it is for</text>
+<rect x="40" y="96" width="210" height="88" rx="14" fill="#fff" stroke="#99f6e4"/><text x="58" y="126" class="p">"A home page for my café.</text><text x="58" y="148" class="p">Hours, address, a few</text><text x="58" y="170" class="p">photos. No fake reviews."</text></g>
+<g class="s d2"><path d="M256 140 H290" stroke="#0f766e" stroke-width="3" marker-end="url(#a)"/><circle cx="314" cy="52" r="16" fill="#0f766e"/><text x="314" y="57.5" text-anchor="middle" class="w">2</text><text x="340" y="58" class="h">Sections, in order</text></g>
+<g class="s d3"><rect x="300" y="88" width="190" height="20" rx="5" fill="#134e4a"/><text x="312" y="102.5" style="font-size:12.5px;font-weight:700;fill:#fff">Header</text></g><g class="s d4"><rect x="300" y="114" width="190" height="34" rx="5" fill="#0f766e"/><text x="312" y="135.5" style="font-size:12.5px;font-weight:700;fill:#fff">Hero</text></g><g class="s d5"><rect x="300" y="154" width="190" height="22" rx="5" fill="#5eead4"/><text x="312" y="169.5" style="font-size:12.5px;font-weight:700;fill:#134e4a">About</text></g><g class="s d6"><rect x="300" y="182" width="190" height="22" rx="5" fill="#99f6e4"/><text x="312" y="197.5" style="font-size:12.5px;font-weight:700;fill:#134e4a">Gallery</text></g><g class="s d7"><rect x="300" y="210" width="190" height="22" rx="5" fill="#5eead4"/><text x="312" y="225.5" style="font-size:12.5px;font-weight:700;fill:#134e4a">Contact</text></g><g class="s d7"><rect x="300" y="238" width="190" height="20" rx="5" fill="#134e4a"/><text x="312" y="252.5" style="font-size:12.5px;font-weight:700;fill:#fff">Footer</text></g>
+
+<g class="s d7"><path d="M500 180 H534" stroke="#0f766e" stroke-width="3" marker-end="url(#a)"/><circle cx="558" cy="52" r="16" fill="#0f766e"/><text x="558" y="57.5" text-anchor="middle" class="w">3</text><text x="584" y="58" class="h">One responsive page</text>
+<rect x="546" y="96" width="70" height="132" rx="12" fill="#fff" stroke="#134e4a" stroke-width="3"/><rect x="554" y="108" width="54" height="8" rx="2" fill="#134e4a"/><rect x="554" y="120" width="54" height="30" rx="3" fill="#0f766e"/><rect x="554" y="154" width="54" height="16" rx="3" fill="#99f6e4"/><rect x="554" y="174" width="54" height="16" rx="3" fill="#5eead4"/><rect x="554" y="194" width="54" height="22" rx="3" fill="#99f6e4"/>
+<rect x="632" y="104" width="136" height="88" rx="8" fill="#fff" stroke="#134e4a" stroke-width="3"/><rect x="620" y="192" width="160" height="8" rx="3" fill="#134e4a"/><rect x="640" y="112" width="120" height="8" rx="2" fill="#134e4a"/><rect x="640" y="124" width="120" height="28" rx="3" fill="#0f766e"/><rect x="640" y="156" width="38" height="28" rx="3" fill="#99f6e4"/><rect x="681" y="156" width="38" height="28" rx="3" fill="#5eead4"/><rect x="722" y="156" width="38" height="28" rx="3" fill="#99f6e4"/></g>
+<g class="s d8"><text x="400" y="316" text-anchor="middle" style="font-size:16px;font-weight:700;fill:#115e59">Structure first. Then the words (Tone Studio) and the look (Artifact Studio).</text></g>
+</svg>

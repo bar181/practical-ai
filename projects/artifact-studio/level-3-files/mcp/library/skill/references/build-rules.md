@@ -56,7 +56,16 @@ could not find the examples, and this section is what that taught.
 
 - Name at most seven colours as tokens at the top of the style block and use only those: background,
   panel, border, secondary text, main text, accent and highlight. A page with a chart adds one
-  data colour. The accent is for what to act on. The data colour is never the accent.
+  data colour. The accent is for what to act on. The data colour is never a second accent: on a
+  page whose whole job is the data, the data colour may be the one accent.
+- **60-30-10.** One dominant colour for about 60 percent of the page (usually the background), one
+  secondary colour for about 30 percent (text, structure, any dark or tinted panel), and one bold
+  accent for about 10 percent: the call to action and at most one emphasis per screen. Never a
+  second accent. Name the three roles `--c60`, `--c30` and `--c10` in `:root`; the repository's
+  `workshop/tools/check_colour_balance.py` measures them with photos hidden.
+- Keep the background clean. A cinematic page gets its drama from photos, type and motion, not from
+  gradients or coloured panels behind every section. A dark, full-bleed opening is fine; the
+  sections after it can sit on a flat, quiet background.
 - Text against its background: at least 4.5 to 1 for body text, 3 to 1 for large headings.
 - One or two typefaces. If two, make them clearly different.
 - Meaning never depends on colour alone. A warning has an icon and a label as well.

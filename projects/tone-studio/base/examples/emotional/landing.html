@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A shoebox of receipts</title>
+<meta name="description" content="Invented example for Tone Studio, written in the emotional tone.">
+<style>
+  /* Colour roles, 60-30-10: warm paper, deep sepia, one rose red */
+  :root {
+    --c60: #f4ecdf;
+    --c30: #3a2618;
+    --c10: #a8213a;
+    --paper: var(--c60);
+    --paper-2: #fbf7ef;
+    --ink: var(--c30);
+    --muted: #6b5442;
+    --line: rgba(58,38,24,0.16);
+    --on-dark: #f4ecdf;
+    --on-dark-soft: #e3d3b9;
+    --accent: var(--c10);
+    --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, "Times New Roman", serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: 1.15rem;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+  a:focus-visible, button:focus-visible {
+    outline: 3px solid var(--ink);
+    outline-offset: 4px;
+    border-radius: 4px;
+  }
+
+  /* The grade: one warm, faded film look on every photo */
+  .graded {
+    filter: sepia(0.5) saturate(0.7) contrast(0.88) brightness(0.98);
+  }
+  .grade-edge::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0) 50%, rgba(58,38,24,0.45) 100%);
+  }
+
+  /* Opening screen: the memory, on a deep sepia band */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    min-height: 100svh;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+    background: var(--ink);
+    color: var(--on-dark);
+  }
+  .hero-photo {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+  }
+  .hero-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 40%;
+    display: block;
+  }
+  .hero-photo::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(180deg, rgba(58,38,24,0.3) 0%, rgba(58,38,24,0.68) 45%, rgba(58,38,24,0.96) 78%);
+  }
+  .hero-text {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 40rem;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 3.5rem;
+  }
+  .label {
+    font-size: 0.85rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--on-dark-soft);
+    margin: 0 0 1rem;
+    font-weight: normal;
+  }
+  h1 {
+    font-size: clamp(2.4rem, 9vw, 4.2rem);
+    line-height: 1.08;
+    font-weight: normal;
+    margin: 0 0 1.25rem;
+  }
+  .memory {
+    font-size: 1.3rem;
+    font-style: italic;
+    margin: 0 0 1rem;
+  }
+  .who { color: var(--on-dark-soft); margin: 0; }
+
+  /* Pan and zoom: a slow push-in, only when motion is welcome */
+  @media (prefers-reduced-motion: no-preference) {
+    .hero-photo img { animation: pushin 16s ease-out both; }
+    @keyframes pushin { from { transform: scale(1.14); } to { transform: scale(1); } }
+  }
+
+  /* Quiet screens, one thought each */
+  .screen {
+    max-width: 40rem;
+    margin: 0 auto;
+    padding: 5rem 1.5rem;
+  }
+  .screen h2 {
+    font-size: 0.85rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: normal;
+    margin: 0 0 1.5rem;
+  }
+  .big {
+    font-size: clamp(1.8rem, 7vw, 2.8rem);
+    line-height: 1.2;
+    margin: 0;
+  }
+  .lines p { font-size: 1.35rem; margin: 0 0 0.6rem; }
+
+  /* The turn: the one emphasis on the page, a single rose band */
+  .turn {
+    background: var(--accent);
+    color: var(--on-dark);
+  }
+  .turn .screen h2 { color: var(--on-dark-soft); }
+
+  /* Keepsakes: three paper cards, a little crooked */
+  .keepsakes {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 1.25rem;
+  }
+  .keepsakes li {
+    background: var(--paper-2);
+    color: var(--ink);
+    border: 1px solid var(--line);
+    padding: 1.1rem 1.25rem;
+    font-size: 1.35rem;
+    box-shadow: 0 8px 18px rgba(58,38,24,0.12);
+  }
+  .keepsakes li:nth-child(1) { transform: rotate(-2deg); }
+  .keepsakes li:nth-child(2) { transform: rotate(1.5deg); margin-left: 1.5rem; }
+  .keepsakes li:nth-child(3) { transform: rotate(-1deg); margin-left: 0.5rem; }
+
+  /* Photographs as prints with a deep sepia border */
+  .print {
+    position: relative;
+    margin: 0 0 2rem;
+    padding: 0.7rem 0.7rem 2.6rem;
+    background: var(--ink);
+    box-shadow: 0 12px 26px rgba(58,38,24,0.25);
+  }
+  .print.tilt-l { transform: rotate(-1.6deg); }
+  .print.tilt-r { transform: rotate(1.4deg); }
+  .print .frame {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+  }
+  .print img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .print figcaption {
+    position: absolute;
+    left: 0.9rem;
+    bottom: 0.6rem;
+    color: var(--on-dark);
+    font-style: italic;
+    font-size: 1rem;
+  }
+  html.motion .print img {
+    transform: scale(1.12);
+    transition: transform 9s cubic-bezier(0.2, 0.6, 0.2, 1);
+  }
+  html.motion .print.seen img { transform: scale(1); }
+
+  blockquote { margin: 0; }
+  blockquote p { font-size: 1.45rem; font-style: italic; margin: 0 0 0.6rem; }
+  blockquote footer { color: var(--muted); font-size: 1rem; }
+
+  /* The offer, named once, at the end */
+  .offer {
+    background: var(--paper);
+    border-top: 1px solid var(--line);
+  }
+  .offer h2.name {
+    font-size: clamp(1.9rem, 7vw, 2.6rem);
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--ink);
+    margin: 0 0 1.5rem;
+    line-height: 1.15;
+  }
+  .offer p { margin: 0 0 1rem; }
+  .price { font-size: 1.35rem; }
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    min-height: 48px;
+    padding: 0.75rem 1.5rem;
+    margin-top: 0.75rem;
+    background: var(--accent);
+    color: var(--paper);
+    font-family: var(--serif);
+    font-size: 1.15rem;
+    text-decoration: none;
+    border-radius: 3px;
+  }
+  .cta:hover { background: #8c1a30; }
+  .gap {
+    display: block;
+    margin-top: 0.75rem;
+    color: var(--muted);
+    font-size: 0.95rem;
+  }
+  .foot {
+    background: var(--ink);
+    color: var(--on-dark-soft);
+    font-size: 0.9rem;
+  }
+  .foot p {
+    max-width: 40rem;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 3rem;
+  }
+</style>
+<script>
+  if (window.matchMedia && !window.matchMedia("(prefers-reduced-motion: reduce)").matches && "IntersectionObserver" in window) {
+    document.documentElement.classList.add("motion");
+  }
+</script>
+</head>
+<body>
+<main>
+  <header class="hero">
+    <div class="hero-photo grade-edge">
+      <img class="graded" src="../img/fog.jpg" alt="A small wooden house on stilts with two lit windows, standing in thick fog beside a muddy puddle that reflects it. One person walks away down the wet road.">
+    </div>
+    <div class="hero-text">
+      <p class="label">A memory</p>
+      <h1>A shoebox of receipts</h1>
+      <p class="memory">"In my first year as a bookkeeper, a florist brought me a shoebox of receipts on 29 April, two days before her tax deadline."</p>
+      <p class="who">Priya Shah</p>
+    </div>
+  </header>
+
+  <section class="screen" aria-labelledby="cried">
+    <h2 id="cried">That day</h2>
+    <p class="big">"She cried at my desk."</p>
+  </section>
+
+  <section class="screen" aria-labelledby="kept">
+    <h2 id="kept">Three things from that day</h2>
+    <ul class="keepsakes">
+      <li>A shoebox.</li>
+      <li>29 April.</li>
+      <li>Two days before her tax deadline.</li>
+    </ul>
+  </section>
+
+  <section class="screen" aria-labelledby="why">
+    <h2 id="why">What I saw</h2>
+    <div class="lines">
+      <p>"She was not bad with money.</p>
+      <p>Nobody had ever shown her a spreadsheet slowly."</p>
+    </div>
+  </section>
+
+  <section class="turn" aria-labelledby="feeling">
+    <div class="screen">
+      <h2 id="feeling">The feeling</h2>
+      <p class="big">That is what it feels like to be afraid of your own numbers.</p>
+    </div>
+  </section>
+
+  <section class="screen" aria-labelledby="same">
+    <h2 id="same">What has not changed</h2>
+    <figure class="print tilt-l">
+      <div class="frame grade-edge"><img class="graded" src="../img/lake.jpg" alt="A grey lake under a heavy cloudy sky, with dry brown reeds along the shore and a bare tree in the foreground." loading="lazy"></div>
+    </figure>
+    <div class="lines">
+      <p>The month still ends.</p>
+      <p>The receipts still arrive.</p>
+    </div>
+  </section>
+
+  <section class="screen" aria-labelledby="changed">
+    <h2 id="changed">What has changed</h2>
+    <figure class="print tilt-r">
+      <div class="frame grade-edge" style="aspect-ratio: 4 / 5"><img class="graded" src="../img/sunset.jpg" alt="A fluffy dog on a lead looks out over rocks to calm water, where the sun sets low and orange on the horizon." loading="lazy"></div>
+    </figure>
+    <blockquote>
+      <p>"I used to dread the end of the month. Now it takes me twenty minutes on a Sunday."</p>
+      <footer>Marta, who runs a two-person cleaning company, from one of Priya's past groups</footer>
+    </blockquote>
+  </section>
+
+  <section class="screen" aria-labelledby="do">
+    <h2 id="do">What to do</h2>
+    <div class="lines">
+      <p>Bring your own numbers.</p>
+      <p>Build a cash-flow sheet, an invoice tracker and a price calculator with them, in Excel or Google Sheets.</p>
+    </div>
+  </section>
+
+  <section class="offer" aria-labelledby="course">
+    <div class="screen">
+      <h2 class="name" id="course">Spreadsheets Without Fear</h2>
+      <p>Six weekly lessons, live on Zoom. Thursdays at 7pm Eastern, 90 minutes each.</p>
+      <p>It starts Thursday 14 January 2027. At most 20 people per group.</p>
+      <p>Miss a lesson? Each recording stays available for 30 days.</p>
+      <p>I teach it. Priya Shah, a bookkeeper for 12 years.</p>
+      <p class="price">$249, or $199 if you register before 31 December 2026.</p>
+      <a class="cta" href="#" title="[needs: registration link]">Register on the course page</a>
+      <span class="gap">[needs: registration link]</span>
+    </div>
+  </section>
+</main>
+<footer class="foot">
+  <p>Invented example for Tone Studio. The course, people and numbers are made up.</p>
+</footer>
+<script>
+  if (document.documentElement.classList.contains("motion")) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add("seen"); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.25 });
+    document.querySelectorAll(".print").forEach(function (el) { io.observe(el); });
+  }
+</script>
+</body>
+</html>

@@ -59,13 +59,18 @@ Vercel's open-source React skills. The list is in [AGENTS.md](AGENTS.md).
 **20 November 2026: building.** The Bradley Academy site is cinematic, with:
 
 - an About page that covers the research to instruction line;
-- an Image brief page for the 15 placeholder pictures;
+- an Image brief page for the 24 placeholder pictures;
 - a guide to build your own.
 
 Two reviewer agents scored six rounds against what a client paying an agency US$50,000 would accept:
 
 - UX, content and accessibility rose from 63 to 86, which the reviewer says passes once the photos are replaced.
 - Art direction rose from 50 to 73.
+
+**21 November 2026:** four new tool pages (Web Sections, Tone Studio, Meeting notes to actions, and
+Write and edit in my voice), so the site lists nine tools. Artifact Studio's page now presents it as
+the design step, with the new cinematic effects. Checked by an agent in headless Chrome at phone and
+desktop width; the reviewers have not scored these pages.
 
 **No person has used it, and it is not live until the owner merges it.** The guide was followed twice by
 a fresh agent for an invented bakery; the publish step itself has not been tried.

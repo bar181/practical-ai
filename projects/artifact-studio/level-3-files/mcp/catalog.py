@@ -1,7 +1,7 @@
 # Generated: a copy of _build/catalog.py, made by _build/build.py so the server needs nothing outside this folder and the skill. Edit that file, not this one.
 """The studio's catalogue: every template, what it is for, and the rules that pick between them.
 
-One source for three readers: build.py (which writes templates/index.json and templates/README.md),
+One source for three readers: build.py (which writes level-3-files/mcp/library/index.json),
 the Pick tab of components.html, and the MCP server in level-3-files/mcp. No dependencies.
 """
 FACETS={

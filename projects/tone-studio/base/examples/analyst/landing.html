@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spreadsheets Without Fear: what past students reported</title>
+<style>
+  :root {
+    /* 60-30-10: white page, near-black and grey structure, one data blue */
+    --c60: #ffffff;
+    --c30: #1c1e21;
+    --c10: #1f5f8b;
+    --ink: var(--c30);
+    --muted: #555a61;
+    --paper: var(--c60);
+    --rule: #e3e5e8;
+    --grey: #e3e5e8;
+    --data: var(--c10);
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font: 17px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  main, .wrap { max-width: 44rem; margin: 0 auto; padding: 0 1.25rem; }
+  figure { margin: 0; }
+  /* Hero band: the 30 colour, full bleed without changing the page structure */
+  .hero {
+    background: var(--c30); color: var(--c60);
+    box-shadow: 0 0 0 100vmax var(--c30); clip-path: inset(0 -100vmax);
+    padding: 0.25rem 0 2rem; margin-bottom: 1rem;
+  }
+  .hero .kicker { color: #b9bdc3; }
+  .hero .answer { margin-bottom: 0; }
+  .hero-img {
+    display: block; width: 100%; height: auto; aspect-ratio: 1088 / 588;
+    object-fit: cover; border-radius: 4px; margin-top: 1.25rem;
+    filter: grayscale(0.85) contrast(0.95) brightness(1.04);
+  }
+  .kicker {
+    margin: 1.5rem 0 0.25rem; font-size: 0.8rem; letter-spacing: 0.06em;
+    text-transform: uppercase; color: var(--muted);
+  }
+  h1 { font-size: clamp(1.6rem, 6vw, 2.4rem); line-height: 1.2; margin: 0 0 1rem; font-weight: 700; }
+  h2 { font-size: 1.15rem; line-height: 1.35; margin: 0 0 0.6rem; }
+  .answer { font-size: 1.1rem; margin: 0 0 2rem; }
+  section { border-top: 1px solid var(--rule); padding: 1.75rem 0; }
+  .label {
+    font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--muted); margin: 0 0 0.75rem;
+  }
+  .numbers { display: grid; grid-template-columns: 1fr; gap: 1.25rem; margin: 0; padding: 0; list-style: none; }
+  @media (min-width: 640px) { .numbers { grid-template-columns: repeat(3, 1fr); } }
+  .num { font-size: 3rem; font-weight: 700; color: var(--data); line-height: 1.1; font-variant-numeric: tabular-nums; }
+  .num small { font-size: 1rem; color: var(--muted); font-weight: 400; }
+  .num-text { margin: 0.25rem 0 0; }
+  .source { font-size: 0.85rem; color: var(--muted); margin: 0.35rem 0 0; }
+  .bar { margin: 0.75rem 0 0.25rem; }
+  .bar-track {
+    position: relative; height: 3.5rem; background: var(--grey); border-radius: 2px; overflow: hidden;
+  }
+  .bar-fill {
+    position: absolute; inset: 0 auto 0 0; background: var(--data);
+    transition: width 900ms ease-out;
+  }
+  .bar-legend { display: flex; justify-content: space-between; gap: 1rem; font-size: 0.9rem; margin-top: 0.35rem; }
+  .bar-legend .of { color: var(--muted); }
+  .sowhat { margin: 0.75rem 0 0; }
+  .sowhat b { font-weight: 600; }
+  blockquote { margin: 1rem 0 0; padding: 0 0 0 1rem; border-left: 3px solid var(--data); }
+  blockquote p { margin: 0; }
+  ul.plain { margin: 0; padding-left: 1.2rem; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+  th, td { text-align: left; padding: 0.55rem 0.5rem 0.55rem 0; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  th { font-size: 0.8rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+  .cta {
+    display: flex; align-items: center; justify-content: center; width: 100%;
+    min-height: 56px; padding: 0.75rem 1.4rem; margin-top: 1.25rem;
+    background: var(--data); color: #fff; text-decoration: none; font-weight: 600; border-radius: 4px;
+  }
+  .cta:hover { background: #174a6d; }
+  a:focus-visible { outline: 3px solid #e0a100; outline-offset: 3px; }
+  .gap { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.9rem; color: var(--c30); background: #f1f2f4; padding: 0 0.25rem; }
+  footer { background: var(--c30); color: #b9bdc3; padding: 2rem 0 2.5rem; font-size: 0.85rem; margin-top: 1.5rem; }
+  footer p { margin: 0; }
+  .js .bar-fill.pending { width: 0 !important; }
+  @media (prefers-reduced-motion: reduce) { .bar-fill { transition: none; } }
+</style>
+</head>
+<body>
+<main>
+  <div class="hero">
+  <figure>
+    <img class="hero-img" src="../img/class.jpg" width="1088" height="588"
+      alt="Cartoon of a person in glasses at a desk under a lamp, facing a screen that shows four people on a video call.">
+  </figure>
+
+  <p class="kicker">Past results</p>
+  <h1>44 of 52 past students who answered said they now update their own numbers every week</h1>
+  <p class="answer">Spreadsheets Without Fear is a six-week live online course for small business owners who avoid spreadsheets. In a survey after the course, 44 of the 52 students who answered said they now update their own numbers every week.</p>
+  </div>
+
+  <section aria-labelledby="n-h">
+    <h2 id="n-h" class="label">Three numbers</h2>
+    <ul class="numbers">
+      <li>
+        <div class="num">71</div>
+        <p class="num-text">people in four groups since March 2025.</p>
+        <p class="source">Source: past groups.</p>
+      </li>
+      <li>
+        <div class="num">44 <small>of 52</small></div>
+        <p class="num-text">said they now update their own numbers every week.</p>
+        <p class="source">Source: survey after the course, 52 of 71 answered.</p>
+      </li>
+      <li>
+        <div class="num">39 <small>of 52</small></div>
+        <p class="num-text">said they had stopped sending their receipts to someone else to sort.</p>
+        <p class="source">Source: survey after the course, 52 of 71 answered.</p>
+      </li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="f1">
+    <p class="label">Finding 1</p>
+    <h2 id="f1">44 of 52 respondents said they now update their own numbers every week.</h2>
+    <div class="bar" role="img" aria-label="Bar chart: 44 of 52 respondents.">
+      <div class="bar-track"><div class="bar-fill" style="width: 84.6%"></div></div>
+      <div class="bar-legend"><span>44 said yes</span><span class="of">52 answered</span></div>
+    </div>
+    <p class="source">Source: survey after the course, 52 of 71 answered.</p>
+    <p class="sowhat"><b>So what:</b> most who answered now keep their own numbers up to date each week.</p>
+    <blockquote>
+      <p>"I used to dread the end of the month. Now it takes me twenty minutes on a Sunday."</p>
+      <p class="source">Marta, who runs a two-person cleaning company. One past student, quoted with permission.</p>
+    </blockquote>
+  </section>
+
+  <section aria-labelledby="f2">
+    <p class="label">Finding 2</p>
+    <h2 id="f2">39 of 52 respondents said they had stopped sending their receipts to someone else to sort.</h2>
+    <div class="bar" role="img" aria-label="Bar chart: 39 of 52 respondents.">
+      <div class="bar-track"><div class="bar-fill" style="width: 75%"></div></div>
+      <div class="bar-legend"><span>39 said yes</span><span class="of">52 answered</span></div>
+    </div>
+    <p class="source">Source: survey after the course, 52 of 71 answered.</p>
+    <p class="sowhat"><b>So what:</b> most who answered now sort their own receipts.</p>
+  </section>
+
+  <section aria-labelledby="f3">
+    <p class="label">Finding 3</p>
+    <h2 id="f3">Groups hold at most 20 people, and each recording stays available for 30 days.</h2>
+    <p class="sowhat"><b>So what:</b> if you miss a Thursday, you can still watch that lesson for 30 days.</p>
+  </section>
+
+  <section aria-labelledby="m">
+    <h2 id="m" class="label">How it was measured</h2>
+    <p>A survey after the course. 52 of the 71 past students answered. The figures are what they reported.</p>
+  </section>
+
+  <section aria-labelledby="l">
+    <h2 id="l" class="label">What it does not show</h2>
+    <ul class="plain">
+      <li>Revenue, profit or money saved. These were not measured.</li>
+      <li>Any result beyond this survey.</li>
+      <li>How many people will register this time.</li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="s">
+    <h2 id="s" class="label">Next steps</h2>
+    <table>
+      <thead><tr><th scope="col">Step</th><th scope="col">Owner</th><th scope="col">By</th></tr></thead>
+      <tbody>
+        <tr><td>Register for $199</td><td>You</td><td>Before 31 December 2026</td></tr>
+        <tr><td>Or register at the full price of $249</td><td>You</td><td><span class="gap">[needs: last day to register]</span></td></tr>
+        <tr><td>First lesson, live on Zoom, 90 minutes</td><td>Priya Shah</td><td>Thursday 14 January 2027, 7pm Eastern</td></tr>
+      </tbody>
+    </table>
+    <p>Six weekly lessons, Thursdays at 7pm Eastern. Excel or Google Sheets both work.</p>
+    <a class="cta" href="#" title="[needs: registration link]">Register on the course page</a>
+    <p class="gap">[needs: registration link]</p>
+  </section>
+</main>
+<footer>
+  <div class="wrap"><p>Invented example for Tone Studio. The course, people and numbers are made up.</p></div>
+</footer>
+<script>
+  (function () {
+    if (!('IntersectionObserver' in window)) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    document.documentElement.classList.add('js');
+    var fills = document.querySelectorAll('.bar-fill');
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.remove('pending'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.6 });
+    fills.forEach(function (f) { f.classList.add('pending'); io.observe(f); });
+  })();
+</script>
+</body>
+</html>

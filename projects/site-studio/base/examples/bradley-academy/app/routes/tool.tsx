@@ -126,6 +126,15 @@ function Side({ t }: { t: Tool }) {
           <p className="status-word">{t.status.label}, {t.status.date}</p>
           <p>{t.status.text}</p>
         </div>
+        {t.set ? (
+          <div className="side-card">
+            <h2 className="side-h">Part of a set</h2>
+            <p>{t.set.text}</p>
+            <ul className="plain-list">
+              {t.set.links.map((l) => <li key={l.href}><SmartLink href={l.href}>{l.label}</SmartLink></li>)}
+            </ul>
+          </div>
+        ) : null}
         <div className="side-card">
           <h2 className="side-h">Go deeper</h2>
           <ul className="plain-list">

@@ -1,6 +1,6 @@
 ---
 name: artifact-studio
-description: Turns any content (notes, documents, data, images, video) into one polished, self-contained HTML page, slide deck or social post picture by choosing a template, a voice and a look, then building and checking it. Use when asked to "make a page", "build an artifact", "turn this into a report", "make a proposal page", "make a landing page", "explain this as a scrolling page", "make this look good", "use the keynote voice" (or storyteller, personal story, teacher, practical instructor, analyst, executive brief), or "use the artifact studio".
+description: The design step. Turns content (notes, documents, data, images, finished words) into one polished, self-contained HTML page, slide deck or social picture by choosing a template, a look and the effects, then building and checking it. Use when asked to "make a page", "build an artifact", "turn this into a report", "make a proposal page", "make this look good", "make it look designed", "add effects", "make it cinematic", "build a deck", or "use the artifact studio". For words in a tone only, Tone Studio fits better; for laying out the sections of a site, Web Sections.
 ---
 
 # Artifact studio
@@ -25,8 +25,8 @@ craft. Where it and this skill disagree, this skill wins. This
 | `references/voices.md` | Choosing how the page speaks, and writing in that voice |
 | `references/looks.md` | Choosing colours, type and layout feel |
 | `references/components.md` | Choosing the parts for each section |
+| `references/effects-index.md` | Choosing the moving parts by what the page has to do, including the cinematic effects |
 | `references/design-ideas.md` | Choosing a kind of card, a layout and colours, and building a palette from one brand colour |
-| `references/post-previews.md` | When the person asks for social posts, an email or a blog post |
 | `references/build-rules.md` | Before writing any HTML |
 | `references/pre-ship-checklist.md` | Before showing the page to the person |
 | `assets/page-skeleton.html` | As the starting file for every page |
@@ -49,8 +49,8 @@ craft. Where it and this skill disagree, this skill wins. This
    and say so. A page with a voice named and no recipe: the recipe that lists that voice, or the
    voice's order alone. A decision brief or memo: no recipe, the executive brief voice is the whole
    page. A page led by pictures or photo effects: no recipe and no voice, use the parts the person
-   names in the order they name them. A deck, a social picture or a post preview: see "Decks,
-   pictures and posts" below.
+   names in the order they name them. A deck or a social picture: see "Decks and
+   pictures" below.
 3. **Voice.** Pick one voice from `references/voices.md`. If the person named one, use it. If not,
    take the first voice listed for the recipe. For a post, an email or a blog, the voice is the
    person's own.
@@ -58,6 +58,9 @@ craft. Where it and this skill disagree, this skill wins. This
    only when the person asks for its colours or it is the page's main picture (the method is in
    `references/looks.md`); a palette built from their one brand
    colour (the method is in `references/design-ideas.md`); the default look for the chosen voice.
+   Whatever the look, balance it 60-30-10: one dominant colour, one secondary, one bold accent used
+   only for the action and one emphasis per screen (`references/build-rules.md`). Keep backgrounds
+   clean; the cinematic part is the photos, the type and the motion.
 5. **Outline.** For a page, the voice gives the order (a deck follows its starter).  The recipe is a checklist of what a page of that kind
    usually holds. Build in the voice's order, then go down the recipe's list: put in each section
    the content can fill, where it fits that order, and leave out any it cannot fill. Never pad a
@@ -69,7 +72,7 @@ craft. Where it and this skill disagree, this skill wins. This
    to write: say so under Assumed. A number, a name, a date, a quote, an option or a recommendation
    the person did not give is a gap. By default, leave it out. Offer a recommendation only when
    the person asked what to do, and label it on the page as proposed.
-6. **Parts.** Choose a component from `references/components.md` for each section that needs one,
+6. **Parts.** Choose the effects from `references/effects-index.md` (one or two a page) and a component from `references/components.md` for each section that needs one,
    and the kind of card and the layout from `references/design-ideas.md`.
    Every part must carry content. Use at most three moving parts on a page.
 7. **Build.** Start from `assets/page-skeleton.html`, or from the starter for a deck or a picture. Follow `references/build-rules.md`. Produce
@@ -79,6 +82,18 @@ craft. Where it and this skill disagree, this skill wins. This
 9. **Deliver.** Give the page, then a short note with four things: what you chose (recipe, voice,
    look), what you assumed, what is missing, and what the person should check before sharing. Show the page as a rendered page if you can:
    an artifact, a canvas or a preview. A bare HTML file opens as code on many phones.
+
+## Working with Tone Studio and Web Sections
+
+Artifact Studio is the design step. Two sister projects own the other two steps, and this skill
+works without them.
+
+- **Structure:** if the Web Sections skill is loaded, or the person names sections ("a hero, a
+  gallery and a contact form"), take the sections from it and design them here.
+- **Words:** if the Tone Studio skill is loaded, or the person supplies finished copy, keep their
+  words and their order, and design around them. Otherwise write in the chosen voice, as below.
+- The order is structure, then words, then design. Say in the delivery note which steps came from
+  where.
 
 ## Three kinds of request
 
@@ -112,9 +127,9 @@ fit and take the highest: one page with one voice, or one deck, or one social fo
 you chose and why in one line, and offer the runner-up. With the studio's MCP server connected,
 call `artifact-studio:recommend` and it does the scoring.
 
-## Decks, pictures and posts
+## Decks and pictures
 
-The library also holds decks, social post pictures, post previews and animated SVG parts. They
+The library also holds decks, social post pictures and animated SVG parts. They
 follow the same rules as pages: one self-contained file, the person's own content, the checklist
 before showing. A deck or a social picture has no recipe card. Start from its starter in
 `assets/starters/` in this skill: a complete small file you copy and fill. The starter already has
@@ -132,9 +147,10 @@ closing slide may bring one back.
 A slide is a fixed 16 by 9 stage, so "design at 390 pixels first" means the slides stay readable
 as a column on a phone. A deck's call to action is a line of text, not a button.
 
-When the person asks for social posts, an email or a blog post, read
-`references/post-previews.md`. Never hand back a list of text: show each draft in a frame shaped
-like the place it is going, in the person's own voice, and stop before anything is posted.
+When the person asks to see social posts, an email or a blog post the way their audience will,
+that is Web Sections' post previews
+(https://github.com/bar181/practical-ai/tree/main/projects/web-sections). Say so, and offer the
+social picture here.
 
 ## When the person shows you something they like
 

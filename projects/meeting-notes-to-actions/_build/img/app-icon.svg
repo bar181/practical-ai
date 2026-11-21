@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Meeting notes to actions icon: a checklist with one red flag">
+<rect width="256" height="256" rx="56" fill="#334155"/>
+<rect x="58" y="40" width="140" height="176" rx="14" fill="#fff"/><path d="M76 82l10 10 18-20M76 126l10 10 18-20" stroke="#334155" stroke-width="10" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect x="116" y="76" width="66" height="12" rx="6" fill="#cbd5e1"/><rect x="116" y="120" width="66" height="12" rx="6" fill="#cbd5e1"/><rect x="78" y="158" width="24" height="24" rx="5" fill="none" stroke="#334155" stroke-width="6"/><rect x="116" y="164" width="36" height="12" rx="6" fill="#cbd5e1"/><path d="M166 152v42" stroke="#dc2626" stroke-width="6" stroke-linecap="round"/><path d="M166 152h22l-7 9 7 9h-22z" fill="#dc2626"/>
+</svg>

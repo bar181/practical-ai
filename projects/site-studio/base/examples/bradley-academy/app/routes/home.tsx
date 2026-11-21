@@ -18,7 +18,7 @@ export default function Home() {
   return (
     <>
       {/* Opening scene */}
-      <section className="hero" aria-labelledby="hero-h">
+      <section className="hero hero-home" aria-labelledby="hero-h">
         <SceneImage id="home-hero" cine="kenburns" eager className="hero-img" />
         <div className="hero-shade" aria-hidden="true" />
         <div className="letterbox top" data-letterbox aria-hidden="true" />
@@ -35,7 +35,7 @@ export default function Home() {
         <a className="scroll-cue" href="#intern" aria-label="Scroll to the story"><span /></a>
       </section>
 
-      {/* The five tools, one tap away */}
+      {/* Every tool, one tap away */}
       <nav className="tool-strip" id="all-tools" aria-label={site.labels.toolsListName}>
         <ul className="wrap">
           {tools.map((t) => (
@@ -74,7 +74,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Five scenes, one per tool */}
+      {/* One scene per tool */}
       <section className="reel" id="tools" aria-labelledby="tools-h">
         <div className="wrap reel-head" data-cine="reveal">
           <h2 id="tools-h" data-cine-item>{site.labels.toolsHeading}</h2>

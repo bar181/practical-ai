@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spreadsheets Without Fear: a storyteller landing page (invented example)</title>
+<meta name="description" content="Invented example for Tone Studio, written in the storyteller tone.">
+<style>
+  /* 60-30-10. 60: a clean warm off-white page. 30: deep ink, for the graded photo hero band, text
+     and the footer. 10: one vermilion, taken from the sunset, for the button and one emphasis per
+     screen. Everything else is a tint of the 60 or the 30. */
+  :root {
+    --c60: #faf6ef;
+    --c30: #1c2326;
+    --c10: #c8361b;
+    --paper: var(--c60);
+    --ink: var(--c30);
+    --accent: var(--c10);
+    --accent-deep: #a82d14;
+    --muted: #4f5558;      /* a tint of the ink, for small labels on the page */
+    --quiet: #efe8dc;      /* a tint of the paper, for one quiet panel */
+    --rule: rgba(28, 35, 38, .14);
+    --on-ink: var(--c60);  /* type on the ink band */
+    --on-ink-soft: #b9c2c4;
+    --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+    --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: 1.2rem;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+  img { display: block; max-width: 100%; }
+  a { color: var(--ink); }
+  a:focus-visible, .cta:focus-visible {
+    outline: 3px solid var(--ink);
+    outline-offset: 4px;
+    border-radius: 4px;
+  }
+  .skip {
+    position: absolute; left: 1rem; top: -4rem; z-index: 10;
+    background: var(--ink); color: var(--paper); padding: .75rem 1rem;
+    font-family: var(--sans); font-size: 1rem;
+  }
+  .skip:focus { top: 1rem; }
+
+  /* The grade: one filter and a warm dark edge, the same on every photo. */
+  .photo { position: relative; overflow: hidden; }
+  .photo img {
+    width: 100%; height: 100%; object-fit: cover;
+    filter: saturate(.85) sepia(.18) contrast(1.06) brightness(.92);
+  }
+  .photo::after {
+    content: ""; position: absolute; inset: 0; pointer-events: none;
+    box-shadow: inset 0 0 120px 30px rgba(40, 22, 8, .55);
+  }
+
+  /* Each story beat named in small type. */
+  .beat {
+    display: block;
+    width: fit-content;
+    font-family: var(--sans);
+    font-size: .8rem;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 .75rem;
+  }
+
+  /* The hook: one moment, a time and a place. */
+  .hero {
+    position: relative;
+    background: var(--ink);
+    color: var(--on-ink);
+    overflow: hidden; /* keeps the dark band behind the words inside the hero, off the light page */
+    min-height: 100vh;
+    min-height: 100svh;
+    display: flex;
+    align-items: flex-end;
+  }
+  .hero .photo { position: absolute; inset: 0; }
+  .hero .photo img { transform-origin: 58% 40%; }
+  .hero .shade {
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom, rgba(28,35,38,.1) 0%, rgba(28,35,38,.45) 22%, rgba(28,35,38,.86) 38%, rgba(28,35,38,.97) 70%);
+  }
+  .hero .beat { color: var(--on-ink-soft); }
+  .hero .words {
+    position: relative;
+    width: 100%;
+    max-width: 40rem;
+    margin: 0 auto;
+    padding: 2rem 1.25rem 3rem;
+    z-index: 1;
+  }
+  /* A dark band that always sits behind the hero words, so they stay readable on any screen height. */
+  .hero .words::before {
+    content: ""; position: absolute; z-index: -1;
+    top: -5rem; bottom: 0; left: 50%; width: 100vw; transform: translateX(-50%);
+    background: linear-gradient(to bottom, rgba(28,35,38,0), rgba(28,35,38,.9) 6rem);
+  }
+  h1 {
+    font-weight: 400;
+    font-size: clamp(2.6rem, 11vw, 5.2rem);
+    line-height: 1.02;
+    margin: 0 0 1.25rem;
+    letter-spacing: -.01em;
+  }
+  .memory {
+    margin: 0;
+    font-size: 1.25rem;
+    font-style: italic;
+    color: var(--on-ink);
+  }
+  .memory cite {
+    display: block; margin-top: .6rem;
+    font-style: normal; font-family: var(--sans); font-size: .9rem; color: var(--on-ink-soft);
+  }
+
+  /* One reading column. */
+  main > section:not(.hero) {
+    max-width: 40rem;
+    margin: 0 auto;
+    padding: 4.5rem 1.25rem;
+    border-top: 1px solid var(--rule);
+  }
+  h2 {
+    font-weight: 400;
+    font-size: clamp(1.9rem, 7vw, 2.8rem);
+    line-height: 1.12;
+    margin: 0 0 1.25rem;
+  }
+  p { margin: 0 0 1rem; }
+  .depths { list-style: none; margin: 0; padding: 0; }
+  .depths li { margin: 0 0 1.25rem; padding-left: 1rem; border-left: 2px solid var(--rule); }
+  .depths b {
+    display: block; font-family: var(--sans); font-weight: 600; font-size: .85rem;
+    color: var(--muted); letter-spacing: .04em;
+  }
+  /* The one emphasis on this screen: the line the story turns on. */
+  .depths li:last-child { border-left: 4px solid var(--accent); }
+  .pull {
+    margin: 0;
+    font-size: clamp(1.5rem, 5.5vw, 2rem);
+    line-height: 1.3;
+    font-style: italic;
+  }
+  .plan { margin: 0; padding: 0; list-style: none; counter-reset: step; }
+  .plan li {
+    counter-increment: step;
+    position: relative;
+    padding: 0 0 1.5rem 3.25rem;
+  }
+  .plan li::before {
+    content: counter(step);
+    position: absolute; left: 0; top: .05rem;
+    width: 2.25rem; height: 2.25rem; border-radius: 50%;
+    border: 1px solid var(--ink); color: var(--ink);
+    display: grid; place-items: center;
+    font-family: var(--sans); font-size: 1rem;
+  }
+  .cta {
+    display: inline-flex; align-items: center; justify-content: center;
+    min-height: 52px; padding: .85rem 1.6rem;
+    background: var(--accent); color: var(--paper);
+    font-family: var(--sans); font-weight: 600; font-size: 1.05rem;
+    text-decoration: none; border-radius: 999px;
+  }
+  .cta:hover { background: var(--accent-deep); }
+  /* The call to action is the accent's main place: the step sits on a vermilion panel, and the
+     button turns paper so its label stays the strongest contrast on the panel. */
+  main > section[aria-labelledby="ask"] {
+    background: var(--accent); color: var(--paper);
+    border-top: 0; border-radius: 6px;
+    padding: 3.5rem 1.75rem;
+  }
+  [aria-labelledby="ask"] .beat, [aria-labelledby="ask"] .gap { color: var(--paper); }
+  [aria-labelledby="ask"] .cta { background: var(--paper); color: var(--ink); }
+  [aria-labelledby="ask"] .cta:hover { background: var(--quiet); }
+  [aria-labelledby="ask"] .cta:focus-visible { outline-color: var(--paper); }
+  [aria-labelledby="ask"] + section { border-top: 0; }
+  .gap {
+    display: block; margin-top: .9rem;
+    font-family: var(--sans); font-size: .9rem; color: var(--muted);
+  }
+  .stakes { display: grid; gap: 1.25rem; }
+  .side { padding: 1.25rem; border-radius: 6px; background: var(--quiet); }
+  .side.lit { background: var(--ink); color: var(--on-ink); }
+  .side h3 {
+    margin: 0 0 .5rem; font-family: var(--sans); font-size: .85rem; font-weight: 600;
+    letter-spacing: .08em; text-transform: uppercase; color: var(--muted);
+  }
+  .side.lit h3 { color: var(--on-ink-soft); }
+  .side p { margin: 0; }
+  .side blockquote { margin: 0; font-style: italic; }
+  .side cite { display: block; margin-top: .5rem; font-style: normal; font-family: var(--sans); font-size: .9rem; color: var(--muted); }
+  .side.lit cite { color: var(--on-ink-soft); }
+
+  /* The ending returns to the opening, over the second photograph. */
+  .ending { padding-bottom: 2rem; }
+  .ending .photo { aspect-ratio: 3 / 4; max-height: 70vh; width: 100%; border-radius: 6px; margin: 0 0 2rem; }
+  .ending .photo img { object-position: 50% 30%; }
+  .last { font-size: clamp(1.5rem, 6vw, 2.1rem); line-height: 1.25; margin: 0; }
+
+  /* The footer is an ink band that closes the page, as the hero opens it. */
+  footer {
+    background: var(--ink); color: var(--on-ink-soft);
+    padding: 2.5rem max(1.25rem, calc((100% - 37.5rem) / 2)) 3rem;
+    font-family: var(--sans); font-size: .85rem;
+  }
+  footer p { margin: 0; }
+
+  /* Wide screens: the photograph sits to the right, the words in a dark column on the left. */
+  @media (min-width: 900px) {
+    .hero { align-items: center; }
+    .hero .photo { left: 32%; }
+    .hero .shade { background: linear-gradient(to right, rgba(28,35,38,1) 30%, rgba(28,35,38,.75) 40%, rgba(28,35,38,0) 62%), linear-gradient(to bottom, rgba(28,35,38,0) 70%, rgba(28,35,38,.9)); }
+    .hero .words { margin: 0 0 0 6vw; max-width: 34rem; padding: 3rem 1.25rem; }
+    .hero .words::before { top: -100vh; bottom: -100vh; left: -6vw; width: calc(6vw + 36rem); transform: none;
+      background: linear-gradient(to right, rgba(28,35,38,.92) 80%, rgba(28,35,38,0)); }
+  }
+  @media (min-width: 760px) {
+    .stakes { grid-template-columns: 1fr 1fr; }
+    .ending .photo { aspect-ratio: 16 / 10; }
+  }
+
+  /* Motion: a slow push-in on the opening photo, and the clip on the closing one. */
+  @media (prefers-reduced-motion: no-preference) {
+    .hero .photo img { animation: pushin 16s cubic-bezier(.2,.6,.3,1) both; }
+    @keyframes pushin { from { transform: scale(1.14); } to { transform: scale(1); } }
+    .js .ending .photo { clip-path: inset(var(--clip, 0%) round 18px); }
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#story">Skip to the story</a>
+<main>
+
+  <section class="hero" aria-labelledby="hook">
+    <div class="photo">
+      <img src="../img/fog.jpg" width="716" height="716"
+           alt="A small wooden house on stilts in thick fog, two windows lit orange, a lone person standing on a flooded track beside it.">
+    </div>
+    <div class="shade" aria-hidden="true"></div>
+    <div class="words">
+      <span class="beat">The moment</span>
+      <h1 id="hook">29 April. A shoebox of receipts.</h1>
+      <blockquote class="memory">
+        <p>&ldquo;In my first year as a bookkeeper, a florist brought me a shoebox of receipts on 29 April, two days before her tax deadline. She cried at my desk.&rdquo;</p>
+        <cite>A bookkeeper, remembering</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <section id="story" aria-labelledby="person">
+    <span class="beat">The person</span>
+    <h2 id="person">Maybe you know that box.</h2>
+    <p>You run a small business. You are good at what you sell. You want to look at your own numbers and understand them. Instead, you avoid the spreadsheet.</p>
+  </section>
+
+  <section aria-labelledby="problem">
+    <span class="beat">The problem</span>
+    <h2 id="problem">It goes deeper than receipts</h2>
+    <ul class="depths">
+      <li><b>On the surface</b>The receipts go in a box, or to someone else to sort.</li>
+      <li><b>Underneath</b>The end of the month becomes something you dread.</li>
+      <li><b>Why it is wrong</b><span class="pull">&ldquo;She was not bad with money. Nobody had ever shown her a spreadsheet slowly.&rdquo;</span></li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="guide">
+    <span class="beat">The guide</span>
+    <h2 id="guide">The bookkeeper at that desk was Priya Shah</h2>
+    <p>She knew the florist was not bad with money. Nobody had ever shown her a spreadsheet slowly. That shoebox is why Priya started Spreadsheets Without Fear. She has been a bookkeeper for 12 years.</p>
+    <p>Since March 2025, four groups have taken the course: 71 people. 52 answered a survey afterwards. 44 said they now update their own numbers every week. 39 said they had stopped sending their receipts to someone else to sort.</p>
+  </section>
+
+  <section aria-labelledby="plan">
+    <span class="beat">The plan</span>
+    <h2 id="plan">Three steps</h2>
+    <ol class="plan">
+      <li>Register before 31 December 2026 for $199. After that, it is $249.</li>
+      <li>Join six live lessons on Zoom, Thursdays at 7pm Eastern, 90 minutes each, from Thursday 14 January 2027. At most 20 people per group. Miss one, and its recording stays available for 30 days.</li>
+      <li>Build a cash-flow sheet, an invoice tracker and a price calculator with your own numbers, in Excel or Google Sheets.</li>
+    </ol>
+  </section>
+
+  <section aria-labelledby="ask">
+    <span class="beat">The step</span>
+    <h2 id="ask">Start with step one</h2>
+    <a class="cta" href="#" title="[needs: registration link]">Register on the course page</a>
+    <span class="gap">[needs: registration link]</span>
+  </section>
+
+  <section aria-labelledby="stakes">
+    <span class="beat">What is at stake</span>
+    <h2 id="stakes">Two ends of the month</h2>
+    <div class="stakes">
+      <div class="side">
+        <h3>If nothing changes</h3>
+        <p>The receipts stay in the box. The end of the month stays something you dread.</p>
+      </div>
+      <div class="side lit">
+        <h3>If it does</h3>
+        <blockquote>
+          <p>&ldquo;I used to dread the end of the month. Now it takes me twenty minutes on a Sunday.&rdquo;</p>
+          <cite>Marta, a past student who runs a two-person cleaning company</cite>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <section class="ending" aria-labelledby="end">
+    <span class="beat">The end, back at the beginning</span>
+    <div class="photo" id="clip">
+      <img src="../img/sunset.jpg" width="900" height="1200" loading="lazy"
+           alt="The sun setting over calm water, its light a line across the lake, beyond a shore of grey rocks.">
+    </div>
+    <h2 id="end" class="last">The florist had a shoebox and two days. You can start on 14 January.</h2>
+  </section>
+
+</main>
+<footer>
+  <p>Invented example for Tone Studio. The course, people and numbers are made up.</p>
+</footer>
+<script>
+  // The clip: the closing photo opens from a small rounded window to full width as it scrolls in.
+  // Without this script, or with reduced motion, the photo simply shows in full.
+  (function () {
+    if (!window.matchMedia || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var el = document.getElementById('clip');
+    if (!el) return;
+    document.documentElement.classList.add('js');
+    function update() {
+      var r = el.getBoundingClientRect();
+      var vh = window.innerHeight;
+      var p = Math.min(1, Math.max(0, (vh - r.top) / (vh * 0.75)));
+      el.style.setProperty('--clip', ((1 - p) * 18).toFixed(2) + '%');
+    }
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+  })();
+</script>
+</body>
+</html>

@@ -22,7 +22,7 @@ Macros, each on a line of its own:
 Run: python3 build.py   (prepare_assets.py is needed only when a font or photograph changes)
 This file is dense. The tests that covered it are in the repository's history, before the project was simplified.
 """
-import json, os, re, glob, html
+import json, os, re, glob, html, sys
 import shutil
 HERE=os.path.dirname(os.path.abspath(__file__))
 A=json.load(open(os.path.join(HERE,'assets.json')))
@@ -137,9 +137,9 @@ RECIPES=['recipe-report','recipe-proposal','recipe-explainer','recipe-landing']
 CONCEPTS=(('card','31-cards.html','components/cards.html','Cards'),('layout','32-layouts.html','components/layouts.html','Layouts'),('colour','33-colour.html','components/colour.html','Colour'))
 G_VOICES=('Voices',VOICES,'One message, told six ways. Tap a voice:'); G_RECIPES=('Recipes',RECIPES,'Four whole pages. Tap a recipe:')
 # one kitchen sink. Two rows of tabs: the highlights first, then the components to build with. A group named '#' is a heading in the tab bar.
-POSTS=['post-linkedin','post-instagram','post-tiktok','post-facebook','post-email','post-blog']
-STUDIO_GROUPS=[('#','Highlights',[]),('Photo effects',['photo'],''),('Scroll effects',['scroll'],''),('Layouts',['lookvoice','looks','layouts'],'Looks set the mood and layouts set the order:'),
-  ('Socials',['socials']+POSTS+['social'],'See each draft the way your audience will. The use case first, then a tab for each platform:')]+[(LABEL[v],[v],'') for v in VOICES]+[
+POSTS=[]   # the post previews moved to Web Sections on 21 November 2026 (projects/web-sections/_build/post-previews/)
+STUDIO_GROUPS=[('#','Highlights',[]),('Photo effects',['photo'],''),('Scroll effects',['scroll'],''),('Cinematic effects',['cinema'],''),('Layouts',['lookvoice','looks','layouts'],'Looks set the mood and layouts set the order:'),
+  ('Social pictures',['social'],'')]+[(LABEL[v],[v],'') for v in VOICES]+[
   ('#','Components',[]),('Pages',RECIPES,'Four whole pages. Tap one:'),('Decks',['deck-visionary','deck-story','deck-briefing','deck-workshop'],'Four slide decks on one engine:'),
   ('Parts',['parts','svg'],'The pieces a page is made of:'),('Design',['cards','colour'],'The ideas behind a good page:'),('Pick',['pick','mix'],'Let the studio suggest, or choose every part yourself:'),
   ('Reference',['c-recipes','c-voices','c-parts','c-spec','c-brief','c-sentences'],'The reference sheets, the two forms and every sentence:'),
@@ -149,10 +149,10 @@ _cut=STUDIO_GROUPS.index(('#','Components',[]))
 SHOWCASE_GROUPS=STUDIO_GROUPS[1:_cut]; COMPONENT_GROUPS=STUDIO_GROUPS[_cut+1:]   # two master pages at the project root, one row of tabs each
 WHERE={n:f for f,gs in (('showcase.html',SHOWCASE_GROUPS),('components.html',COMPONENT_GROUPS)) for g,vs,_ in gs if g!='#' for n in vs}   # which file shows each tab
 pv=lambda view: WHERE[view]+'#'+view
-LABEL.update({'socials':'Three drafts','post-linkedin':'LinkedIn','post-instagram':'Instagram','post-tiktok':'TikTok','post-facebook':'Facebook','post-email':'Email','post-blog':'Short blog','social':'Picture formats','cards':'Cards','layouts':'Six layouts','colour':'Colour','parts':'Page parts','photo':'Photo effects','scroll':'Scroll effects','lookvoice':'Looks and voices','svg':'Animated SVG','looks':'Nine looks','pick':'Pick for me','mix':'Mix it myself','deck-visionary':'Visionary','deck-story':'Story','deck-briefing':'Briefing','deck-workshop':'Workshop'})
+LABEL.update({'socials':'Three drafts','post-linkedin':'LinkedIn','post-instagram':'Instagram','post-tiktok':'TikTok','post-facebook':'Facebook','post-email':'Email','post-blog':'Short blog','social':'Picture formats','cards':'Cards','layouts':'Six layouts','colour':'Colour','parts':'Page parts','photo':'Photo effects','scroll':'Scroll effects','cinema':'Cinematic effects','lookvoice':'Looks and voices','svg':'Animated SVG','looks':'Nine looks','pick':'Pick for me','mix':'Mix it myself','deck-visionary':'Visionary','deck-story':'Story','deck-briefing':'Briefing','deck-workshop':'Workshop'})
 FILES={t['id']:t['file'].split('#')[0] for t in C.TEMPLATES if t['kind'] in('page','voice','deck')}
-FILES.update({'cards':'components/cards.html','layouts':'components/layouts.html','colour':'components/colour.html','social':'social/formats.html','parts':'components/page-parts.html','photo':'components/photo-parts.html','svg':'components/animated-svg.html','looks':'looks/nine-looks.html'})
-FTITLE={'cards':'Six kinds of card','layouts':'Six layouts','colour':'Colour: five ideas and a palette maker','social':'Seven social formats','parts':'Twelve page parts','photo':'Nine photo effects','scroll':'Three scroll effects','lookvoice':'Looks and voices','svg':'Twelve animated SVG parts','looks':'Nine looks'}
+FILES.update({'cards':'components/cards.html','layouts':'components/layouts.html','colour':'components/colour.html','social':'social/formats.html','parts':'components/page-parts.html','photo':'components/photo-parts.html','svg':'components/animated-svg.html','looks':'looks/nine-looks.html','cinema':'components/cinematic-effects.html'})
+FTITLE={'cards':'Six kinds of card','layouts':'Six layouts','colour':'Colour: five ideas and a palette maker','social':'Seven social formats','parts':'Twelve page parts','photo':'Nine photo effects','scroll':'Three scroll effects','cinema':'Eight cinematic effects','lookvoice':'Looks and voices','svg':'Twelve animated SVG parts','looks':'Nine looks'}
 FTITLE.update({t['id']:t['title'] for t in C.TEMPLATES})
 TAB={t['id']:(t['id'] if t['kind']!='social' else 'social') for t in C.TEMPLATES}
 # a short "about" strip at the top of every voice and recipe tab, taken from the voice cards and from the page's own closing note
@@ -179,7 +179,7 @@ EXTRA={k:f'--ph-{k}:url("data:image/jpeg;base64,{base64.b64encode(open(os.path.j
 SHELL=open(os.path.join(HERE,'shell.html')).read()
 # the creator's note at the foot of the studio page and of every worked example. Starters do not carry it: they are for other people's work
 FOOT=('<aside class="me" id="about-the-creator" aria-label="About the creator"><div class="wrap"><img src="data:image/jpeg;base64,'+base64.b64encode(open(os.path.join(HERE,'photos','creator-144.jpg'),'rb').read()).decode()+'" width="72" height="72" alt="Bradley Ross">'
-      '<div><p class="me-k">Made by Bradley Ross</p><p>Bradley is an agentic AI architect and developer for businesses of every size, from start-up to enterprise. He builds and teaches practical AI: 12 courses, more than 40 cohorts and more than 900 students.</p>'
+      '<div><p class="me-k">Made by Bradley Ross</p><p>Bradley is an agentic AI architect and developer for businesses of every size, from start-up to enterprise. He builds and teaches practical AI: 14 courses, more than 40 cohorts and more than 900 students.</p>'
       '<a class="me-b" href="https://www.linkedin.com/in/bradaross/">Connect with Bradley on LinkedIn</a><span class="me-s">For training, questions or feedback.</span></div></div></aside>')
 BASE=open(os.path.join(HERE,'base.css')).read()
 PAGE_INDEX={'templates':[dict(t,tab=TAB[t['id']]) for t in C.TEMPLATES],'rules':C.RULES,'labels':{f:dict(v) for f,v in C.FACETS.items()},'social_styles':C.SOCIAL_STYLES,'palette_roles':C.PALETTE_ROLES,'palette_rule':C.palette(0)['rule']}
@@ -229,22 +229,21 @@ def build(key,out,title,lead,groups,other=None,panel=None):
     left=re.findall(r'__[A-Z]+__|^\s*@@\w+',re.sub(r'data:[^")]+','',re.sub(r'<pre>.*?</pre>','',t,flags=re.S)),flags=re.M); assert not left, left
     t=t.replace('<!DOCTYPE html>','<!DOCTYPE html>\n<!-- Generated by _build/build.py from _build/views/. Do not edit this file: change the views and rebuild. -->',1)
     open(os.path.join(ROOT,out),'w').write(t); print(f'{key}: {kb} KB, {len(order)} tabs -> {out}')
-build('showcase','showcase.html','showcase','Master 1 of 2: what your AI can make. Photo effects, scroll effects, layouts, post previews and a tab for each of seven voices. Tap a tab.',SHOWCASE_GROUPS,other=('components.html','Master 2: the components, the picker and the reference sheets'))
-build('components','components.html','components','Master 2 of 2: what a page is built from. Four whole pages, four decks, the parts, the design ideas, the picker, the reference sheets and the skill. Tap a tab.',COMPONENT_GROUPS,other=('showcase.html','Master 1: photo effects, voices and post previews'))
+build('showcase','showcase.html','showcase','Master 1 of 2: what your AI can make. Photo effects, scroll effects, cinematic effects, layouts, social picture sizes and a tab for each of seven voices. Tap a tab.',SHOWCASE_GROUPS,other=('components.html','Master 2: the components, the picker and the reference sheets'))
+build('components','components.html','components','Master 2 of 2: what a page is built from. Four whole pages, four decks, the parts, the design ideas, the picker, the reference sheets and the skill. Tap a tab.',COMPONENT_GROUPS,other=('showcase.html','Master 1: photo, scroll and cinematic effects, and the voices'))
 # ---- worked examples: one file each, with the prompt, the sample input and the finished result
 RAW_MAIN='https://raw.githubusercontent.com/bar181/practical-ai/main/projects/artifact-studio/base/AI-INSTRUCTIONS.md'
 PREFIX['example']='Artifact Studio worked example:'
 _first=lambda f: html.unescape(re.sub(r'<[^>]+>','',re.search(r'<blockquote>(.*?)</blockquote>',open(os.path.join(HERE,'views',f)).read(),re.S).group(1)))
 EXAMPLES=[ # file, view, what it shows, notes, the ask (None: the view's own short ask)
- ('voice-visionary','voice-keynote','the visionary voice','practical-ai.txt',None),
- ('voice-storyteller','voice-story','the storyteller voice','first-reply.txt',None),
- ('voice-emotional','voice-emotional','the emotional voice, a personal story','personal-story.txt',None),
- ('voice-explainer','voice-teacher','the explainer, in the teacher voice','how-to-use.txt',None),
- ('voice-practical','voice-practical','the practical instructor voice','first-reply.txt',None),
- ('voice-analyst','voice-analyst','the analyst voice','first-reply.txt',None),
- ('voice-brief','voice-brief','the executive brief voice','first-reply.txt',None),
- ('social-posts','socials','three drafts of a post, shown as previews','post-drafts.txt',_first('86-socials.html')),
- ('photo-effects','photo','photo effects from one picture','one-picture.txt','Open with my picture as a slow pan and zoom, like a documentary shot. Then set one word in huge letters filled with the picture, and finish with the picture as a postcard I can tap to turn over.')]
+ ('voice-visionary','voice-keynote','the visionary voice','',None),
+ ('voice-storyteller','voice-story','the storyteller voice','',None),
+ ('voice-emotional','voice-emotional','the emotional voice, a personal story','',None),
+ ('voice-explainer','voice-teacher','the explainer, in the teacher voice','',None),
+ ('voice-practical','voice-practical','the practical instructor voice','',None),
+ ('voice-analyst','voice-analyst','the analyst voice','',None),
+ ('voice-brief','voice-brief','the executive brief voice','',None),
+ ('photo-effects','photo','photo effects from one picture','','Open with my picture as a slow pan and zoom, like a documentary shot. Then set one word in huge letters filled with the picture, and finish with the picture as a postcard I can tap to turn over.')]
 EX_OF={view:f'base/examples/{name}.html' for name,view,_,_,_ in EXAMPLES}
 # Each worked example is the unedited page an AI assistant made from its prompt in a fresh session. The runs are kept in examples/runs/.
 RUNS=os.path.join(HERE,'examples','runs'); TAB_OF={name:view for name,view,_,_,_ in EXAMPLES}; TAB_OF['report']='recipe-report'
@@ -262,7 +261,7 @@ def write_examples():
                f'<details style="margin-top:12px"><summary style="cursor:pointer;font-weight:700;min-height:44px;display:flex;align-items:center;color:#fff">The prompt and the sample input</summary><pre tabindex="0" style="{pre}">{html.escape(prompt)}</pre></details>'
                f'<details><summary style="cursor:pointer;font-weight:700;min-height:44px;display:flex;align-items:center;color:#fff">What the assistant said about its page</summary><pre tabindex="0" style="{pre}">{html.escape(note)}</pre></details>'
                f'<p style="margin:10px 0 0"><a href="../../{WHERE[TAB_OF[name]]}#{TAB_OF[name]}" style="color:#ffd23f;font-weight:700">Compare it with the hand-built version in the library</a></p></div></aside>')
-        foot=FOOT.replace('<aside class="me" id="about-the-creator" aria-label="About the creator">','<aside aria-label="About the creator" style="background:#0c2340;color:#fff;padding:34px 0 40px;font:400 16px/1.45 system-ui,-apple-system,Segoe UI,sans-serif;text-align:left">').replace('<div class="wrap">',f'<div style="{box};display:flex;gap:18px;align-items:flex-start">').replace('<img ','<img style="flex:none;border-radius:50%;border:3px solid #ffd23f" ').replace('<p class="me-k">','<p style="margin:0;font-weight:700;font-size:1.3rem;line-height:1.15;color:#fff">').replace('<p>Bradley','<p style="margin:6px 0 0;max-width:38em;color:#dfe6ef">Bradley').replace('<a class="me-b" ','<a style="display:inline-flex;align-items:center;min-height:46px;margin-top:14px;padding:0 20px;border-radius:999px;background:#ffd23f;color:#0c2340;font-weight:700;text-decoration:none" ').replace('<span class="me-s">','<span style="display:block;margin-top:8px;color:#b9c5d3;font-size:.9rem">')
+        foot=FOOT.replace('<aside class="me" id="about-the-creator" aria-label="About the creator">','<aside aria-label="About the creator" style="box-sizing:border-box;max-width:100%;overflow-wrap:anywhere;background:#0c2340;color:#fff;padding:34px 0 40px;font:400 16px/1.45 system-ui,-apple-system,Segoe UI,sans-serif;text-align:left">').replace('<div class="wrap">',f'<div style="{box};display:flex;gap:18px;align-items:flex-start">').replace('<div><p class="me-k">','<div style="min-width:0;flex:1 1 auto;display:block"><p class="me-k">').replace('<img ','<img style="flex:none;width:72px;height:72px;max-width:none;border-radius:50%;border:3px solid #ffd23f" ').replace('<p class="me-k">','<p style="margin:0;font-weight:700;font-size:1.3rem;line-height:1.15;color:#fff">').replace('<p>Bradley','<p style="margin:6px 0 0;max-width:38em;color:#dfe6ef">Bradley').replace('<a class="me-b" ','<a style="display:inline-flex;align-items:center;min-height:46px;margin-top:14px;padding:0 20px;border-radius:999px;background:#ffd23f;color:#0c2340;font-weight:700;text-decoration:none" ').replace('<span class="me-s">','<span style="display:block;margin-top:8px;color:#b9c5d3;font-size:.9rem">')
         m=re.search(r'<body[^>]*>',page); assert m and '</body>' in page, name
         page=page[:m.end()]+'\n'+panel+'\n'+page[m.end():]; page=page.replace('</body>',foot+'\n</body>',1)
         open(os.path.join(ROOT,'base','examples',name+'.html'),'w').write(page)
@@ -391,7 +390,7 @@ def write_index(parts,photo):
     kinds=['page','voice','deck','social']
     counts={'templates':len(tpl),**{k+'s' if k!='social' else 'social_formats':sum(t['kind']==k for t in tpl) for k in kinds},'components':len(comp),'page_parts':len(parts),'photo_parts':len(photo),'animated_svg':sum(c['group']=='svg' for c in comp),'design_ideas':sum(c['group'] in('card','layout','colour') for c in comp),'post_previews':sum(c['group']=='post' for c in comp),'looks':len(looks)}
     idx=dict(name='artifact-studio',generated=datetime.date.today().isoformat(),
-             read_me='Paths are relative to the project folder. "preview" is the master page (showcase.html or components.html) and the tab that shows it. "example", where present, is a worked example: one file with the prompt, the sample input and the finished page. "starter", where present, is a small complete file to copy and fill. "source" is reference code: one style block, the markup and one script, not a complete file. A post preview also needs the frame styles in sources/02-posts-lib.html. "fit" scores run 0 to 3. To choose, score = 3 x goal fit + 2 x audience fit, highest first.',
+             read_me='Paths are relative to the project folder. "preview" is the master page (showcase.html or components.html) and the tab that shows it. "example", where present, is a worked example: one file with the prompt, the sample input and the finished page. "starter", where present, is a small complete file to copy and fill. "source" is reference code: one style block, the markup and one script, not a complete file. Post previews moved to the Web Sections project. "fit" scores run 0 to 3. To choose, score = 3 x goal fit + 2 x audience fit, highest first.',
              counts=counts,social_styles=C.SOCIAL_STYLES,facets={f:[dict(id=k,label=v) for k,v in v2] for f,v2 in C.FACETS.items()},rules=C.RULES,templates=tpl,components=comp,
              looks=[dict(name=l,preview=pv('looks'),card='level-2-files/artifact-studio/references/looks.md') for l in looks])
     os.makedirs(os.path.join(LIBRARY,'sources'),exist_ok=True); os.makedirs(os.path.join(LIBRARY,'svg'),exist_ok=True)
@@ -399,7 +398,7 @@ def write_index(parts,photo):
     # a copy of the skill inside the library, so the server's folder works when it is moved by itself
     sk=os.path.join(LIBRARY,'skill'); shutil.rmtree(sk,ignore_errors=True)
     shutil.copytree(SKILL,sk,ignore=shutil.ignore_patterns('evals','SKILL-single-file.md'))
-    keep={os.path.basename(x['source']) for x in tpl+comp if x['source'].startswith(SRC)}|{'02-posts-lib.html','86-socials.html'}   # the shared frame styles, and the page that shows three drafts side by side
+    keep={os.path.basename(x['source']) for x in tpl+comp if x['source'].startswith(SRC)}
     for f in os.listdir(os.path.join(LIBRARY,'sources')):   # a view removed from views/ leaves the library too
         if f.endswith('.html') and f!='shell.html' and f not in keep: os.remove(os.path.join(LIBRARY,'sources',f))
     for f in sorted(keep): shutil.copy(os.path.join(HERE,'views',f),os.path.join(LIBRARY,'sources',f))

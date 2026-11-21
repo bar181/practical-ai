@@ -1,7 +1,12 @@
 # Artifact Studio: instructions for agents
 
-You are here because a person wants a web page, a slide deck, a social post picture or a preview
-of a post, an email or a blog made from their own content. This file is written for you. People start at the [README](README.md).
+You are here because a person wants a web page, a slide deck or a social post picture made from
+their own content, and wants it to look designed. This file is written for you. People start at the [README](README.md).
+
+Artifact Studio is the design step. If the person mainly needs the words in a tone (a pitch, a
+one-pager, a story), go to [Tone Studio](../tone-studio/AGENTS.md). If they mainly need the sections
+of a site laid out, go to [Web Sections](../web-sections/AGENTS.md). If they hand you words or
+sections from either, keep them and design around them.
 
 ## The path
 
@@ -22,12 +27,13 @@ person's content only; check it; return it with the delivery note below.
 | You need | Read |
 | --- | --- |
 | A complete small file to copy and fill, for a deck or a social picture | [`level-2-files/artifact-studio/assets/starters/`](level-2-files/artifact-studio/assets/starters/) |
-| How to show a social post, an email or a blog as its audience will see it | [`post-previews.md`](level-2-files/artifact-studio/references/post-previews.md), with working frames in [`sources/`](level-3-files/mcp/library/sources/) (`02-posts-lib.html` and `86` to `92`) |
+| How to show a social post, an email or a blog as its audience will see it | Moved to [Web Sections](../web-sections/AGENTS.md) on 21 November 2026: its post previews page and reference |
 | The skeleton every page is built on | [`page-skeleton.html`](level-2-files/artifact-studio/assets/page-skeleton.html) |
+| Which effect fits which job, including the cinematic effects | [`effects-index.md`](level-2-files/artifact-studio/references/effects-index.md) |
 | The rules, and the cards for each recipe, voice and look | [`level-2-files/artifact-studio/references/`](level-2-files/artifact-studio/references/) |
 | Every template with its fit scores, and reference code for each | [`level-3-files/mcp/library/`](level-3-files/mcp/library/): `index.json`, `sources/` and `svg/` |
-| Every template, voice and effect, open in a browser | [`showcase.html`](showcase.html) (effects, layouts, post previews, voices) and [`components.html`](components.html) (pages, decks, parts, design ideas, the picker, the skill). Live at https://bar181.github.io/practical-ai/artifact-studio/showcase.html and https://bar181.github.io/practical-ai/artifact-studio/components.html |
-| What a good result looks like | [`base/examples/`](base/examples/): one worked example for each voice, for post previews, for photo effects and for a report. Each shows the prompt, the sample input and the finished page. [`before-after/`](base/examples/before-after/) is one lesson the author made for a client three ways (plain, teacher, story) from one source, with that source |
+| Every template, voice and effect, open in a browser | [`showcase.html`](showcase.html) (photo, scroll and cinematic effects, layouts, social picture sizes, voices) and [`components.html`](components.html) (pages, decks, parts, design ideas, the picker, the skill). Live at https://bar181.github.io/practical-ai/artifact-studio/showcase.html and https://bar181.github.io/practical-ai/artifact-studio/components.html |
+| What a good result looks like | [`base/examples/`](base/examples/): one worked example for each voice, for photo effects and for a report. Each shows the prompt, the sample input and the finished page. [`before-after/`](base/examples/before-after/) is one lesson the author made for a client three ways (plain, teacher, story) from one source, with that source |
 | The person's standing preferences | A file named `preferences.md`, if they have one. The template is [`level-2-files/preferences.md`](level-2-files/preferences.md) |
 | Designs the person liked, in their own words | [`level-3-files/mcp/inspiration/`](level-3-files/mcp/inspiration/), or call `list_inspiration` |
 
@@ -59,8 +65,8 @@ Check before sharing: <the numbers, names and claims a person must verify>
 1. No invented facts. A gap that would mislead the reader is marked `[needs: ...]` on the page.
    Every gap is listed in the delivery note.
 2. A voice is a style. Never attribute words to the person who inspired it.
-3. Every company, person and figure in the templates is invented, except on the visionary page
-   and the post previews, which are about this repository and name its author. Adapt the pattern and never
+3. Every company, person and figure in the templates is invented, except on the visionary page,
+   which is about this repository and names its author. Adapt the pattern and never
    carry the example content into the person's page.
 4. When the person shows you a design they like, record the idea in your own words. Do not copy
    its text, pictures, logo, characters or code.

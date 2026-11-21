@@ -15,7 +15,7 @@ their own.
 | --- | --- |
 | Open [the showcase page](https://bar181.github.io/practical-ai/artifact-studio/showcase.html) in a browser on the screen you will present from. Offline? Download [`showcase.html`](../showcase.html) | 1 minute |
 | Download [`examples/voice-explainer.html`](examples/voice-explainer.html) too. It is a lesson on this tool, made by an AI from a prompt | 1 minute |
-| Have the "Try it" prompt from the [README](../README.md#try-it-in-five-minutes) ready to share | 1 minute |
+| Have the "Try it" prompt from the [README](../README.md#try-it-now) ready to share | 1 minute |
 | Ask each learner to bring notes they do not mind showing: nothing private | The day before |
 
 ## The lesson
@@ -26,7 +26,7 @@ their own.
 | 3 to 7 | Open the Visionary tab. Scroll the first three screens | "AI has read every book in the world. It has never met you. Think of it as a smart intern: it needs a brief." | Tell the person beside them one thing a new intern would get wrong on day one |
 | 7 to 10 | Open the Explainer tab, at "Build a good ask". Press Step six times | "The job, the reader, the shape. Those three change the page more than anything else." | Write their own ask: job, reader, shape |
 | 10 to 20 | Share the prompt. Walk the room | "Paste it in, then your notes, then your ask. If it shows code and not a page, say: show this as an artifact, or ask for a preview." | Make their first page from their own notes |
-| 20 to 25 | Open the Three drafts tab under Socials | "A list of drafts is more reading. Ask to see each one the way your audience will." | Ask for the same content a second way: as a deck, in another voice, or as three post drafts |
+| 20 to 25 | Open the Cinematic effects tab in the showcase | "One or two effects make a page feel directed. All eight make it a showreel." | Ask for the same content a second way: as a deck, or with one cinematic effect added |
 | 25 to 30 | Show the delivery note on one learner's screen | "It tells you what it assumed and what to check. The AI builds the file. You sign it." | Check one number on their page against their notes. Say what they would change |
 
 ## What to watch for

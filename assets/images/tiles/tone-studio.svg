@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 380" role="img" aria-label="Tone Studio: your facts, in the tone your reader needs" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif">
+<rect x="2" y="2" width="336" height="376" rx="32" fill="#ffffff" stroke="#d0d7de" stroke-width="3"/>
+<rect x="110" y="34" width="120" height="120" rx="28" fill="#be185d"/>
+<g transform="translate(110 34) scale(0.46875)"><path d="M60 70 H196 Q212 70 212 86 V156 Q212 172 196 172 H122 L88 202 V172 H60 Q44 172 44 156 V86 Q44 70 60 70 Z" fill="#fff"/><rect x="68" y="96" width="98" height="12" rx="6" fill="#be185d"/><rect x="68" y="120" width="120" height="12" rx="6" fill="#f9a8d4"/><rect x="68" y="144" width="60" height="12" rx="6" fill="#f9a8d4"/></g>
+<text x="170" y="222" text-anchor="middle" fill="#0c2340" font-size="32" font-weight="800">Tone Studio</text>
+<text x="170" y="296" text-anchor="middle" fill="#3b4a5e" font-size="26" font-weight="600">Right words, right order.</text>
+<text x="170" y="350" text-anchor="middle" fill="#be185d" font-size="24" font-weight="800">Open ›</text>
+</svg>

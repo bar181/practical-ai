@@ -48,5 +48,7 @@ export type Tool = {
   status: { date: string; label: string; text: string };
   readme: string;
   explainer?: string;
+  /** For a tool that is one of a set: a short note and links to the others. */
+  set?: { text: string; links: { href: string; label: string }[] };
   tabs: Tab[];
 };

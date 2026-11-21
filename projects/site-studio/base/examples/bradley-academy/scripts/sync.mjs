@@ -7,12 +7,19 @@ import { fileURLToPath } from "node:url";
 const here = dirname(fileURLToPath(import.meta.url));
 const site = join(here, "..");
 const repo = join(site, "..", "..", "..", "..", "..");
-const projects = ["artifact-studio", "agentic-process", "document-to-action-brief", "learnings-database", "rare-find"];
+const projects = [
+  "artifact-studio", "agentic-process", "document-to-action-brief", "learnings-database", "rare-find",
+  "tone-studio", "web-sections", "meeting-notes-to-actions", "write-in-my-voice",
+];
 
 // 1. Pictures: each project's _build/img, and the shared images
 const media = join(site, "public", "media");
 rmSync(media, { recursive: true, force: true });
-for (const p of projects) cpSync(join(repo, "projects", p, "_build", "img"), join(media, p), { recursive: true });
+// Some projects have no pictures yet; they are skipped.
+for (const p of projects) {
+  const img = join(repo, "projects", p, "_build", "img");
+  if (existsSync(img)) cpSync(img, join(media, p), { recursive: true });
+}
 cpSync(join(repo, "assets", "images"), join(media, "shared"), { recursive: true });
 // Placeholder photographs, made by the repository owner, until the final images in app/content/images.ts arrive.
 cpSync(join(repo, "projects", "artifact-studio", "_build", "photos"), join(media, "photos"), { recursive: true });
@@ -31,6 +38,10 @@ const headings = {
   "document-to-action-brief": /^## Try it now/m,
   "learnings-database": /^## Get started: try it now/m,
   "rare-find": /^## Play in ChatGPT, or any chatbot/m,
+  "tone-studio": /^## Try it now/m,
+  "web-sections": /^## Try it now/m,
+  "meeting-notes-to-actions": /^## Try it now/m,
+  "write-in-my-voice": /^## Try it now/m,
   starter: /^## Start here/m,
 };
 const prompts = {};

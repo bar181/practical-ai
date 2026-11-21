@@ -133,7 +133,7 @@ code { font-family: var(--mono); font-size: 0.9em; }
 .ticks strong { font: 600 var(--step-2)/1.1 var(--display); letter-spacing: -0.01em; }
 .ticks span { color: var(--ivory-dim); }
 
-/* The reel: five tools as stacked scenes */
+/* The reel: the tools as stacked scenes */
 .reel { padding-top: clamp(4rem, 3rem + 5vw, 8rem); }
 .reel-head { margin-bottom: 2.5rem; }
 .reel-lead { color: var(--ivory-dim); font-size: var(--step-1); max-width: 56ch; }
@@ -341,11 +341,25 @@ td { color: var(--ivory-dim); }
   ::view-transition-group(*), ::view-transition-old(*), ::view-transition-new(*) { animation: none !important; }
 }
 
-/* The five tools, one tap away under the opening scene */
+/* Every tool, one tap away under the opening scene */
 .tool-strip { border-bottom: 1px solid var(--line); background: var(--velvet); }
 .tool-strip ul { list-style: none; padding: 0; margin-block: 0; display: grid; grid-auto-flow: column; grid-auto-columns: minmax(15rem, 1fr); overflow-x: auto; scrollbar-width: none; scroll-snap-type: inline proximity; }
 .tool-strip ul::-webkit-scrollbar { display: none; }
 .tool-strip li { scroll-snap-align: start; }
+/* On a wide screen every tool shows at once: three rows of three, nothing hidden in a scroller */
+@media (min-width: 64rem) {
+  .tool-strip ul { grid-auto-flow: row; grid-template-columns: repeat(3, minmax(0, 1fr)); overflow: visible; }
+  .tool-strip a { padding: 0.45rem 1rem; }
+  .tool-strip a > span { min-width: 0; }
+  .tool-strip a > span > span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  /* the hero gives up the strip's height, so all nine tools sit above the fold */
+  .hero.hero-home { min-height: calc(100svh - 4rem - 13.5rem); }
+  .hero.hero-home .hero-inner { padding-block: calc(var(--header-h) + 1.25rem) 1.75rem; }
+  .hero.hero-home .hero-title { font-size: min(var(--step-4), 7.5svh); }
+}
+@media (min-width: 64rem) and (max-height: 780px) { .hero.hero-home .hero-title { font-size: 6.8svh; } }
+/* On a phone, fade the edge so it is clear the strip scrolls */
+@media (max-width: 63.99rem) { .tool-strip ul { mask-image: linear-gradient(to right, black 85%, transparent); } }
 
 .tool-strip a { display: flex; gap: 0.8rem; align-items: flex-start; padding: 1.1rem 1rem; text-decoration: none; min-height: 100%; transition: background-color 300ms; }
 .tool-strip a:hover { background: var(--velvet-3); }

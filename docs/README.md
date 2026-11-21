@@ -1,15 +1,15 @@
 # Practical AI: what is ready, and what comes next
 
-A one-page summary for anyone deciding where to start. Updated 19 November 2026.
+A one-page summary for anyone deciding where to start. Updated 21 November 2026.
 
 ## What is ready
 
-Five projects are built and ready to try. Other people are testing Artifact Studio, Agentic
-Process, Document to action brief and Rare Find as of 18 November 2026. Nobody else has used the
-Learnings database yet; it was finished on 19 November. Three are described below; the Learnings
-database and the Rare Find game follow in the lists. Artifact Studio, Agentic Process, the
-Learnings database and Rare Find each have an explainer page in [`reports/`](reports/) (download
-the HTML file and open it in a browser).
+Ten projects are built and ready to try. Other people have been testing Artifact Studio, Agentic
+Process, Document to action brief and Rare Find since 18 November 2026. The other six (the
+Learnings database, Meeting notes to actions, Write and edit in my voice, Tone Studio, Web Sections
+and Site Studio) are tested by their author only. Three are described below; the rest follow in the
+lists. Artifact Studio, Agentic Process, the Learnings database and Rare Find each have an explainer
+page in [`reports/`](reports/) (download the HTML file and open it in a browser).
 
 ### Artifact Studio: designer-quality reports you make yourself
 
@@ -19,11 +19,12 @@ puts them on a menu, so one sentence turns rough notes into a professional page 
 reader.
 
 **How you use it:** paste one prompt with your notes, read the page that comes back, check the
-numbers against your notes, and share it. Then ask for the same notes as a deck or a post in one
-sentence.
+numbers against your notes, and share it. Then ask for the same notes as a deck or a social picture in
+one sentence. For the words in a tone, use Tone Studio first; for the sections of a site, Web
+Sections.
 
-**Use cases:** a monthly report for a business partner, a deck for a team meeting, a week of posts
-from one piece, a page that opens with your own photo.
+**Use cases:** a monthly report for a business partner, a deck for a team meeting, a cinematic launch
+page, a page that opens with your own photo.
 
 **Where it stands:** in user testing since 18 November 2026; results are not in yet. Built and
 checked by its author, with 22 runs by fresh AI sessions. Tried
@@ -31,6 +32,11 @@ only in Claude so far. [Open the project](../projects/artifact-studio/) ·
 [the explainer page](reports/artifact-studio.html) ·
 [the showcase](https://bar181.github.io/practical-ai/artifact-studio/showcase.html) and [the components](https://bar181.github.io/practical-ai/artifact-studio/components.html), live ·
 [the evidence](../projects/artifact-studio/quality-results/README.md).
+
+**Split into three, 21 November 2026.** Artifact Studio stays the design step and gained eight
+cinematic effects. Two new projects hold the other steps: [Tone Studio](../projects/tone-studio/)
+for the words and [Web Sections](../projects/web-sections/) for the structure. Both are tested by
+their author only. [The split plan](../workshop/plans/artifact-studio-split/README.md).
 
 ### Agentic Process: teach your AI a job once
 
@@ -114,6 +120,8 @@ Support tools that make every other tool better. Each starts with a version a pe
 
 | Project | What it does for you | Where it stands |
 | --- | --- | --- |
+| **Tone Studio** | Your content rewritten in the tone and story order your reader needs: an investor deck, a board one-pager, a story, an explainer. Every fact kept | **New, tested by its author only:** [project](../projects/tone-studio/) |
+| **Web Sections** | The right sections for a website or page, in order, responsive, filled with your content and clear placeholders | **New, tested by its author only:** [project](../projects/web-sections/) |
 | **Site Studio** | A real website for your work, made with your AI and hosted free on GitHub Pages. Its first site is Bradley Academy, with every tool on this list | **Building:** cinematic version built by Claude, 20 Nov 2026. Six review rounds against a US$50,000 agency bar: UX 86, art direction 73. Not yet live or reviewed by the owner. [Project](../projects/site-studio/) · [plan](../workshop/plans/site-studio/README.md) |
 
 The full list of ideas, sorted into everyday tasks, agent tools and hybrid projects, is in

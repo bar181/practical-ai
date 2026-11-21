@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spreadsheets Without Fear: how it works</title>
+<meta name="description" content="An explainer landing page for an invented online course, written in the explainer tone.">
+<script>document.documentElement.classList.add("js");</script>
+<style>
+  :root {
+    /* 60-30-10: white page, near-black ink and grey structure, one marker yellow */
+    --c60: #ffffff;
+    --c30: #111111;
+    --c10: #ffd60a;
+    --ink: var(--c30);
+    --soft: #4a4a4a;
+    --line: #d9d9d9;
+    --paper: var(--c60);
+    --mark: var(--c10);       /* the one highlight: it means "look here" */
+    --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font: 1.0625rem/1.6 var(--sans);
+  }
+  img { max-width: 100%; height: auto; display: block; }
+  .wrap { width: 100%; max-width: 46rem; margin: 0 auto; padding: 0 1.25rem; }
+  .wide { max-width: 68rem; }
+  section { padding: 3.5rem 0; border-top: 1px solid var(--line); }
+  section:first-of-type { border-top: 0; }
+
+  /* Every section is tagged with what kind of thing it is */
+  .tag {
+    display: inline-block;
+    font: 600 0.75rem/1 var(--mono);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border: 1.5px solid var(--ink);
+    padding: 0.35rem 0.5rem;
+    margin: 0 0 1rem;
+  }
+  h1, h2 { line-height: 1.12; letter-spacing: -0.02em; margin: 0 0 1rem; }
+  h1 { font-size: clamp(2.3rem, 9vw, 3.7rem); font-weight: 800; }
+  h2 { font-size: clamp(1.6rem, 6vw, 2.4rem); font-weight: 800; }
+  p { margin: 0 0 1rem; max-width: 36rem; }
+  .lead { font-size: 1.2rem; color: var(--soft); }
+  /* The marker is a solid block behind the words, like a highlighter pen. It follows wrapped lines. */
+  mark { background: var(--mark); color: var(--c30); padding: 0 0.1em; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+  /* In the hero each mark sits on one line, so the stroke is drawn separately and can sweep in */
+  .hero mark { position: relative; z-index: 0; background: none; }
+  .hero mark::before {
+    content: ""; position: absolute; z-index: -1; left: 0; right: 0; bottom: 0; height: 100%;
+    background: var(--mark); transform-origin: left center;
+  }
+
+  /* Ink bands: the 30 colour as structure, for the big idea, the recap and the footer */
+  .band { background: var(--c30); color: var(--c60); border-top: 0; }
+  .band + section { border-top: 0; }
+  .band .tag { border-color: var(--c60); }
+  .band .soft, .band .gap { color: #b8b8b8; }
+  .band blockquote { color: var(--c30); }
+  .band + .band { border-top: 1px solid #3a3a3a; }
+  .band details { border-color: var(--c60); }
+  .band details[open] summary { color: var(--c30); }
+
+  /* The question */
+  .hero { min-height: 100svh; display: flex; align-items: center; padding: 3rem 0; }
+  .hero-grid { display: grid; gap: 2rem; align-items: center; }
+  .kicker { font: 600 0.9rem/1.4 var(--mono); margin: 0 0 1.25rem; }
+  .rise { display: block; overflow: hidden; }
+  .rise > span { display: block; }
+
+  /* One grade for every photo: black and white, a little contrast */
+  .graded { filter: grayscale(1) contrast(1.08); border: 1.5px solid var(--ink); }
+  figure { margin: 0; }
+  figcaption { font: 0.85rem/1.4 var(--mono); color: var(--soft); margin-top: 0.5rem; }
+
+  /* The analogy, in very large type */
+  .analogy { font-size: clamp(2rem, 8vw, 3.6rem); font-weight: 800; line-height: 1.1; letter-spacing: -0.02em; margin: 0 0 1.25rem; max-width: none; }
+
+  /* The worked example: a sheet in monospace */
+  .sheet-wrap { position: sticky; top: 0; z-index: 1; background: var(--paper); padding: 0.75rem 0; }
+  table.sheet { width: 100%; border-collapse: collapse; font: 0.9rem/1.35 var(--mono); }
+  .sheet th, .sheet td { border: 1px solid #9a9a9a; padding: 0.45rem 0.5rem; text-align: left; vertical-align: top; }
+  .sheet thead th, .sheet tbody th { background: var(--c30); border-color: var(--c30); font-weight: 600; color: var(--c60); }
+  .sheet thead th:first-child, .sheet tbody th { width: 2.2rem; text-align: center; }
+  .sheet td.a { width: 42%; }
+  .sheet .hl { background: var(--mark); color: var(--ink); }
+  .recap-line { font-size: clamp(1.35rem, 5vw, 1.75rem); font-weight: 800; line-height: 1.3; }
+  .steps { list-style: none; margin: 0; padding: 0; }
+  .steps > li { font-size: 1.2rem; padding: 1.25rem 0 1.25rem 1rem; border-left: 4px solid var(--line); margin: 1rem 0; }
+  .steps > li.on { border-left-color: var(--mark); }
+  .steps strong { font-family: var(--mono); font-size: 0.85rem; display: block; margin-bottom: 0.25rem; }
+  .js .steps > li { min-height: 55vh; display: flex; flex-direction: column; justify-content: center; }
+  .build { margin: 0 0 1rem; padding-left: 1.25rem; }
+  .build li { margin: 0.25rem 0; }
+
+  /* The harder case */
+  blockquote { margin: 1.5rem 0; padding: 1.25rem 1.25rem 1.25rem 1.25rem; border-left: 6px solid var(--c30); background: #fafafa; font-size: 1.15rem; }
+  blockquote p { margin: 0 0 0.75rem; }
+  blockquote cite { font: normal 0.85rem/1.4 var(--mono); color: var(--soft); }
+
+  /* Check yourself */
+  details { border: 1.5px solid var(--ink); margin: 0 0 0.75rem; }
+  summary {
+    cursor: pointer; min-height: 44px; padding: 0.75rem 1rem; font-weight: 700;
+    list-style: none; display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: "+"; font: 700 1.25rem/1 var(--mono); }
+  details[open] summary::after { content: "\2212"; }
+  details[open] summary { background: var(--mark); }
+  details > div { padding: 0.75rem 1rem 0.25rem; }
+
+  /* Recap and the one action */
+  .cta {
+    display: inline-flex; align-items: center; justify-content: center; text-align: center; min-height: 60px; min-width: min(100%, 34rem); padding: 1rem 2.5rem;
+    background: var(--mark); color: var(--ink); border: 2px solid var(--ink);
+    font-weight: 800; font-size: 1.3rem; text-decoration: none;
+  }
+  .cta:hover { background: var(--ink); color: var(--paper); }
+  .band .cta { border-color: var(--mark); }
+  .band .cta:hover { background: var(--c60); color: var(--c30); }
+  .gap { font: 0.9rem/1.4 var(--mono); color: var(--soft); margin-top: 0.75rem; }
+  a:focus-visible, summary:focus-visible, button:focus-visible {
+    outline: 3px solid var(--ink); outline-offset: 3px; box-shadow: 0 0 0 6px var(--mark);
+  }
+  .band a:focus-visible { outline-color: var(--c60); }
+  footer { background: var(--c30); padding: 1.5rem 0 2.5rem; font: 0.85rem/1.5 var(--mono); color: #b8b8b8; }
+
+  @media (min-width: 760px) {
+    .hero-grid { grid-template-columns: 1.3fr 1fr; }
+  }
+
+  /* Motion only when the reader allows it */
+  @media (prefers-reduced-motion: no-preference) {
+    .js .rise > span { transform: translateY(105%); animation: rise 0.9s cubic-bezier(.2,.7,.2,1) forwards; }
+    .js .rise:nth-child(2) > span { animation-delay: 0.15s; }
+    .js .rise:nth-child(3) > span { animation-delay: 0.3s; }
+    .js .hero mark::before { transform: scaleX(0); animation: sweep 0.8s 0.9s ease-out forwards; }
+    .sheet td, .sheet th, .steps li { transition: background-color 0.35s ease, border-color 0.35s ease; }
+  }
+  @keyframes rise { to { transform: translateY(0); } }
+  @keyframes sweep { to { transform: scaleX(1); } }
+</style>
+</head>
+<body>
+<main>
+
+  <section class="hero" aria-labelledby="q">
+    <div class="wrap wide hero-grid">
+      <div>
+        <p class="tag">The question</p>
+        <p class="kicker">Spreadsheets Without Fear, an online course</p>
+        <h1 id="q">
+          <span class="rise"><span>What would it take</span></span>
+          <span class="rise"><span>to keep <mark>your own</mark></span></span>
+          <span class="rise"><span><mark>numbers</mark>?</span></span>
+        </h1>
+        <p class="lead">For small business owners who avoid spreadsheets. Here is how it works, one idea at a time.</p>
+      </div>
+      <figure>
+        <img class="graded" src="../img/class.jpg" width="1088" height="588"
+             alt="Cartoon of a person in round glasses at a desk under a lamp, looking unsure at a screen that shows four other cartoon people on a video call.">
+      </figure>
+    </div>
+  </section>
+
+  <section class="band" aria-labelledby="analogy">
+    <div class="wrap">
+      <p class="tag">The analogy</p>
+      <h2 id="analogy" class="analogy">A spreadsheet is a <mark>shoebox with dividers</mark>.</h2>
+      <p>Every receipt still goes in, but in a labelled slot. One thing per row. One kind of thing per column.</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="example">
+    <div class="wrap">
+      <p class="tag">Worked example</p>
+      <h2 id="example">Here is this course, as a sheet.</h2>
+      <div class="sheet-wrap">
+        <table class="sheet" id="sheet">
+          <thead><tr><th scope="col"></th><th scope="col" data-col="a">A</th><th scope="col" data-col="b">B</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">1</th><td class="a">Lessons</td><td class="b">6, weekly</td></tr>
+            <tr><th scope="row">2</th><td class="a">Where</td><td class="b">Live on Zoom</td></tr>
+            <tr><th scope="row">3</th><td class="a">When</td><td class="b">Thursdays, 7pm Eastern</td></tr>
+            <tr><th scope="row">4</th><td class="a">Length</td><td class="b">90 minutes each</td></tr>
+            <tr data-row="5"><th scope="row" class="hl">5</th><td class="a hl">Starts</td><td class="b hl">Thursday 14 January 2027</td></tr>
+            <tr><th scope="row">6</th><td class="a">Group size</td><td class="b">At most 20 people</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="tag" style="margin-top:2rem">Step through it</p>
+      <ol class="steps" id="steps">
+        <li data-step="a"><strong>Step 1</strong>Column A says what a value is.</li>
+        <li data-step="b"><strong>Step 2</strong>Column B holds the value.</li>
+        <li data-step="row"><strong>Step 3</strong>Read across one row: one fact. Row 5: it starts Thursday 14 January 2027.</li>
+        <li data-step="own"><strong>Step 4</strong>
+          <span>Now use your own numbers. You build three sheets:</span>
+          <ul class="build"><li>a cash-flow sheet</li><li>an invoice tracker</li><li>a price calculator</li></ul>
+          <span>Excel or Google Sheets both work.</span>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section aria-labelledby="harder">
+    <div class="wrap">
+      <p class="tag">A harder case</p>
+      <h2 id="harder">What if you think you are bad with money?</h2>
+      <p>The teacher, Priya Shah, a bookkeeper for 12 years, started the course because of this.</p>
+      <blockquote>
+        <p>"In my first year as a bookkeeper, a florist brought me a shoebox of receipts on 29 April, two days before her tax deadline. She cried at my desk. <mark>She was not bad with money.</mark> Nobody had ever shown her a spreadsheet slowly."</p>
+        <cite>Priya Shah</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="band" aria-labelledby="check">
+    <div class="wrap">
+      <p class="tag">Check yourself</p>
+      <h2 id="check">Try these before you peek.</h2>
+      <details><summary>In the sheet above, which cell holds the group size?</summary>
+        <div><p>B6: at most 20 people.</p></div></details>
+      <details><summary>What if I miss a lesson?</summary>
+        <div><p>Each recording stays available for 30 days.</p></div></details>
+      <details><summary>What does it cost?</summary>
+        <div><p>$249. $199 if you register before 31 December 2026.</p></div></details>
+      <details><summary>Has anyone done this before?</summary>
+        <div><p>Four groups, 71 people, since March 2025. 52 of the 71 answered a survey after the course. 44 of the 52 said they now update their own numbers every week. 39 of the 52 said they had stopped sending their receipts to someone else to sort.</p></div></details>
+    </div>
+  </section>
+
+  <section class="band" aria-labelledby="recap">
+    <div class="wrap">
+      <p class="tag">Recap</p>
+      <h2 id="recap">The shoebox, with dividers.</h2>
+      <p class="recap-line"><mark>Six Thursdays, three sheets, your own numbers.</mark></p>
+      <blockquote>
+        <p>"I used to dread the end of the month. Now it takes me twenty minutes on a Sunday."</p>
+        <cite>Marta, who runs a two-person cleaning company</cite>
+      </blockquote>
+      <a class="cta" href="#" title="[needs: registration link]">Register on the course page</a>
+      <p class="gap">[needs: registration link]</p>
+    </div>
+  </section>
+
+</main>
+<footer>
+  <div class="wrap">Invented example for Tone Studio. The course, people and numbers are made up.</div>
+</footer>
+
+<script>
+  // The page reads in full without this script: it only links the steps to the sheet.
+  (function () {
+    var sheet = document.getElementById("sheet");
+    var steps = document.querySelectorAll("#steps > li");
+    if (!("IntersectionObserver" in window) || !sheet) return;
+    function clear() {
+      sheet.querySelectorAll(".hl").forEach(function (el) { el.classList.remove("hl"); });
+      steps.forEach(function (s) { s.classList.remove("on"); });
+    }
+    function show(step) {
+      clear();
+      var k = step.getAttribute("data-step");
+      step.classList.add("on");
+      if (k === "a" || k === "b") {
+        sheet.querySelectorAll("td." + k + ", thead th[data-col='" + k + "']").forEach(function (el) { el.classList.add("hl"); });
+      } else if (k === "row") {
+        sheet.querySelectorAll("tr[data-row='5'] > *").forEach(function (el) { el.classList.add("hl"); });
+      }
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) show(e.target); });
+    }, { rootMargin: "-45% 0px -45% 0px" });
+    steps.forEach(function (s) { io.observe(s); });
+  })();
+</script>
+</body>
+</html>

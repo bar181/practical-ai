@@ -3,6 +3,8 @@ name: Practical AI site on GitHub Pages
 # Publishes https://bar181.github.io/practical-ai/:
 #   /                  the Bradley Academy site (React, every page pre-rendered): projects/site-studio/
 #   /artifact-studio/  the two master pages (showcase, components) and the worked examples
+#   /tone-studio/      the seven tone landing pages
+#   /web-sections/     the section library, the post previews and the café example
 #   /rare-find/        the game, after a full playtest
 #   /reports/          one explainer per project
 # workshop/tools/build_site.py assembles the site; read it for the full map.

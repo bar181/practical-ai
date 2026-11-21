@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Web Sections icon: a page built from stacked blocks">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#14b8a6"/><stop offset="1" stop-color="#115e59"/></linearGradient></defs>
+<rect width="256" height="256" rx="56" fill="url(#bg)"/>
+<rect x="58" y="46" width="140" height="164" rx="12" fill="#fff"/><rect x="72" y="60" width="112" height="14" rx="4" fill="#99f6e4"/><rect x="72" y="84" width="112" height="44" rx="6" fill="#0f766e"/><rect x="72" y="138" width="34" height="30" rx="5" fill="#99f6e4"/><rect x="111" y="138" width="34" height="30" rx="5" fill="#99f6e4"/><rect x="150" y="138" width="34" height="30" rx="5" fill="#99f6e4"/><rect x="72" y="178" width="112" height="18" rx="4" fill="#134e4a"/>
+</svg>
