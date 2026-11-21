@@ -33,6 +33,19 @@ and open it in a browser.
 
 A copy of each is in [`docs/reports/`](../../../docs/reports/).
 
+## Cinematic effects tab, 21 November 2026
+
+The author added eight effects from the Bradley Academy website as a new showcase tab
+(`_build/views/23-cinema.html`) and checked it in headless Chrome:
+
+- Phone (390 by 844) and desktop (1280 by 800): no script errors, no sideways scrolling; each
+  effect captured at nine scroll positions. The statement lights up word by word, the clip opens,
+  the stack's lower scene shrinks and darkens, the timeline draws.
+- Reduced motion: the effects' script does not run and every effect shows its finished state.
+- Not checked: other browsers, a screen reader, and the testers. The page change uses the View
+  Transitions API where the browser has it and simply switches where it does not; only Chrome was
+  tried.
+
 ## Not yet checked
 
 - Any assistant other than Claude: ChatGPT, Gemini, Copilot and the others named on the README.

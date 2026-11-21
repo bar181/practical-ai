@@ -122,6 +122,15 @@ With a photo: slow pan and zoom, parallax window, photo-filled type, pinned phot
 per paragraph, self-drawing line art, before and after slider, frosted glass card, bento grid,
 swipe gallery, flip card.
 
+Cinematic: an opening with letterbox bars, a masked title rise and brief film grain; one film grade
+on every photo; a statement whose words light up as you scroll; a photo that opens from the centre;
+a stack of full-screen scenes; a timeline that draws itself; a card that grows into the next view;
+end credits. Use one or two effects a page. The full list by job is the effects index:
+https://github.com/bar181/practical-ai/blob/main/projects/artifact-studio/level-2-files/artifact-studio/references/effects-index.md
+
+If a Tone Studio or Web Sections skill is loaded, take the words or the sections from it and do the
+design here.
+
 ## Build rules
 
 - One HTML file, CSS and script inside, no build step, opens with no network. Embed fonts and

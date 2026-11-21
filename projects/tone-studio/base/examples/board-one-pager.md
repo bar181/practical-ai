@@ -1,0 +1,114 @@
+# Worked example: an executive one-pager for a board
+
+**Invented.** The business and the people are made up. This is the reply a fresh Claude session
+gave on 21 November 2026 when given [`../SKILL.md`](../SKILL.md) and the message below. It was graded
+against the [answer key](../../_build/eval/t2-key.md) and passed. 
+
+To see tones like this one designed as pages, open the voice examples in
+[Artifact Studio's showcase](https://bar181.github.io/practical-ai/artifact-studio/showcase.html).
+
+## The message (input)
+
+Turn this into a one-pager for the library board. They decide on 9 December.
+
+my notes from the review:
+current room booking = paper diary at front desk, double bookings maybe twice a month, staff hate it
+option A: Roomly, $1,800/yr, staff training half a day, works with our website
+option B: BookIt Pro, $3,100/yr, has kiosk mode, training 2 days, vendor says setup 6 weeks
+Option A could be live by end of January. B probably March.
+Maria (branch manager) prefers A. IT has not reviewed either yet!!
+risk: if website plugin breaks we lose online booking - Roomly says they support it
+budget line for tech this year: $2,500 left
+
+## The reply (output, unedited)
+
+**In short:** Executive brief tone in the executive one-pager format, because the board has to make one decision by a set date.
+
+**Assumed:**
+- Reader: the library board. Goal: choose a room booking system on 9 December.
+- The recommendation is built from Maria's stated preference and the budget left. Confirm it is yours before you send it.
+- Who the paper is from and its date are not in your notes.
+
+### The words
+
+**Room booking system: decision paper**
+
+**To:** Library board
+**From:** [needs: your name and role]
+**Date:** [needs: date of this paper]
+**Decision needed by:** 9 December
+
+**Decision needed**
+
+Choose a room booking system to replace the paper diary at the front desk.
+
+**Background**
+
+1. Rooms are booked in a paper diary at the front desk. Double bookings happen maybe twice a month. Staff strongly dislike the system.
+2. Two systems were reviewed: Roomly and BookIt Pro. IT has not yet reviewed either one.
+3. This year's technology budget line has $2,500 left.
+
+**Options**
+
+| | Do nothing | A: Roomly | B: BookIt Pro |
+| --- | --- | --- | --- |
+| Annual cost | None stated | $1,800 | $3,100 |
+| Within the $2,500 left this year | Not applicable | Yes | No |
+| Staff training | None | Half a day | 2 days |
+| Could be live | Not applicable | End of January | Probably March. The vendor says setup takes 6 weeks |
+| Notable | Double bookings continue | Works with our website | Has a kiosk mode |
+
+**Recommendation**
+
+Option A, Roomly, subject to IT review. It is the preferred option of Maria, the branch manager, it is within the $2,500 left this year, and it could be live by the end of January.
+
+**Risks and controls**
+
+| Risk | Control |
+| --- | --- |
+| IT has not reviewed either system. | IT reviews the chosen system before it goes live. |
+| If the website plugin breaks, online booking is lost. | Roomly says it supports the plugin. IT checks this in its review. |
+| Option B costs more than the $2,500 left this year. | If B is chosen: [needs: where the rest of the cost would come from]. |
+| Both are yearly costs. | [needs: how the annual cost is funded after this year]. |
+
+**Next steps**
+
+| Step | Owner | By |
+| --- | --- | --- |
+| Review Option A, including the website plugin | IT | [needs: date] |
+| Decide on the booking system | Library board | 9 December |
+| If A is approved: set up and train staff (half a day) | [needs: owner] | End of January |
+
+### Facts check
+
+| # | In your content | In the words | Status |
+| --- | --- | --- | --- |
+| 1 | Current room booking = paper diary at front desk | "Rooms are booked in a paper diary at the front desk" | Kept, reworded (full sentence) |
+| 2 | Double bookings maybe twice a month | "Double bookings happen maybe twice a month" | Kept ("maybe" kept) |
+| 3 | Staff hate it | "Staff strongly dislike the system" | Kept, reworded (formal wording, same strength) |
+| 4 | Option A: Roomly, $1,800/yr | Options table, annual cost | Kept |
+| 5 | A: staff training half a day | Options table; next steps | Kept |
+| 6 | A works with our website | Options table, "Works with our website" | Kept |
+| 7 | Option B: BookIt Pro, $3,100/yr | Options table, annual cost | Kept |
+| 8 | B has kiosk mode | Options table, "Has a kiosk mode" | Kept |
+| 9 | B: training 2 days | Options table | Kept |
+| 10 | Vendor says setup 6 weeks | "The vendor says setup takes 6 weeks" | Kept (still the vendor's claim) |
+| 11 | A could be live by end of January | Options table; recommendation; next steps | Kept ("could" kept) |
+| 12 | B probably March | "Probably March" | Kept ("probably" kept) |
+| 13 | Maria (branch manager) prefers A | Recommendation | Kept, reworded (used as the basis of the recommendation) |
+| 14 | IT has not reviewed either yet | Background 2; risks; next steps | Kept |
+| 15 | Risk: if website plugin breaks we lose online booking | Risks table | Kept |
+| 16 | Roomly says they support it | "Roomly says it supports the plugin" | Kept (still Roomly's claim) |
+| 17 | Budget line for tech this year: $2,500 left | Background 3; options table; recommendation; risks | Kept. "Within" and "more than" are direct comparisons of your figures, not new facts |
+| 18 | Board decides 9 December | Header; next steps | Kept (no year added, none given) |
+
+### Gaps
+
+- [needs: your name and role]
+- [needs: date of this paper]
+- [needs: where the rest of the cost would come from] (only if B is chosen)
+- [needs: how the annual cost is funded after this year]
+- [needs: date] for the IT review
+- [needs: owner] for setup and training
+
+Want this designed? Paste the words into Artifact Studio, or name a look.

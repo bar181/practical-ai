@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<!-- Worked example, invented: the café and its details are made up. Built by a fresh Claude session from base/SKILL.md on 21 November 2026 (quality-results/2026-11-21-t1-page.html). Its stand-in photos are labelled on the page; the skill now uses a dashed placeholder box instead. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tallowmere Café, 14 Wren Lane</title>
+<meta name="description" content="Tallowmere Café at 14 Wren Lane: coffee, pastries and soups at lunch. Open Tuesday to Sunday, closed Monday.">
+<style>
+:root{
+  --bg:#fbfaf7;        /* page background */
+  --panel:#f1eee8;     /* alternate section background */
+  --ink:#1c2321;       /* main text */
+  --muted:#5b6461;     /* secondary text, 4.5:1 on --bg */
+  --accent:#1f6f5c;    /* buttons and links: the one colour that means "act" */
+  --line:#dcd7ce;      /* borders */
+  --display:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  --text:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --radius:12px;
+  --max:1120px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.6 var(--text);overflow-x:clip}
+img,video{display:block;max-width:100%;height:auto}
+h1,h2,h3{font-family:var(--display);line-height:1.1;margin:0 0 .4em;text-wrap:balance;font-weight:700}
+h1{font-size:clamp(2.3rem,1.4rem + 4.4vw,4.6rem)}
+h2{font-size:clamp(1.8rem,1.2rem + 2.6vw,3rem)}
+h3{font-size:1.3rem}
+p{margin:0 0 1em;max-width:62ch}
+a{color:var(--accent)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:var(--max);margin-inline:auto;padding-inline:20px}
+.sec{padding-block:clamp(56px,8vw,104px)}
+.alt{background:var(--panel)}
+.lead{font-size:1.2rem;color:var(--muted)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 24px;border-radius:999px;background:var(--accent);color:#fff;font-weight:700;text-decoration:none;border:2px solid var(--accent)}
+.btn.ghost{background:transparent;color:inherit;border-color:currentColor}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px}
+.ph-note{display:inline-block;font-size:.8rem;background:#fff3c4;color:#5a4500;padding:2px 8px;border-radius:6px}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+
+/* HEROES */
+.hero-split .wrap{display:grid;gap:32px;align-items:center;padding-block:clamp(48px,7vw,96px)}
+@media(min-width:860px){.hero-split .wrap{grid-template-columns:1.05fr 1fr}}
+.hero-split img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--radius)}
+
+/* GALLERY */
+.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(min(100%,240px),1fr));margin:0;padding:0;list-style:none}
+.gallery figure{margin:0}
+.gallery img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:10px}
+.gallery figcaption{font-size:.9rem;color:var(--muted);margin-top:6px}
+
+/* ABOUT */
+.about{display:grid;gap:32px;align-items:center}
+@media(min-width:860px){.about{grid-template-columns:1fr 1.1fr}}
+.about img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:var(--radius)}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:24px;padding:0;list-style:none}
+.facts li{border-top:2px solid var(--accent);padding-top:10px}
+.facts b{display:block;font:700 1.6rem/1 var(--display)}
+.facts span{font-size:.9rem;color:var(--muted)}
+
+/* CONTACT */
+.contact{display:grid;gap:32px}
+@media(min-width:860px){.contact{grid-template-columns:1fr 1.2fr}}
+.form{display:grid;gap:14px}
+.form label{display:grid;gap:6px;font-weight:600}
+.form input,.form textarea,.form select{font:inherit;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:#fff;min-height:48px;color:var(--ink)}
+.form textarea{min-height:140px}
+.hours{width:100%;border-collapse:collapse}
+.hours td{padding:8px 0;border-bottom:1px solid var(--line)}
+.hours td+td{text-align:right}
+
+/* FOOTER */
+.foot{background:var(--ink);color:#cfd6d3;padding-block:48px;font-size:.95rem}
+.foot .cols{display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
+.foot a{color:#fff}
+.foot ul{list-style:none;padding:0;margin:0;display:grid;gap:6px}
+.foot h3{color:#fff;font-size:1rem;font-family:var(--text)}
+.foot small{display:block;margin-top:28px;color:#9aa6a1}
+
+/* SITE HEADER */
+.site-head{position:sticky;top:0;z-index:20;background:rgb(251 250 247/.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.site-head .wrap{display:flex;align-items:center;justify-content:space-between;min-height:64px;gap:16px}
+.brand{font:700 1.2rem/1 var(--display);text-decoration:none;color:var(--ink)}
+.site-head nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0}
+.site-head nav a{color:var(--ink);text-decoration:none;min-height:44px;display:inline-flex;align-items:center}
+.site-head details{display:none}
+@media(max-width:720px){.site-head nav{display:none}.site-head details{display:block;position:relative}.site-head summary{list-style:none;cursor:pointer;min-height:44px;display:flex;align-items:center;padding:0 12px;border:1px solid var(--line);border-radius:999px;font-weight:700}.site-head details ul{position:absolute;right:0;top:52px;background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:10px 16px;list-style:none;margin:0;min-width:180px}.site-head details a{display:block;padding:8px 0;color:var(--ink)}}
+section[id]{scroll-margin-top:72px}
+.brand{display:inline-flex;align-items:center;min-height:44px}
+.site-head details a{min-height:44px;display:flex!important;align-items:center}
+.tap{display:inline-flex;align-items:center;min-height:44px}
+</style>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="#">Tallowmere Café</a>
+    <nav aria-label="Main"><ul><li><a href="#about">About</a></li><li><a href="#gallery">Photos</a></li><li><a href="#contact">Hours and contact</a></li></ul></nav>
+    <details><summary aria-label="Open the menu">Menu</summary><ul><li><a href="#about">About</a></li><li><a href="#gallery">Photos</a></li><li><a href="#contact">Hours and contact</a></li></ul></details>
+  </div>
+</header>
+
+<main>
+<section class="hero-split" aria-label="Welcome">
+  <div class="wrap">
+    <div>
+      <h1>Coffee, pastries and soups at lunch on Wren Lane</h1>
+      <p class="lead">Tallowmere Café, 14 Wren Lane. Open Tuesday to Sunday, closed Monday.</p>
+      <div class="btns"><a class="btn" href="#contact">See opening hours</a><a class="btn ghost" href="tel:5550143">Call 555 0143</a></div>
+    </div>
+    <div>
+      <img src="../template/img/home.jpg" width="716" height="716" alt="[The counter at Tallowmere Café]" fetchpriority="high">
+      <p><span class="ph-note">Stand-in photo: replace with your counter photo</span></p>
+    </div>
+  </div>
+</section>
+
+<section class="sec alt" id="about">
+  <div class="wrap about">
+    <div>
+      <img src="../template/img/portrait.jpg" width="716" height="716" alt="[Who is in the photo, for example the owner behind the counter]" loading="lazy">
+      <p><span class="ph-note">Stand-in photo: replace with a photo of you or your team</span></p>
+    </div>
+    <div>
+      <h2>About Tallowmere Café</h2>
+      <p>We have been at 14 Wren Lane since 2019. Our beans come from Kestrel Fold roasters.</p>
+      <p>[One or two sentences: who runs the café and why you started it.]</p>
+      <ul class="facts">
+        <li><b>Since 2019</b><span>on Wren Lane</span></li>
+        <li><b>6 days</b><span>open each week</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="gallery">
+  <div class="wrap">
+    <h2>Photos</h2>
+    <ul class="gallery">
+      <li><figure><img src="../template/img/flower.jpg" width="716" height="716" alt="[A bowl of today's soup]" loading="lazy"><figcaption>Soups at lunch <span class="ph-note">Stand-in photo</span></figcaption></figure></li>
+      <li><figure><img src="../template/img/fog.jpg" width="716" height="716" alt="[Pastries on the counter]" loading="lazy"><figcaption>Pastries <span class="ph-note">[photo of your pastries]</span></figcaption></figure></li>
+      <li><figure><img src="../template/img/toronto.jpg" width="1024" height="1024" alt="[A cup of coffee]" loading="lazy"><figcaption>Coffee <span class="ph-note">[photo of your coffee]</span></figcaption></figure></li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec alt" id="contact">
+  <div class="wrap contact">
+    <div>
+      <h2>Visit or get in touch</h2>
+      <p>14 Wren Lane<br>[City and postal code]</p>
+      <p><a class="tap" href="tel:5550143">555 0143</a><br><a class="tap" href="mailto:hello@tallowmere.example">hello@tallowmere.example</a></p>
+      <table class="hours"><caption class="sr-only">Opening hours</caption><tbody>
+        <tr><td>Monday</td><td>Closed</td></tr>
+        <tr><td>Tuesday to Saturday</td><td>7:30am to 4pm</td></tr>
+        <tr><td>Sunday</td><td>9am to 2pm</td></tr>
+      </tbody></table>
+    </div>
+    <form class="form" action="[form-service-url]" method="post">
+      <p><span class="ph-note">This form does not send yet: it needs [form-service-url]. Until then, email or call.</span></p>
+      <label>Your name<input name="name" autocomplete="name" required></label>
+      <label>Email<input name="email" type="email" autocomplete="email" required></label>
+      <label>Message<textarea name="message" required></textarea></label>
+      <button class="btn" type="submit">Send message</button>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="cols">
+      <div><h3>Tallowmere Café</h3><p>Coffee, pastries and soups at lunch.</p></div>
+      <div><h3>Visit</h3><ul><li>14 Wren Lane</li><li>Tue to Sat 7:30am to 4pm</li><li>Sun 9am to 2pm</li><li>Closed Monday</li></ul></div>
+      <div><h3>Contact</h3><ul><li><a class="tap" href="tel:5550143">555 0143</a></li><li><a class="tap" href="mailto:hello@tallowmere.example">hello@tallowmere.example</a></li></ul></div>
+    </div>
+    <small>© 2026 Tallowmere Café. [Privacy link]</small>
+  </div>
+</footer>
+
+</body>
+</html>

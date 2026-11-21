@@ -1,6 +1,6 @@
 # Practical AI: what is ready, and what comes next
 
-A one-page summary for anyone deciding where to start. Updated 19 November 2026.
+A one-page summary for anyone deciding where to start. Updated 21 November 2026.
 
 ## What is ready
 
@@ -31,6 +31,11 @@ only in Claude so far. [Open the project](../projects/artifact-studio/) ·
 [the explainer page](reports/artifact-studio.html) ·
 [the showcase](https://bar181.github.io/practical-ai/artifact-studio/showcase.html) and [the components](https://bar181.github.io/practical-ai/artifact-studio/components.html), live ·
 [the evidence](../projects/artifact-studio/quality-results/README.md).
+
+**Split into three, 21 November 2026.** Artifact Studio stays the design step and gained eight
+cinematic effects. Two new projects hold the other steps: [Tone Studio](../projects/tone-studio/)
+for the words and [Web Sections](../projects/web-sections/) for the structure. Both are tested by
+their author only. [The split plan](../workshop/plans/artifact-studio-split/README.md).
 
 ### Agentic Process: teach your AI a job once
 
@@ -114,6 +119,8 @@ Support tools that make every other tool better. Each starts with a version a pe
 
 | Project | What it does for you | Where it stands |
 | --- | --- | --- |
+| **Tone Studio** | Your content rewritten in the tone and story order your reader needs: an investor deck, a board one-pager, a story, an explainer. Every fact kept | **New, tested by its author only:** [project](../projects/tone-studio/) |
+| **Web Sections** | The right sections for a website or page, in order, responsive, filled with your content and clear placeholders | **New, tested by its author only:** [project](../projects/web-sections/) |
 | **Site Studio** | A real website for your work, made with your AI and hosted free on GitHub Pages. Its first site is Bradley Academy, with every tool on this list | **Building:** cinematic version built by Claude, 20 Nov 2026. Six review rounds against a US$50,000 agency bar: UX 86, art direction 73. Not yet live or reviewed by the owner. [Project](../projects/site-studio/) · [plan](../workshop/plans/site-studio/README.md) |
 
 The full list of ideas, sorted into everyday tasks, agent tools and hybrid projects, is in

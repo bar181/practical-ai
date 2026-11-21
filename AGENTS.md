@@ -8,7 +8,9 @@ work. Reuse first: use an existing capability, wrap it, or build only the missin
 
 | You were asked to | Go to |
 | --- | --- |
-| Make a page, a slide deck or a social post | [`projects/artifact-studio/AGENTS.md`](projects/artifact-studio/AGENTS.md) |
+| Make a page, a slide deck or a social post look designed: looks, effects, motion | [`projects/artifact-studio/AGENTS.md`](projects/artifact-studio/AGENTS.md) |
+| Rewrite content in the tone and story order a reader needs: a pitch, a one-pager, a deck, a story | [`projects/tone-studio/AGENTS.md`](projects/tone-studio/AGENTS.md) |
+| Lay out the sections of a website or page, or get a social post size | [`projects/web-sections/AGENTS.md`](projects/web-sections/AGENTS.md) |
 | Change the Bradley Academy website, or help someone build a site like it | [`projects/site-studio/AGENTS.md`](projects/site-studio/AGENTS.md) |
 | Turn a policy, contract or bill into an action list | [`projects/document-to-action-brief/AGENTS.md`](projects/document-to-action-brief/AGENTS.md) |
 | Revise an email or post in someone's own voice, keeping every fact | [`projects/write-in-my-voice/AGENTS.md`](projects/write-in-my-voice/AGENTS.md) |

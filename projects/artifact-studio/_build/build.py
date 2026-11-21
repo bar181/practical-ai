@@ -138,7 +138,7 @@ CONCEPTS=(('card','31-cards.html','components/cards.html','Cards'),('layout','32
 G_VOICES=('Voices',VOICES,'One message, told six ways. Tap a voice:'); G_RECIPES=('Recipes',RECIPES,'Four whole pages. Tap a recipe:')
 # one kitchen sink. Two rows of tabs: the highlights first, then the components to build with. A group named '#' is a heading in the tab bar.
 POSTS=['post-linkedin','post-instagram','post-tiktok','post-facebook','post-email','post-blog']
-STUDIO_GROUPS=[('#','Highlights',[]),('Photo effects',['photo'],''),('Scroll effects',['scroll'],''),('Layouts',['lookvoice','looks','layouts'],'Looks set the mood and layouts set the order:'),
+STUDIO_GROUPS=[('#','Highlights',[]),('Photo effects',['photo'],''),('Scroll effects',['scroll'],''),('Cinematic effects',['cinema'],''),('Layouts',['lookvoice','looks','layouts'],'Looks set the mood and layouts set the order:'),
   ('Socials',['socials']+POSTS+['social'],'See each draft the way your audience will. The use case first, then a tab for each platform:')]+[(LABEL[v],[v],'') for v in VOICES]+[
   ('#','Components',[]),('Pages',RECIPES,'Four whole pages. Tap one:'),('Decks',['deck-visionary','deck-story','deck-briefing','deck-workshop'],'Four slide decks on one engine:'),
   ('Parts',['parts','svg'],'The pieces a page is made of:'),('Design',['cards','colour'],'The ideas behind a good page:'),('Pick',['pick','mix'],'Let the studio suggest, or choose every part yourself:'),
@@ -149,10 +149,10 @@ _cut=STUDIO_GROUPS.index(('#','Components',[]))
 SHOWCASE_GROUPS=STUDIO_GROUPS[1:_cut]; COMPONENT_GROUPS=STUDIO_GROUPS[_cut+1:]   # two master pages at the project root, one row of tabs each
 WHERE={n:f for f,gs in (('showcase.html',SHOWCASE_GROUPS),('components.html',COMPONENT_GROUPS)) for g,vs,_ in gs if g!='#' for n in vs}   # which file shows each tab
 pv=lambda view: WHERE[view]+'#'+view
-LABEL.update({'socials':'Three drafts','post-linkedin':'LinkedIn','post-instagram':'Instagram','post-tiktok':'TikTok','post-facebook':'Facebook','post-email':'Email','post-blog':'Short blog','social':'Picture formats','cards':'Cards','layouts':'Six layouts','colour':'Colour','parts':'Page parts','photo':'Photo effects','scroll':'Scroll effects','lookvoice':'Looks and voices','svg':'Animated SVG','looks':'Nine looks','pick':'Pick for me','mix':'Mix it myself','deck-visionary':'Visionary','deck-story':'Story','deck-briefing':'Briefing','deck-workshop':'Workshop'})
+LABEL.update({'socials':'Three drafts','post-linkedin':'LinkedIn','post-instagram':'Instagram','post-tiktok':'TikTok','post-facebook':'Facebook','post-email':'Email','post-blog':'Short blog','social':'Picture formats','cards':'Cards','layouts':'Six layouts','colour':'Colour','parts':'Page parts','photo':'Photo effects','scroll':'Scroll effects','cinema':'Cinematic effects','lookvoice':'Looks and voices','svg':'Animated SVG','looks':'Nine looks','pick':'Pick for me','mix':'Mix it myself','deck-visionary':'Visionary','deck-story':'Story','deck-briefing':'Briefing','deck-workshop':'Workshop'})
 FILES={t['id']:t['file'].split('#')[0] for t in C.TEMPLATES if t['kind'] in('page','voice','deck')}
-FILES.update({'cards':'components/cards.html','layouts':'components/layouts.html','colour':'components/colour.html','social':'social/formats.html','parts':'components/page-parts.html','photo':'components/photo-parts.html','svg':'components/animated-svg.html','looks':'looks/nine-looks.html'})
-FTITLE={'cards':'Six kinds of card','layouts':'Six layouts','colour':'Colour: five ideas and a palette maker','social':'Seven social formats','parts':'Twelve page parts','photo':'Nine photo effects','scroll':'Three scroll effects','lookvoice':'Looks and voices','svg':'Twelve animated SVG parts','looks':'Nine looks'}
+FILES.update({'cards':'components/cards.html','layouts':'components/layouts.html','colour':'components/colour.html','social':'social/formats.html','parts':'components/page-parts.html','photo':'components/photo-parts.html','svg':'components/animated-svg.html','looks':'looks/nine-looks.html','cinema':'components/cinematic-effects.html'})
+FTITLE={'cards':'Six kinds of card','layouts':'Six layouts','colour':'Colour: five ideas and a palette maker','social':'Seven social formats','parts':'Twelve page parts','photo':'Nine photo effects','scroll':'Three scroll effects','cinema':'Eight cinematic effects','lookvoice':'Looks and voices','svg':'Twelve animated SVG parts','looks':'Nine looks'}
 FTITLE.update({t['id']:t['title'] for t in C.TEMPLATES})
 TAB={t['id']:(t['id'] if t['kind']!='social' else 'social') for t in C.TEMPLATES}
 # a short "about" strip at the top of every voice and recipe tab, taken from the voice cards and from the page's own closing note
@@ -229,7 +229,7 @@ def build(key,out,title,lead,groups,other=None,panel=None):
     left=re.findall(r'__[A-Z]+__|^\s*@@\w+',re.sub(r'data:[^")]+','',re.sub(r'<pre>.*?</pre>','',t,flags=re.S)),flags=re.M); assert not left, left
     t=t.replace('<!DOCTYPE html>','<!DOCTYPE html>\n<!-- Generated by _build/build.py from _build/views/. Do not edit this file: change the views and rebuild. -->',1)
     open(os.path.join(ROOT,out),'w').write(t); print(f'{key}: {kb} KB, {len(order)} tabs -> {out}')
-build('showcase','showcase.html','showcase','Master 1 of 2: what your AI can make. Photo effects, scroll effects, layouts, post previews and a tab for each of seven voices. Tap a tab.',SHOWCASE_GROUPS,other=('components.html','Master 2: the components, the picker and the reference sheets'))
+build('showcase','showcase.html','showcase','Master 1 of 2: what your AI can make. Photo effects, scroll effects, cinematic effects, layouts, post previews and a tab for each of seven voices. Tap a tab.',SHOWCASE_GROUPS,other=('components.html','Master 2: the components, the picker and the reference sheets'))
 build('components','components.html','components','Master 2 of 2: what a page is built from. Four whole pages, four decks, the parts, the design ideas, the picker, the reference sheets and the skill. Tap a tab.',COMPONENT_GROUPS,other=('showcase.html','Master 1: photo effects, voices and post previews'))
 # ---- worked examples: one file each, with the prompt, the sample input and the finished result
 RAW_MAIN='https://raw.githubusercontent.com/bar181/practical-ai/main/projects/artifact-studio/base/AI-INSTRUCTIONS.md'

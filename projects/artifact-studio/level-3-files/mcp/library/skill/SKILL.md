@@ -25,6 +25,7 @@ craft. Where it and this skill disagree, this skill wins. This
 | `references/voices.md` | Choosing how the page speaks, and writing in that voice |
 | `references/looks.md` | Choosing colours, type and layout feel |
 | `references/components.md` | Choosing the parts for each section |
+| `references/effects-index.md` | Choosing the moving parts by what the page has to do, including the cinematic effects |
 | `references/design-ideas.md` | Choosing a kind of card, a layout and colours, and building a palette from one brand colour |
 | `references/post-previews.md` | When the person asks for social posts, an email or a blog post |
 | `references/build-rules.md` | Before writing any HTML |
@@ -69,7 +70,7 @@ craft. Where it and this skill disagree, this skill wins. This
    to write: say so under Assumed. A number, a name, a date, a quote, an option or a recommendation
    the person did not give is a gap. By default, leave it out. Offer a recommendation only when
    the person asked what to do, and label it on the page as proposed.
-6. **Parts.** Choose a component from `references/components.md` for each section that needs one,
+6. **Parts.** Choose the effects from `references/effects-index.md` (one or two a page) and a component from `references/components.md` for each section that needs one,
    and the kind of card and the layout from `references/design-ideas.md`.
    Every part must carry content. Use at most three moving parts on a page.
 7. **Build.** Start from `assets/page-skeleton.html`, or from the starter for a deck or a picture. Follow `references/build-rules.md`. Produce
@@ -79,6 +80,18 @@ craft. Where it and this skill disagree, this skill wins. This
 9. **Deliver.** Give the page, then a short note with four things: what you chose (recipe, voice,
    look), what you assumed, what is missing, and what the person should check before sharing. Show the page as a rendered page if you can:
    an artifact, a canvas or a preview. A bare HTML file opens as code on many phones.
+
+## Working with Tone Studio and Web Sections
+
+Artifact Studio is the design step. Two sister projects own the other two steps, and this skill
+works without them.
+
+- **Structure:** if the Web Sections skill is loaded, or the person names sections ("a hero, a
+  gallery and a contact form"), take the sections from it and design them here.
+- **Words:** if the Tone Studio skill is loaded, or the person supplies finished copy, keep their
+  words and their order, and design around them. Otherwise write in the chosen voice, as below.
+- The order is structure, then words, then design. Say in the delivery note which steps came from
+  where.
 
 ## Three kinds of request
 

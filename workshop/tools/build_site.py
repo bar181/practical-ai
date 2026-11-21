@@ -5,7 +5,7 @@ generated from scratch: every page on the site is a file already checked in.
 
   /                                   the Bradley Academy site, added on top by the workflow (projects/site-studio/)
   /artifact-studio/                   index for the two master pages and the worked examples
-  /artifact-studio/showcase.html      master 1: photo effects, scroll effects, layouts, post previews, voices
+  /artifact-studio/showcase.html      master 1: photo, scroll and cinematic effects, layouts, post previews, voices
   /artifact-studio/components.html    master 2: pages, decks, parts, design ideas, the picker, the skill
   /artifact-studio/base/examples/     the worked examples (same path as the repository, so their links work)
   /artifact-studio/try-it-keynote.html  the page the README's try-it prompt made

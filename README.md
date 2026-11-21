@@ -168,6 +168,8 @@ every week. Connect it only where that removes work you repeat.
 | Project | 1. Try it: paste one prompt | 2. Save it | 3. Connect it |
 | --- | --- | --- | --- |
 | [**Artifact Studio**](projects/artifact-studio/) | [The try-it prompt](projects/artifact-studio/#try-it-now): your notes in, a designed page out | A skill, or the design guide in a Claude or ChatGPT Project or a Gemini Gem, plus your brand preferences. [Steps](projects/artifact-studio/level-2-files/README.md) | An MCP server on your own computer that lets an agent browse the template library. [Steps](projects/artifact-studio/level-3-files/README.md) |
+| [**Tone Studio**](projects/tone-studio/) | [The try-it prompt](projects/tone-studio/#try-it-now): your content in, the words in the tone your reader needs | A brand tone file, or your voice guide from Write and edit in my voice. [Steps](projects/tone-studio/level-2-files/README.md) | Planned: words and design in one step with Artifact Studio |
+| [**Web Sections**](projects/web-sections/) | [The try-it prompt](projects/web-sections/#try-it-now): what your site is for in, a responsive page of sections out | Your own section set. [Steps](projects/web-sections/level-2-files/README.md) | Planned: structure, words and design chained |
 | [**Agentic Process**](projects/agentic-process/) | [The try-it prompt](projects/agentic-process/#try-it-now): a job you repeat in, a reusable tool and a test out | The method in a Claude or ChatGPT Project or a Gemini Gem, or the builder as a skill in your coding agent. [Steps](projects/agentic-process/#get-started-make-it-your-standard) | A coding agent runs a whole build and hands back a reviewable change |
 | [**Document to action brief**](projects/document-to-action-brief/) | [The try-it prompt](projects/document-to-action-brief/#try-it-now), with your own document | A skill, or a Claude or ChatGPT Project or Gemini Gem, plus your house rules. [Steps](projects/document-to-action-brief/level-2-files/README.md) | Planned, not built. [The design](projects/document-to-action-brief/level-3-files/README.md) |
 | [**Learnings database**](projects/learnings-database/) | [The try-it prompt](projects/learnings-database/#try-it-now): "log that" and a lesson | A Claude or ChatGPT Project, a skill, or the Claude plugin (its `/log`, `/before-i-start` and `/weekly-review` commands work in Claude Code), or the idea file for a coding agent. [Steps](projects/learnings-database/level-2-files/README.md) | A team log in Supabase, reached through Supabase's own connector. [Steps](projects/learnings-database/level-3-files/README.md) |
@@ -271,7 +273,7 @@ room.
 
 | Folder | What it holds |
 | --- | --- |
-| [`projects/`](projects/) | The projects: Artifact Studio, Agentic Process, Document to action brief, Learnings database, Meeting notes to actions, Rare Find, Site Studio and Write and edit in my voice |
+| [`projects/`](projects/) | The projects: Artifact Studio, Agentic Process, Document to action brief, Learnings database, Meeting notes to actions, Rare Find, Site Studio, Tone Studio, Web Sections and Write and edit in my voice |
 | [`docs/`](docs/) | A summary of the projects, the priority list, and an explainer page for each |
 | [`assets/images/`](assets/images/) | Images shared across the repository |
 | [`workshop/`](workshop/) | How tools get built: plans, earlier drafts, skills and checking scripts. You do not need it to use a tool |

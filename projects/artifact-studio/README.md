@@ -16,10 +16,14 @@ bring, not a wall of text or a slide deck that took hours.
 - **Minutes, not hours.** About five minutes for a page that takes an hour or more by hand. An
   estimate, not a measurement.
 
+**Part of a set.** Artifact Studio is the design step: looks, effects, components and motion.
+[Web Sections](../web-sections/) sets the structure and [Tone Studio](../tone-studio/) writes the
+words. Each works alone, and Artifact Studio still makes a whole page from one paste.
+
 <a name="see-every-example"></a>
 
 <p align="center"><b>See every example, live in your browser:</b><br>
-<a href="https://bar181.github.io/practical-ai/artifact-studio/showcase.html"><b>1. The showcase</b></a>: photo effects, scroll effects, layouts, post previews and seven voices
+<a href="https://bar181.github.io/practical-ai/artifact-studio/showcase.html"><b>1. The showcase</b></a>: photo effects, scroll effects, cinematic effects, layouts, post previews and seven voices
 <br><a href="https://bar181.github.io/practical-ai/artifact-studio/components.html"><b>2. The components</b></a>: four pages, four decks, every part, the design ideas and the picker
 <br><sub>Two pages, nothing to install. The same files are in this folder: <a href="showcase.html"><code>showcase.html</code></a> and <a href="components.html"><code>components.html</code></a>.</sub></p>
 
@@ -216,12 +220,19 @@ computer.
 </p>
 <p align="center"><sub>One photo, one sentence: <i>"Fill the frame with my photo and zoom in very slowly, like a documentary shot."</i> Thirteen effects in all, and none needs an app.</sub></p>
 
+### Cinematic effects
+
+<p align="center">
+  <img src="_build/img/fx-cinematic.webp" width="96%" alt="Three stills from the cinematic effects tab: a city skyline at dusk under a masked title that rises word by word, a dark screen where the sentence Most AI pages look the same lights up word by word, and a full-screen scene titled Care sliding over the one before it">
+</p>
+<p align="center"><sub>Eight effects from the Bradley Academy website, rebuilt for a single file: the opening, the grade, the statement, the clip, the stack, a timeline that draws itself, the page change and end credits. Pick by job in the <a href="level-2-files/artifact-studio/references/effects-index.md">effects index</a>.</sub></p>
+
 ### Post previews
 
 <p align="center">
   <img src="_build/img/social-three-drafts.webp" width="80%" alt="Screen capture of three drafts of one LinkedIn post shown side by side as they would look in a feed. Each starts a different way, has its own picture with a few words over it, and has a button to choose it">
 </p>
-<p align="center"><sub>Three drafts of one post, shown the way the feed shows them, in your voice. LinkedIn, Instagram, TikTok, Facebook, email and blog. Nothing is posted for you.</sub></p>
+<p align="center"><sub>Three drafts of one post, shown the way the feed shows them, in your voice. LinkedIn, Instagram, TikTok, Facebook, email and blog. Nothing is posted for you. The post sizes are also in <a href="../web-sections/">Web Sections</a>, where the previews move next.</sub></p>
 
 Every template and effect, live: [the showcase](https://bar181.github.io/practical-ai/artifact-studio/showcase.html) and [the components](https://bar181.github.io/practical-ai/artifact-studio/components.html). [Ten worked examples](base/examples/),
 each with its prompt and sample notes.
@@ -304,6 +315,8 @@ This one-line version is not yet tested. The tested prompt is in [Try it now](#t
 then two runs of the try-it prompt above. Every run finished its page. Used for real by its author, for a client's
 course (the before and after above). As of 18 November 2026, users are testing it; their results are not in yet. Not yet tried in other chatbots. All example content is
 invented. [The evidence](quality-results/README.md).
+
+**21 November 2026:** eight cinematic effects added as a showcase tab and checked by the author in headless Chrome at phone and desktop width, with motion on and reduced. Not yet seen by the testers.
 
 **Are you an AI agent?** Go to [AGENTS.md](AGENTS.md) for instructions you can follow now.
 

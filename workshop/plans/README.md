@@ -36,7 +36,9 @@ tools faster to build, safer to run or easier to trust.
 
 | Project | What it does | Where it stands |
 | --- | --- | --- |
-| Artifact Studio | Turns notes into a report, deck, post or page from a library of templates | **Ready:** [project](../../projects/artifact-studio/) |
+| Artifact Studio | The design step: looks, effects, components and motion for a report, deck, post or page | **Ready:** [project](../../projects/artifact-studio/) · [split plan](artifact-studio-split/) |
+| Tone Studio | Content rewritten in the tone and story order a reader needs, with every fact kept | **Ready, tested by its author only:** [project](../../projects/tone-studio/) · [plan](tone-studio/) |
+| Web Sections | The sections of a website or page, chosen by intent and built from a responsive library | **Ready, tested by its author only:** [project](../../projects/web-sections/) · [plan](web-sections/) |
 | Agentic Process | Turns a repeated job into a tested tool: a README, one `SKILL.md`, a worked example | **Ready:** [project](../../projects/agentic-process/) |
 | Learnings database | One row per lesson learned, filed by type of learning and topic, read before similar work starts. A spreadsheet at level 1, smart filing at level 2, a real database at level 3 | **Built, 19 Nov 2026:** [project](../../projects/learnings-database/) · [plan](learning-system/) · first example: [learning log](../../projects/agentic-process/base/examples/learning-log/) |
 | Task and dependency graph | A goal becomes tasks, with what is ready and what is blocked | [Plan](task-graph/) |
