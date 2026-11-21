@@ -536,8 +536,10 @@ footer p{border-top:1px solid rgba(232,237,243,.2);padding-top:22px;max-width:40
 .cx-k{font:italic 500 1rem/1.3 var(--display);color:var(--brass);margin:0 0 6px}
 .cx-sec{padding-block:56px}
 .cx-sec>.wrap>p{max-width:34em}
+.cx-sec .cx-k,.intro .cx-k{color:var(--rust)}
+#v-cinema .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
 /* the opening: letterbox bars, a masked title, a graded photo and a little grain */
-.cx-hero{position:relative;height:min(86svh,780px);min-height:500px;overflow:hidden;display:flex;align-items:flex-end;background:var(--ink);color:var(--ivory)}
+.cx-hero{position:relative;height:min(78svh,700px);min-height:500px;overflow:hidden;display:flex;align-items:flex-end;background:var(--ink);color:var(--ivory)}
 .cx-hero .ph{position:absolute;inset:0;background-size:cover;background-position:60% 55%;filter:saturate(.62) contrast(1.08) sepia(.18) brightness(.92)}
 .cx-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgb(27 13 17/.2),rgb(27 13 17/.15) 40%,rgb(27 13 17/.92));pointer-events:none}
 .cx-hero .hero-copy{z-index:4}
@@ -589,9 +591,9 @@ footer p{border-top:1px solid rgba(232,237,243,.2);padding-top:22px;max-width:40
 .cx-n{font:italic 500 1rem/1 var(--display);color:var(--brass)}
 /* the timeline that draws itself */
 .cx-tl{position:relative;list-style:none;margin:28px 0 0;padding:0 0 0 30px;display:grid;gap:34px}
-.cx-tl::before,.cx-tl i.cx-line{content:"";position:absolute;left:8px;top:6px;bottom:6px;width:2px;background:#d8cdbf}
-.cx-tl i.cx-line{background:var(--rust);transform-origin:top;transform:scaleY(1)}
-.cx-on [data-cx="draw"] i.cx-line{transform:scaleY(var(--p,0))}
+.cx-tl::before,.cx-tl::after{content:"";position:absolute;left:8px;top:6px;bottom:6px;width:2px;background:#d8cdbf}
+.cx-tl::after{background:var(--rust);transform-origin:top;transform:scaleY(1)}
+.cx-on [data-cx="draw"]::after{transform:scaleY(var(--p,0))}
 .cx-tl li{position:relative}
 .cx-tl li::before{content:"";position:absolute;left:-28px;top:.45em;width:14px;height:14px;border-radius:50%;background:var(--fog);border:2px solid var(--rust)}
 .cx-tl b{display:block;font-family:var(--display)}
@@ -600,7 +602,8 @@ footer p{border-top:1px solid rgba(232,237,243,.2);padding-top:22px;max-width:40
 .cx-card{position:relative;border-radius:12px;overflow:hidden;aspect-ratio:3/2;max-width:360px;view-transition-name:cx-card;background:var(--ink);color:var(--ivory)}
 .cx-card.full{max-width:none;aspect-ratio:21/9}
 .cx-card .ph{position:absolute;inset:0;background-size:cover;background-position:50% 45%;filter:saturate(.7) sepia(.12)}
-.cx-card span{position:absolute;left:16px;bottom:12px;z-index:1;font:600 1.4rem/1 var(--display);text-shadow:0 1px 12px rgb(0 0 0/.6)}
+.cx-card::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 45%,rgb(27 13 17/.78))}
+.cx-card span{position:absolute;left:16px;bottom:12px;z-index:2;font:600 1.4rem/1 var(--display);text-shadow:0 1px 12px rgb(0 0 0/.6)}
 .cx-btn{justify-self:start;min-height:44px;padding:0 20px;border-radius:999px;border:1.5px solid var(--pine);background:transparent;color:var(--pine);font:700 .95rem/1 var(--display);cursor:pointer}
 .cx-btn:hover{background:var(--pine);color:var(--fog)}
 ::view-transition-group(cx-card){animation-duration:.6s;animation-timing-function:cubic-bezier(.16,1,.3,1)}

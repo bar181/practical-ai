@@ -2,9 +2,9 @@
 <title id="t">How Web Sections works</title>
 <desc id="d">Three steps. 1: say what the page is for, for example a home page for a café. 2: the right sections appear in order: header, hero, about, gallery, contact with hours, footer. 3: one responsive page, shown on a phone and a laptop. At the bottom: structure first; words and design come next.</desc>
 <style>
-.s{animation:in 10s ease-out infinite backwards}
+.s{animation:in 1s ease-out both}
 .d1{animation-delay:.2s}.d2{animation-delay:1.2s}.d3{animation-delay:2.2s}.d4{animation-delay:3.2s}.d5{animation-delay:4.2s}.d6{animation-delay:5.2s}.d7{animation-delay:6.2s}.d8{animation-delay:7s}
-@keyframes in{0%{opacity:0;transform:translateY(6px)}6%{opacity:1;transform:none}92%{opacity:1}100%{opacity:0}}
+@keyframes in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){.s{animation:none;opacity:1}}
 .h{font-size:20px;font-weight:700;fill:#0c2340}.p{font-size:14px;fill:#33415c}.n{font-size:15px;font-weight:700;fill:#0c2340}
 .lab{font-size:12.5px;font-weight:700;fill:#0c2340}.q{font-size:12px;fill:#5a6478}.w{font-size:13px;font-weight:700;fill:#fff}

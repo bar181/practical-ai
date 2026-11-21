@@ -2,8 +2,8 @@
 <title id="t">The design set: three projects, one page</title>
 <desc id="d">Three steps from left to right. Web Sections: the structure, which sections in which order. Tone Studio: the words, in the tone the reader needs. Artifact Studio: the look, colour, effects and motion. Arrows join them. Each project also works alone.</desc>
 <style>
-.s{animation:in 9s ease-out infinite backwards}.a1{animation-delay:.2s}.a2{animation-delay:1.4s}.a3{animation-delay:2.6s}.a4{animation-delay:3.8s}
-@keyframes in{0%{opacity:0;transform:translateY(6px)}7%{opacity:1;transform:none}92%{opacity:1}100%{opacity:0}}
+.s{animation:in 1s ease-out both}.a1{animation-delay:.2s}.a2{animation-delay:1.4s}.a3{animation-delay:2.6s}.a4{animation-delay:3.8s}
+@keyframes in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){.s{animation:none;opacity:1}}
 .h{font-size:20px;font-weight:800;fill:#0c2340}.p{font-size:14px;fill:#3b4a5e}
 </style>

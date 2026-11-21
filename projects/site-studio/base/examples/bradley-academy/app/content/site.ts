@@ -59,7 +59,7 @@ export const home = {
     ],
   },
   // The facts, as one line. Each number is from a README; numbers in {braces} are set in brass.
-  factsLine: "Nine free tools. The one built with Agentic Process scored {93} out of 100 in a blind pilot with one reviewer. They come out of courses taught to more than {900} students.",
+  factsLine: "Nine free tools. Document to action brief, built with Agentic Process, scored {93} out of 100 in a blind pilot with one reviewer. They come out of courses taught to more than {900} students.",
   starter: {
     heading: "Not sure where to start?",
     text: "Paste this into Claude, ChatGPT or Gemini. Your chatbot reads the tools and makes you a page on how they could help in your work.",

@@ -346,6 +346,10 @@ td { color: var(--ivory-dim); }
 .tool-strip ul { list-style: none; padding: 0; margin-block: 0; display: grid; grid-auto-flow: column; grid-auto-columns: minmax(15rem, 1fr); overflow-x: auto; scrollbar-width: none; scroll-snap-type: inline proximity; }
 .tool-strip ul::-webkit-scrollbar { display: none; }
 .tool-strip li { scroll-snap-align: start; }
+/* On a wide screen every tool shows at once: three rows of three, nothing hidden in a scroller */
+@media (min-width: 64rem) { .tool-strip ul { grid-auto-flow: row; grid-template-columns: repeat(3, 1fr); overflow: visible; } }
+/* On a phone, fade the edge so it is clear the strip scrolls */
+@media (max-width: 63.99rem) { .tool-strip ul { mask-image: linear-gradient(to right, black 85%, transparent); } }
 
 .tool-strip a { display: flex; gap: 0.8rem; align-items: flex-start; padding: 1.1rem 1rem; text-decoration: none; min-height: 100%; transition: background-color 300ms; }
 .tool-strip a:hover { background: var(--velvet-3); }

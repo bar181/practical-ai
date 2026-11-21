@@ -8,8 +8,10 @@
 .cx-k{font:italic 500 1rem/1.3 var(--display);color:var(--brass);margin:0 0 6px}
 .cx-sec{padding-block:56px}
 .cx-sec>.wrap>p{max-width:34em}
+.cx-sec .cx-k,.intro .cx-k{color:var(--rust)}
+#v-cinema .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
 /* the opening: letterbox bars, a masked title, a graded photo and a little grain */
-.cx-hero{position:relative;height:min(86svh,780px);min-height:500px;overflow:hidden;display:flex;align-items:flex-end;background:var(--ink);color:var(--ivory)}
+.cx-hero{position:relative;height:min(78svh,700px);min-height:500px;overflow:hidden;display:flex;align-items:flex-end;background:var(--ink);color:var(--ivory)}
 .cx-hero .ph{position:absolute;inset:0;background-size:cover;background-position:60% 55%;filter:saturate(.62) contrast(1.08) sepia(.18) brightness(.92)}
 .cx-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgb(27 13 17/.2),rgb(27 13 17/.15) 40%,rgb(27 13 17/.92));pointer-events:none}
 .cx-hero .hero-copy{z-index:4}
@@ -61,9 +63,9 @@
 .cx-n{font:italic 500 1rem/1 var(--display);color:var(--brass)}
 /* the timeline that draws itself */
 .cx-tl{position:relative;list-style:none;margin:28px 0 0;padding:0 0 0 30px;display:grid;gap:34px}
-.cx-tl::before,.cx-tl i.cx-line{content:"";position:absolute;left:8px;top:6px;bottom:6px;width:2px;background:#d8cdbf}
-.cx-tl i.cx-line{background:var(--rust);transform-origin:top;transform:scaleY(1)}
-.cx-on [data-cx="draw"] i.cx-line{transform:scaleY(var(--p,0))}
+.cx-tl::before,.cx-tl::after{content:"";position:absolute;left:8px;top:6px;bottom:6px;width:2px;background:#d8cdbf}
+.cx-tl::after{background:var(--rust);transform-origin:top;transform:scaleY(1)}
+.cx-on [data-cx="draw"]::after{transform:scaleY(var(--p,0))}
 .cx-tl li{position:relative}
 .cx-tl li::before{content:"";position:absolute;left:-28px;top:.45em;width:14px;height:14px;border-radius:50%;background:var(--fog);border:2px solid var(--rust)}
 .cx-tl b{display:block;font-family:var(--display)}
@@ -72,7 +74,8 @@
 .cx-card{position:relative;border-radius:12px;overflow:hidden;aspect-ratio:3/2;max-width:360px;view-transition-name:cx-card;background:var(--ink);color:var(--ivory)}
 .cx-card.full{max-width:none;aspect-ratio:21/9}
 .cx-card .ph{position:absolute;inset:0;background-size:cover;background-position:50% 45%;filter:saturate(.7) sepia(.12)}
-.cx-card span{position:absolute;left:16px;bottom:12px;z-index:1;font:600 1.4rem/1 var(--display);text-shadow:0 1px 12px rgb(0 0 0/.6)}
+.cx-card::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 45%,rgb(27 13 17/.78))}
+.cx-card span{position:absolute;left:16px;bottom:12px;z-index:2;font:600 1.4rem/1 var(--display);text-shadow:0 1px 12px rgb(0 0 0/.6)}
 .cx-btn{justify-self:start;min-height:44px;padding:0 20px;border-radius:999px;border:1.5px solid var(--pine);background:transparent;color:var(--pine);font:700 .95rem/1 var(--display);cursor:pointer}
 .cx-btn:hover{background:var(--pine);color:var(--fog)}
 ::view-transition-group(cx-card){animation-duration:.6s;animation-timing-function:cubic-bezier(.16,1,.3,1)}
@@ -91,7 +94,7 @@
 </style>
 <div class="view" id="v-cinema" data-tab="cinema" data-title="Cinematic effects">
 <header class="cx-hero">
-  <div class="ph" style="background-image:var(--ph-toronto)" role="img" aria-label="A city skyline at dusk, seen across the water."></div>
+  <div class="ph" style="background-image:var(--ph-toronto)" role="img" aria-label="A city skyline at dusk under a glowing loop of cloud."></div>
   <i class="cx-lb t" aria-hidden="true"></i><i class="cx-lb b" aria-hidden="true"></i><i class="cx-grain" aria-hidden="true"></i>
   <div class="hero-copy">
     <p class="cx-k">Effects from the Bradley Academy website</p>
@@ -136,7 +139,7 @@
   <p>A grade is a filter plus a warm, dark edge. Put the same grade on every photo and stock pictures, phone snaps and placeholders all sit in the same world. Turn it on and off to compare.</p>
   <div class="cx-grade">
     <label class="cx-switch"><input type="checkbox" checked> Grade on</label>
-    <div class="cx-gframe"><div class="ph" style="background-image:var(--ph-dancers)" role="img" aria-label="Two dancers mid-leap in a studio."></div></div>
+    <div class="cx-gframe"><div class="ph" style="background-image:var(--ph-dancers)" role="img" aria-label="A painting of dancers in motion, in bright colours."></div></div>
   </div>
 </section>
 @@ask Give every photo the same film grade: less saturation, a little more contrast, a touch of sepia, and a dark warm edge in the page's accent colour, so all the pictures look like one film. || Under a minute || A CSS filter and one overlay || A switch to compare with and without || Any page with mixed photos
@@ -144,10 +147,11 @@
 <section class="cx-words cx-dark" data-cx="words" style="--n:13">
   <div class="cx-in wrap">
     <p class="cx-k">3. The statement</p>
-    <p class="cx-say" aria-label="Most AI pages look the same. Yours can feel like it was directed."><span class="w" aria-hidden="true" style="--i:0">Most</span> <span class="w" aria-hidden="true" style="--i:1">AI</span> <span class="w" aria-hidden="true" style="--i:2">pages</span> <span class="w" aria-hidden="true" style="--i:3">look</span> <span class="w" aria-hidden="true" style="--i:4">the</span> <span class="w" aria-hidden="true" style="--i:5">same.</span> <span class="w" aria-hidden="true" style="--i:6">Yours</span> <span class="w" aria-hidden="true" style="--i:7">can</span> <span class="w" aria-hidden="true" style="--i:8">feel</span> <span class="w" aria-hidden="true" style="--i:9">like</span> <span class="w" aria-hidden="true" style="--i:10">it</span> <span class="w" aria-hidden="true" style="--i:11">was</span> <span class="w" aria-hidden="true" style="--i:12">directed.</span></p>
+    <h2 class="sr-only">The statement</h2>
+    <p class="cx-say"><span class="sr-only">Most AI pages look the same. Yours can feel like it was directed.</span><span class="w" aria-hidden="true" style="--i:0">Most</span> <span class="w" aria-hidden="true" style="--i:1">AI</span> <span class="w" aria-hidden="true" style="--i:2">pages</span> <span class="w" aria-hidden="true" style="--i:3">look</span> <span class="w" aria-hidden="true" style="--i:4">the</span> <span class="w" aria-hidden="true" style="--i:5">same.</span> <span class="w" aria-hidden="true" style="--i:6">Yours</span> <span class="w" aria-hidden="true" style="--i:7">can</span> <span class="w" aria-hidden="true" style="--i:8">feel</span> <span class="w" aria-hidden="true" style="--i:9">like</span> <span class="w" aria-hidden="true" style="--i:10">it</span> <span class="w" aria-hidden="true" style="--i:11">was</span> <span class="w" aria-hidden="true" style="--i:12">directed.</span></p>
   </div>
 </section>
-@@ask Give the one big idea its own screen: a tall section where the sentence holds still while its words light up one by one as I scroll. On a phone, or with less motion, show the whole sentence at once. || A few minutes || Sticky CSS and a scroll position || A photo that darkens behind the words || The idea behind a launch or a course
+@@ask Give the one big idea its own screen: a tall section where the sentence holds still while its words light up one by one as I scroll. With less motion, show the whole sentence at once. || A few minutes || Sticky CSS and a scroll position || A photo that darkens behind the words || The idea behind a launch or a course
 
 <section class="cx-sec wrap">
   <p class="cx-k">4. The clip</p>
@@ -163,16 +167,16 @@
   <p>Full-screen scenes stack like cards. As the next one arrives, the one underneath shrinks a little and darkens, so the eye goes to the new one. Good for four to six things, never more.</p>
 </section>
 <ol class="cx-stack" data-cx="stack" aria-label="Three example scenes">
-  <li class="cx-scene"><div class="cx-scene-in"><div class="ph" style="background-image:var(--ph-cheetah)" role="img" aria-label="A cheetah running."></div><div class="cx-scene-copy"><span class="cx-n">One of three</span><h3>Speed</h3><p>An invented example: the first of three things a product does.</p></div><i class="cx-dim" aria-hidden="true"></i></div></li>
+  <li class="cx-scene"><div class="cx-scene-in"><div class="ph" style="background-image:var(--ph-cheetah)" role="img" aria-label="A painted cheetah's face, in a dark suit."></div><div class="cx-scene-copy"><span class="cx-n">One of three</span><h3>Speed</h3><p>An invented example: the first of three things a product does.</p></div><i class="cx-dim" aria-hidden="true"></i></div></li>
   <li class="cx-scene"><div class="cx-scene-in"><div class="ph" style="background-image:var(--ph-flower)" role="img" aria-label="A single flower in close-up."></div><div class="cx-scene-copy"><span class="cx-n">Two of three</span><h3>Care</h3><p>An invented example: the second thing, in one line.</p></div><i class="cx-dim" aria-hidden="true"></i></div></li>
-  <li class="cx-scene"><div class="cx-scene-in"><div class="ph" style="background-image:var(--ph-home)" role="img" aria-label="A warm living room."></div><div class="cx-scene-copy"><span class="cx-n">Three of three</span><h3>Home</h3><p>An invented example: the third thing, and where it ends up.</p></div><i class="cx-dim" aria-hidden="true"></i></div></li>
+  <li class="cx-scene"><div class="cx-scene-in"><div class="ph" style="background-image:var(--ph-home)" role="img" aria-label="A painted house with a garden in warm light."></div><div class="cx-scene-copy"><span class="cx-n">Three of three</span><h3>Home</h3><p>An invented example: the third thing, and where it ends up.</p></div><i class="cx-dim" aria-hidden="true"></i></div></li>
 </ol>
 @@ask Show my three to six items as a stack of full-screen scenes: each one slides up over the last, and the one underneath shrinks slightly and darkens. Each scene has a photo, a number, a title and one line. || Ten minutes || Sticky CSS and a scroll position per scene || A link on each scene to its own page || Products, services, chapters of a story
 
 <section class="cx-sec wrap">
   <p class="cx-k">6. The timeline that draws itself</p>
   <h2>The line follows you down the page</h2>
-  <ol class="cx-tl" data-cx="draw"><i class="cx-line" aria-hidden="true"></i>
+  <ol class="cx-tl" data-cx="draw">
     <li><b>Step one</b>An invented example: where it started.</li>
     <li><b>Step two</b>The first thing that changed.</li>
     <li><b>Step three</b>What was learned.</li>
@@ -186,7 +190,7 @@
   <h2>The picture you tapped becomes the next page</h2>
   <p>When you move from a list to one item, the card grows into the header of the next page instead of the page blinking. Browsers that cannot do this simply switch.</p>
   <div class="cx-vt">
-    <div class="cx-card" id="cx-card"><div class="ph" style="background-image:var(--ph-heart)" role="img" aria-label="A heart drawn in light."></div><span>The card</span></div>
+    <div class="cx-card" id="cx-card"><div class="ph" style="background-image:var(--ph-heart)" role="img" aria-label="A painted heart-shaped balloon."></div><span>The card</span></div>
     <button class="cx-btn" type="button" id="cx-vt-btn" aria-controls="cx-card" aria-expanded="false">Open it</button>
   </div>
 </section>
@@ -194,6 +198,7 @@
 
 <section class="cx-dark">
   <div class="cx-credits wrap">
+    <h2 class="sr-only">End credits</h2>
     <p class="cx-k">8. End credits</p>
     <p class="big">Made <em>with</em> care</p>
     <p class="role">Directed and written by</p><p class="name">Your name</p>
@@ -214,7 +219,9 @@ onView("cinema",root=>{
   btn.addEventListener('click',()=>{const go=()=>{const open=card.classList.toggle('full');btn.textContent=open?'Close it':'Open it';btn.setAttribute('aria-expanded',open)};
     document.startViewTransition&&!reduce?document.startViewTransition(go):go()});
   if(reduce)return;
-  root.classList.add('cx-on');requestAnimationFrame(()=>root.classList.add('cx-play'));
+  root.classList.add('cx-on');
+  /* the opening plays when the hero is actually on screen, not while it sits below the tab bar */
+  new IntersectionObserver(([e],o)=>{if(e.isIntersecting){root.classList.add('cx-play');o.disconnect()}},{threshold:.5}).observe($('.cx-title',root));
   const vh=()=>innerHeight;
   const items=$$('[data-cx]',root);
   const scenes=$$('.cx-scene',root);

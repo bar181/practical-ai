@@ -39,6 +39,7 @@ h3{font-size:1.3rem}
 p{margin:0 0 1em;max-width:62ch}
 a{color:var(--accent)}
 :focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.cta :focus-visible,.foot :focus-visible,.lib-top :focus-visible,.hero-photo :focus-visible,.hero-video :focus-visible{outline-color:#fff}
 .wrap{max-width:var(--max);margin-inline:auto;padding-inline:20px}
 .sec{padding-block:clamp(56px,8vw,104px)}
 [id]{scroll-margin-top:72px}
@@ -76,7 +77,7 @@ a{color:var(--accent)}
 .hero-video::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,transparent 30%,rgb(0 0 0/.7))}
 .hero-video .wrap{position:relative;z-index:2;padding-block:48px;width:100%}
 .hero-video p{color:#eee}
-.vid-toggle{position:absolute;right:16px;top:16px;z-index:3;min-height:44px;padding:0 16px;border-radius:999px;border:1px solid #fff;background:rgb(0 0 0/.4);color:#fff;font-weight:700;cursor:pointer}
+.vid-toggle{position:absolute;right:16px;top:16px;z-index:3;min-height:44px;padding:0 16px;border-radius:999px;border:1px solid #fff;background:rgb(0 0 0/.65);color:#fff;font-weight:700;cursor:pointer}
 .hero-center{text-align:center;padding-block:clamp(64px,9vw,120px) 0}
 .hero-center p{margin-inline:auto}
 .hero-center .btns{justify-content:center}
@@ -88,7 +89,7 @@ a{color:var(--accent)}
 @media(min-width:860px){.hero-mosaic .wrap{grid-template-columns:1fr 1.1fr;align-items:center}.mosaic{grid-auto-rows:190px}}
 
 /* GALLERY */
-.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(min(100%,240px),1fr));margin:0;padding:0;list-style:none}
+.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));margin:0;padding:0;list-style:none}
 .gallery figure{margin:0}
 .gallery img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:10px}
 .gallery figcaption{font-size:.9rem;color:var(--muted);margin-top:6px}
@@ -132,7 +133,7 @@ a{color:var(--accent)}
 /* QUESTIONS */
 .faq{max-width:52rem;margin-top:24px}
 .faq details{border-bottom:1px solid var(--line)}
-.faq summary{cursor:pointer;padding:18px 0;font-weight:700;min-height:44px;list-style-position:outside}
+.faq summary{cursor:pointer;padding:18px 0;font-weight:700;min-height:44px;list-style-position:inside}
 .faq details p{color:var(--muted)}
 
 /* CONTACT */
@@ -140,7 +141,7 @@ a{color:var(--accent)}
 @media(min-width:860px){.contact{grid-template-columns:1fr 1.2fr}}
 .form{display:grid;gap:14px}
 .form label{display:grid;gap:6px;font-weight:600}
-.form input,.form textarea,.form select{font:inherit;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:#fff;min-height:48px;color:var(--ink)}
+.form input,.form textarea,.form select{font:inherit;padding:12px 14px;border:1px solid #8a918d;border-radius:10px;background:#fff;min-height:48px;color:var(--ink)}
 .form textarea{min-height:140px}
 .hours{width:100%;border-collapse:collapse}
 .hours td{padding:8px 0;border-bottom:1px solid var(--line)}
@@ -152,7 +153,7 @@ a{color:var(--accent)}
 .cta .btn{background:#fff;color:var(--accent);border-color:#fff}
 .foot{background:var(--ink);color:#cfd6d3;padding-block:48px;font-size:.95rem}
 .foot .cols{display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
-.foot a{color:#fff}
+.foot a{color:#fff;display:inline-block;padding:10px 0}
 .foot ul{list-style:none;padding:0;margin:0;display:grid;gap:6px}
 .foot h3{color:#fff;font-size:1rem;font-family:var(--text)}
 .foot small{display:block;margin-top:28px;color:#9aa6a1}
@@ -162,7 +163,8 @@ a{color:var(--accent)}
 .site-head .wrap{display:flex;align-items:center;justify-content:space-between;min-height:64px;gap:16px}
 .brand{font:700 1.2rem/1 var(--display);text-decoration:none;color:var(--ink);min-height:44px;display:inline-flex;align-items:center}
 .site-head nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0}
-.site-head nav a{color:var(--ink);text-decoration:none;min-height:44px;display:inline-flex;align-items:center}
+.site-head nav a{color:var(--ink);text-decoration:none;min-height:44px;display:inline-flex;align-items:center;padding:0 2px}
+.site-head details a{min-height:44px}
 .site-head details{display:none}
 /* fold the menu at 720px for four links; raise it to 860px for five or more */
 @media(max-width:720px){.site-head nav{display:none}.site-head details{display:block;position:relative}.site-head summary{list-style:none;cursor:pointer;min-height:44px;display:flex;align-items:center;padding:0 12px;border:1px solid var(--line);border-radius:999px;font-weight:700}.site-head details ul{position:absolute;right:0;top:52px;background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:10px 16px;list-style:none;margin:0;min-width:180px}.site-head details a{display:block;padding:8px 0;color:var(--ink)}}
@@ -220,7 +222,7 @@ a{color:var(--accent)}
       <p class="lead">[Who it is for, and the one problem it solves.]</p>
       <div class="btns"><a class="btn" href="#contact">[Main action]</a></div>
     </div>
-    <img src="img/class.jpg" width="1088" height="588" alt="[Describe what the photo shows]" loading="lazy">
+    <img src="img/class.jpg" width="1088" height="588" alt="[Describe what the photo shows]" fetchpriority="high">
   </div>
 </section>
 <!-- /SECTION -->
@@ -241,7 +243,7 @@ a{color:var(--accent)}
 <section class="hero-video" aria-label="Welcome">
   <img class="poster" src="img/fog.jpg" width="716" height="716" alt="" aria-hidden="true">
   <video muted loop playsinline preload="none" poster="img/fog.jpg" aria-hidden="true"><!-- <source src="your-video.mp4" type="video/mp4"> --></video>
-  <button class="vid-toggle" type="button" aria-label="Pause the background video">Pause</button>
+  <button class="vid-toggle" type="button" aria-label="Pause the background video" hidden>Pause</button>
   <div class="wrap">
     <h1>[A line that the video proves]</h1>
     <p>[One sentence.] <span class="ph-note">Add your video file</span></p>
@@ -257,7 +259,7 @@ a{color:var(--accent)}
     <h1>[The promise, with a number if you have a real one]</h1>
     <p class="lead">[Who it is for. What changes for them.]</p>
     <div class="btns"><a class="btn" href="#pricing">[Main action]</a><a class="btn ghost" href="#steps">[See how it works]</a></div>
-    <img src="img/home.jpg" width="716" height="716" alt="[Describe the product picture]" loading="lazy">
+    <img src="img/home.jpg" width="716" height="716" alt="[Describe the product picture]">
   </div>
 </section>
 <!-- /SECTION -->
@@ -484,6 +486,7 @@ document.querySelectorAll('.hero-video').forEach(h=>{
   const still=matchMedia('(prefers-reduced-motion: reduce)').matches;
   const hasSrc=v.querySelector('source');
   if(!hasSrc){b.hidden=true;return}
+  b.hidden=false;
   if(!still){v.play().catch(()=>{});}else{b.textContent='Play';b.setAttribute('aria-label','Play the background video')}
   b.addEventListener('click',()=>{if(v.paused){v.play();b.textContent='Pause';b.setAttribute('aria-label','Pause the background video')}else{v.pause();b.textContent='Play';b.setAttribute('aria-label','Play the background video')}});
 });
