@@ -70,7 +70,9 @@ If there is enough to start, start. Do not ask for photos or colours: use placeh
 
 ## The library
 
-The sections are in `template/sections.html` beside this file, each between
+The sections are in `template/sections.html` beside this file (also at
+https://github.com/bar181/practical-ai/blob/main/projects/web-sections/base/template/sections.html),
+each between
 `<!-- SECTION: name -->` and `<!-- /SECTION -->` with a "use when" line. Its shared style block has
 six colour tokens and two font tokens. Photos are in `template/img/`. Social post pictures are in
 `template/social/`: five shapes (square 1080 by 1080, portrait 1080 by 1350, story 1080 by 1920,
@@ -78,7 +80,8 @@ link preview 1200 by 630, and a three-slide carousel), seven files in all.
 
 **Post previews.** When the person wants to see a social post, an email or a blog post the way its
 audience will (several drafts, in the frame of LinkedIn, Instagram, TikTok, Facebook, an inbox or a
-blog), read `template/post-previews.md` and use the frames in `template/post-previews.html`. Never
+blog), read `template/post-previews.md` and use the frames in `template/post-previews.html` (both
+also in the same folder online as the library). Never
 hand back a bare list of drafts. Nothing is posted: the person chooses and posts.
 
 If you cannot open the file (for example, this skill was pasted into a chat), build the sections

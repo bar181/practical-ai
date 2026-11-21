@@ -14,9 +14,9 @@ said, not only the words. Each folder also has a facts check (`notes.md`).
 | **Visionary** | [`visionary/landing.html`](visionary/landing.html) · [open live](https://bar181.github.io/practical-ai/tone-studio/base/examples/visionary/landing.html) | about 241 | [LinkedIn post](visionary/post.md) | 133 |
 | **Storyteller** | [`storyteller/landing.html`](storyteller/landing.html) · [open live](https://bar181.github.io/practical-ai/tone-studio/base/examples/storyteller/landing.html) | about 379 | [Facebook post](storyteller/post.md) | 287 |
 | **Emotional** | [`emotional/landing.html`](emotional/landing.html) · [open live](https://bar181.github.io/practical-ai/tone-studio/base/examples/emotional/landing.html) | about 239 | [Facebook post](emotional/post.md) | 218 |
-| **Explainer** | [`explainer/landing.html`](explainer/landing.html) · [open live](https://bar181.github.io/practical-ai/tone-studio/base/examples/explainer/landing.html) | about 403 | [Blog article](explainer/post.md) | 393 |
+| **Explainer** | [`explainer/landing.html`](explainer/landing.html) · [open live](https://bar181.github.io/practical-ai/tone-studio/base/examples/explainer/landing.html) | about 403 | [Blog article](explainer/post.md) | 388 |
 | **Practical instructor** | [`practical-instructor/landing.html`](practical-instructor/landing.html) · [open live](https://bar181.github.io/practical-ai/tone-studio/base/examples/practical-instructor/landing.html) | about 379 | [LinkedIn post](practical-instructor/post.md) | 178 |
-| **Analyst** | [`analyst/landing.html`](analyst/landing.html) · [open live](https://bar181.github.io/practical-ai/tone-studio/base/examples/analyst/landing.html) | about 399 | [LinkedIn post](analyst/post.md) | 172 |
+| **Analyst** | [`analyst/landing.html`](analyst/landing.html) · [open live](https://bar181.github.io/practical-ai/tone-studio/base/examples/analyst/landing.html) | about 399 | [LinkedIn post](analyst/post.md) | 177 |
 | **Executive brief** | [`executive-brief/landing.html`](executive-brief/landing.html) · [open live](https://bar181.github.io/practical-ai/tone-studio/base/examples/executive-brief/landing.html) | about 341 | [Board blog post](executive-brief/post.md) | 252 |
 
 Page word counts include headings, buttons and the footer line. Each page was made by a fresh

@@ -62,6 +62,13 @@ landing page and a social post. [The results](../base/examples/README.md).
 - **Pages:** each agent checked its page in Chrome at 390 and 1280 pixels wide, with scripts on and
   off and with reduced motion: no sideways scrolling, one `h1`, 44-pixel targets. The author
   captured all seven and confirmed the looks differ as the tones say.
+- **Independent review:** a fresh agent read all fourteen pieces against the skill and the source.
+  Tone fidelity scored 78 to 92 (visionary 92, storyteller 90, explainer 88, emotional 86, analyst
+  80, executive brief 80, practical instructor 78). It found ten problems, all fixed the same day:
+  two factual (a post that called the invented course "real", and a quote cut so it lost its
+  meaning), plus "so what" lines that did not follow their findings, a missing "Draft
+  recommendation" label, a board memo that invented its readers, and a page that drifted out of
+  the first person.
 - **Not checked:** whether a real reader finds each tone right, and these pages in other browsers.
 
 ## Still to test

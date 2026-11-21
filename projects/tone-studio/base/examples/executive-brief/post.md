@@ -1,13 +1,13 @@
-# Executive brief: a short blog post for partners and the board
+# Executive brief: a short blog post for small business owners deciding whether to join
 
 > **Brief: the January 2027 group of Spreadsheets Without Fear**
 >
-> **To:** Partners and board
+> **To:** Small business owners who avoid spreadsheets
 > **From:** [needs: sender name and role]
 > **Date:** [needs: date of this post]
 > **Decision needed by:** 31 December 2026
 >
-> **Decision.** Whether to share the course page with small business owners who avoid spreadsheets before 31 December 2026, while the $199 price applies.
+> **Decision.** Whether to join the January 2027 group, and whether to register before 31 December 2026, while the $199 price applies.
 >
 > **Background.**
 >
@@ -16,12 +16,12 @@
 > 3. The teacher, Priya Shah, has been a bookkeeper for 12 years.
 > 4. Four groups, 71 people in total, have taken the course since March 2025. Of the 52 who answered a survey afterwards, 44 said they now update their own numbers every week and 39 said they had stopped sending their receipts to someone else to sort.
 >
-> **Options.** (a) Do nothing. (b) Share the page now: registration before 31 December 2026 costs $199. (c) Share it later: the price is $249.
+> **Options.** (a) Do nothing. (b) Register before 31 December 2026: $199. (c) Register later: $249.
 >
-> **Recommendation.** Option (b). The course content is the same and the price is lower before 31 December 2026.
+> **Draft recommendation: confirm it is yours.** Option (b). The course content is the same and the price is lower before 31 December 2026.
 >
-> **Risks and controls.** Money saved by students was not measured, so cite only the survey answers. A person who misses a lesson has 30 days to watch the recording.
+> **Risks and controls.** Money saved by students was not measured, so judge it on the survey answers only. A person who misses a lesson has 30 days to watch the recording.
 >
-> **Next step.** Share the course page: [needs: registration link].
+> **Next step.** Register on the course page: [needs: registration link].
 
 **Words:** 252

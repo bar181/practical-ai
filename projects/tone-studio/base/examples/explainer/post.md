@@ -2,11 +2,10 @@
 
 > **What would it take to keep your own numbers?**
 >
-> Start with one question: where do your receipts go now?
 >
 > **Think of a spreadsheet as a shoebox with dividers.** Every receipt still goes in, but in a labelled slot. One thing per row. One kind of thing per column.
 >
-> **A worked example.** Here is a real course, written as a sheet.
+> **A worked example.** Here is this course, written as a sheet.
 >
 > ```
 >    A            B
@@ -43,4 +42,4 @@
 >
 > Register on the course page: [needs: registration link]
 
-**Words:** 393
+**Words:** 388

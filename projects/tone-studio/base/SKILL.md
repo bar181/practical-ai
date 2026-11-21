@@ -1,6 +1,6 @@
 ---
 name: tone-studio
-description: Rewrites a person's own content in the tone and story order that fits the reader and the goal, such as a visionary keynote, a customer story, a personal story, an explainer, practical steps, an analyst's findings, an executive one-pager, an investor deck or a slide show, and keeps every fact exactly as given. Use when someone says "make this land", "turn my notes into a pitch", "write the deck", "make it an executive one-pager", "explain this simply", "make it more emotional", "what tone should this be", or pastes content and names a reader. It writes the words only; it does not design the page.
+description: Rewrites a person's own content in the tone and story order that fits the reader and the goal, such as a visionary keynote, a customer story, a personal story, an explainer, practical steps, an analyst's findings, an executive one-pager, an investor deck, a slide show, a landing page or a LinkedIn, Facebook or blog post, and keeps every fact exactly as given. Use when someone says "make this land", "turn my notes into a pitch", "write the deck", "make it an executive one-pager", "explain this simply", "make it more emotional", "write the landing page copy", "write a LinkedIn post", "what tone should this be", or pastes content and names a reader. It writes the words only; it does not design the page.
 license: Apache-2.0
 metadata:
   author: Bradley Ross (https://www.linkedin.com/in/bradaross/)
