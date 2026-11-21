@@ -23,8 +23,9 @@ you that every fact survived.
 
 - **Seven tones:** visionary, storyteller, emotional, explainer, practical instructor, analyst and
   executive brief. Each one changes the order of what you say, not only the adjectives.
-- **Nine formats:** visionary, story, briefing, workshop and investor decks, an executive one-pager,
-  an HTML slide show, landing page copy and an announcement email.
+- **Ten formats:** visionary, story, briefing, workshop and investor decks, an executive one-pager,
+  an HTML slide show, a landing page (200 to 400 words), a social post (LinkedIn, Facebook or a blog
+  article) and an announcement email.
 - **A facts check every time.** Every number, date and claim, before and after. Gaps such as a
   market size or a customer's words are marked `[needs: ...]`, never made up. Sums that do not add up
   are flagged, not fixed.
@@ -72,11 +73,30 @@ the top right of the file, select all, copy it into a new chat, then paste your 
 **You get back:** the tone and why, the finished words in order, a facts check and a list of gaps.
 Expect a few `[needs: ...]` lines: it asks for a true memory or a real number rather than inventing
 one. Add yours and ask again.
-Worked examples: [an investor deck](base/examples/investor-deck.md),
+Worked examples: [seven tones as landing pages and posts](base/examples/README.md), [an investor deck](base/examples/investor-deck.md),
 [a board one-pager](base/examples/board-one-pager.md) and
 [an emotional goodbye email](base/examples/farewell-email.md).
 To see tones designed as pages, open the voice examples in
 [Artifact Studio's showcase](https://bar181.github.io/practical-ai/artifact-studio/showcase.html).
+
+## Seven tones, one story
+
+The same invented course, written in all seven tones as a cinematic landing page and a social post.
+The facts never change; the order, the rhythm and the look do. [All seven, with posts and facts
+checks](base/examples/README.md).
+
+<p align="center">
+  <a href="base/examples/visionary/landing.html"><img src="_build/img/tone-visionary.webp" width="23%" alt="Animated phone capture of the visionary landing page for the invented course Spreadsheets Without Fear"></a>
+  <a href="base/examples/storyteller/landing.html"><img src="_build/img/tone-storyteller.webp" width="23%" alt="Animated phone capture of the storyteller landing page for the invented course Spreadsheets Without Fear"></a>
+  <a href="base/examples/emotional/landing.html"><img src="_build/img/tone-emotional.webp" width="23%" alt="Animated phone capture of the emotional landing page for the invented course Spreadsheets Without Fear"></a>
+  <a href="base/examples/explainer/landing.html"><img src="_build/img/tone-explainer.webp" width="23%" alt="Animated phone capture of the explainer landing page for the invented course Spreadsheets Without Fear"></a>
+</p>
+<p align="center">
+  <a href="base/examples/practical-instructor/landing.html"><img src="_build/img/tone-practical-instructor.webp" width="23%" alt="Animated phone capture of the practical instructor landing page for the invented course Spreadsheets Without Fear"></a>
+  <a href="base/examples/analyst/landing.html"><img src="_build/img/tone-analyst.webp" width="23%" alt="Animated phone capture of the analyst landing page for the invented course Spreadsheets Without Fear"></a>
+  <a href="base/examples/executive-brief/landing.html"><img src="_build/img/tone-executive-brief.webp" width="23%" alt="Animated phone capture of the executive brief landing page for the invented course Spreadsheets Without Fear"></a>
+</p>
+<p align="center"><sub><a href="base/examples/visionary/landing.html">Visionary</a> &nbsp;·&nbsp; <a href="base/examples/storyteller/landing.html">Storyteller</a> &nbsp;·&nbsp; <a href="base/examples/emotional/landing.html">Emotional</a> &nbsp;·&nbsp; <a href="base/examples/explainer/landing.html">Explainer</a> &nbsp;·&nbsp; <a href="base/examples/practical-instructor/landing.html">Practical instructor</a> &nbsp;·&nbsp; <a href="base/examples/analyst/landing.html">Analyst</a> &nbsp;·&nbsp; <a href="base/examples/executive-brief/landing.html">Executive brief</a></sub></p>
 
 ## Then make it look designed
 
@@ -122,7 +142,8 @@ is shared.
 ## Status
 
 **21 November 2026: new.** Built by its author with [Agentic Process](../agentic-process/) from
-Artifact Studio's voice cards, and tested in fresh Claude sessions on three invented cases.
+Artifact Studio's voice cards, tested in fresh Claude sessions on three invented cases, and shown
+in all seven tones as landing pages and posts.
 [The evidence](quality-results/README.md). **Not yet tried:** ChatGPT, Gemini, a brand tone file,
 real content, and use by anyone else. All people and businesses in the examples are invented.
 

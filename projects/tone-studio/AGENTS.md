@@ -30,7 +30,7 @@ reader, such as a deck, a one-pager, a story or an announcement. People start at
 | You need | Go to |
 | --- | --- |
 | The skill | [`base/SKILL.md`](base/SKILL.md) |
-| Worked examples | [`base/examples/`](base/examples/) |
+| Worked examples: all seven tones as a landing page and a post from one source, plus three test replies | [`base/examples/`](base/examples/README.md) |
 | A brand tone file (Level 2) | [`level-2-files/`](level-2-files/) |
 | The tests and answer keys | [`_build/eval/`](_build/eval/) |
 | The evidence | [`quality-results/`](quality-results/README.md) |

@@ -4,12 +4,12 @@ A one-page summary for anyone deciding where to start. Updated 21 November 2026.
 
 ## What is ready
 
-Five projects are built and ready to try. Other people are testing Artifact Studio, Agentic
-Process, Document to action brief and Rare Find as of 18 November 2026. Nobody else has used the
-Learnings database yet; it was finished on 19 November. Three are described below; the Learnings
-database and the Rare Find game follow in the lists. Artifact Studio, Agentic Process, the
-Learnings database and Rare Find each have an explainer page in [`reports/`](reports/) (download
-the HTML file and open it in a browser).
+Ten projects are built and ready to try. Other people have been testing Artifact Studio, Agentic
+Process, Document to action brief and Rare Find since 18 November 2026. The other six (the
+Learnings database, Meeting notes to actions, Write and edit in my voice, Tone Studio, Web Sections
+and Site Studio) are tested by their author only. Three are described below; the rest follow in the
+lists. Artifact Studio, Agentic Process, the Learnings database and Rare Find each have an explainer
+page in [`reports/`](reports/) (download the HTML file and open it in a browser).
 
 ### Artifact Studio: designer-quality reports you make yourself
 
@@ -19,11 +19,12 @@ puts them on a menu, so one sentence turns rough notes into a professional page 
 reader.
 
 **How you use it:** paste one prompt with your notes, read the page that comes back, check the
-numbers against your notes, and share it. Then ask for the same notes as a deck or a post in one
-sentence.
+numbers against your notes, and share it. Then ask for the same notes as a deck or a social picture in
+one sentence. For the words in a tone, use Tone Studio first; for the sections of a site, Web
+Sections.
 
-**Use cases:** a monthly report for a business partner, a deck for a team meeting, a week of posts
-from one piece, a page that opens with your own photo.
+**Use cases:** a monthly report for a business partner, a deck for a team meeting, a cinematic launch
+page, a page that opens with your own photo.
 
 **Where it stands:** in user testing since 18 November 2026; results are not in yet. Built and
 checked by its author, with 22 runs by fresh AI sessions. Tried

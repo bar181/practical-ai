@@ -48,6 +48,22 @@ changes.
 - Whether a real reader finds the tone right. That needs real content and a real reader.
 - The grader was the author, who also wrote the skill and the keys.
 
+## 21 November 2026: seven tones, one story
+
+Seven fresh Claude agents each took one tone, the skill and one invented source
+([`../base/examples/source-content.md`](../base/examples/source-content.md)) and wrote a cinematic
+landing page and a social post. [The results](../base/examples/README.md).
+
+- **Facts:** a script compared every number on every page and post with the source. None was added.
+  Each folder's `notes.md` lists every fact used, and the lines that are the writer's own wording
+  (for example a feeling line in the emotional tone, an analogy in the practical instructor's).
+- **Length:** pages 241 to 403 words counted with headings, buttons and footer; posts 133 to 393
+  words, each within its platform's range give or take a few words.
+- **Pages:** each agent checked its page in Chrome at 390 and 1280 pixels wide, with scripts on and
+  off and with reduced motion: no sideways scrolling, one `h1`, 44-pixel targets. The author
+  captured all seven and confirmed the looks differ as the tones say.
+- **Not checked:** whether a real reader finds each tone right, and these pages in other browsers.
+
 ## Still to test
 
 1. ChatGPT and Gemini on the same three cases.

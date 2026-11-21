@@ -788,7 +788,7 @@ const toneStudio: Tool = {
     "Think of it as a speechwriter. The facts are yours. The speechwriter chooses the order, the first line and the rhythm, and never invents a statistic.",
   whatItIs: [
     "An investor wants the problem and the proof. A board wants the decision first. A regular customer wants to feel something before the details. Tone Studio is the instructions your chatbot reads to get that order right.",
-    "You paste your content and say who it is for. You get back the tone and why, the finished words in order, a facts check and a list of gaps. It has seven tones and nine formats: visionary, story, briefing, workshop and investor decks, an executive one-pager, an HTML slide show, landing page copy and an announcement email.",
+    "You paste your content and say who it is for. You get back the tone and why, the finished words in order, a facts check and a list of gaps. It has seven tones and ten formats: visionary, story, briefing, workshop and investor decks, an executive one-pager, an HTML slide show, a landing page, a social post and an announcement email.",
   ],
   benefits: [
     { title: "The right order for the reader", text: "Each of the seven tones changes the order of what you say, not only the adjectives." },
@@ -859,7 +859,7 @@ const toneStudio: Tool = {
       label: "Seven tones",
       intro: "Each tone opens a different way, for a different reader.",
       blocks: [
-        { kind: "picture", size: "wide", picture: { src: "tone-studio/how-it-works.svg", alt: "How Tone Studio works: four facts from an invented bakery notice become a visionary slide, a board one-pager and a goodbye email. Each keeps the same four facts. Same facts, different order, nothing invented." } },
+        { kind: "picture", size: "wide", picture: { src: "tone-studio/how-it-works.svg", alt: "How Tone Studio works: four facts from an invented bakery notice become a visionary slide, a board one-pager and a goodbye email. No fact is changed. Same facts, different order, nothing invented." } },
         {
           kind: "table",
           caption: "Seven tones, one rule: the tone changes the order and the rhythm, never the facts",
@@ -874,6 +874,28 @@ const toneStudio: Tool = {
             ["Decide in three minutes", "Executive brief", "The decision, then the options"],
           ],
         },
+      ],
+    },
+    {
+      id: "seven-pages",
+      label: "Seven tones, one story",
+      intro: "One invented course, written in all seven tones as a cinematic landing page and a social post. The facts never change; the order, the rhythm and the look do.",
+      blocks: [
+        {
+          kind: "gallery",
+          size: "phone",
+          pictures: [
+            { src: "tone-studio/tone-visionary.webp", caption: "Visionary", alt: "Animated phone capture of the visionary landing page for the invented course Spreadsheets Without Fear" },
+            { src: "tone-studio/tone-storyteller.webp", caption: "Storyteller", alt: "Animated phone capture of the storyteller landing page for the invented course Spreadsheets Without Fear" },
+            { src: "tone-studio/tone-emotional.webp", caption: "Emotional", alt: "Animated phone capture of the emotional landing page for the invented course Spreadsheets Without Fear" },
+            { src: "tone-studio/tone-explainer.webp", caption: "Explainer", alt: "Animated phone capture of the explainer landing page for the invented course Spreadsheets Without Fear" },
+            { src: "tone-studio/tone-practical-instructor.webp", caption: "Practical instructor", alt: "Animated phone capture of the practical instructor landing page for the invented course Spreadsheets Without Fear" },
+            { src: "tone-studio/tone-analyst.webp", caption: "Analyst", alt: "Animated phone capture of the analyst landing page for the invented course Spreadsheets Without Fear" },
+            { src: "tone-studio/tone-executive-brief.webp", caption: "Executive brief", alt: "Animated phone capture of the executive brief landing page for the invented course Spreadsheets Without Fear" },
+          ],
+        },
+        { kind: "text", paras: ["Each page is 200 to 400 words and each post fits its platform: LinkedIn 100 to 180 words, Facebook 150 to 300, a blog article 300 to 400. Every page was made by a fresh Claude agent from the skill and one invented source, then checked at phone and desktop width and against the source. The course, the people and the numbers are made up."] },
+        { kind: "links", heading: "Open the pages", items: [{ href: "/tone-studio/base/examples/visionary/landing.html", label: "Visionary", note: "landing page, live" }, { href: "/tone-studio/base/examples/storyteller/landing.html", label: "Storyteller", note: "landing page, live" }, { href: "/tone-studio/base/examples/emotional/landing.html", label: "Emotional", note: "landing page, live" }, { href: "/tone-studio/base/examples/explainer/landing.html", label: "Explainer", note: "landing page, live" }, { href: "/tone-studio/base/examples/practical-instructor/landing.html", label: "Practical instructor", note: "landing page, live" }, { href: "/tone-studio/base/examples/analyst/landing.html", label: "Analyst", note: "landing page, live" }, { href: "/tone-studio/base/examples/executive-brief/landing.html", label: "Executive brief", note: "landing page, live" }] },
       ],
     },
     {

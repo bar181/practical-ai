@@ -82,7 +82,8 @@ put a real person's name on the result.
 | **Investor deck** | Ten slides (Analyst when the numbers are the strength, Visionary when the idea is; a title slide may come first): the problem, why now, the solution, how it works, the market, the business model, traction, the team, the ask, the close. Traction and market numbers only from the content; otherwise `[needs: ...]` | Visionary, Analyst |
 | **Executive one-pager** | The decision or the ask in one line, three facts, options, the recommendation, risks, next steps with owners | Executive brief, Analyst |
 | **HTML slide show** | Any deck above, written one slide per heading, with speaker notes under each, ready for Artifact Studio to build | Any |
-| **Landing page copy** | Promise with a number, one action, three things you get, three steps, a customer's words or `[needs: customer quote]`, price, three questions, the promise again | Storyteller, Practical instructor |
+| **Landing page** | 200 to 400 words. The tone's order becomes the page: the first screen is the tone's opening (the storyteller's hook, the visionary's painful number, the explainer's question), then one section per beat, one action. A promise, a customer's words or a price only if the content has them | Any; Storyteller and Visionary are the most cinematic |
+| **Social post** | LinkedIn 100 to 180 words; Facebook 150 to 300; a blog article 300 to 400. The tone's order, compressed: the opening line does the hook's job | Any |
 | **Announcement email** | Subject line, the news in one sentence, why it matters to the reader, what to do, by when | Practical instructor, Visionary |
 
 ## The output

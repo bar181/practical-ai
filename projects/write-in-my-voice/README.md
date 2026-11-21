@@ -1,7 +1,11 @@
+<p align="center"><img src="_build/img/app-icon.svg" width="104" alt="Write and edit in my voice icon: a pen over lines of writing"></p>
+
 <h1 align="center">Write and edit in my voice</h1>
 
 <p align="center"><b>Make it sound like you, without changing what you promised.</b><br>
 For anyone whose emails and posts come out stiff or generic.</p>
+
+<p align="center"><a href="#try-it-now"><img src="_build/img/btn-try.svg" height="48" alt="Try it with one prompt"></a></p>
 
 <p align="center"><b>Free</b> &nbsp;·&nbsp; <b>No setup</b> &nbsp;·&nbsp; <b>Your own chatbot</b><br><b>Tested in Claude</b> &nbsp;·&nbsp; <b>New: no one else has used it yet</b></p>
 

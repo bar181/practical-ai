@@ -9,6 +9,7 @@ generated from scratch: every page on the site is a file already checked in.
   /artifact-studio/components.html    master 2: pages, decks, parts, design ideas, the picker, the skill
   /artifact-studio/base/examples/     the worked examples (same path as the repository, so their links work)
   /artifact-studio/try-it-keynote.html  the page the README's try-it prompt made
+  /tone-studio/                       the seven tone landing pages
   /web-sections/                      the section library, the post previews and the café example (same paths as the repository's base/)
   /rare-find/                         the game, and how-it-was-made.html
   /reports/                           one explainer page per project
@@ -92,6 +93,13 @@ for dirpath, _, files in os.walk(os.path.join(ROOT, "projects", "web-sections", 
         if f.endswith((".html", ".jpg", ".svg")):
             rel = os.path.relpath(os.path.join(dirpath, f), os.path.join(ROOT, "projects", "web-sections"))
             copy(os.path.join("projects", "web-sections", rel), os.path.join("web-sections", rel))
+
+# Tone Studio: the seven tone landing pages and their photos, at the same relative paths
+for dirpath, _, files in os.walk(os.path.join(ROOT, "projects", "tone-studio", "base", "examples")):
+    for f in files:
+        if f.endswith((".html", ".jpg")):
+            rel = os.path.relpath(os.path.join(dirpath, f), os.path.join(ROOT, "projects", "tone-studio"))
+            copy(os.path.join("projects", "tone-studio", rel), os.path.join("tone-studio", rel))
 
 # Rare Find: the game and how it was made
 copy("projects/rare-find/base/game.html", "rare-find/index.html")

@@ -35,9 +35,9 @@ Sections gives it a tested kit instead.
 <p align="center">
   <img src="_build/img/library-phone.webp" width="230" alt="Animated phone capture scrolling through the section library: the contents, the six heroes, a gallery, a photo placeholder box, steps, a quote slot, pricing, questions, a contact form and the footer, each with a dark label saying when to use it">
   &nbsp;
-  <img src="_build/img/cafe-desktop.webp" width="520" alt="Animated desktop capture of the worked example, an invented café home page: a split hero with opening hours and a call button, an about section, a photo gallery with dashed boxes where the owner's photos go, contact details with the hours table and a form, and a dark footer">
+  <img src="_build/img/cafe-desktop.webp" width="520" alt="Animated desktop capture of the worked example, an invented café home page: a split hero with opening hours and a call button, an about section with a placeholder portrait (a cartoon of the author with a robot), a photo gallery with dashed boxes where the owner's photos go, contact details with the hours table and a form, and a dark footer">
 </p>
-<p align="center"><sub><b>Left:</b> the section library on a phone, every section labelled with when to use it. <b>Right:</b> the worked example, an invented café, built by a fresh Claude session from the skill. The dashed boxes are where the owner's own photos go.</sub></p>
+<p align="center"><sub><b>Left:</b> the section library on a phone, every section labelled with when to use it. <b>Right:</b> the worked example, an invented café, built by a fresh Claude session from the skill. The dashed boxes are where the owner's own photos go; the owner's portrait is a labelled placeholder, the author's AI-generated avatar.</sub></p>
 
 <p align="center">
   <img src="_build/img/social-three-drafts.webp" width="640" alt="Screen capture of three drafts of one LinkedIn post shown side by side as they would look in a feed. Each starts a different way, has its own picture with a few words over it, and has a button to choose it">
