@@ -54,7 +54,7 @@ def md(text):
     for line in text.split("\n"):
         if line.strip().startswith("```"):
             if in_code:
-                out.append("<pre><code>" + esc("\n".join(code)) + "</code></pre>"); code = []; in_code = False
+                out.append("<pre tabindex=\"0\"><code>" + esc("\n".join(code)) + "</code></pre>"); code = []; in_code = False
             else:
                 flush(); in_code = True
             continue

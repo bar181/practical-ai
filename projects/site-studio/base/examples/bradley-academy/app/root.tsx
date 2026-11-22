@@ -7,7 +7,9 @@ import "@fontsource/atkinson-hyperlegible-next/400.css";
 import "@fontsource/atkinson-hyperlegible-next/700.css";
 import "./styles/site.css";
 import { Footer, Header } from "./components/Chrome";
-import { startCinema } from "./lib/cinema";
+import { prefersReducedMotion, startCinema } from "./lib/cinema";
+import { freezeAnimatedImages } from "./lib/still";
+import { NotFoundMessage } from "./routes/not-found";
 
 export const links: Route.LinksFunction = () => [
   { rel: "icon", href: `${import.meta.env.BASE_URL}favicon.svg`, type: "image/svg+xml" },
@@ -46,10 +48,19 @@ export default function App() {
     let stop: (() => void) | undefined;
     let alive = true;
     const main = document.getElementById("main");
-    if (main) startCinema(main).then((s) => (alive ? (stop = s) : s()));
-    return () => { alive = false; stop?.(); };
+    if (!main) return;
+    // A reader who asked for less motion sees each animated capture as a still of its first frame.
+    const thaw = prefersReducedMotion() ? freezeAnimatedImages(main) : undefined;
+    startCinema(main).then((s) => (alive ? (stop = s) : s()));
+    return () => { alive = false; stop?.(); thaw?.(); };
   }, [pathname]);
   return <Outlet />;
+}
+
+// The page shell (404.html on GitHub Pages) is only ever served for an address with no page, so its
+// fallback is the not-found message: it reads without script, and the app shows the same once it runs.
+export function HydrateFallback() {
+  return <NotFoundMessage />;
 }
 
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {

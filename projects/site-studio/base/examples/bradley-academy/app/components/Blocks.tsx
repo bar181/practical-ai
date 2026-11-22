@@ -3,9 +3,21 @@ import { media, pageHref } from "../lib/paths";
 import { SmartLink } from "./SmartLink";
 
 function Pic({ p }: { p: Picture }) {
+  const img = <img src={media(p.src)} alt={p.alt} loading="lazy" decoding="async" />;
+  // A picture of a live page opens that page: the picture and its caption are one tap target.
+  if (p.href) {
+    return (
+      <figure className="pic pic-link">
+        <SmartLink href={p.href}>
+          {img}
+          <span className="pic-open">{p.caption ? <strong>{p.caption}</strong> : null}<span>Open the live page</span></span>
+        </SmartLink>
+      </figure>
+    );
+  }
   return (
     <figure className="pic">
-      <img src={media(p.src)} alt={p.alt} loading="lazy" decoding="async" />
+      {img}
       {p.caption ? <figcaption>{p.caption}</figcaption> : null}
     </figure>
   );

@@ -116,6 +116,7 @@ the repository in Claude Code is offered the same set.
 - [x] **Pictures:** every large picture is a slot in `app/content/images.ts`. Placeholders are pictures the owner already made; the Image brief page lists what each final picture should show.
 - [x] **Review benchmark:** an art director agent and a UX and accessibility agent score each round against what a client paying an agency at least US$50,000 would accept.
 - [x] **Hosting:** GitHub Pages through GitHub Actions. Custom domain left open.
+- [x] **UX review (22 November 2026):** three lenses scored before and after, the findings ranked, and what was fixed versus left for later: [`ux-review-2026-11-22.md`](ux-review-2026-11-22.md). Reviewed by an AI agent only; no person has checked it yet.
 - [ ] **Owner review of voice and look** (step 4).
 - [ ] **Custom domain:** later, owner's choice.
 
