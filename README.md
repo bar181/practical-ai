@@ -116,10 +116,10 @@ share, check every number against your notes.
 ### The design set: Web Sections and Tone Studio
 
 Artifact Studio is the design step of three. **[Web Sections](projects/web-sections/)** sets the
-structure: the right sections for a site or page, in order, from a responsive library, plus post
-sizes and post previews. **[Tone Studio](projects/tone-studio/)** writes the words: your facts in
+structure: the right sections for a site or page, in order, from a builder-style library with four
+sample sites to start from, plus post sizes and post previews. **[Tone Studio](projects/tone-studio/)** writes the words: your facts in
 the tone and story order your reader needs, from an investor deck to a goodbye email, with every
-fact checked. Use all three for one page, or any one alone. Both are new and tested by their
+fact checked, and [all seven tones on one page](projects/tone-studio/base/examples/index.html). Use all three for one page, or any one alone. Both are new and tested by their
 author only.
 
 <p align="center"><img src="projects/web-sections/_build/img/design-set.svg" width="640" alt="The design set: Web Sections sets the structure, Tone Studio writes the words, Artifact Studio adds the look, colour, effects and motion. Use all three for one page, or any one alone."></p>

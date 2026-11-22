@@ -50,5 +50,9 @@ export type Tool = {
   explainer?: string;
   /** For a tool that is one of a set: a short note and links to the others. */
   set?: { text: string; links: { href: string; label: string }[] };
+  /** Show, don't tell: two or three picture cards in the About, right after the core idea. */
+  show?: { heading: string; cards: { picture: Picture; title: string; text: string }[] };
+  /** A linked list in the About, such as Tone Studio's seven tones, each linking to its example. */
+  list?: { heading: string; intro?: string; items: { title: string; text: string; href: string }[] };
   tabs: Tab[];
 };

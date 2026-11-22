@@ -82,8 +82,10 @@ To see tones designed as pages, open the voice examples in
 ## Seven tones, one story
 
 The same invented course, written in all seven tones as a cinematic landing page and a social post.
-The facts never change; the order, the rhythm and the look do. [All seven, with posts and facts
-checks](base/examples/README.md).
+The facts never change; the order, the rhythm and the look do. [See all seven on one
+page](base/examples/index.html), each live with its post and the prompt to make a page like it
+([open it live](https://bar181.github.io/practical-ai/tone-studio/base/examples/index.html)), or
+[the files, with facts checks](base/examples/README.md).
 
 <p align="center">
   <a href="base/examples/visionary/landing.html"><img src="_build/img/tone-visionary.webp" width="23%" alt="Animated phone capture of the visionary landing page for the invented course Spreadsheets Without Fear"></a>
@@ -146,6 +148,10 @@ Artifact Studio's voice cards, tested in fresh Claude sessions on three invented
 in all seven tones as landing pages and posts.
 [The evidence](quality-results/README.md). **Not yet tried:** ChatGPT, Gemini, a brand tone file,
 real content, and use by anyone else. All people and businesses in the examples are invented.
+
+**22 November 2026:** a new examples page shows the seven landing pages live, with each post and a
+"Use this prompt to create a page like this" box. The author built and checked it at phone and
+desktop width. No one has yet run one of its prompts to make a new page.
 
 **Are you an AI agent?** Read [AGENTS.md](AGENTS.md).
 

@@ -34,7 +34,7 @@ layout is in the skill.
 | Photos for the library | [`base/template/img/`](base/template/img/) |
 | Social post sizes | [`base/template/social/`](base/template/social/) |
 | Post previews: drafts shown as each platform shows them | [`base/template/post-previews.md`](base/template/post-previews.md), with working frames in [`post-previews.html`](base/template/post-previews.html) and their source in [`_build/post-previews/`](_build/post-previews/README.md) |
-| A worked example | [`base/examples/cafe-home.html`](base/examples/cafe-home.html) |
+| Sample sites to start from: spa, blog, gallery and the café worked example | [`base/examples/index.html`](base/examples/index.html) |
 | A saved section set (Level 2) | [`level-2-files/`](level-2-files/) |
 | The tests and evidence | [`_build/eval/`](_build/eval/), [`quality-results/`](quality-results/README.md) |
 | The plan | [`workshop/plans/web-sections/`](../../workshop/plans/web-sections/README.md) |

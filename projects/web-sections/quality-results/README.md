@@ -59,9 +59,29 @@ and a short blog) moved here from Artifact Studio, where fresh agents had tested
 Artifact Studio's build. The author opened it in headless Chrome at 390 pixels wide and clicked
 all seven tabs: no script errors, no sideways scrolling. The skill was not rerun with them here.
 
+## Builder layout and sample sites, 22 November 2026
+
+The library was rebuilt as a builder-style page: a left menu (a slide-out menu on phones that works
+without script), a blog list section, a Copy HTML button on every section, and Fonts and Colours
+sections. Three sample sites were added beside the café: a spa startup, a personal blog and a
+gallery. The author's own Claude session built them, not a fresh session from the skill.
+
+- **Headless Chrome at 390 and 1280 pixels:** no sideways scrolling, no script errors, tap targets
+  at least 44 pixels, on the library, the three sites and the index.
+- **The section markers:** 20 `SECTION` blocks, each closed. The Copy HTML button copies the block
+  between them.
+- **Colour balance** with `workshop/tools/check_colour_balance.py`, photos hidden: the library and
+  the three sites pass at both widths. The examples index is 1 percent accent at 1280 pixels, under
+  the 2 percent floor; it is an index of cards, not a designed page.
+- **Text contrast**, computed: every text pair on the three sites is 5.2 to 1 or better.
+
+Not done: a fresh session building a site from the skill with the sample sites available, and any
+check by someone other than the author.
+
 ## Still to test
 
 1. Rerun t1 and t2 with the placeholder box and the new ids.
 2. ChatGPT and Gemini, including the paste-only path without the library file.
 3. The chain: Web Sections, then Tone Studio, then Artifact Studio on one invented site.
 4. A post preview request through this skill, now that the previews live here.
+5. A fresh session asked for a spa, a blog or a gallery: does it start from the matching sample?

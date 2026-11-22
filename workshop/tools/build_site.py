@@ -9,8 +9,8 @@ generated from scratch: every page on the site is a file already checked in.
   /artifact-studio/components.html    master 2: pages, decks, parts, design ideas, the picker, the skill
   /artifact-studio/base/examples/     the worked examples (same path as the repository, so their links work)
   /artifact-studio/try-it-keynote.html  the page the README's try-it prompt made
-  /tone-studio/                       the seven tone landing pages
-  /web-sections/                      the section library, the post previews and the café example (same paths as the repository's base/)
+  /tone-studio/                       the seven tone landing pages and the examples page that shows them all
+  /web-sections/                      the section library, the post previews and the four sample sites (same paths as the repository's base/)
   /rare-find/                         the game, and how-it-was-made.html
   /reports/                           one explainer page per project
 

@@ -90,8 +90,21 @@ measures each role's share of the page with photos hidden. All seven pass at 128
 The rest is lighter tints, borders and greys. Body text contrast is 8.7 to 1 or better on every
 page; button labels are 5.7 to 1 or better.
 
+## The examples page, 22 November 2026
+
+[`../base/examples/index.html`](../base/examples/index.html) puts the seven tones on one page: a
+menu of tones on the left (a slide-out menu on phones), contents at the top, and for each tone the
+landing page live in a frame, its story order, its post and a prompt to make a page like it. A
+script builds it from the tone folders, so it cannot drift from them.
+
+The author's own Claude session checked it in headless Chrome at 390 and 1280 pixels: no sideways
+scrolling, no script errors, the menu opens and closes, tap targets at least 44 pixels. It is a
+viewer, not a designed page, so it has almost no accent colour of its own; each framed page keeps
+the balance above. Not yet done: anyone running one of its prompts to make a new page.
+
 ## Still to test
 
 1. ChatGPT and Gemini on the same three cases.
 2. A brand tone file reused on two pieces.
 3. The hand-off: Tone Studio's words built by Artifact Studio into a deck.
+4. One of the examples page prompts, run in a fresh chat with new content.
