@@ -20,7 +20,7 @@ if (nested && existsSync(nested)) {
   copyFileSync(join(client, "__spa-fallback.html"), join(client, "404.html"));
 }
 
-const paths = ["/", "/research/", "/tools/", "/about/", ...toolSlugs.map((s) => `/tools/${s}/`)];
+const paths = ["/", "/research/", "/tools/", "/about/", "/privacy/", ...toolSlugs.map((s) => `/tools/${s}/`)];
 writeFileSync(
   join(client, "sitemap.xml"),
   `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${paths

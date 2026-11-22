@@ -41,20 +41,22 @@ black-out the first had missed, so its round 4 score fell before it rose again.
 
 **Where it stands after round 6:**
 
-- **UX (86):** a client would accept it at the US$50,000 bar once the placeholder photos are replaced.
+- **UX (86):** a client would accept it at the US$50,000 bar once the placeholder photos are replaced (the owner has since confirmed the photos are final; see below).
 - **Art direction (73):** it clears the bar for direction, type and motion, but the layout is still plain for an award site.
 
 Its last suggestions were made after round 6 and have not been scored:
 
 - a sticky "Try it in a minute" card beside the story on desktop tool pages;
 - a picture-led scene behind the starter prompt;
-- the cartoon first on the image brief;
+- the cartoon first on the image brief (that page has since been removed);
 - a shorter copy message for screen readers.
 
 **What still holds it back:**
 
-- **Placeholder photos.** The 15 placeholders are pictures the owner already made; most do not show
-  their tool. The Image brief page lists each final picture, its size and a prompt.
+- **Photos.** The reviewers read the owner's photographs as placeholders because most do not show
+  their tool. On 22 November 2026 the owner confirmed they are final, so the Image brief page was
+  removed. Whether a picture that does not show its tool weakens a page is still the reviewers'
+  open point.
 - **The headline.** It is the owner's tagline from the root README. Reviewers asked for one that
   names an outcome. That decision belongs to the owner.
 

@@ -7,5 +7,5 @@ import { siteBase } from "./site.config";
 export default {
   ssr: false,
   basename: siteBase,
-  prerender: ["/", "/research", "/tools", "/about", "/image-brief", ...toolSlugs.map((slug) => `/tools/${slug}`)],
+  prerender: ["/", "/research", "/tools", "/about", "/privacy", ...toolSlugs.map((slug) => `/tools/${slug}`)],
 } satisfies Config;

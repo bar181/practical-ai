@@ -10,7 +10,7 @@ const repo = join(site, "..", "..", "..", "..", "..");
 const projects = [
   "artifact-studio", "agentic-process", "document-to-action-brief", "learnings-database", "rare-find",
   "tone-studio", "web-sections", "meeting-notes-to-actions", "write-in-my-voice", "site-studio",
-  "practical-ai-guide", "research-brief",
+  "practical-ai-guide", "research-brief", "website-audit",
 ];
 
 // 1. Pictures: each project's _build/img, and the shared images
@@ -22,8 +22,9 @@ for (const p of projects) {
   if (existsSync(img)) cpSync(img, join(media, p), { recursive: true });
 }
 cpSync(join(repo, "assets", "images"), join(media, "shared"), { recursive: true });
-// Placeholder photographs, made by the repository owner, until the final images in app/content/images.ts arrive.
+// The owner's photographs, and their light WebP copies (made by scripts/make_webp.py).
 cpSync(join(repo, "projects", "artifact-studio", "_build", "photos"), join(media, "photos"), { recursive: true });
+cpSync(join(site, "..", "..", "..", "_build", "photos-webp"), join(media, "photos-webp"), { recursive: true });
 // Each tool's square icon is the top of its tile (the same square in every tile), with the words cropped away.
 mkdirSync(join(media, "icons"), { recursive: true });
 for (const p of projects) {
@@ -46,6 +47,7 @@ const headings = {
   "site-studio": /^## Get started: try it now/m,
   "practical-ai-guide": /^## Get started: try it now/m,
   "research-brief": /^## Try it now/m,
+  "website-audit": /^## Get started: try it now/m,
   starter: /^## Start here/m,
 };
 const prompts = {};

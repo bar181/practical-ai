@@ -12,9 +12,9 @@ export const contact = {
 };
 
 export const brand = {
-  metaTitle: "Bradley Ross, Agentic Architect and Researcher | Bradley Academy",
+  metaTitle: "Bradley Ross, Agentic Architect and Researcher",
   metaDescription:
-    "Bradley Ross: agentic AI research into deterministic AI that keeps what it learns, and teaching from ten-person teams to enterprise developers.",
+    "Bradley Ross, Agentic Architect and Researcher: deterministic AI that keeps what it learns, built on AISP, and teaching from ten-person teams to enterprise developers.",
 
   hero: {
     kicker: "Bradley Ross, Agentic Architect and Researcher",
@@ -77,7 +77,7 @@ export const brand = {
 };
 
 export const research = {
-  metaTitle: "Research: deterministic AI that keeps what it learns | Bradley Ross",
+  metaTitle: "Research: deterministic AI that keeps what it learns",
   metaDescription:
     "Bradley Ross's research: deterministic agents built on AISP, a mathematical specification language, that prove what they did and carry experience to new problems.",
   hero: {

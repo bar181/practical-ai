@@ -3,10 +3,10 @@ import type { Route } from "./+types/about";
 import { about, site } from "../content/site";
 import { SceneImage } from "../components/Scene";
 import { SplitText } from "../components/SplitText";
-import { pageMeta } from "../lib/meta";
+import { pageMeta, personJsonLd } from "../lib/meta";
 
 export const meta: Route.MetaFunction = () =>
-  pageMeta(`About ${about.title} | ${site.brand}`, about.metaDescription, "/about/");
+  [...pageMeta(`About ${about.title} | ${site.brand}`, about.metaDescription, "/about/"), personJsonLd];
 
 export default function About() {
   return (

@@ -18,7 +18,7 @@ import { pageMeta } from "../lib/meta";
 export const meta: Route.MetaFunction = ({ params }) => {
   const t = getTool(params.slug);
   if (!t) return [{ title: `Not found | ${site.brand}` }];
-  return pageMeta(`${t.name}: ${t.promise} | ${site.brand}`, `${t.sub} ${t.coreIdea}`.slice(0, 300), `/tools/${t.slug}/`);
+  return pageMeta(`${t.name} | ${site.brand}`, `${t.promise} ${t.sub}`.slice(0, 300), `/tools/${t.slug}/`);
 };
 
 function About({ t }: { t: Tool }) {

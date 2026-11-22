@@ -4,11 +4,11 @@ import { brand, contact } from "../content/brand";
 import { SceneImage } from "../components/Scene";
 import { SmartLink } from "../components/SmartLink";
 import { SplitText } from "../components/SplitText";
-import { pageMeta } from "../lib/meta";
+import { pageMeta, personJsonLd } from "../lib/meta";
 import { media } from "../lib/paths";
 import { site } from "../content/site";
 
-export const meta: Route.MetaFunction = () => pageMeta(brand.metaTitle, brand.metaDescription, "/");
+export const meta: Route.MetaFunction = () => [...pageMeta(brand.metaTitle, brand.metaDescription, "/"), personJsonLd];
 
 export default function Home() {
   return (

@@ -1441,7 +1441,134 @@ const researchBrief: Tool = {
   ],
 };
 
+const websiteAudit: Tool = {
+  slug: "website-audit",
+  name: "Website audit",
+  icon: "icons/website-audit.svg",
+  promise: "Know what is holding your website back, and what to fix first.",
+  sub: "For anyone with a website, from a page made in Claude or ChatGPT to a company site.",
+  cardLine: "A score out of 100, and the five fixes that matter most.",
+  coreIdea:
+    "Check your site the way a visitor, a search engine and an AI assistant see it, score it out of 100, and fix the five things that matter most.",
+  analogy:
+    "Think of it as a home inspection before a sale: every room walked, what a buyer would notice written down, and the repairs ranked.",
+  whatItIs: [
+    "A skill for any chatbot. Give it your site and your business in one line. It checks eight areas, scores each with the evidence it saw, and lists five fixes in plain words, with the tool that helps.",
+    "It also writes your core context card: what you do, for whom, your value proposition, unique selling points, core messages and call to action. Keep it, and paste it into every AI task about your business.",
+  ],
+  benefits: [
+    { title: "One scorecard", text: "Message, search and AI search, speed, phones, trust, security, links and measurement, out of 100." },
+    { title: "Fixes, not jargon", text: "Five changes in the order that moves the score most, each with where and why a visitor cares." },
+    { title: "Your business, clear", text: "The part other checkers skip: can a stranger say what you do, for whom, and what to do next?" },
+  ],
+  design: [
+    { title: "Builds on free tools", text: "PageSpeed Insights, Search Console and the MDN HTTP Observatory do what they do best. The audit reads their results." },
+    { title: "Evidence for every point", text: "Full points only for what it saw. An estimate says it is one." },
+    { title: "Read-only", text: "It never changes your site, submits a form or asks for a password." },
+  ],
+  coreUser:
+    "A small business owner, a student publishing a first page, or a team before a launch.",
+  levels: [
+    {
+      level: 1,
+      name: "Basic checks",
+      coreUser: "Anyone",
+      story: "As a café owner, I want to know why my site never shows up, so that I fix the right thing first.",
+      does: "Paste the skill and your site into any chatbot. Add PageSpeed Insights and Observatory results for real speed and security scores.",
+      setup: "None",
+      built: true,
+    },
+    {
+      level: 2,
+      name: "The expected basics",
+      coreUser: "A business site",
+      story: "As a consultant, I want messages from my site saved and my visits counted, so that no lead is lost.",
+      does: "Search Console, a contact form saved to a Supabase database, analytics with consent, and a privacy note.",
+      setup: "An afternoon",
+      built: true,
+    },
+    {
+      level: 3,
+      name: "The full audit",
+      coreUser: "A site that matters to the business",
+      story: "As a team lead, I want every page checked before launch, so that the plan we hand the developer is complete.",
+      does: "A coding agent runs the crawler-eye checker, Lighthouse and the Observatory, scores every page and writes the improvement plan.",
+      setup: "An hour, with a coding agent",
+      built: true,
+    },
+  ],
+  tryIt: {
+    intro: "Copy the box into the chatbot you use, add your site's address or paste the page, and send.",
+    after: "You get a score, five fixes and your core context card. For real speed and security scores, run PageSpeed Insights and the MDN HTTP Observatory and paste the results in.",
+    promptKey: "website-audit",
+    primaryLabel: "Copy the try-it prompt",
+  },
+  notDo: [
+    "Not a web designer. The fixes point to Web Sections, Tone Studio and Site Studio.",
+    "Not a security test. A site that takes payments or holds personal data needs a professional review.",
+    "Not your hands. It reports; you make every change.",
+  ],
+  status: {
+    date: "22 November 2026",
+    label: "New",
+    text: "Built by Claude and run on one real site, this one: 71 of 100, then 81 after the fixes made the same day. Not yet tried by anyone else, on a live address, or in ChatGPT or Gemini.",
+  },
+  readme: `${GH}/website-audit`,
+  tabs: [
+    {
+      id: "report",
+      label: "The report",
+      intro: "What you get back at Level 1 and above: one page with the score, the scorecard, issues by severity, Core Web Vitals, Lighthouse by page, before and after, and the fixes in order.",
+      blocks: [{ kind: "frame", src: "/website-audit/base/examples/bradley-academy-report.html", title: "Website audit report for Bradley Academy", caption: "The live report for this site. It opens on its own, with no network.", height: 760 }],
+    },
+    {
+      id: "example",
+      label: "This site, audited",
+      intro: "The worked example: Bradley Academy, before it moves to its own domain. Checked from a copy on a laptop, served compressed as GitHub Pages serves it. Lab speed only; real-user speed needs the live site.",
+      blocks: [
+        {
+          kind: "table",
+          caption: "The scorecard: 81 of 100 after the fixes (71 before)",
+          head: ["Area", "Points"],
+          rows: [
+            ["Message", "16 of 20"],
+            ["Found in search and AI", "12 of 15"],
+            ["Speed (lab)", "11 of 15"],
+            ["Phones and access", "15 of 15"],
+            ["Trust and contact", "10 of 10"],
+            ["Security", "6 of 10"],
+            ["Links and content", "9 of 10"],
+            ["Measured", "2 of 5"],
+          ],
+        },
+        {
+          kind: "steps",
+          heading: "Fix first",
+          items: [
+            { title: "Move to its own domain", text: "robots.txt and llms.txt only count at the root of a domain." },
+            { title: "Switch on measurement", text: "Search Console and analytics with consent are built in; they need an ID to switch on." },
+            { title: "Draw the opening photo sooner", text: "Largest paint is 3.1 s against 2.5 s. The photo waits for the stylesheet and fonts." },
+            { title: "Security headers", text: "GitHub Pages cannot set them. A CDN in front of the domain can." },
+            { title: "Tidy the tool pages", text: "Picture sizes in the page, and motion code only where it runs." },
+          ],
+        },
+        {
+          kind: "links",
+          heading: "Read it all",
+          items: [
+            { href: `${GHB}/website-audit/base/examples/bradley-academy-audit.md`, label: "The full audit", note: "with the core context card" },
+            { href: `${GHB}/website-audit/quality-results/2026-11-22-check-before.md`, label: "The checker's report, before" },
+            { href: `${GHB}/website-audit/quality-results/2026-11-22-check-after.md`, label: "And after the fixes" },
+            { href: `${GHB}/website-audit/quality-results/2026-11-22-lighthouse.md`, label: "Lighthouse, before and after" },
+          ],
+        },
+      ],
+    },
+  ],
+};
+
 const all: Record<ToolSlug, Tool> = {
+  "website-audit": websiteAudit,
   "practical-ai-guide": guide,
   "site-studio": siteStudio,
   "web-sections": webSections,

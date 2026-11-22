@@ -7,9 +7,11 @@ export function SceneImage({ id, cine, eager, className = "scene-img", name, dec
   const s = slot(id);
   // Most scene pictures set a mood behind words that already say everything, so readers skip them.
   return (
-    <div className={className} data-cine={cine} data-placeholder={s.isPlaceholder || undefined}>
+    <div className={className} data-cine={cine}>
       <img
         src={media(s.src)}
+        srcSet={s.srcSet?.split(", ").map((x) => media(x)).join(", ")}
+        sizes={s.srcSet ? "100vw" : undefined}
         alt={decorative ? "" : s.alt}
         style={{ objectPosition: s.focus, viewTransitionName: name }}
         loading={eager ? "eager" : "lazy"}

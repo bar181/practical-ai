@@ -31,8 +31,9 @@ people who never open GitHub, so every page is written for them, not for develop
 | The try-it prompts and the pictures | Not stored here. `scripts/sync.mjs` copies them from each project's README and `_build/img/` before every build, so the site never drifts from the READMEs |
 | The look | `app/styles/site.css`: colour and type tokens at the top. A night at the cinema: velvet, ivory, Harvard crimson and brass, Bodoni Moda titles |
 | The motion | `app/lib/cinema.ts`: GSAP ScrollTrigger and Lenis, driven by `data-cine="..."` attributes on the pages. Off when the reader asks for reduced motion; every page reads fully without it |
-| The large pictures | `app/content/images.ts`: one slot per picture. Today each shows a placeholder the owner already made. The Image brief page (`/image-brief`) lists what each final picture should show, its size and a prompt |
-| The pages | `app/routes/`: home (Bradley), research, practical-ai (the `/tools` page), one tool page, About Bradley, not found |
+| The large pictures | `app/content/images.ts`: one slot per picture, each one of the owner's own photographs with its alt text. `scripts/make_webp.py` makes light WebP copies (1600 and 800 pixels wide) in `../../_build/photos-webp/`; the page serves those with `srcset` |
+| Analytics and Search Console | Off unless set at build time: `SITE_GA_ID` (a Google Analytics 4 ID) shows a consent banner and loads analytics only after Yes; `SITE_GSC` adds the Search Console verification tag. The Privacy page (`/privacy`) says which is on |
+| The pages | `app/routes/`: home (Bradley), research, practical-ai (the `/tools` page), one tool page, About Bradley, privacy, not found |
 | How it is published | [`.github/workflows/pages.yml`](../../.github/workflows/pages.yml) and [`workshop/tools/build_site.py`](../../workshop/tools/build_site.py) |
 | The plan, with a definition of done for each step | [`workshop/plans/site-studio/`](../../workshop/plans/site-studio/README.md) |
 
@@ -46,7 +47,8 @@ people who never open GitHub, so every page is written for them, not for develop
    designed to help, who it is for, three levels with a user story each, try it, what it does not
    do, status), then tabs of real examples.
 4. **Pictures go in slots.** Never put a large picture straight into a page: add a slot to
-   `images.ts`, so the Image brief stays the full list of what is still a placeholder.
+   `images.ts` with alt text that says what is shown, then run `python3 scripts/make_webp.py` for
+   its light copies.
 5. **Phone first.** Check every change at 390 pixels wide: no sideways scrolling, 44 pixel tap
    targets, readable with motion off. Pre-rendered pages must read fully before any script runs.
 6. **Add a tool** by adding its slug to `app/content/slugs.ts`, its entry to `tools.ts`, and its
