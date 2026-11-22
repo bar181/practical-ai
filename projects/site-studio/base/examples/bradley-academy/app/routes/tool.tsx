@@ -33,24 +33,59 @@ function About({ t }: { t: Tool }) {
           <p className="analogy" data-cine-item>{t.analogy}</p>
         </section>
 
-        <section aria-labelledby="what" data-cine="reveal">
-          <h2 id="what" data-cine-item>What it is</h2>
-          {t.whatItIs.map((p, i) => <p key={i} data-cine-item>{p}</p>)}
-        </section>
+        {t.show ? (
+          <section aria-labelledby="show" data-cine="reveal">
+            <h2 id="show" data-cine-item>{t.show.heading}</h2>
+            <ul className="show-cards">
+              {t.show.cards.map((c) => (
+                <li key={c.title} data-cine-item>
+                  <img src={media(c.picture.src)} alt={c.picture.alt} loading="lazy" decoding="async" />
+                  <h3>{c.title}</h3>
+                  <p>{c.text}</p>
+                </li>
+              ))}
+            </ul>
+          </section>
+        ) : null}
 
-        <section aria-labelledby="why" data-cine="reveal">
-          <h2 id="why" data-cine-item>Why it helps</h2>
-          <ul className="ticks">
-            {t.benefits.map((b) => <li key={b.title} data-cine-item><strong>{b.title}</strong><span>{b.text}</span></li>)}
-          </ul>
-        </section>
+        {t.list ? (
+          <section aria-labelledby="list" data-cine="reveal">
+            <h2 id="list" data-cine-item>{t.list.heading}</h2>
+            {t.list.intro ? <p data-cine-item>{t.list.intro}</p> : null}
+            <ul className="link-cards">
+              {t.list.items.map((it) => (
+                <li key={it.href} data-cine-item>
+                  <SmartLink href={it.href}><strong>{it.title}</strong><span>{it.text}</span></SmartLink>
+                </li>
+              ))}
+            </ul>
+          </section>
+        ) : null}
 
-        <section aria-labelledby="design" data-cine="reveal">
-          <h2 id="design" data-cine-item>How it is designed to help</h2>
-          <ul className="design-list">
-            {t.design.map((d) => <li key={d.title} data-cine-item><h3>{d.title}</h3><p>{d.text}</p></li>)}
-          </ul>
-        </section>
+        {t.whatItIs.length ? (
+          <section aria-labelledby="what" data-cine="reveal">
+            <h2 id="what" data-cine-item>What it is</h2>
+            {t.whatItIs.map((p, i) => <p key={i} data-cine-item>{p}</p>)}
+          </section>
+        ) : null}
+
+        {t.benefits.length ? (
+          <section aria-labelledby="why" data-cine="reveal">
+            <h2 id="why" data-cine-item>Why it helps</h2>
+            <ul className="ticks">
+              {t.benefits.map((b) => <li key={b.title} data-cine-item><strong>{b.title}</strong><span>{b.text}</span></li>)}
+            </ul>
+          </section>
+        ) : null}
+
+        {t.design.length ? (
+          <section aria-labelledby="design" data-cine="reveal">
+            <h2 id="design" data-cine-item>How it is designed to help</h2>
+            <ul className="design-list">
+              {t.design.map((d) => <li key={d.title} data-cine-item><h3>{d.title}</h3><p>{d.text}</p></li>)}
+            </ul>
+          </section>
+        ) : null}
 
       </div>
       <aside className="about-side" aria-label="Try it">
@@ -107,10 +142,12 @@ function About({ t }: { t: Tool }) {
           <p className="muted">{t.tryIt.after}</p>
         </section>
 
-        <section aria-labelledby="not">
-          <h2 id="not">What it does not do</h2>
-          <ul className="plain-list">{t.notDo.map((n) => <li key={n}>{n}</li>)}</ul>
-        </section>
+        {t.notDo.length ? (
+          <section aria-labelledby="not">
+            <h2 id="not">What it does not do</h2>
+            <ul className="plain-list">{t.notDo.map((n) => <li key={n}>{n}</li>)}</ul>
+          </section>
+        ) : null}
       </div>
       <Side t={t} />
     </div>

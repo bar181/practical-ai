@@ -19,12 +19,16 @@ Ask an AI for a website and it starts from a blank file every time: a different 
 that breaks on phones, a contact form with no labels, and five-star reviews nobody wrote. Web
 Sections gives it a tested kit instead.
 
-- **A section library in one file.** Six heroes (photo, split, type only, video, centred with a
-  product, mosaic), two galleries, about, features, steps, quote, pricing, questions, contact, call
-  to action, article, header and footer. Responsive, accessible, no build step, one place to change
-  the colours. [Open it](base/template/sections.html).
-- **Five page assemblies.** Small business home, landing page, content page, portfolio and event:
-  which sections, in which order.
+- **A section library in one file.** Laid out like a site builder: a menu on the left (a slide-out
+  menu on phones) and twenty sections from the header and six heroes to the blog list, article and
+  footer, each with a Copy HTML button. Then Fonts and Colours: the type scale, three font pairs and
+  the six colour tokens in a 60-30-10 balance. Responsive, accessible, no build step.
+  [Open it](base/template/sections.html).
+- **Four sample sites to start from.** A spa startup, a personal blog, a gallery and a café, built
+  from the same sections with their own colours and fonts. All invented.
+  [Open them](base/examples/index.html).
+- **Six page assemblies.** Small business home, landing page, blog, portfolio, event and social
+  posts: which sections, in which order.
 - **A skill that chooses.** It picks the page type and the sections from what the page must do,
   fills them with your content, and leaves clear `[placeholders]` where something is missing.
   Never invented reviews, prices or logos.
@@ -33,18 +37,28 @@ Sections gives it a tested kit instead.
   an inbox or a blog will. [Open the previews](base/template/post-previews.html).
 
 <p align="center">
-  <img src="_build/img/library-phone.webp" width="230" alt="Animated phone capture scrolling through the section library: the contents, the six heroes, a gallery, a photo placeholder box, steps, a quote slot, pricing, questions, a contact form and the footer, each with a dark label saying when to use it">
+  <img src="_build/img/library-desktop.webp" width="760" alt="Animated desktop capture of the section library: a menu of sections on the left that marks the one in view, and on the right each section with a label saying when to use it and a Copy HTML button, down to the fonts and colours guide">
+</p>
+<p align="center"><sub>The section library: pick a section on the left, read when to use it, copy its HTML.</sub></p>
+
+<p align="center">
+  <img src="_build/img/sample-sites.webp" width="760" alt="Animated capture of the four sample sites in turn: a calm spa landing page in sage and plum, a personal blog in black and white with one blue, a dark gallery with a gold accent, and the café home page">
+</p>
+<p align="center"><sub>Four sample sites, one library: only the order of the sections, six colours and two fonts change.</sub></p>
+
+<p align="center">
+  <img src="_build/img/library-phone.webp" width="230" alt="Animated phone capture scrolling through the section library: the Sections button that opens the menu, the six heroes, a gallery, steps, pricing, questions, a contact form, the footer, the fonts and the colours, each section labelled with when to use it">
   &nbsp;
   <img src="_build/img/cafe-desktop.webp" width="520" alt="Animated desktop capture of the worked example, an invented café home page: a split hero with opening hours and a call button, an about section with a placeholder portrait (a cartoon of the author with a robot), a photo gallery with dashed boxes where the owner's photos go, contact details with the hours table and a form, and a dark footer">
 </p>
-<p align="center"><sub><b>Left:</b> the section library on a phone, every section labelled with when to use it. <b>Right:</b> the worked example, an invented café, built by a fresh Claude session from the skill. The dashed boxes are where the owner's own photos go; the owner's portrait is a labelled placeholder, the author's AI-generated avatar.</sub></p>
+<p align="center"><sub><b>Left:</b> the section library on a phone; the Sections button opens the menu. <b>Right:</b> the worked example, an invented café, built by a fresh Claude session from the skill. The dashed boxes are where the owner's own photos go; the owner's portrait is a labelled placeholder, the author's AI-generated avatar.</sub></p>
 
 <p align="center">
   <img src="_build/img/social-three-drafts.webp" width="640" alt="Screen capture of three drafts of one LinkedIn post shown side by side as they would look in a feed. Each starts a different way, has its own picture with a few words over it, and has a button to choose it">
 </p>
 <p align="center"><sub>Post previews: three drafts of one post, shown the way the feed shows them. Nothing is posted for you.</sub></p>
 
-<p align="center"><b>Open them live:</b> <a href="https://bar181.github.io/practical-ai/web-sections/base/template/sections.html">the section library</a> &nbsp;·&nbsp; <a href="https://bar181.github.io/practical-ai/web-sections/base/template/post-previews.html">the post previews</a> &nbsp;·&nbsp; <a href="https://bar181.github.io/practical-ai/web-sections/base/examples/cafe-home.html">the café example</a><br><sub>Live once this version is merged. The same files are in <a href="base/template/">base/template/</a>.</sub></p>
+<p align="center"><b>Open them live:</b> <a href="https://bar181.github.io/practical-ai/web-sections/base/template/sections.html">the section library</a> &nbsp;·&nbsp; <a href="https://bar181.github.io/practical-ai/web-sections/base/template/post-previews.html">the post previews</a> &nbsp;·&nbsp; <a href="https://bar181.github.io/practical-ai/web-sections/base/examples/index.html">the sample sites</a><br><sub>Live once this version is merged. The same files are in <a href="base/template/">base/template/</a> and <a href="base/examples/">base/examples/</a>.</sub></p>
 
 **Think of it as** a kit of rooms. Choose the rooms the house needs and put them in order. The
 paint comes later.
@@ -116,6 +130,11 @@ sessions on two invented sites. [The evidence](quality-results/README.md). **Not
 Gemini, a saved section set, a real business, and use by anyone else. All businesses in the
 examples are invented. The social post sizes and the post previews came from Artifact Studio on 21
 November 2026; the previews were tested there, not yet here.
+
+**22 November 2026:** the library now has a builder-style menu, a blog list, and Fonts and Colours
+sections, and there are three new sample sites (spa, blog, gallery). The author's own Claude session
+built and checked them at phone and desktop width. The skill has not been rerun with them, and no
+one else has used them yet.
 
 **Are you an AI agent?** Read [AGENTS.md](AGENTS.md).
 

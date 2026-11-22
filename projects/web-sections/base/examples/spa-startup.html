@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<!-- Sample site, invented: Mossline Day Spa, its treatments, prices, address and opening date are made up. Built on 22 November 2026 from base/template/sections.html: the sections are copied from the library and the colours and fonts changed in :root. Photos are stand-in boxes until real ones arrive. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mossline Day Spa: a quiet hour, close to home</title>
+<meta name="description" content="Mossline Day Spa, 220 Fern Street. Massage, facials and the long afternoon. Opening 3 March 2027. A sample site with invented details.">
+<style>
+:root{
+  --bg:#f3f6f4;--panel:#dce6e0;--ink:#1d2b27;--muted:#4f605a;--accent:#7c3f60;--line:#cbd6d0;
+  --display:Didot,"Bodoni 72","Bodoni Moda","Iowan Old Style",Georgia,serif;
+  --text:"Avenir Next","Segoe UI",system-ui,sans-serif;
+  --radius:18px;--max:1120px;
+  --c60:var(--bg);--c30:var(--panel);--c10:var(--accent);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.6 var(--text);overflow-x:clip}
+img,video{display:block;max-width:100%;height:auto}
+h1,h2,h3{font-family:var(--display);line-height:1.1;margin:0 0 .4em;text-wrap:balance;font-weight:700}
+h1{font-size:clamp(2.3rem,1.4rem + 4.4vw,4.6rem)}
+h2{font-size:clamp(1.8rem,1.2rem + 2.6vw,3rem)}
+h3{font-size:1.3rem}
+p{margin:0 0 1em;max-width:62ch}
+a{color:var(--accent)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.cta :focus-visible,.foot :focus-visible,.hero-photo :focus-visible,.hero-video :focus-visible{outline-color:#fff}
+.wrap{max-width:var(--max);margin-inline:auto;padding-inline:20px}
+.sec{padding-block:clamp(56px,8vw,104px)}
+[id]{scroll-margin-top:72px}
+/* a missing photo: use this box, never a stranger's photo, until the real one arrives */
+.ph-box{display:grid;place-items:center;aspect-ratio:4/3;border:2px dashed var(--line);border-radius:var(--radius);background:var(--panel);color:var(--muted);text-align:center;padding:16px;font-size:.95rem}
+.alt{background:var(--panel)}
+.lead{font-size:1.2rem;color:var(--muted)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 24px;border-radius:999px;background:var(--accent);color:#fff;font-weight:700;text-decoration:none;border:2px solid var(--accent)}
+.btn.ghost{background:transparent;color:inherit;border-color:currentColor}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px}
+.ph-note{display:inline-block;font-size:.8rem;background:#fff3c4;color:#5a4500;padding:2px 8px;border-radius:6px}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+
+/* HEROES */
+.hero-photo{position:relative;min-height:min(88svh,820px);display:flex;align-items:flex-end;color:#fff;background:#222 center/cover no-repeat}
+.hero-photo::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgb(0 0 0/.15),rgb(0 0 0/.65))}
+.hero-photo .wrap{position:relative;padding-block:56px;width:100%}
+.hero-photo p{color:#f1f1f1;font-size:1.2rem}
+.hero-photo .btn.ghost{color:#fff}
+.hero-split .wrap{display:grid;gap:32px;align-items:center;padding-block:clamp(48px,7vw,96px)}
+@media(min-width:860px){.hero-split .wrap{grid-template-columns:1.05fr 1fr}}
+.hero-split img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--radius)}
+.hero-type{padding-block:clamp(72px,12vw,160px)}
+.hero-type h1{font-size:clamp(3rem,1.6rem + 7vw,7.5rem);line-height:.95;max-width:12ch}
+.hero-video{position:relative;min-height:min(80svh,760px);display:flex;align-items:flex-end;color:#fff;overflow:hidden;background:#111}
+.hero-video video,.hero-video .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero-video::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,transparent 30%,rgb(0 0 0/.7))}
+.hero-video .wrap{position:relative;z-index:2;padding-block:48px;width:100%}
+.hero-video p{color:#eee}
+.vid-toggle{position:absolute;right:16px;top:16px;z-index:3;min-height:44px;padding:0 16px;border-radius:999px;border:1px solid #fff;background:rgb(0 0 0/.65);color:#fff;font-weight:700;cursor:pointer}
+.hero-center{text-align:center;padding-block:clamp(64px,9vw,120px) 0}
+.hero-center p{margin-inline:auto}
+.hero-center .btns{justify-content:center}
+.hero-center img{margin:48px auto 0;width:min(100%,960px);aspect-ratio:16/8;object-fit:cover;border-radius:var(--radius) var(--radius) 0 0}
+.hero-mosaic .wrap{display:grid;gap:28px;padding-block:clamp(48px,7vw,96px)}
+.mosaic{display:grid;grid-template-columns:repeat(2,1fr);grid-auto-rows:150px;gap:10px}
+.mosaic img{width:100%;height:100%;object-fit:cover;border-radius:10px}
+.mosaic img:first-child{grid-row:span 2}
+@media(min-width:860px){.hero-mosaic .wrap{grid-template-columns:1fr 1.1fr;align-items:center}.mosaic{grid-auto-rows:190px}}
+
+/* GALLERY */
+.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));margin:0;padding:0;list-style:none}
+.gallery figure{margin:0}
+.gallery img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:10px}
+.gallery figcaption{font-size:.9rem;color:var(--muted);margin-top:6px}
+.swipe{display:grid;grid-auto-flow:column;grid-auto-columns:min(78%,340px);gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px;list-style:none;margin:0;padding-left:0}
+.swipe li{scroll-snap-align:start}
+.swipe img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:12px}
+
+/* ABOUT */
+.about{display:grid;gap:32px;align-items:center}
+@media(min-width:860px){.about{grid-template-columns:1fr 1.1fr}}
+.about img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:var(--radius)}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:24px;padding:0;list-style:none}
+.facts li{border-top:2px solid var(--accent);padding-top:10px}
+.facts b{display:block;font:700 1.6rem/1 var(--display)}
+.facts span{font-size:.9rem;color:var(--muted)}
+
+/* FEATURES, STEPS */
+.cards{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));margin-top:28px;padding:0;list-style:none}
+.card{background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);padding:24px}
+.alt .card{background:#fff}
+.card .ico{width:44px;height:44px;border-radius:10px;background:var(--panel);display:grid;place-items:center;margin-bottom:14px;color:var(--accent)}
+.steps{counter-reset:s;display:grid;gap:20px;margin-top:28px;padding:0;list-style:none}
+@media(min-width:860px){.steps{grid-template-columns:repeat(3,1fr)}}
+.steps li{counter-increment:s;padding-top:14px;border-top:1px solid var(--line)}
+.steps li::before{content:counter(s);display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--accent);color:#fff;font-weight:700;margin-bottom:12px}
+
+/* QUOTE */
+.quote{max-width:52rem;margin-inline:auto;text-align:center}
+.quote blockquote{margin:0;font:400 clamp(1.4rem,1rem + 1.8vw,2.2rem)/1.35 var(--display)}
+.quote figcaption{margin-top:16px;color:var(--muted)}
+
+/* PRICING */
+.prices{display:grid;gap:16px;margin-top:28px;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));padding:0;list-style:none}
+.price{border:1px solid var(--line);border-radius:var(--radius);padding:26px;background:var(--bg);display:flex;flex-direction:column;gap:10px}
+.price.pick{border:2px solid var(--accent)}
+.price .tag{align-self:flex-start;font-size:.8rem;font-weight:700;color:var(--accent)}
+.price .amt{font:700 2.2rem/1 var(--display)}
+.price ul{padding-left:1.1em;margin:0 0 8px;flex:1}
+.price .btn{align-self:stretch}
+
+/* QUESTIONS */
+.faq{max-width:52rem;margin-top:24px}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{cursor:pointer;padding:18px 0;font-weight:700;min-height:44px;list-style-position:inside}
+.faq details p{color:var(--muted)}
+
+/* CONTACT */
+.contact{display:grid;gap:32px}
+@media(min-width:860px){.contact{grid-template-columns:1fr 1.2fr}}
+.form{display:grid;gap:14px}
+.form label{display:grid;gap:6px;font-weight:600}
+.form input,.form textarea,.form select{font:inherit;padding:12px 14px;border:1px solid #6f7672;border-radius:10px;background:#fff;min-height:48px;color:var(--ink)}
+.form textarea{min-height:140px}
+.hours{width:100%;border-collapse:collapse}
+.hours td{padding:8px 0;border-bottom:1px solid var(--line)}
+.hours td+td{text-align:right}
+
+/* CALL TO ACTION, FOOTER */
+.cta{background:var(--accent);color:#fff;text-align:center}
+.cta p{margin-inline:auto;color:#e6f2ee}
+.cta .btn{background:#fff;color:var(--accent);border-color:#fff}
+.foot{background:var(--ink);color:#cfd6d3;padding-block:48px;font-size:.95rem}
+.foot .cols{display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
+.foot a{color:#fff;display:inline-block;padding:10px 0}
+.foot ul{list-style:none;padding:0;margin:0;display:grid;gap:6px}
+.foot h3{color:#fff;font-size:1rem;font-family:var(--text)}
+.foot small{display:block;margin-top:28px;color:#9aa6a1}
+
+/* SITE HEADER */
+.site-head{position:sticky;top:0;z-index:20;background:rgb(251 250 247/.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.site-head .wrap{display:flex;align-items:center;justify-content:space-between;min-height:64px;gap:16px}
+.brand{font:700 1.2rem/1 var(--display);text-decoration:none;color:var(--ink);min-height:44px;display:inline-flex;align-items:center}
+.site-head nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0}
+.site-head nav a{color:var(--ink);text-decoration:none;min-height:44px;display:inline-flex;align-items:center;padding:0 2px}
+.site-head details a{min-height:44px}
+.site-head details{display:none}
+/* fold the menu at 720px for four links; raise it to 860px for five or more */
+@media(max-width:720px){.site-head nav{display:none}.site-head details{display:block;position:relative}.site-head summary{list-style:none;cursor:pointer;min-height:44px;display:flex;align-items:center;padding:0 12px;border:1px solid var(--line);border-radius:999px;font-weight:700}.site-head details ul{position:absolute;right:0;top:52px;background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:10px 16px;list-style:none;margin:0;min-width:180px}.site-head details a{display:block;padding:8px 0;color:var(--ink)}}
+
+/* ARTICLE (content page) */
+.article{max-width:42rem;margin-inline:auto}
+.article .meta{color:var(--muted);font-size:.95rem}
+.article img{border-radius:var(--radius);margin:24px 0}
+.related{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));list-style:none;padding:0;margin:24px 0 0}
+.related a{display:block;text-decoration:none;color:inherit;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:#fff}
+.related img{aspect-ratio:16/9;object-fit:cover;width:100%}
+.related span{display:block;padding:14px 16px;font-weight:700}
+
+/* BLOG LIST */
+.posts{display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));list-style:none;padding:0;margin:28px 0}
+.post a{display:block;color:inherit;text-decoration:none}
+.post img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:var(--radius);margin-bottom:12px}
+.post .meta{color:var(--muted);font-size:.9rem;margin:0 0 4px}
+.post a:hover h3,.post a:focus-visible h3{text-decoration:underline}
+.post p:last-child{color:var(--muted)}
+
+/* SITE ADDITIONS: the sample banner and the stand-in photo boxes */
+.sample-bar{max-width:none;margin:0;background:var(--ink);color:#e7eeea;font-size:.88rem;padding:8px 0;text-align:center}
+.sample-bar a{color:#fff}
+.art{display:flex;align-items:flex-end;aspect-ratio:4/3;border-radius:var(--radius);padding:14px;background:var(--panel)}
+.art span{background:rgb(255 255 255/.85);color:var(--ink);padding:4px 12px;border-radius:999px;font-size:.82rem}
+.art.tall{aspect-ratio:4/5}
+.a1{background:radial-gradient(120% 90% at 20% 10%,#fbfcfa 0,transparent 50%),linear-gradient(160deg,#d3dfd8,#9fb5aa 60%,#6f8a7f)}
+.a2{background:radial-gradient(60% 60% at 70% 30%,#ecd9e2,transparent 70%),linear-gradient(200deg,#e8eeea,#b8c9c0)}
+.a3{background:linear-gradient(120deg,#dfe7e2 0 40%,#c7d5cd 40% 70%,#a9bcb2 70%)}
+.hero-split h1{font-weight:400;letter-spacing:-.01em}
+.hero-split .art{aspect-ratio:5/4}
+.hero-split .note{font-size:.95rem;color:var(--muted);margin-top:14px}
+.price .amt small{font:400 1rem var(--text);color:var(--muted)}
+.cta p{color:#f3e6ec}
+</style>
+</head>
+<body>
+<p class="sample-bar">Sample site. Mossline Day Spa and everything about it is invented. <a href="index.html">All sample sites</a></p>
+
+<!-- SECTION: site-header -->
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="#">Mossline</a>
+    <nav aria-label="Main"><ul><li><a href="#treatments">Treatments</a></li><li><a href="#visit">Your visit</a></li><li><a href="#prices">Prices</a></li><li><a href="#book">Book</a></li></ul></nav>
+    <details><summary aria-label="Open the menu">Menu</summary><ul><li><a href="#treatments">Treatments</a></li><li><a href="#visit">Your visit</a></li><li><a href="#prices">Prices</a></li><li><a href="#book">Book</a></li></ul></details>
+  </div>
+</header>
+<!-- /SECTION -->
+
+<main>
+<!-- SECTION: hero-split -->
+<section class="hero-split">
+  <div class="wrap">
+    <div>
+      <h1>A quiet hour, close to home</h1>
+      <p class="lead">Massage, facials and a long afternoon off, in a small spa with four treatment rooms on Fern Street.</p>
+      <div class="btns"><a class="btn" href="#book">Book a treatment</a><a class="btn ghost" href="#prices">See prices</a></div>
+      <p class="note">Opening 3 March 2027. Booking opens 1 February.</p>
+    </div>
+    <div class="art a1" role="img" aria-label="Stand-in box for a photo of a treatment room"><span>Your photo: a treatment room</span></div>
+  </div>
+</section>
+<!-- /SECTION -->
+
+<!-- SECTION: features -->
+<section id="treatments" class="sec alt">
+  <div class="wrap">
+    <h2>Three treatments, done slowly</h2>
+    <ul class="cards">
+      <li class="card"><div class="ico" aria-hidden="true">1</div><h3>Massage</h3><p>Sixty minutes, full body or back and shoulders. You choose the pressure.</p></li>
+      <li class="card"><div class="ico" aria-hidden="true">2</div><h3>Facial</h3><p>Forty-five minutes of cleansing, a mask and a scalp massage while it sets.</p></li>
+      <li class="card"><div class="ico" aria-hidden="true">3</div><h3>The long afternoon</h3><p>Both treatments, then tea in the garden room. Two and a half hours.</p></li>
+    </ul>
+  </div>
+</section>
+<!-- /SECTION -->
+
+<!-- SECTION: steps -->
+<section id="visit" class="sec">
+  <div class="wrap">
+    <h2>How a visit works</h2>
+    <ol class="steps">
+      <li><h3>Book online</h3><p>Pick a treatment and a time. It takes about two minutes.</p></li>
+      <li><h3>Arrive ten minutes early</h3><p>We ask three short health questions and show you to your room.</p></li>
+      <li><h3>Stay as long as you like</h3><p>The garden room is yours after your treatment, with tea.</p></li>
+    </ol>
+  </div>
+</section>
+<!-- /SECTION -->
+
+<!-- SECTION: gallery-grid -->
+<section class="sec alt">
+  <div class="wrap">
+    <h2>Inside Mossline</h2>
+    <ul class="gallery">
+      <li><figure><div class="art a2" role="img" aria-label="Stand-in box for a photo of the entrance"><span>Your photo</span></div><figcaption>The entrance on Fern Street</figcaption></figure></li>
+      <li><figure><div class="art a3" role="img" aria-label="Stand-in box for a photo of the garden room"><span>Your photo</span></div><figcaption>The garden room</figcaption></figure></li>
+      <li><figure><div class="art a1" role="img" aria-label="Stand-in box for a photo of a treatment room"><span>Your photo</span></div><figcaption>One of four treatment rooms</figcaption></figure></li>
+    </ul>
+  </div>
+</section>
+<!-- /SECTION -->
+
+<!-- SECTION: pricing -->
+<section id="prices" class="sec">
+  <div class="wrap">
+    <h2>Prices</h2>
+    <ul class="prices">
+      <li class="price"><h3>Facial</h3><p class="amt">$80 <small>45 minutes</small></p><ul><li>Cleanse, mask and scalp massage</li><li>Tea afterwards</li></ul><a class="btn ghost" href="#book">Book a facial</a></li>
+      <li class="price pick"><span class="tag">Most chosen</span><h3>The long afternoon</h3><p class="amt">$190 <small>2.5 hours</small></p><ul><li>Massage and facial</li><li>The garden room afterwards</li><li>Tea and something to eat</li></ul><a class="btn" href="#book">Book the afternoon</a></li>
+      <li class="price"><h3>Massage</h3><p class="amt">$95 <small>60 minutes</small></p><ul><li>Full body, or back and shoulders</li><li>Tea afterwards</li></ul><a class="btn ghost" href="#book">Book a massage</a></li>
+    </ul>
+  </div>
+</section>
+<!-- /SECTION -->
+
+<!-- SECTION: about -->
+<section class="sec alt">
+  <div class="wrap about">
+    <div class="ph-box" role="img" aria-label="Placeholder for a photo of the two owners">[Your photo: the owners, at work]</div>
+    <div>
+      <h2>Two therapists, one small spa</h2>
+      <p>[Two or three sentences in the owners' own words: who they are, why they opened Mossline, who it is for.]</p>
+      <ul class="facts">
+        <li><b>4</b><span>treatment rooms</span></li>
+        <li><b>3</b><span>treatments</span></li>
+        <li><b>1</b><span>garden room</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+<!-- /SECTION -->
+
+<!-- SECTION: faq -->
+<section class="sec">
+  <div class="wrap">
+    <h2>Questions</h2>
+    <div class="faq">
+      <details><summary>What should I bring?</summary><p>Nothing. Robes, slippers and towels are here.</p></details>
+      <details><summary>Can two of us book together?</summary><p>Yes. Choose two people when you book and we put you in rooms side by side.</p></details>
+      <details><summary>What if I need to cancel?</summary><p>Cancel up to 24 hours before at no cost. [Add your policy for later cancellations.]</p></details>
+    </div>
+  </div>
+</section>
+<!-- /SECTION -->
+
+<!-- SECTION: contact -->
+<section id="book" class="sec alt">
+  <div class="wrap contact">
+    <div>
+      <h2>Book or ask</h2>
+      <p>220 Fern Street<br>[City]</p>
+      <p><a href="tel:5550182" style="display:inline-block;padding:10px 0">555 0182</a><br><a href="mailto:hello@mossline.example" style="display:inline-block;padding:10px 0">hello@mossline.example</a></p>
+      <table class="hours"><caption class="sr-only">Opening hours</caption><tbody><tr><td>Wednesday to Friday</td><td>10am to 8pm</td></tr><tr><td>Saturday and Sunday</td><td>9am to 6pm</td></tr><tr><td>Monday and Tuesday</td><td>Closed</td></tr></tbody></table>
+    </div>
+    <form class="form" action="[form-service-url]" method="post">
+      <label>Your name<input name="name" autocomplete="name" required></label>
+      <label>Email<input name="email" type="email" autocomplete="email" required></label>
+      <label>Treatment<select name="treatment"><option>Massage</option><option>Facial</option><option>The long afternoon</option></select></label>
+      <label>Anything we should know<textarea name="message"></textarea></label>
+      <button class="btn" type="submit">Send booking request</button>
+    </form>
+  </div>
+</section>
+<!-- /SECTION -->
+
+<!-- SECTION: cta -->
+<section class="sec cta">
+  <div class="wrap">
+    <h2>An hour that is only yours</h2>
+    <p>Booking opens 1 February 2027.</p>
+    <a class="btn" href="#book">Book a treatment</a>
+  </div>
+</section>
+<!-- /SECTION -->
+</main>
+
+<!-- SECTION: footer -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="cols">
+      <div><h3>Mossline Day Spa</h3><p>A quiet hour, close to home.</p></div>
+      <div><h3>Visit</h3><ul><li>220 Fern Street</li><li>Wednesday to Sunday</li></ul></div>
+      <div><h3>Links</h3><ul><li><a href="#treatments">Treatments</a></li><li><a href="#prices">Prices</a></li><li><a href="#book">Book</a></li></ul></div>
+      <div><h3>Follow</h3><ul><li><a href="#">[Social link]</a></li></ul></div>
+    </div>
+    <small>© 2027 Mossline Day Spa, an invented business. [Privacy link]</small>
+  </div>
+</footer>
+<!-- /SECTION -->
+</body>
+</html>

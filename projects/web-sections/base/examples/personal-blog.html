@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<!-- Sample site, invented: Rowan Ellis, the posts and every detail in them are made up. Built on 22 November 2026 from base/template/sections.html: the sections are copied from the library and the colours and fonts changed in :root. Pictures are stand-in boxes until real ones arrive. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Small experiments: notes by Rowan Ellis</title>
+<meta name="description" content="A personal blog about learning something new as an adult, one small experiment at a time. A sample site with an invented author.">
+<style>
+:root{
+  --bg:#ffffff;--panel:#f1f2f5;--ink:#17181c;--muted:#565a63;--accent:#2643c9;--line:#dfe1e6;
+  --display:Charter,"Bitstream Charter","Sitka Text",Cambria,serif;
+  --text:Charter,"Bitstream Charter","Sitka Text",Cambria,serif;
+  --radius:6px;--max:1040px;
+  --c60:var(--bg);--c30:var(--panel);--c10:var(--accent);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.6 var(--text);overflow-x:clip}
+img,video{display:block;max-width:100%;height:auto}
+h1,h2,h3{font-family:var(--display);line-height:1.1;margin:0 0 .4em;text-wrap:balance;font-weight:700}
+h1{font-size:clamp(2.3rem,1.4rem + 4.4vw,4.6rem)}
+h2{font-size:clamp(1.8rem,1.2rem + 2.6vw,3rem)}
+h3{font-size:1.3rem}
+p{margin:0 0 1em;max-width:62ch}
+a{color:var(--accent)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.cta :focus-visible,.foot :focus-visible,.hero-photo :focus-visible,.hero-video :focus-visible{outline-color:#fff}
+.wrap{max-width:var(--max);margin-inline:auto;padding-inline:20px}
+.sec{padding-block:clamp(56px,8vw,104px)}
+[id]{scroll-margin-top:72px}
+/* a missing photo: use this box, never a stranger's photo, until the real one arrives */
+.ph-box{display:grid;place-items:center;aspect-ratio:4/3;border:2px dashed var(--line);border-radius:var(--radius);background:var(--panel);color:var(--muted);text-align:center;padding:16px;font-size:.95rem}
+.alt{background:var(--panel)}
+.lead{font-size:1.2rem;color:var(--muted)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 24px;border-radius:999px;background:var(--accent);color:#fff;font-weight:700;text-decoration:none;border:2px solid var(--accent)}
+.btn.ghost{background:transparent;color:inherit;border-color:currentColor}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px}
+.ph-note{display:inline-block;font-size:.8rem;background:#fff3c4;color:#5a4500;padding:2px 8px;border-radius:6px}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+
+/* HEROES */
+.hero-photo{position:relative;min-height:min(88svh,820px);display:flex;align-items:flex-end;color:#fff;background:#222 center/cover no-repeat}
+.hero-photo::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgb(0 0 0/.15),rgb(0 0 0/.65))}
+.hero-photo .wrap{position:relative;padding-block:56px;width:100%}
+.hero-photo p{color:#f1f1f1;font-size:1.2rem}
+.hero-photo .btn.ghost{color:#fff}
+.hero-split .wrap{display:grid;gap:32px;align-items:center;padding-block:clamp(48px,7vw,96px)}
+@media(min-width:860px){.hero-split .wrap{grid-template-columns:1.05fr 1fr}}
+.hero-split img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--radius)}
+.hero-type{padding-block:clamp(72px,12vw,160px)}
+.hero-type h1{font-size:clamp(3rem,1.6rem + 7vw,7.5rem);line-height:.95;max-width:12ch}
+.hero-video{position:relative;min-height:min(80svh,760px);display:flex;align-items:flex-end;color:#fff;overflow:hidden;background:#111}
+.hero-video video,.hero-video .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero-video::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,transparent 30%,rgb(0 0 0/.7))}
+.hero-video .wrap{position:relative;z-index:2;padding-block:48px;width:100%}
+.hero-video p{color:#eee}
+.vid-toggle{position:absolute;right:16px;top:16px;z-index:3;min-height:44px;padding:0 16px;border-radius:999px;border:1px solid #fff;background:rgb(0 0 0/.65);color:#fff;font-weight:700;cursor:pointer}
+.hero-center{text-align:center;padding-block:clamp(64px,9vw,120px) 0}
+.hero-center p{margin-inline:auto}
+.hero-center .btns{justify-content:center}
+.hero-center img{margin:48px auto 0;width:min(100%,960px);aspect-ratio:16/8;object-fit:cover;border-radius:var(--radius) var(--radius) 0 0}
+.hero-mosaic .wrap{display:grid;gap:28px;padding-block:clamp(48px,7vw,96px)}
+.mosaic{display:grid;grid-template-columns:repeat(2,1fr);grid-auto-rows:150px;gap:10px}
+.mosaic img{width:100%;height:100%;object-fit:cover;border-radius:10px}
+.mosaic img:first-child{grid-row:span 2}
+@media(min-width:860px){.hero-mosaic .wrap{grid-template-columns:1fr 1.1fr;align-items:center}.mosaic{grid-auto-rows:190px}}
+
+/* GALLERY */
+.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));margin:0;padding:0;list-style:none}
+.gallery figure{margin:0}
+.gallery img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:10px}
+.gallery figcaption{font-size:.9rem;color:var(--muted);margin-top:6px}
+.swipe{display:grid;grid-auto-flow:column;grid-auto-columns:min(78%,340px);gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px;list-style:none;margin:0;padding-left:0}
+.swipe li{scroll-snap-align:start}
+.swipe img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:12px}
+
+/* ABOUT */
+.about{display:grid;gap:32px;align-items:center}
+@media(min-width:860px){.about{grid-template-columns:1fr 1.1fr}}
+.about img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:var(--radius)}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:24px;padding:0;list-style:none}
+.facts li{border-top:2px solid var(--accent);padding-top:10px}
+.facts b{display:block;font:700 1.6rem/1 var(--display)}
+.facts span{font-size:.9rem;color:var(--muted)}
+
+/* FEATURES, STEPS */
+.cards{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));margin-top:28px;padding:0;list-style:none}
+.card{background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);padding:24px}
+.alt .card{background:#fff}
+.card .ico{width:44px;height:44px;border-radius:10px;background:var(--panel);display:grid;place-items:center;margin-bottom:14px;color:var(--accent)}
+.steps{counter-reset:s;display:grid;gap:20px;margin-top:28px;padding:0;list-style:none}
+@media(min-width:860px){.steps{grid-template-columns:repeat(3,1fr)}}
+.steps li{counter-increment:s;padding-top:14px;border-top:1px solid var(--line)}
+.steps li::before{content:counter(s);display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--accent);color:#fff;font-weight:700;margin-bottom:12px}
+
+/* QUOTE */
+.quote{max-width:52rem;margin-inline:auto;text-align:center}
+.quote blockquote{margin:0;font:400 clamp(1.4rem,1rem + 1.8vw,2.2rem)/1.35 var(--display)}
+.quote figcaption{margin-top:16px;color:var(--muted)}
+
+/* PRICING */
+.prices{display:grid;gap:16px;margin-top:28px;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));padding:0;list-style:none}
+.price{border:1px solid var(--line);border-radius:var(--radius);padding:26px;background:var(--bg);display:flex;flex-direction:column;gap:10px}
+.price.pick{border:2px solid var(--accent)}
+.price .tag{align-self:flex-start;font-size:.8rem;font-weight:700;color:var(--accent)}
+.price .amt{font:700 2.2rem/1 var(--display)}
+.price ul{padding-left:1.1em;margin:0 0 8px;flex:1}
+.price .btn{align-self:stretch}
+
+/* QUESTIONS */
+.faq{max-width:52rem;margin-top:24px}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{cursor:pointer;padding:18px 0;font-weight:700;min-height:44px;list-style-position:inside}
+.faq details p{color:var(--muted)}
+
+/* CONTACT */
+.contact{display:grid;gap:32px}
+@media(min-width:860px){.contact{grid-template-columns:1fr 1.2fr}}
+.form{display:grid;gap:14px}
+.form label{display:grid;gap:6px;font-weight:600}
+.form input,.form textarea,.form select{font:inherit;padding:12px 14px;border:1px solid #6f7672;border-radius:10px;background:#fff;min-height:48px;color:var(--ink)}
+.form textarea{min-height:140px}
+.hours{width:100%;border-collapse:collapse}
+.hours td{padding:8px 0;border-bottom:1px solid var(--line)}
+.hours td+td{text-align:right}
+
+/* CALL TO ACTION, FOOTER */
+.cta{background:var(--accent);color:#fff;text-align:center}
+.cta p{margin-inline:auto;color:#e6f2ee}
+.cta .btn{background:#fff;color:var(--accent);border-color:#fff}
+.foot{background:var(--ink);color:#cfd6d3;padding-block:48px;font-size:.95rem}
+.foot .cols{display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
+.foot a{color:#fff;display:inline-block;padding:10px 0}
+.foot ul{list-style:none;padding:0;margin:0;display:grid;gap:6px}
+.foot h3{color:#fff;font-size:1rem;font-family:var(--text)}
+.foot small{display:block;margin-top:28px;color:#9aa6a1}
+
+/* SITE HEADER */
+.site-head{position:sticky;top:0;z-index:20;background:rgb(251 250 247/.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.site-head .wrap{display:flex;align-items:center;justify-content:space-between;min-height:64px;gap:16px}
+.brand{font:700 1.2rem/1 var(--display);text-decoration:none;color:var(--ink);min-height:44px;display:inline-flex;align-items:center}
+.site-head nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0}
+.site-head nav a{color:var(--ink);text-decoration:none;min-height:44px;display:inline-flex;align-items:center;padding:0 2px}
+.site-head details a{min-height:44px}
+.site-head details{display:none}
+/* fold the menu at 720px for four links; raise it to 860px for five or more */
+@media(max-width:720px){.site-head nav{display:none}.site-head details{display:block;position:relative}.site-head summary{list-style:none;cursor:pointer;min-height:44px;display:flex;align-items:center;padding:0 12px;border:1px solid var(--line);border-radius:999px;font-weight:700}.site-head details ul{position:absolute;right:0;top:52px;background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:10px 16px;list-style:none;margin:0;min-width:180px}.site-head details a{display:block;padding:8px 0;color:var(--ink)}}
+
+/* ARTICLE (content page) */
+.article{max-width:42rem;margin-inline:auto}
+.article .meta{color:var(--muted);font-size:.95rem}
+.article img{border-radius:var(--radius);margin:24px 0}
+.related{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));list-style:none;padding:0;margin:24px 0 0}
+.related a{display:block;text-decoration:none;color:inherit;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:#fff}
+.related img{aspect-ratio:16/9;object-fit:cover;width:100%}
+.related span{display:block;padding:14px 16px;font-weight:700}
+
+/* BLOG LIST */
+.posts{display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));list-style:none;padding:0;margin:28px 0}
+.post a{display:block;color:inherit;text-decoration:none}
+.post img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:var(--radius);margin-bottom:12px}
+.post .meta{color:var(--muted);font-size:.9rem;margin:0 0 4px}
+.post a:hover h3,.post a:focus-visible h3{text-decoration:underline}
+.post p:last-child{color:var(--muted)}
+
+/* SITE ADDITIONS: the sample banner, the stand-in pictures and a quieter, reading-first rhythm */
+.sample-bar{max-width:none;margin:0;background:var(--ink);color:#e6e7ea;font:400 .88rem/1.4 system-ui,sans-serif;padding:8px 0;text-align:center}
+.sample-bar a{color:#fff}
+body{font-size:1.125rem;line-height:1.7}
+.site-head{background:rgb(255 255 255/.95)}
+.hero-type{padding-block:clamp(56px,10vw,128px) clamp(32px,5vw,56px);border-bottom:1px solid var(--line)}
+.hero-type h1{font-size:clamp(2.6rem,1.4rem + 5.6vw,6rem);font-weight:400;max-width:14ch;letter-spacing:-.02em}
+.art{display:flex;align-items:flex-end;aspect-ratio:3/2;border-radius:var(--radius);padding:12px;margin-bottom:12px}
+.art span{background:rgb(255 255 255/.9);color:var(--ink);padding:3px 10px;border-radius:999px;font:400 .8rem/1.4 system-ui,sans-serif}
+.b1{background:linear-gradient(135deg,#e8ecfb,#c5cff4)}
+.b2{background:radial-gradient(circle at 75% 30%,#fff 0 14%,transparent 15%),linear-gradient(160deg,#dfe3ec,#b9c0cf)}
+.b3{background:repeating-linear-gradient(0deg,#f1f2f5 0 22px,#e3e6ee 22px 24px)}
+.post .tag{display:inline-block;font:600 .8rem/1 system-ui,sans-serif;color:var(--accent);margin-bottom:6px}
+.article .art{aspect-ratio:16/9;margin:24px 0}
+.article blockquote{margin:24px 0;padding-left:20px;border-left:3px solid var(--accent);font-style:italic}
+.signup{max-width:34rem}
+.signup .row{display:flex;flex-wrap:wrap;gap:10px}
+.signup input{flex:1 1 220px}
+.cta{background:var(--accent);color:#fff;text-align:left}
+.cta p{color:#e3e8fb;margin-inline:0}
+.cta .form label{color:#fff}
+.cta .btn{background:#fff;color:var(--accent);border-color:#fff}
+.about .ph-box{aspect-ratio:1;max-width:280px;border-radius:50%}
+</style>
+</head>
+<body>
+<p class="sample-bar">Sample site. Rowan Ellis and the posts are invented. <a href="index.html">All sample sites</a></p>
+
+<!-- SECTION: site-header -->
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="#">Small experiments</a>
+    <nav aria-label="Main"><ul><li><a href="#posts">Posts</a></li><li><a href="#latest">Latest</a></li><li><a href="#about-me">About</a></li><li><a href="#subscribe">Subscribe</a></li></ul></nav>
+    <details><summary aria-label="Open the menu">Menu</summary><ul><li><a href="#posts">Posts</a></li><li><a href="#latest">Latest</a></li><li><a href="#about-me">About</a></li><li><a href="#subscribe">Subscribe</a></li></ul></details>
+  </div>
+</header>
+<!-- /SECTION -->
+
+<main>
+<!-- SECTION: hero-type -->
+<section class="hero-type">
+  <div class="wrap">
+    <h1>Learning something new, one small experiment at a time</h1>
+    <p class="lead">I am Rowan. I write here every second Sunday about learning as an adult: what worked, what did not, and what I would try next.</p>
+  </div>
+</section>
+<!-- /SECTION -->
+
+<!-- SECTION: blog-list -->
+<section id="posts" class="sec">
+  <div class="wrap">
+    <h2>Latest posts</h2>
+    <ul class="posts">
+      <li class="post"><a href="#latest"><div class="art b1" role="img" aria-label="Stand-in box for a picture"><span>Your picture</span></div><p class="meta">8 November 2026</p><h3>Ten minutes a day beat two hours on Saturday</h3><p>Six weeks of a tiny habit, and the one change that made it stick.</p></a></li>
+      <li class="post"><a href="#"><div class="art b2" role="img" aria-label="Stand-in box for a picture"><span>Your picture</span></div><p class="meta">25 October 2026</p><h3>Why I stopped taking notes in class</h3><p>I wrote less and remembered more. Here is what I did instead.</p></a></li>
+      <li class="post"><a href="#"><div class="art b3" role="img" aria-label="Stand-in box for a picture"><span>Your picture</span></div><p class="meta">11 October 2026</p><h3>The question that unsticks me</h3><p>One line I ask myself when a new skill stops making sense.</p></a></li>
+    </ul>
+    <a class="btn ghost" href="#">All posts</a>
+  </div>
+</section>
+<!-- /SECTION -->
+
+<!-- SECTION: article -->
+<section id="latest" class="sec alt">
+  <article class="wrap article">
+    <p class="meta">8 November 2026 · 4 minute read</p>
+    <h2>Ten minutes a day beat two hours on Saturday</h2>
+    <p class="lead">For six weeks I practised for ten minutes every morning instead of two hours at the weekend. I learned more, and I did not dread it.</p>
+    <div class="art b1" role="img" aria-label="Stand-in box for the article picture"><span>Your picture: the article</span></div>
+    <p>The Saturday plan looked sensible. Two hours, coffee, no interruptions. In practice I spent the first half hour remembering where I had stopped, and the last half hour tired.</p>
+    <h3>What changed</h3>
+    <p>Ten minutes is short enough that I never needed to feel ready. I stopped mid-sentence on purpose, so the next morning started with something easy to finish.</p>
+    <blockquote>Stop while it is still going well. Tomorrow starts easier.</blockquote>
+    <p>I will try the same thing with drawing next month, and write up how it goes.</p>
+  </article>
+</section>
+<!-- /SECTION -->
+
+<!-- SECTION: about -->
+<section id="about-me" class="sec">
+  <div class="wrap about">
+    <div class="ph-box" role="img" aria-label="Placeholder for a photo of the author">[Your photo]</div>
+    <div>
+      <h2>About me</h2>
+      <p>I teach adults for a living and learn something new every year, badly at first. This blog is where I keep the notes.</p>
+      <p>[One sentence in your own words on what readers can expect.]</p>
+    </div>
+  </div>
+</section>
+<!-- /SECTION -->
+
+<!-- SECTION: cta (as a newsletter sign-up) -->
+<section id="subscribe" class="sec cta">
+  <div class="wrap">
+    <h2>One post every second Sunday</h2>
+    <p>No other emails. Unsubscribe with one click.</p>
+    <form class="form signup" action="[newsletter-service-url]" method="post">
+      <label>Email<span class="row"><input name="email" type="email" autocomplete="email" required><button class="btn" type="submit">Subscribe</button></span></label>
+    </form>
+  </div>
+</section>
+<!-- /SECTION -->
+</main>
+
+<!-- SECTION: footer -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="cols">
+      <div><h3>Small experiments</h3><p>Notes on learning, by Rowan Ellis.</p></div>
+      <div><h3>Read</h3><ul><li><a href="#posts">All posts</a></li><li><a href="#about-me">About</a></li></ul></div>
+      <div><h3>Follow</h3><ul><li><a href="#subscribe">Newsletter</a></li><li><a href="#">[Social link]</a></li></ul></div>
+    </div>
+    <small>© 2026 Rowan Ellis, an invented author. [Privacy link]</small>
+  </div>
+</footer>
+<!-- /SECTION -->
+</body>
+</html>

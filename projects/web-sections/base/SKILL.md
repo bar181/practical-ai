@@ -42,7 +42,7 @@ If there is enough to start, start. Do not ask for photos or colours: use placeh
    in order. Change the colour and font tokens at the top for the brand, if the person gave one,
    keeping the 60-30-10 balance: one calm background, one secondary colour for text and structure,
    one bold accent for actions only.
-   Delete the library labels. Keep each section's `id` so the header links work; with five or more
+   Leave out the library's own menu, labels and the style rules after its LIBRARY CHROME line. Keep each section's `id` so the header links work; with five or more
    menu links, raise the menu's fold point from 720 to 860 pixels.
    - **Photos:** use the person's own. Where one is missing, use the dashed `ph-box` placeholder that
      says what the photo should show. The library's photos are only for the library: never put
@@ -55,7 +55,7 @@ If there is enough to start, start. Do not ask for photos or colours: use placeh
 | --- | --- | --- |
 | Show a local business and get visits or calls | Small business home | Header, hero (photo or split), about, gallery, contact with hours, footer |
 | Get one kind of visitor to take one action | Landing page | Header, hero (centred or split), features, steps, quote (real only), pricing, questions, call to action, footer |
-| Publish articles or news | Content page | Header, hero (type), article with related posts, call to action, footer |
+| Publish articles or news | Blog or content page | Header, hero (type), blog list, article with related posts, call to action, footer |
 | Show finished work | Portfolio | Header, hero (mosaic), gallery grid, about, contact, footer |
 | Sell tickets or places | Event | Header, hero (video or photo), steps as the programme, pricing as tickets, questions, contact, footer |
 
@@ -79,6 +79,11 @@ each between
 six colour tokens and two font tokens. Photos are in `template/img/`. Social post pictures are in
 `template/social/`: five shapes (square 1080 by 1080, portrait 1080 by 1350, story 1080 by 1920,
 link preview 1200 by 630, and a three-slide carousel), seven files in all.
+
+The library also shows the type scale, three font pairs and the colour tokens (in its Fonts and
+Colours sections), and four sample sites built from it are in `examples/`: a spa startup, a
+personal blog, a gallery and a café. When a request matches one, start from that sample and say so
+in the note. Their businesses, people and prices are invented: replace every one.
 
 **Post previews.** When the person wants to see a social post, an email or a blog post the way its
 audience will (several drafts, in the frame of LinkedIn, Instagram, TikTok, Facebook, an inbox or a
