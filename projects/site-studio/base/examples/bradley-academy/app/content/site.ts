@@ -8,6 +8,8 @@ export const site = {
   source: "https://github.com/bar181/practical-ai",
   sourceLabel: "bar181/practical-ai",
   linkedin: "https://www.linkedin.com/in/bradaross/",
+  // Bradley's company: agentic software for startups. Its own site, deployed separately.
+  wisegeo: __WISEGEO_URL__,
   previewImage: "/media/shared/bradley-ross-avatar.webp",
   // Words used across pages, so a new site changes them here and nowhere else.
   labels: {
@@ -160,4 +162,6 @@ export const about = {
   ],
   why: "Founding Director of the Agentics Foundation, a global community of more than 100,000 agentic developers, researchers and builders. Unpublished results are shared with my connections and research partners on request, once each is verified. Connect on LinkedIn with a short note.",
   contact: "More information, training or feedback: connect on LinkedIn.",
+  workWith: "Building agentic software? WiseGeo, my company, builds it with startups, from MVP to production.",
+  workWithLink: "Work with WiseGeo",
 };

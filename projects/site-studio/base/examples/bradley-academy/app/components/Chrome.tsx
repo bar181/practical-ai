@@ -82,6 +82,7 @@ export function Footer() {
             <li><Link to="/about" viewTransition>About</Link></li>
             <li><Link to="/privacy" viewTransition>Privacy</Link></li>
             <li><a href={site.linkedin} rel="noopener">LinkedIn</a></li>
+            <li><a href={site.wisegeo} rel="noopener">WiseGeo</a></li>
             <li><a href={site.source} rel="noopener">{site.labels.sourceLink}</a></li>
           </ul>
         </div>

@@ -68,6 +68,12 @@ export const brand = {
     ],
   },
 
+  // Bradley's company, for people who want software built rather than taught.
+  workWith: {
+    text: "Building agentic software? WiseGeo, my company, builds it with startups, from MVP to production.",
+    label: "Work with WiseGeo",
+  },
+
   openSource: {
     heading: "Open work",
     items: [

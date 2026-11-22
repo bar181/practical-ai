@@ -96,6 +96,7 @@ export default function Home() {
               </li>
             ))}
           </ul>
+          <p className="work-with" data-cine="reveal">{brand.workWith.text} <a href={site.wisegeo} rel="noopener">{brand.workWith.label}</a></p>
         </div>
       </section>
 

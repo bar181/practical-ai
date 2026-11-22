@@ -57,6 +57,7 @@ npm run dev
 | Part | What it is |
 | --- | --- |
 | [`base/examples/bradley-academy/`](base/examples/bradley-academy/) | The site: React Router with every page pre-rendered, plain CSS, fonts installed with the site |
+| [`base/examples/wisegeo/`](base/examples/wisegeo/README.md) | A second example: WiseGeo, Bradley's company, as one static page with no build step, deployed as its own Vercel project |
 | `app/content/` in that folder | Every word on the site. Facts come from the project READMEs |
 | `scripts/sync.mjs` in that folder | Copies the pictures and try-it prompts out of the READMEs before each build |
 | [`.github/workflows/pages.yml`](../../.github/workflows/pages.yml) | Builds the site and publishes it with every other page in the repository |
@@ -105,6 +106,10 @@ the 512 symbols in eight categories, the foundation and glossary, then the bindi
 architecture, learning, search and the evidence block, each read line by line. The commercial grade
 is named for research partners, not shown. Teaching sits beside research. Checked by Claude at 390
 and 1280 pixels; not yet reviewed by Bradley.
+
+**WiseGeo, 22 November 2026:** a second example, Bradley's company site, as one static page for its
+own Vercel project. Built and checked by Claude at 390 and 1280 pixels, served locally; not yet
+deployed or reviewed by Bradley. Bradley Academy now links to it from home, About and the footer.
 
 **22 November 2026, latest:** Site Studio became the publish-a-website lesson. A skill for any
 chatbot (Level 1), GitHub Pages, your own domain and Vercel (Level 2), and Cloudflare, Google Cloud

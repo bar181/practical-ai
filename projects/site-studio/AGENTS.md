@@ -1,7 +1,7 @@
 # Site Studio: instructions for agents
 
-You are here to help someone publish a website, to change the Bradley Academy website, or to help
-someone build a site like it. This file is written for you. People start at the [README](README.md).
+You are here to help someone publish a website, to change the Bradley Academy website or the
+WiseGeo page, or to help someone build a site like either. This file is written for you. People start at the [README](README.md).
 
 ## Publishing a website
 
@@ -23,6 +23,12 @@ A React site (React Router, every page pre-rendered to HTML) published free by G
 lives in [`base/examples/bradley-academy/`](base/examples/bradley-academy/). Its readers are business
 people who never open GitHub, so every page is written for them, not for developers.
 
+## The second example: WiseGeo
+
+[`base/examples/wisegeo/`](base/examples/wisegeo/README.md) is Bradley's company site: one static
+page, no build step, deployed as its own Vercel project for `wisegeo.com`. Its README has the
+Vercel settings and its own rules. Bradley Academy links to it through `SITE_WISEGEO_URL`.
+
 ## Where things are
 
 | You need | Go to |
@@ -40,7 +46,7 @@ people who never open GitHub, so every page is written for them, not for develop
 
 ## Rules for this site
 
-1. **Every fact comes from a README,** or for Bradley's own pages (home, Research, About), from Bradley himself. Those pages are a personal profile, not a services page: a vision and a few proof points with brief evidence. Early access to the research is by invitation, for Bradley's connections and partners only; everyone else connects on LinkedIn with a note. No offers of free help. No catalogue, no prices, and no statements about who has not used something. His title is Agentic Architect and Researcher; "agentic engineer" is also allowed. Bradley decided this on 22 November 2026 for a global audience, knowing both words are protected titles in Ontario. Research numbers come only from Bradley; a projection is labelled as one. Change the README first, then `tools.ts`. Never invent a
+1. **Every fact comes from a README,** or for Bradley's own pages (home, Research, About), from Bradley himself. Those pages are a personal profile, not a services page: the research, the teaching and public proof points. Services live on WiseGeo. Unpublished research results go to research partners only (the "Research partners" call to action); everyone else connects on LinkedIn with a note. No offers of free help. No catalogue, no prices, and no statements about who has not used something. His title is Agentic Architect and Researcher; "agentic engineer" is also allowed. Bradley decided this on 22 November 2026 for a global audience, knowing both words are protected titles in Ontario. Research numbers come only from Bradley; a projection is labelled as one. Change the README first, then `tools.ts`. Never invent a
    number, a quote, a customer or a result. A status says who has and has not tried the tool.
 2. **The voice is Bradley's practical instructor voice:** the core idea in one sentence, an
    everyday analogy, then the detail. Short sentences. No em dashes. Sentence case headings.
