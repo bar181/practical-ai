@@ -28,7 +28,7 @@ export const brand = {
   // The work, not credentials. Credentials are on About.
   proof: [
     { strong: "Creator of AISP", rest: "paper, specification and tools, MIT licence" },
-    { strong: "15 theorems", rest: "mechanically checkable, in AISP's calculus" },
+    { strong: "15 theorems", rest: "in the AISP paper's calculus" },
     { strong: "Published tools", rest: "AISP on npm and crates.io" },
     { strong: "BAR Observatory", rest: "16 Rust crates on crates.io" },
     { strong: "Founding Director", rest: "Agentics Foundation, 60 locations" },
@@ -41,7 +41,7 @@ export const brand = {
     heading: "Selected results",
     items: [
       { big: "Under 2%", from: "against 40 to 65% in expert prose, per hop", text: "Ambiguity between models on the AISP open-core evidence set, scored by judges from a different model. Method and limits in the paper.", href: "https://github.com/bar181/aisp-open-core/blob/main/formal-papers/aisp-protocol.md" },
-      { big: "72 of 72", from: "two blind models, from two vendors", text: "Gemini and GPT-5.5 read three AISP documents with no glossary or examples and recovered every decision point. A pilot, one run each, with its limits published.", href: "https://github.com/bar181/aisp-open-core/blob/main/evidence/head-to-head-llm-models/test-results-summary.md" },
+      { big: "72 of 72", from: "weighted points, for each of two blind models", text: "Gemini and GPT-5.5 read three AISP documents with no glossary or examples and recovered every decision point. A pilot: one run per model, on a test both models maxed out.", href: "https://github.com/bar181/aisp-open-core/blob/main/evidence/head-to-head-llm-models/test-results-summary.md" },
       { big: "99 of 101", from: "fields matched in an outside reproduction", text: "BAR Observatory reports rebuild byte for byte from an unchanged record. Installed from crates.io alone; the two fields that differ are documented.", href: "https://github.com/bar181/bar-observatory#evidence-verified-not-asserted" },
     ],
   },
@@ -104,9 +104,9 @@ export const research = {
     heading: "Selected results",
     note: "Selected public results from the open core. Results on learning and transfer are shared with research partners.",
     items: [
-      { big: "Under 2%", from: "against 40 to 65% in expert prose, per hop", text: "Ambiguity between models. Each document has a decision-point set fixed in advance; 32 completions are scored by a majority of three judges from a different model.", href: "https://github.com/bar181/aisp-open-core/blob/main/formal-papers/aisp-protocol.md" },
-      { big: "72 of 72", from: "two blind models, from two vendors", text: "Gemini and GPT-5.5 read three AISP documents with no glossary, examples or system prompt, and recovered every decision point, interpreting the symbols rather than reciting them.", href: "https://github.com/bar181/aisp-open-core/blob/main/evidence/head-to-head-llm-models/test-results-summary.md" },
-      { big: "15 theorems", from: "over 12 typed inference rules", text: "Mechanically checkable theorems in AISP's natural-deduction calculus, including termination and tamper-evidence of content-addressed memory, with a categorical semantics for validation.", href: "https://github.com/bar181/aisp-open-core/blob/main/formal-papers/aisp-protocol.md" },
+      { big: "Under 2%", from: "against 40 to 65% in expert prose, per hop", text: "Ambiguity between models, on the AISP open-core evidence set. Each document has a decision-point set fixed in advance; 32 completions are scored by a majority of three judges from a different model.", href: "https://github.com/bar181/aisp-open-core/blob/main/formal-papers/aisp-protocol.md" },
+      { big: "72 of 72", from: "weighted points, for each of two blind models", text: "Gemini and GPT-5.5 read three AISP documents with no glossary, examples or system prompt, and recovered every decision point, interpreting the symbols rather than reciting them. A pilot: one run per model, and a test that does not rank models because both reached the maximum.", href: "https://github.com/bar181/aisp-open-core/blob/main/evidence/head-to-head-llm-models/test-results-summary.md" },
+      { big: "15 theorems", from: "14 at protocol level, 1 at document level", text: "Stated in the AISP paper (version 3.0) over 12 typed inference rules, with selected proofs, including search termination and tamper-evidence of content-addressed memory. The AISP 5.1 specification carries the 14 protocol-level theorems.", href: "https://github.com/bar181/aisp-open-core/blob/main/formal-papers/aisp-protocol.md" },
       { big: "99 of 101", from: "fields matched in an outside reproduction", text: "BAR Observatory, installed from crates.io alone, rebuilt the published report. The two fields that differ are documented as expected to vary.", href: "https://github.com/bar181/bar-observatory#evidence-verified-not-asserted" },
       { big: "60 errors", from: "that the agent's own summary never mentioned", text: "Surfaced by BAR Observatory across seven real captured sessions, each still queryable by a person or an agent.", href: "https://github.com/bar181/bar-observatory#why-developers-use-it" },
     ],
