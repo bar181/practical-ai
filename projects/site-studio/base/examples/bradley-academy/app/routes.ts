@@ -5,7 +5,7 @@ export default [
   route("tools/:slug", "routes/tool.tsx"),
   route("research", "routes/research.tsx"),
   route("tools", "routes/practical-ai.tsx"),
+  route("privacy", "routes/privacy.tsx"),
   route("about", "routes/about.tsx"),
-  route("image-brief", "routes/image-brief.tsx"),
   route("*", "routes/not-found.tsx"),
 ] satisfies RouteConfig;

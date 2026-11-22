@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<!--
+  Website audit report: one page, no network, prints to A4 or Letter.
+  To use it: replace the JSON inside <script id="audit-data"> with your audit, keep the same fields,
+  and open the file in a browser (or ask your chatbot to show it as an artifact or canvas).
+  Fields left empty or null are simply not drawn. Every number must come from the audit.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Website audit report</title>
+<style>
+:root {
+  --ink: #17202a; --ink-2: #4a5563; --ink-3: #6b7480; --paper: #ffffff; --wash: #f4f6f9; --line: #dde2e8;
+  --data: #2f5fd0; --data-soft: #d9e3f8;
+  --good: #1a7f37; --warn: #9a6700; --warn-bar: #d4a72c; --poor: #c62828;
+  --good-soft: #dcf2e3; --warn-soft: #fbefc9; --poor-soft: #fbe0e0;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; color: var(--ink); background: var(--wash); }
+main { max-width: 1040px; margin: 0 auto; padding: 32px 20px 64px; }
+h1 { font-size: 1.9rem; line-height: 1.15; margin: 0 0 4px; }
+h2 { font-size: 1.2rem; margin: 0 0 14px; }
+p { margin: 0 0 10px; }
+.muted { color: var(--ink-3); font-size: 0.9rem; }
+.card { background: var(--paper); border: 1px solid var(--line); border-radius: 14px; padding: 22px; margin-top: 18px; }
+.grid { display: grid; gap: 18px; }
+@media (min-width: 820px) { .g2 { grid-template-columns: 1fr 1fr; } .head { grid-template-columns: 260px 1fr; } }
+.head { display: grid; gap: 22px; align-items: center; }
+.ring text { font-family: inherit; }
+.band { display: inline-block; padding: 2px 10px; border-radius: 999px; font-weight: 700; font-size: 0.85rem; }
+.band.good { background: var(--good-soft); color: var(--good); }
+.band.warn { background: var(--warn-soft); color: var(--warn); }
+.band.poor { background: var(--poor-soft); color: var(--poor); }
+.bars { display: grid; gap: 10px; }
+.bar-row { display: grid; grid-template-columns: minmax(8rem, 13rem) 1fr 4.5rem; gap: 12px; align-items: center; }
+.bar-track { height: 14px; border-radius: 4px; background: var(--wash); position: relative; overflow: hidden; }
+.bar-fill { position: absolute; inset: 0 auto 0 0; border-radius: 4px; background: var(--data); }
+.bar-val { text-align: right; font-variant-numeric: tabular-nums; font-weight: 700; }
+.sev { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.sev div { border-radius: 12px; padding: 14px; border: 1px solid var(--line); }
+.sev b { display: block; font-size: 1.9rem; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.sev .e { background: var(--poor-soft); } .sev .w { background: var(--warn-soft); } .sev .n { background: var(--data-soft); }
+.lh { display: grid; gap: 14px; }
+.lh-row { display: grid; grid-template-columns: minmax(7rem, 10rem) repeat(4, 1fr); gap: 8px; align-items: center; text-align: center; }
+.lh-row.headrow { font-size: 0.8rem; color: var(--ink-3); }
+.lh-row .page { text-align: left; font-weight: 600; }
+.vital { margin-bottom: 18px; }
+.vital-top { display: flex; justify-content: space-between; gap: 12px; font-weight: 600; }
+.zones { position: relative; display: grid; height: 12px; border-radius: 4px; overflow: hidden; margin: 8px 0 4px; }
+.zones span:nth-child(1) { background: var(--good); } .zones span:nth-child(2) { background: var(--warn-bar); } .zones span:nth-child(3) { background: var(--poor); }
+.marker { position: absolute; top: -4px; width: 4px; height: 20px; background: var(--ink); border: 2px solid var(--paper); border-radius: 2px; transform: translateX(-50%); }
+.zone-labels { display: flex; justify-content: space-between; font-size: 0.78rem; color: var(--ink-3); }
+table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+th, td { text-align: left; padding: 9px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-size: 0.8rem; color: var(--ink-3); font-weight: 600; }
+td.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.fixes { counter-reset: fix; list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+.fixes li { counter-increment: fix; display: grid; grid-template-columns: 2.2rem 1fr; gap: 12px; padding: 14px; border: 1px solid var(--line); border-radius: 12px; }
+.fixes li::before { content: counter(fix); width: 2.2rem; height: 2.2rem; border-radius: 50%; background: var(--data); color: #fff; display: grid; place-items: center; font-weight: 700; }
+.fixes h3 { margin: 0 0 4px; font-size: 1.02rem; }
+.tag { display: inline-block; font-size: 0.78rem; padding: 1px 8px; border-radius: 999px; background: var(--wash); border: 1px solid var(--line); margin-right: 6px; }
+.ba { display: grid; grid-template-columns: minmax(8rem, 14rem) 1fr; gap: 10px 14px; align-items: center; }
+.ba-bars { display: grid; gap: 4px; }
+.ba-line { display: grid; grid-template-columns: 3.5rem 1fr 6rem; gap: 8px; align-items: center; font-size: 0.85rem; }
+.ba-line .bar-fill.before { background: #9aa6b5; }
+.card-ctx pre { white-space: pre-wrap; margin: 0; font: 0.92rem/1.55 ui-monospace, SFMono-Regular, Menlo, monospace; background: var(--wash); padding: 14px; border-radius: 10px; }
+details summary { cursor: pointer; font-weight: 600; min-height: 44px; display: flex; align-items: center; }
+@media (max-width: 600px) {
+  main { padding: 16px 12px 48px; }
+  .card { padding: 16px; }
+  .bar-row { grid-template-columns: 1fr auto; gap: 4px 10px; }
+  .bar-row .bar-track { grid-column: 1 / -1; grid-row: 2; }
+  .lh-row { grid-template-columns: repeat(4, 1fr); gap: 4px; }
+  .lh-row .page { grid-column: 1 / -1; }
+  .lh-row.headrow .page { display: none; }
+  .lh-row.headrow { font-size: 0.7rem; }
+  .ba { grid-template-columns: 1fr; }
+  .sev { gap: 8px; } .sev div { padding: 10px; font-size: 0.85rem; } .sev b { font-size: 1.5rem; }
+}
+@media print { body { background: #fff; } .card { break-inside: avoid; } details { display: none; } }
+</style>
+</head>
+<body>
+<main id="report">
+  <noscript><p class="card">This report draws its charts with a small script. Open it in a browser with scripts on; the raw audit is in the file's JSON block.</p></noscript>
+</main>
+
+<script type="application/json" id="audit-data">
+{
+  "site": "https://example.com/",
+  "business": "Invented example: Harbour Bakery",
+  "date": "2026-11-22",
+  "method": "Example data. Replace this block with your audit.",
+  "score": 64,
+  "summary": "Clear message, but slow pictures and no way to measure visits.",
+  "areas": [
+    {"name": "Message", "points": 15, "max": 20, "evidence": "Says what and for whom in the first screen; no clear next step."},
+    {"name": "Found in search and AI", "points": 10, "max": 15, "evidence": "Titles fit; no structured data."},
+    {"name": "Speed", "points": 7, "max": 15, "evidence": "Largest Contentful Paint 4.1 s on mobile (lab)."},
+    {"name": "Phones and access", "points": 12, "max": 15, "evidence": "Two images without alt text."},
+    {"name": "Trust and contact", "points": 8, "max": 10, "evidence": "Address and phone on every page."},
+    {"name": "Security", "points": 6, "max": 10, "evidence": "HTTPS; Observatory grade C."},
+    {"name": "Links and content", "points": 6, "max": 10, "evidence": "One broken link to the menu PDF."},
+    {"name": "Measured", "points": 0, "max": 5, "evidence": "No analytics or Search Console."}
+  ],
+  "severity": {"errors": ["One broken link to the menu"], "warnings": ["Slow first picture", "No structured data"], "notices": ["Two images without alt text"]},
+  "vitals": {"source": "Lab, mobile", "lcp_s": 4.1, "inp_ms": null, "cls": 0.05},
+  "lighthouse": [{"page": "Home", "performance": 61, "accessibility": 92, "best_practices": 96, "seo": 91}],
+  "before_after": [],
+  "fixes": [
+    {"title": "Fix the menu link", "where": "Home, Menu button", "why": "Visitors who want the menu hit an error page.", "fix": "Point the button at the current menu file.", "helps": "Links and content", "gain": 3}
+  ],
+  "could_not_check": ["Real-user speed: run PageSpeed Insights on the live address"],
+  "context_card": [
+    {"label": "One line", "value": "We bake sourdough like a Paris boulangerie to help neighbours start the day well.", "source": "needs you"}
+  ]
+}
+</script>
+
+<script>
+(() => {
+  const d = JSON.parse(document.getElementById("audit-data").textContent);
+  const root = document.getElementById("report");
+  const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  // Bands as Lighthouse colours them: 0 to 49 poor, 50 to 89 needs work, 90 to 100 good. Always with a word.
+  const band = (v) => (v >= 90 ? ["good", "Good"] : v >= 50 ? ["warn", "Needs work"] : ["poor", "Poor"]);
+  const colour = { good: "var(--good)", warn: "var(--warn-bar)", poor: "var(--poor)" };
+  const ring = (v, size, label) => {
+    const r = size / 2 - 8, c = 2 * Math.PI * r, [b] = band(v);
+    return `<svg class="ring" width="${size}" height="${size}" viewBox="0 0 ${size} ${size}" role="img" aria-label="${esc(label)}: ${v} of 100">
+      <circle cx="${size / 2}" cy="${size / 2}" r="${r}" fill="none" stroke="var(--wash)" stroke-width="${size > 120 ? 14 : 7}"/>
+      <circle cx="${size / 2}" cy="${size / 2}" r="${r}" fill="none" stroke="${colour[b]}" stroke-width="${size > 120 ? 14 : 7}" stroke-linecap="round"
+        stroke-dasharray="${(c * v) / 100} ${c}" transform="rotate(-90 ${size / 2} ${size / 2})"/>
+      <text x="50%" y="${size > 120 ? "50%" : "54%"}" text-anchor="middle" dominant-baseline="middle" font-size="${size > 120 ? 54 : 20}" font-weight="800" fill="var(--ink)">${v}</text>
+      ${size > 120 ? `<text x="50%" y="68%" text-anchor="middle" font-size="14" fill="var(--ink-3)">out of 100</text>` : ""}
+    </svg>`;
+  };
+  const parts = [];
+  const [b, bl] = band(d.score);
+  parts.push(`<section class="card head">
+    <div>${ring(d.score, 220, "Overall score")}</div>
+    <div>
+      <p class="muted">Website audit · ${esc(d.date)}</p>
+      <h1>${esc(d.business || d.site)}</h1>
+      <p><a href="${esc(d.site)}">${esc(d.site)}</a></p>
+      <p><span class="band ${b}">${bl}</span> ${esc(d.summary)}</p>
+      <p class="muted">${esc(d.method)}</p>
+    </div></section>`);
+
+  // Scorecard: each area as a share of its points, longest first, the points written beside it.
+  const areas = [...(d.areas || [])];
+  parts.push(`<section class="card"><h2>Scorecard</h2><div class="bars">${areas.map((a) => `
+    <div class="bar-row"><span>${esc(a.name)}</span>
+      <div class="bar-track" role="img" aria-label="${esc(a.name)}: ${a.points} of ${a.max}"><div class="bar-fill" style="width:${(100 * a.points) / a.max}%"></div></div>
+      <span class="bar-val">${a.points} / ${a.max}</span></div>`).join("")}</div>
+    <details><summary>Show the evidence for each area</summary><table><thead><tr><th>Area</th><th>Points</th><th>Evidence</th></tr></thead><tbody>
+    ${areas.map((a) => `<tr><td>${esc(a.name)}</td><td class="num">${a.points} of ${a.max}</td><td>${esc(a.evidence)}</td></tr>`).join("")}</tbody></table></details></section>`);
+
+  const s = d.severity || {};
+  const sevCount = (k) => (s[k] || []).length;
+  const vit = d.vitals;
+  const vitalBar = (name, value, unit, good, poor, max) => {
+    if (value === null || value === undefined) return `<div class="vital"><div class="vital-top"><span>${name}</span><span class="muted">Not measured</span></div></div>`;
+    const pos = Math.min(100, (100 * value) / max), w1 = (100 * good) / max, w2 = (100 * (poor - good)) / max;
+    const [vb, vl] = value <= good ? ["good", "Good"] : value <= poor ? ["warn", "Needs work"] : ["poor", "Poor"];
+    return `<div class="vital"><div class="vital-top"><span>${name}</span><span>${value} ${unit} <span class="band ${vb}">${vl}</span></span></div>
+      <div class="zones" style="grid-template-columns:${w1}fr ${w2}fr ${100 - w1 - w2}fr" role="img" aria-label="${name}: ${value} ${unit}, ${vl}"><span></span><span></span><span></span><i class="marker" style="left:${pos}%"></i></div>
+      <div class="zone-labels"><span>Good to ${good} ${unit}</span><span>Poor above ${poor} ${unit}</span></div></div>`;
+  };
+  parts.push(`<div class="grid g2">
+    <section class="card"><h2>Issues by severity</h2>
+      <div class="sev"><div class="e"><b>${sevCount("errors")}</b>Errors: stop visitors or crawlers</div><div class="w"><b>${sevCount("warnings")}</b>Warnings: cost points</div><div class="n"><b>${sevCount("notices")}</b>Notices: worth a look</div></div>
+      <table><tbody>${["errors", "warnings", "notices"].flatMap((k) => (s[k] || []).map((t) => `<tr><td><span class="tag">${k.slice(0, -1)}</span>${esc(t)}</td></tr>`)).join("")}</tbody></table></section>
+    ${vit ? `<section class="card"><h2>Core Web Vitals <span class="muted">(${esc(vit.source)})</span></h2>
+      ${vitalBar("Largest Contentful Paint", vit.lcp_s, "s", 2.5, 4, 6)}
+      ${vitalBar("Interaction to Next Paint", vit.inp_ms, "ms", 200, 500, 800)}
+      ${vitalBar("Cumulative Layout Shift", vit.cls, "", 0.1, 0.25, 0.4)}
+      <p class="muted">Thresholds from web.dev. Lab figures are one simulated load; real-user figures come from PageSpeed Insights.</p></section>` : ""}
+  </div>`);
+
+  if ((d.lighthouse || []).length) {
+    parts.push(`<section class="card"><h2>Lighthouse, by page</h2><div class="lh">
+      <div class="lh-row headrow"><span class="page"></span><span>Performance</span><span>Accessibility</span><span>Best practices</span><span>SEO</span></div>
+      ${d.lighthouse.map((p) => `<div class="lh-row"><span class="page">${esc(p.page)}</span>${["performance", "accessibility", "best_practices", "seo"].map((k) => `<span>${ring(p[k], 64, `${p.page} ${k.replace("_", " ")}`)}</span>`).join("")}</div>`).join("")}
+    </div><p class="muted">0 to 49 poor, 50 to 89 needs work, 90 to 100 good, as Lighthouse colours them.</p></section>`);
+  }
+
+  if ((d.before_after || []).length) {
+    parts.push(`<section class="card"><h2>Before and after the fixes</h2><div class="ba">${d.before_after.map((m) => {
+      const max = Math.max(m.before, m.after) || 1;
+      return `<span><strong>${esc(m.label)}</strong><br><span class="muted">${esc(m.note || "")}</span></span>
+        <div class="ba-bars">
+          <div class="ba-line"><span class="muted">Before</span><div class="bar-track"><div class="bar-fill before" style="width:${(100 * m.before) / max}%"></div></div><span class="bar-val">${m.before} ${esc(m.unit || "")}</span></div>
+          <div class="ba-line"><span class="muted">After</span><div class="bar-track"><div class="bar-fill" style="width:${(100 * m.after) / max}%"></div></div><span class="bar-val">${m.after} ${esc(m.unit || "")}</span></div>
+        </div>`;
+    }).join("")}</div></section>`);
+  }
+
+  parts.push(`<section class="card"><h2>Fix first</h2><ol class="fixes">${(d.fixes || []).map((f) => `
+    <li><div><h3>${esc(f.title)}</h3><p>${esc(f.why)}</p><p><strong>Fix:</strong> ${esc(f.fix)}</p>
+    <p><span class="tag">${esc(f.where)}</span><span class="tag">${esc(f.helps)}</span>${f.gain ? `<span class="tag">up to +${f.gain} points</span>` : ""}${f.status ? `<span class="tag">${esc(f.status)}</span>` : ""}</p></div></li>`).join("")}</ol></section>`);
+
+  parts.push(`<div class="grid g2">
+    <section class="card"><h2>Could not check</h2><ul>${(d.could_not_check || []).map((x) => `<li>${esc(x)}</li>`).join("")}</ul></section>
+    <section class="card card-ctx"><h2>Core context card</h2><pre>${(d.context_card || []).map((c) => `${esc(c.label)}: ${esc(c.value)}${c.source ? `   (${esc(c.source)})` : ""}`).join("\n")}</pre>
+    <p class="muted">Keep this, and paste it into any AI task about your business.</p></section></div>`);
+  root.insertAdjacentHTML("beforeend", parts.join(""));
+})();
+</script>
+</body>
+</html>

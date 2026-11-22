@@ -22,8 +22,9 @@ for (const p of projects) {
   if (existsSync(img)) cpSync(img, join(media, p), { recursive: true });
 }
 cpSync(join(repo, "assets", "images"), join(media, "shared"), { recursive: true });
-// Placeholder photographs, made by the repository owner, until the final images in app/content/images.ts arrive.
+// The owner's photographs, and their light WebP copies (made by scripts/make_webp.py).
 cpSync(join(repo, "projects", "artifact-studio", "_build", "photos"), join(media, "photos"), { recursive: true });
+cpSync(join(site, "..", "..", "..", "_build", "photos-webp"), join(media, "photos-webp"), { recursive: true });
 // Each tool's square icon is the top of its tile (the same square in every tile), with the words cropped away.
 mkdirSync(join(media, "icons"), { recursive: true });
 for (const p of projects) {

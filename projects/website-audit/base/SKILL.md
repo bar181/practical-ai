@@ -46,6 +46,20 @@ Work through the eight areas. For each, note what you saw, with the exact words 
 Score each area. Full points only when you saw the evidence; half when you could not check; none
 when it is missing or wrong. Never award points for something you did not see.
 
+Sort every finding by severity, the way the market's site audits do:
+
+- **Error:** stops a visitor or a crawler. A broken link, a page blocked from search, no HTTPS, a
+  form that loses what people type.
+- **Warning:** works, but costs points. A slow first picture, a missing description, no structured
+  data, missing security headers.
+- **Notice:** worth a look, costs nothing yet. A picture without a size, a long title on a minor page.
+
+Band every score in words as well as colour: 90 to 100 good, 50 to 89 needs work, 0 to 49 poor (the
+bands Lighthouse uses). Core Web Vitals use their own: Largest Contentful Paint good to 2.5 s and
+poor above 4 s; Interaction to Next Paint good to 200 ms and poor above 500 ms; Cumulative Layout
+Shift good to 0.1 and poor above 0.25. Say whether a figure is lab (one simulated load) or field
+(real visitors).
+
 ## Report
 
 Lead with the answer:
@@ -60,6 +74,15 @@ Lead with the answer:
    Inspection (what Google indexed), a link checker (every link).
 5. **Core context card:** fill it from the site, then mark each line "from the site" or "needs
    you". Tell them to keep it and paste it into any AI task about their business.
+
+Then offer the **report page**. If you can make an artifact, a canvas or an HTML file, make one
+page in this order: the score in a ring with its band in words; the scorecard as one bar per area
+with the points written beside it; issue counts by severity with the list; Core Web Vitals as bars
+marked good, needs work and poor; Lighthouse scores by page; before and after, if there was a
+before; the fixes in order; could not check; the core context card. One data colour for the
+scorecard, and status colours only for good, needs work and poor, always with the word. Every
+number comes from the audit; leave out a chart you have no numbers for. If you have
+`report-template.html` from this tool's folder, fill its data block instead of building the page.
 
 ```
 Core context card: [business]

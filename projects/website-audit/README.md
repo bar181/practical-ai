@@ -34,6 +34,9 @@ For real speed and security scores, also run two free checks and paste the resul
 - **A score out of 100** across eight areas, each with the evidence it saw.
 - **Fix first:** the five changes that move the score most, in plain words, with the tool that helps.
 - **Could not check:** what it did not see, and the free tool that checks it.
+- **A report page** you can share: the score, the scorecard, issues by severity, Core Web Vitals,
+  Lighthouse by page, before and after, and the fixes in order. In a chatbot it is an artifact or
+  canvas; with a shell, fill [`base/report-template.html`](base/report-template.html).
 - **Your core context card:** what you do, for whom, your value proposition, unique selling points,
   core messages and call to action. Keep it, and paste it into every AI task about your business.
 
@@ -47,6 +50,14 @@ For real speed and security scores, also run two free checks and paste the resul
 | Security | 10 |
 | Links and content | 10 |
 | Measured | 5 |
+
+<p align="center"><img src="_build/img/report.webp" width="560" alt="The top of the report page for the worked example: a score ring showing 81 out of 100 marked Needs work, the scorecard as eight bars with points beside each, issue counts of 0 errors, 4 warnings and 3 notices with the list, Core Web Vitals bars marking Largest Contentful Paint 3.1 s as needs work and layout shift 0.001 as good, and Lighthouse rings for three pages"></p>
+<p align="center"><sub>The report for this repository's own site. Open the <a href="base/examples/bradley-academy-report.html">full report</a>: one file, no network.</sub></p>
+
+The report borrows its shape from the audits people already know: one health score with errors,
+warnings and notices weighted apart, as Semrush and Ahrefs do, and score bands in words and colour
+(good, needs work, poor) as Lighthouse does. It adds the part they skip: whether a stranger
+understands your business.
 
 ## Levels
 
@@ -71,8 +82,10 @@ and adds the part they skip: whether a stranger understands your business.
 ## The worked example
 
 [`base/examples/bradley-academy-audit.md`](base/examples/bradley-academy-audit.md): this
-repository's own website, before it moves to its own domain. Score 71 of 100, the five fixes, and
-two of them made the same day: titles cut to fit (14 long titles to 0) and structured data added.
+repository's own website, before it moves to its own domain. Score 71 of 100, then 81 after the
+fixes made the same day: titles cut to fit (14 long titles to 0), structured data, light WebP
+photos (home page 667 to 409 KB), a privacy page and consent-based analytics ready to switch on.
+The [report page](base/examples/bradley-academy-report.html) shows it with charts.
 
 ## What it does not do
 
@@ -84,8 +97,9 @@ two of them made the same day: titles cut to fit (14 long titles to 0) and struc
 ## Status
 
 **22 November 2026:** new. Built by Claude and run on one real site, Bradley Academy, served from a
-copy on a laptop: the skill's scorecard, `check_site.py` on 16 pages and Lighthouse on 3. Not yet
-tried by anyone else, on a live address, or in ChatGPT or Gemini. The Level 2 guide is written from
+copy on a laptop: the skill's scorecard, `check_site.py` on 30 pages and Lighthouse on 3, before
+and after the fixes. The report page was checked at 390 and 1280 pixels wide. Not yet tried by
+anyone else, on a live address, or in ChatGPT or Gemini. The Level 2 guide is written from
 provider documentation and not yet followed. [The evidence](quality-results/README.md).
 
 Planned in [`workshop/plans/website-audit/`](../../workshop/plans/website-audit/README.md).

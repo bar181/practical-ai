@@ -4,7 +4,7 @@
 export const site = {
   brand: "Bradley Academy",
   product: "Bradley Ross, Agentic Architect and Researcher",
-  url: "https://bar181.github.io/practical-ai",
+  url: __SITE_URL__,
   source: "https://github.com/bar181/practical-ai",
   sourceLabel: "bar181/practical-ai",
   linkedin: "https://www.linkedin.com/in/bradaross/",

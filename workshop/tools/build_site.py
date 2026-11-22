@@ -12,6 +12,7 @@ generated from scratch: every page on the site is a file already checked in.
   /tone-studio/                       the seven tone landing pages and the examples page that shows them all
   /web-sections/                      the section library, the post previews and the four sample sites (same paths as the repository's base/)
   /rare-find/                         the game, and how-it-was-made.html
+  /website-audit/                     the report template and the worked example report (same paths as the repository's base/)
   /reports/                           one explainer page per project
   /llms.txt                           the index for AI agents, from projects/practical-ai-guide/
 
@@ -104,6 +105,10 @@ for dirpath, _, files in os.walk(os.path.join(ROOT, "projects", "tone-studio", "
 
 # The index for AI agents, at the site root (see projects/practical-ai-guide/)
 copy("llms.txt", "llms.txt")
+
+# Website audit: the report template and the worked example report
+copy("projects/website-audit/base/report-template.html", "website-audit/base/report-template.html")
+copy("projects/website-audit/base/examples/bradley-academy-report.html", "website-audit/base/examples/bradley-academy-report.html")
 
 # Rare Find: the game and how it was made
 copy("projects/rare-find/base/game.html", "rare-find/index.html")

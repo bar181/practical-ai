@@ -6,8 +6,8 @@ same scorecard, and writes an improvement plan you can hand to whoever builds th
 **Think of it as** the full inspection with the instruments out, room by room, with a written
 report and a repair schedule.
 
-**Status, 22 November 2026:** `check_site.py` and Lighthouse were run on Bradley Academy, served
-from a laptop copy. The rest of this runbook has not been followed end to end by a fresh agent.
+**Status, 22 November 2026:** `check_site.py`, Lighthouse and the report page were run on Bradley
+Academy, served from a laptop copy, before and after its fixes. The rest of this runbook has not been followed end to end by a fresh agent.
 
 ## What you need
 
@@ -30,7 +30,12 @@ from a laptop copy. The rest of this runbook has not been followed end to end by
 8. **Plan the fixes** with [Agentic Process](../../agentic-process/README.md): one change per item,
    with where, the fix, how to check it, and what it should move on the scorecard. Order by points
    gained per hour of work.
-9. **Stop.** Report and plan only. The person approves every change and every publish.
+9. **Report page:** copy [`../base/report-template.html`](../base/report-template.html) to
+   `audit/report.html` and replace its JSON data block with the audit: areas, issues by severity,
+   Core Web Vitals, Lighthouse by page, before and after (if any), fixes, could not check and the
+   core context card. Leave out what you did not measure; the page skips empty parts. Open it at
+   390 and 1280 pixels wide.
+10. **Stop.** Report and plan only. The person approves every change and every publish.
 
 ## What check_site.py checks
 
@@ -58,6 +63,9 @@ Checked 22 November 2026.
 - [Introduction to robots.txt](https://developers.google.com/search/docs/crawling-indexing/robots/intro), Google Search Central
 - [Overview of OpenAI crawlers](https://developers.openai.com/api/docs/bots), OpenAI
 - [Does Anthropic crawl data from the web?](https://support.claude.com/en/articles/8896518), Anthropic
+- [Lighthouse performance scoring](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring) (the 0 to 49, 50 to 89, 90 to 100 bands), Chrome for Developers
+- [How is Site Health Score calculated?](https://www.semrush.com/kb/114-total-score) (errors weigh more than warnings), Semrush
+- [What is Health Score?](https://help.ahrefs.com/en/articles/1424673-what-is-health-score-and-how-is-it-calculated-in-ahrefs-site-audit) (only errors lower it; warnings and notices do not), Ahrefs
 - [HTTP Observatory scoring](https://developer.mozilla.org/en-US/observatory/docs/tests_and_scoring), MDN
 
 Part of the [Website audit](../README.md).

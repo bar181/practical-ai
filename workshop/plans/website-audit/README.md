@@ -28,8 +28,9 @@ courses who need a checklist before they publish.
   security visible from outside, links and content, measurement. The core context card.
 - **Out:** changing the site, logging in anywhere, penetration testing, legal advice on privacy.
 - **It works when:** given Bradley Academy, it scores the site with evidence for every point, finds
-  the long titles and the robots.txt in a sub-folder, and lists the placeholder photos as the first
-  fix. Met on 22 November 2026: 71 of 100.
+  the long titles and the robots.txt in a sub-folder, and draws a report page with the scorecard and
+  charts. Met on 22 November 2026: 71 of 100, then 81 after the fixes. The first run listed the
+  photos as placeholders; the owner corrected that, and the photos are final.
 
 ## What might be involved at each level
 
@@ -70,6 +71,17 @@ courses who need a checklist before they publish.
 7. **Wait for consent before analytics storage where required,** using consent mode. Source:
    [Consent mode overview](https://developers.google.com/tag-platform/security/concepts/consent-mode),
    Google, checked 22 November 2026.
+8. **Sort findings by severity and let errors weigh most.** The market's audits split issues into
+   errors, warnings and notices. Semrush's Site Health weighs errors more than warnings; Ahrefs'
+   Health Score counts only errors. Sources:
+   [How is Site Health Score calculated?](https://www.semrush.com/kb/114-total-score), Semrush, and
+   [What is Health Score?](https://help.ahrefs.com/en/articles/1424673-what-is-health-score-and-how-is-it-calculated-in-ahrefs-site-audit),
+   Ahrefs, checked 22 November 2026.
+9. **Band every score in words and colour.** Lighthouse marks 0 to 49 poor, 50 to 89 needs
+   improvement and 90 to 100 good. The report uses the same bands and always writes the word, so
+   the colour is never the only signal. Source:
+   [Lighthouse performance scoring](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring),
+   Chrome for Developers, checked 22 November 2026.
 
 ## What it reuses
 

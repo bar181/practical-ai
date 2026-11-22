@@ -55,19 +55,19 @@ The old site scored 53 for these audiences. Results of the two review loops are 
 ## Going live on Bradley.academy
 
 Reviewed 22 November 2026, with the [Website audit](../../../projects/website-audit/base/examples/bradley-academy-audit.md)
-(71 of 100 before its first two fixes). **Recommendation: yes, once the placeholder photo on the
-home page's closing band is replaced.** The domain fixes two audit findings on its own: robots.txt
-and llms.txt start counting at the root, and Search Console can verify the whole domain.
+(71 of 100 before the fixes, 80 after). **Recommendation: yes.** The photos are Bradley's own and
+final (confirmed 22 November 2026). The domain fixes two audit findings on its own: robots.txt and
+llms.txt start counting at the root, and Search Console can verify the whole domain.
 
 | Readiness item | Score | Note |
 | --- | --- | --- |
 | Content and claims | 90 | Approved by Bradley, 22 November 2026 |
 | Search basics | 85 | Titles fixed, structured data added; robots.txt works once at the root |
-| Pictures | 55 | Placeholders on the tool pages and the home page's closing band |
-| Speed | 65 | Lab estimate; photos not yet resized or converted |
+| Pictures | 85 | Bradley's own photos, now light WebP copies sized for phones and laptops |
+| Speed | 72 | Lab, local copy: home 72, research 77, tools 69 for performance. Pages are about a third lighter |
 | Security headers | 50 | GitHub Pages cannot set them; a CDN in front can |
-| Measurement | 20 | No Search Console or analytics yet |
-| **Overall** | **61** | **About 80 after the photos, Search Console and the domain** |
+| Measurement | 40 | Ready: set `SITE_GSC` and `SITE_GA_ID`; analytics waits for consent. Not switched on yet |
+| **Overall** | **70** | **The average of the six. About 78 once Search Console and analytics are on (measurement to 85); about 85 with Cloudflare headers too** |
 
 Steps. Bradley does the steps marked "you"; each needs his accounts.
 
@@ -79,25 +79,29 @@ Steps. Bradley does the steps marked "you"; each needs his accounts.
    `SITE_URL=https://bradley.academy`, so every link, the sitemap, robots.txt and llms.txt use the
    domain. Old `bar181.github.io/practical-ai/` links redirect to the domain.
 5. **You:** turn on Enforce HTTPS when GitHub offers it.
-6. **You:** Search Console, a domain property, the sitemap submitted (Website audit, Level 2).
-7. **Later, optional:** Cloudflare in front of the domain for security headers and caching.
+6. **You:** Search Console, a domain property, the sitemap submitted (Website audit, Level 2). If
+   you choose the HTML-tag method, give the agent the token for `SITE_GSC`.
+7. **You, optional:** a Google Analytics 4 property; give the agent its ID for `SITE_GA_ID`. Visitors
+   see a consent banner, and nothing loads until they say yes.
+8. **Later, optional:** Cloudflare in front of the domain for security headers and caching.
 
 ## Further work for the public site
 
-1. Replace the placeholder photos, starting with the home page and the most visited tools (the
-   Image brief page lists every one).
-2. Resize the photos and serve WebP or AVIF at the widths they are shown.
-3. A contact form for companies and people who want a website built or reviewed, saved to Supabase
+Done on 22 November 2026: the Image brief page removed (the photos are final); light WebP copies
+at two widths; a consent banner, analytics and Search Console ready behind build settings; a
+privacy page; the fonts preloaded; phones get the still version of the motion.
+
+1. A contact form for companies and people who want a website built or reviewed, saved to Supabase
    with insert-only access (Website audit, Level 2). It complements LinkedIn; decide whether it
    carries early-access requests too.
-4. Analytics with consent, and Search Console.
-5. Shorter, lighter motion on phones: about 240 KB of unused JavaScript per page, mostly the motion
-   libraries.
+2. Switch on Search Console and analytics once the domain is live (steps 6 and 7 above).
+3. Load the motion libraries only on screens that use them: phones no longer run them, but still
+   download them.
 
 ## Still open
 
 - A request form for early access, if LinkedIn proves too open.
-- A real portrait large enough for a full-screen scene, and final pictures for the new image slots.
+- A real portrait large enough for a full-screen scene.
 - Which research findings Bradley approves for publication: under 2% against 40 to 60%, Milestone 1 at 17 against 62 failures, 37 of 40 after eight sessions, the 6 of 6 grammar trial and the 250,000 units of knowledge.
 - A measured failure rate for elite prose instructions over eight sessions, to replace the labelled projection (about 43% kept, 0.9 to the power of 8).
 - Whether the AISP explainer video is cleared to publish.

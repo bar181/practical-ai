@@ -25,7 +25,8 @@ const wordsIn = (el: HTMLElement) => el.querySelectorAll<HTMLElement>(".w > span
 /** Starts the motion for the current page. Call again after each route change; returns a cleanup. */
 export async function startCinema(root: HTMLElement): Promise<Cleanup> {
   const doc = document.documentElement;
-  if (prefersReducedMotion()) {
+  // Phones and touch screens get the still version: lighter (no motion libraries) and just as readable.
+  if (prefersReducedMotion() || window.matchMedia("(max-width: 759px), (pointer: coarse)").matches) {
     doc.classList.remove("cine");
     return () => {};
   }

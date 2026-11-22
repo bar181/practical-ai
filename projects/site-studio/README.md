@@ -70,7 +70,8 @@ Vercel's open-source React skills. The list is in [AGENTS.md](AGENTS.md).
 **20 November 2026: building.** The Bradley Academy site is cinematic, with:
 
 - an About page that covers the research to instruction line;
-- an Image brief page for the 24 placeholder pictures;
+- the owner's own photographs, served as light WebP copies;
+- a privacy page, and analytics only with consent (off until an ID is set);
 - a guide to build your own.
 
 Two reviewer agents scored six rounds against what a client paying an agency US$50,000 would accept:

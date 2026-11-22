@@ -1511,39 +1511,45 @@ const websiteAudit: Tool = {
   status: {
     date: "22 November 2026",
     label: "New",
-    text: "Built by Claude and run on one real site, this one: 71 of 100, with two fixes made the same day (14 long titles to 0, structured data added). Not yet tried by anyone else, on a live address, or in ChatGPT or Gemini.",
+    text: "Built by Claude and run on one real site, this one: 71 of 100, then 81 after the fixes made the same day. Not yet tried by anyone else, on a live address, or in ChatGPT or Gemini.",
   },
   readme: `${GH}/website-audit`,
   tabs: [
     {
+      id: "report",
+      label: "The report",
+      intro: "What you get back at Level 1 and above: one page with the score, the scorecard, issues by severity, Core Web Vitals, Lighthouse by page, before and after, and the fixes in order.",
+      blocks: [{ kind: "frame", src: "/website-audit/base/examples/bradley-academy-report.html", title: "Website audit report for Bradley Academy", caption: "The live report for this site. It opens on its own, with no network.", height: 760 }],
+    },
+    {
       id: "example",
       label: "This site, audited",
-      intro: "The worked example: Bradley Academy, before it moves to its own domain. Checked from a copy on a laptop, so speed is a floor.",
+      intro: "The worked example: Bradley Academy, before it moves to its own domain. Checked from a copy on a laptop, served compressed as GitHub Pages serves it. Lab speed only; real-user speed needs the live site.",
       blocks: [
         {
           kind: "table",
-          caption: "The scorecard: 71 of 100",
+          caption: "The scorecard: 81 of 100 after the fixes (71 before)",
           head: ["Area", "Points"],
           rows: [
             ["Message", "16 of 20"],
-            ["Found in search and AI", "10 of 15"],
-            ["Speed (estimate)", "8 of 15"],
+            ["Found in search and AI", "12 of 15"],
+            ["Speed (lab)", "11 of 15"],
             ["Phones and access", "15 of 15"],
-            ["Trust and contact", "9 of 10"],
+            ["Trust and contact", "10 of 10"],
             ["Security", "6 of 10"],
-            ["Links and content", "6 of 10"],
-            ["Measured", "1 of 5"],
+            ["Links and content", "9 of 10"],
+            ["Measured", "2 of 5"],
           ],
         },
         {
           kind: "steps",
           heading: "Fix first",
           items: [
-            { title: "Replace the placeholder photos", text: "On the tool pages and the home page's closing band. They undercut the credibility the words build." },
             { title: "Move to its own domain", text: "robots.txt and llms.txt only count at the root of a domain." },
-            { title: "Lighter photos", text: "Sized to the screen and in modern formats: Lighthouse estimates 181 KB saved on the home page from sizing alone." },
+            { title: "Switch on measurement", text: "Search Console and analytics with consent are built in; they need an ID to switch on." },
+            { title: "Draw the opening photo sooner", text: "Largest paint is 3.1 s against 2.5 s. The photo waits for the stylesheet and fonts." },
             { title: "Security headers", text: "GitHub Pages cannot set them. A CDN in front of the domain can." },
-            { title: "Measure", text: "Search Console for the domain, and analytics with consent where required." },
+            { title: "Tidy the tool pages", text: "Picture sizes in the page, and motion code only where it runs." },
           ],
         },
         {
@@ -1552,7 +1558,8 @@ const websiteAudit: Tool = {
           items: [
             { href: `${GHB}/website-audit/base/examples/bradley-academy-audit.md`, label: "The full audit", note: "with the core context card" },
             { href: `${GHB}/website-audit/quality-results/2026-11-22-check-before.md`, label: "The checker's report, before" },
-            { href: `${GHB}/website-audit/quality-results/2026-11-22-check-after.md`, label: "And after two fixes" },
+            { href: `${GHB}/website-audit/quality-results/2026-11-22-check-after.md`, label: "And after the fixes" },
+            { href: `${GHB}/website-audit/quality-results/2026-11-22-lighthouse.md`, label: "Lighthouse, before and after" },
           ],
         },
       ],
