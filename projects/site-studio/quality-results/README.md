@@ -1,9 +1,25 @@
 # Site Studio: the evidence
 
+**22 November 2026: in use.** Bradley reports that people other than the author now use this
+project, from business owners to agentic developers. Their results are not recorded here yet. The
+checks below were run by the author and by fresh Claude sessions; the dates on them still hold.
+
 What was checked, by whom, and what was not.
 
 **No person has used the site yet, and it is not live until the owner merges it.** Every check
 below was run by Claude or by fresh Claude agents in one session, on 19 and 20 November 2026.
+
+## 22 November 2026: the publish-a-website lesson
+
+What was checked, by Claude only:
+
+- Every DNS value, menu name and key rule in the Level 1 to 3 guides was checked against the
+  provider's own documentation on 22 November 2026. The sources are listed at the end of each guide.
+- The new Site Studio tool page was built, pre-rendered and opened in headless Chrome at 390 and
+  1280 pixels wide: no sideways scrolling, one heading, no console errors.
+
+What was not checked: no person and no agent has followed the skill or the Level 2 and 3 guides, no
+domain was connected, and nothing was deployed to Vercel, Cloudflare, Firebase or Supabase.
 
 ## 20 November 2026: the cinematic site, six review rounds
 

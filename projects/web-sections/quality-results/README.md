@@ -1,5 +1,9 @@
 # Quality results: Web Sections
 
+**22 November 2026: in use.** Bradley reports that people other than the author now use this
+project, from business owners to agentic developers. Their results are not recorded here yet. The
+checks below were run by the author and by fresh Claude sessions; the dates on them still hold.
+
 **Who has tried it:** its author, through fresh Claude sessions that had only the skill and the
 library. **Not yet tried:** ChatGPT, Gemini, a saved section set, a real business, and anyone other
 than the author. All businesses are invented.

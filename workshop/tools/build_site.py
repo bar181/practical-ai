@@ -13,6 +13,7 @@ generated from scratch: every page on the site is a file already checked in.
   /web-sections/                      the section library, the post previews and the four sample sites (same paths as the repository's base/)
   /rare-find/                         the game, and how-it-was-made.html
   /reports/                           one explainer page per project
+  /llms.txt                           the index for AI agents, from projects/practical-ai-guide/
 
 The home page and the tool pages are the React site in projects/site-studio/, which the workflow
 builds and copies over this folder.
@@ -100,6 +101,9 @@ for dirpath, _, files in os.walk(os.path.join(ROOT, "projects", "tone-studio", "
         if f.endswith((".html", ".jpg")):
             rel = os.path.relpath(os.path.join(dirpath, f), os.path.join(ROOT, "projects", "tone-studio"))
             copy(os.path.join("projects", "tone-studio", rel), os.path.join("tone-studio", rel))
+
+# The index for AI agents, at the site root (see projects/practical-ai-guide/)
+copy("llms.txt", "llms.txt")
 
 # Rare Find: the game and how it was made
 copy("projects/rare-find/base/game.html", "rare-find/index.html")

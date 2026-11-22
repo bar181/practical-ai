@@ -1,168 +1,123 @@
 import { Link } from "react-router";
 import type { Route } from "./+types/home";
-import prompts from "../content/generated/prompts.json";
-import { about, home, site } from "../content/site";
-import { tools } from "../content/tools";
-import { CopyButton } from "../components/CopyButton";
-import { PromptCard } from "../components/PromptCard";
+import { brand, contact } from "../content/brand";
 import { SceneImage } from "../components/Scene";
+import { SmartLink } from "../components/SmartLink";
 import { SplitText } from "../components/SplitText";
-import { Glyph } from "../components/Glyph";
-import { media } from "../lib/paths";
 import { pageMeta } from "../lib/meta";
+import { media } from "../lib/paths";
+import { site } from "../content/site";
 
-export const meta: Route.MetaFunction = () =>
-  pageMeta(site.labels.homeTitle, site.description, "/");
+export const meta: Route.MetaFunction = () => pageMeta(brand.metaTitle, brand.metaDescription, "/");
 
 export default function Home() {
   return (
     <>
       {/* Opening scene */}
-      <section className="hero hero-home" aria-labelledby="hero-h">
+      <section className="hero hero-brand" aria-labelledby="hero-h">
         <SceneImage id="home-hero" cine="kenburns" eager className="hero-img" />
         <div className="hero-shade" aria-hidden="true" />
         <div className="letterbox top" data-letterbox aria-hidden="true" />
         <div className="letterbox bottom" data-letterbox aria-hidden="true" />
         <div className="wrap hero-inner">
-          <p className="hero-kicker" data-cine-after="0">{site.labels.presents}</p>
-          <SplitText as="h1" id="hero-h" className="hero-title" cine="title" text={home.title} />
-          <p className="hero-lead" data-cine-after="1">{home.lead}</p>
+          <p className="hero-kicker hero-id" data-cine-after="0">
+            <img src={media(site.labels.authorPhoto)} alt="" width={56} height={56} className="hero-face" />
+            <span>{brand.hero.kicker}</span>
+          </p>
+          <SplitText as="h1" id="hero-h" className="hero-title" cine="title" text={brand.hero.title} />
+          <p className="hero-lead" data-cine-after="1">{brand.hero.lead}</p>
           <div className="actions" data-cine-after="2">
-            <a className="btn btn-light" href="#tools">{site.labels.seeTools}</a>
-            <CopyButton text={prompts.starter} label="Copy the starter prompt" className="btn btn-ghost" />
+            <Link className="btn btn-light" to="/research" viewTransition>See the research</Link>
+            <Link className="btn btn-ghost" to="/about" viewTransition>About Bradley</Link>
           </div>
         </div>
-        <a className="scroll-cue" href="#intern" aria-label="Scroll to the story"><span /></a>
       </section>
 
-      {/* Every tool, one tap away */}
-      <nav className="tool-strip" id="all-tools" aria-label={site.labels.toolsListName}>
-        <ul className="wrap">
-          {tools.map((t) => (
-            <li key={t.slug}>
-              <Link to={`/tools/${t.slug}`} viewTransition>
-                <Glyph slug={t.slug} className="glyph glyph-sm" />
-                <span><strong>{t.name}</strong><span>{t.cardLine}</span></span>
-              </Link>
-            </li>
+      {/* Credentials, one line */}
+      <section className="proof" aria-label="Credentials">
+        <ul className="wrap proof-list">
+          {brand.proof.map((p) => (
+            <li key={p.strong}><strong>{p.strong}</strong><span>{p.rest}</span></li>
           ))}
         </ul>
-      </nav>
+      </section>
 
-      {/* The idea, word by word */}
-      <section className="statement" id="intern" data-cine="words" aria-labelledby="intern-h">
+      {/* The vision, word by word */}
+      <section className="statement statement-brand" data-cine="words" aria-labelledby="vision-h">
         <div className="wrap statement-inner">
-          <h2 id="intern-h" className="sr-only">The idea behind every tool</h2>
-          <SplitText className="statement-text" text={home.idea.analogy} />
+          <h2 id="vision-h" className="sr-only">The research</h2>
+          <SplitText className="statement-text" text={brand.statement} />
         </div>
       </section>
 
-      {/* The answer: each tool is the brief */}
-      <section className="split" aria-labelledby="brief-h">
-        <div className="wrap split-inner">
-          <div className="split-media">
-            <SceneImage id="home-intern" cine="clip" className="clip-img" />
-          </div>
-          <div className="split-copy" data-cine="reveal">
-            <h2 id="brief-h" data-cine-item>{home.idea.heading}</h2>
-            <ul className="ticks">
-              {home.idea.points.map((p) => (
-                <li key={p.title} data-cine-item><strong>{p.title}</strong><span>{p.text}</span></li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      {/* One scene per tool */}
-      <section className="reel" id="tools" aria-labelledby="tools-h">
-        <div className="wrap reel-head" data-cine="reveal">
-          <h2 id="tools-h" data-cine-item>{site.labels.toolsHeading}</h2>
-          <p className="reel-lead" data-cine-item>{site.labels.toolsLead}</p>
-        </div>
-        <ol className="stack" data-cine="stack" aria-label={site.labels.toolsListName}>
-          {tools.map((t, i) => (
-            <li key={t.slug} className="stack-scene" data-cine-scene>
-              <Link to={`/tools/${t.slug}`} viewTransition className="stack-inner" data-cine-scene-inner aria-labelledby={`stack-${t.slug}-name stack-${t.slug}-promise`}>
-                <SceneImage id={`tool-${t.slug}`} className="stack-img" name={`tool-${t.slug}`} />
-                <span className="stack-shade" aria-hidden="true" />
-                <span className="stack-dim" aria-hidden="true" />
-                <span className="stack-copy">
-                  <span className="stack-top">
-                    <Glyph slug={t.slug} />
-                    <span className="stack-count" aria-hidden="true">{i + 1} of {tools.length}</span>
-                  </span>
-                  <SplitText as="span" className="stack-name" text={t.name} id={`stack-${t.slug}-name`} />
-                  <span className="stack-promise" id={`stack-${t.slug}-promise`}>{t.promise}</span>
-                  <span className="stack-line">{t.cardLine}</span>
-                  <span className="stack-foot">
-                    <span className="status-word">{t.status.label}</span>
-                    <span className="stack-open">Open {t.name}</span>
-                  </span>
-                </span>
-              </Link>
-            </li>
-          ))}
-        </ol>
-      </section>
-
-      {/* The standard */}
-      <section className="standard" aria-labelledby="levels-h">
-        <SceneImage id="home-standard" cine="parallax" className="standard-img" />
-        <div className="standard-shade" aria-hidden="true" />
-        <div className="wrap standard-inner" data-cine="draw">
-          <div data-cine="reveal">
-            <h2 id="levels-h" data-cine-item>{home.levels.heading}</h2>
-            <p className="reel-lead" data-cine-item>{home.levels.intro}</p>
-          </div>
-          <div className="timeline-wrap">
-          <span className="timeline-line" data-cine-line aria-hidden="true" />
-          <ol className="timeline">
-            {home.levels.steps.map((s, i) => (
-              <li key={s.title} data-cine="reveal">
-                <span className="timeline-num" aria-hidden="true">{i + 1}</span>
-                <h3 data-cine-item>Level {i + 1}: {s.title}</h3>
-                <p data-cine-item>{s.text}</p>
+      {/* The proof: three numbers */}
+      <section className="results" aria-labelledby="results-h">
+        <div className="wrap">
+          <h2 id="results-h" className="results-h" data-cine="reveal">{brand.results.heading}</h2>
+          <ul className="result-grid" data-cine="reveal">
+            {brand.results.items.map((r) => (
+              <li key={r.big} data-cine-item>
+                <p className="result-big">{r.big}</p>
+                <p className="result-from">{r.from}</p>
+                <p className="result-text">{r.text}</p>
               </li>
             ))}
-          </ol>
-          </div>
+          </ul>
+          <p className="results-more" data-cine="reveal"><Link to="/research" viewTransition>More on the research</Link></p>
         </div>
       </section>
 
-      {/* By the numbers */}
-      <section className="numbers" aria-labelledby="numbers-h">
+      {/* The range: from a ten-person team to a lab */}
+      <section className="range" aria-labelledby="range-h">
         <div className="wrap">
-          <h2 id="numbers-h" className="sr-only">By the numbers</h2>
-          <p className="facts-line" data-cine="reveal">
-            {home.factsLine.split(/(\{\d+\})/).map((part, k) => {
-              const n = part.match(/^\{(\d+)\}$/);
-              return n ? <b key={k}>{n[1]}</b> : part;
-            })}
+          <div className="section-head" data-cine="reveal">
+            <h2 id="range-h" data-cine-item>{brand.range.heading}</h2>
+            <p className="reel-lead" data-cine-item>{brand.range.lead}</p>
+          </div>
+          <ul className="range-grid" data-cine="reveal">
+            {brand.range.items.map((r) => (
+              <li key={r.who} data-cine-item>
+                <Link to={r.link.href} viewTransition className="range-tile">
+                  <strong>{r.who}</strong>
+                  <span>{r.text}</span>
+                  <span className="range-go">{r.link.label}</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* Open work */}
+      <section className="open-work" aria-labelledby="open-h">
+        <div className="wrap open-row" data-cine="reveal">
+          <h2 id="open-h" className="open-h" data-cine-item>{brand.openSource.heading}</h2>
+          <ul data-cine-item>
+            {brand.openSource.items.map((o) => (
+              <li key={o.href}><SmartLink href={o.href}>{o.label}</SmartLink><span>{o.note}</span></li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* Network: one quiet line */}
+      <section className="network" aria-labelledby="network-h">
+        <div className="wrap open-row" data-cine="reveal">
+          <h2 id="network-h" className="open-h" data-cine-item>{brand.network.heading}</h2>
+          <p className="network-text" data-cine-item>
+            {brand.network.text} <SmartLink href={brand.network.link.href}>{brand.network.link.label}</SmartLink>
           </p>
         </div>
       </section>
 
-      {/* First take */}
-      <section className="take take-scene" id="start" aria-labelledby="starter-h">
-        <SceneImage id="home-start" cine="parallax" className="take-img" />
+      {/* Early access */}
+      <section className="take take-scene early" aria-labelledby="early-h">
+        <SceneImage id="work-hero" cine="parallax" className="take-img" />
         <div className="wrap narrow" data-cine="reveal">
-          <h2 id="starter-h" data-cine-item>{home.starter.heading}</h2>
-          <p className="reel-lead" data-cine-item>{home.starter.text}</p>
-          <div data-cine-item><PromptCard prompt={prompts.starter} label="Copy the starter prompt" /></div>
-        </div>
-      </section>
-
-      {/* Credits */}
-      <section className="credits" aria-labelledby="maker-h">
-        <div className="wrap credits-inner" data-cine="reveal">
-          <img src={media(site.labels.authorPhoto)} alt={site.labels.author} width={180} height={180} className="portrait" data-cine-item />
-          <div>
-            <p className="credits-small" data-cine-item>{site.labels.authorKicker}</p>
-            <h2 id="maker-h" data-cine-item>{site.labels.author}</h2>
-            <p data-cine-item>{about.role} {about.specialty}</p>
-            <p data-cine-item><Link to="/about" viewTransition className="btn btn-ghost">About {site.labels.author.split(" ")[0]}</Link></p>
-          </div>
+          <h2 id="early-h" data-cine-item>{brand.earlyAccess.heading}</h2>
+          <p className="reel-lead" data-cine-item>{brand.earlyAccess.text}</p>
+          <p className="actions" data-cine-item><a className="btn btn-light" href={contact.earlyAccess.href} rel="noopener">{contact.earlyAccess.label}</a></p>
+          <p className="early-note" data-cine-item>{contact.earlyNote}</p>
         </div>
       </section>
     </>

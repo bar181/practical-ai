@@ -1,5 +1,9 @@
 # Quality results: learnings database
 
+**22 November 2026: in use.** Bradley reports that people other than the author now use this
+project, from business owners to agentic developers. Their results are not recorded here yet. The
+checks below were run by the author and by fresh Claude sessions; the dates on them still hold.
+
 **19 November 2026. Built and tested by Claude only, in fresh agent sessions. No person has used it
 yet. Not yet tried: loading the instructions by the link (it works once this folder is on the main
 branch), ChatGPT, Google Sheets, a real Supabase project and its connector, and the plugin installed

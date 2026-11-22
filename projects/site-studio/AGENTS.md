@@ -1,7 +1,21 @@
 # Site Studio: instructions for agents
 
-You are here to change the Bradley Academy website, or to help someone build a site like it. This
-file is written for you. People start at the [README](README.md).
+You are here to help someone publish a website, to change the Bradley Academy website, or to help
+someone build a site like it. This file is written for you. People start at the [README](README.md).
+
+## Publishing a website
+
+The lesson has three levels. Use [`base/SKILL.md`](base/SKILL.md) as the guide: it picks the
+smallest level that does the job.
+
+| Level | Guide |
+| --- | --- |
+| 1. Share a chatbot artifact or canvas as a link | [`base/SKILL.md`](base/SKILL.md) |
+| 2. GitHub Pages, your own domain, Vercel | [`level-2-files/README.md`](level-2-files/README.md), and [`base/BUILD-YOUR-OWN-SITE.md`](base/BUILD-YOUR-OWN-SITE.md) for a React site |
+| 3. Cloudflare, Google Cloud (Firebase Hosting), Supabase database and login | [`level-3-files/README.md`](level-3-files/README.md) |
+
+The person publishes, buys domains, changes DNS and creates accounts. You never do, and you never
+handle a password or a secret key. Copy DNS values from the host's screen, never from memory.
 
 ## What the site is
 
@@ -13,18 +27,18 @@ people who never open GitHub, so every page is written for them, not for develop
 
 | You need | Go to |
 | --- | --- |
-| The words on every page | `app/content/`: `site.ts` (brand, home, About Bradley) and `tools.ts` (one entry per tool) |
+| The words on every page | `app/content/`: `brand.ts` (Bradley's home page and Research), `site.ts` (the brand, the Practical AI page, About Bradley) and `tools.ts` (one entry per tool) |
 | The try-it prompts and the pictures | Not stored here. `scripts/sync.mjs` copies them from each project's README and `_build/img/` before every build, so the site never drifts from the READMEs |
 | The look | `app/styles/site.css`: colour and type tokens at the top. A night at the cinema: velvet, ivory, Harvard crimson and brass, Bodoni Moda titles |
 | The motion | `app/lib/cinema.ts`: GSAP ScrollTrigger and Lenis, driven by `data-cine="..."` attributes on the pages. Off when the reader asks for reduced motion; every page reads fully without it |
 | The large pictures | `app/content/images.ts`: one slot per picture. Today each shows a placeholder the owner already made. The Image brief page (`/image-brief`) lists what each final picture should show, its size and a prompt |
-| The pages | `app/routes/`: home, one tool page, About Bradley, not found |
+| The pages | `app/routes/`: home (Bradley), research, practical-ai (the `/tools` page), one tool page, About Bradley, not found |
 | How it is published | [`.github/workflows/pages.yml`](../../.github/workflows/pages.yml) and [`workshop/tools/build_site.py`](../../workshop/tools/build_site.py) |
 | The plan, with a definition of done for each step | [`workshop/plans/site-studio/`](../../workshop/plans/site-studio/README.md) |
 
 ## Rules for this site
 
-1. **Every fact comes from a README,** or for About Bradley, from Bradley himself. Change the README first, then `tools.ts`. Never invent a
+1. **Every fact comes from a README,** or for Bradley's own pages (home, Research, About), from Bradley himself. Those pages are a personal profile, not a services page: a vision and a few proof points with brief evidence. Early access to the research is by invitation, for Bradley's connections and partners only; everyone else connects on LinkedIn with a note. No offers of free help. No catalogue, no prices, and no statements about who has not used something. His title is Agentic Architect and Researcher; "agentic engineer" is also allowed. Bradley decided this on 22 November 2026 for a global audience, knowing both words are protected titles in Ontario. Research numbers come only from Bradley; a projection is labelled as one. Change the README first, then `tools.ts`. Never invent a
    number, a quote, a customer or a result. A status says who has and has not tried the tool.
 2. **The voice is Bradley's practical instructor voice:** the core idea in one sentence, an
    everyday analogy, then the detail. Short sentences. No em dashes. Sentence case headings.

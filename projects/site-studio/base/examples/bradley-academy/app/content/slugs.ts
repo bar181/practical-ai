@@ -5,11 +5,15 @@ export const toolSlugs = [
   "web-sections",
   "tone-studio",
   "artifact-studio",
+  // Then put it online
+  "site-studio",
   // Everyday jobs
   "document-to-action-brief",
   "meeting-notes-to-actions",
   "write-in-my-voice",
   "learnings-database",
+  // Ask about any of them
+  "practical-ai-guide",
   "rare-find",
   // For builders
   "agentic-process",

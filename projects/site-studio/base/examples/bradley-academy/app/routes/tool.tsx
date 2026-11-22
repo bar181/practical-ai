@@ -167,7 +167,6 @@ function Side({ t }: { t: Tool }) {
         <div className="side-card">
           <h2 className="side-h">Status</h2>
           <p className="status-word">{t.status.label}, {t.status.date}</p>
-          <p>{t.status.text}</p>
         </div>
         {t.set ? (
           <div className="side-card">
@@ -183,7 +182,7 @@ function Side({ t }: { t: Tool }) {
           <ul className="plain-list">
             {t.explainer ? <li><SmartLink href={t.explainer}>The step-by-step explainer</SmartLink></li> : null}
             <li><a href={t.readme} rel="noopener">{site.labels.projectLink}</a></li>
-            <li><Link to="/#all-tools">All the tools</Link></li>
+            <li><Link to="/tools#all-tools">All the tools</Link></li>
           </ul>
         </div>
     </aside>
@@ -216,7 +215,7 @@ export default function ToolPage({ params }: Route.ComponentProps) {
         <div className="letterbox top" data-letterbox aria-hidden="true" />
         <div className="letterbox bottom" data-letterbox aria-hidden="true" />
         <div className="wrap hero-inner">
-          <p className="crumb" data-cine-after="0"><Link to="/" viewTransition>All tools</Link></p>
+          <p className="crumb" data-cine-after="0"><Link to="/tools" viewTransition>Practical AI</Link></p>
           <div className="tool-title" data-cine-after="0">
             <Glyph slug={t.slug} />
             <h1 id="tool-h">{t.name}</h1>

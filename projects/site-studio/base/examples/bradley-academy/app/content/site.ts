@@ -3,7 +3,7 @@
 
 export const site = {
   brand: "Bradley Academy",
-  product: "Practical AI",
+  product: "Bradley Ross, Agentic Architect and Researcher",
   url: "https://bar181.github.io/practical-ai",
   source: "https://github.com/bar181/practical-ai",
   sourceLabel: "bar181/practical-ai",
@@ -11,20 +11,23 @@ export const site = {
   previewImage: "/media/shared/bradley-ross-avatar.webp",
   // Words used across pages, so a new site changes them here and nowhere else.
   labels: {
-    presents: "Bradley Academy presents",
+    presents: "Practical AI, from Bradley Academy",
     toolsHeading: "Nine tools. One job each.",
     toolsLead: "Each is a prompt you paste into the chatbot you already use. Open one to see what it does, who it is for, and real examples.",
     author: "Bradley Ross",
-    authorKicker: "Meet the author",
+    authorKicker: "Meet the instructor",
     authorPhoto: "shared/bradley-ross.jpg",
-    footerTagline: "Practical AI tools for the jobs you repeat",
+    // The illustrated avatar, Bradley with a robot assistant: used where the page is about teaching.
+    authorAvatar: "shared/bradley-ross-avatar.webp",
+    footerTagline: "Agentic systems, research and Practical AI",
     licence: "Free to use, change and share under the Apache 2.0 licence. All examples use invented businesses and data.",
     worksIn: "Free. Works in the chatbot you already use.",
-    homeTitle: "Bradley Academy: Practical AI tools for the jobs you repeat",
-    seeTools: "See the nine tools",
-    toolsListName: "The nine tools",
+    homeTitle: "Practical AI: free tools for the jobs you repeat | Bradley Academy",
+    seeTools: "See every tool",
+    toolsListName: "Every tool",
     sourceLink: "The tools on GitHub",
     builtWith: "Built with Site Studio, in React, published by GitHub Pages.",
+    operator: "Bradley Academy is operated by WiseGeo Inc., a federally incorporated Canadian company.",
     levelsHeading: "Three levels: start simple, grow when you are ready",
     projectLink: "The project on GitHub",
     readPrompt: "Read the prompt before you copy it",
@@ -32,7 +35,7 @@ export const site = {
     tryCardText: "Copy the prompt, paste it into the chatbot you already use, and see the result.",
   },
   description:
-    "Free Practical AI tools from Bradley Academy: expert work from the AI you already use, on the jobs you repeat. Paste one prompt into Claude, ChatGPT or Gemini to start.",
+    "Practical AI, free tools from Bradley Academy: expert work from the AI you already use, on the jobs you repeat. Paste one prompt into Claude, ChatGPT or Gemini to start.",
 };
 
 export const home = {
@@ -59,10 +62,45 @@ export const home = {
     ],
   },
   // The facts, as one line. Each number is from a README; numbers in {braces} are set in brass.
-  factsLine: "Nine free tools. Document to action brief, built with Agentic Process, scored {93} out of 100 in a blind pilot with one reviewer. They come out of courses taught to more than {900} students.",
+  factsLine: "Nine free tools. Document to action brief, built with Agentic Process, scored {93} out of 100 in a blind pilot. They come out of courses taught to more than {900} students.",
   starter: {
     heading: "Not sure where to start?",
     text: "Paste this into Claude, ChatGPT or Gemini. Your chatbot reads the tools and makes you a page on how they could help in your work.",
+  },
+};
+
+// The Practical AI page: the practical guide and the classroom behind the tools.
+export const practical = {
+  kicker: "Free tools, built from courses taught to more than 900 people, and used today by everyone from business owners to agentic developers.",
+  guide: {
+    heading: "The practical guide: your first tool in ten minutes",
+    intro: "You do not need to learn AI first. Pick one job you already do, and let one tool do the first draft while you stay in charge.",
+    steps: [
+      { title: "Pick one job you repeat", text: "A weekly report, meeting notes, a document someone sent you. Something you will do again next week.", time: "1 minute" },
+      { title: "Paste the tool's prompt", text: "Open the tool below, copy its prompt into Claude, ChatGPT or Gemini, and add your own notes or file.", time: "2 minutes" },
+      { title: "Check it like a manager", text: "Read the answer first, then the gaps it marked. Check every number against your notes before you use it.", time: "5 minutes" },
+      { title: "Save it as your standard", text: "Keep the instructions in a Project, a Gem or a skill, so next week starts from the same standard, not a blank page.", time: "2 minutes" },
+    ],
+    checkHeading: "Every tool keeps the same promises",
+    check: [
+      "The answer comes first, then the detail.",
+      "Nothing is invented. Anything missing is marked for you to fill.",
+      "Nothing is sent, posted, paid or published without you.",
+    ],
+  },
+  // Agentic office hours: the questions people would bring to office hours, answered by their own AI
+  // from the Practical AI repository, through the Practical AI guide (projects/practical-ai-guide/).
+  officeHours: {
+    heading: "Agentic office hours",
+    text: "My office hours run on AI. Copy the prompt into your AI assistant, chatbot or coding tool, then ask it anything about Practical AI. It answers from the tools themselves and names the file it used.",
+    prompt: `Read https://raw.githubusercontent.com/bar181/practical-ai/main/projects/practical-ai-guide/base/SKILL.md and follow it.
+My job or question: [write it here]`,
+    next: "How it works: the Practical AI guide gives your AI an index of every tool. A chat window on this page is planned.",
+  },
+  classroom: {
+    kicker: "From the classroom",
+    heading: "Taught first, then turned into tools",
+    text: "I have designed 14 courses and taught more than 900 people across over 40 cohorts, from small business owners to teams at leading agentic companies. The method is first principles and core ideas, then you build your own tools. Participants report saving an average of 3.5 hours a week.",
   },
 };
 
@@ -70,18 +108,30 @@ type Step = { step: string; title: string; text: string; link?: { href: string; 
 
 export const about = {
   title: "Bradley Ross",
-  role: "Agentic AI architect and developer, for businesses of every size, from start-up to enterprise.",
-  lead: "Bradley Ross is an agentic AI architect and developer for businesses of every size, from start-up to enterprise.",
-  specialty: "His specialty is deterministic AI, and advanced research into AI with learning transfer abilities.",
+  role: "Agentic Architect and Researcher, from ten-person businesses to enterprise teams and research labs.",
+  lead: "Bradley Ross is an agentic architect, researcher and educator, working with funded startups, research labs and engineering teams.",
+  specialty: "My specialty is deterministic AI, and research into AI that keeps what it learns and carries it into new problems.",
   // One line of work, from open code to the classroom.
-  kicker: "About the author",
+  kicker: "About",
   pathHeading: "From open code, to research, to the classroom",
-  pathLead: "One line of work. What he builds in the open becomes what he researches, and what he researches becomes what he teaches.",
+  pathLead: "One line of work. What I build in the open becomes what I research, and what I research becomes what I teach.",
   pathButton: "From research to the classroom",
   credentialsHeading: "Credentials",
-  whyHeading: "Why these tools",
+  record: {
+    heading: "The path here",
+    lead: "Twenty-five years, from the numbers to the machines that work with them.",
+    steps: [
+      { when: "Finance", title: "Accountant", text: "A management accountant (CMA) first: numbers, controls and audit trails." },
+      { when: "At 27", title: "Self-taught programmer", text: "Taught myself to program, then automated analysis at large scale." },
+      { when: "Data", title: "Data science", text: "Moved into data science and earlier forms of AI." },
+      { when: "2016", title: "Founded WiseGeo", text: "Targeted marketing tools and customer data platforms, then practical AI for companies." },
+      { when: "2026", title: "Harvard ALM, Digital Media Design", text: "Completed in May 2026, alongside ten terms as a Harvard CS50 Teaching Fellow." },
+      { when: "Now", title: "Agentic architecture and research", text: "Deterministic agentic systems for teams, and research into AI that keeps what it learns. Claude Certified Architect, Professional." },
+    ],
+  },
+  whyHeading: "Connect",
   contactButton: "Connect on LinkedIn",
-  metaDescription: "Bradley Ross is an agentic AI architect and developer for businesses of every size. His specialty is deterministic AI. Creator of the Practical AI tools and AISP.",
+  metaDescription: "Bradley Ross is an Agentic Architect and Researcher. His specialty is deterministic AI and research into AI that keeps what it learns. Creator of AISP, BAR Observatory and the Practical AI tools.",
   pipeline: <Step[]>[
     {
       step: "Open core",
@@ -92,7 +142,7 @@ export const about = {
     {
       step: "Research",
       title: "Deterministic AI, and AI that transfers what it learns",
-      text: "In his tests, instructions written in plain prose left 40 to 65 percent of their meaning open to interpretation. Written in AISP, under 2 percent. He leads advanced agentic research on deterministic AI and speaks on it as a keynote speaker.",
+      text: "On an ambiguity measure, prose instructions scored 40 to 60 percent; the same instructions in AISP, under 2 percent. I lead advanced agentic research on deterministic AI and speak on it as a keynote speaker.",
     },
     {
       step: "Instruction",
@@ -104,10 +154,9 @@ export const about = {
     { title: "Harvard", text: "ALM in Digital Media Design, with a 4.0 in every class and a capstone nominated for capstone of the graduating class. A Graduate Programming Certificate. Ten terms as a CS50 Teaching Fellow." },
     { title: "Anthropic", text: "Claude Certified Architect, Professional." },
     { title: "Agentics Foundation", text: "Founding Director and Education Director of a global foundation, now in 60 locations, that helps people build the skills for better jobs." },
-    { title: "WiseGeo", text: "Founder, since 2016. WiseGeo helps companies find, build and adopt practical AI." },
+    { title: "WiseGeo", text: "Founder, since 2016. WiseGeo helps companies find, build and adopt practical AI. Bradley Academy is operated by WiseGeo Inc., a federally incorporated Canadian company." },
     { title: "Twenty-five years", text: "Across finance, software architecture, data science and agentic engineering. A former CMA." },
   ],
-  why:
-    "These tools come out of that teaching: what people ask for most, in the form that worked in the room. Bradley Academy is where they live for people who will never open GitHub. The source code stays open at bar181/practical-ai, for builders who want to look inside or make their own.",
+  why: "Founding Director of the Agentics Foundation, a global community of more than 100,000 agentic developers, researchers and builders. Early access to the research is by invitation, for my connections and partners. Connect on LinkedIn with a short note.",
   contact: "More information, training or feedback: connect on LinkedIn.",
 };

@@ -1,5 +1,9 @@
 # Quality results: Write and edit in my voice
 
+**22 November 2026: in use.** Bradley reports that people other than the author now use this
+project, from business owners to agentic developers. Their results are not recorded here yet. The
+checks below were run by the author and by fresh Claude sessions; the dates on them still hold.
+
 **Who has tried it:** its author, through fresh Claude sessions that had only the skill and one
 test case. **Not yet tried:** ChatGPT, Gemini, a saved voice guide (Level 2), real writing samples,
 and anyone other than the author. All people, businesses and samples are invented.

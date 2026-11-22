@@ -9,7 +9,7 @@ Free tools for the jobs you repeat, for business people and developers alike.</p
   <a href="#what-is-inside"><img src="assets/images/btn-projects.svg" height="48" alt="See the projects"></a>
 </p>
 
-<p align="center"><b>Free</b> &nbsp;·&nbsp; <b>Open source</b> &nbsp;·&nbsp; <b>10 projects</b><br><b>Four in user testing, six new and tested by their author</b></p>
+<p align="center"><b>Free</b> &nbsp;·&nbsp; <b>Open source</b> &nbsp;·&nbsp; <b>11 projects</b><br><b>All in use, by business owners to agentic developers</b></p>
 
 <p align="center"><sub>Each tool is a prompt you paste into your chatbot. Developers: the file formats, skills and connectors are at the bottom of this page.</sub></p>
 
@@ -19,11 +19,13 @@ Free tools for the jobs you repeat, for business people and developers alike.</p
   <a href="projects/web-sections/"><img src="assets/images/tiles/web-sections.svg" width="150" alt="Web Sections: the right sections for a website, in order"></a>
   <a href="projects/tone-studio/"><img src="assets/images/tiles/tone-studio.svg" width="150" alt="Tone Studio: your facts, in the tone your reader needs"></a>
   <a href="projects/artifact-studio/"><img src="assets/images/tiles/artifact-studio.svg" width="150" alt="Artifact Studio: notes in, a designer page out"></a>
+  <a href="projects/site-studio/"><img src="assets/images/tiles/site-studio.svg" width="150" alt="Site Studio: publish a website, from a shared page to your own domain"></a>
   <a href="projects/agentic-process/"><img src="assets/images/tiles/agentic-process.svg" width="150" alt="Agentic Process: a job you repeat, set up properly once"></a>
   <a href="projects/document-to-action-brief/"><img src="assets/images/tiles/document-to-action-brief.svg" width="150" alt="Document to action brief: a long document in, what to do and by when out"></a>
   <a href="projects/meeting-notes-to-actions/"><img src="assets/images/tiles/meeting-notes-to-actions.svg" width="150" alt="Meeting notes to actions: who is doing what, and who never agreed to"></a>
   <a href="projects/write-in-my-voice/"><img src="assets/images/tiles/write-in-my-voice.svg" width="150" alt="Write and edit in my voice: your draft in your own voice, every fact kept"></a>
   <a href="projects/learnings-database/"><img src="assets/images/tiles/learnings-database.svg" width="150" alt="Learnings database: stop making the same mistake twice"></a>
+  <a href="projects/practical-ai-guide/"><img src="assets/images/tiles/practical-ai-guide.svg" width="150" alt="Practical AI guide: agentic office hours, ask your AI about any tool"></a>
   <a href="projects/rare-find/"><img src="assets/images/tiles/rare-find.svg" width="150" alt="Rare Find: a daily trivia game where rare answers win"></a>
 </p>
 
@@ -119,10 +121,18 @@ Artifact Studio is the design step of three. **[Web Sections](projects/web-secti
 structure: the right sections for a site or page, in order, from a builder-style library with four
 sample sites to start from, plus post sizes and post previews. **[Tone Studio](projects/tone-studio/)** writes the words: your facts in
 the tone and story order your reader needs, from an investor deck to a goodbye email, with every
-fact checked, and [all seven tones on one page](projects/tone-studio/base/examples/index.html). Use all three for one page, or any one alone. Both are new and tested by their
-author only.
+fact checked, and [all seven tones on one page](projects/tone-studio/base/examples/index.html). Use all three for one page, or any one alone. Both are in use by other people.
 
 <p align="center"><img src="projects/web-sections/_build/img/design-set.svg" width="640" alt="The design set: Web Sections sets the structure, Tone Studio writes the words, Artifact Studio adds the look, colour, effects and motion. Use all three for one page, or any one alone."></p>
+
+### Site Studio, publish a website
+
+**From a shared page to your own domain, with your AI.** Level 1 shares the page your chatbot made as
+a link. Level 2 publishes it on GitHub Pages or Vercel with your own domain. Level 3 adds Cloudflare
+or Google Cloud and a Supabase database with sign-in. The worked example is
+[Bradley Academy](https://bar181.github.io/practical-ai/), Bradley Ross's site with every tool:
+React, every page pre-rendered, published by GitHub Pages. The site is in use; the Level 1 to 3 publishing guides, written on 22 November 2026 from each
+provider's documentation, are not yet followed by anyone. [The project](projects/site-studio/) · [the plan](workshop/plans/site-studio/README.md).
 
 ### Agentic Process
 
@@ -177,6 +187,15 @@ for a team.
 </p>
 
 <p align="center"><a href="projects/learnings-database/"><b>Log your first lesson</b></a> &nbsp;·&nbsp; <a href="projects/learnings-database/level-2-files/gist/learnings-log.md"><b>The idea file for agents</b></a></p>
+
+### Practical AI guide: agentic office hours
+
+**Ask your AI about any tool, and get the answer with the file it came from.** One link gives any
+assistant the repository's index, [`llms.txt`](llms.txt): every project with its promise and links,
+for agents only, plus an approved summary about Bradley. A skill sets the rules: answer first, name
+the file, say when something is not covered. No custom agent or server; coding tools can connect
+through GitMCP. Claude passed three test questions with it; added on 22 November 2026, not yet followed by anyone else.
+[The project](projects/practical-ai-guide/) · [the plan](workshop/plans/practical-ai-guide/README.md).
 
 ### Rare Find, a side quest
 
@@ -256,29 +275,22 @@ is planned, not built yet.
 <details>
 <summary><b>Who has used it?</b></summary>
 
-Its author built and tested all ten projects in Claude, and used Artifact Studio for real for a
-client's course (the before and after above). Since 18 November 2026, other people have been testing
-Artifact Studio, Agentic Process, Document to action brief and Rare Find. Nobody else has used the
-other six yet. Results are not in yet.
+Its author built and tested all eleven projects in Claude, and used Artifact Studio for real for a
+client's course (the before and after above). Every project is now in use by other people, from
+business owners in Bradley's courses to agentic developers (reported by Bradley, 22 November 2026).
+Their results are not recorded here yet.
 
 </details>
 
-### Site Studio, the website
-
-**A real website for your work, made with your AI and hosted free.** Its first site is
-[Bradley Academy](https://bar181.github.io/practical-ai/): a home page and one page per tool, all
-nine of them, for people who never open GitHub. React, every page pre-rendered, published by GitHub
-Pages. [Build your own](projects/site-studio/base/BUILD-YOUR-OWN-SITE.md): seven steps, tried twice
-by a fresh agent. [The project](projects/site-studio/) · [the plan](workshop/plans/site-studio/README.md).
-
 ## Status
 
-**21 November 2026.** The author built all ten projects and tested them in Claude.
+**22 November 2026.** The author built all eleven projects and tested them in Claude.
 
-- **In user testing** with other people since 18 November: Artifact Studio, Agentic Process,
-  Document to action brief and Rare Find. Results are not in yet.
-- **New, tested by their author only:** the Learnings database, Meeting notes to actions, Write and
-  edit in my voice, Tone Studio, Web Sections and Site Studio.
+- **In use by other people,** all eleven projects, from business owners to agentic developers
+  (reported by Bradley). Artifact Studio, Agentic Process, Document to action brief and Rare Find
+  have been in user testing since 18 November. Results are not recorded here yet.
+- **Added on 22 November, not yet followed by anyone else:** Site Studio's publishing guides and the
+  Practical AI guide's index and skill.
 - **Not yet tried** in ChatGPT or Gemini.
 
 What comes next: [the priority list](docs/README.md#what-comes-next) · [every idea](workshop/plans/README.md).
@@ -287,6 +299,7 @@ The evidence: [Artifact Studio](projects/artifact-studio/quality-results/README.
 · [Learnings database](projects/learnings-database/quality-results/README.md) · [Meeting notes to actions](projects/meeting-notes-to-actions/quality-results/README.md)
 · [Write and edit in my voice](projects/write-in-my-voice/quality-results/README.md) · [Tone Studio](projects/tone-studio/quality-results/README.md)
 · [Web Sections](projects/web-sections/quality-results/README.md) · [Site Studio](projects/site-studio/quality-results/README.md)
+· [Practical AI guide](projects/practical-ai-guide/quality-results/README.md)
 · [Rare Find](projects/rare-find/quality-results/README.md).
 
 ## About Bradley Ross

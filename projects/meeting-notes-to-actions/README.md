@@ -7,7 +7,7 @@ For whoever leaves the meeting and has to send the notes.</p>
 
 <p align="center"><a href="#try-it-now"><img src="_build/img/btn-try.svg" height="48" alt="Try it with one prompt"></a></p>
 
-<p align="center"><b>Free</b> &nbsp;·&nbsp; <b>No setup</b> &nbsp;·&nbsp; <b>Your own chatbot</b><br><b>Tested in Claude</b> &nbsp;·&nbsp; <b>New: no one else has used it yet</b></p>
+<p align="center"><b>Free</b> &nbsp;·&nbsp; <b>No setup</b> &nbsp;·&nbsp; <b>Your own chatbot</b><br><b>Tested in Claude</b> &nbsp;·&nbsp; <b>In use by other people</b></p>
 
 Meetings end with "someone should" and "let's look at that soon". A week later, nobody did, because
 nobody agreed to. Your meeting tool's summary lists the actions; it does not tell you which ones
@@ -92,7 +92,7 @@ the [Learnings database](../learnings-database/). Nothing is sent without you.
 
 **20 November 2026: new.** Built by its author with [Agentic Process](../agentic-process/) and tested
 in fresh Claude sessions on three invented meetings. [The evidence](quality-results/README.md).
-**Not yet tried:** ChatGPT, Gemini, house rules, a real meeting, and use by anyone else. All
+**Users:** In use by people other than the author, from business owners to agentic developers (reported by Bradley, 22 November 2026); their results are not recorded here yet. **Not yet tried:** ChatGPT, Gemini and house rules. All
 meetings, people and businesses in the examples are invented.
 
 **Are you an AI agent?** Read [AGENTS.md](AGENTS.md).

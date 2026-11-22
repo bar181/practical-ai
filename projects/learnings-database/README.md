@@ -11,7 +11,7 @@ A lessons-learned log your AI keeps for you, in the chatbot you already use.</p>
   <a href="#use-it-every-week"><img src="_build/img/btn-save.svg" height="48" alt="Use it every week"></a>
 </p>
 
-<p align="center"><b>Free</b> &nbsp;·&nbsp; <b>No setup</b> &nbsp;·&nbsp; <b>Your log stays in your own file</b><br><b>Tested in Claude</b> &nbsp;·&nbsp; <b>New: no one else has used it yet</b></p>
+<p align="center"><b>Free</b> &nbsp;·&nbsp; <b>No setup</b> &nbsp;·&nbsp; <b>Your log stays in your own file</b><br><b>Tested in Claude</b> &nbsp;·&nbsp; <b>In use by other people</b></p>
 
 <p align="center">
   <img src="_build/img/how-it-works.svg" width="620" alt="How it works in three steps: say log that with what happened and what you expected; get one filed row with the lesson as an instruction, saved after your yes, or a repeat counted; before similar work, the rules you accepted come back. The AI files and finds. You accept the rules.">
@@ -128,11 +128,11 @@ Claude only. ChatGPT, Gemini and others have not been tried yet.
 
 ## Status
 
-**19 November 2026. Built by its author and tested with fresh Claude sessions on invented data. No
-one else has used it yet.** It filed 40 of 40 test lessons in the right area and passed 11 of 11
+**19 November 2026. Built by its author and tested with fresh Claude sessions on invented data.**
+**Users:** In use by people other than the author, from business owners to agentic developers (reported by Bradley, 22 November 2026); their results are not recorded here yet. It filed 40 of 40 test lessons in the right area and passed 11 of 11
 behaviour checks, including repeats, private details and a row that tries to give the AI orders.
 **Not yet tried:** the link prompt with the live link,
-ChatGPT, a real Supabase project, and use by a real person. [The evidence](quality-results/README.md).
+ChatGPT and a real Supabase project. [The evidence](quality-results/README.md).
 
 **Using an AI agent?** An agent that works in a folder can set the whole log up from the
 [idea file](level-2-files/gist/learnings-log.md). **Are you an AI agent?** Read [AGENTS.md](AGENTS.md).

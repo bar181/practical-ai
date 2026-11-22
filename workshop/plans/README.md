@@ -37,8 +37,8 @@ tools faster to build, safer to run or easier to trust.
 | Project | What it does | Where it stands |
 | --- | --- | --- |
 | Artifact Studio | The design step: looks, effects, components and motion for a report, deck, post or page | **Ready:** [project](../../projects/artifact-studio/) · [split plan](artifact-studio-split/) |
-| Tone Studio | Content rewritten in the tone and story order a reader needs, with every fact kept | **Ready, tested by its author only:** [project](../../projects/tone-studio/) · [plan](tone-studio/) |
-| Web Sections | The sections of a website or page, chosen by intent and built from a responsive library | **Ready, tested by its author only:** [project](../../projects/web-sections/) · [plan](web-sections/) |
+| Tone Studio | Content rewritten in the tone and story order a reader needs, with every fact kept | **Ready, in use:** [project](../../projects/tone-studio/) · [plan](tone-studio/) |
+| Web Sections | The sections of a website or page, chosen by intent and built from a responsive library | **Ready, in use:** [project](../../projects/web-sections/) · [plan](web-sections/) |
 | Agentic Process | Turns a repeated job into a tested tool: a README, one `SKILL.md`, a worked example | **Ready:** [project](../../projects/agentic-process/) |
 | Learnings database | One row per lesson learned, filed by type of learning and topic, read before similar work starts. A spreadsheet at level 1, smart filing at level 2, a real database at level 3 | **Built, 19 Nov 2026:** [project](../../projects/learnings-database/) · [plan](learning-system/) · first example: [learning log](../../projects/agentic-process/base/examples/learning-log/) |
 | Task and dependency graph | A goal becomes tasks, with what is ready and what is blocked | [Plan](task-graph/) |
@@ -61,7 +61,8 @@ supplies judgement and approves.
 | Client onboarding kit | A welcome pack and checklist for each new client | [Plan](client-onboarding-kit/) |
 | Client project tracking site | A page each client opens to see where their project stands | [Plan](client-project-portal/) |
 | Website chatbot | A site assistant that answers from your notes and captures enquiries | [Plan](website-chatbot/) |
-| Site Studio | A real website for your work, made with your AI and hosted free on GitHub Pages. Its first site is Bradley Academy, with the Practical AI tools. Replaces Publishing a website | [Plan](site-studio/), building as project 6 |
+| Site Studio | Publish a website, from a shared page to your own domain, with Bradley Academy as the worked example. Replaces Publishing a website | **Building:** [project](../../projects/site-studio/) · [plan](site-studio/) |
+| Practical AI guide: agentic office hours | Answers any question about the Practical AI tools and Bradley's work from the repository, naming the file; Level 3 is a chat window on Bradley.academy with his avatar | **Built, Levels 1 and 2:** [project](../../projects/practical-ai-guide/) · [plan](practical-ai-guide/) |
 | Short video guide | The right route for a short video, finished in under 30 minutes | [Draft](../drafts/short-video/) · [plan](short-video/) |
 | Training explainer with avatar | A topic becomes a taught video in a chosen teaching style | [Draft](../drafts/training-explainer/) · [plan](training-explainer/) |
 | Training website | A course site with lessons, a schedule and an assistant | [Plan](training-website/) |

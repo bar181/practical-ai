@@ -44,6 +44,8 @@ jobs:
       - name: The committed pages match their source
         # Artifact Studio's index.json carries the build date, so only the published pages are compared.
         run: git diff --exit-code -- projects/rare-find/base/ projects/artifact-studio/showcase.html projects/artifact-studio/components.html projects/artifact-studio/base/
+      - name: The index for AI agents (llms.txt) matches every project README
+        run: python3 projects/practical-ai-guide/_build/build_index.py --check
       - name: Install the test browser
         run: |
           pip install playwright
