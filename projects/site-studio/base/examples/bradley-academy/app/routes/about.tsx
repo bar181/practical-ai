@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import type { Route } from "./+types/about";
 import { about, site } from "../content/site";
 import { SceneImage } from "../components/Scene";
@@ -74,7 +75,10 @@ export default function About() {
         <div className="wrap narrow" data-cine="reveal">
           <h2 id="why-h" data-cine-item>{about.whyHeading}</h2>
           <p className="reel-lead" data-cine-item>{about.why}</p>
-          <p data-cine-item><a className="btn btn-light" href={site.linkedin} rel="noopener">{about.contactButton}</a></p>
+          <p data-cine-item className="actions">
+            <a className="btn btn-light" href={site.linkedin} rel="noopener">{about.contactButton}</a>
+            <Link className="btn btn-ghost" to="/research#early-access" viewTransition>Early access</Link>
+          </p>
         </div>
       </section>
     </>

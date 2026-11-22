@@ -1,45 +1,56 @@
 # Site Studio
 
-<h3 align="center">A real website for your work, made with your AI, hosted free.</h3>
+<h3 align="center">Publish a website: from a shared page to your own domain, with your AI.</h3>
 
-<p align="center">For people whose customers will never open GitHub.</p>
+<p align="center">For anyone who has made a page with AI and wants it online.</p>
 
-<p align="center"><b>Free</b> &nbsp;·&nbsp; <b>React</b> &nbsp;·&nbsp; <b>Hosted free on GitHub Pages</b><br><b>Building</b> &nbsp;·&nbsp; <b>First site: Bradley Academy</b></p>
+<p align="center"><b>Free to start</b> &nbsp;·&nbsp; <b>Three levels</b> &nbsp;·&nbsp; <b>Worked example: Bradley Academy</b></p>
 
-GitHub is a workshop. Builders are happy there, but most people never walk into a workshop. They
-want a shop front: what each thing does, why it helps, and one button to try it. Site Studio builds
-the shop front.
+**The core idea:** pick the smallest way online that does the job, then move up only when the site
+needs more.
 
-- **For people who never open GitHub.** A home page that says what you do, and one page per
-  product that explains it in plain words, with real examples in tabs.
-- **Made with your AI, from what you already wrote.** The words come from your READMEs, so the site
-  and the code never disagree.
-- **Free to host, yours to grow.** React, every page pre-rendered for search engines, published by
-  GitHub Pages. Add your own domain later.
+**Think of it as** hanging a painting. A pin board anyone can glance at (share a link from your
+chatbot), a frame in your own hallway (your own address on GitHub Pages or Vercel), or a gallery with
+a guard at the door (a platform with a database and sign-in).
 
-**The first site is its author's own:** [Bradley Academy](https://bar181.github.io/practical-ai/),
-with every Practical AI tool. It goes live when this project is merged.
+- **Level 1 takes ten minutes.** Share the page your chatbot made as a link. No account to set up.
+- **Level 2 is yours for good.** A free address that updates every time you save, then your own
+  domain.
+- **Level 3 when the site must remember.** Cloudflare or Google Cloud to host, Supabase for the
+  database and login.
 
-## Get started
+**The worked example is this repository's own site:** [Bradley Academy](https://bar181.github.io/practical-ai/),
+Bradley Ross's personal site with every Practical AI tool, built in React and published by GitHub
+Pages.
 
-**Today: see the site.** Open [bradley-academy](https://bar181.github.io/practical-ai/) once it is
-live, or run it on your computer:
+## Get started: try it now
+
+Copy this into Claude, ChatGPT or Gemini and fill in the brackets. It picks the level and walks you
+through each click.
+
+```
+Read https://github.com/bar181/practical-ai/blob/main/projects/site-studio/base/SKILL.md and follow it.
+I made: [a page in Claude, ChatGPT or Gemini / an HTML file / a React site].
+Who should see it: [anyone I send the link to / the public, under my own domain].
+It must: [only show content / keep data or let people sign in].
+```
+
+Chatbot cannot open links? Open [`base/SKILL.md`](base/SKILL.md), press **Raw**, copy all of it into
+a new chat, then answer its three questions.
+
+| Level | For | What you do | Guide |
+| --- | --- | --- | --- |
+| **1. Share it** | Anyone with a page made in a chatbot | Share the Claude artifact, ChatGPT canvas or Gemini canvas as a link | [The skill](base/SKILL.md) |
+| **2. Publish it** | Someone who wants a lasting address and their own domain | GitHub Pages step by step, your own domain, or Vercel as the easiest import | [Level 2](level-2-files/README.md), and [Build your own site](base/BUILD-YOUR-OWN-SITE.md) for a React site like this one |
+| **3. Build on a platform** | A site that keeps data or lets people sign in | Cloudflare or Google Cloud (Firebase Hosting) to host, Supabase for the database and login | [Level 3](level-3-files/README.md) |
+
+**Run the example on your computer:**
 
 ```sh
 cd projects/site-studio/base/examples/bradley-academy
 npm install
 npm run dev
 ```
-
-**Build your own:** [the step by step](base/BUILD-YOUR-OWN-SITE.md), from a new GitHub repository to a
-live address on GitHub Pages, with a prompt that hands the whole job to a coding agent. Written
-from how this site is built; not yet tried end to end by anyone.
-
-| Level | For | What it will do |
-| --- | --- | --- |
-| **1. Make it in your chatbot** | An owner with notes and no developer | A one-page site, a multi-page site, or a showcase page with photo effects, from one prompt in Claude, ChatGPT or Gemini |
-| **2. Make it your standard** | Someone who updates the site every month | Skills that keep every page in the same voice and look, with a check before anything goes out |
-| **3. Your own React site on GitHub** | A builder with a coding agent | This site as a template: your content in one folder, a free address on GitHub Pages, your own domain when you are ready |
 
 ## How it is built
 
@@ -72,8 +83,22 @@ Write and edit in my voice), so the site lists nine tools. Artifact Studio's pag
 the design step, with the new cinematic effects. Checked by an agent in headless Chrome at phone and
 desktop width; the reviewers have not scored these pages.
 
-**No person has used it, and it is not live until the owner merges it.** The guide was followed twice by
-a fresh agent for an invented bakery; the publish step itself has not been tried.
+**22 November 2026: rebuilt as Bradley's own site.** The home page now presents Bradley Ross,
+Agentic Architect and Researcher, for research labs and funded startups, with a new Research page. Practical AI moved to its own section at `/tools`, with a practical guide added. Built and
+checked by Claude at phone and desktop width, with two rounds of independent agent review. Not yet
+reviewed by Bradley, and not merged.
+
+**22 November 2026, later:** office hours removed. The site is now a personal profile: research
+milestones built on AISP, a one-line network note, and early access for research groups and partners
+through LinkedIn. Built and checked by Claude at phone and desktop width; not rescored, not reviewed by
+Bradley, and not merged.
+
+**22 November 2026, latest:** Site Studio became the publish-a-website lesson. A skill for any
+chatbot (Level 1), GitHub Pages, your own domain and Vercel (Level 2), and Cloudflare, Google Cloud
+and Supabase (Level 3), written from each provider's documentation with dated sources. No person and
+no agent has followed the Level 1 to 3 guides yet.
+
+**Users:** In use by people other than the author, from business owners to agentic developers (reported by Bradley, 22 November 2026); their results are not recorded here yet. The React guide was also followed twice by a fresh agent for an invented bakery.
 [The evidence](quality-results/README.md).
 
 ## About Bradley Ross

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 380" role="img" aria-label="Practical AI guide: agentic office hours" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif">
+<rect x="2" y="2" width="336" height="376" rx="32" fill="#ffffff" stroke="#d0d7de" stroke-width="3"/>
+<rect x="110" y="34" width="120" height="120" rx="28" fill="#5b3f8c"/>
+<g transform="translate(110 34) scale(0.46875)"><path d="M52 64h120a16 16 0 0 1 16 16v62a16 16 0 0 1-16 16h-62l-34 28v-28h-24a16 16 0 0 1-16-16V80a16 16 0 0 1 16-16z" fill="#fff"/><rect x="70" y="88" width="84" height="12" rx="6" fill="#c9b8e6"/><rect x="70" y="112" width="58" height="12" rx="6" fill="#c9b8e6"/><circle cx="190" cy="176" r="34" fill="#f2c94c"/><path d="M175 176l11 11 20-22" stroke="#5b3f8c" stroke-width="10" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g>
+<text x="170" y="214" text-anchor="middle" fill="#0c2340" font-size="30" font-weight="800">Practical AI guide</text>
+<text x="170" y="280" text-anchor="middle" fill="#3b4a5e" font-size="26" font-weight="600">Ask about any tool.</text>
+<text x="170" y="350" text-anchor="middle" fill="#5b3f8c" font-size="24" font-weight="800">Open ›</text>
+</svg>

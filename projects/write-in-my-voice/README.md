@@ -7,7 +7,7 @@ For anyone whose emails and posts come out stiff or generic.</p>
 
 <p align="center"><a href="#try-it-now"><img src="_build/img/btn-try.svg" height="48" alt="Try it with one prompt"></a></p>
 
-<p align="center"><b>Free</b> &nbsp;·&nbsp; <b>No setup</b> &nbsp;·&nbsp; <b>Your own chatbot</b><br><b>Tested in Claude</b> &nbsp;·&nbsp; <b>New: no one else has used it yet</b></p>
+<p align="center"><b>Free</b> &nbsp;·&nbsp; <b>No setup</b> &nbsp;·&nbsp; <b>Your own chatbot</b><br><b>Tested in Claude</b> &nbsp;·&nbsp; <b>In use by other people</b></p>
 
 Ask a chatbot to "make this sound like me" and two things go wrong. It sounds like a chatbot, and
 it quietly changes things: "may" becomes "will", a date moves, an offer appears that you never made.
@@ -87,8 +87,7 @@ corrections update the guide after you approve them. Nothing is sent without you
 
 **20 November 2026: new.** Built by its author with [Agentic Process](../agentic-process/) and tested
 in fresh Claude sessions on three invented cases. [The evidence](quality-results/README.md).
-**Not yet tried:** ChatGPT, Gemini, a saved voice guide, real writing samples, and use by anyone
-else. All people, businesses and samples in the examples are invented.
+**Users:** In use by people other than the author, from business owners to agentic developers (reported by Bradley, 22 November 2026); their results are not recorded here yet. **Not yet tried:** ChatGPT, Gemini and a saved voice guide. All people, businesses and samples in the examples are invented.
 
 **Are you an AI agent?** Read [AGENTS.md](AGENTS.md).
 

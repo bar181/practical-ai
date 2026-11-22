@@ -11,7 +11,7 @@ For anyone writing a pitch, a deck, a one-pager or an announcement.</p>
   <a href="level-2-files/README.md"><img src="_build/img/btn-save.svg" height="48" alt="Save your own tone"></a>
 </p>
 
-<p align="center"><b>Free</b> &nbsp;·&nbsp; <b>No setup</b> &nbsp;·&nbsp; <b>Your own chatbot</b><br><b>Tested in Claude</b> &nbsp;·&nbsp; <b>New: no one else has used it yet</b></p>
+<p align="center"><b>Free</b> &nbsp;·&nbsp; <b>No setup</b> &nbsp;·&nbsp; <b>Your own chatbot</b><br><b>Tested in Claude</b> &nbsp;·&nbsp; <b>In use by other people</b></p>
 
 <p align="center"><img src="_build/img/how-it-works.svg" width="760" alt="How Tone Studio works: four facts from an invented bakery notice become a visionary slide, a board one-pager and a goodbye email. No fact is changed. Same facts, different order, nothing invented."></p>
 <p align="center"><sub>An illustration. The goodbye email is from a real test run; the slide and the one-pager are drawn to show the idea.</sub></p>
@@ -146,8 +146,7 @@ is shared.
 **21 November 2026: new.** Built by its author with [Agentic Process](../agentic-process/) from
 Artifact Studio's voice cards, tested in fresh Claude sessions on three invented cases, and shown
 in all seven tones as landing pages and posts.
-[The evidence](quality-results/README.md). **Not yet tried:** ChatGPT, Gemini, a brand tone file,
-real content, and use by anyone else. All people and businesses in the examples are invented.
+[The evidence](quality-results/README.md). **Users:** In use by people other than the author, from business owners to agentic developers (reported by Bradley, 22 November 2026); their results are not recorded here yet. **Not yet tried:** ChatGPT, Gemini and a brand tone file. All people and businesses in the examples are invented.
 
 **22 November 2026:** a new examples page shows the seven landing pages live, with each post and a
 "Use this prompt to create a page like this" box. The author built and checked it at phone and

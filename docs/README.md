@@ -1,13 +1,13 @@
 # Practical AI: what is ready, and what comes next
 
-A one-page summary for anyone deciding where to start. Updated 21 November 2026.
+A one-page summary for anyone deciding where to start. Updated 22 November 2026.
 
 ## What is ready
 
-Ten projects are built and ready to try. Other people have been testing Artifact Studio, Agentic
-Process, Document to action brief and Rare Find since 18 November 2026. The other six (the
-Learnings database, Meeting notes to actions, Write and edit in my voice, Tone Studio, Web Sections
-and Site Studio) are tested by their author only. Three are described below; the rest follow in the
+Eleven projects are built, and all are in use by people other than the author, from business owners
+to agentic developers (reported by Bradley, 22 November 2026). Artifact Studio, Agentic Process,
+Document to action brief and Rare Find have been in user testing since 18 November 2026. Results are
+not recorded here yet. Three are described below; the rest follow in the
 lists. Artifact Studio, Agentic Process, the Learnings database and Rare Find each have an explainer
 page in [`reports/`](reports/) (download the HTML file and open it in a browser).
 
@@ -35,8 +35,7 @@ only in Claude so far. [Open the project](../projects/artifact-studio/) ·
 
 **Split into three, 21 November 2026.** Artifact Studio stays the design step and gained eight
 cinematic effects. Two new projects hold the other steps: [Tone Studio](../projects/tone-studio/)
-for the words and [Web Sections](../projects/web-sections/) for the structure. Both are tested by
-their author only. [The split plan](../workshop/plans/artifact-studio-split/README.md).
+for the words and [Web Sections](../projects/web-sections/) for the structure. Both are in use by other people. [The split plan](../workshop/plans/artifact-studio-split/README.md).
 
 ### Agentic Process: teach your AI a job once
 
@@ -83,8 +82,8 @@ Jobs you already do, done faster with the chatbot you have. Each is one file and
 | # | Tool | What it will do for you | Where it stands |
 | --- | --- | --- | --- |
 | 1 | **Document to action brief** | Turn a notice, contract, tender or bill into what you must do, the dates and the open questions, each with the line it came from | **In user testing:** [project](../projects/document-to-action-brief/) |
-| 2 | **Write and edit in my voice** | Learn your style from three samples, then revise an email or post without changing a fact or a promise | **New, tested by its author only:** [project](../projects/write-in-my-voice/) |
-| 3 | **Meeting notes to actions** | Turn a transcript into decisions, tasks and a follow-up, and flag any owner or date nobody agreed | **New, tested by its author only:** [project](../projects/meeting-notes-to-actions/) |
+| 2 | **Write and edit in my voice** | Learn your style from three samples, then revise an email or post without changing a fact or a promise | **In use:** [project](../projects/write-in-my-voice/) |
+| 3 | **Meeting notes to actions** | Turn a transcript into decisions, tasks and a follow-up, and flag any owner or date nobody agreed | **In use:** [project](../projects/meeting-notes-to-actions/) |
 | 4 | **Research brief with checked sources** | Compare options on one page, with every claim linked to a source you can open | Early draft |
 | 5 | **Inbox triage and replies** | Sort the inbox into reply today, delegate and wait, and draft the two replies that matter most | Early draft |
 | 6 | **Customer issue helper** | Handle a late order or a refund from your one-page policy, and say when a manager should step in | Idea |
@@ -99,7 +98,7 @@ Support tools that make every other tool better. Each starts with a version a pe
 
 | # | Tool | What it will do for you | Where it stands |
 | --- | --- | --- | --- |
-| 1 | **Learnings database** | Record each lesson once, filed by area and project, and bring it back before similar work starts | **Built and tested in Claude by its author, 19 Nov 2026. No one else has used it yet:** [project](../projects/learnings-database/) · [explainer](reports/learnings-database.html) · [idea file](../projects/learnings-database/level-2-files/gist/learnings-log.md) |
+| 1 | **Learnings database** | Record each lesson once, filed by area and project, and bring it back before similar work starts | **In use; built and tested in Claude by its author, 19 Nov 2026:** [project](../projects/learnings-database/) · [explainer](reports/learnings-database.html) · [idea file](../projects/learnings-database/level-2-files/gist/learnings-log.md) |
 | 2 | **Task and dependency graph** | Turn a goal into tasks, and show what is ready and what is blocked | Plan |
 | 3 | **Decision support** | Take a decision from options to a recommendation with the working shown | Example built |
 | 4 | **Estimate to proposal** | Combine a request, notes and past jobs into a draft estimate and proposal | Early draft |
@@ -120,9 +119,10 @@ Support tools that make every other tool better. Each starts with a version a pe
 
 | Project | What it does for you | Where it stands |
 | --- | --- | --- |
-| **Tone Studio** | Your content rewritten in the tone and story order your reader needs: an investor deck, a board one-pager, a story, an explainer. Every fact kept | **New, tested by its author only:** [project](../projects/tone-studio/) |
-| **Web Sections** | The right sections for a website or page, in order, responsive, filled with your content and clear placeholders | **New, tested by its author only:** [project](../projects/web-sections/) |
-| **Site Studio** | A real website for your work, made with your AI and hosted free on GitHub Pages. Its first site is Bradley Academy, with every tool on this list | **Building:** cinematic version built by Claude, 20 Nov 2026. Six review rounds against a US$50,000 agency bar: UX 86, art direction 73. Not yet live or reviewed by the owner. [Project](../projects/site-studio/) · [plan](../workshop/plans/site-studio/README.md) |
+| **Tone Studio** | Your content rewritten in the tone and story order your reader needs: an investor deck, a board one-pager, a story, an explainer. Every fact kept | **In use:** [project](../projects/tone-studio/) |
+| **Web Sections** | The right sections for a website or page, in order, responsive, filled with your content and clear placeholders | **In use:** [project](../projects/web-sections/) |
+| **Site Studio** | Publish a website, from a shared page to your own domain: share an artifact (Level 1), GitHub Pages, your own domain or Vercel (Level 2), Cloudflare, Google Cloud and Supabase (Level 3). Worked example: Bradley Academy, with every tool on this list | **In use:** the cinematic site was built by Claude, 20 Nov 2026 (six review rounds: UX 86, art direction 73). The publish lesson for Levels 1 to 3 was written 22 Nov 2026 from provider documentation; not yet followed by anyone. [Project](../projects/site-studio/) · [plan](../workshop/plans/site-studio/README.md) |
+| **Practical AI guide** | Agentic office hours: ask your AI about any tool or Bradley's work, and get the answer with the file it came from. An index for AI agents (`llms.txt`) and a skill; a chat window on the site is planned | **In use:** three test questions passed, 22 Nov 2026. [Project](../projects/practical-ai-guide/) · [plan](../workshop/plans/practical-ai-guide/README.md) |
 
 The full list of ideas, sorted into everyday tasks, agent tools and hybrid projects, is in
 [the plans](../workshop/plans/README.md).

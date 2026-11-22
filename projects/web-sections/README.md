@@ -11,7 +11,7 @@ For anyone starting a website or a page, and for the AI building it.</p>
   <a href="base/template/sections.html"><img src="_build/img/btn-save.svg" height="48" alt="Open the section library"></a>
 </p>
 
-<p align="center"><b>Free</b> &nbsp;·&nbsp; <b>No setup</b> &nbsp;·&nbsp; <b>Your own chatbot</b><br><b>Tested in Claude</b> &nbsp;·&nbsp; <b>New: no one else has used it yet</b></p>
+<p align="center"><b>Free</b> &nbsp;·&nbsp; <b>No setup</b> &nbsp;·&nbsp; <b>Your own chatbot</b><br><b>Tested in Claude</b> &nbsp;·&nbsp; <b>In use by other people</b></p>
 
 <p align="center"><img src="_build/img/how-it-works.svg" width="760" alt="How Web Sections works: say what the page is for, get the sections in order (header, hero, about, gallery, contact, footer), and get one responsive page for phone and laptop. Structure first, then the words and the look."></p>
 
@@ -126,8 +126,8 @@ published.
 
 **21 November 2026: new.** Built by its author with [Agentic Process](../agentic-process/), with
 sections drawn from Artifact Studio and the Bradley Academy website, and tested in fresh Claude
-sessions on two invented sites. [The evidence](quality-results/README.md). **Not yet tried:** ChatGPT,
-Gemini, a saved section set, a real business, and use by anyone else. All businesses in the
+sessions on two invented sites. [The evidence](quality-results/README.md). **Users:** In use by people other than the author, from business owners to agentic developers (reported by Bradley, 22 November 2026); their results are not recorded here yet. **Not yet tried:** ChatGPT,
+Gemini and a saved section set. All businesses in the
 examples are invented. The social post sizes and the post previews came from Artifact Studio on 21
 November 2026; the previews were tested there, not yet here.
 

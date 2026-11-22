@@ -6,7 +6,7 @@ const BASE = import.meta.env.BASE_URL; // always ends with "/"
 export const media = (src: string) => `${BASE}media/${src}`;
 
 /** Routes the React app renders. Everything else under "/" is a published page outside the app. */
-export const isAppRoute = (href: string) => href === "/" || href === "/about" || href === "/image-brief" || href.startsWith("/tools/");
+export const isAppRoute = (href: string) => href === "/" || ["/about", "/research", "/tools", "/image-brief"].some((p) => href === p || href.startsWith(`${p}#`)) || href.startsWith("/tools/");
 
 /** A full address for a page outside the app, or an outside link left as it is. */
 export const pageHref = (href: string) => (href.startsWith("/") ? `${BASE}${href.slice(1)}` : href);
