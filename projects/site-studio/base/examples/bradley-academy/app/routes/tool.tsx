@@ -38,9 +38,10 @@ function About({ t }: { t: Tool }) {
             <h2 id="show" data-cine-item>{t.show.heading}</h2>
             <ul className="show-cards">
               {t.show.cards.map((c) => (
-                <li key={c.title} data-cine-item>
+                <li key={c.title} data-cine-item className={c.href ? "has-link" : undefined}>
                   <img src={media(c.picture.src)} alt={c.picture.alt} loading="lazy" decoding="async" />
-                  <h3>{c.title}</h3>
+                  {/* With a link, the title carries it and the whole card is its tap target (CSS). */}
+                  <h3>{c.href ? <SmartLink href={c.href} className="card-link">{c.title}</SmartLink> : c.title}</h3>
                   <p>{c.text}</p>
                 </li>
               ))}
@@ -52,10 +53,15 @@ function About({ t }: { t: Tool }) {
           <section aria-labelledby="list" data-cine="reveal">
             <h2 id="list" data-cine-item>{t.list.heading}</h2>
             {t.list.intro ? <p data-cine-item>{t.list.intro}</p> : null}
-            <ul className="link-cards">
+            <ul className={t.list.items.some((it) => it.picture) ? "link-cards poster-cards" : "link-cards"}>
               {t.list.items.map((it) => (
                 <li key={it.href} data-cine-item>
-                  <SmartLink href={it.href}><strong>{it.title}</strong><span>{it.text}</span></SmartLink>
+                  <SmartLink href={it.href}>
+                    {/* The poster is a glimpse of the page the card opens; the words already name it. */}
+                    {it.picture ? <img src={media(it.picture)} alt="" loading="lazy" decoding="async" /> : null}
+                    <strong>{it.title}</strong>
+                    <span>{it.text}</span>
+                  </SmartLink>
                 </li>
               ))}
             </ul>
@@ -119,7 +125,7 @@ function About({ t }: { t: Tool }) {
                   <span className="level-num" aria-hidden="true">{l.level}</span>
                   <span>
                     <span className="level-name">Level {l.level}: {l.name}</span>
-                    <span className="level-meta">For {l.coreUser.charAt(0).toLowerCase() + l.coreUser.slice(1)}. Setup: {l.setup.toLowerCase()}.{l.built ? "" : " Not built yet."}</span>
+                    <span className="level-meta">For {l.coreUser.charAt(0).toLowerCase() + l.coreUser.slice(1)}. {l.built ? `Setup: ${l.setup.toLowerCase()}.` : "Not built yet."}</span>
                   </span>
                 </p>
                 <blockquote className="story">{l.story}</blockquote>
@@ -225,7 +231,9 @@ export default function ToolPage({ params }: Route.ComponentProps) {
           <p className="status-line" data-cine-after="3"><span className="status-word">{t.status.label}</span> {site.labels.worksIn}</p>
         </div>
       </section>
-      <Tabs items={items} label={`${t.name}: about and examples`} />
+      {/* Keyed by tool, so moving to another tool (a link, or Back) starts on its About tab instead of
+          keeping a tab id the new tool may not have, which left every panel hidden. */}
+      <Tabs key={t.slug} items={items} label={`${t.name}: about and examples`} />
     </>
   );
 }

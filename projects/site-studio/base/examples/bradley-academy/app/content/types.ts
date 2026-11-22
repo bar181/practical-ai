@@ -11,8 +11,11 @@ export type Level = {
   built: boolean;
 };
 
-/** A picture from the repository. `src` is relative to the site's media folder. */
-export type Picture = { src: string; alt: string; caption?: string; width?: number; height?: number };
+/**
+ * A picture from the repository. `src` is relative to the site's media folder. With `href`, the picture
+ * opens the live page it shows, and its caption names that page.
+ */
+export type Picture = { src: string; alt: string; caption?: string; width?: number; height?: number; href?: string };
 
 export type Block =
   | { kind: "text"; heading?: string; paras: string[] }
@@ -51,8 +54,12 @@ export type Tool = {
   /** For a tool that is one of a set: a short note and links to the others. */
   set?: { text: string; links: { href: string; label: string }[] };
   /** Show, don't tell: two or three picture cards in the About, right after the core idea. */
-  show?: { heading: string; cards: { picture: Picture; title: string; text: string }[] };
-  /** A linked list in the About, such as Tone Studio's seven tones, each linking to its example. */
-  list?: { heading: string; intro?: string; items: { title: string; text: string; href: string }[] };
+  /** With `href`, a card opens the live page its picture shows. */
+  show?: { heading: string; cards: { picture: Picture; title: string; text: string; href?: string }[] };
+  /**
+   * A linked list in the About, such as Tone Studio's seven tones, each linking to its example. With a
+   * `picture` (a still or capture of the page it opens), the list shows as a row of posters.
+   */
+  list?: { heading: string; intro?: string; items: { title: string; text: string; href: string; picture?: string }[] };
   tabs: Tab[];
 };
