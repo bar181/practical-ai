@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 360" role="img" aria-labelledby="t d" font-family="system-ui,-apple-system,Segoe UI,Helvetica,Arial,sans-serif">
+<title id="t">Before and after: one claim from an invented research summary</title>
+<desc id="d">Before, a research summary says: SlotPilot has no contract, cancel any time. After, the brief says: does not match. The page says 35 pounds a month on a 12-month minimum term.</desc>
+<rect width="800" height="360" rx="18" fill="#f4f6fa"/>
+<text x="40" y="56" font-size="15" font-weight="700" fill="#5b6b82" letter-spacing="1">BEFORE: A RESEARCH SUMMARY</text>
+<rect x="40" y="74" width="330" height="200" rx="14" fill="#fff" stroke="#c9d1de"/>
+<text x="64" y="128" font-size="22" fill="#0c2340">"SlotPilot has no</text>
+<text x="64" y="160" font-size="22" fill="#0c2340">contract, cancel</text>
+<text x="64" y="192" font-size="22" fill="#0c2340">any time."</text>
+<text x="64" y="244" font-size="15" fill="#5b6b82">Source: its pricing page</text>
+<path d="M390 174h28" stroke="#8fa0ba" stroke-width="3" stroke-dasharray="6 6"/>
+<path d="M418 166l10 8-10 8" fill="none" stroke="#8fa0ba" stroke-width="3"/>
+<text x="440" y="56" font-size="15" font-weight="700" fill="#0f5e63" letter-spacing="1">AFTER: THE BRIEF</text>
+<rect x="440" y="74" width="320" height="200" rx="14" fill="#fff" stroke="#b45309" stroke-width="2"/>
+<text x="464" y="120" font-size="20" font-weight="700" fill="#b45309">⚠ Does not match</text>
+<text x="464" y="160" font-size="17" fill="#33415c">The page says:</text>
+<text x="464" y="192" font-size="19" fill="#0c2340">"£35 a month on a</text>
+<text x="464" y="222" font-size="19" fill="#0c2340">12-month minimum term"</text>
+<text x="464" y="254" font-size="15" fill="#5b6b82">Flagged before the table</text>
+<text x="400" y="322" text-anchor="middle" font-size="17" font-weight="700" fill="#0c2340">Invented example. The words come from the page, not from memory.</text>
+</svg>

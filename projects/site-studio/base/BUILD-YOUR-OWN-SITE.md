@@ -73,7 +73,7 @@ Everything a visitor reads is in `app/content/`:
 | --- | --- |
 | `site.ts` | Your brand, your home page words, the `labels` used across pages, and your About page. The About page is a person's story: rewrite it all |
 | `slugs.ts` | The short names of your products or services, in the order you want them |
-| `tools.ts` | One entry per product. Every field is required: the promise, the core idea, an analogy, the benefits, how it is designed to help, who it is for, three levels, the try-it text, what it does not do, a status and the example tabs. Delete the nine Practical AI entries |
+| `tools.ts` | One entry per product. Every field is required: the promise, the core idea, an analogy, the benefits, how it is designed to help, who it is for, three levels, the try-it text, what it does not do, a status and the example tabs. Delete the ten Practical AI entries |
 | `images.ts` | One slot per large picture, including one opening scene and one "who it is for" scene per product (`tool-<slug>` and `who-<slug>`). Point each at your picture, or leave a placeholder and the Image brief page lists it |
 
 Products without their own line drawing get a simple framed star. To draw your own, add a path

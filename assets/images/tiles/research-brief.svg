@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 380" role="img" aria-label="Research brief with checked sources: compare options, every claim with its words" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif">
+<rect x="2" y="2" width="336" height="376" rx="32" fill="#ffffff" stroke="#d0d7de" stroke-width="3"/>
+<rect x="110" y="34" width="120" height="120" rx="28" fill="#0f5e63"/>
+<g transform="translate(110 34) scale(0.46875)"><rect x="44" y="52" width="150" height="150" rx="14" fill="#fff"/><path d="M44 92h150M44 132h150M44 172h150M104 52v150M150 52v150" stroke="#c6dadb" stroke-width="4"/><path d="M62 72h26M118 72h20M162 72h20" stroke="#0f5e63" stroke-width="8" stroke-linecap="round"/><path d="M114 112l7 7 13-14M160 112l7 7 13-14" stroke="#0f5e63" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M118 151h18" stroke="#c6dadb" stroke-width="8" stroke-linecap="round"/><path d="M166 145v14M166 165v1" stroke="#d97706" stroke-width="7" stroke-linecap="round"/>
+<circle cx="178" cy="172" r="30" fill="none" stroke="#f8c95b" stroke-width="12"/><path d="M200 194l22 22" stroke="#f8c95b" stroke-width="14" stroke-linecap="round"/></g>
+<text x="170" y="206" text-anchor="middle" fill="#0c2340" font-size="32" font-weight="800">Research brief</text>
+<text x="170" y="242" text-anchor="middle" fill="#0c2340" font-size="32" font-weight="800">with sources</text>
+<text x="170" y="296" text-anchor="middle" fill="#3b4a5e" font-size="26" font-weight="600">Every claim, checked.</text>
+<text x="170" y="350" text-anchor="middle" fill="#334155" font-size="24" font-weight="800">Open ›</text>
+</svg>

@@ -12,7 +12,7 @@ export const site = {
   // Words used across pages, so a new site changes them here and nowhere else.
   labels: {
     presents: "Practical AI, from Bradley Academy",
-    toolsHeading: "Nine tools. One job each.",
+    toolsHeading: "Twelve tools. One job each.",
     toolsLead: "Each is a prompt you paste into the chatbot you already use. Open one to see what it does, who it is for, and real examples.",
     author: "Bradley Ross",
     authorKicker: "Meet the instructor",
@@ -62,7 +62,7 @@ export const home = {
     ],
   },
   // The facts, as one line. Each number is from a README; numbers in {braces} are set in brass.
-  factsLine: "Nine free tools. Document to action brief, built with Agentic Process, scored {93} out of 100 in a blind pilot. They come out of courses taught to more than {900} students.",
+  factsLine: "Twelve free tools. Document to action brief, built with Agentic Process, scored {93} out of 100 in a blind pilot with one reviewer. They come out of courses taught to more than {900} students.",
   starter: {
     heading: "Not sure where to start?",
     text: "Paste this into Claude, ChatGPT or Gemini. Your chatbot reads the tools and makes you a page on how they could help in your work.",
