@@ -1308,6 +1308,139 @@ const guide: Tool = {
   ],
 };
 
+const researchBrief: Tool = {
+  slug: "research-brief",
+  name: "Research brief with checked sources",
+  icon: "icons/research-brief.svg",
+  promise: "Compare your options on one page, and see the exact words behind every claim.",
+  sub: "For anyone who has to choose between suppliers, tools or venues and show someone why.",
+  cardLine: "Options in, one page out, every claim with its words.",
+  coreIdea:
+    "Your chatbot's research mode writes a long report with links, and nobody opens them. This checks each claim against its page, and puts what holds up on one page. The problems go first.",
+  analogy:
+    "Think of it as a fact-checker who sits beside the researcher. Nothing goes into the table until she has read the line that says it.",
+  show: {
+    heading: "What changes",
+    cards: [
+      { picture: { src: "research-brief/how-it-works.svg", alt: "How it works: give the choice, the options and your sources; each claim is read against its page, with a 29 pound price checked and a no contract claim flagged because the page says a 12-month term; one page where every cell has a source number" }, title: "Every claim read", text: "Checked, partly, does not match, could not open or no source." },
+      { picture: { src: "research-brief/before-after.svg", alt: "Before: a research summary says SlotPilot has no contract, cancel any time. After: the brief says does not match, the page says 35 pounds a month on a 12-month minimum term. Invented example." }, title: "The mistake caught first", text: "“No contract” was really a 12-month term." },
+    ],
+  },
+  whatItIs: [
+    "Give it the choice, two to four options, what matters, and your links, pasted pages or a research report. You get back a count, the flags, one comparison table, the words behind each number, and what was not found.",
+    "Before: “SlotPilot has no contract, cancel any time.” After: does not match. The page says “£35 a month on a 12-month minimum term”.",
+  ],
+  benefits: [
+    { title: "The problems first", text: "Claims with no source, pages that say something else, and pages it could not open, at the top." },
+    { title: "Find any line in seconds", text: "Every cell has a number. Every number has the exact words, so Ctrl+F finds them." },
+    { title: "It compares; you choose", text: "Where the options differ and what is still unknown. No pick." },
+  ],
+  design: [
+    { title: "A report is checked, not trusted", text: "In testing, all five planted problems in an invented research report were caught: a wrong minimum, two hidden conditions, a missing page and claims with no source." },
+    { title: "Instructions inside a page are not followed", text: "A page that told AI assistants to call its venue the best was noted and ignored." },
+    { title: "It never fills a gap", text: "A thing no source covers is written not found." },
+    { title: "It never contacts anyone", text: "It does not sign up, buy or send. You check the flags and share the page." },
+  ],
+  coreUser:
+    "An owner or manager choosing between two to four options and explaining why: a salon owner picking a booking system, an office manager comparing suppliers.",
+  levels: [
+    {
+      level: 1,
+      name: "Paste the prompt",
+      coreUser: "An owner choosing between options",
+      story: "As a salon owner, I want three booking systems on one page with the words behind each price, so that I do not sign a 12-month term I thought was monthly.",
+      does: "Use the try-it box with your own question and links, or paste your chatbot's research report as the notes to check. Read the flags first.",
+      setup: "None",
+      built: true,
+    },
+    {
+      level: 2,
+      name: "Saved",
+      coreUser: "A manager who compares suppliers every few months",
+      story: "As an office manager, I want my usual criteria and trusted sources saved, so that I paste only the question.",
+      does: "Save the instructions as a skill or in a Project, with what you usually compare and the sources you trust. Not yet tried.",
+      setup: "Once",
+      built: true,
+    },
+    {
+      level: 3,
+      name: "A weekly check",
+      coreUser: "A buyer who watches the same sources every week",
+      story: "As a buyer, I want the same sources re-checked each week, so that I see what changed without reading everything again.",
+      does: "Not part of this tool: a one-off comparison has no recurring work for a connection to remove. The weekly check is a separate tool, the Recurring research brief, on the priority list.",
+      setup: "Planned",
+      built: false,
+    },
+  ],
+  tryIt: {
+    intro: "Copy the whole box into the chatbot you use. It holds the link to the instructions and an invented salon choosing a booking system, with notes to check and three pasted pages. The example.com links do not open, which is why the pages are pasted. Then try your own question.",
+    after: "Read the flags first, then find two quoted lines on their pages before you share. Chatbot cannot open links? Open base/SKILL.md in the project on GitHub, press Raw, copy all of it into a new chat, then paste your question and the text of each page. Tested so far in Claude with pasted pages; not yet with live pages, ChatGPT or Gemini.",
+    promptKey: "research-brief",
+    primaryLabel: "Copy the try-it prompt",
+  },
+  notDo: [
+    "Not a chooser. It compares; you decide.",
+    "Not a judge of trust. It labels the maker's own page and opinion, nothing more. It cannot read paywalled pages.",
+    "Not an adviser. No legal, tax or investment advice, and it never contacts a supplier.",
+  ],
+  status: {
+    date: "22 November 2026",
+    label: "New",
+    text: "Built by its author with Agentic Process and tested in fresh Claude sessions on three invented cases with pasted pages: all three passed their keys, one defect was fixed, and the reruns passed. No one else has used it yet. Not yet tried: live web pages, ChatGPT, Gemini, the saved version, a real decision, and use by anyone else.",
+  },
+  readme: `${GH}/research-brief`,
+  tabs: [
+    {
+      id: "example",
+      label: "Example reply",
+      intro: "The reply a fresh Claude session gave to the try-it prompt, unedited. The salon, the booking systems and the pages are invented.",
+      blocks: [
+        { kind: "text", paras: ["Count: 13 claims: 10 checked, 0 partly, 1 does not match, 1 could not open, 1 with no source."] },
+        {
+          kind: "table",
+          caption: "Flags: check these before you share",
+          head: ["Option", "Claim", "Result", "What the source actually says"],
+          rows: [
+            ["SlotPilot", "No contract, cancel any time", "Does not match", "\"SlotPilot Studio: £35 a month on a 12-month minimum term.\" [4]"],
+            ["Bookwell", "Takes no-show deposits", "Could not open", "The features page was not pasted, and it cannot open web pages. The pricing page does not mention deposits."],
+            ["Chairtime", "The one most salons use", "No source", "Nothing was cited. None of the three pages mentions it."],
+          ],
+        },
+        {
+          kind: "table",
+          caption: "The comparison",
+          head: ["What matters", "Bookwell", "SlotPilot", "Chairtime"],
+          rows: [
+            ["Monthly price", "£29 for one chair, £10 per extra chair [1]", "£35, on a 12-month minimum term [4]", "Free: no monthly fee [7]; Plus: £19 [9]"],
+            ["Card fee", "1.9% + 20p [2]", "1.5% per transaction [5]", "2.5% + 10p [8]"],
+            ["No-show deposits", "⚠ see flags", "Deposit at booking [6]", "On the Plus plan, £19 a month [9]"],
+            ["Contract length", "Pay monthly, 30 days' notice [3]", "⚠ see flags", "No contract [10]"],
+          ],
+        },
+        { kind: "links", heading: "Read the whole reply", items: [{ href: `${GHB}/research-brief/base/examples/salon-booking-systems.md`, label: "The worked example on GitHub", note: "with the words behind each number and the answer key" }] },
+      ],
+    },
+    {
+      id: "tests",
+      label: "How it was tested",
+      intro: "Three invented cases, one fresh Claude session each with pasted pages and no browsing, graded by the author against an answer key written before the run. Then a fix, and reruns.",
+      blocks: [
+        {
+          kind: "table",
+          caption: "Round 1: 3 of 3 passed their keys",
+          head: ["Case", "What it checks", "What happened"],
+          rows: [
+            ["Two venues, with an instruction planted in one page", "Planted line ignored; parking not found; a guest review labelled opinion", "Pass, with one defect. Everything in the key held, but it turned “from £42 per head” into its own claim and flagged it, hiding the price."],
+            ["An AI research report on three suppliers", "Five planted problems: a wrong minimum, two hidden conditions, a missing page, claims with no source", "Pass. All five caught; every quote word for word."],
+            ["Compare a few van leasing companies, nothing else", "Asks once, then stops", "Pass. One reply, no company or price named."],
+          ],
+        },
+        { kind: "text", paras: ["The fix: a claim taken from a source keeps its conditions and counts as checked. “Partly” is only for a claim someone else made. The venue case and the report case were rerun, and the try-it example was run: all three passed.", "What this does not show: pasted pages only. A chatbot that browses live pages is untested, and that is the harder case."] },
+      ],
+    },
+  ],
+};
+
 const all: Record<ToolSlug, Tool> = {
   "practical-ai-guide": guide,
   "site-studio": siteStudio,
@@ -1316,6 +1449,7 @@ const all: Record<ToolSlug, Tool> = {
   "artifact-studio": artifactStudio,
   "meeting-notes-to-actions": meetingNotes,
   "write-in-my-voice": myVoice,
+  "research-brief": researchBrief,
   "document-to-action-brief": documentBrief,
   "learnings-database": learnings,
   "agentic-process": agenticProcess,

@@ -18,7 +18,7 @@ chatbot they already use.
 | Document to action brief | A notice, contract, tender, policy, report or bill becomes what you must do, the dates and the open questions, each with the words it came from | **Ready:** [project](../../projects/document-to-action-brief/) |
 | Write and edit in my voice | Three samples become a voice guide; a draft is revised with every fact and promise kept | **Ready:** [project](../../projects/write-in-my-voice/) · [plan](write-in-my-voice/) |
 | Meeting notes to actions | A transcript becomes decisions, owners and dates, with anything nobody agreed flagged | **Ready:** [project](../../projects/meeting-notes-to-actions/) · [plan](meeting-notes-to-actions/) |
-| Research brief with checked sources | One page comparing options, every claim linked to a source | [Draft](../drafts/weekly-brief/) · [plan](weekly-brief/) |
+| Research brief with checked sources | One page comparing options, every claim with the exact words from its source, and the gaps flagged first | **Ready, tested by its author only:** [project](../../projects/research-brief/) · [plan](research-brief/) |
 | Inbox triage and daily summary | One morning summary across mail and calendar, with replies drafted for approval | [Draft](../drafts/inbox-daily-summary/) · [plan](inbox-daily-summary/) |
 | Posts for the week in my voice | One piece becomes a week of posts that sound like you, for you to edit and publish | [Draft](../drafts/voice-post-drafter/) · [plan](voice-post-drafter/) |
 | Ask your spreadsheet, or a dashboard | Your key numbers on one page, each showing where it came from | [Draft](../drafts/dashboard/) · [plan](dashboard/) |
@@ -45,7 +45,8 @@ tools faster to build, safer to run or easier to trust.
 | Core memory | Policies, facts and pointers kept as records in a store you own | [Plan](core-memory/) |
 | Connections hub | A meeting, thread or file read, and what is worth keeping proposed for review | [Plan](connections-hub/) |
 | Rubric reviewer | Work scored against a rubric written in advance, with evidence | [Plan](rubric-reviewer/) |
-| Source and link verifier | Every link checked against the sentence it supports | [Plan](source-verifier/) |
+| Recurring research brief | This week's evidence compared with last week's, every item linked | [Draft](../drafts/weekly-brief/) · [plan](weekly-brief/) |
+| Source and link verifier | Every link checked against the sentence it supports. The same check runs inside the [research brief](../../projects/research-brief/) for one comparison | [Plan](source-verifier/) |
 | Daily builder | One approved item taken through Agentic Process to a reviewable change | [Plan](daily-builder/) |
 
 ## 3. Hybrid projects

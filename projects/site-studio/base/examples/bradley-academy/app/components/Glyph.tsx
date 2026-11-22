@@ -14,6 +14,8 @@ const paths: Record<string, string> = {
   "meeting-notes-to-actions": "M8 11l3 3 5-6M21 11h17M8 22l3 3 5-6M21 22h17M8 31h7v7H8zM21 35h8M35 30v13M35 30h7l-2 3 2 3h-7",
   // A pen over lines of writing: your draft, in your voice
   "write-in-my-voice": "M8 14h18M8 21h14M8 28h16M8 35h8M24 40v-5l14-14 5 5-14 14zM35 24l5 5",
+  // A small table under a magnifying glass: every cell read against its source
+  "research-brief": "M7 9h26v26H7zM7 17h26M7 26h26M16 9v26M24 9v26M36 33a6 6 0 1 0 0.01 0M40.5 37.5l5 5M11 21l2 2 3-4",
   // An open log book with a ribbon
   "learnings-database": "M24 12c-5-3-11-4-17-3v29c6-1 12 0 17 3 5-3 11-4 17-3V9c-6-1-12 0-17 3zM24 12v29M31 9v12l3-2 3 2V9",
   // Three linked steps: a job set up properly once

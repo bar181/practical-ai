@@ -99,6 +99,10 @@ and Supabase (Level 3), written from each provider's documentation with dated so
 no agent has followed the Level 1 to 3 guides yet.
 
 **Users:** In use by people other than the author, from business owners to agentic developers (reported by Bradley, 22 November 2026); their results are not recorded here yet. The React guide was also followed twice by a fresh agent for an invented bakery.
+
+**22 November 2026:** one new tool page, Research brief with checked sources. Built and type-checked,
+and checked by an agent in headless Chrome at phone and desktop width: no sideways scrolling, no
+console errors. The reviewers have not scored it.
 [The evidence](quality-results/README.md).
 
 ## About Bradley Ross

@@ -4,10 +4,10 @@ A one-page summary for anyone deciding where to start. Updated 22 November 2026.
 
 ## What is ready
 
-Eleven projects are built, and all are in use by people other than the author, from business owners
+Twelve projects are built. Eleven are in use by people other than the author, from business owners
 to agentic developers (reported by Bradley, 22 November 2026). Artifact Studio, Agentic Process,
 Document to action brief and Rare Find have been in user testing since 18 November 2026. Results are
-not recorded here yet. Three are described below; the rest follow in the
+not recorded here yet. Research brief with checked sources is new, tested by its author only. Three are described below; the rest follow in the
 lists. Artifact Studio, Agentic Process, the Learnings database and Rare Find each have an explainer
 page in [`reports/`](reports/) (download the HTML file and open it in a browser).
 
@@ -84,7 +84,7 @@ Jobs you already do, done faster with the chatbot you have. Each is one file and
 | 1 | **Document to action brief** | Turn a notice, contract, tender or bill into what you must do, the dates and the open questions, each with the line it came from | **In user testing:** [project](../projects/document-to-action-brief/) |
 | 2 | **Write and edit in my voice** | Learn your style from three samples, then revise an email or post without changing a fact or a promise | **In use:** [project](../projects/write-in-my-voice/) |
 | 3 | **Meeting notes to actions** | Turn a transcript into decisions, tasks and a follow-up, and flag any owner or date nobody agreed | **In use:** [project](../projects/meeting-notes-to-actions/) |
-| 4 | **Research brief with checked sources** | Compare options on one page, with every claim linked to a source you can open | Early draft |
+| 4 | **Research brief with checked sources** | Compare options on one page, with every claim linked to a source you can open | **New, tested by its author only:** [project](../projects/research-brief/) |
 | 5 | **Inbox triage and replies** | Sort the inbox into reply today, delegate and wait, and draft the two replies that matter most | Early draft |
 | 6 | **Customer issue helper** | Handle a late order or a refund from your one-page policy, and say when a manager should step in | Idea |
 | 7 | **Ask your spreadsheet** | Explain what changed in a sales export and show the rows behind the answer | Early draft |

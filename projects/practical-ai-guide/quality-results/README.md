@@ -11,7 +11,7 @@ What was checked, by whom, and what was not.
 Checked by Claude, the author:
 
 - `llms.txt` is generated from every project's README by `_build/build_index.py`. Every one of the
-  11 projects is listed, with links to its README, its AGENTS.md and its skill. The script fails if
+  12 projects (11 on 22 November, then Research brief) is listed, with links to its README, its AGENTS.md and its skill. The script fails if
   a project is missing, and `--check` fails if the file is out of date.
 - Every link in the index points at a file that exists in the repository.
 - The skill was followed on three invented questions, recorded in
