@@ -98,10 +98,26 @@ privacy page; the fonts preloaded; phones get the still version of the motion.
 3. Load the motion libraries only on screens that use them: phones no longer run them, but still
    download them.
 
+## Messaging for a top-tier reader (22 November 2026)
+
+An outside reviewer read the site as decent, not top tier. The diagnosis: it spoke to every
+audience at once, led with credentials rather than work, and its numbers could not be checked. The
+home and Research pages now lead with the contribution (AISP and BAR Observatory), show only public
+evidence with a "Method and limits" link on each number, and end with a five-step "Check it
+yourself" path: the paper, the evidence, the validator, the agent guide, and BAR Observatory.
+Credentials moved to About. Small business moved below research.
+
+Still weak, and only fixable in the research repositories: the AISP README's "97x" figure does not
+follow from its own table (59% to 95% success), the tier distribution and benchmarks have no data
+or script behind them, and the paper is a submission draft with LLM judges and no human agreement
+score.
+
 ## Still open
 
 - A request form for early access, if LinkedIn proves too open.
 - A real portrait large enough for a full-screen scene.
-- Which research findings Bradley approves for publication: under 2% against 40 to 60%, Milestone 1 at 17 against 62 failures, 37 of 40 after eight sessions, the 6 of 6 grammar trial and the 250,000 units of knowledge.
-- A measured failure rate for elite prose instructions over eight sessions, to replace the labelled projection (about 43% kept, 0.9 to the power of 8).
+- Unpublished results stay off the site (Bradley's decision, 22 November 2026, to protect the
+  research): the learning and transfer studies are shared with partners on request, once each is
+  verified. The site shows only what is public in aisp-open-core and bar-observatory, each linked
+  to its method and limits.
 - Whether the AISP explainer video is cleared to publish.

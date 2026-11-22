@@ -2,6 +2,7 @@ import { Link } from "react-router";
 import type { Route } from "./+types/research";
 import { brand, contact, research } from "../content/brand";
 import { Lattice } from "../components/Art";
+import { NextSteps, ResultList } from "../components/Evidence";
 import { SmartLink } from "../components/SmartLink";
 import { SplitText } from "../components/SplitText";
 import { pageMeta } from "../lib/meta";
@@ -19,7 +20,8 @@ export default function Research() {
           <SplitText as="h1" id="research-h" className="hero-title hero-title-page" cine="title" text={research.hero.title} />
           <p className="hero-lead" data-cine-after="1">{research.hero.lead}</p>
           <div className="actions" data-cine-after="2">
-            <a className="btn btn-light" href="#early-access">Early access</a>
+            <a className="btn btn-light" href={contact.paper.href} rel="noopener">{contact.paper.label}</a>
+            <a className="btn btn-ghost" href="#early-access">Further results</a>
           </div>
         </div>
       </section>
@@ -28,18 +30,11 @@ export default function Research() {
         <div className="wrap">
           <h2 id="results-h" className="results-h" data-cine="reveal">{research.results.heading}</h2>
           <p className="results-note" data-cine="reveal">{research.results.note}</p>
-          <ul className="result-grid result-grid-4" data-cine="reveal">
-            {research.results.items.map((r) => (
-              <li key={r.big} data-cine-item>
-                <p className="result-big">{r.big}</p>
-                <p className="result-from">{r.from}</p>
-                <p className="result-text">{r.text}</p>
-                {"note" in r && r.note ? <p className="result-note">{r.note}</p> : null}
-              </li>
-            ))}
-          </ul>
+          <ResultList items={research.results.items} className="result-grid result-grid-4" />
         </div>
       </section>
+
+      <NextSteps id="next-h" heading={brand.next.heading} items={brand.next.items} />
 
       <section className="program" aria-labelledby="layers-h">
         <div className="wrap">

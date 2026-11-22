@@ -1,7 +1,9 @@
 // The words for Bradley's own pages: the home page and Research.
-// A personal profile, not a services page: a vision and a few proof points. Early access to the
-// research is by invitation, for Bradley's connections and partners only, through LinkedIn.
-// Every fact comes from Bradley.
+// A personal profile, not a services page: the contribution first, then evidence a reader can check.
+// Every number below is public, in github.com/bar181/aisp-open-core or github.com/bar181/bar-observatory
+// (read 22 November 2026), and links to its method and limits. Unpublished research results
+// (learning and transfer) stay off the site: Bradley shares them with partners on request, once
+// each is verified (his decision, 22 November 2026). Do not add them back without his approval.
 // Title: Agentic Architect and Researcher. Bradley also allows "agentic engineer" (his decision,
 // 22 November 2026, for a global audience). US spelling.
 
@@ -9,55 +11,68 @@ export const contact = {
   linkedin: { href: "https://www.linkedin.com/in/bradaross/", label: "Connect on LinkedIn" },
   earlyAccess: { href: "https://www.linkedin.com/in/bradaross/", label: "Connect on LinkedIn" },
   earlyNote: "Already connected? Send a short note on your group and your interest.",
+  paper: { href: "https://github.com/bar181/aisp-open-core/blob/main/formal-papers/aisp-protocol.md", label: "Read the AISP paper" },
 };
 
 export const brand = {
   metaTitle: "Bradley Ross, Agentic Architect and Researcher",
   metaDescription:
-    "Bradley Ross, Agentic Architect and Researcher: deterministic AI that keeps what it learns, built on AISP, and teaching from ten-person teams to enterprise developers.",
+    "Bradley Ross created AISP, a proof-carrying symbolic protocol for AI-to-AI communication, and BAR Observatory, a deterministic flight recorder and memory for agent sessions. Open source, with the evidence.",
 
   hero: {
     kicker: "Bradley Ross, Agentic Architect and Researcher",
-    title: "Agentic systems that behave the same way every time.",
-    lead: "Research, agentic systems and teaching, from a ten-person team's first AI workflow to frontier labs.",
+    title: "Agents that read every instruction one way, and prove what they did.",
+    lead: "I created AISP, a proof-carrying symbolic protocol for AI-to-AI communication, and BAR Observatory, a deterministic flight recorder and memory for agent sessions. Both are open source, with the evidence beside them.",
   },
 
-  // Stated facts. No adoption or user counts.
+  // The work, not credentials. Credentials are on About.
   proof: [
-    { strong: "Claude Certified Architect", rest: "Professional, Anthropic" },
-    { strong: "Creator of AISP", rest: "a mathematical specification language" },
-    { strong: "CS50 Teaching Fellow", rest: "ten terms at Harvard" },
+    { strong: "Creator of AISP", rest: "paper, specification and tools, MIT licence" },
+    { strong: "15 theorems", rest: "mechanically checkable, in AISP's calculus" },
+    { strong: "Published tools", rest: "AISP on npm and crates.io" },
+    { strong: "BAR Observatory", rest: "16 Rust crates on crates.io" },
     { strong: "Founding Director", rest: "Agentics Foundation, 60 locations" },
-    { strong: "Keynote speaker", rest: "on deterministic AI" },
-    { strong: "25 years", rest: "finance, software, data, agentic AI" },
   ],
 
   statement: "Most AI solves the same problem from scratch every time. My research is about machines that keep what they learn.",
 
+  // Public results only, each with its source.
   results: {
-    heading: "Selected results",
+    heading: "Evidence you can check",
     items: [
-      { big: "Under 2%", from: "against 40 to 60% in human prose", text: "Ambiguity in agent instructions written in AISP, a mathematical specification language." },
-      { big: "17 vs 62", from: "failures before reaching the goal", text: "Milestone 1, experience transfer: a learning system built on AISP, against a machine learning baseline." },
-      { big: "37 of 40", from: "after 8 chained sessions, from 38 of 40", text: "Long-term memory: knowledge kept in AISP lost 1 task in 40 across eight new sessions." },
+      { big: "Under 2%", from: "against 40 to 65% in expert prose, per hop", text: "Ambiguity between models on the AISP open-core evidence set, scored by judges from a different model. Method and limits in the paper.", href: "https://github.com/bar181/aisp-open-core/blob/main/formal-papers/aisp-protocol.md" },
+      { big: "72 of 72", from: "two blind models, from two vendors", text: "Gemini and GPT-5.5 read three AISP documents with no glossary or examples and recovered every decision point. A pilot, one run each, with its limits published.", href: "https://github.com/bar181/aisp-open-core/blob/main/evidence/head-to-head-llm-models/test-results-summary.md" },
+      { big: "99 of 101", from: "fields matched in an outside reproduction", text: "BAR Observatory reports rebuild byte for byte from an unchanged record. Installed from crates.io alone; the two fields that differ are documented.", href: "https://github.com/bar181/bar-observatory#evidence-verified-not-asserted" },
+    ],
+  },
+
+  // Where a reviewer goes next, in order.
+  next: {
+    heading: "Check it yourself",
+    items: [
+      { href: "https://github.com/bar181/aisp-open-core/blob/main/formal-papers/aisp-protocol.md", label: "Read the paper", note: "AISP: a proof-carrying symbolic protocol for AI cognition. Seven contributions, the assumptions and the failure modes." },
+      { href: "https://github.com/bar181/aisp-open-core/tree/main/evidence", label: "Check the evidence", note: "The ambiguity results and the blind cross-vendor pilot, each with what it does not show." },
+      { href: "https://www.npmjs.com/package/aisp-validator", label: "Run the validator", note: "npx aisp-validator validate spec.aisp, or cargo install aisp." },
+      { href: "https://github.com/bar181/aisp-open-core/blob/main/AI_GUIDE.md", label: "Give AISP to your agent", note: "AI_GUIDE.md is the specification an agent reads. No fine-tuning." },
+      { href: "https://github.com/bar181/bar-observatory", label: "Record your own agent", note: "Install BAR Observatory in Claude Code, then run tests/verify.sh to reproduce the published example." },
     ],
   },
 
   range: {
-    heading: "One practice, every level",
-    lead: "Grounded in small business. Trusted by advanced teams.",
+    heading: "Where the research goes",
+    lead: "The same methods, taught at two levels.",
     items: [
-      { who: "Small teams", text: "Practical AI for businesses of 10 to 30 people, with agentic office hours: ask the tools any question, any time. More than 900 people taught.", link: { href: "/tools#office-hours", label: "Agentic office hours" } },
+      { who: "Research", text: "Deterministic agents that prove what they did and keep what they learn, built on AISP and BAR Observatory.", link: { href: "/research", label: "Research" } },
       { who: "Engineering teams", text: "Advanced agentic engineering for senior developers and enterprise teams, through the Agentics Foundation and Agentic Learning Labs.", link: { href: "/about", label: "About" } },
-      { who: "Research", text: "Deterministic, learning AI built on AISP and a mathematics-first method.", link: { href: "/research", label: "Research" } },
+      { who: "Small teams", text: "Practical AI for businesses of 10 to 30 people, with agentic office hours: ask the tools any question, any time. More than 900 people taught.", link: { href: "/tools#office-hours", label: "Agentic office hours" } },
     ],
   },
 
   openSource: {
     heading: "Open work",
     items: [
-      { href: "https://github.com/bar181/aisp-open-core", label: "AISP open core", note: "specification language, validator, Rust crate" },
-      { href: "https://github.com/bar181/bar-observatory", label: "BAR Observatory", note: "deterministic receipts for agent sessions" },
+      { href: "https://github.com/bar181/aisp-open-core", label: "AISP open core", note: "paper, specification, converter and validator, Rust crate" },
+      { href: "https://github.com/bar181/bar-observatory", label: "BAR Observatory", note: "deterministic receipts and cross-run memory for agent sessions" },
       { href: "https://github.com/bar181/practical-ai", label: "Practical AI", note: "tools for everyday work" },
     ],
   },
@@ -71,41 +86,40 @@ export const brand = {
   },
 
   earlyAccess: {
-    heading: "Early access, by invitation",
-    text: "Research previews go to my connections and research partners ahead of publication. They are not open to the general public.",
+    heading: "Further results, on request",
+    text: "Work on learning and experience transfer continues. Results go to research partners on request, once each one is verified. They are not published here.",
   },
 };
 
 export const research = {
-  metaTitle: "Research: deterministic AI that keeps what it learns",
+  metaTitle: "Research: one reading for every instruction, a receipt for every session",
   metaDescription:
-    "Bradley Ross's research: deterministic agents built on AISP, a mathematical specification language, that prove what they did and carry experience to new problems.",
+    "Bradley Ross's research: AISP, a proof-carrying symbolic protocol for AI-to-AI communication, and BAR Observatory, a deterministic record and memory of what agents did. The public evidence and its limits.",
   hero: {
     kicker: "Research",
-    title: "Deterministic AI that keeps what it learns.",
-    lead: "Built on AISP, a mathematical specification language, so agents read every instruction one way, prove what they did, and carry experience to new problems.",
+    title: "One reading for every instruction. A receipt for every session.",
+    lead: "AISP gives agents a formal language in which every instruction parses one way and carries a checkable evidence block. BAR Observatory records what the agents then did, reproducibly, and lets the next agent ask what was already tried.",
   },
   results: {
-    heading: "Milestones",
-    note: "An ongoing development process. Each result comes from an internal, pre-registered study and is updated as the work continues.",
+    heading: "Public evidence",
+    note: "Everything below is public, with its method and its limits. Results on learning and transfer are shared with partners on request.",
     items: [
-      { big: "Under 2%", from: "against 40 to 60% in human prose", text: "Instruction ambiguity. AISP gives every instruction one formal reading, so two agents act on it the same way." },
-      { big: "17 vs 62", from: "failures before reaching the goal", text: "Milestone 1, experience transfer. A learning system built on AISP averaged 17 failures before reaching the goal; the machine learning baseline needed 62." },
-      { big: "37 of 40", from: "after 8 chained sessions, from 38 of 40", text: "Long-term memory, the elevator game. Like the 12 days of Christmas, each new session adds complex work and must still recall everything before it. After eight chained sessions, knowledge kept in AISP had lost 1 task in 40.", note: "For comparison, elite prose instructions at 10% ambiguity would keep about 43% after eight handoffs (0.9 to the power of 8). A projection, not a measurement." },
-      { big: "6 of 6", from: "up from 0 of 6, with no errors of meaning", text: "AISP grammar. In the latest trial every failure was formatting; a deterministic normalizer closed the gap without a model." },
-      { big: "250,000", from: "domain-general, in one grammar", text: "Units of knowledge written in AISP, so agents reuse what is known instead of re-deriving it." },
+      { big: "Under 2%", from: "against 40 to 65% in expert prose, per hop", text: "Ambiguity between models. Each document has a decision-point set fixed in advance; 32 completions are scored by a majority of three judges from a different model.", note: "The paper names the gaps: no human agreement score yet, and judges may share biases.", href: "https://github.com/bar181/aisp-open-core/blob/main/formal-papers/aisp-protocol.md" },
+      { big: "72 of 72", from: "two blind models, from two vendors", text: "Gemini and GPT-5.5 read three AISP documents with no glossary, examples or system prompt, and recovered every decision point, interpreting the symbols rather than reciting them.", note: "A pilot: one run per model, textbook concepts, no prose baseline yet.", href: "https://github.com/bar181/aisp-open-core/blob/main/evidence/head-to-head-llm-models/test-results-summary.md" },
+      { big: "15 theorems", from: "over 12 typed inference rules", text: "Mechanically checkable theorems in AISP's natural-deduction calculus, including termination and tamper-evidence of content-addressed memory, with a categorical semantics for validation.", href: "https://github.com/bar181/aisp-open-core/blob/main/formal-papers/aisp-protocol.md" },
+      { big: "99 of 101", from: "fields matched in an outside reproduction", text: "BAR Observatory, installed from crates.io alone, rebuilt the published report. The two fields that differ are documented as expected to vary.", href: "https://github.com/bar181/bar-observatory#evidence-verified-not-asserted" },
+      { big: "60 errors", from: "that the agent's own summary never mentioned", text: "Surfaced by BAR Observatory across seven real captured sessions, each still queryable by a person or an agent.", href: "https://github.com/bar181/bar-observatory#why-developers-use-it" },
     ],
   },
   layers: {
     heading: "The system",
     items: [
       { name: "Specify", line: "AISP: one formal reading for every instruction", status: "Open source" },
-      { name: "Gate", line: "Checks in Rust and a database the agent cannot edit", status: "In use" },
-      { name: "Prove", line: "Deterministic receipts for every session", status: "Open source" },
-      { name: "Learn", line: "Knowledge kept in AISP, with its evidence", status: "In research" },
-      { name: "Transfer", line: "Experience carried to new problems", status: "Milestone 1" },
+      { name: "Prove", line: "BAR Observatory: a byte-identical receipt for every session", status: "Open source" },
+      { name: "Remember", line: "Cross-run memory over MCP: the next agent asks what was tried", status: "Open source" },
+      { name: "Learn", line: "Knowledge kept with its evidence, and carried to new problems", status: "In research, on request" },
     ],
   },
-  method: "Every study is pre-registered: predictions are sealed before results are opened, each batch changes one thing, and the rollback rule is written in advance.",
+  method: "Next, as the paper states: independent replication on a public benchmark, with decision-point sets registered in advance, judges from other vendors and human agreement scores.",
   speaking: "Keynote speaker on deterministic AI. Founding Director and Education Director of the Agentics Foundation.",
 };

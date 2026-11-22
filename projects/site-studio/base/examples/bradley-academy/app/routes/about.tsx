@@ -77,7 +77,7 @@ export default function About() {
           <p className="reel-lead" data-cine-item>{about.why}</p>
           <p data-cine-item className="actions">
             <a className="btn btn-light" href={site.linkedin} rel="noopener">{about.contactButton}</a>
-            <Link className="btn btn-ghost" to="/research#early-access" viewTransition>Early access</Link>
+            <Link className="btn btn-ghost" to="/research#early-access" viewTransition>Request results</Link>
           </p>
         </div>
       </section>

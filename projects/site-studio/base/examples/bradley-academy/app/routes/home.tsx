@@ -1,6 +1,7 @@
 import { Link } from "react-router";
 import type { Route } from "./+types/home";
 import { brand, contact } from "../content/brand";
+import { NextSteps, ResultList } from "../components/Evidence";
 import { SceneImage } from "../components/Scene";
 import { SmartLink } from "../components/SmartLink";
 import { SplitText } from "../components/SplitText";
@@ -27,14 +28,14 @@ export default function Home() {
           <SplitText as="h1" id="hero-h" className="hero-title" cine="title" text={brand.hero.title} />
           <p className="hero-lead" data-cine-after="1">{brand.hero.lead}</p>
           <div className="actions" data-cine-after="2">
-            <Link className="btn btn-light" to="/research" viewTransition>See the research</Link>
-            <Link className="btn btn-ghost" to="/about" viewTransition>About Bradley</Link>
+            <a className="btn btn-light" href={contact.paper.href} rel="noopener">{contact.paper.label}</a>
+            <Link className="btn btn-ghost" to="/research" viewTransition>See the evidence</Link>
           </div>
         </div>
       </section>
 
-      {/* Credentials, one line */}
-      <section className="proof" aria-label="Credentials">
+      {/* The work, one line. Credentials are on About */}
+      <section className="proof" aria-label="The work">
         <ul className="wrap proof-list">
           {brand.proof.map((p) => (
             <li key={p.strong}><strong>{p.strong}</strong><span>{p.rest}</span></li>
@@ -50,22 +51,16 @@ export default function Home() {
         </div>
       </section>
 
-      {/* The proof: three numbers */}
+      {/* The proof: three public numbers, each linked to its method */}
       <section className="results" aria-labelledby="results-h">
         <div className="wrap">
           <h2 id="results-h" className="results-h" data-cine="reveal">{brand.results.heading}</h2>
-          <ul className="result-grid" data-cine="reveal">
-            {brand.results.items.map((r) => (
-              <li key={r.big} data-cine-item>
-                <p className="result-big">{r.big}</p>
-                <p className="result-from">{r.from}</p>
-                <p className="result-text">{r.text}</p>
-              </li>
-            ))}
-          </ul>
-          <p className="results-more" data-cine="reveal"><Link to="/research" viewTransition>More on the research</Link></p>
+          <ResultList items={brand.results.items} />
+          <p className="results-more" data-cine="reveal"><Link to="/research" viewTransition>All the public evidence</Link></p>
         </div>
       </section>
+
+      <NextSteps id="next-h" heading={brand.next.heading} items={brand.next.items} />
 
       {/* The range: from a ten-person team to a lab */}
       <section className="range" aria-labelledby="range-h">
@@ -110,7 +105,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Early access */}
+      {/* Further results, on request */}
       <section className="take take-scene early" aria-labelledby="early-h">
         <SceneImage id="work-hero" cine="parallax" className="take-img" />
         <div className="wrap narrow" data-cine="reveal">

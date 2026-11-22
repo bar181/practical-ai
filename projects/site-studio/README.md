@@ -94,6 +94,12 @@ milestones built on AISP, a one-line network note, and early access for research
 through LinkedIn. Built and checked by Claude at phone and desktop width; not rescored, not reviewed by
 Bradley, and not merged.
 
+**22 November 2026, evening:** after an outside reviewer read the site as decent rather than top
+tier, the home and Research pages lead with the work (AISP and BAR Observatory), show only public
+evidence with a link to each number's method and limits, and end with a "Check it yourself" path.
+Unpublished results come off the site and are shared on request. Built and checked by Claude at
+390 and 1280 pixels; not yet reviewed by Bradley or the outside reviewer.
+
 **22 November 2026, latest:** Site Studio became the publish-a-website lesson. A skill for any
 chatbot (Level 1), GitHub Pages, your own domain and Vercel (Level 2), and Cloudflare, Google Cloud
 and Supabase (Level 3), written from each provider's documentation with dated sources. No person and

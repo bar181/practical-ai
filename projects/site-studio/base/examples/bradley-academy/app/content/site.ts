@@ -142,7 +142,8 @@ export const about = {
     {
       step: "Research",
       title: "Deterministic AI, and AI that transfers what it learns",
-      text: "On an ambiguity measure, prose instructions scored 40 to 60 percent; the same instructions in AISP, under 2 percent. I lead advanced agentic research on deterministic AI and speak on it as a keynote speaker.",
+      text: "On the AISP open-core evidence set, ambiguity between models fell from 40 to 65 percent in expert prose to under 2 percent per hop. BAR Observatory, a deterministic flight recorder and memory for agent sessions, records what agents then did. I lead advanced agentic research on deterministic AI and speak on it as a keynote speaker.",
+      link: { href: "https://github.com/bar181/bar-observatory", label: "BAR Observatory on GitHub" },
     },
     {
       step: "Instruction",
@@ -157,6 +158,6 @@ export const about = {
     { title: "WiseGeo", text: "Founder, since 2016. WiseGeo helps companies find, build and adopt practical AI. Bradley Academy is operated by WiseGeo Inc., a federally incorporated Canadian company." },
     { title: "Twenty-five years", text: "Across finance, software architecture, data science and agentic engineering. A former CMA." },
   ],
-  why: "Founding Director of the Agentics Foundation, a global community of more than 100,000 agentic developers, researchers and builders. Early access to the research is by invitation, for my connections and partners. Connect on LinkedIn with a short note.",
+  why: "Founding Director of the Agentics Foundation, a global community of more than 100,000 agentic developers, researchers and builders. Unpublished results are shared with my connections and research partners on request, once each is verified. Connect on LinkedIn with a short note.",
   contact: "More information, training or feedback: connect on LinkedIn.",
 };
