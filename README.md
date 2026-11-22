@@ -9,7 +9,7 @@ Free tools for the jobs you repeat, for business people and developers alike.</p
   <a href="#what-is-inside"><img src="assets/images/btn-projects.svg" height="48" alt="See the projects"></a>
 </p>
 
-<p align="center"><b>Free</b> &nbsp;·&nbsp; <b>Open source</b> &nbsp;·&nbsp; <b>12 projects</b><br><b>Eleven in use, by business owners to agentic developers; one new</b></p>
+<p align="center"><b>Free</b> &nbsp;·&nbsp; <b>Open source</b> &nbsp;·&nbsp; <b>13 projects</b><br><b>Eleven in use, by business owners to agentic developers; two new</b></p>
 
 <p align="center"><sub>Each tool is a prompt you paste into your chatbot. Developers: the file formats, skills and connectors are at the bottom of this page.</sub></p>
 
@@ -20,6 +20,7 @@ Free tools for the jobs you repeat, for business people and developers alike.</p
   <a href="projects/tone-studio/"><img src="assets/images/tiles/tone-studio.svg" width="150" alt="Tone Studio: your facts, in the tone your reader needs"></a>
   <a href="projects/artifact-studio/"><img src="assets/images/tiles/artifact-studio.svg" width="150" alt="Artifact Studio: notes in, a designer page out"></a>
   <a href="projects/site-studio/"><img src="assets/images/tiles/site-studio.svg" width="150" alt="Site Studio: publish a website, from a shared page to your own domain"></a>
+  <a href="projects/website-audit/"><img src="assets/images/tiles/website-audit.svg" width="150" alt="Website audit: a scorecard for your site, and what to fix first"></a>
   <a href="projects/agentic-process/"><img src="assets/images/tiles/agentic-process.svg" width="150" alt="Agentic Process: a job you repeat, set up properly once"></a>
   <a href="projects/document-to-action-brief/"><img src="assets/images/tiles/document-to-action-brief.svg" width="150" alt="Document to action brief: a long document in, what to do and by when out"></a>
   <a href="projects/meeting-notes-to-actions/"><img src="assets/images/tiles/meeting-notes-to-actions.svg" width="150" alt="Meeting notes to actions: who is doing what, and who never agreed to"></a>
@@ -134,6 +135,16 @@ or Google Cloud and a Supabase database with sign-in. The worked example is
 [Bradley Academy](https://bar181.github.io/practical-ai/), Bradley Ross's site with every tool:
 React, every page pre-rendered, published by GitHub Pages. The site is in use; the Level 1 to 3 publishing guides, written on 22 November 2026 from each
 provider's documentation, are not yet followed by anyone. [The project](projects/site-studio/) · [the plan](workshop/plans/site-studio/README.md).
+
+### Website audit
+
+**Know what is holding your website back, and what to fix first.** It checks a site the way a
+visitor, a search engine and an AI assistant see it, scores it out of 100 on eight areas, and lists
+five fixes in plain words. It builds on the free tools (PageSpeed Insights, Search Console, the MDN
+HTTP Observatory) and adds what they skip: whether a stranger understands the business, written up
+as a core context card to keep for every AI task. Level 3 adds a crawler-eye checker for a coding
+agent. New: run by Claude on this repository's own site (71 of 100); not yet tried by anyone else.
+[The project](projects/website-audit/) · [the plan](workshop/plans/website-audit/README.md).
 
 ### Agentic Process
 
@@ -290,8 +301,8 @@ is planned, not built yet.
 <details>
 <summary><b>Who has used it?</b></summary>
 
-Its author built and tested all twelve projects in Claude, and used Artifact Studio for real for a
-client's course (the before and after above). Every project except the newest, Research brief, is now in use by other people, from
+Its author built and tested all thirteen projects in Claude, and used Artifact Studio for real for a
+client's course (the before and after above). Every project except the two newest, Research brief and Website audit, is now in use by other people, from
 business owners in Bradley's courses to agentic developers (reported by Bradley, 22 November 2026).
 Their results are not recorded here yet.
 
@@ -299,14 +310,14 @@ Their results are not recorded here yet.
 
 ## Status
 
-**22 November 2026.** The author built all twelve projects and tested them in Claude.
+**22 November 2026.** The author built all thirteen projects and tested them in Claude.
 
 - **In use by other people,** eleven projects, from business owners to agentic developers
   (reported by Bradley). Artifact Studio, Agentic Process, Document to action brief and Rare Find
   have been in user testing since 18 November. Results are not recorded here yet.
 - **Added on 22 November, not yet followed by anyone else:** Site Studio's publishing guides and the
   Practical AI guide's index and skill.
-- **New, tested by its author only:** Research brief with checked sources.
+- **New, tested by its author only:** Research brief with checked sources, and Website audit.
 - **Not yet tried** in ChatGPT or Gemini.
 
 What comes next: [the priority list](docs/README.md#what-comes-next) · [every idea](workshop/plans/README.md).
@@ -315,7 +326,7 @@ The evidence: [Artifact Studio](projects/artifact-studio/quality-results/README.
 · [Learnings database](projects/learnings-database/quality-results/README.md) · [Meeting notes to actions](projects/meeting-notes-to-actions/quality-results/README.md)
 · [Write and edit in my voice](projects/write-in-my-voice/quality-results/README.md) · [Research brief](projects/research-brief/quality-results/README.md) · [Tone Studio](projects/tone-studio/quality-results/README.md)
 · [Web Sections](projects/web-sections/quality-results/README.md) · [Site Studio](projects/site-studio/quality-results/README.md)
-· [Practical AI guide](projects/practical-ai-guide/quality-results/README.md)
+· [Practical AI guide](projects/practical-ai-guide/quality-results/README.md) · [Website audit](projects/website-audit/quality-results/README.md)
 · [Rare Find](projects/rare-find/quality-results/README.md).
 
 ## About Bradley Ross

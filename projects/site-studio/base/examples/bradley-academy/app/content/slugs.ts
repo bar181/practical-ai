@@ -7,6 +7,7 @@ export const toolSlugs = [
   "artifact-studio",
   // Then put it online
   "site-studio",
+  "website-audit",
   // Everyday jobs
   "document-to-action-brief",
   "meeting-notes-to-actions",

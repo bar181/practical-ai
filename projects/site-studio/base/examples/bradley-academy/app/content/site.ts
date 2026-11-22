@@ -22,7 +22,7 @@ export const site = {
     footerTagline: "Agentic systems, research and Practical AI",
     licence: "Free to use, change and share under the Apache 2.0 licence. All examples use invented businesses and data.",
     worksIn: "Free. Works in the chatbot you already use.",
-    homeTitle: "Practical AI: free tools for the jobs you repeat | Bradley Academy",
+    homeTitle: "Practical AI: free tools for the jobs you repeat",
     seeTools: "See every tool",
     toolsListName: "Every tool",
     sourceLink: "The tools on GitHub",

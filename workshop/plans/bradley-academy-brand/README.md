@@ -52,6 +52,48 @@ teaching, calls to action, craft, protection of the research).
 The old site scored 53 for these audiences. Results of the two review loops are in
 [`scores.md`](scores.md).
 
+## Going live on Bradley.academy
+
+Reviewed 22 November 2026, with the [Website audit](../../../projects/website-audit/base/examples/bradley-academy-audit.md)
+(71 of 100 before its first two fixes). **Recommendation: yes, once the placeholder photo on the
+home page's closing band is replaced.** The domain fixes two audit findings on its own: robots.txt
+and llms.txt start counting at the root, and Search Console can verify the whole domain.
+
+| Readiness item | Score | Note |
+| --- | --- | --- |
+| Content and claims | 90 | Approved by Bradley, 22 November 2026 |
+| Search basics | 85 | Titles fixed, structured data added; robots.txt works once at the root |
+| Pictures | 55 | Placeholders on the tool pages and the home page's closing band |
+| Speed | 65 | Lab estimate; photos not yet resized or converted |
+| Security headers | 50 | GitHub Pages cannot set them; a CDN in front can |
+| Measurement | 20 | No Search Console or analytics yet |
+| **Overall** | **61** | **About 80 after the photos, Search Console and the domain** |
+
+Steps. Bradley does the steps marked "you"; each needs his accounts.
+
+1. **You:** note what Bradley.academy serves today, and keep a copy.
+2. **You:** in the repository, Settings, Pages, Custom domain: `bradley.academy`, then Save.
+3. **You:** at the registrar, four A records for `bradley.academy` (185.199.108.153,
+   185.199.109.153, 185.199.110.153, 185.199.111.153) and a CNAME for `www` to `bar181.github.io`.
+4. **Agent, after DNS resolves:** in `.github/workflows/pages.yml`, build with `SITE_BASE=/` and
+   `SITE_URL=https://bradley.academy`, so every link, the sitemap, robots.txt and llms.txt use the
+   domain. Old `bar181.github.io/practical-ai/` links redirect to the domain.
+5. **You:** turn on Enforce HTTPS when GitHub offers it.
+6. **You:** Search Console, a domain property, the sitemap submitted (Website audit, Level 2).
+7. **Later, optional:** Cloudflare in front of the domain for security headers and caching.
+
+## Further work for the public site
+
+1. Replace the placeholder photos, starting with the home page and the most visited tools (the
+   Image brief page lists every one).
+2. Resize the photos and serve WebP or AVIF at the widths they are shown.
+3. A contact form for companies and people who want a website built or reviewed, saved to Supabase
+   with insert-only access (Website audit, Level 2). It complements LinkedIn; decide whether it
+   carries early-access requests too.
+4. Analytics with consent, and Search Console.
+5. Shorter, lighter motion on phones: about 240 KB of unused JavaScript per page, mostly the motion
+   libraries.
+
 ## Still open
 
 - A request form for early access, if LinkedIn proves too open.

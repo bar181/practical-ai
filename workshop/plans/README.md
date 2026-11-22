@@ -64,6 +64,7 @@ supplies judgement and approves.
 | Website chatbot | A site assistant that answers from your notes and captures enquiries | [Plan](website-chatbot/) |
 | Site Studio | Publish a website, from a shared page to your own domain, with Bradley Academy as the worked example. Replaces Publishing a website | **Building:** [project](../../projects/site-studio/) · [plan](site-studio/) |
 | Practical AI guide: agentic office hours | Answers any question about the Practical AI tools and Bradley's work from the repository, naming the file; Level 3 is a chat window on Bradley.academy with his avatar | **Built, Levels 1 and 2:** [project](../../projects/practical-ai-guide/) · [plan](practical-ai-guide/) |
+| Website audit | Scores any website out of 100 on eight areas, lists five fixes and writes the business's core context card; Level 3 adds a crawler-eye checker for a coding agent | **Built, new:** [project](../../projects/website-audit/) · [plan](website-audit/) |
 | Short video guide | The right route for a short video, finished in under 30 minutes | [Draft](../drafts/short-video/) · [plan](short-video/) |
 | Training explainer with avatar | A topic becomes a taught video in a chosen teaching style | [Draft](../drafts/training-explainer/) · [plan](training-explainer/) |
 | Training website | A course site with lessons, a schedule and an assistant | [Plan](training-website/) |

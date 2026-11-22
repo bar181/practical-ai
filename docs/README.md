@@ -4,10 +4,10 @@ A one-page summary for anyone deciding where to start. Updated 22 November 2026.
 
 ## What is ready
 
-Twelve projects are built. Eleven are in use by people other than the author, from business owners
+Thirteen projects are built. Eleven are in use by people other than the author, from business owners
 to agentic developers (reported by Bradley, 22 November 2026). Artifact Studio, Agentic Process,
 Document to action brief and Rare Find have been in user testing since 18 November 2026. Results are
-not recorded here yet. Research brief with checked sources is new, tested by its author only. Three are described below; the rest follow in the
+not recorded here yet. Research brief with checked sources and Website audit are new, tested by their author only. Three are described below; the rest follow in the
 lists. Artifact Studio, Agentic Process, the Learnings database and Rare Find each have an explainer
 page in [`reports/`](reports/) (download the HTML file and open it in a browser).
 
@@ -123,6 +123,7 @@ Support tools that make every other tool better. Each starts with a version a pe
 | **Web Sections** | The right sections for a website or page, in order, responsive, filled with your content and clear placeholders | **In use:** [project](../projects/web-sections/) |
 | **Site Studio** | Publish a website, from a shared page to your own domain: share an artifact (Level 1), GitHub Pages, your own domain or Vercel (Level 2), Cloudflare, Google Cloud and Supabase (Level 3). Worked example: Bradley Academy, with every tool on this list | **In use:** the cinematic site was built by Claude, 20 Nov 2026 (six review rounds: UX 86, art direction 73). The publish lesson for Levels 1 to 3 was written 22 Nov 2026 from provider documentation; not yet followed by anyone. [Project](../projects/site-studio/) · [plan](../workshop/plans/site-studio/README.md) |
 | **Practical AI guide** | Agentic office hours: ask your AI about any tool or Bradley's work, and get the answer with the file it came from. An index for AI agents (`llms.txt`) and a skill; a chat window on the site is planned | **In use:** three test questions passed, 22 Nov 2026. [Project](../projects/practical-ai-guide/) · [plan](../workshop/plans/practical-ai-guide/README.md) |
+| **Website audit** | A score out of 100 for any website, from a chatbot page to a company site: the message, search and AI search, speed, phones, trust, security, links and measurement, with five fixes and a core context card | **New, tested by its author only:** run on this repository's site, 71 of 100, 22 Nov 2026. [Project](../projects/website-audit/) · [plan](../workshop/plans/website-audit/README.md) |
 
 The full list of ideas, sorted into everyday tasks, agent tools and hybrid projects, is in
 [the plans](../workshop/plans/README.md).

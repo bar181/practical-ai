@@ -12,6 +12,7 @@ work. Reuse first: use an existing capability, wrap it, or build only the missin
 | Rewrite content in the tone and story order a reader needs: a pitch, a one-pager, a deck, a story | [`projects/tone-studio/AGENTS.md`](projects/tone-studio/AGENTS.md) |
 | Lay out the sections of a website or page, or get a social post size | [`projects/web-sections/AGENTS.md`](projects/web-sections/AGENTS.md) |
 | Publish a website (share a page, GitHub Pages, your own domain, Vercel, Cloudflare, Google Cloud, Supabase), change the Bradley Academy website, or build a site like it | [`projects/site-studio/AGENTS.md`](projects/site-studio/AGENTS.md) |
+| Check a website and score it: speed, search and AI search, security, links, the message; a contact form or analytics to add | [`projects/website-audit/AGENTS.md`](projects/website-audit/AGENTS.md) |
 | Turn a policy, contract or bill into an action list | [`projects/document-to-action-brief/AGENTS.md`](projects/document-to-action-brief/AGENTS.md) |
 | Revise an email or post in someone's own voice, keeping every fact | [`projects/write-in-my-voice/AGENTS.md`](projects/write-in-my-voice/AGENTS.md) |
 | Turn a meeting transcript or notes into decisions, actions and a follow-up | [`projects/meeting-notes-to-actions/AGENTS.md`](projects/meeting-notes-to-actions/AGENTS.md) |
