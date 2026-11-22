@@ -38,7 +38,7 @@ export const brand = {
 
   // Public results only, each with its source.
   results: {
-    heading: "Evidence you can check",
+    heading: "Selected results",
     items: [
       { big: "Under 2%", from: "against 40 to 65% in expert prose, per hop", text: "Ambiguity between models on the AISP open-core evidence set, scored by judges from a different model. Method and limits in the paper.", href: "https://github.com/bar181/aisp-open-core/blob/main/formal-papers/aisp-protocol.md" },
       { big: "72 of 72", from: "two blind models, from two vendors", text: "Gemini and GPT-5.5 read three AISP documents with no glossary or examples and recovered every decision point. A pilot, one run each, with its limits published.", href: "https://github.com/bar181/aisp-open-core/blob/main/evidence/head-to-head-llm-models/test-results-summary.md" },
@@ -46,25 +46,25 @@ export const brand = {
     ],
   },
 
-  // Where a reviewer goes next, in order.
+  // Where a reader goes next, in order.
   next: {
-    heading: "Check it yourself",
+    heading: "Explore AISP",
     items: [
       { href: "https://github.com/bar181/aisp-open-core/blob/main/formal-papers/aisp-protocol.md", label: "Read the paper", note: "AISP: a proof-carrying symbolic protocol for AI cognition. Seven contributions, the assumptions and the failure modes." },
-      { href: "https://github.com/bar181/aisp-open-core/tree/main/evidence", label: "Check the evidence", note: "The ambiguity results and the blind cross-vendor pilot, each with what it does not show." },
+      { href: "https://github.com/bar181/aisp-open-core/tree/main/evidence", label: "Check the evidence", note: "The ambiguity results and the blind cross-vendor pilot." },
       { href: "https://www.npmjs.com/package/aisp-validator", label: "Run the validator", note: "npx aisp-validator validate spec.aisp, or cargo install aisp." },
       { href: "https://github.com/bar181/aisp-open-core/blob/main/AI_GUIDE.md", label: "Give AISP to your agent", note: "AI_GUIDE.md is the specification an agent reads. No fine-tuning." },
-      { href: "https://github.com/bar181/bar-observatory", label: "Record your own agent", note: "Install BAR Observatory in Claude Code, then run tests/verify.sh to reproduce the published example." },
+      { href: "https://github.com/bar181/bar-observatory", label: "Record your own agent", note: "Install BAR Observatory in Claude Code and see what your agent really did, session by session." },
     ],
   },
 
   range: {
-    heading: "Where the research goes",
-    lead: "The same methods, taught at two levels.",
+    heading: "Research, and teaching it",
+    lead: "I teach what I research: to engineers building agents, and to business teams adopting them, as I did for ten terms as a Harvard CS50 Teaching Fellow.",
     items: [
       { who: "Research", text: "Deterministic agents that prove what they did and keep what they learn, built on AISP and BAR Observatory.", link: { href: "/research", label: "Research" } },
       { who: "Engineering teams", text: "Advanced agentic engineering for senior developers and enterprise teams, through the Agentics Foundation and Agentic Learning Labs.", link: { href: "/about", label: "About" } },
-      { who: "Small teams", text: "Practical AI for businesses of 10 to 30 people, with agentic office hours: ask the tools any question, any time. More than 900 people taught.", link: { href: "/tools#office-hours", label: "Agentic office hours" } },
+      { who: "Business teams", text: "Practical AI for businesses of 10 to 30 people, with agentic office hours: ask the tools any question, any time. More than 900 people taught.", link: { href: "/tools#office-hours", label: "Agentic office hours" } },
     ],
   },
 
@@ -86,8 +86,8 @@ export const brand = {
   },
 
   earlyAccess: {
-    heading: "Further results, on request",
-    text: "Work on learning and experience transfer continues. Results go to research partners on request, once each one is verified. They are not published here.",
+    heading: "For research partners",
+    text: "Research partners work with the commercial-grade AISP, including the full Pocket architecture and mass-parallel machine learning on CPU, and see results on learning and transfer before publication, once each is verified. Not open to the public.",
   },
 };
 
@@ -98,14 +98,14 @@ export const research = {
   hero: {
     kicker: "Research",
     title: "One reading for every instruction. A receipt for every session.",
-    lead: "AISP gives agents a formal language in which every instruction parses one way and carries a checkable evidence block. BAR Observatory records what the agents then did, reproducibly, and lets the next agent ask what was already tried.",
+    lead: "AISP gives agents a language of 512 mathematical symbols in which every instruction parses one way and carries its own evidence. BAR Observatory records what the agents then did, and lets the next agent ask what was already tried.",
   },
   results: {
-    heading: "Public evidence",
-    note: "Everything below is public, with its method and its limits. Results on learning and transfer are shared with partners on request.",
+    heading: "Selected results",
+    note: "Selected public results from the open core. Results on learning and transfer are shared with research partners.",
     items: [
-      { big: "Under 2%", from: "against 40 to 65% in expert prose, per hop", text: "Ambiguity between models. Each document has a decision-point set fixed in advance; 32 completions are scored by a majority of three judges from a different model.", note: "The paper names the gaps: no human agreement score yet, and judges may share biases.", href: "https://github.com/bar181/aisp-open-core/blob/main/formal-papers/aisp-protocol.md" },
-      { big: "72 of 72", from: "two blind models, from two vendors", text: "Gemini and GPT-5.5 read three AISP documents with no glossary, examples or system prompt, and recovered every decision point, interpreting the symbols rather than reciting them.", note: "A pilot: one run per model, textbook concepts, no prose baseline yet.", href: "https://github.com/bar181/aisp-open-core/blob/main/evidence/head-to-head-llm-models/test-results-summary.md" },
+      { big: "Under 2%", from: "against 40 to 65% in expert prose, per hop", text: "Ambiguity between models. Each document has a decision-point set fixed in advance; 32 completions are scored by a majority of three judges from a different model.", href: "https://github.com/bar181/aisp-open-core/blob/main/formal-papers/aisp-protocol.md" },
+      { big: "72 of 72", from: "two blind models, from two vendors", text: "Gemini and GPT-5.5 read three AISP documents with no glossary, examples or system prompt, and recovered every decision point, interpreting the symbols rather than reciting them.", href: "https://github.com/bar181/aisp-open-core/blob/main/evidence/head-to-head-llm-models/test-results-summary.md" },
       { big: "15 theorems", from: "over 12 typed inference rules", text: "Mechanically checkable theorems in AISP's natural-deduction calculus, including termination and tamper-evidence of content-addressed memory, with a categorical semantics for validation.", href: "https://github.com/bar181/aisp-open-core/blob/main/formal-papers/aisp-protocol.md" },
       { big: "99 of 101", from: "fields matched in an outside reproduction", text: "BAR Observatory, installed from crates.io alone, rebuilt the published report. The two fields that differ are documented as expected to vary.", href: "https://github.com/bar181/bar-observatory#evidence-verified-not-asserted" },
       { big: "60 errors", from: "that the agent's own summary never mentioned", text: "Surfaced by BAR Observatory across seven real captured sessions, each still queryable by a person or an agent.", href: "https://github.com/bar181/bar-observatory#why-developers-use-it" },
@@ -117,9 +117,10 @@ export const research = {
       { name: "Specify", line: "AISP: one formal reading for every instruction", status: "Open source" },
       { name: "Prove", line: "BAR Observatory: a byte-identical receipt for every session", status: "Open source" },
       { name: "Remember", line: "Cross-run memory over MCP: the next agent asks what was tried", status: "Open source" },
-      { name: "Learn", line: "Knowledge kept with its evidence, and carried to new problems", status: "In research, on request" },
+      { name: "Learn", line: "The Pocket architecture: knowledge kept with its evidence, carried to new problems", status: "Commercial grade" },
+      { name: "Scale", line: "Mass-parallel machine learning on CPU", status: "Commercial grade" },
     ],
   },
-  method: "Next, as the paper states: independent replication on a public benchmark, with decision-point sets registered in advance, judges from other vendors and human agreement scores.",
+  method: "The open core is MIT licensed: the specification, the paper, a converter and validator on npm, and a Rust crate on crates.io. The commercial grade is for research partners.",
   speaking: "Keynote speaker on deterministic AI. Founding Director and Education Director of the Agentics Foundation.",
 };

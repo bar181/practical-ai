@@ -107,6 +107,11 @@ evidence with a "Method and limits" link on each number, and end with a five-ste
 yourself" path: the paper, the evidence, the validator, the agent guide, and BAR Observatory.
 Credentials moved to About. Small business moved below research.
 
+Then, at Bradley's direction: the goal is to read as a leader in deterministic AI who also teaches,
+not to let visitors verify. AISP now appears in its own notation, verbatim from the open-core
+specification and read line by line; the commercial-grade AISP (the full Pocket architecture,
+mass-parallel machine learning on CPU) is named for research partners and never shown.
+
 Still weak, and only fixable in the research repositories: the AISP README's "97x" figure does not
 follow from its own table (59% to 95% success), the tier distribution and benchmarks have no data
 or script behind them, and the paper is a submission draft with LLM judges and no human agreement

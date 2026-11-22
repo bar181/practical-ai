@@ -687,3 +687,44 @@ td { color: var(--ivory-dim); }
 .consent-actions { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 0.8rem !important; }
 .prose-page h2 { margin-top: 2.25rem; font-size: var(--step-2); }
 .prose-page p { max-width: 62ch; }
+
+/* AISP in its own notation: verbatim code, read line by line. The two small fonts hold only the
+   characters in app/content/aisp.ts (scripts/make_aisp_fonts.py); browsers fetch them only here. */
+@font-face { font-family: "AISP Mono"; src: url("../fonts/aisp-mono.woff2") format("woff2"); font-display: swap; }
+@font-face { font-family: "AISP Math"; src: url("../fonts/aisp-math.woff2") format("woff2"); font-display: swap; }
+.aisp-code, .aisp-reading code, .aisp-glyphs { font-family: "AISP Mono", "AISP Math", ui-monospace, "DejaVu Sans Mono", "Cambria Math", "Segoe UI Symbol", monospace; font-variant-ligatures: none; }
+.aisp { padding: clamp(3.5rem, 2rem + 5vw, 6rem) 0; border-top: 1px solid var(--line); }
+.aisp .section-head { max-width: 62rem; }
+.aisp-pair { display: grid; gap: 2rem; margin-top: 2rem; align-items: start; }
+@media (min-width: 980px) { .aisp-pair { grid-template-columns: 1fr 1fr; } }
+.aisp-fig { margin: 0; min-width: 0; }
+.aisp-title { font: 600 1.45rem/1.2 var(--display); margin: 0 0 0.4rem; }
+.aisp-text { color: var(--ivory-dim); margin: 0 0 1rem; max-width: 60ch; }
+.aisp-code { margin: 0; padding: 1.1rem 1.2rem; background: rgb(0 0 0 / 0.35); border: 1px solid var(--line); border-left: 3px solid var(--brass); border-radius: 10px; overflow-x: auto; font-size: 0.9rem; line-height: 1.65; color: var(--ivory); tab-size: 2; }
+.aisp-code:focus-visible { outline: 2px solid var(--brass); outline-offset: 3px; }
+.aisp-comment { color: var(--ivory-dim); }
+.aisp-reading { margin: 1rem 0 0; display: grid; gap: 0.7rem; }
+.aisp-reading div { display: grid; gap: 0.15rem; }
+.aisp-reading dt code { color: var(--brass); font-size: 0.88rem; overflow-wrap: anywhere; }
+.aisp-reading dd { margin: 0; color: var(--ivory-dim); }
+.aisp-source { margin: 2rem 0 0; color: var(--ivory-dim); font-size: 0.92rem; }
+.aisp-source a { font-weight: 700; display: inline-flex; min-height: 44px; align-items: center; }
+.aisp-proofline { margin: 1.5rem 0 0; font: italic 500 1.15rem/1.4 var(--display); color: var(--brass); max-width: 60ch; }
+.sigma { min-width: 0; }
+.sigma-big { display: grid; gap: 0.3rem; margin: 0 0 1.25rem; }
+.sigma-mark { display: inline-flex; align-items: baseline; color: var(--ivory); line-height: 1; }
+.sigma-mark .aisp-glyphs { font-family: "AISP Mono", "AISP Math", serif; font-size: clamp(3.2rem, 2rem + 4vw, 5rem); }
+.sigma-mark sub { font: 600 clamp(1.4rem, 1rem + 1.5vw, 2rem)/1 var(--display); vertical-align: baseline; margin-left: 0.1em; }
+.sigma-text { color: var(--ivory-dim); max-width: 44ch; }
+.sigma-grid { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.75rem; }
+@media (min-width: 700px) { .sigma-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.aisp-pair .sigma-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.sigma-grid li { display: grid; gap: 0.1rem; padding: 0.8rem 0.9rem; border: 1px solid var(--line); border-radius: 10px; }
+.sigma-glyph { font-size: 1.9rem; line-height: 1.1; color: var(--brass); }
+.sigma-name { font-weight: 700; }
+.sigma-role { color: var(--ivory-dim); font-size: 0.9rem; }
+.sigma-range { color: var(--ivory-dim); font-size: 0.8rem; }
+.aisp-close { margin-top: 3rem; }
+.aisp-commercial { align-self: center; padding: 1.5rem; border: 1px solid var(--line); border-radius: 12px; }
+.aisp-commercial h3 { font: 600 1.6rem/1.2 var(--display); margin: 0 0 0.75rem; }
+.aisp-commercial p { color: var(--ivory-dim); margin: 0 0 1rem; max-width: 52ch; }

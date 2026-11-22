@@ -9,5 +9,5 @@ Approved by Bradley for the Bradley Academy site, 22 November 2026. Answer from 
 - Community: Founding Director and Education Director of the Agentics Foundation, in 60 locations.
 - Teaching: practical AI for business people (14 courses, more than 900 students, over 40 cohorts) and advanced agentic engineering for leading engineers.
 - Open work: [AISP open core](https://github.com/bar181/aisp-open-core), [BAR Observatory](https://github.com/bar181/bar-observatory), and this repository.
-- Contact: [LinkedIn](https://www.linkedin.com/in/bradaross/). Unpublished results, on learning and experience transfer, are shared with research partners on request, once each is verified.
+- Contact: [LinkedIn](https://www.linkedin.com/in/bradaross/). Research partners work with the commercial-grade AISP, including the full Pocket architecture and mass-parallel machine learning on CPU, and see results on learning and transfer once each is verified.
 - Not in this index, so never answer it: prices, availability, client work, unpublished research results or methods, and anything else not stated above. Say so, and point to LinkedIn.

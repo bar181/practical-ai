@@ -100,6 +100,12 @@ evidence with a link to each number's method and limits, and end with a "Check i
 Unpublished results come off the site and are shared on request. Built and checked by Claude at
 390 and 1280 pixels; not yet reviewed by Bradley or the outside reviewer.
 
+**Later that evening:** AISP shown in its own notation, verbatim from the open-core specification:
+the 512 symbols in eight categories, the foundation and glossary, then the binding proof, the Pocket
+architecture, learning, search and the evidence block, each read line by line. The commercial grade
+is named for research partners, not shown. Teaching sits beside research. Checked by Claude at 390
+and 1280 pixels; not yet reviewed by Bradley.
+
 **22 November 2026, latest:** Site Studio became the publish-a-website lesson. A skill for any
 chatbot (Level 1), GitHub Pages, your own domain and Vercel (Level 2), and Cloudflare, Google Cloud
 and Supabase (Level 3), written from each provider's documentation with dated sources. No person and

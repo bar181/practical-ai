@@ -1,7 +1,9 @@
 import { Link } from "react-router";
 import type { Route } from "./+types/home";
 import { brand, contact } from "../content/brand";
-import { NextSteps, ResultList } from "../components/Evidence";
+import { AispCode, SigmaGrid, SourceNote } from "../components/Aisp";
+import { ResultList } from "../components/Evidence";
+import { aispIntro, foundation } from "../content/aisp";
 import { SceneImage } from "../components/Scene";
 import { SmartLink } from "../components/SmartLink";
 import { SplitText } from "../components/SplitText";
@@ -51,7 +53,22 @@ export default function Home() {
         </div>
       </section>
 
-      {/* The proof: three public numbers, each linked to its method */}
+      {/* AISP in its own notation */}
+      <section className="aisp" aria-labelledby="aisp-home-h">
+        <div className="wrap">
+          <div className="section-head" data-cine="reveal">
+            <h2 id="aisp-home-h" data-cine-item>{aispIntro.heading}</h2>
+            <p className="reel-lead" data-cine-item>{aispIntro.lead}</p>
+          </div>
+          <div className="aisp-pair">
+            <SigmaGrid />
+            <AispCode excerpt={foundation} />
+          </div>
+          <SourceNote more />
+        </div>
+      </section>
+
+      {/* The proof: three public numbers, each linked to its source */}
       <section className="results" aria-labelledby="results-h">
         <div className="wrap">
           <h2 id="results-h" className="results-h" data-cine="reveal">{brand.results.heading}</h2>
@@ -60,7 +77,6 @@ export default function Home() {
         </div>
       </section>
 
-      <NextSteps id="next-h" heading={brand.next.heading} items={brand.next.items} />
 
       {/* The range: from a ten-person team to a lab */}
       <section className="range" aria-labelledby="range-h">

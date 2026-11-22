@@ -2,7 +2,9 @@ import { Link } from "react-router";
 import type { Route } from "./+types/research";
 import { brand, contact, research } from "../content/brand";
 import { Lattice } from "../components/Art";
+import { AispCode, SigmaGrid, SourceNote } from "../components/Aisp";
 import { NextSteps, ResultList } from "../components/Evidence";
+import { advanced, aispIntro, commercial, evidenceBlock, foundation, glossary } from "../content/aisp";
 import { SmartLink } from "../components/SmartLink";
 import { SplitText } from "../components/SplitText";
 import { pageMeta } from "../lib/meta";
@@ -21,8 +23,45 @@ export default function Research() {
           <p className="hero-lead" data-cine-after="1">{research.hero.lead}</p>
           <div className="actions" data-cine-after="2">
             <a className="btn btn-light" href={contact.paper.href} rel="noopener">{contact.paper.label}</a>
-            <a className="btn btn-ghost" href="#early-access">Further results</a>
+            <a className="btn btn-ghost" href="#aisp-h">Inside AISP</a>
           </div>
+        </div>
+      </section>
+
+      <section className="aisp" aria-labelledby="aisp-h">
+        <div className="wrap">
+          <div className="section-head" data-cine="reveal">
+            <h2 id="aisp-h" data-cine-item>{aispIntro.heading}</h2>
+            <p className="reel-lead" data-cine-item>{aispIntro.lead}</p>
+          </div>
+          <SigmaGrid />
+          <p className="aisp-proofline">{aispIntro.proofLine}</p>
+          <div className="aisp-pair">
+            <AispCode excerpt={foundation} />
+            <AispCode excerpt={glossary} />
+          </div>
+          <SourceNote />
+        </div>
+      </section>
+
+      <section className="aisp aisp-deep" aria-labelledby="deep-h">
+        <div className="wrap">
+          <div className="section-head" data-cine="reveal">
+            <h2 id="deep-h" data-cine-item>Inside the open core</h2>
+            <p className="reel-lead" data-cine-item>Beyond the notation, the specification defines how knowledge is bound, kept, learned and searched. Four blocks from it, each read line by line.</p>
+          </div>
+          <div className="aisp-pair">
+            {advanced.map((x) => <AispCode key={x.id} excerpt={x} />)}
+          </div>
+          <div className="aisp-pair aisp-close">
+            <AispCode excerpt={evidenceBlock} />
+            <div className="aisp-commercial">
+              <h3>{commercial.heading}</h3>
+              <p>{commercial.text}</p>
+              <p><a className="btn btn-light" href="#early-access">For research partners</a></p>
+            </div>
+          </div>
+          <SourceNote />
         </div>
       </section>
 

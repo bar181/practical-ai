@@ -13,7 +13,7 @@ export function ResultList({ items, className = "result-grid" }: { items: Result
           <p className="result-from">{r.from}</p>
           <p className="result-text">{r.text}</p>
           {r.note ? <p className="result-note">{r.note}</p> : null}
-          {r.href ? <p className="result-source"><SmartLink href={r.href}>Method and limits</SmartLink></p> : null}
+          {r.href ? <p className="result-source"><SmartLink href={r.href}>Source</SmartLink></p> : null}
         </li>
       ))}
     </ul>

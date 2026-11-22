@@ -48,13 +48,13 @@ export function Header() {
         </Link>
         <nav aria-label="Main" className="main-nav">
           {navLinks.map((l) => <NavLink key={l.to} to={l.to} viewTransition>{l.label}</NavLink>)}
-          <Link className="btn btn-light btn-sm" to="/research#early-access" viewTransition>Request results</Link>
+          <Link className="btn btn-light btn-sm" to="/research#early-access" viewTransition>Research partners</Link>
         </nav>
         <details className="menu" ref={menu}>
           <summary aria-label="Menu"><span className="menu-icon" aria-hidden="true" />Menu</summary>
           <nav aria-label="Main, phone" className="menu-panel">
             {navLinks.map((l) => <NavLink key={l.to} to={l.to} viewTransition>{l.label}</NavLink>)}
-            <Link className="btn btn-light" to="/research#early-access" viewTransition>Request results</Link>
+            <Link className="btn btn-light" to="/research#early-access" viewTransition>Research partners</Link>
           </nav>
         </details>
       </div>
