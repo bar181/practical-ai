@@ -1,21 +1,21 @@
 # WiseGeo: a one-page company site
 
-The second Site Studio example: WiseGeo Inc., Bradley Ross's company. One static page, no build
-step, deployed on its own as a separate Vercel project for `wisegeo.com`. It sells hands-on
-agentic software for startups and links back to Bradley Academy for the research, the teaching and
-the demos that support the offer.
+The second Site Studio example: WiseGeo Inc., Bradley Ross's company. One short static page, no
+build step, deployed on its own as a separate Vercel project for `wisegeo.com`. It is for people
+who see the name on LinkedIn or an invoice: the legal name, Bradley as founder, what the company
+does in three lines, and one link to Bradley's work at `https://bradley.academy/`.
 
-Think of it as the shop front to Bradley Academy's lecture hall: one says what Bradley will build
-for you, the other shows what he researches and teaches.
+Think of it as the brass plate by the door: it confirms who is inside and points you to the room
+where the work is.
 
 ## What is here
 
 | File | Holds |
 | --- | --- |
-| `index.html` | The page: the offer, three services, selected work, who builds it, and the LinkedIn call to action |
+| `index.html` | The page: the legal name, the founder, three lines on the work, "View Bradley's work at Bradley Academy" and LinkedIn |
 | `styles.css` | The look: cool paper, deep ink, one teal for actions. Bricolage Grotesque and Inter Tight |
 | `fonts/` | The two fonts, latin subsets from Fontsource (SIL Open Font License 1.1) |
-| `img/` | Bradley's photo (from `assets/images/`) and the 1200 by 630 social preview |
+| `img/` | The 1200 by 630 social preview |
 | `vercel.json` | Clean URLs, security headers, long caching for fonts, and a rule that skips a deploy when nothing in this folder changed |
 | `404.html`, `robots.txt`, `sitemap.xml`, `favicon.svg` | The usual small files |
 
@@ -42,14 +42,14 @@ Bradley Academy links here through its `SITE_WISEGEO_URL` build setting (default
 ## Rules for this page
 
 - Every fact comes from Bradley. No invented clients, numbers, quotes or testimonials.
-- Selected work is public work only, labelled: live website, open-source tool, demo or research.
-  Client projects appear only with the client's written approval.
-- The main call to action is "Message Bradley on LinkedIn" and opens
-  `https://www.linkedin.com/in/bradaross/`.
+- Keep it short. The work lives at Bradley Academy, behind one link; no portfolio here.
+- The contact is "Message Bradley on LinkedIn", which opens `https://www.linkedin.com/in/bradaross/`.
+  The founder's link in the structured data is `https://bradley.academy/`.
 - Check at 390 and 1280 pixels: no sideways scrolling, 44 pixel tap targets.
 - A person approves anything that is published or merged.
 
 ## Status
 
-Built and checked by Claude on 22 November 2026 at 390 and 1280 pixels wide, served locally. Not
-yet deployed on Vercel, not yet on `wisegeo.com`, and not yet reviewed by Bradley.
+Built and checked by Claude on 22 November 2026 at 390 and 1280 pixels wide, served locally, and
+simplified the same evening to a short company page at Bradley's direction. Not yet deployed on
+Vercel, not yet on `wisegeo.com`.

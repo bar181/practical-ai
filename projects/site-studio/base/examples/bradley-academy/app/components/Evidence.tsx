@@ -1,9 +1,10 @@
 import { SmartLink } from "./SmartLink";
 
-type Result = { big: string; from: string; text: string; note?: string; href?: string };
+type Result = { big: string; from: string; text: string; note?: string; href?: string; code?: string };
 type Next = { href: string; label: string; note: string };
 
-/** The public results, each linked to the page where its method and limits are written down. */
+/** Public results, each linked to the page where it is written down. A result may quote one line of
+ *  AISP verbatim (code), shown in the AISP fonts. */
 export function ResultList({ items, className = "result-grid" }: { items: Result[]; className?: string }) {
   return (
     <ul className={className} data-cine="reveal">
@@ -11,6 +12,7 @@ export function ResultList({ items, className = "result-grid" }: { items: Result
         <li key={r.big} data-cine-item>
           <p className="result-big">{r.big}</p>
           <p className="result-from">{r.from}</p>
+          {r.code ? <p className="result-code"><code>{r.code}</code></p> : null}
           <p className="result-text">{r.text}</p>
           {r.note ? <p className="result-note">{r.note}</p> : null}
           {r.href ? <p className="result-source"><SmartLink href={r.href}>Source</SmartLink></p> : null}
@@ -20,7 +22,7 @@ export function ResultList({ items, className = "result-grid" }: { items: Result
   );
 }
 
-/** Where a reviewer goes next, in order: the paper, the evidence, the tools. */
+/** Where a reader goes next, in order. */
 export function NextSteps({ id, heading, items }: { id: string; heading: string; items: Next[] }) {
   return (
     <section className="next-steps" aria-labelledby={id}>

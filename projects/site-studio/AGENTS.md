@@ -46,7 +46,7 @@ Vercel settings and its own rules. Bradley Academy links to it through `SITE_WIS
 
 ## Rules for this site
 
-1. **Every fact comes from a README,** or for Bradley's own pages (home, Research, About), from Bradley himself. Those pages are a personal profile, not a services page: the research, the teaching and public proof points. Services live on WiseGeo. Unpublished research results go to research partners only (the "Research partners" call to action); everyone else connects on LinkedIn with a note. No offers of free help. No catalogue, no prices, and no statements about who has not used something. His title is Agentic Architect and Researcher; "agentic engineer" is also allowed. Bradley decided this on 22 November 2026 for a global audience, knowing both words are protected titles in Ontario. Research numbers come only from Bradley; a projection is labelled as one. Change the README first, then `tools.ts`. Never invent a
+1. **Every fact comes from a README,** or for Bradley's own pages (home, Research, About), from Bradley himself. Those pages are a personal profile, not a services page: the research, the teaching and public proof points. Services live on WiseGeo. Unpublished research results go to research partners only (the "Research partners" call to action); everyone else connects on LinkedIn with a note. No offers of free help. No catalogue, no prices, and no statements about who has not used something. He is positioned as a senior agentic engineer and research lead, with twenty-five years as a software architect and developer and a specialty in data prediction; "agentic architect" is also allowed. Bradley decided this on 22 November 2026 for a global audience, knowing both words are protected titles in Ontario. Lead with what he built and the evidence, then teaching, then roles. Research numbers come only from Bradley; a projection is labelled as one. Change the README first, then `tools.ts`. Never invent a
    number, a quote, a customer or a result. A status says who has and has not tried the tool.
 2. **The voice is Bradley's practical instructor voice:** the core idea in one sentence, an
    everyday analogy, then the detail. Short sentences. No em dashes. Sentence case headings.
@@ -76,7 +76,10 @@ Pages outside the app (the Artifact Studio master pages, Rare Find, the explaine
 `build_site.py` in the workflow, so in `npm run dev` their links and embeds do not load.
 
 **Custom domain:** set `SITE_BASE=/` and `SITE_URL=https://your-domain` for the build, and add the
-domain in the repository's Pages settings.
+domain in the repository's Pages settings. In this repository the Pages workflow reads them from
+repository variables (`SITE_BASE`, `SITE_URL`, and optionally `SITE_WISEGEO_URL`, `SITE_GA_ID`,
+`SITE_GSC`); unset, it builds for `bar181.github.io/practical-ai/`. For `bradley.academy`, the owner
+sets `SITE_BASE=/` and `SITE_URL=https://bradley.academy` when the domain is added.
 
 ## Plugins and skills
 

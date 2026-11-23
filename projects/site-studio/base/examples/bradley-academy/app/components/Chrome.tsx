@@ -69,7 +69,7 @@ export function Footer() {
       <div className="wrap">
         <div className="end-credits">
           <p className="end-brand"><Brand /></p>
-          <p className="end-role">Bradley Ross, Agentic Architect and Researcher</p>
+          <p className="end-role">{site.product}</p>
           <p className="end-role">{site.labels.footerTagline}</p>
           {onTools ? <><p className="end-role">Source code</p>
           <p className="end-name"><a href={site.source} rel="noopener">{site.sourceLabel}</a></p></> : null}

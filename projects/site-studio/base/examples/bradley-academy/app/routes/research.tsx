@@ -28,6 +28,14 @@ export default function Research() {
         </div>
       </section>
 
+      <section className="results" aria-labelledby="results-h">
+        <div className="wrap">
+          <h2 id="results-h" className="results-h" data-cine="reveal">{research.results.heading}</h2>
+          <p className="results-note" data-cine="reveal">{research.results.note}</p>
+          <ResultList items={research.results.items} className="result-grid result-grid-4" />
+        </div>
+      </section>
+
       <section className="aisp" aria-labelledby="aisp-h">
         <div className="wrap">
           <div className="section-head" data-cine="reveal">
@@ -65,13 +73,6 @@ export default function Research() {
         </div>
       </section>
 
-      <section className="results" aria-labelledby="results-h">
-        <div className="wrap">
-          <h2 id="results-h" className="results-h" data-cine="reveal">{research.results.heading}</h2>
-          <p className="results-note" data-cine="reveal">{research.results.note}</p>
-          <ResultList items={research.results.items} className="result-grid result-grid-4" />
-        </div>
-      </section>
 
       <NextSteps id="next-h" heading={brand.next.heading} items={brand.next.items} />
 

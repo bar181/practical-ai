@@ -1,6 +1,7 @@
 name: Practical AI site on GitHub Pages
 
-# Publishes https://bar181.github.io/practical-ai/:
+# Publishes https://bar181.github.io/practical-ai/, or https://bradley.academy/ once the repository
+# variables below are set:
 #   /                  the Bradley Academy site (React, every page pre-rendered): projects/site-studio/
 #   /artifact-studio/  the two master pages (showcase, components) and the worked examples
 #   /tone-studio/      the seven tone landing pages
@@ -65,6 +66,15 @@ jobs:
           cache-dependency-path: projects/site-studio/base/examples/bradley-academy/package-lock.json
       - name: Build the Bradley Academy site
         working-directory: projects/site-studio/base/examples/bradley-academy
+        # Where the site lives. Unset, it builds for bar181.github.io/practical-ai/. For the custom
+        # domain, set repository variables (Settings, Secrets and variables, Actions, Variables):
+        # SITE_BASE=/ and SITE_URL=https://bradley.academy, at the same time as the Pages custom domain.
+        env:
+          SITE_BASE: ${{ vars.SITE_BASE || '/practical-ai/' }}
+          SITE_URL: ${{ vars.SITE_URL || 'https://bar181.github.io/practical-ai' }}
+          SITE_WISEGEO_URL: ${{ vars.SITE_WISEGEO_URL || 'https://wisegeo.com' }}
+          SITE_GA_ID: ${{ vars.SITE_GA_ID || '' }}
+          SITE_GSC: ${{ vars.SITE_GSC || '' }}
         run: |
           npm ci
           npm run typecheck

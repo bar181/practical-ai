@@ -730,3 +730,48 @@ td { color: var(--ivory-dim); }
 .aisp-commercial { align-self: center; padding: 1.5rem; border: 1px solid var(--line); border-radius: 12px; }
 .aisp-commercial h3 { font: 600 1.6rem/1.2 var(--display); margin: 0 0 0.75rem; }
 .aisp-commercial p { color: var(--ivory-dim); margin: 0 0 1rem; max-width: 52ch; }
+
+/* Home, November 2026: Bradley first, then the systems with their evidence, teaching, roles. */
+.hero-title.hero-name { max-width: none; font-size: clamp(3.4rem, 2rem + 7vw, 8rem); }
+.career, .systems { padding-block: clamp(3.5rem, 2.5rem + 4vw, 6.5rem); border-top: 1px solid var(--line); }
+.career .section-head, .systems .section-head { max-width: 62rem; }
+.career-grid { list-style: none; padding: 0; margin: 2.5rem 0 0; display: grid; gap: 2rem; }
+@media (min-width: 900px) { .career-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 3rem; } }
+.career-grid li { border-top: 2px solid var(--brass); padding-top: 1.1rem; }
+.career-grid h3 { font: 600 var(--step-2)/1.1 var(--display); margin: 0 0 0.6rem; }
+.career-grid p { color: var(--ivory-dim); margin: 0; }
+.system { display: grid; gap: 2rem; margin-top: 3rem; padding-top: 2.5rem; border-top: 1px solid var(--line); }
+@media (min-width: 1000px) { .system { grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.4fr); gap: 3.5rem; } }
+.system-kind { margin: 0 0 0.5rem; color: var(--brass); font-size: 0.95rem; }
+.system-name { font: 600 clamp(2.4rem, 1.6rem + 3vw, 3.6rem)/1 var(--display); margin: 0 0 1rem; }
+.system-line { color: var(--ivory-dim); max-width: 46ch; }
+.system-links { display: flex; flex-wrap: wrap; gap: 0 1.5rem; margin: 0.5rem 0 0; }
+.system-links a { display: inline-flex; min-height: 44px; align-items: center; font-weight: 700; }
+.result-grid-2 { gap: 2rem; }
+@media (min-width: 700px) { .result-grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 900px) { .result-grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2.5rem; } }
+.result-grid-2 .result-big { font-size: clamp(2rem, 1.4rem + 2vw, 2.9rem); }
+.result-code { margin: 0.6rem 0 0.8rem; }
+.result-code code { display: inline-block; max-width: 100%; overflow-wrap: anywhere; font-family: "AISP Mono", "AISP Math", ui-monospace, monospace; font-size: 0.95rem; color: var(--brass); background: rgb(0 0 0 / 0.3); border: 1px solid var(--line); border-radius: 8px; padding: 0.35rem 0.6rem; }
+.practical-block { margin-top: 3rem; padding: clamp(1.5rem, 1rem + 2vw, 2.5rem); border: 1px solid var(--line); border-radius: var(--radius); background: linear-gradient(165deg, var(--velvet-2), var(--velvet) 70%); }
+.practical-block h3 { font: 600 var(--step-3)/1.1 var(--display); margin: 0 0 0.75rem; }
+.practical-block > p { color: var(--ivory-dim); max-width: 60ch; }
+.practical-actions { list-style: none; padding: 0; margin: 1.5rem 0 0; display: grid; gap: 1rem; }
+@media (min-width: 900px) { .practical-actions { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.5rem; } }
+.practical-actions li { display: grid; gap: 0.2rem; align-content: start; }
+.practical-actions a { font: 600 1.2rem/1.2 var(--display); display: inline-flex; min-height: 44px; align-items: center; }
+.practical-actions span { color: var(--ivory-dim); font-size: 0.95rem; }
+.network { padding-block: clamp(3rem, 2rem + 3vw, 5rem); }
+.network-h { font: italic 500 var(--step-2)/1.2 var(--display); color: var(--brass); margin: 0 0 2rem; letter-spacing: 0; }
+.roles { list-style: none; padding: 0; margin: 0; display: grid; gap: 1.75rem; }
+@media (min-width: 800px) { .roles { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem 3rem; } }
+@media (min-width: 1200px) { .roles { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.roles li { border-top: 1px solid var(--crimson-hi); padding-top: 1rem; }
+.role-org { margin: 0; font: 600 var(--step-1)/1.2 var(--display); }
+.role-name { margin: 0.2rem 0 0.4rem; color: var(--brass); }
+.role-text { margin: 0; color: var(--ivory-dim); }
+.role-text a { display: inline-flex; min-height: 44px; align-items: center; font-weight: 700; }
+.system { grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 1000px) { .system { grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.4fr); } }
+.result-grid-2 .result-big { white-space: normal; overflow-wrap: anywhere; }
+.result-code code { display: block; white-space: pre; overflow-x: auto; word-break: normal; overflow-wrap: normal; }

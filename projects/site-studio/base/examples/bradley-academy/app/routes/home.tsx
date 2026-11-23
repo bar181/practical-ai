@@ -16,7 +16,7 @@ export const meta: Route.MetaFunction = () => [...pageMeta(brand.metaTitle, bran
 export default function Home() {
   return (
     <>
-      {/* Opening scene */}
+      {/* Opening scene: Bradley, and what he does */}
       <section className="hero hero-brand" aria-labelledby="hero-h">
         <SceneImage id="home-hero" cine="kenburns" eager className="hero-img" />
         <div className="hero-shade" aria-hidden="true" />
@@ -27,22 +27,60 @@ export default function Home() {
             <img src={media(site.labels.authorPhoto)} alt="" width={56} height={56} className="hero-face" />
             <span>{brand.hero.kicker}</span>
           </p>
-          <SplitText as="h1" id="hero-h" className="hero-title" cine="title" text={brand.hero.title} />
+          <SplitText as="h1" id="hero-h" className="hero-title hero-name" cine="title" text={brand.hero.title} />
           <p className="hero-lead" data-cine-after="1">{brand.hero.lead}</p>
           <div className="actions" data-cine-after="2">
-            <a className="btn btn-light" href={contact.paper.href} rel="noopener">{contact.paper.label}</a>
-            <Link className="btn btn-ghost" to="/research" viewTransition>See the evidence</Link>
+            <a className="btn btn-light" href={brand.hero.primary.href}>{brand.hero.primary.label}</a>
+            <Link className="btn btn-ghost" to="/research#early-access" viewTransition>Research partners</Link>
           </div>
         </div>
       </section>
 
-      {/* The work, one line. Credentials are on About */}
-      <section className="proof" aria-label="The work">
+      {/* The record, one line */}
+      <section className="proof" aria-label="The record">
         <ul className="wrap proof-list">
           {brand.proof.map((p) => (
             <li key={p.strong}><strong>{p.strong}</strong><span>{p.rest}</span></li>
           ))}
         </ul>
+      </section>
+
+      {/* Twenty-five years of production software */}
+      <section className="career" aria-labelledby="career-h">
+        <div className="wrap">
+          <div className="section-head" data-cine="reveal">
+            <h2 id="career-h" data-cine-item>{brand.career.heading}</h2>
+            <p className="reel-lead" data-cine-item>{brand.career.lead}</p>
+          </div>
+          <ul className="career-grid" data-cine="reveal">
+            {brand.career.points.map((c) => (
+              <li key={c.title} data-cine-item><h3>{c.title}</h3><p>{c.text}</p></li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* Systems he has built, each with its evidence */}
+      <section id="systems" className="systems" aria-labelledby="systems-h">
+        <div className="wrap">
+          <div className="section-head" data-cine="reveal">
+            <h2 id="systems-h" data-cine-item>{brand.systems.heading}</h2>
+            <p className="reel-lead" data-cine-item>{brand.systems.lead}</p>
+          </div>
+          {brand.systems.items.map((sys) => (
+            <article key={sys.name} className="system" aria-labelledby={`sys-${sys.name.replace(/\W+/g, "-")}`}>
+              <div className="system-head">
+                <p className="system-kind">{sys.kind}</p>
+                <h3 id={`sys-${sys.name.replace(/\W+/g, "-")}`} className="system-name">{sys.name}</h3>
+                <p className="system-line">{sys.line}</p>
+                <p className="system-links">
+                  {sys.links.map((l) => <SmartLink key={l.href} href={l.href}>{l.label}</SmartLink>)}
+                </p>
+              </div>
+              <ResultList items={sys.evidence} className="result-grid result-grid-2" />
+            </article>
+          ))}
+        </div>
       </section>
 
       {/* The vision, word by word */}
@@ -53,7 +91,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* AISP in its own notation */}
+      {/* AISP in its own notation, after the evidence */}
       <section className="aisp" aria-labelledby="aisp-home-h">
         <div className="wrap">
           <div className="section-head" data-cine="reveal">
@@ -68,61 +106,53 @@ export default function Home() {
         </div>
       </section>
 
-      {/* The proof: three public numbers, each linked to its source */}
-      <section className="results" aria-labelledby="results-h">
-        <div className="wrap">
-          <h2 id="results-h" className="results-h" data-cine="reveal">{brand.results.heading}</h2>
-          <ResultList items={brand.results.items} />
-          <p className="results-more" data-cine="reveal"><Link to="/research" viewTransition>All the public evidence</Link></p>
-        </div>
-      </section>
-
-
-      {/* The range: from a ten-person team to a lab */}
-      <section className="range" aria-labelledby="range-h">
+      {/* Teaching at every level, and Practical AI */}
+      <section className="range" aria-labelledby="teach-h">
         <div className="wrap">
           <div className="section-head" data-cine="reveal">
-            <h2 id="range-h" data-cine-item>{brand.range.heading}</h2>
-            <p className="reel-lead" data-cine-item>{brand.range.lead}</p>
+            <h2 id="teach-h" data-cine-item>{brand.teaching.heading}</h2>
+            <p className="reel-lead" data-cine-item>{brand.teaching.lead}</p>
           </div>
           <ul className="range-grid" data-cine="reveal">
-            {brand.range.items.map((r) => (
+            {brand.teaching.levels.map((r) => (
               <li key={r.who} data-cine-item>
-                <Link to={r.link.href} viewTransition className="range-tile">
+                <SmartLink href={r.link.href} className="range-tile">
                   <strong>{r.who}</strong>
                   <span>{r.text}</span>
                   <span className="range-go">{r.link.label}</span>
-                </Link>
+                </SmartLink>
               </li>
             ))}
           </ul>
-          <p className="work-with" data-cine="reveal">{brand.workWith.text} <a href={site.wisegeo} rel="noopener">{brand.workWith.label}</a></p>
+          <div className="practical-block" data-cine="reveal">
+            <h3 data-cine-item>{brand.teaching.practical.heading}</h3>
+            <p data-cine-item>{brand.teaching.practical.text}</p>
+            <ul className="practical-actions" data-cine-item>
+              {brand.teaching.practical.actions.map((a) => (
+                <li key={a.href}><SmartLink href={a.href}>{a.label}</SmartLink><span>{a.note}</span></li>
+              ))}
+            </ul>
+          </div>
         </div>
       </section>
 
-      {/* Open work */}
-      <section className="open-work" aria-labelledby="open-h">
-        <div className="wrap open-row" data-cine="reveal">
-          <h2 id="open-h" className="open-h" data-cine-item>{brand.openSource.heading}</h2>
-          <ul data-cine-item>
-            {brand.openSource.items.map((o) => (
-              <li key={o.href}><SmartLink href={o.href}>{o.label}</SmartLink><span>{o.note}</span></li>
+      {/* Roles and collaborations */}
+      <section className="network" aria-labelledby="network-h">
+        <div className="wrap">
+          <h2 id="network-h" className="network-h" data-cine="reveal">{brand.network.heading}</h2>
+          <ul className="roles" data-cine="reveal">
+            {brand.network.items.map((n) => (
+              <li key={n.org} data-cine-item>
+                <p className="role-org">{n.org}</p>
+                <p className="role-name">{n.role}</p>
+                <p className="role-text">{n.text}{"link" in n && n.link ? <> <SmartLink href={n.link.href}>{n.link.label}</SmartLink></> : null}</p>
+              </li>
             ))}
           </ul>
         </div>
       </section>
 
-      {/* Network: one quiet line */}
-      <section className="network" aria-labelledby="network-h">
-        <div className="wrap open-row" data-cine="reveal">
-          <h2 id="network-h" className="open-h" data-cine-item>{brand.network.heading}</h2>
-          <p className="network-text" data-cine-item>
-            {brand.network.text} <SmartLink href={brand.network.link.href}>{brand.network.link.label}</SmartLink>
-          </p>
-        </div>
-      </section>
-
-      {/* Further results, on request */}
+      {/* For research partners */}
       <section className="take take-scene early" aria-labelledby="early-h">
         <SceneImage id="work-hero" cine="parallax" className="take-img" />
         <div className="wrap narrow" data-cine="reveal">

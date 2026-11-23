@@ -111,6 +111,15 @@ and 1280 pixels; not yet reviewed by Bradley.
 own Vercel project. Built and checked by Claude at 390 and 1280 pixels, served locally; not yet
 deployed or reviewed by Bradley. Bradley Academy now links to it from home, About and the footer.
 
+**Later, 22 November 2026:** after outside feedback that the site still did not read as a top
+agentic engineer's, the home page leads with Bradley: a Harvard University graduate with twenty-five
+years building software from MVP to global production, and a specialty in data prediction. Then the
+systems he built (AISP, BAR Observatory) with determinism evidence from their repositories, the
+notation, teaching at every level with Practical AI as his open-source teaching work, and his public
+roles. WiseGeo became a short company page. Tested by Claude with `SITE_BASE=/` (direct loads of
+`/research`, `/tools` and `/about`, assets and canonical URLs) and at 390 and 1280 pixels; not yet
+reviewed by Bradley.
+
 **22 November 2026, latest:** Site Studio became the publish-a-website lesson. A skill for any
 chatbot (Level 1), GitHub Pages, your own domain and Vercel (Level 2), and Cloudflare, Google Cloud
 and Supabase (Level 3), written from each provider's documentation with dated sources. No person and
