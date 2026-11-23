@@ -111,9 +111,10 @@ Then, at Bradley's direction: the goal is to read as a leader in deterministic A
 not to let visitors verify. AISP now appears in its own notation, verbatim from the open-core
 specification and read line by line.
 
-23 November 2026, the research boundary: the site shows only the notation and foundation of the
-open core, and a few labelled public results (formal property, experimental finding or engineering
-result, each with its limits). Deeper mechanisms and anything beyond the open core are discussed
+23 November 2026, the research boundary: aisp-open-core and bar-observatory are public, so the
+site may use anything in them, with a link: the notation, the foundation and the open-core blocks
+read line by line, and a few labelled public results (formal property, experimental finding or
+engineering result, each with its limits). Anything beyond those two repositories is discussed
 with qualified research partners and never described on the site or in the agent index.
 
 Still weak, and only fixable in the research repositories: the AISP README's "97x" figure does not

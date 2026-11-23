@@ -2,10 +2,10 @@
 // A personal profile, not a services page: Bradley first (25 years building software, data
 // prediction, agentic research), then the systems he built with evidence a reader can inspect,
 // then teaching at every level and his public roles. Services are on WiseGeo.
-// Research boundary: publish only what is already public in github.com/bar181/aisp-open-core or
-// github.com/bar181/bar-observatory, each with a link and its limits. Never describe proprietary
-// architecture, learning processes, orchestration, optimisation, formulas, thresholds, settings or
-// unpublished results. Unpublished work is discussed with research partners, never summarised here.
+// Research boundary: github.com/bar181/aisp-open-core and github.com/bar181/bar-observatory are
+// public, so anything in them may be used, with a link and its limits. Nothing beyond them: no
+// proprietary architecture, learning processes, orchestration, optimisation, formulas, thresholds,
+// settings or unpublished results. That work is discussed with research partners, never here.
 // Position: senior agentic engineer and research lead (Bradley, 22 November 2026). He also allows
 // "agentic architect". US spelling.
 

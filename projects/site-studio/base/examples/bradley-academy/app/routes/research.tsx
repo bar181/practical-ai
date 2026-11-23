@@ -4,7 +4,7 @@ import { brand, contact, research } from "../content/brand";
 import { Lattice } from "../components/Art";
 import { AispCode, SigmaGrid, SourceNote } from "../components/Aisp";
 import { NextSteps, ResultList } from "../components/Evidence";
-import { aispIntro, foundation, glossary } from "../content/aisp";
+import { advanced, aispIntro, evidenceBlock, foundation, glossary, openCore } from "../content/aisp";
 import { SmartLink } from "../components/SmartLink";
 import { SplitText } from "../components/SplitText";
 import { pageMeta } from "../lib/meta";
@@ -53,6 +53,27 @@ export default function Research() {
           <div className="aisp-pair">
             <AispCode excerpt={foundation} />
             <AispCode excerpt={glossary} />
+          </div>
+          <SourceNote />
+        </div>
+      </section>
+
+      <section className="aisp aisp-deep" aria-labelledby="deep-h">
+        <div className="wrap">
+          <div className="section-head" data-cine="reveal">
+            <h2 id="deep-h" data-cine-item>Inside the open core</h2>
+            <p className="reel-lead" data-cine-item>Beyond the notation, the public specification defines how components bind, how knowledge is kept and learned, and how search works. Four blocks from it, each read line by line.</p>
+          </div>
+          <div className="aisp-pair">
+            {advanced.map((x) => <AispCode key={x.id} excerpt={x} />)}
+          </div>
+          <div className="aisp-pair aisp-close">
+            <AispCode excerpt={evidenceBlock} />
+            <div className="aisp-commercial">
+              <h3>{openCore.heading}</h3>
+              <p>{openCore.text}</p>
+              <p><a className="btn btn-light" href="#early-access">Research partners</a></p>
+            </div>
           </div>
           <SourceNote />
         </div>
