@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Harness 101 — 15 Minute Interactive Session</title>
+<style>
+:root{
+  --navy:#101a24;--navy2:#172532;--orange:#f36b2b;--bg:#f6f7f8;--card:#fff;
+  --ink:#111820;--muted:#66717d;--line:#e3e7ea;--soft:#fff1e9;
+  --green:#2f8f69;--blue:#3b82f6;--shadow:0 18px 48px rgba(16,26,36,.10);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink)}
+button{font:inherit}
+.deck{height:100svh;overflow:auto;scroll-snap-type:y mandatory}
+.slide{min-height:100svh;scroll-snap-align:start;padding:34px 24px;display:grid;place-items:center;position:relative}
+.wrap{width:min(1160px,100%)}
+.topline{position:fixed;top:0;left:0;height:5px;background:linear-gradient(90deg,var(--orange),#ffb180);z-index:20;width:0;transition:.2s}
+.nav{position:fixed;right:20px;bottom:18px;z-index:30;display:flex;gap:8px;align-items:center}
+.nav button,.more{border:0;border-radius:999px;padding:11px 15px;font-weight:800;cursor:pointer}
+.nav button{background:rgba(16,26,36,.9);color:#fff}
+.nav button:hover{background:var(--orange)}
+.count{background:#fff;border:1px solid var(--line);border-radius:999px;padding:10px 13px;font-size:12px;font-weight:900;color:var(--muted);box-shadow:var(--shadow)}
+.hero{background:linear-gradient(135deg,var(--navy),var(--navy2));color:white;border-radius:28px;padding:44px;box-shadow:var(--shadow);display:grid;grid-template-columns:1.25fr .75fr;gap:30px;align-items:center}
+.kicker{font-size:12px;text-transform:uppercase;letter-spacing:.13em;color:var(--orange);font-weight:900}
+h1,h2,h3,p{margin:0}
+h1{font-size:clamp(3.6rem,9vw,8.5rem);line-height:.88;letter-spacing:-.075em}
+h2{font-size:clamp(2.5rem,6vw,5.8rem);line-height:.92;letter-spacing:-.065em;max-width:930px}
+h3{font-size:clamp(1.45rem,3vw,2.4rem);line-height:1;letter-spacing:-.045em}
+p{color:var(--muted);font-size:clamp(1.02rem,1.5vw,1.25rem);line-height:1.48}
+.hero p{color:#cbd5dc}
+.hero-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.13);border-radius:20px;padding:22px}
+.big-num{font-size:54px;font-weight:950;letter-spacing:-.06em;color:#fff;margin:3px 0}
+.grid{display:grid;gap:18px}
+.two{grid-template-columns:1fr 1fr}.three{grid-template-columns:repeat(3,1fr)}.four{grid-template-columns:repeat(4,1fr)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:24px;box-shadow:var(--shadow)}
+.dark{background:linear-gradient(135deg,var(--navy),#203243);color:white}.dark p{color:#cfd8df}
+.card h3{margin-bottom:10px}
+.pill{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:8px 12px;font-size:13px;font-weight:850;background:#fff;color:var(--ink)}
+.step{display:flex;gap:16px;align-items:flex-start;padding:17px 0;border-bottom:1px solid var(--line)}
+.step:last-child{border-bottom:0}
+.badge{width:38px;height:38px;border-radius:12px;display:grid;place-items:center;background:var(--orange);color:#fff;font-weight:950;flex:0 0 auto}
+.arrow{font-size:30px;color:var(--muted);display:grid;place-items:center}
+.example{background:#fff;border:1px solid var(--line);border-radius:24px;padding:26px;box-shadow:var(--shadow)}
+.run{display:grid;grid-template-columns:repeat(7,1fr);gap:10px;align-items:stretch;margin-top:22px}
+.run .node{background:#fff;border:1px solid var(--line);border-radius:16px;padding:15px;text-align:center;min-height:104px;display:grid;place-items:center}
+.node b{display:block}.node span{font-size:12px;color:var(--muted);line-height:1.35}
+.more{background:var(--orange);color:#fff;margin-top:20px}
+.more.secondary{background:#fff;color:var(--ink);border:1px solid var(--line)}
+.details{display:none;margin-top:16px;background:var(--soft);border:1px solid #ffd3bf;border-radius:18px;padding:18px;color:#5b4337}
+.details p,.details li{font-size:15px;color:#5b4337;line-height:1.5}
+.details ul{margin:8px 0 0 18px;padding:0}
+.details.open{display:block}
+.tipbox{display:none;margin-top:16px;background:#eef4f8;border:1px solid #d7e1e8;border-radius:18px;padding:18px}
+.tipbox.open{display:block}
+.tipgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.tip{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px}
+.tip .label{font-size:11px;text-transform:uppercase;letter-spacing:.1em;font-weight:900;color:var(--orange);margin-bottom:7px}
+.tip p{font-size:14px;line-height:1.5;color:#43505c}
+@media(max-width:900px){.tipgrid{grid-template-columns:1fr}}
+.prompt{background:#eef3f7;border:1px solid #d9e1e7;border-radius:18px;padding:18px;margin-top:16px}
+.prompt b{display:block;margin-bottom:7px}
+.footer-note{position:absolute;left:24px;bottom:18px;color:#8b96a3;font-size:12px;font-weight:800}
+.slide-num{position:absolute;right:24px;top:18px;color:#99a5b0;font-size:12px;font-weight:900}
+.checklist li{margin:9px 0}
+.takeaway{font-size:clamp(1.4rem,2.8vw,2.3rem);line-height:1.18;letter-spacing:-.04em;color:var(--ink);font-weight:760}
+@media(max-width:900px){.hero,.two,.three,.four{grid-template-columns:1fr}.run{grid-template-columns:1fr}.hero{padding:28px}h1{font-size:4rem}.slide{padding:28px 15px}.nav{right:10px;bottom:10px}.footer-note{display:none}}
+@media print{
+  .nav,.topline,.more{display:none!important}.deck{height:auto;overflow:visible}.slide{break-after:page;min-height:100vh}.details,.tipbox{display:block!important}
+}
+</style>
+</head>
+<body>
+<div class="topline" id="topline"></div>
+<div class="nav">
+  <button id="prev">←</button>
+  <span class="count" id="counter">1 / 10</span>
+  <button id="next">→</button>
+</div>
+
+<main class="deck" id="deck">
+
+<section class="slide">
+  <div class="wrap hero">
+    <div>
+      <div class="kicker">Harness 101 · 15-minute interactive session</div>
+      <h1>What is an AI harness?</h1>
+      <p style="margin-top:18px;max-width:760px">A practical introduction to how harnesses help teams turn AI agents into reliable, repeatable, company-aligned work.</p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <button class="more" onclick="toggleDetails(this)">More details</button>
+      <button class="more secondary" onclick="toggleTips(this)">Tips</button>
+    </div>
+    <div class="details"><p>A model can generate code, text, and plans. An agent adds tools and can take action. A harness is the system around that agent.</p><p>The harness controls things like what the agent can access, what rules apply, how work is checked, and when the task is complete.</p><p>Why care? Because the same model can produce very different results depending on the harness around it. Better harnesses make agent work easier to trust, repeat, and improve.</p></div>
+    <div class="tipbox">
+      <div class="tipgrid">
+        <div class="tip"><div class="label">Starter</div><p>Do not start with a long prompt. Start with a clear task and a clear Definition of Done.</p><p>For example: “Add export to CSV. Existing tests must pass. Add one new test. Do not change unrelated files.”</p><p>That gives the agent a clear target and gives you a simple way to review the result.</p></div>
+        <div class="tip"><div class="label">Skilled</div><p>Keep task instructions separate from run state.</p><p>The prompt should say what needs to happen. A file, database, or workflow system should track what already happened.</p><p>This matters on longer tasks. The agent should read current state instead of trying to remember everything from previous messages.</p></div>
+        <div class="tip"><div class="label">Expert</div><p>Move important controls out of prompts.</p><p>If a rule really matters, enforce it with code, permissions, or gates. Do not rely only on a Markdown instruction such as “do not deploy.”</p><p>Use the model for reasoning. Use the harness for control.</p></div>
+      </div>
+    </div>
+    </div>
+    <div class="hero-card">
+      <div class="kicker">Outcome</div>
+      <div class="big-num">15 min</div>
+      <p>By the end, learners can explain the main parts of a harness and how a task moves from specification to verified completion.</p>
+    </div>
+  </div>
+  <div class="footer-note">Use arrow keys or buttons · Details expand for leave-behind notes</div>
+  <div class="slide-num">01</div>
+</section>
+
+<section class="slide">
+  <div class="wrap">
+    <div class="kicker">Simple mental model</div>
+    <h2>Model. Agent. Harness.</h2>
+    <div class="grid three" style="margin-top:34px">
+      <div class="card"><h3>Model</h3><p>Generates language, code, plans and reasoning.</p></div>
+      <div class="card"><h3>Agent</h3><p>Uses tools to complete work toward a goal.</p></div>
+      <div class="card dark"><h3>Harness</h3><p>Controls the work: rules, context, tools, checks, evidence and completion.</p></div>
+    </div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <button class="more" onclick="toggleDetails(this)">More details</button>
+      <button class="more secondary" onclick="toggleTips(this)">Tips</button>
+    </div>
+    <div class="details"><p>Think of these as three layers.</p><p>A model generates an answer. An agent gives that model a job, tools, and a loop. A harness controls how that agent works.</p><p>For example, the harness may decide which files the agent can edit, which tests must run, and whether another agent needs to review the result.</p><p>This distinction helps when debugging. Sometimes the model is not the problem. The workflow around it is.</p></div>
+    <div class="tipbox">
+      <div class="tipgrid">
+        <div class="tip"><div class="label">Starter</div><p>Do not assume a stronger model will fix a weak process.</p><p>If results are poor, first check the task, context, and completion criteria.</p><p>A clearer workflow often improves results more than adding more prompt text.</p></div>
+        <div class="tip"><div class="label">Skilled</div><p>Give each agent one clear responsibility.</p><p>A planner should plan. A builder should build. A reviewer should review.</p><p>Clear roles make it easier to see where something failed and easier to improve one part without changing everything else.</p></div>
+        <div class="tip"><div class="label">Expert</div><p>Treat agents as replaceable workers.</p><p>Keep stable input and output contracts around them. Then you can swap models or change agent logic without rebuilding the whole workflow.</p><p>This is especially useful when model capabilities change quickly.</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-num">02</div>
+</section>
+
+<section class="slide">
+  <div class="wrap">
+    <div class="kicker">Why harnesses exist</div>
+    <h2>Powerful agents still need operating rules.</h2>
+    <div class="grid two" style="margin-top:34px">
+      <div class="card">
+        <h3>Loose AI work</h3>
+        <p>Broad prompts, unclear context, unknown tool use, hard-to-read failures and uncertain completion.</p>
+      </div>
+      <div class="card dark">
+        <h3>Harnessed AI work</h3>
+        <p>Clear task, scoped tools, company rules, validation checks, evidence and a repeatable run record.</p>
+      </div>
+    </div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <button class="more" onclick="toggleDetails(this)">More details</button>
+      <button class="more secondary" onclick="toggleTips(this)">Tips</button>
+    </div>
+    <div class="details"><p>Without a harness, agent work can become hard to control.</p><p>The agent may get too much context. It may use the wrong tool. It may stop too early. It may say the work is done without proving it.</p><p>A harness adds structure. It limits what the agent can do. It records what happened. It checks the result before accepting it.</p><p>The goal is not to slow the agent down. The goal is to make useful autonomy safer and more predictable.</p></div>
+    <div class="tipbox">
+      <div class="tipgrid">
+        <div class="tip"><div class="label">Starter</div><p>Do not hide important requirements inside paragraphs.</p><p>Turn them into a short checklist.</p><p>A checklist is easier for the agent to follow and easier for you to verify.</p></div>
+        <div class="tip"><div class="label">Skilled</div><p>Do not let the same agent write the work and be the only judge of the work.</p><p>Use tests, linters, schemas, CI, or a separate reviewer.</p><p>Independent checks catch mistakes that the working agent may miss.</p></div>
+        <div class="tip"><div class="label">Expert</div><p>Use clear end states.</p><p>A run should finish with something explicit such as PASS, FAIL, REFUSED, or NEEDS APPROVAL.</p><p>This makes automation easier because the next step does not depend on guessing what the agent meant.</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-num">03</div>
+</section>
+
+<section class="slide">
+  <div class="wrap">
+    <div class="kicker">The harness loop</div>
+    <h2>From request to verified result.</h2>
+    <div class="card" style="margin-top:30px">
+      <div class="step"><div class="badge">1</div><div><h3>Specify</h3><p>Define goal, scope, constraints and Definition of Done.</p></div></div>
+      <div class="step"><div class="badge">2</div><div><h3>Plan</h3><p>Break work into steps and decide who or what should run.</p></div></div>
+      <div class="step"><div class="badge">3</div><div><h3>Execute</h3><p>Agents use approved tools to complete work.</p></div></div>
+      <div class="step"><div class="badge">4</div><div><h3>Validate</h3><p>Tests, reviews and gates decide whether work is accepted.</p></div></div>
+      <div class="step"><div class="badge">5</div><div><h3>Observe and improve</h3><p>Record what happened and reuse lessons for future runs.</p></div></div>
+    </div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <button class="more" onclick="toggleDetails(this)">More details</button>
+      <button class="more secondary" onclick="toggleTips(this)">Tips</button>
+    </div>
+    <div class="details"><p>A harness usually follows a simple loop.</p><p>First, define the work. Then plan it. Then let the agent act. After that, check the result. Finally, record what happened and use that information next time.</p><p>That last step matters.</p><p>A good harness does not just complete tasks. It gets better at completing similar tasks because failures, fixes, and useful patterns can be reused.</p></div>
+    <div class="tipbox">
+      <div class="tipgrid">
+        <div class="tip"><div class="label">Starter</div><p>Write your specification so the AI can check it.</p><p>Avoid vague instructions like “make sure this works.”</p><p>Use checks such as: feature is implemented, required test was added, existing tests pass, and no unrelated files changed.</p><p>That makes “done” much easier to prove.</p></div>
+        <div class="tip"><div class="label">Skilled</div><p>Store run state outside the conversation.</p><p>Keep plans, approvals, test results, and changed files in structured storage.</p><p>This makes longer runs easier to resume and makes debugging much easier.</p></div>
+        <div class="tip"><div class="label">Expert</div><p>Treat the loop like a state machine.</p><p>Each step should have clear inputs, outputs, and allowed next steps.</p><p>This gives you better recovery, better replay, and much stronger control over complex agent workflows.</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-num">04</div>
+</section>
+
+<section class="slide">
+  <div class="wrap">
+    <div class="kicker">Core components</div>
+    <h2>The parts of a harness.</h2>
+    <div class="grid four" style="margin-top:32px">
+      <div class="card"><h3>Instructions</h3><p>Project and company rules.</p></div>
+      <div class="card"><h3>Context</h3><p>Relevant information for this task.</p></div>
+      <div class="card"><h3>Agents</h3><p>Roles that perform work.</p></div>
+      <div class="card"><h3>Skills</h3><p>Reusable ways to do repeatable work.</p></div>
+      <div class="card"><h3>Tools</h3><p>Allowed ways to act.</p></div>
+      <div class="card"><h3>Coordination</h3><p>Who runs when.</p></div>
+      <div class="card"><h3>Gates</h3><p>Checks before acceptance.</p></div>
+      <div class="card"><h3>Evidence</h3><p>Records, outputs and proof.</p></div>
+    </div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <button class="more" onclick="toggleDetails(this)">More details</button>
+      <button class="more secondary" onclick="toggleTips(this)">Tips</button>
+    </div>
+    <div class="details"><p>Most harnesses use the same basic building blocks, even if they use different names.</p><p>Instructions define rules. Context gives the agent useful information. Agents do the work. Skills describe reusable ways to do work. Tools let agents act. Coordination decides what runs next. Gates check the result. Evidence records what happened.</p><p>Why care? Because separating these parts makes the system easier to understand and easier to improve.</p></div>
+    <div class="tipbox">
+      <div class="tipgrid">
+        <div class="tip"><div class="label">Starter</div><p>If a rule matters more than once, put it somewhere reusable.</p><p>Do not keep repeating the same instruction in every prompt.</p><p>Move it into the spec, a shared rule, or a reusable skill.</p></div>
+        <div class="tip"><div class="label">Skilled</div><p>Keep components separate.</p><p>Do not let one agent own planning, execution, validation, and approval if those jobs can be split.</p><p>Clear boundaries make failures easier to diagnose.</p></div>
+        <div class="tip"><div class="label">Expert</div><p>Use structured formats when precision matters.</p><p>Schemas, enums, typed events, and validated configuration are easier to test than free-form text.</p><p>Use prose to explain. Use structure to control.</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-num">05</div>
+</section>
+
+<section class="slide">
+  <div class="wrap">
+    <div class="kicker">Agents, skills and tools</div>
+    <h2>Three pieces people often mix up.</h2>
+    <div class="grid three" style="margin-top:32px">
+      <div class="card"><h3>Agent</h3><p><b>Who</b> does the work. Example: planner, builder, reviewer.</p></div>
+      <div class="card"><h3>Skill</h3><p><b>How</b> repeatable work is performed. Example: write a spec, review a PR.</p></div>
+      <div class="card"><h3>Tool</h3><p><b>What</b> an agent can use. Example: read files, edit code, run tests.</p></div>
+    </div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <button class="more" onclick="toggleDetails(this)">More details</button>
+      <button class="more secondary" onclick="toggleTips(this)">Tips</button>
+    </div>
+    <div class="details"><p>An agent is the worker.</p><p>A skill is the reusable way that worker performs a task.</p><p>A tool is what the worker can use.</p><p>For example, a review agent may use a PR-review skill and tools that read diffs and run tests.</p><p>Keeping these separate matters because you can improve the skill without changing the tool, or change the model without redesigning the whole workflow.</p></div>
+    <div class="tipbox">
+      <div class="tipgrid">
+        <div class="tip"><div class="label">Starter</div><p>Give each agent one clear job.</p><p>“Review this pull request for security issues” is better than “review everything and fix anything you find.”</p><p>Smaller roles are easier to test and easier to trust.</p></div>
+        <div class="tip"><div class="label">Skilled</div><p>Make tools return clear results.</p><p>Do not return an empty response and make the agent guess what happened.</p><p>Return status, errors, counts, and useful details.</p><p>Good tool design reduces bad reasoning.</p></div>
+        <div class="tip"><div class="label">Expert</div><p>Use typed tool interfaces for important operations.</p><p>Validate inputs and outputs before the agent can continue.</p><p>For high-risk actions, strongly typed runtime code can enforce timeouts, permissions, and error handling much more reliably than prompt instructions.</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-num">06</div>
+</section>
+
+<section class="slide">
+  <div class="wrap">
+    <div class="kicker">Spec + Definition of Done</div>
+    <h2>The harness needs to know what “done” means.</h2>
+    <div class="grid two" style="margin-top:32px">
+      <div class="card">
+        <h3>Specification</h3>
+        <p>Goal, scope, inputs, constraints, exclusions and expected output.</p>
+      </div>
+      <div class="card dark">
+        <h3>Definition of Done</h3>
+        <p>Checks that must pass before the work is accepted.</p>
+      </div>
+    </div>
+    <div class="prompt">
+      <b>Interactive question</b>
+      What could go wrong if an agent starts coding before the Definition of Done is clear?
+    </div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <button class="more" onclick="toggleDetails(this)">More details</button>
+      <button class="more secondary" onclick="toggleTips(this)">Tips</button>
+    </div>
+    <div class="details"><p>The specification explains what should be built.</p><p>The Definition of Done explains what must be true before the work is accepted.</p><p>These are different.</p><p>For example, the spec may say, “Users can export a report as CSV.”</p><p>The Definition of Done may say: export works, permissions are checked, one test is added, existing tests pass, and no unrelated files changed.</p><p>This gives the agent a clear finish line.</p></div>
+    <div class="tipbox">
+      <div class="tipgrid">
+        <div class="tip"><div class="label">Starter</div><p>Do not write a long prompt and hope the agent finds the important parts.</p><p>Use a short spec with clear sections and a clear Definition of Done.</p><p>This is one of the easiest ways to improve agent results.</p></div>
+        <div class="tip"><div class="label">Skilled</div><p>Make Definition of Done checks executable when you can.</p><p>If a test, schema, API response, or fixture can prove something, use that instead of asking the model whether it looks correct.</p></div>
+        <div class="tip"><div class="label">Expert</div><p>Turn important Definition of Done checks into gates.</p><p>A gate should inspect evidence and return a result.</p><p>The agent can propose that work is complete. The gate should decide whether it actually passed.</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-num">07</div>
+</section>
+
+<section class="slide">
+  <div class="wrap">
+    <div class="kicker">Company alignment</div>
+    <h2>Harnesses help agents follow company rules.</h2>
+    <div class="grid two" style="margin-top:32px">
+      <div class="card">
+        <h3>Examples of rules</h3>
+        <ul class="checklist">
+          <li>No production secrets.</li>
+          <li>No unscoped file changes.</li>
+          <li>Tests required for code changes.</li>
+          <li>Human approval for deployment.</li>
+          <li>Record tool calls and evidence.</li>
+        </ul>
+      </div>
+      <div class="card dark">
+        <h3>Why it matters</h3>
+        <p>Team standards should live in the workflow, not only in someone’s memory.</p>
+      </div>
+    </div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <button class="more" onclick="toggleDetails(this)">More details</button>
+      <button class="more secondary" onclick="toggleTips(this)">Tips</button>
+    </div>
+    <div class="details"><p>A harness can help turn company standards into part of the workflow.</p><p>For example, a company may require tests for code changes, block access to production secrets, or require human approval before deployment.</p><p>These rules are stronger when the harness enforces them.</p><p>A prompt can say “do not deploy.” A harness can make the deploy tool unavailable until approval exists.</p><p>That is the difference between asking and enforcing.</p></div>
+    <div class="tipbox">
+      <div class="tipgrid">
+        <div class="tip"><div class="label">Starter</div><p>Put repeated company rules into the workflow.</p><p>If everyone has to remember the same instruction every time, it probably belongs in the harness.</p><p>This reduces mistakes and saves time.</p></div>
+        <div class="tip"><div class="label">Skilled</div><p>Prefer enforcement over reminders.</p><p>Use protected branches, tool permissions, sandboxing, approval checks, and CI when possible.</p><p>The more important the rule, the less you should depend on the model remembering it.</p></div>
+        <div class="tip"><div class="label">Expert</div><p>Do not rely on Markdown files for critical safety rules.</p><p>Files such as CLAUDE.md or AGENTS.md are useful for guidance.</p><p>Hard boundaries should live in permissions, runtime policy, and gates that the agent cannot simply ignore.</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-num">08</div>
+</section>
+
+<section class="slide">
+  <div class="wrap">
+    <div class="kicker">Example progression</div>
+    <h2>“Add a feature” through a harness.</h2>
+    <div class="example">
+      <p class="takeaway">Request: “Add a feature so users can export a report.”</p>
+      <div class="run">
+        <div class="node"><b>Spec</b><span>goal, scope, exclusions</span></div>
+        <div class="node"><b>Plan</b><span>steps and files</span></div>
+        <div class="node"><b>Agent</b><span>builder starts</span></div>
+        <div class="node"><b>Tools</b><span>edit + test</span></div>
+        <div class="node"><b>Rules</b><span>company limits</span></div>
+        <div class="node"><b>Checks</b><span>tests + review</span></div>
+        <div class="node"><b>Done</b><span>evidence accepted</span></div>
+      </div>
+    </div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <button class="more" onclick="toggleDetails(this)">More details</button>
+      <button class="more secondary" onclick="toggleTips(this)">Tips</button>
+    </div>
+    <div class="details"><p>Take a simple request: “Add report export.”</p><p>A harness turns that into a controlled sequence.</p><p>First, create a spec and Definition of Done. Then identify the files and risks. Give the builder the tools it needs. Run the work. Run tests and reviews. Record the evidence. Accept the result only when the required checks pass.</p><p>If a test fails, the harness should record the failure and decide whether to repair, replan, or stop.</p></div>
+    <div class="tipbox">
+      <div class="tipgrid">
+        <div class="tip"><div class="label">Starter</div><p>Start with small tasks.</p><p>A narrow task with one clear outcome is easier to review and easier to debug.</p><p>If something goes wrong, you can usually tell whether the problem came from the spec, the agent, or the implementation.</p></div>
+        <div class="tip"><div class="label">Skilled</div><p>Validate against the real source of truth.</p><p>If the answer exists in a database, test runner, API, log, or source file, read it directly.</p><p>Do not ask the model to remember whether something passed.</p></div>
+        <div class="tip"><div class="label">Expert</div><p>Create a receipt for each run.</p><p>Record what the agent received, what tools it used, what changed, what checks ran, and why the run passed or failed.</p><p>Receipts make complex agent systems much easier to audit and replay.</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-num">09</div>
+</section>
+
+<section class="slide">
+  <div class="wrap">
+    <div class="kicker">Close</div>
+    <h2>The harness is the workplace, rulebook and inspection station for AI agents.</h2>
+    <div class="grid two" style="margin-top:34px">
+      <div class="card">
+        <h3>What learners should remember</h3>
+        <ul class="checklist">
+          <li>A harness is more than a prompt.</li>
+          <li>Specifications define work.</li>
+          <li>Definition of Done defines acceptance.</li>
+          <li>Tools and permissions control action.</li>
+          <li>Gates and evidence create trust.</li>
+        </ul>
+      </div>
+      <div class="card dark">
+        <h3>Next step</h3>
+        <p>Use a team-specific harness walkthrough to show where these concepts appear in the actual internal workflow.</p>
+      </div>
+    </div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <button class="more" onclick="toggleDetails(this)">More details</button>
+      <button class="more secondary" onclick="toggleTips(this)">Tips</button>
+    </div>
+    <div class="details"><p>Harnesses get better as more important behaviour moves out of prompts and into the system around the model.</p><p>Start with clear specs and checks.</p><p>Then add reusable skills, better tools, stored state, independent validation, and stronger controls.</p><p>The goal is not to remove AI reasoning.</p><p>The goal is to make sure important decisions can be checked and trusted.</p></div>
+    <div class="tipbox">
+      <div class="tipgrid">
+        <div class="tip"><div class="label">Starter</div><p>Start simple.</p><p>Use a clear spec, a clear Definition of Done, limited tools, and visible checks.</p><p>That already gives you a useful harness pattern.</p></div>
+        <div class="tip"><div class="label">Skilled</div><p>When you see the same workflow more than once, make it reusable.</p><p>Turn repeated instructions into skills. Store state outside the chat. Add independent validation.</p><p>That reduces repeated work and improves consistency.</p></div>
+        <div class="tip"><div class="label">Expert</div><p>Use deterministic systems around probabilistic models.</p><p>Typed state, gates, receipts, replay, and runtime policy give you reliable control while still letting the model handle reasoning and planning.</p><p>That balance is where advanced harness design becomes powerful.</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-num">10</div>
+</section>
+
+</main>
+
+<script>
+const deck=document.getElementById("deck");
+const slides=[...document.querySelectorAll(".slide")];
+const counter=document.getElementById("counter");
+const topLine=document.getElementById("topline");
+let current=0;
+function update(){
+  current=Math.round(deck.scrollTop/deck.clientHeight);
+  current=Math.max(0,Math.min(slides.length-1,current));
+  counter.textContent=(current+1)+" / "+slides.length;
+  topLine.style.width=((current+1)/slides.length*100)+"%";
+}
+function go(n){
+  current=Math.max(0,Math.min(slides.length-1,n));
+  deck.scrollTo({top:current*deck.clientHeight,behavior:"smooth"});
+  setTimeout(update,160);
+}
+document.getElementById("next").onclick=()=>go(current+1);
+document.getElementById("prev").onclick=()=>go(current-1);
+deck.addEventListener("scroll",()=>requestAnimationFrame(update),{passive:true});
+window.addEventListener("resize",update);
+window.addEventListener("keydown",e=>{
+  if(["ArrowDown","ArrowRight","PageDown"," "].includes(e.key)){e.preventDefault();go(current+1)}
+  if(["ArrowUp","ArrowLeft","PageUp","Backspace"].includes(e.key)){e.preventDefault();go(current-1)}
+});
+function toggleDetails(btn){
+  const wrap=btn.parentElement;
+  const d=wrap.nextElementSibling;
+  if(!d) return;
+  d.classList.toggle("open");
+  btn.textContent=d.classList.contains("open")?"Hide details":"More details";
+}
+function toggleTips(btn){
+  const wrap=btn.parentElement;
+  const tip=wrap.nextElementSibling?.nextElementSibling;
+  if(!tip) return;
+  tip.classList.toggle("open");
+  btn.textContent=tip.classList.contains("open")?"Hide tips":"Tips";
+}
+update();
+</script>
+</body>
+</html>
