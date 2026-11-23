@@ -775,3 +775,46 @@ td { color: var(--ivory-dim); }
 @media (min-width: 1000px) { .system { grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.4fr); } }
 .result-grid-2 .result-big { white-space: normal; overflow-wrap: anywhere; }
 .result-code code { display: block; white-space: pre; overflow-x: auto; word-break: normal; overflow-wrap: normal; }
+
+/* Research boundary, November 2026: each result names its kind and limits. */
+.result-kind { margin: 0 0 0.6rem; display: inline-block; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.02em; color: var(--brass); border: 1px solid rgb(217 173 85 / 0.45); border-radius: 999px; padding: 0.15rem 0.6rem; }
+.result-note strong { color: var(--ivory); }
+.result-grid-3 { gap: 2rem; }
+@media (min-width: 760px) { .result-grid-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1100px) { .result-grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2.5rem; } }
+.result-grid-3 .result-big { white-space: normal; }
+.objective { margin-top: 3rem; padding: 1.5rem; border: 1px dashed var(--line); border-radius: var(--radius); max-width: 48rem; }
+.objective h3 { font: 600 var(--step-2)/1.15 var(--display); margin: 0 0 0.5rem; }
+.objective p { color: var(--ivory-dim); margin: 0; }
+.objective-partner a { display: inline-flex; min-height: 44px; align-items: center; font-weight: 700; }
+.career-link { margin: 0.75rem 0 0; }
+.career-link a { display: inline-flex; min-height: 44px; align-items: center; font-weight: 700; }
+
+/* Practical AI: three starting points, then every tool by what you need */
+.starters, .tool-groups { padding-block: clamp(3rem, 2rem + 4vw, 6rem); border-top: 1px solid var(--line); }
+.starters .section-head, .tool-groups .section-head { max-width: 60rem; }
+.starter-grid { list-style: none; padding: 0; margin: 2rem 0 0; display: grid; gap: 1.25rem; }
+@media (min-width: 900px) { .starter-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; } }
+.starter { display: grid; align-content: start; gap: 0.6rem; padding: 1.5rem; border: 1px solid var(--line); border-radius: var(--radius); background: linear-gradient(165deg, var(--velvet-2), var(--velvet) 70%); }
+.starter .glyph { width: 48px; height: 48px; }
+.starter h3 { font: 600 var(--step-2)/1.15 var(--display); margin: 0; }
+.starter h3 a { color: var(--ivory); text-decoration: none; }
+.starter h3 a:hover { text-decoration: underline; }
+.starter p { margin: 0; color: var(--ivory-dim); }
+.tool-for { color: var(--ivory-dim); font-size: 0.92rem; }
+.tool-for strong { color: var(--ivory); }
+.starter-go { margin-top: 0.5rem !important; }
+.group-jump { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1.75rem 0 0; }
+.group-jump a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 1rem; border: 1px solid var(--line); border-radius: 999px; color: var(--ivory); text-decoration: none; font-weight: 600; }
+.group-jump a:hover { border-color: var(--brass); }
+.tool-group { margin-top: 2.75rem; scroll-margin-top: calc(var(--header-h) + 1rem); }
+.tool-group h3 { font: 600 var(--step-2)/1.15 var(--display); margin: 0; }
+.group-intro { color: var(--ivory-dim); margin: 0.5rem 0 1.25rem; }
+.group-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.75rem; }
+@media (min-width: 800px) { .group-list { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1200px) { .group-list { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.group-list a { display: flex; gap: 0.9rem; align-items: flex-start; height: 100%; padding: 1rem; border: 1px solid var(--line); border-radius: var(--radius); text-decoration: none; color: var(--ivory); transition: background-color 300ms, border-color 300ms; }
+.group-list a:hover { background: var(--velvet-3); border-color: rgb(217 173 85 / 0.5); }
+.group-list a > span { display: grid; gap: 0.2rem; min-width: 0; }
+.group-list strong { font: 600 1.2rem/1.2 var(--display); }
+.group-list span span:last-child { color: var(--ivory-dim); font-size: 0.95rem; }

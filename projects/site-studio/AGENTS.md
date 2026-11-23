@@ -61,6 +61,13 @@ Vercel settings and its own rules. Bradley Academy links to it through `SITE_WIS
 6. **Add a tool** by adding its slug to `app/content/slugs.ts`, its entry to `tools.ts`, and its
    README heading to `scripts/sync.mjs`. The page, the home card and the sitemap follow.
 7. A person approves anything that is published or merged.
+8. **Protect the research.** Bradley's pages show only what is already public in aisp-open-core and
+   bar-observatory: the AISP notation and foundation, and a few results, each labelled as a formal
+   property, an experimental finding or an engineering result, with a link and its limits. Never
+   describe deeper mechanisms, proprietary architecture, learning processes, formulas, thresholds,
+   settings or unpublished results, here or in comments, generated files, commits or pull
+   requests. Make no guarantees about AI reliability. Unpublished work is "available for
+   discussion with qualified research partners", and is never described as validated.
 
 ## Run it
 

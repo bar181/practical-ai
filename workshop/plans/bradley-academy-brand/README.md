@@ -109,8 +109,12 @@ Credentials moved to About. Small business moved below research.
 
 Then, at Bradley's direction: the goal is to read as a leader in deterministic AI who also teaches,
 not to let visitors verify. AISP now appears in its own notation, verbatim from the open-core
-specification and read line by line; the commercial-grade AISP (the full Pocket architecture,
-mass-parallel machine learning on CPU) is named for research partners and never shown.
+specification and read line by line.
+
+23 November 2026, the research boundary: the site shows only the notation and foundation of the
+open core, and a few labelled public results (formal property, experimental finding or engineering
+result, each with its limits). Deeper mechanisms and anything beyond the open core are discussed
+with qualified research partners and never described on the site or in the agent index.
 
 Still weak, and only fixable in the research repositories: the AISP README's "97x" figure does not
 follow from its own table (59% to 95% success), the tier distribution and benchmarks have no data
@@ -121,8 +125,7 @@ score.
 
 - A request form for early access, if LinkedIn proves too open.
 - A real portrait large enough for a full-screen scene.
-- Unpublished results stay off the site (Bradley's decision, 22 November 2026, to protect the
-  research): the learning and transfer studies are shared with partners on request, once each is
-  verified. The site shows only what is public in aisp-open-core and bar-observatory, each linked
-  to its method and limits.
+- Unpublished research stays off the site, out of comments, generated files, commit messages and
+  pull request descriptions. Earlier public commits and pull requests may still hold research
+  detail; reviewing that history is a separate task for Bradley.
 - Whether the AISP explainer video is cleared to publish.
