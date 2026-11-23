@@ -30,8 +30,9 @@ export default function Home() {
           <SplitText as="h1" id="hero-h" className="hero-title hero-name" cine="title" text={brand.hero.title} />
           <p className="hero-lead" data-cine-after="1">{brand.hero.lead}</p>
           <div className="actions" data-cine-after="2">
-            <a className="btn btn-light" href={brand.hero.primary.href}>{brand.hero.primary.label}</a>
-            <Link className="btn btn-ghost" to="/research#early-access" viewTransition>Research partners</Link>
+            {brand.hero.actions.map((a, i) => (
+              <SmartLink key={a.href} href={a.href} className={i === 0 ? "btn btn-light" : "btn btn-ghost"}>{a.label}</SmartLink>
+            ))}
           </div>
         </div>
       </section>
@@ -45,7 +46,7 @@ export default function Home() {
         </ul>
       </section>
 
-      {/* Twenty-five years of production software */}
+      {/* Three differentiators */}
       <section className="career" aria-labelledby="career-h">
         <div className="wrap">
           <div className="section-head" data-cine="reveal">
@@ -54,7 +55,11 @@ export default function Home() {
           </div>
           <ul className="career-grid" data-cine="reveal">
             {brand.career.points.map((c) => (
-              <li key={c.title} data-cine-item><h3>{c.title}</h3><p>{c.text}</p></li>
+              <li key={c.title} data-cine-item>
+                <h3>{c.title}</h3>
+                <p>{c.text}</p>
+                <p className="career-link"><SmartLink href={c.link.href}>{c.link.label}</SmartLink></p>
+              </li>
             ))}
           </ul>
         </div>

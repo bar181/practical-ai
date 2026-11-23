@@ -73,6 +73,26 @@ export const home = {
 
 // The Practical AI page: the practical guide and the classroom behind the tools.
 export const practical = {
+  // Three beginner starting points: each works pasted into any chatbot, with nothing to install.
+  starters: {
+    heading: "Start here",
+    lead: "Three tools a beginner can use today, in the chatbot you already have. Copy one prompt, paste your own material, and check the result.",
+    items: [
+      { slug: "meeting-notes-to-actions", now: "Paste a meeting transcript or your notes. Get owners, dates and what nobody agreed to, ready to send." },
+      { slug: "write-in-my-voice", now: "Paste a draft email or post. Get it back in your own voice, with every fact and promise kept." },
+      { slug: "document-to-action-brief", now: "Paste a policy, contract or bill. Get what it asks of you, by when, and where it says so." },
+    ],
+  },
+  // Every tool, grouped by what the visitor needs. Each slug appears once.
+  categories: {
+    heading: "Every tool, by what you need",
+    lead: "Thirteen tools in three groups. Each page says who it is for, what you get, and how to try it now.",
+    groups: [
+      { id: "writing", name: "Writing and communication", intro: "Say it clearly, in your voice, and leave nothing unowned.", slugs: ["meeting-notes-to-actions", "write-in-my-voice", "tone-studio", "document-to-action-brief"] },
+      { id: "websites", name: "Websites, design and business productivity", intro: "Pages that look designed, websites that work, and a little fun.", slugs: ["artifact-studio", "web-sections", "site-studio", "website-audit", "rare-find"] },
+      { id: "research", name: "Research and agentic engineering", intro: "Checked sources, repeatable jobs, and an AI that remembers what went wrong.", slugs: ["research-brief", "agentic-process", "learnings-database", "practical-ai-guide"] },
+    ],
+  },
   kicker: "My open-source teaching work: free tools built from courses taught to more than 900 people, and used today by everyone from business owners to agentic developers.",
   guide: {
     heading: "The practical guide: your first tool in ten minutes",

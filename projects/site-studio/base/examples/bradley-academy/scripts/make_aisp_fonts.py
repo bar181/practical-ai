@@ -1,6 +1,6 @@
 """make_aisp_fonts.py: small fonts for the AISP code panels (generated files: app/fonts/aisp-*.woff2).
 
-Reads every character in app/content/aisp.ts and cuts two subsets: DejaVu Sans Mono (free licence,
+Reads every character in app/content/aisp.ts and brand.ts and cuts two subsets: DejaVu Sans Mono (free licence,
 installed with most Linux systems; set DEJAVU_MONO to its path elsewhere) for letters, digits, sub-
 and superscripts and the symbols it has, then Noto Sans Math from node_modules (SIL Open Font
 License) for the rest. Rerun after changing aisp.ts:  python3 scripts/make_aisp_fonts.py
@@ -12,7 +12,8 @@ from fontTools.ttLib import TTFont
 HERE = os.path.dirname(os.path.abspath(__file__))
 SITE = os.path.dirname(HERE)
 FS = os.path.join(SITE, "node_modules", "@fontsource")
-text = open(os.path.join(SITE, "app", "content", "aisp.ts"), encoding="utf-8").read()
+# The AISP panels (aisp.ts) and the AISP lines quoted beside results (brand.ts).
+text = "".join(open(os.path.join(SITE, "app", "content", f), encoding="utf-8").read() for f in ("aisp.ts", "brand.ts"))
 chars = sorted(set(text))
 
 def cmap(path):

@@ -1,6 +1,8 @@
 import { SmartLink } from "./SmartLink";
 
-type Result = { big: string; from: string; text: string; note?: string; href?: string; code?: string };
+/** kind says what sort of claim it is (formal property, experimental finding, engineering result);
+ *  limits says what it does not show. */
+type Result = { big: string; from: string; text: string; kind?: string; limits?: string; note?: string; href?: string; code?: string };
 type Next = { href: string; label: string; note: string };
 
 /** Public results, each linked to the page where it is written down. A result may quote one line of
@@ -10,12 +12,14 @@ export function ResultList({ items, className = "result-grid" }: { items: Result
     <ul className={className} data-cine="reveal">
       {items.map((r) => (
         <li key={r.big} data-cine-item>
+          {r.kind ? <p className="result-kind">{r.kind}</p> : null}
           <p className="result-big">{r.big}</p>
           <p className="result-from">{r.from}</p>
           {r.code ? <p className="result-code"><code>{r.code}</code></p> : null}
           <p className="result-text">{r.text}</p>
+          {r.limits ? <p className="result-note"><strong>Limits:</strong> {r.limits}</p> : null}
           {r.note ? <p className="result-note">{r.note}</p> : null}
-          {r.href ? <p className="result-source"><SmartLink href={r.href}>Source</SmartLink></p> : null}
+          {r.href ? <p className="result-source"><SmartLink href={r.href} aria-label={`Public evidence for ${r.big}`}>Public evidence</SmartLink></p> : null}
         </li>
       ))}
     </ul>

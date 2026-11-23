@@ -3,7 +3,13 @@ import type { Route } from "./+types/practical-ai";
 import prompts from "../content/generated/prompts.json";
 import { home, practical, site } from "../content/site";
 import { tools } from "../content/tools";
-import { CopyButton } from "../components/CopyButton";
+import type { Tool } from "../content/types";
+
+const bySlug = (slug: string): Tool => {
+  const t = tools.find((x) => x.slug === slug);
+  if (!t) throw new Error(`No tool "${slug}"`);
+  return t;
+};
 import { PromptCard } from "../components/PromptCard";
 import { SceneImage } from "../components/Scene";
 import { SplitText } from "../components/SplitText";
@@ -29,26 +35,73 @@ export default function PracticalAI() {
           <p className="hero-sub" data-cine-after="0">{practical.kicker}</p>
           <p className="hero-lead" data-cine-after="1">{home.lead}</p>
           <div className="actions" data-cine-after="2">
-            <a className="btn btn-light" href="#all-tools">{site.labels.seeTools}</a>
-            <CopyButton text={prompts.starter} label="Copy the starter prompt" className="btn btn-ghost" />
+            <a className="btn btn-light" href="#start-here">Start here</a>
+            <a className="btn btn-ghost" href="#all-tools">{site.labels.seeTools}</a>
+            
           </div>
         </div>
-        <a className="scroll-cue" href="#intern" aria-label="Scroll to the story"><span /></a>
+        <a className="scroll-cue" href="#start-here" aria-label="Scroll to the starting points"><span /></a>
       </section>
 
-      {/* Every tool, one tap away */}
-      <nav className="tool-strip" id="all-tools" aria-label={site.labels.toolsListName}>
-        <ul className="wrap">
-          {tools.map((t) => (
-            <li key={t.slug}>
-              <Link to={`/tools/${t.slug}`} viewTransition>
-                <Glyph slug={t.slug} className="glyph glyph-sm" />
-                <span><strong>{t.name}</strong><span>{t.cardLine}</span></span>
-              </Link>
-            </li>
+      {/* Three beginner starting points */}
+      <section className="starters" id="start-here" aria-labelledby="starters-h">
+        <div className="wrap">
+          <div className="section-head" data-cine="reveal">
+            <h2 id="starters-h" data-cine-item>{practical.starters.heading}</h2>
+            <p className="reel-lead" data-cine-item>{practical.starters.lead}</p>
+          </div>
+          <ul className="starter-grid" data-cine="reveal">
+            {practical.starters.items.map((s) => {
+              const t = bySlug(s.slug);
+              return (
+                <li key={s.slug} className="starter" data-cine-item>
+                  <Glyph slug={t.slug} className="glyph" />
+                  <h3><Link to={`/tools/${t.slug}`} viewTransition>{t.name}</Link></h3>
+                  <p className="tool-for"><strong>For:</strong> {t.coreUser}</p>
+                  <p>{s.now}</p>
+                  <p className="starter-go"><Link className="btn btn-light btn-sm" to={`/tools/${t.slug}#try-it`} viewTransition aria-label={`Try ${t.name} now`}>Try it now</Link></p>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      </section>
+
+      {/* Every tool, by what the visitor needs */}
+      <section className="tool-groups" id="all-tools" aria-labelledby="groups-h">
+        <div className="wrap">
+          <div className="section-head" data-cine="reveal">
+            <h2 id="groups-h" data-cine-item>{practical.categories.heading}</h2>
+            <p className="reel-lead" data-cine-item>{practical.categories.lead}</p>
+          </div>
+          <nav className="group-jump" aria-label="Tool groups">
+            {practical.categories.groups.map((g) => <a key={g.id} href={`#group-${g.id}`}>{g.name}</a>)}
+          </nav>
+          {practical.categories.groups.map((g) => (
+            <section key={g.id} className="tool-group" id={`group-${g.id}`} aria-labelledby={`group-${g.id}-h`}>
+              <h3 id={`group-${g.id}-h`}>{g.name}</h3>
+              <p className="group-intro">{g.intro}</p>
+              <ul className="group-list">
+                {g.slugs.map((slug) => {
+                  const t = bySlug(slug);
+                  return (
+                    <li key={slug}>
+                      <Link to={`/tools/${t.slug}`} viewTransition>
+                        <Glyph slug={t.slug} className="glyph glyph-sm" />
+                        <span>
+                          <strong>{t.name}</strong>
+                          <span className="tool-for">For: {t.coreUser}</span>
+                          <span>{t.cardLine}</span>
+                        </span>
+                      </Link>
+                    </li>
+                  );
+                })}
+              </ul>
+            </section>
           ))}
-        </ul>
-      </nav>
+        </div>
+      </section>
 
       {/* The idea, word by word */}
       <section className="statement" id="intern" data-cine="words" aria-labelledby="intern-h">

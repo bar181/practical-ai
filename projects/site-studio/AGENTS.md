@@ -38,7 +38,7 @@ Vercel settings and its own rules. Bradley Academy links to it through `SITE_WIS
 | The look | `app/styles/site.css`: colour and type tokens at the top. A night at the cinema: velvet, ivory, Harvard crimson and brass, Bodoni Moda titles |
 | The motion | `app/lib/cinema.ts`: GSAP ScrollTrigger and Lenis, driven by `data-cine="..."` attributes on the pages. Off when the reader asks for reduced motion; every page reads fully without it |
 | The large pictures | `app/content/images.ts`: one slot per picture, each one of the owner's own photographs with its alt text. `scripts/make_webp.py` makes light WebP copies (1600 and 800 pixels wide) in `../../_build/photos-webp/`; the page serves those with `srcset` |
-| AISP in its own notation | `app/content/aisp.ts`: verbatim excerpts of the AISP specification (`AI_GUIDE.md` in aisp-open-core) with a plain reading of key lines; `app/components/Aisp.tsx` draws them. Copy lines exactly and mark gaps with `;; …`. Only the open core is shown. After changing it, run `python3 scripts/make_aisp_fonts.py`, which regenerates the two small fonts in `app/fonts/` |
+| AISP in its own notation | `app/content/aisp.ts`: verbatim excerpts of the AISP specification (`AI_GUIDE.md` in aisp-open-core) with a plain reading of key lines; `app/components/Aisp.tsx` draws them. Copy lines exactly and mark gaps with `;; …`. Any part of the public open core may be shown; nothing beyond it. After changing it, run `python3 scripts/make_aisp_fonts.py`, which regenerates the two small fonts in `app/fonts/` |
 | Analytics and Search Console | Off unless set at build time: `SITE_GA_ID` (a Google Analytics 4 ID) shows a consent banner and loads analytics only after Yes; `SITE_GSC` adds the Search Console verification tag. The Privacy page (`/privacy`) says which is on |
 | The pages | `app/routes/`: home (Bradley), research, practical-ai (the `/tools` page), one tool page, About Bradley, privacy, not found |
 | How it is published | [`.github/workflows/pages.yml`](../../.github/workflows/pages.yml) and [`workshop/tools/build_site.py`](../../workshop/tools/build_site.py) |
@@ -61,6 +61,13 @@ Vercel settings and its own rules. Bradley Academy links to it through `SITE_WIS
 6. **Add a tool** by adding its slug to `app/content/slugs.ts`, its entry to `tools.ts`, and its
    README heading to `scripts/sync.mjs`. The page, the home card and the sitemap follow.
 7. A person approves anything that is published or merged.
+8. **Protect the research.** aisp-open-core and bar-observatory are public (Bradley, 23 November
+   2026), so anything in them may appear, verbatim or summarised, with a link. Results are labelled
+   as a formal property, an experimental finding or an engineering result, with their limits.
+   Nothing beyond those two repositories: no proprietary architecture, learning processes,
+   formulas, thresholds, settings or unpublished results, here or in comments, generated files,
+   commits or pull requests. Make no guarantees about AI reliability. Unpublished work is "available for
+   discussion with qualified research partners", and is never described as validated.
 
 ## Run it
 

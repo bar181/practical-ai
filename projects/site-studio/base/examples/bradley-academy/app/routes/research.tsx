@@ -4,7 +4,7 @@ import { brand, contact, research } from "../content/brand";
 import { Lattice } from "../components/Art";
 import { AispCode, SigmaGrid, SourceNote } from "../components/Aisp";
 import { NextSteps, ResultList } from "../components/Evidence";
-import { advanced, aispIntro, commercial, evidenceBlock, foundation, glossary } from "../content/aisp";
+import { advanced, aispIntro, evidenceBlock, foundation, glossary, openCore } from "../content/aisp";
 import { SmartLink } from "../components/SmartLink";
 import { SplitText } from "../components/SplitText";
 import { pageMeta } from "../lib/meta";
@@ -23,7 +23,7 @@ export default function Research() {
           <p className="hero-lead" data-cine-after="1">{research.hero.lead}</p>
           <div className="actions" data-cine-after="2">
             <a className="btn btn-light" href={contact.paper.href} rel="noopener">{contact.paper.label}</a>
-            <a className="btn btn-ghost" href="#aisp-h">Inside AISP</a>
+            <a className="btn btn-ghost" href="#early-access">Research partners</a>
           </div>
         </div>
       </section>
@@ -32,7 +32,13 @@ export default function Research() {
         <div className="wrap">
           <h2 id="results-h" className="results-h" data-cine="reveal">{research.results.heading}</h2>
           <p className="results-note" data-cine="reveal">{research.results.note}</p>
-          <ResultList items={research.results.items} className="result-grid result-grid-4" />
+          <ResultList items={research.results.items} className="result-grid result-grid-3" />
+          <div className="objective" data-cine="reveal">
+            <p className="result-kind">{research.results.objective.kind}</p>
+            <h3>{research.results.objective.title}</h3>
+            <p>{research.results.objective.text}</p>
+            <p className="objective-partner"><a href="#early-access">Research partners</a></p>
+          </div>
         </div>
       </section>
 
@@ -56,7 +62,7 @@ export default function Research() {
         <div className="wrap">
           <div className="section-head" data-cine="reveal">
             <h2 id="deep-h" data-cine-item>Inside the open core</h2>
-            <p className="reel-lead" data-cine-item>Beyond the notation, the specification defines how knowledge is bound, kept, learned and searched. Four blocks from it, each read line by line.</p>
+            <p className="reel-lead" data-cine-item>Beyond the notation, the public specification defines how components bind, how knowledge is kept and learned, and how search works. Four blocks from it, each read line by line.</p>
           </div>
           <div className="aisp-pair">
             {advanced.map((x) => <AispCode key={x.id} excerpt={x} />)}
@@ -64,14 +70,15 @@ export default function Research() {
           <div className="aisp-pair aisp-close">
             <AispCode excerpt={evidenceBlock} />
             <div className="aisp-commercial">
-              <h3>{commercial.heading}</h3>
-              <p>{commercial.text}</p>
-              <p><a className="btn btn-light" href="#early-access">For research partners</a></p>
+              <h3>{openCore.heading}</h3>
+              <p>{openCore.text}</p>
+              <p><a className="btn btn-light" href="#early-access">Research partners</a></p>
             </div>
           </div>
           <SourceNote />
         </div>
       </section>
+
 
 
       <NextSteps id="next-h" heading={brand.next.heading} items={brand.next.items} />

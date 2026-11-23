@@ -2,18 +2,19 @@
 // A personal profile, not a services page: Bradley first (25 years building software, data
 // prediction, agentic research), then the systems he built with evidence a reader can inspect,
 // then teaching at every level and his public roles. Services are on WiseGeo.
-// Every number below is public, in github.com/bar181/aisp-open-core or github.com/bar181/bar-observatory
-// (read 22 November 2026), and links to its method and limits. Unpublished research results
-// (learning and transfer) stay off the site: Bradley shares them with partners on request, once
-// each is verified (his decision, 22 November 2026). Do not add them back without his approval.
+// Research boundary: github.com/bar181/aisp-open-core and github.com/bar181/bar-observatory are
+// public, so anything in them may be used, with a link and its limits. Nothing beyond them: no
+// proprietary architecture, learning processes, orchestration, optimisation, formulas, thresholds,
+// settings or unpublished results. That work is discussed with research partners, never here.
 // Position: senior agentic engineer and research lead (Bradley, 22 November 2026). He also allows
 // "agentic architect". US spelling.
 
 export const contact = {
   linkedin: { href: "https://www.linkedin.com/in/bradaross/", label: "Connect on LinkedIn" },
   earlyAccess: { href: "https://www.linkedin.com/in/bradaross/", label: "Connect on LinkedIn" },
-  earlyNote: "Already connected? Send a short note on your group and your interest.",
+  earlyNote: "Research partners: send a short note on your group and your interest. For anything else, connect on LinkedIn.",
   paper: { href: "https://github.com/bar181/aisp-open-core/blob/main/formal-papers/aisp-protocol.md", label: "Read the AISP paper" },
+  partnerLine: "Additional research capabilities and technical findings are available for discussion with qualified research partners.",
 };
 
 export const brand = {
@@ -25,7 +26,11 @@ export const brand = {
     kicker: "Senior agentic engineer and research lead",
     title: "Bradley Ross",
     lead: "A Harvard University graduate with twenty-five years architecting and building software for companies, from the first MVP to global production. My specialty is data prediction and advanced data science. Today I lead research in deterministic AI and build agentic systems on it.",
-    primary: { href: "#systems", label: "See what I have built" },
+    actions: [
+      { href: "/research", label: "Explore research" },
+      { href: "/tools", label: "Try free AI tools" },
+      { href: "https://www.linkedin.com/in/bradaross/", label: "Connect on LinkedIn" },
+    ],
   },
 
   proof: [
@@ -36,28 +41,29 @@ export const brand = {
     { strong: "Creator", rest: "of AISP and BAR Observatory" },
   ],
 
+  // Three differentiators, each with where to go next.
   career: {
-    heading: "Twenty-five years of production software",
-    lead: "I have architected and built software for companies for twenty-five years, from a first MVP to systems in production around the world. Data has been the thread throughout: prediction, large-scale analytical automation and advanced data science, long before agents.",
+    heading: "What I bring",
+    lead: "Twenty-five years of production software, research in agentic AI, and teaching at every level. Each is backed by work you can open.",
     points: [
-      { title: "Architecture and delivery", text: "From the first release to global, production-grade systems, for companies from start-up to enterprise." },
-      { title: "Data prediction", text: "My specialty: predictive models and advanced data science, built into systems people rely on." },
-      { title: "Agentic engineering", text: "The same discipline, applied to agents: deterministic by design, with a record of what they did." },
+      { title: "Production software and data", text: "Twenty-five years architecting and building software for companies, from the first MVP to global production, with a specialty in predictive analytics and data systems.", link: { href: "/about", label: "Career and credentials" } },
+      { title: "Agentic AI research and engineering", text: "Research lead in deterministic AI, and the engineer behind AISP and BAR Observatory: two open systems for agents that are easier to predict and inspect.", link: { href: "/research", label: "The research" } },
+      { title: "Teaching and open source", text: "Ten terms as a Harvard CS50 Teaching Fellow, courses from practical AI to advanced agentic development, and open-source tools built from what I teach.", link: { href: "/tools", label: "Practical AI" } },
     ],
   },
 
-  // The systems, each with determinism evidence from its public repository.
+  // The systems, each with public evidence, its kind and its limits.
   systems: {
     heading: "Systems I have built",
-    lead: "Two open systems from my research. Each makes agents behave the same way every time, and each comes with evidence you can inspect.",
+    lead: "Two open systems from my research. Both aim at agents that are easier to predict and inspect. Each result below links to its public evidence and says what it does not show.",
     items: [
       {
         name: "AISP",
-        kind: "Research, open core under the MIT licence",
+        kind: "Open core, MIT licence",
         line: "A proof-carrying protocol for AI-to-AI instructions, written in 512 symbols from formal mathematics, with a fixed grammar and an evidence block in every document.",
         evidence: [
-          { big: "One parse", from: "for every well-formed document", text: "The grammar is deterministic: every AISP document parses to exactly one syntax tree. The specification states it in its own notation.", code: "⊢deterministic:∀D:∃!AST.parse(D)→AST", href: "https://github.com/bar181/aisp-open-core/blob/main/AI_GUIDE.md" },
-          { big: "Same story", from: "from one specification, two models from two vendors", text: "Opus 4.5 and GPT-5.2 each wrote a story from one AISP specification. The plot, the character arc and the quotable line matched; the writing style did not. The write-up scores the alignment at 98%.", note: "One specification, one run per model.", href: "https://github.com/bar181/aisp-open-core/tree/main/evidence/creative-short-story" },
+          { big: "One parse", kind: "Formal property", from: "for every well-formed document", text: "AISP's grammar is deterministic: a well-formed document parses to exactly one syntax tree. The specification states it in its own notation.", code: "⊢deterministic:∀D:∃!AST.parse(D)→AST", limits: "A property of the grammar. It does not guarantee what a model does with the document.", href: "https://github.com/bar181/aisp-open-core/blob/main/AI_GUIDE.md" },
+          { big: "Same story", kind: "Experimental finding", from: "from one specification, two models", text: "Opus 4.5 and GPT-5.2 each wrote a story from one AISP specification. The plot, the character arc and the quotable line matched; the writing style did not.", limits: "One specification, one run per model, scored in the published write-up rather than by independent reviewers.", href: "https://github.com/bar181/aisp-open-core/tree/main/evidence/creative-short-story" },
         ],
         links: [
           { href: "https://github.com/bar181/aisp-open-core", label: "The code" },
@@ -70,8 +76,7 @@ export const brand = {
         kind: "Open source, 16 Rust crates on crates.io",
         line: "A local-first flight recorder and memory for Claude Code: it records what an agent did, reports it without AI, and lets the next agent ask what was already tried.",
         evidence: [
-          { big: "Byte for byte", from: "the same record, the same report", text: "Reports rebuild identically from an unchanged record. Installed from crates.io alone, an outside reproduction matched 99 of 101 fields; the two that differ are documented as expected to vary.", href: "https://github.com/bar181/bar-observatory#evidence-verified-not-asserted" },
-          { big: "60 errors", from: "the agent's own summary never mentioned", text: "Surfaced by BAR Observatory in one real captured session, and still queryable by a person or an agent.", href: "https://github.com/bar181/bar-observatory#why-developers-use-it" },
+          { big: "Byte for byte", kind: "Engineering result", from: "the same record, the same report", text: "Reports rebuild identically from an unchanged record. Installed from crates.io alone, an outside reproduction matched 99 of 101 fields; the two that differ are documented as expected to vary.", limits: "Shown on the published example record.", href: "https://github.com/bar181/bar-observatory#evidence-verified-not-asserted" },
         ],
         links: [
           { href: "https://github.com/bar181/bar-observatory", label: "The code" },
@@ -117,7 +122,7 @@ export const brand = {
 
   earlyAccess: {
     heading: "For research partners",
-    text: "Research partners work with the commercial-grade AISP, including the full Pocket architecture and mass-parallel machine learning on CPU, and see results on learning and transfer before publication, once each is verified. Not open to the public.",
+    text: "Additional research capabilities and technical findings are available for discussion with qualified research partners.",
   },
 
   // Where a reader goes next, in order (Research page).
@@ -148,33 +153,30 @@ export const research = {
     "Bradley Ross's research: AISP, a proof-carrying symbolic protocol for AI-to-AI communication, and BAR Observatory, a deterministic record and memory of what agents did. The public evidence and its limits.",
   hero: {
     kicker: "Research",
-    title: "One reading for every instruction. A receipt for every session.",
-    lead: "Deterministic AI: agents that read an instruction one way, act the same way every time, and leave a record that rebuilds byte for byte. AISP is the language for the first; BAR Observatory is the record.",
+    title: "Agents you can predict and inspect.",
+    lead: "My research is deterministic AI: agents that read an instruction one way and leave a record of what they did. AISP, released as an open core, is a language for the first. BAR Observatory, open source, is the record.",
   },
   results: {
-    heading: "Determinism, with evidence",
-    note: "Public results from the open core and BAR Observatory, each linked to its source. Results on learning and transfer are shared with research partners.",
+    heading: "Selected public results",
+    note: "Each result says what kind of claim it is, links to its public evidence, and gives its limits.",
     items: [
-      { big: "One parse", from: "for every well-formed AISP document", text: "AISP's grammar is deterministic: a document parses to exactly one syntax tree, and the specification states it in its own notation.", code: "⊢deterministic:∀D:∃!AST.parse(D)→AST", href: "https://github.com/bar181/aisp-open-core/blob/main/AI_GUIDE.md" },
-      { big: "Same story", from: "from one specification, two models", text: "Opus 4.5 and GPT-5.2 each wrote a story from one AISP specification. Plot, character arc and the quotable line matched; style did not. Scored at 98% semantic alignment in the write-up.", note: "One specification, one run per model.", href: "https://github.com/bar181/aisp-open-core/tree/main/evidence/creative-short-story" },
-      { big: "Six of six", from: "ambiguities removed from a game's rules", text: "A six-rule prose specification of tic-tac-toe holds six ambiguities, from turn order to the end state. The AISP version removes all six by construction.", note: "A case study in the AISP paper.", href: "https://github.com/bar181/aisp-open-core/blob/main/formal-papers/aisp-protocol.md" },
-      { big: "Byte for byte", from: "the same record, the same report", text: "BAR Observatory reports rebuild identically. Installed from crates.io alone, an outside reproduction matched 99 of 101 fields; the two that differ are documented as expected to vary.", href: "https://github.com/bar181/bar-observatory#evidence-verified-not-asserted" },
-      { big: "60 errors", from: "the agent's own summary never mentioned", text: "Surfaced by BAR Observatory in one real captured session, and still queryable by a person or an agent.", href: "https://github.com/bar181/bar-observatory#why-developers-use-it" },
-      { big: "72 of 72", from: "weighted points, for each of two blind models", text: "Gemini and GPT-5.5 read three AISP documents with no glossary, examples or system prompt, and recovered every decision point.", note: "A pilot: one run per model, on a test both reached the maximum of.", href: "https://github.com/bar181/aisp-open-core/blob/main/evidence/head-to-head-llm-models/test-results-summary.md" },
-      { big: "15 theorems", from: "14 at protocol level, 1 at document level", text: "Stated in the AISP paper (version 3.0) over 12 typed inference rules, including that binding is total and deterministic, and that search terminates. The AISP 5.1 specification carries the 14 protocol-level theorems.", href: "https://github.com/bar181/aisp-open-core/blob/main/formal-papers/aisp-protocol.md" },
-      { big: "Under 2%", from: "ambiguity per hop, against 40 to 65% in expert prose", text: "Measured on the AISP open-core evidence set: 32 completions per document, scored by a majority of three judges from a different model.", note: "Judged by models, without a human agreement score yet.", href: "https://github.com/bar181/aisp-open-core/blob/main/formal-papers/aisp-protocol.md" },
+      { big: "One parse", kind: "Formal property", from: "for every well-formed AISP document", text: "AISP's grammar is deterministic: a well-formed document parses to exactly one syntax tree.", code: "⊢deterministic:∀D:∃!AST.parse(D)→AST", limits: "A property of the grammar, not a guarantee of model behaviour.", href: "https://github.com/bar181/aisp-open-core/blob/main/AI_GUIDE.md" },
+      { big: "15 theorems", kind: "Formal property", from: "stated in the AISP paper", text: "The paper states 14 protocol-level theorems and one document-level theorem over 12 typed inference rules, with selected proofs.", limits: "A submission draft, not yet peer reviewed.", href: "https://github.com/bar181/aisp-open-core/blob/main/formal-papers/aisp-protocol.md" },
+      { big: "Same story", kind: "Experimental finding", from: "from one specification, two models", text: "Opus 4.5 and GPT-5.2 each wrote a story from one AISP specification. Plot, character arc and the quotable line matched; style did not.", limits: "One specification, one run per model, scored in the published write-up.", href: "https://github.com/bar181/aisp-open-core/tree/main/evidence/creative-short-story" },
+      { big: "72 of 72", kind: "Experimental finding", from: "weighted points, for each of two blind models", text: "Gemini and GPT-5.5 read three AISP documents with no glossary, examples or system prompt, and recovered every decision point.", limits: "A pilot: one run per model, on a test both reached the maximum of, so it does not rank models.", href: "https://github.com/bar181/aisp-open-core/blob/main/evidence/head-to-head-llm-models/test-results-summary.md" },
+      { big: "Byte for byte", kind: "Engineering result", from: "the same record, the same report", text: "BAR Observatory reports rebuild identically. An outside reproduction, installed from crates.io alone, matched 99 of 101 fields; the two that differ are documented.", limits: "Shown on the published example record.", href: "https://github.com/bar181/bar-observatory#evidence-verified-not-asserted" },
     ],
+    objective: { kind: "Research objective", title: "Agents that keep what they learn", text: "The longer aim: agents that keep what they learn and carry it into new problems. No results are claimed here." },
   },
   layers: {
-    heading: "The system",
+    heading: "The work, and what is public",
     items: [
-      { name: "Specify", line: "AISP: one formal reading for every instruction", status: "Open source" },
-      { name: "Prove", line: "BAR Observatory: a byte-identical receipt for every session", status: "Open source" },
-      { name: "Remember", line: "Cross-run memory over MCP: the next agent asks what was tried", status: "Open source" },
-      { name: "Learn", line: "The Pocket architecture: knowledge kept with its evidence, carried to new problems", status: "Commercial grade" },
-      { name: "Scale", line: "Mass-parallel machine learning on CPU", status: "Commercial grade" },
+      { name: "Specify", line: "AISP: a formal language for agent instructions", status: "Open source" },
+      { name: "Prove", line: "BAR Observatory: a reproducible record of each session", status: "Open source" },
+      { name: "Remember", line: "BAR Observatory: the next agent can ask what was already tried", status: "Open source" },
+      { name: "Learn", line: "Agents that keep what they learn", status: "Research objective" },
     ],
   },
-  method: "The open core is MIT licensed: the specification, the paper, a converter and validator on npm, and a Rust crate on crates.io. The commercial grade is for research partners.",
+  method: "The open core is MIT licensed: the specification, the paper draft, a converter and validator on npm, and a Rust crate on crates.io. Additional research capabilities and technical findings are available for discussion with qualified research partners.",
   speaking: "Keynote speaker on deterministic AI. Founding Director and Education Director of the Agentics Foundation.",
 };

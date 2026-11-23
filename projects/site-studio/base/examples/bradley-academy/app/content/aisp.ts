@@ -1,7 +1,7 @@
 // AISP shown in its own notation. Every code line is copied verbatim from AI_GUIDE.md, the AISP 5.1
 // specification in github.com/bar181/aisp-open-core (MIT licence, read 22 November 2026); ";; …" marks
-// lines left out. The plain readings are ours. Only the open core appears here: the commercial-grade
-// AISP is named, never shown (Bradley's decision, 22 November 2026).
+// lines left out. The plain readings are ours. aisp-open-core is public (Bradley, 23 November 2026),
+// so any part of it may appear here, verbatim and linked. Nothing beyond the open core does.
 
 export const aispSource = { href: "https://github.com/bar181/aisp-open-core/blob/main/AI_GUIDE.md", label: "AI_GUIDE.md, the AISP 5.1 specification" };
 
@@ -67,7 +67,7 @@ export const advanced: Excerpt[] = [
   },
   {
     id: "pocket",
-    title: "The Pocket architecture",
+    title: "Pockets: knowledge with a fixed identity",
     text: "Knowledge is kept in pockets: a header, a membrane that learning updates, and a nucleus whose hash is the pocket's identity.",
     code: ["⟦Γ:Pocket⟧{", "  𝒫≜⟨ℋ:Header,ℳ:Membrane,𝒩:Nucleus⟩", "  ;; …", "  𝒩≜⟨def:AISP,ir:LLVM,wa:WASM,σ:Sig⟩", "  ;; Immutability Physics", "  ∀p:∂𝒩(p)⇒∂ℋ.id(p)", "  ∀p:∂ℳ(p)⇏∂ℋ.id(p)", "  ∀p:ℋ.id(p)≡SHA256(𝒩(p))", "  ;; …", "}"],
     reading: [
@@ -116,7 +116,7 @@ export const evidenceBlock: Excerpt = {
   ],
 };
 
-export const commercial = {
-  heading: "Open core, and the commercial grade",
-  text: "Everything shown here is from the open core, MIT licensed and free to use. Research partners work with the commercial-grade AISP, which extends it, including the full Pocket architecture and mass-parallel machine learning on CPU.",
+export const openCore = {
+  heading: "Open core, and what lies beyond it",
+  text: "Everything shown here is from the open core, MIT licensed and free to use. Additional research capabilities and technical findings are available for discussion with qualified research partners.",
 };
