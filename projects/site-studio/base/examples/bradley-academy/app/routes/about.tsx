@@ -77,8 +77,9 @@ export default function About() {
           <p className="reel-lead" data-cine-item>{about.why}</p>
           <p data-cine-item className="actions">
             <a className="btn btn-light" href={site.linkedin} rel="noopener">{about.contactButton}</a>
-            <Link className="btn btn-ghost" to="/research#early-access" viewTransition>Early access</Link>
+            <Link className="btn btn-ghost" to="/research#early-access" viewTransition>Research partners</Link>
           </p>
+          <p data-cine-item className="work-with">{about.workWith} <a href={site.wisegeo} rel="noopener">{about.workWithLink}</a></p>
         </div>
       </section>
     </>

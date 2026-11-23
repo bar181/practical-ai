@@ -77,11 +77,14 @@ The problem:         Most AI solves the same problem from scratch every time   (
 Value proposition:   Deterministic AI that keeps what it learns, built on AISP   (from the site)
 Unique selling points: AISP, a mathematical specification language; research milestones from
                      pre-registered studies; teaching from ten-person teams to frontier labs   (from the site)
-Proof:               Under 2% ambiguity against 40 to 60% in prose; 17 vs 62 failures (Milestone 1);
+Proof:               Under 2% ambiguity against 40 to 65% in expert prose, per hop; a blind pilot of 72 of 72;
                      Claude Certified Architect; CS50 Teaching Fellow   (from the site)
 Core messages:       Systems that behave the same way every time; machines that keep what they learn;
                      grounded in small business, trusted by advanced teams   (from the site)
 Call to action:      Early access by invitation; connect on LinkedIn   (from the site)
+
+The Proof line was edited on 22 November 2026, after the audit, to drop unpublished research
+results at Bradley's request.
 Tone:                Needs you. Draft: confident, precise, plain
 Never say:           Needs you
 ```

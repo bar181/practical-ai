@@ -57,6 +57,7 @@ npm run dev
 | Part | What it is |
 | --- | --- |
 | [`base/examples/bradley-academy/`](base/examples/bradley-academy/) | The site: React Router with every page pre-rendered, plain CSS, fonts installed with the site |
+| [`base/examples/wisegeo/`](base/examples/wisegeo/README.md) | A second example: WiseGeo, Bradley's company, as one static page with no build step, deployed as its own Vercel project |
 | `app/content/` in that folder | Every word on the site. Facts come from the project READMEs |
 | `scripts/sync.mjs` in that folder | Copies the pictures and try-it prompts out of the READMEs before each build |
 | [`.github/workflows/pages.yml`](../../.github/workflows/pages.yml) | Builds the site and publishes it with every other page in the repository |
@@ -93,6 +94,31 @@ reviewed by Bradley, and not merged.
 milestones built on AISP, a one-line network note, and early access for research groups and partners
 through LinkedIn. Built and checked by Claude at phone and desktop width; not rescored, not reviewed by
 Bradley, and not merged.
+
+**22 November 2026, evening:** after an outside reviewer read the site as decent rather than top
+tier, the home and Research pages lead with the work (AISP and BAR Observatory), show only public
+evidence with a link to each number's method and limits, and end with a "Check it yourself" path.
+Unpublished results come off the site and are shared on request. Built and checked by Claude at
+390 and 1280 pixels; not yet reviewed by Bradley or the outside reviewer.
+
+**Later that evening:** AISP shown in its own notation, verbatim from the open-core specification:
+the 512 symbols in eight categories, the foundation and glossary, then the binding proof, the Pocket
+architecture, learning, search and the evidence block, each read line by line. The commercial grade
+is named for research partners, not shown. Teaching sits beside research. Checked by Claude at 390
+and 1280 pixels; not yet reviewed by Bradley.
+
+**WiseGeo, 22 November 2026:** a second example, Bradley's company site, as one static page for its
+own Vercel project. Built and checked by Claude at 390 and 1280 pixels, served locally; not yet
+deployed or reviewed by Bradley. Bradley Academy now links to it from home, About and the footer.
+
+**Later, 22 November 2026:** after outside feedback that the site still did not read as a top
+agentic engineer's, the home page leads with Bradley: a Harvard University graduate with twenty-five
+years building software from MVP to global production, and a specialty in data prediction. Then the
+systems he built (AISP, BAR Observatory) with determinism evidence from their repositories, the
+notation, teaching at every level with Practical AI as his open-source teaching work, and his public
+roles. WiseGeo became a short company page. Tested by Claude with `SITE_BASE=/` (direct loads of
+`/research`, `/tools` and `/about`, assets and canonical URLs) and at 390 and 1280 pixels; not yet
+reviewed by Bradley.
 
 **22 November 2026, latest:** Site Studio became the publish-a-website lesson. A skill for any
 chatbot (Level 1), GitHub Pages, your own domain and Vercel (Level 2), and Cloudflare, Google Cloud

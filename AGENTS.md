@@ -38,6 +38,12 @@ work. Reuse first: use an existing capability, wrap it, or build only the missin
 ## Rules for this repository
 
 - Invent no facts. Where content is missing, leave a visible gap and say so.
+- Never publish proprietary research: no architecture, learning processes, orchestration,
+  optimisation, formulas, thresholds, settings or unpublished results, in pages, comments,
+  generated files, `llms.txt`, commit messages or pull request descriptions. Publish only what is
+  already public in Bradley's open repositories, with a link and its limits. For anything more,
+  write: "Additional research capabilities and technical findings are available for discussion
+  with qualified research partners." Never imply unpublished work was independently validated.
 - Examples use invented data and say so. No real company or person is named.
 - Every status line says who has and has not tried the thing. Keep that true when you change it.
 - Generated files say so at the top. Change the source in `_build/`, rebuild, and say so.

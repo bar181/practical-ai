@@ -6,7 +6,7 @@ export const personJsonLd = {
     "@context": "https://schema.org",
     "@type": "Person",
     name: "Bradley Ross",
-    jobTitle: "Agentic Architect and Researcher",
+    jobTitle: "Senior Agentic Engineer and Research Lead",
     url: `${site.url}/`,
     image: `${site.url}/media/shared/bradley-ross.jpg`,
     sameAs: [site.linkedin, "https://github.com/bar181"],

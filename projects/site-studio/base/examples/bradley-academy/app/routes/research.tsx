@@ -2,6 +2,9 @@ import { Link } from "react-router";
 import type { Route } from "./+types/research";
 import { brand, contact, research } from "../content/brand";
 import { Lattice } from "../components/Art";
+import { AispCode, SigmaGrid, SourceNote } from "../components/Aisp";
+import { NextSteps, ResultList } from "../components/Evidence";
+import { advanced, aispIntro, evidenceBlock, foundation, glossary, openCore } from "../content/aisp";
 import { SmartLink } from "../components/SmartLink";
 import { SplitText } from "../components/SplitText";
 import { pageMeta } from "../lib/meta";
@@ -19,7 +22,8 @@ export default function Research() {
           <SplitText as="h1" id="research-h" className="hero-title hero-title-page" cine="title" text={research.hero.title} />
           <p className="hero-lead" data-cine-after="1">{research.hero.lead}</p>
           <div className="actions" data-cine-after="2">
-            <a className="btn btn-light" href="#early-access">Early access</a>
+            <a className="btn btn-light" href={contact.paper.href} rel="noopener">{contact.paper.label}</a>
+            <a className="btn btn-ghost" href="#early-access">Research partners</a>
           </div>
         </div>
       </section>
@@ -28,18 +32,56 @@ export default function Research() {
         <div className="wrap">
           <h2 id="results-h" className="results-h" data-cine="reveal">{research.results.heading}</h2>
           <p className="results-note" data-cine="reveal">{research.results.note}</p>
-          <ul className="result-grid result-grid-4" data-cine="reveal">
-            {research.results.items.map((r) => (
-              <li key={r.big} data-cine-item>
-                <p className="result-big">{r.big}</p>
-                <p className="result-from">{r.from}</p>
-                <p className="result-text">{r.text}</p>
-                {"note" in r && r.note ? <p className="result-note">{r.note}</p> : null}
-              </li>
-            ))}
-          </ul>
+          <ResultList items={research.results.items} className="result-grid result-grid-3" />
+          <div className="objective" data-cine="reveal">
+            <p className="result-kind">{research.results.objective.kind}</p>
+            <h3>{research.results.objective.title}</h3>
+            <p>{research.results.objective.text}</p>
+            <p className="objective-partner"><a href="#early-access">Research partners</a></p>
+          </div>
         </div>
       </section>
+
+      <section className="aisp" aria-labelledby="aisp-h">
+        <div className="wrap">
+          <div className="section-head" data-cine="reveal">
+            <h2 id="aisp-h" data-cine-item>{aispIntro.heading}</h2>
+            <p className="reel-lead" data-cine-item>{aispIntro.lead}</p>
+          </div>
+          <SigmaGrid />
+          <p className="aisp-proofline">{aispIntro.proofLine}</p>
+          <div className="aisp-pair">
+            <AispCode excerpt={foundation} />
+            <AispCode excerpt={glossary} />
+          </div>
+          <SourceNote />
+        </div>
+      </section>
+
+      <section className="aisp aisp-deep" aria-labelledby="deep-h">
+        <div className="wrap">
+          <div className="section-head" data-cine="reveal">
+            <h2 id="deep-h" data-cine-item>Inside the open core</h2>
+            <p className="reel-lead" data-cine-item>Beyond the notation, the public specification defines how components bind, how knowledge is kept and learned, and how search works. Four blocks from it, each read line by line.</p>
+          </div>
+          <div className="aisp-pair">
+            {advanced.map((x) => <AispCode key={x.id} excerpt={x} />)}
+          </div>
+          <div className="aisp-pair aisp-close">
+            <AispCode excerpt={evidenceBlock} />
+            <div className="aisp-commercial">
+              <h3>{openCore.heading}</h3>
+              <p>{openCore.text}</p>
+              <p><a className="btn btn-light" href="#early-access">Research partners</a></p>
+            </div>
+          </div>
+          <SourceNote />
+        </div>
+      </section>
+
+
+
+      <NextSteps id="next-h" heading={brand.next.heading} items={brand.next.items} />
 
       <section className="program" aria-labelledby="layers-h">
         <div className="wrap">

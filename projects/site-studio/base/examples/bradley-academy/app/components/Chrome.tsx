@@ -48,13 +48,13 @@ export function Header() {
         </Link>
         <nav aria-label="Main" className="main-nav">
           {navLinks.map((l) => <NavLink key={l.to} to={l.to} viewTransition>{l.label}</NavLink>)}
-          <Link className="btn btn-light btn-sm" to="/research#early-access" viewTransition>Early access</Link>
+          <a className="btn btn-light btn-sm" href={site.linkedin} rel="noopener">Connect on LinkedIn</a>
         </nav>
         <details className="menu" ref={menu}>
           <summary aria-label="Menu"><span className="menu-icon" aria-hidden="true" />Menu</summary>
           <nav aria-label="Main, phone" className="menu-panel">
             {navLinks.map((l) => <NavLink key={l.to} to={l.to} viewTransition>{l.label}</NavLink>)}
-            <Link className="btn btn-light" to="/research#early-access" viewTransition>Early access</Link>
+            <a className="btn btn-light" href={site.linkedin} rel="noopener">Connect on LinkedIn</a>
           </nav>
         </details>
       </div>
@@ -69,7 +69,7 @@ export function Footer() {
       <div className="wrap">
         <div className="end-credits">
           <p className="end-brand"><Brand /></p>
-          <p className="end-role">Bradley Ross, Agentic Architect and Researcher</p>
+          <p className="end-role">{site.product}</p>
           <p className="end-role">{site.labels.footerTagline}</p>
           {onTools ? <><p className="end-role">Source code</p>
           <p className="end-name"><a href={site.source} rel="noopener">{site.sourceLabel}</a></p></> : null}
@@ -82,6 +82,7 @@ export function Footer() {
             <li><Link to="/about" viewTransition>About</Link></li>
             <li><Link to="/privacy" viewTransition>Privacy</Link></li>
             <li><a href={site.linkedin} rel="noopener">LinkedIn</a></li>
+            <li><a href={site.wisegeo} rel="noopener">WiseGeo</a></li>
             <li><a href={site.source} rel="noopener">{site.labels.sourceLink}</a></li>
           </ul>
         </div>

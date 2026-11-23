@@ -1,0 +1,42 @@
+/* WiseGeo Inc.: a short company page for people who see the name on LinkedIn or an invoice.
+   Cool paper, deep ink, one teal for actions. Bricolage Grotesque and Inter Tight (both SIL OFL). */
+@font-face { font-family: "Bricolage Grotesque"; src: url("/fonts/bricolage-grotesque-latin-wght-normal.woff2") format("woff2"); font-weight: 200 800; font-display: swap; }
+@font-face { font-family: "Inter Tight"; src: url("/fonts/inter-tight-latin-wght-normal.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
+
+:root {
+  --paper: #f3f6f5;
+  --ink: #10201f;
+  --ink-2: #44524f;
+  --line: #cfd9d6;
+  --teal: #0d665e;
+  --display: "Bricolage Grotesque", system-ui, sans-serif;
+  --text: "Inter Tight", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; min-height: 100svh; display: flex; flex-direction: column; background: var(--paper); color: var(--ink); font: 400 1.0625rem/1.6 var(--text); }
+a { color: var(--teal); text-underline-offset: 0.2em; }
+:focus-visible { outline: 3px solid var(--teal); outline-offset: 3px; border-radius: 4px; }
+h1, h2 { font-family: var(--display); margin: 0; letter-spacing: -0.015em; }
+p { margin: 0; }
+.wrap { width: min(880px, 100% - 2.5rem); margin-inline: auto; }
+
+.company { flex: 1; padding: clamp(2.5rem, 1.5rem + 5vw, 5.5rem) 0 clamp(3rem, 2rem + 4vw, 5rem); }
+.mark { display: inline-flex; align-items: center; gap: 0.6rem; font: 700 1.35rem/1 var(--display); }
+h1 { font-size: clamp(2.6rem, 1.6rem + 4.5vw, 4.6rem); font-weight: 700; line-height: 1.02; margin-top: clamp(2.5rem, 1.5rem + 4vw, 4.5rem); }
+.lead { font-size: clamp(1.15rem, 1rem + 0.6vw, 1.4rem); color: var(--ink-2); max-width: 44ch; margin-top: 1.25rem; }
+
+.offer { list-style: none; padding: 0; margin: 2.75rem 0 0; display: grid; gap: 1.5rem; }
+@media (min-width: 720px) { .offer { grid-template-columns: repeat(3, 1fr); gap: 2rem; } }
+.offer li { border-top: 3px solid var(--ink); padding-top: 1rem; }
+.offer h2 { font-size: 1.25rem; font-weight: 650; margin-bottom: 0.4rem; }
+.offer p { color: var(--ink-2); }
+
+.actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2.75rem; }
+.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0.7rem 1.3rem; border-radius: 999px; background: var(--teal); color: #fff; font-weight: 650; text-decoration: none; border: 2px solid var(--teal); text-align: center; }
+.btn:hover { background: #0a524b; border-color: #0a524b; }
+.btn-quiet { background: transparent; color: var(--ink); border-color: var(--ink); }
+.btn-quiet:hover { background: var(--ink); color: #fff; border-color: var(--ink); }
+
+.foot { border-top: 1px solid var(--line); padding: 1.5rem 0 2rem; color: var(--ink-2); font-size: 0.95rem; }

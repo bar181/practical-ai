@@ -1,7 +1,7 @@
 # Site Studio: instructions for agents
 
-You are here to help someone publish a website, to change the Bradley Academy website, or to help
-someone build a site like it. This file is written for you. People start at the [README](README.md).
+You are here to help someone publish a website, to change the Bradley Academy website or the
+WiseGeo page, or to help someone build a site like either. This file is written for you. People start at the [README](README.md).
 
 ## Publishing a website
 
@@ -23,6 +23,12 @@ A React site (React Router, every page pre-rendered to HTML) published free by G
 lives in [`base/examples/bradley-academy/`](base/examples/bradley-academy/). Its readers are business
 people who never open GitHub, so every page is written for them, not for developers.
 
+## The second example: WiseGeo
+
+[`base/examples/wisegeo/`](base/examples/wisegeo/README.md) is Bradley's company site: one static
+page, no build step, deployed as its own Vercel project for `wisegeo.com`. Its README has the
+Vercel settings and its own rules. Bradley Academy links to it through `SITE_WISEGEO_URL`.
+
 ## Where things are
 
 | You need | Go to |
@@ -32,6 +38,7 @@ people who never open GitHub, so every page is written for them, not for develop
 | The look | `app/styles/site.css`: colour and type tokens at the top. A night at the cinema: velvet, ivory, Harvard crimson and brass, Bodoni Moda titles |
 | The motion | `app/lib/cinema.ts`: GSAP ScrollTrigger and Lenis, driven by `data-cine="..."` attributes on the pages. Off when the reader asks for reduced motion; every page reads fully without it |
 | The large pictures | `app/content/images.ts`: one slot per picture, each one of the owner's own photographs with its alt text. `scripts/make_webp.py` makes light WebP copies (1600 and 800 pixels wide) in `../../_build/photos-webp/`; the page serves those with `srcset` |
+| AISP in its own notation | `app/content/aisp.ts`: verbatim excerpts of the AISP specification (`AI_GUIDE.md` in aisp-open-core) with a plain reading of key lines; `app/components/Aisp.tsx` draws them. Copy lines exactly and mark gaps with `;; …`. Any part of the public open core may be shown; nothing beyond it. After changing it, run `python3 scripts/make_aisp_fonts.py`, which regenerates the two small fonts in `app/fonts/` |
 | Analytics and Search Console | Off unless set at build time: `SITE_GA_ID` (a Google Analytics 4 ID) shows a consent banner and loads analytics only after Yes; `SITE_GSC` adds the Search Console verification tag. The Privacy page (`/privacy`) says which is on |
 | The pages | `app/routes/`: home (Bradley), research, practical-ai (the `/tools` page), one tool page, About Bradley, privacy, not found |
 | How it is published | [`.github/workflows/pages.yml`](../../.github/workflows/pages.yml) and [`workshop/tools/build_site.py`](../../workshop/tools/build_site.py) |
@@ -39,7 +46,7 @@ people who never open GitHub, so every page is written for them, not for develop
 
 ## Rules for this site
 
-1. **Every fact comes from a README,** or for Bradley's own pages (home, Research, About), from Bradley himself. Those pages are a personal profile, not a services page: a vision and a few proof points with brief evidence. Early access to the research is by invitation, for Bradley's connections and partners only; everyone else connects on LinkedIn with a note. No offers of free help. No catalogue, no prices, and no statements about who has not used something. His title is Agentic Architect and Researcher; "agentic engineer" is also allowed. Bradley decided this on 22 November 2026 for a global audience, knowing both words are protected titles in Ontario. Research numbers come only from Bradley; a projection is labelled as one. Change the README first, then `tools.ts`. Never invent a
+1. **Every fact comes from a README,** or for Bradley's own pages (home, Research, About), from Bradley himself. Those pages are a personal profile, not a services page: the research, the teaching and public proof points. Services live on WiseGeo. Unpublished research results go to research partners only (the "Research partners" call to action); everyone else connects on LinkedIn with a note. No offers of free help. No catalogue, no prices, and no statements about who has not used something. He is positioned as a senior agentic engineer and research lead, with twenty-five years as a software architect and developer and a specialty in data prediction; "agentic architect" is also allowed. Bradley decided this on 22 November 2026 for a global audience, knowing both words are protected titles in Ontario. Lead with what he built and the evidence, then teaching, then roles. Research numbers come only from Bradley; a projection is labelled as one. Change the README first, then `tools.ts`. Never invent a
    number, a quote, a customer or a result. A status says who has and has not tried the tool.
 2. **The voice is Bradley's practical instructor voice:** the core idea in one sentence, an
    everyday analogy, then the detail. Short sentences. No em dashes. Sentence case headings.
@@ -54,6 +61,13 @@ people who never open GitHub, so every page is written for them, not for develop
 6. **Add a tool** by adding its slug to `app/content/slugs.ts`, its entry to `tools.ts`, and its
    README heading to `scripts/sync.mjs`. The page, the home card and the sitemap follow.
 7. A person approves anything that is published or merged.
+8. **Protect the research.** aisp-open-core and bar-observatory are public (Bradley, 23 November
+   2026), so anything in them may appear, verbatim or summarised, with a link. Results are labelled
+   as a formal property, an experimental finding or an engineering result, with their limits.
+   Nothing beyond those two repositories: no proprietary architecture, learning processes,
+   formulas, thresholds, settings or unpublished results, here or in comments, generated files,
+   commits or pull requests. Make no guarantees about AI reliability. Unpublished work is "available for
+   discussion with qualified research partners", and is never described as validated.
 
 ## Run it
 
@@ -69,7 +83,10 @@ Pages outside the app (the Artifact Studio master pages, Rare Find, the explaine
 `build_site.py` in the workflow, so in `npm run dev` their links and embeds do not load.
 
 **Custom domain:** set `SITE_BASE=/` and `SITE_URL=https://your-domain` for the build, and add the
-domain in the repository's Pages settings.
+domain in the repository's Pages settings. In this repository the Pages workflow reads them from
+repository variables (`SITE_BASE`, `SITE_URL`, and optionally `SITE_WISEGEO_URL`, `SITE_GA_ID`,
+`SITE_GSC`); unset, it builds for `bar181.github.io/practical-ai/`. For `bradley.academy`, the owner
+sets `SITE_BASE=/` and `SITE_URL=https://bradley.academy` when the domain is added.
 
 ## Plugins and skills
 

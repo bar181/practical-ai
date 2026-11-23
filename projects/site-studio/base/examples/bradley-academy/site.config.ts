@@ -7,3 +7,6 @@ export const siteUrl = (process.env.SITE_URL ?? "https://bar181.github.io/practi
 // visitor first and loads analytics only after a yes. SITE_GSC is the Search Console HTML-tag token.
 export const analyticsId = process.env.SITE_GA_ID ?? "";
 export const searchConsoleToken = process.env.SITE_GSC ?? "";
+
+// WiseGeo, Bradley's company (its own one-page site in ../wisegeo/, deployed separately on Vercel).
+export const wisegeoUrl = (process.env.SITE_WISEGEO_URL ?? "https://wisegeo.com").replace(/\/$/, "");
