@@ -16,7 +16,7 @@
 <circle cx="44" cy="50" r="15" fill="#1f3a5f"/><text x="44" y="55" text-anchor="middle" class="n">1</text>
 <text x="68" y="56" class="h">Your question</text>
 <text x="34" y="92" class="p">"Renew the phone contract,</text><text x="34" y="110" class="p">or switch?"</text>
-<text x="34" y="144" class="b">Options</text><text x="34" y="162" class="v">CallCore (renew), VoiceLine,</text><text x="34" y="178" class="v">RingDesk. Do nothing is added.</text>
+<text x="34" y="144" class="b">Options</text><text x="34" y="162" class="v">CallCore (renew), VoiceLine,</text><text x="34" y="178" class="v">RingDesk, or keep what we have.</text>
 <text x="34" y="208" class="b">What matters</text><text x="34" y="226" class="v">2-year cost; recordings kept</text><text x="34" y="242" class="v">12 months (must be met); Teams</text>
 <text x="34" y="272" class="b">Evidence</text><text x="34" y="290" class="v">Your figures, pages, links,</text><text x="34" y="306" class="v">a colleague's notes</text>
 </g>
@@ -24,10 +24,10 @@
 <rect x="282" y="20" width="236" height="300" rx="16" fill="#f4f7fb" stroke="#d0d7de"/>
 <circle cx="310" cy="50" r="15" fill="#1f3a5f"/><text x="310" y="55" text-anchor="middle" class="n">2</text>
 <text x="334" y="56" class="h">Seven steps</text>
-<text x="300" y="88" class="st">1 Define</text><text x="404" y="88" class="stop">stop: correct me</text>
-<text x="300" y="108" class="st">2 Structure</text><text x="404" y="108" class="stop">stop: correct me</text>
-<text x="300" y="128" class="st">3 Prioritise</text><text x="300" y="148" class="st">4 Plan the evidence</text>
-<text x="300" y="168" class="st">5 Analyse</text><text x="300" y="188" class="st">6 Synthesise</text><text x="300" y="208" class="st">7 Recommend</text>
+<text x="300" y="88" class="st">1 Frame it</text><text x="404" y="88" class="stop">stop: correct me</text>
+<text x="300" y="108" class="st">2 List options</text><text x="404" y="108" class="stop">stop: correct me</text>
+<text x="300" y="128" class="st">3 Pick what decides it</text><text x="300" y="148" class="st">4 Plan what to check</text>
+<text x="300" y="168" class="st">5 Check each source</text><text x="300" y="188" class="st">6 Argue the other side</text><text x="300" y="208" class="st">7 Recommend</text>
 <g class="s a3"><text x="300" y="242" class="no">⚠ "No setup fee": page says £150</text></g>
 <g class="s a4"><text x="300" y="266" class="no">⚠ RingDesk keeps 90 days:</text><text x="300" y="282" class="no">fails the 12-month rule</text></g>
 <text x="300" y="308" class="v">Sums shown with their working</text>
