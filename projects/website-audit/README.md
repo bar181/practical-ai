@@ -1,16 +1,28 @@
-<p align="center"><img src="../../assets/images/tiles/website-audit.svg" width="150" alt="Website audit: a scorecard for your site, and what to fix first"></p>
+<p align="center"><img src="_build/img/app-icon.svg" width="104" alt="Website audit icon"></p>
 
-# Website audit
+<h1 align="center">Website audit</h1>
 
-<h3 align="center">Know what is holding your website back, and what to fix first.</h3>
+<p align="center"><b>Know what is holding your website back, and what to fix first.</b><br>
+For anyone with a website, from a page made in Claude or ChatGPT to a company site.</p>
 
-<p align="center">For anyone with a website, from a page made in Claude or ChatGPT to a company site.</p>
+<p align="center"><a href="#get-started-try-it-now"><img src="_build/img/btn-try.svg" height="48" alt="Try it with one prompt"></a></p>
+
+<p align="center"><b>Free</b> &nbsp;·&nbsp; <b>No setup</b> &nbsp;·&nbsp; <b>Your own chatbot</b><br><b>Tested in Claude</b> &nbsp;·&nbsp; <b>New: no one else has used it yet</b></p>
+
+**Are you an AI agent?** Read [AGENTS.md](AGENTS.md).
 
 **The core idea:** check your site the way a visitor, a search engine and an AI assistant see it,
 score it out of 100, and fix the five things that matter most.
 
 **Think of it as** a home inspection before a sale. The inspector walks every room, notes what a
 buyer would notice, and ranks the repairs. You decide what to fix.
+
+<p align="center"><img src="_build/img/how-it-works.svg" width="720" alt="How it works, played once. 1: your site: its address or the page, your business in one line, and optional PageSpeed Insights and Observatory results. 2: eight areas scored with the evidence seen: the message, search and AI search, speed, phones, security, trust, links and measurement. 3: a score out of 100, five fixes in order and your core context card; the worked example scored 71, then 81 after the fixes the same day. It reports; you or your developer make the changes."></p>
+
+## What you get back
+
+<p align="center"><img src="_build/img/report.webp" width="640" alt="The top of the report page for the worked example: a score ring showing 81 out of 100 marked Needs work, the scorecard as eight bars with points beside each, issue counts of 0 errors, 4 warnings and 3 notices with the list, Core Web Vitals bars marking Largest Contentful Paint 3.1 s as needs work and layout shift 0.001 as good, and Lighthouse rings for three pages"></p>
+<p align="center"><sub>The report for this repository's own site. Open the <a href="base/examples/bradley-academy-report.html">full report</a>: one file, no network.</sub></p>
 
 ## Get started: try it now
 
@@ -51,8 +63,6 @@ For real speed and security scores, also run two free checks and paste the resul
 | Links and content | 10 |
 | Measured | 5 |
 
-<p align="center"><img src="_build/img/report.webp" width="560" alt="The top of the report page for the worked example: a score ring showing 81 out of 100 marked Needs work, the scorecard as eight bars with points beside each, issue counts of 0 errors, 4 warnings and 3 notices with the list, Core Web Vitals bars marking Largest Contentful Paint 3.1 s as needs work and layout shift 0.001 as good, and Lighthouse rings for three pages"></p>
-<p align="center"><sub>The report for this repository's own site. Open the <a href="base/examples/bradley-academy-report.html">full report</a>: one file, no network.</sub></p>
 
 The report borrows its shape from the audits people already know: one health score with errors,
 warnings and notices weighted apart, as Semrush and Ahrefs do, and score bands in words and colour

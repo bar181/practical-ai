@@ -4,9 +4,21 @@ A scheduled agent that researches and builds the next item on this list, then op
 
 | Complexity | Research | Level 1 | Draft |
 | --- | --- | --- | --- |
-| Intermediate to advanced | Not started | Not started | None yet |
+| Intermediate to advanced | Not started | Running as a Claude scheduled task since 23 November 2026 | Two tools built and merged |
 
 **Think of it as:** A night-shift apprentice who leaves finished work on the bench with a note, and never ships it without a signature.
+
+## How it runs now
+
+Since 23 November 2026 the daily builder is a Claude scheduled task. The prompt is in
+[`scheduled-task-prompt.md`](scheduled-task-prompt.md); paste it into the task to change how it
+works. Its first two drafts, [Rubric reviewer](../../../projects/rubric-reviewer/) and
+[Weekly status update](../../../projects/weekly-status-update/), were built in `docs/`, reviewed by a
+separate agent, and moved to `projects/` when Bradley merged them on 24 November 2026. From 24
+November it builds each new tool straight into `projects/<slug>/`, with a visual README (an
+animated how-it-works picture and a screenshot of the real result) and registration across the
+repository and the site, all in one pull request that Bradley reviews and merges. No person has
+reviewed its scoring of candidates yet.
 
 ## Overview
 

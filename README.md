@@ -347,7 +347,7 @@ is planned, not built yet.
 <details>
 <summary><b>Who has used it?</b></summary>
 
-Its author built and tested all sixteen projects in Claude, and used Artifact Studio for real for a
+Its author built and tested fourteen of the sixteen projects in Claude (the daily builder, an AI scheduled task, built the other two), and used Artifact Studio for real for a
 client's course (the before and after above). Every project except the five newest, Research brief, Website audit, Decision support, Rubric reviewer and Weekly status update, is now in use by other people, from
 business owners in Bradley's courses to agentic developers (reported by Bradley, 22 November 2026).
 Their results are not recorded here yet.
@@ -356,7 +356,7 @@ Their results are not recorded here yet.
 
 ## Status
 
-**22 November 2026.** The author built all sixteen projects and tested them in Claude. Decision support, Rubric reviewer and Weekly status update were added on 24 November.
+**24 November 2026.** Sixteen projects. The author built fourteen and tested them in Claude. The [daily builder](workshop/plans/daily-builder/README.md), an AI scheduled task, built Rubric reviewer and Weekly status update, and separate AI sessions reviewed them. Decision support, Rubric reviewer and Weekly status update were added on 24 November.
 
 - **In use by other people,** eleven projects, from business owners to agentic developers
   (reported by Bradley). Artifact Studio, Agentic Process, Document to action brief and Rare Find

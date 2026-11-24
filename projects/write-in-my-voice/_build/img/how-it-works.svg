@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 360" role="img" aria-labelledby="t d" font-family="system-ui,-apple-system,Segoe UI,Helvetica,Arial,sans-serif">
+<title id="t">How Write and edit in my voice works</title>
+<desc id="d">Plays once. Three steps. 1: three things you wrote, an email to staff, a post on the café page and an email to a regular, plus the draft to revise. 2: your voice guide: Hi all, not Dear Valued Customers; signs Dana, not The Management; no exclamation marks. You correct any line. 3: your draft in your voice, every fact kept: with effect from becomes From Tuesday 1 December 2026, kept; priced at 2 pounds 50 becomes will be 2 pounds 50, kept; 0 facts changed. At the bottom: sounds like you, every date, price and promise kept. You send it.</desc>
+<style>
+.s{opacity:0;animation:in .7s ease-out forwards}
+.d1{animation-delay:1.2s}.d2{animation-delay:1.9s}.d3{animation-delay:2.6s}.d4{animation-delay:3.3s}.d5{animation-delay:4.2s}.d6{animation-delay:4.9s}.d7{animation-delay:5.6s}.d8{animation-delay:6.3s}.d9{animation-delay:7.4s}
+@keyframes in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.s{animation:none;opacity:1}}
+.h{font-size:20px;font-weight:700;fill:#0c2340}.p{font-size:14px;fill:#33415c}.n{font-size:15px;font-weight:700;fill:#ffffff}
+.lab{font-size:12.5px;font-weight:700;fill:#0c2340}.v{font-size:12.5px;fill:#33415c}.ok{font-size:12px;font-weight:700;fill:#0f5e63}.no{font-size:12px;font-weight:700;fill:#b42318}
+</style>
+<rect width="800" height="360" rx="18" fill="#f4f6fa"/>
+<g class="s"><circle cx="44" cy="44" r="16" fill="#b45309"/><text x="44" y="49.5" text-anchor="middle" class="n">1</text><text x="70" y="50" class="h">Three samples</text><rect x="34" y="78" width="196" height="160" rx="12" fill="#fff" stroke="#c9d1de"/></g>
+<g class="s"><text x="48" y="104" class="lab">Email to staff</text></g>
+<g class="s"><text x="48" y="132" class="lab">Post on the café page</text></g>
+<g class="s"><text x="48" y="160" class="lab">Email to a regular</text></g>
+<g class="s"><text x="48" y="188" class="v">and the draft to revise</text></g>
+<text class="s " x="132" y="266" text-anchor="middle" font-size="14" fill="#33415c">Things you wrote</text>
+<path class="s d1" d="M242 158 h36" stroke="#8fa0ba" stroke-width="3" stroke-dasharray="6 6" fill="none"/>
+<g class="s d1"><circle cx="300" cy="44" r="16" fill="#b45309"/><text x="300" y="49.5" text-anchor="middle" class="n">2</text><text x="326" y="50" class="h">Your voice guide</text><rect x="290" y="78" width="230" height="160" rx="12" fill="#fff" stroke="#c9d1de"/></g>
+<g class="s d2"><text x="304" y="104" class="ok">✓ &quot;Hi all,&quot;</text><text x="304" y="122" class="no">✗ &quot;Dear Valued Customers,&quot;</text></g>
+<g class="s d3"><text x="304" y="150" class="ok">✓ signs &quot;Dana&quot;</text><text x="304" y="168" class="no">✗ &quot;The Management&quot;</text></g>
+<g class="s d4"><text x="304" y="196" class="v">No exclamation marks</text></g>
+<text class="s d4" x="405" y="266" text-anchor="middle" font-size="14" fill="#33415c">Correct any line</text>
+<path class="s d5" d="M532 158 h36" stroke="#8fa0ba" stroke-width="3" stroke-dasharray="6 6" fill="none"/>
+<g class="s d5"><circle cx="590" cy="44" r="16" fill="#b45309"/><text x="590" y="49.5" text-anchor="middle" class="n">3</text><text x="616" y="50" class="h">Every fact kept</text><rect x="580" y="78" width="190" height="160" rx="12" fill="#fff" stroke="#c9d1de"/></g>
+<g class="s d6"><text x="594" y="104" class="v">&quot;with effect from&quot; →</text><text x="594" y="122" class="ok">&quot;From Tuesday 1 December&quot;</text></g>
+<g class="s d7"><text x="594" y="150" class="v">&quot;priced at £2.50&quot; →</text><text x="594" y="168" class="ok">&quot;will be £2.50&quot;</text></g>
+<g class="s d8"><text x="594" y="196" class="lab">0 facts changed</text></g>
+<text class="s d8" x="675" y="266" text-anchor="middle" font-size="14" fill="#33415c">A facts check, line by line</text>
+<text class="s d9" x="400" y="320" text-anchor="middle" font-size="17" font-weight="700" fill="#0c2340">Sounds like you. Every date, price and promise kept. You send it.</text>
+</svg>
