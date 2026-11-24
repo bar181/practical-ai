@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Decision support icon: a signpost with two arms, one marked with a check">
+<rect width="256" height="256" rx="56" fill="#1f3a5f"/>
+<rect x="120" y="58" width="16" height="152" rx="6" fill="#ffffff"/>
+<path d="M60 72h96l26 20-26 20H60z" fill="#ffffff"/>
+<path d="M196 126h-96l-26 20 26 20h96z" fill="#c9d6e6"/>
+<path d="M84 92l12 12 24-26" stroke="#1f3a5f" stroke-width="10" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M118 146h56" stroke="#1f3a5f" stroke-width="8" stroke-linecap="round" opacity=".55"/>
+<rect x="96" y="204" width="64" height="12" rx="6" fill="#f2b84b"/>
+<circle cx="190" cy="66" r="22" fill="#f2b84b"/><path d="M180 66l7 7 13-14" stroke="#1f3a5f" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

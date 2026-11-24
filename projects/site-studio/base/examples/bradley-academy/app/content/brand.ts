@@ -99,7 +99,7 @@ export const brand = {
     ],
     practical: {
       heading: "Practical AI: my open-source teaching work",
-      text: "The skills, prompts and examples I build from what I teach. Thirteen tools, each with a worked example and its test results, free to reuse under the Apache 2.0 licence.",
+      text: "The skills, prompts and examples I build from what I teach. Fourteen tools, each with a worked example and its test results, free to reuse under the Apache 2.0 licence.",
       actions: [
         { href: "/tools", label: "Browse the tools", note: "One job each, from meeting notes to website audits." },
         { href: "/tools/meeting-notes-to-actions", label: "Try one now", note: "Copy one prompt into Claude, ChatGPT or Gemini." },

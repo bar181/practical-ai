@@ -13,6 +13,7 @@ export const toolSlugs = [
   "meeting-notes-to-actions",
   "write-in-my-voice",
   "research-brief",
+  "decision-support",
   "learnings-database",
   // Ask about any of them
   "practical-ai-guide",

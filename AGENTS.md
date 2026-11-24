@@ -17,6 +17,7 @@ work. Reuse first: use an existing capability, wrap it, or build only the missin
 | Revise an email or post in someone's own voice, keeping every fact | [`projects/write-in-my-voice/AGENTS.md`](projects/write-in-my-voice/AGENTS.md) |
 | Turn a meeting transcript or notes into decisions, actions and a follow-up | [`projects/meeting-notes-to-actions/AGENTS.md`](projects/meeting-notes-to-actions/AGENTS.md) |
 | Compare options on one page with every claim checked against its source, or check a research report | [`projects/research-brief/AGENTS.md`](projects/research-brief/AGENTS.md) |
+| Work a decision through to a one-page brief or a decision record (ADR), with every source checked | [`projects/decision-support/AGENTS.md`](projects/decision-support/AGENTS.md) |
 | Log a lesson, find the rules before work, or keep a learnings log | [`projects/learnings-database/AGENTS.md`](projects/learnings-database/AGENTS.md) |
 | Answer questions about the tools or Bradley's work, or change the index for AI agents (`llms.txt`) | [`projects/practical-ai-guide/AGENTS.md`](projects/practical-ai-guide/AGENTS.md) |
 | Play or change the Rare Find game | [`projects/rare-find/AGENTS.md`](projects/rare-find/AGENTS.md) |

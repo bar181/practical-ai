@@ -1,7 +1,7 @@
 # Decision support assistant: North Star
 
 Stages 1 to 3 of the [project method](../../../projects/agentic-process/base/PROCESS.md). Written
-15 November 2026. **Not yet approved.** Complexity: intermediate.
+15 November 2026. **Approved and built on 24 November 2026:** [the project](../../../projects/decision-support/). Complexity: intermediate.
 
 **Think of it as** a junior consultant who never skips a step. It frames the question, breaks it
 down, finds the evidence, checks every source still says what it is quoted as saying, and hands you
@@ -31,6 +31,11 @@ defend: the question, the options, the evidence with working links, and what is 
 | The Deckary page above, on the hypothesis-driven approach | 15 Nov 2026 | Its known weakness is looking only for evidence that agrees. Seek the evidence against each hypothesis on purpose |
 | Research features built into assistants | Known from using the products, not researched today | They gather sources and write a long report. They do not follow a fixed sequence you can review step by step, and a cited link is not the same as a checked one |
 | SWOT, decision matrices and the pre-mortem | Long-standing practice, no single source | A short set of analyses chosen to fit the question, never all of them every time |
+| [BLUF (communication)](https://en.wikipedia.org/wiki/BLUF_(communication)), citing [Sehgal, HBR, 22 Nov 2016](https://hbr.org/2016/11/how-to-write-email-with-military-precision) | 24 Nov 2026 (HBR does not open for programs; confirmed from search results) | Bottom line up front: the executive voice puts the recommendation first |
+| [Bezos, 2016 letter to Amazon shareholders](https://www.aboutamazon.com/news/company-news/2016-letter-to-shareholders) | 24 Nov 2026 | Reversible decisions can use a light-weight process: the depth of the process follows how hard the decision is to undo |
+| [Bain, RAPID decision making](https://bain.com/insights/rapid-decision-making) | 24 Nov 2026 | Ideally one decider per decision: the brief is addressed to one person with a date. RAPID is Bain's trademark; only this idea is used |
+| [Klein, "Performing a Project Premortem", HBR, Sep 2007](https://hbr.org/2007/09/performing-a-project-premortem) | 24 Nov 2026 (does not open for programs; confirmed from search results) | Assume it failed and list why: the premortem in step 6, each reason with a control |
+| [Nygard, "Documenting Architecture Decisions", 2011](https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions), [Fowler, "Architecture Decision Record", 2026](https://www.martinfowler.com/bliki/ArchitectureDecisionRecord.html), [MADR 4.0.0](https://adr.github.io/madr) | 24 Nov 2026 | The technical voice: a short record with status, context, decision, consequences, options, drivers and confirmation; accepted records are superseded, never edited |
 
 **Decision:** build on top. The frameworks are public and well described. What is built here is
 the sequence, the templates, the checks, and the outputs.
@@ -94,4 +99,4 @@ Level 1 is the Beginner level: a student can run it in any chat assistant with n
 
 ## Approved
 
-Not yet.
+Approved by Bradley Ross in chat on 24 November 2026 ("do it"), with two additions: an executive tone by default, and every source verified with a link. Built as [`projects/decision-support/`](../../../projects/decision-support/). The answers to the open questions above: step 4 names the disproving evidence before step 5, as proposed; the short list of analyses is the options table, the sums with working, and the premortem; the existing consulting skill was not installed, and the tool was built beside it.
