@@ -29,6 +29,13 @@ working attached.
 
 <p align="center"><img src="_build/img/how-it-works.svg" width="720" alt="How it works, played once. 1: your question, the options, what matters and your evidence. 2: seven steps, define, structure, prioritise, plan the evidence, analyse, synthesise, recommend, stopping after steps 1 and 2 for your correction when the decision is hard to undo. The colleague's no setup fee claim is flagged because the page says 150 pounds, and RingDesk is ruled out because it keeps recordings for 90 days. 3: a one-page brief, answer first, with every source's exact words and link. You decide."></p>
 
+## What you get back
+
+<p align="center"><img src="_build/img/result.webp" width="640" alt="Screenshot of a chat. The question about renewing a phone contract, then the brief: to the managing partner, decision needed by 15 December; the recommendation to switch to VoiceLine if it confirms 12-month recordings and a 1 January start; three reasons with source numbers; an options table comparing VoiceLine, RingDesk and renewing; the working for each two-year cost; and the evidence against."></p>
+
+<p align="center"><sub>The tool's real answer to the invented example below, set in a plain chat window and shortened.
+<a href="base/examples/phone-contract-executive-brief.md">Read the whole reply</a>.</sub></p>
+
 ## Try it now
 
 Copy the whole box into the chatbot you use. It holds the link to the instructions and an invented
