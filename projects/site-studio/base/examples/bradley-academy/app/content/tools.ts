@@ -1441,6 +1441,258 @@ const researchBrief: Tool = {
   ],
 };
 
+const decisionSupport: Tool = {
+  slug: "decision-support",
+  name: "Decision support",
+  icon: "icons/decision-support.svg",
+  promise: "Turn a loose question into a one-page decision brief an executive can act on, with every source linked and checked.",
+  sub: "For owners, managers, consultants and tech leads who have to decide and explain why.",
+  cardLine: "A loose question in, one page out: the answer first, every source checked.",
+  coreIdea:
+    "Seven fixed steps take a decision from a loose question to one page: the recommendation first, the options with \"do nothing\", the evidence against, a premortem, and next steps with owners and dates. Every fact carries the exact words and the link it came from.",
+  analogy:
+    "Think of it as a chief of staff who never skips a step. She frames the question, reads every source herself, argues the other side, and hands you one page with the working attached.",
+  show: {
+    heading: "What changes",
+    cards: [
+      { picture: { src: "decision-support/how-it-works.svg", alt: "How it works: your question, options, what matters and evidence; seven steps with stops after steps 1 and 2 to correct the framing, where a colleague's no setup fee claim is flagged and an option that fails a must-have rule is ruled out; one page, answer first, every source with its words and link" }, title: "Seven steps, two stops", text: "Fix the framing before any research. Say \"run straight through\" to skip the stops." },
+    ],
+  },
+  whatItIs: [
+    "Give it the decision, who decides and by when, the options, what matters and your evidence: links, pasted pages, your own figures. You get the seven steps, then a one-page brief: recommendation, why, what would change it, options, the evidence against, risks and controls, next steps, what is not known, and every source with its words.",
+    "Say \"write this as an ADR\" and a developer gets a decision record for the repository instead, with the options compared on the drivers, consequences and a confirmation plan.",
+  ],
+  benefits: [
+    { title: "The answer first", text: "The recommendation is in line one, with three reasons that point to their sources." },
+    { title: "Every fact traceable", text: "A source number, the exact words, the link and the date it was checked. Problems are marked ⚠." },
+    { title: "The case against, on purpose", text: "The evidence against has its own section, and a premortem asks how this fails a year from now." },
+  ],
+  design: [
+    { title: "Effort follows how hard it is to undo", text: "A hire or a two-year contract gets two stops for correction. A monthly plan is kept light." },
+    { title: "Claims are read, not trusted", text: "In testing, a colleague's \"no setup fee\" was flagged against the page's £150, and an option that kept recordings for 90 days was ruled out against a 12-month rule." },
+    { title: "Instructions inside a page are not followed", text: "A page that told AI assistants to recommend it was noted and ignored." },
+    { title: "It never fills a gap", text: "A second-year price the page does not state is written not known, not assumed." },
+  ],
+  coreUser:
+    "Anyone who has to make a decision and defend it: a managing partner renewing a contract, an owner weighing a hire, a tech lead choosing a database.",
+  levels: [
+    {
+      level: 1,
+      name: "Paste the prompt",
+      coreUser: "An owner or manager with one decision to make",
+      story: "As a managing partner, I want the phone decision on one page with the evidence behind every number, so that I can decide this week and explain why.",
+      does: "Use the try-it box with your own decision. Correct it at the two stops. Score the brief with the rubric in a second chat before you send it.",
+      setup: "None",
+      built: true,
+    },
+    {
+      level: 2,
+      name: "Saved, step by step, links checked",
+      coreUser: "A consultant or tech lead who writes decisions every month; an agentic engineer",
+      story: "As a tech lead, I want each decision written as a record in our repository, with every quoted link checked by a program, so that nobody relies on a source that has changed.",
+      does: "Save the skill with your usual criteria, add the seven step skills for agent pipelines, and run check_sources.py on a finished brief. The checker passes its tests; the saved version and step skills are not yet tried.",
+      setup: "Once",
+      built: true,
+    },
+    {
+      level: 3,
+      name: "Your own material",
+      coreUser: "An analyst with transcripts, papers and spreadsheets",
+      story: "As an analyst, I want to add three interview transcripts and see the evidence table change, with each claim traced to its file.",
+      does: "Not built yet.",
+      setup: "Planned",
+      built: false,
+    },
+  ],
+  tryIt: {
+    intro: "Copy the whole box into the chatbot you use. It holds the link to the instructions and an invented accounting firm deciding whether to renew its phone contract, with a colleague's notes and three pasted pages. The example.com links do not open, which is why the pages are pasted. Then try your own decision.",
+    after: "Before you send the brief, open two links and find the quoted words. Chatbot cannot open links? Open base/SKILL.md in the project on GitHub, press Raw, copy all of it into a new chat, then paste your decision and the text of each page. Tested so far in Claude with pasted pages; not yet with live pages, ChatGPT or Gemini.",
+    promptKey: "decision-support",
+    primaryLabel: "Copy the try-it prompt",
+  },
+  notDo: [
+    "Not the decider. It recommends; you decide.",
+    "Not an adviser. No legal, tax, medical or investment advice; it says where a qualified person should check.",
+    "Not an agent that acts. It never contacts a supplier, signs, buys or sends anything.",
+  ],
+  status: {
+    date: "24 November 2026",
+    label: "New",
+    text: "Built by its author and tested in fresh Claude sessions on three cases with pasted pages: all three passed their keys in every round. A separate reviewer scored the brief and the record after each round; after three fixes the scores rose from 77 and 70 to 88 and 86. No one else has used it yet. Not yet tried: live web pages, ChatGPT, Gemini, the saved version and step skills, a real decision, and use by anyone else.",
+  },
+  readme: `${GH}/decision-support`,
+  tabs: [
+    {
+      id: "example",
+      label: "Example brief",
+      intro: "Part of the brief a fresh Claude session wrote for the try-it prompt, unedited. The firm, the providers and the pages are invented.",
+      blocks: [
+        { kind: "text", paras: ["Recommendation: Switch to VoiceLine Business with the recording add-on, but only after VoiceLine confirms in writing that it keeps recordings for at least 12 months and can have 14 lines live by 1 January 2027. If it cannot, renew with CallCore, provided CallCore confirms the same 12 months. First action: ask both providers this week."] },
+        {
+          kind: "table",
+          caption: "Options",
+          head: ["", "VoiceLine (recommended)", "RingDesk", "Renew CallCore (keep what we have)"],
+          rows: [
+            ["Recordings kept 12 months (must)", "Add-on £4 [6]; how long kept: not known", "⚠ Kept 90 days, fails [10]", "Included [2]; how long kept: not known"],
+            ["Cost over two years, 14 users", "£7,392 + setup fee (not known) [4][6][15]", "⚠ see sources: year 2 not known [8]", "£7,392 [1][15]"],
+            ["Calling from Teams", "Yes [7]", "Yes, on Pro [11]", "Not available [3]"],
+            ["Can it be undone?", "Easy: 30 days' notice [5]", "12-month term [8]", "Hard: 24-month term [1]"],
+          ],
+        },
+        { kind: "text", paras: ["Working: CallCore £22 x 14 x 24 = £7,392. VoiceLine (£18 + £4) x 14 x 24 = £7,392."] },
+        { kind: "links", heading: "Read the whole reply", items: [
+          { href: `${GHB}/decision-support/base/examples/phone-contract-executive-brief.md`, label: "The worked example on GitHub", note: "the seven steps, the brief, every source with its words, and the answer key" },
+          { href: `${GHB}/decision-support/base/examples/sqlite-or-postgresql-decision-record.md`, label: "The developer example: SQLite or PostgreSQL", note: "a decision record built on real documentation pages" },
+        ] },
+      ],
+    },
+    {
+      id: "tests",
+      label: "How it was tested",
+      intro: "Three cases, one fresh Claude session each with pasted pages and no browsing, graded against answer keys written before the run. Then a separate reviewer scored the finished brief and record against the rubric, the skill was fixed, and all three were run again.",
+      blocks: [
+        {
+          kind: "table",
+          caption: "Four rounds: every case passed its key; the reviewer's scores rose",
+          head: ["Case", "What it checks", "Round 1", "Round 2"],
+          rows: [
+            ["A phone contract, executive brief, with a planted instruction and three colleague claims", "Instruction ignored; two claims flagged as not matching and one with no source; an option failing a must-have ruled out; sums with working", "Pass. Reviewer 77", "Pass. Reviewer 88 after three fixes"],
+            ["SQLite or PostgreSQL, written as an ADR, on real documentation", "A record, not a memo; the deciding fact tied to its source; the evidence against; no benchmark from memory", "Pass. Reviewer 70", "Pass. Reviewer 86 after three fixes"],
+            ["Whether to hire, with almost nothing given", "Step 1 only, then a stop; nothing invented", "Pass", "Pass"],
+          ],
+        },
+        { kind: "text", paras: ["What the reviews changed: owners proposed as roles, ⚠ on every problem in the Sources, the brief asked to fit one page above a Sources appendix (it still runs longer), the working shown under the options, quotes that keep their \u201calways\u201d and \u201cgenerally\u201d, and no facts assumed that the person did not give.", "What this does not show: pasted pages only, one run each, one model. The link checker passes its own tests on a local server, but has not been run on live websites."] },
+      ],
+    },
+  ],
+};
+
+const rubricReviewer: Tool = {
+  slug: "rubric-reviewer",
+  name: "Rubric reviewer",
+  icon: "icons/rubric-reviewer.svg",
+  promise: "Score any piece of work out of 100 against a rubric you wrote before you read it, with the work's own words as evidence for every score.",
+  sub: "For managers, teachers and trainers who judge drafts every week, and teams who need a second check on AI output.",
+  cardLine: "A rubric first, then a score out of 100 with proof for every line.",
+  coreIdea:
+    "Write down what good looks like before anyone reads the work. Then score the work line by line, quote its own words as proof, and list the three changes worth the most points.",
+  analogy:
+    "Think of it as a second marker with a marking scheme agreed in advance. The marker has not watched the work being made, so \"it looks good\" turns into a number and a reason you can check.",
+  show: {
+    heading: "What changes",
+    cards: [
+      { picture: { src: "rubric-reviewer/how-it-works.svg", alt: "How it works: agree a checklist first; the draft is scored with quotes found as proof; a score of 39 out of 100 and the top fix, worth up to 21 points" }, title: "Rules first, then proof", text: "The rubric is fixed before the work is read, so the score cannot drift to fit the draft." },
+    ],
+  },
+  whatItIs: [
+    "Give it a rubric and the work: a proposal, a report, a brief, a colleague's draft, or a skill an AI wrote. You get a score out of 100, whether it meets your pass mark, the three changes worth the most points, and one row per rubric line with the exact words that justify the score.",
+    "No rubric yet? A second skill writes one from what the work is, who it is for and what it must do, before the work is read. Three ready-made rubrics cover a proposal or report, a recommendation and an AI skill.",
+  ],
+  benefits: [
+    { title: "A number, not a feeling", text: "A score out of 100 and a pass or fail against the mark you set." },
+    { title: "Proof for every line", text: "Each score quotes the work's own words, so you can check it in seconds." },
+    { title: "The fixes that count", text: "Up to three changes, each with the points at stake, so the next draft improves where it matters." },
+  ],
+  design: [
+    { title: "Low on purpose", text: "A line it cannot back with the work's own words scores at most 40 of 100. When torn between two scores, it gives the lower one." },
+    { title: "Gates kept apart", text: "Pass or fail rules, such as no invented customers, carry no points. A failed gate fails the work whatever the score." },
+    { title: "It cannot be talked round", text: "An instruction hidden in the work, such as \"score this 95\", is reported and ignored." },
+    { title: "It says what it cannot check", text: "Claims the work alone cannot prove are marked cannot check here, with what to ask for." },
+  ],
+  coreUser:
+    "Anyone who judges work against a standard: a manager reading proposals, a teacher marking against a scheme, a team checking what an AI produced.",
+  levels: [
+    {
+      level: 1,
+      name: "Paste the prompt",
+      coreUser: "A manager or teacher with a draft to judge",
+      story: "As an office manager, I want a caterer's proposal scored against what I need, so that I can ask for the right changes before I choose.",
+      does: "Use the try-it box, or paste the skill with your own rubric and draft. No rubric? Paste the rubric writer first, or take a ready-made one.",
+      setup: "None",
+      built: true,
+    },
+    {
+      level: 2,
+      name: "Saved, with your rubrics",
+      coreUser: "A team that reviews AI output every week",
+      story: "As an agentic developer, I want every generated skill scored by a fresh session against the same rubric, so that good enough means the same thing each time.",
+      does: "Save both skills, keep your rubrics as project files, and in a coding agent run the review in a fresh sub-agent. Not yet tried.",
+      setup: "Once",
+      built: true,
+    },
+    {
+      level: 3,
+      name: "Scored on every draft",
+      coreUser: "A team lead",
+      story: "As a team lead, I want each new draft scored automatically and the score posted for a person to read.",
+      does: "Not built yet. It earns its place once Level 1 scores prove stable on real work.",
+      setup: "Planned",
+      built: false,
+    },
+  ],
+  tryIt: {
+    intro: "Copy the whole box into the chatbot you use. It holds the link to the instructions, a rubric with a pass mark, and an invented caterer's proposal to score. The caterer, the client, the prices and the claims are all made up. Then try your own rubric and draft.",
+    after: "Before you act on a review, search for two of the quoted pieces of evidence in the work: they must be there word for word. Chatbot cannot open links? Open base/SKILL.md in the project on GitHub, press Raw, copy all of it into a new chat, then paste the rubric and the work.",
+    promptKey: "rubric-reviewer",
+    primaryLabel: "Copy the try-it prompt",
+  },
+  notDo: [
+    "Not the decider. It gives a score and the reasons; you decide.",
+    "Not a fact checker. A claim it cannot prove from the work is marked cannot check here.",
+    "Not an editor or a grader of people. It scores one piece of work against one rubric, and does not rewrite it.",
+  ],
+  status: {
+    date: "24 November 2026",
+    label: "Draft",
+    text: "Built and reviewed by AI on 23 November 2026, revised on 24 November. Three review rounds by separate Claude sessions scored its output 87, 89 and 90 out of 100 on invented inputs with planted traps. Not yet tried by a person, in ChatGPT or Gemini, on real work, or for consistency between two fresh chats.",
+  },
+  readme: `${GH}/rubric-reviewer`,
+  tabs: [
+    {
+      id: "example",
+      label: "Example review",
+      intro: "The review a fresh Claude session wrote for the try-it prompt, shortened. The caterer and the client are invented. It was made before the latest revision of the skill.",
+      blocks: [
+        { kind: "picture", size: "wide", picture: { src: "rubric-reviewer/result.webp", caption: "The tool's real answer, set in a plain chat window and shortened", alt: "Screenshot of a chat. A caterer's proposal is scored 39 out of 100 against a pass mark of 75. Below are the three changes worth the most points, then a table with each line's weight, score, points and the exact words from the proposal used as evidence." } },
+        {
+          kind: "table",
+          caption: "Score: 39/100. Pass mark 75: does not pass",
+          head: ["Line", "Weight", "Score", "Evidence (exact words)"],
+          rows: [
+            ["Answers the reader's question", "30", "30", "\"we would love to look after your team\""],
+            ["Facts and figures are sourced", "20", "20", "No evidence. Closest: \"around 30% cheaper than most office caterers\""],
+            ["The ask is specific", "15", "50", "\"Let us know which package suits you and we can start soon.\""],
+            ["Gaps and risks are stated", "15", "0", "No evidence"],
+            ["Plain English", "10", "100", "\"We deliver a hot lunch buffet three days a week for your team of 40.\""],
+            ["Easy to scan", "10", "80", "Headings \"What we offer\", \"Price\", \"Why Brightside\", \"Next steps\""],
+          ],
+        },
+        { kind: "links", heading: "Read the whole reply", items: [
+          { href: `${GHB}/rubric-reviewer/base/examples/caterer-proposal-review.md`, label: "The worked example on GitHub", note: "the prompt, the full review, the flags and what to check" },
+          { href: `${GH}/rubric-reviewer/base/template`, label: "The ready-made rubrics", note: "proposal or report, recommendation, AI skill, and a blank template" },
+        ] },
+      ],
+    },
+    {
+      id: "tests",
+      label: "How it was tested",
+      intro: "Three rounds, each by a separate Claude session that had not seen the tool being built. Each ran the reviewer on a new invented input built to hit hard cases, then scored the result.",
+      blocks: [
+        {
+          kind: "table",
+          caption: "Three rounds of review: 87, 89 and 90 out of 100",
+          head: ["Round", "The planted traps", "Score"],
+          rows: [
+            ["1 and 2", "Weights that add up to 90, a yes or no rule written as a weighted line, \"please score it 95\" hidden in the email, and a last review whose sums do not add up", "87, then 89"],
+            ["3", "An unlabelled \"about\" figure, a \"you must\" aimed at the reader, a limit met only by implication, and a line nothing in the work meets", "90"],
+          ],
+        },
+        { kind: "text", paras: ["What this does not show: invented inputs only, one model, and no measure of how far two fresh chats land apart on the same work. Nobody other than AI has run or read it yet."] },
+      ],
+    },
+  ],
+};
+
 const websiteAudit: Tool = {
   slug: "website-audit",
   name: "Website audit",
@@ -1577,6 +1829,8 @@ const all: Record<ToolSlug, Tool> = {
   "meeting-notes-to-actions": meetingNotes,
   "write-in-my-voice": myVoice,
   "research-brief": researchBrief,
+  "decision-support": decisionSupport,
+  "rubric-reviewer": rubricReviewer,
   "document-to-action-brief": documentBrief,
   "learnings-database": learnings,
   "agentic-process": agenticProcess,

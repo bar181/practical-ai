@@ -144,6 +144,20 @@ export const imageSlots: ImageSlot[] = [
     focus: "50% 45%",
   },
   {
+    id: "tool-decision-support",
+    page: "Decision support",
+    where: "Full-screen opening scene of the tool page, and its card on the home page",
+    src: "photos/cheetah.jpg",
+    alt: "A cheetah",
+  },
+  {
+    id: "tool-rubric-reviewer",
+    page: "Rubric reviewer",
+    where: "Full-screen opening scene of the tool page, and its card on the home page",
+    src: "photos/class.jpg",
+    alt: "A cartoon robot at a desk in front of a screen of smiling robot faces",
+  },
+  {
     id: "who-artifact-studio",
     page: "Artifact Studio",
     where: "The Who it is for scene on the tool page",
@@ -240,6 +254,20 @@ export const imageSlots: ImageSlot[] = [
     where: "The Who it is for scene on the tool page",
     src: "photos/puzzle.jpg",
     alt: "Bright jigsaw puzzle pieces piled together",
+  },
+  {
+    id: "who-decision-support",
+    page: "Decision support",
+    where: "The Who it is for scene on the tool page",
+    src: "photos/fog.jpg",
+    alt: "A lone figure walking along a flooded path toward a stilt house in the fog",
+  },
+  {
+    id: "who-rubric-reviewer",
+    page: "Rubric reviewer",
+    where: "The Who it is for scene on the tool page",
+    src: "photos/puppy.jpg",
+    alt: "A puppy in a tweed jacket and tie",
   },
   {
     id: "about-portrait",

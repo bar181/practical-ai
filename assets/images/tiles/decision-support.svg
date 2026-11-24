@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 380" role="img" aria-label="Decision support: from a loose question to a one-page brief, every source checked" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif">
+<rect x="2" y="2" width="336" height="376" rx="32" fill="#ffffff" stroke="#d0d7de" stroke-width="3"/>
+<rect x="110" y="34" width="120" height="120" rx="28" fill="#1f3a5f"/>
+<g transform="translate(110 34) scale(0.46875)"><rect x="120" y="58" width="16" height="152" rx="6" fill="#ffffff"/>
+<path d="M60 72h96l26 20-26 20H60z" fill="#ffffff"/>
+<path d="M196 126h-96l-26 20 26 20h96z" fill="#c9d6e6"/>
+<path d="M84 92l12 12 24-26" stroke="#1f3a5f" stroke-width="10" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M118 146h56" stroke="#1f3a5f" stroke-width="8" stroke-linecap="round" opacity=".55"/>
+<rect x="96" y="204" width="64" height="12" rx="6" fill="#f2b84b"/>
+<circle cx="190" cy="66" r="22" fill="#f2b84b"/><path d="M180 66l7 7 13-14" stroke="#1f3a5f" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<text x="170" y="206" text-anchor="middle" fill="#0c2340" font-size="32" font-weight="800">Decision</text>
+<text x="170" y="242" text-anchor="middle" fill="#0c2340" font-size="32" font-weight="800">support</text>
+<text x="170" y="296" text-anchor="middle" fill="#3b4a5e" font-size="26" font-weight="600">Every source checked.</text>
+<text x="170" y="350" text-anchor="middle" fill="#334155" font-size="24" font-weight="800">Open ›</text>
+</svg>

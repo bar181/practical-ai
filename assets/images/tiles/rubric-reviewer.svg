@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 380" role="img" aria-label="Rubric reviewer: score any work out of 100, with proof" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif">
+<rect x="2" y="2" width="336" height="376" rx="32" fill="#ffffff" stroke="#d0d7de" stroke-width="3"/>
+<g transform="translate(110 34) scale(0.46875)"><rect width="256" height="256" rx="56" fill="#6d28d9"/><circle cx="128" cy="132" r="70" fill="none" stroke="#ffffff" stroke-width="16"/><path d="M128 132l40-40" stroke="#f5c542" stroke-width="16" stroke-linecap="round"/><circle cx="128" cy="132" r="12" fill="#ffffff"/><path d="M128 62v18M58 132h18M180 132h18" stroke="#ffffff" stroke-width="12" stroke-linecap="round"/></g>
+<text x="170" y="206" text-anchor="middle" fill="#0c2340" font-size="32" font-weight="800">Rubric</text>
+<text x="170" y="242" text-anchor="middle" fill="#0c2340" font-size="32" font-weight="800">reviewer</text>
+<text x="170" y="296" text-anchor="middle" fill="#3b4a5e" font-size="26" font-weight="600">A score, with proof.</text>
+<text x="170" y="350" text-anchor="middle" fill="#334155" font-size="24" font-weight="800">Open ›</text>
+</svg>
