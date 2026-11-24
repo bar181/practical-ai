@@ -9,8 +9,8 @@
 @keyframes in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){.a{animation:none;opacity:1}}
 </style><rect width="660" height="230" rx="18" fill="#ffffff"/>
-<g class="a a1"><rect x="18" y="34" width="150" height="70" rx="8" class="paper"/><text x="32" y="56" class="t b">This week's notes</text><text x="32" y="76" class="t">pages built</text><text x="32" y="94" class="t">launch now 12 Dec</text>
-<rect x="18" y="116" width="150" height="70" rx="8" class="paper"/><text x="32" y="138" class="t b">Last week's update</text><text x="32" y="158" class="t">launch 5 Dec</text><text x="32" y="176" class="t">need hall photos</text>
+<g class="a a1"><rect x="18" y="34" width="150" height="70" rx="8" class="paper"/><text x="32" y="56" class="t b">This week</text><text x="32" y="76" class="t">pages built</text><text x="32" y="94" class="t">launch now 12 Dec</text>
+<rect x="18" y="116" width="150" height="70" rx="8" class="paper"/><text x="32" y="138" class="t b">Last week</text><text x="32" y="158" class="t">launch 5 Dec</text><text x="32" y="176" class="t">need hall photos</text>
 <text x="93" y="215" class="cap" text-anchor="middle">1. Notes and last week</text></g>
 <g class="a a2"><path d="M190 111h48" class="arw"/><path d="M232 104l9 7-9 7" class="arw"/></g>
 <g class="a a3"><rect x="256" y="36" width="150" height="150" rx="10" class="box"/>
