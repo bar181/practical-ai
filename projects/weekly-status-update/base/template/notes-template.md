@@ -1,7 +1,7 @@
 # Weekly notes template
 
 Keep this open during the week and add a line whenever something happens. It takes seconds, and
-on Friday you paste it, with last week's update, into a chat with [`SKILL.md`](SKILL.md).
+on Friday you paste it, with last week's update, into a chat with [`SKILL.md`](../SKILL.md).
 
 Rough is fine. What matters is the dates, the numbers and the exact problem, in your own words.
 

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 380" role="img" aria-label="Weekly status update: rough notes in, a two-minute update out" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif">
+<rect x="2" y="2" width="336" height="376" rx="32" fill="#ffffff" stroke="#d0d7de" stroke-width="3"/>
+<g transform="translate(110 34) scale(0.46875)"><rect width="256" height="256" rx="56" fill="#0e7490"/><rect x="52" y="74" width="152" height="112" rx="16" fill="none" stroke="#ffffff" stroke-width="16"/><path d="M58 84l70 52 70-52" fill="none" stroke="#ffffff" stroke-width="16" stroke-linejoin="round"/><circle cx="196" cy="74" r="24" fill="#f5c542"/><path d="M186 74l7 7 13-14" stroke="#0e7490" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g>
+<text x="170" y="206" text-anchor="middle" fill="#0c2340" font-size="32" font-weight="800">Weekly status</text>
+<text x="170" y="242" text-anchor="middle" fill="#0c2340" font-size="32" font-weight="800">update</text>
+<text x="170" y="296" text-anchor="middle" fill="#3b4a5e" font-size="26" font-weight="600">Nothing goes missing.</text>
+<text x="170" y="350" text-anchor="middle" fill="#334155" font-size="24" font-weight="800">Open ›</text>
+</svg>

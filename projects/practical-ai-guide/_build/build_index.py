@@ -16,7 +16,8 @@ OUT = os.path.join(ROOT, "llms.txt")
 # The order people meet the tools in: the design set, then everyday jobs, then the method and play.
 ORDER = [
     "web-sections", "tone-studio", "artifact-studio", "site-studio", "website-audit",
-    "document-to-action-brief", "meeting-notes-to-actions", "write-in-my-voice", "research-brief",
+    "document-to-action-brief", "meeting-notes-to-actions", "write-in-my-voice", "research-brief", "decision-support",
+    "rubric-reviewer", "weekly-status-update",
     "learnings-database", "practical-ai-guide", "agentic-process", "rare-find",
 ]
 

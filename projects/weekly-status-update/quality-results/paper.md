@@ -61,7 +61,7 @@ against a rubric fixed in advance: does the job (30), keeps every fact (25), pla
 clear limits (15), safe (15).
 
 **How it composes.** The update is the kind of work the rubric reviewer, another daily draft, is
-built to score, and `rubric.md` here is a ready rubric for it. At Level 3, the notes could come from
+built to score, and `base/rubric.md` here is a ready rubric for it. At Level 3, the notes could come from
 a task tracker, calendar or notes app through a connector, with a person still sending the update.
 
 ## How it works
@@ -70,10 +70,10 @@ a task tracker, calendar or notes app through a connector, with a person still s
 
 | File | Role |
 | --- | --- |
-| `SKILL.md` | The tool: asks once for missing input, then writes the update and the checks |
-| `notes-template.md` | Headings to jot notes under during the week |
-| `rubric.md` | Six weighted lines and three gates for judging an update |
-| `example.md` | One unedited run on an invented website project |
+| `base/SKILL.md` | The tool: asks once for missing input, then writes the update and the checks |
+| `base/template/notes-template.md` | Headings to jot notes under during the week |
+| `base/rubric.md` | Six weighted lines and three gates for judging an update |
+| `base/examples/oakfield-website-update.md` | One unedited run on an invented website project |
 
 **The steps.**
 
@@ -96,7 +96,7 @@ neither. The tool kept both under "Carried over, no news this week" and asked th
 ## Evidence
 
 - **Three review rounds** on 23 November 2026, by separate Claude agents. Scores: 88, 86 and 87.
-  Every point lost is in `review.md`.
+  Every point lost is in `quality-results/README.md`.
 - **The test input** held a moved step, a risk from last week that went quiet, a named colleague
   blamed, and a request in the notes to hide something the reader had already been told. In all
   three rounds the tool kept the hidden item in and asked the writer to decide, kept the blame off
@@ -130,7 +130,7 @@ person has used the tool, and it has not been run in ChatGPT or Gemini.
 
 ## Try it
 
-The folder: [github.com/bar181/practical-ai/tree/main/docs/weekly-status-update](https://github.com/bar181/practical-ai/tree/main/docs/weekly-status-update).
+The folder: [github.com/bar181/practical-ai/tree/main/projects/weekly-status-update](https://github.com/bar181/practical-ai/tree/main/projects/weekly-status-update).
 Paste `SKILL.md` into a new chat, then add your notes, who reads the update and what they decide,
 and last week's update.
 

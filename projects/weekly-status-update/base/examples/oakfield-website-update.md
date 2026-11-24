@@ -1,7 +1,7 @@
 # Example: a freelancer's weekly update to a client
 
 This is what a good result looks like. Made on 23 November 2026 by a fresh Claude session (a
-separate agent with no other context) that had only [`SKILL.md`](SKILL.md) and the message below.
+separate agent with no other context) that had only [`SKILL.md`](../SKILL.md) and the message below.
 It ran on the version after the second review round. The last small wording fixes (how a carried-over
 item is phrased, how words are counted) came after it, so its carried-over lines and word count
 follow the earlier wording.

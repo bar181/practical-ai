@@ -114,7 +114,7 @@ After round 3, not reviewed again:
 
 ## The worked example
 
-[`example.md`](example.md) is the third run on the same invented input, by a fresh agent with only
+[The worked example](../base/examples/oakfield-website-update.md) is the third run on the same invented input, by a fresh agent with only
 `SKILL.md`. It ran after round 2's fixes and before round 3's wording fixes; the header says what
 that changes. It is unedited. On the same input, the status went from "at risk" (first version) to
 "off track" once off track was defined as an outcome date the notes say will not be met.

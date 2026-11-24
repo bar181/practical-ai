@@ -1,7 +1,9 @@
 # Rubric reviewer: North Star
 
 Stages 1 to 3 of the [project method](../../../projects/agentic-process/base/PROCESS.md). Written
-15 November 2026. **Not yet approved.** Proposed by the assistant, not asked for by the owner.
+15 November 2026. **Built on 23 November 2026** by the daily builder as a draft, and moved to
+[the project](../../../projects/rubric-reviewer/) on 24 November 2026 when Bradley asked for every
+open pull request to be merged. Not yet tried by a person.
 Complexity: beginner.
 
 **Think of it as** a marking scheme and a second marker. The scheme is written before the work is

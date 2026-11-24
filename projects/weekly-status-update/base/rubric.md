@@ -2,8 +2,8 @@
 
 A rubric for judging a status update, written on 23 November 2026 before any update was scored with
 it. Use it to check your own update, or paste it into a fresh chat with the update and ask for a
-score with the exact words that justify each line. (A rubric reviewer tool that does this is a
-separate daily draft, in review in [pull request 29](https://github.com/bar181/practical-ai/pull/29).) Draft, written by AI; not yet
+score with the exact words that justify each line. (The [Rubric reviewer](../../rubric-reviewer/) does
+this.) Draft, written by AI; not yet
 used on real updates.
 
 Adjust the lines before you score, then keep them fixed week to week, so the scores can be

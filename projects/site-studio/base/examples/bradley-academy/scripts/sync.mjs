@@ -10,7 +10,8 @@ const repo = join(site, "..", "..", "..", "..", "..");
 const projects = [
   "artifact-studio", "agentic-process", "document-to-action-brief", "learnings-database", "rare-find",
   "tone-studio", "web-sections", "meeting-notes-to-actions", "write-in-my-voice", "site-studio",
-  "practical-ai-guide", "research-brief", "website-audit",
+  "practical-ai-guide", "research-brief", "website-audit", "decision-support",
+  "rubric-reviewer", "weekly-status-update",
 ];
 
 // 1. Pictures: each project's _build/img, and the shared images
@@ -47,6 +48,9 @@ const headings = {
   "site-studio": /^## Get started: try it now/m,
   "practical-ai-guide": /^## Get started: try it now/m,
   "research-brief": /^## Try it now/m,
+  "decision-support": /^## Try it now/m,
+  "rubric-reviewer": /^## Try it now/m,
+  "weekly-status-update": /^## Try it now/m,
   "website-audit": /^## Get started: try it now/m,
   starter: /^## Start here/m,
 };

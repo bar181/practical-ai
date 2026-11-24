@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 230" width="660" height="230" role="img" aria-labelledby="rr-t"><title id="rr-t">How it works: the checklist is agreed first, then each line of the draft is matched to quoted evidence, and a score out of 100 comes out with the top fix</title><style>
+.t{font:14px system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;fill:#0f1720}.t.b{font-weight:800}.t.small{font-size:12.5px}
+.bad{fill:#5b21b6;font-weight:800}.cap{font:800 14px system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;fill:#5b21b6}
+.paper{fill:#f3f5f8;stroke:#d9dee6;stroke-width:1.5}.box{fill:#f1ecff;stroke:#d9dee6}.out{fill:#fff;stroke:#6d28d9;stroke-width:2.5}
+.arw{fill:none;stroke:#0f1720;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}.ln{fill:#d9dee6}.hl{fill:#6d28d9;opacity:.55}.bar{fill:#6d28d9}
+.seal{fill:#0f1720}.sealt{font:800 16px system-ui,sans-serif;fill:#fff}.pill{fill:#6d28d9}.pillt{font:800 12.5px system-ui,sans-serif;fill:#fff}
+.ring{fill:none;stroke:#d9dee6;stroke-width:10}.arc{fill:none;stroke:#6d28d9;stroke-width:10;stroke-linecap:round}.big{font:800 30px system-ui,sans-serif;fill:#0f1720}
+.a{opacity:0;animation:in .6s ease-out forwards}.a2{animation-delay:.5s}.a3{animation-delay:.9s}.a4{animation-delay:1.6s}.a5{animation-delay:2s}
+@keyframes in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.a{animation:none;opacity:1}}
+</style><rect width="660" height="230" rx="18" fill="#ffffff"/>
+<g class="a a1"><rect x="18" y="36" width="150" height="150" rx="10" class="paper"/><text x="34" y="62" class="t b">Checklist first</text>
+<text x="34" y="88" class="t">☐ Clear answer</text><text x="34" y="110" class="t">☐ Facts sourced</text><text x="34" y="132" class="t">☐ Clear ask</text><text x="34" y="154" class="t">☐ Risks named</text>
+<text x="93" y="215" class="cap" text-anchor="middle">1. Agree what good is</text></g>
+<g class="a a2"><path d="M190 111h48" class="arw"/><path d="M232 104l9 7-9 7" class="arw"/></g>
+<g class="a a3"><rect x="256" y="36" width="150" height="150" rx="10" class="box"/>
+<rect x="270" y="54" width="122" height="10" rx="5" class="ln"/><rect x="270" y="72" width="100" height="10" rx="5" class="hl"/><rect x="270" y="90" width="118" height="10" rx="5" class="ln"/><rect x="270" y="108" width="84" height="10" rx="5" class="hl"/><rect x="270" y="126" width="112" height="10" rx="5" class="ln"/>
+<text x="270" y="166" class="t small">quotes found as proof</text>
+<text x="331" y="215" class="cap" text-anchor="middle">2. Score with quotes</text></g>
+<g class="a a4"><path d="M428 111h48" class="arw"/><path d="M470 104l9 7-9 7" class="arw"/></g>
+<g class="a a5"><rect x="494" y="30" width="150" height="164" rx="12" class="out"/>
+<circle cx="569" cy="92" r="40" class="ring"/><circle cx="569" cy="92" r="40" class="arc" pathLength="100" stroke-dasharray="39 100" transform="rotate(-90 569 92)"/>
+<text x="569" y="101" class="big" text-anchor="middle">39</text><text x="569" y="160" class="t" text-anchor="middle">Top fix: up to +21</text>
+<text x="569" y="215" class="cap" text-anchor="middle">3. Score and top fixes</text></g></svg>
