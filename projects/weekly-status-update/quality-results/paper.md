@@ -60,7 +60,7 @@ invented input. A separate reviewer agent ran it on a second, harder input and s
 against a rubric fixed in advance: does the job (30), keeps every fact (25), plain English (15),
 clear limits (15), safe (15).
 
-**How it composes.** The update is the kind of work the rubric reviewer, another daily draft, is
+**How it composes.** The update is the kind of work the [Rubric reviewer](../../rubric-reviewer/), another tool in this repository, is
 built to score, and `base/rubric.md` here is a ready rubric for it. At Level 3, the notes could come from
 a task tracker, calendar or notes app through a connector, with a person still sending the update.
 
