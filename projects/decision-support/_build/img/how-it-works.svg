@@ -16,7 +16,7 @@
 <circle cx="44" cy="50" r="15" fill="#1f3a5f"/><text x="44" y="55" text-anchor="middle" class="n">1</text>
 <text x="68" y="56" class="h">Your question</text>
 <text x="34" y="92" class="p">"Renew the phone contract,</text><text x="34" y="110" class="p">or switch?"</text>
-<text x="34" y="144" class="b">Options</text><text x="34" y="162" class="v">CallCore (renew), VoiceLine,</text><text x="34" y="178" class="v">RingDesk, or keep what we have.</text>
+<text x="34" y="144" class="b">Options</text><text x="34" y="162" class="v">Renew CallCore, VoiceLine</text><text x="34" y="178" class="v">or RingDesk.</text>
 <text x="34" y="208" class="b">What matters</text><text x="34" y="226" class="v">2-year cost; recordings kept</text><text x="34" y="242" class="v">12 months (must be met); Teams</text>
 <text x="34" y="272" class="b">Evidence</text><text x="34" y="290" class="v">Your figures, pages, links,</text><text x="34" y="306" class="v">a colleague's notes</text>
 </g>
@@ -39,7 +39,7 @@
 <rect x="566" y="74" width="200" height="40" rx="8" fill="#fff4dc"/>
 <text x="576" y="91" class="b">Recommendation</text><text x="576" y="107" class="v">VoiceLine, if confirmed</text>
 <text x="566" y="140" class="v">Why: three reasons, with sources</text>
-<text x="566" y="162" class="v">Options, with do nothing</text>
+<text x="566" y="162" class="v">Options, side by side</text>
 <text x="566" y="184" class="v">The evidence against</text>
 <text x="566" y="206" class="v">Risks and controls</text>
 <text x="566" y="228" class="v">Next steps: owner, date</text>
