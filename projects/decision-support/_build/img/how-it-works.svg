@@ -35,10 +35,10 @@
 <g class="s s3">
 <rect x="548" y="20" width="236" height="300" rx="16" fill="#ffffff" stroke="#1f3a5f" stroke-width="2"/>
 <circle cx="576" cy="50" r="15" fill="#1f3a5f"/><text x="576" y="55" text-anchor="middle" class="n">3</text>
-<text x="600" y="56" class="h">One page, answer first</text>
+<text x="600" y="56" class="h">Answer first</text>
 <rect x="566" y="74" width="200" height="40" rx="8" fill="#fff4dc"/>
-<text x="576" y="91" class="b">Recommendation</text><text x="576" y="107" class="v">VoiceLine, once retention is confirmed</text>
-<text x="566" y="140" class="v">Why: three reasons [2] [4] [6]</text>
+<text x="576" y="91" class="b">Recommendation</text><text x="576" y="107" class="v">VoiceLine, if confirmed</text>
+<text x="566" y="140" class="v">Why: three reasons, with sources</text>
 <text x="566" y="162" class="v">Options, with do nothing</text>
 <text x="566" y="184" class="v">The evidence against</text>
 <text x="566" y="206" class="v">Risks and controls</text>
