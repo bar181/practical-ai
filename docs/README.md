@@ -1,13 +1,13 @@
 # Practical AI: what is ready, and what comes next
 
-A one-page summary for anyone deciding where to start. Updated 22 November 2026.
+A one-page summary for anyone deciding where to start. Updated 24 November 2026.
 
 ## What is ready
 
-Thirteen projects are built. Eleven are in use by people other than the author, from business owners
+Fourteen projects are built. Eleven are in use by people other than the author, from business owners
 to agentic developers (reported by Bradley, 22 November 2026). Artifact Studio, Agentic Process,
 Document to action brief and Rare Find have been in user testing since 18 November 2026. Results are
-not recorded here yet. Research brief with checked sources and Website audit are new, tested by their author only. Three are described below; the rest follow in the
+not recorded here yet. Research brief with checked sources, Website audit and Decision support are new, tested by their author only. Three are described below; the rest follow in the
 lists. Artifact Studio, Agentic Process, the Learnings database and Rare Find each have an explainer
 page in [`reports/`](reports/) (download the HTML file and open it in a browser).
 
@@ -89,7 +89,7 @@ Jobs you already do, done faster with the chatbot you have. Each is one file and
 | 6 | **Customer issue helper** | Handle a late order or a refund from your one-page policy, and say when a manager should step in | Idea |
 | 7 | **Ask your spreadsheet** | Explain what changed in a sales export and show the rows behind the answer | Early draft |
 | 8 | **Receipts into an expense sheet** | Read each receipt into a sheet and flag any that are blurry or incomplete | Plan |
-| 9 | **Business decision helper** | Compare options against your goals and limits, with sources, and say what would change the answer | Example built |
+| 9 | **Decision support** | Work a decision through to a one-page brief: options with "do nothing", the evidence against, risks with controls, every source checked | **New, tested by its author only:** [project](../projects/decision-support/) |
 | 10 | **Quote a job** | Prepare a first quote from your price sheet and a customer request, with the arithmetic shown | Early draft |
 
 ### For people who build with agents
@@ -100,7 +100,7 @@ Support tools that make every other tool better. Each starts with a version a pe
 | --- | --- | --- | --- |
 | 1 | **Learnings database** | Record each lesson once, filed by area and project, and bring it back before similar work starts | **In use; built and tested in Claude by its author, 19 Nov 2026:** [project](../projects/learnings-database/) · [explainer](reports/learnings-database.html) · [idea file](../projects/learnings-database/level-2-files/gist/learnings-log.md) |
 | 2 | **Task and dependency graph** | Turn a goal into tasks, and show what is ready and what is blocked | Plan |
-| 3 | **Decision support** | Take a decision from options to a recommendation with the working shown | Example built |
+| 3 | **Decision support, step by step** | Seven step skills and a link checker, so an agent can run, review or redo one step of a decision | **New, tested by its author only:** [Level 2](../projects/decision-support/level-2-files/README.md) |
 | 4 | **Estimate to proposal** | Combine a request, notes and past jobs into a draft estimate and proposal | Early draft |
 | 5 | **Recurring research brief** | Compare this week's evidence with last week's and surface what changed | Early draft |
 | 6 | **Source and link checker** | Check that every cited link still says what the document claims | Plan |

@@ -9,7 +9,7 @@ Free tools for the jobs you repeat, for business people and developers alike.</p
   <a href="#what-is-inside"><img src="assets/images/btn-projects.svg" height="48" alt="See the projects"></a>
 </p>
 
-<p align="center"><b>Free</b> &nbsp;·&nbsp; <b>Open source</b> &nbsp;·&nbsp; <b>13 projects</b><br><b>Eleven in use, by business owners to agentic developers; two new</b></p>
+<p align="center"><b>Free</b> &nbsp;·&nbsp; <b>Open source</b> &nbsp;·&nbsp; <b>14 projects</b><br><b>Eleven in use, by business owners to agentic developers; three new</b></p>
 
 <p align="center"><sub>Each tool is a prompt you paste into your chatbot. Developers: the file formats, skills and connectors are at the bottom of this page.</sub></p>
 
@@ -26,6 +26,7 @@ Free tools for the jobs you repeat, for business people and developers alike.</p
   <a href="projects/meeting-notes-to-actions/"><img src="assets/images/tiles/meeting-notes-to-actions.svg" width="150" alt="Meeting notes to actions: who is doing what, and who never agreed to"></a>
   <a href="projects/write-in-my-voice/"><img src="assets/images/tiles/write-in-my-voice.svg" width="150" alt="Write and edit in my voice: your draft in your own voice, every fact kept"></a>
   <a href="projects/research-brief/"><img src="assets/images/tiles/research-brief.svg" width="150" alt="Research brief with checked sources: compare options, every claim with its words"></a>
+  <a href="projects/decision-support/"><img src="assets/images/tiles/decision-support.svg" width="150" alt="Decision support: from a loose question to a one-page brief, every source checked"></a>
   <a href="projects/learnings-database/"><img src="assets/images/tiles/learnings-database.svg" width="150" alt="Learnings database: stop making the same mistake twice"></a>
   <a href="projects/practical-ai-guide/"><img src="assets/images/tiles/practical-ai-guide.svg" width="150" alt="Practical AI guide: agentic office hours, ask your AI about any tool"></a>
   <a href="projects/rare-find/"><img src="assets/images/tiles/rare-find.svg" width="150" alt="Rare Find: a daily trivia game where rare answers win"></a>
@@ -200,6 +201,20 @@ else and pages it could not open are flagged first.
 
 <p align="center"><a href="projects/research-brief/"><b>Compare your next options with checked sources</b></a></p>
 
+### Decision support
+
+**Turn a loose question into a one-page decision brief an executive can act on.** Seven fixed steps,
+from framing the question to the recommendation. The answer comes first, the options include "do
+nothing", the evidence against has its own section, a premortem names how it could fail, and every
+fact carries the exact words and the link it came from. Say "ADR" and a developer gets a decision
+record for the repository instead.
+
+<p align="center">
+  <img src="projects/decision-support/_build/img/how-it-works.svg" width="620" alt="How it works, played once: your question, options, what matters and evidence; seven steps with stops after steps 1 and 2 to correct the framing, where a colleague's no setup fee claim is flagged and an option that fails a must-have rule is ruled out; one page, answer first, every source with its words and link. You decide.">
+</p>
+
+<p align="center"><a href="projects/decision-support/"><b>Work through your next decision</b></a></p>
+
 ### Learnings database
 
 **Stop making the same mistake twice.** Tell your chatbot "log that" when something goes wrong; get
@@ -250,6 +265,7 @@ every week. Connect it only where that removes work you repeat.
 | [**Meeting notes to actions**](projects/meeting-notes-to-actions/) | [The try-it prompt](projects/meeting-notes-to-actions/#try-it-now): a transcript in, owners, dates and the gaps out | A skill or Project with your team's house rules, so names come out right. [Steps](projects/meeting-notes-to-actions/level-2-files/README.md) | Planned: transcripts in from your meeting tool, actions out to your task list after you approve |
 | [**Write and edit in my voice**](projects/write-in-my-voice/) | [The try-it prompt](projects/write-in-my-voice/#try-it-now): three samples and a draft in, your voice out | Your voice guide saved, so you paste only the draft. [Steps](projects/write-in-my-voice/level-2-files/README.md) | Planned: samples from your sent mail, the guide kept current from your corrections |
 | [**Research brief with checked sources**](projects/research-brief/) | [The try-it prompt](projects/research-brief/#try-it-now): your options and links in, one checked page out | Saved as a skill or Project with what you usually compare and the sources you trust. [Steps](projects/research-brief/level-2-files/README.md) | Not assigned: a one-off comparison has no recurring work to connect |
+| [**Decision support**](projects/decision-support/) | [The try-it prompt](projects/decision-support/#try-it-now): your decision and evidence in, a one-page brief out | Saved as a skill with your usual criteria, plus seven step skills and a link checker. [Steps](projects/decision-support/level-2-files/README.md) | Not built yet: your own transcripts and files as evidence, each claim traced to its file |
 | [**Learnings database**](projects/learnings-database/) | [The try-it prompt](projects/learnings-database/#try-it-now): "log that" and a lesson | A Claude or ChatGPT Project, a skill, or the Claude plugin (its `/log`, `/before-i-start` and `/weekly-review` commands work in Claude Code), or the idea file for a coding agent. [Steps](projects/learnings-database/level-2-files/README.md) | A team log in Supabase, reached through Supabase's own connector. [Steps](projects/learnings-database/level-3-files/README.md) |
 | [**Rare Find**](projects/rare-find/) | [Play in Claude](https://claude.ai/artifact/HyfbDjPjofvRttRYKgMCis), [in ChatGPT](projects/rare-find/#play-in-chatgpt-or-any-chatbot) or [in any browser](https://bar181.github.io/practical-ai/rare-find/) | The game's skill in any chatbot, so the AI checks answers and hosts. [Files](projects/rare-find/level-2-files/README.md) | The public web copy, with challenge links for friends |
 
@@ -301,8 +317,8 @@ is planned, not built yet.
 <details>
 <summary><b>Who has used it?</b></summary>
 
-Its author built and tested all thirteen projects in Claude, and used Artifact Studio for real for a
-client's course (the before and after above). Every project except the two newest, Research brief and Website audit, is now in use by other people, from
+Its author built and tested all fourteen projects in Claude, and used Artifact Studio for real for a
+client's course (the before and after above). Every project except the three newest, Research brief, Website audit and Decision support, is now in use by other people, from
 business owners in Bradley's courses to agentic developers (reported by Bradley, 22 November 2026).
 Their results are not recorded here yet.
 
@@ -310,21 +326,21 @@ Their results are not recorded here yet.
 
 ## Status
 
-**22 November 2026.** The author built all thirteen projects and tested them in Claude.
+**22 November 2026.** The author built all fourteen projects and tested them in Claude. Decision support was added on 24 November.
 
 - **In use by other people,** eleven projects, from business owners to agentic developers
   (reported by Bradley). Artifact Studio, Agentic Process, Document to action brief and Rare Find
   have been in user testing since 18 November. Results are not recorded here yet.
 - **Added on 22 November, not yet followed by anyone else:** Site Studio's publishing guides and the
   Practical AI guide's index and skill.
-- **New, tested by its author only:** Research brief with checked sources, and Website audit.
+- **New, tested by its author only:** Research brief with checked sources, Website audit, and Decision support.
 - **Not yet tried** in ChatGPT or Gemini.
 
 What comes next: [the priority list](docs/README.md#what-comes-next) · [every idea](workshop/plans/README.md).
 The evidence: [Artifact Studio](projects/artifact-studio/quality-results/README.md)
 · [Agentic Process](projects/agentic-process/quality-results/README.md) · [Document to action brief](projects/document-to-action-brief/quality-results/README.md)
 · [Learnings database](projects/learnings-database/quality-results/README.md) · [Meeting notes to actions](projects/meeting-notes-to-actions/quality-results/README.md)
-· [Write and edit in my voice](projects/write-in-my-voice/quality-results/README.md) · [Research brief](projects/research-brief/quality-results/README.md) · [Tone Studio](projects/tone-studio/quality-results/README.md)
+· [Write and edit in my voice](projects/write-in-my-voice/quality-results/README.md) · [Research brief](projects/research-brief/quality-results/README.md) · [Decision support](projects/decision-support/quality-results/README.md) · [Tone Studio](projects/tone-studio/quality-results/README.md)
 · [Web Sections](projects/web-sections/quality-results/README.md) · [Site Studio](projects/site-studio/quality-results/README.md)
 · [Practical AI guide](projects/practical-ai-guide/quality-results/README.md) · [Website audit](projects/website-audit/quality-results/README.md)
 · [Rare Find](projects/rare-find/quality-results/README.md).
@@ -354,7 +370,7 @@ room.
 
 | Folder | What it holds |
 | --- | --- |
-| [`projects/`](projects/) | The projects: Artifact Studio, Agentic Process, Document to action brief, Learnings database, Meeting notes to actions, Rare Find, Research brief with checked sources, Site Studio, Tone Studio, Web Sections and Write and edit in my voice |
+| [`projects/`](projects/) | The projects: Artifact Studio, Agentic Process, Decision support, Document to action brief, Learnings database, Meeting notes to actions, Rare Find, Research brief with checked sources, Site Studio, Tone Studio, Web Sections and Write and edit in my voice |
 | [`docs/`](docs/) | A summary of the projects, the priority list, and an explainer page for each |
 | [`assets/images/`](assets/images/) | Images shared across the repository |
 | [`workshop/`](workshop/) | How tools get built: plans, earlier drafts, skills and checking scripts. You do not need it to use a tool |
