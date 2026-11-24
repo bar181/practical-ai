@@ -14,7 +14,7 @@ export const site = {
   // Words used across pages, so a new site changes them here and nowhere else.
   labels: {
     presents: "Practical AI, from Bradley Academy",
-    toolsHeading: "Fifteen tools. One job each.",
+    toolsHeading: "Sixteen tools. One job each.",
     toolsLead: "My open-source teaching work: the skills, prompts and examples I build from what I teach. Each works pasted into the chatbot you already use. Open one to see what it does, who it is for, and real examples.",
     author: "Bradley Ross",
     authorKicker: "Meet the instructor",
@@ -64,7 +64,7 @@ export const home = {
     ],
   },
   // The facts, as one line. Each number is from a README; numbers in {braces} are set in brass.
-  factsLine: "Fifteen free tools. Document to action brief, built with Agentic Process, scored {93} out of 100 in a blind pilot with one reviewer. They come out of courses taught to more than {900} students.",
+  factsLine: "Sixteen free tools. Document to action brief, built with Agentic Process, scored {93} out of 100 in a blind pilot with one reviewer. They come out of courses taught to more than {900} students.",
   starter: {
     heading: "Not sure where to start?",
     text: "Paste this into Claude, ChatGPT or Gemini. Your chatbot reads the tools and makes you a page on how they could help in your work.",
@@ -86,9 +86,9 @@ export const practical = {
   // Every tool, grouped by what the visitor needs. Each slug appears once.
   categories: {
     heading: "Every tool, by what you need",
-    lead: "Fifteen tools in three groups. Each page says who it is for, what you get, and how to try it now.",
+    lead: "Sixteen tools in three groups. Each page says who it is for, what you get, and how to try it now.",
     groups: [
-      { id: "writing", name: "Writing and communication", intro: "Say it clearly, in your voice, and leave nothing unowned.", slugs: ["meeting-notes-to-actions", "write-in-my-voice", "tone-studio", "document-to-action-brief"] },
+      { id: "writing", name: "Writing and communication", intro: "Say it clearly, in your voice, and leave nothing unowned.", slugs: ["meeting-notes-to-actions", "write-in-my-voice", "weekly-status-update", "tone-studio", "document-to-action-brief"] },
       { id: "websites", name: "Websites, design and business productivity", intro: "Pages that look designed, websites that work, and a little fun.", slugs: ["artifact-studio", "web-sections", "site-studio", "website-audit", "rare-find"] },
       { id: "research", name: "Research and agentic engineering", intro: "Checked sources, defended decisions, repeatable jobs, and an AI that remembers what went wrong.", slugs: ["research-brief", "decision-support", "rubric-reviewer", "agentic-process", "learnings-database", "practical-ai-guide"] },
     ],

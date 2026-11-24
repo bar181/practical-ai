@@ -1693,6 +1693,128 @@ const rubricReviewer: Tool = {
   ],
 };
 
+const weeklyStatus: Tool = {
+  slug: "weekly-status-update",
+  name: "Weekly status update",
+  icon: "icons/weekly-status-update.svg",
+  promise: "Turn a week of rough notes into a short update your reader can act on in two minutes, and never let last week's risk or promise disappear without a word.",
+  sub: "For project leads, freelancers and anyone who reports on work every week.",
+  cardLine: "Rough notes in, a two-minute update out, with nothing from last week dropped.",
+  coreIdea:
+    "Read this week's notes beside last week's update. Put the status and any decision first, show what changed with old and new values, and list anything last week raised that this week skipped.",
+  analogy:
+    "Think of it as a good project secretary on a Friday afternoon. She reads your scribbles and last week's report side by side, puts the one thing the boss must know at the top, and asks what happened to the thing you mentioned last week.",
+  show: {
+    heading: "What changes",
+    cards: [
+      { picture: { src: "weekly-status-update/how-it-works.svg", alt: "How it works: this week's notes and last week's update; compared line by line, with the launch moved from 5 to 12 December and the hall photos carried over with no news; a two-minute email marked off track" }, title: "This week beside last week", text: "A moved date shows its old and new value. A risk nobody mentioned this week is carried over, not lost." },
+    ],
+  },
+  whatItIs: [
+    "Give it this week's notes, who reads the update and what they decide, and last week's update as sent. You get the update ready to copy: status with its reason, any decision with a deadline, what changed, risks, carried over with no news, and next week. Under 200 words by default.",
+    "After the update come the checks, kept apart: questions for you, why it chose the status, what it assumed, what it left out as not for this reader, and the word count.",
+  ],
+  benefits: [
+    { title: "The status first", text: "On track, at risk or off track, with the reason and last week's status beside it." },
+    { title: "Nothing disappears", text: "Anything last week's update raised that this week's notes skip goes under Carried over, no news this week." },
+    { title: "Two minutes to read", text: "Under 200 words, with the decision the reader must make and its deadline near the top." },
+  ],
+  design: [
+    { title: "The mood is not the status", text: "In the example, \"good week!\" did not stop a moved launch date from making it off track." },
+    { title: "It will not hide things", text: "Asked to leave out something the reader was told last week, it keeps it and says so in the checks." },
+    { title: "It asks, never invents", text: "A problem that may need the reader to decide becomes a question for you, not a made-up decision." },
+  ],
+  coreUser:
+    "Anyone who reports on work every week: a project lead writing to a director, a freelancer updating a client, a developer summarising a sprint for someone who does not read the tickets.",
+  levels: [
+    {
+      level: 1,
+      name: "Paste the prompt",
+      coreUser: "A freelancer or project lead with a weekly report to write",
+      story: "As a freelancer, I want my scribbles turned into a client update with the slipped date at the top, so that my client hears it from me first.",
+      does: "Use the try-it box, or paste the skill with this week's notes, who reads the update, and last week's update as sent.",
+      setup: "None",
+      built: true,
+    },
+    {
+      level: 2,
+      name: "Saved, week after week",
+      coreUser: "Anyone who writes the same update every week",
+      story: "As a project lead, I want last week's update kept beside this week's notes, so that no risk I raised disappears without a word.",
+      does: "Keep the skill and each sent update in one Project, and paste the week's notes on Friday. Not yet tried.",
+      setup: "Once",
+      built: true,
+    },
+    {
+      level: 3,
+      name: "Notes gathered for you",
+      coreUser: "A team lead",
+      story: "As a team lead, I want the week's notes gathered from our tracker and the draft ready on Friday for me to check.",
+      does: "Not built yet. A person still sends it.",
+      setup: "Planned",
+      built: false,
+    },
+  ],
+  tryIt: {
+    intro: "Copy the whole box into the chatbot you use. It holds the link to the instructions, a freelancer's rough notes for the week and last week's update. The community centre, the people, the payment providers, the dates and the figures are all made up. Then try your own notes.",
+    after: "Before you send, check every date and number against your notes, and settle every item under Carried over, no news this week. Chatbot cannot open links? Open base/SKILL.md in the project on GitHub, press Raw, copy all of it into a new chat, then paste your notes and last week's update.",
+    promptKey: "weekly-status-update",
+    primaryLabel: "Copy the try-it prompt",
+  },
+  notDo: [
+    "Not a sender. You check the update and send it yourself.",
+    "Not a fact finder. If the notes are thin, the update is thin, and the checks say what is missing.",
+    "Not connected to your tools yet. At Level 1 you paste what matters.",
+  ],
+  status: {
+    date: "24 November 2026",
+    label: "Draft",
+    text: "Built and reviewed by AI on 23 November 2026. Three review rounds by separate Claude sessions scored its output 88, 86 and 87 out of 100 on invented inputs with planted traps, including a request to hide something from the reader. Not yet tried by a person, in ChatGPT or Gemini, or on a real week's notes.",
+  },
+  readme: `${GH}/weekly-status-update`,
+  tabs: [
+    {
+      id: "example",
+      label: "Example update",
+      intro: "The update a fresh Claude session wrote for the try-it prompt, unedited. The centre, the people and the dates are invented.",
+      blocks: [
+        { kind: "picture", size: "wide", picture: { src: "weekly-status-update/result.webp", caption: "The tool's real answer, set in a plain chat window", alt: "Screenshot of a chat. The weekly update email to Joan: subject Oakfield website, off track; status off track, was on track, launch moved from 5 to 12 December; decision needed on the donations page by 1 December; what changed; risks; items carried over with no news; next week." } },
+        {
+          kind: "table",
+          caption: "Before and after",
+          head: ["The notes as written", "The update"],
+          rows: [
+            ["\"good week!\" at the top", "Status: Off track (was on track). The launch date has moved from 5 December to 12 December"],
+            ["\"Joan needs to pick PayEasy or GiveBox, I need it by 1 Dec\"", "Decision needed: Donations page: PayEasy or GiveBox. I need your choice by 1 Dec"],
+            ["Last week's hall photos and privacy page: not mentioned", "Carried over, no news this week: both"],
+            ["\"note to self: renew my own software licence\"", "Left out as not for Joan, and listed in the checks"],
+          ],
+        },
+        { kind: "links", heading: "Read the whole reply", items: [
+          { href: `${GHB}/weekly-status-update/base/examples/oakfield-website-update.md`, label: "The worked example on GitHub", note: "the prompt, the update, and the checks before you send" },
+          { href: `${GHB}/weekly-status-update/base/template/notes-template.md`, label: "The notes template", note: "headings to jot notes under during the week" },
+        ] },
+      ],
+    },
+    {
+      id: "tests",
+      label: "How it was tested",
+      intro: "Three rounds on 23 November 2026, each by a separate Claude session that had not seen the tool being built. Each ran the skill on a new invented input built to hit hard cases, then scored the result.",
+      blocks: [
+        {
+          kind: "table",
+          caption: "Three rounds of review: 88, 86 and 87 out of 100",
+          head: ["The planted traps", "Score"],
+          rows: [
+            ["A moved step, a risk from last week not mentioned this week, a named colleague blamed, a request to hide something the reader was told last week, and no stated decision", "88, then 86, then 87"],
+          ],
+        },
+        { kind: "text", paras: ["Round 2 dipped because a fix overcorrected; round 3 reviewed only the README and the skill. What this does not show: invented inputs only, one model, and nobody other than AI has run or read it yet."] },
+      ],
+    },
+  ],
+};
+
 const websiteAudit: Tool = {
   slug: "website-audit",
   name: "Website audit",
@@ -1831,6 +1953,7 @@ const all: Record<ToolSlug, Tool> = {
   "research-brief": researchBrief,
   "decision-support": decisionSupport,
   "rubric-reviewer": rubricReviewer,
+  "weekly-status-update": weeklyStatus,
   "document-to-action-brief": documentBrief,
   "learnings-database": learnings,
   "agentic-process": agenticProcess,

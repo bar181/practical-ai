@@ -4,10 +4,10 @@ A one-page summary for anyone deciding where to start. Updated 24 November 2026.
 
 ## What is ready
 
-Fifteen projects are built. Eleven are in use by people other than the author, from business owners
+Sixteen projects are built. Eleven are in use by people other than the author, from business owners
 to agentic developers (reported by Bradley, 22 November 2026). Artifact Studio, Agentic Process,
 Document to action brief and Rare Find have been in user testing since 18 November 2026. Results are
-not recorded here yet. Research brief with checked sources, Website audit and Decision support are new, tested by their author only. Rubric reviewer is a draft built and reviewed by AI, not yet tried by a person. Three are described below; the rest follow in the
+not recorded here yet. Research brief with checked sources, Website audit and Decision support are new, tested by their author only. Rubric reviewer and Weekly status update are drafts built and reviewed by AI, not yet tried by a person. Three are described below; the rest follow in the
 lists. Artifact Studio, Agentic Process, the Learnings database and Rare Find each have an explainer
 page in [`reports/`](reports/) (download the HTML file and open it in a browser).
 
@@ -91,6 +91,7 @@ Jobs you already do, done faster with the chatbot you have. Each is one file and
 | 8 | **Receipts into an expense sheet** | Read each receipt into a sheet and flag any that are blurry or incomplete | Plan |
 | 9 | **Decision support** | Work a decision through to a one-page brief: options with "do nothing", the evidence against, risks with controls, every source checked | **New, tested by its author only:** [project](../projects/decision-support/) |
 | 10 | **Quote a job** | Prepare a first quote from your price sheet and a customer request, with the arithmetic shown | Early draft |
+| 11 | **Weekly status update** | Turn a week of rough notes into a short update the reader can act on, and keep last week's risks and promises in view | **Draft, built and reviewed by AI, not yet tried by a person:** [project](../projects/weekly-status-update/) |
 
 ### For people who build with agents
 
@@ -136,6 +137,7 @@ tried by a person yet. A draft moves to `projects/` when Bradley promotes it.
 | Tool | What it does | For | Where it stands |
 | --- | --- | --- | --- |
 | [Rubric reviewer](../projects/rubric-reviewer/) | Scores any piece of work out of 100 against a rubric written before the work was read, with the work's own words as evidence for every line | Both | Promoted to `projects/` on 24 November 2026; not yet tried by a person |
+| [Weekly status update](../projects/weekly-status-update/) | Turns a week of rough notes into a short update the reader can act on, and keeps last week's risks and promises from disappearing | Both | Promoted to `projects/` on 24 November 2026; not yet tried by a person |
 
 ## How the order is chosen
 

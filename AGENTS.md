@@ -16,6 +16,7 @@ work. Reuse first: use an existing capability, wrap it, or build only the missin
 | Turn a policy, contract or bill into an action list | [`projects/document-to-action-brief/AGENTS.md`](projects/document-to-action-brief/AGENTS.md) |
 | Revise an email or post in someone's own voice, keeping every fact | [`projects/write-in-my-voice/AGENTS.md`](projects/write-in-my-voice/AGENTS.md) |
 | Turn a meeting transcript or notes into decisions, actions and a follow-up | [`projects/meeting-notes-to-actions/AGENTS.md`](projects/meeting-notes-to-actions/AGENTS.md) |
+| Turn a week of rough notes and last week's update into a short weekly status update | [`projects/weekly-status-update/AGENTS.md`](projects/weekly-status-update/AGENTS.md) |
 | Compare options on one page with every claim checked against its source, or check a research report | [`projects/research-brief/AGENTS.md`](projects/research-brief/AGENTS.md) |
 | Work a decision through to a one-page brief or a decision record (ADR), with every source checked | [`projects/decision-support/AGENTS.md`](projects/decision-support/AGENTS.md) |
 | Score a piece of work out of 100 against a rubric, with evidence, or write the rubric first | [`projects/rubric-reviewer/AGENTS.md`](projects/rubric-reviewer/AGENTS.md) |

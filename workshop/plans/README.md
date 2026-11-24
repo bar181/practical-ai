@@ -25,6 +25,7 @@ chatbot they already use.
 | Receipts into an expense sheet | Receipt photos become a categorised sheet, with unclear ones flagged | [Plan](expense-form/) |
 | Lead responder | A fast, qualified reply to each new enquiry, drafted for approval | [Plan](lead-responder/) |
 | Customer issue helper | A late order or refund handled from your one-page policy | Idea |
+| Weekly status update | A week of rough notes becomes a short update, with last week's risks and promises kept in view | **Built, draft, not yet tried by a person:** [project](../../projects/weekly-status-update/). Built by the daily builder without a separate plan |
 | Summarise a document | A report or contract in a fixed, checkable shape | Idea, partly covered by the document to action brief |
 | Scheduling and calendar planning | A week planned around fixed commitments | Idea |
 | Brainstorming partner | Options generated, then sorted against your criteria | Idea |

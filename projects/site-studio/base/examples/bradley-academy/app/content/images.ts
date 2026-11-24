@@ -158,6 +158,13 @@ export const imageSlots: ImageSlot[] = [
     alt: "A cartoon robot at a desk in front of a screen of smiling robot faces",
   },
   {
+    id: "tool-weekly-status-update",
+    page: "Weekly status update",
+    where: "Full-screen opening scene of the tool page, and its card on the home page",
+    src: "photos/dog.jpg",
+    alt: "A small dog at a laptop keyboard in warm light",
+  },
+  {
     id: "who-artifact-studio",
     page: "Artifact Studio",
     where: "The Who it is for scene on the tool page",
@@ -268,6 +275,13 @@ export const imageSlots: ImageSlot[] = [
     where: "The Who it is for scene on the tool page",
     src: "photos/puppy.jpg",
     alt: "A puppy in a tweed jacket and tie",
+  },
+  {
+    id: "who-weekly-status-update",
+    page: "Weekly status update",
+    where: "The Who it is for scene on the tool page",
+    src: "photos/heart.jpg",
+    alt: "A watercolour heart",
   },
   {
     id: "about-portrait",
