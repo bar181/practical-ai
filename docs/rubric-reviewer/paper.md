@@ -79,7 +79,7 @@ sub-agent that receives only the skill, the rubric and the work.
 1. Check the rubric: keep every line, note weights that do not add up to 100, separate gates (pass
    or fail rules with no points) from weighted lines, and flag unclear lines.
 2. Read the work as its intended reader would.
-3. Score each line from 0 to 100 in plain bands, with up to 30 words quoted as evidence and where
+3. Score each line from 0 to 100 in plain bands, with up to 20 words quoted as evidence and where
    they are. Apply the evidence cap. Mark what cannot be checked from the work alone.
 4. List the points lost on every line.
 5. Add up, rounding once. The work passes only if it reaches the pass mark and no gate failed.
@@ -97,7 +97,8 @@ compared between rounds. The evidence cap and the fixed rubric target exactly th
 
 - **Two review rounds** on 23 November 2026, each by a separate Claude agent that had not seen the
   tool being built. Round 1 scored the tool's output 87/100. After fixes, round 2 scored 89/100.
-  Every point lost is listed in `review.md`.
+  A third round on 24 November 2026, after a revision, scored 90/100 on a new input. Every point
+  lost is listed in `review.md`. The small fixes made after round 3 were not reviewed again.
 - **The hard cases in the test input** were weights adding up to 90, a weighted line that reads
   like a yes or no rule, an instruction to the reviewer hidden in the work, and a previous review
   whose sum was wrong. Round 2 handled all four: it kept the weights, scored the yes or no line,
@@ -105,8 +106,8 @@ compared between rounds. The evidence cap and the fixed rubric target exactly th
 - **Quotes were checked by script** against the input in the worked example. All were present,
   apart from one capitalised word.
 
-**Limits of this evidence.** One reviewer agent per round, both Claude. Invented inputs only: one
-proposal and one status email. The reviewers were given their scoring rubric by the builder. The
+**Limits of this evidence.** One reviewer agent per round, all Claude. Invented inputs only: a
+proposal, a status email and a recommendation email. The reviewers were given their scoring rubric by the builder. The
 tool's score for the same email moved from 31 to 44 between rounds, but the rules changed in
 between, so this says nothing about consistency. No person has used the tool. It has not been run
 in ChatGPT or Gemini.

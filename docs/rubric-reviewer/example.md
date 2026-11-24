@@ -8,6 +8,11 @@ is [the proposal or report rubric](rubrics/proposal-or-report.md) with a reader 
 filled in. **Everything here is invented:** Brightside Kitchen, Northgate Studios, Sam Okafor, the
 prices and the claims. Nothing below the line is edited.
 
+**Made before the 24 November 2026 revision.** It has no Key line and no "another fresh chat"
+check, and two rows fall outside today's rules: one "no evidence" line scores 20 where the closest
+words are about the line's subject (now 21 to 40), and one line scores 0 while quoting closest
+words (0 is now only for a line nothing in the work touches). It has not been rerun.
+
 **The message:**
 
 ```

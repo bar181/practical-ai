@@ -3,7 +3,8 @@
 **Score any piece of work out of 100 against a rubric you wrote before you read it, with the work's
 own words as evidence for every score.**
 
-**Status:** Draft, built and reviewed by AI on 23 November 2026; not yet tried by a person.
+**Status:** Draft, built and reviewed by AI on 23 November 2026, revised by AI on 24 November
+2026; not yet tried by a person.
 
 **Think of it as** a second marker with a marking scheme agreed in advance. The scheme is written
 before the work is handed in, and the marker has not watched it being made, so "it looks good" turns into a number
@@ -70,7 +71,8 @@ place only once the Level 1 scores prove stable on real work.
 - It does not rewrite the work. Ask for that separately, after the review.
 - It does not grade people. It scores one piece of work against one rubric.
 - It leans low on purpose. A line it cannot back with the work's own words scores at most 40 of
-  100 (the evidence cap), and when torn between two scores it gives the lower one.
+  100 (the evidence cap), and when torn between two scores it gives the lower one. Each review
+  includes a one-line key to the terms it used.
 - It is not proven consistent yet. Nobody has measured how far two fresh chats land apart on the
   same work.
 
@@ -78,5 +80,7 @@ place only once the Level 1 scores prove stable on real work.
 
 - Search for two of the quoted pieces of evidence in the work. They must be there word for word.
 - Read the lowest-scoring line yourself. You may disagree, and that is useful.
+- If the total is near your pass mark, or a gate turned on how a word was read, run the review
+  again in a new chat. Another chat may score some lines differently.
 - If the rubric was written after the work was shared, the review says so at the top. Treat those
   scores with more caution.
