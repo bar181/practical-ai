@@ -1,7 +1,13 @@
-# Rubric reviewer
+<p align="center"><img src="img/icon.svg" width="104" alt="Rubric reviewer icon"></p>
 
-**Score any piece of work out of 100 against a rubric you wrote before you read it, with the work's
-own words as evidence for every score.**
+<h1 align="center">Rubric reviewer</h1>
+
+<p align="center"><b>Score any piece of work out of 100 against a rubric you wrote before you read it, with the work's own words as evidence for every score.</b><br>
+For managers, teachers and trainers who judge drafts every week, and teams who need a second check on AI output.</p>
+
+<p align="center"><a href="#try-it-now"><img src="img/btn-try.svg" height="48" alt="Try it with one prompt"></a></p>
+
+<p align="center"><b>Free</b> &nbsp;·&nbsp; <b>No setup</b> &nbsp;·&nbsp; <b>Your own chatbot</b><br><b>Draft: built and reviewed by AI, not yet tried by a person</b></p>
 
 **Status:** Draft, built and reviewed by AI on 23 November 2026, revised by AI on 24 November
 2026; not yet tried by a person.
@@ -9,6 +15,70 @@ own words as evidence for every score.**
 **Think of it as** a second marker with a marking scheme agreed in advance. The scheme is written
 before the work is handed in, and the marker has not watched it being made, so "it looks good" turns into a number
 and a reason you can check.
+
+<p align="center"><img src="img/how-it-works.svg" width="660" alt="How it works, played once. 1: agree a checklist first: answers the question, facts sourced, clear ask, risks named. 2: the draft is scored with quotes found as proof. 3: a score of 39 out of 100 and the top fix, worth up to 21 points."></p>
+
+## What you get back
+
+<p align="center"><img src="img/result.webp" width="640" alt="Screenshot of a chat. A caterer's proposal is scored 39 out of 100 against a pass mark of 75. Below are the three changes worth the most points, then a table with each line's weight, score, points and the exact words from the proposal used as evidence."></p>
+
+<p align="center"><sub>The tool's real answer to the invented example below, set in a plain chat window and shortened. <a href="example.md">Read the whole reply</a>.</sub></p>
+
+## Try it now
+
+Copy the whole box into the chatbot you use. It holds the link to the instructions, a rubric with a pass mark, and an invented caterer's proposal to score. Brightside Kitchen, Northgate Studios, Sam Okafor, the prices and the claims are all made up. Then try your own rubric and draft.
+
+```
+Read the instructions at this link and follow them for the rest of this chat:
+https://raw.githubusercontent.com/bar181/practical-ai/main/docs/rubric-reviewer/SKILL.md
+
+Score this proposal against the rubric below.
+
+RUBRIC
+
+Rubric: proposal or report
+Written: 23 November 2026, before any work was read
+For: the office manager at Northgate Studios, who must choose a lunch catering supplier
+Pass mark: 75
+
+| Line | Weight | Full marks looks like | Evidence to look for |
+| --- | --- | --- | --- |
+| Answers the reader's question | 30 | The answer or the ask is in the first paragraph, in words the reader would use | The opening paragraph |
+| Facts and figures are sourced | 20 | Every number or claim the reader relies on says where it came from, or is marked as an estimate | Each figure, and a note or link beside it |
+| The ask is specific | 15 | The reader knows exactly what to approve or do, by when and at what cost | A closing line, a "next step" or "decision needed" section |
+| Gaps and risks are stated | 15 | What is unknown or could go wrong is named, with what would settle it | A risks, open questions or assumptions section |
+| Plain English | 10 | Short sentences, no unexplained jargon or acronyms | Any paragraph |
+| Easy to scan | 10 | Headings or a short summary let the reader find the answer in under a minute | Headings, a summary box, a table |
+
+Gates (pass or fail, no points):
+- No invented customers, quotes or results.
+- No promise the writer cannot keep (a price, a date or a guarantee nobody has agreed).
+
+THE WORK
+
+Lunch catering for Northgate Studios: our proposal
+
+Thank you for inviting Brightside Kitchen to propose. We have been cooking for offices across the city since 2019 and we would love to look after your team.
+
+What we offer
+We deliver a hot lunch buffet three days a week for your team of 40. Each day has a meat dish, a vegetarian dish, a salad and bread. We label every dish with its allergens.
+
+Price
+Package A, three days a week: £7.50 per person per day.
+Package B, five days a week: £7.00 per person per day.
+Both packages are around 30% cheaper than most office caterers.
+
+Why Brightside
+Our clients love us. We have never missed a delivery. We use local suppliers wherever we can and our packaging is compostable.
+
+Next steps
+Let us know which package suits you and we can start soon.
+
+Sam Okafor, Brightside Kitchen
+```
+
+**Your chatbot cannot open links?** Open [`SKILL.md`](SKILL.md), press **Raw**, copy all of it into a
+new chat, then paste the rest of the box above.
 
 ## Who it is for
 
@@ -45,6 +115,7 @@ Business people and agentic developers:
 | [`example.md`](example.md) | One worked review, invented data |
 | [`review.md`](review.md) | How this draft was reviewed, and its scores |
 | [`paper.md`](paper.md) | A short technical paper about the tool |
+| [`img/`](img/) | The icon, the how-it-works picture and the screenshot of the real result |
 
 ## Levels
 
