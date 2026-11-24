@@ -44,7 +44,7 @@ tools faster to build, safer to run or easier to trust.
 | Task and dependency graph | A goal becomes tasks, with what is ready and what is blocked | [Plan](task-graph/) |
 | Core memory | Policies, facts and pointers kept as records in a store you own | [Plan](core-memory/) |
 | Connections hub | A meeting, thread or file read, and what is worth keeping proposed for review | [Plan](connections-hub/) |
-| Rubric reviewer | Work scored against a rubric written in advance, with evidence | [Plan](rubric-reviewer/) |
+| Rubric reviewer | Work scored against a rubric written in advance, with evidence | **Built, draft, not yet tried by a person:** [project](../../projects/rubric-reviewer/) · [plan](rubric-reviewer/) |
 | Recurring research brief | This week's evidence compared with last week's, every item linked | [Draft](../drafts/weekly-brief/) · [plan](weekly-brief/) |
 | Source and link verifier | Every link checked against the sentence it supports. The same check runs inside the [research brief](../../projects/research-brief/) for one comparison | [Plan](source-verifier/) |
 | Daily builder | One approved item taken through Agentic Process to a reviewable change | [Plan](daily-builder/) |

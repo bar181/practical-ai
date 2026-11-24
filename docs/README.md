@@ -4,10 +4,10 @@ A one-page summary for anyone deciding where to start. Updated 24 November 2026.
 
 ## What is ready
 
-Fourteen projects are built. Eleven are in use by people other than the author, from business owners
+Fifteen projects are built. Eleven are in use by people other than the author, from business owners
 to agentic developers (reported by Bradley, 22 November 2026). Artifact Studio, Agentic Process,
 Document to action brief and Rare Find have been in user testing since 18 November 2026. Results are
-not recorded here yet. Research brief with checked sources, Website audit and Decision support are new, tested by their author only. Three are described below; the rest follow in the
+not recorded here yet. Research brief with checked sources, Website audit and Decision support are new, tested by their author only. Rubric reviewer is a draft built and reviewed by AI, not yet tried by a person. Three are described below; the rest follow in the
 lists. Artifact Studio, Agentic Process, the Learnings database and Rare Find each have an explainer
 page in [`reports/`](reports/) (download the HTML file and open it in a browser).
 
@@ -104,7 +104,7 @@ Support tools that make every other tool better. Each starts with a version a pe
 | 4 | **Estimate to proposal** | Combine a request, notes and past jobs into a draft estimate and proposal | Early draft |
 | 5 | **Recurring research brief** | Compare this week's evidence with last week's and surface what changed | Early draft |
 | 6 | **Source and link checker** | Check that every cited link still says what the document claims | Plan |
-| 7 | **Rubric reviewer** | Score a piece of work against a rubric written in advance, with evidence for each line | Plan |
+| 7 | **Rubric reviewer** | Score a piece of work against a rubric written in advance, with evidence for each line | **Draft, built and reviewed by AI, not yet tried by a person:** [project](../projects/rubric-reviewer/) |
 | 8 | **Core memory** | Keep policies, facts and pointers you ask to be kept, and find them with their source | Plan |
 | 9 | **Connections hub** | Read a meeting or an email thread and propose what is worth keeping, for you to accept | Plan |
 | 10 | **Daily builder** | Take one approved item from this list through Agentic Process and hand back a reviewable change | Plan |
@@ -127,6 +127,15 @@ Support tools that make every other tool better. Each starts with a version a pe
 
 The full list of ideas, sorted into everyday tasks, agent tools and hybrid projects, is in
 [the plans](../workshop/plans/README.md).
+
+## Daily drafts
+
+First drafts built and reviewed by AI, one per run, waiting for Bradley's review. None has been
+tried by a person yet. A draft moves to `projects/` when Bradley promotes it.
+
+| Tool | What it does | For | Where it stands |
+| --- | --- | --- | --- |
+| [Rubric reviewer](../projects/rubric-reviewer/) | Scores any piece of work out of 100 against a rubric written before the work was read, with the work's own words as evidence for every line | Both | Promoted to `projects/` on 24 November 2026; not yet tried by a person |
 
 ## How the order is chosen
 

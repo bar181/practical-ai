@@ -14,6 +14,7 @@ export const toolSlugs = [
   "write-in-my-voice",
   "research-brief",
   "decision-support",
+  "rubric-reviewer",
   "learnings-database",
   // Ask about any of them
   "practical-ai-guide",

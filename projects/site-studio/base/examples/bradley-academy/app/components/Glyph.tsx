@@ -18,6 +18,8 @@ const paths: Record<string, string> = {
   "research-brief": "M7 9h26v26H7zM7 17h26M7 26h26M16 9v26M24 9v26M36 33a6 6 0 1 0 0.01 0M40.5 37.5l5 5M11 21l2 2 3-4",
   // A signpost with two arms, one ticked: a decision, defended
   "decision-support": "M24 6v36M18 42h12M10 10h18l4 4-4 4H10zM38 22H20l-4 4 4 4h18zM14 14l2 2 4-4",
+  // A dial with a needle and tick marks: a score you can check
+  "rubric-reviewer": "M24 26m-15 0a15 15 0 1 0 30 0a15 15 0 1 0 -30 0M24 26l8-8M24 11v3M9 26h3M36 26h3M18 38h12",
   // An open log book with a ribbon
   "learnings-database": "M24 12c-5-3-11-4-17-3v29c6-1 12 0 17 3 5-3 11-4 17-3V9c-6-1-12 0-17 3zM24 12v29M31 9v12l3-2 3 2V9",
   // Three linked steps: a job set up properly once
