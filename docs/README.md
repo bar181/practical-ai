@@ -128,6 +128,15 @@ Support tools that make every other tool better. Each starts with a version a pe
 The full list of ideas, sorted into everyday tasks, agent tools and hybrid projects, is in
 [the plans](../workshop/plans/README.md).
 
+## Daily drafts
+
+First drafts built and reviewed by AI, one per run, waiting for Bradley's review. None has been
+tried by a person yet. A draft moves to `projects/` when Bradley promotes it.
+
+| Tool | What it does | For | Where it stands |
+| --- | --- | --- | --- |
+| [Rubric reviewer](rubric-reviewer/) | Scores any piece of work out of 100 against a rubric written before the work was read, with the work's own words as evidence for every line | Both | Draft |
+
 ## How the order is chosen
 
 Need first: tools people already use AI for most, by usage studies and small-business surveys read
