@@ -12,7 +12,7 @@ These are drafts written by AI on 23 November 2026. Nobody has scored real work 
 | [Proposal or report](proposal-or-report.md) | A document a reader acts on: a proposal, a report, a briefing | 6 | 2 |
 | [Recommendation](recommendation.md) | A decision brief that recommends one option | 6 | 2 |
 | [AI skill or prompt](ai-skill.md) | A `SKILL.md`, a project instruction or a long prompt that others will run | 6 | 3 |
-| [Blank template](rubric-template.md) | Start your own, or use the [rubric writer](../rubric-writer/SKILL.md) | | |
+| [Blank template](rubric-template.md) | Start your own, or use the [rubric writer](../rubric-writer.md) | | |
 
 ## How to use one
 

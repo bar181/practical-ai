@@ -1,10 +1,10 @@
 # Example: scoring a catering proposal against the proposal rubric
 
 This is what a review looks like. Made on 23 November 2026 by a fresh Claude session (a separate
-agent with no other context) that had only [`SKILL.md`](SKILL.md) and the message below. It ran on
+agent with no other context) that had only [`SKILL.md`](../SKILL.md) and the message below. It ran on
 the version after the first review round; the second round's small fixes touch cases this example
 does not hit (weights that do not add up to 100, comparisons, fewer than three changes). The rubric
-is [the proposal or report rubric](rubrics/proposal-or-report.md) with a reader and a pass mark
+is [the proposal or report rubric](../template/proposal-or-report.md) with a reader and a pass mark
 filled in. **Everything here is invented:** Brightside Kitchen, Northgate Studios, Sam Okafor, the
 prices and the claims. Nothing below the line is edited.
 

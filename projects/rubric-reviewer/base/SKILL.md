@@ -4,7 +4,7 @@ description: Scores a piece of work out of 100 against a rubric written before t
 license: Apache-2.0
 metadata:
   author: Bradley Ross (https://www.linkedin.com/in/bradaross/)
-  source: https://github.com/bar181/practical-ai/tree/main/docs/rubric-reviewer
+  source: https://github.com/bar181/practical-ai/tree/main/projects/rubric-reviewer
   status: Draft, built and reviewed by AI on 23 November 2026, revised by AI on 24 November 2026; not yet tried by a person.
 ---
 

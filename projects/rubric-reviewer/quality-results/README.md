@@ -45,7 +45,7 @@ cut quotes to 20 words, added a one-line key to each review, and added a check t
 fresh chat may score differently.
 
 The new invented input was a short email recommending a booking tool for an invented clinic,
-scored with the ready-made [recommendation rubric](rubrics/recommendation.md) plus a pass mark of
+scored with the ready-made [recommendation rubric](../base/template/recommendation.md) plus a pass mark of
 70 and three limits from the requester. It was built to hit: an unlabelled "about" figure, a
 "you must" aimed at the reader (a gate), a limit met only by implication ("Hosted in Frankfurt"
 for an EU rule), and a line nothing in the work meets. The tool scored the email 52/100, did not
@@ -158,7 +158,7 @@ After round 3 (24 November 2026, not reviewed again):
 
 ## The worked example
 
-[`example.md`](example.md) was rerun after round 1 by a fresh agent with only `SKILL.md` and the
+[The worked example](../base/examples/caterer-proposal-review.md) was rerun after round 1 by a fresh agent with only `SKILL.md` and the
 input, and is unedited. Round 2's fixes touch cases the example does not hit. On the same proposal,
 the version before round 1 scored 41 and the version after scored 39. Those were different
 versions of the instructions, so the two-point gap is not a consistency measure. One quote in the

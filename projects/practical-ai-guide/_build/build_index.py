@@ -17,6 +17,7 @@ OUT = os.path.join(ROOT, "llms.txt")
 ORDER = [
     "web-sections", "tone-studio", "artifact-studio", "site-studio", "website-audit",
     "document-to-action-brief", "meeting-notes-to-actions", "write-in-my-voice", "research-brief", "decision-support",
+    "rubric-reviewer",
     "learnings-database", "practical-ai-guide", "agentic-process", "rare-find",
 ]
 

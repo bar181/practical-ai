@@ -69,10 +69,10 @@ sub-agent that receives only the skill, the rubric and the work.
 
 | File | Role |
 | --- | --- |
-| `SKILL.md` | The reviewer. Asks once for a missing rubric or work, then scores |
-| `rubric-writer/SKILL.md` | Writes a rubric from the brief, before the work is read |
-| `rubrics/` | Three ready-made rubrics and a blank template |
-| `example.md` | One unedited run on an invented proposal |
+| `base/SKILL.md` | The reviewer. Asks once for a missing rubric or work, then scores |
+| `base/rubric-writer.md` | Writes a rubric from the brief, before the work is read |
+| `base/template/` | Three ready-made rubrics and a blank template |
+| `base/examples/caterer-proposal-review.md` | One unedited run on an invented proposal |
 
 **The steps the reviewer follows.**
 
@@ -98,7 +98,7 @@ compared between rounds. The evidence cap and the fixed rubric target exactly th
 - **Two review rounds** on 23 November 2026, each by a separate Claude agent that had not seen the
   tool being built. Round 1 scored the tool's output 87/100. After fixes, round 2 scored 89/100.
   A third round on 24 November 2026, after a revision, scored 90/100 on a new input. Every point
-  lost is listed in `review.md`. The small fixes made after round 3 were not reviewed again.
+  lost is listed in `quality-results/README.md`. The small fixes made after round 3 were not reviewed again.
 - **The hard cases in the test input** were weights adding up to 90, a weighted line that reads
   like a yes or no rule, an instruction to the reviewer hidden in the work, and a previous review
   whose sum was wrong. Round 2 handled all four: it kept the weights, scored the yes or no line,
@@ -133,7 +133,7 @@ in ChatGPT or Gemini.
 
 ## Try it
 
-The folder: [github.com/bar181/practical-ai/tree/main/docs/rubric-reviewer](https://github.com/bar181/practical-ai/tree/main/docs/rubric-reviewer).
+The folder: [github.com/bar181/practical-ai/tree/main/projects/rubric-reviewer](https://github.com/bar181/practical-ai/tree/main/projects/rubric-reviewer).
 Paste `SKILL.md` into a new chat in the chatbot you use, then add your rubric and the work.
 
 Gist: not yet published.
