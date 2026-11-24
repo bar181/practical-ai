@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 380" role="img" aria-labelledby="t d" font-family="system-ui,-apple-system,Segoe UI,Helvetica,Arial,sans-serif">
+<title id="t">How Decision support works</title>
+<desc id="d">Plays once. Three panels. 1: your question, the options, what matters and your evidence. 2: seven steps: define, structure, prioritise, plan the evidence, analyse, synthesise, recommend; it stops after steps 1 and 2 for your correction when the decision is hard to undo. In the analysis, the colleague's claim that RingDesk has no setup fee is flagged because the page says 150 pounds, and RingDesk is ruled out because it keeps recordings for 90 days, short of the 12-month rule. 3: a one-page brief, answer first: recommendation, three reasons with source numbers, options including do nothing, the evidence against, risks with controls, next steps, and every source with its exact words and link. You decide.</desc>
+<style>
+.s{opacity:0;animation:in .7s ease-out forwards}
+.s2{animation-delay:1.2s}.s3{animation-delay:2.6s}.a1{animation-delay:1.6s}.a2{animation-delay:2.0s}.a3{animation-delay:3.2s}.a4{animation-delay:3.8s}.f{animation-delay:4.6s}
+@keyframes in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.s{animation:none;opacity:1}}
+.h{font-size:19px;font-weight:700;fill:#0c2340}.p{font-size:13.5px;fill:#33415c}.n{font-size:15px;font-weight:700;fill:#fff}
+.st{font-size:13px;fill:#0c2340}.stop{font-size:11.5px;font-weight:700;fill:#9a5b00}.no{font-size:12px;font-weight:700;fill:#b42318}
+.b{font-size:12.5px;font-weight:700;fill:#0c2340}.v{font-size:12px;fill:#33415c}
+</style>
+<rect width="800" height="380" fill="#ffffff"/>
+<g class="s">
+<rect x="16" y="20" width="236" height="300" rx="16" fill="#f4f7fb" stroke="#d0d7de"/>
+<circle cx="44" cy="50" r="15" fill="#1f3a5f"/><text x="44" y="55" text-anchor="middle" class="n">1</text>
+<text x="68" y="56" class="h">Your question</text>
+<text x="34" y="92" class="p">"Renew the phone contract,</text><text x="34" y="110" class="p">or switch?"</text>
+<text x="34" y="144" class="b">Options</text><text x="34" y="162" class="v">Renew CallCore, VoiceLine</text><text x="34" y="178" class="v">or RingDesk.</text>
+<text x="34" y="208" class="b">What matters</text><text x="34" y="226" class="v">2-year cost; recordings kept</text><text x="34" y="242" class="v">12 months (must be met); Teams</text>
+<text x="34" y="272" class="b">Evidence</text><text x="34" y="290" class="v">Your figures, pages, links,</text><text x="34" y="306" class="v">a colleague's notes</text>
+</g>
+<g class="s s2">
+<rect x="282" y="20" width="236" height="300" rx="16" fill="#f4f7fb" stroke="#d0d7de"/>
+<circle cx="310" cy="50" r="15" fill="#1f3a5f"/><text x="310" y="55" text-anchor="middle" class="n">2</text>
+<text x="334" y="56" class="h">Seven steps</text>
+<text x="300" y="88" class="st">1 Frame it</text><text x="404" y="88" class="stop">stop: correct me</text>
+<text x="300" y="108" class="st">2 List options</text><text x="404" y="108" class="stop">stop: correct me</text>
+<text x="300" y="128" class="st">3 Pick what decides it</text><text x="300" y="148" class="st">4 Plan what to check</text>
+<text x="300" y="168" class="st">5 Check each source</text><text x="300" y="188" class="st">6 Argue the other side</text><text x="300" y="208" class="st">7 Recommend</text>
+<g class="s a3"><text x="300" y="242" class="no">⚠ "No setup fee": page says £150</text></g>
+<g class="s a4"><text x="300" y="266" class="no">⚠ RingDesk keeps 90 days:</text><text x="300" y="282" class="no">fails the 12-month rule</text></g>
+<text x="300" y="308" class="v">Sums shown with their working</text>
+</g>
+<g class="s s3">
+<rect x="548" y="20" width="236" height="300" rx="16" fill="#ffffff" stroke="#1f3a5f" stroke-width="2"/>
+<circle cx="576" cy="50" r="15" fill="#1f3a5f"/><text x="576" y="55" text-anchor="middle" class="n">3</text>
+<text x="600" y="56" class="h">Answer first</text>
+<rect x="566" y="74" width="200" height="40" rx="8" fill="#fff4dc"/>
+<text x="576" y="91" class="b">Recommendation</text><text x="576" y="107" class="v">VoiceLine, if confirmed</text>
+<text x="566" y="140" class="v">Why: three reasons, with sources</text>
+<text x="566" y="162" class="v">Options, side by side</text>
+<text x="566" y="184" class="v">The evidence against</text>
+<text x="566" y="206" class="v">Risks and controls</text>
+<text x="566" y="228" class="v">Next steps: owner, date</text>
+<text x="566" y="250" class="v">Not known</text>
+<text x="566" y="272" class="v">Sources: exact words, link,</text><text x="566" y="288" class="v">checked date, result</text>
+</g>
+<g class="s f"><text x="400" y="356" text-anchor="middle" class="b">Every fact has its words and its link. It recommends; you decide.</text></g>
+</svg>

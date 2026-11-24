@@ -57,7 +57,7 @@ supplies judgement and approves.
 | Project | What it does | Where it stands |
 | --- | --- | --- |
 | Estimator | A first-draft quote from your price list and rules, with the reasoning shown | [Draft](../drafts/estimator/) |
-| Decision support | A decision taken from options to a recommendation, with sources and the working shown | Example built: [decision support](../../projects/agentic-process/base/examples/decision-support/) · [plan](decision-support/) |
+| Decision support | A decision taken from a loose question to a one-page brief or decision record, every source checked | **Ready, tested by its author only:** [project](../../projects/decision-support/) · [plan](decision-support/) · [earlier example](../../projects/agentic-process/base/examples/decision-support/) |
 | Proposal builder | Client notes or a finished estimate become a formatted proposal | [Plan](proposal-builder/) |
 | Client onboarding kit | A welcome pack and checklist for each new client | [Plan](client-onboarding-kit/) |
 | Client project tracking site | A page each client opens to see where their project stands | [Plan](client-project-portal/) |
