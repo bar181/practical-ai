@@ -1,10 +1,15 @@
-<p align="center"><img src="../../assets/images/tiles/practical-ai-guide.svg" width="150" alt="Practical AI guide: agentic office hours"></p>
+<p align="center"><img src="_build/img/app-icon.svg" width="104" alt="Practical AI guide icon"></p>
 
-# Practical AI guide
+<h1 align="center">Practical AI guide</h1>
 
-<h3 align="center">Agentic office hours: ask your AI about any tool, and get the answer with the file it came from.</h3>
+<p align="center"><b>Agentic office hours: ask your AI about any tool, and get the answer with the file it came from.</b><br>
+For anyone who has found Practical AI and wants an answer now, without reading every README.</p>
 
-<p align="center">For anyone who has found Practical AI and wants an answer now, without reading every README.</p>
+<p align="center"><a href="#get-started-try-it-now"><img src="_build/img/btn-try.svg" height="48" alt="Try it with one prompt"></a></p>
+
+<p align="center"><b>Free</b> &nbsp;·&nbsp; <b>One link</b> &nbsp;·&nbsp; <b>Your own chatbot or coding tool</b><br><b>Tested in Claude</b> &nbsp;·&nbsp; <b>New: no one else has followed it yet</b></p>
+
+**Are you an AI agent?** Read [AGENTS.md](AGENTS.md).
 
 **The core idea:** give your AI one link, the repository's index, and it can answer any question
 about the tools and about Bradley's work, naming the file behind every answer.
@@ -12,6 +17,15 @@ about the tools and about Bradley's work, naming the file behind every answer.
 **Think of it as** office hours with a teaching assistant who has read every page of the course,
 always says which page the answer is on, and says "that is not in the material" instead of
 guessing.
+
+<p align="center"><img src="_build/img/how-it-works.svg" width="720" alt="How it works, played once. 1: your question in any chatbot or coding tool, for example: I get 40-page supplier contracts, which tool should I use? 2: one link gives your AI the index, llms.txt, with every tool, its promise and links; it opens the file before it answers. 3: the answer and its file: use Document to action brief, source its README; not covered, it says so. Answer first, the file named, and not in the material instead of a guess."></p>
+
+## What you get back
+
+<p align="center"><img src="_build/img/result.webp" width="640" alt="Screenshot of a chat with two questions. To I get 40-page supplier contracts, which tool should I use, the answer is Document to action brief, with the first step and the README it came from. To what does Bradley charge for a workshop, the answer is that the repository does not say, with a link to LinkedIn and the source named."></p>
+
+<p align="center"><sub>Two of Claude's real answers from the worked example, set in a plain chat window. The questions were invented to test the skill.
+<a href="base/examples/office-hours-session.md">Read all three</a>.</sub></p>
 
 ## Get started: try it now
 

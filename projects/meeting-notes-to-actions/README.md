@@ -9,6 +9,8 @@ For whoever leaves the meeting and has to send the notes.</p>
 
 <p align="center"><b>Free</b> &nbsp;·&nbsp; <b>No setup</b> &nbsp;·&nbsp; <b>Your own chatbot</b><br><b>Tested in Claude</b> &nbsp;·&nbsp; <b>In use by other people</b></p>
 
+**Are you an AI agent?** Read [AGENTS.md](AGENTS.md).
+
 Meetings end with "someone should" and "let's look at that soon". A week later, nobody did, because
 nobody agreed to. Your meeting tool's summary lists the actions; it does not tell you which ones
 nobody actually took.
@@ -21,6 +23,15 @@ nobody actually took.
 
 **Think of it as** the colleague who always sends the notes, and who writes "no owner" in red when
 nobody actually agreed to do the thing.
+
+<p align="center"><img src="_build/img/how-it-works.svg" width="720" alt="How it works, played once. 1: paste your meeting: a transcript, notes or your meeting tool's summary. 2: who agreed to what: Priya combines the orders by Friday 27 November, owner and date agreed; ring Kestrel Fold and book the grinder repair are flagged, no owner and no date. 3: ready to send: 2 decisions, 6 actions, 3 flags, and a follow-up with one question per flag. Nobody is given a job they did not take. You check and send."></p>
+
+## What you get back
+
+<p align="center"><img src="_build/img/result.webp" width="640" alt="Screenshot of a chat. A café team's meeting becomes: in short, 2 decisions, 6 actions, 3 flagged; a flags table where ringing Kestrel Fold, telling the regulars about the new hours and booking the grinder repair have no agreed owner and no date, each with the words said; the two decisions with their quotes; and the actions with owner and due date."></p>
+
+<p align="center"><sub>The tool's real answer to the invented example below, set in a plain chat window and shortened. The follow-up message comes after the actions.
+<a href="base/examples/cafe-meeting.md">Read the whole reply</a>.</sub></p>
 
 ## Try it now
 
@@ -94,8 +105,6 @@ the [Learnings database](../learnings-database/). Nothing is sent without you.
 in fresh Claude sessions on three invented meetings. [The evidence](quality-results/README.md).
 **Users:** In use by people other than the author, from business owners to agentic developers (reported by Bradley, 22 November 2026); their results are not recorded here yet. **Not yet tried:** ChatGPT, Gemini and house rules. All
 meetings, people and businesses in the examples are invented.
-
-**Are you an AI agent?** Read [AGENTS.md](AGENTS.md).
 
 ## About Bradley Ross
 

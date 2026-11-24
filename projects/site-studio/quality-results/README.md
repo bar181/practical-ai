@@ -6,8 +6,8 @@ checks below were run by the author and by fresh Claude sessions; the dates on t
 
 What was checked, by whom, and what was not.
 
-**No person has used the site yet, and it is not live until the owner merges it.** Every check
-below was run by Claude or by fresh Claude agents in one session, on 19 and 20 November 2026.
+The site is live on GitHub Pages since the pull requests were merged. The checks below were run by
+Claude or by fresh Claude agents, on the dates shown.
 
 ## 22 November 2026: the publish-a-website lesson
 
@@ -97,3 +97,73 @@ Built and checked by Claude:
 - a real phone, Safari and Firefox
 - a screen reader
 - the owner's review of the voice and the look
+
+## Build history, as recorded in the README
+
+Moved here from the README on 24 November 2026, unchanged except for this heading. Lines that say
+"not merged" or "not yet reviewed by Bradley" were true on the day they were written; the work was
+merged later.
+
+**20 November 2026: building.** The Bradley Academy site is cinematic, with:
+
+- an About page that covers the research to instruction line;
+- the owner's own photographs, served as light WebP copies;
+- a privacy page, and analytics only with consent (off until an ID is set);
+- a guide to build your own.
+
+Two reviewer agents scored six rounds against what a client paying an agency US$50,000 would accept:
+
+- UX, content and accessibility rose from 63 to 86, which the reviewer says passes once the photos are replaced.
+- Art direction rose from 50 to 73.
+
+**21 November 2026:** four new tool pages (Web Sections, Tone Studio, Meeting notes to actions, and
+Write and edit in my voice), so the site lists nine tools. Artifact Studio's page now presents it as
+the design step, with the new cinematic effects. Checked by an agent in headless Chrome at phone and
+desktop width; the reviewers have not scored these pages.
+
+**22 November 2026: rebuilt as Bradley's own site.** The home page now presents Bradley Ross,
+Agentic Architect and Researcher, for research labs and funded startups, with a new Research page. Practical AI moved to its own section at `/tools`, with a practical guide added. Built and
+checked by Claude at phone and desktop width, with two rounds of independent agent review. Not yet
+reviewed by Bradley, and not merged.
+
+**22 November 2026, later:** office hours removed. The site is now a personal profile: research
+milestones built on AISP, a one-line network note, and early access for research groups and partners
+through LinkedIn. Built and checked by Claude at phone and desktop width; not rescored, not reviewed by
+Bradley, and not merged.
+
+**22 November 2026, evening:** after an outside reviewer read the site as decent rather than top
+tier, the home and Research pages lead with the work (AISP and BAR Observatory), show only public
+evidence with a link to each number's method and limits, and end with a "Check it yourself" path.
+Unpublished results come off the site and are shared on request. Built and checked by Claude at
+390 and 1280 pixels; not yet reviewed by Bradley or the outside reviewer.
+
+**Later that evening:** AISP shown in its own notation, verbatim from the open-core specification:
+the 512 symbols in eight categories, the foundation and glossary, then the binding proof, the Pocket
+architecture, learning, search and the evidence block, each read line by line. The commercial grade
+is named for research partners, not shown. Teaching sits beside research. Checked by Claude at 390
+and 1280 pixels; not yet reviewed by Bradley.
+
+**WiseGeo, 22 November 2026:** a second example, Bradley's company site, as one static page for its
+own Vercel project. Built and checked by Claude at 390 and 1280 pixels, served locally; not yet
+deployed or reviewed by Bradley. Bradley Academy now links to it from home, About and the footer.
+
+**Later, 22 November 2026:** after outside feedback that the site still did not read as a top
+agentic engineer's, the home page leads with Bradley: a Harvard University graduate with twenty-five
+years building software from MVP to global production, and a specialty in data prediction. Then the
+systems he built (AISP, BAR Observatory) with determinism evidence from their repositories, the
+notation, teaching at every level with Practical AI as his open-source teaching work, and his public
+roles. WiseGeo became a short company page. Tested by Claude with `SITE_BASE=/` (direct loads of
+`/research`, `/tools` and `/about`, assets and canonical URLs) and at 390 and 1280 pixels; not yet
+reviewed by Bradley.
+
+**22 November 2026, latest:** Site Studio became the publish-a-website lesson. A skill for any
+chatbot (Level 1), GitHub Pages, your own domain and Vercel (Level 2), and Cloudflare, Google Cloud
+and Supabase (Level 3), written from each provider's documentation with dated sources. No person and
+no agent has followed the Level 1 to 3 guides yet.
+
+**Users:** In use by people other than the author, from business owners to agentic developers (reported by Bradley, 22 November 2026); their results are not recorded here yet. The React guide was also followed twice by a fresh agent for an invented bakery.
+
+**22 November 2026:** one new tool page, Research brief with checked sources. Built and type-checked,
+and checked by an agent in headless Chrome at phone and desktop width: no sideways scrolling, no
+console errors. The reviewers have not scored it.
+The evidence is the rest of this page.

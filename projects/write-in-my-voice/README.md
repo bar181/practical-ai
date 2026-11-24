@@ -21,6 +21,15 @@ it quietly changes things: "may" becomes "will", a date moves, an offer appears 
 **Think of it as** a tailor's pattern. You are measured once from three things you wrote, every new
 piece is cut to fit, and you still check the fit in the mirror.
 
+<p align="center"><img src="_build/img/how-it-works.svg" width="720" alt="How it works, played once. 1: three things you wrote, an email to staff, a post on the café page and an email to a regular, plus the draft to revise. 2: your voice guide: Hi all, not Dear Valued Customers; signs Dana, not The Management; no exclamation marks; you correct any line. 3: every fact kept: with effect from becomes From Tuesday 1 December, priced at 2 pounds 50 becomes will be 2 pounds 50, 0 facts changed. Sounds like you. You send it."></p>
+
+## What you get back
+
+<p align="center"><img src="_build/img/result.webp" width="640" alt="Screenshot of a chat. In short: 3 facts kept, 5 reworded, 0 changed; voice brief, warm, plain. The revised newsletter: Hi all, Quick one, the café opens at 7:30am from Tuesday 1 December 2026, a 2 pound 50 filter coffee all through the first week of December, closed on Friday 25 December, signed Dana. Then a facts check table with each fact from the draft, its wording in the revision and whether it was kept."></p>
+
+<p align="center"><sub>The tool's real answer to the invented example below, set in a plain chat window and shortened. The voice guide comes before the revised draft.
+<a href="base/examples/cafe-newsletter.md">Read the whole reply</a>.</sub></p>
+
 ## Try it now
 
 Copy the whole box into the chatbot you use. It holds the link to the instructions, three invented

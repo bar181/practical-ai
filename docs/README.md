@@ -131,8 +131,9 @@ The full list of ideas, sorted into everyday tasks, agent tools and hybrid proje
 
 ## Daily drafts
 
-First drafts built and reviewed by AI, one per run, waiting for Bradley's review. None has been
-tried by a person yet. A draft moves to `projects/` when Bradley promotes it.
+Tools built and reviewed by AI by the [daily builder](../workshop/plans/daily-builder/README.md),
+one per run. New ones are built straight into `projects/` and wait in a pull request for Bradley's
+review. None has been tried by a person yet.
 
 | Tool | What it does | For | Where it stands |
 | --- | --- | --- | --- |

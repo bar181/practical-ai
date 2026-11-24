@@ -27,6 +27,13 @@ she has read the line that says it.
 
 <p align="center"><img src="_build/img/how-it-works.svg" width="720" alt="How it works, played once. 1: give the choice, the options and your sources or a report. 2: each claim is read against its page: Bookwell 29 pounds a month is checked with its words; SlotPilot no contract is flagged because the page says a 12-month term; most salons use Chairtime is flagged with no source. 3: one page where every cell has a source number. Every cell has its words. You check the flags and decide."></p>
 
+## What you get back
+
+<p align="center"><img src="_build/img/result.webp" width="640" alt="Screenshot of a chat. Count: 13 claims, 10 checked, 1 does not match, 1 could not open, 1 with no source. In short: contract length differs most. A flags table: SlotPilot's no contract claim does not match because the page says a 12-month minimum term; Bookwell's deposits could not be opened; Chairtime as the one most salons use has no source. Then the comparison of monthly price, card fee, no-show deposits and contract length, every cell with a source number or a warning."></p>
+
+<p align="center"><sub>The tool's real answer to the invented example below, set in a plain chat window and shortened. The exact words behind each number come after the comparison.
+<a href="base/examples/salon-booking-systems.md">Read the whole reply</a>.</sub></p>
+
 ## Try it now
 
 Copy the whole box into the chatbot you use. It holds the link to the instructions and an invented

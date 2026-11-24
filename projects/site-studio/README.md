@@ -1,10 +1,15 @@
-# Site Studio
+<p align="center"><img src="_build/img/app-icon.svg" width="104" alt="Site Studio icon: a browser window"></p>
 
-<h3 align="center">Publish a website: from a shared page to your own domain, with your AI.</h3>
+<h1 align="center">Site Studio</h1>
 
-<p align="center">For anyone who has made a page with AI and wants it online.</p>
+<p align="center"><b>Publish a website: from a shared page to your own domain, with your AI.</b><br>
+For anyone who has made a page with AI and wants it online.</p>
 
-<p align="center"><b>Free to start</b> &nbsp;·&nbsp; <b>Three levels</b> &nbsp;·&nbsp; <b>Worked example: Bradley Academy</b></p>
+<p align="center"><a href="#get-started-try-it-now"><img src="_build/img/btn-try.svg" height="48" alt="Try it with one prompt"></a></p>
+
+<p align="center"><b>Free to start</b> &nbsp;·&nbsp; <b>Three levels</b> &nbsp;·&nbsp; <b>Worked example: Bradley Academy</b><br><b>In use by other people</b></p>
+
+**Are you an AI agent?** Read [AGENTS.md](AGENTS.md).
 
 **The core idea:** pick the smallest way online that does the job, then move up only when the site
 needs more.
@@ -22,6 +27,14 @@ a guard at the door (a platform with a database and sign-in).
 **The worked example is this repository's own site:** [Bradley Academy](https://bar181.github.io/practical-ai/),
 Bradley Ross's personal site with every Practical AI tool, built in React and published by GitHub
 Pages.
+
+<p align="center"><img src="_build/img/how-it-works.svg" width="720" alt="How it works, played once. Three levels. 1: share a link: a page made in Claude, ChatGPT or Gemini, shared from the chat, no account to set up, about ten minutes. 2: your own address: GitHub Pages or Vercel, then your own domain, updated every time you save. 3: a site that remembers: Cloudflare or Google Cloud to host, Supabase for the database and sign-in. Start with the smallest way online; move up only when the site needs more."></p>
+
+## What you get back
+
+<p align="center"><img src="_build/img/result.webp" width="720" alt="Screenshots of the worked example, Bradley Academy, at bar181.github.io/practical-ai: on a laptop, the home page with Bradley Ross's name over a Toronto skyline at dusk and buttons to explore research, try free AI tools and connect on LinkedIn; on a phone, the Meeting notes to actions tool page with its promise and a button to copy the try-it prompt."></p>
+
+<p align="center"><sub>The worked example, live: <a href="https://bar181.github.io/practical-ai/">Bradley Academy</a>, built in React and published by GitHub Pages from this repository. Laptop and phone, captured from the build on 24 November 2026.</sub></p>
 
 ## Get started: try it now
 
@@ -68,75 +81,17 @@ Vercel's open-source React skills. The list is in [AGENTS.md](AGENTS.md).
 
 ## Status
 
-**20 November 2026: building.** The Bradley Academy site is cinematic, with:
-
-- an About page that covers the research to instruction line;
-- the owner's own photographs, served as light WebP copies;
-- a privacy page, and analytics only with consent (off until an ID is set);
-- a guide to build your own.
-
-Two reviewer agents scored six rounds against what a client paying an agency US$50,000 would accept:
-
-- UX, content and accessibility rose from 63 to 86, which the reviewer says passes once the photos are replaced.
-- Art direction rose from 50 to 73.
-
-**21 November 2026:** four new tool pages (Web Sections, Tone Studio, Meeting notes to actions, and
-Write and edit in my voice), so the site lists nine tools. Artifact Studio's page now presents it as
-the design step, with the new cinematic effects. Checked by an agent in headless Chrome at phone and
-desktop width; the reviewers have not scored these pages.
-
-**22 November 2026: rebuilt as Bradley's own site.** The home page now presents Bradley Ross,
-Agentic Architect and Researcher, for research labs and funded startups, with a new Research page. Practical AI moved to its own section at `/tools`, with a practical guide added. Built and
-checked by Claude at phone and desktop width, with two rounds of independent agent review. Not yet
-reviewed by Bradley, and not merged.
-
-**22 November 2026, later:** office hours removed. The site is now a personal profile: research
-milestones built on AISP, a one-line network note, and early access for research groups and partners
-through LinkedIn. Built and checked by Claude at phone and desktop width; not rescored, not reviewed by
-Bradley, and not merged.
-
-**22 November 2026, evening:** after an outside reviewer read the site as decent rather than top
-tier, the home and Research pages lead with the work (AISP and BAR Observatory), show only public
-evidence with a link to each number's method and limits, and end with a "Check it yourself" path.
-Unpublished results come off the site and are shared on request. Built and checked by Claude at
-390 and 1280 pixels; not yet reviewed by Bradley or the outside reviewer.
-
-**Later that evening:** AISP shown in its own notation, verbatim from the open-core specification:
-the 512 symbols in eight categories, the foundation and glossary, then the binding proof, the Pocket
-architecture, learning, search and the evidence block, each read line by line. The commercial grade
-is named for research partners, not shown. Teaching sits beside research. Checked by Claude at 390
-and 1280 pixels; not yet reviewed by Bradley.
-
-**WiseGeo, 22 November 2026:** a second example, Bradley's company site, as one static page for its
-own Vercel project. Built and checked by Claude at 390 and 1280 pixels, served locally; not yet
-deployed or reviewed by Bradley. Bradley Academy now links to it from home, About and the footer.
-
-**Later, 22 November 2026:** after outside feedback that the site still did not read as a top
-agentic engineer's, the home page leads with Bradley: a Harvard University graduate with twenty-five
-years building software from MVP to global production, and a specialty in data prediction. Then the
-systems he built (AISP, BAR Observatory) with determinism evidence from their repositories, the
-notation, teaching at every level with Practical AI as his open-source teaching work, and his public
-roles. WiseGeo became a short company page. Tested by Claude with `SITE_BASE=/` (direct loads of
-`/research`, `/tools` and `/about`, assets and canonical URLs) and at 390 and 1280 pixels; not yet
-reviewed by Bradley.
-
-**22 November 2026, latest:** Site Studio became the publish-a-website lesson. A skill for any
-chatbot (Level 1), GitHub Pages, your own domain and Vercel (Level 2), and Cloudflare, Google Cloud
-and Supabase (Level 3), written from each provider's documentation with dated sources. No person and
-no agent has followed the Level 1 to 3 guides yet.
-
-**Users:** In use by people other than the author, from business owners to agentic developers (reported by Bradley, 22 November 2026); their results are not recorded here yet. The React guide was also followed twice by a fresh agent for an invented bakery.
-
-**22 November 2026:** one new tool page, Research brief with checked sources. Built and type-checked,
-and checked by an agent in headless Chrome at phone and desktop width: no sideways scrolling, no
-console errors. The reviewers have not scored it.
-[The evidence](quality-results/README.md).
+**24 November 2026: in use.** The worked example, [Bradley Academy](https://bar181.github.io/practical-ai/),
+is live on GitHub Pages and lists all sixteen Practical AI tools. It was built and checked by Claude
+at phone and desktop width. The 20 November version had six rounds of independent agent review (UX
+86, art direction 73); the site has been rebuilt since and not rescored.
+People other than the author use the project, from business owners to agentic developers (reported
+by Bradley, 22 November 2026); their results are not recorded here yet. **Not yet followed by anyone:**
+the Level 1 to 3 publishing guides, written on 22 November 2026 from each provider's documentation.
+The `bradley.academy` domain is not connected yet; that is an owner step.
+[The evidence and the full build history](quality-results/README.md).
 
 ## About Bradley Ross
 
 Created by **Bradley Ross**, who builds and teaches practical AI. Part of
 [Practical AI](../../README.md). [linkedin.com/in/bradaross](https://www.linkedin.com/in/bradaross/)
-
-**Are you an AI agent?** Read [AGENTS.md](AGENTS.md).
-
-Licence: [Apache 2.0](LICENSE).

@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="110 34 120 120" role="img" aria-label="Site Studio: publish a website, from a shared page to your own domain" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif">
+<rect x="110" y="34" width="120" height="120" rx="28" fill="#0f5c63"/>
+<g transform="translate(110 34) scale(0.46875)"><rect x="40" y="56" width="176" height="132" rx="14" fill="#fff"/><rect x="40" y="56" width="176" height="28" rx="14" fill="#cbd5e1"/><circle cx="60" cy="70" r="6" fill="#0f5c63"/><circle cx="80" cy="70" r="6" fill="#0f5c63"/><rect x="60" y="102" width="80" height="12" rx="6" fill="#cbd5e1"/><rect x="60" y="126" width="60" height="12" rx="6" fill="#cbd5e1"/><path d="M178 172v-56M156 138l22-22 22 22" stroke="#0f5c63" stroke-width="12" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g>
+</svg>

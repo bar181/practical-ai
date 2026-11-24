@@ -24,6 +24,8 @@ For the notice, contract, tender, policy or bill you have to act on.</p>
 - **Fitted to the situation.** A contract, a change of terms, a tender or a bill each get the one
   extra section that reader needs.
 
+<p align="center"><img src="_build/img/how-it-works.svg" width="720" alt="How it works in three steps: paste the prompt and your document into the chatbot you use; get a one-page brief, the answer first, then what you must do, dates, open questions and key facts, each with the exact words from the document; check each quote against the page and tick it, then you decide. The AI lists; you check and decide."></p>
+
 ## Try it now
 
 Copy the whole box into the chatbot you use. It holds the instructions and an invented supplier
