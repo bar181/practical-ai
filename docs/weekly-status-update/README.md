@@ -1,13 +1,63 @@
-# Weekly status update
+<p align="center"><img src="img/icon.svg" width="104" alt="Weekly status update icon"></p>
 
-**Turn a week of rough notes into a short update your reader can act on in two minutes, and never
-let last week's risk or promise disappear without a word.**
+<h1 align="center">Weekly status update</h1>
+
+<p align="center"><b>Turn a week of rough notes into a short update your reader can act on in two minutes, and never let last week's risk or promise disappear without a word.</b><br>
+For project leads, freelancers and anyone who reports on work every week.</p>
+
+<p align="center"><a href="#try-it-now"><img src="img/btn-try.svg" height="48" alt="Try it with one prompt"></a></p>
+
+<p align="center"><b>Free</b> &nbsp;·&nbsp; <b>No setup</b> &nbsp;·&nbsp; <b>Your own chatbot</b><br><b>Draft: built and reviewed by AI, not yet tried by a person</b></p>
 
 **Status:** Draft, built and reviewed by AI on 23 November 2026; not yet tried by a person.
 
 **Think of it as** a good project secretary on a Friday afternoon. She reads your scribbles and last
 week's report side by side, puts the one thing the boss must know at the top, and asks you, "What
 happened to the dock repair? You mentioned it last week."
+
+
+<p align="center"><img src="img/how-it-works.svg" width="660" alt="How it works, played once. 1: this week's notes and last week's update. 2: compared line by line: pages built, the launch moved from 5 to 12 December, and the hall photos have no news this week. 3: a two-minute email marked off track."></p>
+
+## What you get back
+
+<p align="center"><img src="img/result.webp" width="640" alt="Screenshot of a chat. The weekly update email to Joan: subject Oakfield website, off track; status off track, was on track, launch moved from 5 to 12 December; decision needed on the donations page by 1 December; what changed; risks; items carried over with no news; next week."></p>
+
+<p align="center"><sub>The tool's real answer to the invented example below, set in a plain chat window. Its checks before you send come after the email. <a href="example.md">Read the whole reply</a>.</sub></p>
+
+## Try it now
+
+Copy the whole box into the chatbot you use. It holds the link to the instructions, a freelancer's rough notes for the week and last week's update. Oakfield Community Centre, Joan, Alex, PayEasy, GiveBox, the dates and the figures are all made up. Then try your own notes.
+
+```
+Read the instructions at this link and follow them for the rest of this chat:
+https://raw.githubusercontent.com/bar181/practical-ai/main/docs/weekly-status-update/SKILL.md
+
+Can you write this week's update for Joan? She's the centre manager and she decides whether we launch on the date and signs off the content. Last week's update is at the bottom.
+
+My notes this week:
+- good week!
+- home page and events page built, both on the test site
+- booking form: tested 12 bookings, all came through to the office inbox
+- hosting transfer from the old provider still not done, they want a signed form from Joan. launch can't happen till the transfer's done. realistically 12 Dec now
+- donations page: Joan needs to pick PayEasy or GiveBox, I need it by 1 Dec to have it ready for launch
+- next week: events calendar import, mobile fixes
+- note to self: renew my own software licence
+
+LAST WEEK'S UPDATE (as sent)
+
+Subject: Oakfield website: on track
+
+Hi Joan,
+We are on track to launch on 5 December.
+Done: site design approved, test site set up.
+Risk: we still need the photos of the hall and garden from the centre. Without them the home page uses stock images.
+Next week: home page, events page, booking form. I will also send you the draft privacy page by Wednesday.
+Thanks,
+Alex
+```
+
+**Your chatbot cannot open links?** Open [`SKILL.md`](SKILL.md), press **Raw**, copy all of it into a
+new chat, then paste the rest of the box above.
 
 ## Who it is for
 
@@ -38,6 +88,7 @@ developers summarising a sprint for someone who does not read the tickets.
 | [`example.md`](example.md) | One worked example, invented data |
 | [`review.md`](review.md) | How this draft was reviewed, and its scores |
 | [`paper.md`](paper.md) | A short technical paper about the tool |
+| [`img/`](img/) | The icon, the how-it-works picture and the screenshot of the real result |
 
 ## Levels
 

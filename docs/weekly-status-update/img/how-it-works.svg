@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 230" width="660" height="230" role="img" aria-labelledby="ws-t"><title id="ws-t">How it works: this week's notes and last week's update are compared, an item from last week with no news is caught, and a short email comes out with the status first</title><style>
+.t{font:14px system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;fill:#0f1720}.t.b{font-weight:800}.t.small{font-size:12.5px}
+.bad{fill:#155e75;font-weight:800}.cap{font:800 14px system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;fill:#155e75}
+.paper{fill:#f3f5f8;stroke:#d9dee6;stroke-width:1.5}.box{fill:#e3f8fb;stroke:#d9dee6}.out{fill:#fff;stroke:#0e7490;stroke-width:2.5}
+.arw{fill:none;stroke:#0f1720;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}.ln{fill:#d9dee6}.hl{fill:#0e7490;opacity:.55}.bar{fill:#0e7490}
+.seal{fill:#0f1720}.sealt{font:800 16px system-ui,sans-serif;fill:#fff}.pill{fill:#0e7490}.pillt{font:800 12.5px system-ui,sans-serif;fill:#fff}
+.ring{fill:none;stroke:#d9dee6;stroke-width:10}.arc{fill:none;stroke:#0e7490;stroke-width:10;stroke-linecap:round}.big{font:800 30px system-ui,sans-serif;fill:#0f1720}
+.a{opacity:0;animation:in .6s ease-out forwards}.a2{animation-delay:.5s}.a3{animation-delay:.9s}.a4{animation-delay:1.6s}.a5{animation-delay:2s}
+@keyframes in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.a{animation:none;opacity:1}}
+</style><rect width="660" height="230" rx="18" fill="#ffffff"/>
+<g class="a a1"><rect x="18" y="34" width="150" height="70" rx="8" class="paper"/><text x="32" y="56" class="t b">This week's notes</text><text x="32" y="76" class="t">pages built</text><text x="32" y="94" class="t">launch now 12 Dec</text>
+<rect x="18" y="116" width="150" height="70" rx="8" class="paper"/><text x="32" y="138" class="t b">Last week's update</text><text x="32" y="158" class="t">launch 5 Dec</text><text x="32" y="176" class="t">need hall photos</text>
+<text x="93" y="215" class="cap" text-anchor="middle">1. Notes and last week</text></g>
+<g class="a a2"><path d="M190 111h48" class="arw"/><path d="M232 104l9 7-9 7" class="arw"/></g>
+<g class="a a3"><rect x="256" y="36" width="150" height="150" rx="10" class="box"/>
+<text x="270" y="64" class="t">✓ pages built</text><text x="270" y="92" class="t">↻ 5 Dec → 12 Dec</text><text x="270" y="120" class="t bad">⚠ hall photos:</text><text x="270" y="138" class="t small bad">no news this week</text>
+<text x="331" y="215" class="cap" text-anchor="middle">2. Compared line by line</text></g>
+<g class="a a4"><path d="M428 111h48" class="arw"/><path d="M470 104l9 7-9 7" class="arw"/></g>
+<g class="a a5"><rect x="494" y="30" width="150" height="164" rx="12" class="out"/><rect x="510" y="46" width="90" height="22" rx="11" class="pill"/><text x="555" y="61" class="pillt" text-anchor="middle">Off track</text>
+<rect x="510" y="82" width="118" height="8" rx="4" class="ln"/><rect x="510" y="98" width="100" height="8" rx="4" class="ln"/><rect x="510" y="118" width="4" height="26" class="bar"/><rect x="520" y="122" width="96" height="8" rx="4" class="ln"/><rect x="520" y="136" width="70" height="8" rx="4" class="ln"/><rect x="510" y="158" width="110" height="8" rx="4" class="ln"/>
+<text x="569" y="215" class="cap" text-anchor="middle">3. A two-minute email</text></g></svg>
