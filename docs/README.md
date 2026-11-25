@@ -86,7 +86,7 @@ Jobs you already do, done faster with the chatbot you have. Each is one file and
 | 3 | **Meeting notes to actions** | Turn a transcript into decisions, tasks and a follow-up, and flag any owner or date nobody agreed | **In use:** [project](../projects/meeting-notes-to-actions/) |
 | 4 | **Research brief with checked sources** | Compare options on one page, with every claim linked to a source you can open | **New, tested by its author only:** [project](../projects/research-brief/) |
 | 5 | **Inbox triage and replies** | Sort the inbox into reply today, delegate and wait, and draft the two replies that matter most | Early draft |
-| 6 | **Customer issue helper** | Handle a late order or a refund from your one-page policy, and say when a manager should step in | Idea |
+| 6 | **Customer issue helper** | Handle a late order or a refund from your one-page policy, and say when a manager should step in | **Draft, built and reviewed by AI, not yet tried by a person:** [draft](customer-issue-helper/) |
 | 7 | **Ask your spreadsheet** | Explain what changed in a sales export and show the rows behind the answer | Early draft |
 | 8 | **Receipts into an expense sheet** | Read each receipt into a sheet and flag any that are blurry or incomplete | Plan |
 | 9 | **Decision support** | Work a decision through to a one-page brief: options with "do nothing", the evidence against, risks with controls, every source checked | **New, tested by its author only:** [project](../projects/decision-support/) |
@@ -132,13 +132,14 @@ The full list of ideas, sorted into everyday tasks, agent tools and hybrid proje
 ## Daily drafts
 
 Tools built and reviewed by AI by the [daily builder](../workshop/plans/daily-builder/README.md),
-one per run. New ones are built straight into `projects/` and wait in a pull request for Bradley's
-review. None has been tried by a person yet.
+one per run. Each new one waits in `docs/<name>/` in a pull request for Bradley's review, and moves
+to `projects/` when he promotes it. None has been tried by a person yet.
 
 | Tool | What it does | For | Where it stands |
 | --- | --- | --- | --- |
 | [Rubric reviewer](../projects/rubric-reviewer/) | Scores any piece of work out of 100 against a rubric written before the work was read, with the work's own words as evidence for every line | Both | Promoted to `projects/` on 24 November 2026; not yet tried by a person |
 | [Weekly status update](../projects/weekly-status-update/) | Turns a week of rough notes into a short update the reader can act on, and keeps last week's risks and promises from disappearing | Both | Promoted to `projects/` on 24 November 2026; not yet tried by a person |
+| [Customer issue helper](customer-issue-helper/) | Drafts a reply to each customer message from your written policy, quotes the rule each promise rests on, and flags what a manager decides | Both | Draft, built and reviewed by AI on 25 November 2026; not yet tried by a person |
 
 ## How the order is chosen
 
