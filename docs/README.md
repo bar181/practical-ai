@@ -139,6 +139,7 @@ review. None has been tried by a person yet.
 | --- | --- | --- | --- |
 | [Rubric reviewer](../projects/rubric-reviewer/) | Scores any piece of work out of 100 against a rubric written before the work was read, with the work's own words as evidence for every line | Both | Promoted to `projects/` on 24 November 2026; not yet tried by a person |
 | [Weekly status update](../projects/weekly-status-update/) | Turns a week of rough notes into a short update the reader can act on, and keeps last week's risks and promises from disappearing | Both | Promoted to `projects/` on 24 November 2026; not yet tried by a person |
+| [Delegation brief](delegation-brief/) | Turns a rough request into a one-page brief a colleague, contractor or AI agent can finish without coming back, then checks the returned work line by line against it | Both | Draft |
 
 ## How the order is chosen
 

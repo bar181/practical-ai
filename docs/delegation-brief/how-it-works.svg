@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 440" width="880" height="440" role="img" aria-labelledby="t d">
+  <title id="t">How the delegation brief works</title>
+  <desc id="d">A rough request goes into step 1, which asks you the questions it cannot answer and writes a brief with yes-or-no "done when" checks. The brief goes to the doer: a colleague, a contractor or an AI agent. When the work comes back saying "all done", step 2 checks each line as met, not met or can't tell, with the evidence, and says stop if something the brief did not allow was done. You send the brief and you accept the work; the tool never sends, books, pays or merges.</desc>
+  <style>
+    :root { --bg:#fbfaf7; --ink:#1f2328; --mute:#5b6470; --line:#d6d3cc; --card:#ffffff; --accent:#2f5f8a; --ok:#2f7d4a; --no:#9a3b3b; --gap:#8a6a12; --tagink:#ffffff; }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg:#16181c; --ink:#eceff3; --mute:#a3abb6; --line:#3a3f47; --card:#20242a; --accent:#8fb8e6; --ok:#6fcf8f; --no:#e58d8d; --gap:#e2c060; --tagink:#16181c; }
+    }
+    .bg { fill: var(--bg); }
+    .card { fill: var(--card); stroke: var(--line); stroke-width: 1.5; }
+    .hub { fill: var(--card); stroke: var(--accent); stroke-width: 2.5; }
+    .h { font: 600 15px system-ui, -apple-system, "Segoe UI", sans-serif; fill: var(--ink); }
+    .k { font: 700 11px system-ui, -apple-system, "Segoe UI", sans-serif; fill: var(--accent); letter-spacing: .06em; }
+    .s { font: 400 12.5px system-ui, -apple-system, "Segoe UI", sans-serif; fill: var(--mute); }
+    .si { font: italic 400 12.5px system-ui, -apple-system, "Segoe UI", sans-serif; fill: var(--mute); }
+    .tag { font: 600 11.5px system-ui, -apple-system, "Segoe UI", sans-serif; fill: var(--tagink); }
+    .tok { fill: var(--ok); } .tno { fill: var(--no); } .tgap { fill: var(--gap); } .tq { fill: var(--accent); }
+    .box { fill: none; stroke: var(--mute); stroke-width: 1.5; }
+    .wire { stroke: var(--line); stroke-width: 2; fill: none; }
+    .dot { fill: var(--accent); }
+    .step { opacity: 0; animation: show 10s infinite; }
+    .a1 { animation-delay: .8s; } .a2 { animation-delay: 1.3s; } .a3 { animation-delay: 1.8s; } .a4 { animation-delay: 2.3s; }
+    .b1 { animation-delay: 5.2s; } .b2 { animation-delay: 5.7s; } .b3 { animation-delay: 6.2s; } .b4 { animation-delay: 6.9s; }
+    .back { animation-delay: 4.4s; }
+    @keyframes show { 0% { opacity: 0; transform: translateY(4px); } 5%, 88% { opacity: 1; transform: none; } 96%, 100% { opacity: 0; } }
+    .stop { animation: blink 10s infinite; animation-delay: 6.9s; opacity: 0; }
+    @keyframes blink { 0% { opacity: 0; } 4%, 86% { opacity: 1; } 95%, 100% { opacity: 0; } }
+    @media (prefers-reduced-motion: reduce) { .step, .stop { animation: none; opacity: 1; } .dot { display: none; } }
+  </style>
+
+  <rect class="bg" width="880" height="440" rx="16"/>
+
+  <!-- Input -->
+  <rect class="card" x="24" y="150" width="200" height="132" rx="12"/>
+  <text class="h" x="42" y="180">Your rough request</text>
+  <text class="si" x="42" y="206">"Sort out the price list</text>
+  <text class="si" x="42" y="224">before Friday. Do it the</text>
+  <text class="si" x="42" y="242">usual way."</text>
+  <text class="s" x="42" y="268">In your own words</text>
+
+  <!-- Step 1 -->
+  <rect class="hub" x="290" y="24" width="300" height="184" rx="14"/>
+  <text class="k" x="310" y="48">STEP 1 · THE BRIEF</text>
+  <g class="step a1"><circle class="tq" cx="318" cy="70" r="9"/><text class="tag" x="314.5" y="74">?</text><text class="s" x="336" y="74">Questions for you first: "usual way"?</text></g>
+  <g class="step a2"><text class="s" x="310" y="102">Outcome in one sentence</text></g>
+  <g class="step a3"><text class="h" x="310" y="128" style="font-size:13px">Done when</text>
+    <rect class="box" x="312" y="138" width="12" height="12" rx="2"/><text class="s" x="332" y="149">Every product appears once</text>
+    <rect class="box" x="312" y="158" width="12" height="12" rx="2"/><text class="s" x="332" y="169">Changes highlighted in yellow</text></g>
+  <g class="step a4"><text class="s" x="310" y="196">Must not: email suppliers · delete rows</text></g>
+
+  <!-- Doer -->
+  <rect class="card" x="656" y="150" width="200" height="132" rx="12"/>
+  <text class="h" x="674" y="180">The doer</text>
+  <text class="s" x="674" y="206">A colleague</text>
+  <text class="s" x="674" y="226">A contractor</text>
+  <text class="s" x="674" y="246">An AI agent</text>
+  <text class="s" x="674" y="270">You send the brief</text>
+
+  <!-- Step 2 -->
+  <rect class="hub" x="290" y="232" width="300" height="168" rx="14"/>
+  <text class="k" x="310" y="256">STEP 2 · CHECK THE HAND-BACK</text>
+  <g class="step b1"><rect class="tok" x="310" y="268" width="74" height="20" rx="10"/><text class="tag" x="324" y="282">Met</text><text class="s" x="394" y="282">quote shows it</text></g>
+  <g class="step b2"><rect class="tno" x="310" y="296" width="74" height="20" rx="10"/><text class="tag" x="318" y="310">Not met</text><text class="s" x="394" y="310">quote shows it isn't</text></g>
+  <g class="step b3"><rect class="tgap" x="310" y="324" width="74" height="20" rx="10"/><text class="tag" x="316" y="338">Can't tell</text><text class="s" x="394" y="338">only their word</text></g>
+  <g class="stop"><rect class="tno" x="310" y="356" width="262" height="30" rx="8"/><text class="tag" x="324" y="376">Stop: a "must not" was broken</text></g>
+
+  <!-- Wires -->
+  <path id="w1" class="wire" d="M224 200 C 260 200, 260 116, 290 116"/>
+  <path id="w2" class="wire" d="M590 116 C 630 116, 630 200, 656 200"/>
+  <path id="w3" class="wire" d="M656 236 C 630 236, 630 316, 590 316"/>
+  <path id="w4" class="wire" d="M290 316 C 250 316, 220 380, 180 380"/>
+  <circle class="dot" r="5"><animateMotion dur="2.5s" repeatCount="indefinite"><mpath href="#w1"/></animateMotion></circle>
+  <circle class="dot" r="5"><animateMotion dur="2.5s" begin="1.2s" repeatCount="indefinite"><mpath href="#w2"/></animateMotion></circle>
+  <circle class="dot" r="5"><animateMotion dur="2.5s" begin="2.4s" repeatCount="indefinite"><mpath href="#w3"/></animateMotion></circle>
+  <g class="step back"><rect class="card" x="608" y="296" width="110" height="26" rx="13"/><text class="si" x="624" y="314">"All done!"</text></g>
+
+  <!-- Output -->
+  <text class="h" x="24" y="356">You decide</text>
+  <text class="s" x="24" y="376">Accept, or send back</text>
+  <text class="s" x="24" y="394">the reply it drafted</text>
+
+  <text class="s" x="440" y="428" text-anchor="middle">The tool never sends, books, pays or merges. Every addition it makes is marked (suggested).</text>
+</svg>
