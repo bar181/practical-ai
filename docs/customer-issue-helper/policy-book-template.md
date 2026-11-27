@@ -5,7 +5,7 @@ by hand, or let the `build-policy-book` skill fill it from your returns page and
 Keep one rule per entry and keep your own words. Paste the whole file into the chat with each
 batch of customer messages, or save it in a Claude Project, ChatGPT Project or Gemini Gem.
 
-**Last checked:** [date] by [name] · **Built from:** [your returns page, FAQ, owner's notes]
+**Built:** [date] · **Last checked:** [date] by [name] · **Built from:** [your returns page, FAQ, owner's notes]
 
 ## Index
 
@@ -43,16 +43,17 @@ Source: [document, section]
 
 The helper makes no promise on these. It drafts a holding reply and flags them for you. Number
 your own cases first, in your exact words (replace the example row, add more as needed), then
-keep the five cases the helper always flags and renumber them to follow yours.
+keep the six cases the helper always flags and renumber them to follow yours.
 
 | No. | Case | Source |
 | --- | --- | --- |
 | M1 | [Your case. For example: any refund over a set amount] | [document, or "our decision"] |
 | M2 | Two rules give different answers | Always flagged by the helper |
-| M3 | A customer says a member of staff promised something | Always flagged by the helper |
-| M4 | Legal action, a chargeback or a public review is threatened | Always flagged by the helper |
-| M5 | Injury or safety | Always flagged by the helper |
-| M6 | A customer pushes back on an answer already given | Always flagged by the helper |
+| M3 | A customer says a member of staff promised or quoted something | Always flagged by the helper |
+| M4 | Your own records show a rule's condition was not met | Always flagged by the helper |
+| M5 | Legal action, a chargeback or a public review is threatened | Always flagged by the helper |
+| M6 | Injury or safety | Always flagged by the helper |
+| M7 | A customer pushes back on an answer already given | Always flagged by the helper |
 
 ## Conflicts to settle
 

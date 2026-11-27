@@ -5,10 +5,11 @@ project; for each message, get a reply draft
 that quotes the rule it relied on, says "not covered" when your policy is silent, and flags when a
 manager must decide.
 
-**Status.** Draft, built and reviewed by AI on 25 November 2026; not yet tried by a person. A
-fresh Claude agent ran it to make the worked example. Two separate reviewer agents ran it on new
-invented inputs and scored it 82 and 82 out of 100 ([review](review.md)); the fixes after the
-second round have not been re-scored. Tried only in Claude so far.
+**Status.** Draft, built and reviewed by AI on 25 November 2026, revised on 27 November 2026; not
+yet tried by a person. A fresh Claude agent ran it to make the worked example (before the 27
+November changes). Four separate reviewer agents ran it on new invented inputs and scored it 82,
+82, 88 and 87 out of 100 ([review](review.md)); the fixes after the fourth round have not been
+re-scored. Tried only in Claude so far.
 
 ![A customer message and your policy book go into the helper; out comes a reply draft, the rule it used, and flags for you](how-it-works.svg)
 
@@ -48,7 +49,7 @@ For each customer message:
 4. **Check before you send:** two to four things to confirm in your own systems.
 
 [See the worked example](example.md): three invented customer messages for an invented ceramics
-shop, with a deadline the policy cannot promise, a refund that four things send to a manager, and
+shop, with a deadline the policy cannot promise, a refund that five things send to a manager, and
 a request the policy has no rule for.
 
 ## The files
@@ -59,7 +60,7 @@ a request the policy has no rule for.
 | [`build-policy-book/SKILL.md`](build-policy-book/SKILL.md) | Turns your scattered rules (returns page, FAQ, notes) into a numbered policy book, and lists the conflicts and gaps it finds |
 | [`policy-book-template.md`](policy-book-template.md) | The knowledge file: an index, one rule per entry with its source, what a manager decides, conflicts and gaps |
 | [`example.md`](example.md) | One worked example, invented data |
-| [`review.md`](review.md) | The AI review: scores and every point lost |
+| [`review.md`](review.md) | The AI review: scores and every point lost, with a chart ([`review-rounds.svg`](review-rounds.svg)) |
 | [`paper.md`](paper.md) | A short technical paper on the tool |
 
 ## Levels
@@ -84,18 +85,21 @@ a request the policy has no rule for.
 - It does not give legal advice. Consumer rights depend on where you and your customer are; your
   written policy may not be the whole of what the law requires. Check with a qualified adviser.
 - It does not decide hard cases. A rule that says a manager decides, rules that conflict,
-  promises by staff, legal threats, chargebacks, threatened public reviews, injury or safety, and a
-  customer pushing back always go to a manager. So does any answer that rests on its own reading
-  of your words, or on records that disagree. A plain request the policy
-  says no to is refused kindly, with the reason.
+  promises or quotes by staff, your own records showing a rule was not followed, legal threats,
+  chargebacks, threatened public reviews, injury or safety, and a customer pushing back always go
+  to a manager. An answer that rests on its own reading of your
+  words, on a rule marked unclear, or on records that disagree is marked "assumed": the reply
+  promises nothing and a flag asks you. A plain request the policy says no to is refused kindly,
+  with the reason.
 
 ## How it was checked
 
 | ID | Spec line | Check | Result, who ran it, what they saw |
 | --- | --- | --- | --- |
-| U1 | A person who answers customers from written rules | Three invented businesses: a ceramics shop (example), a bike repair shop and a yoga studio (reviews) | Claude agents, 25 Nov 2026: all three ran with no question needed |
-| U2 | Their policy, the customer messages, today's date | Missing input: asks once for only what is missing, and waits | Passed in both review rounds; see [review](review.md) |
+| U1 | A person who answers customers from written rules | Five invented businesses: a ceramics shop (example), a bike repair shop, a yoga studio, a plant shop and a dog groomer (reviews) | Claude agents, 25 and 27 Nov 2026: all five ran with no question needed |
+| U2 | Their policy, the customer messages, today's date | Missing input: asks once for only what is missing, and waits | Passed in all four review rounds; see [review](review.md) |
 | U3 | A reply draft with the rule it relied on | The normal case | [Worked example](example.md), fresh agent, unedited |
-| U4 | Ready to send after a quick check | Would the person send the reply after the checks listed? | Reviewer agents scored 82 and 82; see [review](review.md). Not yet judged by a person |
-| U5 | A reply that promises what the policy does not say | Planted traps: a staff promise, a chargeback threat, a sign-off limit, rules that disagree, an instruction inside a message, an injury, an expired pass, a rule word ("a friend") that may not fit | No unsupported promise in any run. Round 2 found one promise resting on the tool's own reading; fixed, not re-scored |
+| U4 | Ready to send after a quick check | Would the person send the reply after the checks listed? | Reviewer agents scored 82, 82, 88 and 87; see [review](review.md). Not yet judged by a person |
+| U5 | A reply that promises what the policy does not say | Planted traps: staff promises and a phone quote, a chargeback and a review threat, a sign-off limit, rules that disagree, instructions inside messages, an injury, an expired pass, a rule word ("a friend") that may not fit, last-day requests, a 20-minute miss on a 24-hour rule | No unsupported promise in any run. Round 2 found a promise resting on the tool's own reading, round 4 a staff quote stated as fact; both fixed, the round 4 fix not re-scored |
+| U6 | Scattered rules into a policy book | `build-policy-book` run on its own on an invented returns page, delivery page, FAQ and owner's note | Round 3 reviewer, 27 Nov 2026: exact quotes, source order kept, three conflicts and twelve gaps found, nothing invented |
 | | Works in other chatbots | The same file in ChatGPT or Gemini | Not yet run |

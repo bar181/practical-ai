@@ -3,10 +3,11 @@
 This is what a result looks like. Made on 25 November 2026 by a fresh Claude agent that had only
 [`SKILL.md`](SKILL.md) and the message below; it had not seen the rest of this folder. **Fernhollow
 Ceramics, its policy, its customers, orders and amounts are all invented.** Nothing below the line
-is edited. No person has run this yet.
+is edited. No person has run this yet. This run predates the 27 November 2026 changes to the
+skill (rounds 3 and 4 in [`review.md`](review.md)); it has not been re-run on them.
 
 The input has three planted traps: a deadline the policy cannot promise (message 1), a refund that
-four separate things send to a manager (message 2), and a request the policy has no rule for
+five separate things send to a manager (message 2), and a request the policy has no rule for
 (message 3).
 
 **The message:**

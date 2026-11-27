@@ -30,7 +30,9 @@ Ask nothing else until they reply.
    applies to, what is allowed or refused, any time limit, any amount, any condition. Keep the
    order the rules appear in, within each heading. If one sentence holds two decisions (for
    example "non-refundable, but can be transferred once"), make two entries and quote the part of
-   the sentence each one rests on.
+   the sentence each one rests on. Put the sentence's subject in each heading (for example "Gift
+   cards: refunds" and "Gift cards: expiry"), so a fragment such as "but never expire" still
+   reads clearly.
 2. **Keep the exact words.** Each entry quotes the source text. You may add a plain-English
    heading. Do not reword the rule itself.
 3. **Record the source** of each entry: which pasted document and its section or first words.
@@ -42,20 +44,24 @@ Ask nothing else until they reply.
 6. **List what a manager decides** as M1, M2 and so on. Take these from the sources where they
    say so ("at our discretion", "contact the manager", "case by case"), with their source. Then,
    numbered after them, add the cases the helper always sends to a manager, each with the source
-   "Always flagged by the helper": two rules disagree; a customer says staff promised something;
-   legal action, a chargeback or a public review is threatened; injury or safety; a customer
-   pushes back on an answer already given.
+   "Always flagged by the helper": two rules disagree; a customer says staff promised or quoted
+   something; the business's own records show a rule's condition was not met; legal action, a
+   chargeback or a public review is threatened; injury or safety; a customer pushes back on an
+   answer already given.
 7. **Find conflicts and gaps.** A conflict is two entries that give different answers to the same
    case: list both numbers. A gap is a common customer question the sources do not answer, such as
    who pays return postage, what happens to sale items, how refunds are paid, or whether a
    membership can be refunded or a transfer keeps the same end date. List gaps as
-   questions for the owner. Do not answer them.
+   questions for the owner. Do not answer them. If an internal note (from the owner or staff)
+   adds to or differs from what the public pages say, list it under Conflicts too: customers see
+   only the public pages.
 
 ## The output
 
 Use the shape in `policy-book-template.md` if it was given; otherwise this one:
 
-1. **Title:** "[Business name] policy book", the date, and "Built from: [list of sources]".
+1. **Title:** "[Business name] policy book", "Built: [today's date]", "Last checked: [left for
+   the person]" and "Built from: [list of sources]".
 2. **Index:** a table of every entry: number, heading, one-line summary.
 3. **Entries:** for each, the number and heading, the exact words in a quote block, and
    "Source: [document, section]".
