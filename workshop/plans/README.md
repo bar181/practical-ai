@@ -24,7 +24,7 @@ chatbot they already use.
 | Ask your spreadsheet, or a dashboard | Your key numbers on one page, each showing where it came from | [Draft](../drafts/dashboard/) · [plan](dashboard/) |
 | Receipts into an expense sheet | Receipt photos become a categorised sheet, with unclear ones flagged | [Plan](expense-form/) |
 | Lead responder | A fast, qualified reply to each new enquiry, drafted for approval | [Plan](lead-responder/) |
-| Customer issue helper | A late order or refund handled from your one-page policy | Idea |
+| Customer issue helper | A late order or refund handled from your one-page policy | **Draft, built and reviewed by AI, not yet tried by a person:** [draft](../../docs/customer-issue-helper/). Built by the daily builder without a separate plan |
 | Weekly status update | A week of rough notes becomes a short update, with last week's risks and promises kept in view | **Built, draft, not yet tried by a person:** [project](../../projects/weekly-status-update/). Built by the daily builder without a separate plan |
 | Summarise a document | A report or contract in a fixed, checkable shape | Idea, partly covered by the document to action brief |
 | Scheduling and calendar planning | A week planned around fixed commitments | Idea |

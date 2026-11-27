@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 400" width="880" height="400" role="img" aria-labelledby="t d">
+  <title id="t">How the customer issue helper works</title>
+  <desc id="d">A customer message and your policy book go into the helper. It finds the rule, checks the dates and sorts each request as allowed, refused, not covered or manager decides. Out comes a reply draft with the exact rule it used, and flags for you. A person reads and sends; the helper never sends.</desc>
+  <style>
+    :root { --bg:#fbfaf7; --ink:#1f2328; --mute:#5b6470; --line:#d6d3cc; --card:#ffffff; --accent:#2f6f5e; --ok:#2f7d4a; --no:#9a3b3b; --gap:#8a6a12; --mgr:#3d5a99; --tagink:#ffffff; }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg:#16181c; --ink:#eceff3; --mute:#a3abb6; --line:#3a3f47; --card:#20242a; --accent:#6cc3a8; --ok:#6fcf8f; --no:#e58d8d; --gap:#e2c060; --mgr:#94b0ee; --tagink:#16181c; }
+    }
+    .bg { fill: var(--bg); }
+    .card { fill: var(--card); stroke: var(--line); stroke-width: 1.5; }
+    .hub { fill: var(--card); stroke: var(--accent); stroke-width: 2.5; }
+    .h { font: 600 15px system-ui, -apple-system, "Segoe UI", sans-serif; fill: var(--ink); }
+    .s { font: 400 12.5px system-ui, -apple-system, "Segoe UI", sans-serif; fill: var(--mute); }
+    .tok { fill: var(--ok); } .tno { fill: var(--no); } .tgap { fill: var(--gap); } .tmgr { fill: var(--mgr); }
+    .tag { font: 600 11.5px system-ui, -apple-system, "Segoe UI", sans-serif; fill: var(--tagink); }
+    .wire { stroke: var(--line); stroke-width: 2; fill: none; }
+    .dot { fill: var(--accent); }
+    .bar { fill: var(--line); }
+    .q { fill: var(--accent); opacity: .25; }
+    .step { opacity: 0; animation: show 8s infinite; }
+    .s1 { animation-delay: 1.2s; } .s2 { animation-delay: 1.8s; } .s3 { animation-delay: 2.4s; }
+    .b1 { animation-delay: 3.4s; } .b2 { animation-delay: 3.8s; } .b3 { animation-delay: 4.2s; } .b4 { animation-delay: 4.6s; }
+    .out { animation-delay: 3s; }
+    @keyframes show { 0% { opacity: 0; transform: translateY(4px); } 6%, 85% { opacity: 1; transform: none; } 95%, 100% { opacity: 0; } }
+    .pulse { animation: pulse 2s ease-in-out infinite; transform-origin: 440px 200px; }
+    @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.015); } }
+    @media (prefers-reduced-motion: reduce) { .step, .pulse { animation: none; opacity: 1; } .dot { display: none; } }
+  </style>
+
+  <rect class="bg" width="880" height="400" rx="16"/>
+
+  <!-- Inputs -->
+  <rect class="card" x="28" y="56" width="200" height="118" rx="12"/>
+  <text class="h" x="46" y="86">Customer message</text>
+  <rect class="bar" x="46" y="102" width="160" height="7" rx="3.5"/>
+  <rect class="bar" x="46" y="118" width="132" height="7" rx="3.5"/>
+  <rect class="bar" x="46" y="134" width="150" height="7" rx="3.5"/>
+  <text class="s" x="46" y="160">"Can I get a refund?"</text>
+
+  <rect class="card" x="28" y="226" width="200" height="118" rx="12"/>
+  <text class="h" x="46" y="256">Your policy book</text>
+  <text class="s" x="46" y="280">P1  Returns in 30 days</text>
+  <text class="s" x="46" y="300">P5  Damaged: photo, 7 days</text>
+  <text class="s" x="46" y="320">M1  Over £150: manager</text>
+
+  <!-- Wires in -->
+  <path id="w1" class="wire" d="M228 115 C 280 115, 290 175, 330 185"/>
+  <path id="w2" class="wire" d="M228 285 C 280 285, 290 225, 330 215"/>
+  <circle class="dot" r="5"><animateMotion dur="2.4s" repeatCount="indefinite"><mpath href="#w1"/></animateMotion></circle>
+  <circle class="dot" r="5"><animateMotion dur="2.4s" begin="0.6s" repeatCount="indefinite"><mpath href="#w2"/></animateMotion></circle>
+
+  <!-- Hub -->
+  <g class="pulse">
+    <rect class="hub" x="330" y="112" width="220" height="176" rx="14"/>
+    <text class="h" x="352" y="142">The helper</text>
+    <g class="step s1"><circle class="q" cx="360" cy="170" r="9"/><text class="s" x="376" y="174">Finds the rule, exact words</text></g>
+    <g class="step s2"><circle class="q" cx="360" cy="200" r="9"/><text class="s" x="376" y="204">Shows the date arithmetic</text></g>
+    <g class="step s3"><circle class="q" cx="360" cy="230" r="9"/><text class="s" x="376" y="234">Sorts each request</text></g>
+    <text class="s" x="352" y="268">Promises only what a rule allows</text>
+  </g>
+
+  <!-- Wire out -->
+  <path id="w3" class="wire" d="M550 200 L 600 200"/>
+  <circle class="dot" r="5"><animateMotion dur="1.2s" begin="1s" repeatCount="indefinite"><mpath href="#w3"/></animateMotion></circle>
+
+  <!-- Output -->
+  <g class="step out">
+    <rect class="card" x="600" y="40" width="252" height="320" rx="12"/>
+    <text class="h" x="618" y="70">Reply draft</text>
+    <rect class="bar" x="618" y="84" width="214" height="7" rx="3.5"/>
+    <rect class="bar" x="618" y="100" width="190" height="7" rx="3.5"/>
+    <rect class="bar" x="618" y="116" width="204" height="7" rx="3.5"/>
+    <text class="h" x="618" y="156">Why this reply</text>
+    <text class="s" x="618" y="178">P5: "we will send a free</text>
+    <text class="s" x="618" y="194">replacement or a full refund"</text>
+    <text class="h" x="618" y="232">Flags for you</text>
+  </g>
+  <g class="step b1"><rect x="618" y="246" width="96" height="24" rx="12" class="tok"/><text class="tag" x="636" y="262">Allowed</text></g>
+  <g class="step b2"><rect x="722" y="246" width="112" height="24" rx="12" class="tno"/><text class="tag" x="742" y="262">Refused</text></g>
+  <g class="step b3"><rect x="618" y="278" width="110" height="24" rx="12" class="tgap"/><text class="tag" x="632" y="294">Not covered</text></g>
+  <g class="step b4"><rect x="618" y="310" width="150" height="24" rx="12" class="tmgr"/><text class="tag" x="632" y="326">Manager decides</text></g>
+
+  <!-- Footer -->
+  <text class="s" x="28" y="34">You paste the policy once. For each message:</text>
+  <text class="s" x="330" y="320">A person reads, edits and sends.</text>
+  <text class="s" x="330" y="338">The helper never sends anything.</text>
+</svg>
